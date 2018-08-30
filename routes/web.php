@@ -12,3 +12,10 @@
 */
 Auth::routes();
 Route::get('/', 'HomePageController@index');
+//Route::get('/c/{category}', 'ProductController@index');
+Route::get('/list/{prod_type}', 'ProductController@list');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

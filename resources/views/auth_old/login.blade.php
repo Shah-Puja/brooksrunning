@@ -55,10 +55,8 @@
 					</div>
 					<div class="row">
 						<div class="tab-12">
-							<div class="forgot-password">								
-								<a class="btn btn-link" href="{{ route('password.request') }}">
-										{{ __('Forgot Your Password?') }}
-									</a>
+							<div class="forgot-password">
+								<a href="account-password.php">Forgot Password?</a>
 							</div>
 						</div>
 					</div>
@@ -79,9 +77,13 @@
 						<div class="tab-12">
 							<div class="cart-btn">
 								<!--<button class="primary-button">Log in</button>-->
-								<button type="submit" class="primary-button">
+								<button type="submit" class="btn btn-primary">
 										{{ __('Login') }}
 									</button>
+	
+									<a class="btn btn-link" href="{{ route('password.request') }}">
+										{{ __('Forgot Your Password?') }}
+									</a>
 							</div>
 							<p class="privacy">See our <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a>.</p>
 						</div>

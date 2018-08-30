@@ -49,9 +49,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'gender' => 'required|in:Male,Female',
+            'birthday_date' => '',
+            'birthday_month' => '',
+            'age_group' => '',
+            'state' => 'required',
+            'postcode' => 'required|numeric',
+            'newsletter_subscription' => '',
         ]);
     }
 
@@ -64,9 +72,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'gender' => $data['gender'],
+            'birthday_date' => $data['birthday_date'],
+            'birthday_month' => $data['birthday_month'],
+            'age_group' => $data['age_group'],
+            'state' => $data['state'],
+            'postcode' => $data['postcode'],
+            'newsletter_subscription' => @$data['newsletter_subscription'] ? 1 : 0,            
         ]);
     }
 }
