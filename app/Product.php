@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'prod_mast';
-    protected $primaryKey = 'prod_id';
+    protected $table = 'p_products';
 
-    public function variations()
+    public function categories()
     {
-    	return $this->hasMany('App\Variation', 'style_idx', 'style_idx');
+    	return $this->morphedByMany('App\Category', 'group');
     }
 }
