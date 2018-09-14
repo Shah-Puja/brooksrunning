@@ -12,4 +12,8 @@ class Product extends Model
     {
     	return $this->morphedByMany('App\Category', 'group');
     }
+    public function variants()
+    {
+    	return $this->hasMany('App\Variant');
+    }
 }

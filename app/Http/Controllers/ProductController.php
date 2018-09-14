@@ -10,10 +10,7 @@ class ProductController extends Controller
         //
     }
     public function list($prodtype){
-        switch($prodtype):
-            case 'footwear' : return view ('customer.list_footwear'); break;
-            case 'apparel' : return view ('customer.list_apparel'); break;
-            case 'sportsbra' : return view ('customer.list_sportsbra'); break;
-        endswitch;
+        return view ('customer.list_' . $prodtype)
     }
+
 }
