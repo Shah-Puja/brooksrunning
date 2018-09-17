@@ -19,3 +19,5 @@ Route::get('/list/{prod_type}', 'ProductController@list');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/subscribers/new', 'SubscriberController@store');
