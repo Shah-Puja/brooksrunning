@@ -43,7 +43,7 @@ class AddProductsToCategories extends Command
         $sub_categories = Category::where('parent_id', $category_id)->get(['id', 'name']);
         $sub_categories->each(function($sub_category) {
            $products = Product::where('tag', 'LIKE', '%' . $sub_category->name . '%')->pluck('id');
-           dd($products);
+           //dd($products);
            $sub_category->products()->sync($products);
         });
     }

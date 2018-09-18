@@ -6,14 +6,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index($name,$style,$color){
+        echo "<br> name=$name,style=$style,color=$color";
         //
     }
     public function list($prodtype){
-        switch($prodtype):
-            case 'footwear' : return view ('customer.list_footwear'); break;
-            case 'apparel' : return view ('customer.list_apparel'); break;
-            case 'sportsbra' : return view ('customer.list_sportsbra'); break;
-        endswitch;
+        return view ('customer.list_' . $prodtype);
     }
+
 }
