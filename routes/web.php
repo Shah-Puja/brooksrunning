@@ -26,3 +26,5 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/subscribers/new', 'SubscriberController@store');
