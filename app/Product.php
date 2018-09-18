@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'p_products';
+    protected $table = 'p_products';    
 
     public function categories()
     {
@@ -16,4 +16,6 @@ class Product extends Model
     {
     	return $this->hasMany('App\Variant');
     }
+
+    
 }
