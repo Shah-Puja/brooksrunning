@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Brooks Running</title>
         <!-- common files -->
+        <link rel="stylesheet" href="css/lightslider.css">
         <link rel="stylesheet" href="/css/common.css">
         <script src="/js/jquery-2.2.4.min.js"></script>
     </head>
