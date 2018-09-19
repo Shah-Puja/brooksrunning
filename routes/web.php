@@ -19,3 +19,6 @@ Route::get('/list/{prod_type}', 'ProductController@list');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/shipping','BillingShippingController@index');
+Route::post('/shipping','BillingShippingController@store');
