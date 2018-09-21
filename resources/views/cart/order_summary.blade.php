@@ -1,4 +1,5 @@
 <h3 class="bold-font">Order Summary</h3>
+@php //echo "<pre>";print_r($cart);die;@endphp
                     <div class="order-info">
                         <div class="row">
                             <div class="mob-7">

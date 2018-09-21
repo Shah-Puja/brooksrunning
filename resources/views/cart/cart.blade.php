@@ -161,36 +161,7 @@
                         <div class="col-7"></div>
                         <div class="col-5">
                             <div class="order">
-                                <h3 class="br-heading">Order Summary</h3>
-                                <div class="order-info">
-                                    <div class="row">
-                                        <div class="mob-7">
-                                            <p>Subtotal</p>
-                                        </div>
-                                        <div class="mob-5">
-                                            <p class="right">$ 399.90</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mob-7">
-                                            <p>Standard Delivery</p>
-                                        </div>
-                                        <div class="mob-5">
-                                            <p class="right">$ 0.0</p>
-                                        </div>
-                                    </div>
-                                    <div class="row total">
-                                        <div class="mob-7">
-                                            <p class="bold-font blue">Order Total:</p>
-                                        </div>
-                                        <div class="mob-5">
-                                            <p class="bold-font blue right">$ 399.90</p>
-                                        </div>
-                                    </div>	
-                                    <div class="afterpay">
-                                        <span>or 4 payments of $30.00 with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-                                    </div>
-                                </div>
+                                @include('cart.order_summary') 
                             </div>
                             @if ( @$cart->items_count > 0 )
                             <button class="pdp-button">Proceed to Purchase</button>
