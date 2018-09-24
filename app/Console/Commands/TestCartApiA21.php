@@ -54,7 +54,7 @@ class TestCartApiA21 extends Command
 
         $response = Zttp::withHeaders(['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'])->put(
             "https://api.texaspeak.com.au:8525/RetailAPIFIT_LIVE/Carts/1234?countryCode=AUFIT", [
-            $xml
+            'body' => $xml
         ]);
 
     }
