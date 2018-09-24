@@ -56,7 +56,7 @@ class TestCartApiA21 extends Command
             "https://api.texaspeak.com.au:8525/RetailAPIFIT_LIVE/Carts/1234?countryCode=AUFIT", [
             'body' => $xml
         ]);
-        dd($response);
+        dd($response->body());
 
     }
 }
