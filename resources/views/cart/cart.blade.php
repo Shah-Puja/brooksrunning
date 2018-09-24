@@ -1,6 +1,7 @@
 @extends('customer.layouts.master')
 
 @section('content')
+@php $checked = 'checked = "checked"'; @endphp
 <section class="wrapper cart-breadcrumb--header">
     <div class="row hidden-xs">
         <div class="col-9">
@@ -55,7 +56,7 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="standard" name="d-options" checked="checked">
+                                                <input type="radio" id="standard" name="d-options" {{($cart->delivery_type == 'standard') ? $checked : ''}} value="standard">
                                                 <label for="standard">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
@@ -71,7 +72,7 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="express" name="d-options">
+                                                <input type="radio" id="express" name="d-options" {{($cart->delivery_type == 'express') ? $checked : ''}} value="express">
                                                 <label for="express">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
@@ -87,8 +88,8 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="standard-new" name="d-options">
-                                                <label for="standard-new">
+                                                <input type="radio" id="new_zealand" name="d-options"  {{($cart->delivery_type == 'new_zealand') ? $checked : ''}}  value="new_zealand">
+                                                <label for="new_zealand">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
                                                         <h3 class="bold-font">Standard Delivery</h3>
@@ -185,4 +186,45 @@
     </div>
 </section>
 
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var checked_delivery_option = $("input:radio[name='d-options']:checked").val();
+
+        $("input:radio[name='d-options']").click(function () {
+            var overlay = $('<div id="overlay"> </div>');
+            overlay.appendTo(document.body);
+            var delivery_option_value = $("input:radio[name='d-options']:checked").val();
+            var url = "cart/update_delivery_option";
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: url,
+                method: "POST",
+                data: {delivery_option_value: delivery_option_value},
+                //data: {delivery_option_value: delivery_option_value, user_id: user_id},
+                success: function (result) {
+                    $(".order").load("cart/get_cart_order_total");
+                    /*if (((checked_delivery_option == "standard") || (checked_delivery_option == "express")) && (delivery_option_value === "new_zealand")) {
+                     location.reload();
+                     } else if (((delivery_option_value == "standard") || (delivery_option_value == "express")) && (checked_delivery_option === "new_zealand")) {
+                     location.reload();
+                     } else {
+                     //alert("pending");
+                     $(".order").load("cart/get_cart_order_total");
+                     }*/
+
+                    $("#overlay").remove();
+                },
+                error: function () {
+                    return false;
+                }
+            });
+        });
+    });
+</script>
 @endsection
