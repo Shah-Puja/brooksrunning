@@ -2,7 +2,7 @@
 @foreach($cart->cartItems as $cartItem)  
 @php //echo "<pre>";print_r($cartItem->variant);die; @endphp
 		<div class="shoppingcart-products">
-						<div class="row">
+						<div class="row cp-details__wrapper">
 							<div class="col-3 tab-6">
 								<div class="shopping-img"> 
 									<img src="{{ $cartItem->variant->product->media->image1Medium() }}" alt="">
@@ -29,8 +29,8 @@
 									<input type="text" class="input-field" name='qty' value="{{ $cartItem->qty }}" data-qty="{{ $cartItem->qty }}"> 
 									</div>
 									<div class="mob-btn">
-										<button type="submit" class="bold-font action">Update</button>
-	                                    <button type="submit" class="bold-font action">Remove</button>
+									 <button type="submit" data-cart-page="Yes" data-action="update" data-sku="{{ $cartItem->variant->id }}" class="bold-font action">Update</button>
+	                                    <button type="submit" data-cart-page="Yes" data-action="remove" data-sku="{{ $cartItem->variant->id }}" class="bold-font action">Remove</button>
 									</div>
 								</div>
 							</div>

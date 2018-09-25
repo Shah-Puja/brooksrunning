@@ -239,22 +239,6 @@ $(document).ready(function () {
 });
 
 
-//pop up cart
-$(document).ready(function () {
-    $(".cart-close").click(function () {
-        $(".cart-popup-desktop").hide();
-    });
-
-    $('.icon-shopping-cart').hover(function (e) {
-        $(".cart-popup-desktop").slideDown();
-    });
-
-    $('.cart-popup-desktop').mouseleave(function (e) {
-        $('.cart-popup-desktop').hide();
-    });
-});
-
-
 // less and more info btn
 $(document).ready(function () {
     function splitText(text) {
@@ -291,6 +275,7 @@ function collapseText() {
     $(".show-more").show();
 }
 
+
 //update, delete products from cart
 $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a', function () {
     let cart_page = $(this).data("cart-page");
@@ -315,7 +300,7 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a
         method: method,
         data: data,
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             let cart_items = result.cartitemshtml;
             let cart_page_cart_items = result.cartpagecartitemshtml;
             let order_summary = result.ordersummaryhtml;
@@ -331,7 +316,7 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a
             }
             $(".icon-shopping-cart span").text(cart_count);
             $('body,html').animate({scrollTop: 0}, 800);
-            $(".cart-popup-desktop").slideDown();
+            $(".cart-product--popup").slideDown();
         },
         error: function (error) {
             let obj = JSON.parse(error.responseText);

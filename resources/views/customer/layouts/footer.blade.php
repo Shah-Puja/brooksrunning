@@ -139,10 +139,10 @@
     </div>
 </footer>
 
-@if(request()->is('list/*'))
+ 
 <!-- listing page js -->
 <script src="/js/owl.carousel.min.js"></script>
-@endif
+ 
 
 @if(request()->is('register'))
 <!-- Register page js please write here-->

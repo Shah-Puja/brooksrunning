@@ -32,3 +32,9 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
 Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+
+Route::middleware(['allowOnlyAjax'])->group(function () {
+	Route::post('/cartitem', 'CartItemsController@store');
+	Route::patch('/cartitem', 'CartItemsController@update');
+	Route::delete('/cartitem', 'CartItemsController@destroy');
+});

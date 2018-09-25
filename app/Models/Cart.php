@@ -31,8 +31,8 @@ class Cart extends Model
         $this->cartItems()->updateOrCreate(
                 [
                     'variant_id' => $variantSelected->id,
-                    'price'  => $variantSelected->price,
-                    'rrp'  => $variantSelected->rrp,
+                    'price'  => $variantSelected->price_sale,
+                    'rrp'  => $variantSelected->price,
                 ],
                 [
                     'qty' => request('qty'),
@@ -64,7 +64,7 @@ class Cart extends Model
     }
 
     public function updateCartInformation() {
-        $this->load('cartItems.variant.product:id,name');
+        $this->load('cartItems.variant.product:id,stylename');
         $cartTotal = $this->cartItems
                         ->reduce(function($total, $cart_item) { 
                             return $total + ($cart_item->price * $cart_item->qty); 

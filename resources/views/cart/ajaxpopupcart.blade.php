@@ -1,0 +1,35 @@
+<div class="product-wrapper">
+    @if ( $cart->items_count > 0 )
+    @foreach($cart->cartItems as $cartItem)
+
+    <div class="product clearfix">
+        <div class="product-img">
+            <img src="images/apparel/apparel1-details.jpg" alt="">
+        </div>
+        <div class="product-info">
+            <p class="blue">{{ $cartItem->variant->product->stylename }}</p>
+            <p>Colour: {{ $cartItem->variant->product->color_name }}</p>
+            <p>Size: {{ $cartItem->variant->size }}</p>
+            <p>Width: {{ $cartItem->variant->width }}</p>
+            <p>Qty: {{ $cartItem->qty }}</p>
+            <p>@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
+										<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del>
+								@endif
+								&dollar;{{ number_format($cartItem->variant->price_sale, 2) }} </p>
+            <button class="btn blue">Remove</button>
+        </div>
+    </div>
+    @endforeach
+    @endif
+</div>
+
+<div class="total clearfix">
+    <div class="left">
+        <p>Order Subtotal</p>
+    </div>
+    <div class="right">
+        <p class="blue">&dollar;{{ isset($cart) ? number_format($cart->total, 2) : number_format(0, 2) }}</p>
+    </div>
+</div>
+<a href="#" class="primary-button action">Checkout</a>
+<a href="#" class="secondary-button2 action">Countinue Shopping</a>

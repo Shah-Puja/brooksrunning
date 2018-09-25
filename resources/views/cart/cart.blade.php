@@ -25,7 +25,7 @@
                     <h3 class="br-heading">Shopping Cart</h3>
                     <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
-                <button class="pdp-button pdp-proceed-mob visible-mob">Proceed to Purchase</button>
+                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob">Proceed to Purchase</button>
                 <div class="shopping-heading">
                     <div class="row">
                         <div class="col-6 hidden-tab hidden-mob"><p>Product</p></div>
@@ -33,7 +33,7 @@
                         <div class="col-4 hidden-tab hidden-mob"><p>Price</p></div>
                     </div>
                 </div>
-                <div class="shoppingcart-wrapper">
+                <div class="shoppingcart-wrapper ajax_cart">
                     @include('cart.ajaxcartproductinfo')
                 </div>
                 <div class="shopping-del-wrapper">
@@ -161,11 +161,11 @@
                     <div class="row">
                         <div class="col-7"></div>
                         <div class="col-5">
-                            <div class="order">
+                            <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
                             @if ( @$cart->items_count > 0 )
-                            <button class="pdp-button">Proceed to Purchase</button>
+                            <button class="proceed-to-purchase pdp-button">Proceed to Purchase</button>
                             @endif
                         </div>
                     </div>
@@ -175,7 +175,7 @@
         <div class="col-3 tab-4">
             <div class="cart-right--container">
                 @if ( @$cart->items_count > 0 )
-                <button class="pdp-button hidden-mob">Proceed to Purchase</button>
+                <button class="proceed-to-purchase pdp-button hidden-mob">Proceed to Purchase</button>
                 @endif
                 <div class="order hidden-mob">
                     @include('cart.order_summary')
