@@ -182,7 +182,7 @@
             },
             controls: function () {
                 if (settings.controls) {
-                    $el.after('<div class="lSAction visible-mob"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
+                    $el.after('<div class="lSAction visible-mob visible-tab"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
                     if (!settings.autoWidth) {
                         if (length <= settings.item) {
                             $slide.find('.lSAction').hide();
@@ -1138,3 +1138,125 @@
         return this;
     };
 }(jQuery));
+
+// fullscreen API Code
+function launchFullscreen(element) {
+    $("#zoomWindowFullShow").addClass("product-zoom--Window");
+    $("#zoomWindowFullShowIn").addClass("display-none");
+    $("#zoomWindowFullShowOut").removeClass("display-none");
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+function exitFullscreen() {
+    $("#zoomWindowFullShow").removeClass("product-zoom--Window");
+    $("#zoomWindowFullShowIn").removeClass("display-none");
+    $("#zoomWindowFullShowOut").addClass("display-none");
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+}
+
+// number quantity count
+$(document).on('click','#quantity-selector #adds',function add() {
+    var $rooms = $("#quantity-selector #noOfRoom");
+    var a = $rooms.val();
+    a++;
+    $("#quantity-selector #subs").prop("disabled", !a);
+    $rooms.val(a);
+});
+
+$("#quantity-selector #subs").prop("disabled", !$("#quantity-selector #noOfRoom").val());
+
+$(document).on('click','#quantity-selector #subs',function subst() {
+    var $rooms = $("#quantity-selector #noOfRoom");
+    var b = $rooms.val();
+    if (b >= 1) {
+        b--;
+        $rooms.val(b);
+    }
+    else {
+        $("#quantity-selector #subs").prop("disabled", true);
+    }
+});
+
+$(document).on('click','.swatches li:not(".selected")',function(){
+    let url = $(this).data('url');
+    let value = $(this).attr("alt");
+    console.log(url);
+    $( "#data-load" ).load( url + " #data-load", function() {
+        $('#pdp-zoom--image').lightSlider({
+            gallery: true,
+            item: 1,
+            slideMargin: 0,
+            thumbItem: 9
+        });
+        ChangeUrl(value, url);
+    });
+   
+    return false;
+});
+
+$(document).on('click','.size-show li:not(".disable")',function(){
+   if($(this).data('value')!=''){
+        $(".size-show li").removeClass("selected");
+        $(this).addClass("selected");
+        let size_val = $(this).data('value');
+        $("#detail input[name='size']").val(size_val);
+   }
+    return false;
+});
+
+
+function ChangeUrl(page, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Page: page, Url: url };
+		history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        console.log("Browser does not support HTML5.");
+    }
+}
+
+window.addEventListener('popstate', function(event) {
+	if(event.state){
+		var url = event.state.Url;
+		window.location.href=url;
+	}
+});
+
+function detail_validation(){
+    $(".size .main").find("span").text("").removeClass("valerror");
+    $(".width-wrapper").find(".main span").text("").removeClass("valerror");
+    $(".quantity-wrapper").find("span").text("").removeClass("valerror");
+    let form = true;
+    if($("#detail input[name='size']").val()==''){
+        $(".size .main").find("span").text(" - Please Select Option").addClass("valerror");
+        form = false;
+    }
+
+    if($("#detail input[name='width_name']").val()==''){
+        $(".width-wrapper").find(".main span").text(" - Please Select Option").addClass("valerror");
+        form = false;
+    }
+
+    if($("#detail input[name='qty']").val()=='0'){
+        $(".quantity-wrapper").find("span").text(" - Please Enter Quantity").addClass("valerror");
+        form = false;
+    }
+    
+    if(form==false){
+        return false;
+    }
+}
+
+

@@ -5,7 +5,7 @@
 				<div class="col-3 tab-3 header-desktop--left">
 					<a href="#">
 						<div class="logo">
-							<img src="images/brooks-running-logo.png" alt="Brooks Running Aus">
+							<img src="/images/brooks-running-logo.png" alt="Brooks Running Aus">
 						</div>
 					</a>
 				</div>

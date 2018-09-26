@@ -98,12 +98,12 @@
                     </form>
                     <div class="payment--icons clearfix">
                         <ul>
-                            <li><img src="images/payment-master.png" width="50" height="auto" alt=""></li>
-                            <li><img src="images/payment-visa.png" width="50" height="auto" alt=""></li>
-                            <li><img src="images/payment-paypal.png" width="103" height="auto" alt=""></li>
-                            <li><img src="images/payment-afterpay.png" width="115" height="auto" alt=""></li>
+                            <li><img src="/images/payment-master.png" width="50" height="auto" alt=""></li>
+                            <li><img src="/images/payment-visa.png" width="50" height="auto" alt=""></li>
+                            <li><img src="/images/payment-paypal.png" width="103" height="auto" alt=""></li>
+                            <li><img src="/images/payment-afterpay.png" width="115" height="auto" alt=""></li>
                             <li><p>Safe &amp; Secure Payments enabled by</p></li>
-                            <li><img src="images/payment-braintree.png" width="140" height="auto" alt=""></li>
+                            <li><img src="/images/payment-braintree.png" width="140" height="auto" alt=""></li>
                         </ul>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
         <div class="row copywrite">
             <div class="tab-12">
                 <ul>
-                    <li><img src="images/brooks-logo-footer.png" alt=""></li>
+                    <li><img src="/images/brooks-logo-footer.png" alt=""></li>
                     <li>&copy; 2018 Brooks Australia.</li>
                 </ul>
             </div>
@@ -138,12 +138,20 @@
         </div>
     </div>
 </footer>
-
-@if(request()->is('list/*'))
-<!-- listing page js -->
 <script src="/js/owl.carousel.min.js"></script>
-@endif
-
+<script src="/js/listing.js"></script>
+<!-- details page js -->
+	<script src="/js/pdp-js.js"></script>
+    <script>
+    	$(document).ready(function() {
+			$('#pdp-zoom--image').lightSlider({
+			    gallery: true,
+			    item: 1,
+			    slideMargin: 0,
+			    thumbItem: 9
+			});
+		});
+	</script>
 @if(request()->is('register'))
 <!-- Register page js please write here-->
 @endif

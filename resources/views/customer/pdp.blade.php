@@ -1,0 +1,588 @@
+@extends('customer.layouts.master')
+@section('content')
+<div id="data-load">
+	<div class="pdp-container">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-7">
+					<div class="breadcrumbs2 visible-mob visible-tab">
+						<ul>
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+									@switch($product->gender)
+										@case('M')
+											<a href="#">Men's</a>
+											@break
+										@case('W')
+											<a href="#">Women's</a>
+											@break
+										@default
+											<a href="#">{{ $product->gender }}</a>
+									@endswitch
+								</li>
+								<li>
+									<a href="#">{{ $product->prod_type }}</a>
+								</li>
+								<li>
+									<a href="#"></a>
+								</li>
+								<li>
+									<a href="#" class="active">{{ $product->stylename }}</a>
+								</li>
+						</ul>
+					</div>
+					<div class="pdp-container--image">
+						<div class="zoomwindowfull-icon" id="zoomWindowFullShowIn" onclick="launchFullscreen(document.getElementById('zoomWindowFullShow'));">
+							<span class="icon-enlarge2"></span>
+						</div>
+						<div class="pdp-zoom--container" id="zoomWindowFullShow">
+							<div class="zoomwindowfull-icon display-none" id="zoomWindowFullShowOut" onclick="exitFullscreen();">
+								<span class="icon-enlarge"></span>
+							</div>
+							<ul id="pdp-zoom--image">
+								<li data-thumb="{{ $product->image->image1Thumbnail() }}">
+									<img src="{{ $product->image->image1Original() }}" />
+								</li>
+								@for ($i = 2; $i < 10; $i++)
+									@if ($product->image->{'image' . $i . 'Thumbnail'}() != null)
+										<li data-thumb="{{ $product->image->{'image' . $i . 'Thumbnail'}() }}">
+											<img src="{{ $product->image->{'image' . $i . 'Original'}() }}" />
+										</li>
+									@endif
+								@endfor
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="pdp-container--info">
+						<div class="breadcrumbs2 hidden-tab hidden-mob">
+							<ul> 
+								<li>
+									<a href="#">Home</a>
+								</li>
+								
+								<li>
+									@switch($product->gender)
+										@case('M')
+											<a href="#">Men's</a>
+											@break
+										@case('W')
+											<a href="#">Women's</a>
+											@break
+										@default
+											<a href="#">{{ $product->gender }}</a>
+									@endswitch
+								</li>
+								<li>
+									<a href="#">{{ $product->prod_type }}</a>
+								</li>
+								<li>
+									<a href="#"></a>
+								</li>
+								<li>
+									<a href="#" class="active">{{ $product->stylename }}</a>
+								</li>
+							</ul>
+						</div>
+						<div class="offer-info">
+							<span>NEW</span>
+						</div>
+						<div class="heading-wrapper clearfix">
+							<div class="heading">
+								<h1 class="br-heading">{{ $product->stylename }}</h1>
+							</div>
+							<div class="price">
+							    @if($product->price_sale!='0' && $product->price_sale!='')
+									<del><span>&dollar;{{ $product->price }}</span></del>
+									<span>&dollar;{{ $product->price_sale }}</span>
+								@else
+									<span>&dollar;{{ $product->price }}</span>
+								@endif
+								
+								
+							</div>
+						</div>
+						<div class="afterpay">
+							<span>or 4 payments of $30.00 with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
+						</div>
+						<!--afterpay popup -->
+						<div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
+							<div class="popup-container--wrapper">
+								<div class="popup-container--info">
+									<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
+									<div class="header-info">
+										<img src="/images/afterpay_logo-colour.svg" alt="">
+										<h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
+									</div>
+									<div class="afterpay-info clearfix">
+										<div class="info-wrapper">
+											<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
+											<p class="heading">Pay in 4 installments</p>
+											<p class="text">Pay for your order in equal fortnightly payments</p>
+										</div>
+										<div class="info-wrapper">
+											<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
+											<p class="heading">Get your items now</p>
+											<p class="text">Your order will be shipped now, just like a normal order</p>
+										</div>
+										<div class="info-wrapper">
+											<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
+											<p class="heading">Nothing extra to pay</p>
+											<p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
+										</div>
+										<div class="info-wrapper">
+											<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
+											<p class="heading">Spend up to $1000</p>
+											<p class="text">You can use Afterpay for orders up to $1000</p>
+										</div>
+									</div>
+									<div class="footer-info clearfix">
+										<div class="left-block">
+											<p class="heading">
+												Pay in 4 installments
+											</p>
+											<ul class="text">
+												<li>An Australian debit or credit card</li>
+												<li>To be over 18 years of age</li>
+												<li> To live in Australia</li>
+											</ul>
+											<br/>
+											<p class="heading">To use this service</p>
+											<ul class="text">
+												<li>Add your items to your bag and checkout as normal</li>
+												<li>In checkout select Afterpay as your payment method</li>
+												<li>Enter your details with Afterpay and you're done!</li>
+												<li>Your payment schedule will be emailed to you</li>
+											</ul>
+										</div>
+										<div class="right-block">
+											<p class="heading">Other things to note</p>
+											<ul class="text">
+												<li>Repayments will need to be made fortnightly either over a 6 or 8 week period. Your payment schedule will be shown to you by Afterpay before you confirm your purchase.</li>
+												<li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
+												<li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
+											</ul>
+											<a href="#" class="moreinfo">For full terms and conditions please visit Afterpay</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/afterpay popup -->
+						<div class="category"> {{ $product->h2 }} </div>
+						@if( !empty($colour_options) && count($colour_options) > 0 )
+						<!-- Colour swatches -->
+						<div class="swatches">
+							<ul>
+								@foreach($colour_options as $color_data)
+									<li @if($color_data ->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ $color_data->image1thumbnail }}" alt="{{ $color_data->color_name }}"></li>
+								@endforeach
+							</ul>
+						</div>
+						<!-- end Colour swatches -->
+						@endif
+						<div class="color">
+							Colour: {{ $product->color_code }}
+						</div>
+						@php $sizes = $width_names = []; @endphp
+						@foreach($variants as $variant)
+							@php
+								$sizes[] = array('size'=> $variant->size,'visible'=> $variant->visible);
+								$width_names[] = $variant->width_name;
+							@endphp
+						@endforeach
+					 <form id="detail" name="pdp" onsubmit="return detail_validation()">
+							   
+						@if(!empty($sizes))
+						<div class="size">
+							<div class="row">
+								<div class="mob-6">
+									<div class="main">SIZE <span></span></div>
+								</div>
+								<div class="mob-6">
+									<div class="main size-chart"><a href="JavaScript:Void(0);" id="sizechart-popup--control">Size Chart</a></div>
+								</div>
+							</div>
+							<ul class="size-show">
+								<!--<li class="selected">6.0</li>
+								<li class="disable">13.0</li>
+								<li>13.0</li>-->
+								<li data-value="">-</li>
+								@foreach($sizes as $size)
+									<li @if($size['visible']=='No') class="disable" @endif data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
+								@endforeach
+							</ul>
+						</div> <!-- end size -->
+						<input type="hidden" name="size" value="" />
+						@endif
+						<div class="row select-width">
+							@if(!empty($width_names))
+							<div class="col-6">
+								<div class="input-wrapper width-wrapper">
+									<label for="" class="main">MENS WIDTH <span></span></label>
+									<div class="custom-select">
+										<div class = "select-box">
+											<div class = "label-heading">
+												<span class="text">-</span> 
+												<div class="sel-icon">
+													<span class="icon-down-arrow"></span>
+												</div>
+											</div>
+											<ul class="select-option--wrapper">
+												<li class="option-value" data-value="">-</li>
+												<li class="option-value" data-value="sdsddsf">sdfds</li>
+												@foreach($width_names as $width_name)
+													@if($width_name!='')
+													<li class="option-value" data-value="">{{ $width_name }}</li>
+													@endif
+												@endforeach
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="hidden" name="width_name" value="" />
+							@endif
+							<div class="col-6">
+								<div class="quantity-wrapper">
+									<div class="input-wrapper">
+										<label class="main" for="">QUANTITY <span></span></label>
+										<div class="quantity-selector" id="quantity-selector">
+											<input type="button" value="-" id="subs"/>
+											<input type="text" id="noOfRoom" value="1" name="qty" />
+											<input type="button" value="+" id="adds"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="button">
+							<button type="submit" class="pdp-button">Add to Cart</button>
+						</div>
+					</div>
+					</from>
+					<div class="pdp-container--offer">
+						<h3>Free Shipping on all orders over $50. Australia Wide</h3>
+						<ul>
+							<li>
+								<a href="#">Find a store</a>
+							</li>
+							<li>
+								<a href="#">Shipping & returns</a>
+							</li>
+							<li>
+								<a href="#">Contact us</a>
+							</li>
+						</ul>
+						<p>We deliver to Australia and New Zealand only</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="pdp-info--wrapper">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-12 pdp-info">
+					<div class="content--top">
+						<svg id="icon-checklist" viewBox="0 0 25 32" width="100%" height="100%">
+							<title>checklist</title>
+							<path fill="#fff" style="" d="M9.828 7.56c-1.925 0-3.491-1.561-3.491-3.499s1.566-3.499 3.491-3.499h5.608c1.925 0 3.491 1.561 3.491 3.499s-1.566 3.499-3.491 3.499h-5.608z"></path>
+							<path fill="#fff" style="" d="M23.579 24.951c0 2.343-1.885 4.242-4.211 4.242h-13.474c-2.325 0-4.211-1.899-4.211-4.242v-18.027c0-2.343 1.885-4.242 4.211-4.242h13.474c2.325 0 4.211 1.899 4.211 4.242v18.027z"></path>
+							<path fill="#0363f8" style="" d="M6.054 4.782c-1.045 0-1.895 0.856-1.895 1.909v17.989c0 1.053 0.85 1.909 1.895 1.909h13.578c1.045 0 1.895-0.856 1.895-1.909v-17.989c0-1.052-0.85-1.909-1.895-1.909h-13.578zM19.633 27.862h-13.578c-1.741 0-3.158-1.427-3.158-3.181v-17.989c0-1.754 1.417-3.181 3.158-3.181h13.578c1.741 0 3.158 1.427 3.158 3.181v17.989c0 1.754-1.416 3.181-3.158 3.181v0z"></path>
+							<path fill="#fff" style="" d="M15.436 2.327h-5.608c-0.993 0-1.806 0.819-1.806 1.82v0c0 1.001 0.813 1.819 1.806 1.819h5.608c0.993 0 1.806-0.819 1.806-1.819v0c0-1.001-0.813-1.82-1.806-1.82z"></path>
+							<path fill="#0363f8" style="" d="M9.828 2.963c-0.648 0-1.175 0.531-1.175 1.183s0.527 1.183 1.175 1.183h5.608c0.648 0 1.175-0.531 1.175-1.183s-0.527-1.183-1.175-1.183h-5.608zM15.436 6.602h-5.608c-1.344 0-2.438-1.102-2.438-2.456s1.093-2.456 2.438-2.456h5.608c1.344 0 2.438 1.102 2.438 2.456s-1.094 2.456-2.438 2.456v0z"></path>
+							<path fill="#fff" style="" d="M15.768 19.639c0.107 0.336 0.164 0.694 0.164 1.066 0 1.933-1.555 3.499-3.474 3.499s-3.474-1.567-3.474-3.499c0-1.933 1.555-3.499 3.474-3.499 0.419 0 0.821 0.075 1.193 0.212z"></path>
+							<path fill="#0363f8" style="" d="M12.459 24.84c-2.264 0-4.105-1.855-4.105-4.136s1.842-4.136 4.105-4.136c0.484 0 0.959 0.084 1.41 0.25 0.328 0.121 0.496 0.486 0.376 0.816s-0.483 0.5-0.81 0.379c-0.312-0.115-0.64-0.173-0.976-0.173-1.567 0-2.842 1.284-2.842 2.863s1.275 2.863 2.842 2.863c1.567 0 2.842-1.284 2.842-2.863 0-0.298-0.045-0.592-0.134-0.873-0.106-0.335 0.077-0.693 0.41-0.8 0.331-0.107 0.687 0.078 0.793 0.413 0.129 0.406 0.194 0.83 0.194 1.26 0 2.28-1.842 4.136-4.105 4.136z"></path>
+							<path fill="#0363f8" style="" d="M12.285 22.631c-0.167 0-0.328-0.066-0.447-0.186l-1.265-1.274c-0.247-0.248-0.247-0.651 0-0.9s0.646-0.249 0.893 0l0.724 0.729 1.602-2.386c0.196-0.291 0.588-0.368 0.877-0.171s0.365 0.592 0.169 0.884l-2.031 3.025c-0.106 0.157-0.275 0.259-0.463 0.277-0.020 0.002-0.040 0.003-0.060 0.003z"></path>
+							<path fill="#0363f8" style="" d="M18.947 9.496h-12.632c-0.349 0-0.632-0.285-0.632-0.636s0.283-0.636 0.632-0.636h12.632c0.349 0 0.632 0.285 0.632 0.636s-0.283 0.636-0.632 0.636z"></path>
+							<path fill="#0363f8" style="" d="M18.947 12.218h-12.632c-0.349 0-0.632-0.285-0.632-0.636s0.283-0.636 0.632-0.636h12.632c0.349 0 0.632 0.285 0.632 0.636s-0.283 0.636-0.632 0.636z"></path>
+							<path fill="#0363f8" style="" d="M18.947 14.939h-12.632c-0.349 0-0.632-0.285-0.632-0.636s0.283-0.636 0.632-0.636h12.632c0.349 0 0.632 0.285 0.632 0.636s-0.283 0.636-0.632 0.636z"></path>
+						</svg>
+					</div>
+					<div class="row info-wrapper">
+						<div class="info--left tab-6">
+							<h3 class="br-heading">What’s New</h3>
+							<ul class="br-info">
+								<li>
+									DNA LOFT full-length midsole for an ultra-soft feel and ride
+								</li>
+								<li>
+									Engineered mesh for breathability, flexibility and support
+								</li>
+								<li>
+									Two-way stretch bootie for an adaptive fit
+								</li>
+							</ul>
+						</div>
+						<div class="info--right tab-6">
+							<div class="m-label-heading">
+								<h3 class="br-heading">Specs</h3>
+							</div>
+							<table class="table__specs">
+								<tbody>
+									@php  $specification_info = explode('#', $product->specifications); @endphp
+									@foreach($specification_info as $curr_specs)
+										@if ($curr_specs != '')
+											@php
+												$spec_arr = explode(':', $curr_specs);
+												$spec_name = $spec_arr['0'];
+												$spec_value = $spec_arr['1'];
+											@endphp
+										<tr class="specs__row">
+											<td class="label--bold">
+												<p>{{ $spec_name }}</p>
+											</td>
+											<td class="label--info">
+												<p>{{ $spec_value }}</p>
+											</td>
+										</tr>
+										@endif
+									@endforeach
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+@if (strpos(strtolower($product->tag), 'sportsbra') !== false)
+	@include('customer.pdp_bra_benefits')
+@else
+	@include('customer.pdp_shoe_benefits')
+@endif
+<section class="pdp-recommended-products">
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="br-heading">Recommended for you</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="plp-wrapper-container">
+				<div class="mob-6 col-3 plp-wrapper__sub">
+					<div class="plp-product">
+						<div class="offer-info">
+							<span>NEW</span>
+							<span class="sale">SALE</span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="img img-shoes">
+								<img id="plp-img" src="/images/shoes/shoes1-listing.jpg" alt="">
+							</div>
+						</a>
+						<div class="more-color--container">
+							<span class="icon-style icon-back-arrow prev"></span>
+							<div class="owl-carousel owl-theme">
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							</div>
+							<span class="icon-style icon-next-arrow next"></span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="info">
+								<h3>Adrenaline GTS 18</h3>
+								<div class="price">
+									<span><strike>&dollar;89.95</strike></span>
+									<span class="red">&dollar;89.95</span>
+								</div>
+								<div class="shoes-type">Women's Running Tops</div>
+							</div>
+							<div class="info-sub">
+								<div class="row">
+									<div class="mob-6">
+										<p>Neutral Speed</p>
+									</div>
+									<div class="mob-6">
+										<p class="right">Width Available</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="mob-6 col-3 plp-wrapper__sub">
+					<div class="plp-product">
+						<div class="offer-info">
+							<span>NEW</span>
+							<span class="sale">SALE</span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="img img-shoes">
+								<img id="plp-img" src="/images/shoes/shoes1-listing.jpg" alt="">
+							</div>
+						</a>
+						<div class="more-color--container">
+							<span class="icon-style icon-back-arrow prev"></span>
+							<div class="owl-carousel owl-theme">
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							</div>
+							<span class="icon-style icon-next-arrow next"></span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="info">
+								<h3>Adrenaline GTS 18</h3>
+								<div class="price">
+									<span><strike>&dollar;89.95</strike></span>
+									<span class="red">&dollar;89.95</span>
+								</div>
+								<div class="shoes-type">Women's Running Tops</div>
+							</div>
+							<div class="info-sub">
+								<div class="row">
+									<div class="mob-6">
+										<p>Neutral Speed</p>
+									</div>
+									<div class="mob-6">
+										<p class="right">Width Available</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="mob-6 col-3 plp-wrapper__sub">
+					<div class="plp-product">
+						<div class="offer-info">
+							<span>NEW</span>
+							<span class="sale">SALE</span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="img img-shoes">
+								<img id="plp-img" src="/images/shoes/shoes1-listing.jpg" alt="">
+							</div>
+						</a>
+						<div class="more-color--container">
+							<span class="icon-style icon-back-arrow prev"></span>
+							<div class="owl-carousel owl-theme">
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							</div>
+							<span class="icon-style icon-next-arrow next"></span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="info">
+								<h3>Adrenaline GTS 18</h3>
+								<div class="price">
+									<span><strike>&dollar;89.95</strike></span>
+									<span class="red">&dollar;89.95</span>
+								</div>
+								<div class="shoes-type">Women's Running Tops</div>
+							</div>
+							<div class="info-sub">
+								<div class="row">
+									<div class="mob-6">
+										<p>Neutral Speed</p>
+									</div>
+									<div class="mob-6">
+										<p class="right">Width Available</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="mob-6 col-3 plp-wrapper__sub">
+					<div class="plp-product">
+						<div class="offer-info">
+							<span>NEW</span>
+							<span class="sale">SALE</span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="img img-shoes">
+								<img id="plp-img" src="/images/shoes/shoes1-listing.jpg" alt="">
+							</div>
+						</a>
+						<div class="more-color--container">
+							<span class="icon-style icon-back-arrow prev"></span>
+							<div class="owl-carousel owl-theme">
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							  <div class="item">
+							  	 <img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+							  </div>
+							</div>
+							<span class="icon-style icon-next-arrow next"></span>
+						</div>
+						<a href="detail-shoes.php">
+							<div class="info">
+								<h3>Adrenaline GTS 18</h3>
+								<div class="price">
+									<span><strike>&dollar;89.95</strike></span>
+									<span class="red">&dollar;89.95</span>
+								</div>
+								<div class="shoes-type">Women's Running Tops</div>
+							</div>
+							<div class="info-sub">
+								<div class="row">
+									<div class="mob-6">
+										<p>Neutral Speed</p>
+									</div>
+									<div class="mob-6">
+										<p class="right">Width Available</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+		    </div>
+		</div>
+	</div>
+</section>
+@endsection
