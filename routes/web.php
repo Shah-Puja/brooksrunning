@@ -16,8 +16,8 @@ Route::get('/', 'HomePageController@index');
 Route::get('/{gender}-{category}-{prod_type}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductController@index');
 
-//Route::get('/c/{category}', 'ProductController@index');
-// Route::get('/list/{prod_type}', 'ProductController@list');
+Route::get('/c/{category}', 'ProductController@index');
+Route::get('/list/{prod_type}', 'ProductController@list');
 
 Route::get('/test', 'ProductController@newlist');
 Route::get('/data','DataController@index');
