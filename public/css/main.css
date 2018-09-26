@@ -3,48 +3,135 @@
 /* All Variables */
 /* Closed All Variables */
 /* Fonts */
+/* @font-face {
+    font-family: 'Proxima Nova S';
+    src: url('../webfonts/ProximaNovaS-BoldIt.eot');
+    src: url('../webfonts/ProximaNovaS-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaS-BoldIt.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaS-BoldIt.woff') format('woff'),
+        url('../webfonts/ProximaNovaS-BoldIt.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaS-BoldIt.svg#ProximaNovaS-BoldIt') format('svg');
+    font-weight: bold;
+    font-style: italic;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova A';
+    src: url('../webfonts/ProximaNovaA-BoldIt.eot');
+    src: url('../webfonts/ProximaNovaA-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaA-BoldIt.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaA-BoldIt.woff') format('woff'),
+        url('../webfonts/ProximaNovaA-BoldIt.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaA-BoldIt.svg#ProximaNovaA-BoldIt') format('svg');
+    font-weight: bold;
+    font-style: italic;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova S';
+    src: url('../webfonts/ProximaNovaS-Regular.eot');
+    src: url('../webfonts/ProximaNovaS-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaS-Regular.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaS-Regular.woff') format('woff'),
+        url('../webfonts/ProximaNovaS-Regular.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaS-Regular.svg#ProximaNovaS-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova S';
+    src: url('../webfonts/ProximaNovaS-RegularIt.eot');
+    src: url('../webfonts/ProximaNovaS-RegularIt.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaS-RegularIt.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaS-RegularIt.woff') format('woff'),
+        url('../webfonts/ProximaNovaS-RegularIt.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaS-RegularIt.svg#ProximaNovaS-RegularIt') format('svg');
+    font-weight: normal;
+    font-style: italic;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova A';
+    src: url('../webfonts/ProximaNovaA-Bold.eot');
+    src: url('../webfonts/ProximaNovaA-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaA-Bold.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaA-Bold.woff') format('woff'),
+        url('../webfonts/ProximaNovaA-Bold.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaA-Bold.svg#ProximaNovaA-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova A';
+    src: url('../webfonts/ProximaNovaA-Regular.eot');
+    src: url('../webfonts/ProximaNovaA-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaA-Regular.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaA-Regular.woff') format('woff'),
+        url('../webfonts/ProximaNovaA-Regular.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaA-Regular.svg#ProximaNovaA-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova A';
+    src: url('../webfonts/ProximaNovaA-RegularIt.eot');
+    src: url('../webfonts/ProximaNovaA-RegularIt.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaA-RegularIt.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaA-RegularIt.woff') format('woff'),
+        url('../webfonts/ProximaNovaA-RegularIt.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaA-RegularIt.svg#ProximaNovaA-RegularIt') format('svg');
+    font-weight: normal;
+    font-style: italic;
+} */
+/* @font-face {
+    font-family: 'Proxima Nova S';
+    src: url('../webfonts/ProximaNovaS-Bold.eot');
+    src: url('../webfonts/ProximaNovaS-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/ProximaNovaS-Bold.woff2') format('woff2'),
+        url('../webfonts/ProximaNovaS-Bold.woff') format('woff'),
+        url('../webfonts/ProximaNovaS-Bold.ttf') format('truetype'),
+        url('../webfonts/ProximaNovaS-Bold.svg#ProximaNovaS-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+} */
 @font-face {
-  font-family: 'Metropolis-Regular';
-  src: url("../webfonts/Metropolis-Regular.eot");
-  src: url("../webfonts/Metropolis-Regular.eot") format("embedded-opentype"), url("../webfonts/Metropolis-Regular.woff2") format("woff2"), url("../webfonts/Metropolis-Regular.woff") format("woff"), url("../webfonts/Metropolis-Regular.ttf") format("truetype");
+  font-family: 'ProximaNova-Regular';
+  src: url("../webfonts/ProximaNova-Regular.eot");
+  src: url("../webfonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("../webfonts/ProximaNova-Regular.woff2") format("woff2"), url("../webfonts/ProximaNova-Regular.woff") format("woff"), url("../webfonts/ProximaNova-Regular.ttf") format("truetype"), url("../webfonts/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg");
   font-weight: normal;
-  font-display: swap; }
+  font-style: normal; }
 @font-face {
-  font-family: 'Metropolis-RegularItalic';
-  src: url("../webfonts/Metropolis-RegularItalic.eot");
-  src: url("../webfonts/Metropolis-RegularItalic.eot") format("embedded-opentype"), url("../webfonts/Metropolis-RegularItalic.woff2") format("woff2"), url("../webfonts/Metropolis-RegularItalic.woff") format("woff"), url("../webfonts/Metropolis-RegularItalic.ttf") format("truetype");
+  font-family: 'ProximaNova-RegularIt';
+  src: url("../webfonts/ProximaNova-RegularIt.eot");
+  src: url("../webfonts/ProximaNova-RegularIt.eot?#iefix") format("embedded-opentype"), url("../webfonts/ProximaNova-RegularIt.woff2") format("woff2"), url("../webfonts/ProximaNova-RegularIt.woff") format("woff"), url("../webfonts/ProximaNova-RegularIt.ttf") format("truetype"), url("../webfonts/ProximaNova-RegularIt.svg#ProximaNova-RegularIt") format("svg");
   font-weight: normal;
-  font-display: swap; }
+  font-style: italic; }
 @font-face {
-  font-family: 'Metropolis-SemiBold';
-  src: url("../webfonts/Metropolis-SemiBold.eot");
-  src: url("../webfonts/Metropolis-SemiBold.eot") format("embedded-opentype"), url("../webfonts/Metropolis-SemiBold.woff2") format("woff2"), url("../webfonts/Metropolis-SemiBold.woff") format("woff"), url("../webfonts/Metropolis-SemiBold.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap; }
+  font-family: 'ProximaNova-Bold';
+  src: url("../webfonts/ProximaNova-Bold.eot");
+  src: url("../webfonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("../webfonts/ProximaNova-Bold.woff2") format("woff2"), url("../webfonts/ProximaNova-Bold.woff") format("woff"), url("../webfonts/ProximaNova-Bold.ttf") format("truetype"), url("../webfonts/ProximaNova-Bold.svg#ProximaNova-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
 @font-face {
-  font-family: 'Metropolis-SemiBoldItalic';
-  src: url("../webfonts/Metropolis-SemiBoldItalic.eot");
-  src: url("../webfonts/Metropolis-SemiBoldItalic.eot") format("embedded-opentype"), url("../webfonts/Metropolis-SemiBoldItalic.woff2") format("woff2"), url("../webfonts/Metropolis-SemiBoldItalic.woff") format("woff"), url("../webfonts/Metropolis-SemiBoldItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap; }
-@font-face {
-  font-family: 'Metropolis-Bold';
-  src: url("../webfonts/Metropolis-Bold.eot");
-  src: url("../webfonts/Metropolis-Bold.eot") format("embedded-opentype"), url("../webfonts/Metropolis-Bold.woff2") format("woff2"), url("../webfonts/Metropolis-Bold.woff") format("woff"), url("../webfonts/Metropolis-Bold.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap; }
-.br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button, .shoe-main-container .shoes-info .para .features p strong {
-  font-family: "Metropolis-Bold", "Helvetica", "Arial", sans-serif; }
+  font-family: 'ProximaNova-BoldIt';
+  src: url("../webfonts/ProximaNova-BoldIt.eot");
+  src: url("../webfonts/ProximaNova-BoldIt.eot?#iefix") format("embedded-opentype"), url("../webfonts/ProximaNova-BoldIt.woff2") format("woff2"), url("../webfonts/ProximaNova-BoldIt.woff") format("woff"), url("../webfonts/ProximaNova-BoldIt.ttf") format("truetype"), url("../webfonts/ProximaNova-BoldIt.svg#ProximaNova-BoldIt") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003149}}
+.br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .landingpage-banner .landingpage-banner--info .label--underline, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-info .para .features p strong, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2 {
+  font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper .brooksrunhappyis-info h3, .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper .brooksrunhappyis-info h3, .brooksrunhappyis .brooksrunhappyis-btn--container {
-  font-family: "Metropolis-SemiBold", "Helvetica", "Arial", sans-serif; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003150}}
+.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn {
+  font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body {
-  font-family: "Metropolis-Regular", "Helvetica", "Arial", sans-serif; }
-
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003151}}
 .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img {
-  font-family: "Metropolis-SemiBoldItalic", "Helvetica", "Arial", sans-serif; }
+  font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003152}}
+.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body {
+  font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003154}}
 .bold-font {
   font-family: "Metropolis-SemiBold", "Helvetica", "Arial", sans-serif; }
 
@@ -55,6 +142,7 @@
   src: url("../webfonts/icomoon.eot?c84vs6#iefix") format("embedded-opentype"), url("../webfonts/icomoon.ttf?c84vs6") format("truetype"), url("../webfonts/icomoon.woff?c84vs6") format("woff"), url("../webfonts/icomoon.svg?c84vs6#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003169}}
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
   speak: none;
@@ -66,94 +154,124 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003180}}
 .icon-close-icon:before {
   content: "\e900"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003183}}
 .icon-cart-mob:before {
   content: "\e904"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003186}}
 .icon-cart-icon:before {
   content: "\e902"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003189}}
 .icon-navigation-toggle:before {
   content: "\e901"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003192}}
 .icon-top-arrow:before {
   content: "\e905"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003195}}
 .icon-social-insta:before {
   content: "\e906"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003198}}
 .icon-social-fb:before {
   content: "\e907"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003201}}
 .icon-email:before {
   content: "\e908"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003204}}
 .icon-phone:before {
   content: "\e909"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003207}}
 .icon-down-arrow:before {
   content: "\e90a"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003210}}
 .icon-back-arrow:before {
   content: "\e90b"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003213}}
 .icon-next-arrow:before {
   content: "\e90c"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003216}}
 .icon-social-twitter:before {
   content: "\e92a"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003219}}
 .icon-search:before {
   content: "\e92b"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003222}}
 .icon-close:before {
   content: "\e92d"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003225}}
 .icon-cart2:before {
   content: "\e92e"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003228}}
 .icon-cart:before {
   content: "\e92f"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003231}}
 .icon-location:before {
   content: "\e931"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003234}}
 .icon-top-scroll:before {
   content: "\e932"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003237}}
 .icon-next-btn:before {
   content: "\e933"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003240}}
 .icon-home:before {
   content: "\e934"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003243}}
 .icon-download:before {
   content: "\e935"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003246}}
 .icon-plus:before {
   content: "\ea0a"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003249}}
 .icon-minus:before {
   content: "\ea0b"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003252}}
 .icon-play2:before {
   content: "\ea15"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003255}}
 .icon-pause:before {
   content: "\ea16"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003258}}
 .icon-stop:before {
   content: "\ea17"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003261}}
 .icon-enlarge:before {
   content: "\e989"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003264}}
 .icon-enlarge2:before {
   content: "\e98b"; }
 
 /* All Functions and prefixes*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003294}}
 .ctg-main-container .ctg-container .ctg-wrapper-container, .ctg-main-container .ctg-discover .wrapper, .shoe-main-container .shoes-container .shoes-wrapper-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,28 +280,28 @@
 
 /* Closed All Functions and prefixes*/
 /* Common Classes */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003308}}
 .accordian-tab {
   position: relative;
   margin-bottom: 1px;
   width: 100%;
-  color: #fff;
   overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003313}}
   .accordian-tab .input {
     position: absolute;
     opacity: 0;
     z-index: -1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003318}}
   .accordian-tab label {
     position: relative;
     font-size: 24px;
     display: block;
-    background: #16a085;
     font-weight: bold;
     line-height: 1.4;
     padding: 10px 15px;
     cursor: pointer;
     transition: all 0.35s ease-in-out; }
-    .accordian-tab label:hover {
-      background: #097b65; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003328}}
     .accordian-tab label:after {
       position: absolute;
       right: 30px;
@@ -193,39 +311,48 @@
       line-height: 1;
       text-align: center;
       transition: all .35s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003340}}
   .accordian-tab .input + label::after {
     content: "+"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003343}}
   .accordian-tab .accordian-content {
-    background: #fff;
     color: #000;
     max-height: 0;
     transition: all 0.55s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003348}}
   .accordian-tab .input:checked ~ .accordian-content {
-    max-height: 100vh; }
+    max-height: 500vh; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003351}}
   .accordian-tab .input:checked + label::after {
     transform: rotate(45deg); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003354}}
   .accordian-tab .contents-wrapper {
-    border: 1px solid #ccc;
-    padding: 15px; }
+    background-color: #f2f2f2; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003359}}
 .tab-container ul.tabs {
   margin: 0px;
   padding: 0px;
   list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003364}}
 .tab-container ul.tabs li {
   background: none;
   display: inline-block;
   padding: 10px 0px;
   cursor: pointer;
   margin-right: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003371}}
 .tab-container ul.tabs li.current {
   color: #00d3d6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003374}}
 .tab-container .tab-content {
   display: none;
   padding: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003378}}
 .tab-container .tab-content.current {
   display: inherit; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003382}}
 .popup-container {
   display: none;
   position: fixed;
@@ -236,8 +363,10 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1006;
   overflow: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003392}}
   .popup-container.show {
     display: block !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003395}}
   .popup-container--wrapper {
     position: absolute;
     width: 100%;
@@ -248,9 +377,11 @@
     left: 50%;
     transform: translateX(-50%);
     border-bottom: 10px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003406}}
   .popup-container--info {
     position: relative;
     padding: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003409}}
     .popup-container--info .close-me {
       width: 28px;
       height: 28px;
@@ -263,10 +394,12 @@
       text-align: center;
       cursor: pointer; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003425}}
 .breadcrumbs ul li {
   list-style-type: none;
   display: inline-block;
   position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003429}}
   .breadcrumbs ul li:after {
     content: ">";
     position: absolute;
@@ -274,24 +407,31 @@
     right: 2px;
     font-size: 11px;
     color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003438}}
   .breadcrumbs ul li:last-child:after {
     content: " "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003442}}
   .breadcrumbs ul li a {
     color: #ffffff;
     text-decoration: none;
     padding-right: 14px;
     font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003447}}
     .breadcrumbs ul li a.active {
       text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003450}}
     .breadcrumbs ul li a:hover {
       color: #00d3d6; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003457}}
 .breadcrumbs2 {
   padding: 20px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003460}}
   .breadcrumbs2 ul li {
     list-style-type: none;
     display: inline-block;
     position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003464}}
     .breadcrumbs2 ul li:after {
       content: ">";
       position: absolute;
@@ -299,38 +439,49 @@
       right: 2px;
       font-size: 11px;
       color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003473}}
     .breadcrumbs2 ul li:last-child:after {
       content: " "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003476}}
     .breadcrumbs2 ul li:last-child a {
       color: #b7b7b7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003478}}
       .breadcrumbs2 ul li:last-child a:hover {
         color: #b7b7b7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003483}}
     .breadcrumbs2 ul li a {
       color: #000000;
       text-decoration: none;
       padding-right: 14px;
       font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003488}}
       .breadcrumbs2 ul li a:hover {
         color: #00d3d6; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003496}}
 .input-wrapper label {
   display: block;
   margin-bottom: 6px;
   margin-top: 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003501}}
   .input-wrapper label sup {
     color: #b9161e; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003505}}
 .input-wrapper .radio-inline {
   display: inline-block;
   margin-right: 10px;
   margin-top: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003509}}
   .input-wrapper .radio-inline input {
     display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003512}}
   .input-wrapper .radio-inline label {
     display: inline;
     cursor: pointer;
     transition: 3s all;
     line-height: 1.7;
     position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003519}}
     .input-wrapper .radio-inline label .mark {
       width: 19px;
       height: 19px;
@@ -344,6 +495,7 @@
       position: absolute;
       top: 0;
       left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003532}}
       .input-wrapper .radio-inline label .mark span {
         width: 13px;
         height: 13px;
@@ -351,24 +503,31 @@
         background-color: transparent;
         border-radius: 100%;
         transition: all 1s ease; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003541}}
     .input-wrapper .radio-inline label .text {
       padding-left: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003546}}
   .input-wrapper .radio-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003548}}
     .input-wrapper .radio-inline input:checked ~ label .mark span {
       background-color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003554}}
 .input-wrapper .checklist-inline {
   display: inline-block;
   margin-right: 10px;
   margin-top: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003558}}
   .input-wrapper .checklist-inline input {
     display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003561}}
   .input-wrapper .checklist-inline label {
     display: inline;
     cursor: pointer;
     transition: 3s all;
     line-height: 1.7;
     position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003568}}
     .input-wrapper .checklist-inline label .mark {
       width: 21px;
       height: 21px;
@@ -381,6 +540,7 @@
       position: absolute;
       top: 0;
       left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003580}}
       .input-wrapper .checklist-inline label .mark span {
         width: 14px;
         height: 7px;
@@ -389,10 +549,13 @@
         transition: all 1s ease;
         border-left: 2px solid #ffffff;
         border-bottom: 2px solid #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003590}}
     .input-wrapper .checklist-inline label .text {
       padding-left: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003595}}
   .input-wrapper .checklist-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003597}}
     .input-wrapper .checklist-inline input:checked ~ label .mark span {
       width: 14px;
       height: 7px;
@@ -400,6 +563,7 @@
       display: block;
       border-left: 2px solid #0263f7;
       border-bottom: 2px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003608}}
 .input-wrapper .input-field {
   height: 38px;
   margin-bottom: 15px;
@@ -408,6 +572,7 @@
   background-color: #f1f1f1;
   outline: 0;
   border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003618}}
 .input-wrapper .input-textarea {
   height: 75px;
   margin-bottom: 15px;
@@ -417,6 +582,7 @@
   background-color: #f1f1f1;
   outline: 0;
   border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003629}}
 .input-wrapper .select-field {
   width: 100%;
   padding: 6px 7px;
@@ -427,9 +593,11 @@
   border: 0;
   outline: 0;
   cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003640}}
   .input-wrapper .select-field option {
     outline: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003645}}
 .custom-select {
   position: relative;
   border: 1px solid #d3d0cd;
@@ -437,12 +605,16 @@
   display: block;
   max-width: 100%;
   margin: 0 0 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003652}}
   .custom-select.gray-bg {
     border: 1px solid #f1f1f1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003654}}
     .custom-select.gray-bg .label-heading {
       background-color: #f1f1f1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003657}}
     .custom-select.gray-bg .select-option--wrapper {
       background-color: #f1f1f1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003661}}
   .custom-select .label-heading {
     height: 36px;
     overflow: hidden;
@@ -452,9 +624,11 @@
     display: block;
     cursor: pointer; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003661}}
       .custom-select .label-heading {
         font-size: 11px;
         padding: 13px 20px 11px 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003673}}
     .custom-select .label-heading .sel-icon {
       width: 22px;
       height: auto;
@@ -467,6 +641,7 @@
       text-align: center;
       cursor: pointer;
       color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003687}}
   .custom-select .select-option--wrapper {
     display: none;
     z-index: 10010;
@@ -480,26 +655,31 @@
     background-color: #ffffff;
     border: 1px solid #d3d0cd;
     list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003701}}
   .custom-select .option-value {
     padding: 4px 10px;
     font-size: 14px;
     border-bottom: 1px solid #ffffff;
     cursor: pointer;
     transition: all 0.5s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003707}}
     .custom-select .option-value:hover {
       background-color: #0263f7;
       color: #ffffff; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003701}}
       .custom-select .option-value {
         padding: 4px 10px;
         font-size: 11px;
         min-height: 15px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003718}}
 .quantity-selector {
   background-color: #ffffff;
   border: 1px solid #d3d0cd;
   width: 100%;
   max-width: 150px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003723}}
   .quantity-selector input {
     width: 31%;
     height: 40px;
@@ -510,43 +690,56 @@
     border: 0;
     background: #fff; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003734}}
 .display-none {
   display: none !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003737}}
 .br-mainheading {
   font-size: 48px;
   line-height: 1.2; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003737}}
     .br-mainheading {
       font-size: 34px; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003737}}
     .br-mainheading {
       font-size: 26px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003748}}
 .fixed {
   position: fixed; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003751}}
 .br-heading {
   font-size: 28px; }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003751}}
     .br-heading {
       font-size: 24px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003758}}
 .br-info {
   font-size: 15px;
   line-height: 1.3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003765}}
   .br-info .link {
     color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003768}}
   .br-info a {
     color: #0263f7; }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003758}}
     .br-info {
       font-size: 13px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003775}}
 ul.br-info {
   padding: 0;
   list-style-position: inside; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003779}}
 .primary-button {
   color: #ffffff;
   outline: 0;
@@ -565,19 +758,24 @@ ul.br-info {
   font-size: 18px;
   display: inline-block; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003779}}
     .primary-button {
       padding: 15px 20px;
       font-size: 15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003801}}
   .primary-button:hover {
     background: #002855; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003804}}
   .primary-button:active {
     background: #002855;
     background-size: 100%; }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003779}}
     .primary-button {
       padding: 22px 15px;
       font-size: 15px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003813}}
 .shoe-button {
   color: #ffffff !important;
   outline: 0;
@@ -596,20 +794,25 @@ ul.br-info {
   font-size: 18px;
   display: inline-block; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003813}}
     .shoe-button {
       padding: 12px 20px;
       font-size: 13px; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003813}}
     .shoe-button {
       padding: 22px 15px;
       font-size: 15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003839}}
   .shoe-button:hover {
     background: #ffffff;
     color: #002855 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003843}}
   .shoe-button:active {
     background-color: #ffffff;
     color: #0263f7 !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003848}}
 .secondary-button {
   color: #ffffff;
   outline: 0;
@@ -627,20 +830,25 @@ ul.br-info {
   font-size: 18px;
   transition: all 0.35s ease-in; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003848}}
     .secondary-button {
       padding: 17px 15px;
       font-size: 13px; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003848}}
     .secondary-button {
       padding: 20px 15px;
       font-size: 15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003873}}
   .secondary-button:hover {
     background-color: #0263f7;
     border: 2px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003877}}
   .secondary-button:active {
     background-color: #0263f7;
     border: 2px solid #0263f7; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003882}}
 .secondary-button2 {
   color: #0263f7;
   outline: 0;
@@ -652,28 +860,33 @@ ul.br-info {
   display: block;
   width: 100%;
   max-width: 420px;
-  padding: 18px 30px;
+  padding: 16px 30px;
   vertical-align: center;
   text-align: center;
   font-size: 18px;
   transition: all 0.35s ease-in-out; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003882}}
     .secondary-button2 {
       padding: 17px 15px;
       font-size: 13px; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003882}}
     .secondary-button2 {
       padding: 20px 15px;
       font-size: 15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003907}}
   .secondary-button2:hover {
     border: 2px solid #002855;
     background-color: #002855;
     color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003912}}
   .secondary-button2:active {
     color: #ffffff;
     border: 2px solid #002855;
     background-color: #002855; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003918}}
 .pdp-button {
   color: #ffffff;
   min-width: 180px;
@@ -686,42 +899,52 @@ ul.br-info {
   width: 100%;
   text-transform: none;
   width: auto;
-  padding: 18px 30px;
+  padding: 20px 30px;
   vertical-align: center;
-  font-size: 17px;
+  font-size: 18px;
   display: inline-block;
   text-align: center;
   transition: all 0.35s ease-in-out; }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .pdp-button {
-      padding: 12px 20px;
-      font-size: 13px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003937}}
   .pdp-button:hover {
     background: #002855; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003940}}
   .pdp-button:active {
     background-color: #002855;
     background-size: 100%;
     transition: background 0s; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003918}}
     .pdp-button {
-      padding: 22px 15px;
+      padding: 17px 15px;
+      font-size: 13px; } }
+  @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003918}}
+    .pdp-button {
+      padding: 20px 15px;
       font-size: 15px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003954}}
 .error {
   color: #b9161e;
   margin: 2px 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003958}}
 .error-border {
   border: 1px solid #b9161e; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003961}}
 .tab-vertical {
   position: relative;
   display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003964}}
   .tab-vertical input[type="checkbox"] {
     display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003968}}
   .tab-vertical .tab-header label {
     display: block;
     position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003974}}
     .tab-vertical .tab-header label span {
       display: block;
       position: absolute;
@@ -729,64 +952,79 @@ ul.br-info {
       right: 0;
       font-size: 30px;
       transform: rotate(180deg); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003984}}
   .tab-vertical .tab-content {
     display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003986}}
     .tab-vertical .tab-content li {
       font-size: 17px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003990}}
   .tab-vertical input[type="checkbox"]:checked ~ .tab-content {
     display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\00003995}}
   .tab-vertical input[type="checkbox"]:checked ~ .tab-header label span {
     transform: rotate(0deg); }
 
 /* Closed Common Classes */
 /* Layout Styles */
 @media print {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031004}}
   *, *::before, *::after {
     color: #000 !important;
     text-shadow: none !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031012}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031014}}
   *::before, *::after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031018}}
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031024}}
 body {
   margin: 0;
   line-height: 1.3;
   font-size: 15px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031030}}
 hr {
   height: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031034}}
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031037}}
 audio, canvas, progress, video {
   display: inline-block;
   vertical-align: baseline; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031041}}
 a:active,
 a:hover {
   outline: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031045}}
 a {
   text-decoration: none;
   outline: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031049}}
 sub,
 sup {
   position: relative;
@@ -794,60 +1032,77 @@ sup {
   line-height: 0;
   vertical-align: baseline; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031056}}
 sup {
   top: -.5em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031059}}
 sub {
   bottom: -.25em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031062}}
 img {
   border: 0;
   max-width: 100%;
   vertical-align: middle; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031067}}
 ul {
   margin: 0;
   padding: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031071}}
 svg:not(:root) {
   overflow: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031074}}
 figure {
   margin: 1em 40px;
   margin: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031078}}
 pre {
   overflow: auto; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031081}}
 .wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px; }
   @media only screen and (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031081}}
     .wrapper {
       width: 750px; } }
   @media only screen and (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031081}}
     .wrapper {
       width: 970px; } }
   @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031081}}
     .wrapper {
       width: 1200px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031095}}
   .wrapper:after, .wrapper:before {
     display: table;
     content: " "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031099}}
   .wrapper:after {
     clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031103}}
 .row {
   margin-right: -15px;
   margin-left: -15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031106}}
   .row:before, .row:after {
     display: table;
     content: " "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031110}}
   .row:after {
     clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031114}}
 .full-wrapper {
   margin-right: auto;
   margin-left: auto;
@@ -855,6 +1110,7 @@ pre {
   padding-left: 15px;
   width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031121}}
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
 .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12,
 .mob-1, .mob-2, .mob-3, .mob-4, .mob-5, .mob-6, .mob-7, .mob-8, .mob-9, .mob-10, .mob-11, .mob-12 {
@@ -863,263 +1119,346 @@ pre {
   padding-right: 15px;
   padding-left: 15px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031129}}
 .mob-1, .mob-2, .mob-3, .mob-4, .mob-5, .mob-6, .mob-7, .mob-8, .mob-9, .mob-10, .mob-11, .mob-12 {
   float: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031132}}
 .mob-12 {
   width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031135}}
 .mob-11 {
   width: 91.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031138}}
 .mob-10 {
   width: 83.33333333333334%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031141}}
 .mob-9 {
   width: 75%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031144}}
 .mob-8 {
   width: 66.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031147}}
 .mob-7 {
   width: 58.333333333333336%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031150}}
 .mob-6 {
   width: 50%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031153}}
 .mob-5 {
   width: 41.66666666666667%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031156}}
 .mob-4 {
   width: 33.33333333333333%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031159}}
 .mob-3 {
   width: 25%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031162}}
 .mob-2 {
   width: 16.666666666666664%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031165}}
 .mob-1 {
   width: 8.333333333333332%; }
 
 @media only screen and (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031169}}
   .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12 {
     float: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031172}}
   .tab-12 {
     width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031175}}
   .tab-11 {
     width: 91.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031178}}
   .tab-10 {
     width: 83.33333333333334%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031181}}
   .tab-9 {
     width: 75%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031184}}
   .tab-8 {
     width: 66.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031187}}
   .tab-7 {
     width: 58.333333333333336%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031190}}
   .tab-6 {
     width: 50%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031193}}
   .tab-5 {
     width: 41.66666666666667%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031196}}
   .tab-4 {
     width: 33.33333333333333%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031199}}
   .tab-3 {
     width: 25%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031202}}
   .tab-2 {
     width: 16.666666666666664%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031205}}
   .tab-1 {
     width: 8.333333333333332%; } }
 @media only screen and (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031210}}
   .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031213}}
   .col-12 {
     width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031216}}
   .col-11 {
     width: 91.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031219}}
   .col-10 {
     width: 83.33333333333334%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031222}}
   .col-9 {
     width: 75%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031225}}
   .col-8 {
     width: 66.66666666666666%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031228}}
   .col-7 {
     width: 58.333333333333336%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031231}}
   .col-6 {
     width: 50%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031234}}
   .col-5 {
     width: 41.66666666666667%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031237}}
   .col-4 {
     width: 33.33333333333333%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031240}}
   .col-3 {
     width: 25%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031243}}
   .col-2 {
     width: 16.666666666666664%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031246}}
   .col-1 {
     width: 8.333333333333332%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031252}}
 .clearfix:before, .clearfix:after {
   display: table;
   content: " "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031256}}
 .clearfix:after {
   clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031260}}
 .visible-mob {
   display: none !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031264}}
   .visible-mob {
     display: block !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031269}}
   .visible-mob.visible-tab {
     display: block !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031274}}
   .visible-mob.visible-col {
     display: block !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031278}}
 .visible-tab {
   display: none !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031282}}
   .visible-tab.visible-mob {
     display: block !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031287}}
   .visible-tab {
     display: block !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031292}}
   .visible-tab.visible-col {
     display: block !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031296}}
 .visible-col {
   display: none !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031300}}
   .visible-col.visible-mob {
     display: block !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031306}}
   .visible-col.visible-tab {
     display: block !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031311}}
   .hidden-col.hidden-col {
     display: none !important; } }
 @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031316}}
   .visible-col {
     display: block !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031320}}
 .hidden-mob {
   display: block !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031325}}
   .hidden-mob {
     display: none !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031331}}
   .hidden-mob.hidden-tab {
     display: none !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031337}}
   .hidden-mob.hidden-col {
     display: none !important; } }
 @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031343}}
   .hidden-mob.hidden-col {
     display: none !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031348}}
 .hidden-tab {
   display: block !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031353}}
   .hidden-tab.hidden-mob {
     display: none !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031359}}
   .hidden-tab {
     display: none !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031365}}
   .hidden-tab.hidden-col {
     display: none !important; } }
 @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031371}}
   .hidden-tab.hidden-col {
     display: none !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031376}}
 .hidden-col {
   display: block !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031382}}
   .hidden-col.hidden-mob {
     display: none !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031388}}
   .hidden-col.hidden-tab {
     display: none !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031394}}
   .hidden-col {
     display: none !important; } }
 @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031400}}
   .hidden-col.hidden-col {
     display: none !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031405}}
 .hidden-col {
   display: block !important; }
 
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031410}}
   .hidden-col.hidden-mob {
     display: none !important; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031416}}
   .hidden-col.hidden-tab {
     display: none !important; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031422}}
   .hidden-col.hidden-col {
     display: none !important; } }
 @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031428}}
   .hidden-col {
     display: none !important; } }
 /* Closed Layout Styles */
 /* Form Elements Styles */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031435}}
 button, input, select, textarea {
   margin: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031438}}
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031442}}
 button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
   border: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031446}}
 input[type="checkbox"], input[type="radio"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031450}}
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031453}}
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: textfield; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031457}}
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/global\.scss}line{font-family:\000031460}}
 textarea {
   overflow: auto; }
 
 /* Closed Form Elements Styles */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000035}}
 .transparent-button {
   color: #0263f7;
   outline: 0;
@@ -1134,143 +1473,580 @@ textarea {
   font-size: 17px;
   text-align: center; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000035}}
     .transparent-button {
       padding: 12px 20px;
       font-size: 13px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000323}}
   .transparent-button:hover {
     background: #0263f7 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
     border: 1px solid #0263f7;
     color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000328}}
   .transparent-button:active {
     background-color: #6eb9f7;
     background-size: 100%;
     transition: background 0s; }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000035}}
     .transparent-button {
       padding: 6px 5px;
       font-size: 10px; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000339}}
+.br-shoefinder-banner {
+  position: relative;
+  min-height: 320px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000343}}
+.br-shoefinder-subBanner {
+  min-height: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000345}}
+  .br-shoefinder-subBanner .horizontal-shoe-finder {
+    background-color: #00d3d6;
+    text-align: center;
+    padding: 25px 15px;
+    margin: 0px auto 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000350}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading {
+      font-size: 25px;
+      margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000354}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob {
+      font-size: 22px;
+      margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000361}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .br-info {
+      font-size: 23px;
+      line-height: 1.3;
+      margin-top: 5px;
+      margin-bottom: 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000367}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .br-info-mob {
+      font-size: 20px;
+      line-height: 1.1;
+      margin-top: 5px;
+      margin-bottom: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000373}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .primary-button {
+      width: 100%;
+      background-color: #ffffff;
+      color: #0263f7;
+      border: 1px solid #ffffff;
+      transition: all 0.5s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000379}}
+      .br-shoefinder-subBanner .horizontal-shoe-finder .primary-button:hover {
+        background-color: #0263f7;
+        color: #ffffff;
+        border: 1px solid #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000385}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder img {
+      margin-top: 20px;
+      width: auto;
+      max-width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000390}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-btn {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+      padding-top: 20px; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000390}}
+        .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-btn {
+          padding-top: 20px;
+          max-width: 180px;
+          margin: 0 auto;
+          display: block;
+          float: none; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\0000390}}
+        .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-btn {
+          margin-top: 8%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003107}}
+    .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-logo {
+      width: 100%;
+      max-width: 100px;
+      float: left; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003107}}
+        .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-logo {
+          max-width: 500px;
+          margin: 0 auto;
+          display: block;
+          float: none; } }
+
+/* Landing Page CSS Start*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003124}}
+.landingpage-banner {
+  position: relative;
+  min-height: 320px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003128}}
+  .landingpage-banner picture img {
+    width: 100%; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003124}}
+    .landingpage-banner {
+      min-height: 200px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003135}}
+  .landingpage-banner .opacity-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003135}}
+      .landingpage-banner .opacity-cover {
+        height: 70%; } }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003135}}
+      .landingpage-banner .opacity-cover {
+        height: 90%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003148}}
+  .landingpage-banner .landingpage-banner--info {
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003148}}
+      .landingpage-banner .landingpage-banner--info {
+        height: 70%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003159}}
+    .landingpage-banner .landingpage-banner--info .banner--info {
+      padding-top: 60px;
+      max-width: 350px;
+      color: #ffffff; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003159}}
+        .landingpage-banner .landingpage-banner--info .banner--info {
+          padding-top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003165}}
+          .landingpage-banner .landingpage-banner--info .banner--info .secondary-button {
+            max-width: 220px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003171}}
+    .landingpage-banner .landingpage-banner--info .label--underline {
+      position: relative;
+      font-size: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003175}}
+      .landingpage-banner .landingpage-banner--info .label--underline:after {
+        content: "";
+        left: 0;
+        bottom: -13px;
+        width: 50px;
+        height: 1px;
+        position: absolute;
+        background: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003185}}
+    .landingpage-banner .landingpage-banner--info h1 {
+      margin-bottom: 22px;
+      font-size: 40px; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003185}}
+        .landingpage-banner .landingpage-banner--info h1 {
+          font-size: 25px; } }
+    @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003148}}
+      .landingpage-banner .landingpage-banner--info {
+        margin-bottom: 60px !important;
+        background-color: #ffffff;
+        position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003197}}
+        .landingpage-banner .landingpage-banner--info .landing-info {
+          width: 250px;
+          height: 180px;
+          position: absolute;
+          top: -110px;
+          left: 49%;
+          transform: translateX(-50%);
+          background: #ffffff;
+          color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003206}}
+          .landingpage-banner .landingpage-banner--info .landing-info .banner--info {
+            padding-top: 0px;
+            padding-bottom: 30px;
+            color: #000000;
+            text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003211}}
+            .landingpage-banner .landingpage-banner--info .landing-info .banner--info .primary-button {
+              min-width: 200px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003215}}
+          .landingpage-banner .landingpage-banner--info .landing-info .label--underline {
+            position: relative;
+            font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003218}}
+            .landingpage-banner .landingpage-banner--info .landing-info .label--underline:after {
+              content: "";
+              left: 100px;
+              bottom: -13px;
+              width: 50px;
+              height: 1px;
+              position: absolute;
+              background: #000000;
+              text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003229}}
+          .landingpage-banner .landingpage-banner--info .landing-info h1 {
+            margin-bottom: 12px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003236}}
+.new-arrival {
+  padding-top: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003238}}
+  .new-arrival .lp-new--arrival {
+    padding-bottom: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003240}}
+    .new-arrival .lp-new--arrival .main-heading {
+      color: #0263f7;
+      margin-top: 15px; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003240}}
+        .new-arrival .lp-new--arrival .main-heading {
+          text-align: center;
+          margin-top: 75px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003249}}
+  .new-arrival .new-arrival--container {
+    display: block;
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003253}}
+    .new-arrival .new-arrival--container .owl-carousel {
+      width: calc(100% - 80px);
+      margin: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003256}}
+      .new-arrival .new-arrival--container .owl-carousel .product_arrive {
+        padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003258}}
+        .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
+          margin: -5px auto;
+          padding-top: 15px;
+          text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003262}}
+          .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link {
+            text-align: center;
+            text-decoration: none;
+            color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003267}}
+            .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link:hover {
+              color: #00d3d6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003272}}
+        .new-arrival .new-arrival--container .owl-carousel .product_arrive .price {
+          margin: 5px;
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003277}}
+          .new-arrival .new-arrival--container .owl-carousel .product_arrive .price span.black {
+            text-decoration: none;
+            color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003284}}
+    .new-arrival .new-arrival--container .icon-style {
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      cursor: pointer;
+      left: 0;
+      font-size: 30px;
+      font-weight: 700;
+      color: #91a1b3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003293}}
+      .new-arrival .new-arrival--container .icon-style.icon-next-arrow.next {
+        right: 0 !important;
+        left: auto !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003302}}
+.pr-landing-page .prod-desc--wrapper {
+  padding: 10px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003304}}
+  .pr-landing-page .prod-desc--wrapper .lp-cate--link {
+    position: relative;
+    margin: 20px 0;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003308}}
+    .pr-landing-page .prod-desc--wrapper .lp-cate--link img {
+      width: 100%; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003308}}
+        .pr-landing-page .prod-desc--wrapper .lp-cate--link img {
+          width: auto;
+          max-width: 100%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003315}}
+    .pr-landing-page .prod-desc--wrapper .lp-cate--link .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -26px;
+      padding: 0 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003322}}
+      .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left {
+        text-align: left;
+        color: #ffffff;
+        font-size: 42px;
+        line-height: 43px; }
+        @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003322}}
+          .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left {
+            font-size: 30px;
+            line-height: 32px; } }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003322}}
+          .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left {
+            font-size: 30px;
+            line-height: 35px; } }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003315}}
+        .pr-landing-page .prod-desc--wrapper .lp-cate--link .title {
+          bottom: -20px; } }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003315}}
+        .pr-landing-page .prod-desc--wrapper .lp-cate--link .title {
+          bottom: -20px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003344}}
+    .pr-landing-page .prod-desc--wrapper .lp-cate--link .opacity-cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003351}}
+  .pr-landing-page .prod-desc--wrapper .lp-info-block {
+    font-size: 12px;
+    padding: 0 38px 35px 38px;
+    margin: auto;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003356}}
+    .pr-landing-page .prod-desc--wrapper .lp-info-block .primary-button {
+      text-transform: capitalize;
+      max-width: 310px; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003356}}
+        .pr-landing-page .prod-desc--wrapper .lp-info-block .primary-button {
+          max-width: 190px; } }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003356}}
+        .pr-landing-page .prod-desc--wrapper .lp-info-block .primary-button {
+          padding: 16px 10px;
+          font-size: 12px;
+          max-width: 175px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003351}}
+      .pr-landing-page .prod-desc--wrapper .lp-info-block {
+        padding: 0px 12px 20px 12px; } }
+    @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003351}}
+      .pr-landing-page .prod-desc--wrapper .lp-info-block {
+        padding: 0px 25px 25px 25px;
+        font-size: 10px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003380}}
+.landingpage-info {
+  background-color: #f1f1f1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003385}}
+  .landingpage-info .lp-info-wrapper .lp-info .lp-info-title {
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003388}}
+  .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail {
+    float: none;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    min-height: 1px;
+    text-align: center;
+    max-width: 800px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003396}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"] {
+      display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003399}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-content {
+      display: none;
+      padding-bottom: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003402}}
+      .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-content p {
+        font-size: 17px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003408}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-header label span {
+      visibility: visible;
+      opacity: 1;
+      display: inline-block;
+      position: inherit;
+      top: 0;
+      right: 0;
+      font-size: 1.17em;
+      line-height: 0.7;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      transition: all 0.5s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003423}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-header label h3:before {
+      content: "Read more "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003429}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-content {
+      display: block;
+      margin-top: -15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003435}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-header label h3:before {
+      content: "Read less "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003439}}
+    .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-header label span {
+      transform: rotate(45deg); }
+
+/* /landing Page */
 /* Start category page*/
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003454}}
   .ctg-main-container .br-mainheading {
     text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003457}}
   .ctg-main-container .sub-info {
     text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003460}}
   .ctg-main-container .breadcrumbs {
     text-align: left; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003464}}
+.ctg-main-container .plp-header {
+  padding: 20px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003468}}
 .ctg-main-container .ctg-container .ctg-wrapper-container {
   flex-flow: row wrap;
   justify-content: flex-start; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003472}}
   .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub {
     margin: 25px 0 50px;
     border-bottom: 1px solid #f2f2f2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003475}}
     .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product {
       position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003477}}
       .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info {
         position: absolute;
-        top: 5px;
-        right: 50px;
-        z-index: 5;
-        font-size: 13px; }
+        top: -25px;
+        right: 45px;
+        z-index: 5; }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003477}}
+          .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info {
+            position: absolute;
+            top: 36px;
+            right: 8px;
+            z-index: 5;
+            width: 80px; } }
         @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003477}}
           .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info {
-            top: 5px;
-            right: 0px;
-            font-size: 11px; } }
+            top: -15px;
+            right: 0px; } }
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003477}}
           .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info {
             right: 0px;
-            top: 5px; } }
+            top: -15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003497}}
         .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img {
           padding: 7px;
           display: inline-block;
           color: #ffffff; }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003497}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img {
               width: 65px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003507}}
       .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product a {
         display: block;
         color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003511}}
       .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .img {
         text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003513}}
         .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .img.img-shoes {
           height: 224px;
           width: 100%;
           position: relative; }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003513}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .img.img-shoes {
               height: 260px; } }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003513}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .img.img-shoes {
               height: 150px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003523}}
           .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .img.img-shoes img {
             position: absolute;
             bottom: 0;
             left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003530}}
       .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info {
         display: block;
         position: relative;
         padding: 17px 0 8px; }
         @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003530}}
           .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info {
             padding: 2px 0 3px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003537}}
         .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3 {
           font-size: 16px;
           line-height: 1.4;
           margin: 0 0 5px; }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003537}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3 {
               font-size: 13px;
               margin: 0;
               line-height: 1.2; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003548}}
         .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn {
           font-size: 20px;
           margin-bottom: 12px;
           margin-top: 12px; }
           @media only screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003548}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn {
               padding: 0px 45px 10px 0px; } }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003548}}
             .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn {
               padding: 0px 45px 10px 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003560}}
           .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn span {
             float: left;
             width: 50%;
             padding-right: 12px; }
             @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003560}}
               .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn span {
                 padding-right: 8px; } }
-          .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button {
-            color: #0263f7;
-            outline: 0;
-            cursor: pointer;
-            background: transparent;
-            border-radius: 100px;
-            background-position: center;
-            border: 1px solid #0263f7;
-            text-transform: none;
-            width: 100%;
-            padding: 18px 36px;
-            font-size: 17px;
-            text-align: center; }
-            @media only screen and (min-width: 768px) and (max-width: 991px) {
-              .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button {
-                padding: 12px 20px;
-                font-size: 13px; } }
-            .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button:hover {
-              background: #0263f7 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-              border: 1px solid #0263f7;
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003568}}
+          .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+            text-align: center;
+            border: 2px solid #0263f7;
+            color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003572}}
+            .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .secondary-button:hover {
               color: #ffffff; }
-            .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button:active {
-              background-color: #6eb9f7;
-              background-size: 100%;
-              transition: background 0s; }
             @media only screen and (max-width: 767px) {
-              .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .transparent-button {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003568}}
+              .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+                width: 100%;
+                min-width: 70px;
                 padding: 6px 5px;
                 font-size: 10px; } }
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003568}}
+              .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+                width: 100%;
+                min-width: 70px;
+                padding: 6px 5px;
+                font-size: 12px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003589}}
         .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .shoes-type {
           font-size: 12px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003472}}
+      .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub {
+        margin: 5px 0 5px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003601}}
 .ctg-main-container .ctg-benefits {
   background-color: #0263f7;
   padding-top: 20px;
@@ -1278,13 +2054,16 @@ textarea {
   color: #ffffff;
   margin: 0 auto;
   text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003608}}
   .ctg-main-container .ctg-benefits .ctg-benefits--content {
     float: none;
     margin: 0 auto;
     width: 72%; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003608}}
       .ctg-main-container .ctg-benefits .ctg-benefits--content {
         width: 100%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003615}}
     .ctg-main-container .ctg-benefits .ctg-benefits--content .shoe-category-img {
       display: block;
       width: 90px;
@@ -1298,10 +2077,12 @@ textarea {
       background: #fff;
       line-height: 1.8em;
       margin: 0 auto !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003629}}
       .ctg-main-container .ctg-benefits .ctg-benefits--content .shoe-category-img img {
         display: inline-block;
         width: 70px;
         height: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003635}}
     .ctg-main-container .ctg-benefits .ctg-benefits--content .shoe-category-img2 {
       display: block;
       width: 90px;
@@ -1315,407 +2096,534 @@ textarea {
       background: #fff;
       line-height: 1.8em;
       margin: 0 auto !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003649}}
       .ctg-main-container .ctg-benefits .ctg-benefits--content .shoe-category-img2 img {
         display: inline-block;
         width: 50px;
         height: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003655}}
     .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info {
       display: inline-block;
       vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003658}}
       .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info .br-ctg-heading {
         margin-top: 32px;
         font-size: 17px;
         font-weight: bold; }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003658}}
           .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info .br-ctg-heading {
             margin-top: 25px;
             line-height: 0.3; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003667}}
       .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info p {
         text-align: left;
         line-height: 0.3; }
         @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003667}}
           .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info p {
             text-align: center;
             line-height: 1.3; } }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003667}}
           .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info p {
             line-height: 1.3; } }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003655}}
         .ctg-main-container .ctg-benefits .ctg-benefits--content .br-ctg-info {
           display: block; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003686}}
 .ctg-main-container .ctg-discover .wrapper {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003691}}
   .ctg-main-container .ctg-discover .wrapper .cat-desc {
     margin: 20px 0 140px 0;
     text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003694}}
     .ctg-main-container .ctg-discover .wrapper .cat-desc h2 {
       color: #000000;
-      font-size: 25px;
-      font-weight: 900;
-      margin: 0 0 .5em 0; }
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 .5em 0;
+      text-transform: capitalize; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003701}}
     .ctg-main-container .ctg-discover .wrapper .cat-desc p {
       max-width: 950px;
       margin: 0px auto;
       font-size: 14px;
-      color: #000000;
-      font-weight: bold; }
+      color: #000000; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003691}}
       .ctg-main-container .ctg-discover .wrapper .cat-desc {
         margin: 20px 0 40px 0; } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003691}}
       .ctg-main-container .ctg-discover .wrapper .cat-desc {
         margin: 20px 0 20px 0; } }
 
 /* /Category page*/
 /*Shoe main page*/
 @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003726}}
   .shoe-main-container .br-mainheading {
     text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003729}}
   .shoe-main-container .sub-info {
     text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003732}}
   .shoe-main-container .breadcrumbs {
     text-align: left; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003737}}
 .shoe-main-container .shoes-container .shoes-wrapper-container {
   flex-flow: row wrap;
   justify-content: flex-start; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003741}}
   .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub {
     margin: 15px 0 50px; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003741}}
       .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub {
         margin: 0px 0 -15px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003746}}
     .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product {
       position: relative; }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003746}}
         .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product {
           max-width: 240px;
           margin: auto; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003752}}
       .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product a {
         display: block;
         color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003756}}
       .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .img {
         text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003758}}
         .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .img.img-shoes {
           width: 100%;
           position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003761}}
           .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .img.img-shoes img {
             bottom: 0;
             left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003766}}
         .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .img img {
           width: auto;
           max-width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003771}}
       .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info {
         display: block;
         position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003776}}
         .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn {
           font-size: 20px;
           width: 200px;
           margin-left: auto;
           margin-right: auto; }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003776}}
             .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn {
-              width: 100px; } }
+              padding-top: 20px;
+              margin: 0 auto;
+              display: block;
+              float: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003788}}
           .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn span {
             width: 50%;
             padding-right: 12px; }
             @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003788}}
               .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn span {
                 padding-right: 8px; } }
-          .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button {
-            color: #0263f7;
-            outline: 0;
-            cursor: pointer;
-            background: transparent;
-            border-radius: 100px;
-            background-position: center;
-            transition: background 0.8s;
-            border: 1px solid #0263f7;
-            text-transform: none;
-            width: 100%;
-            font-size: 17px;
-            text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003795}}
+          .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .secondary-button {
+            border: 2px solid #0263f7;
+            color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003798}}
+            .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .secondary-button:hover {
+              background-color: #0263f7;
+              color: #ffffff; }
             @media only screen and (min-width: 768px) and (max-width: 991px) {
-              .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003795}}
+              .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .secondary-button {
                 padding: 12px 20px;
                 font-size: 13px; } }
-            .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button:hover {
-              background: #0263f7 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-              border: 1px solid #0263f7;
-              color: #ffffff; }
-            .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button:active {
-              background-color: #6eb9f7;
-              background-size: 100%;
-              transition: background 0s; }
             @media only screen and (max-width: 767px) {
-              .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .transparent-button {
-                padding: 6px 5px;
-                font-size: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003795}}
+              .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn .secondary-button {
+                width: 100%;
+                min-width: 100px; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003815}}
     .shoe-main-container .shoes-container .shoes-wrapper-container .mob-6:nth-of-type(even) {
       padding-left: 7px !important; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003820}}
     .shoe-main-container .shoes-container .shoes-wrapper-container .mob-6:nth-of-type(odd) {
       padding-right: 7px !important; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003828}}
 .shoe-main-container .shoes-benefits #module1, .shoe-main-container .shoes-benefits #module2, .shoe-main-container .shoes-benefits #module3 {
   text-align: center;
   padding: 20px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003831}}
   .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2 {
-    font-size: 18px;
-    font-weight: bold;
+    color: #000000;
+    font-size: 22px;
     text-transform: uppercase;
-    line-height: 18px; }
+    line-height: 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003839}}
   .shoe-main-container .shoes-benefits #module1 p, .shoe-main-container .shoes-benefits #module2 p, .shoe-main-container .shoes-benefits #module3 p {
     font-size: 13px;
     font-weight: normal;
     line-height: 21px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003844}}
   .shoe-main-container .shoes-benefits #module1 img, .shoe-main-container .shoes-benefits #module2 img, .shoe-main-container .shoes-benefits #module3 img {
     text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003851}}
 .shoe-main-container .shoes-info {
   padding: 30px 0px 0px 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003853}}
   .shoe-main-container .shoes-info #desk a.utube {
     position: relative;
     display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003856}}
     .shoe-main-container .shoes-info #desk a.utube .module-img {
       max-width: 950px;
-      margin: 0 auto; }
+      margin: 30px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003859}}
       .shoe-main-container .shoes-info #desk a.utube .module-img img {
         width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003864}}
   .shoe-main-container .shoes-info .para {
-    margin: -30px 0 13px 0; }
+    margin: 0 auto; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003864}}
       .shoe-main-container .shoes-info .para {
         margin: 0 auto; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003869}}
     .shoe-main-container .shoes-info .para h1 {
-      color: #434343;
-      font-size: 24px; }
+      color: #000000;
+      font-size: 28px;
+      margin-bottom: 0px !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003875}}
+    .shoe-main-container .shoes-info .para p {
+      margin-top: 0px !important;
+      font-size: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003879}}
     .shoe-main-container .shoes-info .para .features {
-      line-height: 10px; }
+      line-height: 10px;
+      margin-top: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003882}}
       .shoe-main-container .shoes-info .para .features p {
         font-size: 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003884}}
         .shoe-main-container .shoes-info .para .features p strong {
-          font-size: 25px; }
+          font-size: 28px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003889}}
       .shoe-main-container .shoes-info .para .features .shoe-experience {
         margin-top: -5% !important; }
 
 /* /Shoe main page*/
 /* Start Technology page*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003901}}
 .tech-container {
   background: #1678bd;
   padding: 10px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003904}}
   .tech-container #header-text {
     margin: 0 auto;
     padding-top: 5%; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003904}}
       .tech-container #header-text {
         text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003911}}
   .tech-container img {
     width: 100%;
     max-width: 250px; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003911}}
       .tech-container img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 50%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003921}}
   .tech-container .tech-img {
     margin-left: 25px;
     padding-top: 3%;
     float: right; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003921}}
       .tech-container .tech-img {
         float: none;
         margin: 0 auto; } }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003932}}
 .tech-footer-header {
   padding: 25px 0; }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003932}}
     .tech-footer-header {
       text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003937}}
   .tech-footer-header h1 {
     margin: 25px 0 10px;
     font-size: 40px; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003937}}
       .tech-footer-header h1 {
         font-size: 34px; } }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003937}}
       .tech-footer-header h1 {
         font-size: 24px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003947}}
   .tech-footer-header .sub-info {
     line-height: 1.4; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003952}}
 .technology-page--header {
   background-color: #002855;
   padding: 10px 0;
   color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003956}}
   .technology-page--header a {
     color: #ffffff;
     text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003960}}
   .technology-page--header h1 {
     margin: 0; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003960}}
       .technology-page--header h1 {
         text-align: center; } }
   @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003966}}
     .technology-page--header .sub-info {
       text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003972}}
   .technology-page--header p {
     margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003976}}
 .technology-page--footwear {
   background-color: #00d3d6;
   padding: 50px 0;
   color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003980}}
   .technology-page--footwear a {
     color: #ffffff;
     text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003984}}
   .technology-page--footwear h1 {
     margin: 0; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003984}}
       .technology-page--footwear h1 {
         text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003990}}
   .technology-page--footwear .sub-info {
     font-size: 14px; }
     @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003990}}
       .technology-page--footwear .sub-info {
         text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\00003996}}
   .technology-page--footwear p {
     margin-bottom: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031001}}
 .tech-short-desc {
   padding: 20px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031003}}
   .tech-short-desc .info-wrapper {
     padding: 5px;
     margin: auto; }
     @media only screen and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031003}}
       .tech-short-desc .info-wrapper {
         padding: 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031009}}
     .tech-short-desc .info-wrapper .feature_left {
       width: 48%;
       float: left;
-      margin-bottom: 20px; }
+      margin-bottom: 40px; }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031009}}
         .tech-short-desc .info-wrapper .feature_left {
           width: 100%;
           float: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031018}}
     .tech-short-desc .info-wrapper .feature_right {
       width: 48%;
       float: right;
-      margin-bottom: 20px; }
+      margin-bottom: 40px; }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031018}}
         .tech-short-desc .info-wrapper .feature_right {
           width: 100%;
           float: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031027}}
     .tech-short-desc .info-wrapper #clear {
       clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031030}}
+    .tech-short-desc .info-wrapper .padding_40 {
+      padding-bottom: 40px; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031030}}
+        .tech-short-desc .info-wrapper .padding_40 {
+          padding-bottom: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031036}}
+    .tech-short-desc .info-wrapper .padding_30 {
+      padding-bottom: 30px; }
+      @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031036}}
+        .tech-short-desc .info-wrapper .padding_30 {
+          padding-bottom: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031042}}
     .tech-short-desc .info-wrapper .tech-short-blurb {
       float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031044}}
       .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info {
         float: left;
-        width: 58%; }
-        .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h1 {
-          margin: 0; }
-          @media only screen and (max-width: 767px) {
-            .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h1 {
-              text-align: center; } }
+        width: 65%; }
         @media only screen and (max-width: 767px) {
-          .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .sub-info {
-            text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031044}}
+          .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info {
+            margin-bottom: 30px;
+            width: 55%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031052}}
+        .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2 {
+          margin: 0 auto;
+          color: #000000;
+          font-size: 22px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031058}}
         .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info p {
           margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031061}}
         .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
           width: 100%;
-          max-width: 300px;
-          float: right;
+          max-width: 270px;
+          float: left;
           margin-top: 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031066}}
           .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button {
             text-align: center;
-            border: 1px solid #0263f7;
+            border: 2px solid #0263f7;
             color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031070}}
             .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button:hover {
               color: #ffffff; }
             @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031066}}
               .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button {
                 width: 100%;
                 min-width: 100px; } }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031061}}
             .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
               padding-top: 20px;
               margin: 0 auto;
               display: block;
               float: none; } }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031061}}
             .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
               margin-top: 8%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031089}}
       .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-img {
         float: left;
-        margin-right: 20px;
-        margin-top: 20px; }
+        margin-right: 20px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031097}}
 .tech-short-desc-text {
   padding: 20px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031099}}
   .tech-short-desc-text .info-wrapper {
     padding: 5px;
     margin: auto; }
     @media only screen and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031099}}
       .tech-short-desc-text .info-wrapper {
         padding: 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031105}}
     .tech-short-desc-text .info-wrapper .feature_left {
       width: 48%;
       float: left;
       margin-bottom: 20px; }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031105}}
         .tech-short-desc-text .info-wrapper .feature_left {
           width: 100%;
           float: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031114}}
     .tech-short-desc-text .info-wrapper .feature_right {
       width: 48%;
       float: right;
       margin-bottom: 20px; }
       @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031114}}
         .tech-short-desc-text .info-wrapper .feature_right {
           width: 100%;
           float: none; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031123}}
     .tech-short-desc-text .info-wrapper #clear {
       clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031126}}
     .tech-short-desc-text .info-wrapper .tech-short-blurb {
       float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031128}}
       .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info {
         float: left;
         width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031131}}
         .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info h1 {
           margin: 0; }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031131}}
             .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info h1 {
               text-align: center; } }
         @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031137}}
           .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .sub-info {
             text-align: center; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031142}}
         .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info p {
           margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031145}}
         .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
           width: 100%;
           max-width: 300px;
           float: right;
           margin-top: 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031150}}
           .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button {
             text-align: center;
             border: 1px solid #0263f7;
             color: #0263f7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031154}}
             .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button:hover {
               color: #ffffff; }
             @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031150}}
               .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn .secondary-button {
                 width: 100%;
                 min-width: 100px; } }
           @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031145}}
             .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
               padding-top: 20px;
               margin: 0 auto;
               display: block;
               float: none; } }
           @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031145}}
             .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-info .tech-learnmore-btn {
               margin-top: 8%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031173}}
       .tech-short-desc-text .info-wrapper .tech-short-blurb .tech-short-img {
         float: left;
         margin-right: 20px;
@@ -1723,71 +2631,197 @@ textarea {
 
 /* /Technology page*/
 /* Run happy is- start*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031185}}
 .brooksrunhappyis {
   width: 100%;
   background-color: #ccc; }
-  .brooksrunhappyis .runhappy-banner {
-    position: relative;
-    min-height: 315px; }
-  .brooksrunhappyis .runhappy-banner2 {
-    color: #ffffff; }
-    .brooksrunhappyis .runhappy-banner2 .opacity-cover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); }
-  .brooksrunhappyis .runhappy-brooksrunhappyis {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031188}}
+  .brooksrunhappyis .rhi-header {
+    padding-top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031190}}
+    .brooksrunhappyis .rhi-header .info-wrapper {
+      margin: auto; }
+      @media only screen and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031190}}
+        .brooksrunhappyis .rhi-header .info-wrapper {
+          padding: 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031197}}
+  .brooksrunhappyis .rhi-header-mob {
+    padding-top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031199}}
+    .brooksrunhappyis .rhi-header-mob .info-wrapper {
+      margin: auto; }
+      @media only screen and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031199}}
+        .brooksrunhappyis .rhi-header-mob .info-wrapper {
+          padding: 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031207}}
+  .brooksrunhappyis .module {
+    padding: 0px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031209}}
+    .brooksrunhappyis .module .info-wrapper {
+      position: relative;
+      display: block;
+      padding: 0px 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031213}}
+      .brooksrunhappyis .module .info-wrapper .padd_00 {
+        padding: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031216}}
+      .brooksrunhappyis .module .info-wrapper .padd_36 {
+        padding: 36px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031219}}
+      .brooksrunhappyis .module .info-wrapper .padd_b_6 {
+        padding-bottom: 6.2%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031222}}
+      .brooksrunhappyis .module .info-wrapper .padd_b_16 {
+        padding-bottom: 16.5%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031225}}
+      .brooksrunhappyis .module .info-wrapper .padd_b_3 {
+        padding-bottom: 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031228}}
+      .brooksrunhappyis .module .info-wrapper .padding-top {
+        padding-top: 47px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031231}}
+      .brooksrunhappyis .module .info-wrapper .aqua-bkgd {
+        background: #57dae6;
+        color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031235}}
+      .brooksrunhappyis .module .info-wrapper .blue-bkgd {
+        background: #1678bd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031238}}
+      .brooksrunhappyis .module .info-wrapper .dark-grey-bkgd {
+        background: #6d665f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031241}}
+      .brooksrunhappyis .module .info-wrapper .darkest-grey-bkgd {
+        background: #6d665f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031244}}
+      .brooksrunhappyis .module .info-wrapper .yellow-bkgd {
+        background: #f3b52f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031247}}
+      .brooksrunhappyis .module .info-wrapper .yellow {
+        color: #f3b52f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031250}}
+      .brooksrunhappyis .module .info-wrapper .aqua {
+        color: #57dae6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031253}}
+      .brooksrunhappyis .module .info-wrapper .white {
+        color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031256}}
+      .brooksrunhappyis .module .info-wrapper h3 {
+        font-size: 1.42em;
+        font-weight: 300;
+        margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031261}}
+      .brooksrunhappyis .module .info-wrapper .top_prd_sec {
+        width: 100%;
+        position: relative;
+        display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031267}}
+      .brooksrunhappyis .module .info-wrapper .txtOurflag {
+        position: relative;
+        top: 40px;
+        left: 40px;
+        width: 300px;
+        font-size: 4em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031274}}
+      .brooksrunhappyis .module .info-wrapper .tip {
+        position: relative;
+        top: 15px;
+        left: 10px;
+        font-size: 4em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031281}}
+      .brooksrunhappyis .module .info-wrapper .txtReminds {
+        width: 150px;
+        position: relative;
+        left: 10px;
+        top: 20px;
+        color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031288}}
+      .brooksrunhappyis .module .info-wrapper .txtTap {
+        width: 315px;
+        position: relative;
+        left: 20px;
+        top: 80px;
+        color: #ffffff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031295}}
+      .brooksrunhappyis .module .info-wrapper .txtYoung {
+        font-size: 1.42em;
+        font-weight: 300;
+        padding: 10%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031300}}
+      .brooksrunhappyis .module .info-wrapper .mobtxtRight {
+        width: 80%;
+        margin: 10% 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031304}}
+      .brooksrunhappyis .module .info-wrapper .mobtxtLeft {
+        width: 80%;
+        margin: 10% 10px;
+        padding-top: 35%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031309}}
+      .brooksrunhappyis .module .info-wrapper .mobtxtLeftThin {
+        width: 110px;
+        margin: 25% 0 0 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031313}}
+      .brooksrunhappyis .module .info-wrapper .p40 {
+        font-size: 30px;
+        line-height: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031317}}
+      .brooksrunhappyis .module .info-wrapper .mob-Left {
+        width: 50%;
+        float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031321}}
+      .brooksrunhappyis .module .info-wrapper .hall {
+        padding-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031324}}
+      .brooksrunhappyis .module .info-wrapper .txtFeeling {
+        width: 300px;
+        position: absolute;
+        left: 27%;
+        top: 65%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031330}}
+      .brooksrunhappyis .module .info-wrapper .gridcontainer {
+        overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031333}}
+      .brooksrunhappyis .module .info-wrapper .heightadjust {
+        height: 507px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031339}}
+.rhi-banner2 {
+  position: relative;
+  min-height: 320px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031343}}
+  .rhi-banner2 picture img {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031349}}
+.rhi-header2 {
+  padding-top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031352}}
+  .rhi-header2 .info-wrapper {
+    margin: auto;
     position: relative; }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper {
-        margin: 30px auto; } }
-    @media only screen and (max-width: 767px) {
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper {
-        margin: 20px auto; } }
-    .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper .brooksrunhappyis-info {
-      padding: 15px;
-      border: 1px solid #f1f1f1;
-      border-top: 0; }
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper .brooksrunhappyis-info h3 {
-        font-size: 24px;
-        margin-top: 10px;
-        margin-bottom: 10px; }
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-wrapper .brooksrunhappyis-info .br-info {
-        font-size: 20px;
-        margin-top: 0;
-        line-height: 1.4; }
-    .brooksrunhappyis .runhappy-brooksrunhappyis .aqua-bkgd {
-      background: #57dae6; }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper {
-        margin: 30px auto; } }
-    @media only screen and (max-width: 767px) {
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper {
-        margin: 20px auto; } }
-    .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper .brooksrunhappyis-info {
-      padding: 15px 20px 65px 15px;
-      border: 1px solid #ccc;
-      border-top: 0; }
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper .brooksrunhappyis-info h3 {
-        font-size: 24px;
-        margin-top: 10px;
-        margin-bottom: 10px; }
-      .brooksrunhappyis .runhappy-brooksrunhappyis .brooksrunhappyis-textwrapper .brooksrunhappyis-info .br-info {
-        font-size: 20px;
-        margin-top: 0;
-        line-height: 1.4; }
-  .brooksrunhappyis .brooksrunhappyis-btn--container .btn-wrapper {
-    color: #0263f7; }
-    .brooksrunhappyis .brooksrunhappyis-btn--container .btn-wrapper a {
-      color: #0263f7;
-      display: inline-block; }
-      .brooksrunhappyis .brooksrunhappyis-btn--container .btn-wrapper a:hover {
-        color: #00d3d6; }
-    .brooksrunhappyis .brooksrunhappyis-btn--container .btn-wrapper .brooksrunhappyis-icon {
-      font-size: 24px;
-      display: inline-block;
-      vertical-align: middle; }
+    @media only screen and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031352}}
+      .rhi-header2 .info-wrapper {
+        padding: 0px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031358}}
+    .rhi-header2 .info-wrapper .txtOffice {
+      width: 385px;
+      position: absolute;
+      left: 41.5%;
+      padding: 20px;
+      top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031364}}
+      .rhi-header2 .info-wrapper .txtOffice .yellow {
+        color: #f3b52f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031367}}
+      .rhi-header2 .info-wrapper .txtOffice h3 {
+        font-size: 1.42em;
+        font-weight: 300;
+        margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031373}}
+    .rhi-header2 .info-wrapper .aqua-bkgd {
+      background: #57dae6;
+      color: #ffffff; }
 
 /* Run happy is- end*/
-
-/*# sourceMappingURL=main.css.map */
