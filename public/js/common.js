@@ -231,6 +231,28 @@ $(document).on('click','.custom-select .label-heading',function(event) {
     event.stopPropagation();
  });
 
+//cart popup by Puja Shah
+$(document).ready(function () {
+    $(".cart-popup-desktop-show").show();
+    $(".cart-close").click(function () {
+        $(".cart-popup-desktop-show").hide();
+    });
+});
+
+//cart popup by Puja Shah
+$(document).ready(function () {
+    $(".cart-close").click(function () {
+        $(".cart-popup-desktop").hide();
+    });
+
+    $('.icon-shopping-cart').hover(function (e) { 
+        $(".cart-popup-desktop").slideDown();
+    });
+
+    $('.cart-popup-desktop').mouseleave(function (e) {
+        $('.cart-popup-desktop').hide();
+    });
+});
 
 $(document).ready(function() {
     function splitText(text) {
@@ -303,7 +325,7 @@ function collapseText() {
     $(".show-more").show();
 }
 
-//update, delete products from cart
+//update, delete products from cart by Puja Shah
 $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a', function () {
     let cart_page = $(this).data("cart-page");
     let action = $(this).data("action");
@@ -364,5 +386,4 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a
         }
     });
     return false;
-});
-
+}); 

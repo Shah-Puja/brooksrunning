@@ -5,7 +5,7 @@
 						<div class="row cp-details__wrapper">
 							<div class="col-3 tab-6">
 								<div class="shopping-img"> 
-									<img src="{{ $cartItem->variant->product->media->image1Medium() }}" alt="">
+									<img src="{{ $cartItem->variant->product->image->image1Medium() }}" alt="">
 								</div>
 							</div>
 							<div class="col-3 tab-6">
