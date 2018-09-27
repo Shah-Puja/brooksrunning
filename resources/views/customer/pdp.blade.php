@@ -29,7 +29,7 @@
 									<a href="#"></a>
 								</li>
 								<li>
-									<a href="#" class="active">{{ $product->stylename }}</a>
+									<a href="#" class="active">{{ strip_tags($product->stylename) }}</a>
 								</li>
 						</ul>
 					</div>
@@ -83,7 +83,7 @@
 									<a href="#"></a>
 								</li>
 								<li>
-									<a href="#" class="active">{{ $product->stylename }}</a>
+									<a href="#" class="active">{{ strip_tags($product->stylename) }}</a>
 								</li>
 							</ul>
 						</div>
@@ -92,7 +92,7 @@
 						</div>
 						<div class="heading-wrapper clearfix">
 							<div class="heading">
-								<h1 class="br-heading">{{ $product->stylename }}</h1>
+								<h1 class="br-heading">{{ strip_tags($product->stylename) }}</h1>
 							</div>
 							<div class="price">
 							    @if($product->price_sale!='0' && $product->price_sale!='')
@@ -172,7 +172,7 @@
 							</div>
 						</div>
 						<!--/afterpay popup -->
-						<div class="category"> {{ $product->h2 }} </div>
+						<div class="category"> {{ strip_tags($product->h2) }} </div>
 						@if( !empty($colour_options) && count($colour_options) > 0 )
 						<!-- Colour swatches -->
 						<div class="swatches">
@@ -305,27 +305,36 @@
 						</svg>
 					</div>
 					<div class="row info-wrapper">
-						<div class="info--left tab-6">
-							<h3 class="br-heading">What’s New</h3>
+					<div class="info--left tab-6">
+							@if($product->prod_desc!='')
+								<h3 class="br-heading">Product Description</h3>
+								<p class="br-info">{{ strip_tags($product->prod_desc) }}</p>
+							@endif
+
+							@php  $prod_desc_bullet_points = (!empty($product->prod_desc_bullet_points)) ? explode('#', $product->prod_desc_bullet_points) : ''; @endphp
+
+							@if(!empty($prod_desc_bullet_points))
+							<!--<h3 class="br-heading">What’s New</h3>-->
 							<ul class="br-info">
-								<li>
-									DNA LOFT full-length midsole for an ultra-soft feel and ride
-								</li>
-								<li>
-									Engineered mesh for breathability, flexibility and support
-								</li>
-								<li>
-									Two-way stretch bootie for an adaptive fit
-								</li>
+								@foreach($prod_desc_bullet_points as $bullet_point)
+									@if ($bullet_point != '')
+										<li>
+											{{ $bullet_point }}
+										</li>
+									@endif
+								@endforeach
 							</ul>
+							@endif
 						</div>
 						<div class="info--right tab-6">
+							@php  $specification_info = (!empty($product->specifications)) ? explode('#', $product->specifications) : ''; @endphp
+
+							@if(!empty($specification_info))
 							<div class="m-label-heading">
 								<h3 class="br-heading">Specs</h3>
 							</div>
 							<table class="table__specs">
 								<tbody>
-									@php  $specification_info = explode('#', $product->specifications); @endphp
 									@foreach($specification_info as $curr_specs)
 										@if ($curr_specs != '')
 											@php
@@ -345,6 +354,7 @@
 									@endforeach
 								</tbody>
 							</table>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -353,9 +363,12 @@
 </div>
 @if (strpos(strtolower($product->tag), 'sportsbra') !== false)
 	@include('customer.pdp_bra_benefits')
-@else
+@elseif(strtolower($product->prod_type) =='footwear')
 	@include('customer.pdp_shoe_benefits')
+@else 
+	@include('customer.pdp_apparel_benefits')
 @endif
+<!--
 <section class="pdp-recommended-products">
 	<div class="wrapper">
 		<div class="row">
@@ -584,5 +597,5 @@
 		    </div>
 		</div>
 	</div>
-</section>
+</section>-->
 @endsection

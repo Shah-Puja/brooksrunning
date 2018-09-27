@@ -14,7 +14,7 @@
             </div>
             <div class="mob-2">
                 <div class="mob-icon cart">
-                    <div class="cart-count">{{ $cart->items_count > 0 ? $cart->items_count : 0 }}</div>
+                    <div class="cart-count">2</div>
                     <span class="icon-cart"></span>
                 </div>
             </div>
