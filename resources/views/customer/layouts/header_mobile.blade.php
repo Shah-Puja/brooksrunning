@@ -14,7 +14,7 @@
             </div>
             <div class="mob-2">
                 <div class="mob-icon cart">
-                    <div class="cart-count">2</div>
+                    <div class="cart-count"></div>
                     <span class="icon-cart"></span>
                 </div>
             </div>

@@ -13,10 +13,14 @@ class ComposerServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+
+    {  
         View::composer(
-            [ 'customer.layouts.header_desktop'], 'App\Http\ViewComposers\CartComposer'
+            ['customer.layouts.header_desktop'], 'App\Http\ViewComposers\CartComposer'
         );
+        /*view()->composer(
+            'customer.layouts.header_desktop','App\Http\ViewComposers\CartComposer'
+        );*/
     
     }
 
@@ -27,6 +31,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(\App\Http\ViewComposers\CartComposer::class);
+
+        //$this->app->singleton(\App\Http\ViewComposers\CartComposer::class);
     }
 }
