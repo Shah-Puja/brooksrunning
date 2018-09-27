@@ -177,7 +177,7 @@
                 @if ( @$cart->items_count > 0 )
                 <button class="proceed-to-purchase pdp-button hidden-mob">Proceed to Purchase</button>
                 @endif
-                <div class="order hidden-mob">
+                <div class="order hidden-mob order_summary">
                     @include('cart.order_summary')
                 </div> 
                 @include('cart.right_side')
