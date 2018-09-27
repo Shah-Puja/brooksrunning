@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/shipping','BillingShippingController@index');
 Route::post('/shipping','BillingShippingController@store');
+
+Route::get('/payment', 'PaymentController@create');
+Route::post('/payment', 'PaymentController@store');
+
+Route::get('/cart', 'CartController@show'); 

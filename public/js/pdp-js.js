@@ -182,7 +182,7 @@
             },
             controls: function () {
                 if (settings.controls) {
-                    $el.after('<div class="lSAction visible-mob"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
+                    $el.after('<div class="lSAction visible-mob visible-tab"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
                     if (!settings.autoWidth) {
                         if (length <= settings.item) {
                             $slide.find('.lSAction').hide();
@@ -1138,3 +1138,52 @@
         return this;
     };
 }(jQuery));
+
+// fullscreen API Code
+function launchFullscreen(element) {
+    $("#zoomWindowFullShow").addClass("product-zoom--Window");
+    $("#zoomWindowFullShowIn").addClass("display-none");
+    $("#zoomWindowFullShowOut").removeClass("display-none");
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+function exitFullscreen() {
+    $("#zoomWindowFullShow").removeClass("product-zoom--Window");
+    $("#zoomWindowFullShowIn").removeClass("display-none");
+    $("#zoomWindowFullShowOut").addClass("display-none");
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+}
+
+// number quantity count
+$('#quantity-selector #adds').click(function add() {
+    var $rooms = $("#quantity-selector #noOfRoom");
+    var a = $rooms.val();
+    a++;
+    $("#quantity-selector #subs").prop("disabled", !a);
+    $rooms.val(a);
+});
+$("#quantity-selector #subs").prop("disabled", !$("#quantity-selector #noOfRoom").val());
+$('#quantity-selector #subs').click(function subst() {
+    var $rooms = $("#quantity-selector #noOfRoom");
+    var b = $rooms.val();
+    if (b >= 1) {
+        b--;
+        $rooms.val(b);
+    }
+    else {
+        $("#quantity-selector #subs").prop("disabled", true);
+    }
+});

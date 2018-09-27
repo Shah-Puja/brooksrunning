@@ -128,10 +128,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-        'fname' => [
+        's_fname' => [
             'required' => 'The first name field is required.',
         ],
-        'lname' => [
+        's_lname' => [
             'required' => 'The last name field is required.',
         ],
         's_add1' => [

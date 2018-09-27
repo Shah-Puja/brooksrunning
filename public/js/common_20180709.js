@@ -131,12 +131,11 @@
         }
     })(jQuery);
 
-// Other popup JS
     $(document).ready(function() {
-        $(".afterpay-popup--control").click(function(){
+        $("#afterpay-popup--control").click(function(){
             $("#afterpay-popup--wrapper").addClass("show");
         });
-        $(".afterpay-popup--close").click(function(){
+        $("#afterpay-popup--close").click(function(){
             $("#afterpay-popup--wrapper").removeClass("show");
         });
         $("#sizechart-popup--control").click(function(){
@@ -145,126 +144,4 @@
         $("#sizechart-popup--close").click(function(){
             $("#sizechart-popup--wrapper").removeClass("show");
         });
-        $(".close-popup").click(function(){
-            $(".password-popup").css("display","none");
-        });
     });
-
-
-// carousel for landing page
-    $(document).ready(function() {
-          var owl = $(".new-arrival--container .owl-carousel");
-          owl.owlCarousel({
-              items : 4,
-              itemsDesktop : [1000,4],
-              itemsDesktopSmall : [900,4],
-              itemsCustom : false,
-              pagination : false,
-              rewindNav : false,
-              dots: true
-          });
-          $(".next").click(function(){
-            console.log("next");
-            $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.next');
-          })
-          $(".prev").click(function(){
-            $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.prev');
-          })
-    });
-
-// shipping page 
-    $(document).ready(function() {
-        $("#different-address").change(function() {
-            if($("this.checked")) {
-               $(".billing-address").show(500);
-            }
-        });
-        $("#same-address").change(function() {
-            if($("this.checked")) {
-               $(".billing-address").hide(500);
-            }
-        });
-        $("#reset-pass-open").click(function(){
-            $("#password-popup--reset").show();
-        });
-    });
-
-// cart
-     $(document).ready(function() {
-        $(".edit-cart--handle").click(function(){
-            $("#edit-cart--popup").addClass("show");
-        });
-        $(".edit-cart--close").click(function(){
-            $("#edit-cart--popup").removeClass("show");
-        });
-    });
-
-// All tabs
-    $('ul.tabs li').click(function(){
-        var tab_id = $(this).attr('data-tab');
-        $('ul.tabs li').removeClass('current');
-        $('.tab-content').removeClass('current');
-        $(this).addClass('current');
-        $("#"+tab_id).addClass('current');
-    })
-
-// custom select
-$(document).ready(function(){
-    $(".select-option--wrapper").hide();
-    $(".custom-select .label-heading").click(function(event) {
-       $(this).parent().find(".select-option--wrapper").slideToggle("fast");
-       $(this).find(".sel-icon span").toggleClass("icon-down-arrow");
-       $(this).find(".sel-icon span").toggleClass("icon-top-arrow");
-       event.stopPropagation();
-    });
-    $(".custom-select .option-value").click(function() {
-       $(this).parent().parent().find(".label-heading .text").html($(this).html());
-       $(this).parent().slideToggle("fast");
-       $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
-       $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
-       event.stopPropagation();
-    });
-    $("html").click(function() {
-       $(".select-option--wrapper").slideUp("fast"); 
-       $(".custom-select .label-heading .sel-icon span").removeClass("icon-top-arrow");
-       $(".custom-select .label-heading .sel-icon span").addClass("icon-down-arrow");
-    });
-});
-
-
-// less and more info btn
-$(document).ready(function() {
-    function splitText(text) {
-        var textBreak = textLimit;
-        var first = text.substring(0, textBreak);
-        var second = text.substring(textBreak);
-        var aux = second.substring(0, second.indexOf(" "));
-        var spaceIndex = second.indexOf(" ");
-        second = " " + second.substring(spaceIndex + 1);
-        first = first.substring(0, textBreak) + aux;
-        var bothTextes = [first, second];
-        return bothTextes;
-    }
-    var textLimit = 200;
-    var text = $("#info-more").html();
-    if (text.length > textLimit) {
-        var textArray = splitText(text);
-        $("#info-more").text(textArray[0]);
-        $("#info-more").append("<span onclick=\"expandText()\" class='show-more'>...<span class=\"red\">show more</span></span>");
-        $("#info-more").append("<span style=\"display: none\" class='rest-of-description'>" + textArray[1] + "</span>");
-        $("#info-more").append("<span onclick=\"collapseText()\" style=\"display: none\" class='red show-less'> show less </span>");
-    } else {
-        $("#info-more").text(text);
-    }
-});
-function expandText() {
-    $(".rest-of-description").show();
-    $(".show-less").show();
-    $(".show-more").hide();
-}
-function collapseText() {
-    $(".rest-of-description").hide();
-    $(".show-less").hide();
-    $(".show-more").show();
-}
-

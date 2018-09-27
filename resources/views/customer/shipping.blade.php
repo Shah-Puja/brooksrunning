@@ -164,25 +164,25 @@
                                 <div class="col-6">
                                     <div class="input-wrapper">
                                         <?php
-                                            $error_fname="";
-                                            if ($errors->has('fname') ):
-                                                $error_fname="<span class='error'>".$errors->first('fname')."</span>";
+                                            $error_s_fname="";
+                                            if ($errors->has('s_fname') ):
+                                                $error_s_fname="<span class='error'>".$errors->first('s_fname')."</span>";
                                             endif;
                                         ?>
-                                        <label for=""><sup>*</sup>First Name: {!! $error_fname !!}</label>
-                                        <input type="text" name="fname" class="input-field" data-label-name="first name">
+                                        <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
+                                        <input type="text" name="s_fname" class="input-field" data-label-name="first name">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="input-wrapper">
                                         <?php
-                                            $error_lname="";
-                                            if ($errors->has('lname') ):
-                                                $error_lname="<span class='error'>".$errors->first('lname')."</span>";
+                                            $error_s_lname="";
+                                            if ($errors->has('s_lname') ):
+                                                $error_s_lname="<span class='error'>".$errors->first('s_lname')."</span>";
                                             endif;
                                         ?>
-                                        <label for=""><sup>*</sup>Last Name: {!! $error_lname !!}</label>
-                                        <input type="text" name="lname" class="input-field" data-label-name="last name">
+                                        <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
+                                        <input type="text" name="s_lname" class="input-field" data-label-name="last name">
                                     </div>
                                 </div>
                             </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Order_address;
 use Illuminate\Database\Eloquent\Model;
 
 class BillingShippingController extends Controller
-{
+{    
+
     public function index(){
         return view('customer.shipping');
     }
@@ -15,8 +17,8 @@ class BillingShippingController extends Controller
     public function store(){
         $validatedAddress = request()->validate([
     		'email' => 'required|email',
-    		'fname' => 'required',    		
-    		'lname' => 'required',
+    		's_fname' => 'required',    		
+    		's_lname' => 'required',
      		's_add1' => 'required',
             's_add2' => '',
             's_city' => 'required',
@@ -37,10 +39,16 @@ class BillingShippingController extends Controller
             'signme' => '',
             'flag_same_shipping' => '',
         ]);
-        $cart='';
+        $cart=array(
+            'user_id'=>'1234',
+            'id'=>'1',
+            'total'=>'100.00',
+            'freight_cost'=>'0',
+            'grand_total'=>'105.00'
+        );
         //Order::createNew($this->cart, $validatedAddress);
         Order::createNew($cart, $validatedAddress);
 
-        return redirect("/shipping");
+        return redirect("payment");
     }
 }
