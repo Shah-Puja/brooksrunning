@@ -19,7 +19,6 @@ class CartComposer
                         ->first();
             });
         }
-        dd($this->cart);
     }
 
     public function compose(View $view)

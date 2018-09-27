@@ -8,7 +8,7 @@ use App\Models\Image;
 
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductColourController extends Controller
 {
     public function index($name,$style,$color){
         $product = Product::where('style',$style)
@@ -26,7 +26,10 @@ class ProductController extends Controller
 		$product->price_sale = $variants->max('price_sale');
         $product->stock = $variants->max('stock');
         
-        $colour_options = Product::where('style',$style)->get();
+        $colour_options = Product::where('style',$style)
+                                ->whereHas('variants', function ( $query ) {
+                                    $query->where('visible', '=', 'Yes');
+                                })->get();
         $colour_options = Image::addImagePathsForProducts($colour_options); 
 
         //echo "<pre>";

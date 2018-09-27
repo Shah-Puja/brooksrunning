@@ -224,7 +224,7 @@ $(document).on('click','.custom-select .label-heading',function(event) {
  $(document).on('click','.custom-select .option-value',function() {
     let value = $(this).data('value');
     $(this).parent().parent().find(".label-heading .text").html($(this).text());
-    $(this).parent().slideToggle("fast");
+    $(this).parent().slideUp("fast");
     $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
     $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
     $("#detail input[name='width_name']").val(value);
