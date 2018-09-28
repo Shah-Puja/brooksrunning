@@ -170,7 +170,7 @@
       }
       .label--underline{
         position: relative;
-        font-size: 16px;
+        font-size: 18px;
         @extend %extrabold-font;
         &:after{
           content: "";
@@ -184,7 +184,7 @@
       }
       h1{
         margin-bottom: 22px;
-        font-size: 40px;
+        font-size: 46px;
            @media #{$tab-only}{ 
             font-size:25px;
            }
@@ -228,6 +228,7 @@
                }
                h1{
                   margin-bottom: 12px;
+                  line-height: 0.9;
                   }
           }
         }
@@ -236,13 +237,15 @@
   .new-arrival{
     padding-top: 10px;
     .lp-new--arrival{
-       padding-bottom: 30px;
+       padding-bottom: 5px;
         .main-heading{
           color: $blue;
-          margin-top: 15px;
           @media #{$mobile-only}{
             text-align:center;
-            margin-top: 75px;
+            margin-top: 18%;
+          }
+          .br-heading{
+            font-size:22px;
           }
         }
     }
@@ -349,7 +352,7 @@
         }
       }
       .lp-info-block{
-          font-size: 12px;
+          font-size: 15px;
           padding: 0 38px 35px 38px;
           margin: auto;
           text-align:center;
@@ -360,17 +363,17 @@
               max-width: 190px;
              }
             @media #{$mobile-only}{
-              padding: 16px 10px;
-              font-size: 12px;
-              max-width: 175px;
+                  padding: 22px 20px;
+                  font-size: 18px;
+                  max-width: 225px;
             }
           }
           @media #{$tab-only}{
             padding: 0px 12px 20px 12px;
           }
           @media #{$mobile-only}{
-              padding: 0px 25px 25px 25px;
-               font-size:10px;
+            padding: 0px 20px 20px 20px;
+            font-size: 15px;
           }
       }   
     }
@@ -450,12 +453,18 @@
 
 /* Start category page*/
 .ctg-main-container{
+  .sub-info{
+    width:100%;
+    max-width:720px;
+  }
    @media #{$mobile-only}{
     .br-mainheading{
       text-align:left;
     }
     .sub-info{
       text-align:left;
+      margin: 25px 0 50px;
+
     }
     .breadcrumbs{
       text-align:left;
@@ -1205,7 +1214,7 @@
       }
   
    .module{
-     padding: 0px 0;
+     padding: 0px 0px;
       .info-wrapper{
           position:relative;
         display:block;
@@ -1225,8 +1234,16 @@
           .padd_b_3{
               padding-bottom: 3%;
             }
-          .padding-top{
+          .padding_top{
             padding-top:47px;
+          }
+          .padd_lrt{
+            padding-right: 25px;
+            padding-top: 75px;
+            padding-left: 25px;
+          }
+          .aqua1{
+            color:#6d6643;
           }
            .aqua-bkgd {
             background: #57dae6;
@@ -1286,10 +1303,10 @@
                 color:$white;
               }
            .txtTap{
-                width: 315px;
+                width: 305px;
                 position: relative;
-                left: 20px;
-                top: 80px;
+                left: 5px;
+                top: 90px;
                 color:$white;
             }
             .txtYoung{
@@ -1321,12 +1338,12 @@
               .hall {
               padding-top: 0;
               }
-            .txtFeeling{
-              width: 300px;
-              position: absolute;
-              left: 27%;
-              top: 65%;
-            }
+             .txtFeeling {
+                  width: 300px;
+                  position: absolute;
+                  left: 5%;
+                  top: 65%;
+              }
             .gridcontainer{
               overflow: hidden;
             }
@@ -1379,3 +1396,180 @@
   }
 
 /* Run happy is- end*/
+
+/* what makes us tick -Start*/
+.whatmakesustick{
+  width: 100%;
+  background-color: #ccc;
+  .wrapper{
+      @media #{$tabmob-only}{
+          margin-right: auto;
+          margin-left: auto;
+          padding-right: 0px;
+          padding-left: 0px;
+      }
+    }
+  .wmut-header{
+    padding-top:0px;
+
+      .info-wrapper{
+          margin: auto;
+          position:relative;
+          @media #{$tabmob-only}{
+          padding: 0px;
+          }
+          .tickLedeHead {
+          font-size: 25px;
+          line-height: 25px;
+          position: absolute;
+          left: 60%;
+          top: 20%;
+          color: #fab321;
+           @media #{$mobile-only}{
+              font-size: 9px;
+              line-height: 9px;
+           }
+          }
+          .tickLedeSub {
+          width: 30%;
+          font-size: 18px;
+          line-height: 18px;
+          position: absolute;
+          left: 60%;
+          top: 30%;
+          color: #fff;
+           @media #{$mobile-only}{
+                width: 36%;
+                font-size: 8px;
+                line-height: 7px;
+           }
+          }
+      }
+
+  }
+  .module{
+  padding: 0px 0px;
+  .info-wrapper{
+  position:relative;
+  display:block;
+  padding:0px 15px;
+    .padd_left{
+    padding-left: 0px;
+     @media #{$mobile-only}{
+      padding-right: 0px;
+     }
+    }
+    .padd_right{
+    padding-right: 0px;
+      @media #{$mobile-only}{
+      padding-left: 0px;
+      }
+    }
+    .no-padding{
+      @media #{$mobile-only}{
+        padding-left: 0px;
+       padding-right: 0px;
+      }
+    }
+   
+    .aqua1{
+    color:#6d6643;
+    }
+    .aqua-bkgd {
+    background: #57dae6;
+    color:$white;
+    }
+    .blue-bkgd {
+    background: #1678bd;
+    }
+    .dark-grey-bkgd {
+    background: #6d665f;
+    }
+    .darkest-grey-bkgd{
+    background: #6d665f;
+    }
+    .yellow-bkgd {
+    background: #f3b52f;
+    }
+    .orange {
+    color: #f15a24;
+    }
+    .aqua{
+    color: #57dae6;
+    }
+    .white {
+    color: $white;
+    }
+    .charcoalDk {
+    color: #000;
+    }
+    h3{
+    font-size: 1.42em;
+    font-weight: 300;
+    margin: 0 auto;
+    }
+    .top_prd_sec{
+    width:100%;
+    position:relative;
+    display:block;
+    }
+    .tickTxt {
+    font-size: 20px;
+    line-height: 22px;
+    padding: 50px 20px;
+    color: #6d665f;
+    background-color:#eee;
+      .reg {
+      margin: 20px 0;
+      }
+    }
+    .gridcontainer{
+    overflow: hidden;
+    }
+  }
+  }
+}
+.sliders{
+        text-align: right;
+        font-size: 11px;
+        line-height: 1.4;
+        img{
+          vertical-align: middle;
+          display: inline-block;
+          width: 100%;
+          max-width: 70px;
+          margin-left: 2px;
+          margin-right: 2px;
+        }
+      }
+.sliders--popup{
+  .popup-container--wrapper{
+    max-width: 1180px;
+    position: absolute;
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+    top: 20px;
+    padding-bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid #fff;
+  }
+}
+.sliders-info{
+      display: block;
+      position: relative;
+      border-bottom: 1px solid $darkgray;
+      .info-wrapper{
+        float:left;
+        width: 100%;
+        text-align: center;
+        padding: 18px 18px;
+        @media #{$mobile-only}{
+          width: 50%;
+        }
+   
+      }
+    }
+
+/* Run happy is- End*/

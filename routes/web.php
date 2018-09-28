@@ -38,3 +38,7 @@ Route::middleware(['allowOnlyAjax'])->group(function () {
 	Route::patch('/cartitem', 'CartItemsController@update');
 	Route::delete('/cartitem', 'CartItemsController@destroy');
 });
+
+
+/* info static pages */
+Route::get('/about-us', 'InfoController@about_us');
