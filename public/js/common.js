@@ -130,7 +130,13 @@
             //End of Main function
         }
     })(jQuery);
-
+    //cart popup on adding product on details page
+    $(document).ready(function() {
+        $(".cart-popup-desktop-show").show();
+        $(".cart-close").click(function(){
+            $(".cart-popup-desktop-show").hide();
+        });
+    });
 // Other popup JS
     $(document).on("click",".afterpay-popup--control",function(){
         $("#afterpay-popup--wrapper").addClass("show");
@@ -155,7 +161,10 @@
               items : 4,
               itemsDesktop : [1000,4],
               itemsDesktopSmall : [900,4],
-               dots: true
+              itemsCustom : false,
+              pagination : false,
+              rewindNav : false,
+              dots: true
           });
           $(".next").click(function(){
             console.log("next");
