@@ -262,6 +262,7 @@
                                     </div>
                                 </div>
                             </div>
+                             
                             <div class="button">
                                 <button type="submit" class="pdp-button">Add to Cart</button>
                             </div>

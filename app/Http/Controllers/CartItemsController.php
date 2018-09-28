@@ -19,9 +19,7 @@ class CartItemsController extends Controller
                 ['product_id', request('product_id')],
                 ['width_code', request('width_code')]
             ])->first();
-           // echo "<pre>";print_r($this->variantSelected);die;
-            //$this->variantSelected = Variant::find( request('id') );
-            //echo "<pre>";print_r($this->variantSelected);die;
+            
 	        if ( ! $this->variantSelected ) {
 	            return response()->json([ 'errors' => 'Invalid Item' ], 400);
 	        }
