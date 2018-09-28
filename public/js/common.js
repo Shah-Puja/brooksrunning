@@ -241,8 +241,8 @@ $(document).ready(function () {
 
 //cart popup by Puja Shah
 $(document).ready(function () {
-    $(".cart-close").click(function () {
-        $(".cart-popup-desktop").hide();
+    $(".cart-close, .close-cart--popup").click(function () {
+         $(".cart-popup-desktop").hide();
     });
 
     $('.icon-shopping-cart').hover(function (e) { 
@@ -326,7 +326,7 @@ function collapseText() {
 }
 
 //update, delete products from cart by Puja Shah
-$(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a', function () {
+$(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper button', function () { 
     let cart_page = $(this).data("cart-page");
     let action = $(this).data("action");
     let sku = $(this).data("sku");
@@ -338,9 +338,9 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a
         method = "patch";
         data = {id: sku, qty: qty}
     }
-    console.log(cart_page);
+    /*console.log(cart_page);
     console.log(method);
-    console.log(sku);
+    console.log(sku);*/
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -358,12 +358,12 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper a
                 cart_count = '0';
                 $(".proceed-to-purchase").remove();
             }
+            $(".cart-count").text(cart_count);
             $(".ajax_cart_popup").html(cart_items);
             if (cart_page == 'Yes') {
                 $(".ajax_cart").html(cart_page_cart_items);
                 $(".order_summary").html(order_summary);
-            }
-            $(".icon-shopping-cart span").text(cart_count);
+            } 
             $('body,html').animate({scrollTop: 0}, 800);
             $(".cart-popup-desktop").slideDown();
         },

@@ -28,11 +28,12 @@ class Cart extends Model
 
     public function addOrUpdateItem($variantSelected)
     {
+        //echo "<pre>";print_r($variantSelected);
         $this->cartItems()->updateOrCreate(
                 [
                     'variant_id' => $variantSelected->id,
-                    'price'  => $variantSelected->price_sale,
-                    'rrp'  => $variantSelected->price,
+                    'price'  => ($variantSelected->price_sale > 0) ? $variantSelected->price_sale : $variantSelected->price,
+                    'rrp'  => $variantSelected->price  
                 ],
                 [
                     'qty' => request('qty'),

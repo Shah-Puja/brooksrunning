@@ -1257,6 +1257,45 @@ function detail_validation(){
     if(form==false){
         return false;
     }
+
+    let size_val =$("#detail input[name='size']").val();
+    let width_name = $("#detail input[name='width_name']").val();
+    let qty = $("#detail input[name='qty']").val();
+   /* console.log("Size: "+size_val);
+    console.log("width_name: "+width_name);
+    console.log("qty: "+qty);*/
+    let product_id = $('#product_id').val();
+    //console.log(product_id);return false;
+
+    let cart_page = 'No';
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/cartitem", 
+            method: "post", 
+            data: { product_id:product_id, size:size_val, width_code : width_name, qty : qty },
+            success: function(result) {
+                //console.log(result);
+				let cart_items = result.cartitemshtml;
+				let cart_count = result.cart_count;
+				$(".ajax_cart_popup").html(cart_items);
+				$(".cart-count").text(cart_count);
+				$('body,html').animate({scrollTop:0},800);
+                //$(".cart-product--popup").slideDown();
+                $(".cart-popup-desktop").slideDown();
+            },
+            error: function(error){
+				let obj = JSON.parse(error.responseText);
+				$("#quantity").after("<p class='error'>"+obj.errors+"</p>");
+				setTimeout(function () {
+					$("#quantity").val("1");
+					$(".quantity").find(".error").remove();
+               }, 2500);
+			}
+        });
+    return false; 
+
 }
 
 
