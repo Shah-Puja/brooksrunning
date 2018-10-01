@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index($gender, $category, $prod_type) {
+    public function index($category) {
 
-        $products = \App\Models\Category::getProducts($gender, $category, $prod_type);
+        $products = \App\Models\Category::getProducts($category);
 
         if ($products->count() < 1) {
             abort(404);

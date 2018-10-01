@@ -14,12 +14,12 @@ class Category extends Model
         return $this->morphToMany('App\Models\Product', 'group');
     }
 
-    public static function getProducts($gender, $category, $prod_type) {              
+    public static function getProducts($category) {              
 
         //return \App\Product::query()
         $products = \App\Models\Product::query() 
-            ->where('gender', $gender)
-            ->where('prod_type', $prod_type)
+             ->where('gender', 'W')
+            // ->where('prod_type', $prod_type)
             ->whereHas('categories', function($query) use ($category) { 
                 return $query->whereName($category); 
                 })

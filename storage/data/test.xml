@@ -1,0 +1,10 @@
+ <Cart>
+	<PersonId>115414</PersonId>
+	<Contacts></Contacts>
+	<CartDetails>
+		<CartDetail>
+			<SkuId>204532</SkuId>
+			<Quantity>1</Quantity>
+		</CartDetail>	
+	</CartDetails>
+</Cart>
