@@ -352,7 +352,7 @@
 									</div>
 									<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="hidden-mob">
 										<div class="img img-shoes">
-											<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
+											<img id="plp-img" src="{{ $style->image->image1Original() }}" alt="">
 										</div>
 									</a>
 									<div class="more-color--container">
