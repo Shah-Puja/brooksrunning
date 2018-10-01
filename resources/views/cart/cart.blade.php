@@ -25,7 +25,7 @@
                     <h3 class="br-heading">Shopping Cart</h3>
                     <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
-                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob">Proceed to Purchase</button>
+                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob"><a href="/shipping">Proceed to Purchase</a></button>
                 <div class="shopping-heading">
                     <div class="row">
                         <div class="col-6 hidden-tab hidden-mob"><p>Product</p></div>
@@ -165,7 +165,7 @@
                                 @include('cart.order_summary') 
                             </div>
                             @if ( @$cart->items_count > 0 )
-                            <button class="proceed-to-purchase pdp-button">Proceed to Purchase</button>
+                            <button class="proceed-to-purchase pdp-button"><a href="/shipping">Proceed to Purchase</a></button>
                             @endif
                         </div>
                     </div>
@@ -175,7 +175,7 @@
         <div class="col-3 tab-4">
             <div class="cart-right--container">
                 @if ( @$cart->items_count > 0 )
-                <button class="proceed-to-purchase pdp-button hidden-mob">Proceed to Purchase</button>
+                <button class="proceed-to-purchase pdp-button hidden-mob"><a href="/shipping">Proceed to Purchase</a></button>
                 @endif
                 <div class="order hidden-mob order_summary">
                     @include('cart.order_summary')

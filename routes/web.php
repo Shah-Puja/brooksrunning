@@ -27,6 +27,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 Route::get('/cart', 'CartController@show');
@@ -38,3 +39,10 @@ Route::middleware(['allowOnlyAjax'])->group(function () {
 	Route::patch('/cartitem', 'CartItemsController@update');
 	Route::delete('/cartitem', 'CartItemsController@destroy');
 });
+
+Route::get('/shipping','BillingShippingController@create');
+Route::post('/shipping','BillingShippingController@store');
+
+Route::get('/payment', 'PaymentController@create');
+Route::post('/payment', 'PaymentController@store');
+
