@@ -1,7 +1,7 @@
 @if ( $cart )
 @foreach($cart->cartItems as $cartItem)  
 @php //echo "<pre>";print_r($cartItem->variant);die; @endphp
-		<div class="shoppingcart-products">
+		<div class="shoppingcart-products" data-main-sku="{{ $cartItem->variant->id }}">
 						<div class="row cp-details__wrapper">
 							<div class="col-3 tab-6">
 								<div class="shopping-img"> 
@@ -41,16 +41,25 @@
 										<div class="mob-5"><p class="bold-font blue">Unit Price:</p></div>
 										<div class="mob-7">
 										<p class="bold-font blue right">
+										@if($cartItem->variant->price_sale == 0)
+										&dollar;{{ number_format($cartItem->variant->price, 2) }}
+										 @endif
 								@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
-										<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del>
-								@endif
+										<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del> 
 								&dollar;{{ number_format($cartItem->variant->price_sale, 2) }} 
+								@endif
 										</p>
 										</div>
 									</div>
 									<div class="row price">
 										<div class="mob-5"><p>Item Total:</p></div>
-										<div class="mob-7"><p class="right">&dollar;{{ number_format($cartItem->variant->price_sale * $cartItem->qty, 2) }}</p></div>
+										<div class="mob-7"><p class="right">
+										@if($cartItem->variant->price_sale == 0)
+										&dollar;{{ number_format($cartItem->variant->price * $cartItem->qty, 2) }}
+										@else
+										&dollar;{{ number_format($cartItem->variant->price_sale * $cartItem->qty, 2) }}
+										 @endif 
+										</p></div>
 									</div>
 								</div>
 							</div>
