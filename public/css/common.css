@@ -3574,7 +3574,14 @@ textarea {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032182}}
     .pdp-container--info .button .pdp-button {
       width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032185}}
+    .pdp-container--info .button .pdp-button-disabled {
+      width: 100%;
+      background-color: #f1f1f1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032188}}
+      .pdp-container--info .button .pdp-button-disabled:hover {
+        border: 1px solid #d3d0cd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032195}}
   .pdp-container--offer h3 {
     color: #b9161e;
     border-top: 1px solid #d3d0cd;
@@ -3582,31 +3589,31 @@ textarea {
     padding: 10px 0;
     line-height: 1.3;
     font-size: 16px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032205}}
   .pdp-container--offer ul li {
     display: inline-block;
     width: 40%;
     line-height: 1.4;
     transition: all 0.5 ease-in-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032210}}
     .pdp-container--offer ul li a {
       color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032213}}
       .pdp-container--offer ul li a:hover {
         color: #00d3d6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032219}}
   .pdp-container--offer p {
     font-size: 12px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032224}}
 .pdp-info--wrapper {
   background-color: #f1f1f1;
   padding: 90px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032227}}
   .pdp-info--wrapper .pdp-info {
     background-color: #ffffff;
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032230}}
     .pdp-info--wrapper .pdp-info .content--top {
       width: 50px;
       height: 50px;
@@ -3614,152 +3621,152 @@ textarea {
       top: -29px;
       left: 50%;
       transform: translateX(-50%); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032238}}
     .pdp-info--wrapper .pdp-info .info-wrapper {
       padding: 80px; }
       @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032238}}
         .pdp-info--wrapper .pdp-info .info-wrapper {
           padding: 20px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032243}}
       .pdp-info--wrapper .pdp-info .info-wrapper h3 {
         margin: 0;
         margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032247}}
       .pdp-info--wrapper .pdp-info .info-wrapper p {
         margin: 0;
         margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032251}}
       .pdp-info--wrapper .pdp-info .info-wrapper ul {
         list-style-position: inside; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032246}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032253}}
         .pdp-info--wrapper .pdp-info .info-wrapper ul li {
           margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032257}}
       .pdp-info--wrapper .pdp-info .info-wrapper .table__specs {
         width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032261}}
       .pdp-info--wrapper .pdp-info .info-wrapper .specs__row td {
         border-bottom: 1px solid #d3d0cd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032256}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032263}}
         .pdp-info--wrapper .pdp-info .info-wrapper .specs__row td p {
           margin: 9px 0;
           font-size: 13px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032271}}
       .pdp-info--wrapper .pdp-info .info-wrapper .specs__row .label--info {
         text-align: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032278}}
 .pdp-container--benefits {
   padding: 40px 0;
   background-image: linear-gradient(#ffffff, #f1f1f1); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032281}}
   .pdp-container--benefits .module-header {
     padding: 70px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032284}}
     .pdp-container--benefits .module-header .module-heading h3 {
       margin: 0;
       text-align: center;
       margin-bottom: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032290}}
     .pdp-container--benefits .module-header .module-img {
       max-width: 950px;
       margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032286}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032293}}
       .pdp-container--benefits .module-header .module-img img {
         width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032299}}
   .pdp-container--benefits .module-info .info-wrapper {
     position: relative;
     height: 450px;
     padding-top: 125px;
     width: 100%; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032299}}
       .pdp-container--benefits .module-info .info-wrapper {
         padding-top: 25px;
         padding-bottom: 25px;
         height: auto; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032309}}
     .pdp-container--benefits .module-info .info-wrapper .info {
       max-width: 500px; }
       @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032309}}
         .pdp-container--benefits .module-info .info-wrapper .info {
           max-width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032314}}
       .pdp-container--benefits .module-info .info-wrapper .info.right {
         float: right; }
         @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032314}}
           .pdp-container--benefits .module-info .info-wrapper .info.right {
             float: left; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032320}}
       .pdp-container--benefits .module-info .info-wrapper .info .br-heading {
         margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032323}}
       .pdp-container--benefits .module-info .info-wrapper .info .br-info {
         margin-top: 8px;
         line-height: 1.4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032330}}
   .pdp-container--benefits .module-info .img.left {
     margin-left: -15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032333}}
   .pdp-container--benefits .module-info .img.right {
     margin-right: -15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032336}}
   .pdp-container--benefits .module-info .img img {
     width: auto;
     max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032342}}
   .pdp-container--benefits .module-additional {
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032344}}
     .pdp-container--benefits .module-additional .heading {
       padding-top: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032346}}
       .pdp-container--benefits .module-additional .heading h3 {
         text-align: center;
         margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032352}}
     .pdp-container--benefits .module-additional .info {
       padding: 0 20px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032354}}
       .pdp-container--benefits .module-additional .info h4 {
         margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032358}}
       .pdp-container--benefits .module-additional .info p {
         margin-top: 8px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032365}}
 .pdp-recommended-products h3 {
   text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032371}}
 .size-chart--tab .radio-inline .mark {
   display: none !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032374}}
 .size-chart--tab .radio-inline .text {
   color: #0263f7;
   padding-left: 0 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032377}}
   .size-chart--tab .radio-inline .text:hover {
     color: #00d3d6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032382}}
 .size-chart--tab .radio-inline input:checked ~ label .text {
   color: #00d3d6; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032389}}
 .size-chart-wrapper h3 {
   margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032392}}
 .size-chart-wrapper h4 {
   color: #0263f7;
   margin: 20px 0 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032396}}
 .size-chart-wrapper p {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032399}}
 .size-chart-wrapper .chart-img {
   margin: 20px 0;
   width: auto;
@@ -3767,107 +3774,107 @@ textarea {
 
 /* /details page */
 /* Cart CSS Start */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032409}}
 .afterpay--popup .popup-container--wrapper {
   max-width: 1100px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032411}}
   .afterpay--popup .popup-container--wrapper .popup-container--info {
     padding: 25px 70px; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032411}}
       .afterpay--popup .popup-container--wrapper .popup-container--info {
         padding: 20px 10px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032411}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032418}}
 .afterpay--popup .header-info {
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032420}}
   .afterpay--popup .header-info img {
     width: 100%;
     max-width: 150px;
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032418}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032425}}
   .afterpay--popup .header-info h3 {
     font-size: 27px !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032422}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032429}}
 .afterpay--popup .heading {
   font-size: 14px;
   margin: 10px 0 5px !important;
   color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032428}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032435}}
 .afterpay--popup .text {
   font-size: 12px !important;
   line-height: 1.5 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032439}}
 .afterpay--popup .afterpay-info {
   display: block;
   position: relative;
   border-bottom: 1px solid #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032443}}
   .afterpay--popup .afterpay-info .info-wrapper {
     float: left;
     width: 25%;
     text-align: center;
     padding: 10px 10px; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032443}}
       .afterpay--popup .afterpay-info .info-wrapper {
         width: 50%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032444}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032451}}
     .afterpay--popup .afterpay-info .info-wrapper .icon {
       width: 60px;
       height: 60px;
       margin: 0 auto;
       position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032449}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032456}}
       .afterpay--popup .afterpay-info .info-wrapper .icon .img1 {
         width: 51px;
         padding-top: 21px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032460}}
       .afterpay--popup .afterpay-info .info-wrapper .icon .img2 {
         width: 57px;
         padding-top: 21px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032457}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032464}}
       .afterpay--popup .afterpay-info .info-wrapper .icon .img3 {
         width: 44px;
         padding-top: 11px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032461}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032468}}
       .afterpay--popup .afterpay-info .info-wrapper .icon .img4 {
         width: 37px;
         padding-top: 8px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032468}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032475}}
 .afterpay--popup .footer-info {
   display: block;
   position: relative;
   padding: 15px 15px 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032472}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032479}}
   .afterpay--popup .footer-info .left-block {
     float: left;
     width: 45%; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032472}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032479}}
       .afterpay--popup .footer-info .left-block {
         width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032486}}
   .afterpay--popup .footer-info .right-block {
     float: left;
     width: 55%; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032486}}
       .afterpay--popup .footer-info .right-block {
         width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032487}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032494}}
 .afterpay--popup .moreinfo {
   color: #0263f7;
   font-size: 12px !important;
   text-decoration: underline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032501}}
 .cart-breadcrumb--header .cart-header--step {
   margin: 20px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032496}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032503}}
   .cart-breadcrumb--header .cart-header--step ul {
     padding-left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032505}}
     .cart-breadcrumb--header .cart-header--step ul li {
       display: inline-block;
       list-style-type: none;
@@ -3875,38 +3882,38 @@ textarea {
       font-size: 15px;
       color: #b7b7b7;
       margin-bottom: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032505}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032512}}
       .cart-breadcrumb--header .cart-header--step ul li.active, .cart-breadcrumb--header .cart-header--step ul li.step {
         color: #000000; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032514}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032521}}
 .cart-right--container .pdp-button {
   width: 100%;
   margin: 20px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032518}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032525}}
 .cart-right--container .order, .cart-right--container .address, .cart-right--container .payment {
   background-color: #f2f2f2;
   margin-bottom: 15px;
   padding: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032522}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032529}}
   .cart-right--container .order h3, .cart-right--container .order p, .cart-right--container .address h3, .cart-right--container .address p, .cart-right--container .payment h3, .cart-right--container .payment p {
     font-size: 14px;
     margin: 6px 0;
     line-height: 1.4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032526}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032533}}
     .cart-right--container .order h3.right, .cart-right--container .order p.right, .cart-right--container .address h3.right, .cart-right--container .address p.right, .cart-right--container .payment h3.right, .cart-right--container .payment p.right {
       text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032529}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032536}}
     .cart-right--container .order h3.center, .cart-right--container .order p.center, .cart-right--container .address h3.center, .cart-right--container .address p.center, .cart-right--container .payment h3.center, .cart-right--container .payment p.center {
       text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032532}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032539}}
     .cart-right--container .order h3.blue, .cart-right--container .order p.blue, .cart-right--container .address h3.blue, .cart-right--container .address p.blue, .cart-right--container .payment h3.blue, .cart-right--container .payment p.blue {
       color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032537}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032544}}
   .cart-right--container .order .afterpay span, .cart-right--container .address .afterpay span, .cart-right--container .payment .afterpay span {
     font-size: 10px;
     line-height: 1.4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032540}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032547}}
     .cart-right--container .order .afterpay span img, .cart-right--container .address .afterpay span img, .cart-right--container .payment .afterpay span img {
       vertical-align: middle;
       display: inline-block;
@@ -3914,125 +3921,125 @@ textarea {
       max-width: 60px;
       margin-left: 2px;
       margin-right: 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032548}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032555}}
     .cart-right--container .order .afterpay span a, .cart-right--container .address .afterpay span a, .cart-right--container .payment .afterpay span a {
       color: #0263f7;
       text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032555}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032562}}
 .cart-right--container.footer-order {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032558}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032565}}
   .cart-right--container.footer-order .order {
     background-color: transparent;
     margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032563}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032570}}
     .cart-right--container.footer-order .order h3 {
       font-size: 27px; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032563}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032570}}
         .cart-right--container.footer-order .order h3 {
           font-size: 24px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032571}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032578}}
 .cart-right--container .payment {
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032573}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032580}}
   .cart-right--container .payment img {
     width: auto;
     max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032577}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032584}}
   .cart-right--container .payment .braintree-txt {
     font-size: 12px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032583}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032590}}
 .cart-left--container .heading {
   font-size: 15px;
   margin: 20px 0; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032583}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032590}}
     .cart-left--container .heading {
       margin: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032589}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032596}}
   .cart-left--container .heading h3 {
     margin: 0;
     font-size: 27px; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032589}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032596}}
       .cart-left--container .heading h3 {
         font-size: 24px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032596}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032603}}
   .cart-left--container .heading .offer {
     color: #b9161e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032600}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032607}}
 .cart-left--container .pdp-proceed-mob {
   width: 100%;
   max-width: 400px;
   margin: 15px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032605}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032612}}
 .cart-left--container .shopping-heading {
   background-color: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032607}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032614}}
   .cart-left--container .shopping-heading p {
     margin: 0;
     padding: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032614}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032621}}
 .shoppingcart-wrapper {
   margin-bottom: 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032617}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032624}}
 .shoppingcart-products {
   border-bottom: 1px solid #f2f2f2; }
   @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032617}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032624}}
     .shoppingcart-products {
       padding-bottom: 10px;
       margin-bottom: 10px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032623}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032630}}
   .shoppingcart-products .shopping-img {
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032625}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032632}}
     .shoppingcart-products .shopping-img img {
       width: auto;
       max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032630}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032637}}
   .shoppingcart-products .shopping-img, .shoppingcart-products .product-info {
     padding: 20px 0;
     max-width: 400px; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032630}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032637}}
       .shoppingcart-products .shopping-img, .shoppingcart-products .product-info {
         padding: 5px 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032637}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032644}}
   .shoppingcart-products h3, .shoppingcart-products p {
     font-size: 15px;
     line-height: 1.4;
     margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032642}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032649}}
   .shoppingcart-products h3 {
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032645}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032652}}
   .shoppingcart-products .edit {
     text-decoration: none;
     font-size: 15px;
     display: block;
     margin: 10px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032650}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032657}}
     .shoppingcart-products .edit a {
       color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032652}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032659}}
       .shoppingcart-products .edit a:hover {
         color: #002855; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032658}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032665}}
   .shoppingcart-products .quantity .input-wrapper {
     max-width: 53px;
     display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032661}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032668}}
     .shoppingcart-products .quantity .input-wrapper .input-field {
       text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032665}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032672}}
   .shoppingcart-products .quantity .action {
     color: #0263f7;
     border: 0;
@@ -4042,117 +4049,117 @@ textarea {
     padding: 0;
     margin-bottom: 5px;
     font-size: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032674}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032681}}
     .shoppingcart-products .quantity .action:hover {
       color: #002855; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032678}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032685}}
   .shoppingcart-products .quantity .quantity-heading {
     display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032681}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032688}}
   .shoppingcart-products .quantity .mob-btn {
     display: block; }
   @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032657}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032664}}
     .shoppingcart-products .quantity {
       margin-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032686}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032693}}
       .shoppingcart-products .quantity .quantity-heading {
         display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032689}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032696}}
       .shoppingcart-products .quantity .quantity-heading, .shoppingcart-products .quantity .input-wrapper, .shoppingcart-products .quantity .mob-btn {
         display: inline-block;
         vertical-align: middle; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032693}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032700}}
       .shoppingcart-products .quantity .input-wrapper {
         vertical-align: top;
         margin-left: 3px;
         margin-right: 5px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032701}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032708}}
   .shoppingcart-products .price .blue {
     color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032703}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032710}}
     .shoppingcart-products .price .blue del {
       color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032707}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032714}}
   .shoppingcart-products .price .right {
     text-align: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032712}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032719}}
 .shopping-del-wrapper {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #f2f2f2; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032717}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032724}}
 .shopping-delevery--option {
   margin-bottom: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032719}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032726}}
   .shopping-delevery--option .tab-header {
     background-color: #0263f7;
     color: #ffffff;
     padding: 8px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032723}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032730}}
     .shopping-delevery--option .tab-header label {
       cursor: pointer;
       display: block;
       padding-right: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032727}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032734}}
       .shopping-delevery--option .tab-header label h3 {
         margin: 0;
         font-size: 27px; }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032727}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032734}}
           .shopping-delevery--option .tab-header label h3 {
             font-size: 24px; } }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032727}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032734}}
           .shopping-delevery--option .tab-header label h3 {
             font-size: 20px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032744}}
       .shopping-delevery--option .tab-header label span {
         top: 7px;
         right: 5px;
         font-size: 25px; }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032744}}
           .shopping-delevery--option .tab-header label span {
             top: 1px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032747}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032754}}
   .shopping-delevery--option .tab-content {
     padding: 20px 10px;
     background-color: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032752}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032759}}
   .shopping-delevery--option .delivery-option .heading-main {
     font-size: 15px;
     line-height: 1.3;
     margin: 0;
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032758}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032765}}
   .shopping-delevery--option .delivery-option .radio-inline {
     display: block; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032763}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032770}}
       .shopping-delevery--option .delivery-option .radio-inline .text {
         margin-bottom: 20px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032767}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032774}}
     .shopping-delevery--option .delivery-option .radio-inline .text h3 {
       color: #0263f7;
       margin-bottom: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032771}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032778}}
     .shopping-delevery--option .delivery-option .radio-inline .text h3, .shopping-delevery--option .delivery-option .radio-inline .text p {
       font-size: 14px;
       line-height: 1.4;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032777}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032784}}
     .shopping-delevery--option .delivery-option .radio-inline .text p.area {
       color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032788}}
     .shopping-delevery--option .delivery-option .radio-inline .text p.rate span {
       color: #b9161e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032785}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032792}}
     .shopping-delevery--option .delivery-option .radio-inline .text p.day {
       color: #666666; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032790}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032797}}
     .shopping-delevery--option .delivery-option .radio-inline .text .gift-input {
       display: block;
       color: #666666;
@@ -4164,152 +4171,152 @@ textarea {
       border: 0;
       outline: 0;
       margin-bottom: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032803}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032810}}
     .shopping-delevery--option .delivery-option .radio-inline .text .pdp-button {
       width: 100%;
       max-width: 250px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032812}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032819}}
 .edit-cart--popup .popup-container--wrapper {
   max-width: 1180px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032814}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032821}}
   .edit-cart--popup .popup-container--wrapper .img-wrapper {
     margin-bottom: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032816}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032823}}
     .edit-cart--popup .popup-container--wrapper .img-wrapper img {
       width: auto;
       max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032822}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032829}}
   .edit-cart--popup .popup-container--wrapper .product-info .price {
     font-size: 24px;
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032827}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032834}}
   .edit-cart--popup .popup-container--wrapper .product-info .style {
     font-size: 11px;
     margin-bottom: 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032831}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032838}}
   .edit-cart--popup .popup-container--wrapper .product-info .category {
     font-size: 11px;
     margin-bottom: 14px;
     color: #b7b7b7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032836}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032843}}
   .edit-cart--popup .popup-container--wrapper .product-info .info {
     font-size: 13px;
     margin-bottom: 7px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032840}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032847}}
     .edit-cart--popup .popup-container--wrapper .product-info .info span.red {
       color: #b9161e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032846}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032853}}
   .edit-cart--popup .popup-container--wrapper .product-info .swatches ul {
     padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032848}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032855}}
     .edit-cart--popup .popup-container--wrapper .product-info .swatches ul li {
       display: inline-block;
       margin: 10px 3px 0;
       cursor: pointer;
       border: 1px solid transparent;
       transition: all 0.5s ease-in-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032854}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032861}}
       .edit-cart--popup .popup-container--wrapper .product-info .swatches ul li.selected {
         border: 1px solid #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032857}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032864}}
       .edit-cart--popup .popup-container--wrapper .product-info .swatches ul li img {
         width: auto;
         max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032864}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032871}}
   .edit-cart--popup .popup-container--wrapper .product-info .size {
     margin-top: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032867}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032874}}
   .edit-cart--popup .popup-container--wrapper .product-info .button {
     padding-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032869}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032876}}
     .edit-cart--popup .popup-container--wrapper .product-info .button .pdp-button {
       width: 100%;
       max-width: 300px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032874}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032881}}
   .edit-cart--popup .popup-container--wrapper .product-info .view-more-info {
     margin-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032876}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032883}}
     .edit-cart--popup .popup-container--wrapper .product-info .view-more-info a {
       color: #0263f7; }
 
 /* Cart CSS Closed */
 /* Cart Shipping Start */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032888}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032895}}
 .shipping-right--container .password-popup .popup-container--wrapper {
   max-width: 550px;
   margin: 0 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032891}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032898}}
   .shipping-right--container .password-popup .popup-container--wrapper h3 {
     font-size: 22px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032897}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032904}}
 .shipping-right--container .cart-btn .pdp-button {
   min-width: 250px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032901}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032908}}
 .shipping-right--container .shipping-form {
   padding-bottom: 15px;
   padding-top: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032904}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032911}}
   .shipping-right--container .shipping-form .email-msg {
     font-size: 15px;
     margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032909}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032916}}
   .shipping-right--container .shipping-form .password-wrapper {
     padding: 20px 15px;
     margin-bottom: 15px;
     background-color: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032913}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032920}}
     .shipping-right--container .shipping-form .password-wrapper .input-wrapper .input-field {
       background-color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032916}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032923}}
     .shipping-right--container .shipping-form .password-wrapper .reset-text {
       margin-top: -10px;
       text-align: right;
       font-size: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032920}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032927}}
       .shipping-right--container .shipping-form .password-wrapper .reset-text a {
         color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032924}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032931}}
     .shipping-right--container .shipping-form .password-wrapper .continue-step {
       display: inline-block;
       vertical-align: bottom;
       text-decoration: underline;
       color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032931}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032938}}
     .shipping-right--container .shipping-form .password-wrapper .cart-btn--password button {
       display: inline-block;
       width: 48%;
       margin-right: 5px;
       margin-top: 15px; }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032931}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032938}}
         .shipping-right--container .shipping-form .password-wrapper .cart-btn--password button {
           width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032943}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032950}}
 .shipping-right--container .billing-form {
   margin-bottom: 50px;
   border-top: 1px solid #d3d0cd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032946}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032953}}
   .shipping-right--container .billing-form .address-change {
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032949}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032956}}
   .shipping-right--container .billing-form .billing-address {
     display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032952}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032959}}
   .shipping-right--container .billing-form .cart-btn {
     display: block;
     margin-top: 24px; }
 
 /* /Cart Shipping close */
 /* Landing Page CSS Start*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032962}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032969}}
 .landingpage-banner {
   position: relative;
   min-height: 320px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032966}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032973}}
   .landingpage-banner picture img {
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032970}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032977}}
   .landingpage-banner .landingpage-banner--info {
     color: #ffffff;
     position: absolute;
@@ -4318,16 +4325,16 @@ textarea {
     top: 0;
     left: 0;
     z-index: 2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032978}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032985}}
     .landingpage-banner .landingpage-banner--info .banner--info {
       padding-top: 60px;
       max-width: 750px;
       color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032983}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032990}}
     .landingpage-banner .landingpage-banner--info .label--underline {
       position: relative;
       font-size: 16px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032986}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032993}}
       .landingpage-banner .landingpage-banner--info .label--underline:after {
         content: "";
         left: 0;
@@ -4336,10 +4343,10 @@ textarea {
         height: 1px;
         position: absolute;
         background: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032996}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033003}}
     .landingpage-banner .landingpage-banner--info h1 {
       margin-bottom: 22px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032999}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033006}}
     .landingpage-banner .landingpage-banner--info .transparent-button {
       color: #ffffff;
       outline: 0;
@@ -4357,32 +4364,32 @@ textarea {
       font-size: 17px;
       display: inline-block; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032999}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033006}}
         .landingpage-banner .landingpage-banner--info .transparent-button {
           padding: 12px 20px;
           font-size: 13px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033020}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033027}}
       .landingpage-banner .landingpage-banner--info .transparent-button:hover {
         background: #002855 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
         border: 1px solid #002855;
         color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033025}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033032}}
       .landingpage-banner .landingpage-banner--info .transparent-button:active {
         background-color: #6eb9f7;
         background-size: 100%;
         transition: background 0s; }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032999}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033006}}
         .landingpage-banner .landingpage-banner--info .transparent-button {
           padding: 15px;
           font-size: 15px; } }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032970}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000032977}}
       .landingpage-banner .landingpage-banner--info {
         margin-bottom: 60px !important;
         background-color: #ffffff;
         position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033046}}
         .landingpage-banner .landingpage-banner--info .landing-info {
           width: 250px;
           height: 180px;
@@ -4392,20 +4399,20 @@ textarea {
           transform: translateX(-50%);
           background: #ffffff;
           color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033048}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033055}}
           .landingpage-banner .landingpage-banner--info .landing-info .banner--info {
             padding-top: 0px;
             padding-bottom: 30px;
             color: #000000;
             text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033053}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033060}}
             .landingpage-banner .landingpage-banner--info .landing-info .banner--info .primary-button {
               min-width: 200px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033057}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033064}}
           .landingpage-banner .landingpage-banner--info .landing-info .label--underline {
             position: relative;
             font-size: 14px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033060}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033067}}
             .landingpage-banner .landingpage-banner--info .landing-info .label--underline:after {
               content: "";
               left: 100px;
@@ -4415,18 +4422,18 @@ textarea {
               position: absolute;
               background: #000000;
               text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033071}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033078}}
           .landingpage-banner .landingpage-banner--info .landing-info h1 {
             margin-bottom: 12px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033079}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033086}}
 .new-arrival {
   margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033081}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033088}}
   .new-arrival .new-arrival--container {
     display: block;
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033091}}
     .new-arrival .new-arrival--container .icon-style {
       position: absolute;
       z-index: 2;
@@ -4434,56 +4441,56 @@ textarea {
       cursor: pointer;
       left: 0; }
       @media screen and (max-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033091}}
         .new-arrival .new-arrival--container .icon-style {
           top: 7px; } }
       @media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033091}}
         .new-arrival .new-arrival--container .icon-style {
           top: 17px; } }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033091}}
         .new-arrival .new-arrival--container .icon-style {
           top: auto;
           bottom: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033107}}
       .new-arrival .new-arrival--container .icon-style:hover {
         color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033110}}
       .new-arrival .new-arrival--container .icon-style.icon-next-arrow {
         left: auto;
         right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033115}}
     .new-arrival .new-arrival--container .owl-carousel {
       width: 100%;
       margin: 0px auto; }
       @media screen and (max-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033115}}
         .new-arrival .new-arrival--container .owl-carousel {
           width: 90%; } }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033115}}
         .new-arrival .new-arrival--container .owl-carousel {
           width: 100%;
           position: relative; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033126}}
       .new-arrival .new-arrival--container .owl-carousel .item {
         padding: 0 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033128}}
         .new-arrival .new-arrival--container .owl-carousel .item img {
           width: 100%;
           cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033131}}
           .new-arrival .new-arrival--container .owl-carousel .item img.active-thumb {
             border: 1px solid #0263f7; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033139}}
       .new-arrival .new-arrival--container .owl-theme .owl-controls {
         text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033141}}
         .new-arrival .new-arrival--container .owl-theme .owl-controls .owl-page {
           display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033143}}
           .new-arrival .new-arrival--container .owl-theme .owl-controls .owl-page span {
             background: none repeat scroll 0 0 #869791;
             border-radius: 20px;
@@ -4493,56 +4500,56 @@ textarea {
             opacity: 0.5;
             width: 12px;
             text-align: center; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033157}}
     .new-arrival .new-arrival--container .product-info {
       display: block;
       margin: 0 auto;
       text-align: center;
       line-height: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033163}}
       .new-arrival .new-arrival--container .product-info .product-name .name-link {
         text-align: center;
         text-decoration: none;
         color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033170}}
       .new-arrival .new-arrival--container .product-info .product-price .product-sales-price {
         text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033179}}
 .pr-landing-page .prod-desc--wrapper {
   padding: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033181}}
   .pr-landing-page .prod-desc--wrapper .prod-desc {
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033183}}
     .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper {
       padding: 80px; }
       @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033183}}
         .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper {
           padding: 20px; } }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033183}}
         .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper {
           padding: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033191}}
       .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper h3 {
         margin: 0;
         margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033195}}
       .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper p {
         margin: 0;
         margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033199}}
       .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper ul {
         list-style-position: inside; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033201}}
         .pr-landing-page .prod-desc--wrapper .prod-desc .desc-wrapper ul li {
           margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033208}}
 .pr-landing-page .prod-detail-container {
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033210}}
   .pr-landing-page .prod-detail-container .prod-desc-block {
     position: absolute;
     top: 60px;
@@ -4556,87 +4563,87 @@ textarea {
     font-weight: normal;
     margin: 0; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033210}}
       .pr-landing-page .prod-detail-container .prod-desc-block {
         left: -10px;
         top: 35px;
         font-size: 14px;
         line-height: 16px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033230}}
   .pr-landing-page .prod-detail-container .pr-landing-page-block {
     text-align: center;
     width: 100%;
     max-width: 500px; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033230}}
       .pr-landing-page .prod-detail-container .pr-landing-page-block {
         padding-bottom: 20px; } }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033230}}
       .pr-landing-page .prod-detail-container .pr-landing-page-block {
         width: 100%;
         max-width: 350px;
         font-size: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033241}}
         .pr-landing-page .prod-detail-container .pr-landing-page-block .primary-button {
           padding: 6px;
           font-size: 6px;
           min-width: 110px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033252}}
 .landing-banner2 {
   min-height: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033254}}
   .landing-banner2 .landing-shoe-finder {
     background-color: #00d3d6;
     text-align: center;
     padding: 25px 15px;
     margin: 0px auto 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033259}}
     .landing-banner2 .landing-shoe-finder .br-heading {
       font-size: 25px;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033256}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033263}}
     .landing-banner2 .landing-shoe-finder .br-heading-mob {
       font-size: 22px;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033270}}
     .landing-banner2 .landing-shoe-finder .br-info {
       font-size: 23px;
       line-height: 1.3;
       margin-top: 5px;
       margin-bottom: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033276}}
     .landing-banner2 .landing-shoe-finder .br-info-mob {
       font-size: 20px;
       line-height: 1.1;
       margin-top: 5px;
       margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033282}}
     .landing-banner2 .landing-shoe-finder .primary-button {
       width: 100%;
       background-color: #ffffff;
       color: #0263f7;
       border: 1px solid #ffffff;
       transition: all 0.5s ease-in-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033288}}
       .landing-banner2 .landing-shoe-finder .primary-button:hover {
         background-color: #0263f7;
         color: #ffffff;
         border: 1px solid #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033294}}
     .landing-banner2 .landing-shoe-finder img {
       margin-top: 20px;
       width: auto;
       max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033299}}
     .landing-banner2 .landing-shoe-finder .lp-shoefinder-btn {
       width: 100%;
       max-width: 300px;
       float: right;
       margin-top: 3%; }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033299}}
         .landing-banner2 .landing-shoe-finder .lp-shoefinder-btn {
           padding-top: 20px;
           max-width: 180px;
@@ -4644,45 +4651,45 @@ textarea {
           display: block;
           float: none; } }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033299}}
         .landing-banner2 .landing-shoe-finder .lp-shoefinder-btn {
           margin-top: 8%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033308}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033315}}
     .landing-banner2 .landing-shoe-finder .lp-shoefinder-logo {
       width: 100%;
       max-width: 100px;
       float: left; }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033308}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033315}}
         .landing-banner2 .landing-shoe-finder .lp-shoefinder-logo {
           max-width: 500px;
           margin: 0 auto;
           display: block;
           float: none; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033328}}
 .landingpage-info {
   background-color: #f1f1f1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033333}}
   .landingpage-info .lp-info-wrapper .lp-info .lp-info-title {
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033336}}
   .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail {
     float: none;
     position: relative;
     min-height: 1px;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033341}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"] {
       display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033344}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-content {
       display: none;
       padding-bottom: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033347}}
       .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-content p {
         font-size: 17px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033353}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-header label span {
       visibility: visible;
       opacity: 1;
@@ -4696,63 +4703,63 @@ textarea {
       height: 28px;
       text-align: center;
       transition: all 0.5s ease-in-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033368}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail .lp-info-header label h3:before {
       content: "Read more "; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033374}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-content {
       display: block;
       margin-top: -15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033380}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-header label h3:before {
       content: "Read less "; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033384}}
     .landingpage-info .lp-info-wrapper .lp-info .lp-info-detail input[type="checkbox"]:checked ~ .lp-info-header label span {
       transform: rotate(45deg); }
 
 /* /landing Page */
 /*payment css */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033397}}
 .payment-container h1 {
   margin-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033400}}
 .payment-container .payment-tab {
   border-bottom: 1px solid #d3d0cd;
   padding-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033404}}
   .payment-container .payment-tab .input-wrapper .mark {
     top: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033407}}
   .payment-container .payment-tab .input-wrapper .text {
     padding-left: 23px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033409}}
     .payment-container .payment-tab .input-wrapper .text img {
       width: auto;
       max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033406}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033413}}
     .payment-container .payment-tab .input-wrapper .text .info {
       text-decoration: underline;
       font-size: 11px;
       color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033422}}
 .payment-container .secured-info {
   font-size: 19px;
   color: #0263f7;
   margin: 8px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033428}}
   .payment-container .secured-info span.tick {
     width: 20px;
     height: 20px;
     background-color: #0263f7;
     color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033429}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033436}}
 .payment-container .tab-content {
   padding: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033433}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033440}}
 .payment-container .shipping-form .card-after {
   display: block;
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033443}}
   .payment-container .shipping-form .card-after:after {
     content: "";
     width: 1px;
@@ -4762,317 +4769,317 @@ textarea {
     position: absolute;
     right: 0;
     background-color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033454}}
 .payment-container .shipping-form .cart-btn {
   padding-top: 15px;
   max-width: 250px;
   margin-bottom: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033458}}
   .payment-container .shipping-form .cart-btn .pdp-button {
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033455}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033462}}
 .payment-container .shipping-form .security-code {
   max-width: 150px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033467}}
 .payment-container .payment-afterpay h3 {
   color: #0263f7;
   font-size: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033476}}
 .payment-container .payment-afterpay .header p {
   font-size: 11px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033474}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033481}}
 .payment-container .payment-afterpay .payment-schedule h3 {
   margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033485}}
 .payment-container .payment-afterpay .payment-schedule ul li {
   list-style-type: none;
   margin: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033488}}
   .payment-container .payment-afterpay .payment-schedule ul li .round-icon {
     display: inline-block;
     vertical-align: middle;
     width: 21px;
     height: 21px;
     background: url(../images/payment-round1.jpg); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033487}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033494}}
     .payment-container .payment-afterpay .payment-schedule ul li .round-icon.icon1 {
       background-position: -2px -9px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033490}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033497}}
     .payment-container .payment-afterpay .payment-schedule ul li .round-icon.icon2 {
       background-position: -2px -38px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033493}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033500}}
     .payment-container .payment-afterpay .payment-schedule ul li .round-icon.icon3 {
       background-position: -2px -68px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033496}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033503}}
     .payment-container .payment-afterpay .payment-schedule ul li .round-icon.icon4 {
       background-position: -2px -97px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033507}}
   .payment-container .payment-afterpay .payment-schedule ul li p {
     display: inline-block;
     margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033509}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033516}}
 .payment-container .payment-afterpay .payment-schedule .payment-btn {
   margin-top: 15px;
   max-width: 300px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033512}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033519}}
   .payment-container .payment-afterpay .payment-schedule .payment-btn .pdp-button {
     width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033517}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033524}}
 .payment-container .payment-afterpay .paypal-btn {
   width: auto;
   max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033521}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033528}}
 .payment-container .payment-afterpay .payment-afterpay--info {
   max-width: 430px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033530}}
   .payment-container .payment-afterpay .payment-afterpay--info p {
     font-size: 12px; }
 
 /* / payment css*/
 /* success css*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033535}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033542}}
 .success-container .cart-success--info .order span {
   color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033539}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033546}}
 .success-container .cart-success--info .blue {
   color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033543}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033550}}
 .success-container .footer-order {
   border-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033546}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033553}}
 .success-container--footer {
   margin-bottom: 50px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033548}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033555}}
   .success-container--footer .header {
     background-color: #0263f7;
     color: #ffffff;
     padding: 10px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033552}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033559}}
     .success-container--footer .header h3 {
       font-size: 14px;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033557}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033564}}
     .success-container--footer .header p {
       font-size: 11px;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033562}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033569}}
   .success-container--footer .form-container {
     background-color: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033564}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033571}}
     .success-container--footer .form-container .form-wrapper {
       padding: 20px 20px 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033567}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033574}}
       .success-container--footer .form-container .form-wrapper .input-wrapper .input-field {
         background-color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033572}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033579}}
     .success-container--footer .form-container .cart-btn {
       padding-top: 10px;
       max-width: 230px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033575}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033582}}
       .success-container--footer .form-container .cart-btn .pdp-button {
         width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033579}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033586}}
     .success-container--footer .form-container .form-info {
       padding: 20px 20px 40px;
       max-width: 450px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033583}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033590}}
       .success-container--footer .form-container .form-info p.main {
         color: #0263f7; }
 
 /* /success css*/
 /* sale-page css */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033599}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033606}}
 .sale-container .clothing-bg {
   background-color: #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033602}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033609}}
 .sale-container--wrapper {
   padding: 30px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033604}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033611}}
   .sale-container--wrapper .img-wrapper {
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033606}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033613}}
     .sale-container--wrapper .img-wrapper img {
       width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033609}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033616}}
     .sale-container--wrapper .img-wrapper .img-info {
       color: #ffffff;
       position: absolute;
       bottom: 30px;
       left: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033614}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033621}}
       .sale-container--wrapper .img-wrapper .img-info .btn {
         max-width: 230px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033617}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033624}}
       .sale-container--wrapper .img-wrapper .img-info h3 {
         font-size: 40px;
         margin: 0;
         margin-bottom: 5px; }
         @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033617}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033624}}
           .sale-container--wrapper .img-wrapper .img-info h3 {
             font-size: 30px;
             line-height: 1.2; } }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033609}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033616}}
         .sale-container--wrapper .img-wrapper .img-info {
           bottom: 30px;
           left: 30px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033634}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033641}}
   .sale-container--wrapper .info-wrapper h4 {
     font-size: 27px;
     color: #0263f7;
     margin: 4px 0 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033640}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033647}}
   .sale-container--wrapper .info-wrapper p {
     margin: 0; }
 
 /* /sale-page css */
 /* contact us page */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033649}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033656}}
 .contact-us--banner {
   background-color: #002855;
   color: #ffffff;
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033653}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033660}}
   .contact-us--banner .heading {
     position: absolute;
     top: 20px;
     left: 15px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033659}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033666}}
 .contact-us--container {
   border-right: 1px solid #d3d0cd;
   padding-right: 40px; }
   @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033659}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033666}}
     .contact-us--container {
       border-right: 0px solid #d3d0cd;
       padding-right: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033667}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033674}}
   .contact-us--container .quick-help--link li {
     list-style-type: none;
     margin: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033671}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033678}}
     .contact-us--container .quick-help--link li a {
       color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033673}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033680}}
       .contact-us--container .quick-help--link li a:hover {
         color: #002855; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033680}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033687}}
 .contact-details--right {
   padding: 40px 0; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033680}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033687}}
     .contact-details--right {
       padding: 15px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033685}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033692}}
   .contact-details--right .info-wrapper {
     position: relative;
     padding-left: 50px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033688}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033695}}
     .contact-details--right .info-wrapper .icon {
       width: 45px;
       height: 45px;
       position: absolute;
       top: -3px;
       left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033694}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033701}}
       .contact-details--right .info-wrapper .icon img {
         width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033699}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033706}}
     .contact-details--right .info-wrapper .info h3 {
       margin: 0;
       margin-bottom: 15px; }
 
 /* /contact us page */
 /* about us page */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033709}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033716}}
 .about-header {
   padding: 0 15px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033713}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033720}}
 .about-container .accordian-tab {
   color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033715}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033722}}
   .about-container .accordian-tab label {
     width: 100%;
     margin: auto;
     max-width: 1170px;
     padding: 17px 70px 17px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033721}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033728}}
     .about-container .accordian-tab label:after {
       top: 16px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033725}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033732}}
   .about-container .accordian-tab.color1 {
     background-color: #44bdb5; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033728}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033735}}
   .about-container .accordian-tab.color2 {
     background-color: #f3872c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033731}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033738}}
   .about-container .accordian-tab.color3 {
     background-color: #00bce1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033734}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033741}}
   .about-container .accordian-tab.color4 {
     background-color: #febf17; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033738}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033745}}
 .about-container--info {
   width: 100%;
   max-width: 1170px;
   margin: auto;
   padding: 30px 15px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033743}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033750}}
   .about-container--info h4 {
     font-size: 18px;
     line-height: 1.3;
     margin: 0 0 15px;
     color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033749}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033756}}
     .about-container--info h4 span {
       color: #000000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033754}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033761}}
   .about-container--info ul {
     list-style-position: inside;
     margin: 0 0 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033757}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033764}}
     .about-container--info ul li {
       list-style-type: square;
       line-height: 1.3;
       margin: 0 0 6px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033763}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033770}}
   .about-container--info h5 {
     font-size: 18px;
     line-height: 1.3;
     margin: 0 0 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033768}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033775}}
     .about-container--info h5 span {
       color: #000000; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033775}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033782}}
 .injury-info {
   padding: 30px 15px; }
 
 /* /about us page */
 /* run signature */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033788}}
 .run-signature--img {
   text-align: right; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033788}}
     .run-signature--img {
       text-align: center;
       margin-top: 15px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033787}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033794}}
   .run-signature--img img {
     width: auto;
     max-width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033792}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033799}}
 .run-signature--patti {
   background-color: #00d3d6;
   color: #ffffff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033797}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033804}}
 .run-signature--work {
   text-align: center;
   max-width: 1000px;
@@ -5080,115 +5087,156 @@ textarea {
   border-bottom: 1px solid #d3d0cd;
   padding-bottom: 40px;
   margin-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033804}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033811}}
   .run-signature--work .work-wrapper {
     margin-top: 30px;
     color: #0263f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033808}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033815}}
     .run-signature--work .work-wrapper h3 {
       margin: 0;
       font-size: 38px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033813}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033820}}
     .run-signature--work .work-wrapper p {
       margin: 6px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033817}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033824}}
   .run-signature--work .btn {
     margin-bottom: 10px;
     max-width: 240px;
     margin: auto;
     margin-top: 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033824}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033831}}
 .run-exep {
   max-width: 1000px;
   margin: 0 auto 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033827}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033834}}
   .run-exep .heading {
     text-align: center;
     margin-top: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033830}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033837}}
     .run-exep .heading h3 {
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033834}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033841}}
   .run-exep--wrapper {
     margin-top: 30px;
     padding: 24px 30px;
     color: #ffffff;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033840}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033847}}
     .run-exep--wrapper .btn-wrapper .secondary-button {
       display: inline-block;
       width: 47%;
       margin: 5px 1%; }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033840}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033847}}
         .run-exep--wrapper .btn-wrapper .secondary-button {
           width: 100%;
           margin: 10px 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033848}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033855}}
       .run-exep--wrapper .btn-wrapper .secondary-button:hover {
         background-color: #ffffff;
         border: 2px solid #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033854}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033861}}
     .run-exep--wrapper.bg1 {
       background-color: #03937d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033858}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033865}}
       .run-exep--wrapper.bg1 .btn-wrapper .secondary-button:hover {
         color: #03937d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033864}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033871}}
     .run-exep--wrapper.bg2 {
       background-color: #007cb7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033868}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033875}}
       .run-exep--wrapper.bg2 .btn-wrapper .secondary-button:hover {
         color: #007cb7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033874}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033881}}
     .run-exep--wrapper.bg3 {
       background-color: #c0250c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033878}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033885}}
       .run-exep--wrapper.bg3 .btn-wrapper .secondary-button:hover {
         color: #c0250c; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033884}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033891}}
     .run-exep--wrapper.bg4 {
       background-color: #f58422; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033888}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033895}}
       .run-exep--wrapper.bg4 .btn-wrapper .secondary-button:hover {
         color: #f58422; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033894}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033901}}
     .run-exep--wrapper h3 {
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033897}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033904}}
     .run-exep--wrapper img {
       width: auto;
       max-width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033903}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033910}}
 .run-sig--footer {
   border-top: 1px solid #d3d0cd;
   max-width: 1000px;
   margin: 10px auto 60px;
   padding-top: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033908}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033915}}
   .run-sig--footer .left-img {
     text-align: center;
     margin-bottom: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033911}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033918}}
     .run-sig--footer .left-img img {
       width: 100%;
       max-width: 490px; }
   @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033916}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033923}}
     .run-sig--footer .right-info {
       text-align: center; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033920}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033927}}
   .run-sig--footer .right-info h3 {
     margin-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033923}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033930}}
   .run-sig--footer .right-info .btn {
     max-width: 270px;
     margin-top: 30px; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033923}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033930}}
       .run-sig--footer .right-info .btn {
         margin: 30px auto 0; } }
 
 /* /run signature */
+/* Loader */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033944}}
+.br-loader #br-pg-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 700;
+  cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033957}}
+.br-loader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25%;
+  z-index: 700;
+  margin-top: -200px;
+  margin-left: -500px; }
+  @media only screen and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033957}}
+    .br-loader img {
+      top: 0%;
+      left: 40%;
+      width: 30%;
+      margin-top: 0;
+      margin-left: 0px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/common\.scss}line{font-family:\000033957}}
+    .br-loader img {
+      top: 0%;
+      left: 40%;
+      width: 30%;
+      margin-top: 0;
+      margin-left: 0px; } }
+
+/* /loader */

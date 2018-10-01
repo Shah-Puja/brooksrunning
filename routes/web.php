@@ -40,9 +40,6 @@ Route::middleware(['allowOnlyAjax'])->group(function () {
 	Route::delete('/cartitem', 'CartItemsController@destroy');
 });
 
-Route::get('/shipping','BillingShippingController@create');
-Route::post('/shipping','BillingShippingController@store');
 
-Route::get('/payment', 'PaymentController@create');
-Route::post('/payment', 'PaymentController@store');
-
+/* info static pages */
+Route::get('/about-us', 'InfoController@about_us');

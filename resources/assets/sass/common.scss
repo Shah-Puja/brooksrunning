@@ -2182,6 +2182,13 @@
         .pdp-button{
             width: 100%;
         }
+        .pdp-button-disabled{
+          width: 100%;
+              background-color: $gray;
+              &:hover{
+                border: 1px solid $border;
+              }
+            }
       }
     }
     &--offer{
@@ -3931,6 +3938,48 @@
 }
 /* /run signature */
 
+/* Loader */
+
+    .br-loader{
+            #br-pg-overlay {
+                position: fixed;
+                display: none;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 700;
+                cursor: pointer;
+            }
+            img {
+                  position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 width: 25%;
+                 z-index: 700;
+                 margin-top: -200px; 
+                 margin-left: -500px; 
+                 @media #{$mobile-only}{
+                 top: 0%;
+                 left: 40%;
+                 width: 30%; 
+                 margin-top: 0;
+                  margin-left: 0px;
+                 }
+                   @media #{$tab-only}{
+                 top: 0%;
+                 left: 40%;
+                 width: 30%; 
+                 margin-top: 0;
+                  margin-left: 0px;
+                 }
+               
+          }
+        }
+/* /loader */
 
 
 
