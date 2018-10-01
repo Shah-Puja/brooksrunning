@@ -7,19 +7,53 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
-{
+{   
+    use NodeTrait;
+	
     public function products()
     {
-        //return $this->belongsToMany('App\Product');
         return $this->morphToMany('App\Models\Product', 'group');
     }
 
+    public function groups()
+    {
+    	return $this->hasMany('App\Models\group','group_id','id');
+    }
+
+    /**
+	 * Get the route key for the model.
+	 *
+	 * @return string
+	 */
+	public function getRouteKeyName()
+	{
+	    return 'slug';
+    }
+    
     public static function getProducts($category) {              
+
+        return \App\Models\Product::query() 
+            ->whereHas('categories', function($query) use ($category) { 
+                return $query->whereSlug($category); 
+                })
+            ->whereHas('variants' , function($query)  {
+                return $query->where('visible', '=', 'Yes');
+            })
+            ->with('variants')
+            ->orderBy('style')
+            ->orderBy('seqno')
+            ->get();
+            //->get(['id','style','stylename', 'seqno', 'color_code']);
+            //->values();   
+        
+        
+    }
+    public static function getProducts_BKP2($gender, $category, $prod_type) {              
 
         //return \App\Product::query()
         $products = \App\Models\Product::query() 
-             ->where('gender', 'W')
-            // ->where('prod_type', $prod_type)
+            //->where('gender', $gender)
+            //->where('prod_type', $prod_type)
             ->whereHas('categories', function($query) use ($category) { 
                 return $query->whereName($category); 
                 })
@@ -37,6 +71,7 @@ class Category extends Model
         
         
     }
+
     public static function getProducts_bkp($gender, $category, $prod_type) {
         return \App\Models\Product::query()
         ->where('gender', $gender)

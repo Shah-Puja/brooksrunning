@@ -15,7 +15,11 @@ class CategoryController extends Controller
         }
 
         $styles = $products->unique('style');
+        
+        //echo "<pre>";
+        //print_r($styles);
+        //echo "</pre>";
 
-        return view( 'welcome', compact('products', 'styles') );
+        return view( 'customer.categorylower', compact('products', 'styles') );
     }
 }

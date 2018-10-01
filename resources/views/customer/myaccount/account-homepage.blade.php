@@ -1,0 +1,42 @@
+<?php include("header.php") ?>
+<div class="create-account--header">
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="br-mainheading">Welcome, Meagan!</h1>
+				<p>Not Meagan? <a href="#">Logout</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="create-account wrapper">
+	<div class="row">
+		<div class="tab-4">
+			<div class="create-account--homepage">
+				<div class="icon-img">
+					<img src="images/accounts/icon-account-details.png" alt="">
+				</div>
+				<h3 class="br-heading">Personal Details</h3>
+				<div class="br-info">Manage your name, email and password</div>
+				<a href="account-personal.php" class="primary-button">View Details</a>
+			</div>
+		</div>
+		<div class="tab-4">
+			<div class="create-account--homepage">
+				<div class="icon-img">
+					<img src="images/accounts/icon-order-history.png" alt="">
+				</div>
+				<h3 class="br-heading">Order History</h3>
+				<div class="br-info">Manage your name, email and password</div>
+				<a href="account-personal.php" class="primary-button">View Order History</a>
+			</div>
+		</div>
+		<div class="tab-4">
+			<div class="create-account--banner">
+				<img src="images/accounts/account-banner.png" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+
+<?php include("footer.php") ?>

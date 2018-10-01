@@ -13,8 +13,13 @@ class CartItemsController extends Controller
 	public function __construct()
 	{
 		$this->middleware(function ($request, $next) {
-            $this->variantSelected = Variant::find( request('id') );
-            //echo "<pre>";print_r($this->variantSelected);die;
+            //echo "<pre>";print_r($request->all()); echo "<hr>";
+            $this->variantSelected = Variant::select('*')->where([
+                ['size', request('size')],
+                ['product_id', request('product_id')],
+                ['width_code', request('width_code')]
+            ])->first();
+            
 	        if ( ! $this->variantSelected ) {
 	            return response()->json([ 'errors' => 'Invalid Item' ], 400);
 	        }

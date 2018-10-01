@@ -69,3 +69,113 @@
 		</div>
 	</div>
 </section>
+
+<!-- Size chart popup  -->
+<div id="sizechart-popup--wrapper" class="popup-container size-chart--popup">
+         <div class="popup-container--wrapper">
+          <div class="popup-container--info">
+           <div class="close-me" id="sizechart-popup--close"><span class="icon-close-icon"></span></div>
+           <!-- shoes size chart -->
+           <div class="tab-container" style="display: none;">
+            <ul class="tabs size-chart--tab">
+             <li class="tab-link current" data-tab="tab-1">
+              <div class="input-wrapper">
+                 <div class="radio-inline">
+                    <input type="radio" name="sizechart" id="tab-opt1" checked="checked">
+                     <label for="tab-opt1">
+                          <div class="mark"><span></span></div>
+                          <div class="text">General Sizing Tips</div>
+                      </label>
+                 </div>
+              </div> 
+             </li>
+             <li class="tab-link" data-tab="tab-2">
+              <div class="input-wrapper">
+                 <div class="radio-inline">
+                    <input type="radio" name="sizechart" id="tab-opt2">
+                     <label for="tab-opt2">
+                          <div class="mark"><span></span></div>
+                          <div class="text">Switching to Brooks?</div>
+                      </label>
+                 </div>
+              </div>
+             </li>
+             <li class="tab-link" data-tab="tab-3">
+              <div class="input-wrapper">
+                 <div class="radio-inline">
+                    <input type="radio" name="sizechart" id="tab-opt3">
+                     <label for="tab-opt3">
+                          <div class="mark"><span></span></div>
+                          <div class="text">International Size Chart</div>
+                      </label>
+                 </div>
+              </div>
+             </li>
+            </ul>
+            <div id="tab-1" class="tab-content current">
+             <div class="size-chart-wrapper">
+              <h3 class="br-heading">General Sizing Tips</h3>
+              <h4>Size up</h4>
+              <p>We recommend ordering Brooks running shoes 1/2 size to one size larger than normal dress shoes</p>
+              <h4>Select width</h4>
+              <p>For women's footwear, B is the standard width. 2A is narrow, D is wide, and 2E is extra wide. For men's footwear, D is standard, B is narrow, 2E is wide, and 4E is extra wide.</p>
+              <h4>Unisex sizing</h4>
+              <p>Ladies, when orderding "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
+              <h4>Get fit</h4>
+              <p>Whenever possible, visit your local running and walking footwear store for a proper fitting.</p>
+              <h4>Can't make it to a store?</h4>
+              <p>Our online tools can help you out. Shoefitr compares the fit of your current shoe with other models and finds your perfect fit. If you're switching to Brooks, check out our Shoe Finder, where you can either tell us what brand of shoe you wear and we'll show you something better – or you can answer five simple questions and we'll introduce you to your sole mate. And, our International Size Chart can help make the size translations for the UK, Europe, and Japan.</p>
+             </div>
+            </div>
+            <div id="tab-2" class="tab-content">
+              <div class="size-chart-wrapper">
+              <div class="clearfix">
+               <div class="col-4 tab-5">
+                <div class="plp-store-finder">
+                 <h3 class="br-heading">Need help<br/>choosing a shoe?</h3>
+                 <p class="br-info">Try the shoe finder</p>
+                 <a class="primary-button" href="#">Shoe Finder</a>
+                 <img src="/images/brooks-shoes--logo.png" alt="">
+                </div>
+               </div>
+               <div class="col-8 tab-7">
+                <h3 class="br-heading">Switching to Brooks</h3>
+                <h4>Find your solemate</h4>
+                <p>Running shoes are not created equal - we're the first to agree with that! But if you've been running in shoes from another brand, and want to try Brooks, it's helpful to know where to start. Check out our Shoe Finder, where you can either tell us what brand of shoe you wear and we'll show you something better – or you can answer five simple questions and we'll introduce you to your sole mate.</p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div id="tab-3" class="tab-content">
+             <div class="size-chart-wrapper">
+              <h3 class="br-heading">International Size Chart</h3>
+              <p>Sizing on BrooksRunning.com is displayed in US sizes only. For international sizes, please see conversion chart, below.</p>
+              <img src="/images/size-chart--shoes.png" class="chart-img">
+             </div>
+            </div>
+           </div>
+           <!-- /shoes size chart -->
+           <!-- bras size chart -->
+           <div class="size-chart--bras">
+            <h3 class="br-heading">Sports Bras</h3>
+            <div class="info">
+             <h4>Sizing guide</h4>
+             <p>Sizing on BrooksRunning.com is displayed in US sizes only.</p>
+            </div>
+            <img src="/images/size-chart--bras.png" alt="">
+           </div>
+           <!-- /bras size chart -->
+           <!-- clothing size chart -->
+           <div class="size-chart--bras" style="display: none;">
+            <h3 class="br-heading">Men's Clothing</h3>
+            <div class="info">
+             <h4>Size &amp; Fit Guide</h4>
+             <p>Sizing on BrooksRunning.com is displayed in US sizes only.</p>
+            </div>
+            <img src="/images/size-chart--clothings.png" alt="">
+           </div>
+           <!-- /clothing size chart -->
+          </div>
+         </div>
+        </div>
+        <!-- /Size chart popup -->
