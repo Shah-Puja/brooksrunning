@@ -42,19 +42,19 @@
                         <!-- Level Three-->
                         <ul>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-neutral-running-shoes">Neutral Running</a>
+                                <a href="/womens-neutral-running-shoes">Neutral Running</a>
                                 <p>Superior cushioning for runners that don't need added support.</p>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-support-running-shoes">Support Running</a>
+                                <a href="/womens-support-running-shoes">Support Running</a>
                                 <p>Superior cushioning and support features for runners that overpronate (roll inward).</p>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-lightweight-running-shoes">Lightweight Running</a>
+                                <a href="/womens-lightweight-running-shoes">Lightweight Running</a>
                                 <p>Lightweight and low profile running shoes.</p>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-competition-running-shoes">Competition Running</a>
+                                <a href="/womens-competition-running-shoes">Competition Running</a>
                                 <p>Fast and built for speed, on the road or track.</p>
                             </li>
                         </ul>
@@ -66,31 +66,31 @@
                         <!-- Level Three-->
                         <ul>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-sports-bras">Sports Bras</a>
+                                <a href="/womens-sports-bras">Sports Bras</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-shorts">Shorts</a>
+                                <a href="/womens-running-shorts">Shorts</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-tops">Tops</a>
+                                <a href="/womens-running-tops">Tops</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-jackets-vests">Jackets &amp; Vests</a>
+                                <a href="/womens-running-jackets-vests">Jackets &amp; Vests</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-pants-tights">Tights &amp; Pants</a>
+                                <a href="/womens-running-pants-tights">Tights &amp; Pants</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-reflective-running-gear">NightLife High-Visibility</a>
+                                <a href="/womens-reflective-running-gear">NightLife High-Visibility</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-socks">Socks</a>
+                                <a href="/womens-running-socks">Socks</a>
                             </li>
                             <li>
-                                <a href="https://www.brooksrunning.com.au/womens-running-accessories">Accessories</a>
+                                <a href="/womens-running-accessories">Accessories</a>
                             </li>
                             <li class="sale">
-                                <a href="https://www.brooksrunning.com.au/womens-running-clothes-sale">SALE Clothing</a>
+                                <a href="/womens-running-clothes-sale">SALE Clothing</a>
                             </li>
                         </ul>
                     </li>
