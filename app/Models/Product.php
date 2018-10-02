@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 class Product extends Model
 {
     protected $table = 'p_products';    
-    protected $with = ['image'];
+    protected $with = ['image','tags'];
 
     protected static function boot()
     {
