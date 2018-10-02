@@ -37,12 +37,12 @@
         swipeThreshold: 40,
         responsive: [],
         /* jshint ignore:start */
-        onBeforeStart: function ($el) {},
-        onSliderLoad: function ($el) {},
-        onBeforeSlide: function ($el, scene) {},
-        onAfterSlide: function ($el, scene) {},
-        onBeforeNextSlide: function ($el, scene) {},
-        onBeforePrevSlide: function ($el, scene) {}
+        onBeforeStart: function ($el) { },
+        onSliderLoad: function ($el) { },
+        onBeforeSlide: function ($el, scene) { },
+        onAfterSlide: function ($el, scene) { },
+        onBeforeNextSlide: function ($el, scene) { },
+        onBeforePrevSlide: function ($el, scene) { }
         /* jshint ignore:end */
     };
     $.fn.lightSlider = function (options) {
@@ -378,7 +378,7 @@
                         }
                     }
                     var $cSouter = $slide.parent();
-                    $cSouter.find('.lSPager').html(pagers); 
+                    $cSouter.find('.lSPager').html(pagers);
                     if (settings.gallery === true) {
                         if (settings.vertical === true) {
                             // set Gallery thumbnail width
@@ -447,12 +447,12 @@
                 };
                 setCss();
                 if (obj.find('img').length) {
-                    if ( obj.find('img')[0].complete) {
+                    if (obj.find('img')[0].complete) {
                         setCss();
                         if (!interval) {
                             $this.auto();
-                        }   
-                    }else{
+                        }
+                    } else {
                         obj.find('img').on('load', function () {
                             setTimeout(function () {
                                 setCss();
@@ -462,7 +462,7 @@
                             }, 100);
                         });
                     }
-                }else{
+                } else {
                     if (!interval) {
                         $this.auto();
                     }
@@ -612,14 +612,14 @@
             slideThumb: function () {
                 var position;
                 switch (settings.currentPagerPosition) {
-                case 'left':
-                    position = 0;
-                    break;
-                case 'middle':
-                    position = (elSize / 2) - (thumbWidth / 2);
-                    break;
-                case 'right':
-                    position = elSize - thumbWidth;
+                    case 'left':
+                        position = 0;
+                        break;
+                    case 'middle':
+                        position = (elSize / 2) - (thumbWidth / 2);
+                        break;
+                    case 'right':
+                        position = elSize - thumbWidth;
                 }
                 var sc = scene - $el.find('.clone.left').length;
                 var $pager = $slide.parent().find('.lSPager');
@@ -647,15 +647,15 @@
                     }, settings.pause);
                 }
             },
-            pauseOnHover: function(){
+            pauseOnHover: function () {
                 var $this = this;
                 if (settings.auto && settings.pauseOnHover) {
-                    $slide.on('mouseenter', function(){
+                    $slide.on('mouseenter', function () {
                         $(this).addClass('ls-hover');
                         $el.pause();
                         settings.auto = true;
                     });
-                    $slide.on('mouseleave',function(){
+                    $slide.on('mouseleave', function () {
                         $(this).removeClass('ls-hover');
                         if (!$slide.find('.lightSlider').hasClass('lsGrabbing')) {
                             $this.auto();
@@ -874,11 +874,11 @@
                     }
                 }
 
-                $(window).on('focus', function(){
+                $(window).on('focus', function () {
                     $this.auto();
                 });
-                
-                $(window).on('blur', function(){
+
+                $(window).on('blur', function () {
                     clearInterval(interval);
                 });
 
@@ -927,7 +927,7 @@
                 if (settings.mode === 'slide') {
                     if (settings.vertical === false) {
                         plugin.setHeight($el, false);
-                    }else{
+                    } else {
                         plugin.auto();
                     }
                 } else {
@@ -1080,7 +1080,7 @@
                 }
             }
             return sc + 1;
-        }; 
+        };
         $el.getTotalSlideCount = function () {
             return $slide.find('.lslide').length;
         };
@@ -1097,18 +1097,18 @@
         };
         $el.destroy = function () {
             if ($el.lightSlider) {
-                $el.goToPrevSlide = function(){};
-                $el.goToNextSlide = function(){};
-                $el.mode = function(){};
-                $el.play = function(){};
-                $el.pause = function(){};
-                $el.refresh = function(){};
-                $el.getCurrentSlideCount = function(){};
-                $el.getTotalSlideCount = function(){};
-                $el.goToSlide = function(){}; 
+                $el.goToPrevSlide = function () { };
+                $el.goToNextSlide = function () { };
+                $el.mode = function () { };
+                $el.play = function () { };
+                $el.pause = function () { };
+                $el.refresh = function () { };
+                $el.getCurrentSlideCount = function () { };
+                $el.getTotalSlideCount = function () { };
+                $el.goToSlide = function () { };
                 $el.lightSlider = null;
                 refresh = {
-                    init : function(){}
+                    init: function () { }
                 };
                 $el.parent().parent().find('.lSAction, .lSPager').remove();
                 $el.removeClass('lightSlider lSFade lSSlide lsGrab lsGrabbing leftEnd right').removeAttr('style').unwrap().unwrap();
@@ -1168,7 +1168,7 @@ function exitFullscreen() {
 }
 
 // number quantity count
-$(document).on('click','#quantity-selector #adds',function add() {
+$(document).on('click', '#quantity-selector #adds', function add() {
     var $rooms = $("#quantity-selector #noOfRoom");
     var a = $rooms.val();
     a++;
@@ -1178,7 +1178,7 @@ $(document).on('click','#quantity-selector #adds',function add() {
 
 $("#quantity-selector #subs").prop("disabled", !$("#quantity-selector #noOfRoom").val());
 
-$(document).on('click','#quantity-selector #subs',function subst() {
+$(document).on('click', '#quantity-selector #subs', function subst() {
     var $rooms = $("#quantity-selector #noOfRoom");
     var b = $rooms.val();
     if (b >= 1) {
@@ -1190,11 +1190,11 @@ $(document).on('click','#quantity-selector #subs',function subst() {
     }
 });
 
-$(document).on('click','.swatches li:not(".selected")',function(){
+$(document).on('click', '.swatches li:not(".selected")', function () {
     let url = $(this).data('url');
     let value = $(this).attr("alt");
     console.log(url);
-    $( "#data-load" ).load( url + " #data-load", function() {
+    $("#data-load").load(url + " #data-load", function () {
         $('#pdp-zoom--image').lightSlider({
             gallery: true,
             item: 1,
@@ -1203,17 +1203,17 @@ $(document).on('click','.swatches li:not(".selected")',function(){
         });
         ChangeUrl(value, url);
     });
-   
+
     return false;
 });
 
-$(document).on('click','.size-show li:not(".disable")',function(){
-   if($(this).data('value')!=''){
+$(document).on('click', '.size-show li:not(".disable")', function () {
+    if ($(this).data('value') != '') {
         $(".size-show li").removeClass("selected");
         $(this).addClass("selected");
         let size_val = $(this).data('value');
         $("#detail input[name='size']").val(size_val);
-   }
+    }
     return false;
 });
 
@@ -1221,42 +1221,81 @@ $(document).on('click','.size-show li:not(".disable")',function(){
 function ChangeUrl(page, url) {
     if (typeof (history.pushState) != "undefined") {
         var obj = { Page: page, Url: url };
-		history.pushState(obj, obj.Page, obj.Url);
+        history.pushState(obj, obj.Page, obj.Url);
     } else {
         console.log("Browser does not support HTML5.");
     }
 }
 
-window.addEventListener('popstate', function(event) {
-	if(event.state){
-		var url = event.state.Url;
-		window.location.href=url;
-	}
+window.addEventListener('popstate', function (event) {
+    if (event.state) {
+        var url = event.state.Url;
+        window.location.href = url;
+    }
 });
 
-function detail_validation(){
+function detail_validation() {
     $(".size .main").find("span").text("").removeClass("valerror");
     $(".width-wrapper").find(".main span").text("").removeClass("valerror");
     $(".quantity-wrapper").find("span").text("").removeClass("valerror");
     let form = true;
-    if($("#detail input[name='size']").val()==''){
+    if ($("#detail input[name='size']").val() == '') {
         $(".size .main").find("span").text(" - Please Select Option").addClass("valerror");
         form = false;
     }
 
-    if($("#detail input[name='width_name']").val()==''){
+    if ($("#detail input[name='width_name']").val() == '') {
         $(".width-wrapper").find(".main span").text(" - Please Select Option").addClass("valerror");
         form = false;
     }
 
-    if($("#detail input[name='qty']").val()=='0'){
+    if ($("#detail input[name='qty']").val() == '0') {
         $(".quantity-wrapper").find("span").text(" - Please Enter Quantity").addClass("valerror");
         form = false;
     }
-    
-    if(form==false){
+
+    if (form == false) {
         return false;
     }
+
+    let size_val = $("#detail input[name='size']").val();
+    let width_name = $("#detail input[name='width_name']").val();
+    let qty = $("#detail input[name='qty']").val();
+    /* console.log("Size: "+size_val);
+     console.log("width_name: "+width_name);
+     console.log("qty: "+qty);*/
+    let product_id = $('#product_id').val();
+    //console.log(product_id);return false;
+
+    let cart_page = 'No';
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: "/cartitem",
+        method: "post",
+        data: { product_id: product_id, size: size_val, width_code: width_name, qty: qty },
+        success: function (result) {
+            //console.log(result);
+            let cart_items = result.cartitemshtml;
+            let cart_count = result.cart_count;
+            $(".ajax_cart_popup").html(cart_items);
+            $(".cart-count").text(cart_count);
+            $('body,html').animate({ scrollTop: 0 }, 800);
+            //$(".cart-product--popup").slideDown();
+            $(".cart-popup-desktop").slideDown();
+        },
+        error: function (error) {
+            let obj = JSON.parse(error.responseText);
+            $(".button").before("<p class='error'>" + obj.errors + "</p>");
+            setTimeout(function () {
+                $(".error").val("1");
+                $(".error").remove();
+            }, 3000);
+        }
+    });
+    return false;
+
 }
 
 
