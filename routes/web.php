@@ -13,6 +13,10 @@
 Auth::routes();
 Route::get('/', 'HomePageController@index');
 
+Route::get('/cart', 'CartController@show');
+Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
+Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
@@ -30,9 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/subscribers/new', 'SubscriberController@store');
 
-Route::get('/cart', 'CartController@show');
-Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
-Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+
 
 Route::middleware(['allowOnlyAjax'])->group(function () {
 	Route::post('/cartitem', 'CartItemsController@store');

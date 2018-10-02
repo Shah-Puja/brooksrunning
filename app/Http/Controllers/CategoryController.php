@@ -15,7 +15,8 @@ class CategoryController extends Controller
         }
 
         $styles = $products->unique('style');
-        foreach($styles as $style): 
+        //print_r($products->pluck('prod_type')->first());
+        /*foreach($styles as $style): 
             $style_tags=$style->tags;
             /*$subset = $style_tags->map(function ($stags) {
                 print_r($style_tags->only(['product_id', 'key', 'value']));
@@ -24,15 +25,15 @@ class CategoryController extends Controller
 
 
             
-            echo "<hr><pre>";
+            /*echo "<hr><pre>";
             print_r($style_tags);
             echo "</pre>";
-        endforeach;
-        exit;
+        endforeach;*/
+        //exit;
         
         //print_r($tags);
         //print_r($products[0]->variants);
-        echo "</pre>";
+        //echo "</pre>";
 
         /*$sizes = $width_names = []; 
         foreach($variants as $variant) 
@@ -45,6 +46,6 @@ class CategoryController extends Controller
         @endforeach*/
 
 
-        //return view( 'customer.categorylower', compact('products', 'styles') );
+        return view( 'customer.categorylower', compact('products', 'styles') );
     }
 }
