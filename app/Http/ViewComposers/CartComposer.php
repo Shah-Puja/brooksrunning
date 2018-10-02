@@ -23,6 +23,10 @@ class CartComposer
 
     public function compose(View $view)
     {
+        foreach($this->cart->cartItems as $cart_item){
+            //echo "<pre>";print_r();die;
+            $this->cart['items_count'] += $cart_item->qty;
+        }
         $cart = $this->cart ?? new Cart;
         $view->with( compact('cart') );
     }

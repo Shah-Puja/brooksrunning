@@ -56,7 +56,7 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="standard" name="d-options" {{($cart->delivery_type == 'standard') ? $checked : ''}} value="standard">
+                                                <input type="radio" id="standard" name="d-options" {{(isset($cart->delivery_type) && $cart->delivery_type == 'standard') ? $checked : ''}} value="standard">
                                                 <label for="standard">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
@@ -72,7 +72,7 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="express" name="d-options" {{($cart->delivery_type == 'express') ? $checked : ''}} value="express">
+                                                <input type="radio" id="express" name="d-options" {{(isset($cart->delivery_type) && $cart->delivery_type == 'express') ? $checked : ''}} value="express">
                                                 <label for="express">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
@@ -88,7 +88,7 @@
                                     <div class="col-4">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="new_zealand" name="d-options"  {{($cart->delivery_type == 'new_zealand') ? $checked : ''}}  value="new_zealand">
+                                                <input type="radio" id="new_zealand" name="d-options"  {{(isset($cart->delivery_type) && $cart->delivery_type == 'new_zealand') ? $checked : ''}}  value="new_zealand">
                                                 <label for="new_zealand">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
@@ -164,6 +164,7 @@
                             <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
+                           
                             @if ( @$cart->items_count > 0 )
                             <button class="proceed-to-purchase pdp-button"><a href="/shipping">Proceed to Purchase</a></button>
                             @endif

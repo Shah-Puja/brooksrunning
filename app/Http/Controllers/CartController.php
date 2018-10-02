@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 class CartController extends Controller {
+    
     public function show() {
-        echo "aa";
-    }
-    public function show_bkp() {
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        //echo "<pre>";print_r($cart);die;
         
+        foreach($cart->cartItems as $cart_item){
+            //echo "<pre>";print_r();die;
+            $cart['items_count'] += $cart_item->qty;
+        }
+        //echo "<pre>";print_r($cart);die;
         if ($cart && !$cart->verifyItems()) {
             $cart->deleteUnavaliableItems();
         }
@@ -23,10 +25,7 @@ class CartController extends Controller {
     public function update_delivery_option(){ 
         $delivery_option = request('delivery_option_value');
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        /*$delivery_option = $this->input->post('delivery_option_value');
-        echo $delivery_option;die;*/
-        //echo $delivery_option." - ".config('site.freight_cost.CLIENT_FREIGHT_COST');die;
-        //echo "<pre>";print_r($cart->total);die;
+       
         $cart_total = $cart->total;
         if ($delivery_option == 'express') {
             $freight_charges = '15';

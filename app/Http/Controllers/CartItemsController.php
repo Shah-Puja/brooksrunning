@@ -46,7 +46,7 @@ class CartItemsController extends Controller
 
         return response()->json([
             'cartitemshtml' => view( 'cart.ajaxpopupcart', compact( 'cart' ) )->render(),
-            'cart_count' => $cart->items_count,
+            //'cart_count' => $cart->items_count,
         ]);
     }
 
@@ -57,7 +57,7 @@ class CartItemsController extends Controller
 
         return response()->json([
             'cartitemshtml' => view( 'cart.ajaxpopupcart', compact('cart') )->render(),
-            'cart_count' => $cart->items_count,
+            //'cart_count' => $cart->items_count,
             'cartpagecartitemshtml' => view( 'cart.ajaxcartproductinfo', compact('cart') )->render(),
             'ordersummaryhtml' => view( 'cart.order_summary', compact('cart') )->render(),
         ]);
