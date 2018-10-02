@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Variant extends Model
 {
-    //
+    
     protected $table = 'p_variants';
     
     public function product()

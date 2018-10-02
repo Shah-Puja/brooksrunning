@@ -135,6 +135,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Password Wrapper -->
                             {{-- <div class="password-wrapper" style="display: none;">
                                 <div class="row">
@@ -160,6 +161,7 @@
                                 </div>
                             </div> --}}
                             <!-- /Password Wrapper -->
+                            
                             <div class="row">
                                 <div class="col-6">
                                     <div class="input-wrapper">

@@ -34,7 +34,7 @@ class Order_address extends Model
 
     public function isValid()
     {
-        return strlen($this->fname) > 0 && strlen($this->b_add1) > 0 && strlen($this->b_postcode) > 0;
+        return strlen($this->s_fname) > 0 && strlen($this->s_add1) > 0 && strlen($this->s_postcode) > 0;
     }
 
 }

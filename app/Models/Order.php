@@ -44,19 +44,14 @@ class Order extends Model
             [ 'order_id' => $order_id ],
             Order_address::prepareAddressForSaving($validatedAddress)
         );
+        
 
-        //$order->orderItems()->delete();
-        echo "<pre>";
-        print_r($cart->cartItems);
-        echo "</pre>";
-        exit;
+        $order->orderItems()->delete();
         $cart->cartItems->each(function($item) use ($order) {
             $order->orderItems()->create([
                     'variant_id' =>  $item->variant->id,
-                    'sku' =>  $item->variant->sku,
-                    // 'product_name' =>  $item->variant->product->name,
-                    'style' =>  $item->variant->style,
-                    'colour' =>  $item->variant->product->colour,
+                    'style' =>  $item->variant->product->style,
+                    'colour' =>  $item->variant->product->color_name,
                     'image' =>  $item->variant->product->image->image1Small(),
                     'qty' =>  $item->qty,
                     'price' =>  $item->price,

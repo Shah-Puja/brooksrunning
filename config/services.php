@@ -34,6 +34,7 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    
     'braintree' => [
         'environment' => env('BRAINTREE_ENVIRONMENT'),
         'merchantId' => env('BRAINTREE_MERCHANT_ID'),

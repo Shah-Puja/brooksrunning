@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
               'publicKey' => config('services.braintree.publicKey'),
               'privateKey' => config('services.braintree.privateKey')
             ]);
+            
             return new Processor($paymentgateway);
         });
     }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Payments\Processor;
+
 
 class PaymentController extends Controller
 {
@@ -25,19 +27,17 @@ class PaymentController extends Controller
 		
             $this->order = $this->cart->order;
             
-            
-
 			if ( ! $this->order ) {
                 return redirect('shipping');
             }
-            //echo "<pre>";print_r($this->order);echo "</pre>";exit;
+            
 			if ( ! $this->order->address->isValid() ) {
                 return redirect('shipping');
             }
-           echo "<pre>";echo "hi";echo "</pre>";exit;
-//            if ( $this->order->getItemsCount() != $this->cart->items_count ) {
-//                return redirect('cart');
-//            }
+        
+           if ( $this->order->getItemsCount() != $this->cart->items_count ) {
+               return redirect('cart');
+           }
 
             return $next($request);
 
@@ -68,15 +68,15 @@ class PaymentController extends Controller
         // print_r($transation_result);
         // echo "</pre>";
         // exit;
-        // Cache::forget( 'cart'  . $this->order->cart_id );
-        // $this->cart->delete();
-        // session()->forget('cart_id');
+        
+        Cache::forget( 'cart'  . $this->order->cart_id );
+        $this->cart->delete();
+        session()->forget('cart_id');
+        
+        $order = $this->order->load('orderItems.variant.product', 'address');
+        
+        event(new OrderReceived($order));
 
-        // $order = $this->order->load('orderItems.variant.product', 'address');
-
-        // event(new OrderReceived($order));
-
-        //return view( 'customer.orderconfirmed', compact('order') );
-        return view( 'customer.orderconfirmed');
+        return view( 'customer.orderconfirmed', compact('order') );
     }
 }

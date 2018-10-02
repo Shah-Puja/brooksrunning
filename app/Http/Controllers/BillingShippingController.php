@@ -40,6 +40,7 @@ class BillingShippingController extends Controller
     }
 
     // public function index(){
+        
     //     return view('customer.shipping');
     // }
 
