@@ -1,4 +1,5 @@
 <!-- Header for desktop -->
+@php //echo "<pre>";print_r($cart->item_count);die;@endphp
 <header class="header-desktop hidden-mob">
     <div class="wrapper">
         <div class="row">
