@@ -128,6 +128,52 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        's_fname' => [
+            'required' => 'The first name field is required.',
+        ],
+        's_lname' => [
+            'required' => 'The last name field is required.',
+        ],
+        's_add1' => [
+            'required' => 'The address 1 field is required.',
+        ],
+        's_city' => [
+            'required' => 'The suburb field is required.',
+        ],
+        's_state' => [
+            'required' => 'The state field is required.',
+        ],
+        's_postcode' => [
+            'required' => 'The postal code field is required.',
+            'numeric' => 'The postal code must be a number.',
+        ],
+        's_phone' => [
+            'required' => 'The phone field is required.',
+            'regex' => 'The phone format is invalid.',
+        ],
+        'b_fname' => [
+            'required_if' => 'The first name field is required.',
+        ],
+        'b_lname' => [
+            'required_if' => 'The last name field is required.',
+        ],
+        'b_add1' => [
+            'required_if' => 'The address 1 field is required.',
+        ],
+        'b_city' => [
+            'required_if' => 'The suburb field is required.',
+        ],
+        'b_state' => [
+            'required_if' => 'The state field is required.',
+        ],
+        'b_postcode' => [
+            'required_if' => 'The postal code field is required.',
+            'numeric' => 'The postal code must be a number.',
+        ],
+        'b_phone' => [
+            'required_if' => 'The phone field is required.',
+            'regex' => 'The phone format is invalid.',
+        ],
     ],
 
     /*
