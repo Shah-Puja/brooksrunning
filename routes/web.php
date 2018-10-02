@@ -27,6 +27,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 Route::get('/cart', 'CartController@show');
@@ -42,3 +43,9 @@ Route::middleware(['allowOnlyAjax'])->group(function () {
 
 /* info static pages */
 Route::get('/about-us', 'InfoController@about_us');
+
+Route::get('/shipping','BillingShippingController@create');
+Route::post('/shipping','BillingShippingController@store');
+
+Route::get('/payment', 'PaymentController@create');
+Route::post('/payment', 'PaymentController@store');

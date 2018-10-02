@@ -37,6 +37,7 @@ class Product extends Model
     /**
      * A product has image
      */
+    
     public function image()
     {
         return $this->hasOne('App\Models\Image');
