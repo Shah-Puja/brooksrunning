@@ -13,7 +13,7 @@
 Auth::routes();
 Route::get('/', 'HomePageController@index');
 
-Route::get('/{gender}-{category}-{prod_type}', 'CategoryController@index');
+Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
 Route::get('/c/{category}', 'ProductController@index'); 
@@ -26,6 +26,7 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::post('/subscribers/new', 'SubscriberController@store');
 
@@ -42,3 +43,9 @@ Route::middleware(['allowOnlyAjax'])->group(function () {
 
 /* info static pages */
 Route::get('/about-us', 'InfoController@about_us');
+
+Route::get('/shipping','BillingShippingController@create');
+Route::post('/shipping','BillingShippingController@store');
+
+Route::get('/payment', 'PaymentController@create');
+Route::post('/payment', 'PaymentController@store');

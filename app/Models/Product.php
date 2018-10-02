@@ -14,9 +14,9 @@ class Product extends Model
     {
         parent::boot();
         static::addGlobalScope('image', function (Builder $builder) {
-            $builder->whereHas('image', function($query) {
+            /*$builder->whereHas('image', function($query) {
                 $query->where('image1', '<>', NULL);
-            });
+            });*/
         });
     }
 
@@ -37,6 +37,7 @@ class Product extends Model
     /**
      * A product has image
      */
+    
     public function image()
     {
         return $this->hasOne('App\Models\Image');

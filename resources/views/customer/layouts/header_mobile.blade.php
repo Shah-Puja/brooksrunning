@@ -84,6 +84,9 @@
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
+						<li>
+	                        <a href="https://www.brooksrunning.com.au/womens-running-shoes-and-clothing">All Women</a>
+	                    </li>
 	                    <li>
 	                        <a href="javascript:;">
 	                            Running Shoes						
@@ -110,200 +113,266 @@
 	                    </li>
 	                    <li>
 	                        <a href="javascript:;">
-	                            Clothing
+	                            Best Selling Shoes
 	                        </a>
-	                        <!-- Level Three-->
-	                        <ul>
+							<ul>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-sports-bras">Sports Bras</a>
+	                                <a href="https://www.brooksrunning.com.au/footwear/women/best_selling">All Best Sellers</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-shorts">Shorts</a>
+									<a href="https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_516.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-tops">Tops</a>
+									<a  href="https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-jackets-vests">Jackets &amp; Vests</a>
+									<a  href="https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_493.html" title="Ghost 11">Ghost 11</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-pants-tights">Tights &amp; Pants</a>
+									<a  href="https://www.brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_027.html" title="Ravenna 9">Ravenna 9</a>
+	                            </li>
+	                          
+	                        </ul>
+	                    </li>
+						<li>
+	                        <a href="javascript:;">
+							Clothing
+	                        </a>
+							<ul>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/womens-running-clothes">All Women's Running Clothing</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/womens-sports-bras">Sports Bras</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/womens-running-shorts">Shorts</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/womens-running-tops">Tops</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/womens-running-jackets-vests">Jackets & Vests</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/womens-running-pants-tights">Tights & Pants</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-reflective-running-gear">NightLife High-Visibility</a>
+									<a href="https://www.brooksrunning.com.au/womens-reflective-running-gear">NightLife High-Visibility</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-socks">Socks</a>
+									<a  href="https://www.brooksrunning.com.au/womens-running-socks">Socks</a>
 	                            </li>
 	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/womens-running-accessories">Accessories</a>
+									<a  href="https://www.brooksrunning.com.au/womens-running-accessories">Accessories</a>
 	                            </li>
 	                            <li class="sale">
-	                                <a href="https://www.brooksrunning.com.au/womens-running-accessories">SALE Clothing</a>
+									<a  href="https://www.brooksrunning.com.au/womens-running-clothes-sale">SALE Clothing</a>
 	                            </li>
+	                          
 	                        </ul>
 	                    </li>
-	                    <li>
-	                        <!-- <a href="javascript:;">
-                                     BEST SELLERS							
-	                        </a> -->
-                              <a href="https://www.brooksrunning.com.au/footwear/women/best_selling">
-                                     BEST SELLERS							
-	                        </a> 
-	                        <!-- Level Three-->
-	                        <ul>
-	                            <li>
-	                                <a href="https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_516.html">
-                                    Adrenaline GTS 18
-	                                </a>
-	                            </li>
-	                            <li>
-                                    <a href="https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_070.html">
-                                    Glycerin 16
-	                                </a>
-	                                <!-- <a href="javascript:;">
-                                    Glycerin 16
-	                                </a> -->
-	                                <!-- Level Four-->
-	                                <!-- <ul>
-	                                    <li><a href="#">Sub Item Link 1</a></li>
-	                                    <li><a href="#">Sub Item Link 2</a></li>
-	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul> -->
-	                            </li>
-                                <li>
-	                                <a href="https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_493.html">
-                                    Ghost 11
-	                                </a>
-	                            </li>
-	                            <li><a href="https://www.brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_027.html"></i>Ravenna 9</a></li>
-	                        </ul>
-	                    </li>
+	                  
 	                </ul>
 	            </li>
-	            <li>
+	            
+				<li>
 	                <a href="javascript:;">
 	                    <span class="title">Men</span>
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
-	                    <li>
-	                        <a href="javascript:;">
-	                            Sub Item One                        
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="#">
-	                            Sub Item Two
-	                        </a>
+						<li>
+	                        <a href="https://www.brooksrunning.com.au/mens-running-shoes-and-clothing">All Men</a>
 	                    </li>
 	                    <li>
 	                        <a href="javascript:;">
-	                            Sub Item Three                          
+	                            Running Shoes						
 	                        </a>
 	                        <!-- Level Three-->
 	                        <ul>
-	                            <li>
-	                                <a href="#">
-	                                    Sub Item Link 1
-	                                </a>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/mens-running-shoes">All Men's Running Shoes</a>
 	                            </li>
 	                            <li>
-	                                <a href="javascript:;">
-	                                    Sub Item Link 2
-	                                </a>
-	                                <!-- Level Four-->
-	                                <ul>
-	                                    <li><a href="#">Sub Item Link 1</a></li>
-	                                    <li><a href="#">Sub Item Link 2</a></li>
-	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul>
+	                                <a href="https://www.brooksrunning.com.au/mens-neutral-running-shoes">Neutral Running</a>
+	                                <p>Superior cushioning for runners that don't need added support.</p>
 	                            </li>
-	                            <li><a href="#"></i>Sub Item Link 3</a></li>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-support-running-shoes">Support Running</a>
+	                                <p>Superior cushioning and support features for runners that overpronate (roll inward).</p>
+	                            </li>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-lightweight-running-shoes">Lightweight Running</a>
+	                                <p>Lightweight and low profile running shoes.</p>
+	                            </li>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-competition-running-shoes">Competition Running</a>
+	                                <p>Fast and built for speed, on the road or track.</p>
+	                            </li>
+								<li>
+                            		<a href="https://www.brooksrunning.com.au/mens-trail-running-shoes">Trail Running</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.brooksrunning.com.au/mens-cross-training-shoes">Cross-Training</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.brooksrunning.com.au/mens-walking-shoes">Walking</a>
+                                </li>
+                        		<li class="sale">
+                                    <a href="https://www.brooksrunning.com.au/mens-running-shoes-sale">Sale Shoes</a>
+                                </li>
 	                        </ul>
 	                    </li>
+	                    <li>
+	                        <a href="javascript:;">
+	                            Best Selling Shoes
+	                        </a>
+							<ul>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/footwear/men/best_selling">All Best Sellers</a>
+	                            </li>
+	                            <li>
+									<a href="https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_438.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a>
+	                            </li>
+	                            <li>
+									<a  href="https://www.brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin 16">Glycerin 16</a>
+	                            </li>
+	                            <li>
+									<a  href="https://www.brooksrunning.com.au/ghost-11-mens-running-shoes/110288_093.html" title="Ghost 11">Ghost 11</a>
+	                            </li>
+	                            <li>
+									<a  href="https://www.brooksrunning.com.au/beast-18-mens-running-shoes/110282_015.html" title="Beast 18">Beast 18</a>
+	                            </li>
+	                          
+	                        </ul>
+	                    </li>
+						<li>
+	                        <a href="javascript:;">
+							Clothing
+	                        </a>
+							<ul>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-running-clothes">All Men's Running Clothing</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/mens-running-shorts">Shorts</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/mens-running-tops">Tops</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/mens-running-jackets-vests">Jackets &amp; Vests</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/mens-running-pants-tights">Tights &amp; Pants</a>
+	                            </li>
+								<li>
+									<a href="https://www.brooksrunning.com.au/mens-reflective-running-gear">NightLife High-Visibility</a>
+	                            </li>
+	                            <li>
+									<a href="https://www.brooksrunning.com.au/mens-running-socks">Socks</a>
+	                            </li>
+	                            <li>
+									<a  href="https://www.brooksrunning.com.au/mens-running-accessories">Accessories</a>
+	                            </li>
+	                            <li class="sale">
+									<a  href="https://www.brooksrunning.com.au/mens-running-clothes-sale">Sale Clothing</a>
+	                            </li>
+	                          
+	                        </ul>
+	                    </li>
+	                  
 	                </ul>
 	            </li>
 	            <li>
 	                <a href="javascript:;">
-	                    <span class="title">Shoe Finder</span>
+	                    <span class="title">Shoes</span>
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
+						<li>
+	                        <a href="https://www.brooksrunning.com.au/shoes">
+	                            All Running Shoes                      
+	                        </a>
+						</li>
 	                    <li>
 	                        <a href="javascript:;">
 	                            Neutral Running Shoes                      
 	                        </a>
 	                        <ul>
 	                        	<li>
-                                    <a href="#">Aduro</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/aduro">Aduro</a>
                                 </li>
                                 <li>
-                                    <a href="#">Defyance</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/aduro">Defyance</a>
                                 </li>
                                 <li>
-                                    <a href="#">Dyad</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/dyad">Dyad</a>
                                 </li>
                                 <li>
-                                    <a href="#">Ghost</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/ghost">Ghost</a>
                                 </li>
                                 <li>
-                                    <a href="#">Ghost GTX</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/ghost-gtx">Ghost GTX</a>
                                 </li>
                                 <li>
-                                    <a href="#">Glycerin</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/glycerin">Glycerin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Launch</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/launch">Launch</a>
                                 </li>
                                 <li>
-                                    <a href="#">Levitate</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/levitate">Levitate</a>
                                 </li>
                                 <li>
-                                    <a href="#">Neuro</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/neuro">Neuro</a>
                                 </li>
                                 <li>
-                                    <a href="#">PureFlow</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/pureflow">PureFlow</a>
                                 </li>
                                 <li>
-                                    <a href="#">Revel</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/revel">Revel</a>
                                 </li>
                                 <li>
-                                    <a href="#">Ricochet</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/ricochet">Ricochet</a>
                                 </li>
 	                        </ul>
 	                    </li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="javascript:;">
 	                            Support Running Shoes
 	                        </a>
 	                        <ul>
+								<li>
+                                    <a href="https://www.brooksrunning.com.au/support-running-shoes">All Support Running Shoes</a>
+                                </li>
 	                        	<li>
-                                    <a href="#">Addiction</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/addiction">Addiction</a>
                                 </li>
                                 <li>
-                                    <a href="#">Adrenaline GTS</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/adrenaline-gts">Adrenaline GTS</a>
                                 </li>
                                 <li>
-                                    <a href="#">Ariel</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/ariel">Ariel</a>
                                 </li>
                                 <li>
-                                    <a href="#">Beast</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/beast">Beast</a>
                                 </li>
                                 <li>
-                                    <a href="#">Bedlam</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/bedlam">Bedlam</a>
                                 </li>
                                 <li>
-                                    <a href="#">PureCadence</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/pureCadence">PureCadence</a>
                                 </li>
                                 <li>
-                                    <a href="#">Ravenna</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/ravenna">Ravenna</a>
                                 </li>
                                 <li>
-                                    <a href="#">Transcend</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/transcend">Transcend</a>
                                 </li>
                                 <li>
-                                    <a href="#">Vapor</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/vapor">Vapor</a>
                                 </li>
 	                        </ul>
 	                    </li>
@@ -312,36 +381,42 @@
 	                            Trail Running Shoes                       
 	                        </a>
 	                        <ul>
+								<li>
+                                 <a href="https://www.brooksrunning.com.au/trail-running-shoes">All Trail Running Shoes</a>
+                                </li>
 	                        	<li>
-	                                <a href="#">Adrenaline ASR</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/adrenaline-asr">Adrenaline ASR</a>
 	                            </li>
 	                            <li>
-	                                <a href="#">Caldera</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/caldera">Caldera</a>
 	                            </li>
 	                            <li>
-	                                <a href="#">Cascadia</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/cascadia">Cascadia</a>
 	                            </li>
 	                            <li>
-	                                <a href="#">Cascadia GTX</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/cascadia-gtx">Cascadia GTX</a>
 	                            </li>
 	                            <li>
-	                                <a href="#">Mazama</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/mazama">Mazama</a>
 	                            </li>
 	                            <li>
-	                                <a href="#">PureGrit</a>
+	                                <a href="https://www.brooksrunning.com.au/shoes/puregrit">PureGrit</a>
 	                            </li>
 	                        </ul>
 	                    </li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="javascript:;">
 	                            Competition Running Shoes
 	                        </a>
 	                        <ul>
+								<li>
+                                 <a href="https://www.brooksrunning.com.au/competition-running-shoes">All Competition Running Shoes</a>
+                                </li>
 	                        	<li>
-                                    <a href="#">Asteria</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/asteria">Asteria</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hyperion</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/hyperion">Hyperion</a>
                                 </li>
 	                        </ul>
 	                    </li>
@@ -350,25 +425,31 @@
 	                            Cross Training Shoes                      
 	                        </a>
 	                        <ul>
+								<li>
+                                <a href="https://www.brooksrunning.com.au/cross-trainer-shoes">All Cross Training Shoes</a>
+                                </li>
 	                        	<li>
-                                    <a href="#">Liberty</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/liberty">Liberty</a>
                                 </li>
                                 <li>
-                                    <a href="#">Maximus</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/maximus">Maximus</a>
                                 </li>
 	                        </ul>
 	                    </li>
 	                    <li>
-	                        <a href="#">
+	                        <a href="javascript:;">
 	                            Walking Shoes
 	                        </a>
 	                        <!-- Level Three-->
 	                        <ul>
+								<li>
+                                <a href="https://www.brooksrunning.com.au/walking-shoes">All Walking Shoes</a>
+                                </li>
 	                            <li>
-                                    <a href="#">Addiction Walker</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/addiction-walker">Addiction Walker</a>
                                 </li>
                                 <li>
-                                    <a href="#">Dyad Walker</a>
+                                    <a href="https://www.brooksrunning.com.au/shoes/dyad-walker">Dyad Walker</a>
                                 </li>
 	                        </ul>
 	                    </li>
@@ -382,37 +463,79 @@
 	                <ul>
 	                    <li>
 	                        <a href="javascript:;">
-	                            Sub Item One                        
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="#">
-	                            Sub Item Two
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="javascript:;">
-	                            Sub Item Three                          
+	                            ABOUT US                         
 	                        </a>
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="#">
-	                                    Sub Item Link 1
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/what_makes_us_tick">
+										What Makes Us Tick
 	                                </a>
 	                            </li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/run_happy_is">
+										Run Happy is
+	                                </a>
+	                            </li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/technology">
+									Technology
+	                                </a>
+	                            </li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/runsignature">
+									Run Signature
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+
+						<li>
+	                        <a href="javascript:;">
+								RUN HAPPY                        
+	                        </a>
+	                        <!-- Level Three-->
+	                        <ul>
 	                            <li>
-	                                <a href="javascript:;">
-	                                    Sub Item Link 2
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/competition/rh_competition">
+									Competition
 	                                </a>
-	                                <!-- Level Four-->
-	                                <ul>
-	                                    <li><a href="#">Sub Item Link 1</a></li>
-	                                    <li><a href="#">Sub Item Link 2</a></li>
-	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul>
 	                            </li>
-	                            <li><a href="#"></i>Sub Item Link 3</a></li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/enewsletter">
+									E-Newsletter
+	                                </a>
+	                            </li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/trainingtips">
+									Training Tips
+	                                </a>
+	                            </li>
+								<li>
+	                                <a href="https://www.brooksrunning.com.au/meet_brooks/injury_prevention">
+									Injury Prevention
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </li>
+
+						<li>
+	                        <a href="javascript:;">
+							COMMUNITY                   
+	                        </a>
+	                        <!-- Level Three-->
+	                        <ul>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/events">
+									Event Calendar
+	                                </a>
+	                            </li>
+								<li>
+	                                <a href="http://talk.brooksrunning.com/au">
+									Brooks Blog
+	                                </a>
+	                            </li>
+								
 	                        </ul>
 	                    </li>
 	                </ul>
@@ -423,7 +546,7 @@
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
-	                    <li>
+	                    <!-- <li>
 	                        <a href="javascript:;">
 	                            Sub Item One                        
 	                        </a>
@@ -432,41 +555,66 @@
 	                        <a href="#">
 	                            Sub Item Two
 	                        </a>
-	                    </li>
+	                    </li> -->
 	                    <li>
 	                        <a href="javascript:;">
-	                            Sub Item Three                          
+	                            Women's Sale                         
 	                        </a>
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="#">
-	                                    Sub Item Link 1
+	                                <a href="https://www.brooksrunning.com.au/womens-running-shoes-sale">
+	                                    Sale Shoes
 	                                </a>
 	                            </li>
 	                            <li>
-	                                <a href="javascript:;">
-	                                    Sub Item Link 2
+	                                <a href="https://www.brooksrunning.com.au/womens-running-clothes-sale">
+	                                    Sale Clothing
 	                                </a>
 	                                <!-- Level Four-->
-	                                <ul>
+	                                <!-- <ul>
 	                                    <li><a href="#">Sub Item Link 1</a></li>
 	                                    <li><a href="#">Sub Item Link 2</a></li>
 	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul>
+	                                </ul> -->
 	                            </li>
-	                            <li><a href="#"></i>Sub Item Link 3</a></li>
+	                            <!-- <li><a href="#"></i>Sub Item Link 3</a></li> -->
+	                        </ul>
+	                    </li>
+						<li>
+	                        <a href="javascript:;">
+	                            Men's Sale                         
+	                        </a>
+	                        <!-- Level Three-->
+	                        <ul>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-running-shoes-sale">
+	                                    Sale Shoes
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="https://www.brooksrunning.com.au/mens-running-clothes-sale">
+	                                    Sale Clothing
+	                                </a>
+	                                <!-- Level Four-->
+	                                <!-- <ul>
+	                                    <li><a href="#">Sub Item Link 1</a></li>
+	                                    <li><a href="#">Sub Item Link 2</a></li>
+	                                    <li><a href="#">Sub Item Link 3</a></li>
+	                                </ul> -->
+	                            </li>
+	                            <!-- <li><a href="#"></i>Sub Item Link 3</a></li> -->
 	                        </ul>
 	                    </li>
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="#">
+	                <a href="https://www.brooksrunning.com.au/shoefinder">
 	                    <span class="title">Find A Shoe</span>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="#">
+	                <a href="https://www.brooksrunning.com.au/info/contact">
 	                    <span class="title">Help</span>
 	                </a>
 	            </li>
@@ -488,7 +636,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="#">
+	                <a href="https://www.brooksrunning.com.au/meet_brooks/enewsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>
 	                </a>
 	            </li>
