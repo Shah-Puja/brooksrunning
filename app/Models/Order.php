@@ -49,14 +49,14 @@ class Order extends Model
         $order->orderItems()->delete();
         $cart->cartItems->each(function($item) use ($order) {
             $order->orderItems()->create([
-                    'variant_id' =>  $item->variant->id,
-                    'style' =>  $item->variant->product->style,
-                    'colour' =>  $item->variant->product->color_name,
-                    'image' =>  $item->variant->product->image->image1Small(),
-                    'qty' =>  $item->qty,
-                    'price' =>  $item->price,
-                    'rrp' =>  $item->rrp,
-            ]);
+                     'variant_id' =>  $item->variant->id,
+                     'style' =>  $item->variant->product->style,
+                     'colour' =>  $item->variant->product->color_name,
+                     'image' =>  $item->variant->product->image->image1Small(),
+                     'qty' =>  $item->qty,
+                     'price' =>  $item->price,
+                     'price_sale' =>  $item->price_sale,
+             ]);
         });
         
     }

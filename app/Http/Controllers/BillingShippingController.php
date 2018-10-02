@@ -14,7 +14,7 @@ class BillingShippingController extends Controller
     {
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
-            $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+            $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
             //echo "<pre>";print_r($this->cart);die;
             foreach($this->cart->cartItems as $cart_item){
                 $this->cart['items_count'] += $cart_item->qty;
@@ -74,18 +74,12 @@ class BillingShippingController extends Controller
             'signme' => '',
             'flag_same_shipping' => '',
         ]);
-        // $cart=array(
-        //     'user_id'=>'1234',
-        //     'id'=>'1',
-        //     'total'=>'100.00',
-        //     'freight_cost'=>'0',
-        //     'grand_total'=>'105.00'
-        // );
-        // print_r($this->cart);
-        // exit;
+        //  echo "<pre>";
+        //  print_r($this->cart);
+        //  echo "</pre>";
+        //  exit;
         Order::createNew($this->cart, $validatedAddress);
-        //Order::createNew($cart, $validatedAddress);
-
+        
         return redirect("payment");
     }
 }
