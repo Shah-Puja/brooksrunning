@@ -13,11 +13,11 @@ class Product extends Model
     protected static function boot()
     {
         parent::boot();
-        /*static::addGlobalScope('image', function (Builder $builder) {
-            $builder->whereHas('image', function($query) {
+       static::addGlobalScope('image', function (Builder $builder) {
+           /* $builder->whereHas('image', function($query) {
                 $query->where('image1', '<>', NULL);
-            });
-        });*/
+            });*/
+        });
     }
 
     public function categories()
@@ -28,6 +28,10 @@ class Product extends Model
     {
     	return $this->hasMany('App\Models\Variant','product_id','id');
     }
+    public function tags()
+    {
+    	return $this->hasMany('App\Models\Tag','product_id','id');
+    }    
 
     public function colourOptions($style)
     {

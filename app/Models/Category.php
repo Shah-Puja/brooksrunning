@@ -40,6 +40,7 @@ class Category extends Model
                 return $query->where('visible', '=', 'Yes');
             })
             ->with('variants')
+            ->with('tags')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
