@@ -1,0 +1,5 @@
+{
+   "Footwear": ["Size","Width","Support Level","Experience Type","Color"],
+   "Apparel": ["Color","Fit","Size","Tops Styles"],
+   "Sportsbra": ["Color","Impact Level","Cup Size","Band Size","Alpha Size","Features"]
+}

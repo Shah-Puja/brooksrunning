@@ -59,236 +59,67 @@
 									</li>
 								</ul>
 							</li>
-							<li class="filter-heading">
-								<h3>Filter</h3>
-							</li>
-							<li class="filter-menu">
-								<label class="label">Size</label>
-								<ul class="filter-list clearfix">
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">7.0</a>
-									</li>
-									<li class="size-filter selected">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">7.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">8.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">8.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">9.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">9.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">10.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">10.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">11.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">11.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">12.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">12.5</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">13.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">14.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">15.0</a>
-									</li>
-									<li class="size-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" ">16.0</a>
-									</li>
-								</ul>
-							</li>
-							<li class="filter-menu">
-								<label class="label">Width</label>
-								<ul class="filter-list clearfix">
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="2A-Narrow 2">
-											      <label for="2A-Narrow 2">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">2A-Narrow 2</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="2E Extra Wide 4" checked="checked">
-											      <label for="2E Extra Wide 4">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">2E Extra Wide 4</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="B-Normal 1">
-											      <label for="B-Normal 1">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">B-Normal 1</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="d-wide 3" checked="checked">
-											      <label for="d-wide 3">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">d-wide 3</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-								</ul>
-							</li>
-							<li class="filter-menu">
-								<label class="label">SUPPORT LEVEL</label>
-								<ul class="filter-list clearfix">
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Neutral">
-											      <label for="Neutral">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Neutral</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Support" checked="checked">
-											      <label for="Support">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Support</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-								</ul>
-							</li>
-							<li class="filter-menu">
-								<label class="label">EXPERIENCE TYPE</label>
-								<ul class="filter-list clearfix">
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Connect">
-											      <label for="Connect">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Connect</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Cushion">
-											      <label for="Cushion">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Cushion</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Energize">
-											      <label for="Energize">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Energize</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Speed">
-											      <label for="Speed">
-											      	    <div class="mark"><span></span></div>
-											      	    <div class="text">Speed</div>
-											       </label>
-											  </div>
-										</div>									
-									</li>
-								</ul>
-							</li>
-							<li class="filter-menu">
-								<label class="label">COLOR</label>
-								<ul class="filter-list clearfix">
-									<li class="fullbox-filter color-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Black">
-											      <label for="Black">
-											      	    <div class="mark" style="background-color: black"><span></span></div>
-											      	    <div class="text">Black</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter color-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Blue">
-											      <label for="Blue">
-											      	    <div class="mark" style="background-color: blue"><span></span></div>
-											      	    <div class="text">Blue</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter color-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Green">
-											      <label for="Green">
-											      	    <div class="mark" style="background-color: green"><span></span></div>
-											      	    <div class="text">Green</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-									<li class="fullbox-filter color-filter">
-										<div class="input-wrapper">
-											  <div class="checklist-inline">
-											  	  <input type="checkbox" id="Red">
-											      <label for="Red">
-											      	    <div class="mark" style="background-color: red"><span></span></div>
-											      	    <div class="text">Red</div>
-											       </label>
-											  </div>
-										</div>	
-									</li>
-								</ul>
-							</li>
+							@if(count($filters)>0)
+								<li class="filter-heading">
+									<h3>Filter</h3>
+								</li>
+								@foreach($filters as $key=>$values)
+									@if(count($values)>0)
+										@if($key == 'Size')
+											<li class="filter-menu">
+												<label class="label">Size</label>
+												<ul class="filter-list clearfix">
+													@foreach($values as $filter_value)
+														<li class="size-filter">
+															<a href="#" data-filter-attribute="size" data-filter-value=" ">{{ $filter_value }}</a>
+														</li>
+													@endforeach
+												</ul>
+											</li>
+										@elseif($key == 'Color')
+											<li class="filter-menu">
+												<label class="label">COLOR</label>
+												<ul class="filter-list clearfix">
+													@foreach($values as $filter_value)
+														<li class="fullbox-filter color-filter">
+															<div class="input-wrapper">
+																<div class="checklist-inline">
+																	<input type="checkbox" id="{{ $filter_value }}">
+																	<label for="{{ $filter_value }}">
+																			<div class="mark" style="background-color: {{ $filter_value }}"><span></span></div>
+																			<div class="text">{{ $filter_value }}</div>
+																	</label>
+																</div>
+															</div>	
+														</li>
+													@endforeach
+												</ul>
+											</li>
+										@else
+											<li class="filter-menu">
+											<label class="label">{{ str_replace("_"," ",$key) }}</label>
+											<ul class="filter-list clearfix">
+												@foreach($values as $filter_value)
+													@if($filter_value!='')
+														<li class="fullbox-filter">
+															<div class="input-wrapper">
+																<div class="checklist-inline">
+																	<input type="checkbox" id="{{ $filter_value }}">
+																	<label for="{{ $filter_value }}">
+																			<div class="mark"><span></span></div>
+																			<div class="text">{{ $filter_value }}</div>
+																	</label>
+																</div>
+															</div>	
+														</li>
+													@endif
+												@endforeach
+											</ul>
+										</li>
+										@endif
+									@endif
+								@endforeach
+							@endif
 						</ul>
 					</div>
 			    </div>
