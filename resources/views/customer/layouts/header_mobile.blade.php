@@ -615,7 +615,7 @@
 	            </li>
 	            <li>
 	                <a href="/info/contact">
-	                    <span class="title">Help</span>
+	                 <span class="title">Help</span>
 	                </a>
 	            </li>
 	            <li>

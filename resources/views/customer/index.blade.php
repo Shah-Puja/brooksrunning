@@ -220,7 +220,7 @@
 		                </div>
 		            </div>
 		        </div>
-	       </div> 
+	       </div>
 	       <span class="icon-style icon-next-arrow next"></span>
 	    </div>
 	</div>
