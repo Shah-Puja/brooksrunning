@@ -42,11 +42,16 @@ class CartItemsController extends Controller
         	$cart->deleteItem($this->variantSelected->id);
     	}
 
-        $cart->load('cartItems.variant.product:id,stylename');
-
+        $cart->load('cartItems.variant.product:id,color_name,stylename');
+        
+        if(isset($cart) && !empty($cart)){
+            foreach($cart->cartItems as $cart_item){ 
+                $cart['items_count'] += $cart_item->qty;
+            }
+        }
         return response()->json([
             'cartitemshtml' => view( 'cart.ajaxpopupcart', compact( 'cart' ) )->render(),
-            //'cart_count' => $cart->items_count,
+            'cart_count' => $cart->items_count,
         ]);
     }
 
@@ -54,10 +59,14 @@ class CartItemsController extends Controller
         $cart = Cart::createOrGetForUser();
 
 		$cart->deleteItem( request('id') );
-
+        if(isset($cart) && !empty($cart)){
+            foreach($cart->cartItems as $cart_item){ 
+                $cart['items_count'] += $cart_item->qty;
+            }
+        }
         return response()->json([
             'cartitemshtml' => view( 'cart.ajaxpopupcart', compact('cart') )->render(),
-            //'cart_count' => $cart->items_count,
+            'cart_count' => $cart->items_count,
             'cartpagecartitemshtml' => view( 'cart.ajaxcartproductinfo', compact('cart') )->render(),
             'ordersummaryhtml' => view( 'cart.order_summary', compact('cart') )->render(),
         ]);
@@ -72,8 +81,12 @@ class CartItemsController extends Controller
         	$cart->deleteItem($this->variantSelected->id);
     	}
 
-        $cart->load('cartItems.variant.product:id,stylename');
-
+        $cart->load('cartItems.variant.product:id,color_name,stylename');
+        if(isset($cart) && !empty($cart)){
+            foreach($cart->cartItems as $cart_item){ 
+                $cart['items_count'] += $cart_item->qty;
+            }
+        }
         return response()->json([
             'cartitemshtml' => view( 'cart.ajaxpopupcart', compact('cart') )->render(),
             'cart_count' => $cart->items_count,

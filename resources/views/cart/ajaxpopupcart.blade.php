@@ -10,7 +10,7 @@
             <p class="blue">{{ $cartItem->variant->product->stylename }}</p>
             <p>Colour: {{ $cartItem->variant->product->color_name }}</p>
             <p>Size: {{ $cartItem->variant->size }}</p>
-            <p>Width: {{ $cartItem->variant->width }}</p>
+            <p>Width: {{ $cartItem->variant->width_name }}</p>
             <p>Qty: {{ $cartItem->qty }}</p>
             <p>@if (($cartItem->variant->price > 0) && ($cartItem->variant->price < $cartItem->variant->rrp))
 		<del>&dollar;{{ number_format($cartItem->variant->rrp, 2) }}</del>
