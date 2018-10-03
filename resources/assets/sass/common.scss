@@ -1055,19 +1055,44 @@
       padding: 18px 10px;
       text-align: center;
       min-height: 240px;
+      @media #{$tab-only}{
+        min-height: 145px;
+        padding: 6px 5px;
+      }
       h3{
         margin: 0;
-        font-size: 22px;
+        font-size: 20px;
+         @media #{$tab-only}{
+          font-size: 15px !important;
+        }
       }
       p{
         margin: 0;
         margin-bottom: 2px;
         font-size: 17px;
+        @media #{$tab-only}{
+          margin-bottom: 2px;
+          font-size: 14px;
+        }
+      }
+      .btn{
+      @media #{$tab-only}{
+        bottom: 5px;
+        max-width: 145px;
+        padding: 0px 18px;
+        .secondary-button {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+       }
       }
       img{
         width: auto;
         max-width: 100%;
         margin: auto;
+        @media #{$tab-only}{
+        width:35%;
+       }
       }
     }
   }
@@ -1176,6 +1201,48 @@
             right: 0 !important;
             left: auto !important;
           }
+        }
+    }
+    .info-wrapper{
+      padding: 0 15px;
+      margin-top: -10px;
+      .br-heading{
+        margin: 0px;
+         @media #{$tab-only}{
+          font-size: 20px !important;
+        }
+      }
+      p{
+        margin: 10px 0;
+         @media #{$tab-only}{
+          font-size: 12px !important;
+        }
+      }
+      a{
+        display: inline-block;
+        font-size: 18px;
+        color: $blue;
+        @extend %bold-font;
+        &:hover{
+          color: $lightblue;
+        }
+        img{
+          width: 14px;
+          vertical-align: baseline;
+          display: inline-block;
+        }
+         @media #{$tab-only}{
+          font-size: 13px !important;
+           img{
+            width: 12px;
+          }
+        }
+      }
+      .right-link{
+        float: right;
+      }
+      @media #{$tab-only}{
+           padding: 0 5px;
         }
     }
   }
@@ -2722,9 +2789,12 @@
         padding-bottom: 0;
         padding-top: 0;
         h3{
-          font-size: 27px;
+          font-size: 20px;
           @media #{$tab-only}{
-            font-size: 24px;
+            font-size: 18px;
+          }
+           @media #{$mobile-only}{
+            font-size: 18px;
           }
         }
       }
@@ -2981,7 +3051,6 @@
         }
         .product-info{
           .price{
-            @extend %bold-font;
             font-size: 24px;
             margin-bottom: 10px;
           }
@@ -3040,6 +3109,9 @@
           }
         }
      }
+    .bold-font{
+      @extend %bold-font;
+    }
   }
 /* Cart CSS Closed */
 

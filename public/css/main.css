@@ -2738,132 +2738,168 @@ textarea {
         left: 40px;
         width: 300px;
         font-size: 4em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031291}}
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031284}}
+          .brooksrunhappyis .module .info-wrapper .txtOurflag {
+            top: 40px;
+            left: 30px;
+            width: 230px;
+            font-size: 3em; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031297}}
       .brooksrunhappyis .module .info-wrapper .tip {
         position: relative;
         top: 15px;
         left: 10px;
         font-size: 4em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031298}}
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031297}}
+          .brooksrunhappyis .module .info-wrapper .tip {
+            font-size: 2.5em; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031307}}
       .brooksrunhappyis .module .info-wrapper .txtReminds {
         width: 150px;
         position: relative;
         left: 10px;
         top: 20px;
         color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031305}}
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031307}}
+          .brooksrunhappyis .module .info-wrapper .txtReminds {
+            width: 98px;
+            left: 10px;
+            top: 10px;
+            font-size: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031320}}
       .brooksrunhappyis .module .info-wrapper .txtTap {
         width: 305px;
         position: relative;
         left: 5px;
         top: 90px;
         color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031312}}
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031320}}
+          .brooksrunhappyis .module .info-wrapper .txtTap {
+            width: auto;
+            top: 45px;
+            font-size: 10px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031332}}
       .brooksrunhappyis .module .info-wrapper .txtYoung {
         font-size: 1.42em;
         font-weight: 300;
         padding: 10%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031317}}
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031332}}
+          .brooksrunhappyis .module .info-wrapper .txtYoung {
+            font-size: 0.90em; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031340}}
       .brooksrunhappyis .module .info-wrapper .mobtxtRight {
         width: 80%;
         margin: 10% 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031344}}
       .brooksrunhappyis .module .info-wrapper .mobtxtLeft {
         width: 80%;
         margin: 10% 10px;
         padding-top: 35%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031349}}
       .brooksrunhappyis .module .info-wrapper .mobtxtLeftThin {
         width: 110px;
         margin: 25% 0 0 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031353}}
       .brooksrunhappyis .module .info-wrapper .p40 {
         font-size: 30px;
         line-height: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031357}}
       .brooksrunhappyis .module .info-wrapper .mob-Left {
         width: 50%;
         float: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031361}}
       .brooksrunhappyis .module .info-wrapper .hall {
         padding-top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031364}}
       .brooksrunhappyis .module .info-wrapper .txtFeeling {
         width: 300px;
         position: absolute;
         left: 5%;
         top: 65%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031370}}
       .brooksrunhappyis .module .info-wrapper .gridcontainer {
         overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031373}}
       .brooksrunhappyis .module .info-wrapper .heightadjust {
         height: 507px; }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031373}}
+          .brooksrunhappyis .module .info-wrapper .heightadjust {
+            height: auto; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031382}}
 .rhi-banner2 {
   position: relative;
   min-height: 320px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031386}}
   .rhi-banner2 picture img {
     width: 100%; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031382}}
+    .rhi-banner2 {
+      min-height: auto; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031395}}
 .rhi-header2 {
   padding-top: 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031398}}
   .rhi-header2 .info-wrapper {
     margin: auto;
     position: relative; }
     @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031398}}
       .rhi-header2 .info-wrapper {
         padding: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031404}}
     .rhi-header2 .info-wrapper .txtOffice {
       width: 385px;
       position: absolute;
       left: 41.5%;
       padding: 20px;
       top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031410}}
       .rhi-header2 .info-wrapper .txtOffice .yellow {
         color: #f3b52f; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031413}}
       .rhi-header2 .info-wrapper .txtOffice h3 {
         font-size: 1.42em;
         font-weight: 300;
         margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031419}}
     .rhi-header2 .info-wrapper .aqua-bkgd {
       background: #57dae6;
       color: #ffffff; }
 
 /* Run happy is- end*/
 /* what makes us tick -Start*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031401}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031430}}
 .whatmakesustick {
   width: 100%;
   background-color: #ccc; }
   @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031433}}
     .whatmakesustick .wrapper {
       margin-right: auto;
       margin-left: auto;
       padding-right: 0px;
       padding-left: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031412}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031441}}
   .whatmakesustick .wmut-header {
     padding-top: 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031444}}
     .whatmakesustick .wmut-header .info-wrapper {
       margin: auto;
       position: relative; }
       @media only screen and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031444}}
         .whatmakesustick .wmut-header .info-wrapper {
           padding: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031450}}
       .whatmakesustick .wmut-header .info-wrapper .tickLedeHead {
         font-size: 25px;
         line-height: 25px;
@@ -2872,11 +2908,11 @@ textarea {
         top: 20%;
         color: #fab321; }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031450}}
           .whatmakesustick .wmut-header .info-wrapper .tickLedeHead {
             font-size: 9px;
             line-height: 9px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031433}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031462}}
       .whatmakesustick .wmut-header .info-wrapper .tickLedeSub {
         width: 30%;
         font-size: 18px;
@@ -2886,99 +2922,99 @@ textarea {
         top: 30%;
         color: #fff; }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031433}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031462}}
           .whatmakesustick .wmut-header .info-wrapper .tickLedeSub {
             width: 36%;
             font-size: 8px;
             line-height: 7px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031479}}
   .whatmakesustick .module {
     padding: 0px 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031452}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031481}}
     .whatmakesustick .module .info-wrapper {
       position: relative;
       display: block;
       padding: 0px 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031485}}
       .whatmakesustick .module .info-wrapper .padd_left {
         padding-left: 0px; }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031485}}
           .whatmakesustick .module .info-wrapper .padd_left {
             padding-right: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031462}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031491}}
       .whatmakesustick .module .info-wrapper .padd_right {
         padding-right: 0px; }
         @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031462}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031491}}
           .whatmakesustick .module .info-wrapper .padd_right {
             padding-left: 0px; } }
       @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031468}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031497}}
         .whatmakesustick .module .info-wrapper .no-padding {
           padding-left: 0px;
           padding-right: 0px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031504}}
       .whatmakesustick .module .info-wrapper .aqua1 {
         color: #6d6643; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031507}}
       .whatmakesustick .module .info-wrapper .aqua-bkgd {
         background: #57dae6;
         color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031482}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031511}}
       .whatmakesustick .module .info-wrapper .blue-bkgd {
         background: #1678bd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031485}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031514}}
       .whatmakesustick .module .info-wrapper .dark-grey-bkgd {
         background: #6d665f; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031488}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031517}}
       .whatmakesustick .module .info-wrapper .darkest-grey-bkgd {
         background: #6d665f; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031491}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031520}}
       .whatmakesustick .module .info-wrapper .yellow-bkgd {
         background: #f3b52f; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031523}}
       .whatmakesustick .module .info-wrapper .orange {
         color: #f15a24; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031497}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031526}}
       .whatmakesustick .module .info-wrapper .aqua {
         color: #57dae6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031529}}
       .whatmakesustick .module .info-wrapper .white {
         color: #ffffff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031503}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031532}}
       .whatmakesustick .module .info-wrapper .charcoalDk {
         color: #000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031535}}
       .whatmakesustick .module .info-wrapper h3 {
         font-size: 1.42em;
         font-weight: 300;
         margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031511}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031540}}
       .whatmakesustick .module .info-wrapper .top_prd_sec {
         width: 100%;
         position: relative;
         display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031516}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031545}}
       .whatmakesustick .module .info-wrapper .tickTxt {
         font-size: 20px;
         line-height: 22px;
         padding: 50px 20px;
         color: #6d665f;
         background-color: #eee; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031522}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031551}}
         .whatmakesustick .module .info-wrapper .tickTxt .reg {
           margin: 20px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031526}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031555}}
       .whatmakesustick .module .info-wrapper .gridcontainer {
         overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031532}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031561}}
 .sliders {
   text-align: right;
   font-size: 11px;
   line-height: 1.4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031536}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031565}}
   .sliders img {
     vertical-align: middle;
     display: inline-block;
@@ -2987,7 +3023,7 @@ textarea {
     margin-left: 2px;
     margin-right: 2px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031546}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031575}}
 .sliders--popup .popup-container--wrapper {
   max-width: 1180px;
   position: absolute;
@@ -3000,19 +3036,19 @@ textarea {
   transform: translateX(-50%);
   border-bottom: 1px solid #fff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031559}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031588}}
 .sliders-info {
   display: block;
   position: relative;
   border-bottom: 1px solid #f2f2f2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031563}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031592}}
   .sliders-info .info-wrapper {
     float: left;
     width: 100%;
     text-align: center;
     padding: 18px 18px; }
     @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031563}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooks-redesign\/sass\/main\.scss}line{font-family:\000031592}}
       .sliders-info .info-wrapper {
         width: 50%; } }
 

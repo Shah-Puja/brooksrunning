@@ -107,9 +107,12 @@
 			<div class="tab-4">
 				<div class="homepage-cate--link">
 					<img src="/images/home/sh3.png">
-				    <div class="btn">
-				        <button class="secondary-button">Clothing</button>
-				    </div>
+				</div>
+				<div class="info-wrapper">
+					<h3 class="br-heading">Heading</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+					<a href="#">Shop women's <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="#">Shop men's <img src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 			<div class="tab-4">
@@ -121,13 +124,21 @@
 				        <button class="secondary-button">Shoe Finder</button>
 				    </div>
 				</div>
+				<div class="info-wrapper">
+					<h3 class="br-heading">Shoe Finder</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+					<a href="#">Shoe finder <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					
+				</div>
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link">
 					<img src="/images/home/sh4.png">
-				    <div class="btn">
-				        <button class="secondary-button">Event Name</button>
-				    </div>
+				</div>
+				<div class="info-wrapper">
+					<h3 class="br-heading">Event Name</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+					<a href="#">View event <img src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>

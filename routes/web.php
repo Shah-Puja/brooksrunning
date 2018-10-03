@@ -38,6 +38,19 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 
 /* info static pages */
 Route::get('/about-us', 'InfoController@about_us');
+Route::get('/contact-us', 'InfoController@contact_us');
+
+/* meet_brooks static pages */
+
+Route::get('/newsletter', 'meet_brooksController@newsletter');
+Route::get('/injury-prevention', 'meet_brooksController@injury_prevention');
+Route::get('/newsletter', 'meet_brooksController@newsletter');
+Route::get('/run_happy_view', 'meet_brooksController@run_happy_view');
+Route::get('/run-signature', 'meet_brooksController@run_signature');
+Route::get('/technology', 'meet_brooksController@technology');
+Route::get('/training-tips', 'meet_brooksController@training_tips');
+Route::get('/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
+
 
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
