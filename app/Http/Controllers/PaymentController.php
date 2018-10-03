@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Payments\Processor;
+use App\Events\OrderReceived;
+use App\Mail\OrderConfirmation;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderSubmittedNotification;
 
 
 class PaymentController extends Controller
@@ -20,7 +24,13 @@ class PaymentController extends Controller
         $this->middleware(function ($request, $next) {
 
             $this->cart = Cart::where( 'id', session('cart_id') )->first();
-           
+
+            if(isset($this->cart) && !empty($this->cart)){
+                foreach($this->cart->cartItems as $cart_item){ 
+                    $this->cart['items_count'] += $cart_item->qty;
+                }
+            }
+            //print_r($this->cart->items_count);exit;
             if ( ! $this->cart || $this->cart->items_count < 1 ) {
                 return redirect('cart');
             }
@@ -74,7 +84,10 @@ class PaymentController extends Controller
         session()->forget('cart_id');
         
         $order = $this->order->load('orderItems.variant.product', 'address');
-        
+        // echo "<pre>";
+        // print_r($order);
+        // echo "</pre>";
+        // exit;
         event(new OrderReceived($order));
 
         return view( 'customer.orderconfirmed', compact('order') );

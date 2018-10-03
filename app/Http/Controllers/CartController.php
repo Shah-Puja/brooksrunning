@@ -10,10 +10,12 @@ class CartController extends Controller {
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        
-        foreach($cart->cartItems as $cart_item){
-            //echo "<pre>";print_r();die;
-            $cart['items_count'] += $cart_item->qty;
+         
+        if(isset($cart) && !empty($cart)){
+            foreach($cart->cartItems as $cart_item){
+                
+                $cart['items_count'] += $cart_item->qty;
+            }
         }
         //echo "<pre>";print_r($cart);die;
         if ($cart && !$cart->verifyItems()) {
