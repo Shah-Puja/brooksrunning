@@ -12,8 +12,8 @@
             <p>Size: {{ $cartItem->variant->size }}</p>
             <p>Width: {{ $cartItem->variant->width_name }}</p>
             <p>Qty: {{ $cartItem->qty }}</p>
-            <p>@if (($cartItem->variant->price > 0) && ($cartItem->variant->price < $cartItem->variant->rrp))
-		<del>&dollar;{{ number_format($cartItem->variant->rrp, 2) }}</del>
+            <p>@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
+		<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del>
 		@endif
 		&dollar;{{ number_format($cartItem->variant->price, 2) }} </p>
              <button type="submit" data-sku="{{ $cartItem->variant->id }}"  data-cart-page="{{ Request::is('cart') ? "Yes" : "No" }}" data-action="remove" class="btn blue bold-font action">Remove</button>							
