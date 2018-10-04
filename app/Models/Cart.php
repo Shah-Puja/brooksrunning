@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model {
 
-    protected $fillable = ['user_id', 'total', 'freight_cost', 'grand_total'];
+    protected $fillable = ['user_id', 'total', 'delivery_type', 'freight_cost', 'grand_total'];
 
     public function cartItems() {
         return $this->hasMany('App\Models\Cart_item');
@@ -73,10 +73,12 @@ class Cart extends Model {
             $price = (isset($cart_item->price_sale) && $cart_item->price_sale > 0) ? $cart_item->price_sale : $cart_item->price;
             return $total + ($price * $cart_item->qty);
         });
-        $freightCost = Freight::calculate($this);
+        //$freightCost = Freight::calculate($this);
+        $freightCost = Freight::calculate($cartTotal);
         $this->update([
             //'items_count' => $this->cartItems->sum('qty'), 
             'total' => $cartTotal,
+            'delivery_type' => 'standard',
             'freight_cost' => $freightCost,
             'grand_total' => $cartTotal + $freightCost,
         ]);
