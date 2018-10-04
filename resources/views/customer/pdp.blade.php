@@ -88,21 +88,22 @@
                             </ul>
                         </div>
                         <div class="offer-info">
-                            <span>NEW</span>
+                            <!--<span>NEW</span>-->
+                            @if($product->price_sale < $product->price)
+                                <span class="sale">SALE</span>
+                            @endif
                         </div>
                         <div class="heading-wrapper clearfix">
                             <div class="heading">
                                 <h1 class="br-heading">{{ strip_tags($product->stylename) }}</h1>
                             </div>
                             <div class="price">
-                                @if($product->price_sale!='0' && $product->price_sale!='')
-                                <del><span>&dollar;{{ $product->price }}</span></del>
-                                <span>&dollar;{{ $product->price_sale }}</span>
+                                @if($product->price_sale < $product->price)
+                                <del><span class="black">&dollar;{{ $product->price }}</span></del>
+                                <span class="red">&dollar;{{ $product->price_sale }}</span>
                                 @else
-                                <span>&dollar;{{ $product->price }}</span>
+                                <span lass="black">&dollar;{{ $product->price }}</span>
                                 @endif
-
-
                             </div>
                         </div>
                         <div class="afterpay">
