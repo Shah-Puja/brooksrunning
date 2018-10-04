@@ -17,14 +17,15 @@ class CategoryController extends Controller
         $styles = $products->unique('style');
 
         $prod_type = $products->pluck('prod_type')->first();
-        $flag_bra = $products->pluck('flag_bra')->first();
+        $flag_bra = ($category=='womens-sports-bras') ? 'Yes' : 'No';
+        $gender = $products->pluck('gender')->first();
         $filters = \App\Models\Category::provideFilters($products,$prod_type,$flag_bra);
 
         //echo "<hr><pre>";
-        //print_r($filter);
+        //print_r($products);
         //echo "</pre>";
         //exit;
 
-        return view( 'customer.categorylower', compact('products', 'styles','filters') );
+        return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );
     }
 }

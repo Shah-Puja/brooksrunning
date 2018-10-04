@@ -15,7 +15,7 @@ class CartComposer
         if ( session('cart_id') ) {
             $this->cart = Cache::remember('cart' . session('cart_id'), 4320, function() {
                 return Cart::where( 'id', session('cart_id') )
-                        ->with('cartItems.variant.product:id,stylename')
+                        ->with('cartItems.variant.product:id,color_name,stylename')
                         ->first();
             });
         }
@@ -29,6 +29,7 @@ class CartComposer
                 $this->cart['items_count'] += $cart_item->qty;
             }
         }
+        
         $cart = $this->cart ?? new Cart;
         $view->with( compact('cart') );
     }

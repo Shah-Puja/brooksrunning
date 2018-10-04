@@ -30,7 +30,6 @@ class PaymentController extends Controller
                     $this->cart['items_count'] += $cart_item->qty;
                 }
             }
-            //print_r($this->cart->items_count);exit;
             if ( ! $this->cart || $this->cart->items_count < 1 ) {
                 return redirect('cart');
             }

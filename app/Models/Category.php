@@ -57,7 +57,7 @@ class Category extends Model
             $name=$prod_type;
         }
         $filters =[];
-        $key_names = __($name);
+        $key_names = __($name."_Filter");
 
         foreach($key_names as $key){
             
