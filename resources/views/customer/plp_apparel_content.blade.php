@@ -1,9 +1,16 @@
-<div class="plp-wrapper-container">
+<div class="plp-wrapper-container grid">
 @if($styles!='' && count($styles) >0 )
 	@foreach($styles as $style)
 		@php 
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
+			$filters_array[$style->style]['size'] = $style->variants->pluck('size')->all();
+			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['impact'] = $style->tags->Where('key','PS_F_IMPACT')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['cup_size'] = $style->tags->Where('key','PS_F_CUP')->flatten()->pluck('value')->unique()->all();
+            $filter_arrays = collect($filters_array)->flatten()->unique()->all();
+			$replace_word = array('.',' '); 
+			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 
 		@foreach($products as $product)
@@ -11,7 +18,7 @@
 		   		@php $colors_option[$style->style][] = $product; @endphp
 		   @endif
 		@endforeach
-	<div class="mob-6 col-4 plp-wrapper__sub">
+	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
 		<div class="plp-product">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
@@ -39,9 +46,9 @@
 					<div class="price">
 						@if($price_sale < $price)
 							<del><span class="black">&dollar;{{ $price }}</span></del>
-							<span class="red">&dollar;{{ $price_sale }}</span>
+							<span class="red price_text">&dollar;{{ $price_sale }}</span>
 						@else
-							<span class="black">&dollar;{{ $price }}</span>
+							<span class="black price_text">&dollar;{{ $price }}</span>
 						@endif
 					</div>
 					<div class="shoes-type">{{ strip_tags($style->h2) }}</div>
@@ -60,8 +67,10 @@
 		</div>
 	</div>
 	@endforeach
-	<div class="plp-load-more">
+	<div class="plp-load-more" style="display:none">
 		<a href="#">Load More (5 Remaining)</a>
 	</div>
+@else
+    <p>No products found</p>
 @endif
 </div>
