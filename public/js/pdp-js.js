@@ -1274,7 +1274,7 @@ function detail_validation() {
         },
         url: "/cartitem",
         method: "post",
-        data: { product_id: product_id, size: size_val, width_code: width_name, qty: qty },
+        data: { operation: 'add',product_id: product_id, size: size_val, width_code: width_name, qty: qty },
         success: function (result) {
             //console.log(result);
             let cart_items = result.cartitemshtml;
