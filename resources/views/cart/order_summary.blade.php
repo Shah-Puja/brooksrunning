@@ -11,7 +11,16 @@
                         </div>
                         <div class="row">
                             <div class="mob-7">
-                                <p>Standard Delivery</p>
+                            @php 
+                            if($cart->delivery_type == 'standard'){
+                                $delivery_type = 'Standard';
+                            }elseif($cart->delivery_type == 'express'){
+                                $delivery_type = 'Express';
+                            }elseif($cart->delivery_type == 'new_zealand'){
+                                $delivery_type = 'New Zealand Standard';
+                            }
+                            @endphp
+                                <p>{{ $delivery_type }} Delivery</p>
                             </div>
                             <div class="mob-5">
                                 <p class="right">$ {{ @number_format($cart->freight_cost, 2) }}</p>
