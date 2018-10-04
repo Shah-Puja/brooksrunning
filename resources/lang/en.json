@@ -3,32 +3,36 @@
    "Apparel_Filter": ["Color","Fit","Size","Tops Styles"],
    "Sportsbra_Filter": ["Color","Impact Level","Cup Size","Band Size","Alpha Size","Features"],
    "Footwear_Category":[
-        {
-            "name":"Road Running Shoes",
-            "M_url":"",
-            "W_url":""
-        },
-        {
-            "name":"Trail Running Shoes",
-            "M_url":"/mens-trail-running-shoes",
-            "W_url":"/womens-trail-running-shoes"
-        },
-        {
-            "name":"Walking Shoes",
-            "M_url":"/mens-walking-shoes",
-            "W_url":"/womens-walking-shoes"
-
-        },
-        {
-            "name":"Competition Shoes",
-            "M_url":"/mens-competition-running-shoes",
-            "W_url":"/mens-competition-running-shoes"
-        },
-        {
-            "name":"Neutral",
-            "M_url":"/mens-neutral-running-shoes",
-            "W_url":"/womens-neutral-running-shoes"
-        }
+       {
+            "Shoes":[
+                {
+                    "name":"Road Running Shoes",
+                    "M_url":"",
+                    "W_url":""
+                },
+                {
+                    "name":"Trail Running Shoes",
+                    "M_url":"mens-trail-running-shoes",
+                    "W_url":"womens-trail-running-shoes"
+                },
+                {
+                    "name":"Walking Shoes",
+                    "M_url":"mens-walking-shoes",
+                    "W_url":"womens-walking-shoes"
+        
+                },
+                {
+                    "name":"Competition Shoes",
+                    "M_url":"mens-competition-running-shoes",
+                    "W_url":"mens-competition-running-shoes"
+                },
+                {
+                    "name":"Neutral",
+                    "M_url":"mens-neutral-running-shoes",
+                    "W_url":"womens-neutral-running-shoes"
+                }
+            ]
+       }
     ],
     "Apparel_Category":[
         { 
@@ -36,47 +40,47 @@
                 {
                     "name":"Sports Bras",
                     "M_url":"",
-                    "W_url":"/womens-sports-bras"
+                    "W_url":"womens-sports-bras"
                 },
                 {
                     "name":"Shorts",
-                    "M_url":"/mens-running-shorts",
-                    "W_url":"/womens-running-shorts"
+                    "M_url":"mens-running-shorts",
+                    "W_url":"womens-running-shorts"
                 },
                 {
                     "name":"Tops",
-                    "M_url":"/mens-running-tops",
-                    "W_url":"/womens-running-tops"
+                    "M_url":"mens-running-tops",
+                    "W_url":"womens-running-tops"
                 },
                 {
                     "name":"Jackets & Vests",
-                    "M_url":"/mens-running-jackets-vests",
-                    "W_url":"/womens-running-jackets-vests"
+                    "M_url":"mens-running-jackets-vests",
+                    "W_url":"womens-running-jackets-vests"
                 },
                 {
                     "name":"Pants & Tights",
-                    "M_url":"/mens-running-pants-tights",
-                    "W_url":"/womens-running-pants-tights"
+                    "M_url":"mens-running-pants-tights",
+                    "W_url":"womens-running-pants-tights"
                 },
                 {
                     "name":"NightLife High-Visibility",
-                    "M_url":"/mens-reflective-running-gear",
-                    "W_url":"/womens-reflective-running-gear"
+                    "M_url":"mens-reflective-running-gear",
+                    "W_url":"womens-reflective-running-gear"
                 },
                 {
                     "name":"Socks",
-                    "M_url":"/mens-running-socks",
-                    "W_url":"/womens-running-socks"
+                    "M_url":"mens-running-socks",
+                    "W_url":"womens-running-socks"
                 },
                 {
                     "name":"Accessories",
-                    "M_url":"/mens-running-accessories",
-                    "W_url":"/womens-running-accessories"
+                    "M_url":"mens-running-accessories",
+                    "W_url":"womens-running-accessories"
                 },
                 {
                     "name":"Sale Clothing",
-                    "M_url":"/mens-running-clothes-sale",
-                    "W_url":"/womens-running-clothes-sale"
+                    "M_url":"mens-running-clothes-sale",
+                    "W_url":"womens-running-clothes-sale"
                 }
             ],
             "Sports_bra":[]

@@ -1,10 +1,17 @@
 <div class="plp-wrapper-container">
 @if($styles!='' && count($styles) >0 )
+    @php $colors_option=[]; @endphp
 	@foreach($styles as $style)
 		@php 
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
 		@endphp
+
+		@foreach($products as $product)
+		   @if($product->style== $style->style)
+		   		@php $colors_option[$style->style][] = $product; @endphp
+		   @endif
+		@endforeach
 	<div class="mob-6 col-4 plp-wrapper__sub">
 		<div class="plp-product">
 			<div class="offer-info">
@@ -21,10 +28,11 @@
 			<div class="more-color--container">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel owl-theme">
+					@foreach($colors_option[$style->style] as $color_product)
 					<div class="item">
 						<picture>
 						<source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-						<img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+						<img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
 						</picture>
 						<div class="plp-mob--info visible-mob">
 						<a href="detail-apparel.php">
@@ -35,90 +43,7 @@
 						</a>
 						</div>
 					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-						<img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-						<img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-						<img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-						<img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-						<img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-						<img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
-							<ul>
-								<li>3 Colours</li>
-								<li class="no-pad">Width available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
+					@endforeach
 				</div>
 				<span class="icon-style icon-next-arrow next"></span>
 			</div>

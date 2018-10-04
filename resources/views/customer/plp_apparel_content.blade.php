@@ -5,6 +5,12 @@
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
 		@endphp
+
+		@foreach($products as $product)
+		   @if($product->style== $style->style)
+		   		@php $colors_option[$style->style][] = $product; @endphp
+		   @endif
+		@endforeach
 	<div class="mob-6 col-4 plp-wrapper__sub">
 		<div class="plp-product">
 			<div class="offer-info">
@@ -19,21 +25,11 @@
 			<div class="more-color--container more-clothing">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
+				@foreach($colors_option[$style->style] as $color_product)
 					<div class="item">
 						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
 					</div>
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_mb_WR.jpg" data-big="images/testing/tshirt/211091_414_mb_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_ma_WR.jpg" data-big="images/testing/tshirt/211091_414_ma_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_d2_WR.jpg" data-big="images/testing/tshirt/211091_414_d2_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_d1_WR.jpg" data-big="images/testing/tshirt/211091_414_d1_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
+				@endforeach
 				</div>
 				<span class="icon-style icon-next-arrow next"></span>
 			</div>

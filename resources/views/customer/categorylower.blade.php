@@ -14,17 +14,18 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="#">Womens</a>
+							<a href="#">{{ $gender=='M' ? 'Mens' : 'Womens' }}</a>
 						</li>
+						 @php $page_name = str_replace("-"," ",Request::segment(1)); @endphp
 						<li>
-							<a href="JavaScript:Void(0);" class="active">Womens Running Shoes</a>
+							<a href="/{{Request::segment(1)}}" class="active">{{ ucwords($page_name) }}</a>
 						</li>
 					</ul>
 				</div>
-				<h1 class="br-mainheading">Womens Running Shoes</h1>
-				<div class="sub-info">
+				<h1 class="br-mainheading">{{ ucwords($page_name) }}</h1>
+				<!--<div class="sub-info">
 					Ready for any workout, Our women's running gear proves "look good, feel good" is true.
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
@@ -37,7 +38,7 @@
 				<div class="row">
 					<div class="col-6 tab-5 mob-12 hidden-mob">
 						<div class="all-product--count">
-							<p>Women's Running Shoes (34)</p>
+							<p>{{ ucwords($page_name) }} ({{ count($styles)}})</p>
 						</div>
 					</div>
 					<div class="col-2 tab-1 mob-6">
@@ -69,6 +70,28 @@
 					</div>
 				</div>
 				<div class="row">
+				<style>
+						@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+							.owl-carousel .owl-item{
+								width: 54px !important;
+							}
+						}
+						@media (min-width: 1025px) and (max-width: 1280px) {
+							.owl-carousel .owl-item{
+								width: 54px !important;
+							}
+						}
+						@media (min-width: 768px) and (max-width: 1024px) and (orientation: Portrait) {
+							.owl-carousel .owl-item{
+								width: 86px !important;
+							}
+						}
+						@media (min-width: 1281px) {
+							.owl-carousel .owl-item{
+								width: 54px !important;
+							}
+						}
+				</style>
 					@if(strtolower($prod_type)=='footwear')
 						@include('customer.plp_shoe_content')
 					@else
