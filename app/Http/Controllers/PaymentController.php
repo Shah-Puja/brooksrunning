@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Payments\Processor;
+use App\Events\OrderReceived;
+use App\Mail\OrderConfirmation;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderSubmittedNotification;
 
 
 class PaymentController extends Controller
@@ -79,7 +83,10 @@ class PaymentController extends Controller
         session()->forget('cart_id');
         
         $order = $this->order->load('orderItems.variant.product', 'address');
-        
+        // echo "<pre>";
+        // print_r($order);
+        // echo "</pre>";
+        // exit;
         event(new OrderReceived($order));
 
         return view( 'customer.orderconfirmed', compact('order') );

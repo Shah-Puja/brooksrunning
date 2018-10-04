@@ -117,7 +117,7 @@
 			    <!--/Shipping first step -->
 			    <!-- Shipping Final step -->
 			    <div class="shipping-main-form" style="display: block;">
-                    <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping">
+                    <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
                         @csrf
                         <div class="shipping-form">
                             <p class="email-msg">Please enter your email address</p>					
@@ -469,7 +469,10 @@
 		<div class="col-3 tab-4">
 			<div class="cart-right--container">
 				<div class="order hidden-mob">
-					<h3 class="bold-font">Order Summary</h3>
+                        <div class="order order_summary">
+                                @include('cart.order_summary') 
+                            </div>
+					{{-- <h3 class="bold-font">Order Summary</h3>
 					<div class="order-info">
 					    <div class="row">
 					    	<div class="mob-7">
@@ -498,7 +501,7 @@
 					    <div class="afterpay">
 							<span>or 4 payments of $30.00 with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 				<!--afterpay popup -->
 				<div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
