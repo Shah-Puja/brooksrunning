@@ -13,19 +13,17 @@ class CategoryController extends Controller
         }
         else{
             $gender = $cat_info->gender;            
-            $prod_type = "Footwear"; //$cat_info->prod_type;
+            $prod_type = $cat_info->prod_type;
             $products = \App\Models\Category::getProducts($category);
             if ($products->count() < 1) {
-                echo "<br> No Products";
                 $styles=$flag_bra="";              
-                $filters=[];
-                //exit;  
+                $filters=[];  
             }
             else{
                 $styles = $products->unique('style');                                
                 $filters = \App\Models\Category::provideFilters($products,$prod_type);                
             }            
-            return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );                
+            return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
         }
     }
     public function index_trunal($category) {

@@ -49,15 +49,10 @@ class Category extends Model
         
     }
 
-    public static function provideFilters($products,$prod_type,$flag_bra)
+    public static function provideFilters($products,$prod_type)
     {   
-        if($flag_bra=='Yes'){
-            $name='Sportsbra';
-        }else {  // footwear and apparel
-            $name=$prod_type;
-        }
         $filters =[];
-        $key_names = __($name."_Filter");
+        $key_names = __($prod_type."_Filter");
 
         foreach($key_names as $key){
             

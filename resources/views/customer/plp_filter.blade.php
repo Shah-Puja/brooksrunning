@@ -5,8 +5,11 @@
 		</div>
 		<div class="plp-filter">
 			<ul class="plp-filter--wrapper">
-				@php $category_array = __($prod_type.'_Category') @endphp
-					@if($flag_bra=='Yes')
+				@php 
+					$category_array = __($prod_type.'_Category');
+					$replace_word = array('.',' ');
+				@endphp
+					@if($prod_type=='Sportsbra')
 					    <!-- wrtite sports bra category here -->
 					@elseif($prod_type=='Apparel')
 					<li class="filter-menu">
@@ -47,10 +50,10 @@
 							@if($key == 'Size' || $key == 'Cup_Size')
 								<li class="filter-menu">
 									<label class="label">{{ str_replace("_"," ",$key) }}</label>
-									<ul class="filter-list clearfix">
+									<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 										@foreach($values as $filter_value)
-											<li class="size-filter">
-												<a href="#" data-filter-attribute="{{ $key}}" data-filter-value=" ">{{ $filter_value }}</a>
+											<li class="size-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<a href="javascript:void(0)" class="filter-value" >{{ $filter_value }}</a>
 											</li>
 										@endforeach
 									</ul>
@@ -58,10 +61,10 @@
 							@elseif($key == 'Color')
 								<li class="filter-menu">
 									<label class="label">COLOR</label>
-									<ul class="filter-list clearfix">
+									<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 										@foreach($values as $filter_value)
-											<li class="fullbox-filter color-filter">
-												<div class="input-wrapper">
+											<li class="fullbox-filter color-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<div class="input-wrapper filter-value">
 													<div class="checklist-inline">
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
@@ -77,11 +80,11 @@
 							@else
 								<li class="filter-menu">
 								<label class="label">{{ str_replace("_"," ",$key) }}</label>
-								<ul class="filter-list clearfix">
+								<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 									@foreach($values as $filter_value)
 										@if($filter_value!='')
-											<li class="fullbox-filter">
-												<div class="input-wrapper">
+											<li class="fullbox-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<div class="input-wrapper filter-value">
 													<div class="checklist-inline">
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
