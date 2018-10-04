@@ -4,8 +4,14 @@ namespace App\Models;
 
 class Freight
 {
-	public function calculate($cartOrOrder)
+	public function calculate($cartTotal)
 	{
-		return config('site.freight_cost');	
+		if(isset($cartTotal) && $cartTotal > 50){
+			$freight_cost = '0.00';	
+		}else{
+			$freight_cost = config('site.freight_cost');
+		}
+		//return config('site.freight_cost');	
+		return $freight_cost;
 	}
 }
