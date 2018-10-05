@@ -49,6 +49,23 @@ class Category extends Model
         
     }
 
+    public static function getProducts_main($gender,$prod_type) {              
+
+        return \App\Models\Product::where('gender',$gender)
+            ->where('prod_type',$prod_type)
+            ->whereHas('variants' , function($query)  {
+                return $query->where('visible', '=', 'Yes');
+            })
+            ->with('variants')
+            ->orderBy('style')
+            ->orderBy('seqno')
+            ->get();
+            //->get(['id','style','stylename', 'seqno', 'color_code']);
+            //->values();   
+        
+        
+    }
+
     public static function provideFilters($products,$prod_type)
     {   
         $filters =[];
@@ -74,7 +91,7 @@ class Category extends Model
                  case 'Width':
                     $filters['Width'] = 
                     $products->map(function($product) {
-                        return $product->variants->pluck('width_name');
+                        return $product->variants->where('visible','Yes')->pluck('width_name');
                     })->flatten()->unique()->values()->sort();
                  break;
 

@@ -10,11 +10,16 @@ class CategoryController extends Controller
         $cat_info= \App\Models\Category::where('slug',$category)->first();
         if ($cat_info->count() < 1) {
             abort(404);
-        }
-        else{
+        }else{
             $gender = $cat_info->gender;            
             $prod_type = $cat_info->prod_type;
-            $products = \App\Models\Category::getProducts($category);
+            $depth = $cat_info->depth; 
+            if($depth=='2'){
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type);
+            }elseif($depth=='3'){
+                $products = \App\Models\Category::getProducts($category);
+            }
+            
             if ($products->count() < 1) {
                 $styles=$flag_bra="";              
                 $filters=[];  

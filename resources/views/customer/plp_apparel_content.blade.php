@@ -8,11 +8,11 @@
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['impact'] = $style->tags->Where('key','PS_F_IMPACT')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['cup_size'] = $style->tags->Where('key','PS_F_CUP')->flatten()->pluck('value')->unique()->all();
-            $filter_arrays = collect($filters_array)->flatten()->unique()->all();
+            $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
 			$replace_word = array('.',' '); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
-
+     
 		@foreach($products as $product)
 		   @if($product->style== $style->style)
 		   		@php $colors_option[$style->style][] = $product; @endphp

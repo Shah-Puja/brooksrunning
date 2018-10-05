@@ -9,7 +9,7 @@
 			$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['support_level'] = $style->tags->Where('key','PF_F_SLEVEL')->flatten()->pluck('value')->unique()->all();
-            $filter_arrays = collect($filters_array)->flatten()->unique()->all();
+            $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
 			$replace_word = array('.',' '); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
