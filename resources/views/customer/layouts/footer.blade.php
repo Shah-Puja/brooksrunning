@@ -137,6 +137,11 @@
 			</div>
 	    </div>
 	</footer>
+	<style>
+		.needsfilled{
+			border:1px solid #ff0000 !important;
+		}
+	</style>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/listing.js"></script>
 <!-- details page js -->
