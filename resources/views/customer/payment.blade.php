@@ -108,7 +108,7 @@
 									<span class="tick"><img src="images/tick.jpg" alt=""></span>
 								</span>
 							</div>
-						<form action="" id="my-sample-form" method="post">
+						<form action="" id="my-sample-form" method="post" onsubmit="return paymentform_validate()">
 						@csrf
 							<input type="hidden" name="payment_method_nonce" value="">
 							<div class="shipping-form">
@@ -117,7 +117,7 @@
 									<div class="col-6">
 										<div class="input-wrapper">
 											<label for="email1"><sup>*</sup>Name on Card</label>
-											<input type="text" class="input-field">
+											<input id="card-name" class="input-field">
 										</div>
 									</div>
 									<div class="col-6">
