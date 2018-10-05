@@ -15,57 +15,18 @@
 				<div class="mob-2">
 					<div class="mob-icon cart">
 						<span class="icon-cart-icon"></span>
-						<div class="cart-count">12</div>
+						<div class="cart-count">{{ $cart->items_count > 0 ? $cart->items_count : 0 }}</div>
 					</div>
 				</div>
 				<!-- product cart popup Mobile -->
-			    <div class="cart-popup-desktop" style="display: none;">
-			    	<div class="cart-popup-info">
-			    		<div class="cart-close">
-			    			<i class="icon-close"></i>
-			    		</div>
-			    		<div class="product-wrapper">
-				    		<div class="product clearfix">
-				    			<div class="product-img">
-						            <img src="/images/apparel/apparel1-details.jpg" alt="">
-				    			</div>
-				    			<div class="product-info">
-				    				<p class="blue">Glycerin 16</p>
-				    				<p>Colour: 492</p>
-				    				<p>Size: 9.5</p>
-				    				<p>Width: B-Normal</p>
-				    				<p>Qty: 1</p>
-				    				<p>$219.95</p>
-				    			    <button class="btn blue">Remove</button>
-				    			</div>
-				    		</div>
-				    		<div class="product clearfix">
-				    			<div class="product-img">
-						            <img src="/images/apparel/apparel1-details.jpg" alt="">
-				    			</div>
-				    			<div class="product-info">
-				    				<p class="blue">Glycerin 16</p>
-				    				<p>Colour: 492</p>
-				    				<p>Size: 9.5</p>
-				    				<p>Width: B-Normal</p>
-				    				<p>Qty: 1</p>
-				    				<p>$219.95</p>
-				    			    <button class="btn blue">Remove</button>
-				    			</div>
-				    		</div>
-				    	</div>
-				    	<div class="total clearfix">
-				    		<div class="left">
-				    			<p>Order Subtotal</p>
-				    		</div>
-				    		<div class="right">
-				    			<p class="blue">&dollar;219.95</p>
-				    		</div>
-				    	</div>
-				    	<a href="#" class="primary-button action">Checkout</a>
-				    	<a href="#" class="secondary-button2 action">Countinue Shopping</a>
-			    	</div>
-			    </div>
+				<div class="cart-popup-desktop" style="display: none;">
+                            <div class="cart-popup-info">
+                                <div class="cart-close">
+                                    <i class="icon-close"></i>
+                                </div>
+                                <div class="ajax_cart_popup">@include('cart.ajaxpopupcart')</div> 
+                            </div>
+                </div> 
 			    <!-- /product cart popup Mobile -->
 			</div>
 		</div>

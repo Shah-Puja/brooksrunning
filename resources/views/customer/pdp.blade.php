@@ -106,9 +106,18 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="afterpay">
-                            <span>or 4 payments of $30.00 with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-                        </div>
+                        @php $show_afterpay_prod_price = ''; @endphp
+                        @if($product->price < 1000 || $product->price_sale < 1000)
+                            @if($product->price_sale!=0 && $product->price_sale!='' && $product->price_sale<$product->price)
+                                @php $show_afterpay_prod_price = number_format(($product->price_sale/4), 2); @endphp
+                            @else
+                                @php $show_afterpay_prod_price = number_format(($product->price/4), 2); @endphp
+                            @endif
+                            <div class="afterpay">
+                                <span>or 
+                                4 payments of ${{ $show_afterpay_prod_price }} with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
+                            </div>
+                        @endif 
                         <!--afterpay popup -->
                         <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
                             <div class="popup-container--wrapper">
@@ -226,7 +235,7 @@
                                 @if(!empty($width_names))
                                 <div class="col-6">
                                     <div class="input-wrapper width-wrapper">
-                                        <label for="" class="main">MENS WIDTH <span></span></label>
+                                        <label for="" class="main"> {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH <span></span></label>
                                         <div class="custom-select">
                                             <div class = "select-box">
                                                 <div class = "label-heading">
