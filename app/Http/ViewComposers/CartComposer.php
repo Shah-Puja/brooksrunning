@@ -23,8 +23,6 @@ class CartComposer
 
     public function compose(View $view)
     {
-<<<<<<< HEAD
-=======
         if(isset($this->cart) && !empty($this->cart)){
             foreach($this->cart->cartItems as $cart_item){
                 //echo "<pre>";print_r();die;
@@ -32,7 +30,6 @@ class CartComposer
             }
         }
         
->>>>>>> 770a68bf7e559976f6df5f24972e26496a828f32
         $cart = $this->cart ?? new Cart;
         $view->with( compact('cart') );
     }
