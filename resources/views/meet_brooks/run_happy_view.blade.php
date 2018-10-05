@@ -49,6 +49,9 @@
 				     <div class="tab-7 padd_00">
 				       <div class="top_prd_sec">
 				          <img src="images/meet-brooks/hello/runhappy/04.jpg" alt="">
+				          <span class="txtMeaningful">
+					      <h3><span class="aqua">Run Happy is</span><span class="white"> each runner's deep and meaningful love of running.</span></h3>
+					      </span>
 				       </div>
 				     </div>
 				     <div class="tab-5 padd_00">
@@ -133,9 +136,7 @@
 			<div class="info-wrapper ">
 				  <div class="row blue-bkgd">
 				     <div class="tab-8 padd_00">
-				       <div class="top_prd_sec">
 				          <img src="images/meet-brooks/hello/runhappy/14.jpg" alt="">
-				       </div>
 				     </div>
 				     <div class="tab-4 padd_00">
 				       <div class="txtTap">
@@ -184,7 +185,7 @@
 		<div class="wrapper">
 			<div class="info-wrapper">
 				  <div class="row blue-bkgd ">
-				     <div class="tab-5 padd_00 padd_b_6">
+				     <div class="tab-5 padd_00">
 				       <h2 class="txtOurflag flag aqua">OUR FLAG IN THE GROUND</h2>
 				     </div>
 				     <div class="tab-7 padd_00">
@@ -224,6 +225,24 @@
 		        <img src="images/meet-brooks/hello/runhappy/21.jpg" alt="Header Images">
 		      </picture>
 	    </div>
+	</section>
+	<section class="module">
+		<div class="wrapper">
+			<div class="info-wrapper">
+				  <div class="row">
+				     <div class="tab-6 padd_00">
+				       <div class="top_prd_sec ">
+					      <img src="images/meet-brooks/hello/runhappy/22.jpg" alt="" />
+				       </div>
+				     </div>
+				     <div class="tab-6 padd_00">
+				       <div class="top_prd_sec ">
+					      <img src="images/meet-brooks/hello/runhappy/23.jpg" alt="" />
+				       </div>
+				     </div>
+	   			</div>
+			</div>
+		</div>
 	</section>
 </section>
 <section class="brooksrunhappyis visible-mob">
@@ -375,7 +394,7 @@
 			<div class="info-wrapper">
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
-				      <div class="mobtxtLeft">
+				      <div class="mobtxtLeft-wordsRun">
 					         <span class="white">The words Run Happy<br>
        						remind runners everywhere why they fell in love with running in the first place.
        						</span>

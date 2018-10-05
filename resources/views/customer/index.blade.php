@@ -7,7 +7,7 @@
 		       <div class="top_prd_sec">
 		          <picture>
 			        <source media="(max-width: 595px)" srcset="images/home/home-banner--left-mob.jpg">
-			        <img src="/images/home/home-banner--left.jpg" alt="Header Images" width="100%">
+			        <img src="images/home/home-banner--left.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       			<button class="primary-button">Shop Women's</button>
@@ -18,7 +18,7 @@
 		       <div class="top_prd_sec">
 		          <picture>
 			        <source media="(max-width: 595px)" srcset="images/home/home-banner--right-mob.jpg">
-			        <img src="/images/home/home-banner--right.jpg" alt="Header Images" width="100%">
+			        <img src="images/home/home-banner--right.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       		   <button class="primary-button">Shop Men's</button>
@@ -33,36 +33,36 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/sh1.png">
+					<img src="images/home/sh1.png">
 			        <h3>Overlay text <br/>can go here</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/sh1.png">
+					<img src="images/home/sh1.png">
 			        <h3>Overlay text <br/>can go here</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/sh1.png">
+					<img src="images/home/sh1.png">
 			        <h3>Overlay text <br/>can go here</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>
@@ -106,20 +106,20 @@
 		<div class="row">
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="/images/home/sh3.png">
+					<img src="images/home/sh3.png">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Heading</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Shop women's <img src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="#">Shop men's <img src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<a href="#">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="#">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link shoe-finder">
 					<h3 class="br-heading">Need help choosing a shoe?</h3>
 					<p class="br-info">Try the shoe finder</p>
-					<img src="/images/brooks-shoes--logo.png" alt="">
+					<img src="images/brooks-shoes--logo.png" alt="">
 				    <div class="btn">
 				        <button class="secondary-button">Shoe Finder</button>
 				    </div>
@@ -127,18 +127,18 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Shoe finder <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="#">Shoe finder <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="/images/home/sh4.png">
+					<img src="images/home/sh4.png">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Event Name</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">View event <img src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="#">View event <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>
@@ -157,7 +157,7 @@
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -168,7 +168,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -179,7 +179,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -190,7 +190,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -201,7 +201,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -212,7 +212,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>
@@ -223,7 +223,7 @@
 		        <div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/shoes/shoes1-listing.jpg">
+		              		<img src="images/shoes/shoes1-listing.jpg">
 		                </div>
 		                <div class="prd_caption">
 			              	 <h3>Adrenaline GTS 18</h3>

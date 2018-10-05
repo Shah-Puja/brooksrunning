@@ -1020,6 +1020,9 @@
         @extend %bold-font;
         &:hover{
           color: $lightblue;
+           #br-home{
+          content: url(../images/home/link-arrow-lightblue--icon.png);
+          }
         }
         img{
           width: 14px;
@@ -1220,12 +1223,16 @@
       }
       a{
         display: inline-block;
-        font-size: 18px;
+        font-size: 15px;
         color: $blue;
         @extend %bold-font;
         &:hover{
           color: $lightblue;
+           #br-home{
+          content: url(../images/home/link-arrow-lightblue--icon.png);
+          }
         }
+       
         img{
           width: 14px;
           vertical-align: baseline;
@@ -1239,7 +1246,10 @@
         }
       }
       .right-link{
-        float: right;
+        margin-left: 50px;
+        @media #{$tab-only}{
+          margin-left: 8px;
+        }
       }
       @media #{$tab-only}{
            padding: 0 5px;
