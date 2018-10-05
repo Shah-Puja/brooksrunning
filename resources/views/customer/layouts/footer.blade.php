@@ -136,7 +136,7 @@
 				</div>
 			</div>
 	    </div>
-</footer>
+	</footer>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/listing.js"></script>
 <!-- details page js -->
