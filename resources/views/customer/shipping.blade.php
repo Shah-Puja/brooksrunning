@@ -471,7 +471,7 @@
 				<div class="order hidden-mob">
                         <div class="order order_summary">
                                 @include('cart.order_summary') 
-                            </div>
+                        </div>
 					{{-- <h3 class="bold-font">Order Summary</h3>
 					<div class="order-info">
 					    <div class="row">

@@ -28,6 +28,8 @@ class BillingShippingController extends Controller
 
     public function create()
     {
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        
         if (@$this->cart->order->address) {
             $orderAddress = $this->cart->order->address;
         }
@@ -41,14 +43,9 @@ class BillingShippingController extends Controller
             $orderAddress = new Order_address;
         }
 
-        return view( 'customer.shipping', compact('orderAddress') );
+        return view( 'customer.shipping', compact('orderAddress','cart') );
     }
-
-    // public function index(){
-        
-    //     return view('customer.shipping');
-    // }
-
+    
     public function store(){
         $validatedAddress = request()->validate([
     		'email' => 'required|email',
