@@ -5,45 +5,42 @@
 		</div>
 		<div class="plp-filter">
 			<ul class="plp-filter--wrapper">
-				@php $category_array = __($prod_type.'_Category') @endphp 
-				@if(is_array($category_array))
+				@php 
+					$category_array = __($prod_type.'_Category');
+					$replace_word = array('.',' ');
+				@endphp
+					@if($prod_type=='Sportsbra')
+					    <!-- wrtite sports bra category here -->
+					@elseif($prod_type=='Apparel')
 					<li class="filter-menu">
 						<label class="label br-mainheading category-heading">Categories</label>
 						<ul class="filter-list filter-list--category clearfix">
-							@foreach($category_array as $category)
-							    @if($prod_type=='Apparel')
-									@if($flag_bra=='Yes') <!-- Sports Bras category -->
-										@if($category['Sports_bra']!='')
-											@foreach($category['Sports_bra'] as $value)
-												<a href="{{ $value[$gender.'_url'] }}">
-													<li class="fullbox-filter category">
-														{{ $value['name'] }}
-													</li>
-												</a>
-											@endforeach
-										@endif
-									@else <!-- apparel Category -->
-										@foreach($category['Clothes'] as $value)
-										    @if(!($gender=='M' && $value['name']=='Sports Bras'))
-												<a href="{{ $value[$gender.'_url'] }}">
-													<li class="fullbox-filter category">
-														{{ $value['name'] }}
-													</li>
-												</a>
-											@endif
-										@endforeach
-									@endif
-								@else  <!-- Footwear Category -->
-									<a href="{{ $category[$gender.'_url'] }}">
-										<li class="fullbox-filter category">
-											{{ $category['name'] }}
-										</li>
-									</a>
-								@endif
-							@endforeach
+						@foreach($category_array[0]['Clothes'] as $value)
+							@if(!($gender=='M' && $value['name']=='Sports Bras'))
+								<a href="/{{ $value[$gender.'_url'] }}">
+									<li class="fullbox-filter category {{ (Request::segment(1)==$value[$gender.'_url']) ? 'selected':'' }}">
+										{{ $value['name'] }}
+									</li>
+								</a>
+							@endif
+						@endforeach
 						</ul>
 					</li>
-				@endif
+					@else
+					<li class="filter-menu">
+						<label class="label br-mainheading category-heading">Categories</label>
+						<ul class="filter-list filter-list--category clearfix">
+						@foreach($category_array[0]['Shoes'] as $value)
+							<a href="/{{ $value[$gender.'_url'] }}">
+								<li class="fullbox-filter category {{ (Request::segment(1)==$value[$gender.'_url']) ? 'selected':'' }}">
+									{{ $value['name'] }}
+								</li>
+							</a>
+						@endforeach
+					    </ul>
+					</li>	
+					@endif
+				
 				@if(count($filters)>0)
 					<li class="filter-heading">
 						<h3>Filter</h3>
@@ -53,10 +50,10 @@
 							@if($key == 'Size' || $key == 'Cup_Size')
 								<li class="filter-menu">
 									<label class="label">{{ str_replace("_"," ",$key) }}</label>
-									<ul class="filter-list clearfix">
+									<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 										@foreach($values as $filter_value)
-											<li class="size-filter">
-												<a href="#" data-filter-attribute="{{ $key}}" data-filter-value=" ">{{ $filter_value }}</a>
+											<li class="size-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<a href="javascript:void(0)" class="filter-value" >{{ $filter_value }}</a>
 											</li>
 										@endforeach
 									</ul>
@@ -64,10 +61,10 @@
 							@elseif($key == 'Color')
 								<li class="filter-menu">
 									<label class="label">COLOR</label>
-									<ul class="filter-list clearfix">
+									<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 										@foreach($values as $filter_value)
-											<li class="fullbox-filter color-filter">
-												<div class="input-wrapper">
+											<li class="fullbox-filter color-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<div class="input-wrapper filter-value">
 													<div class="checklist-inline">
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
@@ -83,11 +80,11 @@
 							@else
 								<li class="filter-menu">
 								<label class="label">{{ str_replace("_"," ",$key) }}</label>
-								<ul class="filter-list clearfix">
+								<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
 									@foreach($values as $filter_value)
 										@if($filter_value!='')
-											<li class="fullbox-filter">
-												<div class="input-wrapper">
+											<li class="fullbox-filter" data-filter-value=".{{ str_replace($replace_word,'-',$filter_value) }}">
+												<div class="input-wrapper filter-value">
 													<div class="checklist-inline">
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">

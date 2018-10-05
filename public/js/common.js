@@ -247,6 +247,17 @@ $(document).on('click', '.custom-select .option-value', function () {
     $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
     $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
     $("#detail input[name='width_name']").val(value);
+
+    /** listing sort */
+    var type = $(this).attr('data-sorttype');
+    var sortValue = $(this).attr('value');
+    if(type=='ass'){
+        $grid.isotope({ sortBy: sortValue , sortAscending: false});
+    }else if(type=='name'){
+        $grid.isotope({ sortBy: sortValue , sortAscending: true });
+    }else{
+        $grid.isotope({ sortBy: sortValue , sortAscending: true});
+    }
     event.stopPropagation();
 });
 

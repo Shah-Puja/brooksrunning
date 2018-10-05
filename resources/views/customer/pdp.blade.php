@@ -367,7 +367,7 @@
         </div>
     </div>
 </div>
-@if (strpos(strtolower($product->tag), 'sportsbra') !== false)
+@if (strtolower($product->flag_bra) =='yes')
 @include('customer.pdp_bra_benefits')
 @elseif(strtolower($product->prod_type) =='footwear')
 @include('customer.pdp_shoe_benefits')
