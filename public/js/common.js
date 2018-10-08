@@ -321,6 +321,12 @@ function collapseText() {
 
 // less and more info btn
 $(document).ready(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
     function splitText(text) {
         var textBreak = textLimit;
         var first = text.substring(0, textBreak);

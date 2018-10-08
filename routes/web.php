@@ -59,9 +59,11 @@ Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
 
 
+Route::post('/afterpay', 'PaymentController@create_token');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
-
+Route::get('/afterpay_payment', 'PaymentController@afterpay_payment');
 
 

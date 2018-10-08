@@ -11,13 +11,16 @@ use App\Events\OrderReceived;
 use App\Mail\OrderConfirmation;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderSubmittedNotification;
+use App\Payments\AfterpayProcessor;
+use App\Payments\AfterpayApiClient;
 
 
 class PaymentController extends Controller
 {
     protected $cart; 
 	protected $order;    
- 	protected $processor;
+    protected $processor;
+    protected $afterpay_processor;
 
     public function __construct(Processor $processor)
 	{
@@ -63,6 +66,13 @@ class PaymentController extends Controller
         ], compact('cart'));
     }
 
+    public function create_token(AfterpayProcessor $afterpay_processor){
+        $order=array();
+        //echo "<pre>";print_r($order);die;
+        $get_afterpay_token = $afterpay_processor->getAfterpayToken($order);
+        echo "<pre>";print_r($get_afterpay_token);die;
+    }
+
     public function store(){
         if (! $this->order->canBeFinalised() ) {
 			return redirect('cart')->withErrors(['cart' => 'Some items not available any more']);
@@ -92,5 +102,9 @@ class PaymentController extends Controller
         event(new OrderReceived($order));
 
         return view( 'customer.orderconfirmed', compact('order') );
+    }
+
+    public function afterpay_payment($request){
+        echo "<pre>";print_R($request);die;
     }
 }
