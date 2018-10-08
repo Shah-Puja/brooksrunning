@@ -1778,6 +1778,18 @@
               margin: auto;
             }
             .more-color--container{
+              @media #{$desktop-up}{
+                .owl-carousel {
+                  .owl-item{
+                  width: 54px !important;
+                }
+                }
+              }
+              @media (min-width: 768px) and (max-width: 1024px) and (orientation: Portrait) {
+                .owl-carousel .owl-item{
+                  width: 86px !important;
+                }
+              }
               display: block;
               position: relative;
               &.more-clothing{
@@ -2017,31 +2029,7 @@
             }
           }
       }
-      .plp-load-more{
-        display: block;
-        position: relative;
-        width: 100%;
-        text-align: center;
-        a{
-          @extend %bold-font;
-          padding: 20px;
-          display: inline-block;
-          border: 2px solid #0363F7;
-          width: auto;
-          display: inline-block;
-          min-width: 320px;
-          font-size: 14px;
-          border-radius: 50px;
-          margin: 20px auto 50px;
-          transition: all 0.5s ease-in-out;
-          color: #0363F7;
-          &:hover{
-            border: 2px solid #002855;
-            background-color: #002855;
-            color: $white;
-          }
-        }
-      }
+   
       .mob-6:nth-of-type(even){
          @media #{$mobile-only}{
           padding-left: 7px !important;
@@ -2052,6 +2040,31 @@
           padding-right: 7px !important;
         }
       }
+  }
+  .plp-load-more{
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    a{
+      @extend %bold-font;
+      padding: 20px;
+      display: inline-block;
+      border: 2px solid #0363F7;
+      width: auto;
+      display: inline-block;
+      min-width: 320px;
+      font-size: 14px;
+      border-radius: 50px;
+      margin: 20px auto 50px;
+      transition: all 0.5s ease-in-out;
+      color: #0363F7;
+      &:hover{
+        border: 2px solid #002855;
+        background-color: #002855;
+        color: $white;
+      }
+    }
   }
   .mobile-plp--filter{
     .mobile-plp--close{

@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				<div class="row">
-				<style>
+				<!-- <style>
 						@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 							.owl-carousel .owl-item{
 								width: 54px !important;
@@ -94,7 +94,7 @@
 						.hidden{
 							display:none;
 						}
-				</style>
+				</style> -->
 					@if(strtolower($prod_type)=='footwear')
 						@include('customer.plp_shoe_content')
 					@else
