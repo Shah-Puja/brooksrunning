@@ -12,11 +12,11 @@
                         <div class="row">
                             <div class="mob-7">
                             @php 
-                            if($cart->delivery_type == 'standard'){
+                            if(isset($cart->delivery_type) && $cart->delivery_type == 'standard'){
                                 $delivery_type = 'Standard';
-                            }elseif($cart->delivery_type == 'express'){
+                            }elseif(isset($cart->delivery_type) && $cart->delivery_type == 'express'){
                                 $delivery_type = 'Express';
-                            }elseif($cart->delivery_type == 'new_zealand'){
+                            }elseif(isset($cart->delivery_type) && $cart->delivery_type == 'new_zealand'){
                                 $delivery_type = 'New Zealand Standard';
                             }
                             @endphp
@@ -34,9 +34,12 @@
                                 <p class="bold-font blue right">$ {{ @number_format($cart->grand_total, 2) }}</p>
                             </div>
                         </div>	
+                        @if($cart->grand_total <1000)
                         <div class="afterpay">
-                            <span>or 4 payments of $30.00 with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
+                            <span>or 
+                            4 payments of ${{ @number_format(($cart->grand_total/4), 2) }} with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
                         </div>
+                        @endif 
                     </div>
 
 <!--afterpay popup -->
