@@ -241,7 +241,9 @@ $(document).on('click', '.custom-select .label-heading', function (event) {
     event.stopPropagation();
 });
 $(document).on('click', '.custom-select .option-value', function () {
+    $(".select-option--wrapper li").removeClass("selected");
     let value = $(this).data('value');
+    $(this).addClass("selected");
     $(this).parent().parent().find(".label-heading .text").html($(this).text());
     $(this).parent().slideUp("fast");
     $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");

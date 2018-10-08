@@ -95,10 +95,7 @@ class PaymentController extends Controller
         session()->forget('cart_id');
         
         $order = $this->order->load('orderItems.variant.product', 'address');
-        // echo "<pre>";
-        // print_r($order);
-        // echo "</pre>";
-        // exit;
+    
         event(new OrderReceived($order));
 
         return view( 'customer.orderconfirmed', compact('order') );
