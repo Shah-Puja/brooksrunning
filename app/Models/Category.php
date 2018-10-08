@@ -114,7 +114,56 @@ class Category extends Model
                     $products->map(function($product) {
                         return $product->tags->Where('key','PS_F_CUP');
                     })->flatten()->pluck('value')->unique()->sort();
-              break;
+                 break;
+
+                 case 'Arch':
+                    $filters['Arch'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PF_F_ARCH');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Activity':
+                    $filters['Activity'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PF_F_ACTIVITY');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Midsole Drop':
+                    $filters['Midsole_Drop'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PF_F_DROP');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Feature Preferences':
+                    $filters['Feature_Preferences'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PS_F_PREFERENCE');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Great For':
+                    $filters['Great_For'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PS_F_GREATFOR');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Breast Shape':
+                    $filters['Breast_Shape'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PS_F_SHAPE');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
+
+                 case 'Impact':
+                    $filters['Impact'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PS_F_IMPACT');
+                    })->flatten()->pluck('value')->unique()->sort();
+                 break;
 
              endswitch;
         }

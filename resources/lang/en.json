@@ -1,7 +1,7 @@
 {
-   "Footwear_Filter": ["Size","Width","Support Level","Experience Type","Color"],
-   "Apparel_Filter": ["Color","Fit","Size","Tops Styles"],
-   "Sportsbra_Filter": ["Color","Impact Level","Cup Size","Band Size","Alpha Size","Features"],
+   "Footwear_Filter": ["Size","Width","Color","Support Level","Arch","Activity","Midsole Drop"],
+   "Apparel_Filter": ["Size","Color"],
+   "Sportsbra_Filter": ["Cup Size","Support Preference","Great For","Color","Feature Preferences","Breast Shape","Impact"],
    "Footwear_Category":[
        {
             "Shoes":[
