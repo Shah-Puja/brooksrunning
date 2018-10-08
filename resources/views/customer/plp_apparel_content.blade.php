@@ -8,8 +8,11 @@
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['impact'] = $style->tags->Where('key','PS_F_IMPACT')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['cup_size'] = $style->tags->Where('key','PS_F_CUP')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Great_For'] = $style->tags->Where('key','PS_F_GREATFOR')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Breast_Shape'] = $style->tags->Where('key','PS_F_SHAPE')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Feature_Preferences'] = $style->tags->Where('key','PS_F_PREFERENCE')->flatten()->pluck('value')->unique()->all();
             $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
-			$replace_word = array('.',' '); 
+			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
      

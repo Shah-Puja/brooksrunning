@@ -9,8 +9,11 @@
 			$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['support_level'] = $style->tags->Where('key','PF_F_SLEVEL')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Arch'] = $style->tags->Where('key','PF_F_ARCH')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Activity'] = $style->tags->Where('key','PF_F_ACTIVITY')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Midsole_Drop'] = $style->tags->Where('key','PF_F_DROP')->flatten()->pluck('value')->unique()->all();
             $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
-			$replace_word = array('.',' '); 
+			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 
@@ -42,7 +45,7 @@
 						<img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
 						</picture>
 						<div class="plp-mob--info visible-mob">
-						<a href="detail-apparel.php">
+						<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 							<ul>
 								<li>3 Colours</li>
 								<li class="no-pad">Widths Available</li>

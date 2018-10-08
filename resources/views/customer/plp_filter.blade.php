@@ -7,7 +7,7 @@
 			<ul class="plp-filter--wrapper">
 				@php 
 					$category_array = __($prod_type.'_Category');
-					$replace_word = array('.',' ');
+					$replace_word = array('.',' ','/');
 				@endphp
 					@if($prod_type=='Sportsbra')
 					    <!-- wrtite sports bra category here -->
