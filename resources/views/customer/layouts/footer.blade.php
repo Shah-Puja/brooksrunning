@@ -137,6 +137,11 @@
 			</div>
 	    </div>
 	</footer>
+	<style>
+		.needsfilled{
+			border:1px solid #ff0000 !important;
+		}
+	</style>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/listing.js"></script>
 <!-- details page js -->
@@ -333,6 +338,34 @@
 		});
 
 	</script>
+<!-- shipping close -->
+
+<!-- payment -->
+	<script>
+		function paymentform_validate(){
+			required = ["card-number","expiration-month","expiration-year","cvv"];
+			// The text to show up within a field when it is incorrect
+			emptyerror = "REQUIRED";
+
+			for (i=0;i<required.length;i++) {
+                var input = $('#'+required[i]);
+                if ((input.val() == "") || (input.val() == emptyerror)) {
+                    input.addClass("needsfilled");
+                    input.val("");
+                    input.attr("placeholder", emptyerror);
+                    //errornotice.fadeIn(750);
+                } else {
+                    input.removeClass("needsfilled");
+                }
+    		}
+			
+			if ($(":input").hasClass("needsfilled") ) {
+				return false;
+			}
+		}
+	</script>
+<!-- payment close -->
+
 
 </body>
 </html>

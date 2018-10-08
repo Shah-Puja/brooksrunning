@@ -24,36 +24,6 @@
 						<div class="order order_summary">
 								@include('cart.order_summary') 
 						</div>
-					{{-- <h3 class="bold-font">Order Summary</h3> --}}
-					{{-- <div class="order-info">
-					    <div class="row">
-					    	<div class="mob-7">
-					    		<p>Subtotal</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="right">$ 399.90</p>
-					    	</div>
-					    </div>
-					    <div class="row">
-					    	<div class="mob-7">
-					    		<p>Standard Delivery</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="right">$ 0.0</p>
-					    	</div>
-					    </div>
-					    <div class="row total">
-					    	<div class="mob-7">
-					    		<p class="bold-font blue">Order Total:</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="bold-font blue right">$ 399.90</p>
-					    	</div>
-					    </div>	
-					    <div class="afterpay">
-							<span>or 4 payments of $30.00 with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-						</div>
-					</div> --}}
 				</div>
 			</div>
 			<div class="shipping-right--container payment-container">
@@ -108,7 +78,7 @@
 									<span class="tick"><img src="images/tick.jpg" alt=""></span>
 								</span>
 							</div>
-						<form action="" id="my-sample-form" method="post">
+						<form action="" id="my-sample-form" method="post" onsubmit="return paymentform_validate()">
 						@csrf
 							<input type="hidden" name="payment_method_nonce" value="">
 							<div class="shipping-form">
@@ -117,7 +87,7 @@
 									<div class="col-6">
 										<div class="input-wrapper">
 											<label for="email1"><sup>*</sup>Name on Card</label>
-											<input type="text" class="input-field">
+											<input id="card-name" class="input-field">
 										</div>
 									</div>
 									<div class="col-6">
@@ -219,36 +189,6 @@
 						<div class="order order_summary">
 								@include('cart.order_summary') 
 						</div>
-					{{-- <h3 class="bold-font">Order Summary</h3>
-					<div class="order-info">
-					    <div class="row">
-					    	<div class="mob-7">
-					    		<p>Subtotal</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="right">$ 399.90</p>
-					    	</div>
-					    </div>
-					    <div class="row">
-					    	<div class="mob-7">
-					    		<p>Standard Delivery</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="right">$ 0.0</p>
-					    	</div>
-					    </div>
-					    <div class="row total">
-					    	<div class="mob-7">
-					    		<p class="bold-font blue">Order Total:</p>
-					    	</div>
-					    	<div class="mob-5">
-					    		<p class="bold-font blue right">$ 399.90</p>
-					    	</div>
-					    </div>	
-					    <div class="afterpay">
-							<span>or 4 payments of $30.00 with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-						</div>
-					</div> --}}
 				</div>
 				<!--afterpay popup -->
 				<div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">

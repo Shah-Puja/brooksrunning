@@ -25,7 +25,7 @@
                         <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
                     </div>
                     <div class="cart-success--info">
-                        <p class="order"><span>Order No:</span> BRN-23707</p>
+                        <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>
                         <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We’re available to help Mon-Fri between 9am-5AEST.</p>
                     </div>
                     <div class="shopping-heading">
@@ -37,19 +37,20 @@
                     </div>
                     <div class="shoppingcart-wrapper">
                         <div class="shoppingcart-products">
+                        @foreach($order->orderItems as $orderItem)
                             <div class="row">
                                 <div class="col-3 tab-6">
                                     <div class="shopping-img">
-                                        <img src="images/apparel/apparel1-details.jpg" alt="">
+                                        <img src="{{ $orderItem->variant->product->image->image1Medium() }}" alt="">
                                     </div>
                                 </div>
                                 <div class="col-3 tab-6">
                                     <div class="product-info">
-                                        <h3 class="bold-font">Adrenaline GTS 18</h3>
-                                        <p>Item # 110241</p>
-                                        <p>Color: 033</p>
-                                        <p>Size: 7.5</p>
-                                        <p>Mens Width: D-Normal</p>
+                                        <h3 class="bold-font">{{ $orderItem->variant->product->stylename }}</h3>
+                                        <p>Item # {{ $orderItem->variant->product_id }}</p>
+                                        <p>Color: {{ $orderItem->variant->product->color_name }}</p>
+                                        <p>Size: {{ $orderItem->variant->size }}</p>
+                                        <p>Mens Width: {{ $orderItem->variant->width }}</p>
                                     </div>
                                 </div>
                                 <div class="col-3 tab-12">
@@ -58,7 +59,7 @@
                                             <p class="bold-font">Quantity:</p>
                                         </div>
                                         <div class="input-wrapper">
-                                            <input type="text" class="input-field">
+                                                {{ $orderItem->qty }}
                                         </div>
                                     </div>
                                 </div>
@@ -66,95 +67,16 @@
                                     <div class="product-info">
                                         <div class="row price">
                                             <div class="mob-5"><p class="bold-font blue">Unit Price</p></div>
-                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;239.95</del> &dollar;169.95</p></div>
+                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;{{ number_format($orderItem->variant->price, 2) }}</del> &dollar;{{ number_format($orderItem->variant->price, 2) }}</p></div>
                                         </div>
                                         <div class="row price">
                                             <div class="mob-5"><p>Item Total</p></div>
-                                            <div class="mob-7"><p class="right">&dollar;169.95</p></div>
+                                            <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItem->variant->price_sale, 2) }}</p></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="shoppingcart-products">
-                            <div class="row">
-                                <div class="col-3 tab-6">
-                                    <div class="shopping-img">
-                                        <img src="images/apparel/apparel1-details.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-6">
-                                    <div class="product-info">
-                                        <h3 class="bold-font">Adrenaline GTS 18</h3>
-                                        <p>Item # 110241</p>
-                                        <p>Color: 033</p>
-                                        <p>Size: 7.5</p>
-                                        <p>Mens Width: D-Normal</p>
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-12">
-                                    <div class="product-info quantity clearfix">
-                                        <div class="quantity-heading">
-                                            <p class="bold-font">Quantity:</p>
-                                        </div>
-                                        <div class="input-wrapper">
-                                            <input type="text" class="input-field">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-12">
-                                    <div class="product-info">
-                                        <div class="row price">
-                                            <div class="mob-5"><p class="bold-font blue">Unit Price</p></div>
-                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;239.95</del> &dollar;169.95</p></div>
-                                        </div>
-                                        <div class="row price">
-                                            <div class="mob-5"><p>Item Total</p></div>
-                                            <div class="mob-7"><p class="right">&dollar;169.95</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shoppingcart-products">
-                            <div class="row">
-                                <div class="col-3 tab-6">
-                                    <div class="shopping-img">
-                                        <img src="images/apparel/apparel1-details.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-6">
-                                    <div class="product-info">
-                                        <h3 class="bold-font">Adrenaline GTS 18</h3>
-                                        <p>Item # 110241</p>
-                                        <p>Color: 033</p>
-                                        <p>Size: 7.5</p>
-                                        <p>Mens Width: D-Normal</p>
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-12">
-                                    <div class="product-info quantity clearfix">
-                                        <div class="quantity-heading">
-                                            <p class="bold-font">Quantity:</p>
-                                        </div>
-                                        <div class="input-wrapper">
-                                            <input type="text" class="input-field">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3 tab-12">
-                                    <div class="product-info">
-                                        <div class="row price">
-                                            <div class="mob-5"><p class="bold-font blue">Unit Price</p></div>
-                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;239.95</del> &dollar;169.95</p></div>
-                                        </div>
-                                        <div class="row price">
-                                            <div class="mob-5"><p>Item Total</p></div>
-                                            <div class="mob-7"><p class="right">&dollar;169.95</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        @endforeach
                         </div>
                     </div>
                     <div class="cart-right--container footer-order">
@@ -169,7 +91,7 @@
                                                 <p>Subtotal</p>
                                             </div>
                                             <div class="mob-5">
-                                                <p class="right">$ 399.90</p>
+                                                <p class="right">${{$order->total}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -177,7 +99,7 @@
                                                 <p>Standard Delivery</p>
                                             </div>
                                             <div class="mob-5">
-                                                <p class="right">$ 0.0</p>
+                                                <p class="right">${{$order->freight_cost}}</p>
                                             </div>
                                         </div>
                                         <div class="row total">
@@ -185,7 +107,7 @@
                                                 <p class="bold-font blue">Order Total</p>
                                             </div>
                                             <div class="mob-5">
-                                                <p class="bold-font blue right">$ 399.90</p>
+                                                <p class="bold-font blue right">${{$order->grand_total}}</p>
                                             </div>
                                         </div>
                                     </div>
