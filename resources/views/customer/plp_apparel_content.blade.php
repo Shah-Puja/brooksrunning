@@ -67,9 +67,6 @@
 		</div>
 	</div>
 	@endforeach
-	<div class="plp-load-more" style="display:none">
-		<a href="#">Load More (5 Remaining)</a>
-	</div>
 @else
     <p>No products found</p>
 @endif
