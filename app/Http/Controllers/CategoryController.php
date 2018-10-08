@@ -53,4 +53,11 @@ class CategoryController extends Controller
 
         return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );
     }
+
+    public function womens_landing(){
+        return view('customer.mens-running-shoes-and-clothing');
+   }
+   public function mens_landing(){
+    return view('customer.womens-running-shoes-and-clothing');
+    }
 }

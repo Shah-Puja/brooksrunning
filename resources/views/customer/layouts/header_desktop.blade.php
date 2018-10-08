@@ -49,7 +49,7 @@
                 </div>
                 <div class="bottom clearfix">
                     <ul class="desktop-navigation" id="desktop-navigation">
-                        <li class="main"><a href="javascript:void(0)" class="main-nav">Women</a>
+                        <li class="main"><a href="womens-running-shoes-and-clothing" class="main-nav">Women</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="javascript:void(0)" class="main-nav">Men</a>
+                        <li class="main"><a href="mens-running-shoes-and-clothing" class="main-nav">Men</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">

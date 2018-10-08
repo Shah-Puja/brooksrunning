@@ -58,6 +58,8 @@ Route::post('/shipping','BillingShippingController@store');
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
 
+Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
+Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
