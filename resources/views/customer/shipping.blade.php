@@ -69,27 +69,36 @@
 				<h1 class="br-heading">Shipping Address</h1>
 				<p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
 				<!-- Shipping first step -->
-				<div class="shipping-form" style="display: none;">
+				<div class="shipping-form" id="shipping-form" style="display: block;">
+                <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
+                    @csrf
 					<p class="email-msg">Please enter your email address</p>
 					<div class="row">
 						<div class="col-6">
 							<div class="input-wrapper">
+                                <?php
+                                    $error_email="";
+                                    if ($errors->has('email') ):
+                                        $error_email="<span class='error'>".$errors->first('email')."</span>";
+                                    endif;
+                                ?>
 								<label for="email1"><sup>*</sup>Email Address</label>
-								<input type="text" name="email1" class="input-field">
+								<input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
 							<div class="cart-btn">
-								<button class="primary-button pdp-button">Submit</button>
+								<button class="primary-button pdp-button" type="submit">Submit</button>
 							</div>
 						</div>
-					</div>
+                    </div>
+                </form>
 			    </div>
 			    <!--/Shipping first step -->
 			    <!-- Shipping Final step -->
-			    <div class="shipping-main-form" style="display: block;">
+			    <div class="shipping-main-form" style="display: none;">
                     <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
                         @csrf
                         <div class="shipping-form">
@@ -104,13 +113,13 @@
                                             endif;
                                         ?>
                                         <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
-                                        <input type="text" name="email" class="input-field" data-label-name="email">
+                                        <input type="text" name="email" class="input-field main_email_field" data-label-name="email">
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Password Wrapper -->
-                            {{-- <div class="password-wrapper" style="display: none;">
+                            <div class="password-wrapper" style="display: none;">
                                 <div class="row">
                                     <div class="col-12">
                                         <p class="email-msg">Looks like you have an account. Enter your password for faster checkout.</p>	
@@ -120,19 +129,19 @@
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <label for="password"><sup>*</sup>Password</label>
-                                            <input type="text" name="password" class="input-field">
+                                            <input type="text" id="password" name="password" class="input-field">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="cart-btn">
-                                            <button class="primary-button pdp-button">Login</button>
-                                            <a href="#" class="continue-step">Continue without login</a>
+                                            <button class="primary-button pdp-button" onclick="login_user()">Login</button>
+                                            <a href='javascript:void(0)' class="continue-step" onclick="gest_user()">Continue without login</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                             <!-- /Password Wrapper -->
                             
                             <div class="row">

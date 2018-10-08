@@ -226,6 +226,67 @@
 			});
 		});
 
+		function email_check_validate(){
+			email_required = ['email']; 
+			var k;
+			var email = $('.check_email_field').val();
+			let input = $('#email_check input[name="'+email_required[k]+'"]');
+			if (input.val() == "") {
+				input.addClass("needsfilled");
+				let label_name = $("#email_check input[name="+email_required[k]+"]").data("label-name");
+				let input_label = $("#email_check input[name="+email_required[k]+"]").parent().find('label');
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
+				let error = label_text + error_span ;
+				input_label.html(error);$("#billing_shipping input[name="+email_required[k]+"]").addClass("error-border");
+				
+			}else{
+				input.removeClass("needsfilled");
+			} 
+
+			if ($("#email_check input").hasClass("needsfilled") ) {
+					return false;
+			}
+			else{
+				$.ajax({
+					url:"/shipping-check-email",
+					type:"POST",
+					data: $('#email_check').serialize(),
+					success: function(data){
+						//console.log(data);
+						if(data == "true"){
+							$('#shipping-form').css('display','none');
+							$('.shipping-main-form').css('display','block');
+							$('.password-wrapper').css('display','block');
+							$('.main_email_field').val(email);
+						}else{
+							$('#shipping-form').css('display','none');
+							$('.shipping-main-form').css('display','block');
+							$('.main_email_field').val(email);
+						}
+					}
+				});
+			}
+			return false;
+		}
+
+		function gest_user(){
+			$('.password-wrapper').css('display','none');
+		}
+
+		// function login_user(){
+		// 	if ($('#password').val() == "") {
+		// 		$('#password').addClass("needsfilled");
+		// 		$('#password').val("");
+		// 		$('#password').attr("placeholder", "REQUIRED");
+                
+        //     } else {
+        //         $('#password').removeClass("needsfilled");
+		// 		return false;
+        //     }
+		// 	return false;
+		// }
+
 		function shippingform_validate(){
 			$("#billing_shipping input,#billing_shipping select").removeClass("error-border");
 			$("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
@@ -247,6 +308,7 @@
 				}else{
 					input.removeClass("needsfilled");
 				} 
+			
 			}
 			
 			
@@ -342,27 +404,27 @@
 
 <!-- payment -->
 	<script>
-		function paymentform_validate(){
-			required = ["card-number","expiration-month","expiration-year","cvv"];
-			// The text to show up within a field when it is incorrect
-			emptyerror = "REQUIRED";
+		// function paymentform_validate(){
+		// 	required = ["card-number","expiration-month","expiration-year","cvv"];
+		// 	// The text to show up within a field when it is incorrect
+		// 	emptyerror = "REQUIRED";
 
-			for (i=0;i<required.length;i++) {
-                var input = $('#'+required[i]);
-                if ((input.val() == "") || (input.val() == emptyerror)) {
-                    input.addClass("needsfilled");
-                    input.val("");
-                    input.attr("placeholder", emptyerror);
-                    //errornotice.fadeIn(750);
-                } else {
-                    input.removeClass("needsfilled");
-                }
-    		}
+		// 	for (i=0;i<required.length;i++) {
+        //         var input = $('#'+required[i]);
+        //         if ((input.val() == "") || (input.val() == emptyerror)) {
+        //             input.addClass("needsfilled");
+        //             input.val("");
+        //             input.attr("placeholder", emptyerror);
+        //             //errornotice.fadeIn(750);
+        //         } else {
+        //             input.removeClass("needsfilled");
+        //         }
+    	// 	}
 			
-			if ($(":input").hasClass("needsfilled") ) {
-				return false;
-			}
-		}
+		// 	if ($(":input").hasClass("needsfilled") ) {
+		// 		return false;
+		// 	}
+		// }
 	</script>
 <!-- payment close -->
 
