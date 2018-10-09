@@ -87,13 +87,13 @@
 									<div class="col-6">
 										<div class="input-wrapper">
 											<label for="email1"><sup>*</sup>Name on Card</label>
-											<input id="card-name" class="input-field">
+											<input id="card-name" class="input-field" required>
 										</div>
 									</div>
 									<div class="col-6">
 										<div class="input-wrapper">
 											<label for="card-number"><sup>*</sup>Card Number</label>
-											<div id="card-number" class="input-field"></div>
+											<div id="card-number" class="input-field" required></div>
 										</div>
 									</div>
 									<div class="col-6">
@@ -101,18 +101,18 @@
 											<label for=""><sup>*</sup>Card Expiry Date</label>
 											<div class="row">
 												<div class="mob-6 card-after">
-													<div id="expiration-month" class="input-field"></div>
+													<div id="expiration-month" class="input-field" required></div>
 												</div>
 												<div class="mob-6">
-													<div id="expiration-year" class="input-field year"></div>
+													<div id="expiration-year" class="input-field year" required></div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="col-6">
 										<div class="input-wrapper security-code">
-											<label for="cvv"><sup>*</sup>Security Code ()</label>
-											<div id="cvv" class="input-field security"></div>
+											<label for="cvv"><sup>*</sup>Security Code</label>
+											<div id="cvv" class="input-field security" required></div>
 										</div>
 									</div>
 								</div>

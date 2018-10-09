@@ -70,11 +70,7 @@
 					</div>
 				</div>
 				<div class="row">
-				 <style>						
-						.hidden{
-							display:none;
-						}
-				</style> 
+				
 					@if(strtolower($prod_type)=='footwear')
 						@include('customer.plp_shoe_content')
 					@else

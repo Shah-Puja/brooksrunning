@@ -235,12 +235,131 @@
         });
     });
 
-    function shippingform_validate() {
-        $("#billing_shipping input,#billing_shipping select").removeClass("error-border");
-        $("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
+		function email_check_validate(){
+			email_required = ['email']; 
+			var k;
+			var email = $('.check_email_field').val();
+			let input = $('#email_check input[name="'+email_required[k]+'"]');
+			if (input.val() == "") {
+				input.addClass("needsfilled");
+				let label_name = $("#email_check input[name="+email_required[k]+"]").data("label-name");
+				let input_label = $("#email_check input[name="+email_required[k]+"]").parent().find('label');
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
+				let error = label_text + error_span ;
+				input_label.html(error);$("#billing_shipping input[name="+email_required[k]+"]").addClass("error-border");
+				
+			}else{
+				input.removeClass("needsfilled");
+			} 
 
-        shipping_required = ["email", "s_fname", "s_lname", "s_add1", "s_city", "s_state", "s_postcode", "s_phone", "s_country"];
-        billing_required = ["b_fname", "b_lname", "b_add1", "b_city", "b_state", "b_postcode", "b_phone", "b_country"];
+			if ($("#email_check input").hasClass("needsfilled") ) {
+					return false;
+			}
+			else{
+				$.ajax({
+					url:"/shipping-check-email",
+					type:"POST",
+					data: $('#email_check').serialize(),
+					success: function(data){
+						//console.log(data);
+						if(data == "true"){
+							$('#shipping-form').css('display','none');
+							$('.shipping-main-form').css('display','block');
+							$('.password-wrapper').css('display','block');
+							$('.main_email_field').val(email);
+						}else{
+							$('#shipping-form').css('display','none');
+							$('.shipping-main-form').css('display','block');
+							$('.main_email_field').val(email);
+						}
+					}
+				});
+			}
+			return false;
+		}
+
+		function gest_user(){
+			$('.password-wrapper').css('display','none');
+		}
+
+		// function login_user(){
+		// 	if ($('#password').val() == "") {
+		// 		$('#password').addClass("needsfilled");
+		// 		$('#password').val("");
+		// 		$('#password').attr("placeholder", "REQUIRED");
+                
+        //     } else {
+        //         $('#password').removeClass("needsfilled");
+		// 		return false;
+        //     }
+		// 	return false;
+		// }
+
+		function shippingform_validate(){
+			$("#billing_shipping input,#billing_shipping select").removeClass("error-border");
+			$("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
+
+			shipping_required = ["email","s_fname","s_lname","s_add1","s_city","s_state","s_postcode","s_phone","s_country"];
+			billing_required = ["b_fname","b_lname","b_add1","b_city","b_state","b_postcode","b_phone","b_country"];
+			 
+			for (k=0;k<shipping_required.length;k++) {
+				let input = $('#billing_shipping input[name="'+shipping_required[k]+'"],#billing_shipping select[name="'+shipping_required[k]+'"]');
+				if (input.val() == "") {
+					input.addClass("needsfilled");
+                    let label_name = $("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").data("label-name");
+					let input_label = $("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").parent().find('label');
+					let label_text = input_label.html();
+					let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
+					let error = label_text + error_span ;
+					input_label.html(error);$("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").addClass("error-border");
+					
+				}else{
+					input.removeClass("needsfilled");
+				} 
+			
+			}
+			
+			
+			let email = $("#billing_shipping input[name='email']");
+			if(email.val()!=''){
+				if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
+					email.addClass("needsfilled");
+					let input_label = email.parent().find('label');
+					let label_text = input_label.html();
+					let error_span = " <span class='error'>The email must be a valid email address.</span>";
+					let error = label_text + error_span ;
+					input_label.html(error);
+					email.addClass("error-border");	
+				}
+			}
+            var s_phone = $('#billing_shipping input[name="b_phone"]').val();
+			if(!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone!=''){
+				$('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
+				let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>The phone format is invalid.</span>";
+				let error = label_text + error_span ;
+				input_label.html(error);
+				$('#billing_shipping input[name="s_phone"]').addClass("error-border");	
+			}
+			
+            if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
+				for (j=0;j<billing_required.length;j++) {
+					let input = $('input[name="'+billing_required[j]+'"],select[name="'+billing_required[j]+'"]');
+					if (input.val() == "") {
+						input.addClass("needsfilled");
+						let label_name = $("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").data("label-name");
+						let input_label = $("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").parent().find('label');
+						let label_text = input_label.html();
+						let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
+						let error = label_text + error_span ;
+						input_label.html(error);
+						$("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").addClass("error-border");
+					}else{
+						input.removeClass("needsfilled");
+					} 
+				}
 
         for (k = 0; k < shipping_required.length; k++) {
             let input = $('#billing_shipping input[name="' + shipping_required[k] + '"],#billing_shipping select[name="' + shipping_required[k] + '"]');
@@ -329,57 +448,35 @@
         }
     }
 
-<<<<<<< HEAD
-    $("#billing_shipping .allownumericwithdecimal").on("keypress keyup blur", function (event) {
-        $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-            console.log("edererer");
-            event.preventDefault();
-        }
-    });
-    $(".phone-number").on("keypress keyup blur", function (event) {
-        var yourInput = $(this).val();
-        var no_spl_char = yourInput.replace(/[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`!#$%^&*()|\=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-        $(this).val(no_spl_char);
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) &&
-                (event.which < 48 || event.which > 57) && event.which != 43 &&
-                event.which != 32 && event.which != 45) {
-            event.preventDefault();
-        }
-    });
-
-</script>
-=======
 	</script>
 <!-- shipping close -->
 
 <!-- payment -->
 	<script>
-		function paymentform_validate(){
-			required = ["card-number","expiration-month","expiration-year","cvv"];
-			// The text to show up within a field when it is incorrect
-			emptyerror = "REQUIRED";
+		// function paymentform_validate(){
+		// 	required = ["card-number","expiration-month","expiration-year","cvv"];
+		// 	// The text to show up within a field when it is incorrect
+		// 	emptyerror = "REQUIRED";
 
-			for (i=0;i<required.length;i++) {
-                var input = $('#'+required[i]);
-                if ((input.val() == "") || (input.val() == emptyerror)) {
-                    input.addClass("needsfilled");
-                    input.val("");
-                    input.attr("placeholder", emptyerror);
-                    //errornotice.fadeIn(750);
-                } else {
-                    input.removeClass("needsfilled");
-                }
-    		}
+		// 	for (i=0;i<required.length;i++) {
+        //         var input = $('#'+required[i]);
+        //         if ((input.val() == "") || (input.val() == emptyerror)) {
+        //             input.addClass("needsfilled");
+        //             input.val("");
+        //             input.attr("placeholder", emptyerror);
+        //             //errornotice.fadeIn(750);
+        //         } else {
+        //             input.removeClass("needsfilled");
+        //         }
+    	// 	}
 			
-			if ($(":input").hasClass("needsfilled") ) {
-				return false;
-			}
-		}
+		// 	if ($(":input").hasClass("needsfilled") ) {
+		// 		return false;
+		// 	}
+		// }
 	</script>
 <!-- payment close -->
 
->>>>>>> 2a5a1d930ab3dd05ac0c3589a26d8c0aaa3f4fc9
 
 </body>
 </html>

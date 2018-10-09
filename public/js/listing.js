@@ -166,8 +166,8 @@ function getComboFilter( filters ) {
     }else{
       var sortAscending =  true ;
     }
-    console.log('select_type'+select_type);
-    console.log('select_value'+select_value);
+    //console.log('select_type'+select_type);
+    //console.log('select_value'+select_value);
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows' });
     //console.log("iso.filteredItems.length" + iso.filteredItems.length);
     var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {

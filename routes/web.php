@@ -54,6 +54,7 @@ Route::get('/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
 
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
+Route::post('/shipping-check-email','BillingShippingController@check_email');
 
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');

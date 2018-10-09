@@ -713,6 +713,10 @@
             min-height: 15px;
           }
       }
+      .selected{
+        background-color: $blue;
+        color: $white;
+      }
   }
   .quantity-selector{
     background-color: $white;

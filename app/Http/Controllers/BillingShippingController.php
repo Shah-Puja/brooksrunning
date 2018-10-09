@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Order_address;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use DB;
 
 class BillingShippingController extends Controller
 {    
@@ -78,5 +81,20 @@ class BillingShippingController extends Controller
         Order::createNew($this->cart, $validatedAddress);
         
         return redirect("payment");
+    }
+
+    public function check_email(Request $email){
+
+        $email= $_POST['email'];
+        $user = DB::table('users')->where("email", "=",  $email)->get();
+        $count = count($user);
+        if($count > 0){
+            echo "true";
+            //return true;
+        }else{
+            echo "false";
+            //return false;
+        }
+         
     }
 }
