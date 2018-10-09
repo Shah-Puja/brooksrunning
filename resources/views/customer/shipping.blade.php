@@ -129,14 +129,14 @@
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <label for="password"><sup>*</sup>Password</label>
-                                            <input type="text" id="password" name="password" class="input-field">
+                                            <input type="text" id="password_field" name="password" class="input-field">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="cart-btn">
-                                            <button class="primary-button pdp-button" onclick="login_user()">Login</button>
+                                            <button class="primary-button pdp-button login_user">Login</button>
                                             <a href='javascript:void(0)' class="continue-step" onclick="gest_user()">Continue without login</a>
                                         </div>
                                     </div>

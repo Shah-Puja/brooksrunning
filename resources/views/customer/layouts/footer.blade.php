@@ -176,12 +176,53 @@
                                 }
                             });
 
+							$('.login_user').on('click',function(){
+								if ($('#password_field').val() == "") {
+									$('#password_field').addClass("needsfilled");
+									$('#password_field').val("");
+									$('#password_field').attr("placeholder", "REQUIRED");	
+								} else {
+									$('#password_field').removeClass("needsfilled");
+								}
+
+								if ($("#password_field").hasClass("needsfilled") ) {
+										return false;
+								}
+								else{
+									var password = $('#password_field').val();
+									var email = $("input[name=email]").val();
+									$.ajax({
+										headers: {
+											'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+										},
+										url:"/shipping-verify-password",
+										type:"POST",
+										data: {password:password,email:email},
+										success: function(data){
+											console.log(data);
+											// if(data == "true"){
+											// 	$('#shipping-form').css('display','none');
+											// 	$('.shipping-main-form').css('display','block');
+											// 	$('.password-wrapper').css('display','block');
+											// 	$('.main_email_field').val(email);
+											// }else{
+											// 	$('#shipping-form').css('display','none');
+											// 	$('.shipping-main-form').css('display','block');
+											// 	$('.main_email_field').val(email);
+											// }
+										}
+									});
+								}
+								return false;
+							});
+
                             $('#pdp-zoom--image').lightSlider({
                                 gallery: true,
                                 item: 1,
                                 slideMargin: 0,
                                 thumbItem: 9
                             });
+
                         });
 </script>
 @if(request()->is('register'))
@@ -235,19 +276,20 @@
         });
     });
 
+
+
 		function email_check_validate(){
 			email_required = ['email']; 
-			var k;
 			var email = $('.check_email_field').val();
-			let input = $('#email_check input[name="'+email_required[k]+'"]');
+			let input = $('#email_check input[name="'+email_required+'"]');
 			if (input.val() == "") {
 				input.addClass("needsfilled");
-				let label_name = $("#email_check input[name="+email_required[k]+"]").data("label-name");
-				let input_label = $("#email_check input[name="+email_required[k]+"]").parent().find('label');
+				let label_name = $("#email_check input[name="+email_required+"]").data("label-name");
+				let input_label = $("#email_check input[name="+email_required+"]").parent().find('label');
 				let label_text = input_label.html();
 				let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
 				let error = label_text + error_span ;
-				input_label.html(error);$("#billing_shipping input[name="+email_required[k]+"]").addClass("error-border");
+				input_label.html(error);$("#billing_shipping input[name="+email_required+"]").addClass("error-border");
 				
 			}else{
 				input.removeClass("needsfilled");
@@ -281,33 +323,21 @@
 
 		function gest_user(){
 			$('.password-wrapper').css('display','none');
+			$('#password_field').val('');
 		}
 
-		// function login_user(){
-		// 	if ($('#password').val() == "") {
-		// 		$('#password').addClass("needsfilled");
-		// 		$('#password').val("");
-		// 		$('#password').attr("placeholder", "REQUIRED");
-                
-        //     } else {
-        //         $('#password').removeClass("needsfilled");
-		// 		return false;
-        //     }
-		// 	return false;
-		// }
-
-		function shippingform_validate(){
+	function shippingform_validate(){
 			$("#billing_shipping input,#billing_shipping select").removeClass("error-border");
 			$("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
 
 			shipping_required = ["email","s_fname","s_lname","s_add1","s_city","s_state","s_postcode","s_phone","s_country"];
 			billing_required = ["b_fname","b_lname","b_add1","b_city","b_state","b_postcode","b_phone","b_country"];
-			 
+				
 			for (k=0;k<shipping_required.length;k++) {
 				let input = $('#billing_shipping input[name="'+shipping_required[k]+'"],#billing_shipping select[name="'+shipping_required[k]+'"]');
 				if (input.val() == "") {
 					input.addClass("needsfilled");
-                    let label_name = $("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").data("label-name");
+					let label_name = $("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").data("label-name");
 					let input_label = $("#billing_shipping input[name="+shipping_required[k]+"],#billing_shipping select[name="+shipping_required[k]+"]").parent().find('label');
 					let label_text = input_label.html();
 					let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
@@ -319,8 +349,8 @@
 				} 
 			
 			}
-			
-			
+				
+				
 			let email = $("#billing_shipping input[name='email']");
 			if(email.val()!=''){
 				if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
@@ -333,7 +363,7 @@
 					email.addClass("error-border");	
 				}
 			}
-            var s_phone = $('#billing_shipping input[name="b_phone"]').val();
+			var s_phone = $('#billing_shipping input[name="b_phone"]').val();
 			if(!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone!=''){
 				$('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
 				let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
@@ -343,8 +373,8 @@
 				input_label.html(error);
 				$('#billing_shipping input[name="s_phone"]').addClass("error-border");	
 			}
-			
-            if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
+				
+			if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
 				for (j=0;j<billing_required.length;j++) {
 					let input = $('input[name="'+billing_required[j]+'"],select[name="'+billing_required[j]+'"]');
 					if (input.val() == "") {
@@ -361,92 +391,94 @@
 					} 
 				}
 
-        for (k = 0; k < shipping_required.length; k++) {
-            let input = $('#billing_shipping input[name="' + shipping_required[k] + '"],#billing_shipping select[name="' + shipping_required[k] + '"]');
-            if (input.val() == "") {
-                input.addClass("needsfilled");
-                let label_name = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").data("label-name");
-                let input_label = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").parent().find('label');
-                let label_text = input_label.html();
-                let error_span = " <span class='error'>The " + label_name + " field is required.</span>";
-                let error = label_text + error_span;
-                input_label.html(error);
-                $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").addClass("error-border");
+			for (k = 0; k < shipping_required.length; k++) {
+				let input = $('#billing_shipping input[name="' + shipping_required[k] + '"],#billing_shipping select[name="' + shipping_required[k] + '"]');
+				if (input.val() == "") {
+					input.addClass("needsfilled");
+					let label_name = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").data("label-name");
+					let input_label = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").parent().find('label');
+					let label_text = input_label.html();
+					let error_span = " <span class='error'>The " + label_name + " field is required.</span>";
+					let error = label_text + error_span;
+					input_label.html(error);
+					$("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").addClass("error-border");
 
-            } else {
-                input.removeClass("needsfilled");
-            }
-        }
+				} else {
+					input.removeClass("needsfilled");
+				}
+			}
 
 
-        let email = $("#billing_shipping input[name='email']");
-        if (email.val() != '') {
-            if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
-                email.addClass("needsfilled");
-                let input_label = email.parent().find('label');
-                let label_text = input_label.html();
-                let error_span = " <span class='error'>The email must be a valid email address.</span>";
-                let error = label_text + error_span;
-                input_label.html(error);
-                email.addClass("error-border");
-            }
-        }
-        var s_phone = $('#billing_shipping input[name="b_phone"]').val();
-        if (!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone != '') {
-            $('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
-            let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
-            let label_text = input_label.html();
-            let error_span = " <span class='error'>The phone format is invalid.</span>";
-            let error = label_text + error_span;
-            input_label.html(error);
-            $('#billing_shipping input[name="s_phone"]').addClass("error-border");
-        }
+			let email = $("#billing_shipping input[name='email']");
+			if (email.val() != '') {
+				if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
+					email.addClass("needsfilled");
+					let input_label = email.parent().find('label');
+					let label_text = input_label.html();
+					let error_span = " <span class='error'>The email must be a valid email address.</span>";
+					let error = label_text + error_span;
+					input_label.html(error);
+					email.addClass("error-border");
+				}
+			}
+			var s_phone = $('#billing_shipping input[name="b_phone"]').val();
+			if (!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone != '') {
+				$('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
+				let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>The phone format is invalid.</span>";
+				let error = label_text + error_span;
+				input_label.html(error);
+				$('#billing_shipping input[name="s_phone"]').addClass("error-border");
+			}
 
-        if ($('input[type="radio"][name="flag_same_shipping"]:checked').val() == 'No') {
-            for (j = 0; j < billing_required.length; j++) {
-                let input = $('input[name="' + billing_required[j] + '"],select[name="' + billing_required[j] + '"]');
-                if (input.val() == "") {
-                    input.addClass("needsfilled");
-                    let label_name = $("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").data("label-name");
-                    let input_label = $("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").parent().find('label');
-                    let label_text = input_label.html();
-                    let error_span = " <span class='error'>The " + label_name + " field is required.</span>";
-                    let error = label_text + error_span;
-                    input_label.html(error);
-                    $("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").addClass("error-border");
-                } else {
-                    input.removeClass("needsfilled");
-                }
-            }
+			if ($('input[type="radio"][name="flag_same_shipping"]:checked').val() == 'No') {
+				for (j = 0; j < billing_required.length; j++) {
+					let input = $('input[name="' + billing_required[j] + '"],select[name="' + billing_required[j] + '"]');
+					if (input.val() == "") {
+						input.addClass("needsfilled");
+						let label_name = $("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").data("label-name");
+						let input_label = $("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").parent().find('label');
+						let label_text = input_label.html();
+						let error_span = " <span class='error'>The " + label_name + " field is required.</span>";
+						let error = label_text + error_span;
+						input_label.html(error);
+						$("#billing_shipping input[name=" + billing_required[j] + "],#billing_shipping select[name=" + billing_required[j] + "]").addClass("error-border");
+					} else {
+						input.removeClass("needsfilled");
+					}
+				}
 
-            var b_phone = $('#billing_shipping input[name="s_phone"]').val();
-            if (!b_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && b_phone != '') {
-                $('#billing_shipping input[name="b_phone"]').addClass("needsfilled");
-                let input_label = $('#billing_shipping input[name="b_phone"]').parent().find('label');
-                let label_text = input_label.html();
-                let error_span = " <span class='error'>The phone format is invalid.</span>";
-                let error = label_text + error_span;
-                input_label.html(error);
-                $('#billing_shipping input[name="b_phone"]').addClass("error-border");
-            }
-        }
+				var b_phone = $('#billing_shipping input[name="s_phone"]').val();
+				if (!b_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && b_phone != '') {
+					$('#billing_shipping input[name="b_phone"]').addClass("needsfilled");
+					let input_label = $('#billing_shipping input[name="b_phone"]').parent().find('label');
+					let label_text = input_label.html();
+					let error_span = " <span class='error'>The phone format is invalid.</span>";
+					let error = label_text + error_span;
+					input_label.html(error);
+					$('#billing_shipping input[name="b_phone"]').addClass("error-border");
+				}
+			}
 
-        let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
-        if (!terms.is(':checked')) {
-            let input_label = terms.parent().find('label');
-            let label_text = input_label.html();
-            let error_span = " <span class='error'>The terms must be accepted.</span>";
-            let error = label_text + error_span;
-            input_label.html(error);
-            terms.addClass("needsfilled");
-        } else {
-            terms.removeClass("needsfilled");
-        }
+			let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
+			if (!terms.is(':checked')) {
+				let input_label = terms.parent().find('label');
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>The terms must be accepted.</span>";
+				let error = label_text + error_span;
+				input_label.html(error);
+				terms.addClass("needsfilled");
+			} else {
+				terms.removeClass("needsfilled");
+			}
 
-        if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
-            return false;
-        }
-    }
+			if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
+				return false;
+			}
+    	}
+
+	}
 
 	</script>
 <!-- shipping close -->
