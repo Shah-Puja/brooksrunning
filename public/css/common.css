@@ -519,6 +519,7 @@
 }
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
+  display: inline-block;
 }
 .input-wrapper .radio-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -548,6 +549,7 @@
   margin-right: 10px;
   border: 1px solid #d3d0cd;
   display: inline-block;
+  display: -moz-inline-stack;
   vertical-align: middle;
   transition: all 1s ease;
   position: absolute;
@@ -565,6 +567,7 @@
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
+  display: inline-block;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -3051,7 +3054,7 @@ textarea {
 .plp-filter--wrapper .filter-heading a {
   font-size: 15px;
   display: inline;
-  margin-left: 160px;
+  margin-left: 150px;
   color: #0263f7;
 }
 .plp-filter--wrapper .filter-heading a:hover {
@@ -3729,9 +3732,9 @@ textarea {
     z-index: 1000;
     left: 50%;
     transform: translate(-50%, -16%);
-    padding: 98px 0;
+    padding: 90px 0;
     width: 100%;
-    height: 90%;
+    height: 75%;
     overflow-y: auto;
     background-color: #ffffff;
     border-top: 1px solid #0263f7;
