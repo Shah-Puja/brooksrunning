@@ -1609,6 +1609,7 @@
                     padding: 15px 15px;
                     cursor: pointer;
                     transition: all 0.5s ease-in-out;
+                    color: $black;
                     &:hover{
                       background-color: $lightblue;
                       color: $white;
@@ -1643,6 +1644,22 @@
                         display: block;
                         border-left: 2px solid $white;
                         border-bottom: 2px solid $white; 
+                      }
+                    }
+                    .text{
+                      color: $blue;
+                    }
+                  }
+                  input:checked ~ label[for=White],input:checked ~ label[for=Yellow]{
+                    .mark{
+                      background: $blue;
+                      span{
+                        width: 14px;
+                        height: 7px;
+                        transform: rotate(-45deg);
+                        display: block;
+                        border-left: 2px solid $black;
+                        border-bottom: 2px solid $black; 
                       }
                     }
                     .text{
@@ -4188,7 +4205,9 @@
 /* /run signature */
 
 
-
+.hidden{
+  display:none;
+}
 
 
 
