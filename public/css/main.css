@@ -679,6 +679,10 @@
     min-height: 15px;
   }
 }
+.custom-select .selected {
+  background-color: #0263f7;
+  color: #ffffff;
+}
 
 .quantity-selector {
   background-color: #ffffff;

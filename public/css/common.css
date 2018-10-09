@@ -688,6 +688,10 @@
     min-height: 15px;
   }
 }
+.custom-select .selected {
+  background-color: #0263f7;
+  color: #ffffff;
+}
 
 .quantity-selector {
   background-color: #ffffff;
@@ -3124,6 +3128,7 @@ textarea {
   padding: 15px 15px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  color: #000000;
 }
 .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter.category:hover {
   background-color: #00d3d6;
@@ -3160,6 +3165,20 @@ textarea {
   border-bottom: 2px solid #ffffff;
 }
 .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label .text {
+  color: #0263f7;
+}
+.plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=White] .mark, .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=Yellow] .mark {
+  background: #0263f7;
+}
+.plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=White] .mark span, .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=Yellow] .mark span {
+  width: 14px;
+  height: 7px;
+  transform: rotate(-45deg);
+  display: block;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+.plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=White] .text, .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter input:checked ~ label[for=Yellow] .text {
   color: #0263f7;
 }
 .plp-filter--wrapper .filter-menu .filter-list .fullbox-filter.color-filter {
@@ -5626,5 +5645,8 @@ textarea {
 }
 
 /* /run signature */
+.hidden {
+  display: none;
+}
 
 /*# sourceMappingURL=common.css.map */
