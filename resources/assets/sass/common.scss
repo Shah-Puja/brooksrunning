@@ -1518,13 +1518,75 @@
       position: relative;
       padding:0;
       list-style-type: none;
-      .filter-heading{
+      .filter-heading{ 
+        border-bottom: 1px solid $border;
+        padding-bottom:2px;
         h3{
           @extend %bold-font;
-          border-bottom: 1px solid $border;
           font-size: 17px;
+          display:inline;
+        }
+        a{
+          @extend %bold-font;
+          font-size: 15px;
+          display:inline;
+          margin-left:160px;
+          color: $blue;
+          &:hover{
+            border-bottom: solid 1px $blue;
+          }
         }
       }
+      .selection-filter{
+        text-transform: capitalize;
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        margin-left: -1px;
+        margin-bottom: -1px;
+        text-align: center;
+        float: left;
+        transition: all 1s ease-in-out;
+        a{
+          color: $black;
+          display: block;
+          padding-top: 5px;
+          height: auto;
+          min-height: 30px;
+          border-radius: 18px;
+          background-color: $white;
+          border: solid 1px $border;
+          transition: all 1s ease-in-out;
+          &:hover{
+            color: $blue;
+            border: solid 1px $black;
+          }
+          .close{
+            .icon-close{
+              font-size: 8px;
+              color: $black;
+              margin-left: 2px;
+            }
+          }
+        }
+      }
+      .selection-filter--container{
+        width: 25%;
+        overflow: hidden;
+        margin-left: -1px;
+        margin-bottom: -1px;
+        text-align: center;
+        float: left;
+        color: $black;
+        display: block;
+        padding: 2px;
+        height: auto;
+        min-height: 40px;
+        background-color: $white;
+        border: solid 1px $white;
+        transition: all 1s ease-in-out;
+    }
+    
       .filter-menu{
           list-style-type: none;
           margin-top: 25px;
@@ -1686,6 +1748,16 @@
               }
           }
       }
+      .filter-selection-wrapper{
+        @media #{$mobile-only}{
+          padding-top: 18px !important;
+        }
+        @media #{$tab-only}{
+          padding-top: 18px !important;
+        }
+        padding-top: 1px !important;
+      }
+      
     }
   }
   .plp-store-finder{
@@ -1810,6 +1882,9 @@
               display: block;
               position: relative;
               &.more-clothing{
+                .addmore{
+                  display:none;
+                }
                 @media #{$mobile-only} {
                     .icon-style{
                       bottom: 9px;
@@ -1817,6 +1892,18 @@
                         bottom: 3px;
                       }
                     }
+                    .owl-carousel .owl-wrapper{
+                      width: 100% !important;
+                    }
+                    .addmore{
+                      display:block;
+                    }
+                }
+              }
+              .plp-morethanfour--color{
+                display:none;
+                @media #{$mobile-only} {
+
                 }
               }
               .plp-mob--info{
@@ -2093,9 +2180,9 @@
       z-index: 1000;
       left: 50%;
       transform: translate(-50%, -16%);
-      padding: 20px 0;
+      padding: 98px 0;
       width: 100%;
-      height: 73%;
+      height: 90%;
       overflow-y: auto;
       background-color: $white;
       border-top: 1px solid $blue;
