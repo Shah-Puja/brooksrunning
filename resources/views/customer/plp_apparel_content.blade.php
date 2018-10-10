@@ -32,9 +32,10 @@
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
 				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Original() }}')"></div>
 			</a>
-			<div class="more-color--container more-clothing">
+			<div class="more-color--container more-clothing plp-morethanfour--color">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
+
 				@if($colors_option[$style->style]!='' && count($colors_option[$style->style]) >0 )
 					@foreach($colors_option[$style->style] as $color_product)
 						<div class="item">
@@ -43,6 +44,7 @@
 					@endforeach
 				@endif
 				</div>
+				
 				<span class="icon-style icon-next-arrow next"></span>
 			</div>
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">

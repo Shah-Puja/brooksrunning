@@ -171,7 +171,7 @@
 										<p><span>$80.00</span> 6 weeks later</p>
 									</li>
 								</ul>
-								<div class="payment-btn">
+								<div class="payment-btn" id="afterpay_submit">
 									<button class="pdp-button">Pay now with <img src="images/payment-afterpay.png" alt=""></button>
 								</div>
 								<div class="payment-afterpay--info">
@@ -283,6 +283,24 @@
 	<script src="https://js.braintreegateway.com/web/3.34.1/js/hosted-fields.min.js"></script>
 
     <script>
+
+		 $("#afterpay_submit").click(function () {
+			$.ajax({
+				type: 'POST',
+				headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+                url: "/afterpay",
+								//data: $("#dwfrm_billing").serializeArray(),
+								data: {'order_amount': '20.00'},
+                success: function (token) {
+									console.log("ddddd" + token);
+								}
+			}); 
+			return false;
+		 });
+
+
       var form = document.querySelector('#my-sample-form');
       var submit = document.querySelector('button[type="submit"]');
 			
