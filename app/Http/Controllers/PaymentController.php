@@ -67,10 +67,20 @@ class PaymentController extends Controller
     }
 
     public function create_token(AfterpayProcessor $afterpay_processor){
-        $order=array();
-        //echo "<pre>";print_r($order);die;
-        $get_afterpay_token = $afterpay_processor->getAfterpayToken($order);
-        echo "<pre>";print_r($get_afterpay_token);die;
+        $order=array(); 
+        $orders = Order::where('cart_id', session('cart_id'))->first(); 
+        //Get orders info, address, name, email, total_amount 
+        $get_afterpay_token = $afterpay_processor->getAfterpayToken($orders);
+        return $get_afterpay_token;
+        //echo "<pre>";print_r($get_afterpay_token);die;
+    }
+
+    public function afterpay_success(){
+        echo "Success";
+    }
+
+    public function afterpay_cancel(){
+        echo "Cancelled Payment";
     }
 
     public function store(){
@@ -102,6 +112,6 @@ class PaymentController extends Controller
     }
 
     public function afterpay_payment($request){
-        echo "<pre>";print_R($request);die;
+        echo "eeeeeee";die;
     }
 }
