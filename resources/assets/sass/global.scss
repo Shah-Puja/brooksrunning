@@ -283,6 +283,7 @@
       -ms-flex: $property; 
       flex: $property; 
     }
+    
     $mobile-up: "only screen and (min-width: 768px)";
     $tab-up: "only screen and (min-width: 992px)";
     $desktop-up: "only screen and (min-width: 1200px)";

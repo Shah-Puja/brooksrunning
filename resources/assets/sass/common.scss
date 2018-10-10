@@ -1900,12 +1900,6 @@
                     }
                 }
               }
-              .plp-morethanfour--color{
-                display:none;
-                @media #{$mobile-only} {
-
-                }
-              }
               .plp-mob--info{
                 @extend %bold-font;
                 @media #{$mobile-only} {
@@ -2249,6 +2243,65 @@
       a{
         color: $white;
       }
+  }
+  .color-wrapper--more--container {
+    position: relative;
+    max-width: 226px;
+    min-height: 24px;
+    margin: 0 auto 8px;
+    .color-wrapper--more {
+      width: 98%;
+      float: left;
+      position: relative;
+      text-align: left;
+      .swatches-icon {
+        width: 40px;
+        height: 23px;
+        display: block;
+        float: left;
+        margin-right: 5px;
+        border: 1px solid #777;
+        cursor: pointer;
+        vertical-align: top;
+        img {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          display: block;
+      }
+    }
+    .remaining_swatches_show {
+      width: 100%;
+      text-align: left;
+     .swatches-icon {
+        margin-top: 5px;
+        @media #{$desktop-large-only}{
+          margin-top: 0px;
+        }
+    }
+  }
+  }
+  .color-wrapper--more--add {
+    width: 19%;
+    float: right;
+    position: absolute;
+      right: 0px;
+      top: 0px;
+      @media #{$desktop-large-only}{
+        width: 1%
+      }
+    .remaining_swatches {
+      width: 40px;
+      height: 25px;
+      border: 1px solid #777;
+      text-align: center;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 4px 0 0;
+  }
+  }
   }
 /* /Listing Page  */
 
@@ -3147,7 +3200,7 @@
           }
           .gift-input{
               display: block;
-              color: $lightblack;
+              color: $black;
               @extend %info-font;
               font-size: 14px;
               padding: 7px;
