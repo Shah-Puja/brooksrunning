@@ -43,11 +43,22 @@ $(document).ready(function(){
 			<div class="more-color--container more-clothing hidden-mob">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
+<<<<<<< HEAD
 				@foreach($colors_option[$style->style] as $color_product)
 					<div class="item">
 						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
 					</div>
 				@endforeach
+=======
+
+				@if($colors_option[$style->style]!='' && count($colors_option[$style->style]) >0 )
+					@foreach($colors_option[$style->style] as $color_product)
+						<div class="item">
+							<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
+						</div>
+					@endforeach
+				@endif
+>>>>>>> 2794b623c2bf7e09dce3c77f00f321394046a998
 				</div>
 				
 				<span class="icon-style icon-next-arrow next"></span>
