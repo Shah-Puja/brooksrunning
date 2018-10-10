@@ -38,6 +38,7 @@
 			<div class="more-color--container">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel owl-theme">
+				@if($colors_option[$style->style]!='' && count($colors_option[$style->style]) >0 )
 					@foreach($colors_option[$style->style] as $color_product)
 					<div class="item">
 						<picture>
@@ -47,13 +48,14 @@
 						<div class="plp-mob--info visible-mob">
 						<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 							<ul>
-								<li>3 Colours</li>
+								<li>{{ count($colors_option[$style->style]) }} Colours</li>
 								<li class="no-pad">Widths Available</li>
 							</ul>
 						</a>
 						</div>
 					</div>
 					@endforeach
+				@endif
 				</div>
 				<span class="icon-style icon-next-arrow next"></span>
 			</div>
