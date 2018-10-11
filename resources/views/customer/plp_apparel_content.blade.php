@@ -80,7 +80,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 					</div>
-					<div class="color-wrapper--more--add">
+					<div class="color-wrapper--more--add"> 
 							<!-- /* For showing swatches count */ -->
 						<div  class="remaining_swatches">+3</div>
 							<!--  /* swatches count end */ -->
