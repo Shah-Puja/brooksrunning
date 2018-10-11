@@ -32,7 +32,7 @@
 			</div>
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="hidden-mob">
 				<div class="img img-shoes">
-					<img id="plp-img" src="{{ $style->image->image1Original() }}" alt="">
+					<img id="plp-img" src="{{ env('BASE_PRODUCT_IMAGES_URL').$style->image->image1 }}" alt="">
 				</div>
 			</a>
 			<div class="more-color--container">
@@ -42,8 +42,8 @@
 					@foreach($colors_option[$style->style] as $color_product)
 					<div class="item">
 						<picture>
-						<source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-						<img src="/images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+						<source media="(max-width: 667px)" srcset="{{ env('BASE_PRODUCT_IMAGES_URL').$color_product['image']['image1'] }} ">
+						<img src="{{ env('BASE_PRODUCT_IMAGES_URL').$color_product['image']['image1'] }}" data-big="{{ env('BASE_PRODUCT_IMAGES_URL').$color_product['image']['image1'] }}" class="plp-thumb" alt="">
 						</picture>
 						<div class="plp-mob--info visible-mob">
 						<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
