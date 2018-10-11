@@ -199,17 +199,18 @@
 										type:"POST",
 										data: {password:password,email:email},
 										success: function(data){
-											console.log(data);
-											// if(data == "true"){
-											// 	$('#shipping-form').css('display','none');
-											// 	$('.shipping-main-form').css('display','block');
-											// 	$('.password-wrapper').css('display','block');
-											// 	$('.main_email_field').val(email);
-											// }else{
-											// 	$('#shipping-form').css('display','none');
-											// 	$('.shipping-main-form').css('display','block');
-											// 	$('.main_email_field').val(email);
-											// }
+											// console.log(data);
+											if(data['pass_data'] == "order_address"){
+												$.each( data, function( key, value ) {
+													console.log( key + ": " + value );
+													$("input[name='"+key+"']").val(value);
+												});
+											}else{												
+												$.each( data, function( key, value ) {
+													console.log( key + ": " + value );
+													$("input[name='"+key+"']").val(value);
+												});
+											}
 										}
 									});
 								}
