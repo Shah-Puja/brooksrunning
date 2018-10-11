@@ -8,7 +8,7 @@ use App\Models\Order_address;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use DB;
+use Hash;
 
 class BillingShippingController extends Controller
 {    
@@ -84,17 +84,36 @@ class BillingShippingController extends Controller
     }
 
     public function check_email(Request $email){
-
         $email= $_POST['email'];
-        $user = DB::table('users')->where("email", "=",  $email)->get();
-        $count = count($user);
-        if($count > 0){
+        $user = User::where("email", "=",  $email)->first();
+        if($user){
             echo "true";
-            //return true;
         }else{
             echo "false";
-            //return false;
+        }   
+    }
+
+    public function verify_password(Request $request){
+        $email= $request->email;
+        $password= $request->password;
+        $user_data = User::where("email", "=",  $email)->first();
+        $password_check = Hash::check($password,$user_data->password);
+        if($password_check){
+            $user_verify = User::where("email", "=",  $email)->where("password",$user_data->password)->first();
+            if($user_verify){
+                $orderadd_data = Order_address::where("email", "=",  $email)->orderBy('id', 'desc')->first();
+                if($orderadd_data){
+                    $orderadd_data['pass_data'] = 'order_address';
+                    return $orderadd_data;
+                }else{
+                    $user_verify['pass_data'] = 'user';
+                    return $user_verify;
+                }            
+            }else{
+                return 'false';
+            }
+        }else{
+            return 'false';
         }
-         
     }
 }
