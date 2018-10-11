@@ -1,3 +1,6 @@
+<style>
+
+</style>
 <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
 	<div class="mobile-plp--main">
 		<div class="mobile-plp--close">
@@ -44,25 +47,17 @@
 				@if(count($filters)>0)
 					<li class="filter-heading">
 						<h3>Filter</h3>
+<<<<<<< HEAD
 						<!-- <a href="#">Clear All</a> -->
 					</li>
 					<!-- <li class="filter-menu filter-selection-wrapper">
+=======
+						<a href="javascript:void(0)" class="reset-filter" style="display:none;">Clear All</a>
+					</li>
+					<li class="filter-menu filter-selection-wrapper" style="display:none;">
+>>>>>>> 87f36a51e37a7bfa569c6b6d5c03183b5912e4ea
 								<label class="label">Your Selections</label>
 								<ul class="filter-list clearfix">
-								<div class="selection-filter--container">
-									<li class="selection-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" "><span class="val">7.0</span>
-										<span class="close"><i class="icon-close"></i></span>
-										</a>
-									</li>
-								</div>
-								<div class="selection-filter--container">
-									<li class="selection-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" "><span class="val">7.5</span>
-										<span class="close"><i class="icon-close"></i></span>
-										</a>
-									</li>
-								</div>
 								</ul>
 							</li> -->
 					@foreach($filters as $key=>$values)

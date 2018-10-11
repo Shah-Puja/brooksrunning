@@ -2049,7 +2049,7 @@
                 height: 260px;
               }
               @media #{$mobile-only}{
-                height: 220px;
+                height: 120px;
               }
             }
             .img{
@@ -4099,10 +4099,10 @@
       position: relative;
       padding-left: 50px;
       .icon{
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         position: absolute;
-        top: -3px;
+        top: 5px;
         left: 0;
         img{
           width: 100%;

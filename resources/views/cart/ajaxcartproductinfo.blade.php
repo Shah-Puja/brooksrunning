@@ -15,8 +15,8 @@
 									<p>Color: {{ $cartItem->variant->product->color_name }}</p>
 									<p>Size: {{ $cartItem->variant->size }}</p>
 									<p>Mens Width: {{ $cartItem->variant->width }}</p>
-									<div class="edit">
-										<a href="JavaScript:Void(0);" class="bold-font edit-cart--handle" >EDIT DETAILS</a>
+									<div class="edit" data-id="{{ $cartItem->variant->id }}">
+										<a href="JavaScript:Void(0);" id="edit_{{ $cartItem->variant->id }}" class="bold-font edit-cart--handle" >EDIT DETAILS</a>
 									</div>
 								</div>
 							</div>
