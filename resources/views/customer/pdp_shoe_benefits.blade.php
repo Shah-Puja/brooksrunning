@@ -7,7 +7,18 @@
 			  <h3 class="br-mainheading">Benefits</h3>
 			</div>
 			<div class="module-img">
-				<img src="/images/details/pdp-benefits-top.jpg" alt="">
+				<picture>
+					@php 
+						if($product->benefit_desktop!='') $img_desktop = explode(",",$product->benefit_desktop); 
+						if($product->benefit_mobile!='') $img_mobile = explode(",",$product->benefit_mobile); 
+					@endphp
+					@if(@fopen(env('BASE_PRODUCT_IMAGES_URL').$img_mobile[0],'r'))
+					<source media="(max-width: 595px)" srcset="{{ ($product->benefit_mobile!='') ? env('BASE_PRODUCT_IMAGES_URL').$img_mobile[0] : "" }}">
+					@endif
+					@if(@fopen(env('BASE_PRODUCT_IMAGES_URL').$img_desktop[0],'r'))
+						<img src="{{ ($product->benefit_desktop!='') ? env('BASE_PRODUCT_IMAGES_URL').$img_desktop[0] : "" }}" alt="Header Images">
+				    @endif
+				</picture>
 			</div>
 		</div>
 	</div>
@@ -23,10 +34,13 @@
 			</div>
 			<div class="col-6">
 				<div class="img">
-				    <picture>
-						<source media="(max-width: 595px)" srcset="/images/details/PDP_F18_Cascadia-13-M_RTB-1.png">
-						<img src="/images/details/PDP_F18_Cascadia-13-M_RTB-1.png" alt="Header Images">
-					</picture>
+					@php $benefit_1_img_url = ($benefit_1[3]!='') ? benefit_img_check($benefit_1[3])  : "" ; @endphp
+                    @if($benefit_1_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_1_img_url }}">
+							<img src="{{ $benefit_1_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 		</div>
@@ -44,10 +58,13 @@
 			</div>
 		    <div class="col-6">
 				<div class="img left">
-					<picture>
-						<source media="(max-width: 595px)" srcset="/images/details/PDP_F18_Cascadia-13-M_RTB-2.png">
-						<img src="/images/details/PDP_F18_Cascadia-13-M_RTB-2.png" alt="Header Images">
-					</picture>
+					@php $benefit_2_img_url = ($benefit_2[3]!='') ? benefit_img_check($benefit_2[3])  : "" ; @endphp
+                    @if($benefit_2_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_2_img_url }}">
+							<img src="{{ $benefit_2_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 			<div class="col-6 hidden-mob hidden-tab">
@@ -73,10 +90,13 @@
 			</div>
 			<div class="col-6">
 				<div class="img">
-					<picture>
-						<source media="(max-width: 595px)" srcset="/images/details/PDP_F18_Cascadia-13-M_RTB-3.png">
-						<img src="/images/details/PDP_F18_Cascadia-13-M_RTB-3.png" alt="Header Images">
-					</picture>
+					@php $benefit_3_img_url = ($benefit_3[3]!='') ? benefit_img_check($benefit_3[3])  : "" ; @endphp
+                    @if($benefit_3_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_3_img_url }}">
+							<img src="{{ $benefit_3_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 		</div>

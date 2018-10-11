@@ -263,6 +263,7 @@ $(document).on('click', '.custom-select .option-value', function () {
     }else{
         $grid.isotope({ sortBy: sortValue , sortAscending: true});
     }
+    loadMore(12);
     event.stopPropagation();
 });
 

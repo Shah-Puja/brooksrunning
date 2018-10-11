@@ -32,9 +32,9 @@ class ProductColourController extends Controller
                                 })->get();
         $colour_options = Image::addImagePathsForProducts($colour_options); 
 
-        //echo "<pre>";
-        //print_r( $product );
-        //echo "</pre>";
+        echo "<pre>";
+        print_r( $colour_options );
+        echo "</pre>";
         //exit;
 
         return view ('customer.pdp',compact('product','variants','colour_options'));
