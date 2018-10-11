@@ -22,10 +22,13 @@
 			</div>
 			<div class="col-6">
 				<div class="img">
-				    <picture>
-						<source media="(max-width: 595px)" srcset="/images/details/apparel1.png">
-						<img src="/images/details/apparel1.png" alt="Header Images">
-					</picture>
+				@php $benefit_1_img_url = ($benefit_1[3]!='') ? benefit_img_check($benefit_1[3])  : "" ; @endphp
+                    @if($benefit_1_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_1_img_url }}">
+							<img src="{{ $benefit_1_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 		</div>
@@ -42,10 +45,13 @@
 			</div>
 			<div class="col-6">
 				<div class="img">
-					<picture>
-						<source media="(max-width: 595px)" srcset="/images/details/apparel2.png">
-						<img src="/images/details/apparel2.png" alt="Header Images">
-					</picture>
+				@php $benefit_2_img_url = ($benefit_2[3]!='') ? benefit_img_check($benefit_2[3])  : "" ; @endphp
+                    @if($benefit_2_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_2_img_url }}">
+							<img src="{{ $benefit_2_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 			<div class="col-6 hidden-mob hidden-tab">
@@ -70,10 +76,13 @@
 			</div>
 			<div class="col-6">
 				<div class="img">
-					<picture>
-						<source media="(max-width: 595px)" srcset="/images/details/apparel3.png">
-						<img src="/images/details/apparel3.png" alt="Header Images">
-					</picture>
+					@php $benefit_3_img_url = ($benefit_3[3]!='') ? benefit_img_check($benefit_3[3])  : "" ; @endphp
+                    @if($benefit_3_img_url!='')
+						<picture>
+							<source media="(max-width: 595px)" srcset="{{ $benefit_3_img_url }}">
+							<img src="{{ $benefit_3_img_url }}" alt="Header Images">
+						</picture>
+				    @endif
 				</div>
 			</div>
 		</div>

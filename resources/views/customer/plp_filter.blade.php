@@ -44,17 +44,16 @@
 					</li>	
 					@endif
 				
-				@if(count($filters)>0)
+					@if(count($filters)>0)
 					<li class="filter-heading">
 						<h3>Filter</h3>
-						<!-- <a href="#">Clear All</a> -->
-					</li>
-					<!-- <li class="filter-menu filter-selection-wrapper">
-
-								<label class="label">Your Selections</label>
-								<ul class="filter-list clearfix">
-								</ul>
-							</li> -->
+						<a href="javascript:void(0)" class="reset-filter" style="display:none;">Clear All</a>
+						</li>
+						<li class="filter-menu filter-selection-wrapper" style="display:none;">
+							<label class="label">Your Selections</label>
+							<ul class="filter-list clearfix">
+							</ul>
+					</li>  
 					@foreach($filters as $key=>$values)
 						@if(count($values)>0)
 							@if($key == 'Size' || $key == 'Cup_Size')
