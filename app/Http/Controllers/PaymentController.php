@@ -70,9 +70,15 @@ class PaymentController extends Controller
         $order=array(); 
         $orders = Order::where('cart_id', session('cart_id'))->first(); 
         //Get orders info, address, name, email, total_amount 
-        $get_afterpay_token = $afterpay_processor->getAfterpayToken($orders);
-        return $get_afterpay_token;
-        //echo "<pre>";print_r($get_afterpay_token);die;
+        $get_afterpay_token = json_decode($afterpay_processor->getAfterpayToken($orders));
+        $token = $get_afterpay_token->token;
+        $get_order_details = $afterpay_processor->getOrder($token);
+        $order_details = array();
+        $order_details['id'] = $orders->id;
+        $order_details['afterpayToken'] = $token;
+        $charge_payment = $afterpay_processor->charge($order_details);
+        return $charge_payment;
+        //echo "<pre>";print_r($get_order_details);die;
     }
 
     public function afterpay_success(){
