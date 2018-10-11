@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use App\Models\Cart;
@@ -71,40 +72,53 @@ class PaymentController extends Controller
         $orders = Order::where('cart_id', session('cart_id'))->first(); 
         //Get orders info, address, name, email, total_amount 
         $get_afterpay_token = json_decode($afterpay_processor->getAfterpayToken($orders));
-        $token = $get_afterpay_token->token;
-        //save token in db
-        //Order::find($orders->id)->update(['afterpay_token' => $token]);
-
+        $token = $get_afterpay_token->token; 
+        //save afterpay token in table
         Order::where('id', $orders->id)->update(array(
 			'afterpay_token' 	  =>  $token
 		));
-        //$orders->update(['afterpay_token', $token]);
-        //echo $token;die; 
         return $token;
-
-        /*$get_order_details = $afterpay_processor->getOrder($token);
-        $order_details = array();
-        $order_details['id'] = $orders->id;
-        $order_details['afterpayToken'] = $token;
-        $charge_payment = $afterpay_processor->charge($order_details);
-        return $charge_payment;*/
-        //echo "<pre>";print_r($get_order_details);die;
     }
 
-    public function afterpay_success(Request $request){
+    public function afterpay_success(Request $request, AfterpayProcessor $afterpay_processor){
         $orders = Order::where('cart_id', session('cart_id'))->first();
         if($request->status == "SUCCESS" && $request->orderToken != "" && $orders->id != 0){
-            echo "yesssssssssss";
+            $orders = Order::where('cart_id', session('cart_id'))->first();
+            $get_order_details = $afterpay_processor->getOrder($orders->afterpay_token);
+            $order_details['id'] = $orders->id;
+            $order_details['afterpayToken'] = $orders->afterpay_token;
+            $charge_payment = $afterpay_processor->charge($order_details);
+            $charge_payment = json_decode($charge_payment, true);
+            //echo "<pre>";print_r();die;
+            if ($charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
+                $transaction_id = $charge_payment['id'];
+                Order::where('id', $orders->id)->update(array(
+                    'status' => 'Order Completed',
+                    'transaction_id' => $transaction_id,
+                    'transaction_status'  => 'Succeeded',
+                    'payment_status' => Carbon::now()
+                ));
+                Cache::forget( 'cart'  . $this->order->cart_id );
+                $this->cart->delete();
+                session()->forget('cart_id'); 
+                $order = $this->order->load('orderItems.variant.product', 'address');
+                event(new OrderReceived($order));
+                return view( 'customer.orderconfirmed', compact('order') );
+            }
         }
-         else{
-             echo "ddddddd";
-         }
+        else{
+            return redirect('/cart');
+        }
     }
 
     public function afterpay_cancel(Request $request){
         $orders = Order::where('cart_id', session('cart_id'))->first();
         if($request->status == "CANCELLED" && $request->orderToken != "" && $orders->id != 0){
-            //echo "jkdfhdjkf";
+            Order::where('id', $orders->id)->update(array(
+                'status' => 'Order Incomplete', 
+                'transaction_status'  => 'Incomplete',
+                'payment_status' => Carbon::now()
+            ));
             return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel'); 
         }
     }
