@@ -50,13 +50,13 @@
                                 <span class="icon-enlarge"></span>
                             </div>
                             <ul id="pdp-zoom--image">
-                                <li data-thumb="{{ env('BASE_PRODUCT_IMAGES_URL').$product->image->image1 }}">
-                                    <img src="{{ env('BASE_PRODUCT_IMAGES_URL').$product->image->image1}}" />
+                                <li data-thumb="{{ $product->image->image1Thumbnail() }}">
+                                    <img src="{{ $product->image->image1Original() }}" />
                                 </li>
                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
-                                    <li data-thumb="{{ env('BASE_PRODUCT_IMAGES_URL').$product->image->{'image' . $i } }}">
-                                        <img src="{{ env('BASE_PRODUCT_IMAGES_URL').$product->image->{'image' . $i} }}" />
+                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
+                                        <img src="{{ $product->image->{ 'image'.$i.'Original' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
@@ -190,7 +190,7 @@
                         <div class="swatches">
                             <ul>
                                 @foreach($colour_options as $color_data)
-                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ env('BASE_PRODUCT_IMAGES_URL').$color_data->image->image1 }}" alt="{{ $color_data->color_name }}"></li>
+                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}"></li>
                                 @endforeach
                             </ul>
                         </div>
