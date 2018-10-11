@@ -225,6 +225,7 @@
                             });
 
                         });
+						
 </script>
 @if(request()->is('register'))
 <!-- Register page js please write here-->
