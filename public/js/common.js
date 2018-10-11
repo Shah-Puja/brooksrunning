@@ -205,6 +205,9 @@ $(document).ready(function () {
 // cart
 $(document).ready(function () {
     $(".edit-cart--handle").click(function () {
+        var attr_id =$(this).attr('id').split("_");
+        var  variant_id = attr_id[1];
+        alert(variant_id);
         $("#edit-cart--popup").addClass("show");
     });
     $(".edit-cart--close").click(function () {

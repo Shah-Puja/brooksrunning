@@ -14,7 +14,7 @@ class AfterpayProcessor {
     }
 
     public function getAfterpayToken($order) {
-        $data = [
+        /*$data = [
             "totalAmount" => [
                 "amount" => "20.00",
                 "currency" => "AUD"
@@ -30,8 +30,11 @@ class AfterpayProcessor {
                 "redirectCancelUrl" => "afterpay_payment"
             ],
             "merchantReference" => '123'
-        ];
-        return $this->afterpayApiClient->generateToken($data);
+        ];*/
+        $data = $this->prepareOrderData($order);
+		return $this->afterpayApiClient->createOrder($data);
+        echo "<pre>";print_r($order);die;
+        //return $this->afterpayApiClient->generateToken($data);
     }
 
     public function getOrder($token) {
@@ -39,7 +42,32 @@ class AfterpayProcessor {
     }
 
     public function charge($order) {
-        return true;
+        $paymentDetails = [
+			"token" => $order->afterpayToken,
+			"merchantReference" => $order->id
+		];
+		return $this->afterpayApiClient->capturePayment($paymentDetails);
     }
+
+    protected function prepareOrderData($order)
+	{
+		return [  
+          "totalAmount" => [
+            "amount" => $order->grand_total,
+            "currency" => "AUD"
+          ],
+          "consumer" => [ 
+            "phoneNumber" => $order->address->b_phone,
+            "givenNames" => $order->address->b_fname,
+            "surname" => $order->address->b_lname,
+            "email" => $order->address->email
+          ],
+          "merchant" => [
+            "redirectConfirmUrl" => "afterpay_success",
+            "redirectCancelUrl" => "afterpay_cancel"
+          ],
+          "merchantReference" => $order->id,
+        ];	
+	}
 
 }
