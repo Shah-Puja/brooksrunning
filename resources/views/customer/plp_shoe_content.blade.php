@@ -1,7 +1,8 @@
 <div class="plp-wrapper-container grid">
 @if($styles!='' && count($styles) >0 )
-    @php $colors_option=[]; @endphp
+    @php $colors_option=array(); @endphp
 	@foreach($styles as $style)
+	@php //echo "<pre>"; print_r( $style); exit; @endphp
 		@php 
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
@@ -38,22 +39,28 @@
 			<div class="more-color--container">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel owl-theme">
-				@if($colors_option[$style->style]!='' && count($colors_option[$style->style]) >0 )
-					@foreach((object)$colors_option[$style->style] as $color_product)
-					<div class="item">
-						<picture>
-						<source media="(max-width: 667px)" srcset="{{ env('BASE_PRODUCT_IMAGES_URL').$color_product['image']['image1'] }} ">
-						<img src="{{ $color_product['image']['image1'] }}" data-big="{{ env('BASE_PRODUCT_IMAGES_URL').$color_product['image']['image1'] }}" class="plp-thumb" alt="">
-						</picture>
-						<div class="plp-mob--info visible-mob">
-						<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
-							<ul>
-								<li>{{ count($colors_option[$style->style]) }} Colours</li>
-								<li class="no-pad">Widths Available</li>
-							</ul>
-						</a>
-						</div>
-					</div>
+				@if($colors_option[$style->style]!='' &&  count($colors_option[$style->style]) > 0 )
+					@foreach($colors_option[$style->style] as $color_product)
+						@if(!empty($color_product))
+						    @php
+								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
+								$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
+							@endphp
+							<div class="item">
+								<picture>
+								<source media="(max-width: 667px)" srcset="{{ $img_url_medium }}">
+								<img src="{{ $img_url }}" data-big="{{ $img_url_medium }}" class="plp-thumb" alt="">
+								</picture>
+								<div class="plp-mob--info visible-mob">
+								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
+									<ul>
+										<li>{{ count($colors_option[$style->style]) }} Colours</li>
+										<li class="no-pad">Widths Available</li>
+									</ul>
+								</a>
+								</div>
+							</div>
+						@endif
 					@endforeach
 				@endif
 				</div>
