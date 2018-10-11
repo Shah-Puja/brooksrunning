@@ -109,7 +109,7 @@ $(document).on("click",".filter-value",function(){
 		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
 
-  loadMore(loadmore_count);
+  loadMore(12);
   return false;
 });
 
@@ -132,7 +132,7 @@ $(document).on('click','.selection-filter--container li',function(){
     var comboFilter = getComboFilter( filters );
 		console.log(comboFilter);
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    loadMore(loadmore_count);
+    loadMore(12);
   return false;
 });
 
@@ -145,7 +145,7 @@ $(document).on('click','.reset-filter',function(){
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  loadMore(loadmore_count);
+  loadMore(12);
   filters = [];
   return false;
 });
@@ -190,7 +190,7 @@ function getComboFilter( filters ) {
     //****************************
   // Isotope Load more button
   //****************************
-  var initShow = loadmore_count; //number of images loaded on init & onclick load more button
+  var initShow = 12; //number of images loaded on init & onclick load more button
   var counter = initShow; //counter for load more button
   var iso = $grid.data('isotope'); // get Isotope instance
 
