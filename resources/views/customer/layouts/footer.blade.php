@@ -484,8 +484,6 @@
 			}
     	}
 
-	}
-
 	</script>
 <!-- shipping close -->
 
