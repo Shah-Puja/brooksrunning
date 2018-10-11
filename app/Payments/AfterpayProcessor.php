@@ -32,8 +32,7 @@ class AfterpayProcessor {
             "merchantReference" => '123'
         ];*/
         $data = $this->prepareOrderData($order);
-		return $this->afterpayApiClient->createOrder($data);
-        echo "<pre>";print_r($order);die;
+		return $this->afterpayApiClient->createOrder($data); 
         //return $this->afterpayApiClient->generateToken($data);
     }
 
@@ -41,11 +40,12 @@ class AfterpayProcessor {
         return $this->afterpayApiClient->getOrder($token);
     }
 
-    public function charge($order) {
+    public function charge($order) { 
         $paymentDetails = [
-			"token" => $order->afterpayToken,
-			"merchantReference" => $order->id
-		];
+			"token" => $order['afterpayToken'],
+			"merchantReference" => $order['id']
+        ];
+        
 		return $this->afterpayApiClient->capturePayment($paymentDetails);
     }
 
@@ -63,8 +63,8 @@ class AfterpayProcessor {
             "email" => $order->address->email
           ],
           "merchant" => [
-            "redirectConfirmUrl" => "afterpay_success",
-            "redirectCancelUrl" => "afterpay_cancel"
+            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success.php",
+            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel.php"
           ],
           "merchantReference" => $order->id,
         ];	
