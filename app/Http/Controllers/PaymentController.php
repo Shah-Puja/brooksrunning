@@ -67,26 +67,46 @@ class PaymentController extends Controller
     }
 
     public function create_token(AfterpayProcessor $afterpay_processor){
-        $order=array(); 
+       // $order=array(); 
         $orders = Order::where('cart_id', session('cart_id'))->first(); 
         //Get orders info, address, name, email, total_amount 
         $get_afterpay_token = json_decode($afterpay_processor->getAfterpayToken($orders));
         $token = $get_afterpay_token->token;
-        $get_order_details = $afterpay_processor->getOrder($token);
+        //save token in db
+        //Order::find($orders->id)->update(['afterpay_token' => $token]);
+
+        Order::where('id', $orders->id)->update(array(
+			'afterpay_token' 	  =>  $token
+		));
+        //$orders->update(['afterpay_token', $token]);
+        //echo $token;die; 
+        return $token;
+
+        /*$get_order_details = $afterpay_processor->getOrder($token);
         $order_details = array();
         $order_details['id'] = $orders->id;
         $order_details['afterpayToken'] = $token;
         $charge_payment = $afterpay_processor->charge($order_details);
-        return $charge_payment;
+        return $charge_payment;*/
         //echo "<pre>";print_r($get_order_details);die;
     }
 
-    public function afterpay_success(){
-        echo "Success";
+    public function afterpay_success(Request $request){
+        $orders = Order::where('cart_id', session('cart_id'))->first();
+        if($request->status == "SUCCESS" && $request->orderToken != "" && $orders->id != 0){
+            echo "yesssssssssss";
+        }
+         else{
+             echo "ddddddd";
+         }
     }
 
-    public function afterpay_cancel(){
-        echo "Cancelled Payment";
+    public function afterpay_cancel(Request $request){
+        $orders = Order::where('cart_id', session('cart_id'))->first();
+        if($request->status == "CANCELLED" && $request->orderToken != "" && $orders->id != 0){
+            //echo "jkdfhdjkf";
+            return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel'); 
+        }
     }
 
     public function store(){
@@ -115,9 +135,5 @@ class PaymentController extends Controller
         event(new OrderReceived($order));
 
         return view( 'customer.orderconfirmed', compact('order') );
-    }
-
-    public function afterpay_payment($request){
-        echo "eeeeeee";die;
     }
 }
