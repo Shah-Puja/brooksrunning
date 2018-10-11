@@ -1,5 +1,18 @@
 @extends('customer.layouts.master')
 @section('content')
+<style>
+.lSSlideOuter .lSPager.lSGallery img {
+    display: block;
+    height: auto;
+    max-width: 62px;
+    width: 100%;
+}
+
+.pdp-container--info .swatches ul li img {
+    width: 100%;
+    max-width: 62px;
+}
+</style>
 <div id="data-load">
     <div class="pdp-container">
         <div class="wrapper">

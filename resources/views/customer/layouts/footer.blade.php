@@ -326,6 +326,7 @@
 			$('#password_field').val('');
 		}
 
+
 	function shippingform_validate(){
 			$("#billing_shipping input,#billing_shipping select").removeClass("error-border");
 			$("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
@@ -390,7 +391,6 @@
 						input.removeClass("needsfilled");
 					} 
 				}
-
 			for (k = 0; k < shipping_required.length; k++) {
 				let input = $('#billing_shipping input[name="' + shipping_required[k] + '"],#billing_shipping select[name="' + shipping_required[k] + '"]');
 				if (input.val() == "") {
@@ -402,6 +402,7 @@
 					let error = label_text + error_span;
 					input_label.html(error);
 					$("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").addClass("error-border");
+
 
 				} else {
 					input.removeClass("needsfilled");
@@ -472,6 +473,11 @@
 			} else {
 				terms.removeClass("needsfilled");
 			}
+
+			if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
+				return false;
+			}
+    	}
 
 			if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
 				return false;

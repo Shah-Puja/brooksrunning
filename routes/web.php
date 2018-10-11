@@ -70,4 +70,7 @@ Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index');
 
 Route::get('/afterpay_payment', 'PaymentController@afterpay_payment');
 
+Route::post('/afterpay_success', 'PaymentController@afterpay_success');
+Route::post('/afterpay_cancel', 'PaymentController@afterpay_cancel');
+
 
