@@ -1,3 +1,6 @@
+<style>
+
+</style>
 <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
 	<div class="mobile-plp--main">
 		<div class="mobile-plp--close">
@@ -44,27 +47,14 @@
 				@if(count($filters)>0)
 					<li class="filter-heading">
 						<h3>Filter</h3>
-						<a href="#">Clear All</a>
+						<!-- <a href="#">Clear All</a> -->
 					</li>
-					<li class="filter-menu filter-selection-wrapper">
+					<!-- <li class="filter-menu filter-selection-wrapper">
+
 								<label class="label">Your Selections</label>
 								<ul class="filter-list clearfix">
-								<div class="selection-filter--container">
-									<li class="selection-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" "><span class="val">7.0</span>
-										<span class="close"><i class="icon-close"></i></span>
-										</a>
-									</li>
-								</div>
-								<div class="selection-filter--container">
-									<li class="selection-filter">
-										<a href="#" data-filter-attribute="size" data-filter-value=" "><span class="val">7.5</span>
-										<span class="close"><i class="icon-close"></i></span>
-										</a>
-									</li>
-								</div>
 								</ul>
-							</li>
+							</li> -->
 					@foreach($filters as $key=>$values)
 						@if(count($values)>0)
 							@if($key == 'Size' || $key == 'Cup_Size')

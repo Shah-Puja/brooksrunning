@@ -510,6 +510,7 @@
 }
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
+  display: inline-block;
 }
 .input-wrapper .radio-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -539,6 +540,7 @@
   margin-right: 10px;
   border: 1px solid #d3d0cd;
   display: inline-block;
+  display: -moz-inline-stack;
   vertical-align: middle;
   transition: all 1s ease;
   position: absolute;
@@ -556,6 +558,7 @@
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
+  display: inline-block;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
