@@ -29,6 +29,8 @@ class Image extends Model
 				for ($num=1; $num < 10; $num++) {
 					$option->{"image" . $num} = $option->image->{"image" . $num . "Original"}();
 					$option->{"image" . $num . "thumbnail"} = $option->image->{"image" . $num . "Thumbnail"}();
+					$option->{"image" . $num . "small"} = $option->image->{"image" . $num . "Small"}();
+					$option->{"image" . $num . "medium"} = $option->image->{"image" . $num . "Medium"}();
 				}
 			});	
     }
@@ -39,7 +41,7 @@ class Image extends Model
         $style = explode("_",$fullImageName);
 		$imageName = substr( $fullImageName, 0, strrpos($fullImageName, ".") );
 		$imageExtension = substr( $fullImageName, strrpos($fullImageName, ".") );
-		return config('site.image_url.products.' . $size) . $style[0].'/'.
+		return config('site.image_url.products.' . $size) .
 				$imageName . 
 				config('site.image_extensions.' . $size) .
 				$imageExtension;
