@@ -35,12 +35,14 @@
 			<div class="more-color--container more-clothing plp-morethanfour--color">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
-				@foreach($colors_option[$style->style] as $color_product)
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
-				@endforeach
-				<div class="addmore">+</div>
+
+				@if($colors_option[$style->style]!='' && count($colors_option[$style->style]) >0 )
+					@foreach($colors_option[$style->style] as $color_product)
+						<div class="item">
+							<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
+						</div>
+					@endforeach
+				@endif
 				</div>
 				
 				<span class="icon-style icon-next-arrow next"></span>

@@ -55,6 +55,7 @@ Route::get('/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
 Route::post('/shipping-check-email','BillingShippingController@check_email');
+Route::post('/shipping-verify-password','BillingShippingController@verify_password');
 
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
@@ -68,5 +69,8 @@ Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
 Route::get('/afterpay_payment', 'PaymentController@afterpay_payment');
+
+Route::post('/afterpay_success', 'PaymentController@afterpay_success');
+Route::post('/afterpay_cancel', 'PaymentController@afterpay_cancel');
 
 

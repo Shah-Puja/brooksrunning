@@ -78,9 +78,12 @@ var $grid = $('.grid').isotope({
 });
 
 var filters = {};
+var loadmore_count = '12'; 
 
 $(document).on("click",".filter-value",function(){
-	var filterValue='';
+  console.log(filters);
+  var filterValue='';
+  var value = $(this).text();
 	var this_value= $(this).closest("li").data("filter-value");
 	$(this).find("input").prop("checked",true);
   var this_closest_group = $(this).closest("ul").data("filter-group");
@@ -92,17 +95,58 @@ $(document).on("click",".filter-value",function(){
 		var selected= true;
   }
 	if(selected){
-    	var filterGroup = filters[this_closest_group];
+      $(".filter-heading a").show();
+      var selection_filter_div = '<div class="selection-filter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
+      $(".filter-selection-wrapper ul").append(selection_filter_div);
+      $(".filter-selection-wrapper").show();
+      var filterGroup = filters[this_closest_group];
         if (!filterGroup) {
             filterGroup = filters[this_closest_group] = [];
          }
-		filters[ this_closest_group ].push(this_value);
+    filters[ this_closest_group ].push(this_value);
 		var comboFilter = getComboFilter( filters );
-		//console.log(comboFilter);
+		console.log(comboFilter);
 		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
 
-  loadMore('12');
+  loadMore(loadmore_count);
+  return false;
+});
+
+$(document).on('click','.selection-filter--container li',function(){
+    var removeItem = $(this).find("a").data("filter-value");
+    var removeAttribute = $(this).find("a").data("filter-attribute");
+    //console.log(filters);
+    filters[removeAttribute] = jQuery.grep(filters[removeAttribute], function(value) {
+      return value != removeItem;
+    });
+    $("[data-filter-value='" + removeItem + "']").find("input").prop("checked",false);
+    $("[data-filter-value='" + removeItem + "']").removeClass("selected");
+    $(this).closest(".selection-filter--container").remove();
+    if($(".filter-selection-wrapper li").length==0){
+        $(".filter-selection-wrapper").hide();
+        $(".filter-heading a").hide();
+    }else{
+        $(".filter-selection-wrapper").show();
+    }
+    var comboFilter = getComboFilter( filters );
+		console.log(comboFilter);
+    $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    loadMore(loadmore_count);
+  return false;
+});
+
+$(document).on('click','.reset-filter',function(){
+  $(".size-filter").removeClass("selected");
+  $(".filter-list").removeClass("selected");
+  $(".filter-value").find("input:checkbox").prop("checked", false);
+  $(".selection-filter--container").remove();
+  $(".filter-selection-wrapper").hide();
+  $(".filter-heading a").hide();
+	reset_filter = '*';
+  $grid.isotope({ filter: reset_filter });
+  loadMore(loadmore_count);
+  filters = [];
   return false;
 });
 
@@ -146,7 +190,7 @@ function getComboFilter( filters ) {
     //****************************
   // Isotope Load more button
   //****************************
-  var initShow = 12; //number of images loaded on init & onclick load more button
+  var initShow = loadmore_count; //number of images loaded on init & onclick load more button
   var counter = initShow; //counter for load more button
   var iso = $grid.data('isotope'); // get Isotope instance
 

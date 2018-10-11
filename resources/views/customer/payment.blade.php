@@ -56,6 +56,7 @@
 								  </div>
 							</div>
 						</li>
+						@if($cart->grand_total < 1000)
 						<li class="tab-link" data-tab="tab-3">
 							<div class="input-wrapper">
 								  <div class="radio-inline">
@@ -70,6 +71,7 @@
 								  </div>
 							</div>
 						</li>
+						@endif
 					</ul>
 					<div id="tab-1" class="tab-content current">
 						<div class="payment-container--info">
@@ -143,6 +145,7 @@
 							</div>
 						</div>
 					</div>
+			@if($cart->grand_total < 1000)
 					<div id="tab-3" class="tab-content">
 						<div class="payment-afterpay">
 							<div class="header">
@@ -156,19 +159,19 @@
 								<ul>
 									<li>
 										<div class="round-icon icon1"></div>
-										<p><span>$80.00</span> First payment</p>
+										<p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> First payment</p>
 									</li>
 									<li>
 										<div class="round-icon icon2"></div>
-										<p><span>$80.00</span> 2 weeks later</p>
+										<p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 2 weeks later</p>
 									</li>
 									<li>
 										<div class="round-icon icon3"></div>
-										<p><span>$80.00</span> 4 weeks later</p>
+										<p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 4 weeks later</p>
 									</li>
 									<li>
 										<div class="round-icon icon4"></div>
-										<p><span>$80.00</span> 6 weeks later</p>
+										<p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 6 weeks later</p>
 									</li>
 								</ul>
 								<div class="payment-btn" id="afterpay_submit">
@@ -180,6 +183,7 @@
 							</div>
 						</div>
 					</div>
+			@endif
 				</div>
 			</div>
 		</div>
@@ -295,7 +299,12 @@
 								data: {'order_amount': '20.00'},
                 success: function (token) {
 									console.log("ddddd" + token);
-								}
+								},
+								statusCode: {
+            419: function () {
+                window.location.href = "/cart";
+            }
+        }
 			}); 
 			return false;
 		 });

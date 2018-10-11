@@ -18,6 +18,8 @@
                                 $delivery_type = 'Express';
                             }elseif(isset($cart->delivery_type) && $cart->delivery_type == 'new_zealand'){
                                 $delivery_type = 'New Zealand Standard';
+                            }else{
+                                $delivery_type ='';
                             }
                             @endphp
                                 <p>{{ $delivery_type }} Delivery</p>
