@@ -415,6 +415,157 @@
 	                        </ul>
 	                    </li>
 	                </ul>
+				</li>
+				<li>
+	                <a href="/shoes">
+	                    <span class="title">Shoe Finder</span>
+	                </a>
+	                <!-- Level Two-->
+	                <ul>
+	                    <li>
+	                        <a href="/neutral-running-shoes">
+	                            Neutral Running Shoes                      
+	                        </a>
+	                        <ul>
+							<li>
+									<a href="/shoes/aduro">Aduro</a>
+								</li>
+								<li>
+									<a href="/shoes/defyance">Defyance</a>
+								</li>
+								<li>
+									<a href="/shoes/dyad">Dyad</a>
+								</li>
+								<li>
+									<a href="/shoes/ghost">Ghost</a>
+								</li>
+								<li>
+									<a href="/shoes/ghost-gtx">Ghost GTX</a>
+								</li>
+								<li>
+									<a href="/shoes/glycerin">Glycerin</a>
+								</li>
+								<li>
+									<a href="/shoes/launch">Launch</a>
+								</li>
+								<li>
+									<a href="/shoes/levitate">Levitate</a>
+								</li>
+								<li>
+									<a href="/shoes/neuro">Neuro</a>
+								</li>
+								<li>
+									<a href="/shoes/pureflow">PureFlow</a>
+								</li>
+								<li>
+									<a href="/shoes/revel">Revel</a>
+								</li> 
+								<li>
+									<a href="/shoes/ricochet">Ricochet</a>
+								</li>
+	                        </ul>
+	                    </li> 
+	                    <li>
+	                        <a href="/support-running-shoes">
+	                            Support Running Shoes
+	                        </a>
+	                        <ul>
+							<li>
+								<a href="/shoes/addiction">Addiction</a>
+							</li>
+							<li>
+								<a href="/shoes/adrenaline-gts">Adrenaline GTS</a>
+							</li>
+							<li>
+								<a href="/shoes/ariel">Ariel</a>
+							</li>
+							<li>
+								<a href="/shoes/beast">Beast</a>
+							</li>
+							<li>
+								<a href="/shoes/bedlam">Bedlam</a>
+							</li>
+							<li>
+								<a href="/shoes/pureCadence">PureCadence</a>
+							</li>
+							<li>
+								<a href="/shoes/ravenna">Ravenna</a>
+							</li>
+							<li>
+								<a href="/shoes/transcend">Transcend</a>
+							</li>
+							<li>
+								<a href="/shoes/vapor">Vapor</a>
+							</li>
+							
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="/trail-running-shoes">
+	                            Trail Running Shoes                       
+	                        </a>
+	                        <ul>
+							<li>
+								<a href="/shoes/adrenaline-asr">Adrenaline ASR</a>
+							</li>
+							<li>
+								<a href="/shoes/caldera">Caldera</a>
+							</li>
+							<li>
+								<a href="/shoes/cascadia">Cascadia</a>
+							</li>
+							<li>
+								<a href="/shoes/cascadia-gtx">Cascadia GTX</a>
+							</li>
+							<li>
+								<a href="/shoes/mazama">Mazama</a>
+							</li>
+							<li>
+								<a href="/shoes/puregrit">PureGrit</a>
+							</li>
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="/competition-running-shoes">
+	                            Competition Running Shoes
+	                        </a>
+	                        <ul>
+							<li>
+								<a href="/shoes/asteria">Asteria</a>
+							</li>
+							<li>
+								<a href="/shoes/hyperion">Hyperion</a>
+							</li>
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="/cross-trainer-shoes">
+	                            Cross Training Shoes                      
+	                        </a>
+	                        <ul>
+							<li>
+								<a href="/shoes/liberty">Liberty</a>
+							</li>
+							<li>
+								<a href="/shoes/maximus">Maximus</a>
+							</li>
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="/walking-shoes">
+	                            Walking Shoes
+	                        </a>
+	                        <!-- Level Three-->
+	                        <ul>
+							<li>
+								<a href="/shoes/addiction-walker">Addiction Walker</a>
+							</li>
+							<li>
+								<a href="/shoes/dyad-walker">Dyad Walker</a>
+							</li>
+	                        </ul>
+	                    </li>
+	                </ul>
 	            </li>
 	            <li>
 	                <a href="javascript:;">
@@ -557,14 +708,7 @@
 	                                <a href="/mens-running-clothes-sale">
 	                                    Sale Clothing
 	                                </a>
-	                                <!-- Level Four-->
-	                                <!-- <ul>
-	                                    <li><a href="#">Sub Item Link 1</a></li>
-	                                    <li><a href="#">Sub Item Link 2</a></li>
-	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul> -->
 	                            </li>
-	                            <!-- <li><a href="#"></i>Sub Item Link 3</a></li> -->
 	                        </ul>
 	                    </li>
 	                </ul>
