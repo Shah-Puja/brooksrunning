@@ -3107,22 +3107,6 @@ textarea {
   border: solid 1px #ffffff;
   transition: all 1s ease-in-out;
 }
-.plp-filter--wrapper .selection-Lfilter--container {
-  width: 72%;
-  overflow: hidden;
-  margin-left: -1px;
-  margin-bottom: -1px;
-  text-align: center;
-  float: left;
-  color: #000000;
-  display: block;
-  padding: 2px;
-  height: auto;
-  min-height: 40px;
-  background-color: #ffffff;
-  border: solid 1px #ffffff;
-  transition: all 1s ease-in-out;
-}
 .plp-filter--wrapper .filter-menu {
   list-style-type: none;
   margin-top: 25px;
