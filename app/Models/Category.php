@@ -88,6 +88,13 @@ class Category extends Model
                     })->flatten()->pluck('value')->unique()->sort();
                  break;
 
+                 case 'Experience Type':
+                    $filters['Experience_Type'] = 
+                    $products->map(function($product) {
+                        return $product->pluck('experience');
+                    })->flatten()->unique()->values()->sort();
+                 break;
+
                  case 'Width':
                     $filters['Width'] = 
                     $products->map(function($product) {
