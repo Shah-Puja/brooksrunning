@@ -48,21 +48,12 @@
 					<li class="filter-heading">
 						<h3>Filter</h3>
 						<a href="javascript:void(0)" class="reset-filter" style="display:none;">Clear All</a>
-<<<<<<< HEAD
-					</li>
-					<li class="filter-menu filter-selection-wrapper" style="display:none;">
-								<label class="label">Your Selections</label>
-								<ul class="filter-list clearfix">
-								</ul>
-							</li> 
-=======
 						</li>
 						<li class="filter-menu filter-selection-wrapper" style="display:none;">
 							<label class="label">Your Selections</label>
 							<ul class="filter-list clearfix">
 							</ul>
 					</li>  
->>>>>>> 0b1d71c97f16c1c1bbc486579e85f2b407309c25
 					@foreach($filters as $key=>$values)
 						@if(count($values)>0)
 							@if($key == 'Size' || $key == 'Cup_Size')
