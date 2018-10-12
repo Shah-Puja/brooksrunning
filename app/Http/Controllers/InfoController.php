@@ -12,5 +12,9 @@ class InfoController extends Controller
    public function contact_us()
 	{
 		return view( 'info.contact-us');
+    }
+    public function static_page()
+	{
+		return view( 'info.static-page');
 	}
 }

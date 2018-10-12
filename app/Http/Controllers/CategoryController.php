@@ -60,4 +60,10 @@ class CategoryController extends Controller
    public function mens_landing(){
     return view('customer.womens-running-shoes-and-clothing');
     }
+    public function shoes_category(){
+        return view('customer.shoes-category');
+    }
+    public function shoe_main(){
+        return view('customer.shoe-main');
+    }
 }

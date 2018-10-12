@@ -39,6 +39,7 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 /* info static pages */
 Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
+Route::get('/static-page', 'InfoController@static_page');
 
 /* meet_brooks static pages */
 
@@ -62,6 +63,9 @@ Route::post('/payment', 'PaymentController@store');
 
 Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
 Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');
+
+Route::get('/shoes-category', 'CategoryController@shoes_category');
+Route::get('/shoe-main', 'CategoryController@shoe_main');
 
 Route::post('/afterpay', 'PaymentController@create_token'); 
 
