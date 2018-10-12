@@ -67,7 +67,7 @@
                                     <div class="product-info">
                                         <div class="row price">
                                             <div class="mob-5"><p class="bold-font blue">Unit Price</p></div>
-                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;{{ number_format($orderItem->variant->price, 2) }}</del> &dollar;{{ number_format($orderItem->variant->price, 2) }}</p></div>
+                                            <div class="mob-7"><p class="bold-font blue right"><del>&dollar;{{ number_format($orderItem->variant->price, 2) }}</del> &dollar;{{ number_format($orderItem->variant->price_sale, 2) }}</p></div>
                                         </div>
                                         <div class="row price">
                                             <div class="mob-5"><p>Item Total</p></div>
