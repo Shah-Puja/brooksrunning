@@ -246,8 +246,161 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="javascript:void(0)" class="main-nav">Shoe Finder</a>
-                        </li>
+                        <li class="main"><a href="/shoes" class="main-nav">Shoe Finder</a>
+								<div class="desktop-navigation--sub">
+									<div class="wrapper">
+										<div class="row">
+											<div class="col-12">
+												<div class="row nav-wrapper">
+													<ul class="tab-3">
+														<li class="submenu-main">
+		                                                    <a href="/neutral-running-shoes">Neutral Running Shoes</a>
+		                                                </li>
+		                                                <li>
+                                                            <a href="/shoes/aduro">Aduro</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/defyance">Defyance</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/dyad">Dyad</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/ghost">Ghost</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/ghost-gtx">Ghost GTX</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/glycerin">Glycerin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/launch">Launch</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/levitate">Levitate</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/neuro">Neuro</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/pureflow">PureFlow</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/revel">Revel</a>
+                                                        </li> 
+                                                        <li>
+                                                            <a href="/shoes/ricochet">Ricochet</a>
+                                                        </li>
+													</ul>
+													<ul class="tab-3">
+													    <li class="submenu-main">
+		                                                    <a href="/support-running-shoes">Support Running Shoes</a>
+		                                                </li>
+                                                        <li>
+                                                            <a href="/shoes/addiction">Addiction</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/adrenaline-gts">Adrenaline GTS</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/ariel">Ariel</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/beast">Beast</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/bedlam">Bedlam</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/pureCadence">PureCadence</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/ravenna">Ravenna</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/transcend">Transcend</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/vapor">Vapor</a>
+                                                        </li>
+                                                        
+													</ul>
+													<ul class="tab-3">
+														<li class="submenu-main">
+	                                                        <a href="/trail-running-shoes">Trail Running Shoes</a>
+	                                                    </li>
+                                                        <li>
+                                                            <a href="/shoes/adrenaline-asr">Adrenaline ASR</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/caldera">Caldera</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/cascadia">Cascadia</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/cascadia-gtx">Cascadia GTX</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/mazama">Mazama</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/puregrit">PureGrit</a>
+                                                        </li>
+													</ul>
+													<ul class="tab-3">
+														<li class="submenu-main">
+	                                                        <a href="/competition-running-shoes">Competition Running Shoes</a>
+	                                                    </li>
+	                                                    <li>
+                                                            <a href="/shoes/asteria">Asteria</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/hyperion">Hyperion</a>
+                                                        </li>
+                                                        <li class="submenu-main">
+	                                                        <a href="/cross-trainer-shoes">Cross Training Shoes</a>
+	                                                    </li>
+                                                        <li>
+                                                            <a href="/shoes/liberty">Liberty</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/maximus">Maximus</a>
+                                                        </li>
+                                                        <li class="submenu-main">
+	                                                        <a href="/walking-shoes">Walking Shoes</a>
+	                                                    </li>
+                                                        <li>
+                                                            <a href="/shoes/addiction-walker">Addiction Walker</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/shoes/dyad-walker">Dyad Walker</a>
+                                                        </li>
+													</ul> 
+												</div>
+											</div>
+										</div>
+								    </div>
+								    <div class="menu-shoe--finder">
+								    	<div class="wrapper">
+								    		<div class="row">
+								    			<div class="tab-7">
+								    				<div class="find-out">
+								    					<h3 class="bold-font">Find out which shoe is right for you.</h3>
+								    					<a href="#" class="shoe-button">Shoe Finder</a>
+								    				</div>
+								    			</div>
+								    			<div class="tab-5">
+								    				<div class="shoe-finder--logo">
+								    					<img src="images/brooks-shoes--logo.png" alt="">
+								    				</div>
+								    			</div>
+								    		</div>
+								    	</div>
+								    </div>
+								</div>
+							</li>
                         <li class="main"><a href="#" class="main-nav">Meet Brooks</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
