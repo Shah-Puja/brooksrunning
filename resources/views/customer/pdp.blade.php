@@ -201,14 +201,13 @@
                         </div>
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
-                        @php
-                        $sizes[] = array('size'=> $variant->size,'visible'=> $variant->visible);
-                        if($variant->width_name!=""){
-                            $width_names[$variant->width_code]= $variant->width_name; 
-                        } 
-                        @endphp
+                            @php
+                            $sizes[] = array('size'=> $variant['size'],'width'=> $variant['width_name'],'visible'=> $variant['visible']);
+                            if($variant['width_name']!=""){
+                                $width_names[$variant['width_code']]= $variant['width_name']; 
+                            } 
+                            @endphp
                         @endforeach
-                         
                         <form id="detail" action='' method='post' name='add_to_cart' onsubmit="return detail_validation();">
                             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}"> 
                             @if(!empty($sizes))
@@ -222,12 +221,11 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                    <!--<li class="selected">6.0</li>
-                                    <li class="disable">13.0</li>
-                                    <li>13.0</li>-->
-                                    <li data-value="">-</li>
+                                 @php $sizes = collect($sizes)->Where('visible','Yes')->unique('size'); @endphp
                                     @foreach($sizes as $size)
-                                    <li @if($size['visible']=='No') class="disable" @endif data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
+                                       @if($size['size']!='')
+                                        <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
+                                       @endif
                                     @endforeach
                                 </ul>
                             </div> <!-- end size -->
@@ -615,4 +613,26 @@
                 </div>
         </div>
 </section>-->
+<script>
+ let variants = {!! $variants->toJson() !!};
+
+ $(document).on('click', '.size-show li:not(".disable")', function () {
+    if ($(this).data('value') != '') {
+        $(".size-show li").removeClass("selected");
+        $(this).addClass("selected");
+        var size_val = $(this).data('value');
+        console.log(size_val);
+        let data = $.grep( variants, function( n, i ) {
+            console.log(parseInt(size_val));
+            if(n){
+                return n['size']==size_val && n['visible']=='Yes';
+            }
+         });
+    
+        console.log(data);
+        $("#detail input[name='size']").val(size_val);
+    }
+    return false;
+});
+</script>
 @endsection
