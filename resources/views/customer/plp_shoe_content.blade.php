@@ -2,12 +2,12 @@
 @if($styles!='' && count($styles) >0 )
     @php $colors_option=array(); @endphp
 	@foreach($styles as $style)
-	@php //echo "<pre>"; print_r( $style); exit; @endphp
 		@php 
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
 			$filters_array[$style->style]['size'] = $style->variants->pluck('size')->all();
 			$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
+			$filters_array[$style->style]['experience'] = $style->experience;
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['support_level'] = $style->tags->Where('key','PF_F_SLEVEL')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Arch'] = $style->tags->Where('key','PF_F_ARCH')->flatten()->pluck('value')->unique()->all();
