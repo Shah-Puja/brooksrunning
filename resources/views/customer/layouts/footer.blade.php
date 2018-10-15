@@ -205,12 +205,14 @@
 													$.each( data, function( key, value ) {
 														console.log( key + ": " + value );
 														$("input[name='"+key+"']").val(value);
+														$('.password-wrapper').css('display','none');
 													});
 												}else{												
 													$("input[name='s_fname']").val(data['first_name']);
 													$("input[name='s_lname']").val(data['last_name']);
 													$("input[name='s_state']").val(data['state']);
 													$("input[name='s_postcode']").val(data['postcode']);
+													$('.password-wrapper').css('display','none');
 											}
 											}else{	
 												$('.popup-wrong-password').css('display','block');	
@@ -267,22 +269,23 @@
 											//console.log(data);
 											if(data == "true"){
 												console.log("true pouup");
-												$.ajax({
-													headers: {
-														'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-													},
-													url:"/password/reset",
-													type:"POST",
-													data: {email:email},
-													success: function(data){
-														console.log(data);
-														// if(data == "true"){
-														// 	$('.password-wrapper').css('display','block');
-														// }else{
-														// 	$('.password-wrapper').css('display','none');
-														// }
-													}
-												});
+												// $.ajax({
+												// 	headers: {
+												// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+												// 	},
+												// 	url:"/password/reset",
+												// 	type:"POST",
+												// 	data: {email:email},
+												// 	success: function(data){
+												// 		console.log(data);
+												// 		// if(data == "true"){
+												// 		// 	$('.password-wrapper').css('display','block');
+												// 		// }else{
+												// 		// 	$('.password-wrapper').css('display','none');
+												// 		// }
+												// 	}
+												// });
+												window.location.href = "http://brooksrunning.test/password/reset";
 											}else{
 												$('#popup_email').addClass("needsfilled");
 												$('#popup_email').val("");
