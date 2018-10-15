@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {   
-    protected $fillable = ['cart_id', 'user_id', 'total', 'freight_cost', 'grand_total', 'status', 'payment_status', 'transaction_id', 'transaction_status'];
+    protected $fillable = ['cart_id', 'user_id', 'total', 'freight_cost','delivery_type', 'grand_total', 'status', 'payment_status', 'afterpay_token', 'transaction_id', 'transaction_status'];
 
     public function orderItems()
     {
@@ -27,6 +27,7 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
+        //print_R($cart);die;
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
@@ -35,7 +36,8 @@ class Order extends Model
             [
                 'total' => $cart['total'],
                 'freight_cost' => $cart['freight_cost'],
-                'grand_total' => $cart['grand_total']
+                'grand_total' => $cart['grand_total'],
+                'delivery_type' => $cart['delivery_type'],
             ]
         );
         $order_id = $order['id'];

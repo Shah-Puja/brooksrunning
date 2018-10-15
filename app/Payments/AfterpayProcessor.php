@@ -13,27 +13,9 @@ class AfterpayProcessor {
         $this->afterpayApiClient = $afterpayApiClient;
     }
 
-    public function getAfterpayToken($order) {
-        /*$data = [
-            "totalAmount" => [
-                "amount" => "20.00",
-                "currency" => "AUD"
-            ],
-            "consumer" => [
-                "phoneNumber" => "0413111222",
-                "givenNames" => "Puja",
-                "surname" => "Shah",
-                "email" => "puja.shah@orionsolution.com"
-            ],
-            "merchant" => [
-                "redirectConfirmUrl" => "afterpay_payment",
-                "redirectCancelUrl" => "afterpay_payment"
-            ],
-            "merchantReference" => '123'
-        ];*/
+    public function getAfterpayToken($order) { 
         $data = $this->prepareOrderData($order);
-		return $this->afterpayApiClient->createOrder($data); 
-        //return $this->afterpayApiClient->generateToken($data);
+		return $this->afterpayApiClient->createOrder($data);  
     }
 
     public function getOrder($token) {
@@ -42,10 +24,9 @@ class AfterpayProcessor {
 
     public function charge($order) { 
         $paymentDetails = [
-			"token" => $order['afterpayToken'],
-			"merchantReference" => $order['id']
-        ];
-        
+			"token" => $order->afterpay_token,
+			"merchantReference" => $order->id
+		];
 		return $this->afterpayApiClient->capturePayment($paymentDetails);
     }
 
@@ -63,8 +44,8 @@ class AfterpayProcessor {
             "email" => $order->address->email
           ],
           "merchant" => [
-            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success.php",
-            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel.php"
+            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success",
+            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel"
           ],
           "merchantReference" => $order->id,
         ];	

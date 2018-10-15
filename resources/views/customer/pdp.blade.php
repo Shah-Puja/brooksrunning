@@ -21,28 +21,23 @@
                     <div class="breadcrumbs2 visible-mob visible-tab">
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li>
                                 @switch($product->gender)
-                                @case('M')
-                                <a href="#">Men's</a>
-                                @break
-                                @case('W')
-                                <a href="#">Women's</a>
-                                @break
-                                @default
-                                <a href="#">{{ $product->gender }}</a>
+                                    @case('M')
+                                    <a href="/mens-running-shoes-and-clothing">Men's</a>
+                                    @break
+                                    @case('W')
+                                    <a href="/womens-running-shoes-and-clothing">Women's</a>
+                                    @break
                                 @endswitch
                             </li>
                             <li>
                                 <a href="#">{{ $product->prod_type }}</a>
                             </li>
                             <li>
-                                <a href="#"></a>
-                            </li>
-                            <li>
-                                <a href="#" class="active">{{ strip_tags($product->stylename) }}</a>
+                                <a href="javascript:void(0)" class="active">{{ strip_tags($product->stylename) }}</a>
                             </li>
                         </ul>
                     </div>
@@ -59,11 +54,11 @@
                                     <img src="{{ $product->image->image1Original() }}" />
                                 </li>
                                 @for ($i = 2; $i < 10; $i++)
-                                @if ($product->image->{'image' . $i . 'Thumbnail'}() != null)
-                                <li data-thumb="{{ $product->image->{'image' . $i . 'Thumbnail'}() }}">
-                                    <img src="{{ $product->image->{'image' . $i . 'Original'}() }}" />
-                                </li>
-                                @endif
+                                    @if ($product->image->{'image' . $i} != null)
+                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
+                                        <img src="{{ $product->image->{ 'image'.$i.'Original' }() }}" />
+                                    </li>
+                                    @endif
                                 @endfor
                             </ul>
                         </div>
@@ -74,29 +69,23 @@
                         <div class="breadcrumbs2 hidden-tab hidden-mob">
                             <ul> 
                                 <li>
-                                    <a href="#">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
-
                                 <li>
                                     @switch($product->gender)
-                                    @case('M')
-                                    <a href="#">Men's</a>
-                                    @break
-                                    @case('W')
-                                    <a href="#">Women's</a>
-                                    @break
-                                    @default
-                                    <a href="#">{{ $product->gender }}</a>
+                                        @case('M')
+                                        <a href="/mens-running-shoes-and-clothing">Men's</a>
+                                        @break
+                                        @case('W')
+                                        <a href="/womens-running-shoes-and-clothing">Women's</a>
+                                        @break
                                     @endswitch
                                 </li>
                                 <li>
                                     <a href="#">{{ $product->prod_type }}</a>
                                 </li>
                                 <li>
-                                    <a href="#"></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="active">{{ strip_tags($product->stylename) }}</a>
+                                    <a href="javascript:void(0)" class="active">{{ strip_tags($product->stylename) }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -201,7 +190,7 @@
                         <div class="swatches">
                             <ul>
                                 @foreach($colour_options as $color_data)
-                                <li @if($color_data ->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ $color_data->image1thumbnail }}" alt="{{ $color_data->color_name }}"></li>
+                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}"></li>
                                 @endforeach
                             </ul>
                         </div>

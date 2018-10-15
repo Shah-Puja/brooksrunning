@@ -96,7 +96,7 @@ $(document).on("click",".filter-value",function(){
   }
 	if(selected){
       $(".filter-heading a").show();
-      var selection_filter_div = '<div class="selection-filter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
+      var selection_filter_div = '<div class="selection-filter--container selection-Lfilter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
       $(".filter-selection-wrapper ul").append(selection_filter_div);
       $(".filter-selection-wrapper").show();
       var filterGroup = filters[this_closest_group];
@@ -109,7 +109,7 @@ $(document).on("click",".filter-value",function(){
 		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
 
-  loadMore(loadmore_count);
+  loadMore(12);
   return false;
 });
 
@@ -132,7 +132,7 @@ $(document).on('click','.selection-filter--container li',function(){
     var comboFilter = getComboFilter( filters );
 		console.log(comboFilter);
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    loadMore(loadmore_count);
+    loadMore(12);
   return false;
 });
 
@@ -145,7 +145,7 @@ $(document).on('click','.reset-filter',function(){
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  loadMore(loadmore_count);
+  loadMore(12);
   filters = [];
   return false;
 });
@@ -190,7 +190,7 @@ function getComboFilter( filters ) {
     //****************************
   // Isotope Load more button
   //****************************
-  var initShow = loadmore_count; //number of images loaded on init & onclick load more button
+  var initShow = 12; //number of images loaded on init & onclick load more button
   var counter = initShow; //counter for load more button
   var iso = $grid.data('isotope'); // get Isotope instance
 

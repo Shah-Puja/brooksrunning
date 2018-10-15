@@ -3092,7 +3092,7 @@ textarea {
   margin-left: 2px;
 }
 .plp-filter--wrapper .selection-filter--container {
-  width: 25%;
+  width: 33%;
   overflow: hidden;
   margin-left: -1px;
   margin-bottom: -1px;
@@ -3433,9 +3433,6 @@ textarea {
     display: block;
   }
 }
-.plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .plp-morethanfour--color {
-  display: none;
-}
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .plp-mob--info {
     padding-top: 5px;
@@ -3604,7 +3601,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .plp-main--img--wrapper {
-    height: 220px;
+    height: 120px;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .img {
@@ -3800,6 +3797,70 @@ textarea {
 }
 .filter-mob--apply a {
   color: #ffffff;
+}
+
+.color-wrapper--more--container {
+  position: relative;
+  max-width: 226px;
+  min-height: 24px;
+  margin: 0 auto 8px;
+}
+.color-wrapper--more--container .color-wrapper--more {
+  width: 98%;
+  float: left;
+  position: relative;
+  text-align: left;
+}
+.color-wrapper--more--container .color-wrapper--more .swatches-icon {
+  width: 40px;
+  height: 23px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  border: 1px solid #777;
+  cursor: pointer;
+  vertical-align: top;
+}
+.color-wrapper--more--container .color-wrapper--more .swatches-icon img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: block;
+}
+.color-wrapper--more--container .color-wrapper--more .remaining_swatches_show {
+  width: 100%;
+  text-align: left;
+}
+.color-wrapper--more--container .color-wrapper--more .remaining_swatches_show .swatches-icon {
+  margin-top: 5px;
+}
+@media only screen and (min-width: 1200px) {
+  .color-wrapper--more--container .color-wrapper--more .remaining_swatches_show .swatches-icon {
+    margin-top: 0px;
+  }
+}
+.color-wrapper--more--container .color-wrapper--more--add {
+  width: 19%;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+@media only screen and (min-width: 1200px) {
+  .color-wrapper--more--container .color-wrapper--more--add {
+    width: 1%;
+  }
+}
+.color-wrapper--more--container .color-wrapper--more--add .remaining_swatches {
+  width: 40px;
+  height: 25px;
+  border: 1px solid #777;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 0 0;
 }
 
 /* /Listing Page  */
@@ -4675,7 +4736,7 @@ textarea {
 }
 .shopping-delevery--option .delivery-option .radio-inline .text .gift-input {
   display: block;
-  color: #666666;
+  color: #000000;
   font-size: 14px;
   padding: 7px;
   height: 34px;
@@ -5512,10 +5573,10 @@ textarea {
   padding-left: 50px;
 }
 .contact-details--right .info-wrapper .icon {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: -3px;
+  top: 5px;
   left: 0;
 }
 .contact-details--right .info-wrapper .icon img {

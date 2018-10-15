@@ -36,7 +36,7 @@
                                 <p class="bold-font blue right">$ {{ @number_format($cart->grand_total, 2) }}</p>
                             </div>
                         </div>	
-                        @if($cart->grand_total <1000)
+                        @if(isset($cart->grand_total) && $cart->grand_total <1000)
                         <div class="afterpay">
                             <span>or 
                             4 payments of ${{ @number_format(($cart->grand_total/4), 2) }} with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
