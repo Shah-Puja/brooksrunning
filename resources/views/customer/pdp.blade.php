@@ -12,6 +12,32 @@
     width: 100%;
     max-width: 62px;
 }
+.select-option--wrapper .disable{
+    background-color: #f1f1f1;
+    color: #000;
+    cursor:auto;
+}
+.pdp-container--info .size .size-show li.disable{
+    background-color: #f1f1f1;
+    cursor:auto;
+}
+.custom-select .option-value-data {
+    padding: 4px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+.custom-select .option-value-data:not(.disable):hover {
+    background-color: #0263f7;
+    color: #ffffff;
+    cursor:pointer;
+}
+.pdp-container--info .size .size-show li.selected{
+    background-color: #0263f7;
+    border: solid 1px #0263f7;
+    color: #ffffff;
+}
+
 </style>
 <div id="data-load">
     <div class="pdp-container">
@@ -221,7 +247,7 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                 @php $sizes = collect($sizes)->Where('visible','Yes')->unique('size'); @endphp
+                                 @php $sizes = collect($sizes)->unique('size'); @endphp
                                     @foreach($sizes as $size)
                                        @if($size['size']!='')
                                         <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
@@ -245,11 +271,11 @@
                                                     </div>
                                                 </div>
                                                 <ul class="select-option--wrapper">
-                                                    <li class="option-value" data-value="">-</li>
+                                                    <li class="option-value-data " data-value="">-</li>
                                                     @php //echo "<pre>";print_r($width_names);die; @endphp
                                                     @foreach($width_names as $width_code => $width_name)
                                                     @if($width_name!='')
-                                                    <li class="option-value" data-value="{{ $width_code }}">{{ $width_name }}</li>
+                                                    <li class="option-value-data " data-value="{{ $width_code }}">{{ $width_name }}</li>
                                                     @endif
                                                     @endforeach
                                                 </ul>
@@ -621,18 +647,36 @@
         $(".size-show li").removeClass("selected");
         $(this).addClass("selected");
         var size_val = $(this).data('value');
-        console.log(size_val);
         let data = $.grep( variants, function( n, i ) {
-            console.log(parseInt(size_val));
-            if(n){
-                return n['size']==size_val && n['visible']=='Yes';
-            }
+            if(n) return n['size']==size_val && n['visible']=='Yes';
          });
-    
-        console.log(data);
+        $(".select-option--wrapper :not([data-value=''])").addClass("disable");
+        for(i = 0; i< data.length; i++){
+            $(".select-option--wrapper").find("[data-value='"+data[i]['width_code']+"']").removeClass("disable");
+        }
         $("#detail input[name='size']").val(size_val);
     }
     return false;
 });
+
+$(document).on('click', '.width-wrapper li:not(".disable")', function () {
+    $(".select-option--wrapper li").removeClass("selected");
+    let value = $(this).data('value');
+    $(this).addClass("selected");
+    $(this).parent().parent().find(".label-heading .text").html($(this).text());
+    $(this).parent().slideUp("fast");
+    $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
+    $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
+    $("#detail input[name='width_name']").val(value);
+    let data = $.grep( variants, function( n, i ) {
+         if(n) return n['width_code']==value && n['visible']=='Yes';
+        });
+    $(".size-show li").addClass("disable");
+    for(i = 0; i< data.length; i++){
+        $(".size-show").find("[data-value='"+data[i]['size']+"']").removeClass("disable");
+    }
+    event.stopPropagation();
+});
+
 </script>
 @endsection

@@ -244,6 +244,7 @@ $(document).on('click', '.custom-select .label-heading', function (event) {
     event.stopPropagation();
 });
 $(document).on('click', '.custom-select .option-value', function () {
+    console.log("hh122");
     $(".select-option--wrapper li").removeClass("selected");
     let value = $(this).data('value');
     $(this).addClass("selected");
@@ -251,7 +252,6 @@ $(document).on('click', '.custom-select .option-value', function () {
     $(this).parent().slideUp("fast");
     $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
     $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
-    $("#detail input[name='width_name']").val(value);
 
     /** listing sort */
     var type = $(this).attr('data-sorttype');
