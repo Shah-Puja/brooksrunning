@@ -76,5 +76,11 @@ Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
 
-
+// Myaccount
+Route::get('/account', 'MyaccountController@account');
+Route::get('/account-homepage', 'MyaccountController@account_homepage');
+Route::get('/account-order-history', 'MyaccountController@account_order_history');
+Route::get('/account-password', 'MyaccountController@account_password');
+Route::get('/account-personal', 'MyaccountController@account_personal');
+Route::get('/account-signin', 'MyaccountController@account_signin');
 

@@ -1,4 +1,5 @@
-<?php include("header.php") ?>
+@extends('customer.layouts.master')
+@section('content')
 
 <section class="create-account wrapper">
 	<div class="row">
@@ -241,4 +242,4 @@
 	</div>
 </section>
 
-<?php include("footer.php") ?>
+@endsection
