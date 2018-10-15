@@ -200,16 +200,93 @@
 										data: {password:password,email:email},
 										success: function(data){
 											// console.log(data);
-											if(data['pass_data'] == "order_address"){
-												$.each( data, function( key, value ) {
-													console.log( key + ": " + value );
-													$("input[name='"+key+"']").val(value);
+											if(data['pass_status']=='true'){
+												if(data['pass_data'] == "order_address"){
+													$.each( data, function( key, value ) {
+														console.log( key + ": " + value );
+														$("input[name='"+key+"']").val(value);
+													});
+												}else{												
+													$("input[name='s_fname']").val(data['first_name']);
+													$("input[name='s_lname']").val(data['last_name']);
+													$("input[name='s_state']").val(data['state']);
+													$("input[name='s_postcode']").val(data['postcode']);
+											}
+											}else{	
+												$('.popup-wrong-password').css('display','block');	
+												$('#popup_email').val(email);						
+											}
+										}
+									});
+								}
+								return false;
+							});
+
+							$(".main_email_field").on('blur',function(){
+								var email = $(this).val();
+								if(email == ''){
+									$('.password-wrapper').css('display','none');
+								}else{
+									//console.log(email);
+									$.ajax({
+										headers: {
+											'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+										},
+										url:"/shipping-check-email",
+										type:"POST",
+										data: {email:email},
+										success: function(data){
+											console.log(data);
+											if(data == "true"){
+												$('.password-wrapper').css('display','block');
+											}else{
+												$('.password-wrapper').css('display','none');
+											}
+										}
+									});
+							 	}
+							 	return false;
+							});
+
+							$('.pass-emailpopup-send').on('click',function(){
+								var email = $('#popup_email').val();
+								if ($('#popup_email').val() == "") {
+									$('#popup_email').addClass("needsfilled");
+									$('#popup_email').val("");
+									$('#popup_email').attr("placeholder", "REQUIRED");	
+								} else {
+								    //console.log($('#popup_email').val());
+									$.ajax({
+										headers: {
+											'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+										},
+										url:"/shipping-check-email",
+										type:"POST",
+										data: {email:email},
+										success: function(data){
+											//console.log(data);
+											if(data == "true"){
+												console.log("true pouup");
+												$.ajax({
+													headers: {
+														'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+													},
+													url:"/password/reset",
+													type:"POST",
+													data: {email:email},
+													success: function(data){
+														console.log(data);
+														// if(data == "true"){
+														// 	$('.password-wrapper').css('display','block');
+														// }else{
+														// 	$('.password-wrapper').css('display','none');
+														// }
+													}
 												});
-											}else{												
-												$.each( data, function( key, value ) {
-													console.log( key + ": " + value );
-													$("input[name='"+key+"']").val(value);
-												});
+											}else{
+												$('#popup_email').addClass("needsfilled");
+												$('#popup_email').val("");
+												$('#popup_email').attr("placeholder","The email address is invalid");
 											}
 										}
 									});
@@ -237,7 +314,6 @@
 <script>
                         function check_subscribers() {
                             let email = $("form[name='form_subscribers'] input[name='email']").val();
-
                             $.ajax({
                                 url: "/subscribers/new",
                                 method: "post", 

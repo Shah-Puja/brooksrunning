@@ -27,7 +27,7 @@
 			</div>
 			<div class="shipping-right--container">
 				<!--Password popup -->
-				<div class="popup-container password-popup" style="display: none;">
+				<div class="popup-container password-popup popup-wrong-password" style="display: none;">
 					<div class="popup-container--wrapper">
 						<div class="popup-container--info">
 							<div class="close-me"><span class="icon-close-icon close-popup"></span></div>
@@ -37,14 +37,14 @@
 								<div class="col-8">
 									<div class="input-wrapper">
 										<label for=""><sup>*</sup>Email Address</label>
-										<input type="text" class="input-field">
+										<input type="text" name="popup_email" id="popup_email" class="input-field">
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-8">
 									<div class="cart-btn">
-										<button class="primary-button pdp-button">Send</button>
+										<button class="primary-button pdp-button pass-emailpopup-send">Send</button>
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 				</div>
 				<!--/Password popup -->
 				<!--Password popup Success -->
-				<div class="popup-container password-popup" style="display: none;">
+				<div class="popup-container password-popup popup-success" style="display: none;">
 					<div class="popup-container--wrapper">
 						<div class="popup-container--info">
 							<div class="close-me"><span class="icon-close-icon close-popup"></span></div>
