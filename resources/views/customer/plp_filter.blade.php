@@ -8,12 +8,11 @@
 		</div>
 		<div class="plp-filter">
 			<ul class="plp-filter--wrapper">
-				@php 
+				<!--@php 
 					$category_array = __($prod_type.'_Category');
 					$replace_word = array('.',' ','/');
 				@endphp
 					@if($prod_type=='Sportsbra')
-					    <!-- wrtite sports bra category here -->
 					@elseif($prod_type=='Apparel')
 					<li class="filter-menu">
 						<label class="label br-mainheading category-heading">Categories</label>
@@ -42,7 +41,7 @@
 						@endforeach
 					    </ul>
 					</li>	
-					@endif
+					@endif -->
 				
 					@if(count($filters)>0)
 					<li class="filter-heading">
