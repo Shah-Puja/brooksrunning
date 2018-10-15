@@ -1207,17 +1207,6 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
     return false;
 });
 
-$(document).on('click', '.size-show li:not(".disable")', function () {
-    if ($(this).data('value') != '') {
-        $(".size-show li").removeClass("selected");
-        $(this).addClass("selected");
-        let size_val = $(this).data('value');
-        $("#detail input[name='size']").val(size_val);
-    }
-    return false;
-});
-
-
 function ChangeUrl(page, url) {
     if (typeof (history.pushState) != "undefined") {
         var obj = { Page: page, Url: url };
