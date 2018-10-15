@@ -221,7 +221,7 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                    <li data-value="">-</li>
+                                 @php $sizes = collect($sizes)->Where('visible','Yes')->unique('size'); @endphp
                                     @foreach($sizes as $size)
                                        @if($size['size']!='')
                                         <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
@@ -613,4 +613,26 @@
                 </div>
         </div>
 </section>-->
+<script>
+ let variants = {!! $variants->toJson() !!};
+
+ $(document).on('click', '.size-show li:not(".disable")', function () {
+    if ($(this).data('value') != '') {
+        $(".size-show li").removeClass("selected");
+        $(this).addClass("selected");
+        var size_val = $(this).data('value');
+        console.log(size_val);
+        let data = $.grep( variants, function( n, i ) {
+            console.log(parseInt(size_val));
+            if(n){
+                return n['size']==size_val && n['visible']=='Yes';
+            }
+         });
+    
+        console.log(data);
+        $("#detail input[name='size']").val(size_val);
+    }
+    return false;
+});
+</script>
 @endsection
