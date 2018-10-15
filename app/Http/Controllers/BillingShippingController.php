@@ -83,8 +83,8 @@ class BillingShippingController extends Controller
         return redirect("payment");
     }
 
-    public function check_email(Request $email){
-        $email= $_POST['email'];
+    public function check_email(){
+        $email= request()->email;
         $user = User::where("email", "=",  $email)->first();
         if($user){
             echo "true";
@@ -104,9 +104,11 @@ class BillingShippingController extends Controller
                 $orderadd_data = Order_address::where("email", "=",  $email)->orderBy('id', 'desc')->first();
                 if($orderadd_data){
                     $orderadd_data['pass_data'] = 'order_address';
+                    $orderadd_data['pass_status'] = 'true';
                     return $orderadd_data;
                 }else{
                     $user_verify['pass_data'] = 'user';
+                    $orderadd_data['pass_status'] = 'true';
                     return $user_verify;
                 }            
             }else{
