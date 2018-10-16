@@ -44,8 +44,8 @@ class AfterpayProcessor {
             "email" => $order->address->email
           ],
           "merchant" => [
-            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success",
-            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel"
+            "redirectConfirmUrl" => config('app.url') ."afterpay_success",
+            "redirectCancelUrl" => config('app.url') ."afterpay_cancel"
           ],
           "merchantReference" => $order->id,
         ];	
