@@ -32,22 +32,11 @@
 						<div class="popup-container--info">
 							<div class="close-me"><span class="icon-close-icon close-popup"></span></div>
 							<h3 class="br-heading">Request to Reset Your Password</h3>
-							<p class="br-info">Provide you account email to receive an email to reset your password</p>
-							<div class="row">
-								<div class="col-8">
-									<div class="input-wrapper">
-										<label for=""><sup>*</sup>Email Address</label>
-										<input type="text" name="popup_email" id="popup_email" class="input-field">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-8">
-									<div class="cart-btn">
-										<button class="primary-button pdp-button pass-emailpopup-send">Send</button>
-									</div>
-								</div>
-							</div>
+                            <p class="br-info">Provide you account email to receive an email to reset your password</p>
+
+                            <div id="shippingbilling_popup">@include('customer.ajax_shippingbilling_popup')</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -60,7 +49,7 @@
 							<h3 class="br-heading">Request to Reset Your Password Received</h3>
 							<p class="br-info">Thanks for submitting your email address. We have sent you an email with the information needed to reset your password. The email might take a couple of minutes to reach your account. Please check your junk mail to ensure you receive it.</p>
 							<div class="cart-btn">
-								<a href="#" class="primary-button pdp-button">Go to Homepage</a>
+								<a href="/" class="primary-button pdp-button">Go to Homepage</a>
 							</div>
 						</div>
 					</div>
@@ -113,7 +102,7 @@
                                             endif;
                                         ?>
                                         <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
-                                        <input type="text" name="email" class="input-field main_email_field" data-label-name="email">
+                                        <input type="text" id ="reset_email" name="email" class="input-field main_email_field" data-label-name="email">
                                     </div>
                                 </div>
                             </div>

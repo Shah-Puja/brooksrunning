@@ -45,13 +45,13 @@ $(document).ready(function(){
         } else {
             $('#password_field').removeClass("needsfilled");
         }
-
+        
         if ($("#password_field").hasClass("needsfilled") ) {
                 return false;
         }
         else{
             var password = $('#password_field').val();
-            var email = $("input[name=email]").val();
+            var email = $("#billing_shipping input[name=email]").val();
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -88,9 +88,55 @@ $(document).ready(function(){
     });
 
     $("#reset-pass-open").on('click',function(){
-        var email = $("input[name=email]").val();
         $('.popup-wrong-password').css('display','block');	
-        $('#popup_email').val(email);
+        var email_shipping = $("#billing_shipping input[name=email]").val();
+        $("#email").val(email_shipping);
+        return false;
+    });
+
+    $(".reset_password").on('click',function(){
+        var email = $("#reset_email").val();
+
+        if ($('#email').val() == "") {
+            $('#email').addClass("needsfilled");
+            $('#email').val("");
+            $('#email').attr("placeholder", "REQUIRED");	
+        } else {
+            $('#email').removeClass("needsfilled");
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:"/shipping-check-email",
+                type:"POST",
+                data: {email:email},
+                success: function(data){
+                    console.log(data);
+                    if(data == "true"){
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            type: 'post',
+                            url: "/password/email",
+                            data : { email : email },
+                            success:function(data){
+                                $("#shippingbilling_popup").hide();
+                                $(".popup-success").show();
+                            },
+                            error: function(jq,status,message) {
+                                alert('A jQuery error has occurred. Status: ' + status + ' - Message: ' + message);
+                            }
+                        })
+                    }else{
+                        $('#email').addClass("needsfilled");
+                        $('#email').val("");
+                        $('#email').attr("placeholder", "Wrong Email Id");
+                    }
+                }
+            });
+        }
+        return false;
     });
 
     $(".main_email_field").on('blur',function(){
