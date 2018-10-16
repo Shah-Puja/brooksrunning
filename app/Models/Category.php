@@ -91,7 +91,7 @@ class Category extends Model
                  case 'Experience Type':
                     $filters['Experience_Type'] = 
                     $products->map(function($product) {
-                        return $product->pluck('experience');
+                        return $product->experience;
                     })->flatten()->unique()->values()->sort();
                  break;
 
