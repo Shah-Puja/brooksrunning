@@ -8,15 +8,15 @@
 			</div>
 			<div class="module-img">
 				<picture>
-					@php 
-						if($product->benefit_desktop!='') $img_desktop = explode(",",$product->benefit_desktop); 
-						if($product->benefit_mobile!='') $img_mobile = explode(",",$product->benefit_mobile); 
+					@php $benefit_desktop_url =  ($product->benefit_desktop!='') ? benefit_img_check($product->benefit_desktop) : '';
+					     $benefit_mobile_url =  ($product->benefit_mobile!='') ? benefit_img_check($product->benefit_mobile) : '';
 					@endphp
-					@if(@fopen(env('BASE_PRODUCT_IMAGES_URL').$img_mobile[0],'r'))
-					<source media="(max-width: 595px)" srcset="{{ ($product->benefit_mobile!='') ? env('BASE_PRODUCT_IMAGES_URL').$img_mobile[0] : "" }}">
+					@if($benefit_desktop_url!='')
+						<source media="(max-width: 595px)" srcset="{{ $benefit_mobile_url }}">
 					@endif
-					@if(@fopen(env('BASE_PRODUCT_IMAGES_URL').$img_desktop[0],'r'))
-						<img src="{{ ($product->benefit_desktop!='') ? env('BASE_PRODUCT_IMAGES_URL').$img_desktop[0] : "" }}" alt="Header Images">
+
+					@if($benefit_desktop_url!='')
+						<img src="{{ $benefit_desktop_url }}" alt="Header Images">
 				    @endif
 				</picture>
 			</div>
