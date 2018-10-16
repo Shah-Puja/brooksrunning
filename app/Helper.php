@@ -11,10 +11,10 @@ if (!function_exists('benefit_img_check')) {
             }else if(@fopen($img.".jpg",'r')){
                 $img_url = $img.".jpg";
             }else{
-                $img_url = "";
+                $img_url = "/images/no_image.png";
             }
         }else{
-            $img_url = "";
+            $img_url = "/images/no_image.png";
         }
 
         return $img_url;
