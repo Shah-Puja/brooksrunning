@@ -56,6 +56,7 @@
 								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
 								$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 							@endphp
+							
 							<div class="item">
 								<picture>
 								<source media="(max-width: 667px)" srcset="{{ $img_url_medium }}">
