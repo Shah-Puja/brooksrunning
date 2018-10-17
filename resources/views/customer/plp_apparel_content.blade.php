@@ -43,10 +43,16 @@ $(document).ready(function(){
 			<div class="more-color--container more-clothing hidden-mob">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
-				@foreach($colors_option[$style->style] as $color_product)
-					<div class="item">
-						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" data-big="images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg" alt="">
-					</div>
+				@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
+					@if(!empty($color_product))
+						<!--@php
+							$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
+							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
+						@endphp-->
+						<div class="item">
+							<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Original() }}" class="plp-thumb--bg" alt="">
+						</div>
+					@endif
 				@endforeach
 				</div>
 				
@@ -54,37 +60,27 @@ $(document).ready(function(){
 			</div>
 		<!-- Start mobile swatches -->
 		<div class="color-wrapper--more--container visible-mob hidden-tab hidden-col">
-					<div class="color-wrapper--more">
-							<div class="swatches-icon">
-								<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
-							</div>
-							<div class="swatches-icon">
-								<img src="/images/testing/tshirt/211091_414_mb_WR.jpg" class="plp-thumb--bg" alt="">
-							</div>
-							<div class="swatches-icon">
-								<img src="/images/testing/tshirt/211091_414_ma_WR.jpg" class="plp-thumb--bg"  alt="">
-							</div>
-						<div class="remaining_swatches_show" style="display: none;" >
-							
-							<div class="swatches-icon">
-								<img src="/images/testing/tshirt/211091_414_d2_WR.jpg" class="plp-thumb--bg" alt="">
-							</div>
-							<div class="swatches-icon">
-									<img src="/images/testing/tshirt/211091_414_d1_WR.jpg" class="plp-thumb--bg"  alt="">
-							</div>
-							<div class="swatches-icon">
-									<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
-							</div>
-							<div class="swatches-icon">
-									<img src="/images/testing/tshirt/211091_414_ma_WR.jpg" class="plp-thumb--bg" alt="">
-							</div>
+				<div class="color-wrapper--more">
+					<div class="swatches-icon">
+						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
+					</div>
+					<div class="remaining_swatches_show" style="display: none;" >
+						<div class="swatches-icon">
+							<img src="/images/testing/tshirt/211091_414_d2_WR.jpg" class="plp-thumb--bg" alt="">
+						</div>
+						<div class="swatches-icon">
+							<img src="/images/testing/tshirt/211091_414_d1_WR.jpg" class="plp-thumb--bg"  alt="">
+						</div>
+						<div class="swatches-icon">
+							<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
 						</div>
 					</div>
-					<div class="color-wrapper--more--add"> 
-							<!-- /* For showing swatches count */ -->
-						<div  class="remaining_swatches">+3</div>
-							<!--  /* swatches count end */ -->
-					</div>
+				</div>
+				<div class="color-wrapper--more--add"> 
+					<!-- /* For showing swatches count */ -->
+					<div  class="remaining_swatches">+3</div>
+						<!--  /* swatches count end */ -->
+				</div>
 		</div>
 		<!-- End mobile swatches -->
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">

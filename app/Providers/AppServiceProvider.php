@@ -5,9 +5,9 @@ namespace App\Providers;
 use App\Payments\Processor;
 use App\Payments\AfterpayApiClient;
 use App\Payments\AfterpayProcessor;
-use Braintree\Gateway as PaymentGateway;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
+use Braintree\Gateway as PaymentGateway;
 
 
 class AppServiceProvider extends ServiceProvider {
@@ -50,6 +50,16 @@ class AppServiceProvider extends ServiceProvider {
 
             return new Processor($paymentgateway);
         });
+
+        $this->app->bind('App\SYG\Bridges\BridgeInterface', function ($app) {
+            $apiClient = new \GuzzleHttp\Client([
+                'base_uri' => 'https://api.texaspeak.com.au:8525/RetailAPIFIT_LIVE/', 
+                'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'],
+            ]);
+            return new \App\SYG\Bridges\AP21Bridge($apiClient);
+            // return new \App\SYG\Bridges\EntrezoBridge;
+        });
+
     }
 
 }
