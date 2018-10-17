@@ -38,7 +38,7 @@ $(document).ready(function(){
 				@endif
 			</div>
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
-				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Original() }}')"></div>
+				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Medium() }}')"></div>
 			</a>
 			<div class="more-color--container more-clothing hidden-mob">
 				<span class="icon-style icon-back-arrow prev"></span>
@@ -50,7 +50,7 @@ $(document).ready(function(){
 							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 						@endphp-->
 						<div class="item">
-							<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Original() }}" class="plp-thumb--bg" alt="">
+							<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb--bg" alt="">
 						</div>
 					@endif
 				@endforeach
