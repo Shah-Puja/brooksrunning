@@ -13,10 +13,10 @@ class Product extends Model
     protected static function boot()
     {
         parent::boot();
-       static::addGlobalScope('image', function (Builder $builder) {
-           /* $builder->whereHas('image', function($query) {
+        static::addGlobalScope('image', function (Builder $builder) {
+            $builder->whereHas('image', function($query) {
                 $query->where('image1', '<>', NULL);
-            });*/
+            });
         });
     }
 

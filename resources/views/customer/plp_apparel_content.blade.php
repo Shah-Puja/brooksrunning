@@ -45,12 +45,12 @@ $(document).ready(function(){
 				<div class="owl-carousel-clothing owl-theme">
 				@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
 					@if(!empty($color_product))
-						@php
+						<!--@php
 							$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
 							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
-						@endphp
+						@endphp-->
 						<div class="item">
-							<img src="{{ $img_url }}" data-big="{{ $img_url_medium }}" class="plp-thumb--bg" alt="">
+							<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Original() }}" class="plp-thumb--bg" alt="">
 						</div>
 					@endif
 				@endforeach

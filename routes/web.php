@@ -72,6 +72,8 @@ Route::post('/afterpay', 'PaymentController@create_token');
 Route::get('/afterpay_success', 'PaymentController@afterpay_success');
 Route::get('/afterpay_cancel', 'PaymentController@afterpay_cancel');
 
+Route::get('/imagecheck', 'ImagecheckController@index');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
