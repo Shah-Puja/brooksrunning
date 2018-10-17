@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/ap21demo', 'AP21Demo@index');
+
 Auth::routes();
 Route::get('/', 'HomePageController@index');
 
