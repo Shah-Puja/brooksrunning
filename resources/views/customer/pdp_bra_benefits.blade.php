@@ -1,6 +1,8 @@
-@php  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; @endphp
-@php  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; @endphp
-@php  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; @endphp
+@php  
+  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; 
+  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; 
+  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; 
+@endphp
 @if($benefit_1)
 <section class="pdp-container--benefits">
 	<div class="wrapper module-header">
@@ -18,14 +20,14 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-					 	<h3 class="br-heading">{{ ($benefit_1!='') ? $benefit_1[1] : "" }}</h3>
-						<p class="br-info">{{ ($benefit_1!='') ? $benefit_1[2] : "" }}</p>
+            <h3 class="br-heading">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</h3>
+						<p class="br-info">{{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}</p>
 					</div>
 			    </div>
 			</div>
 			<div class="col-6">
 				<div class="img">
-        @php $benefit_1_img_url = ($benefit_1[3]!='') ? benefit_img_check($benefit_1[3])  : "" ; @endphp
+        @php $benefit_1_img_url = (isset($benefit_1[3]) &&  $benefit_1[3]!='') ? benefit_img_check($benefit_1[3])  : "" ; @endphp
                     @if($benefit_1_img_url!='')
 						<picture>
 							<source media="(max-width: 595px)" srcset="{{ $benefit_1_img_url }}">
@@ -41,14 +43,14 @@
 			<div class="col-6 visible-mob visible-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-						<h3 class="br-heading">{{ ($benefit_2!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ ($benefit_2!='') ? $benefit_2[2] : "" }}</p>
+            <h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
+						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
 					</div>
 			    </div>
 			</div>
 			<div class="col-6">
 				<div class="img">
-            @php $benefit_2_img_url = ($benefit_2[3]!='') ? benefit_img_check($benefit_2[3])  : "" ; @endphp
+        @php $benefit_2_img_url = (isset($benefit_2[3]) &&  $benefit_2[3]!='') ? benefit_img_check($benefit_2[3])  : "" ; @endphp
                     @if($benefit_2_img_url!='')
 						<picture>
 							<source media="(max-width: 595px)" srcset="{{ $benefit_2_img_url }}">
@@ -60,8 +62,8 @@
 			<div class="col-6 hidden-mob hidden-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-            <h3 class="br-heading">{{ ($benefit_2!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ ($benefit_2!='') ? $benefit_2[2] : "" }}</p>
+            <h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
+						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
 					</div>
 			    </div>
 			</div>
@@ -72,14 +74,14 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-						<h3 class="br-heading">{{ ($benefit_3!='') ? $benefit_3[1] : "" }}</h3>
-						<p class="br-info">{{ ($benefit_3!='') ? $benefit_3[2] : "" }}</p>
+            <h3 class="br-heading">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</h3>
+						<p class="br-info">{{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}</p>
 					</div>
 			    </div>
 			</div>
 			<div class="col-6">
 				<div class="img right">
-        @php $benefit_3_img_url = ($benefit_3[3]!='') ? benefit_img_check($benefit_3[3])  : "" ; @endphp
+        @php $benefit_3_img_url = (isset($benefit_3[3]) &&  $benefit_3[3]!='') ? benefit_img_check($benefit_3[3])  : "" ; @endphp
                     @if($benefit_3_img_url!='')
 						<picture>
 							<source media="(max-width: 595px)" srcset="{{ $benefit_3_img_url }}">
@@ -95,110 +97,126 @@
 
 <!-- Size chart popup  -->
 <div id="sizechart-popup--wrapper" class="popup-container size-chart--popup">
-         <div class="popup-container--wrapper">
-          <div class="popup-container--info">
-           <div class="close-me" id="sizechart-popup--close"><span class="icon-close-icon"></span></div>
-           <!-- shoes size chart -->
-           <div class="tab-container" style="display: none;">
-            <ul class="tabs size-chart--tab">
-             <li class="tab-link current" data-tab="tab-1">
-              <div class="input-wrapper">
-                 <div class="radio-inline">
-                    <input type="radio" name="sizechart" id="tab-opt1" checked="checked">
-                     <label for="tab-opt1">
-                          <div class="mark"><span></span></div>
-                          <div class="text">General Sizing Tips</div>
-                      </label>
-                 </div>
-              </div> 
-             </li>
-             <li class="tab-link" data-tab="tab-2">
-              <div class="input-wrapper">
-                 <div class="radio-inline">
-                    <input type="radio" name="sizechart" id="tab-opt2">
-                     <label for="tab-opt2">
-                          <div class="mark"><span></span></div>
-                          <div class="text">Switching to Brooks?</div>
-                      </label>
-                 </div>
-              </div>
-             </li>
-             <li class="tab-link" data-tab="tab-3">
-              <div class="input-wrapper">
-                 <div class="radio-inline">
-                    <input type="radio" name="sizechart" id="tab-opt3">
-                     <label for="tab-opt3">
-                          <div class="mark"><span></span></div>
-                          <div class="text">International Size Chart</div>
-                      </label>
-                 </div>
-              </div>
-             </li>
-            </ul>
-            <div id="tab-1" class="tab-content current">
-             <div class="size-chart-wrapper">
-              <h3 class="br-heading">General Sizing Tips</h3>
-              <h4>Size up</h4>
-              <p>We recommend ordering Brooks running shoes 1/2 size to one size larger than normal dress shoes</p>
-              <h4>Select width</h4>
-              <p>For women's footwear, B is the standard width. 2A is narrow, D is wide, and 2E is extra wide. For men's footwear, D is standard, B is narrow, 2E is wide, and 4E is extra wide.</p>
-              <h4>Unisex sizing</h4>
-              <p>Ladies, when orderding "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
-              <h4>Get fit</h4>
-              <p>Whenever possible, visit your local running and walking footwear store for a proper fitting.</p>
-              <h4>Can't make it to a store?</h4>
-              <p>Our online tools can help you out. Shoefitr compares the fit of your current shoe with other models and finds your perfect fit. If you're switching to Brooks, check out our Shoe Finder, where you can either tell us what brand of shoe you wear and we'll show you something better – or you can answer five simple questions and we'll introduce you to your sole mate. And, our International Size Chart can help make the size translations for the UK, Europe, and Japan.</p>
-             </div>
-            </div>
-            <div id="tab-2" class="tab-content">
-              <div class="size-chart-wrapper">
-              <div class="clearfix">
-               <div class="col-4 tab-5">
-                <div class="plp-store-finder">
-                 <h3 class="br-heading">Need help<br/>choosing a shoe?</h3>
-                 <p class="br-info">Try the shoe finder</p>
-                 <a class="primary-button" href="#">Shoe Finder</a>
-                 <img src="/images/brooks-shoes--logo.png" alt="">
-                </div>
-               </div>
-               <div class="col-8 tab-7">
-                <h3 class="br-heading">Switching to Brooks</h3>
-                <h4>Find your solemate</h4>
-                <p>Running shoes are not created equal - we're the first to agree with that! But if you've been running in shoes from another brand, and want to try Brooks, it's helpful to know where to start. Check out our Shoe Finder, where you can either tell us what brand of shoe you wear and we'll show you something better – or you can answer five simple questions and we'll introduce you to your sole mate.</p>
-               </div>
-              </div>
-             </div>
-            </div>
-            <div id="tab-3" class="tab-content">
-             <div class="size-chart-wrapper">
-              <h3 class="br-heading">International Size Chart</h3>
-              <p>Sizing on BrooksRunning.com is displayed in US sizes only. For international sizes, please see conversion chart, below.</p>
-              <img src="/images/size-chart--shoes.png" class="chart-img">
-             </div>
-            </div>
-           </div>
-           <!-- /shoes size chart -->
-           <!-- bras size chart -->
-           <div class="size-chart--bras">
-            <h3 class="br-heading">Sports Bras</h3>
-            <div class="info">
-             <h4>Sizing guide</h4>
-             <p>Sizing on BrooksRunning.com is displayed in US sizes only.</p>
-            </div>
-            <img src="/images/size-chart--bras.png" alt="">
-           </div>
-           <!-- /bras size chart -->
-           <!-- clothing size chart -->
-           <div class="size-chart--bras" style="display: none;">
-            <h3 class="br-heading">Men's Clothing</h3>
-            <div class="info">
-             <h4>Size &amp; Fit Guide</h4>
-             <p>Sizing on BrooksRunning.com is displayed in US sizes only.</p>
-            </div>
-            <img src="/images/size-chart--clothings.png" alt="">
-           </div>
-           <!-- /clothing size chart -->
-          </div>
-         </div>
-        </div>
-        <!-- /Size chart popup -->
+	<div class="popup-container--wrapper">
+		<div class="popup-container--info">
+			<div class="close-me" id="sizechart-popup--close"><span class="icon-close-icon"></span></div>
+			<!-- bras size chart -->
+			<div class="size-chart--bras" >
+				<h3 class="br-heading">Sports Bras</h3>
+				<div class="info">
+					<h4>Sizing guide</h4>
+					<p>Sizing on BrooksRunning.com is displayed in US sizes only.</p>
+					<div class="bras-size--table">
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2">&nbsp;</th>
+									<th>US</th>
+									<th>EURO</th>
+									<th>AU</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="5" class="blue-bg">A/B<br>CUP</th>
+									<td class="dark-bg">XS/XP</td>
+									<td>30AB-32A</td>
+									<td>65AB-70A</td>
+									<td>8AB-10A</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">S/P</td>
+									<td>32AB-34A</td>
+									<td>70AB-75A</td>
+									<td>10AB-12A</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">M/M</td>
+									<td>34AB-36A</td>
+									<td>75AB-80A</td>
+									<td>12AB-14A</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">L/G</td>
+									<td>36AB-38A</td>
+									<td>80AB-85A</td>
+									<td>14AB-16A</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">XL/TG</td>
+									<td>38AB-40A</td>
+									<td>85AB-90A</td>
+									<td>16AB-18A</td>
+								</tr>
+								<tr>
+									<th rowspan="5" class="blue-bg">C/D<br>CUP</th>
+									<td class="dark-bg">XS/XP</td>
+									<td>30CD-32C</td>
+									<td>65CD-70C</td>
+									<td>8ACD-10C</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">S/P</td>
+									<td>32CD-34C</td>
+									<td>70CD-75C</td>
+									<td>10CD-12C</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">M/M</td>
+									<td>34CD-36C</td>
+									<td>75CD-80C</td>
+									<td>12CD-14C</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">L/G</td>
+									<td>36CD-38C</td>
+									<td>80CD-85C</td>
+									<td>14CD-16C</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">XL/TG</td>
+									<td>38CD-40C</td>
+									<td>85CD-90C</td>
+									<td>16CD-18C</td>
+								</tr>
+								<tr>
+									<th rowspan="5" class="blue-bg">XS-XL<br>SIZING</th>
+									<td class="dark-bg">XS/XP</td>
+									<td>30-32</td>
+									<td>65-70</td>
+									<td>8-10</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">S/P</td>
+									<td>32-34</td>
+									<td>70-75</td>
+									<td>10-12</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">M/M</td>
+									<td>34-36</td>
+									<td>75-80</td>
+									<td>12-14</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">L/G</td>
+									<td>36-38</td>
+									<td>80-85</td>
+									<td>14-16</td>
+								</tr>
+								<tr>
+									<td class="dark-bg">XL/TG</td>
+									<td>38-40</td>
+									<td>85-90</td>
+									<td>16-18</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- /bras size chart -->
+	     </div>
+    </div>
+</div>
+<!-- /Size chart popup -->
