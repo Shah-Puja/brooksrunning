@@ -9,7 +9,7 @@
 				</div>
 				<div class="mob-8">
 					<div class="mob-logo">
-						<img src="/images/brooks-running-logo.png" alt="Brooks Running Aus">
+					   <a href="/"><img src="/images/brooks-running-logo.png" alt="Brooks Running Aus"></a>
 					</div>
 				</div>
 				<div class="mob-2">
@@ -653,7 +653,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="javascript:;">
+	                <a href="/running-shoes-and-apparel-sale">
 	                    <span class="title">Sale</span>
 	                </a>
 	                <!-- Level Two-->

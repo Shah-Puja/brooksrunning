@@ -40,6 +40,12 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
 Route::get('/static-page', 'InfoController@static_page');
+Route::get('/find-a-store', 'InfoController@find_a_store');
+Route::get('/returns-exchange', 'InfoController@returns_exchange');
+Route::get('/shipping-information', 'InfoController@shipping_information');
+Route::get('/terms-conditions', 'InfoController@terms_conditions');
+Route::get('/terms-of-use', 'InfoController@terms_of_use');
+Route::get('/newsletter', 'InfoController@newsletter_signup');
 
 /* meet_brooks static pages */
 
@@ -72,15 +78,19 @@ Route::post('/afterpay', 'PaymentController@create_token');
 Route::get('/afterpay_success', 'PaymentController@afterpay_success');
 Route::get('/afterpay_cancel', 'PaymentController@afterpay_cancel');
 
-Route::get('/{category}', 'CategoryController@index');
-Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
-
-
 // Myaccount
-Route::get('/account', 'MyaccountController@account');
+
 Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
-Route::get('/account-password', 'MyaccountController@account_password');
 Route::get('/account-personal', 'MyaccountController@account_personal');
-Route::get('/account-signin', 'MyaccountController@account_signin');
 
+
+/* quickhelp static pages */
+Route::get('/returns-centre', 'quickhelpController@returns_centre');
+Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
+Route::get('/faqs', 'quickhelpController@faqs');
+Route::get('/fit-sizing', 'quickhelpController@fit_sizing');
+Route::get('/track-your-order', 'quickhelpController@track_your_order');
+
+Route::get('/{category}', 'CategoryController@index');
+Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

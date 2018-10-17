@@ -659,6 +659,11 @@
       }
       .select-option--wrapper{
         background-color: $gray;
+        .disable{
+          background-color: #f1f1f1;
+          color: $black;
+          cursor:auto;
+          }
       }
     }
     .label-heading{
@@ -721,6 +726,18 @@
         background-color: $blue;
         color: $white;
       }
+
+      .option-value-data {
+        padding: 4px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #ffffff;
+        transition: all 0.5s ease-in-out;
+        &:not(.disable):hover {
+          background-color: #0263f7;
+          color: $white;
+          cursor:pointer;
+        }
+    }
   }
   .quantity-selector{
     background-color: $white;
