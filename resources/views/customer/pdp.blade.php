@@ -1,44 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<style>
-.lSSlideOuter .lSPager.lSGallery img {
-    display: block;
-    height: auto;
-    max-width: 62px;
-    width: 100%;
-}
 
-.pdp-container--info .swatches ul li img {
-    width: 100%;
-    max-width: 62px;
-}
-.select-option--wrapper .disable{
-    background-color: #f1f1f1;
-    color: #000;
-    cursor:auto;
-}
-.pdp-container--info .size .size-show li.disable{
-    background-color: #f1f1f1;
-    cursor:auto;
-}
-.custom-select .option-value-data {
-    padding: 4px 10px;
-    font-size: 14px;
-    border-bottom: 1px solid #ffffff;
-    transition: all 0.5s ease-in-out;
-}
-.custom-select .option-value-data:not(.disable):hover {
-    background-color: #0263f7;
-    color: #ffffff;
-    cursor:pointer;
-}
-.pdp-container--info .size .size-show li.selected{
-    background-color: #0263f7;
-    border: solid 1px #0263f7;
-    color: #ffffff;
-}
-
-</style>
 <div id="data-load">
     <div class="pdp-container">
         <div class="wrapper">
@@ -225,6 +187,11 @@
                         <div class="color">
                             Colour: {{ $product->color_code }}
                         </div>
+                        <div class="loaderContainer">
+                            <div class="overlayloader">
+                            <div class="imgloader"><img src="/images/ajax-loader.gif" alt=""></div>
+                            </div>
+				        </div>
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
                             @php

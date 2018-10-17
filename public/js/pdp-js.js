@@ -1191,6 +1191,8 @@ $(document).on('click', '#quantity-selector #subs', function subst() {
 });
 
 $(document).on('click', '.swatches li:not(".selected")', function () {
+    $(".overlayloader").show();
+    $("#zoomWindowFullShowIn").css("z-index", "2");
     let url = $(this).data('url');
     let value = $(this).attr("alt");
     console.log(url);
@@ -1202,6 +1204,7 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
             thumbItem: 9
         });
         ChangeUrl(value, url);
+        $(".overlayloader").hide();
     });
 
     return false;

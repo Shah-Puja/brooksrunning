@@ -52,14 +52,14 @@
 				@if($colors_option[$style->style]!='' &&  count($colors_option[$style->style]) > 0 )
 					@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
 						@if(!empty($color_product))
-						    @php
+						   <!-- @php
 								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
 								$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
-							@endphp
+							@endphp -->
 							<div class="item">
 								<picture>
-								<source media="(max-width: 667px)" srcset="{{ $img_url_medium }}">
-								<img src="{{ $img_url }}" data-big="{{ $img_url_medium }}" class="plp-thumb" alt="">
+								<source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
+								<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
 								</picture>
 								<div class="plp-mob--info visible-mob">
 								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
