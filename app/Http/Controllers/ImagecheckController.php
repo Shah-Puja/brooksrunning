@@ -22,8 +22,8 @@ class ImagecheckController extends Controller
             $records[] = $record;
         }
         Imagecheck::insert($records);
-        foreach($i=1;$i<=10;$i++):
+        for($i=1;$i<=10;$i++):
             $sql="select distinct image1 from p_images where image1 not in (select image from imagecheck)";
-        endforeach;
+        endfor;
     }
 }
