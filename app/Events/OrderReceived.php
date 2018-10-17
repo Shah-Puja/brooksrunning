@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Events;
 
 use App\Models\Order;
@@ -17,6 +18,7 @@ class OrderReceived
      */
     public function __construct(Order $order)
     {
+        //echo "<pre>";print_r($order);die;
         $this->order = $order;
     }
 
