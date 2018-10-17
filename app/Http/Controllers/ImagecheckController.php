@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class ImagecheckController extends Controller
 {
     public function index(){
-        $exists = Storage::disk('sftp')->exists('public_html/product/orig/300614_001_lf_wr.jpg');
-        echo $exists;
+        $files = Storage::disk('sftp')->files('public_html/product/orig/');
+        print_r($files);
     }
 }
