@@ -187,7 +187,7 @@
                         <div class="color">
                             Colour: {{ $product->color_code }}
                         </div>
-                        <div class="loaderContainer">
+                        <div class="loaderContainer" style="display:none;">
                             <div class="overlayloader">
                             <div class="imgloader"><img src="/images/ajax-loader.gif" alt=""></div>
                             </div>

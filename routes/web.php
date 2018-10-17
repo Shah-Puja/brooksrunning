@@ -81,15 +81,12 @@ Route::post('/afterpay', 'PaymentController@create_token');
 Route::get('/afterpay_success', 'PaymentController@afterpay_success');
 Route::get('/afterpay_cancel', 'PaymentController@afterpay_cancel');
 
-<<<<<<< HEAD
-// Myaccount
-=======
 Route::get('/imagecheck', 'ImagecheckController@index');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
->>>>>>> 347501ebd5030c391ac8758a722078908e4ac9e8
 
+/* myaccount static pages */
 Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
 Route::get('/account-personal', 'MyaccountController@account_personal');

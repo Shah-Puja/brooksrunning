@@ -4076,9 +4076,12 @@ textarea {
 }
 .pdp-container--info .size .size-show li.selected {
   border: 1px solid #0263f7;
+  background-color: #0263f7;
+  color: #ffffff;
 }
 .pdp-container--info .size .size-show li.disable {
   background-color: #f1f1f1;
+  cursor: auto;
 }
 .pdp-container--info .size .size-show li.disable:hover {
   border: 1px solid #d3d0cd;

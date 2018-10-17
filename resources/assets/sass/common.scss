@@ -2538,9 +2538,12 @@
             transition: all 0.5s ease-in-out;
             &.selected{
               border: 1px solid $blue;
+              background-color: $blue;
+              color: $white;
             }
             &.disable{
-              background-color: $gray;
+              background-color: #f1f1f1;
+              cursor:auto;
               &:hover{
                 border: 1px solid $border;
               }
@@ -2553,8 +2556,8 @@
               cursor:auto;
             }
             .selected{
-              background-color: #0263f7;
-              border: solid 1px #0263f7;
+              background-color: $blue;
+              border: solid 1px $blue;
               color: $white;
             }
           }
