@@ -23,13 +23,13 @@
 		                </label>
 		            </div>
 	            	<ul class="tab-content">
-	                    <li><a href="#">Contact Us</a></li>
-	                    <li><a href="#">Shipping Information</a></li>
-	                    <li><a href="#">Returns &amp; Exchange</a></li>
-	                    <li><a href="#">Terms &amp; Conditions</a></li>
-	                    <li><a href="#">Terms of Use</a></li>
-	                    <li><a href="#">Shoe Finder</a></li>
-	                    <li><a href="#">Find A Store</a></li>
+	                    <li><a href="/contact-us">Contact Us</a></li>
+	                    <li><a href="/shipping-information">Shipping Information</a></li>
+	                    <li><a href="/return-exchange">Returns &amp; Exchange</a></li>
+	                    <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+	                    <li><a href="/terms-of-use">Terms of Use</a></li>
+	                    <li><a href="/shoe-finder">Shoe Finder</a></li>
+	                    <li><a href="/find-store">Find A Store</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">
@@ -41,10 +41,10 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-	                    <li><a href="#">Women's Shoes</a></li>
-	                    <li><a href="#">Men's Shoes</a></li>
-	                    <li><a href="#">Women's Clothing</a></li>
-	                    <li><a href="#">Men's Clothing</a></li>
+	                    <li><a href="/womens-running-shoes">Women's Shoes</a></li>
+	                    <li><a href="/mens-running-shoes">Men's Shoes</a></li>
+	                    <li><a href="/womens-running-clothes">Women's Clothing</a></li>
+	                    <li><a href="/mens-running-clothes">Men's Clothing</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">
@@ -56,8 +56,8 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-						<li><a href="#">The Run Down Email Sign Up</a></li>
-						<li><a href="#">Blog</a></li>
+						<li><a href="/email-signup">The Run Down Email Sign Up</a></li>
+						<li><a href="/blog">Blog</a></li>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
 						<li><a href="#">Instagram</a></li>
@@ -72,8 +72,8 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-	                    <li><a href="#">Login</a></li>
-	                    <li><a href="#">Register</a></li>
+	                    <li><a href="/login">Login</a></li>
+	                    <li><a href="/register">Register</a></li>
 	                </ul>
 				</div>
 			</div>

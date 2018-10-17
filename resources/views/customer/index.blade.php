@@ -10,7 +10,7 @@
 			        <img src="images/home/home-banner--left.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
-		       			<button class="primary-button">Shop Women's</button>
+		       			<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
 		       	  </div>
 		       </div>
 		     </div>
@@ -21,7 +21,7 @@
 			        <img src="images/home/home-banner--right.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
-		       		   <button class="primary-button">Shop Men's</button>
+				  <a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
 		          </div>
 		       </div>
 		     </div>
