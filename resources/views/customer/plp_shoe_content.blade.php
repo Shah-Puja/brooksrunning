@@ -6,16 +6,13 @@
 			$price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
 			$filters_array[$style->style]['size'] = $style->variants->pluck('size')->all();
-			$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
+			//$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
 			$filters_array[$style->style]['experience'] = $style->experience;
 			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['support_level'] = $style->tags->Where('key','PF_F_SLEVEL')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Arch'] = $style->tags->Where('key','PF_F_ARCH')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Activity'] = $style->tags->Where('key','PF_F_ACTIVITY')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Midsole_Drop'] = $style->tags->Where('key','PF_F_DROP')->flatten()->pluck('value')->unique()->all();
-            $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
-			$replace_word = array('.',' ','/'); 
-			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 
 		@foreach($products as $product)
@@ -23,6 +20,18 @@
 		   		@php $colors_option[$style->style][] = $product; @endphp
 		   @endif
 		@endforeach
+
+		@php
+
+		    $filters_array[$style->style]['width'] = collect($colors_option[$style->style])->transform(function ($product) {
+														return $product->variants->where('visible','Yes')->pluck('width_name');
+												 })->flatten()->unique()->values()->sort();
+
+	     	$filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
+			$replace_word = array('.',' ','/'); 
+			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
+		@endphp
+
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
 		<div class="plp-product">
 			<div class="offer-info">
@@ -39,8 +48,9 @@
 			<div class="more-color--container">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel owl-theme">
+				
 				@if($colors_option[$style->style]!='' &&  count($colors_option[$style->style]) > 0 )
-					@foreach($colors_option[$style->style] as $color_product)
+					@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
 						@if(!empty($color_product))
 						    @php
 								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
@@ -82,10 +92,13 @@
 				<div class="info-sub">
 					<div class="row">
 						<div class="mob-6">
-							<p>Neutral Speed</p>
+							<!--<p>Neutral Speed</p>-->
 						</div>
 						<div class="mob-6">
-							<p class="right">Width Available</p>
+						    @php 
+							
+							@endphp
+							<p class="right"> {{ count( $filters_array[$style->style]['width']) }} Width Available</p>
 						</div>
 					</div>
 				</div>
@@ -93,6 +106,7 @@
 		</div>
 	</div>
 	@endforeach
+	
 @else
     <p>No products found</p>
 @endif

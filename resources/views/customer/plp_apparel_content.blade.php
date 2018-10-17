@@ -100,7 +100,7 @@ $(document).ready(function(){
 					</div>
 					<div class="shoes-type">{{ strip_tags($style->h2) }}</div>
 				</div>
-				<div class="info-sub">
+				<!--<div class="info-sub">
 					<div class="row">
 						<div class="mob-6">
 							<p>Neutral Speed</p>
@@ -109,7 +109,7 @@ $(document).ready(function(){
 							<p class="right">Width Available</p>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</a>
 		</div>
 	</div>
