@@ -9,6 +9,6 @@ class AP21Demo extends Controller
 {
     public function index(BridgeInterface $bridge)
     {
-    	return $bridge->getProduct(1);
+    	return $bridge->getProduct(28842);
     }
 }
