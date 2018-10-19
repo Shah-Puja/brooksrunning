@@ -169,7 +169,6 @@ $(document).ready(function () {
         dots: true
     });
     $(".next").click(function () {
-        console.log("next");
         $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.next');
     })
     $(".prev").click(function () {
@@ -177,7 +176,6 @@ $(document).ready(function () {
     })
 });
 $(".next").click(function () {
-    console.log("next");
     $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.next');
 })
 $(".prev").click(function () {
@@ -258,7 +256,6 @@ $(document).on('click', '.custom-select .label-heading', function (event) {
     event.stopPropagation();
 });
 $(document).on('click', '.custom-select .option-value', function () {
-    console.log("hh122");
     $(".select-option--wrapper li").removeClass("selected");
     let value = $(this).data('value');
     $(this).addClass("selected");

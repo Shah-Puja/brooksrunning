@@ -244,3 +244,8 @@ function getComboFilter( filters ) {
     counter = counter + initShow;
     loadMore(counter);
   });
+
+  $(document).on('click','.color-wrapper--more--add',function(){
+     $(this).closest(".color-wrapper--more--container").find(".color-wrapper--more .remaining").toggle();
+     return false;
+  });
