@@ -207,8 +207,22 @@ $(document).ready(function () {
     $(".edit-cart--handle").click(function () {
         var attr_id =$(this).attr('id').split("_");
         var  variant_id = attr_id[1];
-        alert(variant_id);
-        $("#edit-cart--popup").addClass("show");
+        //alert(variant_id);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/cart/edit_cart",
+            method: "POST",
+            data: {variant_id: variant_id},
+            success: function (result) {
+                let cart_items = result.cartitemshtml;
+                //console.log(cart_items);
+                $("#edit-cart--popup").html(cart_items);
+                $("#edit-cart--popup").addClass("show");
+                
+            },
+        });
     });
     $(".edit-cart--close").click(function () {
         $("#edit-cart--popup").removeClass("show");

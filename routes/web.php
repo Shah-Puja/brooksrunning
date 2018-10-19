@@ -19,6 +19,7 @@ Route::get('/', 'HomePageController@index');
 Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
 Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+Route::post('/cart/edit_cart','CartController@edit_cart_popup');
 
 
 Route::middleware(['allowOnlyAjax'])->group(function () {
@@ -44,14 +45,15 @@ Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
 Route::get('/static-page', 'InfoController@static_page');
 Route::get('/find-a-store', 'InfoController@find_a_store');
+Route::get('/shoe-finder', 'InfoController@shoe_finder');
 Route::get('/returns-exchange', 'InfoController@returns_exchange');
 Route::get('/shipping-information', 'InfoController@shipping_information');
 Route::get('/terms-conditions', 'InfoController@terms_conditions');
 Route::get('/terms-of-use', 'InfoController@terms_of_use');
 Route::get('/newsletter', 'InfoController@newsletter_signup');
 
-/* meet_brooks static pages */
 
+/* meet_brooks static pages */
 Route::get('/newsletter', 'meet_brooksController@newsletter');
 Route::get('/injury-prevention', 'meet_brooksController@injury_prevention');
 Route::get('/newsletter', 'meet_brooksController@newsletter');

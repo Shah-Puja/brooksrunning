@@ -152,7 +152,7 @@
             </div>
         </div>
     </section>
-    <div id="edit-cart--popup" class="popup-container edit-cart--popup">
+    <div id="1edit-cart--popup" class="popup-container edit-cart--popup">
         <div class="popup-container--wrapper">
             <div class="popup-container--info">
                 <div class="close-me"><span class="icon-close-icon edit-cart--close"></span></div>

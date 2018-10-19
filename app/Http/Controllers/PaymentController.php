@@ -78,8 +78,8 @@ class PaymentController extends Controller
         if($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0){ 
             $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
-            
-            if ($charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
+             
+            if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
                 $transaction_id = $charge_payment['id'];
                 $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id,  'transaction_status'  => 'Succeeded', 'payment_status' => Carbon::now()));
                 Cache::forget( 'cart'  . $this->order->cart_id );

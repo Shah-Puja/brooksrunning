@@ -2,6 +2,8 @@
 
 return [
 	'freight_cost' => env('CLIENT_FREIGHT_COST', 0),
+    'notify_email' => env('CLIENT_NOTIFY_EMAIL'),
+	'syg_notify_email' => env('SYG_NOTIFY_EMAIL'),
 	'image_url'=> [
         'base' => env('BASE_IMAGE_URL'),
         'products' => [

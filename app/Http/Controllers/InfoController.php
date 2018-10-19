@@ -17,26 +17,29 @@ class InfoController extends Controller
 	{
 		return view( 'info.static-page');
   }
-    public function find_a_store(){
-    return view( 'info.find-a-store');
+  public function find_a_store(){
+  return view( 'info.find-a-store');
+  }
+  public function shoe_finder(){
+    return view( 'info.shoe-finder');
     }
-    public function returns_exchange()
-    {
-    return view( 'info.returns-exchange');
-    }
-    public function shipping_information()
-    {
-    return view( 'info.shipping-information');
-    }
-    public function terms_conditions(){
-      return view( 'info.terms-conditions');
-    }
-    public function terms_of_use()
-    {
-    return view( 'info.terms-of-use');
-    }
-    public function newsletter_signup()
-    {
-    return view( 'info.newsletter');
-    }
+  public function returns_exchange()
+  {
+  return view( 'info.returns-exchange');
+  }
+  public function shipping_information()
+  {
+  return view( 'info.shipping-information');
+  }
+  public function terms_conditions(){
+    return view( 'info.terms-conditions');
+  }
+  public function terms_of_use()
+  {
+  return view( 'info.terms-of-use');
+  }
+  public function newsletter_signup()
+  {
+  return view( 'info.newsletter');
+  }
 }

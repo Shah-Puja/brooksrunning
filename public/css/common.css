@@ -3886,6 +3886,12 @@ textarea {
   width: 100%;
 }
 
+.cust-grid {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
 /* /Listing Page  */
 /* details page */
 .pdp-container {
