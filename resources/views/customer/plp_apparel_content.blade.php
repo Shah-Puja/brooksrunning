@@ -1,11 +1,3 @@
-<script>
-$(document).ready(function(){
-	$(".remaining_swatches_show").hide();
-    $(".remaining_swatches").click(function(){
-        $(".remaining_swatches_show").toggle();
-    });
-});
-</script>
 <div class="plp-wrapper-container grid">
 @if($styles!='' && count($styles) >0 )
 	@foreach($styles as $style)
@@ -76,26 +68,34 @@ $(document).ready(function(){
 		<!-- Start mobile swatches -->
 		<div class="color-wrapper--more--container visible-mob hidden-tab hidden-col">
 				<div class="color-wrapper--more">
-					<div class="swatches-icon">
-						<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
-					</div>
-					<div class="remaining_swatches_show" style="display: none;" >
-						<div class="swatches-icon">
-							<img src="/images/testing/tshirt/211091_414_d2_WR.jpg" class="plp-thumb--bg" alt="">
-						</div>
-						<div class="swatches-icon">
-							<img src="/images/testing/tshirt/211091_414_d1_WR.jpg" class="plp-thumb--bg"  alt="">
-						</div>
-						<div class="swatches-icon">
-							<img src="/images/testing/tshirt/211091_414_mf_WR.jpg" class="plp-thumb--bg"  alt="">
-						</div>
-					</div>
+				    @php 
+						$i = 1; 
+						$remaining_count = 0;
+					@endphp
+				    @foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
+					    @php 
+						   $add_class = '';
+						   $add_css = '';
+						   if(($i > 3 )){
+							    $add_class = 'remaining';
+								$add_css = 'style=display:none;';
+                                $remaining_count++;
+						   }
+						@endphp
+						
+						<div class="swatches-icon {{ $add_class }} "  {{ $add_css }}>
+						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
+					    </div>
+					   @php $i++  @endphp
+					@endforeach
 				</div>
+				@if($remaining_count>0)
 				<div class="color-wrapper--more--add"> 
 					<!-- /* For showing swatches count */ -->
-					<div  class="remaining_swatches">+3</div>
+					<div  class="remaining_swatches">+{{  $remaining_count }}</div>
 						<!--  /* swatches count end */ -->
 				</div>
+			    @endif
 		</div>
 		<!-- End mobile swatches -->
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">

@@ -118,9 +118,9 @@
 						</div>
 						<div class="mob-6">
 						    @php 
-							
+							   $width_count = count( $filters_array[$style->style]['width']);
 							@endphp
-							<p class="right"> {{ count( $filters_array[$style->style]['width']) }} Width Available</p>
+							<p class="right"> {{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
 						</div>
 					</div>
 				</div>
