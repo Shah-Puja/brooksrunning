@@ -25,11 +25,11 @@
 	            	<ul class="tab-content">
 	                    <li><a href="/contact-us">Contact Us</a></li>
 	                    <li><a href="/shipping-information">Shipping Information</a></li>
-	                    <li><a href="/return-exchange">Returns &amp; Exchange</a></li>
+	                    <li><a href="/returns-exchange">Returns &amp; Exchange</a></li>
 	                    <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
 	                    <li><a href="/terms-of-use">Terms of Use</a></li>
 	                    <li><a href="/shoe-finder">Shoe Finder</a></li>
-	                    <li><a href="/find-store">Find A Store</a></li>
+	                    <li><a href="/find-a-store">Find A Store</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">

@@ -646,19 +646,4 @@ $(document).on('click', '.width-wrapper li:not(".disable")', function () {
 });
 
 </script>
-<<<<<<< HEAD
-
-<script>
-$(document).ready(function(){
-    $(".overlayloader").click(function(){
-        $(".overlayloader").hide();
-    });
-    $(".overlayloaderOn").click(function(){
-        $(".overlayloader").show();
-        $("#zoomWindowFullShowIn").css("z-index", "2");
-    });
-});
-</script>
-=======
->>>>>>> 44d4880a30db60c01d59faf0c59914b2a4a6ace4
 @endsection
