@@ -66,4 +66,23 @@ class CategoryController extends Controller
     public function shoe_main(){
         return view('customer.shoe-main');
     }
+
+    public function neutral_running_shoes(){
+        return view('customer.neutral-running-shoes');
+    }
+    public function support_running_shoes(){
+        return view('customer.support-running-shoes');
+    }
+    public function trail_running_shoes(){
+        return view('customer.trail-running-shoes');
+    }
+    public function competition_running_shoes(){
+        return view('customer.competition-running-shoes');
+    }
+    public function cross_trainer_shoes(){
+        return view('customer.cross-trainer-shoes');
+    }
+    public function walking_shoes(){
+        return view('customer.walking-shoes');
+    }
 }
