@@ -120,7 +120,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row cust-grid">
 			<div class="col-4">
 				<div class="info">
 					<h4>{{ (isset($add_benefit_1[1]) &&  $add_benefit_1[1]!='') ? $add_benefit_1[1] : "" }}</h4>
