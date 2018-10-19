@@ -86,6 +86,7 @@
 									</ul>
 								</li>
 							@else
+							    @php  $extra_value = ($key == 'Midsole_Drop') ? 'mm' : '';  @endphp
 								<li class="filter-menu">
 								<label class="label">{{ str_replace("_"," ",$key) }}</label>
 								<ul class="filter-list clearfix" data-filter-group="{{ $key }}">
@@ -97,7 +98,7 @@
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
 																<div class="mark"><span></span></div>
-																<div class="text">{{ $filter_value }}</div>
+																<div class="text">{{ $filter_value.$extra_value }}</div>
 														</label>
 													</div>
 												</div>	

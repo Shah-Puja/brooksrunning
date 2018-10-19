@@ -22,7 +22,18 @@
 		@endforeach
 
 		@php
-
+		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
+								return $product->variants->pluck('price');
+							})->flatten()->max();
+			$max_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
+								return $product->variants->pluck('price_sale');
+							})->flatten()->max();
+			$min_price = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('price');
+							})->flatten()->min();
+			$min_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('price_sale');
+							})->flatten()->min();
 		    $filters_array[$style->style]['width'] = collect($colors_option[$style->style])->transform(function ($product) {
 														return $product->variants->where('visible','Yes')->pluck('width_name');
 												 })->flatten()->unique()->values()->sort();
@@ -80,11 +91,22 @@
 				<div class="info">
 					<h3>{{ $style->stylename }}</h3>
 					<div class="price">
-						@if($price_sale < $price)
-							<del><span class="black">&dollar;{{ $price }}</span></del>
-							<span class="red price_text">&dollar;{{ $price_sale }}</span>
+						@if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+						    <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+						@elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+						    <del><span class="black">&dollar;{{ $max_price }}</span></del>
+							<span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+						@elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+						    <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+						@elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+						   <del><span class="black">&dollar;{{ $max_price }}</span></del>
+						   <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+					    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+						   <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+						   <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
 						@else
-							<span class="black price_text">&dollar;{{ $price }}</span>
+						   <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+						   <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
 						@endif
 					</div>
 					<div class="shoes-type">{{ $style->h2 }}</div>

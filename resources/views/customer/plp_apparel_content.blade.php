@@ -19,9 +19,6 @@ $(document).ready(function(){
 			$filters_array[$style->style]['Great_For'] = $style->tags->Where('key','PS_F_GREATFOR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Breast_Shape'] = $style->tags->Where('key','PS_F_SHAPE')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Feature_Preferences'] = $style->tags->Where('key','PS_F_PREFERENCE')->flatten()->pluck('value')->unique()->all();
-            $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
-			$replace_word = array('.',' ','/'); 
-			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
      
 		@foreach($products as $product)
@@ -29,6 +26,24 @@ $(document).ready(function(){
 		   		@php $colors_option[$style->style][] = $product; @endphp
 		   @endif
 		@endforeach
+
+		@php
+		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
+								return $product->variants->pluck('price');
+							})->flatten()->max();
+			$max_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
+								return $product->variants->pluck('price_sale');
+							})->flatten()->max();
+			$min_price = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('price');
+							})->flatten()->min();
+			$min_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('price_sale');
+							})->flatten()->min();
+		    $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
+			$replace_word = array('.',' ','/'); 
+			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
+		@endphp
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
 		<div class="plp-product">
 			<div class="offer-info">
@@ -38,7 +53,7 @@ $(document).ready(function(){
 				@endif
 			</div>
 			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
-				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Medium() }}')"></div>
+				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Mediumx() }}')"></div>
 			</a>
 			<div class="more-color--container more-clothing hidden-mob">
 				<span class="icon-style icon-back-arrow prev"></span>
@@ -87,11 +102,22 @@ $(document).ready(function(){
 				<div class="info">
 					<h3>{{ strip_tags($style->stylename) }}</h3>
 					<div class="price">
-						@if($price_sale < $price)
-							<del><span class="black">&dollar;{{ $price }}</span></del>
-							<span class="red price_text">&dollar;{{ $price_sale }}</span>
+					    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+						    <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+						@elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+						    <del><span class="black">&dollar;{{ $max_price }}</span></del>
+							<span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+						@elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+						    <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+						@elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+						   <del><span class="black">&dollar;{{ $max_price }}</span></del>
+						   <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+					    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+						   <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+						   <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
 						@else
-							<span class="black price_text">&dollar;{{ $price }}</span>
+						   <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+						   <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
 						@endif
 					</div>
 					<div class="shoes-type">{{ strip_tags($style->h2) }}</div>

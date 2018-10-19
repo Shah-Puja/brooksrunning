@@ -8,7 +8,7 @@ class Image extends Model
 {
     //
     protected $table = 'p_images';
-    protected const VALID_SIZES = ['original', 'thumbnail', 'small', 'medium', 'large', 'zoom'];
+    protected const VALID_SIZES = ['original', 'thumbnail', 'small', 'medium','mediumx', 'large', 'zoom'];
 
     public function __call($method, $arguments) {
         $explodedMethodName = explode( "-", kebab_case($method) );
