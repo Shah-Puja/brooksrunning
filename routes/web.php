@@ -77,6 +77,12 @@ Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landin
 
 Route::get('/shoes-category', 'CategoryController@shoes_category');
 Route::get('/shoe-main', 'CategoryController@shoe_main');
+Route::get('/neutral-running-shoes', 'CategoryController@neutral_running_shoes');
+Route::get('/support-running-shoes', 'CategoryController@support_running_shoes');
+Route::get('/trail-running-shoes', 'CategoryController@trail_running_shoes');
+Route::get('/competition-running-shoes', 'CategoryController@competition_running_shoes');
+Route::get('/cross-trainer-shoes', 'CategoryController@cross_trainer_shoes');
+Route::get('/walking-shoes', 'CategoryController@walking_shoes');
 
 Route::post('/afterpay', 'PaymentController@create_token'); 
 

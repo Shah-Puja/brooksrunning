@@ -312,7 +312,7 @@
                     <path fill="#0363f8" style="" d="M18.947 14.939h-12.632c-0.349 0-0.632-0.285-0.632-0.636s0.283-0.636 0.632-0.636h12.632c0.349 0 0.632 0.285 0.632 0.636s-0.283 0.636-0.632 0.636z"></path>
                     </svg>
                 </div>
-                <div class="row info-wrapper">
+                <div class="row info-wrapper cust-grid">
                     <div class="info--left tab-6">
                         @if($product->prod_desc!='')
                         <h3 class="br-heading">Product Description</h3>
