@@ -37,7 +37,7 @@ class Image extends Model
 
     private function handleImageRequest($image, $size)
     {   
-        $fullImageName = $this->{$image};
+        $fullImageName = strtolower($this->{$image});
         $style = explode("_",$fullImageName);
 		$imageName = substr( $fullImageName, 0, strrpos($fullImageName, ".") );
 		$imageExtension = substr( $fullImageName, strrpos($fullImageName, ".") );
