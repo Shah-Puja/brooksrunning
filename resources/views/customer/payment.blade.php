@@ -299,6 +299,7 @@ $("#afterpay_submit").click(function () {
             },
             url: "/afterpay",
             success: function (token) {
+                console.log(token);
                 AfterPay.initialize({countryCode: "AU"});
                 AfterPay.display({token: token});
             },
