@@ -187,14 +187,11 @@
                         <div class="color">
                             Colour: {{ $product->color_code }}
                         </div>
-                        <div class="loaderContainer" style="display:none;">
+                        <div class="loaderContainer">
                             <div class="overlayloader">
                             <div class="imgloader"><img src="/images/ajax-loader.gif" alt=""></div>
                             </div>
-                            <button class="overlayloaderOn">Click here</button>
 				        </div>
-
-                        
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
                             @php
@@ -649,6 +646,7 @@ $(document).on('click', '.width-wrapper li:not(".disable")', function () {
 });
 
 </script>
+<<<<<<< HEAD
 
 <script>
 $(document).ready(function(){
@@ -661,4 +659,6 @@ $(document).ready(function(){
     });
 });
 </script>
+=======
+>>>>>>> 44d4880a30db60c01d59faf0c59914b2a4a6ace4
 @endsection
