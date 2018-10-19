@@ -657,6 +657,7 @@ $(document).ready(function(){
     });
     $(".overlayloaderOn").click(function(){
         $(".overlayloader").show();
+        $("#zoomWindowFullShowIn").css("z-index", "2");
     });
 });
 </script>
