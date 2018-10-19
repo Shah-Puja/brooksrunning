@@ -19,6 +19,7 @@ Route::get('/', 'HomePageController@index');
 Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
 Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+Route::post('/cart/edit_cart','CartController@edit_cart_popup');
 
 
 Route::middleware(['allowOnlyAjax'])->group(function () {

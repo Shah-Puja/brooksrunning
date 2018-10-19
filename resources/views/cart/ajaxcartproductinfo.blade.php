@@ -41,7 +41,7 @@
 										<div class="mob-5"><p class="bold-font blue">Unit Price:</p></div>
 										<div class="mob-7">
 										<p class="bold-font blue right">
-										@if($cartItem->variant->price_sale == 0)
+										@if($cartItem->variant->price_sale == 0 || $cartItem->variant->price_sale==$cartItem->variant->price)
 										&dollar;{{ number_format($cartItem->variant->price, 2) }}
 										 @endif
 								@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
