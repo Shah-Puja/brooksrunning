@@ -44,7 +44,7 @@
 				<p class="br-info">All payments from this online store will appear on your credit card statement from Brooks Running / Fit Chain Pty Ltd.</p>
 				<h3 class="br-heading">What if I am not home to accept the delivery?</h3>
                 <p class="br-info">Signature is required on delivery with most of our orders. Where possible, we suggest having your purchases delivered to a work address or a location with someone available to sign for the parcel. If no one is present when a delivery is made a card is left detailing where to collect your parcel or to arrange a redelivery. </p>
-				<p class="br-info"><i>Last Updated: 20th June 2017</i></p>
+				<!-- <p class="br-info"><i>Last Updated: 20th June 2017</i></p> -->
 			</div>
 		</div>
 		<div class="col-3 contact-details--right">
