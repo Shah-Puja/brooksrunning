@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 class CartController extends Controller {
     
@@ -49,6 +50,21 @@ class CartController extends Controller {
     public function get_cart_order_total(){
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
         return view('cart.order_summary', compact('cart'));
+    }
+    
+    public function edit_cart_popup(Request $request){
+        /*$cart_items['prod_details'] = Cart::where('carts.id', session('cart_id'))->where('variant_id', $request->variant_id)->join('cart_items', 'carts.id', '=', 'cart_items.cart_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
+        $cart_items['cart_details'] = Cart::where('carts.id', session('cart_id'))->join('cart_items', 'carts.id', '=', 'cart_items.cart_id')->where('variant_id', $request->variant_id)->get();
+       */
+      $cart_items = Cart::where('carts.id', session('cart_id'))->where('ci.variant_id', $request->variant_id)->
+      join('cart_items as ci', 'carts.id', '=', 'ci.cart_id')->
+      join('p_variants as pv','pv.id','=','ci.variant_id')->
+      join('p_products as pp','pp.id','=','pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
+        // echo "<pre>";print_r($cart_items);
+        //return view('cart.edit_cart_popup', compact('cart_items'));
+        return response()->json([
+            'cartitemshtml' => view('cart.edit_cart_popup', compact('cart_items'))->render()
+]);
     }
 
 }
