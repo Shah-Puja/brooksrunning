@@ -154,6 +154,7 @@ $(document).on('click','.selection-filter--container li',function(){
 $(document).on('click','.reset-filter',function(){
   $(".size-filter").removeClass("selected");
   $(".filter-list").removeClass("selected");
+  $(".fullbox-filter").removeClass("selected");
   $(".filter-value").find("input:checkbox").prop("checked", false);
   $(".selection-filter--container").remove();
   $(".filter-selection-wrapper").hide();
@@ -258,7 +259,8 @@ function getComboFilter( filters ) {
   $(document).on("click",".load-more",function() {
     $(".plp-load-more").remove();
     counter = counter + initShow;
-    loadMore(counter,'');
+    var comboFilter = getComboFilter( filters );
+    loadMore(counter,comboFilter);
   });
 
   $(document).on('click','.color-wrapper--more--add',function(){
