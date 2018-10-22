@@ -1227,22 +1227,22 @@ window.addEventListener('popstate', function (event) {
 });
 
 function detail_validation() {
-    $(".size .main").find("span").text("").removeClass("valerror");
-    $(".width-wrapper").find(".main span").text("").removeClass("valerror");
-    $(".quantity-wrapper").find("span").text("").removeClass("valerror");
+    $(".size .main").find("span").text("").removeClass("error");
+    $(".width-wrapper").find(".main span").text("").removeClass("error");
+    $(".quantity-wrapper").find("span").text("").removeClass("error");
     let form = true;
     if ($("#detail input[name='size']").val() == '') {
-        $(".size .main").find("span").text(" - Please Select Option").addClass("valerror");
+        $(".size .main").find("span").text(" - Please Select Option").addClass("error");
         form = false;
     }
 
     if ($("#detail input[name='width_name']").val() == '') {
-        $(".width-wrapper").find(".main span").text(" - Please Select Option").addClass("valerror");
+        $(".width-wrapper").find(".main span").text(" - Please Select Option").addClass("error");
         form = false;
     }
 
     if ($("#detail input[name='qty']").val() == '0') {
-        $(".quantity-wrapper").find("span").text(" - Please Enter Quantity").addClass("valerror");
+        $(".quantity-wrapper").find("span").text(" - Please Enter Quantity").addClass("error");
         form = false;
     }
 

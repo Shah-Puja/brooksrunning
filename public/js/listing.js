@@ -212,7 +212,7 @@ function getComboFilter( filters ) {
 
   $(window).load(function(){
     $grid.isotope({ sortBy: 'price' , sortAscending: true ,layoutMode: 'fitRows'});
-    loadMore(initShow,'');
+    loadMore(initShow,''); 
   });
    //execute function onload
 

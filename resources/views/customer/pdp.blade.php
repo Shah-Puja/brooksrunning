@@ -313,11 +313,11 @@
                     </svg>
                 </div>
                 <div class="row info-wrapper cust-grid">
+                    @if($product->prod_desc!='')
                     <div class="info--left tab-6">
-                        @if($product->prod_desc!='')
                         <h3 class="br-heading">Product Description</h3>
                         <p class="br-info">{{ strip_tags($product->prod_desc) }}</p>
-                        @endif
+                        
 
                         @php  $prod_desc_bullet_points = (!empty($product->prod_desc_bullet_points)) ? explode('#', $product->prod_desc_bullet_points) : ''; @endphp
 
@@ -334,10 +334,10 @@
                         </ul>
                         @endif
                     </div>
+                    @endif
+                    @php  $specification_info = (!empty($product->specifications)) ? explode('#', $product->specifications) : ''; @endphp
+                    @if(!empty($specification_info))
                     <div class="info--right tab-6">
-                        @php  $specification_info = (!empty($product->specifications)) ? explode('#', $product->specifications) : ''; @endphp
-
-                        @if(!empty($specification_info))
                         <div class="m-label-heading">
                             <h3 class="br-heading">Specs</h3>
                         </div>
@@ -362,8 +362,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        @endif
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 
-@section('content')
+@section('content') 
 
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
