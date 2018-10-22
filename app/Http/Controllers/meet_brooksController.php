@@ -20,7 +20,7 @@ class meet_brooksController extends Controller
     }
     public function run_happy_view()
     {
-        return view( 'meet_brooks.run_happy_view');
+        return view( 'meet_brooks.run_happy_is');
     }
     public function run_signature()
     {

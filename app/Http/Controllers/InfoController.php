@@ -13,7 +13,9 @@ class InfoController extends Controller
 	{
 		return view( 'info.contact-us');
     }
-  
+  public function events(){
+      return view( 'info.events');
+  }
   public function find_a_store(){
   return view( 'info.find-a-store');
   }
