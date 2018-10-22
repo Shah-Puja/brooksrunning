@@ -39,12 +39,12 @@
                             </div>
                             <ul id="pdp-zoom--image">
                                 <li data-thumb="{{ $product->image->image1Thumbnail() }}">
-                                    <img src="{{ $product->image->image1Original() }}" />
+                                    <img src="{{ $product->image->image1Large() }}" />
                                 </li>
                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
                                     <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
-                                        <img src="{{ $product->image->{ 'image'.$i.'Original' }() }}" />
+                                        <img src="{{ $product->image->{ 'image'.$i.'image1Large' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
@@ -250,7 +250,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="width_name" value="" />
+                                <input type="hidden" name="width_code" value="" />
                                 @endif
                                 <div class="col-6">
                                     <div class="quantity-wrapper">
@@ -291,6 +291,9 @@
             </div>
         </div>
     </div>
+    <script>
+         var variants = {!! $variants->toJson() !!};
+    </script>
 </div>
 <div class="pdp-info--wrapper">
     <div class="wrapper">
@@ -607,8 +610,6 @@
         </div>
 </section>-->
 <script>
- let variants = {!! $variants->toJson() !!};
-
  $(document).on('click', '.size-show li:not(".disable")', function () {
     if ($(this).data('value') != '') {
         $(".size-show li").removeClass("selected");
@@ -634,7 +635,7 @@ $(document).on('click', '.width-wrapper li:not(".disable")', function () {
     $(this).parent().slideUp("fast");
     $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
     $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
-    $("#detail input[name='width_name']").val(value);
+    $("#detail input[name='width_code']").val(value);
     let data = $.grep( variants, function( n, i ) {
          if(n) return n['width_code']==value && n['visible']=='Yes';
         });

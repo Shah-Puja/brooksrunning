@@ -1196,7 +1196,7 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
     let url = $(this).data('url');
     let value = $(this).attr("alt");
     console.log(url);
-    $("#data-load").load(url + " #data-load", function () {
+    /*$("#data-load").load(url + " #data-load", function () {
         $('#pdp-zoom--image').lightSlider({
             gallery: true,
             item: 1,
@@ -1205,7 +1205,38 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
         });
         ChangeUrl(value, url);
         $(".overlayloader").hide();
+    });*/
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: url,
+        method: "get",
+        success: function (result) {
+            $("#data-load").html($(result).filter("#data-load").html());
+            $('#pdp-zoom--image').lightSlider({
+                gallery: true,
+                item: 1,
+                slideMargin: 0,
+                thumbItem: 9
+            });
+            ChangeUrl(value, url);
+            $(".overlayloader").hide();
+            return false;
+        }
     });
+    /*$.get( url, function( data ) {
+        $("#data-load").html($(data).filter("#data-load").html());
+        $('#pdp-zoom--image').lightSlider({
+            gallery: true,
+            item: 1,
+            slideMargin: 0,
+            thumbItem: 9
+        });
+        ChangeUrl(value, url);
+        $(".overlayloader").hide();
+        return false;
+    });*/
 
     return false;
 });
@@ -1236,7 +1267,7 @@ function detail_validation() {
         form = false;
     }
 
-    if ($("#detail input[name='width_name']").val() == '') {
+    if ($("#detail input[name='width_code']").val() == '') {
         $(".width-wrapper").find(".main span").text(" - Please Select Option").addClass("error");
         form = false;
     }
@@ -1249,16 +1280,32 @@ function detail_validation() {
     if (form == false) {
         return false;
     }
-
+    var variants_filter = ['size','width_code'];
+    let if_condition = "";
+	for(i = 0; i< variants_filter.length; i++){  
+        let attr_val = $("#detail input[name='"+variants_filter[i]+"']").val();
+        if(attr_val) if_condition += "variants[i]."+variants_filter[i] + " == '"+ attr_val+ "' && ";
+    }
+    if_condition =if_condition.substring(0, if_condition.length - 3);
+    let sku_val ='';
+    console.log(if_condition);
+	for(var i = 0; i < variants.length; i++){ 
+        if(variants[i]!='' && variants[i]!=null){
+            if(if_condition!=''){
+                if(eval(if_condition)){
+                    sku_val = variants[i].id;
+                }
+            }else{
+                sku_val = variants[i].id;
+            }
+        }
+	}
+    console.log("sku_val"+sku_val);
     let size_val = $("#detail input[name='size']").val();
-    let width_name = $("#detail input[name='width_name']").val();
+    let width_name = $("#detail input[name='width_code']").val();
     let qty = $("#detail input[name='qty']").val();
-    /* console.log("Size: "+size_val);
-     console.log("width_name: "+width_name);
-     console.log("qty: "+qty);*/
     let product_id = $('#product_id').val();
-    //console.log(product_id);return false;
-
+	
     let cart_page = 'No';
     $.ajax({
         headers: {

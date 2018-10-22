@@ -76,7 +76,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row"> 
 				
 					@if(strtolower($prod_type)=='footwear')
 						@include('customer.plp_shoe_content')

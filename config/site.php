@@ -12,7 +12,7 @@ return [
 			'small' => env('BASE_PRODUCT_IMAGES_URL') .'u/',
 			'medium' => env('BASE_PRODUCT_IMAGES_URL').'v/',
 			'mediumx' => env('BASE_PRODUCT_IMAGES_URL').'x/',
-			'large' => env('BASE_PRODUCT_IMAGES_URL') ,
+			'large' => env('BASE_PRODUCT_IMAGES_URL') .'z/',
 			'zoom' => env('BASE_PRODUCT_IMAGES_URL') ,
         ],
     ],
@@ -22,7 +22,7 @@ return [
 		'small' => "_u",
 		'medium' => "_v",
 		'mediumx' => "_x",
-		'large' => "_LG",
+		'large' => "_z",
 		'zoom' => "",
 	],
 	'featured_categories' => [

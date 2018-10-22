@@ -216,7 +216,7 @@ function getComboFilter( filters ) {
   });
    //execute function onload
 
-  function loadMore(toShow,comboFilter) {
+  function loadMore(toShow,comboFilter) { 
     //console.log("toShow"+toShow);
     $grid.find(".hidden").removeClass("hidden");
     var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
