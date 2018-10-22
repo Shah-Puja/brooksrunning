@@ -11,10 +11,17 @@
 				<div class="breadcrumbs">
 					<ul>
 						<li>
-							<a href="#">Home</a>
+							<a href="/">Home</a>
 						</li>
 						<li>
-							<a href="#">{{ $gender=='M' ? 'Mens' : 'Womens' }}</a>
+						 @switch($gender)
+                            @case('M')
+								<a href="/mens-running-shoes-and-clothing">Men's</a>
+								@break
+                            @case('W')
+                                <a href="/womens-running-shoes-and-clothing">Women's</a>
+                                @break
+                         @endswitch
 						</li>
 						 @php $page_name = str_replace("-"," ",Request::segment(1)); @endphp
 						<li>
@@ -79,7 +86,7 @@
 			    </div>
 			</div>
 			<div class="filter-mob--apply plp-mob-filter__control">
-				<a href="#">Apply</a>
+				<a href="javascript:void(0)" class="mobile-plp--close" >Apply</a>
 			</div>
 	    </div>
 	</div>
