@@ -3657,6 +3657,7 @@ textarea {
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .info {
     padding: 2px 0 3px;
+    z-index: -90;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3 {
@@ -3822,7 +3823,7 @@ textarea {
   margin: 0 auto 8px;
 }
 .color-wrapper--more--container .color-wrapper--more {
-  width: 98%;
+  width: 95%;
   float: left;
   position: relative;
   text-align: left;

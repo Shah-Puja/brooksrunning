@@ -2107,6 +2107,7 @@
               border-bottom: 1px solid #f2f2f2;
               @media #{$mobile-only} {
                 padding: 2px 0 3px;
+                z-index: -90;
               }
               h3{
                 @extend %bold-font;
@@ -2274,7 +2275,7 @@
     min-height: 24px;
     margin: 0 auto 8px;
     .color-wrapper--more {
-      width: 98%;
+      width: 95%;
       float: left;
       position: relative;
       text-align: left;
@@ -2324,8 +2325,8 @@
       font-size: 12px;
       cursor: pointer;
       padding: 4px 0 0;
-  }
-  }
+      }
+    }
   }
   .lSSlideOuter {
     .lSPager{

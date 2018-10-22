@@ -43,7 +43,6 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 /* info static pages */
 Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
-Route::get('/static-page', 'InfoController@static_page');
 Route::get('/find-a-store', 'InfoController@find_a_store');
 Route::get('/shoe-finder', 'InfoController@shoe_finder');
 Route::get('/returns-exchange', 'InfoController@returns_exchange');

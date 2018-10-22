@@ -57,10 +57,10 @@
 		            </div>
 		            <ul class="tab-content">
 						<li><a href="/email-signup">The Run Down Email Sign Up</a></li>
-						<li><a href="/blog">Blog</a></li>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">Instagram</a></li>
+						<li><a href="http://talk.brooksrunning.com/au/">Blog</a></li>
+						<li><a href="https://www.facebook.com/BrooksrunningAU/">Facebook</a></li>
+						<li><a href="https://twitter.com/brooksrunningau">Twitter</a></li>
+						<li><a href="https://www.instagram.com/brooksrunningau/">Instagram</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">
@@ -81,9 +81,9 @@
 				<div class="col-6 tab-5">
 					<div class="footer-social">
 						<h3>Run Happy!</h3>
-						<a href="#"><span class="icon-social-twitter"></span></a>
-						<a href="#"><span class="icon-social-insta"></span></a>
-						<a href="#"><span class="icon-social-fb"></span></a>
+						<a href="https://twitter.com/brooksrunningau"><span class="icon-social-twitter"></span></a>
+						<a href="https://www.instagram.com/brooksrunningau/"><span class="icon-social-insta"></span></a>
+						<a href="https://www.facebook.com/BrooksrunningAU/"><span class="icon-social-fb"></span></a>
 					</div>
 				</div>
 				<div class="col-6 tab-7">
