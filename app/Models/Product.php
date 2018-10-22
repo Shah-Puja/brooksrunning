@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
+
+    use Searchable;
+
     protected $table = 'p_products';    
     protected $with = ['image','tags'];
 
@@ -18,6 +22,15 @@ class Product extends Model
                 $query->where('image1', '<>', NULL);
             });
         });
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->stylename,
+            'styleid' => $this->style_idx,
+            'description' => $this->prod_desc,
+        ];
     }
 
     public function categories()
