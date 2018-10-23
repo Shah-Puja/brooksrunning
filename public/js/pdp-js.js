@@ -1300,11 +1300,11 @@ function detail_validation() {
             }
         }
 	}
-    console.log("sku_val"+sku_val);
-    let size_val = $("#detail input[name='size']").val();
-    let width_name = $("#detail input[name='width_code']").val();
+
+    //let size_val = $("#detail input[name='size']").val();
+    //let width_name = $("#detail input[name='width_code']").val();
     let qty = $("#detail input[name='qty']").val();
-    let product_id = $('#product_id').val();
+    //let product_id = $('#product_id').val();
 	
     let cart_page = 'No';
     $.ajax({
@@ -1313,7 +1313,7 @@ function detail_validation() {
         },
         url: "/cartitem",
         method: "post",
-        data: { operation: 'add',product_id: product_id, size: size_val, width_code: width_name, qty: qty },
+        data: { id : sku_val , qty: qty },
         success: function (result) {
             //console.log(result);
             let cart_items = result.cartitemshtml;
