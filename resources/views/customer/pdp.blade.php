@@ -44,7 +44,7 @@
                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
                                     <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
-                                        <img src="{{ $product->image->{ 'image'.$i.'image1Large' }() }}" />
+                                        <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
