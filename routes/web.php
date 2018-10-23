@@ -90,9 +90,6 @@ Route::get('/afterpay_cancel', 'PaymentController@afterpay_cancel');
 
 Route::get('/imagecheck', 'ImagecheckController@index');
 
-Route::get('/{category}', 'CategoryController@index');
-Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
-
 /* myaccount static pages */
 Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');

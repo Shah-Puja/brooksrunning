@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <section class="technology-page--header tech-container">
 	<div class="wrapper">
@@ -15,7 +15,7 @@
 				</div>
 				<div class="col-5 mob-12">
 						<div  class="tech-img">
-							<img src="images/meet-brooks/technology/techLandingHeader.png" alt="Brooks Running Shoes Technology"/>
+							<img src="/images/meet-brooks/technology/techLandingHeader.png" alt="Brooks Running Shoes Technology"/>
 						</div>
 					</div>
 			</div>
@@ -39,7 +39,7 @@
 			<div class="feature_left">
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/3D-print.png">
+						<img src="/images/meet-brooks/technology/3D-print.png">
 					</div>
 					<div class="tech-short-info padding_30">
 						<h2>3D Fit Print</h2>
@@ -48,7 +48,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/ballistic-rock-shield.png">
+						<img src="/images/meet-brooks/technology/ballistic-rock-shield.png">
 					</div>
 					<div class="tech-short-info padding_30">
 						<h2>Ballstic Rock Shield</h2>
@@ -57,7 +57,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/dna-midsole.png">
+						<img src="/images/meet-brooks/technology/dna-midsole.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>DNA Midsole</h2>
@@ -69,7 +69,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/ideal-pressure.png">
+						<img src="/images/meet-brooks/technology/ideal-pressure.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Ideal Pressure Zones</h2>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/rounded-heel.png">
+						<img src="/images/meet-brooks/technology/rounded-heel.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Rounded Heels</h2>
@@ -93,7 +93,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/stride-signature.png">
+						<img src="/images/meet-brooks/technology/stride-signature.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Stride Signature</h2>
@@ -107,7 +107,7 @@
 			<div class="feature_right">
 				<div class="tech-short-blurb ">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/3d-lug.png">
+						<img src="/images/meet-brooks/technology/3d-lug.png">
 					</div>
 					<div class="tech-short-info padding_30">
 						<h2>3D Hex Lugs</h2>
@@ -116,7 +116,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/dna-fabric.png">
+						<img src="/images/meet-brooks/technology/dna-fabric.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>DNA Fabric</h2>
@@ -128,7 +128,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/guide-rails.png">
+						<img src="/images/meet-brooks/technology/guide-rails.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Guide Rails</h2>
@@ -140,7 +140,7 @@
 				</div>
 				<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/nightlife.png">
+						<img src="/images/meet-brooks/technology/nightlife.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Nightlife</h2>
@@ -152,7 +152,7 @@
 				</div>
 					<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/segmented-crash-pad.png">
+						<img src="/images/meet-brooks/technology/segmented-crash-pad.png">
 					</div>
 					<div class="tech-short-info padding_40">
 						<h2>Segmented Crash Pad</h2>
@@ -164,7 +164,7 @@
 				</div>
 					<div class="tech-short-blurb">
 					<div class="tech-short-img">
-						<img src="images/meet-brooks/technology/superDNA.png">
+						<img src="/images/meet-brooks/technology/superDNA.png">
 					</div>
 					<div class="tech-short-info">
 						<h2>Super DNA</h2>

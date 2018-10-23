@@ -18,13 +18,13 @@
                             <a href="javascript:void(0)">My Account <span class="icon-down-arrow"></span></a>
                             <ul class="header-utality__submenu">
                                 <li>
-                                    <a href="#">Log in</a>
+                                    <a href="/login">Log in</a>
                                 </li>
                                 <li>
-                                    <a href="#">My Orders</a>
+                                    <a href="/account-order-history">My Orders</a>
                                 </li>
                                 <li>
-                                    <a href="#">Register</a>
+                                    <a href="/register">Register</a>
                                 </li>
                             </ul>
                         </li>
