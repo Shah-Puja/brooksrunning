@@ -52,7 +52,7 @@
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Email us</h3>
-					<p>Fill in our support form or if you prefer you can email us your enquiry and we'll get back to you shortly</p>
+					<p><a href="http://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
 				</div>
 			</div>
 			<div class="info-wrapper">

@@ -1,6 +1,4 @@
-<style>
 
-</style>
 <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
 	<div class="mobile-plp--main">
 		<div class="mobile-plp--close">

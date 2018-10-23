@@ -401,7 +401,7 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main"><a href="#" class="main-nav">Meet Brooks</a>
+                        <li class="main"><a href="javascript:;" class="main-nav">Meet Brooks</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -409,7 +409,7 @@
                                             <div class="row nav-wrapper">
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="#">About Us</a>
+                                                        <a href="/about-us">About Us</a>
                                                     </li>
                                                     <li><a href="/meet_brooks/what_makes_us_tick">What Makes Us Tick</a></li>
                                                     <li><a href="/meet_brooks/run_happy_is">Run Happy is</a></li>
@@ -418,16 +418,16 @@
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="#">Run Happy</a>
+                                                        <a href="javascript:;">Run Happy</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/competition/rh_competition">Competition</a></li>
-                                                    <li><a href="/meet_brooks/enewsletter">E-Newsletter</a></li>
+                                                    <li><a href="/meet_brooks/competition">Competition</a></li>
+                                                    <li><a href="/meet_brooks/newsletter">E-Newsletter</a></li>
                                                     <li><a href="/meet_brooks/trainingtips">Training Tips</a></li>
                                                     <li><a href="/meet_brooks/injury_prevention">Injury Prevention</a></li>
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="#">Community</a>
+                                                        <a href="javascript:;">Community</a>
                                                     </li>
                                                     <li><a href="/events">Event Calendar</a></li>
                                                     <li><a href="http://talk.brooksrunning.com/au/">Brooks Blog</a></li>

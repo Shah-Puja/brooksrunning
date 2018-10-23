@@ -3123,6 +3123,25 @@ textarea {
   border: solid 1px #ffffff;
   transition: all 1s ease-in-out;
 }
+.plp-filter--wrapper .selection-Lfilter--container {
+  width: 53%;
+  overflow: hidden;
+  margin-left: -1px;
+  margin-bottom: -1px;
+  text-align: center;
+  float: left;
+  color: #000000;
+  display: block;
+  padding: 2px;
+  height: auto;
+  min-height: 40px;
+  background-color: #ffffff;
+  border: solid 1px #ffffff;
+  transition: all 1s ease-in-out;
+}
+.plp-filter--wrapper a[data-filter-attribute=Great_For] .plp-filter--wrapper .selection-filter--container {
+  width: 73% !important;
+}
 .plp-filter--wrapper .filter-menu {
   list-style-type: none;
   margin-top: 25px;
@@ -3657,6 +3676,7 @@ textarea {
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .info {
     padding: 2px 0 3px;
+    z-index: -90;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3 {
@@ -3822,7 +3842,7 @@ textarea {
   margin: 0 auto 8px;
 }
 .color-wrapper--more--container .color-wrapper--more {
-  width: 98%;
+  width: 95%;
   float: left;
   position: relative;
   text-align: left;
@@ -4087,7 +4107,7 @@ textarea {
 }
 .pdp-container--info .size .size-show li.disable {
   background-color: #f1f1f1;
-  cursor: auto;
+  cursor: no-drop;
 }
 .pdp-container--info .size .size-show li.disable:hover {
   border: 1px solid #d3d0cd;
@@ -4097,7 +4117,7 @@ textarea {
 }
 .pdp-container--info .size .size-show li .disable {
   background-color: #f1f1f1;
-  cursor: auto;
+  cursor: no-drop;
 }
 .pdp-container--info .size .size-show li .selected {
   background-color: #0263f7;

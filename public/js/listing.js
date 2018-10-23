@@ -96,7 +96,7 @@ $(document).on("click",".filter-value",function(){
   }
 	if(selected){
       $(".filter-heading a").show();
-      var selection_filter_div = '<div class="selection-filter--container selection-Lfilter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
+      var selection_filter_div = '<div class="selection-filter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
       $(".filter-selection-wrapper ul").append(selection_filter_div);
       $(".filter-selection-wrapper").show();
       var filterGroup = filters[this_closest_group];
