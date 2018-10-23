@@ -121,17 +121,17 @@ $(document).on("click",".filter-value",function(){
           $(".filter-selection-wrapper").show();
       }
       var comboFilter = getComboFilter( filters );
-      //$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+      $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
-
-  loadMore(12,comboFilter);
+  counter = 12;
+  loadMore(counter);
   return false;
 });
 
 $(document).on('click','.selection-filter--container li',function(){
     var removeItem = $(this).find("a").data("filter-value");
     var removeAttribute = $(this).find("a").data("filter-attribute");
-    //console.log(filters);
+    //console.log("before remove"+filters[removeAttribute]);
     filters[removeAttribute] = jQuery.grep(filters[removeAttribute], function(value) {
       return value != removeItem;
     });
@@ -144,10 +144,12 @@ $(document).on('click','.selection-filter--container li',function(){
     }else{
         $(".filter-selection-wrapper").show();
     }
+    //console.log("filters remove"+filters[removeAttribute]);
     var comboFilter = getComboFilter( filters );
 		//console.log(comboFilter);
-    //$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    loadMore(12,comboFilter);
+    $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    counter = 12;
+    loadMore(counter);
   return false;
 });
 
@@ -161,7 +163,8 @@ $(document).on('click','.reset-filter',function(){
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  loadMore(12,'');
+  counter = 12;
+  loadMore(counter);
   filters = [];
   return false;
 });
@@ -212,11 +215,11 @@ function getComboFilter( filters ) {
 
   $(window).load(function(){
     $grid.isotope({ sortBy: 'price' , sortAscending: true ,layoutMode: 'fitRows'});
-    loadMore(initShow,''); 
+    loadMore(initShow); 
   });
    //execute function onload
 
-  function loadMore(toShow,comboFilter) { 
+  function loadMore(toShow) { 
     //console.log("toShow"+toShow);
     $grid.find(".hidden").removeClass("hidden");
     var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
@@ -226,16 +229,12 @@ function getComboFilter( filters ) {
     }else{
       var sortAscending =  true ;
     }
-    //console.log('select_type'+select_type);
-    //console.log('select_value'+select_value);
-    //$grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows' });
-    //console.log("iso.filteredItems.length" + iso.filteredItems.length);
+
     var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
       return item.element;
     });
     $(hiddenElems).addClass('hidden');
-    console.log(comboFilter);
-    $grid.isotope({ filter: comboFilter , sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
+    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
     var hidden_count = $(".element-item:hidden").length;
     if(iso.filteredItems.length > toShow){
@@ -252,15 +251,13 @@ function getComboFilter( filters ) {
     return false;
   }
   
-  //append load more button
-  //$grid.after('<div class="plp-load-more"><a href="javascript:void(0)" id="load-more">Load More (15 Remaining)</a></div>');
-
   //when load more button clicked
   $(document).on("click",".load-more",function() {
-    $(".plp-load-more").remove();
-    counter = counter + initShow;
-    var comboFilter = getComboFilter( filters );
-    loadMore(counter,comboFilter);
+      $(".plp-load-more").remove();
+      var counter = $(".element-item:not('.hidden')").length;
+      counter = counter + initShow;
+      loadMore(counter);
+      return false;
   });
 
   $(document).on('click','.color-wrapper--more--add',function(){
