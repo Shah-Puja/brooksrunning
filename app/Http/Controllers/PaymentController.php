@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Order_log;
+use App\Models\Order_number;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderConfirmation;
@@ -120,15 +122,246 @@ class PaymentController extends Controller
         // print_r($transation_result);
         // echo "</pre>";
         // exit;
-        
-        Cache::forget( 'cart'  . $this->order->cart_id );
-        $this->cart->delete();
-        session()->forget('cart_id');
-        
-        $order = $this->order->load('orderItems.variant.product', 'address');
-    
-        event(new OrderReceived($order));
 
-        return view( 'customer.orderconfirmed', compact('order') );
+        if($transation_result->processorResponseCode =="1000" && $transation_result->processorResponseText=="Approved"){
+            $order_id = $transation_result->orderId;
+            $braintree_result = 'Success';
+            $transaction_id = $transation_result->id;
+            $log_title = "Braintree Payment";
+            $log_type = "Response";
+            $log_status = "Braintree Payment Process Completed";
+            $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
+            $xml = '';
+            $payment = 'Braintree';
+            $time = Carbon::now();
+            $timestamp = $time->format('Y-m-d H:i:s');
+
+            $logger = array(
+                'order_id'      => $order_id,
+                'log_title'     => $log_title,
+                'log_type'      => $log_type,
+                'log_status'    => $log_status,
+                'result'        => $orderReport,
+                'xml'           => (!empty($xml))? $xml:'',
+                'nab_txnid'     => $transaction_id,
+                'nab_result'    => $braintree_result
+            );
+            Order_log::insert($logger);
+
+            $result = $this->process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp);
+
+            Cache::forget( 'cart'  . $this->order->cart_id );
+            $this->cart->delete();
+            session()->forget('cart_id');
+
+            $order = $this->order->load('orderItems.variant.product', 'address');
+            //event(new OrderReceived($order));
+            return view( 'customer.orderconfirmed', compact('order') );
+            
+        }
+        else{
+            $order_id = $transation_result->orderId;
+            $orderCheck = $this->checkOrderMast_prev($order_id);
+            if ($orderCheck) {
+
+                $order_no = $this->addOrderNo($order_id);
+                if (empty($order_no)) {
+                    $order_no = $order_id;
+                }
+
+                Cache::forget( 'cart'  . $this->order->cart_id );
+                $this->cart->delete();
+                session()->forget('cart_id');
+
+                $order = $this->order->load('orderItems.variant.product', 'address');
+                //event(new OrderReceived($order));
+                return view( 'customer.orderconfirmed', compact('order') );
+
+            } else {
+
+                $nab_result = "Failed";
+                // $transaction = $transation_result->transaction;
+                $transaction_id = $transation_result->id;
+                // $vault_result_message = $transation_result->message;
+                $order_id = $transation_result->orderId;
+
+                $check_transaction_status = $this->checkOrderMastTransStatus($order_id);
+                if ($check_transaction_status == "Succeeded") {
+                    
+                    // if (isset($_SESSION["cart_id"])) {
+                    //     session()->forget('cart_id');
+                    // }
+                    $order_no = $this->addOrderNo($order_id);
+                    if (empty($order_no)) {
+                        $order_no = $order_id;
+                    }
+
+                    Cache::forget( 'cart'  . $this->order->cart_id );
+                    $this->cart->delete();
+                    session()->forget('cart_id');
+
+                    $order = $this->order->load('orderItems.variant.product', 'address');
+                    //event(new OrderReceived($order));
+                    return view( 'customer.orderconfirmed', compact('order') );
+                    
+                } else {
+
+                    $orderDataUpdate = array(
+                        'trans_status' => 'Braintree Processor Declined'
+                    );
+                    Order::where('id', $order_id)->update($orderDataUpdate);
+
+                    $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
+                    $transaction_id = $transation_result->id;
+                    $log_title = "Braintree Payment";
+                    $log_type = "Response";
+                    $log_status = "Braintree Processor Declined";
+                    $nab_result = "Failed";
+
+                    $logger = array(
+                        'order_id'      => $order_id,
+                        'log_title'     => $log_title,
+                        'log_type'      => $log_type,
+                        'log_status'    => $log_status,
+                        'result'        => $orderReport,
+                        'xml'           => (!empty($xml))? $xml:'',
+                        'nab_txnid'     => $transaction_id,
+                        'nab_result'    => $braintree_result
+                    );
+                    Order_log::insert($logger);
+
+                    $order_no = $this->addOrderNo($order_id);
+                    if (empty($order_no)) {
+                        $order_no = $order_id;
+                    }
+
+                    //return view( 'customer.orderconfirmed', compact('order') );
+                    echo "Braintree Processor Declined";exit;
+
+
+                }
+
+            }
+        }
+
+        
+        
+        // Cache::forget( 'cart'  . $this->order->cart_id );
+        // $this->cart->delete();
+        // session()->forget('cart_id');
+        
+        // $order = $this->order->load('orderItems.variant.product', 'address');
+    
+        // event(new OrderReceived($order));
+
+        // return view( 'customer.orderconfirmed', compact('order') );
     }
+
+    public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp){
+        $orderIdData = Order::where("id", "=",  $order_id)->first();
+        if($orderIdData->status == "Order Completed"){
+
+            $this->addOrderNo($order_id);
+            $date = Carbon::now();
+            $timestamp = $date->format('Y-m-d H:i:s');
+            switch ($payment) {
+                case 'gift_cert':
+                    $orderDataUpdate = array(
+                        'payment_type' => $payment,
+                        'transaction_status' => 'Succeeded',
+                        'payment_status' => date('Y-m-d H:i:s')
+                    );
+                    break;
+
+                case 'Paypal':
+                    $orderDataUpdate = array(
+                        'payment_type' => $payment,
+                        'paypal_trans_id' => '',
+                        'transaction_status' => 'Succeeded',
+                        'paypal_order_dt' => date('Y-m-d H:i:s'),
+                        'payment_status' => date('Y-m-d H:i:s')
+                    );
+                    break;
+
+                default:
+                    $orderDataUpdate = array(
+                        'payment_type' => $payment,
+                        'transaction_status' => 'Succeeded',
+                        'nab_trans_id' => $transaction_id,
+                        'nab_order_dt' => date('Y-m-d H:i:s'),
+                        'payment_status' => date('Y-m-d H:i:s')
+                    );
+                    break;
+            }
+            
+            Order::where('id', $order_id)
+            ->update($orderDataUpdate);
+            
+            return true;
+        }
+    
+    }
+
+    public function addOrderNo($order_id){
+        $order_no = 0;
+        if($_ENV['APP_ENV'] != "local"){
+            $order_data = array(
+                'order_id' => $order_id
+            );
+            $order_number_insert = Order_number::create($order_data);
+            $order_no = $order_number_insert->id;
+
+            if (!empty($order_no)) {
+                $status = 'Order Number';
+            
+                Order::where('id', $order_id)
+                ->update(['status' => $status]);
+            }
+
+            Order::where('id', $order_id)
+            ->update(['order_no' => $order_no]);
+
+        }
+        else{
+
+            $order_no = "test-$order_id";
+
+            Order::where('id', $order_id)
+            ->update(['order_no' => $order_no]);
+
+        }
+        return $order_no;
+    }
+
+    public function checkOrderMast_prev($order_id){
+        $returnVal = false;
+        $result = Order::where([
+            ['id', '=', $order_id],
+            ['status', '=', 'Order Completed']
+        ])->get();
+
+        if ($result->count()) {
+            $returnVal = true;
+        }else{
+            $returnVal = false;
+        }
+
+        return $returnVal; 
+    }
+
+    public function checkOrderMastTransStatus($order_id){
+        $transaction_status="";
+        $result = Order::where(['id', '=', $order_id])->get();
+
+        if ($result->count()) {
+            $transaction_status= $result->transaction_status;
+        }else{
+            $returnVal = '';
+        }
+
+        return $transaction_status; 
+    }
+    
+
+
 }
