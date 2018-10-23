@@ -48,7 +48,7 @@ $(document).ready(function() {
          $(".plp-mob-filter__control").show();
          $(".header-mobile").css("position", "fixed");
       });
-      $(".mobile-plp--close .icon-close").click(function(){
+      $(".mobile-plp--close .icon-close,.mobile-plp--close").click(function(){
          $(".plp-mob-filter__control").hide();
          $(".header-mobile").css("position", "relative");
       });
@@ -107,9 +107,24 @@ $(document).on("click",".filter-value",function(){
 		var comboFilter = getComboFilter( filters );
 		console.log(comboFilter);
 		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+  }else{
+      filters[this_closest_group] = jQuery.grep(filters[this_closest_group], function(value) {
+        return value != this_value;
+      });
+      $("[data-filter-value='" + this_value + "']").find("input").prop("checked",false);
+      $("[data-filter-value='" + this_value + "']").removeClass("selected");
+      $(".selection-filter--container").find("[data-filter-value='" + this_value + "']").closest(".selection-filter--container").remove();
+      if($(".filter-selection-wrapper li").length==0){
+          $(".filter-selection-wrapper").hide();
+          $(".filter-heading a").hide();
+      }else{
+          $(".filter-selection-wrapper").show();
+      }
+      var comboFilter = getComboFilter( filters );
+      //$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
 
-  loadMore(12);
+  loadMore(12,comboFilter);
   return false;
 });
 
@@ -130,22 +145,23 @@ $(document).on('click','.selection-filter--container li',function(){
         $(".filter-selection-wrapper").show();
     }
     var comboFilter = getComboFilter( filters );
-		console.log(comboFilter);
-    $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    loadMore(12);
+		//console.log(comboFilter);
+    //$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    loadMore(12,comboFilter);
   return false;
 });
 
 $(document).on('click','.reset-filter',function(){
   $(".size-filter").removeClass("selected");
   $(".filter-list").removeClass("selected");
+  $(".fullbox-filter").removeClass("selected");
   $(".filter-value").find("input:checkbox").prop("checked", false);
   $(".selection-filter--container").remove();
   $(".filter-selection-wrapper").hide();
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  loadMore(12);
+  loadMore(12,'');
   filters = [];
   return false;
 });
@@ -196,11 +212,11 @@ function getComboFilter( filters ) {
 
   $(window).load(function(){
     $grid.isotope({ sortBy: 'price' , sortAscending: true ,layoutMode: 'fitRows'});
-    loadMore(initShow);
+    loadMore(initShow,''); 
   });
    //execute function onload
 
-  function loadMore(toShow) {
+  function loadMore(toShow,comboFilter) { 
     //console.log("toShow"+toShow);
     $grid.find(".hidden").removeClass("hidden");
     var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
@@ -212,13 +228,14 @@ function getComboFilter( filters ) {
     }
     //console.log('select_type'+select_type);
     //console.log('select_value'+select_value);
-    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows' });
+    //$grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows' });
     //console.log("iso.filteredItems.length" + iso.filteredItems.length);
     var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
       return item.element;
     });
     $(hiddenElems).addClass('hidden');
-    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
+    console.log(comboFilter);
+    $grid.isotope({ filter: comboFilter , sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
     var hidden_count = $(".element-item:hidden").length;
     if(iso.filteredItems.length > toShow){
@@ -232,7 +249,7 @@ function getComboFilter( filters ) {
     }
     var text =iso.filteredItems.length;
     $(".all-product--count").find("p span").text(text);
-
+    return false;
   }
   
   //append load more button
@@ -242,7 +259,8 @@ function getComboFilter( filters ) {
   $(document).on("click",".load-more",function() {
     $(".plp-load-more").remove();
     counter = counter + initShow;
-    loadMore(counter);
+    var comboFilter = getComboFilter( filters );
+    loadMore(counter,comboFilter);
   });
 
   $(document).on('click','.color-wrapper--more--add',function(){
