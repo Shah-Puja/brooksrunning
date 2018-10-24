@@ -142,7 +142,7 @@
                                 <h3>Paypal</h3>
                             </div>
                             <div class="payment-schedule">
-                                <img src="images/icon-paypal-checkout.png" class="paypal-btn" alt="">
+                                <div id="paypal-button"></div>
                                 <div class="payment-afterpay--info">
                                     <p>Click on the Paypal button to log into your Paypal account<br/>Then place your order by clicking on the ‘Pay Now & Place Order’ button that appears below.<br/><sup>*</sup>Please ensure that your browser allows pop-ups to pay, with Paypal.</p>
                                 </div>

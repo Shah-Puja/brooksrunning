@@ -34,6 +34,7 @@ class Order extends Model
                 'cart_id' => $cart['id'], 
             ],
             [
+                'cart_id' => $cart['id'], 
                 'total' => $cart['total'],
                 'freight_cost' => $cart['freight_cost'],
                 'grand_total' => $cart['grand_total'],

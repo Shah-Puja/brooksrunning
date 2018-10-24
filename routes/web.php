@@ -36,6 +36,7 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 
 
 Route::post('/subscribers/new', 'SubscriberController@store');

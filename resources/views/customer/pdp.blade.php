@@ -195,7 +195,7 @@
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
                             @php
-                            $sizes[] = array('size'=> $variant['size'],'width'=> $variant['width_name'],'visible'=> $variant['visible']);
+                            $sizes[] = array('size'=> $variant['size'],'width'=> $variant['width_name'],'visible'=> $variant['visible'],'seqno'=> $variant['seqno']);
                             if($variant['width_name']!=""){
                                 $width_names[$variant['width_code']]= $variant['width_name']; 
                             } 
@@ -214,7 +214,7 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                 @php $sizes = collect($sizes)->unique('size'); @endphp
+                                 @php $sizes = collect($sizes)->unique('size')->sortBy('seqno'); @endphp
                                     @foreach($sizes as $size)
                                        @if($size['size']!='')
                                         <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>

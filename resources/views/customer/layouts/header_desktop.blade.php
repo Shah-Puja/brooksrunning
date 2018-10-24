@@ -478,99 +478,13 @@
     <div class="search-container" id="header-search--popup">
         <div class="search-wrapper">
             <div class="close"><i class="icon-close"></i></div>
-            <form role="search" action="#" method="get">
+            <form name="searchproduct" role="search" method="get" onsubmit="return search_product()">
                 <input type="search" name="q" id="q" class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off">
-                <button type="submit" name="search"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
+
+                <button type="submit"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
             </form>
-             <!-- Start of search -->
-            <section class="search--container">
-                        <div class="wrapper homepage-new--arrival">
-                    <div class="new-arrival--container">
-                        <span class="icon-style icon-back-arrow prev"></span>
-                        <div class="owl-carousel">
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product_arrive">
-                                    <div class="prd_img">
-                                        <img src="images/shoes/shoes1-listing.jpg">
-                                    </div>
-                                    <div class="prd_caption">
-                                        <h3>Adrenaline GTS 18</h3>
-                                        <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <span class="icon-style icon-next-arrow next"></span>
-                    </div>
-                </div>
-                </div>
-                <!-- End of search -->
+            <div class="search-product-content"></div>
+
         </div>
     </div>
 </header>
