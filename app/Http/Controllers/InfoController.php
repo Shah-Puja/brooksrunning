@@ -54,4 +54,8 @@ class InfoController extends Controller
   {
       return view( 'info.privacy');
   }
+  public function sitemap()
+  {
+      return view( 'info.sitemap');
+  }
 }

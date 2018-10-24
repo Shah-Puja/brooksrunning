@@ -55,6 +55,7 @@ Route::get('/newsletter', 'InfoController@newsletter_signup');
 Route::get('/events', 'InfoController@events');
 Route::get('/help', 'InfoController@help');
 Route::get('/privacy', 'InfoController@privacy');
+Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks static pages */
 Route::get('/competition', 'meet_brooksController@competition');

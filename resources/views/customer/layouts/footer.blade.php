@@ -128,7 +128,7 @@
 							<a href="/contact-us">Help</a>
 						</li>
 						<li>
-							<a href="/find-a-store">Site Map</a>
+							<a href="/sitemap">Site Map</a>
 						</li>
 						<li>
 							<a href="/hello">About Brooks</a>
