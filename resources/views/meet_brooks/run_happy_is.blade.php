@@ -1,13 +1,13 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <section class="brooksrunhappyis hidden-mob">
 	<section class="rhi-header2">
 		<div class="wrapper">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/runhappy-lp-header.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/runhappy-lp-header.jpg" alt="">
 				</div>
 			</div>
 		</div>
@@ -18,12 +18,12 @@
 				  <div class="row gridcontainer">
 				     <div class="tab-3 padd_00">
 				       <div class="top_prd_sec">
-					      <img src="images/meet-brooks/hello/runhappy/02.jpg" alt=""> 
+					      <img src="/images/meet-brooks/hello/runhappy/02.jpg" alt=""> 
 				       </div>
 				     </div>
 				     <div class="tab-7 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/03.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/03.jpg" alt="">
 				          <p class="txtFeeling">
 					        <span class="aqua1">It's a feeling,</span><span class="white">an attitude,<br>
 					        a spirit that lives in the hearts and minds of all runners—</span>
@@ -48,7 +48,7 @@
 				  <div class="row">
 				     <div class="tab-7 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/04.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/04.jpg" alt="">
 				          <span class="txtMeaningful">
 					      <h3><span class="aqua">Run Happy is</span><span class="white"> each runner's deep and meaningful love of running.</span></h3>
 					      </span>
@@ -56,7 +56,7 @@
 				     </div>
 				     <div class="tab-5 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/05-final.jpg" alt="" class="heightadjust" />
+					      <img src="/images/meet-brooks/hello/runhappy/05-final.jpg" alt="" class="heightadjust" />
 				       </div>
 				     </div>
 	   			</div>
@@ -67,7 +67,7 @@
 		<div class="rhi-banner2--wrapper">
 		      <picture>
 		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/06.jpg">
-		        <img src="images/meet-brooks/hello/runhappy/06.jpg" alt="Header Images">
+		        <img src="/images/meet-brooks/hello/runhappy/06.jpg" alt="Header Images">
 		      </picture>
 	    </div>
 	</section>
@@ -77,17 +77,17 @@
 				  <div class="row blue-bkgd">
 				     <div class="tab-2 padd_00 padd_b_6">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/07.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/07.jpg" alt="">
 				       </div>
 				     </div>
 				     <div class="tab-5 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/08.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/08.jpg" alt="" />
 				       </div>
 				     </div>
 				      <div class="tab-5 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/09.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/09.jpg" alt="" />
 				       </div>
 				     </div>
 	   			</div>
@@ -100,17 +100,17 @@
 				  <div class="row yellow-bkgd">
 				     <div class="tab-5 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/10.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/10.jpg" alt="">
 				       </div>
 				     </div>
 				     <div class="tab-5 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/11.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/11.jpg" alt="" />
 				       </div>
 				     </div>
 				      <div class="tab-2 padd_00">
 				       <div class="top_prd_sec padd_lrt">
-					      <img src="images/meet-brooks/hello/runhappy/12.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/12.jpg" alt="" />
 				       </div>
 				     </div>
 	   			</div>
@@ -122,7 +122,7 @@
 		<div class="wrapper">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/13.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/13.jpg" alt="">
 					<div class="txtOffice p20 white aqua-bkgd">
 				        <h3><span class="yellow">Run Happy is</span> the best part of the runner's day, the part that understands that the worst day spent running is better than the best day at the office.</h3>
 				      </div>
@@ -136,7 +136,7 @@
 			<div class="info-wrapper ">
 				  <div class="row blue-bkgd">
 				     <div class="tab-8 padd_00">
-				          <img src="images/meet-brooks/hello/runhappy/14.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/14.jpg" alt="">
 				     </div>
 				     <div class="tab-4 padd_00">
 				       <div class="txtTap">
@@ -161,12 +161,12 @@
 				     </div>
 				     <div class="tab-4 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/15-W-480T.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/15-W-480T.jpg" alt="" />
 				       </div>
 				     </div>
 				      <div class="tab-6 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/16.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/16.jpg" alt="" />
 				       </div>
 				     </div>
 	   			</div>
@@ -177,7 +177,7 @@
 		<div class="rhi-banner2--wrapper">
 		      <picture>
 		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/17.jpg">
-		        <img src="images/meet-brooks/hello/runhappy/17.jpg" alt="Header Images">
+		        <img src="/images/meet-brooks/hello/runhappy/17.jpg" alt="Header Images">
 		      </picture>
 	    </div>
 	</section>
@@ -190,7 +190,7 @@
 				     </div>
 				     <div class="tab-7 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/18.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/18.jpg" alt="" />
 				       </div>
 				     </div>
 	   			</div>
@@ -203,12 +203,12 @@
 				  <div class="row">
 				     <div class="tab-4 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/19.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/19.jpg" alt="">
 				       </div>
 				     </div>
 				     <div class="tab-4 padd_00">
 				       <div class="top_prd_sec">
-					      <img src="images/meet-brooks/hello/runhappy/20.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/20.jpg" alt="" />
 				       </div>
 				     </div>
 				      <div class="tab-4 padd_00 darkest-grey-bkgd padd_b_3">
@@ -222,7 +222,7 @@
 		<div class="rhi-banner2--wrapper">
 		      <picture>
 		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/21.jpg">
-		        <img src="images/meet-brooks/hello/runhappy/21.jpg" alt="Header Images">
+		        <img src="/images/meet-brooks/hello/runhappy/21.jpg" alt="Header Images">
 		      </picture>
 	    </div>
 	</section>
@@ -232,12 +232,12 @@
 				  <div class="row">
 				     <div class="tab-6 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/22.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/22.jpg" alt="" />
 				       </div>
 				     </div>
 				     <div class="tab-6 padd_00">
 				       <div class="top_prd_sec ">
-					      <img src="images/meet-brooks/hello/runhappy/23.jpg" alt="" />
+					      <img src="/images/meet-brooks/hello/runhappy/23.jpg" alt="" />
 				       </div>
 				     </div>
 	   			</div>
@@ -249,7 +249,7 @@
 	<section class="rhi-header">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/runhappy-lp-header.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/runhappy-lp-header.jpg" alt="">
 				</div>
 			</div>
 	</section>
@@ -264,7 +264,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/02a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/02a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -275,7 +275,7 @@
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/03a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/03a.jpg" alt="">
 				       </div>
 				     </div>
 				      <div class="mob-6 padd_00">
@@ -299,7 +299,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/04a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/04a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -310,7 +310,7 @@
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/05a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/05a.jpg" alt="">
 				       </div>
 				     </div>
 				      <div class="mob-6 padd_00">
@@ -324,35 +324,35 @@
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/006.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/006.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/007.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/007.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/008.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/008.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/009.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/009.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/010.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/010.jpg" alt="">
 				</div>
 			</div>
 	</section>
@@ -366,7 +366,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/11a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/11a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -377,7 +377,7 @@
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/12a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/12a.jpg" alt="">
 				       </div>
 				     </div>
 				      <div class="mob-6 padd_00">
@@ -402,7 +402,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/13a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/13a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -413,7 +413,7 @@
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/14a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/14a.jpg" alt="">
 				       </div>
 				     </div>
 				      <div class="mob-6 padd_00">
@@ -437,7 +437,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/15a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/15a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -448,7 +448,7 @@
 				  <div class="row gridcontainer">
 				     <div class="mob-6 padd_00">
 				       <div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/16a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/16a.jpg" alt="">
 				       </div>
 				     </div>
 				      <div class="mob-6 padd_00">
@@ -462,7 +462,7 @@
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/17.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/17.jpg" alt="">
 				</div>
 			</div>
 	</section>
@@ -478,7 +478,7 @@
 				     </div>
 				      <div class="mob-6 padd_00">
 						<div class="top_prd_sec">
-				          <img src="images/meet-brooks/hello/runhappy/18a.jpg" alt="">
+				          <img src="/images/meet-brooks/hello/runhappy/18a.jpg" alt="">
 				       </div>
 				     </div>
 	   			</div>
@@ -487,28 +487,28 @@
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/019.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/019.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/020.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/020.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/021.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/021.jpg" alt="">
 				</div>
 			</div>
 	</section>
 	<section class="rhi-header-mob">
 			<div class="info-wrapper">
 				<div class="module-img">
-					<img src="images/meet-brooks/hello/runhappy/022.jpg" alt="">
+					<img src="/images/meet-brooks/hello/runhappy/022.jpg" alt="">
 				</div>
 			</div>
 	</section>

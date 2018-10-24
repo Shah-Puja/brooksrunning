@@ -253,7 +253,7 @@
 	                <!-- Level Two-->
 	                <ul>
 						<li>
-	                        <a href="/shoes">
+	                        <a href="javascript:;">
 	                            All Running Shoes                      
 	                        </a>
 						</li>
@@ -417,7 +417,7 @@
 	                </ul>
 				</li>
 				<li>
-	                <a href="/shoes">
+	                <a href="javascript:;">
 	                    <span class="title">Shoe Finder</span>
 	                </a>
 	                <!-- Level Two-->
@@ -580,22 +580,22 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/what_makes_us_tick">
+	                                <a href="/what_makes_us_tick">
 										What Makes Us Tick
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/run_happy_is">
+	                                <a href="/run_happy_is">
 										Run Happy is
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/technology">
+	                                <a href="/technology">
 									Technology
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/runsignature">
+	                                <a href="/run-signature">
 									Run Signature
 	                                </a>
 	                            </li>
@@ -609,22 +609,22 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/competition/rh_competition">
+	                                <a href="/competition">
 									Competition
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/enewsletter">
+	                                <a href="/newsletter">
 									E-Newsletter
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/trainingtips">
+	                                <a href="/training-tips">
 									Training Tips
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/injury_prevention">
+	                                <a href="/injury-prevention">
 									Injury Prevention
 	                                </a>
 	                            </li>
@@ -653,7 +653,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="/running-shoes-and-apparel-sale">
+	                <a href="javascript:;">
 	                    <span class="title">Sale</span>
 	                </a>
 	                <!-- Level Two-->
@@ -683,14 +683,6 @@
 	                                <a href="/womens-running-clothes-sale">
 	                                    Sale Clothing
 	                                </a>
-	                                <!-- Level Four-->
-	                                <!-- <ul>
-	                                    <li><a href="#">Sub Item Link 1</a></li>
-	                                    <li><a href="#">Sub Item Link 2</a></li>
-	                                    <li><a href="#">Sub Item Link 3</a></li>
-	                                </ul> -->
-	                            </li>
-	                            <!-- <li><a href="#"></i>Sub Item Link 3</a></li> -->
 	                        </ul>
 	                    </li>
 						<li>
@@ -719,7 +711,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/info/contact">
+	                <a href="/contact">
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>
@@ -741,7 +733,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="/meet_brooks/enewsletter">
+	                <a href="/newsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>
 	                </a>
 	            </li>

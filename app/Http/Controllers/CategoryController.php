@@ -85,4 +85,7 @@ class CategoryController extends Controller
     public function walking_shoes(){
         return view('customer.walking-shoes');
     }
+    public function sale(){
+        return view('customer.running-shoes-and-apparel-sale');
+    }
 }
