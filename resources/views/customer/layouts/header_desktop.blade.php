@@ -476,10 +476,11 @@
     <div class="search-container" id="header-search--popup">
         <div class="search-wrapper">
             <div class="close"><i class="icon-close"></i></div>
-            <form role="search" action="#" method="get">
+            <form name="searchproduct" role="search" method="get" onsubmit="return search_product()">
                 <input type="search" name="q" id="q" class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off">
-                <button type="submit"><i class="icon-next-arrow"></i></button>
+                <button type="submit"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
             </form>
+            <div class="search-product-content"></div>
         </div>
     </div>
 </header>
