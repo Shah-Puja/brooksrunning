@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderSubmittedNotification;
 use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
+use App\SYG\Bridges\BridgeInterface;
 
 
 class PaymentController extends Controller
@@ -24,8 +25,9 @@ class PaymentController extends Controller
 	protected $order;    
     protected $processor;
     protected $afterpay_processor;
+	protected $bridge;
 
-    public function __construct(Processor $processor)
+    public function __construct(Processor $processor, BridgeInterface $bridge)
 	{
         $this->middleware(function ($request, $next) {
 
@@ -57,7 +59,8 @@ class PaymentController extends Controller
             return $next($request);
 
         });
-		$this->processor = $processor;
+        $this->processor = $processor;
+        $this->bridge = $bridge;
     }
     
     public function create(){
@@ -258,6 +261,7 @@ class PaymentController extends Controller
     }
 
     public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp){
+        
         $orderIdData = Order::where("id", "=",  $order_id)->first();
         if($orderIdData->status == "Order Completed"){
 
@@ -296,6 +300,11 @@ class PaymentController extends Controller
             
             Order::where('id', $order_id)
             ->update($orderDataUpdate);
+			
+			//ap21 order process 
+
+            $person_data =  $this->bridge->getPersonid($this->order->address->email)->getContents();
+            dd($person_data);
             
             return true;
         }
