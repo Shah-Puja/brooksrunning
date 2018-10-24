@@ -6,4 +6,5 @@ interface BridgeInterface {
 	public function allProducts();
 	public function getProduct($productCode);
 	public function processCart($data);
+	public function getPersonid($email);
 }

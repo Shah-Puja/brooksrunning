@@ -74,9 +74,10 @@
 								</picture>
 								<div class="plp-mob--info visible-mob">
 								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
+								@php  $width_count = count( $filters_array[$style->style]['width']); @endphp
 									<ul>
 										<li>{{ count($colors_option[$style->style]) }} Colours</li>
-										<li class="no-pad">Widths Available</li>
+										<li class="no-pad">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }}  Available</li>
 									</ul>
 								</a>
 								</div>
@@ -117,9 +118,6 @@
 							<!--<p>Neutral Speed</p>-->
 						</div>
 						<div class="mob-6">
-						    @php 
-							   $width_count = count( $filters_array[$style->style]['width']);
-							@endphp
 							<p class="right"> {{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
 						</div>
 					</div>
