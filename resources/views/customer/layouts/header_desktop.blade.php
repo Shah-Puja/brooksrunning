@@ -28,8 +28,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="/help">Help</a>
+                            
+                        </li>
+                        <li><a href="/find-a-store">Store Locator</a></li>
                         <li class="cart">
                             <a href="/cart">Cart
                                 <span class="icon-shopping-cart icon-cart"></span>
@@ -144,7 +146,7 @@
                                                 <div class="col-12">
                                                     <div class="header-menu--btn">
                                                         <p>Not sure which shoe is right for you?</p>
-                                                        <a href="#" class="primary-button">Use our shoe finder</a>
+                                                        <a href="/shoefinder" class="primary-button">Use our shoe finder</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,7 +248,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="/shoes" class="main-nav">Shoe Finder</a>
+                        <li class="main"><a href="javascript:void(0)" class="main-nav">Shoe Finder</a>
 								<div class="desktop-navigation--sub">
 									<div class="wrapper">
 										<div class="row">
@@ -388,7 +390,7 @@
 								    			<div class="tab-7">
 								    				<div class="find-out">
 								    					<h3 class="bold-font">Find out which shoe is right for you.</h3>
-								    					<a href="#" class="shoe-button">Shoe Finder</a>
+								    					<a href="/shoefinder" class="shoe-button">Shoe Finder</a>
 								    				</div>
 								    			</div>
 								    			<div class="tab-5">
@@ -411,19 +413,19 @@
                                                     <li class="submenu-main">
                                                         <a href="/about-us">About Us</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/what_makes_us_tick">What Makes Us Tick</a></li>
-                                                    <li><a href="/meet_brooks/run_happy_is">Run Happy is</a></li>
-                                                    <li><a href="/meet_brooks/technology">Technology</a></li>
-                                                    <li><a href="/runsignature">Run Signature</a></li>
+                                                    <li><a href="/what_makes_us_tick">What Makes Us Tick</a></li>
+                                                    <li><a href="/run_happy_is">Run Happy is</a></li>
+                                                    <li><a href="/technology">Technology</a></li>
+                                                    <li><a href="/run-signature">Run Signature</a></li>
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
                                                         <a href="javascript:;">Run Happy</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/competition">Competition</a></li>
-                                                    <li><a href="/meet_brooks/newsletter">E-Newsletter</a></li>
-                                                    <li><a href="/meet_brooks/trainingtips">Training Tips</a></li>
-                                                    <li><a href="/meet_brooks/injury_prevention">Injury Prevention</a></li>
+                                                    <li><a href="/competition">Competition</a></li>
+                                                    <li><a href="/newsletter">E-Newsletter</a></li>
+                                                    <li><a href="/training-tips">Training Tips</a></li>
+                                                    <li><a href="/injury-prevention">Injury Prevention</a></li>
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
@@ -478,9 +480,11 @@
             <div class="close"><i class="icon-close"></i></div>
             <form name="searchproduct" role="search" method="get" onsubmit="return search_product()">
                 <input type="search" name="q" id="q" class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off">
+
                 <button type="submit"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
             </form>
             <div class="search-product-content"></div>
+
         </div>
     </div>
 </header>

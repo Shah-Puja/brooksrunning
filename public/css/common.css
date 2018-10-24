@@ -1920,6 +1920,48 @@ textarea {
 .header-desktop .header-desktop--right .top .header-utality li:hover .header-utality__submenu {
   display: block;
 }
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu {
+  display: none;
+  text-align: left;
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #d3d0cd;
+  border-top: 0;
+  padding-top: 5px;
+  padding: 5px 5px;
+  width: 110px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li {
+  padding: 5px 0;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-phone {
+  background-image: url(../images/interface/icon-phone.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-phone a {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-email {
+  background-image: url(../images/interface/icon-email.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top: 1px;
+  padding-bottom: 5px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-email a {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+.header-desktop .header-desktop--right .top .header-utality li:hover .header-utality__Helpsubmenu {
+  display: block;
+}
 .header-desktop .header-desktop--right .bottom {
   margin-top: 6px;
 }

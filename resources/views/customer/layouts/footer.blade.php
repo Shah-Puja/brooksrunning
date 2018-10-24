@@ -56,7 +56,7 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-						<li><a href="/email-signup">The Run Down Email Sign Up</a></li>
+						<li><a href="/newsletter">The Run Down Email Sign Up</a></li>
 						<li><a href="http://talk.brooksrunning.com/au/">Blog</a></li>
 						<li><a href="https://www.facebook.com/BrooksrunningAU/">Facebook</a></li>
 						<li><a href="https://twitter.com/brooksrunningau">Twitter</a></li>
@@ -122,16 +122,16 @@
 				<div class="col-6 tab-7">
 					<ul class="footer-nav">
 						<li>
-							<a href="#">Privacy Policy</a>
+							<a href="/privacy">Privacy Policy</a>
 						</li>
 						<li>
-							<a href="#">Help</a>
+							<a href="/contact-us">Help</a>
 						</li>
 						<li>
-							<a href="#">Site Map</a>
+							<a href="/find-a-store">Site Map</a>
 						</li>
 						<li>
-							<a href="#">About Brooks</a>
+							<a href="/hello">About Brooks</a>
 						</li>
 					</ul>
 				</div>

@@ -6,8 +6,7 @@
 			<div class="col-6">
 				<div class="about-header">
 					<h1 class="br-mainheading">About Us</h1>
-				    <p>Unfortunately running injuries are all too common so it is important to know ways in which you can best try to prevent them occuring. We list the common injuries that runners sustain and give you information on treatment available.</p>
-				</div>
+			</div>
 			</div>
 		</div>
 	</div>
