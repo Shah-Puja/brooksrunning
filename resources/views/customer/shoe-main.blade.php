@@ -92,12 +92,12 @@
 <section class="shoes-info">
 	<div class="wrapper">
 		<div class="row">
+			
 			<div id="desk" class="col-8 tab-8 mob-12">
-				  <a class="utube">
-				  	<div class="module-img">
+				  	<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
                             <img src="/images/shoes_new/pureflow/maxresdefault.jpg" />
-                     </div>
-                   </a>
+                            <div class="play"></div>
+                        </a>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div class="para">
@@ -140,7 +140,18 @@
 				</div>
 		</div>
 </section>
-
+<!--uTube popup -->
+<div id="uTube-popup--wrapper" class="popup-container uTube--popup">
+						<div class="popup-container--wrapper">
+							<div class="popup-container--info">
+								<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
+								<div class="uTube-info">
+									<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/uTube popup -->
 
 </section>
 @endsection

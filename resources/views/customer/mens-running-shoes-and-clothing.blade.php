@@ -15,13 +15,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="secondary-button" href="https://www.brooksrunning.com.au">Shop Men's Shoes</a>
+							<a class="secondary-button" href="/mens-running-shoes">Shop Men's Shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Men's Shoes</a>
+							<a class="primary-button" href="/mens-running-shoes">Shop Men's Shoes</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -43,7 +43,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -54,7 +54,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -65,7 +65,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -76,7 +76,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -101,7 +101,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop new beast</a>
+							<a class="primary-button" href="beast-18-mens-running-shoes/110282_015.html">Shop new beast</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -114,7 +114,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Trail Running Shoes</a>
+							<a class="primary-button" href="/mens-trail-running-shoes">Trail Running Shoes</a>
 					</div> 
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 						<div class="col-4 tab-4 mob-12" >&nbsp;</div>
 						<div class="col-4 tab-4 mob-12" >
 									<div class="horizontal-shoefinder-btn">
-										<a class="primary-button" href="#">Shoe Finder</a>
+										<a class="primary-button" href="/shoefinder">Shoe Finder</a>
 									</div>
 						</div>
 						<div class="col-4 tab-4 mob-12" >
@@ -153,13 +153,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="secondary-button" href="https://www.brooksrunning.com.au">Shop Men's Clothing</a>
+							<a class="secondary-button" href="/mens-running-clothes">Shop Men's Clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Men's Clothing</a>
+							<a class="primary-button" href="/mens-running-clothes">Shop Men's Clothing</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -185,7 +185,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	 <h3><a class="name-link" href="/distance-short-sleeve-mens-running-top/211052_084.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -196,7 +196,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-mens-running-top/211052_084.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -207,7 +207,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-mens-running-top/211052_084.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -218,7 +218,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-mens-running-top/211052_084.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -243,7 +243,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Details make the difference and our Men's Clothing and Accessories Collection is all about details.</p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Accessories</a>
+							<a class="primary-button" href="/mens-running-accessories">Shop Accessories</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -256,7 +256,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel and look your best on the run in one of our lightweight and breathable t-shirts and singlets. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop tops</a>
+							<a class="primary-button" href="/mens-running-tops">Shop tops</a>
 					</div>
 				</div>
 			</div>
