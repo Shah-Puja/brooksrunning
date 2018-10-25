@@ -303,10 +303,11 @@ class PaymentController extends Controller
 			
 			//ap21 order process 
 
-            $person_data =  $this->bridge->getPersonid($this->order->address->email);
-            switch ($person_data['code']) {
+            $response =  $this->bridge->getPersonid($this->order->address->email);
+            $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
                 case '200':
-                    $response_xml = @simplexml_load_string($person_data['data']);
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
                     $userid = $response_xml->Person->Id;
                     Order_log::createnew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid);
                     $returnVal = $userid; 
@@ -318,7 +319,7 @@ class PaymentController extends Controller
                     break;
 
                 default:
-                    $result = 'HTTP ERROR -> ' . $person_data['code'] . "<br>" .$person_data['data'];
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
                     Order_log::createnew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result);
                     // Logger
                     //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
