@@ -468,10 +468,11 @@ class PaymentController extends Controller
             switch ($returnCode) {
                 case 201:
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    $person_id = $response_xml->Person->Id;
+                    print_r($response_xml);
+                    //$person_id = $response_xml->Person->Id;
                     
 
-                    echo $returnVal = $person_id;
+                    //echo $returnVal = $person_id;
 
                     //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
                     // Logger
