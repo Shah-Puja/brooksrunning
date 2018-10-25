@@ -97,11 +97,19 @@
 	<div class="wrapper">
 		<div class="row">
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
-				<div id="desk" class="col-8 tab-8 mob-12">
+				{{-- <div id="desk" class="col-8 tab-8 mob-12">
 					<a class="utube" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
 						<div class="module-img">
 								<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
 						</div>
+					</a>
+				</div> --}}
+				<div id="desk" class="col-8 tab-8 mob-12">
+					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
+							<div class="module-img">
+									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
+							</div>
+						<div class="play"></div>
 					</a>
 				</div>
 			@endif
@@ -163,6 +171,18 @@
 		</div>
 </section>
 
+<!--uTube popup -->
+<div id="uTube-popup--wrapper" class="popup-container uTube--popup">
+	<div class="popup-container--wrapper">
+		<div class="popup-container--info">
+			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
+			<div class="uTube-info">
+				<iframe src="https://www.youtube.com/embed/{{ $shoe_info->video_link }}?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/uTube popup -->
 
 </section>
 
