@@ -95,7 +95,8 @@ class CategoryController extends Controller
             $shoe_name == "neuro" || $shoe_name == "asteria" || $shoe_name == "addiction" || $shoe_name == "purecadence" ||
             $shoe_name == "pureflow" || $shoe_name == "mazama" || $shoe_name == "cascadia" || $shoe_name == "cascadia-gtx" ||
             $shoe_name == "ghost-gtx" || $shoe_name == "puregrit" || $shoe_name == "caldera" || $shoe_name == "vapor" ||
-            $shoe_name == "defyance" || $shoe_name == "dyad" || $shoe_name == "adrenaline-asr") {
+            $shoe_name == "defyance" || $shoe_name == "dyad" || $shoe_name == "adrenaline-asr" || $shoe_name == "ricochet" 
+            || $shoe_name == "levitate" || $shoe_name == "bedlam") {
 
                 if ($shoe_name == "adrenaline-gts" || $shoe_name == "cascadia-gtx" || $shoe_name == "ghost-gtx") {
                     if (strpos($shoe_name, '-') !== false) {

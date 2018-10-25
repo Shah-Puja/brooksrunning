@@ -4,7 +4,7 @@ if (!function_exists('benefit_img_check')) {
     function benefit_img_check($img) 
     { 
         if($img!=''){
-            $img = env('BASE_MEDIA_BENEFITS_IMAGES_URL').$img;
+            $img = config('site.image_url.base_banefit').$img;
 
             if(@fopen($img.".png",'r')){
                 $img_url = $img.".png";
