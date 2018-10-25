@@ -61,9 +61,13 @@ class AfterpayProcessor {
             "surname" => $order->address->b_lname,
             "email" => $order->address->email
           ],
+          /*"merchant" => [
+            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success",
+            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel"
+          ],*/
           "merchant" => [
-            "redirectConfirmUrl" => "/" . config('app.url') . "afterpay_success",
-            "redirectCancelUrl" => "/" . config('app.url') . "afterpay_cancel"
+            "redirectConfirmUrl" => "http://brooks.syginteractive.com/afterpay_success",
+            "redirectCancelUrl" => "http://brooks.syginteractive.com/afterpay_cancel"
           ],
           "merchantReference" => $order->id,
           "items" => $order_items,
