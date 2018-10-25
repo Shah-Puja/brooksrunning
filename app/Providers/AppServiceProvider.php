@@ -53,7 +53,8 @@ class AppServiceProvider extends ServiceProvider {
 
         $this->app->bind('App\SYG\Bridges\BridgeInterface', function ($app) {
             $apiClient = new \GuzzleHttp\Client([
-                'base_uri' => 'https://api.texaspeak.com.au:8525/RetailAPIFIT_LIVE/', 
+                //'base_uri' => 'https://api.texaspeak.com.au:8525/RetailAPIFIT_LIVE/',
+                'base_uri' => 'https://api.texaspeak.com.au:8525/RetailAPIFIT_TEST/',  
                 'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'],
             ]);
             return new \App\SYG\Bridges\AP21Bridge($apiClient);

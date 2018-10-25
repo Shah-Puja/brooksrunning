@@ -303,12 +303,31 @@ class PaymentController extends Controller
 			
 			//ap21 order process 
 
-            $person_data =  $this->bridge->getPersonid($this->order->address->email);
-            echo "<pre>";
-            print_r($person_data);
-            echo "</pre>";
+            $response =  $this->bridge->getPersonid($this->order->address->email);
+            $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid,'','','');
+                    $returnVal = $userid; 
+                    break;
+
+                case '404':
+                    $userid = $this->create_user();
+                    $returnVal = $userid;
+                    break;
+
+                default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
+                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result,'','','');
+                    // Logger
+                    //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
+                    // Send ap21 alert  
+                    $returnVal = false;
+                    break;
+            }
             exit;
-            
             return true;
         }
     
@@ -373,6 +392,93 @@ class PaymentController extends Controller
 
         return $transaction_status; 
     }
+
+
+    public function create_user(){
+
+        $fullname = $this->order->address->b_fname.' '.$this->order->address->b_lname;
+        $fname = $this->order->address->s_fname;
+        $lname = $this->order->address->s_lname;
+        $returnVal = false;
+        $returnData = '';
+
+        if (!empty($fname) && !empty($lname)) {
+
+            $firstname = $fname;
+            $lastname = $lname;
+        } else {
+            list($firstname, $lastname) = explode(' ', $fullname);
+        }
+
+        $person_xml="<Person>
+                        <Firstname>$firstname</Firstname>
+                        <Surname>$lastname</Surname>
+                        <Contacts>
+                          <Email>".$this->order->address->email."</Email>
+                          <Phones>
+                            <Home>".$this->order->address->s_phone."</Home>
+                          </Phones>
+                        </Contacts>
+                        <Addresses>
+                            <Billing>
+                              <AddressLine1>".htmlspecialchars($this->order->address->b_add1)."</AddressLine1>
+                              <AddressLine2>".htmlspecialchars($this->order->address->b_add2)."</AddressLine2>
+                              <City>".htmlspecialchars($this->order->address->b_city)."</City>
+                              <State>".htmlspecialchars($this->order->address->b_state)."</State>
+                              <Postcode>".$this->order->address->b_postcode."</Postcode>
+                              <Country></Country>
+                            </Billing>
+                            <Delivery>
+                              <AddressLine1>".htmlspecialchars($this->order->address->s_add1)."</AddressLine1>
+                              <AddressLine2>".htmlspecialchars($this->order->address->s_add2)."</AddressLine2>
+                              <City>".htmlspecialchars($this->order->address->s_city)."</City>
+                              <State>".htmlspecialchars($this->order->address->s_state)."</State>
+                              <Postcode>".$this->order->address->s_postcode."</Postcode>
+                              <Country></Country>
+                            </Delivery>
+                        </Addresses>
+                      </Person>";
+
+        $response = $this->bridge->processPerson($person_xml);
+        $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
+        Order_log::createNew($this->order->id,'Person', 'Response', 'Generate Person XML', 'Created Person xml and submitted to app21 url:- ' . $URL, $person_xml,'','');
+        $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                     
+                      print_r($response->getBody());
+                   /* preg_match('/Location:(.*?)\n/', $output, $matches);
+
+                    $location = $matches[1];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_id = $last_seg_arr[0];
+
+                    $returnVal = $person_id;*/
+
+                    //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
+                    // Logger
+
+                    break;
+
+                default:
+                    /*$result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $output;
+
+                    $this->alert->order_log($this->_order_id, 'Person', 'Response', 'Error While Creating Person ID', $result);
+                    // Logger
+
+                    $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                    // Send ap21 alert  
+
+                    $returnVal = false;*/
+
+                    break;
+        }
+        dd($person_xml);
+
+    }
+
     
 
 

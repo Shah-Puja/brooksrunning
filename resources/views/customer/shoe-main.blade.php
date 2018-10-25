@@ -37,13 +37,15 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/mens.jpg" alt="">
+									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt="">
 								</div>
+								@if(isset($shoe_info->shop_men) && $shoe_info->shop_men!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
-										<span><a class="secondary-button" href="#">Shop Men's</a></span>
+										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
 									</div>
 								</div>
+								@endif
 							</div>
 					</div>
 				</div>
@@ -51,13 +53,15 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/womens.jpg" alt="">
+									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
 								</div>
+								@if(isset($shoe_info->shop_women) && $shoe_info->shop_women!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
-										<span><a class="secondary-button" href="#">Shop Women's</a></span>
+										<span><a class="secondary-button" href="/{{$shop_women_url}}">Shop Women's</a></span>
 									</div>
 								</div>
+								@endif
 							</div>
 					</div>
 				</div>
@@ -71,19 +75,19 @@
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
 					{!! $shoe_info->feature_1 !!}
-					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_1.jpg" alt="ariel feature 1"> 
+					<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/feature_1.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
 					{!! $shoe_info->feature_2 !!}
-					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_2.jpg" alt="ariel feature 1"> 
+					<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/feature_2.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
 					{!! $shoe_info->feature_3 !!}
-					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_3.jpg" alt="ariel feature 1"> 
+					<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/feature_3.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 		</div>
@@ -92,14 +96,21 @@
 <section class="shoes-info">
 	<div class="wrapper">
 		<div class="row">
-			<div id="desk" class="col-8 tab-8 mob-12">
-				  <a class="utube">
-				  	<div class="module-img">
-                            <img src="/images/shoes_new/pureflow/maxresdefault.jpg" />
-                     </div>
-                   </a>
-			</div>
-			<div class="col-4 tab-4 mob-12">
+			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
+				<div id="desk" class="col-8 tab-8 mob-12">
+					<a class="utube" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
+						<div class="module-img">
+								<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
+						</div>
+					</a>
+				</div>
+			@endif
+
+			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
+				<div class="col-4 tab-4 mob-12">
+			@else
+				<div class="col-12 tab-12 mob-12">
+			@endif
 				<div class="para">
 						<h1 class="product-name widvideo">Brooks {{ $shoe_info->shoe_name }}</h1>
 	                    <div id="product-content">
@@ -107,9 +118,20 @@
 								 <div class="features">
 								 	<p><strong>Activity:</strong> Running</p>
 								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->category) }} </p>
-								 	<div class="shoe-experience">
+								 	<div class="shoe-experience" style="margin-top: -2% !important;">
 								 		<p>
-								 			<strong>Experience:</strong> <img src="/images/shoes_new/pureflow/connect.png" alt="Connect Badge" width="60" height="60">
+											<strong>Experience:</strong>
+											@if(isset($shoe_info->experience))
+												@if($shoe_info->experience == 'Cushion Me')
+													<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="60" height="60" />
+												@elseif ($shoe_info->experience == 'Energize Me')
+													<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.png" alt="Energize Badge" width="60" height="60" />
+												@elseif ($shoe_info->experience == 'Connect Me') {
+													<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="60" height="60" />
+												@elseif ($shoe_info->experience == 'Propel Me') {
+													<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="60" height="60" />
+												@endif
+											@endif
 								 		</p>
 									</div>
 								 		
@@ -143,4 +165,5 @@
 
 
 </section>
+
 @endsection

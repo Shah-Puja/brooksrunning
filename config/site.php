@@ -5,7 +5,11 @@ return [
     'notify_email' => env('CLIENT_NOTIFY_EMAIL'),
 	'syg_notify_email' => env('SYG_NOTIFY_EMAIL'),
 	'image_url'=> [
-        'base' => env('BASE_IMAGE_URL'),
+		'base' => env('BASE_IMAGE_URL'),
+		'base_shoe_new' => env('BASE_SHOE_NEW_IMAGES_URL'),
+		'base_shoe_new_exp' => env('BASE_SHOE_NEW_EXP_URL'),
+		'base_banefit' => env('BASE_MEDIA_BENEFITS_IMAGES_URL'),
+
         'products' => [
 			'original' => env('BASE_PRODUCT_IMAGES_URL').'orig/' ,
 			'thumbnail' => env('BASE_PRODUCT_IMAGES_URL').'t/',
