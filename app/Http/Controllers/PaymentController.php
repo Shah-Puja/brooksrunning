@@ -304,13 +304,19 @@ class PaymentController extends Controller
 			//ap21 order process 
 
             $response =  $this->bridge->getPersonid($this->order->address->email);
-            print_r($response);
-            echo $returnCode =  $response->getStatusCode();
+            $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
                     $userid = $response_xml->Person->Id;
-                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid);
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'Person Id Found',
+                        'result'        =>  $userid,
+                    );
+                    Order_log::createNew($logger);
                     $returnVal = $userid; 
                     break;
 
@@ -320,8 +326,15 @@ class PaymentController extends Controller
                     break;
 
                 default:
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'Error While Getting Person ID',
+                        'result'        =>  $result,
+                    );
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
-                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result);
+                    Order_log::createNew($logger);
                     // Logger
                     //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
                     // Send ap21 alert  
@@ -440,6 +453,51 @@ class PaymentController extends Controller
                         </Addresses>
                       </Person>";
 
+        $response = $this->bridge->processPerson($person_xml);
+        $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
+        $logger = array(
+            'order_id'      => $this->order->id,
+            'log_title'     => 'Person',
+            'log_type'      => 'Response',
+            'log_status'    => 'Generate Person XML',
+            'result'        => 'Created Person xml and submitted to app21 url:- ' . $URL,
+            'xml'           => $person_xml
+        );
+        Order_log::createNew($logger);
+        print_r($response);
+        echo $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                     
+                      print_r($response->getBody());
+                   /* preg_match('/Location:(.*?)\n/', $output, $matches);
+
+                    $location = $matches[1];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_id = $last_seg_arr[0];
+
+                    $returnVal = $person_id;*/
+
+                    //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
+                    // Logger
+
+                    break;
+
+                default:
+                    /*$result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $output;
+
+                    $this->alert->order_log($this->_order_id, 'Person', 'Response', 'Error While Creating Person ID', $result);
+                    // Logger
+
+                    $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                    // Send ap21 alert  
+
+                    $returnVal = false;*/
+
+                    break;
+        }
         dd($person_xml);
 
     }
