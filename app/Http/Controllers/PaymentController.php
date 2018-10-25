@@ -464,7 +464,8 @@ class PaymentController extends Controller
             'xml'           => $person_xml
         );
         Order_log::createNew($logger);
-        $returnCode =  $response->getStatusCode();
+        print_r($response);
+        echo $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
                      
