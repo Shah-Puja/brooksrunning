@@ -591,7 +591,7 @@ class PaymentController extends Controller
         $subtotal = 0;
         foreach ($this->order->orderItems as $item) {
 
-            $sku = $item->variant->barcode;
+            $sku = $item->variant->id;
             $qty = $item->qty;
             $price = $item->price_sale;
             $value = $qty * $price;
