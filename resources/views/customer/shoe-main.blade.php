@@ -1,8 +1,12 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <section class="shoe-main-container">
-	
+	{{-- @php
+		echo "<pre>";
+        print_r($shoe_info);
+        echo "</pre>";
+	@endphp --}}
 <section class="create-account--header plp-header">
 	<div class="wrapper">
 		<div class="row">
@@ -16,11 +20,11 @@
 							<a href="#">Shoes</a>
 						</li>
 						<li>
-							<a href="JavaScript:Void(0);" class="active">Brooks pureflow</a>
+						<a href="JavaScript:Void(0);" class="active">Brooks {{ $shoe_info->shoe_name }}</a>
 						</li>
 					</ul>
 				</div>
-				<h1 class="br-mainheading">Brooks Pureflow</h1>
+				<h1 class="br-mainheading">Brooks {{ $shoe_info->shoe_name }}</h1>
 			</div>
 		</div>
 	</div>
@@ -33,7 +37,7 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									<img src="images/shoes_new/pureflow/mens.jpg" alt="">
+									<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/mens.jpg" alt="">
 								</div>
 								<div class="info">
 									<div class="shoes-detail-btn">
@@ -47,7 +51,7 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									<img src="images/shoes_new/pureflow/womens.jpg" alt="">
+									<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/womens.jpg" alt="">
 								</div>
 								<div class="info">
 									<div class="shoes-detail-btn">
@@ -66,23 +70,20 @@
 		<div class="row">
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
-					<h2><strong>SUPER SOFT CUSHIONING</strong></h2>
-					<p>The Super DNA midsole provides<br class="visible-tab"> 25% more<br class="visible-col"> adaptable cushioning<br class="visible-tab"> than our standard <br class="visible-col">DNA<br class="visible-tab"> midsole.</p>
-					<img src="images/shoes_new/pureflow/feature_1.jpg" alt="ariel feature 1"> 
+					{!! $shoe_info->feature_1 !!}
+					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_1.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
-					<h2><strong>SUPER SOFT CUSHIONING</strong></h2>
-					<p>The Super DNA midsole provides<br class="visible-tab"> 25% more<br class="visible-col"> adaptable cushioning<br class="visible-tab"> than our standard <br class="visible-col">DNA<br class="visible-tab"> midsole.</p>
-					<img src="images/shoes_new/pureflow/feature_2.jpg" alt="ariel feature 1"> 
+					{!! $shoe_info->feature_2 !!}
+					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_2.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div id="module1">
-					<h2><strong>SUPER SOFT CUSHIONING</strong></h2>
-					<p>The Super DNA midsole provides<br class="visible-tab"> 25% more<br class="visible-col"> adaptable cushioning<br class="visible-tab"> than our standard <br class="visible-col">DNA<br class="visible-tab"> midsole.</p>
-					<img src="images/shoes_new/pureflow/feature_3.jpg" alt="ariel feature 1"> 
+					{!! $shoe_info->feature_3 !!}
+					<img src="/images/shoes_new/{{ $shoe_info->shoe_type }}/feature_3.jpg" alt="ariel feature 1"> 
 				</div>
 			</div>
 		</div>
@@ -94,23 +95,21 @@
 			<div id="desk" class="col-8 tab-8 mob-12">
 				  <a class="utube">
 				  	<div class="module-img">
-                            <img src="images/shoes_new/pureflow/maxresdefault.jpg" />
+                            <img src="/images/shoes_new/pureflow/maxresdefault.jpg" />
                      </div>
                    </a>
 			</div>
 			<div class="col-4 tab-4 mob-12">
 				<div class="para">
-						<h1 class="product-name widvideo">Brooks Pureflow</h1>
+						<h1 class="product-name widvideo">Brooks {{ $shoe_info->shoe_name }}</h1>
 	                    <div id="product-content">
-	                            <p>Brooks brings forth the holy matrimony of pure comfort and functional lightweight construction in our PureFlow range. With a new clean, simple design and featuring our DNA LT cushioned midsole which has all the benefits of adaptive cushioning without increasing the weight of the shoe. The updated stretch-woven upper that hugs the feet and the rounded heel helps to reduce internal stress on the body, as well as a wraparound collar for a plush, luxurious feel.
-								 
-								 Discover the harmonious blend of our Brooks <a href="https://www.brooksrunning.com.au/pureflow-7-mens-running-shoes/110275_048.html">PureFlow 7 for men</a> and <a href="https://www.brooksrunning.com.au/pureflow-7-womens-running-shoes/120262_048.html">PureFlow 7 for women</a> today.</p>
+	                            {!! $shoe_info->description !!}
 								 <div class="features">
 								 	<p><strong>Activity:</strong> Running</p>
-								 	<p><strong>Category:</strong> Neutral</p>
+								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->category) }} </p>
 								 	<div class="shoe-experience">
 								 		<p>
-								 			<strong>Experience:</strong> <img src="images/shoes_new/pureflow/connect.png" alt="Connect Badge" width="60" height="60">
+								 			<strong>Experience:</strong> <img src="/images/shoes_new/pureflow/connect.png" alt="Connect Badge" width="60" height="60">
 								 		</p>
 									</div>
 								 		
@@ -135,12 +134,13 @@
 						</div>
 						<div class="col-4 tab-4 mob-12 " >
 							<div class="horizontal-shoefinder-logo">
-											<img src="images/brooks-shoes--logo.png" alt="">
+											<img src="/images/brooks-shoes--logo.png" alt="">
 										</div>
 						</div>
 				</div>
 		</div>
 </section>
+
 
 </section>
 @endsection

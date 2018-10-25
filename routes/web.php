@@ -105,3 +105,7 @@ Route::get('/track-your-order', 'quickhelpController@track_your_order');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
+
+
+/* Shoes pages */
+Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
