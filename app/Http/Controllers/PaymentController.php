@@ -584,25 +584,20 @@ class PaymentController extends Controller
                     </Phones>
                 </Contacts>
                 <OrderDetails>";  
-      echo "<pre>";
-      print_r($this->order);
-      echo "</pre>"; 
-      dd($xml_data);
-
-
-     /*
+    
+     
         $i = 0;
 
         $subtotal = 0;
-        foreach ($order_item as $order) {
+        foreach ($this->order->orderItems as $item) {
 
-            $sku = $order['barcode'];
-            $qty = $order['qty'];
-            $price = $order['price_sale'];
-            $value = $order['subtotal'];
-            $discount = ($order['coup_discount'] != 0) ? $order['coup_discount'] : 0;
-            $promo_code = $order['promo_code'];
-            $promo_string = $order['promo_string'];
+            $sku = $item->variant->barcode;
+            $qty = $item->qty;
+            $price = $item->price_sale;
+            $value = $qty * $price;
+            //$discount = ($order['coup_discount'] != 0) ? $order['coup_discount'] : 0;
+            //$promo_code = $order['promo_code'];
+            //$promo_string = $order['promo_string'];
 
 
             $xml_data.="
@@ -612,7 +607,7 @@ class PaymentController extends Controller
                           <Price>$price</Price>";
 
 
-            if (!empty($discount)) {
+            /*if (!empty($discount)) {
                 $xml_data.="<Discounts> 
                                         <Discount>
                                             <DiscountType>ManualDiscount</DiscountType>
@@ -627,7 +622,7 @@ class PaymentController extends Controller
                 $xml_data.= "<Value>$discount</Value>
                                         </Discount>
                                     </Discounts>";
-            }
+            }*/
 
             $xml_data.=" <Value>$value</Value>
                         </OrderDetail>";
@@ -636,23 +631,23 @@ class PaymentController extends Controller
             $subtotal += $value;
         }
 
-        if (!empty($order_data['shipping_charges']) && $order_data['shipping_charges'] != 0) {
+        if (!empty($this->order->freight_cost) && $this->order->freight_cost != 0) {
             $xml_data.="<OrderDetail>
                                   <SkuId>2542</SkuId>
                                   <Quantity>1</Quantity>
-                                  <Price>" . $order_data['shipping_charges'] . "</Price> 
-                                  <Value>" . $order_data['shipping_charges'] . "</Value>
+                                  <Price>" . $this->order->freight_cost . "</Price> 
+                                  <Value>" . $$this->order->freight_cost . "</Value>
                                 </OrderDetail>";
-            $subtotal += $order_data['shipping_charges'];
+            $subtotal += $this->order->freight_cost;
         }
 
         $xml_data.="
                 </OrderDetails>";
         $xml_data.="<Payments>";
-        $gift_data = $this->voucher->giftVoucherGvvalid($this->_app21_url, $this->_country_code, $order_id);
+        //$gift_data = $this->voucher->giftVoucherGvvalid($this->_app21_url, $this->_country_code, $order_id);
 
 
-        if ($gift_data) {
+        /*if ($gift_data) {
 
             $gift_amount = $order_data['gift_amount'];
             $subtotal = $subtotal - $gift_amount;
@@ -667,7 +662,7 @@ class PaymentController extends Controller
 
 
             $subtotal = number_format($subtotal, 2);
-        }
+        }*/
 
         $xml_data.="<PaymentDetail>
                             <Id>7781</Id>
@@ -678,8 +673,8 @@ class PaymentController extends Controller
                             <AccountType/>
                             <Settlement>20111129</Settlement>";
 
-        if (!empty($order_data['nab_trans_id'])) {
-            $xml_data.="<Reference>" . $order_data['nab_trans_id'] . "</Reference>";
+        if (!empty($this->order->nab_trans_id)) {
+            $xml_data.="<Reference>" . $this->order->nab_trans_id . "</Reference>";
         } else {
             $xml_data.="<Reference>Ref1</Reference>";
         }
@@ -689,8 +684,75 @@ class PaymentController extends Controller
         $xml_data.="</PaymentDetail>";
         $xml_data.="</Payments>";
 
-        $xml_data.="</Order>";*/
+        $xml_data.="</Order>";
+        $this->order->updateOrder_xml($xml_data);
+        $response = $this->bridge->processOrder($person_id,$person_xml);
     
+        $returnCode =  $response->getStatusCode();
+        switch ($returnCode) {
+            case 201:
+                //print_r($response->getBody());
+                //$person_id = $response_xml->Person->Id;
+                $app21_order = $this->order->id;
+                $order_url =env('app21_url') . "/Persons/$person_id/Orders/$app21_order?countryCode=AUFIT";
+
+                $returnVal = $app21_order;
+                $logger = array(
+                    'order_id'      => $this->order->id,
+                    'log_title'     => 'Order',
+                    'log_type'      => 'Response',
+                    'log_status'    => '201 Order Created',
+                    'result'        =>  $response->getBody(),
+                    'xml'           =>  $xml_data
+                );
+                
+                Order_log::createNew($logger);
+
+                $orderDataUpdate = array(
+                    'status' => 'Completed',
+                    'app21_order' => $returnVal,
+                    'app21_order_status' => date('Y-m-d H:i:s')
+                );
+                Order::where('id', $this->order->id)
+                ->update($orderDataUpdate);
+
+                break;
+            case 400 :
+
+                $returnVal = false;
+                $logger = array(
+                    'order_id'      => $this->order->id,
+                    'log_title'     => 'Order',
+                    'log_type'      => 'Response',
+                    'log_status'    => '400 Order exists',
+                    'result'        =>  $response->getBody(),
+                );
+                Order_log::createNew($logger);
+                $this->alert->ap21_error($order_id, 'Order Exists', $URL, $returnVal, $xml_data); // Send ap21 alert 
+
+                break;
+
+            default:
+
+            $returnVal = false;
+            $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                $logger = array(
+                    'order_id'      => $this->order->id,
+                    'log_title'     => 'Order',
+                    'log_type'      => 'Response',
+                    'log_status'    => 'Error While Creating Order',
+                    'result'        =>  $result,
+                );
+                Order_log::createNew($logger);
+                //$this->alert->ap21_error($order_id, 'Create Order Error', $URL, $returnVal, $xml_data); // Send ap21 alert 
+                // Send ap21 alert  
+
+                $returnVal = false;
+
+                break;
+        }
+       
+        return $returnVal;
     }
 
     

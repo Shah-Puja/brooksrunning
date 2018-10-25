@@ -35,5 +35,10 @@ class AP21Bridge implements BridgeInterface {
 		return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data , 'http_errors' => false]);
 	}
 
+	public function processOrder($PersonId,$data)
+	{
+		return $this->apiClient->post('Persons/'.$PersonId.'/Orders/?countryCode=AUFIT', ['body' => $data , 'http_errors' => false]);
+	}
+
 }
 
