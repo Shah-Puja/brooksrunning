@@ -32,7 +32,7 @@ class AP21Bridge implements BridgeInterface {
 
 	public function processPerson($data)
 	{
-		return $this->apiClient->put('Persons/?countryCode=AUFIT', ['body' => $data ,'http_errors' => false]);
+		return $this->apiClient->put('Persons/?countryCode=AUFIT', ['body' => $data]);
 	}
 
 }
