@@ -467,12 +467,9 @@ class PaymentController extends Controller
         echo $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
-                    preg_match('/Location:(.*?)\n/', $response->getBody(), $matches);
-                    $location = $matches[1];
-                    $str_arr = explode("/", $location);
-                    $last_seg = $str_arr[count($str_arr) - 1];
-                    $last_seg_arr = explode("?", $last_seg);
-                    $person_id = $last_seg_arr[0];
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $person_id = $response_xml->Person->Id;
+                    
 
                     echo $returnVal = $person_id;
 
