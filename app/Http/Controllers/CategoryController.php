@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Shoe_mast;
 
 class CategoryController extends Controller
 {
@@ -85,7 +86,44 @@ class CategoryController extends Controller
     public function walking_shoes(){
         return view('customer.walking-shoes');
     }
-    public function sale(){
-        return view('customer.running-shoes-and-apparel-sale');
+
+    public function shoes_detail($shoe_name=''){
+
+        if ($shoe_name == "glycerin" || $shoe_name == "adrenaline-gts" || $shoe_name == "ghost" || 
+            $shoe_name == "transcend" || $shoe_name == "launch" || $shoe_name == "aduro" || $shoe_name == "revel" ||
+            $shoe_name == "ravenna" || $shoe_name == "beast" || $shoe_name == "ariel" || $shoe_name == "hyperion" ||
+            $shoe_name == "neuro" || $shoe_name == "asteria" || $shoe_name == "addiction" || $shoe_name == "purecadence" ||
+            $shoe_name == "pureflow" || $shoe_name == "mazama" || $shoe_name == "cascadia" || $shoe_name == "cascadia-gtx" ||
+            $shoe_name == "ghost-gtx" || $shoe_name == "puregrit" || $shoe_name == "caldera" || $shoe_name == "vapor" ||
+            $shoe_name == "defyance" || $shoe_name == "dyad" || $shoe_name == "adrenaline-asr") {
+
+                if ($shoe_name == "adrenaline-gts" || $shoe_name == "cascadia-gtx" || $shoe_name == "ghost-gtx") {
+                    if (strpos($shoe_name, '-') !== false) {
+                        $shoename = explode("-",$this->get_str_conv_upper($shoe_name));
+                        $shoe_name = implode(" ",$shoename);
+
+                    }
+                }
+                // print_r($shoe_name);
+                // exit;
+            $shoe_info = shoe_mast::where(['shoe_name'=> $shoe_name])->first();
+            return view('customer.shoe-main', compact('shoe_info') );
+
+        }
+        
+    }
+
+    function get_str_conv_upper($shoe_name = "") {
+        $shoe_name_arr = explode('-', $shoe_name);
+        $shoe_name_arr_final = array();
+        foreach ($shoe_name_arr as $shoe_key => $shoe_arr) {
+            if ($shoe_key == 0) {
+                $shoe_name_arr_final[] = $shoe_arr;
+            } else {
+                $shoe_name_arr_final[] = (strlen($shoe_arr) < 4) ? strtoupper($shoe_arr) : $shoe_arr;
+            }
+        }
+        $shoe_name = implode('-', $shoe_name_arr_final);
+        return $shoe_name;
     }
 }
