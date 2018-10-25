@@ -7,10 +7,10 @@
 				<!-- for different banner ipad and mobile
 					<picture>
 					    <source media="(max-width: 595px)" srcset="images/home/82018_Wave8_HP_FW_1b_SM.jpg">
-					    <img src="/images/home/82018_Wave8_HP_FW_1b_BIG.jpg" alt="Header Images">
+					    <img src="images/home/82018_Wave8_HP_FW_1b_BIG.jpg" alt="Header Images">
 				    </picture>
 			    -->
-				<img src="/images/competition/banner.jpg" width="100%" alt="competetion">
+				<img src="images/competition/banner.jpg" width="100%" alt="competetion">
 			</div>
 		</div>
 	</div>

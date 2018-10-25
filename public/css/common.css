@@ -123,7 +123,7 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-.run-signature--work .work-wrapper, .run-signature--patti, .about-container--info h5, .about-container--info h4, .about-container .accordian-tab label, .contact-us--container .quick-help--link li, .success-container--footer .form-container .form-info p span, .success-container--footer .form-container .form-info p.main, .success-container--footer .header h3, .payment-container .payment-afterpay .payment-schedule ul li p span, .payment-container .payment-afterpay h3, .shipping-right--container .shipping-form .email-msg, .edit-cart--popup .bold-font, .cart-breadcrumb--header .cart-header--step ul li.active, .cart-breadcrumb--header .cart-header--step ul li.step, .afterpay--popup .heading, .size-chart--popup .size-chart--bras .info h4, .pdp-container--benefits .module-additional .info h4, .pdp-container--benefits .module-additional .heading h3, .pdp-info--wrapper .pdp-info .info-wrapper .specs__row .label--bold, .pdp-container--offer ul li a, .pdp-container--offer h3, .pdp-container--info .main, .pdp-container--info .heading-wrapper .price, .plp-load-more a, .plp-wrapper-container .plp-wrapper__sub .plp-product .info .price, .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3, .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .plp-mob--info, .plp-filter--wrapper .filter-menu .label, .plp-filter--wrapper .filter-heading a, .plp-filter--wrapper .filter-heading h3, .order-history--product .bold, .product-info-mob, .create-account--right .info h4, .homepage-footer .info p.big, .homepage-gray--container .info-wrapper a, .homepage-gray--container .new-arrival--container, .overgray-wrapper .info-wrapper a, .overgray-wrapper .img-wrapper h3, .bottom-signup .btn, .bottom-signup h3, .footer-social h3, .footer-navbar .footer-navbar-info .tab-header label h3, .mobile-navbar > li > a, .mobile-navbar li.menu-active > a, .desktop-navigation .main .desktop-navigation--sub .nav-wrapper .submenu-main, .desktop-navigation .main .desktop-navigation--sub .header-menu--btn p, .header-desktop .header-desktop--right, .cart-popup-desktop .cart-popup-info .total, .tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
+.run-signature--work .work-wrapper, .run-signature--patti, .about-container--info h5, .about-container--info h4, .about-container .accordian-tab label, .contact-us--container .quick-help--link li, .success-container--footer .form-container .form-info p span, .success-container--footer .form-container .form-info p.main, .success-container--footer .header h3, .payment-container .payment-afterpay .payment-schedule ul li p span, .payment-container .payment-afterpay h3, .shipping-right--container .shipping-form .email-msg, .edit-cart--popup .bold-font, .cart-breadcrumb--header .cart-header--step ul li.active, .cart-breadcrumb--header .cart-header--step ul li.step, .afterpay--popup .heading, .size-chart--popup .size-chart--bras .info h4, .pdp-container--benefits .module-additional .info h4, .pdp-container--benefits .module-additional .heading h3, .pdp-info--wrapper .pdp-info .info-wrapper .specs__row .label--bold, .pdp-container--offer ul li a, .pdp-container--offer h3, .pdp-container--info .main, .pdp-container--info .heading-wrapper .price, .plp-load-more a, .plp-wrapper-container .plp-wrapper__sub .plp-product .info .price, .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3, .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .plp-mob--info, .plp-filter--wrapper .filter-menu .label, .plp-filter--wrapper .filter-heading a, .plp-filter--wrapper .filter-heading h3, .order-history--product .bold, .product-info-mob, .create-account--right .info h4, .homepage-footer .info p.big, .homepage-gray--container .info-wrapper a, .homepage-gray--container .new-arrival--container, .overgray-wrapper .info-wrapper a, .overgray-wrapper .img-wrapper h3, .bottom-signup .btn, .bottom-signup h3, .footer-social h3, .footer-navbar .footer-navbar-info .tab-header label h3, .mobile-navbar > li > a, .mobile-navbar li.menu-active > a, .desktop-navigation .main .desktop-navigation--sub .nav-wrapper .submenu-main, .desktop-navigation .main .desktop-navigation--sub .header-menu--btn p, .header-desktop .header-desktop--right, .header-desktop .search-container .search-wrapper .search--container .info-wrapper a, .header-desktop .search-container .search-wrapper .search--container .new-arrival--container, .cart-popup-desktop .cart-popup-info .total, .tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -1709,6 +1709,118 @@ textarea {
   border-radius: 0 6px 6px 0;
   outline: 0;
 }
+.header-desktop .search-container .search-wrapper .search--container {
+  background-color: #ffffff;
+  padding-top: 10px;
+}
+.header-desktop .search-container .search-wrapper .search--container .homepage-new--arrival {
+  padding-bottom: 30px;
+}
+.header-desktop .search-container .search-wrapper .search--container .homepage-new--arrival .main-heading {
+  border-top: 1px solid #d3d0cd;
+  color: #0263f7;
+  margin-top: 15px;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container {
+  display: block;
+  position: relative;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel {
+  width: calc(100% - 80px);
+  margin: auto;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive {
+  padding: 10px;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
+  margin: 0px;
+  text-align: center;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price {
+  margin: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
+  text-decoration: none;
+  color: #b9161e;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price span.black {
+  text-decoration: line-through;
+  color: #000000;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  cursor: pointer;
+  left: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #91a1b3;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style.icon-next-arrow.next {
+  right: 0 !important;
+  left: auto !important;
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper {
+  padding: 0 15px;
+  margin-top: -10px;
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper .br-heading {
+  margin: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper .br-heading {
+    font-size: 20px !important;
+  }
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper p {
+  margin: 10px 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper p {
+    font-size: 12px !important;
+  }
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper a {
+  display: inline-block;
+  font-size: 15px;
+  color: #0263f7;
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper a:hover {
+  color: #00d3d6;
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper a:hover #br-home {
+  content: url(../images/home/link-arrow-lightblue--icon.png);
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper a img {
+  width: 14px;
+  vertical-align: baseline;
+  display: inline-block;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper a {
+    font-size: 13px !important;
+  }
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper a img {
+    width: 12px;
+  }
+}
+.header-desktop .search-container .search-wrapper .search--container .info-wrapper .right-link {
+  margin-left: 50px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper .right-link {
+    margin-left: 8px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .info-wrapper {
+    padding: 0 5px;
+  }
+}
 .header-desktop .header-desktop--left {
   position: relative;
 }
@@ -1806,6 +1918,48 @@ textarea {
   padding: 5px 0;
 }
 .header-desktop .header-desktop--right .top .header-utality li:hover .header-utality__submenu {
+  display: block;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu {
+  display: none;
+  text-align: left;
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #d3d0cd;
+  border-top: 0;
+  padding-top: 5px;
+  padding: 5px 5px;
+  width: 110px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li {
+  padding: 5px 0;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-phone {
+  background-image: url(../images/interface/icon-phone.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-phone a {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-email {
+  background-image: url(../images/interface/icon-email.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top: 1px;
+  padding-bottom: 5px;
+}
+.header-desktop .header-desktop--right .top .header-utality li .header-utality__Helpsubmenu li #support-email a {
+  display: block;
+  margin: 5px 0;
+  font-size: 12px;
+}
+.header-desktop .header-desktop--right .top .header-utality li:hover .header-utality__Helpsubmenu {
   display: block;
 }
 .header-desktop .header-desktop--right .bottom {

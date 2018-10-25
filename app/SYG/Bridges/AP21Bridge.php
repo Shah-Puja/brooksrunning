@@ -24,6 +24,14 @@ class AP21Bridge implements BridgeInterface {
 	{
 		return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
 	}
+	
+	public function getPersonid($email)
+	{
+		$response =  $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email);
+		$status_code =  $response->getStatusCode();
+		$data =  $response->getBody()->getContents();
+		return array('code'=> $status_code , 'data' => $data);
+	}
 
 }
 

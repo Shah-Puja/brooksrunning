@@ -36,6 +36,7 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 
 
 Route::post('/subscribers/new', 'SubscriberController@store');
@@ -44,6 +45,7 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
 Route::get('/find-a-store', 'InfoController@find_a_store');
+Route::get('/help', 'InfoController@help');
 Route::get('/shoe-finder', 'InfoController@shoe_finder');
 Route::get('/returns-exchange', 'InfoController@returns_exchange');
 Route::get('/shipping-information', 'InfoController@shipping_information');
@@ -51,16 +53,21 @@ Route::get('/terms-conditions', 'InfoController@terms_conditions');
 Route::get('/terms-of-use', 'InfoController@terms_of_use');
 Route::get('/newsletter', 'InfoController@newsletter_signup');
 Route::get('/events', 'InfoController@events');
+Route::get('/help', 'InfoController@help');
+Route::get('/privacy', 'InfoController@privacy');
+Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks static pages */
-Route::get('/meet_brooks/newsletter', 'meet_brooksController@newsletter');
-Route::get('/meet_brooks/injury-prevention', 'meet_brooksController@injury_prevention');
-Route::get('/meet_brooks/newsletter', 'meet_brooksController@newsletter');
-Route::get('/meet_brooks/run_happy_is', 'meet_brooksController@run_happy_view');
-Route::get('/meet_brooks/run-signature', 'meet_brooksController@run_signature');
-Route::get('/meet_brooks/technology', 'meet_brooksController@technology');
-Route::get('/meet_brooks/training-tips', 'meet_brooksController@training_tips');
-Route::get('/meet_brooks/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
+Route::get('/competition', 'meet_brooksController@competition');
+Route::get('/newsletter', 'meet_brooksController@newsletter');
+Route::get('/injury-prevention', 'meet_brooksController@injury_prevention');
+Route::get('/newsletter', 'meet_brooksController@newsletter');
+Route::get('/run_happy_is', 'meet_brooksController@run_happy_view');
+Route::get('/run-signature', 'meet_brooksController@run_signature');
+Route::get('/hello', 'meet_brooksController@hello');
+Route::get('/technology', 'meet_brooksController@technology');
+Route::get('/training-tips', 'meet_brooksController@training_tips');
+Route::get('/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
 
 
 Route::get('/shipping','BillingShippingController@create');
@@ -82,6 +89,7 @@ Route::get('/trail-running-shoes', 'CategoryController@trail_running_shoes');
 Route::get('/competition-running-shoes', 'CategoryController@competition_running_shoes');
 Route::get('/cross-trainer-shoes', 'CategoryController@cross_trainer_shoes');
 Route::get('/walking-shoes', 'CategoryController@walking_shoes');
+Route::get('/running-shoes-and-apparel-sale', 'CategoryController@sale');
 
 Route::post('/afterpay', 'PaymentController@create_token'); 
 
@@ -95,6 +103,8 @@ Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
 Route::get('/account-personal', 'MyaccountController@account_personal');
 
+/* shoefinder page */
+Route::get('/shoefinder', 'ShoefinderController@shoefinder');
 
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');

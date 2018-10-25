@@ -38,5 +38,9 @@ class meet_brooksController extends Controller
     {
         return view( 'meet_brooks.what_makes_us_tick');
     }
+    public function hello()
+    {
+        return view( 'meet_brooks.hello');
+    }
 }
 
