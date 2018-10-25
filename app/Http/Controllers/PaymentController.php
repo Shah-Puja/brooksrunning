@@ -302,32 +302,10 @@ class PaymentController extends Controller
             ->update($orderDataUpdate);
 			
 			//ap21 order process 
-
-            $response =  $this->bridge->getPersonid($this->order->address->email);
-            $returnCode =  $response->getStatusCode();
-            switch ($returnCode) {
-                case '200':
-                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    $userid = $response_xml->Person->Id;
-                    Order_log::createnew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid);
-                    $returnVal = $userid; 
-                    break;
-
-                case '404':
-                    $userid = $this->create_user();
-                    $returnVal = $userid;
-                    break;
-
-                default:
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
-                    Order_log::createnew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result);
-                    // Logger
-                    //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
-                    // Send ap21 alert  
-                    $returnVal = false;
-                    break;
+            $PersonID = $this->get_personid($this->order->address->email);
+            if(!empty($PersonID)){
+                $this->ap21order($PersonID);
             }
-            
             return true;
         }
     
@@ -393,7 +371,50 @@ class PaymentController extends Controller
         return $transaction_status; 
     }
 
+    
+    public function get_personid($email){
+       
+        $response =  $this->bridge->getPersonid($email);
+            $returnCode =  $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'Person Id Found',
+                        'result'        =>  $userid,
+                    );
+                    Order_log::createNew($logger);
+                    $returnVal = $userid; 
+                    break;
 
+                case '404':
+                    $userid = $this->create_user();
+                    break;
+
+                default:
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'Error While Getting Person ID',
+                        'result'        =>  $result,
+                    );
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
+                    Order_log::createNew($logger);
+                    // Logger
+                    //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
+                    // Send ap21 alert  
+                    $userid = false;
+                    break;
+            }
+        return $userid;
+
+    }
     public function create_user(){
 
         $fullname = $this->order->address->b_fname.' '.$this->order->address->b_lname;
@@ -439,8 +460,237 @@ class PaymentController extends Controller
                         </Addresses>
                       </Person>";
 
-        dd($person_xml);
+        $response = $this->bridge->processPerson($person_xml);
+        $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
+        $logger = array(
+            'order_id'      => $this->order->id,
+            'log_title'     => 'Person',
+            'log_type'      => 'Response',
+            'log_status'    => 'Generate Person XML',
+            'result'        => 'Created Person xml and submitted to app21 url:- ' . $URL,
+            'xml'           => $person_xml
+        );
+        Order_log::createNew($logger);
+        $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $response_xml = @simplexml_load_string($response->getBody());
+                    print_r($response_xml);
+                    //$person_id = $response_xml->Person->Id;
+                    
 
+                    $person_id = '115414';
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => '201 Person ID Created',
+                        'result'        =>  $person_id,
+                    );
+                    Order_log::createNew($logger);
+                     //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
+                    // Logger
+
+                    $returnVal = $person_id;
+
+                   
+                    break;
+
+                default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'Error While Creating Person ID',
+                        'result'        =>  $result,
+                    );
+                    Order_log::createNew($logger);
+                    $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                    // Send ap21 alert  
+
+                    $returnVal = false;
+
+                    break;
+        }
+       
+        return  $returnVal;
+    }
+
+    public function ap21order($person_id){
+        
+        $returnVal = false;
+        $returnData = array();
+        $returnOrderNum = $this->order->id;
+        $OrderNum = $this->order->order_no;
+        $add_description = '';
+        $ordernum = "BRN-" . $OrderNum;
+
+        /*if (!empty($order_data['coupon_code'])) {
+            $add_description .= ' Coupon Code :- ' . $order_data['coupon_code'];
+        }
+
+        if (!empty($order_data['giftcert_code'])) {
+            $add_description .= ' Gift Code :- ' . $order_data['giftcert_code'];
+        }*/
+
+        if (!empty($this->order->nab_trans_id)) {
+            $add_description .= ' Transaction Id :- ' . $this->order->nab_trans_id;
+        }
+
+        $fullname = $this->order->address->b_fname.' '.$this->order->address->b_lname;
+        $fname = $this->order->address->s_fname;
+        $lname = $this->order->address->s_lname;
+        $returnVal = false;
+        $returnData = '';
+
+        if (!empty($fname) && !empty($lname)) {
+
+            $firstname = $fname;
+            $lastname = $lname;
+        } else {
+            list($firstname, $lastname) = explode(' ', $fullname);
+        }
+
+        $xml_data = "
+                <Order>
+                <PersonId>$person_id</PersonId>
+                <OrderNumber>" . $ordernum . "</OrderNumber>";
+        $xml_data.="<DeliveryInstructions>" . $add_description . "</DeliveryInstructions>";
+        $xml_data.="<Addresses>
+                    <Billing>
+                      <ContactName>" . htmlspecialchars(((isset($fullname) && $fullname != "") ? $fullname : "")) . "</ContactName>
+                      <AddressLine1>" . htmlspecialchars(((isset($this->order->address->b_add1) && $this->order->address->b_add1 != "") ? $this->order->address->b_add1 : $this->order->address->s_add1)) . "</AddressLine1>
+                      <AddressLine2>" . htmlspecialchars(((isset($this->order->address->b_add2) && $this->order->address->b_add2 != "") ? $this->order->address->b_add2 : $this->order->address->s_add2)) . "</AddressLine2>
+                      <City>" . htmlspecialchars(((isset($this->order->address->b_city) && $this->order->address->b_city != "") ? $this->order->address->b_city : $this->order->address->s_city)) . "</City>
+                      <State>" . htmlspecialchars(((isset($this->order->address->b_state) && $this->order->address->b_state != "") ? $this->order->address->b_state : $this->order->address->s_state)) . "</State>
+                      <Postcode>" . htmlspecialchars(((isset($this->order->address->b_postcode) && $this->order->address->b_postcode != "") ? $this->order->address->b_postcode : $this->order->address->s_postcode)) . "</Postcode>
+                      <Country></Country>
+                    </Billing>
+                    <Delivery>
+                      <ContactName>" . htmlspecialchars($this->order->address->s_fname) . " " . $this->order->address->s_lname . "</ContactName>
+                      <AddressLine1>" . htmlspecialchars($this->order->address->s_add1) . "</AddressLine1>
+                      <AddressLine2>" . htmlspecialchars($this->order->address->s_add2) . "</AddressLine2>
+                      <City>" . htmlspecialchars($this->order->address->s_city) . "</City>
+                      <State>" . htmlspecialchars($this->order->address->s_state) . "</State>
+                      <Postcode>" . htmlspecialchars($this->order->address->s_postcode) . "</Postcode>
+                      <Country></Country>
+                    </Delivery>
+                </Addresses>
+                <Contacts>
+                    <Email>" . $this->order->address->email . "</Email>
+                    <Phones>
+                        <Home>" . $this->order->address->s_phone . "</Home>
+                    </Phones>
+                </Contacts>
+                <OrderDetails>";  
+      echo "<pre>";
+      print_r($this->order);
+      echo "</pre>"; 
+      dd($xml_data);
+
+
+     /*
+        $i = 0;
+
+        $subtotal = 0;
+        foreach ($order_item as $order) {
+
+            $sku = $order['barcode'];
+            $qty = $order['qty'];
+            $price = $order['price_sale'];
+            $value = $order['subtotal'];
+            $discount = ($order['coup_discount'] != 0) ? $order['coup_discount'] : 0;
+            $promo_code = $order['promo_code'];
+            $promo_string = $order['promo_string'];
+
+
+            $xml_data.="
+                        <OrderDetail>
+                          <SkuId>$sku</SkuId>
+                          <Quantity>$qty</Quantity>
+                          <Price>$price</Price>";
+
+
+            if (!empty($discount)) {
+                $xml_data.="<Discounts> 
+                                        <Discount>
+                                            <DiscountType>ManualDiscount</DiscountType>
+                                            <DiscountTypeId>1</DiscountTypeId>
+                                            <ReasonId>720</ReasonId>>";
+
+                if ($promo_code == 'BROOKS30' && $promo_string != ''):
+                    $xml_data.="<Description>$promo_string</Description>";
+                else:
+                    $xml_data.="<Description>$promo_code</Description>";
+                endif;
+                $xml_data.= "<Value>$discount</Value>
+                                        </Discount>
+                                    </Discounts>";
+            }
+
+            $xml_data.=" <Value>$value</Value>
+                        </OrderDetail>";
+            $i++;
+
+            $subtotal += $value;
+        }
+
+        if (!empty($order_data['shipping_charges']) && $order_data['shipping_charges'] != 0) {
+            $xml_data.="<OrderDetail>
+                                  <SkuId>2542</SkuId>
+                                  <Quantity>1</Quantity>
+                                  <Price>" . $order_data['shipping_charges'] . "</Price> 
+                                  <Value>" . $order_data['shipping_charges'] . "</Value>
+                                </OrderDetail>";
+            $subtotal += $order_data['shipping_charges'];
+        }
+
+        $xml_data.="
+                </OrderDetails>";
+        $xml_data.="<Payments>";
+        $gift_data = $this->voucher->giftVoucherGvvalid($this->_app21_url, $this->_country_code, $order_id);
+
+
+        if ($gift_data) {
+
+            $gift_amount = $order_data['gift_amount'];
+            $subtotal = $subtotal - $gift_amount;
+
+            $xml_data.=" <PaymentDetail>
+                                <Origin>GiftVoucher</Origin>
+                                <VoucherNumber>" . $gift_data['VoucherNumber'] . "</VoucherNumber>
+                                <ValidationId>" . $gift_data['ValidationId'] . "</ValidationId>
+                                <Amount>" . $gift_amount . "</Amount>
+                            </PaymentDetail>";
+
+
+
+            $subtotal = number_format($subtotal, 2);
+        }
+
+        $xml_data.="<PaymentDetail>
+                            <Id>7781</Id>
+                            <Origin>CreditCard</Origin>
+                            <CardType>MASTERCARD / VISA</CardType>
+                            <Stan>986516</Stan>
+                            <AuthCode/>
+                            <AccountType/>
+                            <Settlement>20111129</Settlement>";
+
+        if (!empty($order_data['nab_trans_id'])) {
+            $xml_data.="<Reference>" . $order_data['nab_trans_id'] . "</Reference>";
+        } else {
+            $xml_data.="<Reference>Ref1</Reference>";
+        }
+
+        $xml_data.="<Amount>" . $subtotal . "</Amount>";
+        $xml_data.="<Message>payment_statusCURRENTbank_</Message>";
+        $xml_data.="</PaymentDetail>";
+        $xml_data.="</Payments>";
+
+        $xml_data.="</Order>";*/
+    
     }
 
     
