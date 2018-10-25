@@ -1,10 +1,10 @@
 <div class="product-wrapper">
     @if ( $cart->items_count > 0 )
     @foreach($cart->cartItems as $cartItem)
-    @php //echo "<pre>";print_r($cartItem); @endphp
+    @php //echo "<pre>";print_r($cartItem->variant->product->image); @endphp
     <div class="product clearfix">
         <div class="product-img">
-            <img src="images/apparel/apparel1-details.jpg" alt="">
+            <img src="{{ $cartItem->variant->product->image->image1Small() }}" />
         </div>
         <div class="product-info">
             <p class="blue">{{ $cartItem->variant->product->stylename }}</p>
