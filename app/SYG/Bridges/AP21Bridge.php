@@ -29,7 +29,7 @@ class AP21Bridge implements BridgeInterface {
 	{
 		$response =  $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email);
 		$status_code =  $response->getStatusCode();
-		$data =  $response->getBody();
+		$data =  $response->getBody()->getContents();
 		return array('code'=> $status_code , 'data' => $data);
 	}
 
