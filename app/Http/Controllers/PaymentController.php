@@ -309,7 +309,7 @@ class PaymentController extends Controller
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
                     $userid = $response_xml->Person->Id;
-                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid);
+                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Person Id Found', $userid,'','','');
                     $returnVal = $userid; 
                     break;
 
@@ -320,7 +320,7 @@ class PaymentController extends Controller
 
                 default:
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
-                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result);
+                    Order_log::createNew($this->order->id, 'Person', 'Response', 'Error While Getting Person ID', $result,'','','');
                     // Logger
                     //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
                     // Send ap21 alert  
@@ -441,7 +441,7 @@ class PaymentController extends Controller
 
         $response = $this->bridge->processPerson($person_xml);
         $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
-        Order_log::createNew($this->order->id,'Person', 'Response', 'Generate Person XML', 'Created Person xml and submitted to app21 url:- ' . $URL, $person_xml);
+        Order_log::createNew($this->order->id,'Person', 'Response', 'Generate Person XML', 'Created Person xml and submitted to app21 url:- ' . $URL, $person_xml,'','');
         $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
