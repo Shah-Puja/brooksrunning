@@ -374,7 +374,7 @@ class PaymentController extends Controller
     
     public function get_personid($email){
        
-        $response =  $this->bridge->getPersonid($email);
+        $response =  $this->bridge->getPersonid($email);        
             $returnCode =  $response->getStatusCode();
             $userid = false;
             switch ($returnCode) {
@@ -461,6 +461,8 @@ class PaymentController extends Controller
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
+        print_r($response);
+        exit;
         $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
         $logger = array(
             'order_id'      => $this->order->id,
@@ -475,7 +477,7 @@ class PaymentController extends Controller
             switch ($returnCode) {
                 case 201:
                     $response_xml = @simplexml_load_string($response->getBody());
-                    print_r($response_xml);
+                    //print_r($response_xml);
                     //$person_id = $response_xml->Person->Id;
                     
 
