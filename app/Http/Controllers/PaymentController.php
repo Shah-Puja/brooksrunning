@@ -686,7 +686,7 @@ class PaymentController extends Controller
 
         $xml_data.="</Order>";
         $this->order->updateOrder_xml($xml_data);
-        $response = $this->bridge->processOrder($person_id,$person_xml);
+        $response = $this->bridge->processOrder($person_id,$xml_data);
     
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
@@ -705,7 +705,7 @@ class PaymentController extends Controller
                     'result'        =>  $response->getBody(),
                     'xml'           =>  $xml_data
                 );
-                
+
                 Order_log::createNew($logger);
 
                 $orderDataUpdate = array(
