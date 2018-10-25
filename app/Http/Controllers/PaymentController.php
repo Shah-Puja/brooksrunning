@@ -730,7 +730,7 @@ class PaymentController extends Controller
                     'result'        =>  $response->getBody(),
                 );
                 Order_log::createNew($logger);
-                $this->alert->ap21_error($order_id, 'Order Exists', $URL, $returnVal, $xml_data); // Send ap21 alert 
+                //$this->alert->ap21_error($order_id, 'Order Exists', $URL, $returnVal, $xml_data); // Send ap21 alert 
 
                 break;
 
