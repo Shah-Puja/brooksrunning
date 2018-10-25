@@ -304,8 +304,7 @@ class PaymentController extends Controller
 			//ap21 order process 
 
             $response =  $this->bridge->getPersonid($this->order->address->email);
-            print_r($response);
-            echo $returnCode =  $response->getStatusCode();
+            $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
@@ -440,6 +439,42 @@ class PaymentController extends Controller
                         </Addresses>
                       </Person>";
 
+        $response = $this->bridge->processPerson($person_xml);
+        $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
+        Order_log::createNew($this->order->id,'Person', 'Response', 'Generate Person XML', 'Created Person xml and submitted to app21 url:- ' . $URL, $person_xml);
+        $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                     
+                      print_r($response->getBody());
+                   /* preg_match('/Location:(.*?)\n/', $output, $matches);
+
+                    $location = $matches[1];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_id = $last_seg_arr[0];
+
+                    $returnVal = $person_id;*/
+
+                    //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
+                    // Logger
+
+                    break;
+
+                default:
+                    /*$result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $output;
+
+                    $this->alert->order_log($this->_order_id, 'Person', 'Response', 'Error While Creating Person ID', $result);
+                    // Logger
+
+                    $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                    // Send ap21 alert  
+
+                    $returnVal = false;*/
+
+                    break;
+        }
         dd($person_xml);
 
     }
