@@ -304,7 +304,8 @@ class PaymentController extends Controller
 			//ap21 order process 
 
             $response =  $this->bridge->getPersonid($this->order->address->email);
-            $returnCode =  $response->getStatusCode();
+            print_r($response);
+            echo $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
@@ -327,7 +328,7 @@ class PaymentController extends Controller
                     $returnVal = false;
                     break;
             }
-            
+            exit;
             return true;
         }
     
