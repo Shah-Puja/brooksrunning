@@ -464,21 +464,17 @@ class PaymentController extends Controller
             'xml'           => $person_xml
         );
         Order_log::createNew($logger);
-        print_r($response);
         echo $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
-                     
-                      print_r($response->getBody());
-                   /* preg_match('/Location:(.*?)\n/', $output, $matches);
-
+                    preg_match('/Location:(.*?)\n/', $response->getBody(), $matches);
                     $location = $matches[1];
                     $str_arr = explode("/", $location);
                     $last_seg = $str_arr[count($str_arr) - 1];
                     $last_seg_arr = explode("?", $last_seg);
                     $person_id = $last_seg_arr[0];
 
-                    $returnVal = $person_id;*/
+                    echo $returnVal = $person_id;
 
                     //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
                     // Logger
