@@ -104,7 +104,7 @@ Route::get('/account-order-history', 'MyaccountController@account_order_history'
 Route::get('/account-personal', 'MyaccountController@account_personal');
 
 /* shoefinder page */
-Route::get('/shoefinder', 'ShoefinderController@shoefinder');
+Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
 
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
