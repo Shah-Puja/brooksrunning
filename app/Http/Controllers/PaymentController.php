@@ -303,8 +303,10 @@ class PaymentController extends Controller
 			
 			//ap21 order process 
 
-            $person_data =  $this->bridge->getPersonid($this->order->address->email)->getContents();
-            $code = $person_data->getStatusCode();
+            $response =  $this->bridge->getPersonid($this->order->address->email)->send();
+            $code = $response->getStatusCode();
+            $person_data = $response->getContents();
+            print_r($person_data);
             dd($code);
             
             return true;
