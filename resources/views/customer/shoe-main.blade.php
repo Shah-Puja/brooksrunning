@@ -42,7 +42,7 @@
 								@if(isset($shoe_info->shop_men) && $shoe_info->shop_men!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
-										<span><a class="secondary-button" href="#">Shop Men's</a></span>
+										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
 									</div>
 								</div>
 								@endif
@@ -58,7 +58,7 @@
 								@if(isset($shoe_info->shop_women) && $shoe_info->shop_women!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
-										<span><a class="secondary-button" href="#">Shop Women's</a></span>
+										<span><a class="secondary-button" href="/{{$shop_women_url}}">Shop Women's</a></span>
 									</div>
 								</div>
 								@endif
