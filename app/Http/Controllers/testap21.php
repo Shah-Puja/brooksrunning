@@ -15,7 +15,7 @@ public function create_order($person_id='115414'){
         $xml_data = "
         <Order>
         <PersonId>115414</PersonId>
-        <OrderNumber>BRN-2018test-2</OrderNumber>
+        <OrderNumber>BRN-2018-test-3</OrderNumber>
         <DeliveryInstructions></DeliveryInstructions>
         <Addresses>
             <Billing>
