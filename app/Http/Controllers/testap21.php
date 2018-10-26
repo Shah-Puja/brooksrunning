@@ -11,8 +11,78 @@ class testap21 extends Controller
 	{
         $this->bridge = $bridge;
     }
+public function create_order($person_id='115414'){               
+        $xml_data = "
+        <Order>
+        <PersonId>115414</PersonId>
+        <OrderNumber>BRN-</OrderNumber><DeliveryInstructions></DeliveryInstructions>
+        <Addresses>
+            <Billing>
+              <ContactName>test test</ContactName>
+              <AddressLine1>test</AddressLine1>
+              <AddressLine2>dd</AddressLine2>
+              <City>test</City>
+              <State>NSW</State>
+              <Postcode>2222</Postcode>
+              <Country></Country>
+            </Billing>
+            <Delivery>
+              <ContactName>test test</ContactName>
+              <AddressLine1>test</AddressLine1>
+              <AddressLine2>dd</AddressLine2>
+              <City>test</City>
+              <State>NSW</State>
+              <Postcode>2222</Postcode>
+              <Country></Country>
+            </Delivery>
+        </Addresses>
+        <Contacts>
+            <Email>abcsygtest@gmail.com</Email>
+            <Phones>
+                <Home>2222222222</Home>
+            </Phones>
+        </Contacts>
+        <OrderDetails>
+                <OrderDetail>
+                  <SkuId>202289</SkuId>
+                  <Quantity>1</Quantity>
+                  <Price>129.95</Price> <Value>129.95</Value>
+        </OrderDetail>
+        </OrderDetails>
+            <Payments>
+                <PaymentDetail>
+                    <Id>7781</Id>
+                    <Origin>CreditCard</Origin>
+                    <CardType>MASTERCARD / VISA</CardType>
+                    <Stan>986516</Stan>
+                    <AuthCode/>
+                    <AccountType/>
+                    <Settlement>20111129</Settlement>
+                    <Reference>Ref1</Reference>
+                    <Amount>129.95</Amount>
+                    <Message>payment_statusCURRENTbank_</Message>
+                </PaymentDetail>
+            </Payments>
+        </Order>         
+        ";
+    
+        $response = $this->bridge->processOrder($person_id,$xml_data);
+        print_r($response);
+        exit;
+    
+        $returnCode =  $response->getStatusCode();
+        switch ($returnCode) {
+            case 201:
+                break;
+            case 400 :
+                echo "Order Exist";
+                break;
+            default:
+                echo "HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                break;
+        }       
+    }
     public function create_user(){
-
         $person_xml="<Person>
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
