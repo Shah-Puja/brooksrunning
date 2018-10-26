@@ -12,7 +12,7 @@ class testap21 extends Controller
         $this->bridge = $bridge;
     }
 public function voucher_valid(){
-    $gift_id="200001005"; $pin="3164";$total=10;
+    $gift_id="200001005"; $pin="3164";$total=1000;
     //$gift_id="200001012"; $pin="2026";
     //$gift_id="200001029"; $pin="3649";
     //$gift_id="200001036"; $pin="923";
@@ -27,7 +27,19 @@ public function voucher_valid(){
     //$gift_id="200001128"; $pin="7572";
     
     $response = $this->bridge->vouchervalid($gift_id,$pin,$total);
+    $returnCode =  $response->getStatusCode();
     print_r($response);
+    switch ($returnCode) {
+            case 200:                
+                echo "Success : Gift Voucher is Valid";
+                break;
+            case 400 :
+                echo "Order Exist";
+                break;
+            default:
+                echo "HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                break;
+        }   
     exit;
 }  
 public function create_order($person_id='115414'){               
