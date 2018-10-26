@@ -113,9 +113,19 @@ Route::get('/faqs', 'quickhelpController@faqs');
 Route::get('/fit-sizing', 'quickhelpController@fit_sizing');
 Route::get('/track-your-order', 'quickhelpController@track_your_order');
 
+/* Shoes pages */
+Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
+
+Route::get('/neutral-running-shoes', 'CategoryController@neutral_category');
+// Route::get('/support-running-shoes', 'CategoryController@shoes_category');
+// Route::get('/trail-running-shoes', 'CategoryController@shoes_category');
+// Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
+// Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
+// Route::get('/walking-shoes', 'CategoryController@shoes_category');
+
+
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
 
-/* Shoes pages */
-Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shoe_mast;
 use App\Models\Product;
+use App\Models\Seo;
 
 class CategoryController extends Controller
 {
@@ -58,34 +59,43 @@ class CategoryController extends Controller
 
     public function womens_landing(){
         return view('customer.mens-running-shoes-and-clothing');
-   }
-   public function mens_landing(){
-    return view('customer.womens-running-shoes-and-clothing');
     }
-    public function shoes_category(){
-        return view('customer.shoes-category');
+    public function mens_landing(){
+        return view('customer.womens-running-shoes-and-clothing');
     }
     public function shoe_main(){
         return view('customer.shoe-main');
     }
 
-    public function neutral_running_shoes(){
-        return view('customer.neutral-running-shoes');
-    }
-    public function support_running_shoes(){
-        return view('customer.support-running-shoes');
-    }
-    public function trail_running_shoes(){
-        return view('customer.trail-running-shoes');
-    }
-    public function competition_running_shoes(){
-        return view('customer.competition-running-shoes');
-    }
-    public function cross_trainer_shoes(){
-        return view('customer.cross-trainer-shoes');
-    }
-    public function walking_shoes(){
-        return view('customer.walking-shoes');
+    // public function neutral_running_shoes(){
+    //     return view('customer.neutral-running-shoes');
+    // }
+    // public function support_running_shoes(){
+    //     return view('customer.support-running-shoes');
+    // }
+    // public function trail_running_shoes(){
+    //     return view('customer.trail-running-shoes');
+    // }
+    // public function competition_running_shoes(){
+    //     return view('customer.competition-running-shoes');
+    // }
+    // public function cross_trainer_shoes(){
+    //     return view('customer.cross-trainer-shoes');
+    // }
+    // public function walking_shoes(){
+    //     return view('customer.walking-shoes');
+    // }
+
+    public function neutral_category(){
+        $page_url = explode('/',$_SERVER['REQUEST_URI']);
+        $page_info = $this->get_page_info($page_url[1]);
+        $category = "neutral";
+        $shoes_category_product = $this->get_shoes_category_product($category);
+        echo "<pre>";
+        print_r($shoes_category_product);
+        echo "</pre>";
+        exit;
+        return view('customer.shoes-category');
     }
 
     public function shoes_detail($shoe_name=''){
@@ -160,5 +170,75 @@ class CategoryController extends Controller
         )->first();
     
         return $prod_info->seo_name;
+    }
+
+    public function get_page_info($page_url = ''){
+        $page_url .= '/';
+        $shoe_info = seo::where(['page_url'=> $page_url])->first();
+        $cnt = seo::where(['page_url'=> $page_url])->count();
+        if($cnt > 0){
+            $page_info = array(
+                "title" => $shoe_info->title_tag,
+                "meta_description" => $shoe_info->meta_description, 
+                "keywords" => $shoe_info->keywords,
+                "header_h1" => $shoe_info->header_h1, 
+                "header_text" => $shoe_info->header_text, 
+                "footer_h2" => $shoe_info->footer_h2, 
+                "footer_text" => $shoe_info->footer_text
+            );
+
+            return $page_info;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function get_shoes_category_product($category){
+        $result = Shoe_mast::where(['category'=> $category])->get();
+
+        foreach ($result as $res_data) {
+            if(!empty($res_data->prod_link)){
+                $prod_link = explode(",", $res_data->prod_link);
+				$shoes_product_m    = array();
+				$shoes_product_w    = array();
+                $shoe_cat_product    = array();
+                
+                foreach ($prod_link as $p_link) {
+					if(substr($p_link, 0,3) == 'men'){
+						array_push($shoes_product_m, $p_link);
+					}
+					if(substr($p_link, 0,5) == 'women'){
+						array_push($shoes_product_w, $p_link);
+					}
+                }
+                $shoe_cat_product[] = end($shoes_product_m);
+                $shoe_cat_product[] = end($shoes_product_w);
+                $data =[];
+                foreach ($shoe_cat_product as $cat_prod) {
+                    $prod  		=  explode("-", $cat_prod);
+					@$prod_id	= $prod[1];
+					@$color_code = $prod[2];
+                    $gender		= $prod[0];
+                    
+					if ($gender == 'women') {
+			            $gen = 'w';
+			        } else if ($gender == 'men') {
+			            $gen = 'm';
+                    }
+
+                    $data[] = Product::where("style",$prod_id)
+                            ->where("color_code",$color_code)
+                            ->whereHas('variants' , function($query)  {
+                                return $query->where('visible', '=', 'Yes');
+                            })->get();
+                }
+                
+            }
+        }
+         echo "<pre>";
+         print_r($data);
+         echo "</pre>";
+        exit;
     }
 }
