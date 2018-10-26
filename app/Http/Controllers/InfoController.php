@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class InfoController extends Controller
 {
+  public function index($pg){   
+   
+      return view( 'info.'.$pg);
+  }
+  /* remove this after testing
   public function about_us()
   {
       return view( 'info.about_us');
@@ -58,4 +63,5 @@ class InfoController extends Controller
   {
       return view( 'info.sitemap');
   }
+  */
 }

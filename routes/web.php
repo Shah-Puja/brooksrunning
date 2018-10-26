@@ -42,6 +42,9 @@ Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 /* info static pages */
+Route::get('/info/{pg}', 'InfoController@index');
+
+/* remove this after testing
 Route::get('/about-us', 'InfoController@about_us');
 Route::get('/contact-us', 'InfoController@contact_us');
 Route::get('/find-a-store', 'InfoController@find_a_store');
@@ -56,6 +59,7 @@ Route::get('/events', 'InfoController@events');
 Route::get('/help', 'InfoController@help');
 Route::get('/privacy', 'InfoController@privacy');
 Route::get('/sitemap', 'InfoController@sitemap');
+*/
 
 /* meet_brooks static pages */
 Route::get('/competition', 'meet_brooksController@competition');
