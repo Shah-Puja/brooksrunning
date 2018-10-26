@@ -17,7 +17,7 @@ class testap21 extends Controller
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
                         <Contacts>
-                          <Email>zh@syginteractive.com</Email>
+                          <Email>zi@syginteractive.com</Email>
                           <Phones>
                             <Home>11111</Home>
                           </Phones>
@@ -43,15 +43,7 @@ class testap21 extends Controller
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        print_r($response);
-        echo "<hr>";
-        print_r($response->getHeaders());   
-        echo "<hr>";
-        $location=$response->getHeader('Location')[0];
-        $str_arr = explode("/", $location);
-        $last_seg = $str_arr[count($str_arr) - 1];
-        $last_seg_arr = explode("?", $last_seg);
-        $person_id = $last_seg_arr[0];
+        
         echo "------------------".$person_id;
         
         exit;
@@ -59,9 +51,12 @@ class testap21 extends Controller
         $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
-                    $response_xml = @simplexml_load_string($response->getBody());
-                    print_r($response_xml);
-                    //$person_id = $response_xml->Person->Id;                                    
+                    $location=$response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
+                    echo "Success : PersonIDX is ".$person_idx;                    
                     break;
                 default:
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();                   
