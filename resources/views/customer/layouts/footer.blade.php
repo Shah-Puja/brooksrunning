@@ -23,13 +23,13 @@
 		                </label>
 		            </div>
 	            	<ul class="tab-content">
-	                    <li><a href="/contact-us">Contact Us</a></li>
-	                    <li><a href="/shipping-information">Shipping Information</a></li>
-	                    <li><a href="/returns-exchange">Returns &amp; Exchange</a></li>
-	                    <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-	                    <li><a href="/terms-of-use">Terms of Use</a></li>
-	                    <li><a href="/shoe-finder">Shoe Finder</a></li>
-	                    <li><a href="/find-a-store">Find A Store</a></li>
+	                    <li><a href="/info/contact-us">Contact Us</a></li>
+	                    <li><a href="/info/shipping-information">Shipping Information</a></li>
+	                    <li><a href="/info/returns-exchange">Returns &amp; Exchange</a></li>
+	                    <li><a href="/info/terms-conditions">Terms &amp; Conditions</a></li>
+	                    <li><a href="/info/terms-of-use">Terms of Use</a></li>
+	                    <li><a href="/info/shoe-finder">Shoe Finder</a></li>
+	                    <li><a href="/info/find-a-store">Find A Store</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">
@@ -56,7 +56,7 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-						<li><a href="/newsletter">The Run Down Email Sign Up</a></li>
+						<li><a href="/meet_brooks/newsletter">The Run Down Email Sign Up</a></li>
 						<li><a href="http://talk.brooksrunning.com/au/">Blog</a></li>
 						<li><a href="https://www.facebook.com/BrooksrunningAU/">Facebook</a></li>
 						<li><a href="https://twitter.com/brooksrunningau">Twitter</a></li>
@@ -131,7 +131,7 @@
 							<a href="/sitemap">Site Map</a>
 						</li>
 						<li>
-							<a href="/hello">About Brooks</a>
+							<a href="/about-us">About Brooks</a>
 						</li>
 					</ul>
 				</div>

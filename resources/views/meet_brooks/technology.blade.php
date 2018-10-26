@@ -186,7 +186,6 @@
 				<div class="close-me"><span class="icon-close-icon tech-popup--close"></span></div>	
 						<div class="sliders-info clearfix">
 						    <div class="info-wrapper">
-						 hdhdhdhsdl
 						 
 							</div>
 						</div>	

@@ -146,6 +146,15 @@ $(document).on("click", ".afterpay-popup--control", function () {
 $(document).on("click", ".afterpay-popup--close", function () {
     $("#afterpay-popup--wrapper").removeClass("show");
 });
+// popup for shoe page  
+$(".uTube-popup--control").click(function(){
+    $("#uTube-popup--wrapper").addClass("show");
+});
+$(".uTube-popup--close").click(function(){
+    $("#uTube-popup--wrapper").removeClass("show");
+    $('.uTube-info iframe').attr('src', '');
+});
+// popup for shoe page end
 $(document).on("click", "#sizechart-popup--control", function () {
     $("#sizechart-popup--wrapper").addClass("show");
 });

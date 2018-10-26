@@ -20,13 +20,7 @@
 				<h3 class="br-heading">Quick help</h3>
 				<ul class="quick-help--link">
 					<li>
-						<a href="#">Returns Centre</a>
-					</li>
-					<li>
-						<a href="#">Track Your Order</a>
-					</li>
-					<li>
-						<a href="#">Defective Product Clain</a>
+						<a href="/info/returns-exchange">Returns Centre</a>
 					</li>
 					<li>
 						<a href="#">Fit &amp; Sizing</a>
