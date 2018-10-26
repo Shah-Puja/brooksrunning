@@ -111,8 +111,8 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Heading</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="#">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/womens-running-shoes-and-clothing">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-running-shoes-and-clothing">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			<div class="tab-4">
@@ -121,13 +121,13 @@
 					<p class="br-info">Try the shoe finder</p>
 					<img src="images/brooks-shoes--logo.png" alt="">
 				    <div class="btn">
-				        <button class="secondary-button">Shoe Finder</button>
+				        <a href="/shoefinder" class="secondary-button">Shoe Finder</a>
 				    </div>
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Shoe finder <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/shoefinder">Shoe finder <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>
 			</div>
@@ -138,7 +138,7 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Event Name</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">View event <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/events">View event <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>

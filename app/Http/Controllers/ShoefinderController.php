@@ -9,7 +9,8 @@ class ShoefinderController extends Controller
     //
     public function shoefinder()
 	{
-        //echo "a";
-		return view( 'customer.shoefinder.shoefinder');
+
+		return view( 'customer.shoe_finder_view.shoefinder');
+
     }
 }

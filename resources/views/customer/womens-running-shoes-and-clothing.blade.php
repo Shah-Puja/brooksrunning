@@ -13,15 +13,15 @@
 	      		<div class="row">
 	      			<div class="col-12">
 	      				<div class="banner--info hidden-mob">
-	      					<p class="label--underline">MEN'S</p>
+	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="secondary-button" href="https://www.brooksrunning.com.au">Shop Men's Shoes</a>
+							<a class="secondary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
-	      					<p class="label--underline">MEN'S</p>
+	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Men's Shoes</a>
+							<a class="primary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -43,7 +43,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -54,7 +54,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -65,7 +65,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -76,7 +76,7 @@
 		              		<img src="/images/landingpage/shoe1.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Glycerin">Glycerin 16</a></h3>
+			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
 			                 <h4 class="price"><span class="black">$249.95</span></h4>
 		                </div>
 		            </div>
@@ -96,12 +96,12 @@
 						 <div class="opacity-cover"></div>
 						<img src="/images/landingpage/shop-now.png">
 					    <div class="title">
-					       <h2 class="happy left">New!<br>Beast 18</h2>
+					       <h2 class="happy left">New!<br>Ravenna 9</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop new beast</a>
+							<a class="primary-button" href="ravenna-9-womens-running-shoes/120269_027.html">Shop new ravenna</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -114,7 +114,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Trail Running Shoes</a>
+							<a class="primary-button" href="/womens-trail-running-shoes">Trail Running Shoes</a>
 					</div> 
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 						<div class="col-4 tab-4 mob-12" >&nbsp;</div>
 						<div class="col-4 tab-4 mob-12" >
 									<div class="horizontal-shoefinder-btn">
-										<a class="primary-button" href="#">Shoe Finder</a>
+										<a class="primary-button" href="/shoefinder">Shoe Finder</a>
 									</div>
 						</div>
 						<div class="col-4 tab-4 mob-12" >
@@ -151,15 +151,15 @@
 	      		<div class="row">
 	      			<div class="col-12">
 	      				<div class="banner--info hidden-mob">
-	      					<p class="label--underline">MEN'S</p>
+	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="secondary-button" href="https://www.brooksrunning.com.au">Shop Men's Clothing</a>
+							<a class="secondary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
-	      					<p class="label--underline">MEN'S</p>
+	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Men's Clothing</a>
+							<a class="primary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -185,7 +185,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	 <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -196,7 +196,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -207,7 +207,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -218,7 +218,7 @@
 		              		<img src="/images/landingpage/short-sleeves.png">
 		                </div>
 		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="#" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
+			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
 			                 <h4 class="price"><span class="black">$69.95</span></h4>
 		                </div>
 		            </div>
@@ -238,12 +238,12 @@
 						 	<div class="opacity-cover"></div>
 							<img src="/images/landingpage/ml4.jpg">
 						    <div class="title">
-						       <h1 class="happy left">Men's <br/> Accessories</h2>
+						       <h1 class="happy left">Women's <br/> Accessories</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Details make the difference and our Men's Clothing and Accessories Collection is all about details.</p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop Accessories</a>
+							<p>Details make the difference and our Women's Clothing and Accessories Collection is all about details.</p>
+							<a class="primary-button" href="/womens-running-accessories">Shop Accessories</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -251,12 +251,12 @@
 						 	<div class="opacity-cover"></div>
 							<img src="/images/landingpage/ml4.jpg">
 						    <div class="title">
-						        <h1 class="happy left">Men's<br>Top</h2>
+						        <h1 class="happy left">Women's<br>Top</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel and look your best on the run in one of our lightweight and breathable t-shirts and singlets. </p>
-							<a class="primary-button" href="https://www.brooksrunning.com.au">Shop tops</a>
+							<a class="primary-button" href="/womens-running-tops">Shop tops</a>
 					</div>
 				</div>
 			</div>
@@ -268,8 +268,8 @@
 
 			<div class="lp-info-detail">
 				<input id="tab-one" type="checkbox" class="tab-checkbox" name="tabs">
-					<h1 class="lp-info-title">Men's Running Gear</h1>
-			<p>Brooks has a wide collection of men's running gear, with footwear for both running and walking and a superior quality range of men's running clothes that have been designed and manufactured to strike the perfect balance between comfort and style.</p>
+					<h1 class="lp-info-title">Women's Running Gear</h1>
+			<p>Brooks has a wide collection of women's running gear, with footwear for both running and walking and a superior quality range of men's running clothes that have been designed and manufactured to strike the perfect balance between comfort and style.</p>
              <p class="lp-info-content"> From running shorts and singlets through to moisture-wicking running pants and jackets, we have your men's running apparel needs covered. You'll also find a great selection of high-visibility clothing that's designed to keep you safe and seen at night or in areas of low light.</p>
  	            <div class="lp-info-header">
 	                <label for="tab-one" class="bold">
@@ -279,8 +279,8 @@
 			</div>
 			<div class="lp-info-detail">
 				<input id="tab-two" type="checkbox" class="tab-checkbox" name="tabs">
-				<h1 class="lp-info-title">Men's Running Shoes</h1>
-			<p>To complement your men's running gear, explore the comprehensive range of men's running shoes from Brooks. Whether you're looking for road running shoes for your evening jog, long distance running shoes for competitive endurance events, or even walking sneakers with added cushioning for enhanced comfort, </p>
+				<h1 class="lp-info-title">Women's Running Shoes</h1>
+			<p>To complement your women's running gear, explore the comprehensive range of men's running shoes from Brooks. Whether you're looking for road running shoes for your evening jog, long distance running shoes for competitive endurance events, or even walking sneakers with added cushioning for enhanced comfort, </p>
              <p class="lp-info-content"> we’re sure to have the right pair to accommodate your needs. You'll even find lightweight running shoes that will make you feel like you’re running barefoot. Browse our range or use the Brooks shoe finder to determine which shoe is right for you!</p>
 	            <div class="lp-info-header">
 	            	<label for="tab-two" class="bold">
@@ -291,8 +291,8 @@
 			</div>
 			<div class="lp-info-detail">
 				<input id="tab-three" type="checkbox" class="tab-checkbox" name="tabs">
-				<h1 class="lp-info-title">Men’s Running Socks</h1>
-			<p>More than just mere men's running accessories, your choice of socks not only determines your comfort level during your run but can also enhance your performance. Brooks compression socks help to increase blood flow throughout the body, reduce the production </p>
+				<h1 class="lp-info-title">Women’s Running Socks</h1>
+			<p>More than just mere women's running accessories, your choice of socks not only determines your comfort level during your run but can also enhance your performance. Brooks compression socks help to increase blood flow throughout the body, reduce the production </p>
              <p class="lp-info-content">and build up of lactic acid, and promote faster recovery. You'll also find moisture-wicking socks that keep your feet free of sweat and unwanted moisture.</p>
 	           <div class="lp-info-header">
 	            	<label for="tab-three" class="bold">

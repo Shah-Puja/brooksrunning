@@ -82,4 +82,9 @@ class Order extends Model
             return $item->qty <= $item->variant->stock;
         });
     }
+
+    public function updateOrder_xml($xml) {
+        $this->ap21_xml = $xml ? $xml : null;
+        $this->save();
+    }
 }

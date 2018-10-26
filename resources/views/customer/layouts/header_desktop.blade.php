@@ -248,7 +248,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="javascript:void(0)" class="main-nav">Shoe Finder</a>
+                        <li class="main"><a href="/shoefinder" class="main-nav">Shoe Finder</a>
 								<div class="desktop-navigation--sub">
 									<div class="wrapper">
 										<div class="row">

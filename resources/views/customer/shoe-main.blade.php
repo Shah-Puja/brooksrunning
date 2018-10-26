@@ -96,12 +96,19 @@
 <section class="shoes-info">
 	<div class="wrapper">
 		<div class="row">
+
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
+<<<<<<< HEAD
 				{{-- <div id="desk" class="col-8 tab-8 mob-12">
 					<a class="utube" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
+=======
+				<div id="desk" class="col-8 tab-8 mob-12">
+					<a class="utube uTube-popup--control" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
+>>>>>>> 2f0b303b096fe369d5fc94570f1a28cfc8018695
 						<div class="module-img">
 								<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
 						</div>
+                        <div class="play"></div>
 					</a>
 				</div> --}}
 				<div id="desk" class="col-8 tab-8 mob-12">
@@ -119,6 +126,7 @@
 			@else
 				<div class="col-12 tab-12 mob-12">
 			@endif
+
 				<div class="para">
 						<h1 class="product-name widvideo">Brooks {{ $shoe_info->shoe_name }}</h1>
 	                    <div id="product-content">
@@ -170,6 +178,7 @@
 				</div>
 		</div>
 </section>
+<<<<<<< HEAD
 
 <!--uTube popup -->
 <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
@@ -183,6 +192,20 @@
 	</div>
 </div>
 <!--/uTube popup -->
+=======
+<!--uTube popup -->
+<div id="uTube-popup--wrapper" class="popup-container uTube--popup">
+						<div class="popup-container--wrapper">
+							<div class="popup-container--info">
+								<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
+								<div class="uTube-info">
+									<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/uTube popup -->
+>>>>>>> 2f0b303b096fe369d5fc94570f1a28cfc8018695
 
 </section>
 
