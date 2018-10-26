@@ -74,6 +74,12 @@ public function create_order($person_id='115414'){
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
             case 201:
+                $location=$response->getHeader('Location')[0];
+                $str_arr = explode("/", $location);
+                $last_seg = $str_arr[count($str_arr) - 1];
+                $last_seg_arr = explode("?", $last_seg);
+                $order_idx = $last_seg_arr[0];
+                echo "Success : Order ID is ".$order_idx;
                 break;
             case 400 :
                 echo "Order Exist";
