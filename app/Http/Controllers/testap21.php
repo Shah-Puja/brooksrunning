@@ -45,7 +45,8 @@ class testap21 extends Controller
         $response = $this->bridge->processPerson($person_xml);
         print_r($response);
         echo "<hr>";
-        print_r($response->getHeaders());        
+        print_r($response->getHeaders());   
+        echo "<br> ---- ".$response->getHeaders()->Location[0];
         exit;
              
         $returnCode =  $response->getStatusCode();
