@@ -63,7 +63,8 @@
 						<h2>DNA Midsole</h2>
 						<p>An innovative cushioning system that adapts to runners of all sizes and speeds, providing a custom ride</p>
 						<div class="tech-learnmore-btn">
-								<a class="secondary-button" href="#">Learn more</a>
+								<!-- <a class="secondary-button" href="#">Learn more</a> -->
+								<a href="JavaScript:Void(0);" class="tech-popup--control secondary-button">Leran more</a>
 						</div>
 					</div>
 				</div>
@@ -177,8 +178,22 @@
 			</div>
 			<div id="clear"></div>
 		</div>
-		
 	</div>
+	<!--Sliders  popup -->
+	<div id="tech-popup--wrapper" class="popup-container sliders--popup">
+		<div class="popup-container--wrapper">
+			<div class="popup-container--info">
+				<div class="close-me"><span class="icon-close-icon tech-popup--close"></span></div>	
+						<div class="sliders-info clearfix">
+						    <div class="info-wrapper">
+						 hdhdhdhsdl
+						 
+							</div>
+						</div>	
+			</div>
+		</div>
+	</div>
+	<!--/Sliders popup -->
 </section>
 <section class="technology-page--footwear tech-footer-header">
 	<div class="wrapper">

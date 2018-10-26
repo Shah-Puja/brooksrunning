@@ -1709,6 +1709,9 @@ textarea {
   border-radius: 0 6px 6px 0;
   outline: 0;
 }
+.header-desktop .search-container .search-wrapper form button:active, .header-desktop .search-container .search-wrapper form button:focus {
+  background: #f1f1f1 !important;
+}
 .header-desktop .search-container .search-wrapper .search--container {
   background-color: #ffffff;
   padding-top: 10px;
