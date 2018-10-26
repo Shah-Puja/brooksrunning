@@ -26,9 +26,10 @@ public function voucher_valid(){
     //$gift_id="200001111"; $pin="6344";
     //$gift_id="200001128"; $pin="7572";
     
-    $response = $this->bridge->vouchervalid($gift_id,$pin,$total)->getBody()->getContents();;
-    //$returnCode =  $response->getStatusCode();
-    print_r($response);
+    $response = $this->bridge->vouchervalid($gift_id,$pin,$total);
+    $response_body=$response->getBody()->getContents();
+    $returnCode = $response->getStatusCode();
+    print_r($response_body);
     exit;
     switch ($returnCode) {
             case 200:                
