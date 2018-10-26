@@ -17,7 +17,7 @@ class testap21 extends Controller
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
                         <Contacts>
-                          <Email>zf@syginteractive.com</Email>
+                          <Email>zg@syginteractive.com</Email>
                           <Phones>
                             <Home>11111</Home>
                           </Phones>
