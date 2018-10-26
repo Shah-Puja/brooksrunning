@@ -28,7 +28,7 @@ public function voucher_valid(){
     
     $response = $this->bridge->vouchervalid($gift_id,$pin,$total);
     $returnCode =  $response->getStatusCode();
-    print_r($response);
+    print_r($response->getBody());
     switch ($returnCode) {
             case 200:                
                 echo "<hr>Success : Gift Voucher is Valid";
