@@ -30,7 +30,7 @@ public function voucher_valid(){
     $response_body=$response->getBody()->getContents();
     $returnCode = $response->getStatusCode();
     print_r($response_body);
-    exit;
+    //exit;
     switch ($returnCode) {
             case 200:                
                 echo "<hr>Success : Gift Voucher is Valid";
