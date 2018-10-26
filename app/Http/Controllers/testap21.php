@@ -31,13 +31,13 @@ public function voucher_valid(){
     print_r($response);
     switch ($returnCode) {
             case 200:                
-                echo "Success : Gift Voucher is Valid";
+                echo "<hr>Success : Gift Voucher is Valid";
                 break;
             case 400 :
-                echo "Order Exist";
+                echo "<hr>Order Exist";
                 break;
             default:
-                echo "HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
                 break;
         }   
     exit;
