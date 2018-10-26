@@ -12,7 +12,7 @@ class testap21 extends Controller
         $this->bridge = $bridge;
     }
 public function voucher_valid(){
-    $gift_id="200001005"; $pin="3164",$total=10;
+    $gift_id="200001005"; $pin="3164";$total=10;
     //$gift_id="200001012"; $pin="2026";
     //$gift_id="200001029"; $pin="3649";
     //$gift_id="200001036"; $pin="923";
