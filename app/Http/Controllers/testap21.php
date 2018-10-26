@@ -43,6 +43,10 @@ class testap21 extends Controller
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
+        
+        print_r($response);
+        exit;
+             
         $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
