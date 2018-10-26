@@ -17,7 +17,7 @@ class testap21 extends Controller
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
                         <Contacts>
-                          <Email>zi@syginteractive.com</Email>
+                          <Email>zj@syginteractive.com</Email>
                           <Phones>
                             <Home>11111</Home>
                           </Phones>
@@ -42,12 +42,7 @@ class testap21 extends Controller
                         </Addresses>
                       </Person>";
 
-        $response = $this->bridge->processPerson($person_xml);
-        
-        echo "------------------".$person_id;
-        
-        exit;
-             
+        $response = $this->bridge->processPerson($person_xml);                            
         $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
