@@ -15,7 +15,7 @@ public function create_order($person_id='115414'){
         $xml_data = "
         <Order>
         <PersonId>115414</PersonId>
-        <OrderNumber>BRN-2018-test-3</OrderNumber>
+        <OrderNumber>BRN-2018-test-4</OrderNumber>
         <DeliveryInstructions></DeliveryInstructions>
         <Addresses>
             <Billing>
@@ -69,7 +69,6 @@ public function create_order($person_id='115414'){
     
         $response = $this->bridge->processOrder($person_id,$xml_data);
         print_r($response);
-        exit;
     
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
