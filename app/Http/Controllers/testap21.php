@@ -17,7 +17,7 @@ class testap21 extends Controller
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
                         <Contacts>
-                          <Email>zb@syginteractive.com</Email>
+                          <Email>zc@syginteractive.com</Email>
                           <Phones>
                             <Home>11111</Home>
                           </Phones>
@@ -46,7 +46,8 @@ class testap21 extends Controller
         print_r($response);
         echo "<hr>";
         print_r($response->getHeaders());   
-        echo "<br> ---- ".$response->getHeaders()->Location[0];
+        echo "<hr>";
+        print_r($response->getHeaders('Location'));
         exit;
              
         $returnCode =  $response->getStatusCode();
