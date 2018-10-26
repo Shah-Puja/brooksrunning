@@ -119,6 +119,8 @@ Route::get('/track-your-order', 'quickhelpController@track_your_order');
 
 Route::get('/testap21/create_user', 'testap21@create_user'); 
 Route::get('/testap21/create_order', 'testap21@create_order'); 
+Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
+
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

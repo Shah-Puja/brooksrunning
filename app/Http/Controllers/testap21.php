@@ -11,6 +11,25 @@ class testap21 extends Controller
 	{
         $this->bridge = $bridge;
     }
+public function voucher_valid(){
+    $gift_id="200001005"; $pin="3164",$total=10;
+    //$gift_id="200001012"; $pin="2026";
+    //$gift_id="200001029"; $pin="3649";
+    //$gift_id="200001036"; $pin="923";
+    //$gift_id="200001043"; $pin="2685";
+    //$gift_id="200001050"; $pin="8545";
+    //$gift_id="200001067"; $pin="158";
+    //$gift_id="200001074"; $pin="1267";
+    //$gift_id="200001081"; $pin="9201";
+    //$gift_id="200001098"; $pin="1352";
+    //$gift_id="200001104"; $pin="7573";
+    //$gift_id="200001111"; $pin="6344";
+    //$gift_id="200001128"; $pin="7572";
+    
+    $response = $this->bridge->vouchervalid($gift_id,$pin,$total);
+    print_r($response);
+    exit;
+}  
 public function create_order($person_id='115414'){               
         $xml_data = "
         <Order>
