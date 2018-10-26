@@ -701,7 +701,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/contact">
+	                <a href="/info/contact">
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>
@@ -723,7 +723,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="/newsletter">
+	                <a href="/meet_brooks/newsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>
 	                </a>
 	            </li>
