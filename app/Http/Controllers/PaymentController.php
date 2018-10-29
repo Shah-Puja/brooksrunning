@@ -11,7 +11,6 @@ use App\Models\Order_log;
 use App\Models\Order_number;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
-use App\Events\ApialertReceived;
 use App\Mail\OrderConfirmation;
 use App\Mail\OrderAlert;
 use Illuminate\Support\Facades\Mail;
@@ -401,7 +400,7 @@ class PaymentController extends Controller
                         'Result'    => $userid,
                         'Parameters'        => '',
                     );
-                    event(new ApialertReceived($this->order));
+                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order));
                     $returnVal = $userid; 
                     break;
 
