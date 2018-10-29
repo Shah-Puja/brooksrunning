@@ -400,7 +400,7 @@ class PaymentController extends Controller
                         'Result'    => $userid,
                         'Parameters'        => '',
                     );
-                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order));
+                    event(new ApialertReceived($this->order));
                     $returnVal = $userid; 
                     break;
 
