@@ -89,7 +89,7 @@ class CategoryController extends Controller
     }
 
     public function shoes_detail($shoe_name=''){
-
+        $shoe_name=strtolower($shoe_name);
         if ($shoe_name == "glycerin" || $shoe_name == "adrenaline-gts" || $shoe_name == "ghost" || 
             $shoe_name == "transcend" || $shoe_name == "launch" || $shoe_name == "aduro" || $shoe_name == "revel" ||
             $shoe_name == "ravenna" || $shoe_name == "beast" || $shoe_name == "ariel" || $shoe_name == "hyperion" ||
