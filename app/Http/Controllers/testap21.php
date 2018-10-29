@@ -29,11 +29,11 @@ public function voucher_valid(){
     try{
         $response = $this->bridge->vouchervalid($gift_id,$pin,$total);   
         print_r($response);
-        exit;
+        //exit;
     }
     catch (Exception $e) {
         echo "ERROR HANDLED";
-        exit;
+        //exit;
     }
     $returnCode = $response->getStatusCode();
     //exit;
@@ -45,6 +45,9 @@ public function voucher_valid(){
                 break;
             case 400 :
                 echo "<hr>Order Exist";
+                break;
+            case 403 :
+                echo "Incorrect Voucher";
                 break;
             default:
                 echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
