@@ -13,7 +13,7 @@ class testap21 extends Controller
     }
 public function voucher_valid(){
     //$gift_id="200001005111"; $pin="3164111";$total=1000;
-    $gift_id="200001012"; $pin="2026";$total=100;
+    $gift_id="11200001012"; $pin="2026";$total=100;
     //$gift_id="200001029"; $pin="3649";
     //$gift_id="200001036"; $pin="923";
     //$gift_id="200001043"; $pin="2685";
