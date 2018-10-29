@@ -43,9 +43,6 @@ public function voucher_valid(){
                 print_r($response_body);
                 echo "<hr>Success : Gift Voucher is Valid";
                 break;
-            case 400 :
-                echo "<hr>Order Exist";
-                break;
             case 403 :
                 echo "Incorrect Voucher";
                 break;
