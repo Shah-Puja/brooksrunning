@@ -44,35 +44,8 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 /* info static pages */
 Route::get('/info/{pg}', 'InfoController@index');
 
-/* remove this after testing
-Route::get('/about-us', 'InfoController@about_us');
-Route::get('/contact-us', 'InfoController@contact_us');
-Route::get('/find-a-store', 'InfoController@find_a_store');
-Route::get('/help', 'InfoController@help');
-Route::get('/shoe-finder', 'InfoController@shoe_finder');
-Route::get('/returns-exchange', 'InfoController@returns_exchange');
-Route::get('/shipping-information', 'InfoController@shipping_information');
-Route::get('/terms-conditions', 'InfoController@terms_conditions');
-Route::get('/terms-of-use', 'InfoController@terms_of_use');
-Route::get('/newsletter', 'InfoController@newsletter_signup');
-Route::get('/events', 'InfoController@events');
-Route::get('/help', 'InfoController@help');
-Route::get('/privacy', 'InfoController@privacy');
-Route::get('/sitemap', 'InfoController@sitemap');
-*/
-
 /* meet_brooks static pages */
-Route::get('/competition', 'meet_brooksController@competition');
-Route::get('/newsletter', 'meet_brooksController@newsletter');
-Route::get('/injury-prevention', 'meet_brooksController@injury_prevention');
-Route::get('/newsletter', 'meet_brooksController@newsletter');
-Route::get('/run_happy_is', 'meet_brooksController@run_happy_view');
-Route::get('/run-signature', 'meet_brooksController@run_signature');
-Route::get('/hello', 'meet_brooksController@hello');
-Route::get('/technology', 'meet_brooksController@technology');
-Route::get('/training-tips', 'meet_brooksController@training_tips');
-Route::get('/what_makes_us_tick', 'meet_brooksController@what_makes_us_tick');
-
+Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
@@ -113,6 +86,8 @@ Route::get('/track-your-order', 'quickhelpController@track_your_order');
 
 Route::get('/testap21/create_user', 'testap21@create_user'); 
 Route::get('/testap21/create_order', 'testap21@create_order'); 
+Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
+
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

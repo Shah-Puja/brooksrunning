@@ -39,6 +39,12 @@ class AP21Bridge implements BridgeInterface {
 	{
 		return $this->apiClient->post('Persons/'.$PersonId.'/Orders/?countryCode=AUFIT', ['body' => $data , 'http_errors' => false]);
 	}
+	public function vouchervalid($gift,$pin,$amount)
+	{
+        return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT');
+		//return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT')->getBody();
+        //return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT', ['http_errors' => false]);
+	}	
 
 }
 

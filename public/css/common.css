@@ -1709,6 +1709,9 @@ textarea {
   border-radius: 0 6px 6px 0;
   outline: 0;
 }
+.header-desktop .search-container .search-wrapper form button:active, .header-desktop .search-container .search-wrapper form button:focus {
+  background: #f1f1f1 !important;
+}
 .header-desktop .search-container .search-wrapper .search--container {
   background-color: #ffffff;
   padding-top: 10px;
@@ -4262,6 +4265,7 @@ textarea {
 .pdp-container--info .size .size-show li.disable {
   background-color: #f1f1f1;
   cursor: no-drop;
+  color: #dedcda;
 }
 .pdp-container--info .size .size-show li.disable:hover {
   border: 1px solid #d3d0cd;
@@ -4272,6 +4276,7 @@ textarea {
 .pdp-container--info .size .size-show li .disable {
   background-color: #f1f1f1;
   cursor: no-drop;
+  color: #d4d3d4;
 }
 .pdp-container--info .size .size-show li .selected {
   background-color: #0263f7;
