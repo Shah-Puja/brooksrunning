@@ -12,6 +12,7 @@ use App\Models\Order_number;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderConfirmation;
+use App\Mail\OrderAlert;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderSubmittedNotification;
 use App\Payments\AfterpayProcessor;
@@ -391,6 +392,8 @@ class PaymentController extends Controller
                         'result'        =>  $userid,
                     );
                     Order_log::createNew($logger);
+                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
+                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order));
                     $returnVal = $userid; 
                     break;
 
@@ -408,9 +411,8 @@ class PaymentController extends Controller
                     );
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
                     Order_log::createNew($logger);
-                    // Logger
-                    //$this->alert->ap21_error($this->_order_id, 'Get PersonID Error', $URL, $result);
-                    // Send ap21 alert  
+                    //$URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
+                    //Mail::to('trunaltamore@gmail.com')->send(new OrderAlert());
                     $userid = false;
                     break;
             }
@@ -463,8 +465,6 @@ class PaymentController extends Controller
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        //print_r($response);
-        //exit;
         $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
         $logger = array(
             'order_id'      => $this->order->id,
@@ -478,24 +478,24 @@ class PaymentController extends Controller
         $returnCode =  $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
-                    $response_xml = @simplexml_load_string($response->getBody());
-                    //print_r($response_xml);
-                    //$person_id = $response_xml->Person->Id;
-                    
+                    $location=$response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
 
-                    $person_id = '115414';
                     $logger = array(
                         'order_id'      => $this->order->id,
                         'log_title'     => 'Person',
                         'log_type'      => 'Response',
                         'log_status'    => '201 Person ID Created',
-                        'result'        =>  $person_id,
+                        'result'        =>  $person_idx,
                     );
                     Order_log::createNew($logger);
                      //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
                     // Logger
 
-                    $returnVal = $person_id;
+                    $returnVal = $person_idx;
 
                    
                     break;
@@ -510,7 +510,7 @@ class PaymentController extends Controller
                         'result'        =>  $result,
                     );
                     Order_log::createNew($logger);
-                    $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                   // $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
                     // Send ap21 alert  
 
                     $returnVal = false;
@@ -695,12 +695,14 @@ class PaymentController extends Controller
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
             case 201:
-                //print_r($response->getBody());
-                //$person_id = $response_xml->Person->Id;
-                $app21_order = $this->order->id;
-                $order_url =env('app21_url') . "/Persons/$person_id/Orders/$app21_order?countryCode=AUFIT";
+                $location=$response->getHeader('Location')[0];
+                $str_arr = explode("/", $location);
+                $last_seg = $str_arr[count($str_arr) - 1];
+                $last_seg_arr = explode("?", $last_seg);
+                $order_id = $last_seg_arr[0];
+                $order_url =env('app21_url') . "/Persons/$person_id/Orders/$order_id?countryCode=AUFIT";
 
-                $returnVal = $app21_order;
+                $returnVal = $order_id;
                 $logger = array(
                     'order_id'      => $this->order->id,
                     'log_title'     => 'Order',
