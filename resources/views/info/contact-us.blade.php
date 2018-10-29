@@ -5,7 +5,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-12">
-				<img src="images/competition/contact-banner.png" alt="">
+				<img src="/images/competition/contact-banner.png" alt="">
 				<div class="heading">
 					<h1 class="br-mainheading">Contact Us</h1>
 				</div>
@@ -21,12 +21,6 @@
 				<ul class="quick-help--link">
 					<li>
 						<a href="/info/returns-exchange">Returns Centre</a>
-					</li>
-					<li>
-						<a href="#">Fit &amp; Sizing</a>
-					</li>
-					<li>
-						<a href="#">FAQs</a>
 					</li>
 				</ul>
 				<h3 class="br-heading">Submit a question to our support team</h3>
@@ -62,22 +56,7 @@
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for="name"><sup>*</sup>Subject</label>
-                            <div class="custom-select gray-bg">
-						       <div class = "select-box">
-								    <div class = "label-heading">
-								    	<span class="text">Select Subject</span> 
-								    	<div class="sel-icon">
-								    		<span class="icon-down-arrow"></span>
-								    	</div>
-								    </div>
-								    <ul class="select-option--wrapper">
-								    	<option class="option-value" value="">Select Subject</option>
-                                        <option class="option-value" value="ACT,Australia">Brooks 1</option>
-		                                <option class="option-value" value="ACT,Australia">Brooks 2</option>
-		                                <option class="option-value" value="NSW,Australia">Brooks 3</option>
-								    </ul>
-								</div>
-						    </div>
+                            <input type="text" class="input-field">
 						</div>
 					</div>
 					<div class="tab-6">
@@ -86,16 +65,21 @@
                             <div class="custom-select gray-bg">
 						       <div class = "select-box">
 								    <div class = "label-heading">
-								    	<span class="text">Select Subject</span> 
+								    	<span class="text">Select Category</span> 
 								    	<div class="sel-icon">
 								    		<span class="icon-down-arrow"></span>
 								    	</div>
 								    </div>
 								    <ul class="select-option--wrapper">
-								    	<option class="option-value" value="">Select Subject</option>
-                                        <option class="option-value" value="ACT,Australia">Brooks 1</option>
-		                                <option class="option-value" value="ACT,Australia">Brooks 2</option>
-		                                <option class="option-value" value="NSW,Australia">Brooks 3</option>
+								    	<option class="option-value" value="">Select Category</option>
+                                        <option class="option-value" value="order info">Order Info</option>
+		                                <option class="option-value" value="return info">Return Info</option>
+		                                <option class="option-value" value="selecting correct product">Selecting a correct product</option>
+										<option class="option-value" value="product questions">Product questions / feedback</option>
+										<option class="option-value" value="sponsorship">Sponsorship</option>
+										<option class="option-value" value="technical support">Technical support</option>
+										<option class="option-value" value="media enquiries">Media enquiries</option>
+										<option class="option-value" value="other">Other</option>
 								    </ul>
 								</div>
 						    </div>
@@ -150,5 +134,21 @@
 		</div>
 	</div>
 </section>
-
+<script>
+$( '#btn-validate' ).click(function(){
+  var $captcha = $( '#recaptcha' ),
+      response = grecaptcha.getResponse();
+  
+  if (response.length === 0) {
+    $( '.msg-error').text( "reCAPTCHA is mandatory" );
+    if( !$captcha.hasClass( "error" ) ){
+      $captcha.addClass( "error" );
+    }
+  } else {
+    $( '.msg-error' ).text('');
+    $captcha.removeClass( "error" );
+    alert( 'reCAPTCHA marked' );
+  }
+})
+</script>
 @endsection
