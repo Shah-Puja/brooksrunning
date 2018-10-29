@@ -392,15 +392,6 @@ class PaymentController extends Controller
                         'result'        =>  $userid,
                     );
                     Order_log::createNew($logger);
-                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
-                    $data = array(
-                        'order_id'      => $this->order->id,
-                        'api_name'     => 'Get PersonID Error',
-                        'URL'      => $URL,
-                        'Result'    => $userid,
-                        'Parameters'        => '',
-                    );
-                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order,$data));
                     $returnVal = $userid; 
                     break;
 
@@ -409,6 +400,7 @@ class PaymentController extends Controller
                     break;
 
                 default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
                     $logger = array(
                         'order_id'      => $this->order->id,
                         'log_title'     => 'Person',
@@ -416,10 +408,17 @@ class PaymentController extends Controller
                         'log_status'    => 'Error While Getting Person ID',
                         'result'        =>  $result,
                     );
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
+                    
                     Order_log::createNew($logger);
-                    //$URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
-                    //Mail::to('trunaltamore@gmail.com')->send(new OrderAlert());
+                    
+                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
+                    $data = array(
+                        'api_name'     => 'Get PersonID Error',
+                        'URL'      => $URL,
+                        'Result'    => $result,
+                        'Parameters'        => '',
+                    );
+                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order,$data));
                     $userid = false;
                     break;
             }
@@ -499,9 +498,6 @@ class PaymentController extends Controller
                         'result'        =>  $person_idx,
                     );
                     Order_log::createNew($logger);
-                     //$this->alert->order_log($this->_order_id, 'Person', 'Response', '201 Person ID Created', $person_id);
-                    // Logger
-
                     $returnVal = $person_idx;
 
                    
@@ -517,8 +513,17 @@ class PaymentController extends Controller
                         'result'        =>  $result,
                     );
                     Order_log::createNew($logger);
-                   // $this->alert->ap21_error($this->_order_id, 'Create Person Error', $URL, $result, $person_xml);
+                    
                     // Send ap21 alert  
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
+                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT";
+                    $data = array(
+                        'api_name'     => 'Create Person Error',
+                        'URL'      => $URL,
+                        'Result'    => $result,
+                        'Parameters'        => $person_xml,
+                    );
+                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order,$data));
 
                     $returnVal = false;
 
