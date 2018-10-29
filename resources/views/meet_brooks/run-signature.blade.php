@@ -56,7 +56,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="btn">
-					<a href="#" class="primary-button">Use the shoe finder</a>
+					<a href="/shoefinder" class="primary-button">Use the shoe finder</a>
 				</div>
 			</div>
 		</div>
@@ -78,8 +78,8 @@
 					<p>Responsive and springy to add extra lift to your stride.</p>
 					<img src="images/run-signature-icon1.png" alt="">
 					<div class="btn-wrapper clearfix">
-						<a href="#" class="secondary-button">Shop men's</a>
-						<a href="#" class="secondary-button">Shop women's</a>
+						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
+						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
 					</div>
 				</div>
 			</div>
@@ -89,8 +89,8 @@
 					<p>Soft and protective to cushion your every step.</p>
 					<img src="images/run-signature-icon2.png" alt="">
 					<div class="btn-wrapper clearfix">
-						<a href="#" class="secondary-button">Shop men's</a>
-						<a href="#" class="secondary-button">Shop women's</a>
+						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
+						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
 					</div>
 				</div>
 			</div>
@@ -100,8 +100,8 @@
 					<p>Fast and streamlined to propel you through your run.</p>
 					<img src="images/run-signature-icon3.png" alt="">
 					<div class="btn-wrapper clearfix">
-						<a href="#" class="secondary-button">Shop men's</a>
-						<a href="#" class="secondary-button">Shop women's</a>
+						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
+						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
 					</div>
 				</div>
 			</div>
@@ -111,8 +111,8 @@
 					<p>Lightweight and flexible to naturally feel your run.</p>
 					<img src="images/run-signature-icon4.png" alt="">
 					<div class="btn-wrapper clearfix">
-						<a href="#" class="secondary-button">Shop men's</a>
-						<a href="#" class="secondary-button">Shop women's</a>
+						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
+						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
 					</div>
 				</div>
 			</div>
@@ -134,7 +134,7 @@
 					<p>It's a simple yet powerful combo that makes for enjoyable runs every time you lace up.</p>
 					<p>Geek out on the science behind the philosophy by reading our Run Signature white paper.</p>
 					<div class="btn">
-						<a href="#" class="primary-button">Learn more</a>
+						<a href="https://www.brooksrunning.com.au/images/SS/RunSignatureWhitePaper.pdf" class="primary-button">Learn more</a>
 					</div>
 				</div>
 			</div>

@@ -28,10 +28,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/help">Help</a>
-                            
+                        <li><a href="/info/contact-us">Help</a>
                         </li>
-                        <li><a href="/find-a-store">Store Locator</a></li>
+                        <li><a href="/info/find-a-store">Store Locator</a></li>
                         <li class="cart">
                             <a href="/cart">Cart
                                 <span class="icon-shopping-cart icon-cart"></span>
@@ -411,25 +410,25 @@
                                             <div class="row nav-wrapper">
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="/about-us">About Us</a>
+                                                        <a href="/info/about-us">About Us</a>
                                                     </li>
-                                                    <li><a href="/what_makes_us_tick">What Makes Us Tick</a></li>
-                                                    <li><a href="/run_happy_is">Run Happy is</a></li>
-                                                    <li><a href="/technology">Technology</a></li>
-                                                    <li><a href="/run-signature">Run Signature</a></li>
+                                                    <li><a href="/meet_brooks/what-makes-us-tick">What Makes Us Tick</a></li>
+                                                    <li><a href="/meet_brooks/run-happy-is">Run Happy is</a></li>
+                                                    <li><a href="/meet_brooks/technology">Technology</a></li>
+                                                    <li><a href="/meet_brooks/run-signature">Run Signature</a></li>
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="javascript:;">Run Happy</a>
+                                                        <a href="/meet_brooks/run-happy-is">Run Happy</a>
                                                     </li>
-                                                    <li><a href="/competition">Competition</a></li>
-                                                    <li><a href="/newsletter">E-Newsletter</a></li>
-                                                    <li><a href="/training-tips">Training Tips</a></li>
-                                                    <li><a href="/injury-prevention">Injury Prevention</a></li>
+                                                    <li><a href="/meet_brooks/competition">Competition</a></li>
+                                                    <li><a href="/meet_brooks/newsletter">E-Newsletter</a></li>
+                                                    <li><a href="/meet_brooks/training-tips">Training Tips</a></li>
+                                                    <li><a href="/meet_brooks/injury-prevention">Injury Prevention</a></li>
                                                 </ul>
                                                 <ul class="tab-3">
                                                     <li class="submenu-main">
-                                                        <a href="javascript:;">Community</a>
+                                                        <a href="/events">Community</a>
                                                     </li>
                                                     <li><a href="/events">Event Calendar</a></li>
                                                     <li><a href="http://talk.brooksrunning.com/au/">Brooks Blog</a></li>
