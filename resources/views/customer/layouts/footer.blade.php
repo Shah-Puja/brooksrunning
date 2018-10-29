@@ -22,7 +22,7 @@
 		                	<span>+</span>
 		                </label>
 		            </div>
-	            	<ul class="tab-content">
+	            	<ul class="tab-content"> 
 	                    <li><a href="/info/contact-us">Contact Us</a></li>
 	                    <li><a href="/info/shipping-information">Shipping Information</a></li>
 	                    <li><a href="/info/returns-exchange">Returns &amp; Exchange</a></li>

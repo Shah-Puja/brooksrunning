@@ -2711,6 +2711,7 @@
             &.disable{
               background-color: #f1f1f1;
               cursor:no-drop;
+              color: #dedcda;
               &:hover{
                 border: 1px solid $border;
               }

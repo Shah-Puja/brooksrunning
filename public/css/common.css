@@ -4265,6 +4265,7 @@ textarea {
 .pdp-container--info .size .size-show li.disable {
   background-color: #f1f1f1;
   cursor: no-drop;
+  color: #dedcda;
 }
 .pdp-container--info .size .size-show li.disable:hover {
   border: 1px solid #d3d0cd;

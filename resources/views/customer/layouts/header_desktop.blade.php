@@ -28,7 +28,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/info/contact-us">Help</a>
+                        <li><a href="/info/contact-us">Help</a> 
                         </li>
                         <li><a href="/info/find-a-store">Store Locator</a></li>
                         <li class="cart">

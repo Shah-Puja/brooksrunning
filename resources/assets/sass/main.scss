@@ -685,7 +685,7 @@
             @extend %display-flex;
             flex-flow: row wrap;
             justify-content: center;
-            align-items: center; 
+            align-items: center;
         .cat-desc{
           margin: 20px 0 140px 0;
            text-align:center;
@@ -714,8 +714,6 @@
       }
 }
 
-
-
 /* /Category page*/
 
 /*Shoe main page*/
@@ -731,85 +729,85 @@
         text-align:left;
       }
    }
-      .shoes-container{
-              .shoes-wrapper-container{
-                          @extend %display-flex;
-                          flex-flow: row wrap;
-                          justify-content: flex-start;
-                          .shoes-wrapper__sub{
-                              margin: 15px 0 50px;
-                              @media #{$mobile-only} {
-                                margin: 0px 0 -15px;
-                              }
-                              .shoe-product{
-                                position: relative;
-                                @media #{$mobile-only} {
-                                  max-width: 240px;
-                                  margin: auto;
-                                }
-                                a{
-                                  display: block;
-                                  color: $black;
-                                }
-                                .img{
-                                  text-align: center;
-                                  &.img-shoes{
-                                     width: 100%;
-                                     position: relative;
-                                     img{
-                                      bottom:0;
-                                      left:0;
-                                     }
-                                  }
-                                  img{
-                                    width: auto;
-                                    max-width: 100%;
-                                  }
-                                }
-                                .info{
-                                  display: block;
-                                  position: relative;
-                                
-                                  // Button
-                                   .shoes-detail-btn{
-                                      @extend %bold-font;
-                                      font-size: 20px;
-                                      width: 200px;
-                                      margin-left: auto;
-                                      margin-right: auto;
-                                       @media #{$mobile-only}{
-                                        padding-top:20px;
-                                        margin:0 auto;
-                                        display:block;
-                                        float:none;
-                                       }
-                                      span{
-                                         width:50%;
-                                         padding-right:12px;
-                                          @media #{$mobile-only}{
-                                            padding-right:8px;
-                                          }
-                                        }
-                                               .secondary-button{
-                                                border: 2px solid $blue;
-                                                color: $blue;
-                                                    &:hover{
-                                                      background-color: $blue;
-                                                      color: $white;
-                                                    }
-                                                     @media #{$tab-only}{
-                                                      padding: 12px 20px;
-                                                      font-size: 13px;
-                                                    }
-                                                     @media #{$mobile-only}{
-                                                      width:100%;
-                                                       min-width:100px;
-                                                    }
-                                                  }
-                                    }
-                                }
-                              }
-                          }
+  .shoes-container{
+    .shoes-wrapper-container{
+    @extend %display-flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+      .shoes-wrapper__sub{
+          margin: 15px 0 50px;
+          @media #{$mobile-only} {
+            margin: 0px 0 -15px;
+          }
+      .shoe-product{
+        position: relative;
+        @media #{$mobile-only} {
+          max-width: 240px;
+          margin: auto;
+        }
+        a{
+          display: block;
+          color: $black;
+        }
+        .img{
+          text-align: center;
+          &.img-shoes{
+              width: 100%;
+              position: relative;
+              img{
+              bottom:0;
+              left:0;
+              }
+          }
+          img{
+            width: auto;
+            max-width: 100%;
+          }
+        }
+    .info{
+      display: block;
+      position: relative;
+    
+      // Button
+        .shoes-detail-btn{
+          @extend %bold-font;
+          font-size: 20px;
+          width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+            @media #{$mobile-only}{
+            padding-top:20px;
+            margin:0 auto;
+            display:block;
+            float:none;
+            }
+          span{
+              width:50%;
+              padding-right:12px;
+              @media #{$mobile-only}{
+                padding-right:8px;
+              }
+            }
+                    .secondary-button{
+                    border: 2px solid $blue;
+                    color: $blue;
+                        &:hover{
+                          background-color: $blue;
+                          color: $white;
+                        }
+                          @media #{$tab-only}{
+                          padding: 12px 20px;
+                          font-size: 13px;
+                        }
+                          @media #{$mobile-only}{
+                          width:100%;
+                            min-width:100px;
+                        }
+                      }
+        }
+    }
+  }
+}
                           .mob-6:nth-of-type(even){
                              @media #{$mobile-only}{
                               padding-left: 7px !important;
