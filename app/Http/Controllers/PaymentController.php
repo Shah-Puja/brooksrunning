@@ -393,7 +393,14 @@ class PaymentController extends Controller
                     );
                     Order_log::createNew($logger);
                     $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
-                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order));
+                    $data = array(
+                        'order_id'      => $this->order->id,
+                        'api_name'     => 'Get PersonID Error',
+                        'URL'      => $URL,
+                        'Result'    => $userid,
+                        'Parameters'        => '',
+                    );
+                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($data));
                     $returnVal = $userid; 
                     break;
 
