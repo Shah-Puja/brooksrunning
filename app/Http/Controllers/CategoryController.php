@@ -63,33 +63,10 @@ class CategoryController extends Controller
     public function mens_landing(){
         return view('customer.womens-running-shoes-and-clothing');
     }
-    public function shoe_main(){
-        return view('customer.shoe-main');
-    }
-
-    // public function neutral_running_shoes(){
-    //     return view('customer.neutral-running-shoes');
-    // }
-    // public function support_running_shoes(){
-    //     return view('customer.support-running-shoes');
-    // }
-    // public function trail_running_shoes(){
-    //     return view('customer.trail-running-shoes');
-    // }
-    // public function competition_running_shoes(){
-    //     return view('customer.competition-running-shoes');
-    // }
-    // public function cross_trainer_shoes(){
-    //     return view('customer.cross-trainer-shoes');
-    // }
-    // public function walking_shoes(){
-    //     return view('customer.walking-shoes');
-    // }
-
-    public function neutral_category(){
+    
+    public function shoes_category($category){
         $page_url = explode('/',$_SERVER['REQUEST_URI']);
         $page_info = $this->get_page_info($page_url[1]);
-        $category = "neutral";
         $shoes_category_product = $this->get_shoes_category_product($category);
         echo "<pre>";
         print_r($shoes_category_product);
@@ -214,7 +191,7 @@ class CategoryController extends Controller
                 }
                 $shoe_cat_product[] = end($shoes_product_m);
                 $shoe_cat_product[] = end($shoes_product_w);
-                $data =[];
+                $data=[];
                 foreach ($shoe_cat_product as $cat_prod) {
                     $prod  		=  explode("-", $cat_prod);
 					@$prod_id	= $prod[1];
@@ -227,18 +204,36 @@ class CategoryController extends Controller
 			            $gen = 'm';
                     }
 
-                    $data[] = Product::where("style",$prod_id)
-                            ->where("color_code",$color_code)
-                            ->whereHas('variants' , function($query)  {
-                                return $query->where('visible', '=', 'Yes');
-                            })->get();
+                    // echo "<pre>";
+                    // print_r($cat_prod);echo " hi";
+                    // echo "</pre>";
+
+                    // $data[] = Product::where("style",$prod_id)
+                    //         ->where("color_code",$color_code)
+                    //         ->whereHas('variants' , function($query)  {
+                    //             return $query->where('visible', '=', 'Yes');
+                    //         })->get();
+
+                    $data[] = product::where(
+                        [
+                            ['color_code', '=', $color_code],
+                            ['style', '=', $prod_id],
+                        ]
+                    )->orwhere(
+                        [
+                            ['gender', '=', $gender],
+                            ['gender', '=', 'Unisex'], 
+                        ]
+                    )->first();
+
+                    echo "<pre>";
+                    print_r($data);
+                    echo "</pre>";
                 }
-                
             }
         }
-         echo "<pre>";
-         print_r($data);
-         echo "</pre>";
         exit;
     }
+
+
 }

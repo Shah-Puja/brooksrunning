@@ -178,34 +178,18 @@
 				</div>
 		</div>
 </section>
-<<<<<<< HEAD
-
 <!--uTube popup -->
 <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
 	<div class="popup-container--wrapper">
 		<div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
 			<div class="uTube-info">
-				<iframe src="https://www.youtube.com/embed/{{ $shoe_info->video_link }}?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+				<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
 			</div>
 		</div>
 	</div>
 </div>
 <!--/uTube popup -->
-=======
-<!--uTube popup -->
-<div id="uTube-popup--wrapper" class="popup-container uTube--popup">
-						<div class="popup-container--wrapper">
-							<div class="popup-container--info">
-								<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
-								<div class="uTube-info">
-									<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--/uTube popup -->
->>>>>>> 2f0b303b096fe369d5fc94570f1a28cfc8018695
 
 </section>
 
