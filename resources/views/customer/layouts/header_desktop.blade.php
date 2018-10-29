@@ -314,7 +314,7 @@
                                                             <a href="/shoes/bedlam">Bedlam</a>
                                                         </li>
                                                         <li>
-                                                            <a href="/shoes/pureCadence">PureCadence</a>
+                                                            <a href="/shoes/purecadence">PureCadence</a>
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/ravenna">Ravenna</a>
