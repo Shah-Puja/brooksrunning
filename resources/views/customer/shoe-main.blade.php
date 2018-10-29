@@ -39,7 +39,7 @@
 								<div class="img img-shoes">
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt="">
 								</div>
-								@if(isset($shoe_info->shop_men) && $shoe_info->shop_men!='')
+								@if(isset($shop_men_url))
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
@@ -55,7 +55,7 @@
 								<div class="img img-shoes">
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
 								</div>
-								@if(isset($shoe_info->shop_women) && $shoe_info->shop_women!='')
+								@if(isset($shop_women_url))
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_women_url}}">Shop Women's</a></span>

@@ -75,26 +75,11 @@ class CategoryController extends Controller
         return view('customer.shoes-category');
     }
 
-    public function shoes_detail($shoe_name=''){
-        $shoe_name=strtolower($shoe_name);
-        if ($shoe_name == "glycerin" || $shoe_name == "adrenaline-gts" || $shoe_name == "ghost" || 
-            $shoe_name == "transcend" || $shoe_name == "launch" || $shoe_name == "aduro" || $shoe_name == "revel" ||
-            $shoe_name == "ravenna" || $shoe_name == "beast" || $shoe_name == "ariel" || $shoe_name == "hyperion" ||
-            $shoe_name == "neuro" || $shoe_name == "asteria" || $shoe_name == "addiction" || $shoe_name == "purecadence" ||
-            $shoe_name == "pureflow" || $shoe_name == "mazama" || $shoe_name == "cascadia" || $shoe_name == "cascadia-gtx" ||
-            $shoe_name == "ghost-gtx" || $shoe_name == "puregrit" || $shoe_name == "caldera" || $shoe_name == "vapor" ||
-            $shoe_name == "defyance" || $shoe_name == "dyad" || $shoe_name == "adrenaline-asr" || $shoe_name == "ricochet" 
-            || $shoe_name == "levitate" || $shoe_name == "bedlam") {
-
-                if ($shoe_name == "adrenaline-gts" || $shoe_name == "cascadia-gtx" || $shoe_name == "ghost-gtx") {
-                    if (strpos($shoe_name, '-') !== false) {
-                        $shoename = explode("-",$this->get_str_conv_upper($shoe_name));
-                        $shoe_name = implode(" ",$shoename);
-
-                    }
-                }
-        
-            $shoe_info = shoe_mast::where(['shoe_name'=> $shoe_name])->first();
+    public function shoes_detail($shoe_type=''){
+        //$shoe_name=strtolower($shoe_name);
+        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam");
+        if (in_array($shoe_type,$common_template)){    
+            $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
             
             if($shoe_info->shop_men != ''){
@@ -145,8 +130,7 @@ class CategoryController extends Controller
                 ['gender', '=', 'Unisex'], 
             ]
         )->first();
-    
-        return $prod_info->seo_name;
+        if ($prod_info) return $prod_info->seo_name;
     }
 
     public function get_page_info($page_url = ''){
