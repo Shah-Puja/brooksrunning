@@ -647,7 +647,6 @@
 									Brooks Blog
 	                                </a>
 	                            </li>
-								
 	                        </ul>
 	                    </li>
 	                </ul>
