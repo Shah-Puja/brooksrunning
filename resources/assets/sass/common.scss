@@ -160,6 +160,9 @@
             font-size: 24px;
             border-radius: 0 6px 6px 0;
             outline: 0;
+              &:active, &:focus{
+                background: $gray !important;
+              }
           }
         }
 
@@ -2708,6 +2711,7 @@
             &.disable{
               background-color: #f1f1f1;
               cursor:no-drop;
+              color: #dedcda;
               &:hover{
                 border: 1px solid $border;
               }
@@ -2718,6 +2722,7 @@
             .disable{
               background-color: #f1f1f1;
               cursor:no-drop;
+              color :#d4d3d4;
             }
             .selected{
               background-color: $blue;

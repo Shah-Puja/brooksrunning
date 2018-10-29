@@ -580,22 +580,22 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/what_makes_us_tick">
+	                                <a href="/meet_brooks/what-makes-us-tick">
 										What Makes Us Tick
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/run_happy_is">
+	                                <a href="/meet_brooks/run-happy-is">
 										Run Happy is
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/technology">
+	                                <a href="/meet_brooks/technology">
 									Technology
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/run-signature">
+	                                <a href="/meet_brooks/run-signature">
 									Run Signature
 	                                </a>
 	                            </li>
@@ -609,22 +609,22 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/competition">
+	                                <a href="/meet_brooks/competition">
 									Competition
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/newsletter">
+	                                <a href="/meet_brooks/newsletter">
 									E-Newsletter
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/training-tips">
+	                                <a href="/meet_brooks/training-tips">
 									Training Tips
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/injury-prevention">
+	                                <a href="/meet_brooks/injury-prevention">
 									Injury Prevention
 	                                </a>
 	                            </li>
@@ -647,27 +647,16 @@
 									Brooks Blog
 	                                </a>
 	                            </li>
-								
 	                        </ul>
 	                    </li>
 	                </ul>
 	            </li>
 	            <li>
 	                <a href="javascript:;">
-	                    <span class="title">Sale</span>
+	                    <span class="title">Sale</span> 
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
-	                    <!-- <li>
-	                        <a href="javascript:;">
-	                            Sub Item One                        
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="#">
-	                            Sub Item Two
-	                        </a>
-	                    </li> -->
 	                    <li>
 	                        <a href="javascript:;">
 	                            Women's Sale                         
@@ -711,7 +700,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/contact">
+	                <a href="/info/contact">
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>
@@ -733,7 +722,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="/newsletter">
+	                <a href="/meet_brooks/newsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>
 	                </a>
 	            </li>
