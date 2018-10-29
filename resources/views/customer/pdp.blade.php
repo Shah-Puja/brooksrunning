@@ -11,19 +11,22 @@
                             <li>
                                 <a href="/">Home</a>
                             </li>
+                            @if ($product->gender=='M' or $product->gender=='W')
                             <li>
                                 @switch($product->gender)
                                     @case('M')
-                                    <a href="/mens-running-shoes-and-clothing">Men's</a>
-                                    @break
+                                        <a href="/mens-running-shoes-and-clothing">Men's</a>
+                                        @break
                                     @case('W')
-                                    <a href="/womens-running-shoes-and-clothing">Women's</a>
-                                    @break
+                                        <a href="/womens-running-shoes-and-clothing">Women's</a>
+                                        @break
+                                    
                                 @endswitch
                             </li>
                             <li>
                                 <a href="#">{{ $product->prod_type }}</a>
                             </li>
+                            @endif
                             <li>
                                 <a href="javascript:void(0)" class="active">{{ strip_tags($product->stylename) }}</a>
                             </li>
@@ -59,6 +62,7 @@
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
+                                @if ($product->gender=='M' or $product->gender=='W')
                                 <li>
                                     @switch($product->gender)
                                         @case('M')
@@ -72,6 +76,7 @@
                                 <li>
                                     <a href="#">{{ $product->prod_type }}</a>
                                 </li>
+                                @endif
                                 <li>
                                     <a href="javascript:void(0)" class="active">{{ strip_tags($product->stylename) }}</a>
                                 </li>

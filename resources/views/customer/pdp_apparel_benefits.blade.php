@@ -109,7 +109,10 @@
                         @break
                     @case('W')
 						@php $gender = "Women's"; @endphp
-                        @break
+						@break
+					@default
+						@php $gender=""; @endphp
+						@break	
                  @endswitch
 				 <h3 class="br-heading">{{ $gender }} Clothing</h3>
 				<div class="info">
