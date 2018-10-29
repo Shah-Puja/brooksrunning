@@ -28,6 +28,8 @@ public function voucher_valid(){
     
     try{
         $response = $this->bridge->vouchervalid($gift_id,$pin,$total);   
+        print_r($response);
+        exit;
     }
     catch (Exception $e) {
         echo "ERROR HANDLED";
