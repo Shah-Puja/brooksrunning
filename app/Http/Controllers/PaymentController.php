@@ -301,11 +301,24 @@ class PaymentController extends Controller
             
             Order::where('id', $order_id)
             ->update($orderDataUpdate);
-			
-			//ap21 order process 
-            $PersonID = $this->get_personid($this->order->address->email);
-            if(!empty($PersonID)){
-                $this->ap21order($PersonID);
+            //ap21 order process 
+            if(env('APP_ENV')=='staging')
+                if(env('APP21_STATUS') == 'ON'){
+                    $PersonID = $this->get_personid($this->order->address->email);
+                    if(!empty($PersonID)){
+                        $this->ap21order($PersonID);
+                    }
+                }else{
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'System not connected to ap21',
+                        'result'        =>  'Ap21-OFF',
+                    );
+                    Order_log::createNew($logger);
+                }
+                
             }
             return true;
         }
