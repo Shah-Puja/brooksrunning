@@ -4,7 +4,7 @@
     <div class="wrapper">
         <div class="row">
             <div class="col-3 tab-3 header-desktop--left">
-                <a href="/">
+                <a href="/"> 
                     <div class="logo">
                         <img src="/images/brooks-running-logo.png" alt="Brooks Running Aus">
                     </div>
@@ -28,7 +28,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/info/contact-us">Help</a>
+                        <li><a href="/info/contact-us">Help</a> 
                         </li>
                         <li><a href="/info/find-a-store">Store Locator</a></li>
                         <li class="cart">
