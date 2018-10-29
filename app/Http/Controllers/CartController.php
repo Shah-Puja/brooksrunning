@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Cart_item;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 
 class CartController extends Controller {
@@ -31,46 +32,48 @@ class CartController extends Controller {
         if ($cart && !$cart->verifyItems()) {
             $cart->deleteUnavaliableItems();
         }
-        $cart_details = $skuidx_arr = array();
-        if (!empty($cart)) {
-        foreach ($cart->cartItems as $row) {
-
-            $skuidx_arr[] = $row->variant_id;
-        }
-         /*echo "<pre>";
-          print_r($cart);
-          die;*/
         
-            $data = $this->cart_api($cart);
-        }
-
-        /* echo "<pre>";
-          print_r($data);
-          die; */
-        if (!empty($data)) {
-            $cart_total = $data['cart_total'];
-            $total_discount = $data['total_discount'];
-            $freight_charges = $data['freight_charges'];
-
-            Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
-
-            $cart_details = $data['cart_detail'];
-        }
-
-        if (!empty($cart_details)) {
-            foreach ($cart_details as $item):
-                if ($item['ProductCode'] == 'EXPRESS') {
-                    $cart_total = $cart_total - $item['Value'];
-                    $freight_charges = $item['Value'];
-                    $cart_total = $cart_total;
-                    Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
+        if (App::environment('staging')) {
+            $cart_details = $skuidx_arr = array();
+            if (!empty($cart)) {
+                foreach ($cart->cartItems as $row) {
+                    $skuidx_arr[] = $row->variant_id;
                 }
-                
-                if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
-                    $cart_api_price_sale = $item['Price'];
-                    Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update([ 'price_sale' => $cart_api_price_sale]);
-                }
-            endforeach;
+                /* echo "<pre>";
+                  print_r($cart);
+                  die; */
+
+                $data = $this->cart_api($cart);
+            }
+
+            /* echo "<pre>";
+              print_r($data);
+              die; */
+            if (!empty($data)) {
+                $cart_total = $data['cart_total'];
+                $total_discount = $data['total_discount'];
+                $freight_charges = $data['freight_charges'];
+
+                Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+
+                $cart_details = $data['cart_detail'];
+            }
+
+            if (!empty($cart_details)) {
+                foreach ($cart_details as $item):
+                    if ($item['ProductCode'] == 'EXPRESS') {
+                        $cart_total = $cart_total - $item['Value'];
+                        $freight_charges = $item['Value'];
+                        $cart_total = $cart_total;
+                        Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
+                    }
+
+                    if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
+                        $cart_api_price_sale = $item['Price'];
+                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['price_sale' => $cart_api_price_sale]);
+                    }
+                endforeach;
+            }
         }
         /* echo $cart_total;
           die; */
