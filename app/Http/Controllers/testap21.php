@@ -13,7 +13,7 @@ class testap21 extends Controller
     }
 public function voucher_valid(){
     //$gift_id="200001005111"; $pin="3164111";$total=1000;
-    $gift_id="200001012"; $pin="2026";
+    $gift_id="200001012"; $pin="2026";$total=100;
     //$gift_id="200001029"; $pin="3649";
     //$gift_id="200001036"; $pin="923";
     //$gift_id="200001043"; $pin="2685";
@@ -56,7 +56,7 @@ public function create_order($person_id='115414'){
         $xml_data = "
         <Order>
         <PersonId>115414</PersonId>
-        <OrderNumber>BRN-2018-test-4</OrderNumber>
+        <OrderNumber>BRN-2018-test-5</OrderNumber>
         <DeliveryInstructions></DeliveryInstructions>
         <Addresses>
             <Billing>
