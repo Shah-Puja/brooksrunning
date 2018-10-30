@@ -28,18 +28,36 @@
                                 <p class="right">$ {{ @number_format($cart->freight_cost, 2) }}</p>
                             </div>
                         </div>
+                            @if($cart->gift_discount!=0)
+                        <div class="row total">
+                            <div class="mob-7">
+                                <p>Gift Discount</p>
+                            </div>
+                            <div class="mob-5">
+                                <p class="right">-$ {{ @number_format($cart->gift_discount, 2) }}</p>
+                            </div>
+                        </div>
+                        @endif
+
                         <div class="row total">
                             <div class="mob-7">
                                 <p class="bold-font blue">Order Total:</p>
                             </div>
+                            @php 
+                            if($cart->gift_discount!=0){
+                                $subtotal = @number_format(($cart->gift_cart_total + $cart->freight_cost), 2);
+                            }else{
+                                $subtotal = @number_format($cart->grand_total, 2);
+                            }
+                            @endphp
                             <div class="mob-5">
-                                <p class="bold-font blue right">$ {{ @number_format($cart->grand_total, 2) }}</p>
+                                <p class="bold-font blue right">$ {{ $subtotal }}</p>
                             </div>
                         </div>	
                         @if(isset($cart->grand_total) && $cart->grand_total <1000)
                         <div class="afterpay">
                             <span>or 
-                            4 payments of ${{ @number_format(($cart->grand_total/4), 2) }} with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
+                            4 payments of ${{ @number_format(($subtotal/4), 2) }} with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
                         </div>
                         @endif 
                     </div>

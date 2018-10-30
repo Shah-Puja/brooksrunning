@@ -25,7 +25,7 @@
                     <h3 class="br-heading">Shopping Cart</h3>
                     <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
-                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href='/shipping'">Proceed to Purchase</button> 
+                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
                 <div class="shopping-heading">
                     <div class="row">
                         <div class="col-6 hidden-tab hidden-mob"><p>Product</p></div>
@@ -123,30 +123,51 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="input-wrapper">
-                                            <div class="radio-inline">
-                                                <input type="radio" id="voucher" name="gift" checked="checked">
-                                                <label for="voucher">
-                                                    <div class="mark"><span></span></div>
-                                                    <div class="text">
-                                                        <h3 class="bold-font">Gift Voucher</h3>
-                                                        <input type="text" class="gift-input" placeholder="Voucher Number">
-                                                        <input type="text" class="gift-input" placeholder="Voucher Pin">
-                                                        <button class="pdp-button">Apply</button>
-                                                    </div>
-                                                </label>
-                                            </div>
+                                            <form name="check_valid_gift_voucher" id="check_valid_gift_voucher"> 
+                                                <div class="radio-inline">
+                                                    <input type="radio" id="gift_voucher" name="gift_voucher" checked="checked">
+                                                    <label for="voucher">
+                                                        <div class="mark"><span></span></div>
+                                                        <div class="text">
+                                                            <h3 class="bold-font">Gift Voucher</h3> 
+                                                            @php if($cart->gift_id!="0.00") {
+                                                            $display = "display:block";
+                                                            } 
+                                                            else{
+                                                            $display = "display:none";
+                                                            } 
+                                                            @endphp
+
+                                                            @if($cart->gift_id!="0.00")
+                                                            <a style="{{ $display }}" id="voucher_number_link" href="javascript:void(0);" class="remove_gift">{{$cart->gift_id}}</a>
+                                                            <input type="hidden" name="gift_voucher_number" id="gift_voucher_number" value="{{$cart->gift_id}}">
+                                                            @endif
+
+
+                                                            <div class="show_gift_vouchers" style="{{ $display }}">
+                                                                <input type="text" id="voucher_number" name="voucher_number" class="gift-input" placeholder="Voucher Number">
+                                                                <input type="text" id="voucher_pin" name="voucher_pin" class="gift-input" placeholder="Voucher Pin">
+                                                                <p class="show_voucher_error" style="color:red;"></p>
+                                                                <button id="gift_voucher_validate" class="pdp-button">Apply</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <div class="radio-inline">
-                                                <input type="radio" id="promotion" name="gift">
+                                                <input type="radio" id="promotion" name="promotion">
                                                 <label for="promotion">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
                                                         <h3 class="bold-font">Promotion Code</h3>
-                                                        <input type="text" class="gift-input" placeholder="Discount Code">
-                                                        <button class="pdp-button">Apply</button>
+                                                        <input type="text" id="promo_code" class="gift-input" placeholder="Discount Code">
+                                                        <p class="show_promocode_error" style="color:red;"></p>
+                                                        <button id="promo_code_validate" class="pdp-button">Apply</button>
                                                     </div>
                                                 </label>
                                             </div>
@@ -164,9 +185,9 @@
                             <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
-                           
+
                             @if ( @$cart->items_count > 0 )
-                            <button class="proceed-to-purchase pdp-button" onclick="window.location.href='/shipping'">Proceed to Purchase</button>
+                            <button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
                             @endif
                         </div>
                     </div>
@@ -176,7 +197,7 @@
         <div class="col-3 tab-4">
             <div class="cart-right--container">
                 @if ( @$cart->items_count > 0 )
-                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href='/shipping'">Proceed to Purchase</button> 
+                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
                 @endif
                 <div class="order hidden-mob order_summary">
                     @include('cart.order_summary')
@@ -186,7 +207,7 @@
         </div>
     </div>
 
-<!---start of static popup-->
+    <!---start of static popup-->
     <div id="edit-cart--popup" class="popup-container edit-cart--popup"> </div>
     <!---end of static popup-->
 </section>
@@ -196,6 +217,82 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        $('#gift_voucher_validate').click(function () {
+            var voucher_number = $('#voucher_number').val();
+            var voucher_pin = $('#voucher_pin').val();
+            if (voucher_number == "" || voucher_pin == "") {
+                $('.show_voucher_error').html('Please enter the gift certificate pin');
+                return false;
+            } else {
+                var url = "cart/check_valid_gift_voucher";
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: url,
+                    method: "POST",
+                    data: {voucher_number: voucher_number, voucher_pin: voucher_pin},
+                    success: function (result) {
+                        if (result == "success") {
+                            $('.show_voucher_error').html();
+                            $('.show_gift_vouchers').hide();
+                            $('#voucher_number_link').css('display', 'block');
+                            $("#voucher_number_link").val(voucher_number);
+                        } else {
+                            $('.show_voucher_error').html(result);
+                        }
+                    },
+                    error: function () {
+                        return false;
+                    },
+                    statusCode: {
+                        419: function () {
+                            window.location.href = "/cart";
+                        }
+                    }
+                });
+                return false;
+            }
+        });
+
+        $('.remove_gift').click(function () {
+            var gift_voucher_number = $('#gift_voucher_number').val();
+            var url = "cart/remove_gift_voucher";
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: url,
+                method: "POST",
+                data: {gift_voucher_number: gift_voucher_number},
+                success: function (result) {
+                    if (result == "success") {
+                        //$('.show_gift_vouchers').show(); 
+                        $(".show_gift_vouchers").fadeIn(200)
+                        $('.remove_gift').hide();
+                    }
+                },
+                error: function () {
+                    return false;
+                },
+                statusCode: {
+                    419: function () {
+                        window.location.href = "/cart";
+                    }
+                }
+            });
+        });
+
+        $('#promo_code_validate').click(function () {
+            var promo_code = $('#promo_code').val();
+            if (promo_code == "") {
+                $('.show_promocode_error').html('Please enter discount code');
+                return false;
+            } else {
+                $('.show_promocode_error').html('');
+            }
+        });
+
         var checked_delivery_option = $("input:radio[name='d-options']:checked").val();
 
         $("input:radio[name='d-options']").click(function () {
@@ -211,18 +308,8 @@
                 url: url,
                 method: "POST",
                 data: {delivery_option_value: delivery_option_value},
-                //data: {delivery_option_value: delivery_option_value, user_id: user_id},
                 success: function (result) {
                     $(".order").load("cart/get_cart_order_total");
-                    /*if (((checked_delivery_option == "standard") || (checked_delivery_option == "express")) && (delivery_option_value === "new_zealand")) {
-                     location.reload();
-                     } else if (((delivery_option_value == "standard") || (delivery_option_value == "express")) && (checked_delivery_option === "new_zealand")) {
-                     location.reload();
-                     } else {
-                     //alert("pending");
-                     $(".order").load("cart/get_cart_order_total");
-                     }*/
-
                     $("#overlay").remove();
                 },
                 error: function () {
@@ -233,3 +320,11 @@
     });
 </script>
 @endsection
+
+<style>
+    .remove_gift{
+        background: url(../images/compareremove.png) no-repeat;
+        padding-left: 22px;
+        font-weight: normal;
+    }
+</style>
