@@ -9,6 +9,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Order_log;
 use App\Models\Order_number;
+use App\Models\User;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderConfirmation;
@@ -298,13 +299,14 @@ class PaymentController extends Controller
                     );
                     break;
             }
-            
-            Order::where('id', $order_id)
-            ->update($orderDataUpdate);
             //ap21 order process 
+           $Person = User::select('person_idx')->where('email',$this->order->address->email)->first();
+           $PersonID = (isset($Person->person_idx) && $Person->person_idx!='') ? $Person->person_idx : '';
             if(env('APP_ENV')=='staging'){
                 if(env('APP21_STATUS') == 'ON'){
-                    $PersonID = $this->get_personid($this->order->address->email);
+                    if(empty($PersonID)){
+                        $PersonID = $this->get_personid($this->order->address->email);
+                    }
                     if(!empty($PersonID)){
                         $this->ap21order($PersonID);
                     }
@@ -320,6 +322,21 @@ class PaymentController extends Controller
                 }
                 
             }
+            if(!empty($PersonID)){
+                // Update personid_status 
+                $orderDataUpdate['person_idx']= $PersonID;
+                $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
+                Order::where('id', $this->order->id)->update($orderDataUpdate);
+
+                //Add User  when place an order
+                User::updateOrCreate(
+                    ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname , 'source' =>'Order' ,'person_idx'=>$PersonID],
+                    ['email' => $this->order->address->email]
+                );
+
+            }
+
+
             return true;
         }
     
