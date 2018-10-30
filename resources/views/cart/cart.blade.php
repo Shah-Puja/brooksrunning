@@ -240,6 +240,7 @@
                             $('.show_gift_vouchers').hide();
                             $('#voucher_number_link').css('display', 'block');
                             $("#voucher_number_link").val(voucher_number);
+                            $(".order_summary").load("cart/get_cart_order_total");
                         } else {
                             $('.show_voucher_error').html(result);
                         }
@@ -272,6 +273,7 @@
                         //$('.show_gift_vouchers').show(); 
                         $(".show_gift_vouchers").fadeIn(200)
                         $('.remove_gift').hide();
+                        $(".order_summary").load("cart/get_cart_order_total");
                     }
                 },
                 error: function () {
