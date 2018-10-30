@@ -252,4 +252,8 @@ class CartController extends Controller {
         }
     }
 
+    public function couponvalidate(Request $request){
+        //echo "<pre>";print_r($request->promo_code);die;
+    }
+
 }
