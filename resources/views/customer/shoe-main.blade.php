@@ -2,11 +2,6 @@
 @section('content')
 <link rel="stylesheet" href="/css/main.css">
 <section class="shoe-main-container">
-	{{-- @php
-		echo "<pre>";
-        print_r($shoe_info);
-        echo "</pre>";
-	@endphp --}}
 <section class="create-account--header plp-header">
 	<div class="wrapper">
 		<div class="row">

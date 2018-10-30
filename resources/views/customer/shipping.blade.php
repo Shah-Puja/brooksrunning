@@ -57,8 +57,9 @@
 				<!--/Password popup Success-->
 				<h1 class="br-heading">Shipping Address</h1>
 				<p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
-				<!-- Shipping first step -->
-				<div class="shipping-form" id="shipping-form" style="display: block;">
+                {{ auth()->user() }}
+                <!-- Shipping first step -->
+				<div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
                 <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
                     @csrf
 					<p class="email-msg">Please enter your email address</p>
@@ -72,7 +73,7 @@
                                     endif;
                                 ?>
 								<label for="email1"><sup>*</sup>Email Address</label>
-								<input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
 							</div>
 						</div>
 					</div>
@@ -85,9 +86,9 @@
                     </div>
                 </form>
 			    </div>
-			    <!--/Shipping first step -->
-			    <!-- Shipping Final step -->
-			    <div class="shipping-main-form" style="display: none;">
+                <!--/Shipping first step -->
+                <!-- Shipping Final step -->
+			    <div class="shipping-main-form" @if(auth()->user()) style="display: block;" @else style="display: none;" @endif>
                     <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
                         @csrf
                         <div class="shipping-form">
@@ -102,13 +103,13 @@
                                             endif;
                                         ?>
                                         <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
-                                        <input type="text" id ="reset_email" name="email" class="input-field main_email_field" data-label-name="email">
+                                        <input type="text" id ="reset_email" value="{{(isset(auth()->user()->email) && auth()->user()->email!='')?auth()->user()->email:''}}" name="email" class="input-field main_email_field" data-label-name="email">
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Password Wrapper -->
-                            <div class="password-wrapper" style="display: none;">
+                            <div class="password-wrapper" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
                                 <div class="row">
                                     <div class="col-12">
                                         <p class="email-msg">Looks like you have an account. Enter your password for faster checkout.</p>	
@@ -145,7 +146,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
-                                        <input type="text" name="s_fname" class="input-field" data-label-name="first name">
+                                        <input type="text" name="s_fname" value="{{(isset(auth()->user()->first_name) && auth()->user()->first_name!='')?auth()->user()->first_name:''}}" class="input-field" data-label-name="first name">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -157,7 +158,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
-                                        <input type="text" name="s_lname" class="input-field" data-label-name="last name">
+                                        <input type="text" name="s_lname" value="{{(isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:''}}" class="input-field" data-label-name="last name">
                                     </div>
                                 </div>
                             </div>
@@ -206,16 +207,16 @@
                                         <label for=""><sup>*</sup>State: {!! $error_s_state !!}</label>
                                         <select class="select-field" name="s_state" data-label-name="state">
                                             <option value="" selected="selected">Select State</option>
-                                            <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
-                                            <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
-                                            <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>ACT</option>
-                                            <option value="QLD" {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
-                                            <option value="SA" {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
-                                            <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
-                                            <option value="VIC" {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
-                                            <option value="WA" {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
-                                            <option value="New Zealand" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
-                                            <option value="Other" {{ $state =='Other' ? "selected='selected'": "" }}>Other</option>
+                                            <option value="ACT" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
+                                            <option value="NSW" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
+                                            <option value="NT" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='NT' ? "selected='selected'": "" }}>ACT</option>
+                                            <option value="QLD" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
+                                            <option value="SA" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
+                                            <option value="TAS" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
+                                            <option value="VIC" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
+                                            <option value="WA" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
+                                            <option value="New Zealand" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
+                                            <option value="Other" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='Other' ? "selected='selected'": "" }}>Other</option>
                                         </select>
                                     </div>
                                 </div>
@@ -230,7 +231,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        <input type="text" class="input-field" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                        <input type="text" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -242,7 +243,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Phone: {!! $error_s_phone !!}</label>
-                                        <input type="text" name="s_phone" class="input-field" data-label-name="phone">
+                                        <input type="text" name="s_phone" value="{{(isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:''}}" class="input-field" data-label-name="phone">
                                     </div>
                                 </div>
                             </div>
