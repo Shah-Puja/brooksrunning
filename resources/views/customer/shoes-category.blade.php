@@ -1,5 +1,17 @@
 @extends('customer.layouts.master')
 @section('content')
+@php
+	use App\Http\Controllers\CategoryController;
+	$heading='';
+	switch($category){
+		case 'neutral': $heading = "Neutral Running Shoes";break;
+		case 'support': $heading = "support Running Shoes";break;
+		case 'trail': $heading = "Trail Running Shoes";break;
+		case 'competition': $heading = "competition Running Shoes";break;
+		case 'x-training': $heading = "Cross Trainer Shoes";break;
+		case 'walking': $heading = "Walking shoes";break;
+	}
+@endphp
 <link rel="stylesheet" href="css/main.css">
 <section class="ctg-main-container">
 <div class="create-account--header plp-header">
@@ -13,13 +25,13 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="JavaScript:Void(0);" class="active">Neutral Running Shoes</a>
+							<a href="JavaScript:Void(0);" class="active">{{$heading}}</a>
 						</li>
 					</ul>
 				</div>
         
-          <h1 class="br-mainheading">Neutral Running Shoes</h1>
-            <p>Neutral running shoes are ideal for people who neither under-pronate nor over-pronate but pronate at 15%, which is the optimal amount that allows for feet to make full contact with the ground. As neutral runners possess the correct running form and their feet absorb shock at the highest degree, neutral shoes are perfect as they come with minimal stabilising features.</p>
+          <h1 class="br-mainheading">{{$heading}}</h1>
+            <p>{{$page_info['header_text']}}</p>
         </div>
       </div>
     </div>
@@ -29,126 +41,58 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="ctg-wrapper-container">
+				@foreach($shoes_category_product as $items)
 				<div class="mob-6 tab-4 col-4">
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								@if(isset($items->experience))
+									@if($items->experience == 'Cushion Me')
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="100" height="100" />
+									@elseif ($items->experience == 'Energize Me')
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.png" alt="Energize Badge" width="100" height="100" />
+									@elseif ($items->experience == 'Connect Me') 
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="100" height="100" />
+									@elseif ($items->experience == 'Propel Me') 
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="100" height="100" />
+									@endif
+								@endif
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+							@if($items->category == "x-training")
+								<img id="plp-img" src="{{ config('site.image_url.base_category_img')}}x_training/img/{{ strtolower($items->shoe_type) }}.jpg" alt="">
+							@else
+							<img id="plp-img" src="{{ config('site.image_url.base_category_img').strtolower($items->category) }}/img/{{ strtolower($items->shoe_type) }}.jpg" alt="">
+							@endif
 							</div>						
 							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
+								<h3>{{ $items->shoe_name }}</h3>
+								<div class="shoes-type">{{ $items->shoe_category_desc }}</div>
 								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
+									@php
+										if(isset($items->shop_men) && $items->shop_men!=''){
+											$shop_m = explode('_', $items->shop_men);
+											$seo_name_men = CategoryController::get_seo_name($shop_m['0'],$shop_m['1'],'m');
+											$shop_men_url = $seo_name_men."/".$items->shop_men.".html";
+										}
+										if(isset($items->shop_women) && $items->shop_women!=''){
+											$shop_w = explode('_', $items->shop_women);
+											$seo_name_women = CategoryController::get_seo_name($shop_w['0'],$shop_w['1'],'w');
+											$shop_women_url = $seo_name_women."/".$items->shop_women.".html";
+										}
+									@endphp
+									@if($items->shop_men != '')
+									<span><a class="secondary-button" href="{{$shop_men_url}}">Men's</a></span>
+									@endif
+									@if($items->shop_women != '')
+									<span><a class="secondary-button" href="{{$shop_women_url}}">Women's</a></span>
+									@endif
 								</div>
 							</div>
 						</div>
 				   </div>
 			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="ctg-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="ctg-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="ctg-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="ctg-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="ctg-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="shoes-type">Lightweight-Flexible-Neutral</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Men's</a></span>
-									<span><a class="secondary-button" href="#">Women's</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
+			   @endforeach
 		    </div>
 		</div>
 	</div>
@@ -204,9 +148,8 @@
 		<div class="row">
 			<div class="cat-desc">
 				<div class="col-12">
-					<h2 class="">Discover our range</h2>
-					<p>If you’re looking for the best neutral running shoes, you’ll find what you seek here at Brooks. Constructed with high-quality materials for a superior fit, our neutral shoes are comfortable, durable, and will provide you with years of wear.
-					Choose from our wide range of styles and place your order today to receive free delivery across Australia when you spend more than $50!</p>
+					<h2 class="">{{$page_info['footer_h2']}}</h2>
+					<p>{{$page_info['footer_text']}}</p>
 				</div>
 			</div>
 		</div>

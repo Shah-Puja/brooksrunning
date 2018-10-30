@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shoe_mast;
 use App\Models\Product;
+use App\Models\Seo;
 
 class CategoryController extends Controller
 {
@@ -47,45 +48,27 @@ class CategoryController extends Controller
         $flag_bra = ($category=='womens-sports-bras') ? 'Yes' : 'No';
         $gender = $products->pluck('gender')->first();
         $filters = \App\Models\Category::provideFilters($products,$prod_type,$flag_bra);
-
-        //echo "<hr><pre>";
-        //print_r($products);
-        //echo "</pre>";
-        //exit;
-
         return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );
     }
 
     public function womens_landing(){
         return view('customer.mens-running-shoes-and-clothing');
-   }
-   public function mens_landing(){
-    return view('customer.womens-running-shoes-and-clothing');
     }
+    public function mens_landing(){
+        return view('customer.womens-running-shoes-and-clothing');
+    }
+    
     public function shoes_category(){
-        return view('customer.shoes-category');
-    }
-    public function shoe_main(){
-        return view('customer.shoe-main');
-    }
-
-    public function neutral_running_shoes(){
-        return view('customer.neutral-running-shoes');
-    }
-    public function support_running_shoes(){
-        return view('customer.support-running-shoes');
-    }
-    public function trail_running_shoes(){
-        return view('customer.trail-running-shoes');
-    }
-    public function competition_running_shoes(){
-        return view('customer.competition-running-shoes');
-    }
-    public function cross_trainer_shoes(){
-        return view('customer.cross-trainer-shoes');
-    }
-    public function walking_shoes(){
-        return view('customer.walking-shoes');
+        $page_url = explode('/',$_SERVER['REQUEST_URI']);
+        $page_info = $this->get_page_info($page_url[1]);
+        $category_array = explode('-',$page_url[1]);
+        $category = $category_array[0];
+        if($category=='cross'){
+            $category = 'x-training';
+        }
+        $shoes_category_product = $this->get_shoes_category_product($category);
+        
+        return view('customer.shoes-category', compact('category','page_info','shoes_category_product') );
     }
 
     public function shoes_detail($shoe_type=''){
@@ -117,7 +100,21 @@ class CategoryController extends Controller
         
     }
 
-    public function get_seo_name($style, $color_code, $gen) {
+    public function get_str_conv_upper($shoe_name = "") {
+        $shoe_name_arr = explode('-', $shoe_name);
+        $shoe_name_arr_final = array();
+        foreach ($shoe_name_arr as $shoe_key => $shoe_arr) {
+            if ($shoe_key == 0) {
+                $shoe_name_arr_final[] = $shoe_arr;
+            } else {
+                $shoe_name_arr_final[] = (strlen($shoe_arr) < 4) ? strtoupper($shoe_arr) : $shoe_arr;
+            }
+        }
+        $shoe_name = implode('-', $shoe_name_arr_final);
+        return $shoe_name;
+    }
+
+    public static function get_seo_name($style, $color_code, $gen) {
         $prod_info = product::where(
             [
                 ['color_code', '=', $color_code],
@@ -129,4 +126,33 @@ class CategoryController extends Controller
         })->first();
         if ($prod_info) return $prod_info->seo_name;
     }
+
+    public function get_page_info($page_url = ''){
+        $page_url .= '/';
+        $shoe_info = seo::where(['page_url'=> $page_url])->first();
+        $cnt = seo::where(['page_url'=> $page_url])->count();
+        if($cnt > 0){
+            $page_info = array(
+                "title" => $shoe_info->title_tag,
+                "meta_description" => $shoe_info->meta_description, 
+                "keywords" => $shoe_info->keywords,
+                "header_h1" => $shoe_info->header_h1, 
+                "header_text" => $shoe_info->header_text, 
+                "footer_h2" => $shoe_info->footer_h2, 
+                "footer_text" => $shoe_info->footer_text
+            );
+
+            return $page_info;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function get_shoes_category_product($category){
+        $result = Shoe_mast::where('category',$category)->get();
+        return $result;
+    }
+
+
 }

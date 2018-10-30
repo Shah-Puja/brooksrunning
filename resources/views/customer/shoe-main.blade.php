@@ -98,11 +98,11 @@
 		<div class="row">
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
 				<div id="desk" class="col-8 tab-8 mob-12">
-					<a class="utube uTube-popup--control" href="JavaScript:Void(0);">
-						<div class="module-img">
-								<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
-						</div>
-                        <div class="play"></div>
+					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
+							<div class="module-img">
+									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
+							</div>
+						<div class="play"></div>
 					</a>
 				</div>
 			@endif
@@ -166,6 +166,18 @@
 <!--uTube popup -->
 @if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
 <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
+<<<<<<< HEAD
+	<div class="popup-container--wrapper">
+		<div class="popup-container--info">
+			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
+			<div class="uTube-info">
+				<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/uTube popup -->
+=======
 						<div class="popup-container--wrapper">
 							<div class="popup-container--info">
 								<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
@@ -177,6 +189,7 @@
 					</div>
 					@endif
 					<!--/uTube popup -->
+>>>>>>> 0545086bc1ae9f7b2143cf527a49aeffa831b23f
 
 </section>
 

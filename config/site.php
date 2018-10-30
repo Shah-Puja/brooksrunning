@@ -6,9 +6,10 @@ return [
 	'syg_notify_email' => env('SYG_NOTIFY_EMAIL'),
 	'image_url'=> [
 		'base' => env('BASE_IMAGE_URL'),
-		'base_shoe_new' => env('BASE_SHOE_NEW_IMAGES_URL'),
-		'base_shoe_new_exp' => env('BASE_SHOE_NEW_EXP_URL'),
 		'base_banefit' => env('BASE_MEDIA_BENEFITS_IMAGES_URL'),
+		'base_shoe_new' => env('SHOE_PAGE_URL').'pages/',
+		'base_shoe_new_exp' => env('SHOE_PAGE_URL').'experience/',
+		'base_category_img' => env('SHOE_PAGE_URL').'category/',
 
         'products' => [
 			'original' => env('BASE_PRODUCT_IMAGES_URL').'orig/' ,
