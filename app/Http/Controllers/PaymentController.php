@@ -300,8 +300,10 @@ class PaymentController extends Controller
                     break;
             }
             //ap21 order process 
-           $Person = User::select('person_idx')->where('email',$this->order->address->email)->first();
-           $PersonID = (isset($Person->person_idx) && $Person->person_idx!='') ? $Person->person_idx : '';
+           $Person = User::firstOrCreate(['email' => $this->order->address->email],['first_name' => $this->order->address->s_fname, 'last_name'=>$this->order->address->s_lname])
+           if(isset($Person)){
+               $PersonID = ($Person->person_idx!='') ? $Person->person_idx : '';
+           }
             if(env('APP_ENV')=='staging'){
                 if(env('APP21_STATUS') == 'ON'){
                     if(empty($PersonID)){
@@ -328,15 +330,8 @@ class PaymentController extends Controller
                 $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 Order::where('id', $this->order->id)->update($orderDataUpdate);
 
-                //Add User  when place an order
-                User::updateOrCreate(
-                    ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname , 'source' =>'Order' ,'person_idx'=>$PersonID],
-                    ['email' => $this->order->address->email]
-                );
-
+                User::where('email', $this->order->address->email)->update(['person_idx'=> $PersonID]);
             }
-
-
             return true;
         }
     
