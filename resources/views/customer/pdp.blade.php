@@ -343,33 +343,64 @@
                         @endif
                     </div>
                     @endif
-                    @php  $specification_info = (!empty($product->specifications)) ? explode('#', $product->specifications) : ''; @endphp
-                    @if(!empty($specification_info))
+                    @php  
+                        $specification_info = (!empty($product->specifications)) ? explode('#', $product->specifications) : ''; 
+                        $product_features = (!empty($product->product_features)) ? explode('#', $product->product_features) : '';
+                        $fabric = (!empty($product->fabric)) ? $product->fabric : '';
+                    @endphp
+                   
+                    @if(!empty($specification_info) || !empty($product_features) || !empty($fabric))
                     <div class="info--right tab-6">
+                        @if(!empty($specification_info))
                         <div class="m-label-heading">
                             <h3 class="br-heading">Specs</h3>
                         </div>
                         <table class="table__specs">
                             <tbody>
                                 @foreach($specification_info as $curr_specs)
-                                @if ($curr_specs != '')
-                                @php
-                                $spec_arr = explode(':', $curr_specs);
-                                $spec_name = $spec_arr['0'];
-                                $spec_value = $spec_arr['1'];
-                                @endphp
-                                <tr class="specs__row">
-                                    <td class="label--bold">
-                                        <p>{{ $spec_name }}</p>
-                                    </td>
-                                    <td class="label--info">
-                                        <p>{{ $spec_value }}</p>
-                                    </td>
-                                </tr>
-                                @endif
+                                    @if ($curr_specs != '')
+                                        @php
+                                            $spec_arr = explode(':', $curr_specs);
+                                            $spec_name = $spec_arr['0'];
+                                            $spec_value = $spec_arr['1'];
+                                        @endphp
+                                    <tr class="specs__row">
+                                        <td class="label--bold">
+                                            <p>{{ $spec_name }}</p>
+                                        </td>
+                                        <td class="label--info">
+                                            <p>{{ $spec_value }}</p>
+                                        </td>
+                                    </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>
+                         <br>
+                        @endif
+            
+                        @if(!empty($product_features))
+                            <h3 class="br-heading">Product Features</h3>
+                            <table class="table__specs">
+                                <tbody>
+                                    @foreach($product_features as $product_feature)
+                                        @if ($product_feature != '')
+                                        <tr class="specs__row">
+                                            <td class="label--info">
+                                                <p style="text-align:left">{{ $product_feature }}</p>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <br>
+                        @endif
+                        
+                        @if(!empty($fabric))
+                            <h3 class="br-heading">Fabric</h3>
+                            <p class="br-info">{!! $fabric !!}</p>
+                        @endif
                     </div>
                     @endif
                 </div>
@@ -632,21 +663,23 @@
     return false;
 });
 
-$(document).on('click', '.width-wrapper li:not(".disable")', function () {
-    $(".select-option--wrapper li").removeClass("selected");
+$(document).on('click', '.width-wrapper li:not(".disable")', function (event) {
     let value = $(this).data('value');
-    $(this).addClass("selected");
-    $(this).parent().parent().find(".label-heading .text").html($(this).text());
-    $(this).parent().slideUp("fast");
-    $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
-    $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
-    $("#detail input[name='width_code']").val(value);
-    let data = $.grep( variants, function( n, i ) {
-         if(n) return n['width_code']==value && n['visible']=='Yes';
-        });
-    $(".size-show li").addClass("disable");
-    for(i = 0; i< data.length; i++){
-        $(".size-show").find("[data-value='"+data[i]['size']+"']").removeClass("disable");
+    if(value!=''){
+        $(".select-option--wrapper li").removeClass("selected");
+        $(this).addClass("selected");
+        $(this).parent().parent().find(".label-heading .text").html($(this).text());
+        $(this).parent().slideUp("fast");
+        $(this).parent().parent().find(".label-heading .sel-icon span").removeClass("icon-top-arrow");
+        $(this).parent().parent().find(".label-heading .sel-icon span").addClass("icon-down-arrow");
+        $("#detail input[name='width_code']").val(value);
+        let data = $.grep( variants, function( n, i ) {
+            if(n) return n['width_code']==value && n['visible']=='Yes';
+            });
+        $(".size-show li").addClass("disable");
+        for(i = 0; i< data.length; i++){
+            $(".size-show").find("[data-value='"+data[i]['size']+"']").removeClass("disable");
+        }
     }
     event.stopPropagation();
 });
