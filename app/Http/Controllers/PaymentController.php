@@ -304,7 +304,7 @@ class PaymentController extends Controller
            if(isset($Person)){
                $PersonID = ($Person->person_idx!='') ? $Person->person_idx : '';
            }            
-            if(env('APP21_STATUS') == 'ON'){
+            if(env('AP21_STATUS') == 'ON'){
                     if(empty($PersonID)){
                         $PersonID = $this->get_personid($this->order->address->email);
                         $orderDataUpdate['person_idx']= $PersonID;
@@ -324,7 +324,6 @@ class PaymentController extends Controller
                     Order_log::createNew($logger);
             }
                 
-            
             if(!empty($PersonID)){
                 Order::where('id', $this->order->id)->update($orderDataUpdate);
                 User::where('email', $this->order->address->email)->update(['person_idx'=> $PersonID]);
@@ -433,14 +432,16 @@ class PaymentController extends Controller
                     
                     Order_log::createNew($logger);
                     
-                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT&email=" . $email;
+                    $URL = env('AP21_URL')."/Persons/?countryCode=".env('AP21_COUNTRYCODE')."&email=" . $email;
                     $data = array(
                         'api_name'     => 'Get PersonID Error',
                         'URL'      => $URL,
                         'Result'    => $result,
                         'Parameters'        => '',
                     );
-                    Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
+                    Mail::to( config('site.notify_email') )
+                        ->cc( config('site.syg_notify_email') )
+                        ->send(new OrderAlert($this->order,$data));
                     $userid = false;
                     break;
             }
@@ -493,7 +494,7 @@ class PaymentController extends Controller
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        $URL = env('AP21_URL')."Persons/?countryCode=AUFIT";
+        $URL = env('AP21_URL')."Persons/?countryCode=".env('AP21_COUNTRYCODE');
         $logger = array(
             'order_id'      => $this->order->id,
             'log_title'     => 'Person',
@@ -538,14 +539,15 @@ class PaymentController extends Controller
 
                     // Send ap21 alert  
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
-                    $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT";
                     $data = array(
                         'api_name'     => 'Create Person Error',
                         'URL'      => $URL,
                         'Result'    => $result,
                         'Parameters'        => $person_xml,
                     );
-                    Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
+                    Mail::to( config('site.notify_email') )
+                        ->cc( config('site.syg_notify_email') )
+                        ->send(new OrderAlert($this->order,$data));
 
                     $returnVal = false;
 
@@ -725,7 +727,7 @@ class PaymentController extends Controller
         $xml_data.="</Order>";
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id,$xml_data);
-        $URL =  env('app21_url') . "/Persons/$person_id/Orders/?countryCode=AUFIT";
+        $URL =  env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=".env('AP21_COUNTRYCODE');
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
             case 201:
@@ -734,7 +736,7 @@ class PaymentController extends Controller
                 $last_seg = $str_arr[count($str_arr) - 1];
                 $last_seg_arr = explode("?", $last_seg);
                 $order_id = $last_seg_arr[0];
-                $order_url =env('app21_url') . "/Persons/$person_id/Orders/$order_id?countryCode=AUFIT";
+                $order_url =env('AP21_URL') . "/Persons/$person_id/Orders/$order_id?countryCode=".env('AP21_COUNTRYCODE');
 
                 $returnVal = $order_id;
                 $logger = array(
@@ -753,9 +755,7 @@ class PaymentController extends Controller
                     'app21_order' => $returnVal,
                     'app21_order_status' => date('Y-m-d H:i:s')
                 );
-                Order::where('id', $this->order->id)
-                ->update($orderDataUpdate);
-
+                Order::where('id', $this->order->id)->update($orderDataUpdate);
                 break;
             case 400 :
 
@@ -776,7 +776,9 @@ class PaymentController extends Controller
                      'Result'    => $returnVal,
                      'Parameters'        => $xml_data,
                  );
-                 Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
+                 Mail::to( config('site.notify_email') )
+                      ->cc( config('site.syg_notify_email') )
+                      ->send(new OrderAlert($this->order,$data));
                 break;
 
             default:
@@ -798,7 +800,9 @@ class PaymentController extends Controller
                      'Result'    => $returnVal,
                      'Parameters'        => $xml_data,
                  );
-                 Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
+                 Mail::to( config('site.notify_email') )
+                      ->cc( config('site.syg_notify_email') )
+                      ->send(new OrderAlert($this->order,$data));
 
                 $returnVal = false;
 
