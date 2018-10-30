@@ -132,9 +132,11 @@
                                                             <h3 class="bold-font">Gift Voucher</h3> 
                                                             @php if($cart->gift_id!="0.00") {
                                                             $display = "display:block";
+                                                            $display_link = "display:none";
                                                             } 
                                                             else{
                                                             $display = "display:none";
+                                                            $display_link = "display:block";
                                                             } 
                                                             @endphp
 
@@ -144,7 +146,7 @@
                                                             @endif
 
 
-                                                            <div class="show_gift_vouchers" style="{{ $display }}">
+                                                            <div class="show_gift_vouchers" style="{{ $display_link }}">
                                                                 <input type="text" id="voucher_number" name="voucher_number" class="gift-input" placeholder="Voucher Number">
                                                                 <input type="text" id="voucher_pin" name="voucher_pin" class="gift-input" placeholder="Voucher Pin">
                                                                 <p class="show_voucher_error" style="color:red;"></p>
@@ -238,6 +240,7 @@
                             $('.show_gift_vouchers').hide();
                             $('#voucher_number_link').css('display', 'block');
                             $("#voucher_number_link").val(voucher_number);
+                            $(".order_summary").load("cart/get_cart_order_total");
                         } else {
                             $('.show_voucher_error').html(result);
                         }
@@ -270,6 +273,7 @@
                         //$('.show_gift_vouchers').show(); 
                         $(".show_gift_vouchers").fadeIn(200)
                         $('.remove_gift').hide();
+                        $(".order_summary").load("cart/get_cart_order_total");
                     }
                 },
                 error: function () {
