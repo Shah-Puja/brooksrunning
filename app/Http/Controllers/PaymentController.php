@@ -300,7 +300,7 @@ class PaymentController extends Controller
                     break;
             }
             //ap21 order process 
-           $Person = User::firstOrCreate(['email' => $this->order->address->email],['first_name' => $this->order->address->s_fname, 'last_name'=>$this->order->address->s_lname])
+           $Person = User::firstOrCreate(['email' => $this->order->address->email],['first_name' => $this->order->address->s_fname, 'last_name'=>$this->order->address->s_lname]);
            if(isset($Person)){
                $PersonID = ($Person->person_idx!='') ? $Person->person_idx : '';
            }
