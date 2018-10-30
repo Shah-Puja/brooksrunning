@@ -70,6 +70,7 @@
 								<div class="shoes-type">{{ $items->shoe_category_desc }}</div>
 								<div class="ctg-btn clearfix">
 									@php
+										$seo_name_women=''; $seo_name_men='';
 										if(isset($items->shop_men) && $items->shop_men!=''){
 											$shop_m = explode('_', $items->shop_men);
 											$seo_name_men = CategoryController::get_seo_name($shop_m['0'],$shop_m['1'],'m');
@@ -81,10 +82,10 @@
 											$shop_women_url = $seo_name_women."/".$items->shop_women.".html";
 										}
 									@endphp
-									@if($items->shop_men != '')
+									@if($items->shop_men != '' && $seo_name_men!='')
 									<span><a class="secondary-button" href="{{$shop_men_url}}">Men's</a></span>
 									@endif
-									@if($items->shop_women != '')
+									@if($items->shop_women != '' && $seo_name_women!='')
 									<span><a class="secondary-button" href="{{$shop_women_url}}">Women's</a></span>
 									@endif
 								</div>
