@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shoe_mast;
 use App\Models\Product;
+use App\Models\Seo;
 
 class CategoryController extends Controller
 {
@@ -47,67 +48,34 @@ class CategoryController extends Controller
         $flag_bra = ($category=='womens-sports-bras') ? 'Yes' : 'No';
         $gender = $products->pluck('gender')->first();
         $filters = \App\Models\Category::provideFilters($products,$prod_type,$flag_bra);
-
-        //echo "<hr><pre>";
-        //print_r($products);
-        //echo "</pre>";
-        //exit;
-
         return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );
     }
 
     public function womens_landing(){
         return view('customer.mens-running-shoes-and-clothing');
-   }
-   public function mens_landing(){
-    return view('customer.womens-running-shoes-and-clothing');
     }
+    public function mens_landing(){
+        return view('customer.womens-running-shoes-and-clothing');
+    }
+    
     public function shoes_category(){
-        return view('customer.shoes-category');
-    }
-    public function shoe_main(){
-        return view('customer.shoe-main');
-    }
-
-    public function neutral_running_shoes(){
-        return view('customer.neutral-running-shoes');
-    }
-    public function support_running_shoes(){
-        return view('customer.support-running-shoes');
-    }
-    public function trail_running_shoes(){
-        return view('customer.trail-running-shoes');
-    }
-    public function competition_running_shoes(){
-        return view('customer.competition-running-shoes');
-    }
-    public function cross_trainer_shoes(){
-        return view('customer.cross-trainer-shoes');
-    }
-    public function walking_shoes(){
-        return view('customer.walking-shoes');
-    }
-
-    public function shoes_detail($shoe_name=''){
-
-        if ($shoe_name == "glycerin" || $shoe_name == "adrenaline-gts" || $shoe_name == "ghost" || 
-            $shoe_name == "transcend" || $shoe_name == "launch" || $shoe_name == "aduro" || $shoe_name == "revel" ||
-            $shoe_name == "ravenna" || $shoe_name == "beast" || $shoe_name == "ariel" || $shoe_name == "hyperion" ||
-            $shoe_name == "neuro" || $shoe_name == "asteria" || $shoe_name == "addiction" || $shoe_name == "purecadence" ||
-            $shoe_name == "pureflow" || $shoe_name == "mazama" || $shoe_name == "cascadia" || $shoe_name == "cascadia-gtx" ||
-            $shoe_name == "ghost-gtx" || $shoe_name == "puregrit" || $shoe_name == "caldera" || $shoe_name == "vapor" ||
-            $shoe_name == "defyance" || $shoe_name == "dyad" || $shoe_name == "adrenaline-asr" || $shoe_name == "ricochet" 
-            || $shoe_name == "levitate" || $shoe_name == "bedlam") {
-
-                if ($shoe_name == "adrenaline-gts" || $shoe_name == "cascadia-gtx" || $shoe_name == "ghost-gtx") {
-                    if (strpos($shoe_name, '-') !== false) {
-                        $shoename = explode("-",$this->get_str_conv_upper($shoe_name));
-                        $shoe_name = implode(" ",$shoename);
-
-                    }
-                }
+        $page_url = explode('/',$_SERVER['REQUEST_URI']);
+        $page_info = $this->get_page_info($page_url[1]);
+        $category_array = explode('-',$page_url[1]);
+        $category = $category_array[0];
+        if($category=='cross'){
+            $category = 'x-training';
+        }
+        $shoes_category_product = $this->get_shoes_category_product($category);
         
-            $shoe_info = shoe_mast::where(['shoe_name'=> $shoe_name])->first();
+        return view('customer.shoes-category', compact('category','page_info','shoes_category_product') );
+    }
+
+    public function shoes_detail($shoe_type=''){
+        //$shoe_name=strtolower($shoe_name);
+        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam");
+        if (in_array($shoe_type,$common_template)){    
+            $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
             
             if($shoe_info->shop_men != ''){
@@ -146,19 +114,45 @@ class CategoryController extends Controller
         return $shoe_name;
     }
 
-    public function get_seo_name($style, $color_code, $gen) {
+    public static function get_seo_name($style, $color_code, $gen) {
         $prod_info = product::where(
             [
                 ['color_code', '=', $color_code],
                 ['style', '=', $style],
             ]
-        )->orwhere(
-            [
-                ['gender', '=', $gen],
-                ['gender', '=', 'Unisex'], 
-            ]
-        )->first();
-    
-        return $prod_info->seo_name;
+        )->whereIn('gender', array($gen,'Unisex'))        
+        ->whereHas('variants' , function($query)  {
+            return $query->where('visible', '=', 'Yes');
+        })->first();
+        if ($prod_info) return $prod_info->seo_name;
     }
+
+    public function get_page_info($page_url = ''){
+        $page_url .= '/';
+        $shoe_info = seo::where(['page_url'=> $page_url])->first();
+        $cnt = seo::where(['page_url'=> $page_url])->count();
+        if($cnt > 0){
+            $page_info = array(
+                "title" => $shoe_info->title_tag,
+                "meta_description" => $shoe_info->meta_description, 
+                "keywords" => $shoe_info->keywords,
+                "header_h1" => $shoe_info->header_h1, 
+                "header_text" => $shoe_info->header_text, 
+                "footer_h2" => $shoe_info->footer_h2, 
+                "footer_text" => $shoe_info->footer_text
+            );
+
+            return $page_info;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function get_shoes_category_product($category){
+        $result = Shoe_mast::where('category',$category)->get();
+        return $result;
+    }
+
+
 }

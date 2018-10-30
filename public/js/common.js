@@ -146,15 +146,18 @@ $(document).on("click", ".afterpay-popup--control", function () {
 $(document).on("click", ".afterpay-popup--close", function () {
     $("#afterpay-popup--wrapper").removeClass("show");
 });
-// popup for shoe page  
-$(".uTube-popup--control").click(function(){
-    $("#uTube-popup--wrapper").addClass("show");
+$(document).ready(function(){
+    $(".uTube-popup--control").on('click',function(){
+        $("#uTube-popup--wrapper").addClass("show");
+    });
+    $(".uTube-popup--close").on('click',function(){
+        $("#uTube-popup--wrapper").removeClass("show");
+        $('.uTube-info iframe').attr('src', '');
+        //$('.uTube-info iframe').attr('src').get(0).stopVideo();
+        //$('.uTube-info iframe').attr('src', $('iframe').attr('src'));
+        return false;
+    });
 });
-$(".uTube-popup--close").click(function(){
-    $("#uTube-popup--wrapper").removeClass("show");
-    $('.uTube-info iframe').attr('src', '');
-});
-// popup for shoe page end
 $(document).on("click", "#sizechart-popup--control", function () {
     $("#sizechart-popup--wrapper").addClass("show");
 });

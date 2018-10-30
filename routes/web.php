@@ -58,15 +58,8 @@ Route::post('/payment', 'PaymentController@store');
 Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
 Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');
 
-Route::get('/shoes-category', 'CategoryController@shoes_category');
-Route::get('/shoe-main', 'CategoryController@shoe_main');
-Route::get('/neutral-running-shoes', 'CategoryController@neutral_running_shoes');
-Route::get('/support-running-shoes', 'CategoryController@support_running_shoes');
-Route::get('/trail-running-shoes', 'CategoryController@trail_running_shoes');
-Route::get('/competition-running-shoes', 'CategoryController@competition_running_shoes');
-Route::get('/cross-trainer-shoes', 'CategoryController@cross_trainer_shoes');
-Route::get('/walking-shoes', 'CategoryController@walking_shoes');
-Route::get('/running-shoes-and-apparel-sale', 'CategoryController@sale');
+/* Shoes pages */
+Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
 
 Route::post('/afterpay', 'PaymentController@create_token'); 
 
@@ -83,6 +76,10 @@ Route::get('/account-personal', 'MyaccountController@account_personal');
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
 
+/* events page */
+Route::get('/events', 'EventController@events_view'); 
+Route::get('/events/{events_pg}', 'EventController@index');
+
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
@@ -94,6 +91,12 @@ Route::get('/testap21/create_user', 'testap21@create_user');
 Route::get('/testap21/create_order', 'testap21@create_order'); 
 Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
 
+Route::get('/neutral-running-shoes', 'CategoryController@shoes_category');
+Route::get('/support-running-shoes', 'CategoryController@shoes_category');
+Route::get('/trail-running-shoes', 'CategoryController@shoes_category');
+Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
+Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
+Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
@@ -103,3 +106,4 @@ Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index');
 Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
 Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
 Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
+

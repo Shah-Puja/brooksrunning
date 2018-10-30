@@ -12,8 +12,8 @@ class testap21 extends Controller
         $this->bridge = $bridge;
     }
 public function voucher_valid(){
-    $gift_id="200001005"; $pin="3164";$total=1000;
-    //$gift_id="200001012"; $pin="2026";
+    //$gift_id="200001005111"; $pin="3164111";$total=1000;
+    $gift_id="1200001012"; $pin="2026";$total=100;
     //$gift_id="200001029"; $pin="3649";
     //$gift_id="200001036"; $pin="923";
     //$gift_id="200001043"; $pin="2685";
@@ -25,18 +25,16 @@ public function voucher_valid(){
     //$gift_id="200001104"; $pin="7573";
     //$gift_id="200001111"; $pin="6344";
     //$gift_id="200001128"; $pin="7572";
-    
-    $response = $this->bridge->vouchervalid($gift_id,$pin,$total);
-    $response_body=$response->getBody()->getContents();
-    $returnCode = $response->getStatusCode();
-    print_r($response_body);
-    //exit;
+    $response=$this->bridge->vouchervalid($gift_id,$pin,$total);    
+    $returnCode = $response->getStatusCode();    
     switch ($returnCode) {
-            case 200:                
+            case 200:        
+                $response_body=$response->getBody()->getContents();
+                print_r($response_body);
                 echo "<hr>Success : Gift Voucher is Valid";
                 break;
-            case 400 :
-                echo "<hr>Order Exist";
+            case 403 :
+                echo "Incorrect Voucher";
                 break;
             default:
                 echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
@@ -48,7 +46,7 @@ public function create_order($person_id='115414'){
         $xml_data = "
         <Order>
         <PersonId>115414</PersonId>
-        <OrderNumber>BRN-2018-test-4</OrderNumber>
+        <OrderNumber>BRN-2018-test-5</OrderNumber>
         <DeliveryInstructions></DeliveryInstructions>
         <Addresses>
             <Billing>
