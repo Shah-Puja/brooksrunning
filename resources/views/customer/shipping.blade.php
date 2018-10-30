@@ -57,7 +57,6 @@
 				<!--/Password popup Success-->
 				<h1 class="br-heading">Shipping Address</h1>
 				<p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
-                {{ auth()->user() }}
                 <!-- Shipping first step -->
 				<div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
                 <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
