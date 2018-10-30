@@ -70,7 +70,8 @@ var $grid = $('.grid').isotope({
         return name;
       },
   date: function(item){
-    var date = $(item).find("a .info").data('date');
+    var date = $(item).find(".plp-product").data('release-dt');
+    console.log(date);
     return date;
   }
 }
@@ -224,7 +225,8 @@ function getComboFilter( filters ) {
     $grid.find(".hidden").removeClass("hidden");
     var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
     var select_value =  $(".select-option--wrapper .selected").attr('value');
-    if(select_type=='ass'){
+    console.log(select_value);
+    if(select_type=='ass' || select_type=='new'){
         var sortAscending =  false ;
     }else{
       var sortAscending =  true ;

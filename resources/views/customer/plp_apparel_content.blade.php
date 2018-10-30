@@ -11,6 +11,7 @@
 			$filters_array[$style->style]['Great_For'] = $style->tags->Where('key','PS_F_GREATFOR')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Breast_Shape'] = $style->tags->Where('key','PS_F_SHAPE')->flatten()->pluck('value')->unique()->all();
 			$filters_array[$style->style]['Feature_Preferences'] = $style->tags->Where('key','PS_F_PREFERENCE')->flatten()->pluck('value')->unique()->all();
+			$filters_array[$style->style]['Support_Preference'] = $style->tags->Where('key','PS_F_SUPPORT')->flatten()->pluck('value')->unique()->all();
 		@endphp
      
 		@foreach($products as $product)
@@ -37,7 +38,7 @@
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
-		<div class="plp-product">
+		<div class="plp-product"  data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
 				@if($price_sale < $price)
