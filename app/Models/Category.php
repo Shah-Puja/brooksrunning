@@ -172,6 +172,13 @@ class Category extends Model
                     })->flatten()->pluck('value')->unique()->sort();
                  break;
 
+                 case 'Support Preference':
+                 $filters['Support_Preference'] = 
+                 $products->map(function($product) {
+                     return $product->tags->Where('key','PS_F_SUPPORT');
+                 })->flatten()->pluck('value')->unique()->sort();
+              break;
+
              endswitch;
         }
 

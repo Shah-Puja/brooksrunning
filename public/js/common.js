@@ -279,10 +279,10 @@ $(document).on('click', '.custom-select .option-value', function () {
     /** listing sort */
     var type = $(this).attr('data-sorttype');
     var sortValue = $(this).attr('value');
-    if(type=='ass'){
+    console.log(type);
+    console.log(sortValue);
+    if(type=='ass' || type=='new'){
         $grid.isotope({ sortBy: sortValue , sortAscending: false});
-    }else if(type=='name'){
-        $grid.isotope({ sortBy: sortValue , sortAscending: true });
     }else{
         $grid.isotope({ sortBy: sortValue , sortAscending: true});
     }
