@@ -60,7 +60,6 @@ Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landin
 
 /* Shoes pages */
 Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
-Route::get('/{category}-running-shoes', 'CategoryController@shoes_category');
 
 Route::post('/afterpay', 'PaymentController@create_token'); 
 
@@ -88,6 +87,12 @@ Route::get('/testap21/create_user', 'testap21@create_user');
 Route::get('/testap21/create_order', 'testap21@create_order'); 
 Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
 
+Route::get('/neutral-running-shoes', 'CategoryController@shoes_category');
+Route::get('/support-running-shoes', 'CategoryController@shoes_category');
+Route::get('/trail-running-shoes', 'CategoryController@shoes_category');
+Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
+Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
+Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

@@ -97,23 +97,6 @@
 	<div class="wrapper">
 		<div class="row">
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
-<<<<<<< HEAD
-				{{-- <div id="desk" class="col-8 tab-8 mob-12">
-					<a class="utube" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
-=======
-				<div id="desk" class="col-8 tab-8 mob-12">
-<<<<<<< HEAD
-					<a class="utube uTube-popup--control" href="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}">
->>>>>>> 2f0b303b096fe369d5fc94570f1a28cfc8018695
-=======
-					<a class="utube uTube-popup--control" href="JavaScript:Void(0);">
->>>>>>> 0545086bc1ae9f7b2143cf527a49aeffa831b23f
-						<div class="module-img">
-								<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
-						</div>
-                        <div class="play"></div>
-					</a>
-				</div> --}}
 				<div id="desk" class="col-8 tab-8 mob-12">
 					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
 							<div class="module-img">

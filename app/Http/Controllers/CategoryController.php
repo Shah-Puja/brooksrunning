@@ -48,12 +48,6 @@ class CategoryController extends Controller
         $flag_bra = ($category=='womens-sports-bras') ? 'Yes' : 'No';
         $gender = $products->pluck('gender')->first();
         $filters = \App\Models\Category::provideFilters($products,$prod_type,$flag_bra);
-
-        //echo "<hr><pre>";
-        //print_r($products);
-        //echo "</pre>";
-        //exit;
-
         return view( 'customer.categorylower', compact('products', 'styles','filters','prod_type','gender','flag_bra') );
     }
 
@@ -64,15 +58,17 @@ class CategoryController extends Controller
         return view('customer.womens-running-shoes-and-clothing');
     }
     
-    public function shoes_category($category){
+    public function shoes_category(){
         $page_url = explode('/',$_SERVER['REQUEST_URI']);
         $page_info = $this->get_page_info($page_url[1]);
+        $category_array = explode('-',$page_url[1]);
+        $category = $category_array[0];
+        if($category=='cross'){
+            $category = 'x-training';
+        }
         $shoes_category_product = $this->get_shoes_category_product($category);
-        echo "<pre>";
-        print_r($shoes_category_product);
-        echo "</pre>";
-        exit;
-        return view('customer.shoes-category');
+        
+        return view('customer.shoes-category', compact('category','page_info','shoes_category_product') );
     }
 
     public function shoes_detail($shoe_type=''){
@@ -118,7 +114,7 @@ class CategoryController extends Controller
         return $shoe_name;
     }
 
-    public function get_seo_name($style, $color_code, $gen) {
+    public static function get_seo_name($style, $color_code, $gen) {
         $prod_info = product::where(
             [
                 ['color_code', '=', $color_code],
@@ -156,67 +152,31 @@ class CategoryController extends Controller
     }
 
     public function get_shoes_category_product($category){
-        $result = Shoe_mast::where(['category'=> $category])->get();
+        $result = Shoe_mast::where('category',$category)->get();
+        // $shop_men = $result->pluck('shop_men');
+        // $shop_women = $result->pluck('shop_women');
+        // $all_array= collect([$shop_men,$shop_women])->collapse()->all();
+        // $data=[];
+        // foreach ($all_array as $item){
+        //      $i = explode('_',$item);
+        //      $data['style'][]= $i[0];
+        //      $data['color_code'][]= $i[1];
+        // }
+    
+        // $products = Product::whereIn('style',$data['style'])
+        //                     ->whereIn('color_code',$data['color_code'])
+        //                     ->whereHas('variants' , function($query)  {
+        //                         return $query->where('visible', '=', 'Yes');
+        //                     })
+        //                     ->with('variants')
+        //                     ->get();
+        // $all = $products->unique('color_code');
 
-        foreach ($result as $res_data) {
-            if(!empty($res_data->prod_link)){
-                $prod_link = explode(",", $res_data->prod_link);
-				$shoes_product_m    = array();
-				$shoes_product_w    = array();
-                $shoe_cat_product    = array();
-                
-                foreach ($prod_link as $p_link) {
-					if(substr($p_link, 0,3) == 'men'){
-						array_push($shoes_product_m, $p_link);
-					}
-					if(substr($p_link, 0,5) == 'women'){
-						array_push($shoes_product_w, $p_link);
-					}
-                }
-                $shoe_cat_product[] = end($shoes_product_m);
-                $shoe_cat_product[] = end($shoes_product_w);
-                $data=[];
-                foreach ($shoe_cat_product as $cat_prod) {
-                    $prod  		=  explode("-", $cat_prod);
-					@$prod_id	= $prod[1];
-					@$color_code = $prod[2];
-                    $gender		= $prod[0];
-                    
-					if ($gender == 'women') {
-			            $gen = 'w';
-			        } else if ($gender == 'men') {
-			            $gen = 'm';
-                    }
+        // echo "<pre>";
+        // print_r($result);
+        return $result;
+        //exit;
 
-                    // echo "<pre>";
-                    // print_r($cat_prod);echo " hi";
-                    // echo "</pre>";
-
-                    // $data[] = Product::where("style",$prod_id)
-                    //         ->where("color_code",$color_code)
-                    //         ->whereHas('variants' , function($query)  {
-                    //             return $query->where('visible', '=', 'Yes');
-                    //         })->get();
-
-                    $data[] = product::where(
-                        [
-                            ['color_code', '=', $color_code],
-                            ['style', '=', $prod_id],
-                        ]
-                    )->orwhere(
-                        [
-                            ['gender', '=', $gender],
-                            ['gender', '=', 'Unisex'], 
-                        ]
-                    )->first();
-
-                    echo "<pre>";
-                    print_r($data);
-                    echo "</pre>";
-                }
-            }
-        }
-        exit;
     }
 
 

@@ -301,11 +301,24 @@ class PaymentController extends Controller
             
             Order::where('id', $order_id)
             ->update($orderDataUpdate);
-			
-			//ap21 order process 
-            $PersonID = $this->get_personid($this->order->address->email);
-            if(!empty($PersonID)){
-                $this->ap21order($PersonID);
+            //ap21 order process 
+            if(env('APP_ENV')=='staging'){
+                if(env('APP21_STATUS') == 'ON'){
+                    $PersonID = $this->get_personid($this->order->address->email);
+                    if(!empty($PersonID)){
+                        $this->ap21order($PersonID);
+                    }
+                }else{
+                    $logger = array(
+                        'order_id'      => $this->order->id,
+                        'log_title'     => 'Person',
+                        'log_type'      => 'Response',
+                        'log_status'    => 'System not connected to ap21',
+                        'result'        =>  'Ap21-OFF',
+                    );
+                    Order_log::createNew($logger);
+                }
+                
             }
             return true;
         }
@@ -418,7 +431,7 @@ class PaymentController extends Controller
                         'Result'    => $result,
                         'Parameters'        => '',
                     );
-                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order,$data));
+                    Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
                     $userid = false;
                     break;
             }
@@ -513,7 +526,7 @@ class PaymentController extends Controller
                         'result'        =>  $result,
                     );
                     Order_log::createNew($logger);
-                    
+
                     // Send ap21 alert  
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" .$response->getBody()->getContents();
                     $URL = env('AP21_URL')."/Persons/?countryCode=AUFIT";
@@ -523,7 +536,7 @@ class PaymentController extends Controller
                         'Result'    => $result,
                         'Parameters'        => $person_xml,
                     );
-                    Mail::to('trunaltamore@gmail.com')->send(new OrderAlert($this->order,$data));
+                    Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
 
                     $returnVal = false;
 
@@ -703,7 +716,7 @@ class PaymentController extends Controller
         $xml_data.="</Order>";
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id,$xml_data);
-    
+        $URL =  env('app21_url') . "/Persons/$person_id/Orders/?countryCode=AUFIT";
         $returnCode =  $response->getStatusCode();
         switch ($returnCode) {
             case 201:
@@ -746,8 +759,15 @@ class PaymentController extends Controller
                     'result'        =>  $response->getBody(),
                 );
                 Order_log::createNew($logger);
-                //$this->alert->ap21_error($order_id, 'Order Exists', $URL, $returnVal, $xml_data); // Send ap21 alert 
 
+                 // Send ap21 alert  
+                 $data = array(
+                     'api_name'     => 'Order Exists',
+                     'URL'      => $URL,
+                     'Result'    => $returnVal,
+                     'Parameters'        => $xml_data,
+                 );
+                 Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
                 break;
 
             default:
@@ -762,8 +782,14 @@ class PaymentController extends Controller
                     'result'        =>  $result,
                 );
                 Order_log::createNew($logger);
-                //$this->alert->ap21_error($order_id, 'Create Order Error', $URL, $returnVal, $xml_data); // Send ap21 alert 
-                // Send ap21 alert  
+                // Send ap21 alert 
+                 $data = array(
+                     'api_name'     => 'Create Order Error',
+                     'URL'      => $URL,
+                     'Result'    => $returnVal,
+                     'Parameters'        => $xml_data,
+                 );
+                 Mail::to('sygtest@gmail.com')->send(new OrderAlert($this->order,$data));
 
                 $returnVal = false;
 
