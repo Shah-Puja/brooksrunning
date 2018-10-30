@@ -130,7 +130,7 @@
                                                         <div class="mark"><span></span></div>
                                                         <div class="text">
                                                             <h3 class="bold-font">Gift Voucher</h3> 
-                                                            @php if($cart->gift_id!="0.00") {
+                                                            @php if($cart->gift_id!="0.00" && $cart->gift_id > "0.00") {
                                                             $display = "display:block";
                                                             $display_link = "display:none";
                                                             } 
@@ -140,10 +140,10 @@
                                                             } 
                                                             @endphp
 
-                                                            @if($cart->gift_id!="0.00")
+                                                               
                                                             <a style="{{ $display }}" id="voucher_number_link" href="javascript:void(0);" class="remove_gift">{{$cart->gift_id}}</a>
                                                             <input type="hidden" name="gift_voucher_number" id="gift_voucher_number" value="{{$cart->gift_id}}">
-                                                            @endif
+                                                            
 
 
                                                             <div class="show_gift_vouchers" style="{{ $display_link }}">
@@ -238,8 +238,8 @@
                         if (result == "success") {
                             $('.show_voucher_error').html();
                             $('.show_gift_vouchers').hide();
-                            $('#voucher_number_link').css('display', 'block');
-                            $("#voucher_number_link").val(voucher_number);
+                            $("#voucher_number_link").text(voucher_number);
+                            $('#voucher_number_link').css('display', 'block'); 
                             $(".order_summary").load("cart/get_cart_order_total");
                         } else {
                             $('.show_voucher_error').html(result);
