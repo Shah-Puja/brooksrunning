@@ -120,11 +120,11 @@
   font-weight: bold;
   font-style: italic;
 }
-.rhi-header2 .info-wrapper .txtOffice, .brooksrunhappyis .module .info-wrapper .txtFeeling, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .shoe-main-container .shoes-info .para .features p strong, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .landingpage-banner .landingpage-banner--info .label--underline, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .transparent-button, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.br-events-months .content-asset .cta, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-content .create-account--header .event-date, .br-events .cta, .br-events .content-asset .main-events li a .listevents h2, .br-events .events-information h4, .br-events .events-information .events-months li, .br-events .events-information .events-months .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .module .info-wrapper .tickLedeHead span, .rhi-header2 .info-wrapper .txtOffice, .brooksrunhappyis .module .info-wrapper .txtFeeling, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .shoe-main-container .shoes-info .para .features p strong, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .landingpage-banner .landingpage-banner--info .label--underline, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .transparent-button, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-.shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .new-arrival .new-arrival--container, .tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
+.br-events-months .content-asset .main-events li a .listevents p, .br-events .content-asset .main-events li a .listevents p, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .new-arrival .new-arrival--container, .tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -3281,5 +3281,619 @@ textarea {
 }
 
 /* Run happy is- End*/
+/* Events -Start*/
+.br-events {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #0079b8;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .module {
+    padding: 10px;
+  }
+}
+.br-events .module .info-wrapper {
+  margin: auto;
+  position: relative;
+}
+@media only screen and (max-width: 991px) {
+  .br-events .module .info-wrapper {
+    padding: 0px;
+  }
+}
+.br-events .module .info-wrapper p {
+  font-size: 15px;
+  line-height: 22px;
+}
+.br-events .module .info-wrapper .tickLedeHead {
+  color: #67c9cf;
+  font-size: 60px;
+  line-height: 0.1;
+  text-transform: uppercase;
+}
+.br-events .module .info-wrapper .tickLedeHead span {
+  color: #fff;
+  font-size: 80px;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .module .info-wrapper .tickLedeHead span {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events .module .info-wrapper .tickLedeHead span {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .br-events .module .info-wrapper .tickLedeHead {
+    font-size: 24px;
+    line-height: 37px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events .module .info-wrapper .tickLedeHead {
+    font-size: 50px;
+  }
+}
+.br-events .module .info-wrapper .tickLedeSub {
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .module .info-wrapper .tickLedeSub {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+.br-events .module .info-wrapper img {
+  background-size: contain;
+}
+.br-events .module .info-wrapper img[align=right] {
+  margin: 50px 0 0 0px;
+}
+.br-events .events-information .upcoming-events {
+  background: none repeat scroll 0 0 #fff;
+  float: left;
+  padding: 2%;
+  width: 100%;
+  height: 520px;
+}
+.br-events .events-information .upcoming-events ul li {
+  margin: 0 auto;
+  border-bottom: 1px solid #b5b5b5;
+  padding: 0 10px 15px;
+}
+.br-events .events-information .upcoming-events .upcoming-list {
+  height: 440px;
+  overflow-y: scroll;
+}
+.br-events .events-information .upcoming-events .upcoming-list .title {
+  color: #00afd6;
+  display: block;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.br-events .events-information .upcoming-events .upcoming-list .viewmore-p {
+  width: 100%;
+  color: #1678bd;
+  font-family: arial;
+  font-size: 14px;
+  margin-top: 7px;
+}
+.br-events .events-information .upcoming-events .upcoming-list .viewmore-p span {
+  float: right;
+  text-transform: capitalize;
+}
+.br-events .events-information .upcoming-events .upcoming-list .viewmore-p span .cta {
+  text-transform: capitalize;
+}
+.br-events .events-information .upcoming-events p {
+  color: #666;
+  font-size: 17px;
+}
+.br-events .events-information .events-months {
+  background: none repeat scroll 0 0 #fff;
+  float: right;
+  padding: 5%;
+  width: 100%;
+}
+.br-events .events-information .events-months .title {
+  color: #666;
+  display: block;
+  margin: 10px 0;
+}
+.br-events .events-information .events-months ul {
+  margin: 0;
+  padding: 0;
+}
+.br-events .events-information .events-months ul li {
+  height: 97px;
+  width: 31%;
+}
+.br-events .events-information .events-months ul li:nth-child(odd) {
+  background: #00adce;
+}
+.br-events .events-information .events-months ul li:nth-child(even) {
+  background: #1678bd;
+}
+.br-events .events-information .events-months li {
+  background: none repeat scroll 0 0 #f1f1f1;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 25px;
+  height: 97px;
+  line-height: 97px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 97px;
+}
+.br-events .events-information .events-months li a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+.br-events .events-information .events-months li a:hover {
+  color: #fec018;
+}
+.br-events .events-information h4 {
+  border-bottom: 1px solid #b5b5b5;
+  color: #00afd6;
+  display: block;
+  font-size: 22px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+.br-events .events-information p {
+  color: #666;
+  font-size: 17px;
+}
+.br-events .events-lp-content {
+  background: white;
+}
+.br-events .events-lp-content .events-main-page {
+  padding-top: 0;
+}
+.br-events .content-asset ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+.br-events .content-asset .main-events li {
+  margin: 0;
+  padding: 0;
+  list-style: square outside none;
+}
+.br-events .content-asset .main-events li a {
+  display: block;
+  height: 363px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .content-asset .main-events li a {
+    height: auto;
+    min-height: 230px;
+  }
+}
+.br-events .content-asset .main-events li a .listevents {
+  color: #fff;
+  margin: 50px auto;
+  position: relative;
+  width: 1020px;
+  z-index: 99;
+  height: 70%;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .content-asset .main-events li a .listevents {
+    margin: 3%;
+    width: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events .content-asset .main-events li a .listevents {
+    padding: 15px;
+  }
+}
+.br-events .content-asset .main-events li a .listevents h2 {
+  color: #fff;
+  font-size: 52px;
+  line-height: 50px;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .content-asset .main-events li a .listevents h2 {
+    width: 60%;
+    font-size: 37px;
+    line-height: 36px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events .content-asset .main-events li a .listevents h2 {
+    width: 75%;
+  }
+}
+.br-events .content-asset .main-events li a .listevents p {
+  margin: 10px 0;
+  width: 60%;
+}
+.br-events .content-asset .main-events li a .listevents .cta .white {
+  text-transform: capitalize;
+}
+.br-events .content-asset .main-events li a .listevents img {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  max-height: 100%;
+  left: auto !important;
+  right: 0;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .content-asset .main-events li a .listevents img {
+    left: auto !important;
+    right: 0;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events .content-asset .main-events li a .listevents img {
+    width: 20%;
+    right: 265px;
+  }
+}
+.br-events .content-asset .main-events > li {
+  height: 363px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .br-events .content-asset .main-events > li {
+    height: auto;
+    min-height: 230px;
+  }
+}
+.br-events .content-asset .events-list-li-1 {
+  background: url(../images/events/banner/s2s_featured_event_1450x363.jpg) no-repeat center center #d43633;
+}
+.br-events .content-asset .events-list-li-2 {
+  background: url(../images/events/banner/bridge2bris_featured_event_1450x363.jpg) no-repeat center center #fdc906;
+}
+.br-events .content-asset .events-list-li-3 {
+  background: url(../images/events/banner/sandypoint_featured_event_1450x363.jpg) no-repeat center center #818181;
+}
+.br-events .cta {
+  cursor: pointer;
+  font-size: 1.1em;
+  text-transform: none;
+}
+.br-events .cta:after {
+  content: "➤";
+  font-family: Zapf Dingbats;
+  padding-left: 5px;
+  position: relative;
+  bottom: 0;
+}
+
+.br-events-content .event-banner {
+  position: relative;
+  min-height: 320px;
+}
+@media only screen and (max-width: 767px) {
+  .br-events-content .event-banner {
+    min-height: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-content .event-banner {
+    min-height: 185px;
+  }
+}
+.br-events-content .create-account--header {
+  background-color: #2b9cd1 !important;
+}
+.br-events-content .create-account--header .breadcrumbs ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.br-events-content .create-account--header .breadcrumbs ul li a:hover {
+  color: #ffffff;
+}
+.br-events-content .create-account--header .breadcrumbs ul li a .active {
+  cursor: alias;
+}
+.br-events-content .create-account--header .sub-header {
+  margin: 25px 0 10px;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.br-events-content .create-account--header .event-date {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+}
+.br-events-content .create-account--header p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+.br-events-content .create-account--header .regNow-btn {
+  width: 100%;
+  max-width: 270px;
+  float: left;
+  margin-top: 3%;
+}
+.br-events-content .create-account--header .regNow-btn .secondary-button {
+  text-align: center;
+  border: 2px solid #0263f7;
+  background: #0263f7 !important;
+  color: #ffffff;
+  text-decoration: none;
+}
+.br-events-content .create-account--header .regNow-btn .secondary-button:hover {
+  background: #42bac5 !important;
+  border: 2px solid #42bac5;
+}
+@media only screen and (max-width: 767px) {
+  .br-events-content .create-account--header .regNow-btn .secondary-button {
+    width: 100%;
+    min-width: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .br-events-content .create-account--header .regNow-btn {
+    padding-top: 20px;
+    margin: 0 auto;
+    display: block;
+    float: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-content .create-account--header .regNow-btn {
+    margin-top: 8%;
+  }
+}
+.br-events-content .create-account--header .event-img {
+  float: right;
+}
+.br-events-content .create-account--header img {
+  width: 95%;
+  border: solid 5px #fff;
+  margin-top: 15px;
+}
+
+#event-content {
+  background: #0079b8;
+}
+
+.br-events-months .monthly-events {
+  padding-top: 20px;
+}
+.br-events-months .event-banner {
+  position: relative;
+  min-height: 320px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .event-banner {
+    min-height: 240px;
+  }
+}
+.br-events-months .event-banner .event-banner--info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+}
+.br-events-months .event-banner .event-banner--info .banner--info {
+  max-width: 750px;
+  padding-top: 50px;
+}
+.br-events-months .event-banner .event-banner--info h1 {
+  margin: 25px 0 10px;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.br-events-months .event-banner .event-banner--info .br-info {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+.br-events-months .content-asset a {
+  color: #1678bd;
+  text-decoration: none;
+  overflow: hidden;
+}
+.br-events-months .content-asset .location {
+  display: block;
+  font-size: 15px;
+  line-height: normal;
+  margin-bottom: 4%;
+  color: #6d665f;
+}
+.br-events-months .content-asset .events-top {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.br-events-months .content-asset .cta.backtoevent > span {
+  display: block;
+  float: left;
+  line-height: 22px;
+  margin-right: 5px;
+  transform: rotate(180deg);
+}
+.br-events-months .content-asset .monthly-event-list {
+  overflow: hidden;
+}
+.br-events-months .content-asset .monthly-event-list li {
+  display: block;
+  float: left;
+  margin: 0 3% 4% 0;
+  width: 29%;
+  min-height: 475px;
+  list-style: square outside none;
+}
+.br-events-months .content-asset .monthly-event-list .event-title {
+  color: #00ae95;
+  display: block;
+  font-family: neosansstd-blackitalic;
+  font-size: 34px;
+  line-height: 34px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  height: 100px;
+  overflow: hidden;
+}
+.br-events-months .content-asset .monthly-event-list .eventdate {
+  color: #67c9cf;
+  display: block;
+  font-family: neosansstd-bold;
+  font-size: 24px;
+  line-height: 33px;
+  text-transform: uppercase;
+}
+.br-events-months .content-asset .monthly-event-list .event-img-main {
+  margin-bottom: 4%;
+}
+.br-events-months .content-asset .monthly-event-list .event-img-main img {
+  max-width: 100%;
+}
+.br-events-months .content-asset ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+.br-events-months .content-asset .main-events li {
+  margin: 0;
+  padding: 0;
+  list-style: square outside none;
+}
+.br-events-months .content-asset .main-events li a {
+  display: block;
+  height: 363px;
+  margin: 0 auto;
+}
+.br-events-months .content-asset .main-events li a .listevents {
+  color: #fff;
+  margin: 50px auto;
+  position: relative;
+  width: 1020px;
+  z-index: 99;
+  height: 70%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .content-asset .main-events li a .listevents {
+    margin: 3%;
+    width: 90%;
+  }
+}
+.br-events-months .content-asset .main-events li a .listevents h2 {
+  color: #fff;
+  font-size: 52px;
+  line-height: 50px;
+  margin: 0;
+}
+.br-events-months .content-asset .main-events li a .listevents p {
+  margin: 10px 0;
+  width: 60%;
+}
+.br-events-months .content-asset .main-events li a .listevents .cta .white {
+  text-transform: capitalize;
+}
+.br-events-months .content-asset .main-events li a .listevents img {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  max-height: 100%;
+  left: auto !important;
+  right: 0;
+}
+.br-events-months .content-asset .main-events > li {
+  height: 363px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.br-events-months .content-asset .cta {
+  cursor: pointer;
+  font-size: 1.1em;
+  text-transform: none;
+}
+.br-events-months .content-asset .cta:after {
+  content: "➤";
+  font-family: Zapf Dingbats;
+  padding-left: 5px;
+  position: relative;
+  bottom: 0;
+}
+.br-events-months .content-asset .cta:hover {
+  color: #42bac5;
+}
+.br-events-months .events-btn {
+  width: 100%;
+  max-width: 450px;
+  float: right;
+  margin-top: 3%;
+  padding: 0px 45px 10px 0px;
+}
+.br-events-months .events-btn span {
+  float: left;
+  width: 50%;
+  padding-right: 12px;
+}
+@media only screen and (max-width: 767px) {
+  .br-events-months .events-btn span {
+    padding-right: 8px;
+  }
+}
+.br-events-months .events-btn span .secondary-button {
+  text-align: center;
+  border: 2px solid #0263f7;
+  background: #0263f7;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 17px;
+}
+.br-events-months .events-btn span .secondary-button:hover {
+  background: #42bac5 !important;
+  border: 2px solid #42bac5 !important;
+}
+@media only screen and (max-width: 767px) {
+  .br-events-months .events-btn span .secondary-button {
+    width: 100%;
+    min-width: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .br-events-months .events-btn {
+    padding-top: 20px;
+    margin: 0 auto;
+    display: block;
+    float: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .events-btn {
+    margin-top: 8%;
+  }
+}
+
+.backtoevent {
+  float: right;
+  margin-top: 12px;
+}
+
+/* Events- End*/
 
 /*# sourceMappingURL=main.css.map */

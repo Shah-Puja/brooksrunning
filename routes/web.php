@@ -83,6 +83,10 @@ Route::get('/account-personal', 'MyaccountController@account_personal');
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
 
+/* events page */
+Route::get('/events', 'EventController@events_view'); 
+Route::get('/events/{events_pg}', 'EventController@index');
+
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');

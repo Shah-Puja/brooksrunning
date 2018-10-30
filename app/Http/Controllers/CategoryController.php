@@ -117,32 +117,16 @@ class CategoryController extends Controller
         
     }
 
-    public function get_str_conv_upper($shoe_name = "") {
-        $shoe_name_arr = explode('-', $shoe_name);
-        $shoe_name_arr_final = array();
-        foreach ($shoe_name_arr as $shoe_key => $shoe_arr) {
-            if ($shoe_key == 0) {
-                $shoe_name_arr_final[] = $shoe_arr;
-            } else {
-                $shoe_name_arr_final[] = (strlen($shoe_arr) < 4) ? strtoupper($shoe_arr) : $shoe_arr;
-            }
-        }
-        $shoe_name = implode('-', $shoe_name_arr_final);
-        return $shoe_name;
-    }
-
     public function get_seo_name($style, $color_code, $gen) {
         $prod_info = product::where(
             [
                 ['color_code', '=', $color_code],
                 ['style', '=', $style],
             ]
-        )->orwhere(
-            [
-                ['gender', '=', $gen],
-                ['gender', '=', 'Unisex'], 
-            ]
-        )->first();
+        )->whereIn('gender', array($gen,'Unisex'))        
+        ->whereHas('variants' , function($query)  {
+            return $query->where('visible', '=', 'Yes');
+        })->first();
         if ($prod_info) return $prod_info->seo_name;
     }
 }

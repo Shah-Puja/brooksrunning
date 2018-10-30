@@ -28,7 +28,7 @@
 	                    <li><a href="/info/returns-exchange">Returns &amp; Exchange</a></li>
 	                    <li><a href="/info/terms-conditions">Terms &amp; Conditions</a></li>
 	                    <li><a href="/info/terms-of-use">Terms of Use</a></li>
-	                    <li><a href="/info/shoe-finder">Shoe Finder</a></li>
+	                    <li><a href="/shoefinder">Shoe Finder</a></li>
 	                    <li><a href="/info/find-a-store">Find A Store</a></li>
 	                </ul>
 				</div>
@@ -122,16 +122,16 @@
 				<div class="col-6 tab-7">
 					<ul class="footer-nav">
 						<li>
-							<a href="/privacy">Privacy Policy</a>
+							<a href="/info/privacy">Privacy Policy</a>
 						</li>
 						<li>
-							<a href="/contact-us">Help</a>
+							<a href="/info/contact-us">Help</a>
 						</li>
 						<li>
-							<a href="/sitemap">Site Map</a>
+							<a href="/info/sitemap">Site Map</a>
 						</li>
 						<li>
-							<a href="/about-us">About Brooks</a>
+							<a href="/info/about-us">About Brooks</a>
 						</li>
 					</ul>
 				</div>
