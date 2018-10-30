@@ -9,12 +9,13 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Hash;
+use App\Http\Controllers\Auth;
 
 class BillingShippingController extends Controller
 {    
     protected $cart;
     public function __construct()
-    {
+    { 
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
