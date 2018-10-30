@@ -120,12 +120,10 @@ class CategoryController extends Controller
                 ['color_code', '=', $color_code],
                 ['style', '=', $style],
             ]
-        )->orwhere(
-            [
-                ['gender', '=', $gen],
-                ['gender', '=', 'Unisex'], 
-            ]
-        )->first();
+        )->whereIn('gender', array($gen,'Unisex'))        
+        ->whereHas('variants' , function($query)  {
+            return $query->where('visible', '=', 'Yes');
+        })->first();
         if ($prod_info) return $prod_info->seo_name;
     }
 
@@ -153,30 +151,7 @@ class CategoryController extends Controller
 
     public function get_shoes_category_product($category){
         $result = Shoe_mast::where('category',$category)->get();
-        // $shop_men = $result->pluck('shop_men');
-        // $shop_women = $result->pluck('shop_women');
-        // $all_array= collect([$shop_men,$shop_women])->collapse()->all();
-        // $data=[];
-        // foreach ($all_array as $item){
-        //      $i = explode('_',$item);
-        //      $data['style'][]= $i[0];
-        //      $data['color_code'][]= $i[1];
-        // }
-    
-        // $products = Product::whereIn('style',$data['style'])
-        //                     ->whereIn('color_code',$data['color_code'])
-        //                     ->whereHas('variants' , function($query)  {
-        //                         return $query->where('visible', '=', 'Yes');
-        //                     })
-        //                     ->with('variants')
-        //                     ->get();
-        // $all = $products->unique('color_code');
-
-        // echo "<pre>";
-        // print_r($result);
         return $result;
-        //exit;
-
     }
 
 
