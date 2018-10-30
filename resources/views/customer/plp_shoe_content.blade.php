@@ -44,7 +44,7 @@
 		@endphp
 
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
-		<div class="plp-product">
+		<div class="plp-product" data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
 				@if($price_sale < $price)
