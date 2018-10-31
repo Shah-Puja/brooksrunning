@@ -453,7 +453,9 @@
 
 /* Start category page*/
 .ctg-main-container{
-  
+  .detail-shoe-pg{
+    border-bottom: 1px solid #f2f2f2;
+  }
    @media #{$mobile-only}{
     .br-mainheading{
       text-align:left;
@@ -467,6 +469,9 @@
               @extend %display-flex;
               flex-flow: row wrap;
               justify-content: flex-start;
+              .br-padding_bottm{
+                margin-bottom: 20px;
+              }
               .ctg-wrapper__sub{
                   margin: 25px 0 50px;
                   border-bottom: 1px solid #f2f2f2;
@@ -593,6 +598,147 @@
                   margin: 5px 0 5px;
                   }
               }
+              // Shoe-Detail-page
+              .shoe-wrapper__sub{
+                margin: 25px 0 50px;
+                .ctg-product{
+                  position: relative;
+                  .offer-info{
+                    position: absolute;
+                    top:-25px;
+                    right:45px;
+                    z-index: 5;
+                       @media #{$tab-only}{
+                          position: absolute;
+                          top: 36px;
+                          right: 8px;
+                          z-index: 5;
+                          width: 80px;
+                        }
+                    @media #{$mobile-only}{
+                      top: -15px;
+                      right:0px;
+                    }
+                    @media #{$desktop-only} {
+                        right:0px;
+                         top:-15px;
+                    }
+                    img{
+                      @extend %bold-italic-font;
+                      padding: 7px;
+                      display: inline-block;
+                      color: $white;
+                      @media #{$mobile-only}{
+                        width: 65px;
+                      }
+                    }
+                  }
+                  a{
+                    display: block;
+                    color: $black;
+                  }
+                  .img{
+                    text-align: center;
+                    &.img-shoes{
+                       height: 224px;
+                       width: 100%;
+                       position: relative;
+                       @media #{$tab-only}{
+                          height: 260px;
+                        }
+                        @media #{$mobile-only}{
+                          height: 150px;
+                        }
+                       img{
+                        position: absolute;
+                        bottom:0;
+                        left:0;
+                       }
+                    }
+                  }
+                  .info{
+                    display: block;
+                    position: relative;
+                    padding: 17px 0 8px;
+                    @media #{$mobile-only} {
+                      padding: 2px 0 3px;
+                    }
+                    h3{
+                      @extend %bold-font;
+                      font-size: 16px;
+                      line-height: 1.4;
+                      margin: 0 0 5px;
+                      @media #{$mobile-only}{
+                        font-size: 13px;
+                        margin:0;
+                        line-height: 1.2;
+                      }
+                    }
+                    .ctg-btn{
+                      @extend %bold-font;
+                      font-size: 20px;
+                      margin-bottom: 12px;
+                      margin-top: 12px;
+                      
+                       @media #{$tab-up} {
+                          padding:0px 45px 10px 0px;
+                        }
+                       @media #{$tab-only}{
+                          padding:0px 45px 10px 0px;
+                       }
+                      span{
+                         float:left;
+                         width:50%;
+                         padding-right:12px;
+                          @media #{$mobile-only}{
+                            padding-right:8px;
+                          }
+                      }
+                          .secondary-button{
+                            text-align:center;
+                            border: 2px solid $blue;
+                            color: $blue;
+                              &:hover {
+                                  color: $white;
+                                }
+                              @media #{$mobile-only}{ 
+                                width:100%;
+                                min-width:70px;
+                                padding: 6px 5px;
+                                font-size: 10px;
+                              }
+                               @media #{$tab-only}{ 
+                                width:100%;
+                                min-width:70px;
+                                padding: 6px 5px;
+                                font-size: 12px;
+                              }
+                          }
+                    }
+                    .shoes-type{
+                      font-size: 12px;
+                    }
+                  }
+                }
+                 @media #{$tab-only}{
+                margin: 5px 0 5px;
+                }
+            }
+            .heading {
+              .br-heading-detail{
+                text-transform: uppercase;
+                margin: 25px 0 3px 0;
+                font-size: 2em;
+              }
+            }
+            .info{
+              h4{
+                @extend %info-font;
+                font-size:15px;
+                font-weight: normal;
+              }
+            }
+            // Shoe-Detail-page
           }
         }
 

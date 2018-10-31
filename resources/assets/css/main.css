@@ -119,13 +119,13 @@
 .br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .landingpage-banner .landingpage-banner--info .label--underline, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-info .para .features p strong, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtFeeling, .rhi-header2 .info-wrapper .txtOffice, .br-events .module .info-wrapper .tickLedeHead span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .events-months .title, .br-events .events-information .events-months li, .br-events .events-information h4, .br-events .content-asset .main-events li a .listevents h2, .br-events .cta, .br-events-content .create-account--header .event-date, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-months .content-asset .cta {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .br-events .content-asset .main-events li a .listevents p, .br-events-months .content-asset .main-events li a .listevents p {
+.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .br-events .content-asset .main-events li a .listevents p, .br-events-months .content-asset .main-events li a .listevents p {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img, .brooksrunhappyis .module .info-wrapper .txtOurflag {
+.ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info img, .brooksrunhappyis .module .info-wrapper .txtOurflag {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun {
+.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
 
 .bold-font {
@@ -1570,6 +1570,8 @@ textarea {
 
 /* /landing Page */
 /* Start category page*/
+.ctg-main-container .detail-shoe-pg {
+  border-bottom: 1px solid #f2f2f2; }
 @media only screen and (max-width: 767px) {
   .ctg-main-container .br-mainheading {
     text-align: left; }
@@ -1578,6 +1580,8 @@ textarea {
 .ctg-main-container .ctg-container .ctg-wrapper-container {
   flex-flow: row wrap;
   justify-content: flex-start; }
+  .ctg-main-container .ctg-container .ctg-wrapper-container .br-padding_bottm {
+    margin-bottom: 20px; }
   .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub {
     margin: 25px 0 50px;
     border-bottom: 1px solid #f2f2f2; }
@@ -1685,6 +1689,119 @@ textarea {
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub {
         margin: 5px 0 5px; } }
+  .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub {
+    margin: 25px 0 50px; }
+    .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product {
+      position: relative; }
+      .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info {
+        position: absolute;
+        top: -25px;
+        right: 45px;
+        z-index: 5; }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info {
+            position: absolute;
+            top: 36px;
+            right: 8px;
+            z-index: 5;
+            width: 80px; } }
+        @media only screen and (max-width: 767px) {
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info {
+            top: -15px;
+            right: 0px; } }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info {
+            right: 0px;
+            top: -15px; } }
+        .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info img {
+          padding: 7px;
+          display: inline-block;
+          color: #ffffff; }
+          @media only screen and (max-width: 767px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info img {
+              width: 65px; } }
+      .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product a {
+        display: block;
+        color: #000000; }
+      .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .img {
+        text-align: center; }
+        .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .img.img-shoes {
+          height: 224px;
+          width: 100%;
+          position: relative; }
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .img.img-shoes {
+              height: 260px; } }
+          @media only screen and (max-width: 767px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .img.img-shoes {
+              height: 150px; } }
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .img.img-shoes img {
+            position: absolute;
+            bottom: 0;
+            left: 0; }
+      .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info {
+        display: block;
+        position: relative;
+        padding: 17px 0 8px; }
+        @media only screen and (max-width: 767px) {
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info {
+            padding: 2px 0 3px; } }
+        .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3 {
+          font-size: 16px;
+          line-height: 1.4;
+          margin: 0 0 5px; }
+          @media only screen and (max-width: 767px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3 {
+              font-size: 13px;
+              margin: 0;
+              line-height: 1.2; } }
+        .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn {
+          font-size: 20px;
+          margin-bottom: 12px;
+          margin-top: 12px; }
+          @media only screen and (min-width: 992px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn {
+              padding: 0px 45px 10px 0px; } }
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn {
+              padding: 0px 45px 10px 0px; } }
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn span {
+            float: left;
+            width: 50%;
+            padding-right: 12px; }
+            @media only screen and (max-width: 767px) {
+              .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn span {
+                padding-right: 8px; } }
+          .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+            text-align: center;
+            border: 2px solid #0263f7;
+            color: #0263f7; }
+            .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn .secondary-button:hover {
+              color: #ffffff; }
+            @media only screen and (max-width: 767px) {
+              .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+                width: 100%;
+                min-width: 70px;
+                padding: 6px 5px;
+                font-size: 10px; } }
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+              .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn .secondary-button {
+                width: 100%;
+                min-width: 70px;
+                padding: 6px 5px;
+                font-size: 12px; } }
+        .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .shoes-type {
+          font-size: 12px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub {
+        margin: 5px 0 5px; } }
+  .ctg-main-container .ctg-container .ctg-wrapper-container .heading .br-heading-detail {
+    text-transform: uppercase;
+    margin: 25px 0 3px 0;
+    font-size: 2em; }
+  .ctg-main-container .ctg-container .ctg-wrapper-container .info h4 {
+    font-size: 15px;
+    font-weight: normal; }
 .ctg-main-container .ctg-benefits {
   background-color: #0263f7;
   padding-top: 20px;

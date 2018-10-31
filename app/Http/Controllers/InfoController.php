@@ -10,4 +10,8 @@ class InfoController extends Controller
    
       return view( 'info.'.$pg);
   }
+  public function help()
+	{
+		return view( 'info.help');
+    }
 }
