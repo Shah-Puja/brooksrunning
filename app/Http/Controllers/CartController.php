@@ -33,6 +33,14 @@ class CartController extends Controller {
         if ($cart && !$cart->verifyItems()) {
             $cart->deleteUnavaliableItems();
         }
+        
+        if(isset($cart->promo_code) && $cart->promo_code!=""){
+            $check_promo_code = promo_mast::where('promo_string', $cart->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+            if(empty($check_promo_code)){
+                //remove_promo_code
+                Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => '']);
+            }
+        }
 
         if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
@@ -273,6 +281,11 @@ class CartController extends Controller {
             $promotion['redirect'] = 0;
         }
         echo json_encode($promotion);
+    }
+
+    public function removecoupon(Request $request) {
+        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
+        return redirect('cart'); 
     }
 
 }
