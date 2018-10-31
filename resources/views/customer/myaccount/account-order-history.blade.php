@@ -59,7 +59,7 @@
 							<div class="col-2 tab-4">
 								<div class="product-info">
 									<div class="edit">
-										<a href="JavaScript:Void(0);" class="bold-font edit-cart--handle" >View Order</a>
+										<a href="JavaScript:Void(0);" class="bold-font edit-order--handle" >View Order</a>
 									</div>
 								</div>
 							</div>
@@ -95,7 +95,7 @@
 							<div class="col-2 tab-4">
 								<div class="product-info">
 									<div class="edit">
-										<a href="JavaScript:Void(0);" class="bold-font edit-cart--handle" >View Order</a>
+										<a href="JavaScript:Void(0);" class="bold-font edit-order--handle" >View Order</a>
 									</div>
 								</div>
 							</div>
@@ -131,7 +131,7 @@
 							<div class="col-2 tab-4">
 								<div class="product-info">
 									<div class="edit">
-										<a href="JavaScript:Void(0);" class="bold-font edit-cart--handle" >View Order</a>
+										<a href="JavaScript:Void(0);" class="bold-font edit-order--handle" >View Order</a>
 									</div>
 								</div>
 							</div>
@@ -142,10 +142,10 @@
 		</div>
 	</div>
 </section>
-<div id="edit-cart--popup" class="popup-container edit-cart--popup">
+<div id="edit-order--popup" class="popup-container edit-cart--popup">
 	<div class="popup-container--wrapper">
 		<div class="popup-container--info">
-			<div class="close-me"><span class="icon-close-icon edit-cart--close"></span></div>
+			<div class="close-me"><span class="icon-close-icon edit-order--close"></span></div>
 			<div class="cart-left--container account-order-popup">
 				<div class="heading">
 					<h3 class="br-heading">Order Information</h3>
