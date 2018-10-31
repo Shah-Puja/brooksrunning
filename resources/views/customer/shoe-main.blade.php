@@ -121,7 +121,7 @@
 												@if($shoe_info->experience == 'Cushion Me')
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="60" height="60" />
 												@elseif ($shoe_info->experience == 'Energize Me')
-													<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.png" alt="Energize Badge" width="60" height="60" />
+													<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.svg" alt="Energize Badge" width="60" height="60" />
 												@elseif ($shoe_info->experience == 'Connect Me') {
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="60" height="60" />
 												@elseif ($shoe_info->experience == 'Propel Me') {
@@ -161,7 +161,6 @@
 <!--uTube popup -->
 @if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
 <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
-<<<<<<< HEAD
 	<div class="popup-container--wrapper">
 		<div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
@@ -171,20 +170,8 @@
 		</div>
 	</div>
 </div>
+@endif
 <!--/uTube popup -->
-=======
-						<div class="popup-container--wrapper">
-							<div class="popup-container--info">
-								<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
-								<div class="uTube-info">
-									<iframe src="https://www.youtube.com/watch?v={{ $shoe_info->video_link }}" frameborder="0" allowfullscreen ></iframe>
-								</div>
-							</div>
-						</div>
-					</div>
-					@endif
-					<!--/uTube popup -->
->>>>>>> 0545086bc1ae9f7b2143cf527a49aeffa831b23f
 
 </section>
 
