@@ -71,7 +71,8 @@ class CartController extends Controller {
 
                     if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
                         $cart_api_price_sale = $item['Price'];
-                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['price_sale' => $cart_api_price_sale]);
+                        $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
+                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_detail' => $discount_detail,'price_sale' => $cart_api_price_sale]);
                     }
                 endforeach;
             }
