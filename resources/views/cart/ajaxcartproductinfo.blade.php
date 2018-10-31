@@ -1,6 +1,8 @@
 @if ( $cart )
 @foreach($cart->cartItems as $cartItem)  
-@php //echo "<pre>";print_r($cartItem->variant);die; @endphp
+@php //echo "<pre>";print_r($cartItem);die;
+            $price_sale = (!empty($cartItem->price_sale) && $cartItem->price_sale != $cartItem->variant->price && $cartItem->price_sale != 0) ? $cartItem->price_sale : $cartItem->variant->price;
+        @endphp
 		<div class="shoppingcart-products" data-main-sku="{{ $cartItem->variant->id }}">
 						<div class="row cp-details__wrapper">
 							<div class="col-3 tab-6">
@@ -41,33 +43,42 @@
 										<div class="mob-5"><p class="bold-font blue">Unit Price:</p></div>
 										<div class="mob-7">
 										<p class="bold-font blue right">
-										@if($cartItem->variant->price_sale == 0 || $cartItem->variant->price_sale==$cartItem->variant->price)
+										@if($cartItem->price_sale == 0 || $cartItem->price_sale==$cartItem->variant->price)
 										&dollar;{{ number_format($cartItem->variant->price, 2) }}
 										 @endif
-								@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
+								@if (($cartItem->price_sale > 0) && ($cartItem->price_sale < $cartItem->variant->price))
 										<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del> 
-								&dollar;{{ number_format($cartItem->variant->price_sale, 2) }} 
+								&dollar;{{ number_format($cartItem->price_sale, 2) }} 
 								@endif
 										</p>
 										</div>
 									</div>
+									
+									@if (!empty($cartItem->discount_detail) && $cartItem->discount_detail != 0) 
+									 <div class="row price">
+									  <div class="mob-5"><p>Discount:</p></div>
+												<div class="mob-7"><p class="right">
+													&dollar;{{ number_format($cartItem->discount_detail, 2) }}
+                                                </div>
+										</div>
+                                    @endif
+
 									<div class="row price">
 										<div class="mob-5"><p>Item Total:</p></div>
-										<div class="mob-7"><p class="right">
-										@if($cartItem->variant->price_sale == 0)
-										&dollar;{{ number_format($cartItem->variant->price * $cartItem->qty, 2) }}
-										@else
-										&dollar;{{ number_format($cartItem->variant->price_sale * $cartItem->qty, 2) }}
-										 @endif 
-										</p></div>
+										<div class="mob-7">
+                                                                                    <p class="right">
+                                                                                        @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
+                                                                                                &dollar;{{ number_format($cartItem->discount_price, 2) }}
+                                                                                                @else
+                                                                                        &dollar;{{ number_format($price_sale * $cartItem->qty, 2) }}
+                                                                                         @endif  
+                                                                                    </p>
+                                                                                </div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					 
-					 
-        
+					</div>  
         @endforeach
 @else
  <h3>YOUR SHOPPING CART DOES NOT HAVE ANY PRODUCTS.</h3>
