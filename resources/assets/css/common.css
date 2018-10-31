@@ -590,7 +590,8 @@
     padding: 4px 10px;
     font-size: 14px;
     border-bottom: 1px solid #ffffff;
-    transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out;
+    cursor: pointer !important; }
     .custom-select .option-value-data:not(.disable):hover {
       background-color: #0263f7;
       color: #ffffff;
@@ -3310,14 +3311,16 @@ textarea {
         color: #ffffff; }
       .pdp-container--info .size .size-show li.disable {
         background-color: #f1f1f1;
-        cursor: no-drop; }
+        cursor: no-drop;
+        color: #dedcda; }
         .pdp-container--info .size .size-show li.disable:hover {
           border: 1px solid #d3d0cd; }
       .pdp-container--info .size .size-show li:hover {
         border: 1px solid #000000; }
       .pdp-container--info .size .size-show li .disable {
         background-color: #f1f1f1;
-        cursor: no-drop; }
+        cursor: no-drop;
+        color: #d4d3d4; }
       .pdp-container--info .size .size-show li .selected {
         background-color: #0263f7;
         border: solid 1px #0263f7;
