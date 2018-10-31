@@ -28,7 +28,7 @@
                                 <p class="right">$ {{ @number_format($cart->freight_cost, 2) }}</p>
                             </div>
                         </div>
-                            @if($cart->gift_discount!=0)
+                            @if(isset($cart->gift_discount) && $cart->gift_discount!=0)
                         <div class="row total">
                             <div class="mob-7">
                                 <p>Gift Discount</p>
@@ -44,7 +44,7 @@
                                 <p class="bold-font blue">Order Total:</p>
                             </div>
                             @php 
-                            if($cart->gift_discount!=0){
+                            if(isset($cart->gift_discount) && $cart->gift_discount!=0){
                                 $subtotal = @number_format(($cart->gift_cart_total + $cart->freight_cost), 2);
                             }else{
                                 $subtotal = @number_format($cart->grand_total, 2);
