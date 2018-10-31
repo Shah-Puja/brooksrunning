@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shoe_mast;
 use App\Models\Product;
+use App\Models\Seo;
 
 class CategoryController extends Controller
 {
