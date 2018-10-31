@@ -120,7 +120,7 @@
 .accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .cart-popup-desktop .cart-popup-info .total, .header-desktop .search-container .search-wrapper .search--container .new-arrival--container, .header-desktop .search-container .search-wrapper .search--container .info-wrapper a, .header-desktop .header-desktop--right, .desktop-navigation .main .desktop-navigation--sub .header-menu--btn p, .desktop-navigation .main .desktop-navigation--sub .nav-wrapper .submenu-main, .mobile-navbar li.menu-active > a, .mobile-navbar > li > a, .footer-navbar .footer-navbar-info .tab-header label h3, .footer-social h3, .bottom-signup h3, .bottom-signup .btn, .overgray-wrapper .img-wrapper h3, .overgray-wrapper .info-wrapper a, .homepage-gray--container .new-arrival--container, .homepage-gray--container .info-wrapper a, .homepage-footer .info p.big, .create-account--right .info h4, .product-info-mob, .order-history--product .bold, .plp-filter--wrapper .filter-heading h3, .plp-filter--wrapper .filter-heading a, .plp-filter--wrapper .filter-menu .label, .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .plp-mob--info, .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3, .plp-wrapper-container .plp-wrapper__sub .plp-product .info .price, .plp-load-more a, .pdp-container--info .heading-wrapper .price, .pdp-container--info .main, .pdp-container--offer h3, .pdp-container--offer ul li a, .pdp-info--wrapper .pdp-info .info-wrapper .specs__row .label--bold, .pdp-container--benefits .module-additional .heading h3, .pdp-container--benefits .module-additional .info h4, .size-chart--popup .size-chart--bras .info h4, .afterpay--popup .heading, .cart-breadcrumb--header .cart-header--step ul li.active, .cart-breadcrumb--header .cart-header--step ul li.step, .edit-cart--popup .bold-font, .shipping-right--container .shipping-form .email-msg, .payment-container .payment-afterpay h3, .payment-container .payment-afterpay .payment-schedule ul li p span, .success-container--footer .header h3, .success-container--footer .form-container .form-info p.main, .success-container--footer .form-container .form-info p span, .contact-us--container .quick-help--link li, .about-container .accordian-tab label, .about-container--info h4, .about-container--info h5, .run-signature--patti, .run-signature--work .work-wrapper {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span, .pdp-container--info .offer-info span {
+.plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span, .pdp-container--info .offer-info span, .pdp-container--info .shoe-info-wrapper {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
 .accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body, .cart-popup-desktop .cart-popup-info .product .product-info .btn, .header-desktop .search-container .search-wrapper form input, .header-desktop .header-desktop--right .top .offer-info, .desktop-navigation .main .desktop-navigation--sub, .header-mobile .mob-search--product input, .product-info-mob p span, .order-history--product .bold span, .pdp-container--info .main.size-chart a, .shopping-delevery--option .delivery-option .radio-inline label, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .payment-container .payment-tab .input-wrapper .text .info, .about-container--info h4 span, .about-container--info h5 span {
@@ -3159,6 +3159,8 @@ textarea {
 /* details page */
 .pdp-container {
   padding: 0 0 20px; }
+  .pdp-container .detail-shoe-pg {
+    border-bottom: 1px solid #f2f2f2; }
   .pdp-container--image {
     margin-bottom: 25px;
     position: relative; }
@@ -3229,12 +3231,22 @@ textarea {
     color: #ffffff; }
     .pdp-container--info .offer-info span.sale {
       background-color: #b9161e; }
+  .pdp-container--info .shoe-info-wrapper {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 6em 0 1em; }
+    @media only screen and (max-width: 991px) {
+      .pdp-container--info .shoe-info-wrapper {
+        margin: 0 0 1em; } }
   .pdp-container--info .heading-wrapper .heading {
     float: left;
     width: 50%;
     padding: 10px 0 5px; }
     .pdp-container--info .heading-wrapper .heading h1 {
       margin: 0; }
+    .pdp-container--info .heading-wrapper .heading .br-heading-detail {
+      text-transform: uppercase;
+      margin: 0 0 3px 0; }
   .pdp-container--info .heading-wrapper .price {
     padding: 17px 0 5px;
     float: left;

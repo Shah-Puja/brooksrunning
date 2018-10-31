@@ -2508,6 +2508,9 @@
 /* details page */
   .pdp-container{
     padding: 0 0 20px;
+    .detail-shoe-pg{
+      border-bottom: 1px solid #f2f2f2;
+    }
     &--image{
       margin-bottom: 25px;
       position: relative;
@@ -2598,15 +2601,28 @@
           }
         }
       }
-      .heading-wrapper{
-        .heading{
-          float: left;
-          width: 50%;
-          padding: 10px 0 5px;
-          h1{
-            margin: 0;
-          }
+      .shoe-info-wrapper{
+        @extend %bold-italic-font;
+        font-size: 1em;
+        line-height: 1.5;
+        margin: 6em 0 1em;
+        @media #{$tabmob-only}{
+         margin: 0 0 1em;
+      }
+    }
+    .heading-wrapper{
+      .heading{
+        float: left;
+        width: 50%;
+        padding: 10px 0 5px;
+        h1{
+          margin: 0;
         }
+       .br-heading-detail{
+          text-transform: uppercase;
+          margin: 0 0 3px 0;
+        }
+      }
         .price{
           padding: 17px 0 5px;
           @extend %bold-font;
