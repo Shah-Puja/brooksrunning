@@ -172,7 +172,7 @@
                                                         <div class="text">
                                                             <h3 class="bold-font">Promotion Code</h3>
                                                             <input type="text" id="promo_code" name="promo_code" class="gift-input" placeholder="Discount Code">
-                                                            <p class="show_promocode_error" style="color:red;"></p>
+                                                            <p class="confirm-coupon" style="color:red;"></p>
                                                             <button id="promo_code_validate" class="pdp-button">Apply</button>
                                                         </div>
                                                     </label>
@@ -180,6 +180,27 @@
                                             </div>
                                         </form>                         
                                     </div>
+
+                                    <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 
+                                    <div id="cartCouponRemove">
+
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td colspan="2" style="text-align:left;">
+                                                    <a href="#" class="remove_coupon">
+                                                        <?php
+                                                        if (!empty($coupon_code)) {
+                                                            echo $coupon_code['promo_string'];
+                                                        }
+                                                        ?>
+                                                    </a>
+                                                </td>
+                                              <input type="hidden" name="coupon_code" id="coupon_code" value="<?= (!empty($coupon_code)) ? $coupon_code['promo_code'] : '' ?>">
+                                            </tr>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -292,15 +313,50 @@
             });
         });
 
-        /*$('#promo_code_validate').click(function () {
-         var promo_code = $('#promo_code').val();
-         if (promo_code == "") {
-         $('.show_promocode_error').html('Please enter discount code');
-         return false;
-         } else {
-         $('.show_promocode_error').html('');
-         }
-         });*/
+        $("#ajaxcoupon").submit(function(e)
+{
+    var postData = $(this).serializeArray();
+    var formURL = $(this).attr("action");
+ 
+    $.ajax(
+    {
+        url     : formURL,
+        type    : "POST",
+        data    : postData,
+        cache   : false,
+        dataType:'json',
+        statusCode: {
+            404: function() {
+              alert( "page not found" );
+            }
+        },
+        success:function(data, textStatus, jqXHR) 
+        {
+            console.log(data);
+            if($('#promo_code').val()==""){
+                $('.confirm-coupon').html(data.msg).show();
+            }
+            if(textStatus == 'success'){
+                if(data.result == 'success'){
+                    window.location.assign(data.url);
+                }
+                if (data.result == 'fail'){
+                    $('.confirm-coupon').html(data.msg).show();
+                } 
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails
+            console.log(errorThrown);
+            console.log(textStatus);
+            console.log(jqXHR);
+        }
+    });
+    e.preventDefault(); //STOP default action
+});
+
+
 
         var checked_delivery_option = $("input:radio[name='d-options']:checked").val();
 
