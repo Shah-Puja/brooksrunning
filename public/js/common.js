@@ -239,6 +239,16 @@ $(document).ready(function () {
     });
 });
 
+// Edit my account order details
+$(document).ready(function() {
+    $(".edit-order--handle").click(function(){
+        $("#edit-order--popup").addClass("show");
+    });
+    $(".edit-order--close").click(function(){
+        $("#edit-order--popup").removeClass("show");
+    });
+});
+
 
 // All tabs
 $('ul.tabs li').click(function () {
@@ -279,8 +289,6 @@ $(document).on('click', '.custom-select .option-value', function () {
     /** listing sort */
     var type = $(this).attr('data-sorttype');
     var sortValue = $(this).attr('value');
-    console.log(type);
-    console.log(sortValue);
     if(type=='ass' || type=='new'){
         $grid.isotope({ sortBy: sortValue , sortAscending: false});
     }else{

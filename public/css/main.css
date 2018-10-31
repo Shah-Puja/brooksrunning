@@ -696,6 +696,7 @@
   font-size: 14px;
   border-bottom: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
+  cursor: pointer !important;
 }
 .custom-select .option-value-data:not(.disable):hover {
   background-color: #0263f7;
@@ -3897,4 +3898,3 @@ textarea {
 /* Events- End*/
 
 /*# sourceMappingURL=main.css.map */
-ap */

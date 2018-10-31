@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
+use App\Models\Promo_mast;
 
 class CartController extends Controller {
 
@@ -32,8 +33,8 @@ class CartController extends Controller {
         if ($cart && !$cart->verifyItems()) {
             $cart->deleteUnavaliableItems();
         }
-    
-        if(env('AP21_STATUS') == "ON"){
+
+        if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
             if (!empty($cart)) {
                 foreach ($cart->cartItems as $row) {
@@ -205,11 +206,11 @@ class CartController extends Controller {
         ]);
     }
 
-    public function remove_gift_voucher(Request $request){
+    public function remove_gift_voucher(Request $request) {
         Cart::where('id', session('cart_id'))->update(['gift_id' => '', 'pin' => '', 'gift_available_amount' => '0.00', 'gift_discount' => '0.00', 'gift_cart_total' => '0.00']);
-        echo "success"; 
+        echo "success";
     }
-    
+
     public function check_valid_gift_voucher(Request $request) {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
         $cartTotal = $cart->total;
@@ -217,7 +218,7 @@ class CartController extends Controller {
         $giftcert_code = $request->voucher_number;
         $giftcert_pin = $request->voucher_pin;
         $vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
-         
+
 
         $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal);
         $returnCode = $response->getStatusCode();
@@ -250,6 +251,27 @@ class CartController extends Controller {
                 echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
                 break;
         }
+    }
+
+    public function couponvalidate(Request $request) {
+        //echo "<pre>";print_r($check_promo_code);die;
+        
+        $check_promo_code = promo_mast::where('promo_string', $request->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+        if($request->promo_code == ""){
+            $promotion['msg'] = 'Please enter Discount Code';
+        }
+        else if (isset($check_promo_code) && $check_promo_code != "") { 
+            Cart::where('id', session('cart_id'))->update(['promo_code' => $request->promo_code, 'promo_string' => $check_promo_code->promo_string, 'sku' => $check_promo_code->skuidx]);
+            $promotion ['result'] = 'success';
+            $promotion['msg'] = 'Valid Code';
+            $promotion['url'] = 'cart';
+            $promotion['redirect'] = 1;
+        } else {
+            $promotion ['result'] = 'fail';
+            $promotion['msg'] = 'Discount Code is not valid';
+            $promotion['redirect'] = 0;
+        }
+        echo json_encode($promotion);
     }
 
 }
