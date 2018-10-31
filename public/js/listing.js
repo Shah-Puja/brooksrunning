@@ -71,7 +71,6 @@ var $grid = $('.grid').isotope({
       },
   date: function(item){
     var date = $(item).find(".plp-product").data('release-dt');
-    console.log(date);
     return date;
   }
 }
@@ -82,7 +81,7 @@ var filters = {};
 var loadmore_count = '12'; 
 
 $(document).on("click",".filter-value",function(){
-  console.log(filters);
+
   var filterValue='';
   var value = $(this).text();
 	var this_value= $(this).closest("li").data("filter-value");
@@ -106,7 +105,7 @@ $(document).on("click",".filter-value",function(){
          }
     filters[ this_closest_group ].push(this_value);
 		var comboFilter = getComboFilter( filters );
-		console.log(comboFilter);
+	
 		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }else{
       filters[this_closest_group] = jQuery.grep(filters[this_closest_group], function(value) {
@@ -215,7 +214,15 @@ function getComboFilter( filters ) {
   var iso = $grid.data('isotope'); // get Isotope instance
 
   $(window).load(function(){
-    $grid.isotope({ sortBy: 'price' , sortAscending: true ,layoutMode: 'fitRows'});
+    var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
+    var select_value =  $(".select-option--wrapper .selected").attr('value');
+    if(select_type=='ass' || select_type=='new'){
+        var sortAscending =  false ;
+    }else{
+      var sortAscending =  true ;
+    }
+
+    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
     loadMore(initShow); 
   });
    //execute function onload
@@ -225,17 +232,17 @@ function getComboFilter( filters ) {
     $grid.find(".hidden").removeClass("hidden");
     var select_type =  $(".select-option--wrapper .selected").attr('data-sorttype');
     var select_value =  $(".select-option--wrapper .selected").attr('value');
-    console.log(select_value);
     if(select_type=='ass' || select_type=='new'){
         var sortAscending =  false ;
     }else{
       var sortAscending =  true ;
     }
-
+    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
       return item.element;
     });
     $(hiddenElems).addClass('hidden');
+
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
     var hidden_count = $(".element-item:hidden").length;
@@ -256,8 +263,11 @@ function getComboFilter( filters ) {
   //when load more button clicked
   $(document).on("click",".load-more",function() {
       $(".plp-load-more").remove();
-      var counter = $(".element-item:not('.hidden')").length;
+      //var counter = $(".element-item:not('.hidden')").length;
+      //console.log(counter);
+      //console.log($(".element-item:visible").length);
       counter = counter + initShow;
+      console.log(counter);
       loadMore(counter);
       return false;
   });
