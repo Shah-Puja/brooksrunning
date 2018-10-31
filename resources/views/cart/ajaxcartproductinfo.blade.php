@@ -42,26 +42,25 @@
 									<div class="row price">
 										<div class="mob-5"><p class="bold-font blue">Unit Price:</p></div>
 										<div class="mob-7">
-										<p class="bold-font blue right">
-										@if($cartItem->price_sale == 0 || $cartItem->price_sale==$cartItem->variant->price)
-										&dollar;{{ number_format($cartItem->variant->price, 2) }}
-										 @endif
-								@if (($cartItem->price_sale > 0) && ($cartItem->price_sale < $cartItem->variant->price))
-										<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del> 
-								&dollar;{{ number_format($cartItem->price_sale, 2) }} 
-								@endif
-										</p>
+                                                                                    <p class="bold-font blue right">
+                                                                                    @if($cartItem->price_sale == 0 || $cartItem->price_sale==$cartItem->variant->price)
+                                                                                    &dollar;{{ number_format($cartItem->variant->price, 2) }}
+                                                                                     @endif
+                                                                    @if (($cartItem->price_sale > 0) && ($cartItem->price_sale < $cartItem->variant->price))
+                                                                                    <del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del> 
+                                                                    &dollar;{{ number_format($cartItem->price_sale, 2) }} 
+                                                                    @endif
+                                                                                    </p>
 										</div>
 									</div>
 									
 									@if (!empty($cartItem->discount_detail) && $cartItem->discount_detail != 0) 
-									 <div class="row price">
-									  <div class="mob-5"><p>Discount:</p></div>
-												<div class="mob-7"><p class="right">
-													&dollar;{{ number_format($cartItem->discount_detail, 2) }}
-                                                </div>
-										</div>
-                                    @endif
+									<div class="row price">
+                                                                            <div class="mob-5"><p>Discount:</p></div>
+                                                                            <div class="mob-7"><p class="right">&dollar;{{ number_format($cartItem->discount_detail, 2) }}
+                                                                            </div>
+									</div>
+                                                                        @endif
 
 									<div class="row price">
 										<div class="mob-5"><p>Item Total:</p></div>

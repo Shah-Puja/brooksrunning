@@ -107,4 +107,5 @@ Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
 Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
 Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
 Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
+Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
