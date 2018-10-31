@@ -3,11 +3,8 @@
 <link rel="stylesheet" href="/css/shoefinder-css/main.css">
 <link rel="stylesheet" href="/css/shoefinder-css/ss-newquiz.css" />
 <link rel="stylesheet" href="/css/shoefinder-css/jquery.ui.all.css" />
- <script src="http://test.texaspeak.com.au/brooks/test/js/test/footerjs.js" type="text/javascript"></script>  
-
-
+ <script src="/js/shoefinder.js" type="text/javascript"></script>  
 <div id="wrapper" class="shoefinder pt_content">
-       
 	   <script>
 	   function changeFunction(){
 		  var gender=document.getElementById('gender').value;
