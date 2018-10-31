@@ -255,18 +255,23 @@ class CartController extends Controller {
 
     public function couponvalidate(Request $request) {
         //echo "<pre>";print_r($check_promo_code);die;
+        
+        $check_promo_code = promo_mast::where('promo_string', $request->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
         if($request->promo_code == ""){
             $promotion['msg'] = 'Please enter Discount Code';
         }
-        $check_promo_code = promo_mast::where('promo_string', $request->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
-        if (isset($check_promo_code) && $check_promo_code != "") { 
-            Cart::where('id', session('cart_id'))->update(['promo_code' => $request->promo_code, 'promo_string' => $check_promo_code->promo_string, 'skuidx' => $check_promo_code->skuidx]);
-
+        else if (isset($check_promo_code) && $check_promo_code != "") { 
+            Cart::where('id', session('cart_id'))->update(['promo_code' => $request->promo_code, 'promo_string' => $check_promo_code->promo_string, 'sku' => $check_promo_code->skuidx]);
+            $promotion ['result'] = 'success';
+            $promotion['msg'] = 'Valid Code';
+            $promotion['url'] = 'cart';
+            $promotion['redirect'] = 1;
         } else {
             $promotion ['result'] = 'fail';
-            $promotion['msg'] = 'Promotion code expired';
+            $promotion['msg'] = 'Discount Code is not valid';
             $promotion['redirect'] = 0;
         }
+        echo json_encode($promotion);
     }
 
 }
