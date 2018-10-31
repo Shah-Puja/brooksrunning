@@ -5,9 +5,9 @@
 	$heading='';
 	switch($category){
 		case 'neutral': $heading = "Neutral Running Shoes";break;
-		case 'support': $heading = "support Running Shoes";break;
+		case 'support': $heading = "Support Running Shoes";break;
 		case 'trail': $heading = "Trail Running Shoes";break;
-		case 'competition': $heading = "competition Running Shoes";break;
+		case 'competition': $heading = "Competition Running Shoes";break;
 		case 'x-training': $heading = "Cross Trainer Shoes";break;
 		case 'walking': $heading = "Walking shoes";break;
 	}
@@ -50,7 +50,7 @@
 									@if($items->experience == 'Cushion Me')
 										<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="100" height="100" />
 									@elseif ($items->experience == 'Energize Me')
-										<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.png" alt="Energize Badge" width="100" height="100" />
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.svg" alt="Energize Badge" width="100" height="100" />
 									@elseif ($items->experience == 'Connect Me') 
 										<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="100" height="100" />
 									@elseif ($items->experience == 'Propel Me') 
