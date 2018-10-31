@@ -239,6 +239,16 @@ $(document).ready(function () {
     });
 });
 
+// Edit my account order details
+$(document).ready(function() {
+    $(".edit-order--handle").click(function(){
+        $("#edit-order--popup").addClass("show");
+    });
+    $(".edit-order--close").click(function(){
+        $("#edit-order--popup").removeClass("show");
+    });
+});
+
 
 // All tabs
 $('ul.tabs li').click(function () {
