@@ -279,8 +279,8 @@
 							   <span class='label-title'>No</span>
 							   </label>
 						   </div>
-						   <ul class="followup-questions question5_div" style="display:none;">
-							   <li class="visually-hidden">
+						   <ul class="followup-questions" >
+							   <li class="visually-hidden question5_div" style="display:none;">
 							   <p>
 								   Sorry to hear that, tell us where it is/was?
 							   </p>
@@ -533,7 +533,7 @@
 					   if (activeQuestion === false) {
 						   if (jQuery(selectors.results).length) {
 							   top = jQuery(selectors.results).offset().top;
-							   app.product.tile.init();
+							   //app.product.tile.init();
 						   } else {
 							   top = jQuery(selectors.accordion).offset().top + jQuery(selectors.accordion).outerHeight(true);
 						   }					
@@ -669,19 +669,30 @@
 					   if (jQuery(selectors.accordion).accordion('option','active') === false) {
 						   console.log('no accordion active');
 						   //return;
-						   jQuery.get(
-							   baseurl + "shoefinder/get_shoe",
-							   function(html) {
-								   console.log('get callback');
+						   $.ajax({
+                                url: "shoefinder-getshoe",
+                                method: "get", 
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                success: function (response) {
+									console.log('get callback');
 								   if (jQuery(selectors.results).length) {
 									   jQuery(selectors.results).remove();
 								   }
-								   jQuery(selectors.accordion).after(html);
+								   jQuery(selectors.accordion).after(response);
 								   jQuery(selectors.results).css('display','');
-								   //app.product.tile.init();
-							   },
-							   'html'											
-						   );
+                                    return false;
+                                },
+                                error: function (error) { 
+                                   
+                                },
+                                statusCode: {
+                                    419: function () {
+                                        return false;
+                                    }
+                                }
+                            });
 						   //loading gif for results
 						   //jQuery('body').append('<div id="loading"><img src="http://test.texaspeak.com.au/brooks/test/images/SS/ss-runner.gif" /></div>');
 					   }									
