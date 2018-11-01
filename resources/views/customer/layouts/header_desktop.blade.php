@@ -37,7 +37,7 @@
                         </li>
                         <li><a href="/info/contact-us">Help</a> 
                         </li>
-                        <li><a href="/info/find-a-store">Store Locator</a></li>
+                        <li><a href="/store-locator">Store Locator</a></li>
                         <li class="cart">
                             <a href="/cart">Cart
                                 <span class="icon-shopping-cart icon-cart"></span>
