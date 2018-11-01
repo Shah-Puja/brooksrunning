@@ -77,6 +77,7 @@ Route::get('/account-personal', 'MyaccountController@account_personal');
 
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
+Route::post('/shoefinder-ajax', 'ShoefinderController@ajax_data')->middleware('allowOnlyAjax');
 
 /* events page */
 Route::get('/events', 'EventController@events_view'); 
