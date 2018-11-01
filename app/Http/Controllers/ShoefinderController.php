@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Models\Shoefinder;
 use Session;
 
 class ShoefinderController extends Controller
@@ -64,11 +65,27 @@ class ShoefinderController extends Controller
 			),
 
 			7 => array(
+				0 => array(
 					0 => 0,
 					1 => 0,
 					2 => 0,
 					3 => 15,
 					4 => 15
+				),
+				1 => array(
+					0 => 0,
+					1 => 0,
+					2 => 0,
+					3 => 5,
+					4 => 10
+				),
+				2 => array(
+					0 => 0,
+					1 => 0,
+					2 => 0,
+					3 => 0,
+					4 => 5
+				)
 			),
 		);
 
@@ -111,13 +128,13 @@ class ShoefinderController extends Controller
                 $user_choices = Session::get('user_choices');
 				$user_choices[$qid] = $score_array[$qid][$val0];
                 Session::put('user_choices',$user_choices);
-                Session::get('miles',$val0);
+                Session::put('miles',$val0);
 				break;
 
 			case 7:
-				//$miles =  session('miles');
+				$miles =  Session::get('miles');
 				$user_choices = Session::get('user_choices');
-				$user_choices[$qid] = $score_array[$qid][$val0];
+				$user_choices[$qid] = $score_array[$qid][$miles][$val0];
 				Session::put('user_choices',$user_choices);
 				break;
 
@@ -141,6 +158,32 @@ class ShoefinderController extends Controller
         Session::put('score',$final_score);
 
         $data = Input::all();
-        return view( 'customer.shoe_finder_view.shoe_finder_ajax_view',compact('data'));
-    }
+        return view( 'customer.shoe_finder_view.shoefinder_ajax_view',compact('data'));
+	}
+	
+	public function get_shoe(){
+		$score = Session::get('score');
+		if($score <= 50 ){
+			// its neutral
+			$tag  = 'neutral';
+		}
+		elseif($score > 50 && $score <= 90){
+			// its support
+			$tag  = 'support';
+		}
+		elseif($score >= 90){
+			$tag  = 'support_max';
+		}
+
+		$experience_type = Session::get('experience_type');
+		$experience = Session::get('experience');
+		$gender = $data['gender'] = Session::get('gender');
+		$trail_status = (Session::get('shoe_status') == 'trail' ? 'yes' : 'no');
+		$result = Shoefinder::getshoe($tag,$experience_type,$experience,$gender,$trail_status);
+		//echo "<pre>";
+		//print_r($result);
+		//exit;
+		return view( 'customer.shoe_finder_view.shoefinder_result',compact('result','tag'));
+
+	}
 }

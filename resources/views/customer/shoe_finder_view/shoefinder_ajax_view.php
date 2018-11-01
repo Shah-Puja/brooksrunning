@@ -285,12 +285,12 @@ case 5:?>
 			<p class='sub-question'>Nobody likes injuries, but they're important to discuss. Do you currently experience pain or have you endured a running-related injury in the past six months?</p>
 			<div class="grid-container grid">
 				<label class="two columns block-label">
-					<input type="radio" name="val0" value="0" <?=($val0 == 0 ? 'checked' : '');?> > <span class='label-title'>Yes</span> </label>
+					<input type="radio" name="val0" value="0" <?=($val0 == 0 ? 'checked' : '');?> class="question5"> <span class='label-title'>Yes</span> </label>
 				<label class="two columns block-label">
-					<input type="radio" name="val0" value="1" <?=($val0 == 1 ? 'checked' : '');?> id='s6_2' onclick='step6radio(this.id)'> <span class='label-title'>No</span> </label>
+					<input type="radio" name="val0" value="1" <?=($val0 == 1 ? 'checked' : '');?> id='s6_2' onclick='step6radio(this.id)' class="question5"> <span class='label-title'>No</span> </label>
 			</div>
-			<ul class="followup-questions">
-				<li class="<?=($val0 == 0 ? '' : 'visually-hidden');?>">
+			<ul class="followup-questions " >
+				<li class="question5_div" <?=($val0 == 0 ? '' : 'style=display:none');?>>
 					<p>Sorry to hear that, tell us where it is/was?</p>
 					<div class="grid-container grid">
 						<label class="two columns block-label">
@@ -304,7 +304,7 @@ case 5:?>
 							<input type="checkbox" name="val1[]" value="3" <?=(in_array(3, $val1) ? 'checked' : '');?> onclick="clickFunction();" > <span class='label-title'>None of these</span> </label>
 					</div>
 				</li>
-				<li class="<?=($val0 == 0 ? 'visually-hidden' : '');?>"></li>
+				<li class="" <?=($val0 == 0 ? 'style=display:none' : '');?>></li>
 			</ul>
 			<div class="clearfix"></div>
 			<button class="ss-continue" type="submit" style='display:none;'>Continue</button>
@@ -393,20 +393,20 @@ case 8: ?>
 			<p class='sub-question'>Choose the running experience you want.</p>
 			<div class="grid-container grid">
 				<label class="four columns block-label">
-					<input type="radio" name="val0" value="0" <?=($val0 == 0 ? 'checked' : '');?> >
+					<input type="radio" name="val0" value="0" <?=($val0 == 0 ? 'checked' : '');?>  class="question8">
 					<div class='label-text'><span class='label-title'>Float</span>
 						<p>I want more shoe to lift me off the ground.</p>
 					</div>
 				</label>
 				<label class="four columns block-label">
-					<input type="radio" name="val0" value="1" <?=($val0 == 1 ? 'checked' : '');?> > 
+					<input type="radio" name="val0" value="1" <?=($val0 == 1 ? 'checked' : '');?>  class="question8" > 
 					<div class='label-text'><span class='label-title'>Feel</span>
 						<p>I want less shoe that feels lightweight and keeps me closer to the ground.</p>
 					</div>
 				</label>
 			</div>
 			<ul class="followup-questions">
-				<li class="<?=($val0 == 0 ) ? '' : 'visually-hidden'?>">
+				<li <?=($val0 == 0 ) ? '' : 'style=display:none'?> class="question8_div1">
 					<p>And last but not least, which experience appeals to you?</p>
 					<div class="grid-container grid">
 						<label class="four columns block-label">
@@ -423,7 +423,7 @@ case 8: ?>
 						</label>
 					</div>
 				</li>
-				<li class="<?=($val0 == 1 ) ? '' : 'visually-hidden'?>">
+				<li <?=($val0 == 1 ) ? '' : 'style=display:none'?> class="question8_div2">
 					<p>And last but not least, which experience appeals to you?</p>
 					<div class="grid-container grid">
 						<label class="four columns block-label">
