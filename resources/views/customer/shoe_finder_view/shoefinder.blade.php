@@ -58,30 +58,6 @@
 					   </div>
 				   </div>
 			   <div id="accordion" class="row">
-			   
-				   <h3 class="answered row">
-					   <div class="grid-container col-12 mob-12">
-						   <span class="checkmark">&#10004;</span>
-						   <span class="accordion-header-text">You prefer <span class='neo-sans-black-italic'><b>val1</b> <b>val2</b></span> shoes. Sweet!</span>
-						   <a href="#">Edit</a>
-					   </div>	
-				   </h3>
-				   <div>
-					   <form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
-						   <input name="qid" type="hidden" value="0">
-						   <p class='sub-question'>When I go out for a run, I prefer to wear
-							   <select name='val0' id="gender" onchange="changeFunction();">
-								   <option value='mens'>men's</option>
-								   <option value='womens'>women's</option>
-							   </select> shoes on the
-							   <select name='val1' id="shoe_status" onchange="changeFunction();">
-								   <option value='road'>road</option>
-								   <option value='trail'>trail</option>
-							   </select> </p>
-						   <div class="clearfix"></div>
-						   <button class="ss-continue" onclick="shoestatus()" type="submit" style='display:none;'>Continue</button>
-					   </form>
-				   </div>
 				   <h3 class="row">
 				   <div class="grid-container col-12 mob-12">
 					   <!-- 0.0 -->
@@ -109,7 +85,7 @@
 						   </p>
 						   <div class="clearfix">
 						   </div>
-						   <button class="ss-continue" onclick="shoestatus()" type="submit" style="display:block;">Continue</button>
+						   <button class="ss-continue" type="submit" style="display:none;">Continue</button>
 					   </form>
 				   </div>
 				   <h3 class="row">
@@ -295,15 +271,15 @@
 						   </p>
 						   <div class="flex-container">
 							   <label class="two columns block-label">
-							   <input type="radio" name="val0" value="0" >
+							   <input type="radio" name="val0" value="0" class="question5" >
 							   <span class='label-title'>Yes</span>
 							   </label>
 							   <label class="two columns block-label">
-							   <input type="radio" name="val0" value="1" id='s6_2' onclick='step6radio(this.id)'>
+							   <input type="radio" name="val0" value="1" id='s6_2' onclick='step6radio(this.id)' class="question5">
 							   <span class='label-title'>No</span>
 							   </label>
 						   </div>
-						   <ul class="followup-questions">
+						   <ul class="followup-questions question5_div" style="display:none;">
 							   <li class="visually-hidden">
 							   <p>
 								   Sorry to hear that, tell us where it is/was?
@@ -421,7 +397,7 @@
 						   </p>
 						   <div class="flex-container">
 							   <label class="four columns block-label">
-							   <input type="radio" name="val0" value="0">
+							   <input type="radio" name="val0" value="0" class="question8">
 							   <div class='label-text'>
 								   <span class='label-title'>Float</span>
 								   <p>
@@ -430,7 +406,7 @@
 							   </div>
 							   </label>
 							   <label class="four columns block-label">
-							   <input type="radio" name="val0" value="1">
+							   <input type="radio" name="val0" value="1" class="question8">
 							   <div class='label-text'>
 								   <span class='label-title'>Feel</span>
 								   <p>
@@ -440,7 +416,7 @@
 							   </label>
 						   </div>
 						   <ul class="followup-questions">
-							   <li class="visually-hidden">
+							   <li class="visually-hidden question8_div1" style="display:none">
 							   <p>
 								   And last but not least, which experience appeals to you?
 							   </p>
@@ -465,7 +441,7 @@
 								   </label>
 							   </div>
 							   </li>
-							   <li class="visually-hidden">
+							   <li class="visually-hidden question8_div2" style="display:none">
 							   <p>
 								   And last but not least, which experience appeals to you?
 							   </p>
@@ -509,6 +485,22 @@
 		   </div>
 	   </div>
 	   <script>
+	         $(document).on("click",".question5",function(){
+				   if($(this).val()=='0'){
+					   $(".question5_div").show();
+				   }else{
+					   $(".question5_div").hide();
+				   }
+			   });	
+			   $(document).on("click",".question8",function(){
+				   if($(this).val()=='0'){
+					   $(".question8_div1").show();
+					   $(".question8_div2").hide();
+				   }else{
+					   $(".question8_div1").hide();
+					   $(".question8_div2").show();
+				   }
+			   });	
 			   (function() {
 			   console.log('shoe finder SEIF');	
 				   var selectors = {'accordion':'#accordion','answered':'#accordion>h3>div>a','questions':'#accordion>h3','results':'#ss-results','header':'#ui-accordion-accordion-header-','panel':'#ui-accordion-accordion-panel-','qid':'input[name="qid"]'};
@@ -584,41 +576,28 @@
 						   return false;
 					   }
 					   jQuery(form).find("li.visually-hidden input[name='val1']").attr('checked', false);
-	   
-					   var env = 'development';
-					   if(env == 'production'){
-						   if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-0') {
-							   ga('send', 'pageview', '/step-1/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-1') {
-							   ga('send', 'pageview', '/step-2/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-2') {  
-							   ga('send', 'pageview', '/step-3/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-3') { 
-							   ga('send', 'pageview', '/step-4/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-4') { 
-							   ga('send', 'pageview', '/step-5/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-5') { 
-							   ga('send', 'pageview', '/step-6/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-6') { 
-							   ga('send', 'pageview', '/step-7/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-7') { 
-							   ga('send', 'pageview', '/step-8/');
-						   } else if(jQuery(form).parent().attr('id') == 'ui-accordion-accordion-panel-8') { 
-							   ga('send', 'pageview', '/form-completed-see-results/');
-						   }
-					   }
-	   
-					   jQuery.post(
-						   baseurl + "shoefinder/ajax_data",
-						   jQuery(form).serialize(),
-						   function(html) {
-							   console.log("succes data");
-							   console.log(html);
-							   getscore(html);
-							   showSuccess(form,html);						
-						   },
-						   'html'
-					   );
+	                   $.ajax({
+                                url: "shoefinder-ajax",
+                                method: "post", 
+                                data: jQuery(form).serialize(),
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                success: function (response) {
+                                    getscore(response);
+							   		showSuccess(form,response);
+                                    return false;
+                                },
+                                error: function (error) { 
+                                   
+                                },
+                                statusCode: {
+                                    419: function () {
+                                        return false;
+                                    }
+                                }
+                            });
+                            return false;
 									   
 				   }
 			   
@@ -753,7 +732,7 @@
 				   checkLabel();
 				   stickyBar();					
 				   initialize();			
-			   })();		
+			   })();
 		   </script>
 
 @endsection
