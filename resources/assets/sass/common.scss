@@ -4609,7 +4609,39 @@
 /* /overlay-loader */
 
 
+// Sitemap
 
+.sitemap--container{
+.title{
+  border-bottom: 2px solid $border;
+}
+.list-head {
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+a {
+  color: #1678bd;
+  text-decoration: none;
+  overflow: hidden;
+}
+  @media #{$tabmob-only}{
+    padding-right: 0px;
+  }
+  .quick-help--link{
+    li{
+      list-style-type: none;
+      @extend %bold-font;
+      margin: 10px 0;
+      a{
+        color: $blue;
+        &:hover{
+          color: $darkblue;
+        }
+      }
+    }
+  }
+}
 
 
 

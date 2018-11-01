@@ -14,4 +14,8 @@ class InfoController extends Controller
 	{
 		return view( 'info.help');
     }
+    public function sitemap()
+	{
+		return view( 'info.sitemap');
+    }
 }

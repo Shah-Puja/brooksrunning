@@ -45,6 +45,7 @@ Route::post('/subscribers/new', 'SubscriberController@store');
 Route::get('/info/{pg}', 'InfoController@index');
 
 Route::get('/help', 'InfoController@help');  
+Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
