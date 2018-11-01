@@ -195,7 +195,7 @@
                                         </form>   
                                         @endif
 
-                                        @if (isset($cart->promo_string) && $cart->promo_string =="") 
+                                        @if (empty($cart) || $cart->promo_string =="") 
                                         <form action="cart/couponvalidate" method="post" name="dwfrm_cart" id="ajaxcoupon">
                                             @csrf
                                             <div class="input-wrapper">
