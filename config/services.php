@@ -47,5 +47,11 @@ return [
         'userAgent' => env('AFTERPAY_USER_AGENT'),
         'url' => env('AFTERPAY_URL'),
     ],
+    'google' => [
+        'recaptcha_key' => env('RECAPTCHA_KEY'),
+        'recaptcha_secret' => env('RECAPTCHA_SECRET'),
+        'tagmanager_account_id' => env('GTM_ACCOUNT', 'GTM-XXXX123'),
+        'maps_api_key' => env('GOOGLE_MAP_API'),
+    ],
 
 ];

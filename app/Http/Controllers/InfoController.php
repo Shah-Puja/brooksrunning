@@ -14,4 +14,8 @@ class InfoController extends Controller
 	{
 		return view( 'info.help');
     }
+
+    public function store_locator(){
+      return view( 'info.store_locator');
+    }
 }
