@@ -51,6 +51,7 @@ Route::get('/info/{pg}', 'InfoController@index');
 Route::get('/store-locator', 'InfoController@store_locator');
 Route::get('/stores', 'StoreController@index');
 
+Route::get('/sitemap', 'InfoController@sitemap'); 
 Route::get('/help', 'InfoController@help');  
 Route::get('/sitemap', 'InfoController@sitemap');
 
