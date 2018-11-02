@@ -1,4 +1,5 @@
 @php $cart_items = $cart_items[0]; @endphp
+@php echo "<pre>";print_r($cart_items); @endphp
 <div class="popup-container--wrapper">
     <div class="popup-container--info">
         <div class="close-me"><span class="icon-close-icon edit-cart--close"></span></div>

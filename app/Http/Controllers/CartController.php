@@ -208,7 +208,8 @@ class CartController extends Controller {
         $cart_items = Cart::where('carts.id', session('cart_id'))->where('ci.variant_id', $request->variant_id)->
                         join('cart_items as ci', 'carts.id', '=', 'ci.cart_id')->
                         join('p_variants as pv', 'pv.id', '=', 'ci.variant_id')->
-                        join('p_products as pp', 'pp.id', '=', 'pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
+                        join('p_products as pp', 'pp.id', '=', 'pv.product_id')->
+                        join('p_images as pi','pi.product_id','=','pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
         // echo "<pre>";print_r($cart_items);
         //return view('cart.edit_cart_popup', compact('cart_items'));
         return response()->json([
