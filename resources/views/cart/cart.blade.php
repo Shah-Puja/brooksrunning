@@ -124,7 +124,7 @@
                                 <div class="coupon-msg">Gift Vouchers can not be redeemed in conjunction with any promotional offers</div>
                                 @endif   
                                 @if(isset($cart->gift_id) && $cart->gift_id!="") 
-                                <div class="coupon-msg" style="float: right;margin-right: 31px;"> Promotional offers can not be used with gift vouchers </div>
+                                    <div class="coupon-msg" style="float: right;margin-right: 31px;"> Promotional offers can not be used with gift vouchers </div>
                                 @endif 
                                 <div class="row">
                                     <div class="col-6">
@@ -302,11 +302,13 @@
                 return false;
             }
         });
+
         $('.remove_coupon').click(function (e) {
             $("#ajaxremovecoupon").submit();
-            $('.coupon-msg').css('display', 'none');
+            $('.coupon-msg').css('display','none');
             e.preventDefault();
         });
+
         $('.remove_gift').click(function () {
             var gift_voucher_number = $('#gift_voucher_number').val();
             var url = "cart/remove_gift_voucher";
@@ -319,7 +321,8 @@
                 data: {gift_voucher_number: gift_voucher_number},
                 success: function (result) {
                     if (result == "success") {
-                        $('.coupon-msg').css('display', 'none');
+                        //remove validation promo msg 
+                        $('.coupon-msg').css('display','none');
                         var form = document.getElementById("ajaxcoupon");
                         var elements = form.elements;
                         for (var i = 0, len = elements.length; i < len; ++i) {
@@ -342,10 +345,12 @@
                 }
             });
         });
+
         $("#ajaxcoupon").submit(function (e)
         {
             var postData = $(this).serializeArray();
             var formURL = $(this).attr("action");
+
             $.ajax(
                     {
                         url: formURL,
@@ -383,12 +388,17 @@
                     });
             e.preventDefault(); //STOP default action
         });
+
+
+
         var checked_delivery_option = $("input:radio[name='d-options']:checked").val();
+
         $("input:radio[name='d-options']").click(function () {
             var overlay = $('<div id="overlay"> </div>');
             overlay.appendTo(document.body);
             var delivery_option_value = $("input:radio[name='d-options']:checked").val();
             var url = "cart/update_delivery_option";
+
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -406,22 +416,21 @@
             });
         });
     });
+@if(isset($cart->promo_string) && $cart->promo_string != "")
+        var form = document.getElementById("ajaxgift");
+        var elements = form.elements;
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].readOnly = true;
+        }
+@endif
 
-    @if (isset($cart - > promo_string) && $cart - > promo_string != "")
-    var form = document.getElementById("ajaxgift");
-    var elements = form.elements;
-    for (var i = 0, len = elements.length; i < len; ++i) {
-        elements[i].readOnly = true;
-    }
-    @endif
-
-    @if (isset($cart - > gift_id) && $cart - > gift_id != "0.00" && $cart - > gift_id > "0.00")
-    var form = document.getElementById("ajaxcoupon");
-    var elements = form.elements;
-    for (var i = 0, len = elements.length; i < len; ++i) {
-    elements[i].readOnly = true;
-    }
-    @endif
+@if(isset($cart->gift_id) && $cart->gift_id!="0.00" && $cart->gift_id > "0.00")
+var form = document.getElementById("ajaxcoupon");
+        var elements = form.elements;
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].readOnly = true;
+        }
+@endif
 </script>
 @endsection
 
