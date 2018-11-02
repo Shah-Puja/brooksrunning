@@ -20,6 +20,10 @@ Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
 Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
 Route::post('/cart/edit_cart','CartController@edit_cart_popup');
+Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
+Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
+Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
+Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
 
 Route::middleware(['allowOnlyAjax'])->group(function () {
@@ -42,7 +46,12 @@ Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 /* info static pages */
-Route::get('/info/{pg}', 'InfoController@index'); 
+Route::get('/info/{pg}', 'InfoController@index');
+
+Route::get('/store-locator', 'InfoController@store_locator');
+Route::get('/stores', 'StoreController@index');
+
+Route::get('/help', 'InfoController@help');  
 
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
@@ -75,6 +84,8 @@ Route::get('/account-personal', 'MyaccountController@account_personal');
 
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
+Route::post('/shoefinder-ajax', 'ShoefinderController@ajax_data')->middleware('allowOnlyAjax');
+Route::get('/shoefinder-getshoe', 'ShoefinderController@get_shoe')->middleware('allowOnlyAjax');
 
 /* events page */
 Route::get('/events', 'EventController@events_view'); 
@@ -103,6 +114,7 @@ Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index');
 
 
 /* Shoes pages */
+<<<<<<< HEAD
 Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
 
 
@@ -111,3 +123,6 @@ Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
 Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
 Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
+=======
+Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
+>>>>>>> 03a7f4aa61ef764f0699a4477c41ba1946507b64

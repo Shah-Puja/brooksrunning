@@ -21,7 +21,7 @@
 		   @endif
 		@endforeach
 
-		@php
+		@php  
 		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
 								return $product->variants->pluck('price');
 							})->flatten()->max();

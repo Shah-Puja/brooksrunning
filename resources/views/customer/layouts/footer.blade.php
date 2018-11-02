@@ -29,7 +29,7 @@
 	                    <li><a href="/info/terms-conditions">Terms &amp; Conditions</a></li>
 	                    <li><a href="/info/terms-of-use">Terms of Use</a></li>
 	                    <li><a href="/shoefinder">Shoe Finder</a></li>
-	                    <li><a href="/info/find-a-store">Find A Store</a></li>
+	                    <li><a href="/store-locator">Find A Store</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">

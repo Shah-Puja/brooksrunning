@@ -67,7 +67,7 @@
 								    </div>
 								    <ul class="select-option--wrapper">
 								    	<li class="option-value" data-value="">-</li>
-										<li class="option-value selected" data-sorttype="new" value="date"></li>
+										<li class="option-value selected" data-sorttype="new" value="date">Sort by latest</li>
 								    	<li class="option-value" data-sorttype="ass" value="price">Price (High To Low)</li>
 								    	<li class="option-value" data-sorttype="dec" value="price">Price (Low To High)</li>
 								    	<li class="option-value" data-sorttype="name" value="name">Product Name (A To Z)</li>
