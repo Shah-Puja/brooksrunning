@@ -1,11 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
 <section class="homepage-container">
-	@php
-		// echo "<pre>";
-		// 	print_r($product);
-		// 	echo "</pre>";
-	@endphp
 	  <div class="wrapper">
 		   <div class="row">
 		     <div class="mob-6 pr-0">
