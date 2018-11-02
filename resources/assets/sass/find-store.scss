@@ -184,7 +184,11 @@
 		 display: none; 
 	}
 	@media #{$mobile-only}{
+<<<<<<< HEAD
 		width:88%;
+=======
+		width:100%;
+>>>>>>> cc83dc1924a27665d49d225e1cb2d35994172642
 	}
 	@media (orientation: landscape) {
 		width: 266px;
@@ -197,7 +201,11 @@
 	position: relative; 
 	
 	@media (orientation: landscape) {
+<<<<<<< HEAD
 		width: 250px;
+=======
+		width: 230px;
+>>>>>>> cc83dc1924a27665d49d225e1cb2d35994172642
 	}
 }
 .overview { 
@@ -214,7 +222,11 @@
 }
 
 @media only screen and (max-width: 480px) {
+<<<<<<< HEAD
 .viewport {height:350px; width:100%;}
+=======
+.viewport {height:350px;}
+>>>>>>> cc83dc1924a27665d49d225e1cb2d35994172642
 .gsidebar{
 	max-height:370px;
 	height:100%;

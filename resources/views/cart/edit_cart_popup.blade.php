@@ -10,6 +10,7 @@
         <div class="clearfix">
             <div class="col-7">
                 <div class="img-wrapper">
+                @php echo "<pre>";print_r($cart_items); @endphp
                     <img src="images/shoes/shoes1-details.jpg" alt="">
                 </div>
             </div>

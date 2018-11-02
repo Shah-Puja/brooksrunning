@@ -17,20 +17,27 @@
                         <li>
                             <a href="javascript:void(0)">My Account <span class="icon-down-arrow"></span></a>
                             <ul class="header-utality__submenu">
-                                <li>
-                                    <a href="/login">Log in</a>
-                                </li>
-                                <li>
-                                    <a href="/account-order-history">My Orders</a>
-                                </li>
-                                <li>
-                                    <a href="/register">Register</a>
-                                </li>
+                                @if(auth()->user())
+                                    <li>
+                                        <a href="/account-order-history">My Orders</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Logout</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a href="/login">Log in</a>
+                                    </li>
+                                    <li>
+                                        <a href="/register">Register</a>
+                                    </li>
+                                @endif
+                                
                             </ul>
                         </li>
                         <li><a href="/info/contact-us">Help</a> 
                         </li>
-                        <li><a href="/info/find-a-store">Store Locator</a></li>
+                        <li><a href="/store-locator">Store Locator</a></li>
                         <li class="cart">
                             <a href="/cart">Cart
                                 <span class="icon-shopping-cart icon-cart"></span>

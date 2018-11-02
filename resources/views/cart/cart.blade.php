@@ -133,12 +133,12 @@
                                                             @php $display = "";
                                                             $display_link = "";
                                                             if(isset($cart->gift_id) && $cart->gift_id!="0.00" && $cart->gift_id > "0.00") {
-                                                                $display = "display:block";
-                                                                $display_link = "display:none";
+                                                            $display = "display:block";
+                                                            $display_link = "display:none";
                                                             } 
                                                             else{
-                                                                $display = "display:none";
-                                                                $display_link = "display:block";
+                                                            $display = "display:none";
+                                                            $display_link = "display:block";
                                                             } 
                                                             @endphp
 
@@ -161,9 +161,43 @@
                                             </form>
                                         </div>
                                     </div>
+
                                     <div class="col-6">
+                                        @if (isset($cart->promo_string) && $cart->promo_string != "") 
+                                        <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 
+                                            @csrf
+                                            <div class="input-wrapper">
+                                                <div class="radio-inline">
+                                                    <input type="radio" id="promotion" name="promotion" checked="checked">
+                                                    <label for="promotion">
+                                                        <div class="mark"><span></span></div>
+                                                        <div class="text">
+                                                            <h3 class="bold-font">Promotion Code</h3>
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td colspan="2" style="text-align:left;">
+                                                                        <a href="#" class="remove_coupon">
+                                                                            <?php
+                                                                            if (isset($cart->promo_string) && $cart->promo_string != "") {
+                                                                                echo $cart->promo_string;
+                                                                            }
+                                                                            ?>
+                                                                        </a>
+                                                                    </td>
+                                                                <input type="hidden" name="coupon_code" id="coupon_code" value="{{ (!empty($cart->promo_code)) ? $cart->promo_code : '' }}">
+                                                                </tr>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>   
+                                        @endif
+
+                                        @if (empty($cart) || $cart->promo_string =="") 
                                         <form action="cart/couponvalidate" method="post" name="dwfrm_cart" id="ajaxcoupon">
-                                        @csrf
+                                            @csrf
                                             <div class="input-wrapper">
                                                 <div class="radio-inline">
                                                     <input type="radio" id="promotion" name="promotion">
@@ -178,29 +212,9 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                        </form>                         
-                                    </div>
-
-                                    <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 
-                                    <div id="cartCouponRemove">
-
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td colspan="2" style="text-align:left;">
-                                                    <a href="#" class="remove_coupon">
-                                                        <?php
-                                                        if (!empty($coupon_code)) {
-                                                            echo $coupon_code['promo_string'];
-                                                        }
-                                                        ?>
-                                                    </a>
-                                                </td>
-                                              <input type="hidden" name="coupon_code" id="coupon_code" value="<?= (!empty($coupon_code)) ? $coupon_code['promo_code'] : '' ?>">
-                                            </tr>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </form>
+                                        </form>   
+                                        @endif                      
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -213,7 +227,6 @@
                             <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
-
                             @if ( @$cart->items_count > 0 )
                             <button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
                             @endif
@@ -284,6 +297,11 @@
             }
         });
 
+        $('.remove_coupon').click(function (e) {
+            $("#ajaxremovecoupon").submit();
+            e.preventDefault();
+        });
+
         $('.remove_gift').click(function () {
             var gift_voucher_number = $('#gift_voucher_number').val();
             var url = "cart/remove_gift_voucher";
@@ -313,48 +331,48 @@
             });
         });
 
-        $("#ajaxcoupon").submit(function(e)
-{
-    var postData = $(this).serializeArray();
-    var formURL = $(this).attr("action");
- 
-    $.ajax(
-    {
-        url     : formURL,
-        type    : "POST",
-        data    : postData,
-        cache   : false,
-        dataType:'json',
-        statusCode: {
-            404: function() {
-              alert( "page not found" );
-            }
-        },
-        success:function(data, textStatus, jqXHR) 
+        $("#ajaxcoupon").submit(function (e)
         {
-            console.log(data);
-            if($('#promo_code').val()==""){
-                $('.confirm-coupon').html(data.msg).show();
-            }
-            if(textStatus == 'success'){
-                if(data.result == 'success'){
-                    window.location.assign(data.url);
-                }
-                if (data.result == 'fail'){
-                    $('.confirm-coupon').html(data.msg).show();
-                } 
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown) 
-        {
-            //if fails
-            console.log(errorThrown);
-            console.log(textStatus);
-            console.log(jqXHR);
-        }
-    });
-    e.preventDefault(); //STOP default action
-});
+            var postData = $(this).serializeArray();
+            var formURL = $(this).attr("action");
+
+            $.ajax(
+                    {
+                        url: formURL,
+                        type: "POST",
+                        data: postData,
+                        cache: false,
+                        dataType: 'json',
+                        statusCode: {
+                            404: function () {
+                                alert("page not found");
+                            }
+                        },
+                        success: function (data, textStatus, jqXHR)
+                        {
+                            console.log(data);
+                            if ($('#promo_code').val() == "") {
+                                $('.confirm-coupon').html(data.msg).show();
+                            }
+                            if (textStatus == 'success') {
+                                if (data.result == 'success') {
+                                    window.location.assign(data.url);
+                                }
+                                if (data.result == 'fail') {
+                                    $('.confirm-coupon').html(data.msg).show();
+                                }
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown)
+                        {
+                            //if fails
+                            console.log(errorThrown);
+                            console.log(textStatus);
+                            console.log(jqXHR);
+                        }
+                    });
+            e.preventDefault(); //STOP default action
+        });
 
 
 
@@ -387,7 +405,7 @@
 @endsection
 
 <style>
-    .remove_gift{
+    .remove_coupon,.remove_gift{
         background: url(../images/compareremove.png) no-repeat;
         padding-left: 22px;
         font-weight: normal;
