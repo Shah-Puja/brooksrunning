@@ -30,8 +30,22 @@ class Shoefinder extends Model
             $color_code = $i[1];
             return array('style' => $style, 'color_code' => $color_code);
         });
+
+        $styles = \App\Models\Product::whereIn("style",$items_data->pluck('style'))
+                  ->whereHas('variants', function ( $query ) {
+                        $query->where('visible', '=', 'Yes');
+                  })->get();
+        if(!$styles){
+             return '';
+        }
+        $product=$styles->whereIn("color_code",$items_data->pluck('color_code')); // single product data 
+        if(!$product){
+            return '';
+        }
+        $colour_options=$styles->unique('color_code'); // all unique colors data
+        $product = $product->unique('color_code');
        
-        $product_details = \App\Models\Product::whereIn("style",$items_data->pluck('style'))
+        /*$product_details = \App\Models\Product::whereIn("style",$items_data->pluck('style'))
                                   ->whereIn("color_code",$items_data->pluck('color_code'))
                                   ->whereHas('variants' , function($query)  {
                                         return $query->where('visible', '=', 'Yes');
@@ -41,8 +55,10 @@ class Shoefinder extends Model
         if(!$product_details) return '';
         $product = $product_details->unique('color_code');
         $result['shoe_detail'] = $shoe_detail;
+        $result['product_details'] = $product;*/
         $result['product_details'] = $product;
-
-         return $result;
+        $result['shoe_detail'] = $shoe_detail;
+        $result['colour_options'] = $colour_options;
+        return $result;
     }
 }

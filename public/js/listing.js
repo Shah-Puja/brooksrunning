@@ -27,22 +27,7 @@ $(document).ready(function() {
       $(".prev").click(function(){
         $(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.prev');
       })
-      if ($(window).width() > 667){
-        $(".plp-wrapper__sub .plp-thumb").on("click", function(){
-              var bigImg = $(this).data("big");
-              $('.plp-wrapper-container .plp-thumb').removeClass('active-thumb');
-              $(this).addClass('active-thumb');
-              $(this).closest('.plp-wrapper__sub').find('#plp-img').attr("src", bigImg);
-              return false;
-        });
-      }
-      $(".plp-wrapper__sub .plp-thumb--bg").on("click", function(){
-            var bigImg = $(this).data("big");
-            $('.plp-wrapper-container .plp-thumb--bg').removeClass('active-thumb');
-            $(this).addClass('active-thumb');
-            $(this).closest('.plp-wrapper__sub').find('.plp-main--img--wrapper').css({backgroundImage: "url("+bigImg+")"});
-            return false;
-      });
+      
       // Listing mobile filter popup
       $("#mob-filter--popup").click(function(){
          $(".plp-mob-filter__control").show();
@@ -56,6 +41,22 @@ $(document).ready(function() {
 	    //$(".all-product--count").find("p span").text(text);
 });
 
+if ($(window).width() > 667){
+  $(document).on("click",".plp-wrapper__sub .plp-thumb", function(){
+        var bigImg = $(this).data("big");
+        $('.plp-wrapper-container .plp-thumb').removeClass('active-thumb');
+        $(this).addClass('active-thumb');
+        $(this).closest('.plp-wrapper__sub').find('#plp-img').attr("src", bigImg);
+        return false;
+  });
+}
+$(document).on("click",".plp-wrapper__sub .plp-thumb--bg", function(){
+      var bigImg = $(this).data("big");
+      $('.plp-wrapper-container .plp-thumb--bg').removeClass('active-thumb');
+      $(this).addClass('active-thumb');
+      $(this).closest('.plp-wrapper__sub').find('.plp-main--img--wrapper').css({backgroundImage: "url("+bigImg+")"});
+      return false;
+});
 var $grid = $('.grid').isotope({
   itemSelector: '.element-item',
   getSortData: {
