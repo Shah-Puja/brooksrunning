@@ -61,9 +61,9 @@
 }
 
 .rs-head{
-  align-items: baseline;
+  align-items: center;
     border-right: 2px solid #9c9891;
-    margin: 0;
+    margin: 10px auto;
     display: flex;
 }
 
@@ -71,13 +71,6 @@
  
     font-size: 1.3em;
 }
-
-
-
-
-
-
-
 
 /* HEADINGS */
 h1 {

@@ -384,7 +384,7 @@ case 8: ?>
 				<?endif;?>
 
 				experience. Excellent choice.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2" onclick="editshoestatus()">Edit</a>
+			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2" >Edit</a>
 		</div>	
 	</h3>
 	<div>
