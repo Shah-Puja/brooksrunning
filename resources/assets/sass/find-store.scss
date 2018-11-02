@@ -33,7 +33,7 @@
 	width:267px; 
 	height:148px; 
 	position:absolute;
-	z-index:99999;
+	z-index:99;
 	top: 30px;
     left: 30px;
 	text-align:left;
@@ -184,7 +184,7 @@
 		 display: none; 
 	}
 	@media #{$mobile-only}{
-		width:100%;
+		width:88%;
 	}
 	@media (orientation: landscape) {
 		width: 266px;
@@ -197,7 +197,7 @@
 	position: relative; 
 	
 	@media (orientation: landscape) {
-		width: 230px;
+		width: 250px;
 	}
 }
 .overview { 
@@ -214,7 +214,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-.viewport {height:350px;}
+.viewport {height:350px; width:100%;}
 .gsidebar{
 	max-height:370px;
 	height:100%;

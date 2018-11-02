@@ -281,13 +281,13 @@
                         <h3>Free Shipping on all orders over $50. Australia Wide</h3>
                         <ul>
                             <li>
-                                <a href="#">Find a store</a>
+                                <a href="/shoefinder">Find a store</a>
                             </li>
                             <li>
-                                <a href="#">Shipping & returns</a>
+                                <a href="/info/shipping-information">Shipping Information</a>
                             </li>
                             <li>
-                                <a href="#">Contact us</a>
+                                <a href="/info/contact-us">Contact us</a>
                             </li>
                         </ul>
                         <p>We deliver to Australia and New Zealand only</p>

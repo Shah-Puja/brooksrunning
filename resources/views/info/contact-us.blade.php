@@ -105,7 +105,7 @@
 				<div class="row">
 					<div class="tab-12">
 						<div class="cart-btn">
-							<button class="primary-button">Subscribe</button>
+							<button class="primary-button">Submit</button>
 						</div>
 					</div>
 				</div>
