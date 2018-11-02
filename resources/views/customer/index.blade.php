@@ -147,90 +147,28 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="main-heading">
-				    <h3 class="br-heading">Sale</h3>
+				    <h3 class="br-heading">Featured</h3>
 			    </div>
 			</div>
 		</div>
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
+				@foreach($product as $prod_key => $Featured_prod)
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
+						   <a href = "/{{$Featured_prod->seo_name}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
+						   <img src="{{$Featured_prod->image->image1Medium()}}">
+							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
+							<h3>{{$Featured_prod->stylename}}</h3>
+			                <h4 class="price"><span class="black">{{$Featured_prod->variants[$prod_key]->price}}</span> <span class="red">{{$Featured_prod->variants[$prod_key]->price_sale}}</span></h4>
 		                </div>
 		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="images/shoes/shoes1-listing.jpg">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3>Adrenaline GTS 18</h3>
-			                 <h4 class="price"><span class="black">$120</span> <span class="red">$99</span></h4>
-		                </div>
-		            </div>
-		        </div>
+				</div>
+				@endforeach
 	       </div>
 	       <span class="icon-style icon-next-arrow next"></span>
 	    </div>
