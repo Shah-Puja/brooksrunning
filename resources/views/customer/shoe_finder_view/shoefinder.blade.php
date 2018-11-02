@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/shoefinder-css/main.css">
 <link rel="stylesheet" href="/css/shoefinder-css/ss-newquiz.css" />
 <link rel="stylesheet" href="/css/shoefinder-css/jquery.ui.all.css" />
- <script src="/js/shoefinder.js" type="text/javascript"></script>  
+<script src="/js/shoefinder.js" type="text/javascript"></script>  
 <div id="wrapper" class="shoefinder pt_content">
 	   <script>
 	   function changeFunction(){
@@ -485,7 +485,7 @@
 		   </div>
 	   </div>
 	   <script>
-	         $(document).on("click",".question5",function(){
+               $(document).on("click",".question5",function(){
 				   if($(this).val()=='0'){
 					   $(".question5_div").show();
 				   }else{
@@ -682,6 +682,16 @@
 								   }
 								   jQuery(selectors.accordion).after(response);
 								   jQuery(selectors.results).css('display','');
+								   var owl = $(".more-color--container .owl-carousel");
+									owl.owlCarousel({
+										items : 4,
+										itemsDesktop : [1024,3],
+										itemsDesktopSmall : [900,2],
+										itemsMobile : [667,1],
+										itemsCustom : false,
+										pagination : false,
+										rewindNav : false
+									});
                                     return false;
                                 },
                                 error: function (error) { 
@@ -744,6 +754,10 @@
 				   stickyBar();					
 				   initialize();			
 			   })();
+
+			   
+			   
+
 		   </script>
 
 @endsection

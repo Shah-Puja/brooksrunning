@@ -117,7 +117,7 @@ case 1: ?>
 					<input type="radio" name="val0" value="1" <?=($val0 == 1 ? 'checked' : '');?> onclick="clickFunction();">
 					<div class='label-text'><span class='label-title'>Toe out</span>
 						<p>My feet pointed outward.</p>
-					</div> <img src="</images/SS/toesOut.png" alt=""> </label>
+					</div> <img src="/images/SS/toesOut.png" alt=""> </label>
 				<label class="three columns withImg">
 					<input type="radio" name="val0" value="2" <?=($val0 == 2 ? 'checked' : '');?> onclick="clickFunction();">
 					<div class='label-text'><span class='label-title'>Toe straight forward</span></div> <img src="/images/SS/toesStraight.png" alt=""> </label>
@@ -384,7 +384,7 @@ case 8: ?>
 				<?endif;?>
 
 				experience. Excellent choice.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2" onclick="editshoestatus()">Edit</a>
+			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2" >Edit</a>
 		</div>	
 	</h3>
 	<div>

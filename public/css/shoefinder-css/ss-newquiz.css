@@ -443,16 +443,16 @@ img.ssIcon {
     flex-shrink: 0
 }
 
-#ss-results-header .seven.columns.last {
+#ss-results-header .col-4 .last {
     margin: 5px 0 0 0
 }
 
-#ss-results-header .seven.columns.last>li:first-child {
+#ss-results-header .col-4 .last>li:first-child {
     border-bottom: 2px solid #9c9891;
     padding: 0 0 10px 0
 }
 
-#ss-results-header .seven.columns.last>li:last-child {
+#ss-results-header .col-4 .last>li:last-child {
     padding: 10px 0 0 0
 }
 
@@ -505,7 +505,7 @@ img.ssIcon {
     padding: 20px 0
 }
 
-#ss-results-runnersup .four.columns:last-child {
+#ss-results-runnersup .col-4 :last-child {
     border-bottom: 0
 }
 
@@ -589,7 +589,7 @@ img.ssIcon {
         border-right: 2px solid #9c9891;
         margin: 0
     }
-    #ss-results-header .seven.columns.last {
+    #ss-results-header .col-3 .last {
         padding: 0 0 0 40px
     }
     #ss-results-main .product-swatches {
@@ -616,7 +616,7 @@ img.ssIcon {
     #ss-results-save {
         font-size: inherit
     }
-}
+
 
 .pt_account #main {
     padding-top: 20px
@@ -668,8 +668,8 @@ img.ssIcon {
     width: 100px;
     height: 100px;
 }
-.callout-display .energize {
-    background: url(../images/SS/energize.png);
+.recomm-display .energize {
+     background: url('../images/cushion.png');
 }
 .product-tile .callout {
     background-repeat: no-repeat;
@@ -679,10 +679,8 @@ img.ssIcon {
     z-index: 1;
 }
 
-
 .medibank_detail {
     color: #e63329;
-    font-family: "NeoSansStd-Medium", Helvetica, Arial, sans-serif;
     font-size: 17px;
     margin-top: 5px;
     font-weight: normal;
@@ -721,12 +719,21 @@ margin: 7px 0 7px;
 }
 
 @media only screen and (max-width: 320px){
-#ss-results-header h2 {
+    #ss-results-header h2 {
     font-size: 2em !important;
-}}
-.plp-wrapper-container .plp-wrapper__sub .plp-product .info{
-    border-bottom: 1px solid #fff;
+    }
 }
+
+@media only screen and (max-width: 768px){
+    #ss-results-header h2 {
+    font-size: 2em !important;
+    }
+    #ss-results-header .last{
+            margin-bottom: 10%;
+              margin-top: 5%;
+    }
+}
+
 .plp-wrapper-container .callout {
     background-size: 70px 70px;
     width: 70px;
@@ -742,15 +749,11 @@ margin: 7px 0 7px;
     top: 0;
     z-index: 1;
 }
-.plp-wrapper-container .plp-wrapper__sub .plp-product .img{
-        background-color: #fff;
+#ss-results-main #results-text .error-msg{
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
     text-align: center;
-}
-.plp-wrapper-container .plp-wrapper__sub .plp-product .img.img-shoes{
-    max-width: 95%;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    height: 220px;
-    width: 220px;
+    line-height: 1.8;
 }

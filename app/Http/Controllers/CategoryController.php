@@ -17,9 +17,10 @@ class CategoryController extends Controller
         }else{
             $gender = $cat_info->gender;            
             $prod_type = $cat_info->prod_type;
-            $depth = $cat_info->depth; 
+            $depth = $cat_info->depth;
+            $name = $cat_info->name; 
             if($depth=='2'){
-                $products = \App\Models\Category::getProducts_main($gender,$prod_type);
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
             }elseif($depth=='3'){
                 $products = \App\Models\Category::getProducts($category);
             }

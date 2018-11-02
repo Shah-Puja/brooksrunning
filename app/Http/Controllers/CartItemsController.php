@@ -17,12 +17,12 @@ class CartItemsController extends Controller {
             if (!$this->variantSelected) {
                 return response()->json(['errors' => 'Invalid Item'], 400);
             }
-            if ($this->variantSelected->stock == 0) {
+            /*if ($this->variantSelected->stock == 0) {
                 return response()->json(['errors' => 'Item not in stock'], 400);
             }
             if ($this->variantSelected->stock < request('qty')) {
                 return response()->json(['errors' => 'Quantity ordered is not available'], 400);
-            }
+            }*/
             return $next($request);
         })->only(['store', 'update']);
     }
