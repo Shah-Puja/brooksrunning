@@ -4614,6 +4614,13 @@
 .sitemap--container{
 .title{
   border-bottom: 2px solid $border;
+  text-transform: uppercase;
+  font-size: 26px;
+  a{
+    color: $black;
+    font-size: 26px;
+    text-transform: uppercase;
+  }
 }
 .list-head {
   font-size: 20px;
@@ -4643,9 +4650,22 @@ a {
   }
 }
 
-
-
-
+/*sitemap*/
+.sitemap--container{
+.child-list {
+  list-style: outside none none;
+  padding: 0;
+  margin: 0px;
+  font-size: 15px;
+  @extend %extrabold-font;
+  a{
+    :hover {
+    color: #42bac5;
+    text-decoration: none;
+    }
+}
+}
+}
 
 
 

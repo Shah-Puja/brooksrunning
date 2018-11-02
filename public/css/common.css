@@ -119,7 +119,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -6067,6 +6067,13 @@ textarea {
 /* /overlay-loader */
 .sitemap--container .title {
   border-bottom: 2px solid #d3d0cd;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+.sitemap--container .title a {
+  color: #000000;
+  font-size: 26px;
+  text-transform: uppercase;
 }
 .sitemap--container .list-head {
   font-size: 20px;
@@ -6092,6 +6099,18 @@ textarea {
 }
 .sitemap--container .quick-help--link li a:hover {
   color: #002855;
+}
+
+/*sitemap*/
+.sitemap--container .child-list {
+  list-style: outside none none;
+  padding: 0;
+  margin: 0px;
+  font-size: 15px;
+}
+.sitemap--container .child-list a :hover {
+  color: #42bac5;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=common.css.map */
