@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Shoe_mast;
 use App\Models\Product;
+use App\Models\Shoe_specs;
 use App\Models\Seo;
 
 class CategoryController extends Controller
@@ -96,6 +97,18 @@ class CategoryController extends Controller
             
             return view('customer.shoe-main', compact('shoe_info','shop_women_url','shop_men_url') );
 
+        }
+
+        $diff_template=array("liberty","maximus","addiction-walker","dyad-walker");
+        if (in_array($shoe_type,$diff_template)){ 
+            $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
+            $shoe_specs = shoe_specs::where(['shoe_type'=> $shoe_type])->orderBy('seqno', 'asc')->get();
+            //$shoes_info = $this->get_shoes_detail($shoe_type);
+            // echo "<pre>";
+            // print_r($shoe_info);
+            // echo "</pre>";
+            // exit;
+            return view('customer.shoe-main-new', compact('shoe_info','shoe_specs') );
         }
         
     }
