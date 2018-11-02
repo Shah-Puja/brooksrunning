@@ -114,7 +114,6 @@ Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index');
 
 
 /* Shoes pages */
-<<<<<<< HEAD
 Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
 
 
@@ -123,6 +122,3 @@ Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
 Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
 Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
-=======
-Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
->>>>>>> 03a7f4aa61ef764f0699a4477c41ba1946507b64
