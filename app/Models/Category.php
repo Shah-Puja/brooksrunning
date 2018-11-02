@@ -49,12 +49,16 @@ class Category extends Model
         
     }
 
-    public static function getProducts_main($gender,$prod_type) {              
-
-        return \App\Models\Product::where('gender',$gender)
+    public static function getProducts_main($gender,$prod_type,$name) {              
+       return  \App\Models\Product::where('gender',$gender)
             ->where('prod_type',$prod_type)
-            ->whereHas('variants' , function($query)  {
-                return $query->where('visible', '=', 'Yes');
+            ->whereHas('variants' , function($query) use ($name)  {
+                if($name=='sale'){
+                    return $query->where('visible', '=', 'Yes')
+                                 ->whereColumn('price_sale', '<', 'price');
+                }else{
+                    return $query->where('visible', '=', 'Yes');
+                }
             })
             ->with('variants')
             ->orderBy('style')
