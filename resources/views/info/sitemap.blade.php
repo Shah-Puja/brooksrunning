@@ -1,58 +1,269 @@
 @extends('customer.layouts.master')
 @section('content')
-<div class="create-account--header">
-	<div class="wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h1 class="br-mainheading">Title of the page</h1>
-			</div>
-		</div>
-	</div>
-</div>
+
 <section class="create-account wrapper">
 	<div class="row">
-		<div class="col-9">
-			<div class="create-account--left contact-us--container">
-				<h3 class="br-heading">Main Heading</h3>
-
-				<p class="br-info">Body Copy Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat </p>
-
-				<p class="br-info"><span class="bold">Sub heading</span> <br/>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-
-				<ul class="br-info">
-					<li>Bullet point</li>
-					<li>Bullet point</li>
-					<li>Bullet point</li>
-					<li>Bullet point</li>
-					<li>Bullet point</li>
-					<li>Bullet point</li>
-					<li>Bullet point</li>
+		<div class="col-12 wrapper">
+			<div class=" sitemap--container row">
+				<div class="col-5 mob-12">
+				<h3 class="br-heading title">Women</h3>
+				<div class="row">
+				<div class="col-6 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<ul class="child-list">
+					<li>
+							<a href="/womens-neutral-running-shoes">Neutral Running Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-support-running-shoes">Support Running Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-lightweight-running-shoes">Lightweight Running Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-trail-running-shoes">Trail Running Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-competition-running-shoes">Competition Running Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-cross-training-shoes">X-Training Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-walking-shoes">Walking Shoes</a>
+					</li>
+					<li>
+							<a href="/womens-heritage-shoes">Heritage Collection</a>
+					</li>
+						<li>
+							<a href="/womens-running-shoes-sale">SALE Shoes</a>
+					</li>
 				</ul>
-
-				<p class="br-info"><a href="#" class="link">Link Text</a></p>
+				</div>
+				<div class="col-6 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Clothing</a></h3>
+				<ul class="child-list">
+					<li>
+							<a href="/womens-sports-bras">Sports Bras</a>
+					</li>
+					<li>
+							<a href="/womens-running-shorts">Shorts</a>
+					</li>
+					<li>
+							<a href="/womens-running-tops">Tops</a>
+					</li>
+					<li>
+							<a href="/womens-running-jackets-vests">Jackets & Vests</a>
+					</li>
+						<li>
+							<a href="/womens-running-pants-tights">Tights & Pants</a>
+					</li>
+						<li>
+							<a href="/womens-reflective-running-gear">NightLife High-Visibility Collection</a>
+					</li>
+						<li>
+							<a href="/womens-running-socks">Socks</a>
+					</li>
+						<li>
+							<a href="/womens-running-accessories">Accessories</a>
+					</li>
+						<li>
+							<a href="/apparel/women/lifestyle_collection">Lifestyle Collection</a>
+					</li>
+						<li>
+							<a href="/womens-running-clothes-sale">Sale Clothing</a>
+					</li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="col-5 mob-12">
+				<h3 class="br-heading title">Men</h3>
+				<div class="row">
+				<div class="col-6 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<ul class="child-list">
+					<li>
+							<a href="/mens-neutral-running-shoes">Neutral Running Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-support-running-shoes">Support Running Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-lightweight-running-shoes">Lightweight Running Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-trail-running-shoes">Trail Running Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-competition-running-shoes">Competition Running Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-cross-training-shoes">X-Training Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-walking-shoes">Walking Shoes</a>
+					</li>
+					<li>
+							<a href="/mens-heritage-shoes">Heritage Collection</a>
+					</li>
+						<li>
+							<a href="/mens-running-shoes-sale">SALE Shoes</a>
+					</li>
+				</ul>
+				</div>
+				<div class="col-6 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Clothing</a></h3>
+				<ul class="child-list">
+					<li>
+							<a href="/mens-running-shorts">Shorts</a>
+					</li>
+					<li>
+							<a href="/mens-running-tops">Tops</a>
+					</li>
+					<li>
+							<a href="/mens-running-jackets-vests">Jackets & Vests</a>
+					</li>
+						<li>
+							<a href="/mens-running-pants-tights">Tights & Pants</a>
+					</li>
+						<li>
+							<a href="/mens-reflective-running-gear">NightLife High-Visibility Collection</a>
+					</li>
+						<li>
+							<a href="/mens-running-socks">Socks</a>
+					</li>
+						<li>
+							<a href="/mens-running-accessories">Accessories</a>
+					</li>
+						<li>
+							<a href="/apparel/men/lifestyle_collection">Lifestyle Collection</a>
+					</li>
+						<li>
+							<a href="/mens-running-clothes-sale">Sale Clothing</a>
+					</li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="col-2 mob-12">
+				<h3 class="br-heading title">Kids</h3>
+				<div class="row">
+				<div class="col-12 mob-12">
+				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
+				<ul class="child-list">
+					<li>
+							<a href="/girls-running-shoes">All Girls Shoes</a>
+					</li>
+					<li>
+						<a href="/boys-running-shoes">All Boys Shoes</a>
+					</li>
+					</ul>
+				</div>
+				</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-3 contact-details--right">
-			<div class="info-wrapper">
-				<div class="icon">
-					<img src="images/brooks_aus_icons_email.svg" alt="">
+			<div class=" sitemap--container row">
+			<div class="col-3 mob-12">
+				<h3 class="br-heading title">Meet brooks</h3>
+				<div class="row">
+				<div class="col-12 mob-12">
+				<h3 class="br-heading"><a href="/info/about-us" class="list-head">hello</a></h3>
+				<ul class="child-list">
+					<li>
+						<a href="/meet_brooks/what_makes_us_tick">What Makes Us Tick</a>
+					</li>
+					<li>
+						<a href="/meet_brooks/run_happy_is">Run Happy Is...</a>
+					</li>
+					<li>
+						<a href="/meet_brooks/technology">Technology</a>
+					</li>
+				</ul>
+				<h3 class="br-heading"><a href="/meet_brooks/runhappy" class="list-head">run happy</a></h3>
+				<ul class="child-list">
+					<li>
+						<a href="/meet_brooks/competition/rh_competition">Competition</a>
+					</li>
+					<li>
+						<a href="/meet_brooks/enewsletter">E-Newsletter</a>
+					</li>
+					<li>
+						<a href="/meet_brooks/trainingtips">Training Tips</a>
+					</li>
+					<li>
+						<a href="/meet_brooks/injury_prevention">Injury Prevention</a>
+					</li>
+				</ul>
+				<h3 class="br-heading"><a href="http://talk.brooksrunning.com/au/" class="list-head">BLOG</a></h3>
 				</div>
-				<div class="info">
-					<h3 class="br-heading">Email us</h3>
-				
-					<p><a href="http://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
+				</div>
+				</div>
+				<div class="col-3 mob-12">
+				<h3 class="br-heading title"><a href="/events" class="list-head">EVENTS</a></h3>
+				<div class="row">
+				<div class="col-12 mob-12">
+				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
+				<ul class="child-list">
+					<li>
+						<a href="/events">Find your local event</a>
+					</li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="col-3 mob-12">
+				<h3 class="br-heading title"><a href="/shoefinder" class="list-head">Shoe finder</a></h3>
+				<div class="row">
+				<div class="col-12 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<ul class="child-list">
+					<li>
+						<a href="/shoefinder">Find the right shoe for you</a>
+					</li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="col-3 mob-12">
+				<h3 class="br-heading title">Customer service</a></h3>
+				<div class="row">
+				<div class="col-12 mob-12">
+				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<ul class="child-list">
+					<li>
+						<a href="/info/contact">Contact Us</a>
+					</li>
+					<li>
+						<a href="/info/shipping">Shipping Information</a>
+					</li>
+					<li>
+						<a href="/info/returns">Returns &amp; Exchange</a>
+					</li>
+					<li>
+						<a href="/store-locator">Find a Store</a>
+					</li>
+					<li>
+						<a class="dialogify" href="/info/footwear_sizeguide">Women's Shoe Size Chart</a>
+					</li>
+					<li>
+						<a class="dialogify" href="/info/footwear_sizeguide">Men's Shoe Size Chart</a>
+					</li>
+					<li>
+						<a class="dialogify" href="/info/kids_sizeguide">Kids Shoe Size Chart</a>
+					</li>
+					<li>
+						<a class="dialogify" href="/info/apparel_sizeguide">Women's Clothing Size Chart</a>
+					</li>
+					<li>
+						<a class="dialogify" href="/info/apparel_men_sizeguide">Men's Clothing Size Chart</a>
+					</li>
+				</ul>
+				</div>
+				</div>
 				</div>
 			</div>
-			<div class="info-wrapper">
-				<div class="icon">
-					<img src="images/brooks_aus_icons_phone.svg" alt="">
-				</div>
-				<div class="info">
-					<h3 class="br-heading">Call us</h3>
-					<p>Australia: 1300 735 099 <br/>New Zealand: 08 0061 3502 <br/>We're available to help you 
-						<br/>Mon - Fri 9am - 5pm AEST</p>
-				</div>
-			</div>
+		
 		</div>
 	</div>
 </section>

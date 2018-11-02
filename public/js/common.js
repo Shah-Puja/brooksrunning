@@ -491,3 +491,7 @@ function search_product(){
     
     return false; 
 }	
+
+  /*Map Js*/  
+
+ /* /Map Js*/  
