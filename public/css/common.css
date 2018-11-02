@@ -6107,6 +6107,7 @@ textarea {
   padding: 0;
   margin: 0px;
   font-size: 15px;
+  line-height: 1.9;
 }
 .sitemap--container .child-list a :hover {
   color: #42bac5;
