@@ -144,11 +144,13 @@
 </div>
 @else
 <div id="ss-results" >
-    <div class="row">
-        <div class="col-12">
-            <h3 style="margin:0 auto;text-align:center">Sorry, No Result Found! <br />Try Again.</h3>
-        </div>
+ <div id="ss-results-main">
+    <div id="results-text">
+        <p class="grid-container error-msg">
+            Sorry, No Result Found! <br />Try Again.
+        </p>
     </div>
+</div>
 </div>
 @endif
 <!---------->
