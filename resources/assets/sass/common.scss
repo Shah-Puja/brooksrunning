@@ -4658,6 +4658,7 @@ a {
   margin: 0px;
   font-size: 15px;
   @extend %extrabold-font;
+  line-height: 1.9;
   a{
     :hover {
     color: #42bac5;

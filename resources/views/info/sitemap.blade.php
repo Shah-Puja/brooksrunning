@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-12 wrapper">
 			<div class=" sitemap--container row">
-				<div class="col-5 mob-12">
+				<div class="col-6 mob-12">
 				<h3 class="br-heading title">Women</h3>
 				<div class="row">
 				<div class="col-6 mob-12">
@@ -31,9 +31,6 @@
 					</li>
 					<li>
 							<a href="/womens-walking-shoes">Walking Shoes</a>
-					</li>
-					<li>
-							<a href="/womens-heritage-shoes">Heritage Collection</a>
 					</li>
 						<li>
 							<a href="/womens-running-shoes-sale">SALE Shoes</a>
@@ -68,16 +65,13 @@
 							<a href="/womens-running-accessories">Accessories</a>
 					</li>
 						<li>
-							<a href="/apparel/women/lifestyle_collection">Lifestyle Collection</a>
-					</li>
-						<li>
 							<a href="/womens-running-clothes-sale">Sale Clothing</a>
 					</li>
 				</ul>
 				</div>
 				</div>
 				</div>
-				<div class="col-5 mob-12">
+				<div class="col-6 mob-12">
 				<h3 class="br-heading title">Men</h3>
 				<div class="row">
 				<div class="col-6 mob-12">
@@ -103,9 +97,6 @@
 					</li>
 					<li>
 							<a href="/mens-walking-shoes">Walking Shoes</a>
-					</li>
-					<li>
-							<a href="/mens-heritage-shoes">Heritage Collection</a>
 					</li>
 						<li>
 							<a href="/mens-running-shoes-sale">SALE Shoes</a>
@@ -137,28 +128,9 @@
 							<a href="/mens-running-accessories">Accessories</a>
 					</li>
 						<li>
-							<a href="/apparel/men/lifestyle_collection">Lifestyle Collection</a>
-					</li>
-						<li>
 							<a href="/mens-running-clothes-sale">Sale Clothing</a>
 					</li>
 				</ul>
-				</div>
-				</div>
-				</div>
-				<div class="col-2 mob-12">
-				<h3 class="br-heading title">Kids</h3>
-				<div class="row">
-				<div class="col-12 mob-12">
-				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
-				<ul class="child-list">
-					<li>
-							<a href="/girls-running-shoes">All Girls Shoes</a>
-					</li>
-					<li>
-						<a href="/boys-running-shoes">All Boys Shoes</a>
-					</li>
-					</ul>
 				</div>
 				</div>
 				</div>
@@ -171,28 +143,31 @@
 				<h3 class="br-heading"><a href="/info/about-us" class="list-head">hello</a></h3>
 				<ul class="child-list">
 					<li>
-						<a href="/meet_brooks/what_makes_us_tick">What Makes Us Tick</a>
+						<a href="/meet_brooks/what-makes-us-tick">What Makes Us Tick</a>
 					</li>
 					<li>
-						<a href="/meet_brooks/run_happy_is">Run Happy Is...</a>
+						<a href="/meet_brooks/run-happy-is">Run Happy Is...</a>
 					</li>
 					<li>
 						<a href="/meet_brooks/technology">Technology</a>
 					</li>
+					<li>
+						<a href="/meet_brooks/run-signature">Run signature</a>
+					</li>
 				</ul>
-				<h3 class="br-heading"><a href="/meet_brooks/runhappy" class="list-head">run happy</a></h3>
+				<h3 class="br-heading"><a href="/meet_brooks/run-happy-is" class="list-head">run happy</a></h3>
 				<ul class="child-list">
 					<li>
-						<a href="/meet_brooks/competition/rh_competition">Competition</a>
+						<a href="/meet_brooks/competition">Competition</a>
 					</li>
 					<li>
-						<a href="/meet_brooks/enewsletter">E-Newsletter</a>
+						<a href="/meet_brooks/newsletter">E-Newsletter</a>
 					</li>
 					<li>
-						<a href="/meet_brooks/trainingtips">Training Tips</a>
+						<a href="/meet_brooks/training-tips">Training Tips</a>
 					</li>
 					<li>
-						<a href="/meet_brooks/injury_prevention">Injury Prevention</a>
+						<a href="/meet_brooks/injury-prevention">Injury Prevention</a>
 					</li>
 				</ul>
 				<h3 class="br-heading"><a href="http://talk.brooksrunning.com/au/" class="list-head">BLOG</a></h3>
@@ -216,7 +191,7 @@
 				<h3 class="br-heading title"><a href="/shoefinder" class="list-head">Shoe finder</a></h3>
 				<div class="row">
 				<div class="col-12 mob-12">
-				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
 				<ul class="child-list">
 					<li>
 						<a href="/shoefinder">Find the right shoe for you</a>
@@ -229,7 +204,7 @@
 				<h3 class="br-heading title">Customer service</a></h3>
 				<div class="row">
 				<div class="col-12 mob-12">
-				<h3 class="br-heading"><a href="/womens-running-shoes" class="list-head">Running Shoes</a></h3>
+				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
 				<ul class="child-list">
 					<li>
 						<a href="/info/contact">Contact Us</a>
@@ -242,21 +217,6 @@
 					</li>
 					<li>
 						<a href="/store-locator">Find a Store</a>
-					</li>
-					<li>
-						<a class="dialogify" href="/info/footwear_sizeguide">Women's Shoe Size Chart</a>
-					</li>
-					<li>
-						<a class="dialogify" href="/info/footwear_sizeguide">Men's Shoe Size Chart</a>
-					</li>
-					<li>
-						<a class="dialogify" href="/info/kids_sizeguide">Kids Shoe Size Chart</a>
-					</li>
-					<li>
-						<a class="dialogify" href="/info/apparel_sizeguide">Women's Clothing Size Chart</a>
-					</li>
-					<li>
-						<a class="dialogify" href="/info/apparel_men_sizeguide">Men's Clothing Size Chart</a>
 					</li>
 				</ul>
 				</div>

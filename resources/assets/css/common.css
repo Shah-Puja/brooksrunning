@@ -4696,7 +4696,8 @@ textarea {
   list-style: outside none none;
   padding: 0;
   margin: 0px;
-  font-size: 15px; }
+  font-size: 15px;
+  line-height: 1.9; }
   .sitemap--container .child-list a :hover {
     color: #42bac5;
     text-decoration: none; }
