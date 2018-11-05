@@ -3584,6 +3584,16 @@
               width: 100%;
             }
           }
+          a{
+            display: inline-block;
+            text-decoration: none;
+            width: 48%;
+            margin-right: 5px;
+            margin-top: 15px;
+            @media #{$mobile-only}{
+              width: 100%;
+            }
+          }
         }
       }
     }
