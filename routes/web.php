@@ -15,6 +15,7 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
+Route::post('/reset_pass', 'InfoController@check_email');
 
 Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
