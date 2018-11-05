@@ -12,7 +12,7 @@
 */
 
 Route::get('/ap21demo', 'AP21Demo@index');
-
+$this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
 
