@@ -25,7 +25,7 @@
 				<div class="row">
 					<div class="tab-12">
 						<div class="input-wrapper">
-							<label for="">Enter Email Address<sup>*</sup></label>
+							<label for="">Enter Email Address<sup>*</sup></label><span id="msg" style="color:green;"></span>
                             <input type="text" name="email" id="email" class="input-field form-control{{ $errors->has('email') ? ' is-invalid' : '' }}">
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback error" role="alert">
@@ -100,7 +100,8 @@
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        url:"/shipping-check-email",
+                        // url:"/shipping-check-email",
+                        url:"/reset_pass",
                         type:"POST",
                         data: {email:email},
                         success: function(data){
@@ -115,8 +116,8 @@
                                     data : { email : email },
                                     success:function(data){
                                         console.log(data);
-                                        // $("#shippingbilling_popup").hide();
-                                        // $(".popup-success").show();
+                                        $("#msg").text("kindly check your mail for reset password");
+                                        $('#email').val("");
                                     },
                                     error: function(jq,status,message) {
                                         alert('A jQuery error has occurred. Status: ' + status + ' - Message: ' + message);
