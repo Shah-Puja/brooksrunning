@@ -90,6 +90,9 @@ Route::get('/shoefinder', 'ShoefinderController@shoefinder');
 Route::post('/shoefinder-ajax', 'ShoefinderController@ajax_data')->middleware('allowOnlyAjax');
 Route::get('/shoefinder-getshoe', 'ShoefinderController@get_shoe')->middleware('allowOnlyAjax');
 
+/* Best selling page */
+Route::get('/footwear/{gender}/best_selling', 'CategoryController@bestselling');  
+
 /* events page */
 Route::get('/events', 'EventController@events_view'); 
 Route::get('/events/{events_pg}', 'EventController@index');
