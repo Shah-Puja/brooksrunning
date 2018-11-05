@@ -83,6 +83,7 @@ Route::get('/imagecheck', 'ImagecheckController@index');
 Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
 Route::get('/account-personal', 'MyaccountController@account_personal');
+Route::get('/order-history', 'MyaccountController@order_history');
 
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
@@ -110,6 +111,8 @@ Route::get('/trail-running-shoes', 'CategoryController@shoes_category');
 Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
 Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
 Route::get('/walking-shoes', 'CategoryController@shoes_category');
+
+Route::get('/orderfailed', 'CategoryController@orderfailed');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

@@ -210,10 +210,10 @@
 						<a href="/info/contact">Contact Us</a>
 					</li>
 					<li>
-						<a href="/info/shipping">Shipping Information</a>
+						<a href="/info/shipping-information">Shipping Information</a>
 					</li>
 					<li>
-						<a href="/info/returns">Returns &amp; Exchange</a>
+						<a href="/info/returns-exchange">Returns &amp; Exchange</a>
 					</li>
 					<li>
 						<a href="/store-locator">Find a Store</a>

@@ -1389,7 +1389,8 @@ textarea {
                   text-decoration: none;
                   color: #b9161e; }
                 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price span.black {
-                  text-decoration: line-through;
+                  color: #000000; }
+                .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price del {
                   color: #000000; }
           .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style {
             position: absolute;
