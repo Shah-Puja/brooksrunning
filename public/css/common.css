@@ -5109,6 +5109,18 @@ textarea {
     width: 100%;
   }
 }
+.shipping-right--container .shipping-form .password-wrapper .cart-btn--password a {
+  display: inline-block;
+  text-decoration: none;
+  width: 48%;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .shipping-right--container .shipping-form .password-wrapper .cart-btn--password a {
+    width: 100%;
+  }
+}
 .shipping-right--container .billing-form {
   margin-bottom: 50px;
   border-top: 1px solid #d3d0cd;

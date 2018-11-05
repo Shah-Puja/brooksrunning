@@ -12,7 +12,7 @@
 */
 
 Route::get('/ap21demo', 'AP21Demo@index');
-
+$this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
 
@@ -46,6 +46,8 @@ Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 /* info static pages */
+Route::get('/info/contact-us', 'ContactUsEnquiryController@create');
+Route::post('/info/contact-us', 'ContactUsEnquiryController@store');
 Route::get('/info/{pg}', 'InfoController@index');
 
 Route::get('/store-locator', 'InfoController@store_locator');
