@@ -249,5 +249,46 @@ class CategoryController extends Controller
         return $result;
     }
 
+    public function orderfailed()
+	{
+        return view( 'customer.orderfailed');
+    }
+
+    public function bestselling($gender){
+        $special_prod = \App\Models\Special_prod::where('prod_type','footwear')
+                                ->where('category','Best Selling')
+                                ->where('gender',$gender)
+                                ->where('status','active')
+                                ->first();
+        $data ='';
+        if($special_prod){
+            $prod_list = ($special_prod->prod_list!='') ? explode(",",$special_prod->prod_list) : '';
+            if($prod_list!=''){
+                $data_array = [];
+                foreach($prod_list as $item){
+                    $item = explode('=>',$item);
+                    $style = $item[0];
+                    $color_code = $item[1];
+                    $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+                }
+                $style_array = collect($data_array)->pluck('style');
+                $color_code_array = collect($data_array)->pluck('color_code');
+
+                $styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })->get();
+                if(!$styles) $data = '';
+                $product=$styles->whereIn("color_code",$color_code_array); // single product data 
+                if(!$product) $data = '';
+                $colour_options=$styles->unique('color_code'); // all unique colors data
+                $products = $product->unique(function ($item) {
+                    return $item['style'].$item['color_code'];
+                })->unique('style');
+
+            } 
+        }
+        return view( 'customer.best_selling',compact('colour_options','products','gender'));
+    }
 
 }
