@@ -6,12 +6,18 @@ class SearchController extends Controller
 {
 	public function index()
 	{
-		$products = \App\Models\Product::search( request('q') )
+		$product = \App\Models\Product::search( request('q') )
 										->get()
 										->take(10)
 										->map(function($item) {
-											return $item;
+											return $item->load('variants');
 										});
+	
+		$products =	$product->filter(function ($value, $key) {
+			           if($value->variants){
+						   return $value->variants->firstWhere('visible','Yes') ;
+						}
+					});			
 		$styles = $products->unique('style');
 		return view('customer.searchproduct', compact('products','styles') );
 	}
