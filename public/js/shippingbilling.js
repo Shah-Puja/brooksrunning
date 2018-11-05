@@ -11,6 +11,13 @@ $(document).ready(function(){
         }
     });
 
+
+    $(".gest_user").on('click',function () {
+        $('#password_field').val('');
+        $('.password-wrapper').css('display','none'); 
+        $('#guest').val('guest_account');
+    });
+
     $('input[name=s_fname]').on("keypress keyup blur", function () {
         var $firstname = $('input[name=s_fname]').val();
         if ($firstname.toLowerCase() == 'sygtest') {
@@ -144,23 +151,25 @@ $(document).ready(function(){
         if(email == ''){
             $('.password-wrapper').css('display','none');
         }else{
-            //console.log(email);
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url:"/shipping-check-email",
-                type:"POST",
-                data: {email:email},
-                success: function(data){
-                    console.log(data);
-                    if(data == "true"){
-                        $('.password-wrapper').css('display','block');
-                    }else{
-                        $('.password-wrapper').css('display','none');
+            var guest = $('#guest').val();
+            if(guest!='guest_account'){
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:"/shipping-check-email",
+                    type:"POST",
+                    data: {email:email},
+                    success: function(data){
+                        console.log(data);
+                        if(data == "true"){
+                            $('.password-wrapper').css('display','block');
+                        }else{
+                            $('.password-wrapper').css('display','none');
+                        }
                     }
-                }
-            });
+                });
+            }
          }
          return false;
     });
@@ -265,12 +274,6 @@ function email_check_validate(){
     }
     return false;
 }
-
-function gest_user(){
-    $('#password_field').val('');
-    $('.password-wrapper').css('display','none');   
-}
-
 
 function shippingform_validate(){
     $("#billing_shipping input,#billing_shipping select").removeClass("error-border");
