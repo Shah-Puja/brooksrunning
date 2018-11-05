@@ -10,9 +10,8 @@
         </div> 
         <div class="clearfix">
             <div class="col-7">
-                <div class="img-wrapper">
-                @php echo "<pre>";print_r($cart_items); @endphp
-                    <img src="images/shoes/shoes1-details.jpg" alt="">
+                <div class="img-wrapper"> 
+                    <img src="{{$cart_items->variant->product->image->image1Large()}}" alt="">
                 </div>
             </div>
             <div class="col-5">
