@@ -249,5 +249,8 @@ class CategoryController extends Controller
         return $result;
     }
 
-
+    public function orderfailed()
+	{
+        return view( 'customer.orderfailed');
+    }
 }
