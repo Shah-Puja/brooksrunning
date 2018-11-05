@@ -17,9 +17,10 @@ class CategoryController extends Controller
         }else{
             $gender = $cat_info->gender;            
             $prod_type = $cat_info->prod_type;
-            $depth = $cat_info->depth; 
+            $depth = $cat_info->depth;
+            $name = $cat_info->name; 
             if($depth=='2'){
-                $products = \App\Models\Category::getProducts_main($gender,$prod_type);
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
             }elseif($depth=='3'){
                 $products = \App\Models\Category::getProducts($category);
             }
@@ -103,14 +104,95 @@ class CategoryController extends Controller
         if (in_array($shoe_type,$diff_template)){ 
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             $shoe_specs = shoe_specs::where(['shoe_type'=> $shoe_type])->orderBy('seqno', 'asc')->get();
-            //$shoes_info = $this->get_shoes_detail($shoe_type);
-            // echo "<pre>";
-            // print_r($shoe_info);
-            // echo "</pre>";
-            // exit;
-            return view('customer.shoe-main-new', compact('shoe_info','shoe_specs') );
+            $shoes_detail = $this->get_shoes_detail($shoe_type);
+            $shoes_detail = array_filter($shoes_detail);
+            return view('customer.shoe-main-new', compact('shoe_info','shoe_specs','shoes_detail') );
         }
         
+    }
+    public function get_shoes_detail($shoe_type){
+        $result = shoe_mast::where(['shoe_type'=> $shoe_type])->get();
+        $data 				= array();
+		$prod_array 		= array();
+		$trail_array 		= array();
+		$kids_array 		= array();
+		$prod_link_array	= array();
+		$trail_link_array	= array();
+		$kids_link_array	= array();
+		$prod_link 			= ''; 
+        foreach($result as $value){
+            $data['shoe_type'] 	= $value['shoe_type'];
+			$data['experience'] = $value['experience'];
+			$data['keywords'] 	= $value['keywords'];
+			$data['meta_desc'] 	= $value['meta_desc'];
+			$data['description']= $value['description'];
+			$data['page_title']= $value['page_title'];
+			$data['video_link'] = $value['video_link'];
+			$data['features'] 	= $value['features'];
+			$data['feature_1'] 	= $value['feature_1'];
+			$data['feature_2'] 	= $value['feature_2'];
+			$data['feature_3'] 	= $value['feature_3'];
+            $data['category'] 	= $value['category'];
+            
+            if($value['shop_men'] != ''){
+				$shop_m = explode('_', $value['shop_men']);
+				$seo_name = $this->get_seo_name($shop_m['0'],$shop_m['1'],'m');
+				if(!empty($seo_name)){
+					if($seo_name != ''){
+						$data['shop_men'] = $seo_name."/".$value['shop_men'].".html";
+					} else {
+						$data['shop_men'] = $seo_name."/".$value['shop_men'].".html";
+					}
+				}
+			}
+
+			if($value['shop_women'] != ''){
+				$shop_w = explode('_', $value['shop_women']);
+				$seo_name = $this->get_seo_name($shop_w['0'],$shop_w['1'],'w');
+				if(!empty($seo_name)){
+					if($seo_name != ''){
+						$data['shop_women'] = $seo_name."/".$value['shop_women'].".html";
+					} else {
+						$data['shop_women'] = $seo_name."/".$value['shop_women'].".html";
+					}
+				}
+            }
+
+            // print_r($value['prod_link']);echo "<br>";
+            // exit;
+            
+            if(!empty($value['prod_link'])){
+				
+				$prod_link = explode(",", $value['prod_link']);
+                $product=[];
+				foreach ($prod_link as $p_link) {
+					$prod  		=  explode("-", $p_link);
+					@$style	= $prod[1];
+					@$color_code = $prod[2];
+                    $gender		= $prod[0];
+                    if($gender == 'men'){
+                        $gender = "M";
+                    }
+                    if($gender == 'women'){
+                        $gender = "W";
+                    }
+                    
+                    $product[] =  product::where(
+                        [
+                            ['color_code', '=', $color_code],
+                            ['style', '=', $style],
+                            ['gender', '=', $gender],
+                        ]
+                    )
+                    ->whereHas('variants' , function($query)  {
+                        return $query->where('visible', '=', 'Yes');
+                    })->with('variants')
+                    ->first();  	
+                }  
+                
+                return $product;
+			}
+        }
     }
 
     public function get_str_conv_upper($shoe_name = "") {

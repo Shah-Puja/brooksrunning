@@ -198,6 +198,19 @@ class CartController extends Controller {
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        if($cart->gift_pin!=""){
+            $AvailableAmount = $cart->gift_available_amount;
+            $cartTotal = $cart->cart_total; 
+
+            if ($AvailableAmount > $cartTotal) {
+                $gift_discount = $cartTotal;
+                $gift_cart_total = 0;
+            } else {
+                $gift_discount = $AvailableAmount;
+                $gift_cart_total = $cartTotal - $AvailableAmount;
+            }
+            Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
+        }
         return view('cart.order_summary', compact('cart'));
     }
 
@@ -208,7 +221,8 @@ class CartController extends Controller {
         $cart_items = Cart::where('carts.id', session('cart_id'))->where('ci.variant_id', $request->variant_id)->
                         join('cart_items as ci', 'carts.id', '=', 'ci.cart_id')->
                         join('p_variants as pv', 'pv.id', '=', 'ci.variant_id')->
-                        join('p_products as pp', 'pp.id', '=', 'pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
+                        join('p_products as pp', 'pp.id', '=', 'pv.product_id')->
+                        join('p_images as pi','pi.product_id','=','pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
         // echo "<pre>";print_r($cart_items);
         //return view('cart.edit_cart_popup', compact('cart_items'));
         return response()->json([

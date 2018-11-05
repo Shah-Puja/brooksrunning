@@ -54,120 +54,37 @@
 				</div>
 		<div class="row detail-shoe-pg">
 			<div class="ctg-wrapper-container">
+			@foreach($shoes_detail as $prod_key => $shoes_value)	
 				<div class="mob-6 tab-4 col-4">
 					<div class="shoe-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								@if(isset($shoes_value->experience))
+									@if($shoe_info->experience == 'Cushion Me')
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="100" height="100" />
+									@elseif ($shoe_info->experience == 'Energize Me')
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.svg" alt="Energize Badge" width="100" height="100" />
+									@elseif ($shoe_info->experience == 'Connect Me') {
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="100" height="100" />
+									@elseif ($shoe_info->experience == 'Propel Me') {
+										<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="100" height="100" />
+									@endif
+								@endif
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="$shoes_value->image->image1Medium()" alt="">
 							</div>						
 							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
+								<h3>@if($shoes_value->gender == 'M')Men's @else Women's @endif {{$shoes_value->stylename}}</h3>
+								<div class="price">{{$shoes_value->variants[$prod_key]->price_sale}}</div>
 								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
+									<span><a class="secondary-button" href="/{{$shoes_value->seo_name}}/{{$shoes_value->style}}_{{$shoes_value->color_code}}.html">Shop Now</a></span>
 								</div>
 							</div>
 						</div>
 				   </div>
 			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="shoe-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="shoe-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="shoe-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="shoe-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
-			   <div class="mob-6 tab-4 col-4">
-					<div class="shoe-wrapper__sub">
-						<div class="ctg-product">
-							<div class="offer-info">
-								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
-							</div>
-							<div class="img img-shoes">
-								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
-							</div>						
-							<div class="info">
-								<h3>PureFlow</h3>
-								<div class="price">$179.95</div>
-								<div class="ctg-btn clearfix">
-									<span><a class="secondary-button" href="#">Shop Now</a></span>
-								</div>
-							</div>
-						</div>
-				   </div>
-			   </div>
+			@endforeach   
 		    </div>
 		</div>
 	<div class="row">
