@@ -11,6 +11,13 @@ $(document).ready(function(){
         }
     });
 
+
+    $(".gest_user").on('click',function () {
+        $('#password_field').val('');
+        $('.password-wrapper').css('display','none'); 
+        $('#guest').val('guest_account');
+    });
+
     $('input[name=s_fname]').on("keypress keyup blur", function () {
         var $firstname = $('input[name=s_fname]').val();
         if ($firstname.toLowerCase() == 'sygtest') {
@@ -144,23 +151,25 @@ $(document).ready(function(){
         if(email == ''){
             $('.password-wrapper').css('display','none');
         }else{
-            //console.log(email);
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url:"/shipping-check-email",
-                type:"POST",
-                data: {email:email},
-                success: function(data){
-                    console.log(data);
-                    if(data == "true"){
-                        $('.password-wrapper').css('display','block');
-                    }else{
-                        $('.password-wrapper').css('display','none');
+            var guest = $('#guest').val();
+            if(guest!='guest_account'){
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url:"/shipping-check-email",
+                    type:"POST",
+                    data: {email:email},
+                    success: function(data){
+                        console.log(data);
+                        if(data == "true"){
+                            $('.password-wrapper').css('display','block');
+                        }else{
+                            $('.password-wrapper').css('display','none');
+                        }
                     }
-                }
-            });
+                });
+            }
          }
          return false;
     });
@@ -218,20 +227,28 @@ function email_check_validate(){
     email_required = ['email']; 
     var email = $('.check_email_field').val();
     let input = $('#email_check input[name="'+email_required+'"]');
+    
     if (input.val() == "") {
         input.addClass("needsfilled");
-        let label_name = $("#email_check input[name="+email_required+"]").data("label-name");
-        let input_label = $("#email_check input[name="+email_required+"]").parent().find('label');
-        let label_text = input_label.html();
-        let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
-        let error = label_text + error_span ;
-        input_label.html(error);$("#billing_shipping input[name="+email_required+"]").addClass("error-border");
-        
+        // let label_name = $("#email_check input[name="+email_required+"]").data("label-name");
+        // let input_label = $("#email_check input[name="+email_required+"]").parent().find('label');
+        // let label_text = input_label.html();
+        // let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
+        // let error = label_text + error_span ;
+        // input_label.html(error);$("#billing_shipping input[name="+email_required+"]").addClass("error-border");
+        input.val("");
+        input.attr("placeholder", "THE INPUT FIELD IS REQUIRED");
     }else{
-        input.removeClass("needsfilled");
-    } 
-
-    if ($("#email_check input").hasClass("needsfilled") ) {
+        if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(input.val())) {
+            input.addClass("needsfilled");
+            input.val("");
+            input.attr("placeholder", "ENTER VALID EMAIL ADDRESS");
+        }else{
+            input.removeClass("needsfilled");
+        } 
+    }
+    
+    if (input.hasClass("needsfilled") ) {
             return false;
     }
     else{
@@ -253,15 +270,10 @@ function email_check_validate(){
                 }
             }
         });
+        return false;
     }
     return false;
 }
-
-function gest_user(){
-    $('.password-wrapper').css('display','none');
-    $('#password_field').val('');
-}
-
 
 function shippingform_validate(){
     $("#billing_shipping input,#billing_shipping select").removeClass("error-border");
@@ -286,7 +298,6 @@ function shippingform_validate(){
         } 
     
     }
-        
         
     let email = $("#billing_shipping input[name='email']");
     if(email.val()!=''){
