@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\ContactUsEnquiry;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +15,7 @@ class ContactUsEnquiryController extends Controller
 		return view( 'info.contact-us');	
 	}
 
-	public function store(ContactUsEnquiry $enquiry)
+	public function store(ContactUsEnquiry $enquiry, Recaptcha $recaptcha)
 	{  
     	request()->validate([
             'fname' => 'required',
@@ -23,6 +24,7 @@ class ContactUsEnquiryController extends Controller
     		'email' => 'required|email',
      		'subject' => 'required',
             'category' => 'required',
+            'g-recaptcha-response' => ['required', $recaptcha],
     	]);
     	$enquiry = $enquiry->create([
             'fname' => request('fname'),

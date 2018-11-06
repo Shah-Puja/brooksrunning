@@ -1,4 +1,9 @@
 @extends('customer.layouts.master')
+
+@section('head')
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endsection
+
 @section('content')
 
 <div class="contact-us--banner">
@@ -92,8 +97,7 @@
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<div class="captcha">Captcha Code <br/>Show Here</div>
-                            <input type="password" class="input-field" placeholder="Enter Above Text">
+							<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
 						</div>
 					</div>
 				</div>

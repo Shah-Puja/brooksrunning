@@ -11,6 +11,7 @@
         <!-- common file -->
         <link rel="stylesheet" href="/css/common.css">
         <script src="/js/jquery-2.2.4.min.js"></script>
+        @yield('head')
     </head>
     <body>
         @include('customer.layouts.header_desktop')
