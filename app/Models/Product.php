@@ -34,6 +34,7 @@ class Product extends Model
             'description' => $this->prod_desc,
             'specifications' => $this->specifications,
             'styleid' => $this->style_idx,
+            'release_date' => $this->variants->max('release_date'),
         ];
     }
 
