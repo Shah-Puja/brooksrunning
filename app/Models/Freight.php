@@ -6,7 +6,7 @@ class Freight
 {
 	public function calculate($cartTotal)
 	{
-		if(isset($cartTotal) && $cartTotal > 50){
+		if(isset($cartTotal) && $cartTotal > config('site.SHIPPING_SET_LIMIT')){
 			$freight_cost = '0.00';	
 		}else{
 			$freight_cost = config('site.freight_cost');

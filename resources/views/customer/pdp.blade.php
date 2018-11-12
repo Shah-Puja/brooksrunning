@@ -243,11 +243,12 @@
                                                     </div>
                                                 </div>
                                                 <ul class="select-option--wrapper">
-                                                    <li class="option-value-data " data-value="">-</li>
-                                                    @php //echo "<pre>";print_r($width_names);die; @endphp
+                                                    @if(count($width_names) > 1)
+                                                        <li class="option-value-data " data-value="">-</li>
+                                                    @endif
                                                     @foreach($width_names as $width_code => $width_name)
                                                     @if($width_name!='')
-                                                    <li class="option-value-data " data-value="{{ $width_code }}">{{ $width_name }}</li>
+                                                        <li class="option-value-data {{ (count($width_names) == 1) ? 'selected' : '' }}" data-value="{{ $width_code }}" >{{ $width_name }}</li>
                                                     @endif
                                                     @endforeach
                                                 </ul>
@@ -409,11 +410,11 @@
     </div>
 </div>
 @if (strtolower($product->flag_bra) =='yes')
-@include('customer.pdp_bra_benefits')
+    @include('customer.pdp_bra_benefits')
 @elseif(strtolower($product->prod_type) =='footwear')
-@include('customer.pdp_shoe_benefits')
+    @include('customer.pdp_shoe_benefits')
 @else 
-@include('customer.pdp_apparel_benefits')
+    @include('customer.pdp_apparel_benefits')
 @endif
 <!--
 <section class="pdp-recommended-products">
@@ -646,6 +647,14 @@
         </div>
 </section>-->
 <script>
+ $(document).ready(function(){
+     var target = $(".width-wrapper ul").find(".selected");
+     var width_name = target.text();
+     var width_code = target.data('value');
+     $(".width-wrapper").find(".label-heading .text").text(width_name);
+     $("#detail input[name='width_code']").val(width_code);
+
+ });
  $(document).on('click', '.size-show li:not(".disable")', function () {
     if ($(this).data('value') != '') {
         $(".size-show li").removeClass("selected");
