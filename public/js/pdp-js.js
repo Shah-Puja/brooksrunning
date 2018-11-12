@@ -1221,6 +1221,11 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
                 thumbItem: 9
             });
             ChangeUrl(value, url);
+            var target = $(".width-wrapper ul").find(".selected");
+            var width_name = target.text();
+            var width_code = target.data('value');
+            $(".width-wrapper").find(".label-heading .text").text(width_name);
+            $("#detail input[name='width_code']").val(width_code);
             $(".overlayloader").hide();
             return false;
         }
