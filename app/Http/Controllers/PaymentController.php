@@ -355,7 +355,7 @@ class PaymentController extends Controller
         }
         else{
 
-            $order_no = "test-$order_id";
+            $order_no = "test2018-$order_id";
 
             Order::where('id', $order_id)
             ->update(['order_no' => $order_no]);
