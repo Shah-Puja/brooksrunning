@@ -8,7 +8,7 @@ class SearchController extends Controller
 	{
 		$product = \App\Models\Product::search( request('q') )
 										->get()
-										->take(10)
+										//->take(10)
 										->map(function($item) {
 											return $item->load('variants');
 										});
@@ -18,7 +18,7 @@ class SearchController extends Controller
 						   return $value->variants->firstWhere('visible','Yes') ;
 						}
 					});			
-		$styles = $products->unique('style');
+		$styles = $products->where('seo_name','!=','')->unique('style')->slice(0,10);
 		return view('customer.searchproduct', compact('products','styles') );
 	}
 }
