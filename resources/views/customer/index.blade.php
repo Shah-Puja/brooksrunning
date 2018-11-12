@@ -164,7 +164,7 @@
 		                </div>
 		                <div class="prd_caption">
 							<h3>{{$Featured_prod->stylename}}</h3>
-			                <h4 class="price"><span class="black">{{$Featured_prod->variants[$prod_key]->price}}</span> <span class="red">{{$Featured_prod->variants[$prod_key]->price_sale}}</span></h4>
+							<h4 class="price">{{$Featured_prod->variants[$prod_key]->price}}</h4>
 		                </div>
 		            </div>
 				</div>
