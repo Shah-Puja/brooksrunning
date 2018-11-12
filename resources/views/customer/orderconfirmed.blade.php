@@ -81,11 +81,12 @@
                                             </p>
                                         </div>
                                     </div>
+                                    @if($orderItem->discount!=0.00)
                                     <div class="row price">
                                         <div class="mob-5"><p class="bold-font blue">Discount</p></div>
                                         <div class="mob-7"><p class="bold-font blue right">&dollar;{{ number_format($orderItem->discount, 2) }}</p></div>
                                     </div>
-
+                                    @endif
                                     <div class="row price">
                                         <div class="mob-5"><p>Item Total</p></div>
                                         @php  

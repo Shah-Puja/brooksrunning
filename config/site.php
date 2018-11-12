@@ -1,7 +1,6 @@
 <?php
 
 return [
-	'freight_cost' => env('CLIENT_FREIGHT_COST'),
     'SHIPPING_SET_LIMIT' => env('SHIPPING_SET_LIMIT'),
     'SHIPPING_SET_PRICE'=> env('SHIPPING_SET_PRICE'),
     'notify_email' => env('CLIENT_NOTIFY_EMAIL'),
