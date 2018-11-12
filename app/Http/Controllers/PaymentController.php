@@ -96,6 +96,7 @@ class PaymentController extends Controller
                 // event(new OrderReceived($order));
                 //return view( 'customer.orderconfirmed', compact('order') );
                 $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
+                $time = Carbon::now();
                 $timestamp = $time->format('Y-m-d H:i:s');
                 $result = $this->process_order($this->order->id, $payment='AfterPay', $orderReport, $transaction_id, $timestamp);
                 $order = $this->order->load('orderItems.variant.product', 'address');
