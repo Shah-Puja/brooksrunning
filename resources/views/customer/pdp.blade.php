@@ -200,8 +200,8 @@
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
                             @php
-                            $sizes[] = array('size'=> $variant['size'],'width'=> $variant['width_name'],'visible'=> $variant['visible'],'seqno'=> $variant['seqno']);
-                            if($variant['width_name']!=""){
+                            $sizes[] = array('size'=> $variant['size'],'width'=> $variant['width_code'],'visible'=> $variant['visible'],'seqno'=> $variant['seqno']);
+                            if($variant['width_code']!=""){
                                 $width_names[$variant['width_code']]= $variant['width_name']; 
                             } 
                             @endphp
@@ -247,8 +247,8 @@
                                                         <li class="option-value-data " data-value="">-</li>
                                                     @endif
                                                     @foreach($width_names as $width_code => $width_name)
-                                                    @if($width_name!='')
-                                                        <li class="option-value-data {{ (count($width_names) == 1) ? 'selected' : '' }}" data-value="{{ $width_code }}" >{{ $width_name }}</li>
+                                                    @if($width_code!='')
+                                                        <li class="option-value-data {{ (count($width_names) == 1) ? 'selected' : '' }}" data-value="{{ $width_code }}" >{{ ($width_name!='') ? $width_name : $width_code }}</li>
                                                     @endif
                                                     @endforeach
                                                 </ul>
