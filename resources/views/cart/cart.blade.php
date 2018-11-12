@@ -233,8 +233,12 @@
                             <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
-
-                            <button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
+@if(!empty($cart))
+<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
+@else
+<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/cart'">Proceed to Purchase</button>
+@endif
+                            
 
                         </div>
                     </div>
@@ -243,9 +247,11 @@
         </div>
         <div class="col-3 tab-4">
             <div class="cart-right--container">
-
+            @if(!empty($cart))
                 <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
-
+            @else
+                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/cart'">Proceed to Purchase</button> 
+            @endif
                 <div class="order hidden-mob order_summary">
                     @include('cart.order_summary')
                 </div> 
