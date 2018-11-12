@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<style>
+.error-border {
+    border: 1px solid #db1414!important;
+}
+</style>
 
 <div class="contact-us--banner">
 	<div class="wrapper">
@@ -73,7 +78,7 @@
                         <div class="input-wrapper">
 							<label for="name"><sup>*</sup>Category</label>
 							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-								<option value="-">Select Category</option>
+								<option value="">Select Category</option>
 								<option value="order info">Order Info</option>
 								<option value="return info">Return Info</option>
 								<option value="selecting correct product">Selecting a correct product</option>
@@ -93,11 +98,18 @@
                             <input type="text" name="order_no" class="input-field">
 						</div>
 					</div>
+					<div class="tab-6">
+						<div class="input-wrapper">
+							<label for=""><sup>*</sup>Message</label>
+							<textarea name="message" id="message" class="input-textarea" placeholder="Message"></textarea>
+						</div>
+					</div>
 				</div>
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
+							<label class="recaptcha-label"></label>
 						</div>
 					</div>
 				</div>
@@ -154,7 +166,7 @@ $( '#btn-validate' ).click(function(){
 </script>
 <script>
 	 	function contactus(){
-			$("#contact-us input,#contact-us textarea,#contact-us select").removeClass("error");
+			$("#contact-us input,#contact-us textarea,#contact-us select").removeClass("error-border");
 			$("#contact-us input,#contact-us textarea,#contact-us select").parent().find('label span').remove();
 			var form_data =  $('#contact-us').serialize();
 		 	$.ajax({
@@ -168,14 +180,23 @@ $( '#btn-validate' ).click(function(){
 	            },
 	            error: function(error){
 					let obj = JSON.parse(error.responseText);
-					console.log(obj);
+					let response = grecaptcha.getResponse();
+					if(response==''){;
+						let label_text =  $(".recaptcha-label").html("");
+						let error_span = " <span class='error'>The recaptcha field is required.</span>";
+						let error = error_span ;
+						$(".recaptcha-label").html(error);
+					}else{
+						grecaptcha.reset();
+					}
 					$.each( obj.errors, function( key, value ) {
 						let input_label = $("#contact-us input[id="+key+"],#contact-us textarea[id="+key+"],#contact-us select[id="+key+"]").parent().find('label');
 						let label_text = input_label.html();
 						let error_span = " <span class='error'>"+ value +"</span>";
 						let error = label_text + error_span ;
 						input_label.html(error);
-						$("#contact-us input[name="+key+"],#contact-us select[name="+key+"]").addClass("error");
+						$("#contact-us input[name="+key+"],#contact-us select[name="+key+"]").addClass("error-border");
+					
 					});
 	            }
 	        });

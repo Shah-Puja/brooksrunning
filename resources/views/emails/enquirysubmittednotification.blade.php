@@ -90,6 +90,16 @@
                     </td>
                 </tr>
               </table>
+              <table width="700" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="left" width="300" style="vertical-align: top; padding: 10px 15px 0;">
+                        <p style="font-family: 'Verdana','Helvetica','Arial',sans-serif; font-weight: 600;margin: 0;">Inquiry Message:</p>
+                    </td>
+                    <td align="left" width="400" style="vertical-align: top; padding: 10px 15px 0;">
+                        <p style="font-family: 'Verdana','Helvetica','Arial',sans-serif;margin: 0;">{{ $enquiry->message }}</p>
+                    </td>
+                </tr>
+              </table>
                <table width="700" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td align="left" width="300" style="vertical-align: top; padding: 10px 15px 0;">
