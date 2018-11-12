@@ -63,14 +63,14 @@
                         <div class="input-wrapper">
 							<label for="name"><sup>*</sup>Category</label>
                             <div class="custom-select gray-bg">
-						       <div class = "select-box">
+						       <!-- <div class = "select-box">
 								    <div class = "label-heading">
 								    	<span class="text">Select Category</span> 
 								    	<div class="sel-icon">
 								    		<span class="icon-down-arrow"></span>
 								    	</div>
-								    </div>
-								    <ul class="select-option--wrapper">
+								    </div> -->
+								    <!-- <ul class="select-option--wrapper">
 								    	<option class="option-value" value="">Select Category</option>
                                         <option class="option-value" value="order info">Order Info</option>
 		                                <option class="option-value" value="return info">Return Info</option>
@@ -80,7 +80,18 @@
 										<option class="option-value" value="technical support">Technical support</option>
 										<option class="option-value" value="media enquiries">Media enquiries</option>
 										<option class="option-value" value="other">Other</option>
-								    </ul>
+								    </ul> -->
+									<select class="select-field" style="margin-bottom: 0px;">
+										<option value="-">Select Category</option>
+										<option value="order info">Order Info</option>
+										<option value="return info">Return Info</option>
+										<option value="selecting correct product">Selecting a correct product</option>
+										<option  value="product questions">Product questions / feedback</option>
+										<option value="sponsorship">Sponsorship</option>
+										<option value="technical support">Technical support</option>
+										<option value="media enquiries">Media enquiries</option>
+										<option value="other">Other</option>
+									</select>
 								</div>
 						    </div>
 						</div>
