@@ -46,7 +46,7 @@ class PaymentController extends Controller
             }
             
             $this->order = $this->cart->order;
-            
+  
 			if ( ! $this->order ) {
                 return redirect('shipping');
             }
@@ -58,7 +58,7 @@ class PaymentController extends Controller
            if ( $this->order->getItemsCount() != $this->cart->items_count ) {
                return redirect('cart');
            }
-
+           
             return $next($request);
 
         });
@@ -97,7 +97,7 @@ class PaymentController extends Controller
                 //return view( 'customer.orderconfirmed', compact('order') );
                 
                 $order = $this->order->load('orderItems.variant.product', 'address');
-                return redirect('/order/success/'.$this->order->id);
+                return redirect('/order/success');
                 
             } else{
                 $this->order->update(array('status' => 'Order Declined', 'transaction_status'  => 'Incomplete', 'payment_status' => Carbon::now()
@@ -164,7 +164,7 @@ class PaymentController extends Controller
             //session()->forget('cart_id');
 
             $order = $this->order->load('orderItems.variant.product', 'address');
-            return redirect('/order/success/'.$this->order->id);
+            return redirect('/order/success');
             //event(new OrderReceived($order));
             //return view( 'customer.orderconfirmed', compact('order') );
             
@@ -184,7 +184,7 @@ class PaymentController extends Controller
                 // session()->forget('cart_id');
 
                 $order = $this->order->load('orderItems.variant.product', 'address');
-                return redirect('/order/success/'.$this->order->id);
+                return redirect('/order/success');
                 //event(new OrderReceived($order));
                 //return view( 'customer.orderconfirmed', compact('order') );
 
@@ -212,7 +212,7 @@ class PaymentController extends Controller
                     // session()->forget('cart_id');
 
                     $order = $this->order->load('orderItems.variant.product', 'address');
-                    return redirect('/order/success/'.$this->order->id);
+                    return redirect('/order/success');
                     //event(new OrderReceived($order));
                     //return view( 'customer.orderconfirmed', compact('order') );
                     
@@ -269,7 +269,7 @@ class PaymentController extends Controller
         // return view( 'customer.orderconfirmed', compact('order') );
     }
 
-    public function order_success($order_id){
+    public function order_success(){
              
             Cache::forget( 'cart'  . $this->order->cart_id );
             $this->cart->delete();
