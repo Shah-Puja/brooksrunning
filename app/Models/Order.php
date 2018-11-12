@@ -27,10 +27,10 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
-        // echo "<pre>";
-        // print_R($cart);
-        // echo "</pre>";
-        // die;
+         /*echo "<pre>";
+         print_R($cart);
+         echo "</pre>";
+         die;*/
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
@@ -53,6 +53,8 @@ class Order extends Model
         
 
         $order->orderItems()->delete();
+        $promo_code = isset($cart->promo_code) ? $cart->promo_code : "";
+        
         $cart->cartItems->each(function($item) use ($order) {
             $order->orderItems()->create([
                      'variant_id' =>  $item->variant->id,
@@ -62,8 +64,14 @@ class Order extends Model
                      'qty' =>  $item->qty,
                      'price' =>  $item->price,
                      'price_sale' =>  $item->price_sale,
+                     'discount' => ($item->discount_detail!=0.00) ? $item->discount_detail : "0.00", 
+                     'total' => ($item->discount_price != 0.00) ? ($item->discount_price * $item->qty) : ($item->price_sale * $item->qty)
              ]);
         });
+
+        $order->orderItems()->update([
+            'promo_code' => ($promo_code) ? $promo_code : ""
+        ]);
         
     }
 

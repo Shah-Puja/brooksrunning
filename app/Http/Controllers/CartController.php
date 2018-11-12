@@ -20,7 +20,7 @@ class CartController extends Controller {
         $cart_arr = array();
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
 
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);

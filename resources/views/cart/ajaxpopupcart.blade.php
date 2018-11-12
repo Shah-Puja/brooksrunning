@@ -10,9 +10,11 @@
             <p class="blue">{{ $cartItem->variant->product->stylename }}</p>
             <p>Colour: {{ $cartItem->variant->product->color_name }}</p>
             <p>Size: {{ $cartItem->variant->size }}</p>
-            <p>Width: {{ $cartItem->variant->width_name }}</p>
+            @if($cartItem->variant->width_name!="")
+            <p>{{ ($cartItem->variant->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
+            @endif
             <p>Qty: {{ $cartItem->qty }}</p>
-            <p>@if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
+            <p>Price: @if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))
 		<del>&dollar;{{ number_format($cartItem->variant->price, 2) }}</del>
 		@endif
 		&dollar;{{ number_format($cartItem->variant->price_sale, 2) }} </p>
