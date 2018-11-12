@@ -286,7 +286,7 @@ class PaymentController extends Controller
         $orderIdData = Order::where("id", "=",  $order_id)->first();
         if($orderIdData->status == "Order Completed"){
 
-            $this->addOrderNo($order_id);
+            $order_no = $this->addOrderNo($order_id);
             $date = Carbon::now();
             $timestamp = $date->format('Y-m-d H:i:s');
             switch ($payment) {
