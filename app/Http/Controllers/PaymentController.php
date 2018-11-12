@@ -366,7 +366,7 @@ class PaymentController extends Controller
             }
 
             Order::where('id', $order_id)
-            ->update(['order_no' => "Test2018".$order_no]);
+            ->update(['order_no' => "Test2018-".$order_no]);
 
         }
         else{
