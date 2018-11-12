@@ -380,6 +380,7 @@ class PaymentController extends Controller
             ->update(['order_no' => $order_no]);
 
         }
+        echo $order_no;die;
         return $order_no;
     }
 
