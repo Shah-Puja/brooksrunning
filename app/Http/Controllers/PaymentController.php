@@ -359,7 +359,7 @@ class PaymentController extends Controller
                 'order_id' => $order_id
             );
             $order_number_insert = Order_number::create($order_data);
-            $order_no = $order_number_insert->id;
+            $order_no = "Test2018-".$order_number_insert->id;
 
             if (!empty($order_no)) {
                 $status = 'Order Number';
@@ -369,7 +369,7 @@ class PaymentController extends Controller
             }
 
             Order::where('id', $order_id)
-            ->update(['order_no' => "Test2018-".$order_no]);
+            ->update(['order_no' => $order_no]);
 
         }
         else{
