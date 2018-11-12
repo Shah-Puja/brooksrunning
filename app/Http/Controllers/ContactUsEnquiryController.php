@@ -23,7 +23,8 @@ class ContactUsEnquiryController extends Controller
     		'phone' => 'required',    		
     		'email' => 'required|email',
      		'subject' => 'required',
-            'category' => 'required',
+	    'category' => 'required',
+	    'message' => 'required',
             'g-recaptcha-response' => ['required', $recaptcha],
     	]);
     	$enquiry = $enquiry->create([
@@ -33,7 +34,8 @@ class ContactUsEnquiryController extends Controller
     		'email' => request('email'),
     		'subject' => request('subject'),
             'order_no' => request('order_no'),
-            'category' => request('category'),
+	    'category' => request('category'),
+	    'message' => request('message'),
     	]);
 
         Mail::to( config('site.notify_email') )
