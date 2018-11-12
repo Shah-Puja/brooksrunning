@@ -89,12 +89,16 @@ class PaymentController extends Controller
             if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
                 $transaction_id = $charge_payment['id'];
                 $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id,  'transaction_status'  => 'Succeeded', 'payment_status' => Carbon::now()));
-                Cache::forget( 'cart'  . $this->order->cart_id );
-                $this->cart->delete();
-                session()->forget('cart_id'); 
+                // Cache::forget( 'cart'  . $this->order->cart_id );
+                // $this->cart->delete();
+                // session()->forget('cart_id'); 
+                // $order = $this->order->load('orderItems.variant.product', 'address');
+                // event(new OrderReceived($order));
+                //return view( 'customer.orderconfirmed', compact('order') );
+                
                 $order = $this->order->load('orderItems.variant.product', 'address');
-                event(new OrderReceived($order));
-                return view( 'customer.orderconfirmed', compact('order') );
+                return redirect('/order/success/'.$this->order->id);
+                
             } else{
                 $this->order->update(array('status' => 'Order Declined', 'transaction_status'  => 'Incomplete', 'payment_status' => Carbon::now()
                 ));
@@ -155,13 +159,14 @@ class PaymentController extends Controller
 
             $result = $this->process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp);
 
-            Cache::forget( 'cart'  . $this->order->cart_id );
-            $this->cart->delete();
-            session()->forget('cart_id');
+            //Cache::forget( 'cart'  . $this->order->cart_id );
+            //$this->cart->delete();
+            //session()->forget('cart_id');
 
             $order = $this->order->load('orderItems.variant.product', 'address');
+            return redirect('/order/success/'.$this->order->id);
             //event(new OrderReceived($order));
-            return view( 'customer.orderconfirmed', compact('order') );
+            //return view( 'customer.orderconfirmed', compact('order') );
             
         }
         else{
@@ -174,13 +179,14 @@ class PaymentController extends Controller
                     $order_no = $order_id;
                 }
 
-                Cache::forget( 'cart'  . $this->order->cart_id );
-                $this->cart->delete();
-                session()->forget('cart_id');
+                // Cache::forget( 'cart'  . $this->order->cart_id );
+                // $this->cart->delete();
+                // session()->forget('cart_id');
 
                 $order = $this->order->load('orderItems.variant.product', 'address');
+                return redirect('/order/success/'.$this->order->id);
                 //event(new OrderReceived($order));
-                return view( 'customer.orderconfirmed', compact('order') );
+                //return view( 'customer.orderconfirmed', compact('order') );
 
             } else {
 
@@ -201,13 +207,14 @@ class PaymentController extends Controller
                         $order_no = $order_id;
                     }
 
-                    Cache::forget( 'cart'  . $this->order->cart_id );
-                    $this->cart->delete();
-                    session()->forget('cart_id');
+                    // Cache::forget( 'cart'  . $this->order->cart_id );
+                    // $this->cart->delete();
+                    // session()->forget('cart_id');
 
                     $order = $this->order->load('orderItems.variant.product', 'address');
+                    return redirect('/order/success/'.$this->order->id);
                     //event(new OrderReceived($order));
-                    return view( 'customer.orderconfirmed', compact('order') );
+                    //return view( 'customer.orderconfirmed', compact('order') );
                     
                 } else {
 
@@ -260,6 +267,15 @@ class PaymentController extends Controller
         // event(new OrderReceived($order));
 
         // return view( 'customer.orderconfirmed', compact('order') );
+    }
+
+    public function order_success($order_id){
+             
+            Cache::forget( 'cart'  . $this->order->cart_id );
+            $this->cart->delete();
+            session()->forget('cart_id');
+            $order = $this->order->load('orderItems.variant.product', 'address');
+            return view( 'customer.orderconfirmed', compact('order') );
     }
 
     public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp){
