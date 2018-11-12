@@ -108,14 +108,15 @@ class BillingShippingController extends Controller
                     return $orderadd_data;
                 }else{
                     $user_verify['pass_data'] = 'user';
-                    $orderadd_data['pass_status'] = 'true';
+                    $user_verify['pass_status'] = 'true';
                     return $user_verify;
-                }            
+               }            
             }else{
-                return 'false';
+                 return 'false';
             }
         }else{
             return 'false';
         }
     }
+
 }
