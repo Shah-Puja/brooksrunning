@@ -67,11 +67,11 @@ $(document).ready(function(){
                 type:"POST",
                 data: {password:password,email:email},
                 success: function(data){
-                    // console.log(data);
+                    //console.log(data);console.log("hi");
                     if(data['pass_status']=='true'){
                         if(data['pass_data'] == "order_address"){
                             $.each( data, function( key, value ) {
-                                console.log( key + ": " + value );
+                                //console.log( key + ": " + value );
                                 $("input[name='"+key+"']").val(value);
                                 $('.password-wrapper').css('display','none');
                             });
@@ -266,6 +266,7 @@ function email_check_validate(){
                 }else{
                     $('#shipping-form').css('display','none');
                     $('.shipping-main-form').css('display','block');
+                    $('.password-wrapper').css('display','none');
                     $('.main_email_field').val(email);
                 }
             }
