@@ -22,7 +22,7 @@
                                         <a href="/account-order-history">My Orders</a>
                                     </li>
                                     <li>
-                                        <a href="#">Logout</a>
+                                        <a href="{{ route('logout') }}">Logout</a>
                                     </li>
                                 @else
                                     <li>

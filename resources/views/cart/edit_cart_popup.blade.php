@@ -1,18 +1,17 @@
 @php $cart_items = $cart_items[0]; @endphp
-@php echo "<pre>";print_r($cart_items); @endphp
+@php //echo "<pre>";print_r($cart_items); @endphp
 <div class="popup-container--wrapper">
     <div class="popup-container--info">
         <div class="close-me"><span class="icon-close-icon edit-cart--close"></span></div>
         <div class="clearfix">
             <div class="col-12">
-                <h3 class="br-heading">{{ $cart_items->stylename }}</h3>
+                <h3 class="br-heading">{{ $cart_items->variant->product->stylename }}</h3>
             </div>
         </div> 
         <div class="clearfix">
             <div class="col-7">
-                <div class="img-wrapper">
-                @php echo "<pre>";print_r($cart_items); @endphp
-                    <img src="images/shoes/shoes1-details.jpg" alt="">
+                <div class="img-wrapper"> 
+                    <img src="{{$cart_items->variant->product->image->image1Large()}}" alt="">
                 </div>
             </div>
             <div class="col-5">
@@ -92,7 +91,7 @@
                     <div class="button">
                         <a href="#" class="primary-button">Update Cart</a>
                     </div>
-                    <div class="view-more-info"><a href="#">View full details</a></div>
+                    <div class="view-more-info"><a href="/{{$cart_items->variant->product->seo_name}}/{{$cart_items->variant->product->style}}_{{$cart_items->variant->product->color_code}}.html">View full details</a></div>
                 </div>
             </div>
         </div>

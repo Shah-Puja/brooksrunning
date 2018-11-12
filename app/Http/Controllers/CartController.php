@@ -12,49 +12,55 @@ use App\Models\Promo_mast;
 
 class CartController extends Controller {
 
-    protected $carObject;
-
     public function __construct(Bridge $b) {
         $this->bridgeObject = $b;
     }
 
     public function show() {
+        $cart_arr = array();
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
 
         if (isset($cart) && !empty($cart)) {
+            $cart_arr = json_decode(json_encode($cart), true);
+
             foreach ($cart->cartItems as $cart_item) {
 
                 $cart['items_count'] += $cart_item->qty;
             }
         }
         // echo "<pre>";print_r($cart);die;
-       /* checking stock - Not required
-       if ($cart && !$cart->verifyItems()) {
-            $cart->deleteUnavaliableItems();
-        }*/
-        
-        if(isset($cart->promo_code) && $cart->promo_code!=""){
-            $check_promo_code = promo_mast::where('promo_string', $cart->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
-            if(empty($check_promo_code)){
-                //remove_promo_code
-                Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => '']);
-            }
-        }
+        /* checking stock - Not required
+          if ($cart && !$cart->verifyItems()) {
+          $cart->deleteUnavaliableItems();
+          } */
+
+
 
         if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
             if (!empty($cart)) {
-                foreach ($cart->cartItems as $row) {
-                    $skuidx_arr[] = $row->variant_id;
-                }
-                /* echo "<pre>";
-                  print_r($cart);
-                  die; */
+                if (isset($cart->promo_code) && $cart->promo_code != "") {
+                    $check_promo_code = promo_mast::where('promo_string', $cart->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+                    if (!empty($check_promo_code)) {
 
-                $data = $this->cart_api($cart);
+                        $check_promo_code = json_decode(json_encode($check_promo_code), true);
+                        $check_promo_code['qty'] = 1;
+
+
+                        array_push($cart_arr['cart_items'], $check_promo_code);
+                    }
+                    if (empty($check_promo_code)) {
+                        //remove_promo_code
+                        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => '']);
+                    }
+                }
+
+                $data = $this->cart_api($cart_arr);
             }
+
+
 
             /* echo "<pre>";
               print_r($data);
@@ -81,11 +87,13 @@ class CartController extends Controller {
                     if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
                         $cart_api_price_sale = $item['Price'];
                         $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
-                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_detail' => $discount_detail,'price_sale' => $cart_api_price_sale]);
+                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
                     }
                 endforeach;
             }
+            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
         }
+
         /* echo $cart_total;
           die; */
         //return $data;
@@ -95,15 +103,16 @@ class CartController extends Controller {
     public function cart_api($cart) {
         $data = array();
         $freight_charges = 0;
+
         if (!empty($cart)) {
             $cart_xml = "<Cart>
 						<PersonId>115414</PersonId>
 						<Contacts>
 						</Contacts>
 							<CartDetails>\n\t";
-            foreach ($cart->cartItems as $item) {
-                $sku = $item->variant_id;
-                $qty = $item->qty;
+            foreach ($cart['cart_items'] as $item) {
+                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
+                $qty = $item['qty'];
                 $cart_xml .= "		<CartDetail>		
 									<SkuId>$sku</SkuId>
 									<Quantity>$qty</Quantity>
@@ -146,7 +155,7 @@ class CartController extends Controller {
                 //$cart->delivery_type
                 /* echo "<pre>";
                   print_r();die; */
-                $delivery_option = $cart->delivery_type;
+                $delivery_option = $cart['delivery_type'];
                 if ($delivery_option == 'new_zealand') {
                     $freight_charges = config('site.SHIPPING_NZ_PRICE');
                 } elseif ($delivery_option == 'standard') {
@@ -169,7 +178,6 @@ class CartController extends Controller {
                 $data['total_discount'] = $total_discount;
                 $data['freight_charges'] = $freight_charges;
             }
-
             return $data;
         }
     }
@@ -198,9 +206,9 @@ class CartController extends Controller {
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        if($cart->gift_pin!=""){
+        if ($cart->gift_pin != "") {
             $AvailableAmount = $cart->gift_available_amount;
-            $cartTotal = $cart->cart_total; 
+            $cartTotal = $cart->cart_total;
 
             if ($AvailableAmount > $cartTotal) {
                 $gift_discount = $cartTotal;
@@ -218,13 +226,7 @@ class CartController extends Controller {
         /* $cart_items['prod_details'] = Cart::where('carts.id', session('cart_id'))->where('variant_id', $request->variant_id)->join('cart_items', 'carts.id', '=', 'cart_items.cart_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
           $cart_items['cart_details'] = Cart::where('carts.id', session('cart_id'))->join('cart_items', 'carts.id', '=', 'cart_items.cart_id')->where('variant_id', $request->variant_id)->get();
          */
-        $cart_items = Cart::where('carts.id', session('cart_id'))->where('ci.variant_id', $request->variant_id)->
-                        join('cart_items as ci', 'carts.id', '=', 'ci.cart_id')->
-                        join('p_variants as pv', 'pv.id', '=', 'ci.variant_id')->
-                        join('p_products as pp', 'pp.id', '=', 'pv.product_id')->
-                        join('p_images as pi','pi.product_id','=','pv.product_id')->with('cartItems.variant.product:id,stylename,color_name')->get();
-        // echo "<pre>";print_r($cart_items);
-        //return view('cart.edit_cart_popup', compact('cart_items'));
+        $cart_items = Cart_item::where('cart_id', session('cart_id'))->where('variant_id', $request->variant_id)->with('variant.product.image')->get();
         return response()->json([
                     'cartitemshtml' => view('cart.edit_cart_popup', compact('cart_items'))->render()
         ]);
@@ -279,12 +281,11 @@ class CartController extends Controller {
 
     public function couponvalidate(Request $request) {
         //echo "<pre>";print_r($check_promo_code);die;
-        
+
         $check_promo_code = promo_mast::where('promo_string', $request->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
-        if($request->promo_code == ""){
+        if ($request->promo_code == "") {
             $promotion['msg'] = 'Please enter Discount Code';
-        }
-        else if (isset($check_promo_code) && $check_promo_code != "") { 
+        } else if (isset($check_promo_code) && $check_promo_code != "") {
             Cart::where('id', session('cart_id'))->update(['promo_code' => $request->promo_code, 'promo_string' => $check_promo_code->promo_string, 'sku' => $check_promo_code->skuidx]);
             $promotion ['result'] = 'success';
             $promotion['msg'] = 'Valid Code';
@@ -300,7 +301,7 @@ class CartController extends Controller {
 
     public function removecoupon(Request $request) {
         Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
-        return redirect('cart'); 
+        return redirect('cart');
     }
 
 }

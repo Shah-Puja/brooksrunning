@@ -79,10 +79,20 @@ class Category extends Model
             
              switch($key):
                  case 'Size':
-                    $filters['Size'] = 
-                    $products->map(function($product) {
+                    //$filters['Size'] = 
+                    /*$products->map(function($product) {
                         return $product->variants->pluck('size');
-                    })->flatten()->unique()->values()->sort();
+                    })->flatten()->unique()->values()->sort();*/
+                    $p = $products->map(function($product) {
+                          return $product->variants;
+                    })->flatten();
+                   
+                    $sorted = $p->sortBy(function ($product, $key) {
+                        return $product->seqno;
+                    });
+
+                    $filters['Size'] = $sorted->pluck('size')->unique()->values();
+                    
                  break;
 
                  case 'Color':

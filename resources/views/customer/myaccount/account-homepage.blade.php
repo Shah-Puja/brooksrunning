@@ -19,7 +19,7 @@
 				</div>
 				<h3 class="br-heading">Personal Details</h3>
 				<div class="br-info">Manage your name, email and password</div>
-				<a href="account-personal.php" class="primary-button">View Details</a>
+				<a href="account-personal" class="primary-button">View Details</a>
 			</div>
 		</div>
 		<div class="tab-4">

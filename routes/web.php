@@ -12,9 +12,10 @@
 */
 
 Route::get('/ap21demo', 'AP21Demo@index');
-
+$this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
+Route::post('/reset_pass', 'InfoController@check_email');
 
 Route::get('/cart', 'CartController@show');
 Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
@@ -46,6 +47,8 @@ Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 Route::post('/subscribers/new', 'SubscriberController@store');
 
 /* info static pages */
+Route::get('/info/contact-us', 'ContactUsEnquiryController@create');
+Route::post('/info/contact-us', 'ContactUsEnquiryController@store');
 Route::get('/info/{pg}', 'InfoController@index');
 
 Route::get('/store-locator', 'InfoController@store_locator');
@@ -83,6 +86,7 @@ Route::get('/imagecheck', 'ImagecheckController@index');
 Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
 Route::get('/account-personal', 'MyaccountController@account_personal');
+Route::post('/account/update_profile', 'MyaccountController@update_profile');
 Route::get('/order-history', 'MyaccountController@order_history');
 
 /* shoefinder page */
