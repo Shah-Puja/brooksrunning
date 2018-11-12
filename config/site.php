@@ -1,8 +1,9 @@
 <?php
 
 return [
-	'freight_cost' => env('CLIENT_FREIGHT_COST', 0),
-    'SHIPPING_SET_LIMIT' => env('SHIPPING_SET_LIMIT', 0),
+	'freight_cost' => env('CLIENT_FREIGHT_COST'),
+    'SHIPPING_SET_LIMIT' => env('SHIPPING_SET_LIMIT'),
+    'SHIPPING_SET_PRICE'=> env('SHIPPING_SET_PRICE'),
     'notify_email' => env('CLIENT_NOTIFY_EMAIL'),
 	'syg_notify_email' => env('SYG_NOTIFY_EMAIL'),
 	'image_url'=> [
