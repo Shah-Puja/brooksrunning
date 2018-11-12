@@ -266,6 +266,7 @@ function email_check_validate(){
                 }else{
                     $('#shipping-form').css('display','none');
                     $('.shipping-main-form').css('display','block');
+                    $('.password-wrapper').css('display','none');
                     $('.main_email_field').val(email);
                 }
             }
