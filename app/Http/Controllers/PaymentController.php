@@ -695,7 +695,7 @@ class PaymentController extends Controller
                                   <SkuId>2542</SkuId>
                                   <Quantity>1</Quantity>
                                   <Price>" . $this->order->freight_cost . "</Price> 
-                                  <Value>" . $$this->order->freight_cost . "</Value>
+                                  <Value>" . $this->order->freight_cost . "</Value>
                                 </OrderDetail>";
             $subtotal += $this->order->freight_cost;
         }
