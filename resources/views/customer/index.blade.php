@@ -6,8 +6,8 @@
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="images/home/home-banner--left-mob.jpg">
-			        <img src="images/home/home-banner--left.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="images/home/hp_shop_w_mobile.jpg">
+			        <img src="images/home/hp_shop_w.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       			<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
@@ -17,8 +17,8 @@
 		     <div class="mob-6 pl-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="images/home/home-banner--right-mob.jpg">
-			        <img src="images/home/home-banner--right.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="images/home/hp_shop_men_mobile.jpg">
+			        <img src="images/home/hp_shop_m.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 				  <a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
@@ -33,24 +33,27 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/sh1.png">
-			        <h3>Overlay text <br/>can go here</h3>
+					<img src="images/home/hp_sm1.jpg">
+			        <h3>Levitate 2 <br/>&nbsp;</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
+					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's link <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/sh1.png">
-			        <h3>Overlay text <br/>can go here</h3>
+					<img src="images/home/hp_sm2.jpg">
+			        <h3>New! <br/>Adrenaline GTS 19</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+				
 				</div>
 			</div>
 		</div>
@@ -106,13 +109,13 @@
 		<div class="row">
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="images/home/sh3.png">
+					<img src="images/home/hp_sm4.jpg">
 				</div>
 				<div class="info-wrapper">
-					<h3 class="br-heading">Heading</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="/womens-running-shoes-and-clothing">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/mens-running-shoes-and-clothing">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<h3 class="br-heading">Gear Up</h3>
+					<p> It’s not just the shoes. Clothing cleverly engineered clothing for comfort and mobility, helping you run better, faster, and happier. </p>
+					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			<div class="tab-4">
@@ -133,12 +136,12 @@
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="images/home/sh4.png">
+					<img src="images/home/hp_sm6.jpg">
 				</div>
 				<div class="info-wrapper">
-					<h3 class="br-heading">Event Name</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="/events">View event <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<h3 class="br-heading">Events</h3>
+					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
+					<a href="/events">Running Events<img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>

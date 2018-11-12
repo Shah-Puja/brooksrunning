@@ -146,6 +146,23 @@ $(document).on("click", ".afterpay-popup--control", function () {
 $(document).on("click", ".afterpay-popup--close", function () {
     $("#afterpay-popup--wrapper").removeClass("show");
 });
+
+
+$(document).ready(function() {
+    
+    $(".privacy-terms--popup").click(function(){
+        $(".privacy-content").load("/terms_conditions/eoyrpghost11_terms .privacy-content",function(){
+            $(".privacy-terms--wrapper").show();
+        });
+    });
+
+    $(".afterpay-popup--close").click(function(){
+        $(".privacy-terms--wrapper").hide();
+    });
+
+}); 
+
+
 $(document).ready(function(){
     $(".uTube-popup--control").on('click',function(){
         $("#uTube-popup--wrapper").addClass("show");

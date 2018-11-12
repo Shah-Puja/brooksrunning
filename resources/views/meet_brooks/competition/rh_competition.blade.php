@@ -268,29 +268,12 @@
 						<div class="cart-btn">
 							<button class="primary-button">Enter</button>
 						</div>
-						<div class="comp_bottom">
-                        <p>Competition Closes: 14th December 2018</p>
-						<p class="notice">Brooks Sports will not use your email address or information for any purpose other than notifying the winner of the competition and distributing our email newsletter. You must be an Australian resident to be eligible for any prize drawing.</p>
-                        <p class="privacy">Click here to view the <a class="privacy-terms--popup" href="#">Terms &amp; Conditions of Entry</a></p>
-                                                    
-                    	</div>
-					
+						<p class="privacy">Brooks Sports will not use your email address or information for any purpose other than distributing our email newsletter. You must be an Australian or New Zealand resident to be eligible for any prize drawing. View our <a href="#">Privacy Policy</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-  <div class="privacy-terms--wrapper popup-container afterpay--popup">
-    <div class="popup-container--wrapper">
-        <div class="popup-container--info">
-			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>        
-            <div class="privacy-content"></div>
-		</div>
-	</div>
-    </div>
 </section>
 
 @endsection

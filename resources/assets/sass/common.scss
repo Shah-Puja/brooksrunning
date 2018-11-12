@@ -1176,8 +1176,8 @@
         margin: 10px 0;
       }
       a{
-        display: block;
-        font-size: 18px;
+        display: inline-block;
+        font-size: 15px;
         color: $blue;
         @extend %bold-font;
         &:hover{
@@ -1186,10 +1186,23 @@
           content: url(../images/home/link-arrow-lightblue--icon.png);
           }
         }
+       
         img{
           width: 14px;
           vertical-align: baseline;
           display: inline-block;
+        }
+         @media #{$tab-only}{
+          font-size: 13px !important;
+           img{
+            width: 12px;
+          }
+        }
+      }
+      .right-link{
+        margin-left: 50px;
+        @media #{$tab-only}{
+          margin-left: 8px;
         }
       }
     }
@@ -4681,5 +4694,13 @@ a {
 }
 
 
-
+// Compitition
+.comp_bottom{
+.notice {
+  color: #666;
+  @extend %extrabold-font;
+  font-size: 0.9em;
+  font-style: italic;
+  }
+}
 
