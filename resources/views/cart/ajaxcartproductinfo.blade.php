@@ -68,6 +68,7 @@
 										<div class="mob-5"><p>Item Total:</p></div>
 										<div class="mob-7">
                                                                                     <p class="right">
+																					{{ $price_sale." ".$cartItem->qty}}
                                                                                         @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
                                                                                                 &dollar;{{ number_format($cartItem->discount_price, 2) }}
                                                                                                 @else
