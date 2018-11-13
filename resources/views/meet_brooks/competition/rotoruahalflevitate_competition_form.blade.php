@@ -123,51 +123,62 @@
 		</div>
 	</div>
 	<div class="row">
-					<div class="tab-6">
-						<div class="row">
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label><sup>*</sup>State</label>
-									
-										    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-										    	<option class="option-value" value="">Select State</option>
-		                                        <option class="option-value" value="ACT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="NSW,Australia">NSW,Australia</option>
-		                                        <option class="option-value" value="NT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="QLD,Australia">QLD,Australia</option>
-		                                        <option class="option-value" value="SA,Australia">SA,Australia</option>
-		                                        <option class="option-value" value="TAS,Australia">TAS,Australia</option>
-		                                        <option class="option-value" value="VIC,Australia">VIC,Australia</option>
-		                                        <option class="option-value" value="WA,Australia">WA,Australia</option>
-		                                        <option class="option-value" value="New Zealand">New Zealand</option>
-		                                        <option class="option-value" value="Other">Other</option>
-										    </select>
-									
-								</div>
-							</div>
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label>Postcode<sup>*</sup></label>
-		                            <input type="text" class="input-field">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-6">
-						<div class="input-wrapper">
-							<label>What Brooks Shoes do you wear?</label>
+		<div class="tab-6">
+			<div class="row">
+				<div class="mob-6">
+					<div class="input-wrapper">
+						<label><sup>*</sup>State</label>
 						
-								   
-								    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-								    	<option class="option-value" value="">Select Brooks Shoes you wear</option>
-                                        <option class="option-value" value="ACT,Australia">Brooks 1</option>
-		                                <option class="option-value" value="ACT,Australia">Brooks 2</option>
-		                                <option class="option-value" value="NSW,Australia">Brooks 3</option>
-								    </select>
 								
-						</div>
+								<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+									<option class="option-value" value="">Select State</option>
+									<option class="option-value" value="ACT,Australia">ACT,Australia</option>
+									<option class="option-value" value="NSW,Australia">NSW,Australia</option>
+									<option class="option-value" value="NT,Australia">ACT,Australia</option>
+									<option class="option-value" value="QLD,Australia">QLD,Australia</option>
+									<option class="option-value" value="SA,Australia">SA,Australia</option>
+									<option class="option-value" value="TAS,Australia">TAS,Australia</option>
+									<option class="option-value" value="VIC,Australia">VIC,Australia</option>
+									<option class="option-value" value="WA,Australia">WA,Australia</option>
+									<option class="option-value" value="New Zealand">New Zealand</option>
+									<option class="option-value" value="Other">Other</option>
+								</select>
 					</div>
 				</div>
+				<div class="mob-6">
+					<div class="input-wrapper">
+						<label>Postcode<sup>*</sup></label>
+						<input type="text" class="input-field">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-6">
+			<div class="input-wrapper">
+				<label>What Brooks Shoes do you wear?</label>
+				
+						<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+							<option class="option-value" value="">Select Brooks Shoes you wear</option>
+							<option class="option-value" value="Addiction">Addiction</option>
+							<option class="option-value" value="Addiction Walker">Addiction Walker</option>
+							<option class="option-value" value="Adrenaline GTS">Adrenaline GTS</option>
+							<option class="option-value" value="Ariel">Ariel</option>
+							<option class="option-value" value="Beast">Beast</option>
+							<option class="option-value" value="Cascadia">Cascadia</option>
+							<option class="option-value" value="Dyad">Dyad</option>
+							<option class="option-value" value="Ghost">Ghost</option>
+							<option class="option-value" value="Glycerin">Glycerin</option>
+							<option class="option-value" value="Launch">Launch</option>
+							<option class="option-value" value="Levitate">Levitate</option>
+							<option class="option-value" value="PureCadance">PureCadance</option>
+							<option class="option-value" value="PureFlow">PureFlow</option>
+							<option class="option-value" value="Ravenna">Ravenna</option>
+							<option class="option-value" value="Transcend">Transcend</option>
+							<option class="option-value" value="Other">Other</option>
+						</select>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="tab-6">
 			<div class="input-wrapper">
