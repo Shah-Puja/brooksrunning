@@ -357,7 +357,6 @@
                                             <?php
                                                 $error_b_state="";
                                                 $state = old('b_state');
-                                                echo $state;
                                                 if ($errors->has('b_state') ):
                                                     $error_b_state="<span class='error'>".$errors->first('b_state')."</span>";
                                                 endif;
@@ -389,7 +388,7 @@
                                                 endif;
                                             ?>
                                             <label for=""><sup>*</sup>Postal Code: {!! $error_b_postcode !!}</label>
-                                            <input type="text" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                            <input type="number" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                         </div>
                                     </div>
                                     <div class="col-6">

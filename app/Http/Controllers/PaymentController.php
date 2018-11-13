@@ -9,6 +9,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Order_log;
 use App\Models\Order_number;
+use App\Models\Order_address;
 use App\Models\User;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
@@ -19,6 +20,7 @@ use App\Mail\OrderSubmittedNotification;
 use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
+use Illuminate\Database\Eloquent\Model;
 
 class PaymentController extends Controller {
 
@@ -315,7 +317,16 @@ class PaymentController extends Controller {
         $this->cart->delete();
         session()->forget('cart_id');
         $order = $this->order->load('orderItems.variant.product', 'address');
-        return view('customer.orderconfirmed', compact('order'));
+        $order_email_find = Order_address::where("order_id", "=",  $order->id)->first();
+        $order_email = $order_email_find->email;
+        $user_id = User::where('email', '=', $order_email)->whereNull('password')->first();
+        if($user_id!=''){
+            $user_id = $user_id->id;
+        }else{
+            $user_id = "no";
+        }
+        //print_r($user_id);
+        return view('customer.orderconfirmed', compact('order','user_id','order_email'));
     }
 
     public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp) {

@@ -70,19 +70,30 @@ $(document).ready(function(){
                     //console.log(data);console.log("hi");
                     if(data['pass_status']=='true'){
                         if(data['pass_data'] == "order_address"){
-                            $.each( data, function( key, value ) {
-                                console.log( key + ": " + value );
-                                if(key=='flag_same_shipping'){
-                                    if(value=='Yes'){
-                                        $("#same-address").prop( "checked", true );
-                                    }else{
-                                        $("#different-address").prop( "checked", false );
-                                    }
-                                }else{
-                                    $("input[name='"+key+"'],select[name='"+key+"']").val(value);
-                                }
-                                $('.password-wrapper').css('display','none');
-                            });
+                            console.log(data);
+                            $("input[name='b_add1']").val(data['b_add1']);
+                            $("input[name='b_add2']").val(data['b_add2']);
+                            $("input[name='b_city']").val(data['b_city']);
+                            $("input[name='b_fname']").val(data['b_fname']);
+                            $("input[name='b_lname']").val(data['b_lname']);
+                            $("input[name='b_phone']").val(data['b_phone']);
+                            $("input[name='b_postcode']").val(data['b_postcode']);
+                            $("select[name='b_state']").val(data['b_state']);
+
+                            $("input[name='s_add1']").val(data['s_add1']);
+                            $("input[name='s_add2']").val(data['s_add2']);
+                            $("input[name='s_city']").val(data['s_city']);
+                            $("input[name='s_fname']").val(data['s_fname']);
+                            $("input[name='s_lname']").val(data['s_lname']);
+                            $("input[name='s_phone']").val(data['s_phone']);
+                            $("input[name='s_postcode']").val(data['s_postcode']);
+                            $("select[name='s_state']").val(data['s_state']);
+
+                            $(".billing-address").hide(100);
+                            $("#billing_shipping input,#billing_shipping select").removeClass("error-border");
+                            $("#billing_shipping input,#billing_shipping select").removeClass("needsfilled");
+                            $("#billing_shipping input,#billing_shipping select").parent().find('label .error').remove();
+                            $('.password-wrapper').css('display','none');
                         }else{												
                             $("input[name='s_fname']").val(data['first_name']);
                             $("input[name='s_lname']").val(data['last_name']);
