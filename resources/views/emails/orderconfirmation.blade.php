@@ -71,7 +71,7 @@
                                             &dollar;{{ number_format($item->variant->price_sale, 2) }} 
                                             @endif 
                                         </p></td>
-                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">$ @if($item->variant->price_sale == 0)
+                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">@if($item->variant->price_sale == 0)
                                             &dollar;{{ number_format($item->variant->price * $item->qty, 2) }}
                                             @else
                                             &dollar;{{ number_format($item->variant->price_sale * $item->qty, 2) }}
