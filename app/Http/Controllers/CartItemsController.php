@@ -36,7 +36,7 @@ class CartItemsController extends Controller {
             $cart->deleteItem($this->variantSelected->id);
         }
 
-        $cart->load('cartItems.variant.product:id,color_name,stylename');
+        $cart->load('cartItems.variant.product:id,gender,color_name,stylename');
 
         if (isset($cart) && !empty($cart)) {
             foreach ($cart->cartItems as $cart_item) {
@@ -78,7 +78,7 @@ class CartItemsController extends Controller {
             $cart->deleteItem($this->variantSelected->id);
         }
 
-        $cart->load('cartItems.variant.product:id,color_name,stylename');
+        $cart->load('cartItems.variant.product:id,gender,color_name,stylename');
         if (isset($cart) && !empty($cart)) {
             foreach ($cart->cartItems as $cart_item) {
                 $cart['items_count'] += $cart_item->qty;
