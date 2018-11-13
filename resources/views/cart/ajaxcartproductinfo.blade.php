@@ -68,12 +68,12 @@
 										<div class="mob-5"><p>Item Total:</p></div>
 										<div class="mob-7">
                                                                                     <p class="right">
-																					{{ $price_sale." ".$cartItem->qty}}
-                                                                                        @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
+																					   @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
                                                                                                 &dollar;{{ number_format($cartItem->discount_price, 2) }}
-                                                                                                @else
-                                                                                        &dollar;{{ number_format($price_sale * $cartItem->qty, 2) }}
-                                                                                         @endif  
+                                                                                        @else
+																								$item_total = $price_sale * $cartItem->qty;
+                                                                                        		&dollar;{{ number_format($item_total, 2) }}
+                                                                                        @endif  
                                                                                     </p>
                                                                                 </div>
 									</div>
