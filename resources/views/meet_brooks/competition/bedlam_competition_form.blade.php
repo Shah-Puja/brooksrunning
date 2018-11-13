@@ -187,6 +187,8 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" name="comp_name" value="{{ $competition->comp_name }} " />
+	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}>" />
 	<div class="row">
 		<div class="tab-6">
 			<div class="input-wrapper">
