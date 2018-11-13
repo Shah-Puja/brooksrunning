@@ -29,6 +29,7 @@ class Cart extends Model {
         $this->cartItems()->updateOrCreate(
                 [
             'variant_id' => $variantSelected->id,
+            'discount_price'=> $variantSelected->discount_price,
             'price_sale' => ($variantSelected->price_sale > 0) ? $variantSelected->price_sale : $variantSelected->price,
             'price' => $variantSelected->price
                 ], [
