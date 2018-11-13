@@ -334,7 +334,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
-                                            <label for=""><sup>*</sup>Address 2</label>
+                                            <label for="">Address 2</label>
                                             <input type="text" name="b_add2" class="input-field" data-label-name="address 2">
                                         </div>
                                     </div>
@@ -421,7 +421,7 @@
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
                                                         I have read and agree to the <a href="#">Privacy Policy</a> and <a href="#" class="shipping--popup">Terms and Conditions</a>.
-                                                    </div>
+                                                    </div><br>
                                                     {!! $error_terms !!}
                                             </label>
                                         </div>
