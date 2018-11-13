@@ -330,6 +330,7 @@ $(document).ready(function () {
     });
 
     $('.icon-shopping-cart').hover(function (e) {
+        alert(window.location.pathname);
         if(window.location.pathname != "/payment"){
             $(".cart-popup-desktop").slideDown();
         } 
