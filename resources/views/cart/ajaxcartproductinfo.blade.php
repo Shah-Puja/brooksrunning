@@ -2,7 +2,7 @@
 @foreach($cart->cartItems as $cartItem)  
 @php //echo "<pre>";print_r($cartItem);die;
             $item_total='';
-			$price_sale = (isset($cartItem->price_sale) && ($cartItem->price_sale != $cartItem->variant->price) && $cartItem->price_sale != 0) ? $cartItem->price_sale : $cartItem->variant->price;
+			$price_sale = (isset($cartItem->price_sale) && ($cartItem->price_sale != $cartItem->variant->price) && $cartItem->price_sale != 0) ? number_format($cartItem->price_sale,2) : $cartItem->variant->price;
         @endphp
 		<div class="shoppingcart-products" data-main-sku="{{ $cartItem->variant->id }}">
 						<div class="row cp-details__wrapper">
