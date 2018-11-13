@@ -34,7 +34,7 @@
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
 					<img src="images/home/hp_sm1.jpg">
-			        <h3>Levitate 2 <br/>&nbsp;</h3>
+			        <h3>&nbsp;<br/>Levitate 2  </h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
@@ -50,8 +50,8 @@
 			        <h3>New! <br/>Adrenaline GTS 19</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<p>The GTS 19 has landed. Very softly, thanks to it’s new DNA Loft cushioning and GuideRails support.</p>
+					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
@@ -60,12 +60,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/sh1.png">
-			        <h3>Overlay text <br/>can go here</h3>
+					<img src="images/home/hp_sm3.jpg">
+			        <h3>&nbsp; <br/>Support Running</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-					<a href="#">Link text here <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<p>Our support shoes are designed to offer ultimate shock protection, stability and comfort.</p>
+					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
@@ -113,7 +114,7 @@
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
-					<p> It’s not just the shoes. Clothing cleverly engineered clothing for comfort and mobility, helping you run better, faster, and happier. </p>
+					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
 					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
@@ -129,7 +130,7 @@
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+					<p>Our Shoe Finder is like Tinder for your feet. Uses your biomechanics, preferences and running science to find the ideal shoe for you. </p>
 					<a href="/shoefinder">Shoe finder <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>

@@ -42,7 +42,7 @@
         <div class="col-6">
             <div class="product-name">
                 <h3>
-                    <a class="name-link" href="/{{ $result['product_details'][0]['seo_name'].'/'.$result['product_details'][0]['style'].'_'.$result['product_details'][0]['color_code'] }}.html" title="{{ $result['product_details'][0]['stylename'] }}">
+                    <a class="sf-name-link" href="/{{ $result['product_details'][0]['seo_name'].'/'.$result['product_details'][0]['style'].'_'.$result['product_details'][0]['color_code'] }}.html" title="{{ $result['product_details'][0]['stylename'] }}">
 					{{ $result['product_details'][0]['stylename'] }} </a>
                 </h3>
             </div>
@@ -232,7 +232,7 @@
                                 <div class="info">
                                     <div class="product-name">
                             <h3>
-                            <a class="name-link" href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" title="">
+                            <a class="sf-name-link" href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" title="">
                             {{  $curr_ele->stylename }}</a>
                             </h3>
                         </div>

@@ -1,4 +1,5 @@
-<p><strong><u>Cancer Council Walking Stars Competition  Terms &amp; Conditions</u></strong></p>
+<div class="privacy-content">
+  <p><strong><u>Cancer Council Walking Stars Competition  Terms &amp; Conditions</u></strong></p>
 <ol>
   	<li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
   	<li>Entry is open to Australian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
@@ -20,3 +21,4 @@
 	 <li>To the full extent permitted by law, the Promoter will not be liable to you in respect of any claim for any loss or damage whatsoever (including, without limitation, any consequential, indirect, special, punitive or incidental damages) or for any personal injury suffered by you as a result of or in connection with the Promotion.</li>
 	<li>The Promoter is Texas Peak Pty Ltd, 30 Tullamarine Park Rd, Tullamarine VIC 3043. ABN 70 055 241 248</li>
 </ol>
+</div>
