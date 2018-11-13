@@ -56,7 +56,7 @@
 		                </label>
 		            </div>
 		            <ul class="tab-content">
-						<li><a href="/meet_brooks/newsletter">The Run Down Email Sign Up</a></li>
+						<li><a href="/meet_brooks/enewsletter">The Run Down Email Sign Up</a></li>
 						<li><a href="http://talk.brooksrunning.com/au/">Blog</a></li>
 						<li><a href="https://www.facebook.com/BrooksrunningAU/">Facebook</a></li>
 						<li><a href="https://twitter.com/brooksrunningau">Twitter</a></li>
