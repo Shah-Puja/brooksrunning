@@ -70,10 +70,10 @@
 										@php 
 											$total = 0;  
 											if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty){
-												{{ " ssss " }}
+												echo " ssss ";
 												$total = $cartItem->discount_price;
 											} else {
-												{{ " eeee " }}
+												echo " eeee ";
 												$total = $cartItem->qty * $price_sale;
 											}
 										@endphp
