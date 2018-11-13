@@ -1,8 +1,7 @@
 @if ( $cart )
 @foreach($cart->cartItems as $cartItem)  
 @php //echo "<pre>";print_r($cartItem);die;
-            $item_total='';
-			$price_sale = (isset($cartItem->price_sale) && ($cartItem->price_sale != $cartItem->variant->price) && $cartItem->price_sale != 0) ? number_format($cartItem->price_sale,2) : $cartItem->variant->price;
+            $price_sale = (isset($cartItem->price_sale) && ($cartItem->price_sale != $cartItem->variant->price) && $cartItem->price_sale != 0) ? $cartItem->price_sale : $cartItem->variant->price;
         @endphp
 		<div class="shoppingcart-products" data-main-sku="{{ $cartItem->variant->id }}">
 						<div class="row cp-details__wrapper">
@@ -69,12 +68,11 @@
 										<div class="mob-5"><p>Item Total:</p></div>
 										<div class="mob-7">
                                                                                     <p class="right">
-																					   @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
+                                                                                        @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
                                                                                                 &dollar;{{ number_format($cartItem->discount_price, 2) }}
-                                                                                        @else
-																								$item_total = $price_sale * $cartItem->qty;
-                                                                                        		&dollar;{{ number_format($item_total, 2) }}
-                                                                                        @endif  
+                                                                                                @else
+                                                                                        &dollar;{{ number_format($price_sale * $cartItem->qty, 2) }}
+                                                                                         @endif  
                                                                                     </p>
                                                                                 </div>
 									</div>
