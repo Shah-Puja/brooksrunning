@@ -34,8 +34,17 @@
 			Free shipping on all orders over &dollar;50. Australia Wide
 		</div>
 		<div class="mob-search--product">
-			<input type="text" placeholder="Search Product">
-			<span class="icon-search"></span>
+				<div class="search-container">
+				<div class="search-wrapper">
+					<form name="searchproduct" role="search" method="get" onsubmit="return search_product()">
+						<input type="search" name="q" id="q" class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off">
+
+						<button type="submit"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
+					</form>
+					<div class="search-product-content"></div>
+
+				</div>
+			</div>
 		</div>
 		<nav class="mobile-navbar--container" id="mobile-navbar--container">
 	        <ul id="mobile-navbar" class="ace-responsive-menu mobile-navbar" data-menu-style="accordion">
@@ -609,12 +618,12 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/competition">
+	                                <a href="/meet_brooks/competition/rh_competition">
 									Competition
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/newsletter">
+	                                <a href="/meet_brooks/enewsletter">
 									E-Newsletter
 	                                </a>
 	                            </li>
@@ -722,7 +731,7 @@
 	                </ul>
 	            </li>
 	            <li>
-	                <a href="/meet_brooks/newsletter">
+	                <a href="/meet_brooks/enewsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>
 	                </a>
 	            </li>

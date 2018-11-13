@@ -131,7 +131,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .header-mobile .mob-search--product .search-container .search-wrapper form input, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -2166,6 +2166,45 @@ textarea {
   position: absolute;
   top: 17px;
   left: 25px;
+}
+.header-mobile .mob-search--product .search-container .search-wrapper form {
+  max-width: 660px;
+  margin: auto;
+  position: relative;
+}
+@media screen and (max-width: 950px) {
+  .header-mobile .mob-search--product .search-container .search-wrapper form {
+    width: 330px;
+  }
+}
+.header-mobile .mob-search--product .search-container .search-wrapper form input {
+  border: 1px solid #d3d0cd;
+  display: inherit;
+  height: 50px;
+  line-height: auto;
+  width: 90%;
+  outline: 0;
+  padding: 3px 10px;
+  font-size: 15px;
+}
+.header-mobile .mob-search--product .search-container .search-wrapper form button {
+  background: #0263f7;
+  border: 0;
+  border-radius: 0 3px 3px 0;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  border-radius: 0 6px 6px 0;
+  outline: 0;
+}
+.header-mobile .mob-search--product .search-container .search-wrapper form button:active, .header-mobile .mob-search--product .search-container .search-wrapper form button:focus {
+  background: #f1f1f1 !important;
 }
 .header-mobile .mob-logo {
   padding: 4px 0;

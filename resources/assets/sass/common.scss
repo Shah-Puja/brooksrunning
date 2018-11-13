@@ -629,6 +629,48 @@
           top: 17px;
           left: 25px;
       }
+      .search-container{
+      .search-wrapper{
+        form{
+        max-width: 660px;
+        margin: auto;
+        position: relative;
+        @media screen and (max-width: 950px){
+          width: 330px;
+        }
+        input{
+          @extend %info-font;
+          border: 1px solid $border;
+          display: inherit;
+          height: 50px;
+          line-height: auto;
+          width: 90%;
+          outline: 0;
+          padding: 3px 10px;
+          font-size: 15px;
+        }
+        button{
+          background: $blue;
+          border: 0;
+          border-radius: 0 3px 3px 0;
+          display: inline-block;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100px;
+          cursor: pointer;
+          color: $white;
+          font-size: 24px;
+          border-radius: 0 6px 6px 0;
+          outline: 0;
+            &:active, &:focus{
+              background: $gray !important;
+            }
+        }
+      }
+    }
+  }
     }
     .mob-logo{
       padding: 4px 0;

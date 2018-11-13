@@ -287,7 +287,7 @@
     <div class="popup-container--wrapper">
         <div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>        
-            <div class="privacy-content"></div>
+            <div class="privacy-content">@include('terms_conditions.{{$comp_name}}_terms')</div>
 		</div>
 	</div>
     </div>

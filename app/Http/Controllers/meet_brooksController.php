@@ -11,7 +11,12 @@ class meet_brooksController extends Controller
     }
 
     public function competition($comp_name){
+
         return view('meet_brooks.competition.'.$comp_name);
+    }
+    public function roadtester()
+	{
+		return view( 'meet_brooks.roadtester');
     }
 }
 
