@@ -11,7 +11,7 @@
             <p>Colour: {{ $cartItem->variant->product->color_name }}</p>
             <p>Size: {{ $cartItem->variant->size }}</p>
             @if($cartItem->variant->width_name!="")
-            <p>{{ ($cartItem->variant->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
+            <p>{{ ($cartItem->variant->product->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
             @endif
             <p>Qty: {{ $cartItem->qty }}</p>
             <p>Price: @if (($cartItem->variant->price_sale > 0) && ($cartItem->variant->price_sale < $cartItem->variant->price))

@@ -17,7 +17,7 @@
 									<p>Color: {{ $cartItem->variant->product->color_name }}</p>
 									<p>Size: {{ $cartItem->variant->size }}</p>
 									@if($cartItem->variant->width_name!="")
-									<p> {{ ($cartItem->variant->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
+									<p> {{ ($cartItem->variant->product->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
 									@endif
 									<div class="edit" data-id="{{ $cartItem->variant->id }}">
 										<a href="JavaScript:Void(0);" id="edit_{{ $cartItem->variant->id }}" class="bold-font edit-cart--handle" >EDIT DETAILS</a>
