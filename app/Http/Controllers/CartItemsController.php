@@ -76,14 +76,13 @@ class CartItemsController extends Controller {
             $cart->addOrUpdateItem($this->variantSelected);
         } else {
             $cart->deleteItem($this->variantSelected->id);
-        }
-
-        $cart->load('cartItems.variant.product:id,gender,color_name,stylename');
+        } 
         if (isset($cart) && !empty($cart)) {
             foreach ($cart->cartItems as $cart_item) {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
+        $cart->load('cartItems.variant.product:id,gender,color_name,stylename');
         return response()->json([
                     'cartitemshtml' => view('cart.ajaxpopupcart', compact('cart'))->render(),
                     'cart_count' => $cart->items_count,
