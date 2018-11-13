@@ -583,7 +583,7 @@ class PaymentController extends Controller
         $returnOrderNum = $this->order->id;
         $OrderNum = $this->order->order_no;
         $add_description = '';
-        $ordernum = "BRNTest2018-" . $OrderNum;
+        $ordernum = "BRNTest2018-" . $OrderNum; //change Order No with new series when site goes live
 
         /*if (!empty($order_data['coupon_code'])) {
             $add_description .= ' Coupon Code :- ' . $order_data['coupon_code'];
