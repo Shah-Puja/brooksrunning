@@ -152,7 +152,7 @@ class PaymentController extends Controller {
                 $this->order->update(array('status' => 'AfterPay Processor Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
                 ));
                 $logger = array(
-                    'order_id' => $order_id,
+                    'order_id' => $this->order->id,
                     'log_title' => 'AfterPay Payment',
                     'log_type' => 'Response',
                     'log_status' => 'AfterPay Processor Declined',
