@@ -67,14 +67,16 @@
 									<div class="row price">
 										<div class="mob-5"><p>Item Total:</p></div>
 										<div class="mob-7">
-                                                                                    <p class="right">
-                                                                                        @if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty)
-                                                                                                &dollar;{{ number_format($cartItem->discount_price, 2) }}
-                                                                                                @else
-                                                                                        &dollar;{{ number_format($price_sale * $cartItem->qty, 2) }}
-                                                                                         @endif  
-                                                                                    </p>
-                                                                                </div>
+										@php 
+											$total = 0;  
+											if(($cartItem->discount_price!=0.00) && $cartItem->discount_price < $price_sale * $cartItem->qty){
+												$total = $cartItem->discount_price;
+											} else {
+												$total = $cartItem->qty * $price_sale;
+											}
+										@endphp
+											<p class="right"> &dollar;{{ number_format($total, 2) }} </p>
+                                    </div>
 									</div>
 								</div>
 							</div>
