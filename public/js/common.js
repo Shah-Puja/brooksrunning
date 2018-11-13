@@ -444,6 +444,9 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper b
         data: data,
         success: function (result) {
             console.log(result);
+            if(action=="update"){
+                location.reload();
+            }
             var cart_items = result.cartitemshtml;
             var cart_page_cart_items = result.cartpagecartitemshtml;
             var order_summary = result.ordersummaryhtml;
