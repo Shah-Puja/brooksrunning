@@ -330,7 +330,10 @@ $(document).ready(function () {
     });
 
     $('.icon-shopping-cart').hover(function (e) {
-        $(".cart-popup-desktop").slideDown();
+        alert(window.location.pathname);
+        if(window.location.pathname != "/payment"){
+            $(".cart-popup-desktop").slideDown();
+        } 
     });
 
     $('.cart-popup-desktop').mouseleave(function (e) {
