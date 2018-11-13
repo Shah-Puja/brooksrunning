@@ -322,66 +322,20 @@ function shippingform_validate(){
         input_label.html(error);
         $('#billing_shipping input[name="s_phone"]').addClass("error-border");	
     }
-        
-    if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
-        for (j=0;j<billing_required.length;j++) {
-            let input = $('input[name="'+billing_required[j]+'"],select[name="'+billing_required[j]+'"]');
-            if (input.val() == "") {
-                input.addClass("needsfilled");
-                let label_name = $("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").data("label-name");
-                let input_label = $("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").parent().find('label');
-                let label_text = input_label.html();
-                let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
-                let error = label_text + error_span ;
-                input_label.html(error);
-                $("#billing_shipping input[name="+billing_required[j]+"],#billing_shipping select[name="+billing_required[j]+"]").addClass("error-border");
-            }else{
-                input.removeClass("needsfilled");
-            } 
-        }
-    for (k = 0; k < shipping_required.length; k++) {
-        let input = $('#billing_shipping input[name="' + shipping_required[k] + '"],#billing_shipping select[name="' + shipping_required[k] + '"]');
-        if (input.val() == "") {
-            input.addClass("needsfilled");
-            let label_name = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").data("label-name");
-            let input_label = $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").parent().find('label');
-            let label_text = input_label.html();
-            let error_span = " <span class='error'>The " + label_name + " field is required.</span>";
-            let error = label_text + error_span;
-            input_label.html(error);
-            $("#billing_shipping input[name=" + shipping_required[k] + "],#billing_shipping select[name=" + shipping_required[k] + "]").addClass("error-border");
 
-
-        } else {
-            input.removeClass("needsfilled");
-        }
-    }
-
-
-    let email = $("#billing_shipping input[name='email']");
-    if (email.val() != '') {
-        if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
-            email.addClass("needsfilled");
-            let input_label = email.parent().find('label');
-            let label_text = input_label.html();
-            let error_span = " <span class='error'>The email must be a valid email address.</span>";
-            let error = label_text + error_span;
-            input_label.html(error);
-            email.addClass("error-border");
-        }
-    }
-    var s_phone = $('#billing_shipping input[name="b_phone"]').val();
-    if (!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone != '') {
-        $('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
-        let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
+    let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
+    if (!terms.is(':checked')) {
+        let input_label = terms.parent().find('label');
         let label_text = input_label.html();
-        let error_span = " <span class='error'>The phone format is invalid.</span>";
+        let error_span = " <span class='error'>The terms must be accepted.</span>";
         let error = label_text + error_span;
         input_label.html(error);
-        $('#billing_shipping input[name="s_phone"]').addClass("error-border");
+        terms.addClass("needsfilled");
+    } else {
+        terms.removeClass("needsfilled");
     }
 
-    if ($('input[type="radio"][name="flag_same_shipping"]:checked').val() == 'No') {
+    if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
         for (j = 0; j < billing_required.length; j++) {
             let input = $('input[name="' + billing_required[j] + '"],select[name="' + billing_required[j] + '"]');
             if (input.val() == "") {
@@ -410,25 +364,10 @@ function shippingform_validate(){
         }
     }
 
-    let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
-    if (!terms.is(':checked')) {
-        let input_label = terms.parent().find('label');
-        let label_text = input_label.html();
-        let error_span = " <span class='error'>The terms must be accepted.</span>";
-        let error = label_text + error_span;
-        input_label.html(error);
-        terms.addClass("needsfilled");
-    } else {
-        terms.removeClass("needsfilled");
-    }
-
     if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
         return false;
     }
+
 }
 
-    if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
-        return false;
-    }
-}
 
