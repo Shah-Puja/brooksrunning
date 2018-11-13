@@ -284,7 +284,7 @@
                                         </div>
                                         <div class="radio-inline">
                                             <input type="radio" id="different-address" class="input-radio" name="flag_same_shipping" value="No">
-                                            <label for="different-address" onchange="valueChanged()">
+                                            <label for="different-address">
                                                 <div class="mark"><span></span></div>
                                                 <div class="text">Different Billing Address</div>
                                             </label>
@@ -334,7 +334,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
-                                            <label for=""><sup>*</sup>Address 2</label>
+                                            <label for="">Address 2</label>
                                             <input type="text" name="b_add2" class="input-field" data-label-name="address 2">
                                         </div>
                                     </div>
@@ -357,13 +357,13 @@
                                             <?php
                                                 $error_b_state="";
                                                 $state = old('b_state');
+                                                echo $state;
                                                 if ($errors->has('b_state') ):
                                                     $error_b_state="<span class='error'>".$errors->first('b_state')."</span>";
                                                 endif;
                                             ?>
                                             <label for=""><sup>*</sup>State: {!! $error_b_state !!}</label>
                                             <select class="select-field" name="b_state" data-label-name="state">
-                                                <option value="" selected="selected">Select State</option>
                                                 <option value="" selected="selected">Select State</option>
                                                 <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
                                                 <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
@@ -421,7 +421,7 @@
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
                                                         I have read and agree to the <a href="#">Privacy Policy</a> and <a href="#" class="shipping--popup">Terms and Conditions</a>.
-                                                    </div>
+                                                    </div><br>
                                                     {!! $error_terms !!}
                                             </label>
                                         </div>

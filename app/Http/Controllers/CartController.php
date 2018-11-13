@@ -161,6 +161,8 @@ class CartController extends Controller {
                 } elseif ($delivery_option == 'standard') {
                     if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
                         $freight_charges = config('site.SHIPPING_SET_PRICE');
+                    } else if (empty($cart_total) || $cart_total <= 0) {
+                        $freight_charges = '0.00';
                     } else {
                         $freight_charges = '0';
                     }

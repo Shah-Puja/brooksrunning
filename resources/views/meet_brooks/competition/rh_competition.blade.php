@@ -10,7 +10,7 @@
 					    <img src="/images/home/82018_Wave8_HP_FW_1b_BIG.jpg" alt="Header Images">
 				    </picture>
 			    -->
-				<img src="/images/competition-single/ghost11_a19_comp_eoypr_1430x350.jpg" width="100%" alt="competetion">
+				<img src="/images/competition/banner.jpg" width="100%" alt="competetion">
 			</div>
 		</div>
 	</div>
@@ -22,7 +22,6 @@
 				<div class="row">
 					<div class="col-10">
 						<p>For your chance to win a pair of Ghost 11, sign up to the Brooks e-newsletter, The RunDown to receive updates on the latest Brooks styles, training tips and so much more! 
-						<p> 
 						<br/>To enter fill in your details below:</p>
 					</div>
 				</div>

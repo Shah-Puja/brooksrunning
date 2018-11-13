@@ -38,8 +38,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4">&nbsp;</td>
-                                </tr> 
-                                @php echo "It is in Order Email";die; @endphp
+                                </tr>  
                                 @if (! $order->orderItems->isEmpty() ) 
                                 @foreach($order->orderItems as $item)
                                 <tr>
@@ -72,7 +71,7 @@
                                             &dollar;{{ number_format($item->variant->price_sale, 2) }} 
                                             @endif 
                                         </p></td>
-                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">$ @if($item->variant->price_sale == 0)
+                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">@if($item->variant->price_sale == 0)
                                             &dollar;{{ number_format($item->variant->price * $item->qty, 2) }}
                                             @else
                                             &dollar;{{ number_format($item->variant->price_sale * $item->qty, 2) }}

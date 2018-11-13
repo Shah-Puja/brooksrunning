@@ -15,10 +15,16 @@ class meet_brooksController extends Controller
     }
 
     public function competition($comp_name){
+
         if(!view()->exists('meet_brooks.competition.'.$comp_name.'_form')){
             return abort(404);
          }
         return view('meet_brooks.competition.competition',compact('comp_name'));
+
+    }
+    public function roadtester()
+	{
+		return view( 'meet_brooks.roadtester');
     }
 }
 
