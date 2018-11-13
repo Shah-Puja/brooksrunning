@@ -609,12 +609,12 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/competition">
+	                                <a href="/meet_brooks/competition/rh_competition">
 									Competition
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/newsletter">
+	                                <a href="/meet_brooks/enewsletter">
 									E-Newsletter
 	                                </a>
 	                            </li>
