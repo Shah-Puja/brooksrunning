@@ -108,6 +108,14 @@ class PaymentController extends Controller {
                 );
                 Order_log::insert($logger);
 
+                $orderDataUpdate = array(
+                    'payment_type' => $payment,
+                    'transaction_status' => 'Succeeded',
+                    'nab_trans_id' => $transaction_id,
+                    'nab_order_dt' => date('Y-m-d H:i:s'),
+                    'payment_status' => date('Y-m-d H:i:s')
+                );
+
                 $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order']);
                 if (isset($Person)) {
                     $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
@@ -135,14 +143,24 @@ class PaymentController extends Controller {
                 if (!empty($PersonID)) {
                     Order::where('id', $this->order->id)->update($orderDataUpdate);
                     User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID]);
-                } 
+                }
 
                 $order = $this->order->load('orderItems.variant.product', 'address');
                 event(new OrderReceived($order));
                 return redirect('/order/success');
             } else {
-                $this->order->update(array('status' => 'Order Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
+                $this->order->update(array('status' => 'AfterPay Processor Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
                 ));
+                $logger = array(
+                    'order_id' => $order_id,
+                    'log_title' => 'AfterPay Payment',
+                    'log_type' => 'Response',
+                    'log_status' => 'AfterPay Processor Declined',
+                    'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
+                    'nab_txnid' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "",
+                    'nab_result' => 'Failed'
+                );
+                Order_log::insert($logger);
                 return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
             }
         } else {
@@ -213,7 +231,7 @@ class PaymentController extends Controller {
                 $order = $this->order->load('orderItems.variant.product', 'address');
                 event(new OrderReceived($order));
                 return redirect('/order/success');
-               
+
                 //return view( 'customer.orderconfirmed', compact('order') );
             } else {
 
@@ -241,7 +259,7 @@ class PaymentController extends Controller {
                     $order = $this->order->load('orderItems.variant.product', 'address');
                     event(new OrderReceived($order));
                     return redirect('/order/success');
-                    
+
                     //return view( 'customer.orderconfirmed', compact('order') );
                 } else {
 
