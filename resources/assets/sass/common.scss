@@ -670,7 +670,118 @@
         }
       }
     }
+    
   }
+
+   // Product search
+   .search--container{
+    background-color: $white;
+    padding-top: 10px;
+    .homepage-new--arrival{
+       padding-bottom: 30px;
+        .main-heading{
+          border-top: 1px solid $border;
+          color: $blue;
+          margin-top: 15px;
+        }
+    }
+    .new-arrival--container{
+        display: block;
+        position: relative;
+        @extend %bold-font;
+        .owl-carousel{
+          width: calc(100% - 80px);
+          margin: auto;
+          .product_arrive{
+          padding:10px;
+          .prd_caption h3 {
+             margin: 0px;
+             text-align: center;
+          }
+          .price{
+              margin: 5px;
+              text-align: center;
+              font-size: 20px;
+              font-weight: bold;
+              span.red{
+                text-decoration:none;
+                color:$red;
+              }
+              span.black{
+                color:$black;
+              } 
+              del{
+                color:$black;
+              }
+           }
+          }
+        }
+        .icon-style {
+          position: absolute;
+          z-index: 2;
+          top: 40%;
+          cursor: pointer;
+          left: 0;
+          font-size: 30px;
+          font-weight: 700;
+          color: #91a1b3;
+          &.icon-next-arrow.next {
+            right: 0 !important;
+            left: auto !important;
+          }
+        }
+    }
+    .info-wrapper{
+      padding: 0 15px;
+      margin-top: -10px;
+      .br-heading{
+        margin: 0px;
+         @media #{$tab-only}{
+          font-size: 20px !important;
+        }
+      }
+      p{
+        margin: 10px 0;
+         @media #{$tab-only}{
+          font-size: 12px !important;
+        }
+      }
+      a{
+        display: inline-block;
+        font-size: 15px;
+        color: $blue;
+        @extend %bold-font;
+        &:hover{
+          color: $lightblue;
+           #br-home{
+          content: url(../images/home/link-arrow-lightblue--icon.png);
+          }
+        }
+       
+        img{
+          width: 14px;
+          vertical-align: baseline;
+          display: inline-block;
+        }
+         @media #{$tab-only}{
+          font-size: 13px !important;
+           img{
+            width: 12px;
+          }
+        }
+      }
+      .right-link{
+        margin-left: 50px;
+        @media #{$tab-only}{
+          margin-left: 8px;
+        }
+      }
+      @media #{$tab-only}{
+           padding: 0 5px;
+        }
+    }
+  }
+  // End of product search
     }
     .mob-logo{
       padding: 4px 0;

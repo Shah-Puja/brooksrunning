@@ -61,11 +61,6 @@ Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks competition pages */
 Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@competition');
-<<<<<<< HEAD
-Route::get('/roadtester', 'meet_brooksController@roadtester');
-
-=======
->>>>>>> fadcc0415790eecc146ac195d49201d656c8a83e
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
