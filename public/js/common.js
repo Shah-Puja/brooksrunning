@@ -508,7 +508,35 @@ function search_product(){
     
     return false; 
 }	
-
+function mob_search_product(){
+    var search = $("form[name='mob_searchproduct'] input[name='q']").val();
+    $("form[name='mob_searchproduct']").find("button img").show();
+    $("form[name='mob_searchproduct']").find("button i").hide();
+    $("form[name='mob_searchproduct']").find("button").addClass("formsearchbtn");
+    $.ajax({
+        url: "/search", 
+        method: "get", 
+        data: { q: search },
+        success: function(response) {
+            $(".search-container .search-wrapper").find(".search-product-content").html(response);
+            var owl = $(".new-arrival--container .owl-carousel");
+            owl.owlCarousel({
+                items: 4,
+                itemsTablet : [768,4],
+                 itemsMobile : [479,2],
+                itemsCustom: false,
+                pagination: false,
+                rewindNav: false,
+                dots: true
+            });
+            $("form[name='mob_searchproduct']").find("button img").hide();
+            $("form[name='mob_searchproduct']").find("button i").show();
+            $("form[name='mob_searchproduct']").find("button").removeClass("formsearchbtn");
+        }
+    });
+    
+    return false; 
+}	
   /*Map Js*/  
 
  /* /Map Js*/  
