@@ -38,8 +38,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4">&nbsp;</td>
-                                </tr> 
-                                @php echo "It is in Order Email";die; @endphp
+                                </tr>  
                                 @if (! $order->orderItems->isEmpty() ) 
                                 @foreach($order->orderItems as $item)
                                 <tr>
