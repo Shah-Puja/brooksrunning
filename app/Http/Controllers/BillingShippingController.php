@@ -76,7 +76,7 @@ class BillingShippingController extends Controller
             'flag_same_shipping' => '',
         ]);
         //  echo "<pre>";
-        //  print_r($this->cart);
+        //  print_r($validatedAddress);
         //  echo "</pre>";
         //  exit;
         Order::createNew($this->cart, $validatedAddress);
