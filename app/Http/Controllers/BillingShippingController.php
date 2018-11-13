@@ -19,7 +19,9 @@ class BillingShippingController extends Controller
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-            //echo "<pre>";print_r($this->cart);die;
+            if(empty($this->cart)){
+                return redirect('cart');
+            }
             foreach($this->cart->cartItems as $cart_item){
                 $this->cart['items_count'] += $cart_item->qty;
             }
