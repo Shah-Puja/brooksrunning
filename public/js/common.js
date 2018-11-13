@@ -417,9 +417,9 @@ function collapseText() {
 
 //update, delete products from cart by Puja Shah
 $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper button', function () {
-    let cart_items = '';
-    let cart_page_cart_items = '';
-    let order_summary = '';
+    var cart_items = '';
+    var cart_page_cart_items = '';
+    var order_summary = '';
     
     let cart_page = $(this).data("cart-page");
     let action = $(this).data("action");
@@ -444,9 +444,9 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper b
         data: data,
         success: function (result) {
             console.log(result);
-            let cart_items = result.cartitemshtml;
-            let cart_page_cart_items = result.cartpagecartitemshtml;
-            let order_summary = result.ordersummaryhtml;
+            var cart_items = result.cartitemshtml;
+            var cart_page_cart_items = result.cartpagecartitemshtml;
+            var order_summary = result.ordersummaryhtml;
             let cart_count = result.cart_count;
             if (cart_count == '') {
                 cart_count = '0';
