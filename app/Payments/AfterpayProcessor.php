@@ -60,11 +60,7 @@ class AfterpayProcessor {
             "givenNames" => $order->address->b_fname,
             "surname" => $order->address->b_lname,
             "email" => $order->address->email
-          ],
-          /*"merchant" => [
-            "redirectConfirmUrl" => "http://brooksrunning.test/afterpay_success",
-            "redirectCancelUrl" => "http://brooksrunning.test/afterpay_cancel"
-          ],*/
+          ], 
           "merchant" => [
             "redirectConfirmUrl" => config('app.url') . "/afterpay_success",
             "redirectCancelUrl" => config('app.url') . "/afterpay_cancel"
