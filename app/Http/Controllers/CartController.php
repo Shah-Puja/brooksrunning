@@ -91,7 +91,7 @@ class CartController extends Controller {
                     }
                 endforeach;
             }
-            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         }
 
         /* echo $cart_total;
@@ -184,7 +184,7 @@ class CartController extends Controller {
 
     public function update_delivery_option() {
         $delivery_option = request('delivery_option_value');
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
 
         $cart_total = $cart->total;
         if ($delivery_option == 'express') {
@@ -205,7 +205,7 @@ class CartController extends Controller {
     }
 
     public function get_cart_order_total() {
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         if ($cart->gift_pin != "") {
             $AvailableAmount = $cart->gift_available_amount;
             $cartTotal = $cart->cart_total;
@@ -238,7 +238,7 @@ class CartController extends Controller {
     }
 
     public function check_valid_gift_voucher(Request $request) {
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         $cartTotal = $cart->total;
 
         $giftcert_code = $request->voucher_number;

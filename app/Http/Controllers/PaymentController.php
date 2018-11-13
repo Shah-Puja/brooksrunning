@@ -46,7 +46,7 @@ class PaymentController extends Controller
             }
             
             $this->order = $this->cart->order;
-            
+  
 			if ( ! $this->order ) {
                 return redirect('shipping');
             }
@@ -58,7 +58,7 @@ class PaymentController extends Controller
            if ( $this->order->getItemsCount() != $this->cart->items_count ) {
                return redirect('cart');
            }
-
+           
             return $next($request);
 
         });
@@ -95,9 +95,12 @@ class PaymentController extends Controller
                 // $order = $this->order->load('orderItems.variant.product', 'address');
                 // event(new OrderReceived($order));
                 //return view( 'customer.orderconfirmed', compact('order') );
-                
+                $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
+                $time = Carbon::now();
+                $timestamp = $time->format('Y-m-d H:i:s');
+                $result = $this->process_order($this->order->id, $payment='AfterPay', $orderReport, $transaction_id, $timestamp);
                 $order = $this->order->load('orderItems.variant.product', 'address');
-                return redirect('/order/success/'.$this->order->id);
+                return redirect('/order/success');
                 
             } else{
                 $this->order->update(array('status' => 'Order Declined', 'transaction_status'  => 'Incomplete', 'payment_status' => Carbon::now()
@@ -164,7 +167,7 @@ class PaymentController extends Controller
             //session()->forget('cart_id');
 
             $order = $this->order->load('orderItems.variant.product', 'address');
-            return redirect('/order/success/'.$this->order->id);
+            return redirect('/order/success');
             //event(new OrderReceived($order));
             //return view( 'customer.orderconfirmed', compact('order') );
             
@@ -184,7 +187,7 @@ class PaymentController extends Controller
                 // session()->forget('cart_id');
 
                 $order = $this->order->load('orderItems.variant.product', 'address');
-                return redirect('/order/success/'.$this->order->id);
+                return redirect('/order/success');
                 //event(new OrderReceived($order));
                 //return view( 'customer.orderconfirmed', compact('order') );
 
@@ -212,7 +215,7 @@ class PaymentController extends Controller
                     // session()->forget('cart_id');
 
                     $order = $this->order->load('orderItems.variant.product', 'address');
-                    return redirect('/order/success/'.$this->order->id);
+                    return redirect('/order/success');
                     //event(new OrderReceived($order));
                     //return view( 'customer.orderconfirmed', compact('order') );
                     
@@ -269,7 +272,7 @@ class PaymentController extends Controller
         // return view( 'customer.orderconfirmed', compact('order') );
     }
 
-    public function order_success($order_id){
+    public function order_success(){
              
             Cache::forget( 'cart'  . $this->order->cart_id );
             $this->cart->delete();
@@ -283,7 +286,7 @@ class PaymentController extends Controller
         $orderIdData = Order::where("id", "=",  $order_id)->first();
         if($orderIdData->status == "Order Completed"){
 
-            $this->addOrderNo($order_id);
+            $order_no = $this->addOrderNo($order_id);
             $date = Carbon::now();
             $timestamp = $date->format('Y-m-d H:i:s');
             switch ($payment) {
@@ -356,7 +359,7 @@ class PaymentController extends Controller
                 'order_id' => $order_id
             );
             $order_number_insert = Order_number::create($order_data);
-            $order_no = $order_number_insert->id;
+            $order_no = "Test2018-".$order_number_insert->id;
 
             if (!empty($order_no)) {
                 $status = 'Order Number';
@@ -580,7 +583,7 @@ class PaymentController extends Controller
         $returnOrderNum = $this->order->id;
         $OrderNum = $this->order->order_no;
         $add_description = '';
-        $ordernum = "BRN2018-" . $OrderNum;
+        $ordernum = "BRNTest2018-" . $OrderNum; //change Order No with new series when site goes live
 
         /*if (!empty($order_data['coupon_code'])) {
             $add_description .= ' Coupon Code :- ' . $order_data['coupon_code'];
@@ -692,7 +695,7 @@ class PaymentController extends Controller
                                   <SkuId>2542</SkuId>
                                   <Quantity>1</Quantity>
                                   <Price>" . $this->order->freight_cost . "</Price> 
-                                  <Value>" . $$this->order->freight_cost . "</Value>
+                                  <Value>" . $this->order->freight_cost . "</Value>
                                 </OrderDetail>";
             $subtotal += $this->order->freight_cost;
         }

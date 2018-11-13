@@ -61,8 +61,11 @@ Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks competition pages */
 Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@competition');
+<<<<<<< HEAD
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
+=======
+>>>>>>> fadcc0415790eecc146ac195d49201d656c8a83e
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
@@ -73,7 +76,7 @@ Route::post('/shipping-verify-password','BillingShippingController@verify_passwo
 
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
-Route::get('/order/success/{order_id}', 'PaymentController@order_success');
+Route::get('/order/success', 'PaymentController@order_success');
 
 Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
 Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');
