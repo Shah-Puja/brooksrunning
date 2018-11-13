@@ -69,7 +69,7 @@
 										<div class="mob-7">
 										@php 
 											$total = 0;  
-											if(($cartItem->discount_price!=0.00) && $cartItem->discount_price!= $price_sale && $cartItem->discount_price < $price_sale * $cartItem->qty){
+											if($cartItem->discount_detail!=0.00 && ($cartItem->discount_price!=0.00) && $cartItem->discount_price!= $price_sale && $cartItem->discount_price < $price_sale * $cartItem->qty){
 												$total = $cartItem->discount_price;
 											} else {
 												$total = $cartItem->qty * $price_sale;
