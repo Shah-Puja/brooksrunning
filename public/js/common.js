@@ -417,6 +417,10 @@ function collapseText() {
 
 //update, delete products from cart by Puja Shah
 $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper button', function () {
+    let cart_items = '';
+    let cart_page_cart_items = '';
+    let order_summary = '';
+    
     let cart_page = $(this).data("cart-page");
     let action = $(this).data("action");
     let sku = $(this).data("sku");
