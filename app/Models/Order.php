@@ -55,11 +55,12 @@ class Order extends Model
         $order->orderItems()->delete();
         $promo_code = isset($cart->promo_code) ? $cart->promo_code : "";
 
-        if($promo_code!=""){
+        if($cart->promo_code!=""){
             $order->update([
-                'promo_code' => ($promo_code) ? $promo_code : "",
+                'coupon_code' => ($promo_code) ? $promo_code : "",
                 'discount' => isset($cart->discount) ? $cart->discount : ""
             ]);
+            echo "eeeeeeeeee";die;
         }
         
         
