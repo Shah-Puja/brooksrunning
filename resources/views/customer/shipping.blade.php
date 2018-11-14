@@ -420,7 +420,7 @@
                                             <label for="already-read">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
-                                                        I have read and agree to the <a href="#">Privacy Policy</a> and <a href="#" class="shipping--popup">Terms and Conditions</a>.
+                                                        I have read and agree to the  <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
                                                     </div><br>
                                                     {!! $error_terms !!}
                                             </label>
@@ -454,7 +454,7 @@
 						<div class="popup-container--info">
 							<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
 							<div class="header-info">
-								<img src="images/afterpay_logo-colour.svg" alt="">
+								<img src="/images/afterpay_logo-colour.svg" alt="">
 								<h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
 							</div>
 							<div class="afterpay-info clearfix">
@@ -526,10 +526,10 @@
 				</div>
 				<div class="payment">
 				    <h3 class="bold-font center">We accept these payments</h3>
-				    <img src="images/payment-option.jpg" alt="">
+				    <img src="/images/payment-option.jpg" alt="">
 				    <p class="braintree-txt">Safe and Secure Payments</p>
 				    <p class="braintree-txt">enabled by</p>
-				    <img src="images/payment-braintree-black.jpg" alt="">
+				    <img src="/images/payment-braintree-black.jpg" alt="">
 			    </div>
 			</div>
 		</div>

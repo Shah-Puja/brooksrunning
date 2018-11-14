@@ -66,7 +66,7 @@
 	<section class="rhi-banner2 ">
 		<div class="rhi-banner2--wrapper">
 		      <picture>
-		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/06.jpg">
+		        <source media="(max-width: 595px)" srcset="/images/meet-brooks/hello/runhappy/06.jpg">
 		        <img src="/images/meet-brooks/hello/runhappy/06.jpg" alt="Header Images">
 		      </picture>
 	    </div>
@@ -176,7 +176,7 @@
 	<section class="rhi-banner2 ">
 		<div class="rhi-banner2--wrapper">
 		      <picture>
-		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/17.jpg">
+		        <source media="(max-width: 595px)" srcset="/images/meet-brooks/hello/runhappy/17.jpg">
 		        <img src="/images/meet-brooks/hello/runhappy/17.jpg" alt="Header Images">
 		      </picture>
 	    </div>
@@ -221,7 +221,7 @@
 	<section class="rhi-banner2 ">
 		<div class="rhi-banner2--wrapper">
 		      <picture>
-		        <source media="(max-width: 595px)" srcset="images/meet-brooks/hello/runhappy/21.jpg">
+		        <source media="(max-width: 595px)" srcset="/images/meet-brooks/hello/runhappy/21.jpg">
 		        <img src="/images/meet-brooks/hello/runhappy/21.jpg" alt="Header Images">
 		      </picture>
 	    </div>

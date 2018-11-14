@@ -72,11 +72,11 @@ $gen = ($val0 == 'mens' ? "men's" : "women's");
 		<div class="grid-container col-12 mob-12 ">
 			<span class="checkmark">&#10004;</span>
 			<span class="accordion-header-text">You prefer <span class='neo-sans-black-italic'><b><?=$gen;?></b> <b><?=$val1;?></b></span> shoes. Sweet!</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=0">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=0">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="0">
 			<p class='sub-question'>When I go out for a run, I prefer to wear
 				<select name='val0' id="gender" onchange="changeFunction();">
@@ -100,11 +100,11 @@ case 1: ?>
 			<span class="checkmark">&#10004;</span>
 			<span class="accordion-header-text">Your feet <?=($val0 == 2 ? 'point ' : '');?><span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?>.</span> Good to know.</span>
 			<!-- <span class="neo-sans-black-italic">straight ahead.</span> -->
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=1">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=1">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="1">
 			<p class='sub-question'>Time to take a quick walk. Observe five steps and notice how your feet position themselves. Did they?</p>
 			<div class="grid-container grid">
@@ -134,11 +134,11 @@ case 2: ?>
 		<div class="grid-container col-12 mob-12">
 	    	<span class="checkmark">&#10004;</span>
 		  	<span class="accordion-header-text">Got it. Standing on one foot feels <span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?></span> Let's roll on.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="2">
 			<p class='sub-question'>Kick off your shoes and stand on one leg. What do you sense in your standing foot?</p>
 			<div class="grid-container grid">
@@ -166,11 +166,11 @@ case 3: ?>
 		<div class="grid-container col-12 mob-12">
 	    	<span class="checkmark">&#10004;</span>
 	    	<span class="accordion-header-text">Noted. Your knees <span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?>.</span>.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="3"> <img class='qImg' src='/images/SS/kneeQuestion.png' />
 			<p class='sub-question wImg'>Now that you're warmed up, stand up with your feet together, heels and toes touching. Slide your hand between your knees and do a shallow squat. What do you feel?</p>
 			<div class='clearfix'></div>
@@ -203,11 +203,11 @@ case 4: ?>
 		<div class="grid-container col-12 mob-12">
 	    	<span class="checkmark">&#10004;</span>
 		  	<span class="accordion-header-text">Your joints are <span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?></span>.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 		<input name="qid" type="hidden" value="4">
 		<p class='sub-question'>Place your hand, palm face down, on to a flat surface. Bend back your index finger with your opposite hand. What is the angle from the table?</p>
 		<div class="grid-container grid">
@@ -276,11 +276,11 @@ case 5:?>
 				?>
 
 		  		
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="5">
 			<p class='sub-question'>Nobody likes injuries, but they're important to discuss. Do you currently experience pain or have you endured a running-related injury in the past six months?</p>
 			<div class="grid-container grid">
@@ -318,11 +318,11 @@ case 6: ?>
 		<div class="grid-container col-12 mob-12">
 	    	<span class="checkmark">&#10004;</span>
 		  	<span class="accordion-header-text">You ran <span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?></span>. Keep it up!</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="6">
 			<p class='sub-question'>During the past six months, estimate how many kilometers you ran each week.</p>
 			<div class="grid-container grid">
@@ -345,11 +345,11 @@ case 7: ?>
 		<div class="grid-container col-12 mob-12">
 	    	<span class="checkmark">&#10004;</span>
 		  	<span class="accordion-header-text">You're training for a <span class='neo-sans-black-italic'><?=$answer_array[$qid][$val0];?></span>. We're cheering for you!</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2">Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="7">
 			<p class='sub-question'>What are you training for?</p>
 			<div class="grid-container grid">
@@ -384,11 +384,11 @@ case 8: ?>
 				<?endif;?>
 
 				experience. Excellent choice.</span>
-			<a href="http://www.brooksrunning.com/en_us/ShoeFinder?qid=2" >Edit</a>
+			<a href="https://www.brooksrunning.com/en_us/ShoeFinder?qid=2" >Edit</a>
 		</div>	
 	</h3>
 	<div>
-		<form method="POST" action="http://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
+		<form method="POST" action="https://www.brooksrunning.com/en_us/ShoeFinder" class="grid-container wrapper">
 			<input name="qid" type="hidden" value="8">
 			<p class='sub-question'>Choose the running experience you want.</p>
 			<div class="grid-container grid">

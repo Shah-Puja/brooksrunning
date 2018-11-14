@@ -30,12 +30,12 @@
 				  <div class="row">
 				     <div class="tab-4">
 				       <div class="top_prd_sec">
-				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-01-final.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-1-900.jpg" /></a>
+				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-01-final.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-1-900.jpg" /></a>
 				          <img src="/images/meet-brooks/hello/tick/color-shoes.jpg">
-				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-05.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-5-900.jpg" /></a>
-				          <a href="JavaScript:Void(0);" class="slideImg-popup--control" ><img src="/images/meet-brooks/hello/tick/9-things-06.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-6-900.jpg"></a>
+				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-05.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-5-900.jpg" /></a>
+				          <a href="JavaScript:Void(0);" class="slideImg-popup--control" ><img src="/images/meet-brooks/hello/tick/9-things-06.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-6-900.jpg"></a>
 				          <img src="/images/meet-brooks/hello/tick/circus-kid.jpg">
-				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-09.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-9-900.jpg"></a>
+				          <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-09.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-9-900.jpg"></a>
 				          <img src="/images/meet-brooks/hello/tick/dog.jpg">
 				       </div>
 				     </div>
@@ -43,22 +43,22 @@
 				       <div class="top_prd_sec">
 					      <img src="/images/meet-brooks/hello/tick/girl-1.jpg" alt="" />
 					      <img src="/images/meet-brooks/hello/tick/girl-2.jpg">
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-03.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-3-900.jpg"></a>
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-04.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-4-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-03.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-3-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-04.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-4-900.jpg"></a>
 					      <img src="/images/meet-brooks/hello/tick/rocker.jpg">
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-08.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-8-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-08.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-8-900.jpg"></a>
 					      <img src="/images/meet-brooks/hello/tick/tracks.jpg"/>
 				       </div>
 				     </div>
 				      <div class="tab-4">
 				       <div class="top_prd_sec ">
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-02.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-2-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-02.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-2-900.jpg"></a>
 					      <img src="/images/meet-brooks/hello/tick/legs-top.jpg">
 					      <img src="/images/meet-brooks/hello/tick/legs-bottom.jpg">
 					      <img src="/images/meet-brooks/hello/tick/man-top.jpg">
 					      <img src="/images/meet-brooks/hello/tick/man-bottom.jpg">
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-07-top.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-7-900.jpg"></a>
-					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="https://www.brooksrunning.com.au/images/meet-brooks/hello/tick/9-things-07-bottom.jpg" data-bigimage="images/meet-brooks/hello/tick/slide-7-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="/images/meet-brooks/hello/tick/9-things-07-top.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-7-900.jpg"></a>
+					      <a href="JavaScript:Void(0);" class="slideImg-popup--control"><img src="https://www.brooksrunning.com.au/images/meet-brooks/hello/tick/9-things-07-bottom.jpg" data-bigimage="/images/meet-brooks/hello/tick/slide-7-900.jpg"></a>
 					      <img src="/images/meet-brooks/hello/tick/shoe-top.jpg">
 					      <img src="/images/meet-brooks/hello/tick/shoe-bottom.jpg">
 					      <img src="/images/meet-brooks/hello/tick/elvis.jpg">

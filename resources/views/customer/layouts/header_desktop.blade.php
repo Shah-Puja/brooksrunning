@@ -401,7 +401,7 @@
 								    			</div>
 								    			<div class="tab-5">
 								    				<div class="shoe-finder--logo">
-								    					<img src="images/brooks-shoes--logo.png" alt="">
+								    					<img src="/images/brooks-shoes--logo.png" alt="">
 								    				</div>
 								    			</div>
 								    		</div>

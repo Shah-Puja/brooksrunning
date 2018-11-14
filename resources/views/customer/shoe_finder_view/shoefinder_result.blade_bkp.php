@@ -90,7 +90,7 @@
 
                 <div class="product-image custom-image">
                     <div class="callout-display">
-                        <img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+                        <img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
                     </div>
                     <img  src="{{ $result['product_details'][0]->image->image1Large() }} " alt="" title="" style="padding-top:5px;">
                
@@ -129,8 +129,8 @@
                                 <div class="owl-carousel owl-theme">
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-                                        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes1-listing.jpg">
+                                        <img src="/images/shoes/shoes1-swatches.jpg" data-big="/images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -143,8 +143,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-                                        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes2-listing.jpg">
+                                        <img src="/images/shoes/shoes2-swatches.jpg" data-big="/images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -157,8 +157,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-                                        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes1-listing.jpg">
+                                        <img src="/images/shoes/shoes1-swatches.jpg" data-big="/images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -171,8 +171,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-                                        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes2-listing.jpg">
+                                        <img src="/images/shoes/shoes2-swatches.jpg" data-big="/images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -185,8 +185,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-                                        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes1-listing.jpg">
+                                        <img src="/images/shoes/shoes1-swatches.jpg" data-big="/images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -199,8 +199,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-                                        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes2-listing.jpg">
+                                        <img src="/images/shoes/shoes2-swatches.jpg" data-big="/images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">
@@ -213,8 +213,8 @@
                                   </div>
                                   <div class="item">
                                      <picture>
-                                        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-                                        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
+                                        <source media="(max-width: 667px)" srcset="/images/shoes/shoes1-listing.jpg">
+                                        <img src="/images/shoes/shoes1-swatches.jpg" data-big="/images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
                                       </picture>
                                      <div class="plp-mob--info visible-mob">
                                         <a href="detail-apparel.php">

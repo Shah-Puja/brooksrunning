@@ -126,7 +126,7 @@
 		<div class="col-3 contact-details--right">
 			<div class="info-wrapper">
 				<div class="icon">
-					<img src="images/brooks_aus_icons_email.svg" alt="">
+					<img src="/images/brooks_aus_icons_email.svg" alt="">
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Email us</h3>

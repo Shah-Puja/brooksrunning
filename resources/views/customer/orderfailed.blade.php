@@ -89,7 +89,7 @@
                 <div class="clearfix">
                     <div class="col-6">
                         <div class="img-wrapper">
-                            <img src="images/shoes/shoes1-details.jpg" alt="">
+                            <img src="/images/shoes/shoes1-details.jpg" alt="">
                         </div>
                     </div>
                     <div class="col-6">
@@ -100,10 +100,10 @@
                             <div class="info" id="info-more">A bold leap forward to deliver infinite energy, the new Levitate 2 gives you the most energy return with the DNA AMP midsole technology which gives you back more of the effort you put in. Also featuring a new highly adaptable fit knit upper to provide you with the ultimate in comfort to keep you running. A bold leap forward to deliver infinite energy, the new Levitate 2 gives you the most energy return with the DNA AMP midsole technology which gives you back more of the effort you put in. Also featuring a new highly adaptable fit knit upper to provide you with the ultimate in comfort to keep you running. A bold leap forward to deliver infinite energy, the new Levitate 2 gives you the most energy return with the DNA AMP midsole technology which gives you back more of the effort you put in. Also featuring a new highly adaptable fit knit upper to provide you with the ultimate in comfort to keep you running. </div>
                             <div class="swatches">
                                 <ul>
-                                    <li class="selected"><img src="images/details/shoes/shoes1-swatches.jpg" alt=""></li>
-                                    <li><img src="images/details/shoes/shoes2-swatches.jpg" alt=""></li>
-                                    <li><img src="images/details/shoes/shoes1-swatches.jpg" alt=""></li>
-                                    <li><img src="images/details/shoes/shoes2-swatches.jpg" alt=""></li>
+                                    <li class="selected"><img src="/images/details/shoes/shoes1-swatches.jpg" alt=""></li>
+                                    <li><img src="/images/details/shoes/shoes2-swatches.jpg" alt=""></li>
+                                    <li><img src="/images/details/shoes/shoes1-swatches.jpg" alt=""></li>
+                                    <li><img src="/images/details/shoes/shoes2-swatches.jpg" alt=""></li>
                                 </ul>
                             </div>
                             <div class="row">

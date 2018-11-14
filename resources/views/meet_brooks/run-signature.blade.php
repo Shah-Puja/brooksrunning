@@ -9,7 +9,7 @@
       </div>
       <div class="tab-5">
       	 <div class="run-signature--img">
-      	 	<img src="images/run-signature-logo.png" alt="">
+      	 	<img src="/images/run-signature-logo.png" alt="">
       	 </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
 				<div class="run-exep--wrapper bg1">
 					<h3 class="br-heading">ENERGIZE</h3>
 					<p>Responsive and springy to add extra lift to your stride.</p>
-					<img src="images/run-signature-icon1.png" alt="">
+					<img src="/images/run-signature-icon1.png" alt="">
 					<div class="btn-wrapper clearfix">
 						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
 						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
@@ -87,7 +87,7 @@
 				<div class="run-exep--wrapper bg2">
 					<h3 class="br-heading">CUSHION</h3>
 					<p>Soft and protective to cushion your every step.</p>
-					<img src="images/run-signature-icon2.png" alt="">
+					<img src="/images/run-signature-icon2.png" alt="">
 					<div class="btn-wrapper clearfix">
 						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
 						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
@@ -98,7 +98,7 @@
 				<div class="run-exep--wrapper bg3">
 					<h3 class="br-heading">SPEED</h3>
 					<p>Fast and streamlined to propel you through your run.</p>
-					<img src="images/run-signature-icon3.png" alt="">
+					<img src="/images/run-signature-icon3.png" alt="">
 					<div class="btn-wrapper clearfix">
 						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
 						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
@@ -109,7 +109,7 @@
 				<div class="run-exep--wrapper bg4">
 					<h3 class="br-heading">CONNECT</h3>
 					<p>Lightweight and flexible to naturally feel your run.</p>
-					<img src="images/run-signature-icon4.png" alt="">
+					<img src="/images/run-signature-icon4.png" alt="">
 					<div class="btn-wrapper clearfix">
 						<a href="/mens-running-shoes" class="secondary-button">Shop men's</a>
 						<a href="/womens-running-shoes" class="secondary-button">Shop women's</a>
@@ -124,7 +124,7 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="left-img">
-					<img src="images/run-signature-footer.jpg" alt="">
+					<img src="/images/run-signature-footer.jpg" alt="">
 				</div>
 			</div>
 			<div class="col-6">
