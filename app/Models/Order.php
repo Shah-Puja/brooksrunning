@@ -60,7 +60,7 @@ class Order extends Model
                 'coupon_code' => ($promo_code) ? $promo_code : "",
                 'discount' => isset($cart->discount) ? $cart->discount : ""
             ]);
-            echo $promo_code." eeeeeeeeee ".$cart->discount;die;
+            //echo $promo_code." eeeeeeeeee ".$cart->discount;die;
         }
         
         
