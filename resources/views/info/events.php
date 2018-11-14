@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <section class="br-events">
 		<section class="module">
@@ -15,7 +15,7 @@
 							<br/>Check out our calendar of events for running events in 2018 - we've listed partnered events in Melbourne, Sydney, Gold Coast, and right around Australia, as well as several events in New Zealand.</p>
 						</div>
 						<div class="tab-4">
-							<img src="//images/events/main-banner.png" class="main-banner hidden-mob" align="right">
+							<img src="/images/events/main-banner.png" class="main-banner hidden-mob" align="right">
 						</div>
 					</div>
 				</div>

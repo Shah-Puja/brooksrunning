@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <section class="ctg-main-container">
 <div class="create-account--header plp-header">
   <div class="wrapper">
@@ -34,10 +34,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -54,10 +54,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -74,10 +74,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -94,10 +94,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -114,10 +114,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -134,10 +134,10 @@
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
-								<img src="images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
+								<img src="/images/category/updated/runsig_icon_stacked_cushion.svg" alt="" width="100" height="100">
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="images/category/placeholder_shoe category.png" alt="">
+								<img id="plp-img" src="/images/category/placeholder_shoe category.png" alt="">
 							</div>						
 							<div class="info">
 								<h3>PureFlow</h3>
@@ -160,7 +160,7 @@
 			<div class="ctg-benefits--content">
 				<div class="tab-6 mob-12">
 					<div class="shoe-category-img br-ctg-info">
-					<img src="images/category/medium-high-arch.png" alt="brooks" />
+					<img src="/images/category/medium-high-arch.png" alt="brooks" />
 					</div>
 					<div class="br-ctg-info">
 					<p class="br-ctg-heading">Medium - High arch height</p>
@@ -169,7 +169,7 @@
 				</div>
 				<div class="tab-6 mob-12">
 					<div class="shoe-category-img2 br-ctg-info">
-					<img src="images/category/normal-pronation.png" alt="brooks" />
+					<img src="/images/category/normal-pronation.png" alt="brooks" />
 					</div>
 					<div class="br-ctg-info">
 					<p class="br-ctg-heading">Normal Pronation</p>
@@ -194,7 +194,7 @@
 						</div>
 						<div class="col-4 tab-4 mob-12 " >
 							<div class="horizontal-shoefinder-logo">
-											<img src="images/brooks-shoes--logo.png" alt="">
+											<img src="/images/brooks-shoes--logo.png" alt="">
 										</div>
 						</div>
 				</div>

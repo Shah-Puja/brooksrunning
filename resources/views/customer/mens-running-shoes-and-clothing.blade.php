@@ -1,11 +1,11 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/Mens/men_shoesbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_shoesbanner_mob.jpg">
 	        <img src="/images/landingpage/Mens/men_shoesbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
@@ -143,7 +143,7 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/Mens/men_clothingbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_clothingbanner_mob.jpg">
 	        <img src="/images/landingpage/Mens/men_clothingbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">

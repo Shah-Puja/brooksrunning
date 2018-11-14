@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hideen-mob"></div>
@@ -143,7 +143,7 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/Womens/women_clothingbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Womens/women_clothingbanner_mob.jpg">
 	        <img src="/images/landingpage/Womens/women_clothingbanner.jpg" alt="clothing">
 	      </picture>
 	      <div class="landingpage-banner--info">
