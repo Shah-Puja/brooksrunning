@@ -74,12 +74,9 @@
 						</div>	
 						@php $dob = auth()->user()->dob;
 						$dob = explode("-",$dob);
-						$month = $dob[0];
-						$date = $dob[1];
-						@endphp
-
-						
-						 				
+						$month = isset($dob[0]) ? $dob[0] : "";
+						$date = isset($dob[1]) ? $dob[1] : "";
+						@endphp			
 						<div class="row">
 							<div class="mob-6">
 								<div class="input-wrapper">

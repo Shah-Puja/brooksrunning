@@ -259,11 +259,26 @@ $(document).ready(function () {
 // Edit my account order details
 $(document).ready(function() {
     $(".edit-order--handle").click(function(){
-        $("#edit-order--popup").addClass("show");
-    });
-    $(".edit-order--close").click(function(){
-        $("#edit-order--popup").removeClass("show");
-    });
+        var attr_id =$(this).attr('id').split("_");
+        var  order_id = attr_id[1];
+        //console.log(order_id);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/order/view_order",
+            method: "POST",
+            data: {order_id: order_id},
+            success: function (result) {
+                let order_items = result.orderitemshtml;
+                //console.log(result);
+                //return false;
+                $("#edit-order--popup").html(order_items);
+                $("#edit-order--popup").addClass("show");
+                
+            },
+        }); 
+    }); 
 });
 
 

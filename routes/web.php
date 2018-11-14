@@ -101,6 +101,7 @@ Route::get('/account-personal', 'MyaccountController@account_personal');
 Route::post('/account/update_profile', 'MyaccountController@update_profile');
 Route::get('/confirm-password', 'MyaccountController@confirm_password');
 Route::get('/order-history', 'MyaccountController@order_history');
+Route::post('/order/view_order','MyaccountController@view_order');
 
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  

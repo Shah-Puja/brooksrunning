@@ -16,15 +16,22 @@ class MyaccountController extends Controller {
     }
 
     public function account_order_history() { 
-        $userOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->get();
-        echo "<pre>";print_r($userOrder);die;
-       /* $cart_items = Cart_item::where('cart_id', session('cart_id'))->where('variant_id', $request->variant_id)->with('variant.product.image')->get();
-        echo "<pre>";print_r(Order_address.order);die;
-        $userOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->get();
-        //$orderadd_data = Order_address::where("email", "=",  $email)->orderBy('id', 'desc')->first();
-        echo "<pre>";print_r($userOrder);die;*/
-        //User::where('id', auth()->id());
-        return view('customer.myaccount.account-order-history');
+        $user_order_details = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->with('address')->get();
+        //echo "<pre>";print_r($user_order_details);die; 
+        return view( 'customer.myaccount.account-order-history', compact('user_order_details') );
+    }
+
+    public function view_order(Request $request){
+        /*echo "<pre>"; 
+          print_r($request->order_id);*/
+          $order_item_detail = Order::where('id', $request->order_id)->with('orderItems.variant.product')->get();
+          $order = $order_item_detail[0];
+          /*echo "<pre>"; 
+          print_r($order_item_detail);die;*/
+          return response()->json([
+                    'orderitemshtml' => view('customer.myaccount.view_order_popup', compact('order'))->render()
+                    //'orderitemshtml' => view('customer.myaccount.view_order_popup')->render()
+        ]);
     }
 
     public function account_personal() {
@@ -43,10 +50,17 @@ class MyaccountController extends Controller {
     public function update_profile(Request $request) {
         /* echo "<pre>"; 
           print_r($request->all());die; */
-        User::where('id', auth()->id())->update(['first_name' => $request->first_name, 'last_name' => $request->last_name, 'gender' => ucfirst($request->gender),
-            'dob' => $request->birth_month . "-" . $request->birth_date, 'birth_date' => $request->birth_date,
-            'birth_month' => $request->birth_month, 'age_group' => $request->age_group, 'state' => $request->state,
-            'postcode' => $request->postcode, 'shoe_wear' => $request->shoe_wear ? $request->shoe_wear : '', 'password' => Hash::make($request->password),
+        User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
+            'last_name' => isset($request->last_name) ? $request->last_name : "",
+            'gender' => isset($request->gender) ? ucfirst($request->gender) : "",
+            'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "",
+            'birth_date' => (isset($request->birth_date)) ? $request->birth_date : "",
+            'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "", 
+            'age_group' => (isset($request->age_group)) ? $request->age_group : "",
+            'state' => isset($request->state) ? $request->state : "",
+            'postcode' => isset($request->postcode) ? $request->postcode : "",
+            'shoe_wear' => isset($request->shoe_wear) ? $request->shoe_wear : '',
+            'password' => isset($request->password) ? Hash::make($request->password) : "",
             'newsletter' => @$request->newsletter ? 1 : 0
         ]);
         return redirect('account-personal');
