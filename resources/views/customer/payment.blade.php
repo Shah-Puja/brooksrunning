@@ -160,22 +160,29 @@
                             </div>
                             <div class="payment-schedule">
                                 <h3>Your payment schedule</h3>
+                            @php
+                            if(isset($cart->gift_discount) && $cart->gift_discount!=0){
+                                $subtotal = @number_format(($cart->grand_total - $cart->gift_discount), 2);
+                            }else{
+                                $subtotal = @number_format($cart->grand_total, 2);
+                            }
+                            @endphp
                                 <ul>
                                     <li>
                                         <div class="round-icon icon1"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> First payment</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> First payment</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon2"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 2 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 2 weeks later</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon3"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 4 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 4 weeks later</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon4"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 6 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 6 weeks later</p>
                                     </li>
                                 </ul>
                                 <div class="payment-btn" id="afterpay_submit">
