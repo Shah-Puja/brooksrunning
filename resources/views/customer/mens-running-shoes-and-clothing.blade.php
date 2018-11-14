@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="css/main.css">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
-
+	<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/topbanner-mob.png">
-	        <img src="/images/landingpage/topbanner.png" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="images/landingpage/Mens/men_shoesbanner_mob.jpg">
+	        <img src="/images/landingpage/Mens/men_shoesbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
@@ -94,27 +94,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/shop-now.png">
+						<img src="/images/landingpage/Mens/men_ravenna9.jpg">
 					    <div class="title">
-					       <h2 class="happy left">New!<br>Beast 18</h2>
+					       <h2 class="happy left">Energize your run!<br>with Ravenna</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="beast-18-mens-running-shoes/110282_015.html">Shop new beast</a>
+							<a class="primary-button" href="/ravenna-9-mens-running-shoes/110280_025.html">Shop Ravenna 9</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/shop-now.png">
+							<img src="/images/landingpage/Mens/men_glycerin16.jpg">
 						    <div class="title">
-						        <h2 class="happy left">Take your<br>run-off road</h2>
+						        <h2 class="happy left">New Colours<br>Glycerin 16</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="/mens-trail-running-shoes">Trail Running Shoes</a>
+							<p>With Brooks latest cushioning technology, DNA LOFT, the Glycerin 16 is engineered to provide a luxurious feeling underfoot. </p>
+							<a class="primary-button" href="/brooks-running-shoes-glycerin-17-mens/110289_050.html">Shop Glycerin 16</a>
 					</div> 
 				</div>
 			</div>
@@ -143,8 +143,8 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/topbanner-mob.png">
-	        <img src="/images/landingpage/bottombanner.png" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="images/landingpage/Mens/men_clothingbanner_mob.jpg">
+	        <img src="/images/landingpage/Mens/men_clothingbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
@@ -236,26 +236,26 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/ml4.jpg">
+							<img src="/images/landingpage/Mens/men_shorts.jpg">
 						    <div class="title">
-						       <h1 class="happy left">Men's <br/> Accessories</h2>
+						       <h1 class="happy left">Men's <br/> Shorts</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Details make the difference and our Men's Clothing and Accessories Collection is all about details.</p>
-							<a class="primary-button" href="/mens-running-accessories">Shop Accessories</a>
+							<p>Brooks running shorts allow for breathability and optimal freedom of movement, to help make your run more comfortable.</p>
+							<a class="primary-button" href="/mens-running-shorts">Shop Shorts</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/ml4.jpg">
+							<img src="/images/landingpage/Mens/men_tops.jpg">
 						    <div class="title">
-						        <h1 class="happy left">Men's<br>Top</h2>
+						        <h1 class="happy left">Men's<br>Tops</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Feel and look your best on the run in one of our lightweight and breathable t-shirts and singlets. </p>
+							<p>Made from lightweight, highly absorbent fabrics that are designed to not weigh you down, our running tops will help you make light work of your next run. </p>
 							<a class="primary-button" href="/mens-running-tops">Shop tops</a>
 					</div>
 				</div>

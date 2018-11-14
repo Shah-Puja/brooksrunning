@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="css/main.css">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
-
+	<div class="opacity-cover hideen-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/topbanner-mob.png">
-	        <img src="/images/landingpage/topbanner.png" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="images/landingpage/Womens/women_shoesbanner_mob.jpg">
+	        <img src="/images/landingpage/Womens/women_shoesbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
@@ -94,27 +94,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/shop-now.png">
+						<img src="/images/landingpage/Womens/women_ghost11.jpg">
 					    <div class="title">
-					       <h2 class="happy left">New!<br>Ravenna 9</h2>
+					       <h2 class="happy left">New Colours!<br>Ghost 11</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
 							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="ravenna-9-womens-running-shoes/120269_027.html">Shop new ravenna</a>
+							<a class="primary-button" href="/ghost-11-womens-running-shoes/120277_017.html">Shop Ghost 11</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/shop-now.png">
+							<img src="/images/landingpage/Womens/women_gts19.jpg">
 						    <div class="title">
-						        <h2 class="happy left">Take your<br>run-off road</h2>
+						        <h2 class="happy left">New!<br>Adrenaline GTS 19</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="/womens-trail-running-shoes">Trail Running Shoes</a>
+							<p>The Adrenaline GTS 19 features an innovative GuideRails support system, soft cushioning, and smooth heel-to-toe transitions. </p>
+							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop Adrenaline GTS 19</a>
 					</div> 
 				</div>
 			</div>
@@ -143,8 +143,8 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/topbanner-mob.png">
-	        <img src="/images/landingpage/bottombanner.png" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="images/landingpage/Womens/women_clothingbanner_mob.jpg">
+	        <img src="/images/landingpage/Womens/women_clothingbanner.jpg" alt="clothing">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
@@ -236,26 +236,26 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/ml4.jpg">
+							<img src="/images/landingpage/Womens/women_sportsbras.jpg">
 						    <div class="title">
-						       <h1 class="happy left">Women's <br/> Accessories</h2>
+						       <h1 class="happy left">Women's <br/> Sports Bra's</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Details make the difference and our Women's Clothing and Accessories Collection is all about details.</p>
-							<a class="primary-button" href="/womens-running-accessories">Shop Accessories</a>
+							<p>A great sports bra is at the center of every woman's run. Every Brooks sports bra is engineered to support the unique needs of women everywhere. Experience the difference a Brooks Sports bra can make.</p>
+							<a class="primary-button" href="/womens-sports-bras">Shop Sports Bras</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/ml4.jpg">
+							<img src="/images/landingpage/Womens/women_tops.jpg">
 						    <div class="title">
 						        <h1 class="happy left">Women's<br>Top</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Feel and look your best on the run in one of our lightweight and breathable t-shirts and singlets. </p>
+							<p>Whether you’re training for a marathon or enjoying a run around the neighbourhood, Brooks’ running tops will ensure practical functionality and a stylish look. </p>
 							<a class="primary-button" href="/womens-running-tops">Shop tops</a>
 					</div>
 				</div>

@@ -38,7 +38,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
-					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's link <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
@@ -65,8 +65,8 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Our support shoes are designed to offer ultimate shock protection, stability and comfort.</p>
-					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<br/><a href="/womens-support-running-shoes">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-support-running-shoes">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
