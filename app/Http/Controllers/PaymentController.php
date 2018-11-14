@@ -620,7 +620,9 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-
+        echo "<pre>";
+        print_r($this->order);
+        exit;
         $returnVal = false;
         $returnData = array();
         $returnOrderNum = $this->order->id;
