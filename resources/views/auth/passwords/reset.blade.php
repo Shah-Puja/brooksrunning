@@ -41,7 +41,7 @@
 									<div class="mob-6">Password<sup>*</sup></div>
 									<div class="mob-6">
 										<div class="show-pass">
-										    <input type="checkbox" name="vehicle" value="Bike">Show Password
+										    <input type="checkbox" id="show_password" name="show_password">Show Password
 									    </div>
 								    </div>
 								</div>
@@ -119,5 +119,15 @@
 		</div>
 	</div>
 </section>
-
+<script>
+    $(document).ready(function(){
+        $('#show_password').change(function() {
+            if($(this).is(":checked")) {
+                $('#password').prop('type', 'text');
+            }else{
+                $('#password').prop('type', 'password');
+            }
+        });
+    });
+</script>
 @endsection
