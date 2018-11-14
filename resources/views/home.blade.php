@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="br-mainheading">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}!</h1>
-                    <p>Not {{ auth()->user()->first_name }} ? <a href="#">Logout</a></p>
+                    <p>Not {{ auth()->user()->first_name }} ? <a href="{{ route('logout') }}">Logout</a></p>
                 </div>
             </div>
         </div>
