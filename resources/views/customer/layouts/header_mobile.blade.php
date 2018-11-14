@@ -14,8 +14,9 @@
 				</div>
 				<div class="mob-2">
 					<div class="mob-icon cart">
-						<span class="icon-cart-icon"></span>
+					<a href="/cart"><span class="icon-cart-icon"></span>
 						<div class="cart-count">{{ $cart->items_count > 0 ? $cart->items_count : 0 }}</div>
+					</a>
 					</div>
 				</div>
 				<!-- product cart popup Mobile -->

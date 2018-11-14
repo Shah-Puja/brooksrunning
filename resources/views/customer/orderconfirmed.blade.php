@@ -156,11 +156,11 @@
                                         <input type='hidden' name="user_email" id="user_email" value="{{$order_email}}">
                                         <div class="input-wrapper">
                                             <label for="email1"><sup>*</sup>Password</label>
-                                            <input type="text" name="pass" id="pass" class="input-field">
+                                            <input type="passoword" name="pass" id="pass" class="input-field">
                                         </div>
                                         <div class="input-wrapper">
                                             <label for="email1"><sup>*</sup>Confirm Password</label>
-                                            <input type="text" name="conf_pass" id="conf_pass" class="input-field">
+                                            <input type="passoword" name="conf_pass" id="conf_pass" class="input-field">
                                         </div>
                                         <div class="cart-btn">
                                             <button type="submit" name="submit" class="pdp-button">Create account</button>

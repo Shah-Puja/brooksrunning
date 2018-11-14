@@ -18,10 +18,8 @@ class SubscriberController extends Controller
     }
 
     public function make_member(){
-       // print_r($_POST);
         $email = $_POST['user_email'];
         $password = Hash::make($_POST['pass']);
-        // print_r($email);
         User::where('email', $email)->update(['password' => $password]);
     }
 }
