@@ -23,7 +23,7 @@
 					<div class="tab-12">
 						<div class="input-wrapper">
 							<label for="">Enter Email Address<sup>*</sup></label>
-							<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+							<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} input-field" name="email" value="{{ $email ?? old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
 								    </div>
 								</div>
 							</label>
-							<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+							<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} input-field" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
 									<div class="mob-6">Confirm Password<sup>*</sup></div>
 								</div>
 							</label>
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            <input id="password-confirm" type="password" class="form-control input-field" name="password_confirmation" required>
 						</div>
 					</div>
 				</div>
