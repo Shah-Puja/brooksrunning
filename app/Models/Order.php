@@ -57,7 +57,7 @@ class Order extends Model
 
         self::where('id',$order_id)->update([
                 'coupon_code' => ($promo_code) ? $promo_code : "",
-                'discount' => isset($cart->discount) ? $cart->discount : "",
+                'discount' => isset($cart->discount) ? $cart->discount : "0.00",
                 'giftcert_ap21code' => (isset($cart->gift_id) && $cart->gift_id!="") ? $cart->gift_id : "",
                 'giftcert_ap21pin' => (isset($cart->pin) && $cart->pin!="") ? $cart->pin : "",
                 'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "0",
