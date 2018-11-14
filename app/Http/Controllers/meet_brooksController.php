@@ -56,6 +56,9 @@ class meet_brooksController extends Controller
             ]
         );
         
+        $person_id = app('App\Http\Controllers\PaymentController')->get_personid(request('email'));
+        echo $person_id;
+        exit;
         if($competition->wasRecentlyCreated){
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
