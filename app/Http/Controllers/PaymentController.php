@@ -69,7 +69,7 @@ class PaymentController extends Controller {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
         return view('customer.payment', [
             'clientToken' => $this->processor->getToken(),
-            'cartGrandTotal' => ($this->order->gift_discount!="") ? ($this->order->grand_total - $this->order->gift_discount) : $this->order->grand_total,
+            'cartGrandTotal' => $this->order->grand_total,
                 ], compact('cart'));
     }
 
