@@ -57,7 +57,7 @@
                         @if(isset($cart->grand_total) && $cart->grand_total <1000)
                         <div class="afterpay">
                             <span>or 
-                            4 payments of ${{ @number_format(($subtotal/4), 2) }} with <img src="images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
+                            4 payments of ${{ @number_format(($subtotal/4), 2) }} with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
                         </div>
                         @endif 
                     </div>
@@ -68,7 +68,7 @@
                         <div class="popup-container--info">
                             <div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
                             <div class="header-info">
-                                <img src="images/afterpay_logo-colour.svg" alt="">
+                                <img src="/images/afterpay_logo-colour.svg" alt="">
                                 <h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
                             </div>
                             <div class="afterpay-info clearfix">

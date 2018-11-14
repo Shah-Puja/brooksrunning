@@ -15,5 +15,5 @@
     <img src="/images/payment-option.jpg" alt="">
     <p class="braintree-txt">Safe and Secure Payments</p>
     <p class="braintree-txt">enabled by</p>
-    <img src="images/payment-braintree-black.jpg" alt="">
+    <img src="/images/payment-braintree-black.jpg" alt="">
 </div>

@@ -82,7 +82,7 @@
 		</div>
 		<div class="col-7 tab-6 hidden-mob">
 			<div class="create-account--banner">
-				<img src="images/accounts/login-banner.png" alt="">
+				<img src="/images/accounts/login-banner.png" alt="">
 			</div>
 		</div>
 	</div>
@@ -91,7 +91,7 @@
 			<div class="create-account--right bottom-info">
 				<div class="header">
 					<div class="icon-img">
-						<img src="images/accounts/icon-profile.png" alt="">
+						<img src="/images/accounts/icon-profile.png" alt="">
 					</div>
 					<h3>Why Create An Account?</h3>
 				</div>

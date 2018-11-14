@@ -121,7 +121,7 @@
       <div class="accordian-content">
          <div class="contents-wrapper">
         <div class="about-container--info">
-           <p>Shoes are definitely the runner's most important equipment, and have to be chosen with care. The first requirement for <a href="https://www.brooksrunning.com.au/">running shoes</a> is to have a comfortable fit and be well cushioned. If your feet tend to pronate or supinate, then choose a shoe with specific motion control characteristics. Visit the <a href="https://www.brooksrunning.com.au/shoefinder">Shoe Finder</a> to find the right shoes for your running mechanics.</p>
+           <p>Shoes are definitely the runner's most important equipment, and have to be chosen with care. The first requirement for <a href="/">running shoes</a> is to have a comfortable fit and be well cushioned. If your feet tend to pronate or supinate, then choose a shoe with specific motion control characteristics. Visit the <a href="/shoefinder">Shoe Finder</a> to find the right shoes for your running mechanics.</p>
         </div>
          </div>
       </div>

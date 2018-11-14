@@ -28,10 +28,10 @@
                     <div class="info" id="info-more">{{$cart_items->prod_desc}}</div>
                     <div class="swatches">
                         <ul>
-                            <li class="selected"><img src="images/details/shoes/shoes1-swatches.jpg" alt=""></li>
-                            <li><img src="images/details/shoes/shoes2-swatches.jpg" alt=""></li>
-                            <li><img src="images/details/shoes/shoes1-swatches.jpg" alt=""></li>
-                            <li><img src="images/details/shoes/shoes2-swatches.jpg" alt=""></li>
+                            <li class="selected"><img src="/images/details/shoes/shoes1-swatches.jpg" alt=""></li>
+                            <li><img src="/images/details/shoes/shoes2-swatches.jpg" alt=""></li>
+                            <li><img src="/images/details/shoes/shoes1-swatches.jpg" alt=""></li>
+                            <li><img src="/images/details/shoes/shoes2-swatches.jpg" alt=""></li>
                         </ul>
                     </div>
                     <div class="row">

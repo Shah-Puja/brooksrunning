@@ -5,7 +5,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-12">
-				<img src="images/competition/contact-banner.png" alt="">
+				<img src="/images/competition/contact-banner.png" alt="">
 				<div class="heading">
 					<h1 class="br-mainheading">Contact Us</h1>
 				</div>
@@ -136,16 +136,16 @@
 		<div class="col-3 contact-details--right">
 			<div class="info-wrapper">
 				<div class="icon">
-					<img src="images/brooks_aus_icons_email.svg" alt="">
+					<img src="/images/brooks_aus_icons_email.svg" alt="">
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Email us</h3>
-					<p><a href="http://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
+					<p><a href="https://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
 				</div>
 			</div>
 			<div class="info-wrapper">
 				<div class="icon">
-					<img src="images/brooks_aus_icons_phone.svg" alt="">
+					<img src="/images/brooks_aus_icons_phone.svg" alt="">
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Call us</h3>

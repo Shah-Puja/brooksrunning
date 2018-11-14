@@ -163,7 +163,7 @@
 						<div class="row">
 							<div class="col-3 tab-6">
 								<div class="shopping-img">
-									<img src="images/apparel/apparel1-details.jpg" alt="">
+									<img src="/images/apparel/apparel1-details.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-3 tab-6">

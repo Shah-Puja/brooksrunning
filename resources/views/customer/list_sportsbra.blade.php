@@ -305,19 +305,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -359,19 +359,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -412,19 +412,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -466,72 +466,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                        </div>
-                                        <span class="icon-style icon-next-arrow next"></span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="info">
-                                            <h3>Adrenaline GTS 18</h3>
-                                            <div class="price">
-                                                <span>&dollar;89.95</span>
-                                            </div>
-                                            <div class="shoes-type">Women's Running Tops</div>
-                                        </div>
-                                        <div class="info-sub">
-                                            <div class="row">
-                                                <div class="mob-6">
-                                                    <p>Neutral Speed</p>
-                                                </div>
-                                                <div class="mob-6">
-                                                    <p class="right">Width Available</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mob-6 col-4 plp-wrapper__sub">
-                                <div class="plp-product">
-                                    <div class="offer-info">
-                                        <span>NEW</span>
-                                        <span class="sale">SALE</span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="img">
-                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="more-color--container">
-                                        <span class="icon-style icon-back-arrow prev"></span>
-                                        <div class="owl-carousel owl-theme">
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -572,72 +519,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                        </div>
-                                        <span class="icon-style icon-next-arrow next"></span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="info">
-                                            <h3>Adrenaline GTS 18</h3>
-                                            <div class="price">
-                                                <span>&dollar;89.95</span>
-                                            </div>
-                                            <div class="shoes-type">Women's Running Tops</div>
-                                        </div>
-                                        <div class="info-sub">
-                                            <div class="row">
-                                                <div class="mob-6">
-                                                    <p>Neutral Speed</p>
-                                                </div>
-                                                <div class="mob-6">
-                                                    <p class="right">Width Available</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mob-6 col-4 plp-wrapper__sub">
-                                <div class="plp-product">
-                                    <div class="offer-info">
-                                        <span>NEW</span>
-                                        <span class="sale">SALE</span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="img">
-                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="more-color--container">
-                                        <span class="icon-style icon-back-arrow prev"></span>
-                                        <div class="owl-carousel owl-theme">
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -678,72 +572,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                        </div>
-                                        <span class="icon-style icon-next-arrow next"></span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="info">
-                                            <h3>Adrenaline GTS 18</h3>
-                                            <div class="price">
-                                                <span>&dollar;89.95</span>
-                                            </div>
-                                            <div class="shoes-type">Women's Running Tops</div>
-                                        </div>
-                                        <div class="info-sub">
-                                            <div class="row">
-                                                <div class="mob-6">
-                                                    <p>Neutral Speed</p>
-                                                </div>
-                                                <div class="mob-6">
-                                                    <p class="right">Width Available</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mob-6 col-4 plp-wrapper__sub">
-                                <div class="plp-product">
-                                    <div class="offer-info">
-                                        <span>NEW</span>
-                                        <span class="sale">SALE</span>
-                                    </div>
-                                    <a href="detail.php">
-                                        <div class="img">
-                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
-                                        </div>
-                                    </a>
-                                    <div class="more-color--container">
-                                        <span class="icon-style icon-back-arrow prev"></span>
-                                        <div class="owl-carousel owl-theme">
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
-                                          </div>
-                                          <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -784,19 +625,19 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
@@ -837,19 +678,178 @@
                                         <span class="icon-style icon-back-arrow prev"></span>
                                         <div class="owl-carousel owl-theme">
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras2-swatches.jpg" data-big="images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                           <div class="item">
-                                               <img src="/images/bras/bras1-swatches.jpg" data-big="images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                        </div>
+                                        <span class="icon-style icon-next-arrow next"></span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="info">
+                                            <h3>Adrenaline GTS 18</h3>
+                                            <div class="price">
+                                                <span>&dollar;89.95</span>
+                                            </div>
+                                            <div class="shoes-type">Women's Running Tops</div>
+                                        </div>
+                                        <div class="info-sub">
+                                            <div class="row">
+                                                <div class="mob-6">
+                                                    <p>Neutral Speed</p>
+                                                </div>
+                                                <div class="mob-6">
+                                                    <p class="right">Width Available</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mob-6 col-4 plp-wrapper__sub">
+                                <div class="plp-product">
+                                    <div class="offer-info">
+                                        <span>NEW</span>
+                                        <span class="sale">SALE</span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="img">
+                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="more-color--container">
+                                        <span class="icon-style icon-back-arrow prev"></span>
+                                        <div class="owl-carousel owl-theme">
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                        </div>
+                                        <span class="icon-style icon-next-arrow next"></span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="info">
+                                            <h3>Adrenaline GTS 18</h3>
+                                            <div class="price">
+                                                <span>&dollar;89.95</span>
+                                            </div>
+                                            <div class="shoes-type">Women's Running Tops</div>
+                                        </div>
+                                        <div class="info-sub">
+                                            <div class="row">
+                                                <div class="mob-6">
+                                                    <p>Neutral Speed</p>
+                                                </div>
+                                                <div class="mob-6">
+                                                    <p class="right">Width Available</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mob-6 col-4 plp-wrapper__sub">
+                                <div class="plp-product">
+                                    <div class="offer-info">
+                                        <span>NEW</span>
+                                        <span class="sale">SALE</span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="img">
+                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="more-color--container">
+                                        <span class="icon-style icon-back-arrow prev"></span>
+                                        <div class="owl-carousel owl-theme">
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                        </div>
+                                        <span class="icon-style icon-next-arrow next"></span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="info">
+                                            <h3>Adrenaline GTS 18</h3>
+                                            <div class="price">
+                                                <span>&dollar;89.95</span>
+                                            </div>
+                                            <div class="shoes-type">Women's Running Tops</div>
+                                        </div>
+                                        <div class="info-sub">
+                                            <div class="row">
+                                                <div class="mob-6">
+                                                    <p>Neutral Speed</p>
+                                                </div>
+                                                <div class="mob-6">
+                                                    <p class="right">Width Available</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mob-6 col-4 plp-wrapper__sub">
+                                <div class="plp-product">
+                                    <div class="offer-info">
+                                        <span>NEW</span>
+                                        <span class="sale">SALE</span>
+                                    </div>
+                                    <a href="detail.php">
+                                        <div class="img">
+                                            <img id="plp-img" src="/images/bras/bras1-listing.jpg" alt="">
+                                        </div>
+                                    </a>
+                                    <div class="more-color--container">
+                                        <span class="icon-style icon-back-arrow prev"></span>
+                                        <div class="owl-carousel owl-theme">
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras2-swatches.jpg" data-big="/images/bras/bras2-listing.jpg" class="plp-thumb" alt="">
+                                          </div>
+                                          <div class="item">
+                                               <img src="/images/bras/bras1-swatches.jpg" data-big="/images/bras/bras1-listing.jpg" class="plp-thumb" alt="">
                                           </div>
                                         </div>
                                         <span class="icon-style icon-next-arrow next"></span>
