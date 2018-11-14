@@ -899,7 +899,8 @@ class PaymentController extends Controller {
                     $data = array(
                         'api_name' => 'Gift certificate',
                         'URL' => $url,
-                        'Result' => $result
+                        'Result' => $result,
+                        'Parameters' => '',
                     );
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
