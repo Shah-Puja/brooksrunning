@@ -61,6 +61,7 @@ Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks competition pages */
 Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@competition');
+Route::post('/meet_brooks/competition', 'meet_brooksController@store');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
@@ -95,6 +96,7 @@ Route::get('/account-homepage', 'MyaccountController@account_homepage');
 Route::get('/account-order-history', 'MyaccountController@account_order_history');
 Route::get('/account-personal', 'MyaccountController@account_personal');
 Route::post('/account/update_profile', 'MyaccountController@update_profile');
+Route::get('/confirm-password', 'MyaccountController@confirm_password');
 Route::get('/order-history', 'MyaccountController@order_history');
 
 /* shoefinder page */

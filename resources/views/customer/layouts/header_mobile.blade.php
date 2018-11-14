@@ -709,7 +709,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/info/contact">
+	                <a href="/info/contact-us">
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>

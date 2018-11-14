@@ -95,7 +95,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left">Email</td>
-                                    <td align="left">$order->address->email</td>
+                                    <td align="left">{{ $order->address->email }}</td>
                                 </tr>  
                             </table>
 
@@ -136,7 +136,7 @@
 										<del>&dollar;{{ number_format($item->variant->price, 2) }}</del> 
 								&dollar;{{ number_format($item->variant->price_sale, 2) }} 
 								@endif  </td>
-                                        <td align='left'>$ @if($item->variant->price_sale == 0)
+                                        <td align='left'>@if($item->variant->price_sale == 0)
 										&dollar;{{ number_format($item->variant->price * $item->qty, 2) }}
 										@else
 										&dollar;{{ number_format($item->variant->price_sale * $item->qty, 2) }}
