@@ -56,7 +56,7 @@ class Order extends Model
         $promo_code = isset($cart->promo_code) ? $cart->promo_code : "";
 
         if($cart->promo_code!=""){
-            $order->update([
+             self::where('id',$order_id)->update([
                 'coupon_code' => ($promo_code) ? $promo_code : "",
                 'discount' => isset($cart->discount) ? $cart->discount : ""
             ]);
