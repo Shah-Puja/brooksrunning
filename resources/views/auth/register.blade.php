@@ -18,7 +18,7 @@
                 <div class="create-account--right">
                     <div class="header">
                         <div class="icon-img">
-                            <img src="images/accounts/icon-profile.png" alt="">
+                            <img src="/images/accounts/icon-profile.png" alt="">
                         </div>					
                         <h3>Why Create An Account?</h3>
                     </div>

@@ -74,8 +74,6 @@
 	</div>
 </section>
 
-<div id="edit-order--popup" class="popup-container edit-cart--popup">
-	
-</div>
+<div id="edit-order--popup" class="popup-container edit-cart--popup"></div>
 
 @endsection

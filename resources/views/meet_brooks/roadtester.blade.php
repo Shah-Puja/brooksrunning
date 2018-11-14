@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 <section class="header-img--banner">
-
+<div class="wrapper">
 		<div class="row">
 			<div class="col-12">
 				<!-- for different banner ipad and mobile
@@ -12,6 +12,7 @@
 			    -->
 				<img src="/images/competition/gts19_sra_roadtester_comp_1430x350.jpg" width="100%" alt="competetion">
 			</div>
+		</div>
 		</div>
 </section>
 <section class="create-account wrapper">

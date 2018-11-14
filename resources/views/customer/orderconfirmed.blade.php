@@ -172,10 +172,12 @@
                     <div class="form-container">
                         <div class="row">
                             <div class="tab-6">
+                                <p id="msg" style="color:green; margin-bottom: 0px;margin-left: 20px;" class="br-heading">Thank you for registration</p>
                                 <form name="make_member_form" id="make_member_form" method="post" onsubmit="return check_validate()">
                                     {{ csrf_field() }}
                                     <div class="form-wrapper">
                                         <input type='hidden' name="user_email" id="user_email" value="{{$order_email}}">
+                                        <input type='hidden' name="user_id" id="user_id" value="{{$user_id}}">
                                         <div class="input-wrapper">
                                             <label for="email1"><sup>*</sup>Password</label>
                                             <input type="passoword" name="pass" id="pass" class="input-field">
@@ -214,6 +216,7 @@
 </style>
 <script>
     $(document).ready(function () {
+        $("#msg").css('display','none');
         required = ["pass", "conf_pass"];
         emptyerror = "REQUIRED";
     });
@@ -221,6 +224,7 @@
         var user_email = $('#user_email').val();
         var pass = $('#pass').val();
         var conf_pass = $('#conf_pass').val();
+        var user_id = $('#user_id').val();
         required = ["pass", "conf_pass"];
         for (i = 0; i < required.length; i++) {
             var input = $('#' + required[i]);
@@ -250,9 +254,11 @@
                 type: "POST",
                 data: {user_email: user_email, pass: pass, conf_pass: conf_pass},
                 success: function (data) {
-                    console.log(data);
+                    //console.log(data);
                     var pass = $('#pass').val('');
                     var conf_pass = $('#conf_pass').val('');
+                    $("#msg").css('display','block');
+                    $("#msg").text("Thank you for registration");
                 }
             });
             return false;

@@ -45,7 +45,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     <label for="tab-opt1">
                                         <div class="mark"><span></span></div>
                                         <div class="text">
-                                            <img src="images/icon-visa-master.png" alt="">
+                                            <img src="/images/icon-visa-master.png" alt="">
                                         </div>
                                     </label>
                                 </div>
@@ -58,7 +58,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     <label for="tab-opt2">
                                         <div class="mark"><span></span></div>
                                         <div class="text">
-                                            <img src="images/icon-paypal-blue.png" alt="">
+                                            <img src="/images/icon-paypal-blue.png" alt="">
                                         </div>
                                     </label>
                                 </div>
@@ -72,7 +72,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     <label for="tab-opt3">
                                         <div class="mark"><span></span></div>
                                         <div class="text">
-                                            <img src="images/payment-afterpay--black.png" alt="">
+                                            <img src="/images/payment-afterpay--black.png" alt="">
                                             <span class="info afterpay-popup--control">info</span>
                                         </div>
                                     </label>
@@ -85,7 +85,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                         <div class="payment-container--info">
                             <div class="secured-info">
                                 <span>Secure Credit Card Payment 
-                                    <span class="tick"><img src="images/tick.jpg" alt=""></span>
+                                    <span class="tick"><img src="/images/tick.jpg" alt=""></span>
                                 </span>
                             </div>
                             <form action="" id="my-sample-form" method="post" onsubmit="return paymentform_validate()">
@@ -158,7 +158,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                         <div class="payment-afterpay">
                             <div class="header">
                                 <h3>Afterpay</h3>
-                                <img src="images/payment-afterpay--black.png" alt="">
+                                <img src="/images/payment-afterpay--black.png" alt="">
                                 <p>Receive your item(s) now and pay later with<br/>
                                     4x fortnightly payments of $80.00</p>
                             </div>
@@ -183,7 +183,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     </li>
                                 </ul>
                                 <div class="payment-btn" id="afterpay_submit">
-                                    <button class="pdp-button">Pay now with <img src="images/payment-afterpay.png" alt=""></button>
+                                    <button class="pdp-button">Pay now with <img src="/images/payment-afterpay.png" alt=""></button>
                                 </div>
                                 <div class="payment-afterpay--info">
                                     <p>Please ensure your browser allows pop-up windows to pay with Afterpay.<br/>When you click ‘PAY WITH AFTERPAY’ you will be redirected to the Afterpay login window to complete your order. Please not that once you complete your payment details with Afterpay, this order will be finalised and completed for processing</p>
@@ -208,7 +208,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                         <div class="popup-container--info">
                             <div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
                             <div class="header-info">
-                                <img src="images/afterpay_logo-colour.svg" alt="">
+                                <img src="/images/afterpay_logo-colour.svg" alt="">
                                 <h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
                             </div>
                             <div class="afterpay-info clearfix">
@@ -280,10 +280,10 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                 </div>
                 <div class="payment">
                     <h3 class="bold-font center">We accept these payments</h3>
-                    <img src="images/payment-option.jpg" alt="">
+                    <img src="/images/payment-option.jpg" alt="">
                     <p class="braintree-txt">Safe and Secure Payments</p>
                     <p class="braintree-txt">enabled by</p>
-                    <img src="images/payment-braintree-black.jpg" alt="">
+                    <img src="/images/payment-braintree-black.jpg" alt="">
                 </div>
             </div>
         </div>

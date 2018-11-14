@@ -182,7 +182,7 @@
 
 				<p class="br-info">13.1 You should check your Goods as soon as they are delivered to you in order to ensure that: (i) they are what you ordered; and (ii) they are not damaged or faulty. If this is not the case you should contact Texas Peak Pty Ltd on <a href="mailto:shop@brooksrunning.com.au">shop@brooksrunning.com.au</a> as soon as possible.</p>
 
-				<p class="br-info">13.2 If you have a problem with any Goods or otherwise wish to return them please refer to Texas Peak Pty Ltd’s <a href="https://www.brooksrunning.com.au/info/returns">Returns Policy</a> which forms part of these Terms and Conditions. </p>
+				<p class="br-info">13.2 If you have a problem with any Goods or otherwise wish to return them please refer to Texas Peak Pty Ltd’s <a href="/info/returns-exchange">Returns Policy</a> which forms part of these Terms and Conditions. </p>
 
 				<p class="br-info">13.3 When returning Goods:</p>
 
@@ -200,11 +200,11 @@
 
 				<h3 class="br-heading">15. PRIVACY</h3>
 
-				<p class="br-info">15.1 Texas Peak Pty Ltd policy on the collection, use and disclosure of customers’ personal information is set out in its <a href="https://www.brooksrunning.com.au/info/privacy">Privacy Policy</a> which forms part of these Terms and Conditions.</p>
+				<p class="br-info">15.1 Texas Peak Pty Ltd policy on the collection, use and disclosure of customers’ personal information is set out in its <a href="/info/privacy">Privacy Policy</a> which forms part of these Terms and Conditions.</p>
 
 				<h3 class="br-heading">16. WEBSITE TERMS</h3>
 
-				<p class="br-info">16.1 Your use of the Website is governed by the <a href="https://www.brooksrunning.com.au/info/termsofuse">Website Terms of Use.</a> </p>
+				<p class="br-info">16.1 Your use of the Website is governed by the <a href="/info/termsofuse">Website Terms of Use.</a> </p>
 
 				<h3 class="br-heading">17. GENERAL</h3>
 
@@ -223,7 +223,7 @@
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Email us</h3>
-					<p><a href="http://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
+					<p><a href="https://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
 				</div>
 			</div>
 			<div class="info-wrapper">

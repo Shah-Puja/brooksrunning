@@ -99,12 +99,12 @@
 						Texas Peak Pty Ltd <br />
 						30 Tullamarine Park Road <br />
 						TULLAMARINE VIC 3043 <br />
-						Website: <a href="http://www.brooksrunning.com.au/" target="_blank">www.brooksrunning.com.au</a> <br />
+						Website: <a href="https://www.brooksrunning.com.au/" target="_blank">www.brooksrunning.com.au</a> <br />
 						Email: privacyofficer@brooksrunning.com.au  <br />
 						Phone: 03 9338 5099
 					</p>
 					<br />
-					<p class="br-info">To download this document please <a href="http://test.texaspeak.com.au/brooks/test/images/pdf/Privacy_Policy_Brooks.pdf" target="_blank">click here</a></p>
+					<p class="br-info">To download this document please <a href="https://www.brooksrunning.com.au/images/pdf/Privacy_Policy_Brooks.pdf" target="_blank">click here</a></p>
 			</div>
 		</div>
 		<div class="col-3 contact-details--right">
@@ -114,7 +114,7 @@
 				</div>
 				<div class="info">
 					<h3 class="br-heading">Email us</h3>
-					<p class="br-info"><a href="http://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
+					<p class="br-info"><a href="https://brooks.syginteractive.com/contact-us"><u>Fill in our email support form</u></a> and we'll get back to you shortly.</p>
 				</div>
 			</div>
 			<div class="info-wrapper">

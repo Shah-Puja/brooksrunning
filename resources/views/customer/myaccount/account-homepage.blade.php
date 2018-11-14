@@ -15,7 +15,7 @@
 		<div class="tab-4">
 			<div class="create-account--homepage">
 				<div class="icon-img">
-					<img src="images/accounts/icon-account-details.png" alt="">
+					<img src="/images/accounts/icon-account-details.png" alt="">
 				</div>
 				<h3 class="br-heading">Personal Details</h3>
 				<div class="br-info">Manage your name, email and password</div>
@@ -25,7 +25,7 @@
 		<div class="tab-4">
 			<div class="create-account--homepage">
 				<div class="icon-img">
-					<img src="images/accounts/icon-order-history.png" alt="">
+					<img src="/images/accounts/icon-order-history.png" alt="">
 				</div>
 				<h3 class="br-heading">Order History</h3>
 				<div class="br-info">Manage your name, email and password</div>
@@ -34,7 +34,7 @@
 		</div>
 		<div class="tab-4">
 			<div class="create-account--banner">
-				<img src="images/accounts/account-banner.png" alt="">
+				<img src="/images/accounts/account-banner.png" alt="">
 			</div>
 		</div>
 	</div>

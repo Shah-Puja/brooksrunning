@@ -1,11 +1,11 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <section class="br-events-content">
 	<section class="event-banner">
 	<div class="event-banner--wrapper" style="background-color: #1a6ec6;">
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="images/events/generic_event_header.png">
+	        <source media="(max-width: 595px)" srcset="/images/events/generic_event_header.png">
 	        <img src="/images/events/generic_event_header.png" alt="Header Images">
 	      </picture>
 	  </div>

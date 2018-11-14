@@ -6,8 +6,8 @@
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="images/home/hp_shop_w_mobile.jpg">
-			        <img src="images/home/hp_shop_w.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_w_mobile.jpg">
+			        <img src="/images/home/hp_shop_w.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       			<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
@@ -17,8 +17,8 @@
 		     <div class="mob-6 pl-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="images/home/hp_shop_men_mobile.jpg">
-			        <img src="images/home/hp_shop_m.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_men_mobile.jpg">
+			        <img src="/images/home/hp_shop_m.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 				  <a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
@@ -33,26 +33,26 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/hp_sm1.jpg">
+					<img src="/images/home/hp_sm1.jpg">
 			        <h3>&nbsp;<br/>Levitate 2  </h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
-					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/hp_sm2.jpg">
+					<img src="/images/home/hp_sm2.jpg">
 			        <h3>New! <br/>Adrenaline GTS 19</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>The GTS 19 has landed. Very softly, thanks to it’s new DNA Loft cushioning and GuideRails support.</p>
-					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
 			</div>
@@ -60,13 +60,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="images/home/hp_sm3.jpg">
+					<img src="/images/home/hp_sm3.jpg">
 			        <h3>&nbsp; <br/>Support Running</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Our support shoes are designed to offer ultimate shock protection, stability and comfort.</p>
-					<br/><a href="/womens-support-running-shoes">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/mens-support-running-shoes">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<br/><a href="/womens-support-running-shoes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-support-running-shoes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
@@ -110,20 +110,20 @@
 		<div class="row">
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="images/home/hp_sm4.jpg">
+					<img src="/images/home/hp_sm4.jpg">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
 					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
-					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link shoe-finder">
 					<h3 class="br-heading">Need help choosing a shoe?</h3>
 					<p class="br-info">Try the shoe finder</p>
-					<img src="images/brooks-shoes--logo.png" alt="">
+					<img src="/images/brooks-shoes--logo.png" alt="">
 				    <div class="btn">
 				        <a href="/shoefinder" class="secondary-button">Shoe Finder</a>
 				    </div>
@@ -131,18 +131,18 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
 					<p>Our Shoe Finder is like Tinder for your feet. Uses your biomechanics, preferences and running science to find the ideal shoe for you. </p>
-					<a href="/shoefinder">Shoe finder <img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/shoefinder">Shoe finder <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>
 			</div>
 			<div class="tab-4">
 				<div class="homepage-cate--link">
-					<img src="images/home/hp_sm6.jpg">
+					<img src="/images/home/hp_sm6.jpg">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Events</h3>
 					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
-					<a href="/events">Running Events<img id="br-home" src="images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/events">Running Events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 		</div>

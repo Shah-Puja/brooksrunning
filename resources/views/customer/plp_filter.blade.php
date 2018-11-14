@@ -116,7 +116,7 @@
 		<div class="plp-store-finder">
 			<h3 class="br-heading">Need help<br/>choosing a shoe?</h3>
 			<p class="br-info">Try the shoe finder</p>
-			<a class="primary-button" href="#">Shoe Finder</a>
+			<a class="primary-button" href="/shoefinder">Shoe Finder</a>
 			<img src="images/brooks-shoes--logo.png" alt="">
 		</div>
 	@endif

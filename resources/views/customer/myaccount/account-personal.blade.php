@@ -245,7 +245,7 @@
 		</div>
 		<div class="col-3 tab-4">
 			<div class="create-account--banner">
-				<img src="images/accounts/signup-banner.png" alt="">
+				<img src="/images/accounts/signup-banner.png" alt="">
 			</div>
 		</div>
 	</div>

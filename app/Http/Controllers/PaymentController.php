@@ -374,12 +374,13 @@ class PaymentController extends Controller {
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
-                    $orderDataUpdate['person_idx'] = $PersonID;
-                    $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 }
                 if (!empty($PersonID)) {
                     $this->ap21order($PersonID);
+                    $orderDataUpdate['person_idx'] = $PersonID;
+                    $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 }
+                
             } else {
                 $logger = array(
                     'order_id' => $this->order->id,
@@ -620,21 +621,23 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-
+        //echo "<pre>";
+        //print_r($this->order);
+        //exit;
+        $order = Order::where('id', $this->order->id)->first();
         $returnVal = false;
         $returnData = array();
         $returnOrderNum = $this->order->id;
-        $OrderNum = $this->order->order_no;
         $add_description = '';
-        $ordernum = "BRNTest2018-" . $OrderNum; //change Order No with new series when site goes live
+        $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
+       
+        if (!empty($this->order->coupon_code)) {
+           $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
+        }
 
-        /* if (!empty($order_data['coupon_code'])) {
-          $add_description .= ' Coupon Code :- ' . $order_data['coupon_code'];
-          }
-
-          if (!empty($order_data['giftcert_code'])) {
-          $add_description .= ' Gift Code :- ' . $order_data['giftcert_code'];
-          } */
+        if (!empty($this->order->giftcert_ap21code)) {
+           $add_description .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
+        } 
 
         if (!empty($this->order->nab_trans_id)) {
             $add_description .= ' Transaction Id :- ' . $this->order->nab_trans_id;
@@ -697,9 +700,9 @@ class PaymentController extends Controller {
             $qty = $item->qty;
             $price = $item->price_sale;
             $value = $qty * $price;
-            //$discount = ($order['coup_discount'] != 0) ? $order['coup_discount'] : 0;
-            //$promo_code = $order['promo_code'];
-            //$promo_string = $order['promo_string'];
+            $discount = ($item->discount!= 0) ? $item->discount : 0;
+            $promo_code = $item->promo_code;
+            $promo_string = $item->promo_string;
 
 
             $xml_data .= "
@@ -709,7 +712,7 @@ class PaymentController extends Controller {
                           <Price>$price</Price>";
 
 
-            /* if (!empty($discount)) {
+             if (!empty($discount)) {
               $xml_data.="<Discounts>
               <Discount>
               <DiscountType>ManualDiscount</DiscountType>
@@ -724,7 +727,7 @@ class PaymentController extends Controller {
               $xml_data.= "<Value>$discount</Value>
               </Discount>
               </Discounts>";
-              } */
+              } 
 
             $xml_data .= " <Value>$value</Value>
                         </OrderDetail>";
@@ -746,12 +749,12 @@ class PaymentController extends Controller {
         $xml_data .= "
                 </OrderDetails>";
         $xml_data .= "<Payments>";
-        //$gift_data = $this->voucher->giftVoucherGvvalid($this->_app21_url, $this->_country_code, $order_id);
 
+        $gift_data = $this->giftVoucherGvvalid();
+        //print_r($gift_data);
+        if($gift_data) {
 
-        /* if ($gift_data) {
-
-          $gift_amount = $order_data['gift_amount'];
+          $gift_amount = $this->order->gift_amount;
           $subtotal = $subtotal - $gift_amount;
 
           $xml_data.=" <PaymentDetail>
@@ -761,10 +764,9 @@ class PaymentController extends Controller {
           <Amount>" . $gift_amount . "</Amount>
           </PaymentDetail>";
 
-
-
           $subtotal = number_format($subtotal, 2);
-          } */
+
+          } 
 
         $xml_data .= "<PaymentDetail>
                             <Id>7781</Id>
@@ -787,6 +789,9 @@ class PaymentController extends Controller {
         $xml_data .= "</Payments>";
 
         $xml_data .= "</Order>";
+
+        //echo $xml_data;
+        
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
@@ -870,8 +875,57 @@ class PaymentController extends Controller {
 
                 break;
         }
-
+        //exit;
         return $returnVal;
+    }
+
+    public function giftVoucherGvvalid(){
+        $dataValue = false;
+        if($this->order->gift_amount > 0){
+
+            $gift = $this->order->giftcert_ap21code;
+            $pin = $this->order->giftcert_ap21pin;
+            $amount = $this->order->gift_amount;
+            $url = env('AP21_URL') . "/Voucher/GVValid/{$gift}?pin={$pin}&amount={$amount}&countryCode=" . env('AP21_COUNTRYCODE');
+            $response = $this->bridge->vouchervalid($gift, $pin, $amount);
+            $returnCode = $response->getStatusCode();
+
+            //print_r($response);
+            //echo $returnCode;
+            //exit;
+
+            switch ($returnCode) {
+                case 200:
+
+                    $xml = @simplexml_load_string($response->getBody()->getContents());
+                    $dataValue['VoucherNumber'] = (int) ($xml->VoucherNumber);
+                    $dataValue['gift_pin'] = $pin;
+                    $dataValue['ExpiryDate'] = $xml->ExpiryDate;
+                    $dataValue['ValidationId'] = $xml->ValidationId;
+                    $dataValue['Amount'] = $amount;
+                    break;
+
+                case 403 :
+                    echo "Incorrect Voucher";
+                    $dataValue = false;
+                    break;
+
+                default:
+                    $result = "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                    $data = array(
+                        'api_name' => 'Gift certificate',
+                        'URL' => $url,
+                        'Result' => $result,
+                        'Parameters' => '',
+                    );
+                    Mail::to(config('site.notify_email'))
+                        ->cc(config('site.syg_notify_email'))
+                        ->send(new OrderAlert($this->order, $data));
+                    $dataValue = false;
+                    break;
+            }
+        }
+        return $dataValue;
     }
 
 }

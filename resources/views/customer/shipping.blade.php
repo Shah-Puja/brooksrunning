@@ -92,7 +92,7 @@
                     <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
                         @csrf
                         <div class="shipping-form">
-                            <p class="email-msg">Please enter your email address</p>					
+                            <p class="email-msg">Please enter your email address</p>				
                             <div class="row">
                                 <div class="col-6">
                                     <div class="input-wrapper">
@@ -127,7 +127,8 @@
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="cart-btn cart-btn--password">
-                                            <a href='javascript:void(0)' class="primary-button pdp-button login_user">Login</a>
+                                            <!--<a href='javascript:void(0)' class="primary-button pdp-button login_user">Login</a>-->
+                                            <button class="primary-button pdp-button login_user" type="submit">Login</button>
                                             {{-- <button class="secondary-button2" onclick="gest_user()">Checkout as guest</button> --}}
                                             <a href='javascript:void(0)' class="secondary-button2 gest_user">Checkout as guest</a>
                                             {{-- <a href='javascript:void(0)' class="continue-step" onclick="gest_user()">Continue without login</a> --}}
@@ -419,7 +420,7 @@
                                             <label for="already-read">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
-                                                        I have read and agree to the <a href="#">Privacy Policy</a> and <a href="#" class="shipping--popup">Terms and Conditions</a>.
+                                                        I have read and agree to the  <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
                                                     </div><br>
                                                     {!! $error_terms !!}
                                             </label>
@@ -453,7 +454,7 @@
 						<div class="popup-container--info">
 							<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
 							<div class="header-info">
-								<img src="images/afterpay_logo-colour.svg" alt="">
+								<img src="/images/afterpay_logo-colour.svg" alt="">
 								<h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
 							</div>
 							<div class="afterpay-info clearfix">
@@ -525,14 +526,15 @@
 				</div>
 				<div class="payment">
 				    <h3 class="bold-font center">We accept these payments</h3>
-				    <img src="images/payment-option.jpg" alt="">
+				    <img src="/images/payment-option.jpg" alt="">
 				    <p class="braintree-txt">Safe and Secure Payments</p>
 				    <p class="braintree-txt">enabled by</p>
-				    <img src="images/payment-braintree-black.jpg" alt="">
+				    <img src="/images/payment-braintree-black.jpg" alt="">
 			    </div>
 			</div>
 		</div>
     </div>
 </section>
 <script src="/js/shippingbilling.js"></script>
+
 @endsection

