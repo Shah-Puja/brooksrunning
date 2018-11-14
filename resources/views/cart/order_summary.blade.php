@@ -29,7 +29,7 @@
                             </div>
                         </div>
                             @if(isset($cart->gift_discount) && $cart->gift_discount!=0)
-                        <div class="row total">
+                        <div class="row">
                             <div class="mob-7">
                                 <p>Gift Discount</p>
                             </div>

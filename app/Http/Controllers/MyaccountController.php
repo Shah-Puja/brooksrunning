@@ -16,7 +16,8 @@ class MyaccountController extends Controller {
     }
 
     public function account_order_history() { 
-        
+        $userOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->get();
+        echo "<pre>";print_r($userOrder);die;
        /* $cart_items = Cart_item::where('cart_id', session('cart_id'))->where('variant_id', $request->variant_id)->with('variant.product.image')->get();
         echo "<pre>";print_r(Order_address.order);die;
         $userOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->get();

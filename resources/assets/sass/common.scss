@@ -4847,13 +4847,35 @@ a {
 }
 
 
-// Compitition
+// Competition
 .comp_bottom{
 .notice {
   color: #666;
   @extend %extrabold-font;
   font-size: 0.9em;
   font-style: italic;
+  }
+  p{
+    line-height: 1.5em;
+    margin: 1em 0;
+  }
+}
+.response_content{
+  .heading{
+    color: $blue;
+    font-size: 42px;
+    line-height: 38px;
+    @extend %extrabold-font;
+    border-bottom: solid 1px $border;
+    margin: 0 0 5px 0;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+  }
+  .thankyou_heading{
+    font-weight: normal;
+    font-size: 2em;
+    color: #6d665f;
+    line-height:0.5px;
   }
 }
 

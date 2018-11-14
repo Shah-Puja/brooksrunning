@@ -27,10 +27,10 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
-         /*echo "<pre>";
+        /*echo "<pre>";
          print_R($cart);
          echo "</pre>";
-         die;*/ 
+         die;*/
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
@@ -40,7 +40,7 @@ class Order extends Model
                 'cart_id' => $cart['id'], 
                 'total' => $cart['total'],
                 'freight_cost' => $cart['freight_cost'],
-                'grand_total' => $cart['grand_total'],
+                'grand_total' => ($cart['gift_discount']!="") ? ($cart['grand_total'] - $cart['gift_discount']) : $cart['grand_total'],
                 'delivery_type' => $cart['delivery_type'],
             ]
         );
@@ -57,10 +57,10 @@ class Order extends Model
 
         self::where('id',$order_id)->update([
                 'coupon_code' => ($promo_code) ? $promo_code : "",
-                'discount' => isset($cart->discount) ? $cart->discount : "",
+                'discount' => isset($cart->discount) ? $cart->discount : "0.00",
                 'giftcert_ap21code' => (isset($cart->gift_id) && $cart->gift_id!="") ? $cart->gift_id : "",
                 'giftcert_ap21pin' => (isset($cart->pin) && $cart->pin!="") ? $cart->pin : "",
-                'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "",
+                'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "0",
         ]);
           
        

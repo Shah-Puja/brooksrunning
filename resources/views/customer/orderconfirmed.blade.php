@@ -3,7 +3,7 @@
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
     @php
-        // echo "<pre>";
+    // echo "<pre>";
         //     print_r($order);
         // echo "</pre>";
     @endphp
@@ -122,12 +122,34 @@
                                     </div>
                                     <div class="row">
                                         <div class="mob-7">
-                                            <p>Standard Delivery</p>
+                                            @php 
+                                            if(isset($order->delivery_type) && $order->delivery_type == 'standard'){
+                                                $delivery_type = 'Standard';
+                                            }elseif(isset($order->delivery_type) && $order->delivery_type == 'express'){
+                                                $delivery_type = 'Express';
+                                            }elseif(isset($order->delivery_type) && $order->delivery_type == 'new_zealand'){
+                                                $delivery_type = 'New Zealand Standard';
+                                            }else{
+                                                $delivery_type ='';
+                                            }
+                                            @endphp
+                                            <p>{{ $delivery_type }} Delivery</p>
                                         </div>
                                         <div class="mob-5">
                                             <p class="right">${{$order->freight_cost}}</p>
                                         </div>
                                     </div>
+                                    @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                    <div class="row total">
+                                        <div class="mob-7">
+                                            <p class="bold-font blue">Gift Discount</p>
+                                        </div>
+                                        <div class="mob-5">
+                                            <p class="bold-font blue right">-$ {{ @number_format($order->gift_amount, 2) }}</p>
+                                        </div>
+                                    </div>
+                                    @endif
+
                                     <div class="row total">
                                         <div class="mob-7">
                                             <p class="bold-font blue">Order Total</p>
@@ -189,19 +211,19 @@
     .needsfilled{
         border:1px solid #ff0000 !important;
     }
-    </style>
+</style>
 <script>
-    $(document).ready(function(){
-        required = ["pass","conf_pass"];
+    $(document).ready(function () {
+        required = ["pass", "conf_pass"];
         emptyerror = "REQUIRED";
     });
-    function check_validate(){
+    function check_validate() {
         var user_email = $('#user_email').val();
         var pass = $('#pass').val();
         var conf_pass = $('#conf_pass').val();
-        required = ["pass","conf_pass"];
-        for (i=0;i<required.length;i++) {
-            var input = $('#'+required[i]);
+        required = ["pass", "conf_pass"];
+        for (i = 0; i < required.length; i++) {
+            var input = $('#' + required[i]);
             if ((input.val() == "") || (input.val() == emptyerror)) {
                 input.addClass("needsfilled");
                 input.val("");
@@ -211,24 +233,23 @@
             }
         }
 
-        if(pass != conf_pass){
+        if (pass != conf_pass) {
             $('#conf_pass').addClass("needsfilled");
             $('#conf_pass').val("");
             $('#conf_pass').attr("placeholder", "Confirm Password Matched With Password");
         }
 
-        if ($(":input").hasClass("needsfilled") ) {
+        if ($(":input").hasClass("needsfilled")) {
             return false;
-        }
-        else{
+        } else {
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url:"/make_member",
-                type:"POST",
-                data: {user_email:user_email,pass:pass,conf_pass:conf_pass},
-                success: function(data){
+                url: "/make_member",
+                type: "POST",
+                data: {user_email: user_email, pass: pass, conf_pass: conf_pass},
+                success: function (data) {
                     console.log(data);
                     var pass = $('#pass').val('');
                     var conf_pass = $('#conf_pass').val('');

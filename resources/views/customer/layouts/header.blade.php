@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link href="/images/favicon.ico" rel="shortcut icon">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <title>Brooks Running</title>
