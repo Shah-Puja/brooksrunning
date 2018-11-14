@@ -620,8 +620,8 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        //echo "<pre>";
-        //print_r($this->order);
+        echo "<pre>";
+        print_r($this->order);
         //exit;
         $returnVal = false;
         $returnData = array();
@@ -749,6 +749,7 @@ class PaymentController extends Controller {
         $xml_data .= "<Payments>";
 
         $gift_data = $this->giftVoucherGvvalid();
+        print_r($gift_data);
         if($gift_data) {
 
           $gift_amount = $this->order->gift_amount;
@@ -786,6 +787,9 @@ class PaymentController extends Controller {
         $xml_data .= "</Payments>";
 
         $xml_data .= "</Order>";
+
+        echo $xml_data;
+        
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
@@ -869,7 +873,7 @@ class PaymentController extends Controller {
 
                 break;
         }
-
+        exit;
         return $returnVal;
     }
 
@@ -884,9 +888,9 @@ class PaymentController extends Controller {
             $response = $this->bridge->vouchervalid($gift, $pin, $amount);
             $returnCode = $response->getStatusCode();
 
-            print_r($response);
-            echo $returnCode;
-            exit;
+            //print_r($response);
+            //echo $returnCode;
+            //exit;
 
             switch ($returnCode) {
                 case 200:
