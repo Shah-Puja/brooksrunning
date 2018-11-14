@@ -620,8 +620,8 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        echo "<pre>";
-        print_r($this->order);
+        //echo "<pre>";
+        //print_r($this->order);
         //exit;
         $returnVal = false;
         $returnData = array();
@@ -749,7 +749,7 @@ class PaymentController extends Controller {
         $xml_data .= "<Payments>";
 
         $gift_data = $this->giftVoucherGvvalid();
-        print_r($gift_data);
+        //print_r($gift_data);
         if($gift_data) {
 
           $gift_amount = $this->order->gift_amount;
@@ -788,7 +788,7 @@ class PaymentController extends Controller {
 
         $xml_data .= "</Order>";
 
-        echo $xml_data;
+        //echo $xml_data;
         
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
@@ -873,7 +873,7 @@ class PaymentController extends Controller {
 
                 break;
         }
-        exit;
+        //exit;
         return $returnVal;
     }
 
