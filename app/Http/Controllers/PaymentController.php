@@ -374,12 +374,13 @@ class PaymentController extends Controller {
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
-                    $orderDataUpdate['person_idx'] = $PersonID;
-                    $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 }
                 if (!empty($PersonID)) {
                     $this->ap21order($PersonID);
+                    $orderDataUpdate['person_idx'] = $PersonID;
+                    $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 }
+                
             } else {
                 $logger = array(
                     'order_id' => $this->order->id,
