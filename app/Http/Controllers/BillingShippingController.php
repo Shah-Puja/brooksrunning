@@ -9,7 +9,8 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Hash;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 class BillingShippingController extends Controller
 {    
@@ -95,10 +96,19 @@ class BillingShippingController extends Controller
         }   
     }
 
+
     public function verify_password(Request $request){
-        $email= $request->email;
-        $password= $request->password;
-        $user_data = User::where("email", "=",  $email)->first();
+        //$email= $request->email;
+        //$password= $request->password;
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return "true";
+        }else{
+            return "false";
+        }
+        /*$user_data = User::where("email", "=",  $email)->first();
         $password_check = Hash::check($password,$user_data->password);
         if($password_check){
             $user_verify = User::where("email", "=",  $email)->where("password",$user_data->password)->first();
@@ -118,7 +128,7 @@ class BillingShippingController extends Controller
             }
         }else{
             return 'false';
-        }
+        }*/
     }
 
 }

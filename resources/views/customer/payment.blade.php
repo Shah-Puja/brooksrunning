@@ -1,6 +1,10 @@
 
 @extends('customer.layouts.master')
 @section('content')
+
+@php 
+$subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_discount) : $cart->grand_total;
+@endphp
 <section class="wrapper cart-breadcrumb--header">
     <div class="row hidden-xs">
         <div class="col-9">
@@ -60,7 +64,7 @@
                                 </div>
                             </div>
                         </li>
-                        @if($cart->grand_total < 1000)
+                        @if($subtotal < 1000)
                         <li class="tab-link" data-tab="tab-3">
                             <div class="input-wrapper">
                                 <div class="radio-inline">
@@ -149,7 +153,7 @@
                             </div>
                         </div>
                     </div>
-                    @if($cart->grand_total < 1000)
+                    @if($subtotal < 1000)
                     <div id="tab-3" class="tab-content">
                         <div class="payment-afterpay">
                             <div class="header">
@@ -163,19 +167,19 @@
                                 <ul>
                                     <li>
                                         <div class="round-icon icon1"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> First payment</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> First payment</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon2"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 2 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 2 weeks later</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon3"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 4 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 4 weeks later</p>
                                     </li>
                                     <li>
                                         <div class="round-icon icon4"></div>
-                                        <p><span>${{ @number_format($cart->grand_total/4, 2) }}</span> 6 weeks later</p>
+                                        <p><span>${{ @number_format($subtotal/4, 2) }}</span> 6 weeks later</p>
                                     </li>
                                 </ul>
                                 <div class="payment-btn" id="afterpay_submit">
