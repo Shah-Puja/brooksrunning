@@ -35,6 +35,10 @@ class MyaccountController extends Controller {
         return view('customer.myaccount.order-history');
     }
 
+    public function confirm_password() {
+        return view('customer.myaccount.confirm-password');
+    }
+
     public function update_profile(Request $request) {
         /* echo "<pre>"; 
           print_r($request->all());die; */
