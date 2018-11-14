@@ -12,6 +12,10 @@
 <section class="create-account wrapper">
 	<div class="row">
 		<div class="col-5 tab-6">
+
+		<form method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Reset Password') }}">
+        	@csrf
+			<input type="hidden" name="token" value="{{ $token }}">
 			<div class="create-account--left">
 				<h3 class="br-heading">Get your Password Here</h3>
 				<hr>
@@ -19,7 +23,13 @@
 					<div class="tab-12">
 						<div class="input-wrapper">
 							<label for="">Enter Email Address<sup>*</sup></label>
-							<input type="text" class="input-field">
+							<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
 						</div>
 					</div>
 				</div>
@@ -36,7 +46,13 @@
 								    </div>
 								</div>
 							</label>
-                            <input type="password" class="input-field">
+							<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
 						</div>
 					</div>
 				</div>
@@ -46,22 +62,23 @@
 							<label>
 								<div class="row">
 									<div class="mob-6">Confirm Password<sup>*</sup></div>
-									
 								</div>
 							</label>
-                            <input type="password" class="input-field">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="tab-12">
 						<div class="cart-btn">
-							<button class="primary-button">Send Password</button>
+							<button class="primary-button" type="submit">Send Password</button>
 						</div>
 						<p class="privacy">See our <a href="#">Terms and Conditions</a>.</p>
 					</div>
 				</div>
 			</div>
+		</form>
+
 		</div>
 		<div class="col-7 tab-6 hidden-mob">
 			<div class="create-account--banner">
