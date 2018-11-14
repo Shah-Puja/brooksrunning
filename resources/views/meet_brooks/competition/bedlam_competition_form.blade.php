@@ -122,55 +122,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-<<<<<<< HEAD
-					<div class="tab-6">
-						<div class="row">
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label><sup>*</sup>State</label>
-									
-										    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-										    	<option class="option-value" value="">Select State</option>
-		                                        <option class="option-value" value="ACT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="NSW,Australia">NSW,Australia</option>
-		                                        <option class="option-value" value="NT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="QLD,Australia">QLD,Australia</option>
-		                                        <option class="option-value" value="SA,Australia">SA,Australia</option>
-		                                        <option class="option-value" value="TAS,Australia">TAS,Australia</option>
-		                                        <option class="option-value" value="VIC,Australia">VIC,Australia</option>
-		                                        <option class="option-value" value="WA,Australia">WA,Australia</option>
-		                                        <option class="option-value" value="New Zealand">New Zealand</option>
-		                                        <option class="option-value" value="Other">Other</option>
-										    </select>
-									
-								</div>
-							</div>
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label>Postcode<sup>*</sup></label>
-		                            <input type="text" class="input-field">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-6">
-						<div class="input-wrapper">
-							<label>What Brooks Shoes do you wear?</label>
-						
-								   
-								    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-								    	<option class="option-value" value="">Select Brooks Shoes you wear</option>
-                                        <option class="option-value" value="ACT,Australia">Brooks 1</option>
-		                                <option class="option-value" value="ACT,Australia">Brooks 2</option>
-		                                <option class="option-value" value="NSW,Australia">Brooks 3</option>
-								    </select>
-								
-						</div>
-					</div>
-				</div>
-	<div class="row">
-=======
+	<div class="row" style="margin-top:20px;">
 		<div class="tab-6">
 			<div class="row">
 				<div class="mob-6">
@@ -217,7 +169,6 @@
 		</div>
 	</div>
 	<!--<div class="row">
->>>>>>> 2bb41f993a704ce23491aa96cb719f0f7b2b184f
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label>Contest code (if applicable)<sup>*</sup></label>
@@ -227,7 +178,7 @@
 	</div>-->
 	<input type="hidden" name="comp_name" value="{{ $competition->comp_name }} " />
 	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
-	<div class="row">
+	<div class="row" style="margin-top:20px;">
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
