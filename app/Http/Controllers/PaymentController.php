@@ -620,14 +620,14 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        echo "<pre>";
-        print_r($this->order);
+        //echo "<pre>";
+        //print_r($this->order);
         //exit;
         $returnVal = false;
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
-        echo $ordernum = "BRN-" . $this->order->order_no; //change Order No with new series when site goes live
+        $ordernum = "BRN-" . $this->order->order_no; //change Order No with new series when site goes live
        
         if (!empty($this->order->coupon_code)) {
            $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
@@ -747,8 +747,6 @@ class PaymentController extends Controller {
         $xml_data .= "
                 </OrderDetails>";
         $xml_data .= "<Payments>";
-        echo $xml_data;
-        exit;
 
         $gift_data = $this->giftVoucherGvvalid();
         if($gift_data) {
