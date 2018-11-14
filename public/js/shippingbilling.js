@@ -68,7 +68,7 @@ $(document).ready(function(){
                 data: {password:password,email:email},
                 success: function(data){
                     console.log(data);
-                    if(data=='true'){
+                    if(data=="true"){
                         window.location.href="/shipping";
                     }else{	
                         $('#password_field').addClass("needsfilled");
@@ -364,7 +364,7 @@ function shippingform_validate(){
         terms.removeClass("needsfilled");
     }
 
-    
+
     // if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
     if($('#different-address:checked').val()=='No'){
         for (j = 0; j < billing_required.length; j++) {
