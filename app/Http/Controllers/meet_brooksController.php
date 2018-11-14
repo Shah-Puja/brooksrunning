@@ -39,9 +39,7 @@ class meet_brooksController extends Controller
             'postcode' => 'required',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
-        $comp_record_exist = Competition_user::where('comp_name',request('comp_name'))
-                              ->where('email',request('email')) 
-                              ->first();
+
     	$competition = Competition_user::updateOrCreate(
             [ 'email' => request('email'),'comp_name' => request('comp_name')],
             [
@@ -58,7 +56,7 @@ class meet_brooksController extends Controller
             ]
         );
         
-        if(!$comp_record_exist){
+        if($competition->wasRecentlyCreated){
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
             return response()->json([ 'success' => '<p class="heading">Thank for your interest! </p> <p class="thankyou_heading">You have already entered the competition.</p>' ]);
