@@ -172,7 +172,7 @@
                     <div class="form-container">
                         <div class="row">
                             <div class="tab-6">
-                                <span id="msg" style="color:green;"></span> <br>
+                                <p id="msg" style="color:green; margin-bottom: 0px;margin-left: 20px;" class="br-heading">Thank you for registration</p>
                                 <form name="make_member_form" id="make_member_form" method="post" onsubmit="return check_validate()">
                                     {{ csrf_field() }}
                                     <div class="form-wrapper">
@@ -216,6 +216,7 @@
 </style>
 <script>
     $(document).ready(function () {
+        $("#msg").css('display','none');
         required = ["pass", "conf_pass"];
         emptyerror = "REQUIRED";
     });
@@ -256,6 +257,7 @@
                     //console.log(data);
                     var pass = $('#pass').val('');
                     var conf_pass = $('#conf_pass').val('');
+                    $("#msg").css('display','block');
                     $("#msg").text("Thank you for registration");
                 }
             });
