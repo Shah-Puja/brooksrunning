@@ -2,6 +2,11 @@
 @extends('customer.layouts.master')
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
+    @php
+        // echo "<pre>";
+        //     print_r($order);
+        // echo "</pre>";
+    @endphp
     <div class="row hidden-xs">
         <div class="col-9">
             <div class="cart-header--step">
@@ -136,6 +141,7 @@
                         </div>
                     </div>
                 </div>
+                @if($user_id!="no")
                 <div class="success-container--footer">
                     <div class="header">
                         <h3>Save your order details by creating an account!</h3>
@@ -144,19 +150,23 @@
                     <div class="form-container">
                         <div class="row">
                             <div class="tab-6">
-                                <div class="form-wrapper">
-                                    <div class="input-wrapper">
-                                        <label for="email1"><sup>*</sup>Password</label>
-                                        <input type="text" name="email1" class="input-field">
+                                <form name="make_member_form" id="make_member_form" method="post" onsubmit="return check_validate()">
+                                    {{ csrf_field() }}
+                                    <div class="form-wrapper">
+                                        <input type='hidden' name="user_email" id="user_email" value="{{$order_email}}">
+                                        <div class="input-wrapper">
+                                            <label for="email1"><sup>*</sup>Password</label>
+                                            <input type="passoword" name="pass" id="pass" class="input-field">
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <label for="email1"><sup>*</sup>Confirm Password</label>
+                                            <input type="passoword" name="conf_pass" id="conf_pass" class="input-field">
+                                        </div>
+                                        <div class="cart-btn">
+                                            <button type="submit" name="submit" class="pdp-button">Create account</button>
+                                        </div>
                                     </div>
-                                    <div class="input-wrapper">
-                                        <label for="email1"><sup>*</sup>Confirm Password</label>
-                                        <input type="text" name="email1" class="input-field">
-                                    </div>
-                                    <div class="cart-btn">
-                                        <button class="pdp-button">Create account</button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                             <div class="tab-6">
                                 <div class="form-info">
@@ -169,9 +179,64 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
 </section> 
 </div>
+<style>
+    .needsfilled{
+        border:1px solid #ff0000 !important;
+    }
+    </style>
+<script>
+    $(document).ready(function(){
+        required = ["pass","conf_pass"];
+        emptyerror = "REQUIRED";
+    });
+    function check_validate(){
+        var user_email = $('#user_email').val();
+        var pass = $('#pass').val();
+        var conf_pass = $('#conf_pass').val();
+        required = ["pass","conf_pass"];
+        for (i=0;i<required.length;i++) {
+            var input = $('#'+required[i]);
+            if ((input.val() == "") || (input.val() == emptyerror)) {
+                input.addClass("needsfilled");
+                input.val("");
+                input.attr("placeholder", emptyerror);
+            } else {
+                input.removeClass("needsfilled");
+            }
+        }
+
+        if(pass != conf_pass){
+            $('#conf_pass').addClass("needsfilled");
+            $('#conf_pass').val("");
+            $('#conf_pass').attr("placeholder", "Confirm Password Matched With Password");
+        }
+
+        if ($(":input").hasClass("needsfilled") ) {
+            return false;
+        }
+        else{
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:"/make_member",
+                type:"POST",
+                data: {user_email:user_email,pass:pass,conf_pass:conf_pass},
+                success: function(data){
+                    console.log(data);
+                    var pass = $('#pass').val('');
+                    var conf_pass = $('#conf_pass').val('');
+                }
+            });
+            return false;
+        }
+        return false;
+    }
+</script>
 @endsection

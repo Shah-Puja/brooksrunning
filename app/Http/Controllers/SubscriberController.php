@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscriber;
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class SubscriberController extends Controller
 {
@@ -11,5 +15,11 @@ class SubscriberController extends Controller
     	request()->validate(['email' => 'required|email|unique:subscribers']);
     	$subscriber = $subscriber->create(['email' => request('email')]);
     	return response()->json(['success'=>'Thank you for subscribing!']);
+    }
+
+    public function make_member(){
+        $email = $_POST['user_email'];
+        $password = Hash::make($_POST['pass']);
+        User::where('email', $email)->update(['password' => $password]);
     }
 }
