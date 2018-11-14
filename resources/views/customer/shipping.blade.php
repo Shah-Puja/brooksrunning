@@ -255,7 +255,7 @@
                                             <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
                                             <label for="signme">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">Uncheck this box if you do not wish to receive communication from Brooks on new products, exclusive offers and info to make you Run Happy.</div>
+                                                    <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
                                             </label>
                                         </div>
                                     </div>

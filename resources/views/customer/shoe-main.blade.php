@@ -147,7 +147,7 @@
 						<div class="col-4 tab-4 mob-12 " >&nbsp;</div>
 						<div class="col-4 tab-4 mob-12 " >
 									<div class="horizontal-shoefinder-btn">
-										<a class="primary-button" href="#">Shoe Finder</a>
+										<a class="primary-button" href="/shoefinder">Shoe Finder</a>
 									</div>
 						</div>
 						<div class="col-4 tab-4 mob-12 " >

@@ -58,7 +58,7 @@
 				<div class="mob-6 tab-4 col-4">
 					<div class="shoe-wrapper__sub">
 						<div class="ctg-product">
-							<div class="offer-info">
+							<!-- <div class="offer-info">
 								@if(isset($shoes_value->experience))
 									@if($shoe_info->experience == 'Cushion Me')
 										<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="100" height="100" />
@@ -70,7 +70,7 @@
 										<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="100" height="100" />
 									@endif
 								@endif
-							</div>
+							</div> -->
 							<div class="img img-shoes">
 								<img id="plp-img" src="{{ $shoes_value->image->image1Medium() }}" alt="">
 							</div>						

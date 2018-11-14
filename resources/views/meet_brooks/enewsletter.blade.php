@@ -229,7 +229,7 @@
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label>Contest code (if applicable)<sup>*</sup></label>
-                            <input type="password" class="input-field">
+                            <input type="text" class="input-field">
 						</div>
 					</div>
 				</div>
