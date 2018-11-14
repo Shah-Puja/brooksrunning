@@ -67,9 +67,19 @@ $(document).ready(function(){
                 type:"POST",
                 data: {password:password,email:email},
                 success: function(data){
-                    //console.log(data);console.log("hi");
-                    if(data['pass_status']=='true'){
+                    console.log(data);
+                    if(data=='true'){
+                        window.location.href="/shipping";
+                    }else{	
+                        $('#password_field').addClass("needsfilled");
+                        $('#password_field').val("");
+                        $('#password_field').attr("placeholder", "Wrong Password");
+                        						
+                    }
+                    //console.log("hi");
+                    /*if(data['pass_status']=='true'){
                         if(data['pass_data'] == "order_address"){
+                            location.reload();
                             console.log(data);
                             $("input[name='b_add1']").val(data['b_add1']);
                             $("input[name='b_add2']").val(data['b_add2']);
@@ -106,7 +116,7 @@ $(document).ready(function(){
                         $('#password_field').val("");
                         $('#password_field').attr("placeholder", "Wrong Password");
                         						
-                    }
+                    }*/
                 }
             });
         }
@@ -354,7 +364,9 @@ function shippingform_validate(){
         terms.removeClass("needsfilled");
     }
 
-    if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
+    
+    // if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
+    if($('#different-address:checked').val()=='No'){
         for (j = 0; j < billing_required.length; j++) {
             let input = $('input[name="' + billing_required[j] + '"],select[name="' + billing_required[j] + '"]');
             if (input.val() == "") {
