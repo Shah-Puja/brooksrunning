@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Competition;
 use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
+use App\Models\User;
 
 class meet_brooksController extends Controller
 {   
