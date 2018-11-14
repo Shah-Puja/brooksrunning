@@ -81,7 +81,7 @@ class meet_brooksController extends Controller
                 $PersonID = $this->get_personid(request('email'),request('fname'),request('lname'),request('gender'),request('country'));
             } 
             if(!empty($PersonID)){
-                $Person->update(['person_idx' => $PersonID ]);
+                User::where('email',request('email'))->update(['person_idx' => $PersonID ]);
             }
         } 
         
