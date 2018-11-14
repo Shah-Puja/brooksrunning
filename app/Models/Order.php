@@ -27,10 +27,10 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
-        echo "<pre>";
+        /*echo "<pre>";
          print_R($cart);
          echo "</pre>";
-         die;
+         die;*/
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
@@ -40,7 +40,7 @@ class Order extends Model
                 'cart_id' => $cart['id'], 
                 'total' => $cart['total'],
                 'freight_cost' => $cart['freight_cost'],
-                'grand_total' => ($cart->gift_discount!="") ? ($cart['grand_total'] - $cart->gift_discount) : $cart['grand_total'],
+                'grand_total' => ($cart['gift_discount']!="") ? ($cart['grand_total'] - $cart['gift_discount']) : $cart['grand_total'],
                 'delivery_type' => $cart['delivery_type'],
             ]
         );
