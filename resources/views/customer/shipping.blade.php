@@ -536,4 +536,5 @@
     </div>
 </section>
 <script src="/js/shippingbilling.js"></script>
+
 @endsection

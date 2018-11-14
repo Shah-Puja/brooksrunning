@@ -96,6 +96,7 @@ class BillingShippingController extends Controller
         }   
     }
 
+    
     public function verify_password(Request $request){
         //$email= $request->email;
         //$password= $request->password;

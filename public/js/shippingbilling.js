@@ -364,6 +364,7 @@ function shippingform_validate(){
         terms.removeClass("needsfilled");
     }
 
+    
     // if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
     if($('#different-address:checked').val()=='No'){
         for (j = 0; j < billing_required.length; j++) {
