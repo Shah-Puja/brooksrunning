@@ -27,10 +27,10 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
-         /*echo "<pre>";
+         echo "<pre>";
          print_R($cart);
          echo "</pre>";
-         die;*/ 
+         die; 
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
@@ -56,11 +56,10 @@ class Order extends Model
         $promo_code = isset($cart->promo_code) ? $cart->promo_code : "";
 
         if($cart->promo_code!=""){
-             self::where('id',$order_id)->update([
+            self::where('id',$order_id)->update([
                 'coupon_code' => ($promo_code) ? $promo_code : "",
                 'discount' => isset($cart->discount) ? $cart->discount : ""
-            ]);
-            //echo $promo_code." eeeeeeeeee ".$cart->discount;die;
+            ]); 
         }
         
         
