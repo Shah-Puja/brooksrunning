@@ -72,7 +72,7 @@
 								@endif
 							</div>
 							<div class="img img-shoes">
-								<img id="plp-img" src="$shoes_value->image->image1Medium()" alt="">
+								<img id="plp-img" src="{{ $shoes_value->image->image1Medium() }}" alt="">
 							</div>						
 							<div class="info">
 								<h3>@if($shoes_value->gender == 'M')Men's @else Women's @endif {{$shoes_value->stylename}}</h3>
