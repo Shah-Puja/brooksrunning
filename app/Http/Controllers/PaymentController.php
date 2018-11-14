@@ -884,6 +884,10 @@ class PaymentController extends Controller {
             $response = $this->bridge->vouchervalid($gift, $pin, $amount);
             $returnCode = $response->getStatusCode();
 
+            print_r($response);
+            echo $returnCode;
+            exit;
+
             switch ($returnCode) {
                 case 200:
 
