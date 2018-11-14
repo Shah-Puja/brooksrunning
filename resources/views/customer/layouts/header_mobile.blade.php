@@ -88,7 +88,7 @@
 	                        </a>
 							<ul>
 	                            <li>
-	                                <a href="/footwear/women/best_selling">All Best Sellers</a>
+	                                <a href="/footwear/women/best_selling">Best Sellers</a>
 	                            </li>
 	                            <li>
 									<a href="/adrenaline-gts-18-womens-running-shoes/120268_516.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a>
@@ -201,7 +201,7 @@
 	                        </a>
 							<ul>
 	                            <li>
-	                                <a href="/footwear/men/best_selling">All Best Sellers</a>
+	                                <a href="/footwear/men/best_selling">Best Sellers</a>
 	                            </li>
 	                            <li>
 									<a href="/adrenaline-gts-18-mens-running-shoes/110271_438.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a>
@@ -710,7 +710,7 @@
 	                </a>
 	            </li>
 	            <li>
-	                <a href="/info/contact">
+	                <a href="/info/contact-us">
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>

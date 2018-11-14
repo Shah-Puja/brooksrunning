@@ -1,15 +1,15 @@
-<form name="competition" id='competition' method="post"  onsubmit="return insert_competition()">
+<form>
 	<div class="row">
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label for=""><sup>*</sup>First Name</label>
-				<input type="text" name="fname"  class="input-field">
+				<input type="text" class="input-field">
 			</div>
 		</div>
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label for=""><sup>*</sup>Last Name</label>
-				<input type="text" name="lname" class="input-field">
+				<input type="text" class="input-field">
 			</div>
 		</div>
 	</div>
@@ -17,12 +17,12 @@
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label for=""><sup>*</sup>Email Address</label>
-				<input type="text" name="email" class="input-field">
+				<input type="text" class="input-field">
 			</div>
 		</div>
 		<div class="tab-6">
 			<div class="input-wrapper">
-				<label class='gender-label'><sup>*</sup>Gender</label>
+				<label><sup>*</sup>Gender</label>
 				<div class="radio-inline">
 					<input type="radio" class="input-radio" name="gender" value="male" id="male">
 					<label for="male">
@@ -48,17 +48,17 @@
 			<div class="row">
 				<div class="mob-6">
 				<div class="input-wrapper">
-							<select class="select-field" name="custom_Birth_Date" id="custom_Birth_Date" style="margin-bottom: 0px;">
+							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 								<option class="option-value" value="">Select Date</option>
-								<option class="option-value" value="01">1</option>
-								<option class="option-value" value="02">2</option>
-								<option class="option-value" value="03">3</option>
-								<option class="option-value" value="04">4</option>
-								<option class="option-value" value="05">5</option>
-								<option class="option-value" value="06">6</option>
-								<option class="option-value" value="07">7</option>
-								<option class="option-value" value="08">8</option>
-								<option class="option-value" value="09">9</option>
+								<option class="option-value" value="1">1</option>
+								<option class="option-value" value="2">2</option>
+								<option class="option-value" value="3">3</option>
+								<option class="option-value" value="4">4</option>
+								<option class="option-value" value="5">5</option>
+								<option class="option-value" value="6">6</option>
+								<option class="option-value" value="7">7</option>
+								<option class="option-value" value="8">8</option>
+								<option class="option-value" value="9">9</option>
 								<option class="option-value" value="10">10</option>
 								<option class="option-value" value="11">11</option>
 								<option class="option-value" value="12">12</option>
@@ -86,17 +86,17 @@
 				</div>
 				<div class="mob-6">
 				<div class="input-wrapper">
-							<select class="select-field" name="custom_Birth_Month" id="custom_Birth_Month" style="margin-bottom: 0px;">
+							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 								<option class="option-value" value="">Select Month</option>
-								<option class="option-value" value="01">Jan</option>
-								<option class="option-value" value="02">Feb</option>
-								<option class="option-value" value="03">Mar</option>
-								<option class="option-value" value="04">Apr</option>
-								<option class="option-value" value="05">May</option>
-								<option class="option-value" value="06">Jun</option>
-								<option class="option-value" value="07">Jul</option>
-								<option class="option-value" value="08">Aug</option>
-								<option class="option-value" value="09">Sep</option>
+								<option class="option-value" value="1">Jan</option>
+								<option class="option-value" value="2">Feb</option>
+								<option class="option-value" value="3">Mar</option>
+								<option class="option-value" value="4">Apr</option>
+								<option class="option-value" value="5">May</option>
+								<option class="option-value" value="6">Jun</option>
+								<option class="option-value" value="7">Jul</option>
+								<option class="option-value" value="8">Aug</option>
+								<option class="option-value" value="9">Sep</option>
 								<option class="option-value" value="10">Oct</option>
 								<option class="option-value" value="11">Nov</option>
 								<option class="option-value" value="12">Dec</option>
@@ -109,7 +109,7 @@
 			<div class="input-wrapper">
 				<label for="name">Age</label>
 
-						<select class="select-field" name="custom_Age" id="custom_Age" style="margin-bottom: 0px;">
+						<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 							<option class="option-value" value="">Select your age group</option>
 							<option class="option-value" value="<18">18 and under</option>
 							<option class="option-value" value="19-30">19 to 30</option>
@@ -123,69 +123,32 @@
 		</div>
 	</div>
 	<div class="row">
-<<<<<<< HEAD
-					<div class="tab-6">
-						<div class="row">
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label><sup>*</sup>State</label>
-									
-										    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-										    	<option class="option-value" value="">Select State</option>
-		                                        <option class="option-value" value="ACT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="NSW,Australia">NSW,Australia</option>
-		                                        <option class="option-value" value="NT,Australia">ACT,Australia</option>
-		                                        <option class="option-value" value="QLD,Australia">QLD,Australia</option>
-		                                        <option class="option-value" value="SA,Australia">SA,Australia</option>
-		                                        <option class="option-value" value="TAS,Australia">TAS,Australia</option>
-		                                        <option class="option-value" value="VIC,Australia">VIC,Australia</option>
-		                                        <option class="option-value" value="WA,Australia">WA,Australia</option>
-		                                        <option class="option-value" value="New Zealand">New Zealand</option>
-		                                        <option class="option-value" value="Other">Other</option>
-										    </select>
-									
-								</div>
-							</div>
-							<div class="mob-6">
-								<div class="input-wrapper">
-									<label>Postcode<sup>*</sup></label>
-		                            <input type="text" class="input-field">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-6">
-						<div class="input-wrapper">
-							<label>What Brooks Shoes do you wear?</label>
-						
-								   
-								    <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
-								    	<option class="option-value" value="">Select Brooks Shoes you wear</option>
-                                        <option class="option-value" value="ACT,Australia">Brooks 1</option>
-		                                <option class="option-value" value="ACT,Australia">Brooks 2</option>
-		                                <option class="option-value" value="NSW,Australia">Brooks 3</option>
-								    </select>
-								
-						</div>
-					</div>
-				</div>
-	<div class="row">
-=======
 		<div class="tab-6">
 			<div class="row">
 				<div class="mob-6">
 					<div class="input-wrapper">
-						<label><sup>*</sup>Country</label>
-							<select class="select-field" name="country" id="custom_Country" style="margin-bottom: 0px;">
-								<option value="AU">Australia</option>
-								<option value="NZ">New Zealand</option>
-							</select>
+						<label><sup>*</sup>State</label>
+						
+								
+								<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+									<option class="option-value" value="">Select State</option>
+									<option class="option-value" value="ACT,Australia">ACT,Australia</option>
+									<option class="option-value" value="NSW,Australia">NSW,Australia</option>
+									<option class="option-value" value="NT,Australia">ACT,Australia</option>
+									<option class="option-value" value="QLD,Australia">QLD,Australia</option>
+									<option class="option-value" value="SA,Australia">SA,Australia</option>
+									<option class="option-value" value="TAS,Australia">TAS,Australia</option>
+									<option class="option-value" value="VIC,Australia">VIC,Australia</option>
+									<option class="option-value" value="WA,Australia">WA,Australia</option>
+									<option class="option-value" value="New Zealand">New Zealand</option>
+									<option class="option-value" value="Other">Other</option>
+								</select>
 					</div>
 				</div>
 				<div class="mob-6">
 					<div class="input-wrapper">
 						<label>Postcode<sup>*</sup></label>
-						<input type="text" name="postcode" class="input-field">
+						<input type="text" class="input-field">
 					</div>
 				</div>
 			</div>
@@ -194,7 +157,7 @@
 			<div class="input-wrapper">
 				<label>What Brooks Shoes do you wear?</label>
 				
-						<select class="select-field" name="custom_Shoes_you_wear" id="custom_Shoes_you_wear" style="margin-bottom: 0px;">
+						<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 							<option class="option-value" value="">Select Brooks Shoes you wear</option>
 							<option class="option-value" value="Addiction">Addiction</option>
 							<option class="option-value" value="Addiction Walker">Addiction Walker</option>
@@ -216,17 +179,16 @@
 			</div>
 		</div>
 	</div>
-	<!--<div class="row">
->>>>>>> 2bb41f993a704ce23491aa96cb719f0f7b2b184f
+	<div class="row">
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label>Contest code (if applicable)<sup>*</sup></label>
-				<input type="text" class="input-field">
+				<input type="password" class="input-field">
 			</div>
 		</div>
-	</div>-->
+	</div>
 	<input type="hidden" name="comp_name" value="{{ $competition->comp_name }} " />
-	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
+	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}>" />
 	<div class="row">
 		<div class="tab-6">
 			<div class="input-wrapper">
