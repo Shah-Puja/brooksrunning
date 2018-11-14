@@ -92,7 +92,7 @@
                     <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
                         @csrf
                         <div class="shipping-form">
-                            <p class="email-msg">Please enter your email address</p>					
+                            <p class="email-msg">Please enter your email address</p>				
                             <div class="row">
                                 <div class="col-6">
                                     <div class="input-wrapper">
@@ -127,7 +127,8 @@
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="cart-btn cart-btn--password">
-                                            <a href='javascript:void(0)' class="primary-button pdp-button login_user">Login</a>
+                                            <!--<a href='javascript:void(0)' class="primary-button pdp-button login_user">Login</a>-->
+                                            <button class="primary-button pdp-button login_user" type="submit">Login</button>
                                             {{-- <button class="secondary-button2" onclick="gest_user()">Checkout as guest</button> --}}
                                             <a href='javascript:void(0)' class="secondary-button2 gest_user">Checkout as guest</a>
                                             {{-- <a href='javascript:void(0)' class="continue-step" onclick="gest_user()">Continue without login</a> --}}
