@@ -884,8 +884,12 @@ class PaymentController extends Controller {
             $response = $this->bridge->vouchervalid($gift, $pin, $amount);
             $returnCode = $response->getStatusCode();
 
+            print_r($response);
+            echo $returnCode;
+            exit;
+
             switch ($returnCode) {
-                case 201:
+                case 200:
 
                     $xml = @simplexml_load_string($response->getBody()->getContents());
                     $dataValue['VoucherNumber'] = (int) ($xml->VoucherNumber);
@@ -893,6 +897,11 @@ class PaymentController extends Controller {
                     $dataValue['ExpiryDate'] = $xml->ExpiryDate;
                     $dataValue['ValidationId'] = $xml->ValidationId;
                     $dataValue['Amount'] = $amount;
+                    break;
+
+                case 403 :
+                    echo "Incorrect Voucher";
+                    $dataValue = false;
                     break;
 
                 default:
