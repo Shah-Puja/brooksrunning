@@ -622,13 +622,13 @@ class PaymentController extends Controller {
     public function ap21order($person_id) {
         echo "<pre>";
         print_r($this->order);
-        exit;
+        //exit;
         $returnVal = false;
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
-        $ordernum = "BRNTest2018-" . $this->order->order_no; //change Order No with new series when site goes live
-
+        echo $ordernum = "BRNTest2018-" . $this->order->order_no; //change Order No with new series when site goes live
+        exit;
         if (!empty($this->order->coupon_code)) {
            $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
         }
