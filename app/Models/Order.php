@@ -60,7 +60,7 @@ class Order extends Model
                 'discount' => isset($cart->discount) ? $cart->discount : "",
                 'giftcert_ap21code' => (isset($cart->gift_id) && $cart->gift_id!="") ? $cart->gift_id : "",
                 'giftcert_ap21pin' => (isset($cart->pin) && $cart->pin!="") ? $cart->pin : "",
-                'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "",
+                'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "0",
         ]);
           
        
