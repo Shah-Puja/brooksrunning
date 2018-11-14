@@ -79,7 +79,7 @@ Route::post('/payment', 'PaymentController@store');
 Route::get('/order/success', 'PaymentController@order_success');
 
 /* Success page password */
-Route::post('/make_member', 'SubscriberController@make_member');
+Route::post('/make_member', 'MyaccountController@make_member');
 
 Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
 Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');

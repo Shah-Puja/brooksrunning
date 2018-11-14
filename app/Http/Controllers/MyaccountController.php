@@ -41,8 +41,8 @@ class MyaccountController extends Controller {
     }
 
     public function update_profile(Request $request) {
-        /* echo "<pre>"; 
-          print_r($request->all());die; */
+        // echo "<pre>"; 
+        // print_r($request->all());die;
         User::where('id', auth()->id())->update(['first_name' => $request->first_name, 'last_name' => $request->last_name, 'gender' => ucfirst($request->gender),
             'dob' => $request->birth_month . "-" . $request->birth_date, 'birth_date' => $request->birth_date,
             'birth_month' => $request->birth_month, 'age_group' => $request->age_group, 'state' => $request->state,
@@ -50,6 +50,12 @@ class MyaccountController extends Controller {
             'newsletter' => @$request->newsletter ? 1 : 0
         ]);
         return redirect('account-personal');
+    }
+
+    public function make_member(){
+        $email = $_POST['user_email'];
+        $password = Hash::make($_POST['pass']);
+        User::where('email', $email)->update(['password' => $password]);
     }
 
 }
