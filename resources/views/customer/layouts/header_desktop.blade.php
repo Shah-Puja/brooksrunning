@@ -100,7 +100,7 @@
                                                 </ul>
                                                 <ul class="tab-2 sub-menu-margin">
                                                     <li class="submenu-main">
-                                                        <a href="/footwear/women/best_selling">All Best Sellers</a>
+                                                        <a href="/footwear/women/best_selling">Best Sellers</a>
                                                     </li>
                                                     <li>
                                                         <a href="/adrenaline-gts-18-womens-running-shoes/120268_516.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a> 
