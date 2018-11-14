@@ -3,7 +3,7 @@
 @section('content')
 
 @php 
-$cart->grand_total = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_discount) : $cart->grand_total;
+$subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_discount) : $cart->grand_total;
 @endphp
 <section class="wrapper cart-breadcrumb--header">
     <div class="row hidden-xs">
