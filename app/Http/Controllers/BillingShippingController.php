@@ -96,7 +96,7 @@ class BillingShippingController extends Controller
         }   
     }
 
-    
+
     public function verify_password(Request $request){
         //$email= $request->email;
         //$password= $request->password;
@@ -104,9 +104,9 @@ class BillingShippingController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return 'true';
+            return "true";
         }else{
-            return 'false';
+            return "false";
         }
         /*$user_data = User::where("email", "=",  $email)->first();
         $password_check = Hash::check($password,$user_data->password);
