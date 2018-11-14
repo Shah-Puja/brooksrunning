@@ -24,7 +24,7 @@
 			    @if($competition->status == 'Open')
 				<div class="row">
 					<div class="col-10">
-						<p>{{ $competition->comp_text }}</p>
+						<p>{!! $competition->comp_text !!}</p>
 					</div>
 				</div>
 				<hr>
