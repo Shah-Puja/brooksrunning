@@ -1,4 +1,9 @@
 @extends('customer.layouts.master')
+
+@section('head')
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endsection
+
 @section('content')
 <div class="create-account--header">
 	<div class="wrapper">
@@ -17,17 +22,18 @@
 				<p>Sign up to Brooks ‘The Run Down’ to receive the inside story on new and <br/>upcoming product info, exclusing offers and inspiration to keep you running.</p>
 				<hr>
 				<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+				<form name="enewsletter" id='enewsletter' method="post"  onsubmit="return insert_enewsletter()">
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for=""><sup>*</sup>First Name</label>
-							<input type="text" class="input-field">
+							<input type="text" name="fname"  class="input-field">
 						</div>
 					</div>
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for=""><sup>*</sup>Last Name</label>
-							<input type="text" class="input-field">
+							<input type="text" name="lname" class="input-field">
 						</div>
 					</div>
 				</div>
@@ -35,26 +41,26 @@
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for=""><sup>*</sup>Email Address</label>
-							<input type="text" class="input-field">
+							<input type="text" name="email" class="input-field">
 						</div>
 					</div>
 					<div class="tab-6">
 						<div class="input-wrapper">
-							  <label><sup>*</sup>Gender</label>
-							  <div class="radio-inline">
-							  	  <input type="radio" class="input-radio" name="gender" value="male" id="male">
-							  	  <label for="male">
-							      	 <div class="mark"><span></span></div>
-							      	 <div class="text">Male</div>
-							      </label>
-							  </div>
-							  <div class="radio-inline">
-							  	  <input type="radio" class="input-radio" name="gender" value="female" id="female">
-							  	  <label for="female">
-							      	 <div class="mark"><span></span></div>
-							      	 <div class="text">Female</div>
-							      </label>
-							  </div>
+							<label class='gender-label'><sup>*</sup>Gender</label>
+							<div class="radio-inline">
+								<input type="radio" class="input-radio" name="gender" value="male" id="male">
+								<label for="male">
+									<div class="mark"><span></span></div>
+									<div class="text">Male</div>
+								</label>
+							</div>
+							<div class="radio-inline">
+								<input type="radio" class="input-radio" name="gender" value="female" id="female">
+								<label for="female">
+									<div class="mark"><span></span></div>
+									<div class="text">Female</div>
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -189,16 +195,16 @@
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label>Contest code (if applicable)<sup>*</sup></label>
-                            <input type="text" class="input-field">
+							<label>Contest code (if applicable)</label>
+                            <input type="text" name="contest_code" class="input-field">
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" style="margin-top:20px;">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<div class="captcha">Captcha Code <br/>Show Here</div>
-                            <input type="password" class="input-field" placeholder="Enter Above Text">
+							<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
+							<label class="recaptcha-label"></label>
 						</div>
 					</div>
 				</div>
@@ -207,6 +213,11 @@
 						<div class="cart-btn">
 							<button class="primary-button">Subscribe</button>
 						</div>
+					</div>
+				</div>
+				</form>
+				<div class="row">
+					<div class="tab-12">
 						<p class="privacy">Brooks Sports will not use your email address or information for any purpose other than distributing our email newsletter. You must be an Australian or New Zealand resident to be eligible for any prize drawing. View our <a href="#">Privacy Policy</a></p>
 					</div>
 				</div>
@@ -244,4 +255,48 @@
 		</div>
 	</div>
 </section>
+<script>
+function insert_enewsletter(){
+	$("#enewsletter input,#enewsletter select").removeClass("error-border");
+	$("#enewsletter input,#enewsletter select").parent().find('label span').remove();
+	var form_data =  $('#enewsletter').serialize();
+	$.ajax({
+		headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+		url: "/meet_brooks/enewsletter", 
+		method: "post", 
+		data: form_data,
+		success: function(response) {
+			$(".response_content").html(response.success);
+			return false;
+		},
+		error: function(error){
+			let obj = JSON.parse(error.responseText);
+			let response = grecaptcha.getResponse();
+			if(response==''){;
+				let label_text =  $(".recaptcha-label").html("");
+				let error_span = " <span class='error'>The recaptcha field is required.</span>";
+				let error = error_span ;
+				$(".recaptcha-label").html(error);
+			}else{
+				grecaptcha.reset();
+			}
+			$.each( obj.errors, function( key, value ) {
+				if(key=='gender'){
+					var input_label = $(".gender-label");
+				}else{
+					var input_label = $("#enewsletter input[name="+key+"],#enewsletter select[name="+key+"]").parent().find('label');
+					$("#enewsletter input[name="+key+"],#enewsletter select[name="+key+"]").addClass("error-border");
+				}
+				let label_text = input_label.html();
+				let error_span = " <span class='error'>"+ value +"</span>";
+				let error = label_text + error_span ;
+				input_label.html(error);
+			});
+		}
+	});
+	return false;
+}
+</script>
 @endsection
