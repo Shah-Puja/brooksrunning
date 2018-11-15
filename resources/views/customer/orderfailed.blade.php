@@ -30,49 +30,59 @@
 
                     <br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We’re available to help Mon-Fri between 9am-5AEST.</p>
                     </div>
-                      <p class="order"><span>Order No:</span> BRN-98989</p>
-                      <p class="order"><span>Your transaction no:</span> paypal#2225999</p>
+                      <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>
+                      {{-- <p class="order"><span>Your transaction no:</span> paypal#2225999</p> --}}
                       <p>N.B.: The information is at your disposal for a possible request to the customer support and it does not confirm the validation of the payment in any case.</p>
                     <div class="cart-btn" style="padding-bottom: 25px;">
-                                            <button class="pdp-button">Back to Order</button>
+                                            <a href="/cart" class="pdp-button">Back to Order</a>
                     </div>
                     </div>
                   
                   
                
-                    <div class="success-container--footer">
-                        <div class="header">
-                            <h3>Save your order details by creating an account!</h3>
-                            <p>It’s easy, just choose a password and you’ll have access to all your order information.</p>
-                        </div>
-                        <div class="form-container">
-                            <div class="row">
-                                <div class="tab-6">
+                @if($user_id!="no")
+                <div class="success-container--footer">
+                    <div class="header">
+                        <h3>Save your order details by creating an account!</h3>
+                        <p>It’s easy, just choose a password and you’ll have access to all your order information.</p>
+                    </div>
+                    <div class="form-container">
+                        <div class="row">
+                            <div class="tab-6">
+                                <p id="msg" style="color:green; margin-bottom: 0px;margin-left: 20px;" class="br-heading">Thank you for registration</p>
+                                <form name="make_member_form" id="make_member_form" method="post" onsubmit="return check_validate()">
+                                    {{ csrf_field() }}
                                     <div class="form-wrapper">
+                                        <input type='hidden' name="user_email" id="user_email" value="{{$order_email}}">
+                                        <input type='hidden' name="user_id" id="user_id" value="{{$user_id}}">
                                         <div class="input-wrapper">
                                             <label for="email1"><sup>*</sup>Password</label>
-                                            <input type="text" name="email1" class="input-field">
+                                            <input type="passoword" name="pass" id="pass" class="input-field">
                                         </div>
                                         <div class="input-wrapper">
                                             <label for="email1"><sup>*</sup>Confirm Password</label>
-                                            <input type="text" name="email1" class="input-field">
+                                            <input type="passoword" name="conf_pass" id="conf_pass" class="input-field">
                                         </div>
                                         <div class="cart-btn">
-                                            <button class="pdp-button">Create account</button>
+                                            <button type="submit" name="submit" class="pdp-button">Create account</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-6">
-                                    <div class="form-info">
-                                        <p class="main">The benefits of creating an account</p>
-                                        <p><span>Faster checkout:</span> Save your billing and shipping information to make it easier to buy your favourite gear.</p>
-                                        <p><span>Order history:</span> Look up important information about your current and past orders</p>
-                                        <p><span>News and exclusive offers:</span> Sign up to receive email updates on special promotion, now product announcement, gift ideas, and more.</p>
-                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-6">
+                                <div class="form-info">
+                                    <p class="main">The benefits of creating an account</p>
+                                    <p><span>Faster checkout:</span> Save your billing and shipping information to make it easier to buy your favourite gear.</p>
+                                    <p><span>Order history:</span> Look up important information about your current and past orders</p>
+                                    <p><span>News and exclusive offers:</span> Sign up to receive email updates on special promotion, now product announcement, gift ideas, and more.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                @endif
+
+
                 </div>
             </div>
         </div>
@@ -171,4 +181,61 @@
             </div>
         </div>
     </div>
+<style>
+    .needsfilled{
+        border:1px solid #ff0000 !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("#msg").css('display','none');
+        required = ["pass", "conf_pass"];
+        emptyerror = "REQUIRED";
+    });
+    function check_validate() {
+        var user_email = $('#user_email').val();
+        var pass = $('#pass').val();
+        var conf_pass = $('#conf_pass').val();
+        var user_id = $('#user_id').val();
+        required = ["pass", "conf_pass"];
+        for (i = 0; i < required.length; i++) {
+            var input = $('#' + required[i]);
+            if ((input.val() == "") || (input.val() == emptyerror)) {
+                input.addClass("needsfilled");
+                input.val("");
+                input.attr("placeholder", emptyerror);
+            } else {
+                input.removeClass("needsfilled");
+            }
+        }
+
+        if (pass != conf_pass) {
+            $('#conf_pass').addClass("needsfilled");
+            $('#conf_pass').val("");
+            $('#conf_pass').attr("placeholder", "Confirm Password Matched With Password");
+        }
+
+        if ($(":input").hasClass("needsfilled")) {
+            return false;
+        } else {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "/make_member",
+                type: "POST",
+                data: {user_email: user_email, pass: pass, conf_pass: conf_pass},
+                success: function (data) {
+                    //console.log(data);
+                    var pass = $('#pass').val('');
+                    var conf_pass = $('#conf_pass').val('');
+                    $("#msg").css('display','block');
+                    $("#msg").text("Thank you for registration");
+                }
+            });
+            return false;
+        }
+        return false;
+    }
+</script>
 @endsection

@@ -54,7 +54,7 @@ class PaymentController extends Controller {
             if (!$this->order->address->isValid()) {
                 return redirect('shipping');
             }
-
+            
             if ($this->order->getItemsCount() != $this->cart->items_count) {
                 return redirect('cart');
             }
@@ -195,6 +195,10 @@ class PaymentController extends Controller {
             $payment = 'Braintree';
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
+            $orderDataUpdate = array(
+                'status' => 'Order Completed'
+            );
+            Order::where('id', $order_id)->update($orderDataUpdate);
 
             $logger = array(
                 'order_id' => $order_id,
@@ -226,17 +230,12 @@ class PaymentController extends Controller {
                     $order_no = $order_id;
                 }
 
-                // Cache::forget( 'cart'  . $this->order->cart_id );
-                // $this->cart->delete();
-                // session()->forget('cart_id');
-
                 $order = $this->order->load('orderItems.variant.product', 'address');
                 event(new OrderReceived($order));
                 return redirect('/order/success');
 
-                //return view( 'customer.orderconfirmed', compact('order') );
             } else {
-
+                
                 $nab_result = "Failed";
                 // $transaction = $transation_result->transaction;
                 $transaction_id = $transation_result->id;
@@ -244,29 +243,23 @@ class PaymentController extends Controller {
                 $order_id = $transation_result->orderId;
 
                 $check_transaction_status = $this->checkOrderMastTransStatus($order_id);
+                
                 if ($check_transaction_status == "Succeeded") {
 
-                    // if (isset($_SESSION["cart_id"])) {
-                    //     session()->forget('cart_id');
-                    // }
                     $order_no = $this->addOrderNo($order_id);
                     if (empty($order_no)) {
                         $order_no = $order_id;
                     }
 
-                    // Cache::forget( 'cart'  . $this->order->cart_id );
-                    // $this->cart->delete();
-                    // session()->forget('cart_id');
-
                     $order = $this->order->load('orderItems.variant.product', 'address');
                     event(new OrderReceived($order));
                     return redirect('/order/success');
-
-                    //return view( 'customer.orderconfirmed', compact('order') );
+                    
                 } else {
 
                     $orderDataUpdate = array(
-                        'trans_status' => 'Braintree Processor Declined'
+                        'transaction_status' => 'Braintree Processor Declined',
+                        'status' => 'Order Failed'
                     );
                     Order::where('id', $order_id)->update($orderDataUpdate);
 
@@ -285,7 +278,7 @@ class PaymentController extends Controller {
                         'result' => $orderReport,
                         'xml' => (!empty($xml)) ? $xml : '',
                         'nab_txnid' => $transaction_id,
-                        'nab_result' => $braintree_result
+                        'nab_result' => $nab_result
                     );
                     Order_log::insert($logger);
 
@@ -295,8 +288,12 @@ class PaymentController extends Controller {
                     }
 
                     //return view( 'customer.orderconfirmed', compact('order') );
-                    echo "Braintree Processor Declined";
-                    exit;
+                    // echo "Braintree Processor Declined";
+                    // exit;
+                    // $order = $this->order->load('orderItems.variant.product', 'address');
+                    // event(new OrderReceived($order));
+                    return redirect('/order/failed');
+
                 }
             }
         }
@@ -313,7 +310,7 @@ class PaymentController extends Controller {
 
     public function order_success() {
 
-        Cache::forget('cart' . $this->order->cart_id);
+        Cache::forget( 'cart'  . $this->order->cart_id );
         $this->cart->delete();
         session()->forget('cart_id');
         $order = $this->order->load('orderItems.variant.product', 'address');
@@ -329,12 +326,30 @@ class PaymentController extends Controller {
         return view('customer.orderconfirmed', compact('order','user_id','order_email'));
     }
 
+    public function order_failed() {
+
+        $order = $this->order->load('orderItems.variant.product', 'address');
+        $order_email_find = Order_address::where("order_id", "=",  $order->id)->first();
+        $order_email = $order_email_find->email;
+        $user_id = User::where('email', '=', $order_email)->whereNull('password')->first();
+        if($user_id!=''){
+            $user_id = $user_id->id;
+        }else{
+            $user_id = "no";
+        }
+        //print_r($user_id);
+        return view('customer.orderfailed', compact('order','user_id','order_email'));
+    }
+
     public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp) {
 
         $orderIdData = Order::where("id", "=", $order_id)->first();
+        // echo "<pre>";
+        // print_r($orderIdData);
+        // exit;
         if ($orderIdData->status == "Order Completed") {
 
-            $order_no = $this->addOrderNo($order_id);
+            //$order_no = $this->addOrderNo($order_id);
             $date = Carbon::now();
             $timestamp = $date->format('Y-m-d H:i:s');
             switch ($payment) {
@@ -393,9 +408,9 @@ class PaymentController extends Controller {
             }
 
             if (!empty($PersonID)) {
-                Order::where('id', $this->order->id)->update($orderDataUpdate);
                 User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID]);
             }
+            Order::where('id', $this->order->id)->update($orderDataUpdate);
             return true;
         }
     }
@@ -441,8 +456,8 @@ class PaymentController extends Controller {
 
     public function checkOrderMastTransStatus($order_id) {
         $transaction_status = "";
-        $result = Order::where(['id', '=', $order_id])->get();
-
+        $result = Order::where('id', '=', $order_id)->first();
+        
         if ($result->count()) {
             $transaction_status = $result->transaction_status;
         } else {
