@@ -60,6 +60,8 @@ class RegisterController extends Controller
             'state' => 'required',
             'postcode' => 'required|numeric',
             'newsletter_subscription' => '',
+            'source' => '',
+            'user_type' => '', 
         ]);
     }
 
@@ -77,12 +79,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
-            'birthday_date' => $data['birthday_date'],
-            'birthday_month' => $data['birthday_month'],
+            'birth_date' => $data['birthday_date'],
+            'birth_month' => $data['birthday_month'],
             'age_group' => $data['age_group'],
             'state' => $data['state'],
             'postcode' => $data['postcode'],
-            'newsletter_subscription' => @$data['newsletter_subscription'] ? 1 : 0,            
+            'newsletter' => @$data['newsletter_subscription'] ? 1 : 0, 
+            'source' => "User",
+            'user_type' => "User",      
         ]);
     }
 }
