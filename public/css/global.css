@@ -497,7 +497,6 @@ body, html, .br-info, .input-wrapper .select-field, .input-wrapper .input-textar
 }
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
-  display: inline-block;
 }
 .input-wrapper .radio-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
