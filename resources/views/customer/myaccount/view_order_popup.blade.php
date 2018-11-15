@@ -13,7 +13,7 @@
                     <div class="col-3 hidden-tab hidden-mob"><p>Price</p></div>
                 </div>
             </div>
-            @php echo "<pre>";print_r($order); @endphp
+            @php //echo "<pre>";print_r($order); @endphp
            
             @foreach($order->orderItems as $orderItems)
             <div class="shoppingcart-wrapper">
@@ -21,16 +21,18 @@
                     <div class="row">
                         <div class="col-3 tab-6">
                             <div class="shopping-img">
-                                <img src="images/apparel/apparel1-details.jpg" alt="">
+                                <img src="{{ $orderItems->variant->product->image->image1Medium() }}" alt="">
                             </div>
                         </div>
                         <div class="col-3 tab-6">
                             <div class="product-info">
                                 <h3 class="bold-font">{{ $orderItems->variant->product->stylename }}</h3>
-                                <p>Item # {{ $orderItems->variant->product->stylename }}</p>
-                                <p>Color: 033</p>
-                                <p>Size: 7.5</p>
-                                <p>Mens Width: D-Normal</p>
+                                <p>Item # {{ $orderItems->variant->product_id }}</p>
+                                <p>Color: {{ $orderItems->variant->product->color_name }}</p>
+                                <p>Size: {{ $orderItems->variant->size }}</p>
+                                @if($orderItems->variant->width_name!="")
+									<p> {{ ($orderItems->variant->product->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $orderItems->variant->width_name }}</p>
+								@endif
                             </div>
                         </div>
                         <div class="col-3 tab-12">
@@ -39,7 +41,7 @@
                                     <p class="bold-font">Quantity:</p>
                                 </div>
                                 <div class="input-wrapper">
-                                <p class="right"> 1 </p>
+                                <p class="right"> {{ $orderItems->qty }} </p>
                                 </div>
                             </div>
                         </div>
@@ -47,11 +49,39 @@
                             <div class="product-info">
                                 <div class="row price">
                                     <div class="mob-5"><p class="bold-font blue">Unit Price:</p></div>
-                                    <div class="mob-7"><p class="bold-font blue right"><del>&dollar;239.95</del> &dollar;169.95</p></div>
+                                    <div class="mob-7"><p class="bold-font blue right">
+                                    @if($orderItems->price_sale == 0 || $orderItems->price_sale==$orderItems->variant->price)
+                                        &dollar;{{ number_format($orderItems->variant->price, 2) }}
+                                    @endif
+                                    
+                                    @if (($orderItems->price_sale > 0) && ($orderItems->price_sale < $orderItems->variant->price))
+                                        <del>&dollar;{{ number_format($orderItems->variant->price, 2) }}</del> 
+                                        &dollar;{{ number_format($orderItems->price_sale, 2) }} 
+                                    @endif
+                                    </p></div>
                                 </div>
+
+                                @if (!empty($orderItems->discount_detail) && $orderItems->discount_detail != 0) 
+									<div class="row price">
+                                        <div class="mob-5"><p>Discount:</p></div>
+                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItems->discount_detail, 2) }}</div>
+									</div>
+                                @endif
+
                                 <div class="row price">
                                     <div class="mob-5"><p>Item Total:</p></div>
-                                    <div class="mob-7"><p class="right">&dollar;169.95</p></div>
+                                    <div class="mob-7">
+                                        @php 
+                                        $price_sale = (isset($orderItems->price_sale) && ($orderItems->price_sale != $orderItems->variant->price) && $orderItems->price_sale != 0) ? $orderItems->price_sale : $orderItems->variant->price;
+											$total = 0;  
+											if($orderItems->discount_detail!=0.00 && ($orderItems->discount_price!=0.00) && $orderItems->discount_price!= $price_sale && $orderItems->discount_price < $price_sale * $orderItems->qty){
+												$total = $orderItems->discount_price;
+											} else {
+												$total = $orderItems->qty * $price_sale;
+											}
+									    @endphp
+                                        <p class="right"> &dollar;{{ number_format($total, 2) }} </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
