@@ -117,6 +117,10 @@ class PaymentController extends Controller {
                     'nab_order_dt' => date('Y-m-d H:i:s'),
                     'payment_status' => date('Y-m-d H:i:s')
                 );
+                $order_no = $this->addOrderNo($this->order->id);
+                if($order_no!=""){
+                    Order::where('id', $this->order->id)->update(['order_no' => $order_no]);
+                }
 
                 $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order']);
                 if (isset($Person)) {
