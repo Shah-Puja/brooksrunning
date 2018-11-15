@@ -77,6 +77,7 @@ Route::post('/shipping-verify-password','BillingShippingController@verify_passwo
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
 Route::get('/order/success', 'PaymentController@order_success');
+Route::get('/order/failed', 'PaymentController@order_failed');
 
 /* Success page password */
 Route::post('/make_member', 'MyaccountController@make_member');
@@ -134,7 +135,7 @@ Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
 Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
 Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
-Route::get('/orderfailed', 'CategoryController@orderfailed');
+// Route::get('/orderfailed', 'CategoryController@orderfailed');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
