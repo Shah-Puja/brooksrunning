@@ -16,6 +16,7 @@ class EventController extends Controller {
 
     public function index($month) {
         $events = event_mast::where('status', 'Y')->where('month', 'like', '%' . $month . '%')->orderBy('event_timestamp', 'asc')->get();
+        //echo "<pre>";print_r($events);die;
         $month_name = str_replace("-", " ", $month);
         $months = event_month::where('month_name', 'like', '' . $month_name . '')->first();
         $month_id = $months->month_id;
