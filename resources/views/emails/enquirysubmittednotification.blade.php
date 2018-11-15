@@ -28,7 +28,7 @@
       <table width="700" border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td align="left" width="250" style="vertical-align: bottom;">
-            <img src="{{ config('app.url') }}/images/brooks-running-logo.png" alt="Brooks Logo" style="max-width: 220px;height: auto; margin: 10px 0 11px;">
+            <img src="{{ env('APP_URL') }}/images/brooks-running-logo.png" alt="Brooks Logo" style="max-width: 220px;height: auto; margin: 10px 0 11px;">
           </td>
         </tr>
       </table>
