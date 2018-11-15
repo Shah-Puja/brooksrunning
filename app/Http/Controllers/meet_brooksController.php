@@ -198,7 +198,7 @@ class meet_brooksController extends Controller
             }
         } 
         
-        if($competition->wasRecentlyCreated){
+        if($Person->wasRecentlyCreated){
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>' ]);
         }else{
