@@ -19,9 +19,9 @@
 									@if($cartItem->variant->width_name!="")
 									<p> {{ ($cartItem->variant->product->gender == 'M') ? "Mens" : "Womens" }} Width: {{ $cartItem->variant->width_name }}</p>
 									@endif
-									<div class="edit" data-id="{{ $cartItem->variant->id }}">
+									<!-- <div class="edit" data-id="{{ $cartItem->variant->id }}">
 										<a href="JavaScript:Void(0);" id="edit_{{ $cartItem->variant->id }}" class="bold-font edit-cart--handle" >EDIT DETAILS</a>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="col-2 tab-12">
