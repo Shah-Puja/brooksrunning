@@ -402,13 +402,14 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
-        if ($_ENV['APP_ENV'] != "local") {
+        if (env('AP21_STATUS') == 'ON') {
             $order_data = array(
                 'order_id' => $order_id
             );
             $order_number_insert = Order_number::create($order_data);
             $order_no = "Test2018-" . $order_number_insert->id;
-
+            print_r($order_no);
+            exit;
             if (!empty($order_no)) {
                 $status = 'Order Number';
 
