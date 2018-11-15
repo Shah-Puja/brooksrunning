@@ -62,6 +62,8 @@ Route::get('/sitemap', 'InfoController@sitemap');
 /* meet_brooks competition pages */
 Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@competition');
 Route::post('/meet_brooks/competition', 'meet_brooksController@store');
+Route::post('/meet_brooks/enewsletter_post', 'meet_brooksController@enewsletter_store');
+Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
@@ -77,6 +79,7 @@ Route::post('/shipping-verify-password','BillingShippingController@verify_passwo
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
 Route::get('/order/success', 'PaymentController@order_success');
+Route::get('/order/failed', 'PaymentController@order_failed');
 
 /* Success page password */
 Route::post('/make_member', 'MyaccountController@make_member');
@@ -134,7 +137,7 @@ Route::get('/competition-running-shoes', 'CategoryController@shoes_category');
 Route::get('/cross-trainer-shoes', 'CategoryController@shoes_category');
 Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
-Route::get('/orderfailed', 'CategoryController@orderfailed');
+// Route::get('/orderfailed', 'CategoryController@orderfailed');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

@@ -259,12 +259,6 @@ function email_check_validate(){
     
     if (input.val() == "") {
         input.addClass("needsfilled");
-        // let label_name = $("#email_check input[name="+email_required+"]").data("label-name");
-        // let input_label = $("#email_check input[name="+email_required+"]").parent().find('label');
-        // let label_text = input_label.html();
-        // let error_span = " <span class='error'>The "+label_name+" field is required.</span>";
-        // let error = label_text + error_span ;
-        // input_label.html(error);$("#billing_shipping input[name="+email_required+"]").addClass("error-border");
         input.val("");
         input.attr("placeholder", "THE INPUT FIELD IS REQUIRED");
     }else{
@@ -341,7 +335,7 @@ function shippingform_validate(){
             email.addClass("error-border");	
         }
     }
-    var s_phone = $('#billing_shipping input[name="b_phone"]').val();
+    var s_phone = $('#billing_shipping input[name="s_phone"]').val();
     if(!s_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && s_phone!=''){
         $('#billing_shipping input[name="s_phone"]').addClass("needsfilled");
         let input_label = $('#billing_shipping input[name="s_phone"]').parent().find('label');
@@ -359,7 +353,7 @@ function shippingform_validate(){
         let error_span = " <span class='error'>The terms must be accepted.</span>";
         let error = label_text + error_span;
         input_label.html(error);
-        terms.addClass("needsfilled");
+        return false;
     } else {
         terms.removeClass("needsfilled");
     }
@@ -383,7 +377,7 @@ function shippingform_validate(){
             }
         }
 
-        var b_phone = $('#billing_shipping input[name="s_phone"]').val();
+        var b_phone = $('#billing_shipping input[name="b_phone"]').val();
         if (!b_phone.match(/^(?=.*[0-9])[- +()0-9]+$/) && b_phone != '') {
             $('#billing_shipping input[name="b_phone"]').addClass("needsfilled");
             let input_label = $('#billing_shipping input[name="b_phone"]').parent().find('label');

@@ -81,27 +81,30 @@
 		            <p>Keep up to date with all the latest news, special offers, events, competitions and tips to keep you running happy!</p>
 	            </div>
 	        </div>
-	        <div class="col-3 tab-6">
-	    		<div class="homepage-signup--wrapper">
-			        <div class="input-wrapper">
-			          <input type="text" name="name" placeholder="Name" class="input-field">
-			        </div>
+			<form name="subscriber_news1" method='post' action='/meet_brooks/enewsletter'>
+				@csrf
+				<div class="col-3 tab-6">
+					<div class="homepage-signup--wrapper">
+						<div class="input-wrapper">
+						<input type="text" name="name" placeholder="Name" class="input-field">
+						</div>
+					</div>
 				</div>
-	        </div>
-	        <div class="col-3 tab-6">
-	    		<div class="homepage-signup--wrapper">
-		            <div class="input-wrapper">
-		                <input type="text" name="email" placeholder="Email" class="input-field">
-		            </div>
-		        </div>
-	        </div>
-	        <div class="col-2 tab-4">
-	    		<div class="homepage-signup--wrapper">
-	    			<div class="btn">
-	    				<button class="secondary-button">Continue</button>
-	    			</div>
-	            </div>
-	        </div>
+				<div class="col-3 tab-6">
+					<div class="homepage-signup--wrapper">
+						<div class="input-wrapper">
+							<input type="text" name="email" placeholder="Email" class="input-field">
+						</div>
+					</div>
+				</div>
+				<div class="col-2 tab-4">
+					<div class="homepage-signup--wrapper">
+						<div class="btn">
+							<button type="submit" class="secondary-button">Continue</button>
+						</div>
+					</div>
+				</div>
+			</form>
 	    </div>
 	</div>
 </section>

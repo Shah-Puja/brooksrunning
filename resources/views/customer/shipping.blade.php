@@ -233,7 +233,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        <input type="text" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                        <input type="number" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                     </div>
                                 </div>
                                 <div class="col-6">
