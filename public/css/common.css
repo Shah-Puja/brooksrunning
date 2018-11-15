@@ -567,7 +567,6 @@
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
-  display: inline-block;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -6328,5 +6327,12 @@ textarea {
   color: #6d665f;
   line-height: 0.5px;
 }
+
+/*  Shipping Page Start */
+.input-wrapper .checklist-inline .run-happy {
+  margin-top: -24px;
+}
+
+/*  Shipping Page End */
 
 /*# sourceMappingURL=common.css.map */

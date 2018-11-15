@@ -558,7 +558,6 @@
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
-  display: inline-block;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
