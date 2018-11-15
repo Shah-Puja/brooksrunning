@@ -161,5 +161,50 @@ class meet_brooksController extends Controller
 
         return $returnVal;
     }
+
+    public function enewsletter_store(Recaptcha $recaptcha){
+        request()->validate([
+            'fname' => 'required',
+            'lname' => 'required',
+    		'gender' => 'required',    		
+            'email' => 'required|email',
+     		'country' => 'required',
+            'postcode' => 'required',
+            'g-recaptcha-response' => ['required', $recaptcha],
+            ]);
+
+        $Person = User::firstOrCreate(['email' => request('email')], 
+                                      ['first_name' => request('fname'),
+                                       'last_name' => request('lname'),
+                                       'tag' => request('comp_name'),
+                                       'gender' => request('gender'),
+                                       'dob' => request('custom_Birth_Month').'-'.request('custom_Birth_Date'),
+                                       'age_group' => request('custom_Age'),
+                                       'postcode' => request('postcode'),
+                                       'shoe_wear' => request('custom_Shoes_you_wear'),
+                                       'contest_code' => request('postcode'),
+                                       'source' => 'Subscriber',
+                                       'subscribed' => 'Yes',
+                                       'user_type' => 'Subscriber']);
+        if (isset($Person)) {
+            $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
+        }
+        if (env('AP21_STATUS') == 'ON') {
+            if (empty($PersonID)) {
+                $PersonID = $this->get_personid(request('email'),request('fname'),request('lname'),request('gender'),request('country'));
+            } 
+            if(!empty($PersonID)){
+                User::where('email',request('email'))->update(['person_idx' => $PersonID ]);
+            }
+        } 
+        
+        if($competition->wasRecentlyCreated){
+            return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
+            We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>' ]);
+        }else{
+            User::where('email',request('email'))->update(['subscribed' => 'Yes','user_type' => 'Subscriber', 'contest_code' => request('contest_code')]);
+            return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+        }
+    }
 }
 
