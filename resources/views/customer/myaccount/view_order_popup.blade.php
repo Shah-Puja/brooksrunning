@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 @if(isset($order->gift_amount) && $order->gift_amount!="")
-                                    <div class="row total">
+                                    <div class="row">
                                         <div class="mob-7">
                                             <p class="bold-font blue">Gift Discount</p>
                                         </div>
