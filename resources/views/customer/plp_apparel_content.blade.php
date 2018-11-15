@@ -1,18 +1,6 @@
 <div class="plp-wrapper-container grid">
 @if($styles!='' && count($styles) >0 )
 	@foreach($styles as $style)
-		@php 
-			$price_sale = $style->variants->max('price_sale');
-			$price = $style->variants->max('price');
-			$filters_array[$style->style]['size'] = $style->variants->pluck('size')->all();
-			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['impact'] = $style->tags->Where('key','PS_F_IMPACT')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['cup_size'] = $style->tags->Where('key','PS_F_CUP')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Great_For'] = $style->tags->Where('key','PS_F_GREATFOR')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Breast_Shape'] = $style->tags->Where('key','PS_F_SHAPE')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Feature_Preferences'] = $style->tags->Where('key','PS_F_PREFERENCE')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Support_Preference'] = $style->tags->Where('key','PS_F_SUPPORT')->flatten()->pluck('value')->unique()->all();
-		@endphp
      
 		@foreach($products as $product)
 		   @if($product->style== $style->style)
@@ -21,18 +9,57 @@
 		@endforeach
 
 		@php
+		    $price_sale = $style->variants->max('price_sale');
+			$price = $style->variants->max('price');
+			
 		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
 								return $product->variants->pluck('price');
 							})->flatten()->max();
+
 			$max_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
 								return $product->variants->pluck('price_sale');
 							})->flatten()->max();
+
 			$min_price = collect($colors_option[$style->style])->transform(function ($product) {
 					            return $product->variants->pluck('price');
 							})->flatten()->min();
+							
 			$min_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
 					            return $product->variants->pluck('price_sale');
 							})->flatten()->min();
+		
+			$filters_array[$style->style]['size'] =  collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('size');
+							})->flatten()->unique()->values();
+
+			$filters_array[$style->style]['color'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','C_F_COLOUR');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['impact'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_IMPACT');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['cup_size'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_CUP');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['Great_For'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_GREATFOR');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['Breast_Shape'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_SHAPE');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['Support_Preference'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_SUPPORT');
+							})->flatten()->pluck('value')->unique();	
+
+			$filters_array[$style->style]['Feature_Preferences'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PS_F_PREFERENCE');
+							})->flatten()->pluck('value')->unique();
+
 		    $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
 			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
