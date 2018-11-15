@@ -59,6 +59,10 @@ class CategoryController extends Controller
     public function mens_landing(){
         return view('customer.womens-running-shoes-and-clothing');
     }
+
+    public function sale_landing(){
+        return view('customer.running-shoes-and-apparel-sale');
+    }
     
     public function shoes_category(){
         $page_url = explode('/',$_SERVER['REQUEST_URI']);
