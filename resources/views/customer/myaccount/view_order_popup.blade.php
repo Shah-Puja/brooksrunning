@@ -127,10 +127,10 @@
                                 @if(isset($order->gift_amount) && $order->gift_amount!="")
                                     <div class="row">
                                         <div class="mob-7">
-                                            <p class="bold-font blue">Gift Discount</p>
+                                            <p>Gift Discount</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="bold-font blue right">-$ {{ @number_format($order->gift_amount, 2) }}</p>
+                                            <p class="right">-$ {{ @number_format($order->gift_amount, 2) }}</p>
                                         </div>
                                     </div>
                                 @endif
