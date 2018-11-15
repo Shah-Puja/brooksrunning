@@ -30,41 +30,19 @@
 				  		<div class="upcoming-events">
                             <h4>Upcoming events</h4>
                             <ul class="upcoming-list">
-							<li>
-	                            <a href="/events/augusta-adventure-fest">
-	                            <p class="title">Augusta Adventure Fest</p>
-                                <p>3rd - 4th November 2018</p>
-                                <p class="viewmore-p">Augusta, WA<span class="cta">View more</span></p>
-	                            </a>
-                        	</li>
-                            <li>
-                                <a href="/events/point-to-pinnacle">
-                                <p class="title">Point to Pinnacle</p>
-                                <p>Sunday 18th November 2018</p>
-                                <p class="viewmore-p">Hobart, TAS<span class="cta">View more</span></p>
-	                            </a>
-	                        </li>
-                            <li>
-                                <a href="/events/ballarat_run_for_a_cause">
-                                <p class="title">Ballarat Run For A Cause</p>
-                                <p>Sunday 18th November 2018</p>
-                                <p class="viewmore-p">Ballarat, VIC<span class="cta">View more</span></p>
-                                </a>
-                            </li>
-						 	<li>
-                                <a href="/events/black-diamond-afterglow-twilight-night-trail-run">
-                                <p class="title">Black Diamond Afterglow Twilight Night Trail Run</p>
-                                <p>Saturday 24th November 2018</p>
-                                <p class="viewmore-p">Torquay, VIC<span class="cta">View more</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/events/rotorua-half-marathon">
-                                <p class="title">Rotorua Half Marathon </p>
-                                <p>Sunday 25th November 2018</p>
-                                <p class="viewmore-p">Augusta, WA<span class="cta">View more</span></p>
-                                </a>
-                            </li>
+                                @if(!empty($upcoming_events))
+                                    @foreach ($upcoming_events as $events) 
+                                    <li>
+                                        <a href="/{{ $events->slug }}">
+                                            <p class="title">{{ $events->event_name }}</p>
+                                        @if(!empty($events->event_date))
+                                            <p>{{$events->event_date}}</p>
+                                        @endif
+                                        <p class="viewmore-p">{{ ucwords($events->location) }}<span class="cta">View more</span></p>
+	                                    </a> 
+                        	        </li>
+                                    @endforeach 
+                                @endif 
                             </ul>
                         </div>
 				  	</div>

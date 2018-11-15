@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Event_mast;
+use App\Models\Event_month;
 
-class EventController extends Controller
-{
-    //
-    public function events_view()
-	{
-		return view( 'info.event-view.events');
+class EventController extends Controller {
+
+    public function events_view() {
+        $upcoming_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        return view('info.event-view.events', compact('upcoming_events'));
     }
-    public function index($events_pg){
-        return view('info.event-view.'.$events_pg);
+
+    public function index($month) {
+        $events = event_mast::where('status', 'Y')->where('month', 'like', '%' . $month . '%')->orderBy('event_timestamp', 'asc')->get();
+        $month_name = str_replace("-", " ", $month);
+        $months = event_month::where('month_name', 'like', '' . $month_name . '')->first();
+        $month_id = $months->month_id;
+        $monthObj = new event_month();
+        $prev_month = $monthObj->getMonthNameByID($month_id - 1);
+        $next_month = $monthObj->getMonthNameByID($month_id + 1);
+        return view('info.event-view.month-event-view', compact('events', 'month_name', 'months', 'prev_month', 'next_month'));
     }
+
 }
