@@ -2,18 +2,6 @@
 @if($styles!='' && count($styles) >0 )
     @php $colors_option=array(); @endphp
 	@foreach($styles as $style)
-		@php 
-			$price_sale = $style->variants->max('price_sale');
-			$price = $style->variants->max('price');
-			$filters_array[$style->style]['size'] = $style->variants->pluck('size')->all();
-			//$filters_array[$style->style]['width'] = $style->variants->pluck('width_name')->all();
-			$filters_array[$style->style]['experience'] = $style->experience;
-			$filters_array[$style->style]['color'] = $style->tags->Where('key','C_F_COLOUR')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['support_level'] = $style->tags->Where('key','PF_F_SLEVEL')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Arch'] = $style->tags->Where('key','PF_F_ARCH')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Activity'] = $style->tags->Where('key','PF_F_ACTIVITY')->flatten()->pluck('value')->unique()->all();
-			$filters_array[$style->style]['Midsole_Drop'] = $style->tags->Where('key','PF_F_DROP')->flatten()->pluck('value')->unique()->all();
-		@endphp
 
 		@foreach($products as $product)
 		   @if($product->style== $style->style)
@@ -22,18 +10,52 @@
 		@endforeach
 
 		@php  
+		    $price_sale = $style->variants->max('price_sale');
+			$price = $style->variants->max('price');
 		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
 								return $product->variants->pluck('price');
 							})->flatten()->max();
+
 			$max_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
 								return $product->variants->pluck('price_sale');
 							})->flatten()->max();
+
 			$min_price = collect($colors_option[$style->style])->transform(function ($product) {
 					            return $product->variants->pluck('price');
 							})->flatten()->min();
+							
 			$min_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
 					            return $product->variants->pluck('price_sale');
 							})->flatten()->min();
+
+			$filters_array[$style->style]['size'] =  collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->variants->pluck('size');
+							})->flatten()->unique()->values();
+
+			$filters_array[$style->style]['experience'] = $style->experience;
+
+			
+			$filters_array[$style->style]['color'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','C_F_COLOUR');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['support_level'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PF_F_SLEVEL');
+							})->flatten()->pluck('value')->unique();
+
+			
+			$filters_array[$style->style]['Arch'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PF_F_ARCH');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['Activity'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PF_F_ACTIVITY');
+							})->flatten()->pluck('value')->unique();
+
+			$filters_array[$style->style]['Midsole_Drop'] = collect($colors_option[$style->style])->transform(function ($product) {
+					            return $product->tags->Where('key','PF_F_DROP');
+							})->flatten()->pluck('value')->unique();
+
 		    $filters_array[$style->style]['width'] = collect($colors_option[$style->style])->transform(function ($product) {
 														return $product->variants->where('visible','Yes')->pluck('width_name');
 												 })->flatten()->unique()->values()->sort();
