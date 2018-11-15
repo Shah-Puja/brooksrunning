@@ -16,9 +16,7 @@
                             <div class="banner--info">
                                 @php //echo "<pre>";print_r($prev_month);die; @endphp 
                                 <h1 class="br-mainheading">RUNNING EVENTS {{ $month_name }}</h1>
-                                <p class="br-info">Spring has sprung, which means it's time to spring into a new month of exciting running events. Brooks partners with a number of marathons, fun runs, triathlons and more being held around Australia in September 2018; plenty for you to join in on! 
-                                    So if your running gear needs a bit of a spring clean, why not check out everything happening in Brooks' 2018 September running event calendar. 
-                                </p>
+                                <p class="br-info"> {{ $months->content }} </p>
                             </div>
                         </div>
                     </div>
@@ -32,64 +30,34 @@
                 <a href="/events" class="cta backtoeventtop"><span style="display:none;">➤</span>Back to Events Page</a>
             </div>
             <ul class="monthly-event-list">
-                <li>
-                    <a href="/events/YMCA-fathers-day-fun-run" class="findout"><div class="event-title">
-                            YMCA Fathers Day Fun Run                             </div></a>
-                    <div class="title eventdate">Sun 02/09/18                                
+                @if(!empty($events))  
+                    @foreach ($events as $event)
+                    <li>
+                        @php $event_slug = $event->slug; @endphp
+                    <a href="/events/{{ $event_slug }}" class="findout"><div class="event-title"> {{ $event->event_name }} </div></a>
+                    <div class="title eventdate">
+                         @php
+                              $event_time = strtotime($event->event_timestamp);
+                              $event_date = date('D d/m/y',$event_time);
+                        @endphp
+                            {{ $event_date }} 
                     </div>
                     <div class="event-img-main">
-                        <a href="/events/YMCA-fathers-day-fun-run" class="findout">
-                            <img src="/images/events/monthly/logo/YMCA-Fathers-Day_logo1.jpg" alt="YMCA Fathers Day Fun Run ">                                    </a>
+                        <a href="/events/{{ $event_slug }}" class="findout"> 
+                            @if(!empty($event->logo)) 
+                        <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
+                            @else 
+                        <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
+                            @endif   
+                        </a>
                     </div>
-                    <a href="/events/YMCA-fathers-day-fun-run" class="findout"><span class="location">Location, Melbourne, VIC</span></a>
-                    <a href="/events/YMCA-fathers-day-fun-run" class="findout cta">Find Out More</a>
-                </li>
-                <li>
-                    <a href="/events/sandy-point-half-marathon" class="findout"><div class="event-title">
-                            Sandy Point Half Marathon </div></a>
-                    <div class="title eventdate">Sun 09/09/18                                
-                    </div>
-                    <div class="event-img-main">
-                        <a href="/events/sandy-point-half-marathon" class="findout">
-                            <img src="/images/events/monthly/logo/SandyPointHalf_logo.jpg" alt="Sandy Point Half Marathon">                                    </a>
-                    </div>
-                    <a href="/events/sandy-point-half-marathon" class="findout"><span class="location">Location, Melbourne, VIC</span></a>
-                    <a href="/events/sandy-point-half-marathon" class="findout cta">Find Out More</a>
-                </li>
-                <li>
-                    <a href="/events/coffs-harbour-half-marathon" class="findout"><div class="event-title">
-                            Coffs Harbour Running Festival</div></a>
-                    <div class="title title eventdate">Sun 09/09/18</div>
-                    <div class="event-img-main">
-                        <a href="/events/coffs-harbour-half-marathon" class="findout">
-                            <img src="/images/events/monthly/logo/coffs_logo.jpg" alt="Coffs Harbour Running Festival ">                                    </a>
-                    </div>
-                    <a href="/events/coffs-harbour-half-marathon" class="findout"><span class="location">Location, Coffs Harbour, NSW</span></a>
-                    <a href="/events/coffs-harbour-half-marathon" class="findout cta">Find Out More</a>
-                </li>
-                <li>
-                    <a href="/events/the-olivia-newton-john-wellness-walk-and-research-run" class="findout"><div class="event-title">The Olivia Newton John Wellness Walk and Research Run </div></a>
-                    <div class="title eventdate">Sun 16/09/18                                
-                    </div>
-                    <div class="event-img-main">
-                        <a href="/events/the-olivia-newton-john-wellness-walk-and-research-run" class="findout">
-                            <img src="/images/events/monthly/logo/onj_wellness_logo.jpg" alt="The Olivia Newton John Wellness Walk and Research Run ">                                    </a>
-                    </div>
-                    <a href="/events/the-olivia-newton-john-wellness-walk-and-research-run" class="findout"><span class="location">Location, Melbourne, VIC</span></a>
-                    <a href="/events/the-olivia-newton-john-wellness-walk-and-research-run" class="findout cta">Find Out More</a>
-                </li>
-                <li>
-                    <a href="/events/forster-running-festival" class="findout"><div class="event-title">
-                            Forster Running Festival                            </div></a>
-                    <div class="title eventdate">Sun 23/09/18                                
-                    </div>
-                    <div class="event-img-main">
-                        <a href="/events/forster-running-festival" class="findout">
-                            <img src="/images/events/monthly/logo/forster_logo.jpg" alt="Forster Running Festival">                                    </a>
-                    </div>
-                    <a href="/events/forster-running-festival" class="findout"><span class="location">Location, Forster, NSW</span></a>
-                    <a href="/events/forster-running-festival" class="findout cta">Find Out More</a>
-                </li>
+                    <a href="/events/{{ $event->slug }}" class="findout"><span class="location">Location, {{ $event->location }}</span></a>
+                    <a href="/events/{{ $event->slug }}" class="findout cta">Find Out More</a>
+                    </li>
+                    @endforeach
+                @else
+                    <div class="no-result"><h2>No Events Available for this month</h2></div>
+                @endif 
             </ul>
             <div class="linkpages"> 
                 <div class="events-btn">
