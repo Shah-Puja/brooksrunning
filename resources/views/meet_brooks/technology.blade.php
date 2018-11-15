@@ -62,10 +62,10 @@
 					<div class="tech-short-info padding_40">
 						<h2>DNA Midsole</h2>
 						<p>An innovative cushioning system that adapts to runners of all sizes and speeds, providing a custom ride</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<!-- <a class="secondary-button" href="#">Learn more</a> -->
 								<a href="JavaScript:Void(0);" class="tech-popup--control secondary-button">Leran more</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="tech-short-blurb">
@@ -75,9 +75,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Ideal Pressure Zones</h2>
 						<p>Distribute pressure evenly under your foot, transforming your run into a more comfortable and effortless ride.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="tech-short-blurb">
@@ -87,9 +87,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Rounded Heels</h2>
 						<p>The slight curve of the heel aligns force through the center of your ankle joint, reducing internal stress on your body.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 				<div class="tech-short-blurb">
@@ -99,9 +99,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Stride Signature</h2>
 						<p>A scientific approach to improving performance by working with the natural, unique motion paths of runners.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -122,9 +122,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>DNA Fabric</h2>
 						<p>A lightweight fabric that adapts to your body. It breathes, stretches and recovers, providing a custom, "made-for-me" fit.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 				<div class="tech-short-blurb">
@@ -134,9 +134,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Guide Rails</h2>
 						<p>Midsole construction that helps your hips, knees and joints move in their unique motion path.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 				<div class="tech-short-blurb">
@@ -146,9 +146,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Nightlife</h2>
 						<p>Products that will make a runner visible in all lighting conditions while ensuring they're recognized as humans (and not a traffic cone).</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 					<div class="tech-short-blurb">
@@ -158,9 +158,9 @@
 					<div class="tech-short-info padding_40">
 						<h2>Segmented Crash Pad</h2>
 						<p>Made up of fully-integrated shock absorbers to provide cushion and smooth heel-to-toe transition, maximizing the efficiency of every stride.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 					<div class="tech-short-blurb">
@@ -170,9 +170,9 @@
 					<div class="tech-short-info">
 						<h2>Super DNA</h2>
 						<p>An adaptable midsole material that offers increased cushioning while providing peak energy return and support.</p>
-						<div class="tech-learnmore-btn">
+						<!-- <div class="tech-learnmore-btn">
 								<a class="secondary-button" href="#">Learn more</a>
-							</div>
+							</div> -->
 					</div>
 				</div>
 			</div>
