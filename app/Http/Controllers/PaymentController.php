@@ -402,30 +402,24 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
+        $status ='';
         if (env('AP21_STATUS') == 'ON') {
             $order_data = array(
                 'order_id' => $order_id
             );
             $order_number_insert = Order_number::create($order_data);
-            $order_no = "Test2018-" . $order_number_insert->id;
-            print_r($order_no);
-            exit;
-            if (!empty($order_no)) {
+            if($order_number_insert){
+                $order_no = "Test2018-" . $order_number_insert->id;
                 $status = 'Order Number';
-
-                Order::where('id', $order_id)
-                        ->update(['status' => $status]);
             }
-
-            Order::where('id', $order_id)
-                    ->update(['order_no' => $order_no]);
+           
         } else {
 
             $order_no = "test2018-$order_id";
-
-            Order::where('id', $order_id)
-                    ->update(['order_no' => $order_no]);
         }
+        Order::where('id', $order_id)
+        ->update(['status' => $status,'order_no' => $order_no]);
+
         return $order_no;
     }
 
