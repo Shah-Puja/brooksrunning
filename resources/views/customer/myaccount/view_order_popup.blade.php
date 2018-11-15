@@ -61,10 +61,10 @@
                                     </p></div>
                                 </div>
 
-                                @if (!empty($orderItems->discount_detail) && $orderItems->discount_detail != 0) 
+                                @if (!empty($orderItems->discount) && $orderItems->discount != 0) 
 									<div class="row price">
                                         <div class="mob-5"><p>Discount:</p></div>
-                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItems->discount_detail, 2) }}</div>
+                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItems->discount, 2) }}</div>
 									</div>
                                 @endif
 
