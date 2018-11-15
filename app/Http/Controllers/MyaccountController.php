@@ -68,7 +68,7 @@ class MyaccountController extends Controller {
     public function make_member() {
         $email = $_POST['user_email'];
         $password = Hash::make($_POST['pass']);
-        User::where('email', $email)->update(['password' => $password]);
+        User::where('email', $email)->update(['password' => $password,'user_type' => 'Order']);
     }
 
 }

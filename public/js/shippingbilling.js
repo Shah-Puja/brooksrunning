@@ -353,6 +353,7 @@ function shippingform_validate(){
         let error_span = " <span class='error'>The terms must be accepted.</span>";
         let error = label_text + error_span;
         input_label.html(error);
+        return false;
     } else {
         terms.removeClass("needsfilled");
     }
