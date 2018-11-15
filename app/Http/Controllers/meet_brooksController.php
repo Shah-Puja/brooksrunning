@@ -46,7 +46,7 @@ class meet_brooksController extends Controller
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
-    	$competition = Competition_user::updateOrCreate(
+    	$competition = Competition_user::firstOrCreate(
             [ 'email' => request('email'),'comp_name' => request('comp_name')],
             [
                 'comp_slug' => request('comp_slug'),
@@ -72,7 +72,8 @@ class meet_brooksController extends Controller
                                        'age_group' => request('custom_Age'),
                                        'postcode' => request('postcode'),
                                        'shoe_wear' => request('custom_Shoes_you_wear'),
-                                       'source' => 'Competition']);
+                                       'source' => 'Competition',
+                                       'user_type' => 'Competition']);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
