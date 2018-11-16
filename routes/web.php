@@ -84,8 +84,8 @@ Route::get('/order/failed', 'PaymentController@order_failed');
 /* Success page password */
 Route::post('/make_member', 'MyaccountController@make_member');
 
-Route::get('/mens-running-shoes-and-clothing', 'CategoryController@womens_landing');
-Route::get('/womens-running-shoes-and-clothing', 'CategoryController@mens_landing');
+Route::get('/womens-running-shoes-and-clothing', 'CategoryController@womens_landing');
+Route::get('/mens-running-shoes-and-clothing', 'CategoryController@mens_landing');
 Route::get('/running-shoes-and-apparel-sale', 'CategoryController@sale_landing');
 
 /* Shoes pages */
