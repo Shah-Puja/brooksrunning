@@ -30,7 +30,8 @@
                 <a href="/events" class="cta backtoeventtop"><span style="display:none;">➤</span>Back to Events Page</a>
             </div>
             <ul class="monthly-event-list">
-                @if(!empty($events))  
+            @php //echo "<pre>";print_r($events);die; @endphp
+                @if(isset($events[0]) && $events[0]!="")  
                     @foreach ($events as $event)
                     <li>
                         @php $event_slug = $event->slug; @endphp
