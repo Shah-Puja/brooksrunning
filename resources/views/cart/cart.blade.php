@@ -131,12 +131,13 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="input-wrapper">
-                                            <form name="check_valid_gift_voucher" id="ajaxgift"> 
+                                            
                                                 <div class="radio-inline">
-                                                    <input type="radio" id="gift_voucher" name="gift_voucher" checked="checked">
-                                                    <label for="voucher">
+                                                    <input type="radio" id="gift_voucher" name="promotion" checked="checked">
+                                                    <label for="gift_voucher">
                                                         <div class="mark"><span></span></div>
                                                         <div class="text">
+                                                            <form name="check_valid_gift_voucher" id="ajaxgift"> 
                                                             <h3 class="bold-font">Gift Voucher</h3> 
                                                             @php $display = "";
                                                             $display_link = "";
@@ -162,18 +163,14 @@
                                                                 <p class="show_voucher_error" style="color:red;"></p>
                                                                 <button id="gift_voucher_validate" class="pdp-button">Apply</button>
                                                             </div>
-
+                                                             </form>
                                                         </div>
                                                     </label>
                                                 </div>
-                                            </form>
                                         </div>
                                     </div>
 
                                     <div class="col-6">
-                                        @if (isset($cart->promo_string) && $cart->promo_string != "") 
-                                        <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 
-                                            @csrf
                                             <div class="input-wrapper">
                                                 <div class="radio-inline">
                                                     <input type="radio" id="promotion" name="promotion" checked="checked">
@@ -181,6 +178,9 @@
                                                         <div class="mark"><span></span></div>
                                                         <div class="text">
                                                             <h3 class="bold-font">Promotion Code</h3>
+                                                            @if (isset($cart->promo_string) && $cart->promo_string != "") 
+                                                        <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 
+                                                            @csrf
                                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                                 <tr>
                                                                     <td colspan="2" style="text-align:left;">
@@ -196,32 +196,21 @@
                                                                 </tr>
                                                                 </tr>
                                                             </table>
-                                                        </div>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </form>   
-                                        @endif
+                                                            </form>   
+                                                             @endif
 
-                                        @if (empty($cart) || $cart->promo_string =="") 
-                                        <form action="cart/couponvalidate" method="post" name="dwfrm_cart" id="ajaxcoupon">
-                                            @csrf
-                                            <div class="input-wrapper">
-                                                <div class="radio-inline">
-                                                    <input type="radio" id="promotion" name="promotion">
-                                                    <label for="promotion">
-                                                        <div class="mark"><span></span></div>
-                                                        <div class="text">
-                                                            <h3 class="bold-font">Promotion Code</h3>
+                                                              @if (empty($cart) || $cart->promo_string =="") 
+                                                        <form action="cart/couponvalidate" method="post" name="dwfrm_cart" id="ajaxcoupon">
+                                                            @csrf
                                                             <input type="text" id="promo_code" name="promo_code" class="gift-input" placeholder="Discount Code">
                                                             <p class="confirm-coupon" style="color:red;"></p>
                                                             <button id="promo_code_validate" class="pdp-button">Apply</button>
+                                                            </form>   
+                                                            @endif  
                                                         </div>
                                                     </label>
                                                 </div>
                                             </div>
-                                        </form>   
-                                        @endif                      
                                     </div> 
                                 </div>
                             </div>
