@@ -98,7 +98,7 @@
                     </form>-->
 					<form class="clearfix" name="subscriber_news2" method='post' action='/meet_brooks/enewsletter'>			
                         @csrf
-                        <input class="input " type="text" name="email" value="{{ old('email') }}" id="email" placeholder="Enter your email address">
+                        <input class="input " type="text" name="email" value="{{ old('email') }}"  placeholder="Enter your email address" required>
                         <button type="submit" class="btn">go</button>
                     </form>
 						<div class="payment--icons clearfix">
