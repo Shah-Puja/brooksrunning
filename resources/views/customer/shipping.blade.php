@@ -107,9 +107,9 @@
                                     </div>
                                 </div>
                             </div>
-
+                            @if(!auth()->user())
                             <!-- Password Wrapper -->
-                            <div class="password-wrapper" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
+                            <div class="password-wrapper">
                                 <div class="row">
                                     <div class="col-12">
                                         <p class="email-msg">Looks like you have an account. Enter your password for faster checkout.</p>	
@@ -136,6 +136,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <!-- /Password Wrapper -->
                             
                             <div class="row">
