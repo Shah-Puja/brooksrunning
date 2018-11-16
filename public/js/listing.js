@@ -47,6 +47,8 @@ if ($(window).width() > 667){
         $('.plp-wrapper-container .plp-thumb').removeClass('active-thumb');
         $(this).addClass('active-thumb');
         $(this).closest('.plp-wrapper__sub').find('#plp-img').attr("src", bigImg);
+        var href = $(this).data('url');
+        $("[data-main-id="+$(this).data('style')+"]").find(".plp-product .main_link").attr('href',href);
         return false;
   });
 }
@@ -55,6 +57,8 @@ $(document).on("click",".plp-wrapper__sub .plp-thumb--bg", function(){
       $('.plp-wrapper-container .plp-thumb--bg').removeClass('active-thumb');
       $(this).addClass('active-thumb');
       $(this).closest('.plp-wrapper__sub').find('.plp-main--img--wrapper').css({backgroundImage: "url("+bigImg+")"});
+      var href = $(this).data('url');
+      $("[data-main-id="+$(this).data('style')+"]").find(".plp-product .main_link").attr('href',href);
       return false;
 });
 var $grid = $('.grid').isotope({

@@ -64,7 +64,7 @@
 			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
-	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
+	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}" data-main-id="{{ $style->style }}">
 		<div class="plp-product"  data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
@@ -72,7 +72,7 @@
 					<span class="sale">SALE</span>
 				@endif
 			</div>
-			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
+			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="main_link">
 				<div class="plp-main--img--wrapper" style="background-image: url('{{ $style->image->image1Mediumx() }}')"></div>
 			</a>
 			<div class="more-color--container more-clothing hidden-mob">
@@ -85,7 +85,7 @@
 							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 						@endphp-->
 						<div class="item">
-							<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
+							<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
 						</div>
 					@endif
 				@endforeach
@@ -112,7 +112,7 @@
 						@endphp
 						
 						<div class="swatches-icon {{ $add_class }} "  {{ $add_css }}>
-						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
+						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
 					    </div>
 					   @php $i++  @endphp
 					@endforeach
@@ -126,7 +126,7 @@
 			    @endif
 		</div>
 		<!-- End mobile swatches -->
-			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
+			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="main_link">
 				<div class="info">
 					<h3>{{ strip_tags($style->stylename) }}</h3>
 					<div class="price">
