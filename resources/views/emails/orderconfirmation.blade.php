@@ -46,7 +46,7 @@
                                         <table width="95%" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:22px;color:#6d665f;">
                                             <tr>
                                                 <td width="45%">
-                                                    <img src="{{ $item->variant->product->image->image1Medium() }}" alt=""> 
+                                                    <img src="{{ $item->variant->product->image->image1Thumbnail() }}" alt=""> 
                                                 </td>
                                                 <td width="55%">
                                                     <span>{{ $item->variant->product->stylename }}</span><br />
@@ -63,19 +63,13 @@
                                     <td align="center" valign="top"><p style="background:#f4f3ee;padding:5px 8px;">{{ $item->qty }}</p></td>
                                     <td valign="top" align="left">
                                         <p style="background:#f4f3ee;padding:5px 8px;">
-                                            @if($item->variant->price_sale == 0)
-                                            $ {{ number_format($item->variant->price, 2) }}
-                                            @endif
-                                            @if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
-                                            <del>$ {{ number_format($item->variant->price, 2) }}</del> 
-                                            $ {{ number_format($item->variant->price_sale, 2) }} 
-                                            @endif 
-                                        </p></td>
-                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">@if($item->variant->price_sale == 0)
-                                            $ {{ number_format($item->variant->price * $item->qty, 2) }}
-                                            @else
-                                            $ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
-                                            @endif </p>
+                                        @if($item->variant->price_sale < $orderItem->variant->price)
+                                                <del>$ {{ number_format($item->variant->price, 2) }}</del> 
+                                                $ {{ number_format($item->variant->price_sale, 2) }}
+                                                @else 
+                                                $ {{ number_format($item->variant->price_sale, 2) }}
+                                        @endif
+                                        </p>
                                     </td>
                                 </tr>
                                 @endforeach
