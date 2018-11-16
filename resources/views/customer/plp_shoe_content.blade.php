@@ -65,7 +65,7 @@
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 
-	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}">
+	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}" data-main-id="{{ $style->style }}">
 		<div class="plp-product" data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
@@ -73,7 +73,7 @@
 					<span class="sale">SALE</span>
 				@endif
 			</div>
-			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="hidden-mob">
+			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="hidden-mob main_link">
 				<div class="img img-shoes">
 					<img id="plp-img" src="{{ $style->image->image1Medium() }}" alt="">
 				</div>
@@ -92,7 +92,7 @@
 							<div class="item">
 								<picture>
 								<source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-								<img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
+								<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-big="{{ $color_product->image->image1Medium() }}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" class="plp-thumb" alt="">
 								</picture>
 								<div class="plp-mob--info visible-mob">
 								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
@@ -110,7 +110,7 @@
 				</div>
 				<span class="icon-style icon-next-arrow next"></span>
 			</div>
-			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html">
+			<a href="/{{$style->seo_name}}/{{$style->style}}_{{$style->color_code}}.html" class="main_link">
 				<div class="info">
 					<h3>{{ $style->stylename }}</h3>
 					<div class="price">
