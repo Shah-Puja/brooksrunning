@@ -180,7 +180,7 @@ class PaymentController extends Controller {
     }
 
     public function store() {
-        $transation_result = $this->processor->charge($this->order);
+        $transation_result = $this->processor->charge($this->order); 
         $this->order->updateOrder($transation_result);
 
         if (!$transation_result) {
@@ -353,7 +353,7 @@ class PaymentController extends Controller {
         // exit;
         if ($orderIdData->status == "Order Completed") {
 
-            //$order_no = $this->addOrderNo($order_id);
+            $order_no = $this->addOrderNo($order_id);
             $date = Carbon::now();
             $timestamp = $date->format('Y-m-d H:i:s');
             switch ($payment) {
