@@ -37,50 +37,21 @@
 			</div>
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
+			@foreach($shoes_product as $prod_key => $shoes_arrival)
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/landingpage/shoe1.png">
+							<a href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html">
+								<img src="{{$shoes_arrival->image->image1Medium()}}">
+							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
-			                 <h4 class="price"><span class="black">$249.95</span></h4>
+			              	 <h3><a class="name-link" href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
+			                 <h4 class="price"><span class="black">${{$shoes_arrival->variants[$prod_key]->price}}</span></h4>
 		                </div>
 		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/shoe1.png">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
-			                 <h4 class="price"><span class="black">$249.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/shoe1.png">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
-			                 <h4 class="price"><span class="black">$249.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/shoe1.png">
-		                </div>
-		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin">Glycerin 16</a></h3>
-			                 <h4 class="price"><span class="black">$249.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
+				</div>
+			@endforeach	
 	       </div>
 	       <span class="icon-style icon-next-arrow next hidden-col"></span>
 	    </div>
@@ -179,50 +150,21 @@
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
+			@foreach($cloths_product as $prod_key => $cloths_arrival)
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-		              		<img src="/images/landingpage/short-sleeves.png">
+							<a href = "/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html">
+								<img src="{{$cloths_arrival->image->image1Medium()}}">
+							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
-			                 <h4 class="price"><span class="black">$69.95</span></h4>
+			              	<h3><a class="name-link" href="/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
+							<h4 class="price"><span class="black">${{$cloths_arrival->variants[$prod_key]->price}}</span></h4>
 		                </div>
 		            </div>
 		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/short-sleeves.png">
-		                </div>
-		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
-			                 <h4 class="price"><span class="black">$69.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/short-sleeves.png">
-		                </div>
-		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
-			                 <h4 class="price"><span class="black">$69.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		        <div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-		              		<img src="/images/landingpage/short-sleeves.png">
-		                </div>
-		                <div class="prd_caption">
-			              	  <h3><a class="name-link" href="/distance-short-sleeve-womens-running-top/221259_422.html" title="Distance Short Sleeves">Distance Short Sleeves</a></h3>
-			                 <h4 class="price"><span class="black">$69.95</span></h4>
-		                </div>
-		            </div>
-		        </div>
+		    @endforeach    
 	       </div>
 	       <span class="icon-style icon-next-arrow next hidden-col"></span>
 	    </div>
