@@ -782,7 +782,17 @@ class PaymentController extends Controller {
           $subtotal = number_format($subtotal, 2);
 
           } 
-
+if($this->order->payment_type == "AfterPay"){
+    $merchant_id = env('AFTERPAY_MERCHANT_ID');
+    $xml_data.="<PaymentDetail>
+						<Origin>CreditCard</Origin>
+						<MerchantId>".$merchant_id."</MerchantId>
+						<CardType>AFTERPAY</CardType>
+						<Stan>".$this->order->id."</Stan>
+						<Reference>".$this->order->id."</Reference>
+						<Amount>".$subtotal."</Amount>
+						</PaymentDetail>\n\t\t";
+}else{
         $xml_data .= "<PaymentDetail>
                             <Id>7781</Id>
                             <Origin>CreditCard</Origin>
@@ -801,6 +811,7 @@ class PaymentController extends Controller {
         $xml_data .= "<Amount>" . $subtotal . "</Amount>";
         $xml_data .= "<Message>payment_statusCURRENTbank_</Message>";
         $xml_data .= "</PaymentDetail>";
+}
         $xml_data .= "</Payments>";
 
         $xml_data .= "</Order>";
