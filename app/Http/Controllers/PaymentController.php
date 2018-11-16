@@ -429,13 +429,13 @@ class PaymentController extends Controller {
             );
             $order_number_insert = Order_number::create($order_data);
             if($order_number_insert){
-                $order_no = "Test2018-" . $order_number_insert->id;
+                $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
                 $status = 'Order Number';
             }
            
         } else {
 
-            $order_no = "test2018-$order_id";
+            $order_no = env('ORDER_PREFIX').$order_id;
         }
         Order::where('id', $order_id)
         ->update(['status' => $status,'order_no' => $order_no]);
@@ -644,7 +644,7 @@ class PaymentController extends Controller {
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
-        $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
+        $ordernum = $order->order_no; //change Order No with new series when site goes live
        
         if (!empty($this->order->coupon_code)) {
            $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
