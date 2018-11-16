@@ -376,6 +376,13 @@ function shippingform_validate(){
         }
     }
 
+    if($('#same-address:checked').val()=='Yes'){
+        for (j = 0; j < billing_required.length; j++) {
+            let input = $('input[name="' + billing_required[j] + '"],select[name="' + billing_required[j] + '"]');
+            input.removeClass("needsfilled");
+        }
+    }
+
     let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
     if (!terms.is(':checked')) {
         let input_label = terms.parent().find('label');
