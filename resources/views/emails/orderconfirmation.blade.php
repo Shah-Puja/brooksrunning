@@ -71,6 +71,12 @@
                                         @endif
                                         </p>
                                     </td>
+                                    <td valign="top" align="left"><p style="background:#f4f3ee;padding:5px 8px;">@if($item->variant->price_sale == 0)
+                                            $ {{ number_format($item->variant->price * $item->qty, 2) }}
+                                            @else
+                                            $ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
+                                            @endif </p>
+                                    </td>
                                 </tr>
                                     @php  
                                        /* $coup_discount += ($item->discount!=0.00) ? $item->discount : 0;
