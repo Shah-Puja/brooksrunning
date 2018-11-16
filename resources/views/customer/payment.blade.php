@@ -395,11 +395,11 @@ $("#afterpay_submit").click(function () {
                                         fields: {
                                         number: {
                                         selector: '#card-number',
-                                                placeholder: '4111 1111 1111 1111',
+                                                //placeholder: '4111 1111 1111 1111',
                                         },
                                                 cvv: {
                                                 selector: '#cvv',
-                                                        placeholder: '123'
+                                                        //placeholder: '123'
                                                 },
                                                 expirationMonth: {
                                                 selector: '#expiration-month',
