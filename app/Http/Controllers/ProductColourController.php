@@ -22,7 +22,7 @@ class ProductColourController extends Controller
         if(!$product){
             return abort(404);
         }   
-        $colour_options=$styles->unique('color_code'); // all unique colors data
+        $colour_options=$styles->unique('color_code')->sortBy('release_date'); // all unique colors data
         $unique_data= $styles->map(function($style) use ($color) {
             if($color==$style->color_code){
                 return $style->variants;
