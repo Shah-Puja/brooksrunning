@@ -206,7 +206,7 @@
                                                 $error_s_state="<span class='error'>".$errors->first('s_state')."</span>";
                                             endif;
                                         ?>
-                                        <label for=""><sup>*</sup>State: {!! $error_s_state !!}</label>
+                                        <label for=""><sup>*</sup>State / Country: {!! $error_s_state !!}</label>
                                         <select class="select-field" name="s_state" data-label-name="state">
                                             <option value="" selected="selected">Select State</option>
                                             <option value="ACT" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
@@ -233,7 +233,7 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        <input type="number" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                        <input type="text" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                     </div>
                                 </div>
                                 <div class="col-6">
