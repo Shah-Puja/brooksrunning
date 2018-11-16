@@ -130,7 +130,7 @@
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)
-										$ {{ number_format($order->variant->price, 2) }}
+										$ {{ number_format($item->variant->price, 2) }}
 										 @endif
 								@if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
 										<del>$ {{ number_format($item->variant->price, 2) }}</del> 
