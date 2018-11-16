@@ -59,7 +59,7 @@ input[type="radio"] {
 
 .four.columns.withImg .label-text {
     max-width: 77%;
-    min-height: 50px
+    min-height: 50px;
 }
 
 .learn-more {
@@ -225,10 +225,13 @@ img.ssIcon {
 
 .ui-accordion .ui-accordion-header {
     background: #15b0b0;
-    height: 60px;
+    height: 92px;
     color: #fff;
     display: flex;
-    display: -webkit-flex
+    display: -webkit-flex;
+}
+@media only screen and (min-width:768px) {
+    .ui-accordion .ui-accordion-header {height: 100px !important;}
 }
 
 .ui-accordion .ui-accordion-header.answered {
@@ -568,9 +571,7 @@ img.ssIcon {
 }
         
     }
-    .four.columns.withImg .label-text {
-        height: 50px
-    }
+  
     .qImg {
         width: 15%
     }

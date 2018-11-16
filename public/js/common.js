@@ -291,8 +291,6 @@ $('ul.tabs li').click(function () {
     $("#" + tab_id).addClass('current');
 })
 
-
-
 // custom select
 $(document).ready(function () {
     $(".select-option--wrapper").hide();
