@@ -577,6 +577,7 @@
   background-color: #f1f1f1;
   outline: 0;
   border: 0;
+  font-size: 14px;
 }
 .input-wrapper .input-textarea {
   height: 75px;
