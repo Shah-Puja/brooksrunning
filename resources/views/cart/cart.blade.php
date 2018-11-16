@@ -64,7 +64,7 @@
                                                     <div class="text">
                                                         <h3 class="bold-font">Standard Delivery</h3>
                                                         <p class="area">Australia</p>
-                                                        <p class="rate">$10 of <span>FREE for orders over $50</span></p>
+                                                        <p class="rate">$10 or <span>FREE for orders over $50</span></p>
                                                         <p class="day">2-10 business Days<sup>*</sup></p>
                                                     </div>
                                                 </label>

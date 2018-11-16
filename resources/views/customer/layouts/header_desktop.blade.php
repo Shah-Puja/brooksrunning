@@ -249,6 +249,14 @@
                                                     </li>
                                                 </ul>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="header-menu--btn">
+                                                        <p>Not sure which shoe is right for you?</p>
+                                                        <a href="/shoefinder" class="primary-button">Use our shoe finder</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
