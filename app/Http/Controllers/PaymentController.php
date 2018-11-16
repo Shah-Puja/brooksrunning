@@ -781,7 +781,7 @@ class PaymentController extends Controller {
           $subtotal = number_format($subtotal, 2);
 
           } 
-if($this->order->payment_type == "AfterPay"){
+if($order->payment_type == "AfterPay"){
     $merchant_id = env('AFTERPAY_MERCHANT_ID');
     $xml_data.="<PaymentDetail>
 						<Origin>CreditCard</Origin>
