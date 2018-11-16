@@ -67,7 +67,7 @@ class BillingShippingController extends Controller
             'b_fname' => 'required_if:flag_same_shipping,No',
             'b_lname' => 'required_if:flag_same_shipping,No',
             'b_add1' => 'required_if:flag_same_shipping,No',
-            'b_add2' => 'required_if:flag_same_shipping,No',
+            'b_add2' => '',
             'b_city' => 'required_if:flag_same_shipping,No',
             'b_state' => 'required_if:flag_same_shipping,No',
             'b_postcode' => 'required_if:flag_same_shipping,No|nullable|numeric',
