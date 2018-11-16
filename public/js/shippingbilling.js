@@ -346,19 +346,6 @@ function shippingform_validate(){
         $('#billing_shipping input[name="s_phone"]').addClass("error-border");	
     }
 
-    let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
-    if (!terms.is(':checked')) {
-        let input_label = terms.parent().find('label');
-        let label_text = input_label.html();
-        let error_span = " <span class='error'>The terms must be accepted.</span>";
-        let error = label_text + error_span;
-        input_label.html(error);
-        return false;
-    } else {
-        terms.removeClass("needsfilled");
-    }
-
-
     // if($('input[type="radio"][name="flag_same_shipping"]:checked').val()=='No'){
     if($('#different-address:checked').val()=='No'){
         for (j = 0; j < billing_required.length; j++) {
@@ -389,10 +376,22 @@ function shippingform_validate(){
         }
     }
 
+    let terms = $('#billing_shipping input[type="checkbox"][name="terms"]');
+    if (!terms.is(':checked')) {
+        let input_label = terms.parent().find('label');
+        let label_text = input_label.html();
+        let error_span = " <span class='error'>The terms must be accepted.</span>";
+        let error = label_text + error_span;
+        input_label.html(error);
+        return false;
+    } 
+
+
     if ($("#billing_shipping input,#billing_shipping select").hasClass("needsfilled")) {
         return false;
     }
 
+    
 }
 
 
