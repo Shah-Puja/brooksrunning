@@ -84,16 +84,16 @@ class PaymentController extends Controller {
         if ($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0) {
             $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
-
+            $payment = 'AfterPay';
             if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
                 $transaction_id = $charge_payment['id'];
-                $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id, 'transaction_status' => 'Succeeded', 'payment_status' => Carbon::now()));
+                $this->order->update(array('payment_type' => $payment, 'status' => 'Order Completed', 'transaction_id' => $transaction_id, 'transaction_status' => 'Succeeded', 'payment_status' => Carbon::now()));
                 $xml = '';
                 $braintree_result = 'Success';
                 $log_title = "AfterPay Payment";
                 $log_type = "Response";
                 $log_status = "AfterPay Payment Process Completed";
-                $payment = 'AfterPay';
+                
                 $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
                 $time = Carbon::now();
                 $timestamp = $time->format('Y-m-d H:i:s');
@@ -110,8 +110,7 @@ class PaymentController extends Controller {
                 );
                 Order_log::insert($logger);
 
-                $orderDataUpdate = array(
-                    'payment_type' => $payment,
+                $orderDataUpdate = array( 
                     'transaction_status' => 'Succeeded',
                     'nab_trans_id' => $transaction_id,
                     'nab_order_dt' => date('Y-m-d H:i:s'),
