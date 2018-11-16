@@ -73,8 +73,8 @@
                                     </td>
                                 </tr>
                                     @php  
-                                        $coup_discount += ($item->discount!=0.00) ? $item->discount : 0;
-                                        $coup_discount = number_format($coup_discount, 2);  
+                                       /* $coup_discount += ($item->discount!=0.00) ? $item->discount : 0;
+                                        $coup_discount = number_format($coup_discount, 2);  */
                                     @endphp
                                 @endforeach
                                 @endif 
@@ -98,24 +98,14 @@
                                     
                                     <td width="40%">
                                         <table width="85%" border="0" cellspacing="0" cellpadding="8" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:16px;color:#6d665f;background:#f4f3ee;padding:10px;">
-                                            <tr>
-                                            @php 
-                                                $subtotal = $orderItem->total;
-                                            @endphp
+                                            <tr> 
                                                 <td width="60%" align="left">Subtotal:</td>
-                                                <td width="40%" align="left">$ {{  @number_format($subtotal, 2) }}</td>
+                                                <td width="40%" align="left">$ {{  @number_format($orderItem->total, 2) }}</td>
                                             </tr>
                                             <tr>
                                                 <td align="left">Delivery:</td>
                                                 <td align="left">$ {{  @number_format($order->freight_cost, 2) }}</td>
-                                            </tr>
-
-                                            @if($orderItem->discount!=0.00)
-                                            <tr>
-	                                            <td align="left">Coupon Discounts:</td>
-	                                            <td align="left">$ {{  @number_format($coup_discount, 2) }}</td>
-	                                        </tr>
-                                            @endif
+                                            </tr> 
 
                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                             <tr>
