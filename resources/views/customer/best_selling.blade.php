@@ -55,9 +55,9 @@
 												 })->flatten()->unique()->values()->sort();
                         @endphp
 
-						<div class="mob-6 col-3 plp-wrapper__sub">
+						<div class="mob-6 col-3 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob">
+								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob main_link">
 									<div class="img img-shoes">
 										<img id="plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
 									</div>
@@ -71,10 +71,10 @@
                                         <div class="item">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
+                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
                                             </picture>
                                             <div class="plp-mob--info visible-mob">
-                                                <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html">
+                                                <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
                                                         <li>{{ count($colors_option[$curr_ele->style]) }} Colours</li>
@@ -89,7 +89,7 @@
 									</div>
 									<span class="icon-style icon-next-arrow next"></span>
 								</div>
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html">
+								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
 										<h3>{{ $curr_ele->stylename }} </h3>
 										<div class="price">
