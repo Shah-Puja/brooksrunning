@@ -30,7 +30,7 @@
                     <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
                 </div>
                 <div class="cart-success--info">
-                    <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>
+                    <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>
                     <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
                 </div>
                 <div class="shopping-heading">
@@ -42,6 +42,7 @@
                 </div>
                 <div class="shoppingcart-wrapper">
                     <div class="shoppingcart-products">
+                    @php //echo "<pre>";print_R($order); echo "<hr>"; @endphp
                         @foreach($order->orderItems as $orderItem)
                         <div class="row">
                             <div class="col-3 tab-6">
@@ -77,10 +78,10 @@
                                         <div class="mob-7">
                                             <p class="bold-font blue right">
                                                 @if($orderItem->variant->price_sale < $orderItem->variant->price)
-                                                <del>&dollar;{{ number_format($orderItem->variant->price, 2) }}</del> 
-                                                &dollar;{{ number_format($orderItem->variant->price_sale, 2) }}
+                                                <del>$ {{ number_format($orderItem->variant->price, 2) }}</del> 
+                                                $ {{ number_format($orderItem->variant->price_sale, 2) }}
                                                 @else 
-                                                &dollar;{{ number_format($orderItem->variant->price_sale, 2) }}
+                                                $ {{ number_format($orderItem->variant->price_sale, 2) }}
                                                 @endif
 
                                             </p>

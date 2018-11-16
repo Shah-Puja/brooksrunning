@@ -9,7 +9,7 @@
                 <table width="620" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px;">
                     <tr>
                         <td align="left">            
-                            Customer Order Number: BRN-{{ $order->id }}</td>
+                            Customer Order Number: BRN-{{ $order->order_no }}</td>
                         <td align="right">Date: {{ date("D j M Y G:i:s T") }}
                         </td>
                     </tr>
@@ -130,16 +130,17 @@
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)
-										&dollar;{{ number_format($order->variant->price, 2) }}
+										$ {{ number_format($order->variant->price, 2) }}
 										 @endif
 								@if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
-										<del>&dollar;{{ number_format($item->variant->price, 2) }}</del> 
-								&dollar;{{ number_format($item->variant->price_sale, 2) }} 
+										<del>$ {{ number_format($item->variant->price, 2) }}</del> 
+								$ {{ number_format($item->variant->price_sale, 2) }} 
 								@endif  </td>
-                                        <td align='left'>@if($item->variant->price_sale == 0)
-										&dollar;{{ number_format($item->variant->price * $item->qty, 2) }}
+                                        <td align='left'>
+                                        @if($item->variant->price_sale == 0)
+										$ {{ number_format($item->variant->price * $item->qty, 2) }}
 										@else
-										&dollar;{{ number_format($item->variant->price_sale * $item->qty, 2) }}
+										$ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
 										 @endif </td>
                                     </tr>
                                     @endforeach
