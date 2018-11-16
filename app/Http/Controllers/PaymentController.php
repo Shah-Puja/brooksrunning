@@ -422,7 +422,7 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
-        $status ='';
+        $status ='Order Completed';
         if (env('AP21_STATUS') == 'ON') {
             $order_data = array(
                 'order_id' => $order_id
