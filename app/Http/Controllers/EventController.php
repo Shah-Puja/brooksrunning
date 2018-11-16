@@ -23,7 +23,12 @@ class EventController extends Controller {
         $monthObj = new event_month();
         $prev_month = $monthObj->getMonthNameByID($month_id - 1);
         $next_month = $monthObj->getMonthNameByID($month_id + 1);
-        return view('info.event-view.month-event-view', compact('events', 'month_name', 'months', 'prev_month', 'next_month'));
+        return view('info.event-view.month-event', compact('events', 'month_name', 'months', 'prev_month', 'next_month'));
+    }
+
+    public function events_detail($event){
+        $event = event_mast::where('slug', 'like', '%' . $event . '%')->first();
+        return view('info.event-view.month-detail', compact('event'));
     }
 
 }

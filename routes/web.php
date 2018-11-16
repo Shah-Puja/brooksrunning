@@ -118,6 +118,7 @@ Route::get('/footwear/{gender}/best_selling', 'CategoryController@bestselling');
 /* events page */
 Route::get('/events', 'EventController@events_view'); 
 Route::get('/events/month/{events_pg}', 'EventController@index');
+Route::get('/events/{event}', 'EventController@events_detail'); 
 
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
