@@ -67,7 +67,7 @@
 						 <div class="opacity-cover"></div>
 						<img src="/images/landingpage/Womens/women_ghost11.jpg">
 					    <div class="title">
-					       <h2 class="happy left">New Colours!<br>Ghost 11</h2>
+					       <h2 class="happy left">New Colours<br>Ghost 11</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
@@ -80,7 +80,7 @@
 						 	<div class="opacity-cover"></div>
 							<img src="/images/landingpage/Womens/women_gts19.jpg">
 						    <div class="title">
-						        <h2 class="happy left">New!<br>Adrenaline GTS 19</h2>
+						        <h2 class="happy left">New<br>Adrenaline GTS 19</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
@@ -193,7 +193,7 @@
 						 	<div class="opacity-cover"></div>
 							<img src="/images/landingpage/Womens/women_tops.jpg">
 						    <div class="title">
-						        <h1 class="happy left">Women's<br>Top</h2>
+						        <h1 class="happy left">Women's<br>Tops</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">

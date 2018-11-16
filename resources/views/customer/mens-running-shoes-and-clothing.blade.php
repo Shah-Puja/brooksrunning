@@ -67,7 +67,7 @@
 						 <div class="opacity-cover"></div>
 						<img src="/images/landingpage/Mens/men_ravenna9.jpg">
 					    <div class="title">
-					       <h2 class="happy left">Energize your run!<br>with Ravenna</h2>
+					       <h2 class="happy left">Energize your run<br>with Ravenna</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
