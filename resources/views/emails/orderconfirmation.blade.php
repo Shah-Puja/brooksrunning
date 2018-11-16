@@ -63,7 +63,7 @@
                                     <td align="center" valign="top"><p style="background:#f4f3ee;padding:5px 8px;">{{ $item->qty }}</p></td>
                                     <td valign="top" align="left">
                                         <p style="background:#f4f3ee;padding:5px 8px;">
-                                        @if($item->variant->price_sale < $orderItem->variant->price)
+                                        @if($item->variant->price_sale < $item->variant->price)
                                                 <del>$ {{ number_format($item->variant->price, 2) }}</del> 
                                                 $ {{ number_format($item->variant->price_sale, 2) }}
                                                 @else 
