@@ -46,7 +46,7 @@
                                         <table width="95%" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:22px;color:#6d665f;">
                                             <tr>
                                                 <td width="45%">
-                                                    <img src="{{ $item->variant->product->image->image1Thumbnail() }}" alt=""> 
+                                                    <img src="{{ $item->variant->product->image->image1Medium() }}" alt=""> 
                                                 </td>
                                                 <td width="55%">
                                                     <span>{{ $item->variant->product->stylename }}</span><br />
