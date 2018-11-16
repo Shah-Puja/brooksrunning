@@ -48,6 +48,7 @@ if ($(window).width() > 667){
         $(this).addClass('active-thumb');
         $(this).closest('.plp-wrapper__sub').find('#plp-img').attr("src", bigImg);
         var href = $(this).data('url');
+        //console.log(href);
         $("[data-main-id="+$(this).data('style')+"]").find(".plp-product .main_link").attr('href',href);
         return false;
   });
