@@ -54,10 +54,68 @@ class CategoryController extends Controller
     }
 
     public function womens_landing(){
-        return view('customer.mens-running-shoes-and-clothing');
+
+        //NEW ARRIVALS
+        $shoe_info = array('120278_494','120277_064','120268_146','120269_452');
+        $shoes_product=[];
+        foreach($shoe_info as $item){
+            $slider_shoe = explode('_', $item); 
+            $shoes_product[] =  product::where(
+                [
+                    ['color_code', '=', $slider_shoe[1]],
+                    ['style', '=', $slider_shoe[0]],
+                ]
+            )->with('variants')
+            ->first();            
+        }
+
+        //NEW CLOTHING ARRIVALS
+        $cloths_info = array('350037_052','221257_043','221296_524','220981_579');
+        $cloths_product=[];
+        foreach($cloths_info as $item){
+            $slider_cloths = explode('_', $item); 
+            $cloths_product[] =  product::where(
+                [
+                    ['color_code', '=', $slider_cloths[1]],
+                    ['style', '=', $slider_cloths[0]],
+                ]
+            )->with('variants')
+            ->first();            
+        }
+
+        return view('customer.womens-running-shoes-and-clothing',compact('shoes_product','cloths_product'));
     }
     public function mens_landing(){
-        return view('customer.womens-running-shoes-and-clothing');
+
+        //NEW ARRIVALS
+        $shoe_info = array('110289_050','110288_038','110271_026','110280_471');
+        $shoes_product=[];
+        foreach($shoe_info as $item){
+            $slider_shoe = explode('_', $item); 
+            $shoes_product[] =  product::where(
+                [
+                    ['color_code', '=', $slider_shoe[1]],
+                    ['style', '=', $slider_shoe[0]],
+                ]
+            )->with('variants')
+            ->first();            
+        }
+
+        //NEW CLOTHING ARRIVALS
+        $cloths_info = array('211139_481','211133_330','211157_001','211135_047');
+        $cloths_product=[];
+        foreach($cloths_info as $item){
+            $slider_cloths = explode('_', $item); 
+            $cloths_product[] =  product::where(
+                [
+                    ['color_code', '=', $slider_cloths[1]],
+                    ['style', '=', $slider_cloths[0]],
+                ]
+            )->with('variants')
+            ->first();            
+        }
+
+        return view('customer.mens-running-shoes-and-clothing',compact('shoes_product','cloths_product'));
     }
 
     public function sale_landing(){
