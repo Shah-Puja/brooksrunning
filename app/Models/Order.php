@@ -76,7 +76,7 @@ class Order extends Model
                      'price' =>  $item->price,
                      'price_sale' =>  $item->price_sale,
                      'discount' => ($item->discount_detail!=0.00) ? $item->discount_detail : "0.00", 
-                     'total' => ($item->discount_price != 0.00) ? ($item->discount_price * $item->qty) : ($item->price_sale * $item->qty)
+                     //'total' => ($item->discount_price != 0.00) ? ($item->discount_price * $item->qty) : ($item->price_sale * $item->qty)
              ]);
         });
 
