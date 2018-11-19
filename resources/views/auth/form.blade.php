@@ -223,7 +223,7 @@
                         <div class="cart-btn">                                           
                                 <button type="submit" class="btn primary-button">{{ request()->is('register') ? 'Create Account' : 'update' }}</button>                                    
                         </div>
-                        <p class="privacy">See our <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
+                        <p class="privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
                     </div>
                 </div>                
             

@@ -186,9 +186,22 @@
 							<label>What Brooks Shoes do you wear?</label>
                             <select name="shoe_wear" class="select-field">
                                 <option value="" selected="selected">Select Brooks Shoes you wear</option>
-                                <option value="ACT,Australia">Brooks 1</option>
-                                <option value="ACT,Australia">Brooks 2</option>
-                                <option value="NSW,Australia">Brooks 3</option>
+                                <option value="Addiction">Addiction</option>
+                                <option value="Addiction Walker">Addiction Walker</option>
+                                <option value="Adrenaline GTS">Adrenaline GTS</option>
+								<option value="Ariel">Ariel</option>
+								<option value="Beast">Beast</option>
+								<option value="Cascadia">Cascadia</option>
+								<option value="Dyad">Dyad</option>
+								<option value="Ghost">Ghost</option>
+								<option value="Glycerin">Glycerin</option>
+								<option value="Launch">Launch</option>
+								<option value="Levitate">Levitate</option>
+								<option value="PureCadance">PureCadance</option>
+								<option value="PureFlow">PureFlow</option>
+								<option value="Ravenna">Ravenna</option>
+								<option value="Transcend">Transcend</option>
+								<option value="Other">Other</option>
                             </select>
 						</div>
 					</div>
@@ -238,7 +251,7 @@
 						<div class="cart-btn">
 							<button name="update_personal_details" value="update" class="primary-button">Apply</button>
 						</div>
-						<p class="privacy">See our <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a>.</p>
+						<p class="privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
 					</div>
 				</div>
 			</div>
