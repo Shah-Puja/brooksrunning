@@ -45,13 +45,15 @@ class LoginController extends Controller
         //echo "aaa";
         //exit;
         $email=request('email');
-        echo "aaa - $email ";
-        exit;
-        $credentials = $request->only('email', 'password');
-        //if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])){
-        if (Auth::attempt($credentials)) {
+        $password=request('password');
+
+        //echo "aaa - $email ";
+        //exit;
+        //$credentials = $request->only('email', 'password');
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'user_type' => 'User'])){
+        //if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('home');
         }
     }
 }
