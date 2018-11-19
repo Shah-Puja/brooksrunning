@@ -73,7 +73,7 @@
 						<div class="cart-btn">
 							<button class="primary-button" type="submit">Send Password</button>
 						</div>
-						<p class="privacy">See our <a href="#">Terms and Conditions</a>.</p>
+						<p class="privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
 					</div>
 				</div>
 			</div>
