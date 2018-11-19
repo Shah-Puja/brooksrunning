@@ -1,5 +1,10 @@
 @extends('customer.layouts.master')
 @section('content')
+<style type="text/css">
+	 .cart-mark{
+    display: -moz-inline-box !important;
+  }	
+</style>
 <section class="wrapper cart-breadcrumb--header">
 	<div class="row hidden-xs">
 		<div class="col-9">
