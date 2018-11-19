@@ -363,7 +363,7 @@
                                                     $error_b_state="<span class='error'>".$errors->first('b_state')."</span>";
                                                 endif;
                                             ?>
-                                            <label for=""><sup>*</sup>State: {!! $error_b_state !!}</label>
+                                            <label for=""><sup>*</sup>State / Country: {!! $error_b_state !!}</label>
                                             <select class="select-field" name="b_state" data-label-name="state">
                                                 <option value="" selected="selected">Select State</option>
                                                 <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
@@ -390,7 +390,7 @@
                                                 endif;
                                             ?>
                                             <label for=""><sup>*</sup>Postal Code: {!! $error_b_postcode !!}</label>
-                                            <input type="number" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                            <input type="text" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                         </div>
                                     </div>
                                     <div class="col-6">
