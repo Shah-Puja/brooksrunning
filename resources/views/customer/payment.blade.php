@@ -91,7 +91,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                             @if ( $errors->has('payment') )
                             <div class="alert-msg">
                                     <h2>{{ $errors->first('payment') }}</h2>
-				                    <p>You order has not been finalised and you have not been charged. Please try again, if the issue persists get in touch with your financial provider. You can also <a href="/info/contact-us">Contact Us</a>.</p>
+				                    <p>You order has not been finalised and you have not been charged. Please try again, if the issue persists get in touch with your financial provider. You can also <u><a href="/info/contact-us">Contact Us</a></u>.</p>
 				             </div>
                             @endif
                             <form action="" id="my-sample-form" method="post" onsubmit="return paymentform_validate()">
