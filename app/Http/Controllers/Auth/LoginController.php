@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        //echo "aaa"; 
+        //echo "aaa";
         //exit;
         $email=request('email');
         $password=request('password');
