@@ -67,6 +67,7 @@ class Order extends Model
         
         
         $cart->cartItems->each(function($item) use ($order) {
+            echo $item->discount_price."  ".$item->price_sale." item total--- ".$item->price_sale * $item->qty; 
             $order->orderItems()->create([
                      'variant_id' =>  $item->variant->id,
                      'style' =>  $item->variant->product->style,
@@ -79,6 +80,7 @@ class Order extends Model
                      'total' => ($item->discount_price != 0.00) ? ($item->discount_price * $item->qty) : ($item->price_sale * $item->qty)
              ]);
         });
+        die;
 
         $order->orderItems()->update([
             'promo_code' => ($promo_code) ? $promo_code : ""
