@@ -3,9 +3,9 @@
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
     @php
-    // echo "<pre>";
-        //     print_r($order);
-        // echo "</pre>";
+     echo "<pre>";
+             print_r($order);
+         echo "</pre>";
     @endphp
     <div class="row hidden-xs">
         <div class="col-9">
@@ -94,11 +94,8 @@
                                     </div>
                                     @endif
                                     <div class="row price">
-                                        <div class="mob-5"><p>Item Total</p></div>
-                                        @php  
-                                        $subtotal = $orderItem->total; 
-                                        @endphp
-                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($subtotal, 2) }}</p></div>
+                                        <div class="mob-5"><p>Item Total</p></div> 
+                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItem->total, 2) }}</p></div>
                                     </div>
                                 </div>
                             </div>
