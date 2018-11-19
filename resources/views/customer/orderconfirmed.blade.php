@@ -98,7 +98,8 @@
                                         @php  
                                         $subtotal = $orderItem->total; 
                                         @endphp
-                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($subtotal, 2) }}</p></div>
+                                        {{-- <div class="mob-7"><p class="right">&dollar;{{ number_format($subtotal, 2) }}</p></div> --}}
+                                        <div class="mob-7"><p class="right">&dollar;{{$order->total}}</p></div>
                                     </div>
                                 </div>
                             </div>
