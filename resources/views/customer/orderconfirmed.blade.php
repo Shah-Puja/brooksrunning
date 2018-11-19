@@ -3,9 +3,9 @@
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
     @php
-     echo "<pre>";
-             print_r($order);
-         echo "</pre>";
+    // echo "<pre>";
+        //     print_r($order);
+        // echo "</pre>";
     @endphp
     <div class="row hidden-xs">
         <div class="col-9">
@@ -30,6 +30,11 @@
                     <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
                 </div>
                 <div class="cart-success--info">
+                @php
+     echo "<pre>";
+             print_r($order);
+         echo "</pre>";
+    @endphp
                     <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>
                     <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
                 </div>
@@ -94,8 +99,11 @@
                                     </div>
                                     @endif
                                     <div class="row price">
-                                        <div class="mob-5"><p>Item Total</p></div> 
-                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItem->total, 2) }}</p></div>
+                                        <div class="mob-5"><p>Item Total</p></div>
+                                        @php  
+                                        $subtotal = $orderItem->total; 
+                                        @endphp
+                                        <div class="mob-7"><p class="right">&dollar;{{ number_format($subtotal, 2) }}</p></div>
                                     </div>
                                 </div>
                             </div>
