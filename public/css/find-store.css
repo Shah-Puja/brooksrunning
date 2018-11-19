@@ -123,11 +123,11 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-.tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
+.tab-vertical .tab-header label h3, .alert-msg h2, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-body, html, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -959,6 +959,26 @@ ul.br-info {
   .pdp-button {
     padding: 20px 15px;
     font-size: 15px;
+  }
+}
+
+.alert-msg {
+  padding: 10px;
+  background-color: #f9d7da;
+  color: #6a2327;
+  margin-bottom: 15px;
+  border: 2px solid #eecdd2;
+  border-radius: 25px;
+}
+.alert-msg a {
+  color: #6a2327;
+}
+.alert-msg .center {
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .alert-msg .center {
+    margin-left: 25%;
   }
 }
 

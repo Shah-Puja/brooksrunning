@@ -982,6 +982,29 @@
         font-size:15px;
       }
   }
+  .alert-msg{
+	padding: 10px;
+	background-color: #f9d7da;
+	color: #6a2327;	
+	margin-bottom: 15px;
+	border: 2px solid #eecdd2;
+	border-radius: 25px;
+	h2{
+		@extend %bold-font;
+	}
+	p{
+		@extend %info-font;
+	}	
+	a{
+color:#6a2327;
+	}	
+	.center{
+			text-align:center;
+			@media screen and (min-width: 1024px){
+				  margin-left: 25%;
+			}
+	}
+}
   .error{
     color: $red;
     margin: 2px 0;
