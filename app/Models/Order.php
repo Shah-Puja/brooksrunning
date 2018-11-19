@@ -67,6 +67,11 @@ class Order extends Model
         
         
         $cart->cartItems->each(function($item) use ($order) {
+            if($item->discount_price!= 0.00){
+                echo "<br>";echo $item->discount_price;die;
+            }else{
+                echo "<br>";echo $item->price_sale * $item->qty;
+            }
             $order->orderItems()->create([
                      'variant_id' =>  $item->variant->id,
                      'style' =>  $item->variant->product->style,
@@ -76,10 +81,10 @@ class Order extends Model
                      'price' =>  $item->price,
                      'price_sale' =>  $item->price_sale,
                      'discount' => ($item->discount_detail!=0.00) ? $item->discount_detail : "0.00", 
-                     //'total' => ($item->discount_price != 0.00) ? ($item->discount_price * $item->qty) : ($item->price_sale * $item->qty)
+                     //'total' => ( ) ? ($item->discount_price * $item->qty) : ()
              ]);
         });
-
+die;
         $order->orderItems()->update([
             'promo_code' => ($promo_code) ? $promo_code : ""
         ]);
