@@ -34,6 +34,4 @@
     </div>
 </div>
 <a href="/cart" class="primary-button action">Checkout</a>
-<a href="/">
 <button class="primary-btn secondary-button2 action close-cart--popup">continue shopping</button> 
-</a>
