@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+//use Illuminate\Validation\Rule;
+
 
 class RegisterController extends Controller
 {
@@ -52,6 +54,12 @@ class RegisterController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            /*'email' => [
+                'required',
+                Rule::unique('users')->where(function ($query) {
+                    $query->where('user_type', 'User');
+                }),
+            ],*/
             'password' => 'required|string|min:6|confirmed',
             'gender' => 'required|in:Male,Female',
             'birthday_date' => '',
@@ -73,10 +81,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::where()->updateorcreate(
+            ['email' => $data['email'] ],
+            [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
             'birth_date' => $data['birthday_date'],
@@ -85,8 +94,12 @@ class RegisterController extends Controller
             'state' => $data['state'],
             'postcode' => $data['postcode'],
             'newsletter' => @$data['newsletter_subscription'] ? 1 : 0, 
-            'source' => "User",
             'user_type' => "User",      
         ]);
+
+        if($user->wasRecentlyCreated){
+            $user->update(['source' => "User"]);
+        }
+        return $user;
     }
 }
