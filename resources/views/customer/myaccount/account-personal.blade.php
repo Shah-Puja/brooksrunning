@@ -201,7 +201,7 @@
 								<option value="PureFlow">PureFlow</option>
 								<option value="Ravenna">Ravenna</option>
 								<option value="Transcend">Transcend</option>
-								<option value="Other">Other</option>
+								<option value="Other">Other</option> 
                             </select>
 						</div>
 					</div>

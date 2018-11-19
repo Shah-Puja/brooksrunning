@@ -61,7 +61,7 @@
 							<h4>Women’s Clothing</h4>
 							<p>After spending money on a pair of high-quality running shoes, we understand that you might be looking to save some money on running clothing. If you're after affordable options that don't compromise on quality, check out our incredible range. We have everything you need for raising a sweat without raising a debt!</p>
 						</div>
-					</div>
+					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="sale-container--wrapper">
