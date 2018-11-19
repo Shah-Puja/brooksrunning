@@ -13,8 +13,10 @@
         <link rel="stylesheet" href="/css/common.css">
         <script src="/js/jquery-2.2.4.min.js"></script>
         @yield('head')
+        @include('digitalmarketingsnippets.gtm')
     </head>
     <body>
+        @include('digitalmarketingsnippets.gtmnoscript')
         @include('customer.layouts.header_desktop')
         @include('customer.layouts.header_mobile')
 
