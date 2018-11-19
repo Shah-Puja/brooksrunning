@@ -38,7 +38,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                             <br>Please try again or use another method of payment to complete your transaction.</p> --}}
                             <div class="alert-msg">
                                 <h2>Your payment was declined</h2>
-                                <p>Your order has not been finalised and you have not been charged. Please try again or use another payment method.</p>
+                                <p>Your order has not been finalised and you have not been charged. Please try again or use another payment method <u><a href="/info/contact-us">Contact Us</a></u>.</p>
                             </div>
 						@endif  
                     <ul class="tabs payment-tab">
