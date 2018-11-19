@@ -3,9 +3,9 @@
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
     @php
-    // echo "<pre>";
-        //     print_r($order);
-        // echo "</pre>";
+     echo "<pre>";
+            print_r($order);
+         echo "</pre>";die;
     @endphp
     <div class="row hidden-xs">
         <div class="col-9">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="shoppingcart-wrapper">
                     <div class="shoppingcart-products">
-                    @php //echo "<pre>";print_R($order); echo "<hr>"; @endphp
+                    @php echo "<pre>";print_R($order); echo "<hr>";die; @endphp
                         @foreach($order->orderItems as $orderItem)
                         <div class="row">
                             <div class="col-3 tab-6">
@@ -95,8 +95,6 @@
                                     @endif
                                     <div class="row price">
                                         <div class="mob-5"><p>Item Total</p></div>
-                                         
-                                        @php echo "<pre>"; print_r($orderItem); echo "</pre>"; die; @endphp
                                         <div class="mob-7"><p class="right">&dollar;{{ number_format($orderItem->total, 2) }}</p></div>
                                     </div>
                                 </div>
