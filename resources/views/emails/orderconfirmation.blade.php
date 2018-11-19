@@ -40,7 +40,11 @@
                                     <td colspan="4">&nbsp;</td>
                                 </tr>  
                                 @if (! $order->orderItems->isEmpty() ) 
+                                $coup_discount = 0;
                                 @foreach($order->orderItems as $item)
+                                    $promo_code = $item->promo_code;
+                                    $coup_discount += ($item->discount!=0) ? $item->discount : 0;
+                                    $coup_discount = number_format($coup_discount, 2);
                                 <tr>
                                     <td valign="top">
                                         <table width="95%" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:22px;color:#6d665f;">
@@ -77,11 +81,7 @@
                                             $ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
                                             @endif </p>
                                     </td>
-                                </tr>
-                                    @php  
-                                       /* $coup_discount += ($item->discount!=0.00) ? $item->discount : 0;
-                                        $coup_discount = number_format($coup_discount, 2);  */
-                                    @endphp
+                                </tr> 
                                 @endforeach
                                 @endif 
                             </table>
@@ -97,6 +97,7 @@
                                 <tr>
                                     <td valign="top" width="60%" align="left">
                                         <p style="font-size:16px;font-weight:bold;line-height:18px;margin:0 25px;color:#6d665f;">
+                                            Promo String : {{$promo_code}}<br><br>
                                             If you have an enquiry regarding your order and <br />would like to contact Brooks, please email us at <br />
                                             <a href="mailto:shop@brooksrunning.com.au" style="color:#eb7f14;">shop@brooksrunning.com.au</a>
                                         </p>
@@ -112,6 +113,13 @@
                                                 <td align="left">Delivery:</td>
                                                 <td align="left">$ {{  @number_format($order->freight_cost, 2) }}</td>
                                             </tr> 
+
+                                            @if (!empty($promo_code) && $promo_code != '')
+                                            <tr>
+	                                            <td align="left">Coupon Discounts:</td>
+	                                            <td align="left">$ {{  $coup_discount }}</td>
+	                                        </tr>
+                                            @endif
 
                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                             <tr>
