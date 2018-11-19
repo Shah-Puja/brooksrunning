@@ -434,8 +434,7 @@
         border-radius: 100%;
         transition: all 1s ease; }
     .input-wrapper .radio-inline label .text {
-      padding-left: 30px;
-      display: -ms-inline-grid; }
+      padding-left: 30px; }
   .input-wrapper .radio-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .radio-inline input:checked ~ label .mark span {
@@ -474,8 +473,7 @@
         border-left: 2px solid #ffffff;
         border-bottom: 2px solid #ffffff; }
     .input-wrapper .checklist-inline label .text {
-      padding-left: 30px;
-      display: inline-grid; }
+      padding-left: 30px; }
   .input-wrapper .checklist-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .checklist-inline input:checked ~ label .mark span {
@@ -515,6 +513,9 @@
   cursor: pointer; }
   .input-wrapper .select-field option {
     outline: 0; }
+
+.cart-mark {
+  display: -moz-inline-box !important; }
 
 .custom-select {
   position: relative;
