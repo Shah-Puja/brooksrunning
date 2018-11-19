@@ -18,6 +18,8 @@
 					<h3 class="br-heading">Order History</h3>
 					<p>Your Information</p>
 				</div>
+				 
+				@if(count($user_order_details) > 0)
 				<div class="shopping-heading">
 					<div class="row">
 						<div class="col-2 tab-4"><p>Order No</p></div>
@@ -28,6 +30,9 @@
 						<div class="col-2 tab-4"><p>Action</p></div>
 					</div>
 				</div>
+				@endif
+
+				@if(count($user_order_details) > 0)
 				<div class="shoppingcart-wrapper">
 				@foreach($user_order_details as $order_details)
 					<div class="shoppingcart-products"> 
@@ -69,6 +74,9 @@
 					</div>
 					@endforeach
 				</div>
+				@else
+				<p>We have no order records for this account.</p>
+				@endif
 			</div>
 		</div>
 	</div>
