@@ -44,9 +44,9 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $user=User::where('email',request('email'))
+        /*$user=User::where('email',request('email'))
         ->where('user_type','!=','User')->first();
-        if($user) return redirect('login')->withErrors(['email' => 'You are not Registered.']);
+        if($user) return redirect('login')->withErrors(['email' => 'You are not Registered.']);*/
       
 
         $this->validateLogin($request);
