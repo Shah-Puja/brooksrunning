@@ -119,13 +119,13 @@
 .br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .landingpage-banner .landingpage-banner--info .label--underline, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-info .para .features p strong, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtFeeling, .rhi-header2 .info-wrapper .txtOffice, .br-events .module .info-wrapper .tickLedeHead span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .events-months .title, .br-events .events-information .events-months li, .br-events .events-information h4, .br-events .content-asset .main-events li a .listevents h2, .br-events .cta, .br-events-content .create-account--header .event-date, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-months .content-asset .cta {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .br-events .content-asset .main-events li a .listevents p, .br-events-months .content-asset .main-events li a .listevents p {
+.accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .alert-msg h2, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .br-events .content-asset .main-events li a .listevents p, .br-events-months .content-asset .main-events li a .listevents p {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
 .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info img, .brooksrunhappyis .module .info-wrapper .txtOurflag {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, html, body, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun {
+.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, .alert-msg p, html, body, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
 
 .bold-font {
@@ -428,7 +428,8 @@
         border-radius: 100%;
         transition: all 1s ease; }
     .input-wrapper .radio-inline label .text {
-      padding-left: 30px; }
+      padding-left: 30px;
+      display: -ms-inline-grid; }
   .input-wrapper .radio-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .radio-inline input:checked ~ label .mark span {
@@ -467,7 +468,8 @@
         border-left: 2px solid #ffffff;
         border-bottom: 2px solid #ffffff; }
     .input-wrapper .checklist-inline label .text {
-      padding-left: 30px; }
+      padding-left: 30px;
+      display: -ms-inline-grid; }
   .input-wrapper .checklist-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .checklist-inline input:checked ~ label .mark span {
@@ -806,6 +808,21 @@ ul.br-info {
     .pdp-button {
       padding: 20px 15px;
       font-size: 15px; } }
+
+.alert-msg {
+  padding: 10px;
+  background-color: #f9d7da;
+  color: #6a2327;
+  margin-bottom: 15px;
+  border: 2px solid #eecdd2;
+  border-radius: 25px; }
+  .alert-msg a {
+    color: #6a2327; }
+  .alert-msg .center {
+    text-align: center; }
+    @media screen and (min-width: 1024px) {
+      .alert-msg .center {
+        margin-left: 25%; } }
 
 .error {
   color: #b9161e;
