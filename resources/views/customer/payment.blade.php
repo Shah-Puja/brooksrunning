@@ -33,10 +33,14 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
             <div class="shipping-right--container payment-container">
                 <h1 class="br-heading">Select Your Payment Method</h1>
                 <div class="tab-container">
-								@if(session('afterpay_cancel') == "AfterPay Cancel") 
-									<p style="color: #eb0028;"> Afterpay has been unsuccessful, you have not been charged. 
-                	<br>Please try again or use another method of payment to complete your transaction.</p>
-								@endif  
+						@if(session('afterpay_cancel') == "AfterPay Cancel") 
+							{{-- <p style="color: #eb0028;"> Afterpay has been unsuccessful, you have not been charged. 
+                            <br>Please try again or use another method of payment to complete your transaction.</p> --}}
+                            <div class="alert-msg">
+                                <h2>Your payment was declined</h2>
+                                <p>Your order has not been finalised and you have not been charged. Please try again or use another payment method.</p>
+                            </div>
+						@endif  
                     <ul class="tabs payment-tab">
                         <li class="tab-link current" data-tab="tab-1">
                             <div class="input-wrapper">

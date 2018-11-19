@@ -183,7 +183,7 @@ class PaymentController extends Controller {
         $this->order->updateOrder($transation_result);
 
         if (!$transation_result) {
-            return back()->withErrors(['payment' => 'Payment Failed']);
+            return back()->withErrors(['payment' => 'Your payment was declined']);
         }
 
         if ($transation_result->processorResponseCode == "1000" && $transation_result->processorResponseText == "Approved") {
