@@ -35,3 +35,9 @@
 </div>
 <a href="/cart" class="primary-button action">Checkout</a>
 <button class="primary-btn secondary-button2 action close-cart--popup">continue shopping</button> 
+
+<script>
+$(".close-cart--popup").click(function () {
+    $(".cart-popup-desktop").hide();
+});
+</script>
