@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function womens_landing(){
 
         //NEW ARRIVALS
-        $shoe_info = array('120278_494','120277_064','120268_146','120269_452');
+        $shoe_info = array('120278_494','120277_461','120268_146','120269_452');
         $shoes_product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
