@@ -46,7 +46,7 @@ class LoginController extends Controller
     {
         $user=User::where('email',request('email'))
         ->where('user_type','!=','User')->first();
-        if($user) return redirect('login')->withErrors(['email' => 'You are not registered with Us.']);
+        if($user) return redirect('login')->withErrors(['email' => 'You are not registered with us.']);
       
 
         $this->validateLogin($request);
