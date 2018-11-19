@@ -421,7 +421,7 @@
                                             <label for="already-read">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">
-                                                        I have read and agree to the  <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
+                                                        I have read and agree to the <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
                                                     </div><br>
                                                     {!! $error_terms !!}
                                             </label>

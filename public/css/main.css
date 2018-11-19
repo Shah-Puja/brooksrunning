@@ -124,7 +124,7 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-.br-events-months .content-asset .main-events li a .listevents p, .br-events .content-asset .main-events li a .listevents p, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .new-arrival .new-arrival--container, .tab-vertical .tab-header label h3, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
+.br-events-months .content-asset .main-events li a .listevents p, .br-events .content-asset .main-events li a .listevents p, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .new-arrival .new-arrival--container, .tab-vertical .tab-header label h3, .alert-msg h2, .pdp-button, .shoe-button, .primary-button, .br-info .bold, .input-wrapper .radio-inline label, .accordian-tab label {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -132,7 +132,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -971,6 +971,26 @@ ul.br-info {
   .pdp-button {
     padding: 20px 15px;
     font-size: 15px;
+  }
+}
+
+.alert-msg {
+  padding: 10px;
+  background-color: #f9d7da;
+  color: #6a2327;
+  margin-bottom: 15px;
+  border: 2px solid #eecdd2;
+  border-radius: 25px;
+}
+.alert-msg a {
+  color: #6a2327;
+}
+.alert-msg .center {
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  .alert-msg .center {
+    margin-left: 25%;
   }
 }
 
