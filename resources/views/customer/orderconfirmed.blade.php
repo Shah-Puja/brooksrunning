@@ -118,7 +118,7 @@
                                             <p>Subtotal</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right">${{$order->total}}</p>
+                                            <p class="right">$ {{ number_format($order->total,2) }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -156,7 +156,7 @@
                                             <p class="bold-font blue">Order Total</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="bold-font blue right">${{$order->grand_total}}</p>
+                                            <p class="bold-font blue right">$ {{ number_format($order->grand_total,2) }}</p>
                                         </div>
                                     </div>
                                 </div>
