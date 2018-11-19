@@ -88,7 +88,9 @@ class BillingShippingController extends Controller
 
     public function check_email(){
         $email= request()->email;
-        $user = User::where("email", "=",  $email)->first();
+        $user = User::where("email", "=",  $email)
+        ->where("user_type", "=",  'User')
+        ->first();
         if($user){
             echo "true";
         }else{
