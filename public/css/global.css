@@ -497,7 +497,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
-  display: -ms-inline-grid;
 }
 .input-wrapper .radio-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -545,7 +544,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
-  display: inline-grid;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
@@ -591,6 +589,10 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .input-wrapper .select-field option {
   outline: 0;
+}
+
+.cart-mark {
+  display: -moz-inline-box !important;
 }
 
 .custom-select {
