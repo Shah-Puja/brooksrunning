@@ -42,10 +42,13 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        echo "aaa";
+        //echo "aaa";
+        //exit;
+        $email=request('email');
+        echo "aaa - $email ";
         exit;
         $credentials = $request->only('email', 'password');
-
+        //if (Auth::attempt(['email' => $email, 'password' => $password, 'active' => 1])){
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('dashboard');
