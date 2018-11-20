@@ -108,10 +108,10 @@
                             @else
                                 @php $show_afterpay_prod_price = number_format(($product->price/4), 2); @endphp
                             @endif
-                            <div class="afterpay">
+                            {{-- <div class="afterpay">
                                 <span>or 
                                 4 payments of ${{ $show_afterpay_prod_price }} with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-                            </div>
+                            </div> --}}
                         @endif 
                         <!--afterpay popup -->
                         <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
