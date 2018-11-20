@@ -713,7 +713,8 @@ class PaymentController extends Controller {
             $sku = $item->variant->id;
             $qty = $item->qty;
             $price = $item->price_sale;
-            $value = $qty * $price;
+            //$value = $qty * $price;
+            $value = $item->total;
             $discount = ($item->discount!= 0) ? $item->discount : 0;
             $promo_code = $item->promo_code;
             $promo_string = $item->promo_string;
