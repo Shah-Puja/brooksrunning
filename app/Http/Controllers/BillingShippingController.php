@@ -79,7 +79,6 @@ class BillingShippingController extends Controller
             'flag_same_shipping' => '',
         ]);
         
-        // echo $user_id;
         //  echo "<pre>";
         //  print_r($validatedAddress);
         //  echo "</pre>";

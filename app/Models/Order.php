@@ -25,7 +25,7 @@ class Order extends Model
         return $this->hasOne('App\Models\Order_address');
     }
     
-    public static function createNew($cart, $user_id, $validatedAddress)
+    public static function createNew($cart, $user_id , $validatedAddress)
     {  
         // echo "<pre>";
         // print_R($cart);

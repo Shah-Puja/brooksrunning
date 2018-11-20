@@ -158,6 +158,7 @@
 				</div>
 		</div>
 </section>
+
 <!--uTube popup -->
 @if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
 <div id="uTube-popup--wrapper" class="popup-container uTube--popup">

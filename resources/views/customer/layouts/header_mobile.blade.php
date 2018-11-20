@@ -80,6 +80,18 @@
 	                                <a href="/womens-competition-running-shoes">Competition Running</a>
 	                                <p>Fast and built for speed, on the road or track.</p>
 	                            </li>
+								<li>
+                            		<a href="/womens-trail-running-shoes">Trail Running</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="/womens-cross-training-shoes">Cross-Training</a>
+                                </li> -->
+                                <li>
+                                    <a href="/womens-walking-shoes">Walking</a>
+                                </li>
+                        		<li class="sale">
+                                    <a href="/womens-running-shoes-sale">Sale Shoes</a>
+                                </li>
 	                        </ul>
 	                    </li>
 	                    <li>
@@ -184,9 +196,9 @@
 								<li>
                             		<a href="/mens-trail-running-shoes">Trail Running</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="/mens-cross-training-shoes">Cross-Training</a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="/mens-walking-shoes">Walking</a>
                                 </li>
@@ -379,7 +391,7 @@
 							</li>
 	                        </ul>
 	                    </li>
-	                    <li>
+	                    <!-- <li>
 	                        <a href="/cross-trainer-shoes">
 	                            Cross Training Shoes                      
 	                        </a>
@@ -391,7 +403,7 @@
 								<a href="/shoes/maximus">Maximus</a>
 							</li>
 	                        </ul>
-	                    </li>
+	                    </li> -->
 	                    <li>
 	                        <a href="/walking-shoes">
 	                            Walking Shoes
