@@ -83,7 +83,6 @@ class BillingShippingController extends Controller
         //  echo "</pre>";
         //  exit;
         Order::createNew($this->cart, $validatedAddress);
-        echo "Order New";die;
         return redirect("payment");
     }
 
