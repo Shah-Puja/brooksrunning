@@ -42,7 +42,7 @@
                                 @if (! $order->orderItems->isEmpty() ) 
                                 $coup_discount = 0;
                                 @foreach($order->orderItems as $item) 
-                                    $coup_discount += ($item->discount!=0) ? $item->discount : 0;
+                                    $coup_discount += ($item->discount > 0) ? $item->discount : 0;
                                     $coup_discount = number_format($coup_discount, 2);
                                 <tr>
                                     <td valign="top">
@@ -113,12 +113,7 @@
                                                 <td align="left">$ {{  @number_format($order->freight_cost, 2) }}</td>
                                             </tr> 
 
-                                            @if (isset($order->coupon_code) && $order->coupon_code != '')
-                                            <tr>
-	                                            <td align="left">Coupon Discounts:</td>
-	                                            <td align="left">$ {{  $coup_discount }}</td>
-	                                        </tr>
-                                            @endif
+                                            
 
                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                             <tr>
