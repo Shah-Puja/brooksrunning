@@ -27,10 +27,10 @@ class Order extends Model
     
     public static function createNew($cart, $validatedAddress)
     {  
-        /*echo "<pre>";
+        echo "<pre>";
          print_R($cart);
          echo "</pre>";
-         die;*/
+         die;
         $order = self::updateOrCreate(
             [
                 'user_id' => $cart['user_id'],
