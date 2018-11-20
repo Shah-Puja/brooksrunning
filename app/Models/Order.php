@@ -25,15 +25,15 @@ class Order extends Model
         return $this->hasOne('App\Models\Order_address');
     }
     
-    public static function createNew($cart, $validatedAddress)
+    public static function createNew($cart, $user_id , $validatedAddress)
     {  
-        /*echo "<pre>";
-         print_R($cart);
-         echo "</pre>";
-         die;*/
+        // echo "<pre>";
+        // print_R($cart);
+        // echo "</pre>";
+        // die;
         $order = self::updateOrCreate(
             [
-                'user_id' => $cart['user_id'],
+                'user_id' => $user_id,
                 'cart_id' => $cart['id'], 
             ],
             [
