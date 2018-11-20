@@ -83,6 +83,7 @@ class BillingShippingController extends Controller
         //  print_r($validatedAddress);
         //  echo "</pre>";
         //  exit;
+        
         $user_id = $this->cart->user_id;
         if(auth()->user()){
             if($this->cart['user_id']==''){
