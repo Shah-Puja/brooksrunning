@@ -41,8 +41,7 @@
                                 </tr>  
                                 @if (! $order->orderItems->isEmpty() ) 
                                 $coup_discount = 0;
-                                @foreach($order->orderItems as $item)
-                                    $promo_code = $item->promo_code;
+                                @foreach($order->orderItems as $item) 
                                     $coup_discount += ($item->discount!=0) ? $item->discount : 0;
                                     $coup_discount = number_format($coup_discount, 2);
                                 <tr>
