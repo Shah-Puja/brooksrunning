@@ -88,9 +88,9 @@
                                                     <li>
                                                         <a href="/womens-trail-running-shoes">Trail Running</a>
                                                     </li>
-                                                    <li>
+                                                    <!-- <li>
                                                         <a href="/womens-cross-training-shoes">Cross-Training</a>
-                                                    </li>
+                                                    </li> -->
                                                     <li>
                                                         <a href="/womens-walking-shoes">Walking</a>
                                                     </li>
@@ -192,9 +192,9 @@
                                                     <li>
                                                         <a href="/mens-trail-running-shoes">Trail Running</a>
                                                     </li>
-                                                    <li>
+                                                    <!-- <li>
                                                         <a href="/mens-cross-training-shoes">Cross-Training</a>
-                                                    </li>
+                                                    </li> -->
                                                     <li>
                                                         <a href="/mens-walking-shoes">Walking</a>
                                                     </li>
@@ -375,15 +375,15 @@
                                                         <li>
                                                             <a href="/shoes/hyperion">Hyperion</a>
                                                         </li>
-                                                        <li class="submenu-main">
+                                                        <!-- <li class="submenu-main">
 	                                                        <a href="/cross-trainer-shoes">Cross Training Shoes</a>
-	                                                    </li>
-                                                        <li>
+	                                                    </li> -->
+                                                        <!-- <li>
                                                             <a href="/shoes/liberty">Liberty</a>
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/maximus">Maximus</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="submenu-main">
 	                                                        <a href="/walking-shoes">Walking Shoes</a>
 	                                                    </li>
