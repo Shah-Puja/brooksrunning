@@ -122,9 +122,9 @@
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}cushion.png" alt="Cushion Badge" width="60" height="60" />
 												@elseif ($shoe_info->experience == 'Energize Me')
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}energize.svg" alt="Energize Badge" width="60" height="60" />
-												@elseif ($shoe_info->experience == 'Connect Me') {
+												@elseif ($shoe_info->experience == 'Connect Me')
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}connect.png" alt="Connect Badge" width="60" height="60" />
-												@elseif ($shoe_info->experience == 'Propel Me') {
+												@elseif ($shoe_info->experience == 'Propel Me')
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="60" height="60" />
 												@endif
 											@endif
@@ -165,7 +165,8 @@
 		<div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
 			<div class="uTube-info">
-				<iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+				{{-- <iframe src="https://www.youtube.com/embed/jynRHfitLOY?autoplay=1" frameborder="0" allowfullscreen ></iframe> --}}
+				<iframe src="https://www.youtube.com/embed/{{ $shoe_info->video_link }}?autoplay=1" frameborder="0" allowfullscreen ></iframe>
 			</div>
 		</div>
 	</div>
