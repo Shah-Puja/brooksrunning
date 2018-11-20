@@ -36,14 +36,15 @@
                                     <th width="15%" style="background:#f4f3ee;padding:10px;">Unit Price</th>
                                     <th width="15%" style="background:#f4f3ee;padding:10px;">Total</th>
                                 </tr>
+                                @php $coup_discount = 0; @endphp
                                 <tr>
                                     <td colspan="4">&nbsp;</td>
                                 </tr>  
                                 @if (! $order->orderItems->isEmpty() ) 
-                                $coup_discount = 0;
+                                
                                 @foreach($order->orderItems as $item) 
-                                    $coup_discount += ($item->discount > 0) ? $item->discount : 0;
-                                    $coup_discount = number_format($coup_discount, 2);
+                                   @php $coup_discount += ($item->discount > 0) ? $item->discount : 0;
+                                    $coup_discount = number_format($coup_discount, 2); @endphp
                                 <tr>
                                     <td valign="top">
                                         <table width="95%" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:22px;color:#6d665f;">
@@ -113,7 +114,12 @@
                                                 <td align="left">$ {{  @number_format($order->freight_cost, 2) }}</td>
                                             </tr> 
 
-                                            
+                                            @if (isset($order->coupon_code) && $order->coupon_code != '')
+                                            <tr>
+	                                            <td align="left">Coupon Discounts:</td>
+	                                            <td align="left">$ {{  $coup_discount }}</td>
+	                                        </tr>
+                                            @endif
 
                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                             <tr>
