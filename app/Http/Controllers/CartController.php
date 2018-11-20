@@ -220,7 +220,7 @@ class CartController extends Controller {
                 $gift_cart_total = $cartTotal - $AvailableAmount;
             }
             Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
+            $cart = Cart::where('id', session('cart_id'))->where('gift_id',$cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         }
         return view('cart.order_summary', compact('cart'));
     }
