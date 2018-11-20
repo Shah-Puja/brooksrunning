@@ -58,6 +58,21 @@ class CartController extends Controller {
                 }
 
                 $data = $this->cart_api($cart_arr);
+
+                if ($cart->gift_pin != "") {
+                    $AvailableAmount = $cart->gift_available_amount;
+                    $cartTotal = $cart->cart_total;
+        
+                    if ($AvailableAmount > $cartTotal) {
+                        $gift_discount = $cartTotal;
+                        $gift_cart_total = 0;
+                    } else {
+                        $gift_discount = $AvailableAmount;
+                        $gift_cart_total = $cartTotal - $AvailableAmount;
+                    }
+                    Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
+                    $cart = Cart::where('id', session('cart_id'))->where('gift_id',$cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
+                }
             }
 
 
