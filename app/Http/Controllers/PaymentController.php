@@ -67,10 +67,29 @@ class PaymentController extends Controller {
 
     public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        return view('customer.payment', [
-            'clientToken' => $this->processor->getToken(),
-            'cartGrandTotal' => $this->order->grand_total,
-                ], compact('cart'));
+        if(isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total==0.00){
+            $logger = array(
+                'order_id' => $this->order->id,
+                'log_title' => 'Gift Certificate Payment'
+            );
+            Order_log::insert($logger);
+            $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
+            $time = Carbon::now();
+            $timestamp = $time->format('Y-m-d H:i:s');
+            $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
+
+
+            $order = $this->order->load('orderItems.variant.product', 'address');
+            event(new OrderReceived($order));
+            return redirect('/order/success');
+
+        }else{
+            return view('customer.payment', [
+                'clientToken' => $this->processor->getToken(),
+                'cartGrandTotal' => $this->order->grand_total,
+                    ], compact('cart'));
+        }
+        
     }
 
     public function create_token(AfterpayProcessor $afterpay_processor) {
@@ -176,6 +195,10 @@ class PaymentController extends Controller {
     public function afterpay_cancel(Request $request) {
         $this->order->update(array('status' => 'Order Incomplete', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()));
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
+    }
+
+    public function discount_order(Request $request){
+        echo "<pre>";print_r($this->order);print_r($request->all());die;
     }
 
     public function store() {
