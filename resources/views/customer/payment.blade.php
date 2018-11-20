@@ -352,7 +352,7 @@ $("#afterpay_submit").click(function () {
 
                                 // Set up PayPal with the checkout.js library
                                 paypal.Button.render({
-                                env: 'sandbox', // Or 'sandbox'
+                                env: {{ config('services.braintree.environment') }},
                                         commit: true, // This will add the transaction amount to the PayPal button
 
                                         style: {
