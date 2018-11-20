@@ -76,7 +76,6 @@ Route::post('/shipping','BillingShippingController@store');
 Route::post('/shipping-check-email','BillingShippingController@check_email');
 Route::post('/shipping-verify-password','BillingShippingController@verify_password');
 
-Route::post('/payment/discount_order', 'PaymentController@discount_order');
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
 Route::get('/order/success', 'PaymentController@order_success');
