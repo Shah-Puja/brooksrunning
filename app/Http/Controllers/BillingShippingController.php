@@ -78,11 +78,19 @@ class BillingShippingController extends Controller
             'signme' => '',
             'flag_same_shipping' => '',
         ]);
+        
         //  echo "<pre>";
         //  print_r($validatedAddress);
         //  echo "</pre>";
         //  exit;
-        Order::createNew($this->cart, $validatedAddress);
+        $user_id = $this->cart->user_id;
+        if(auth()->user()){
+            if($this->cart['user_id']==''){
+                $user_data = User::where("email","=",$validatedAddress['email'])->first();
+                $user_id = $user_data->id;
+            }
+        }
+        Order::createNew($this->cart, $user_id, $validatedAddress);
         return redirect("payment");
     }
 
