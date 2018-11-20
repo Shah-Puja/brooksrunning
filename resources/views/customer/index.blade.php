@@ -45,7 +45,7 @@
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
-				<div class="img-wrapper">
+				<div class="img-wrapper"> 
 					<img src="/images/home/hp_sm2.jpg">
 			        <h3>New! <br/>Adrenaline GTS 19</h3>
 				</div>
