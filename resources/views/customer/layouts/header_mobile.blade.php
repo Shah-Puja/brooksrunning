@@ -551,15 +551,22 @@
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
-	                    <li>
-							<a href="/login">Log in</a>
-						</li>
-						<li>
-							<a href="/account-order-history">My Orders</a>
-						</li>
-						<li>
-							<a href="/register">Register</a>
-						</li>
+						@if(auth()->user())
+							<li>
+								<a href="/account-order-history">My Orders</a>
+							</li>
+							<li>
+								<a href="{{ route('logout') }}">Logout</a>
+							</li>
+						@else
+							<li>
+								<a href="/login">Log in</a>
+							</li>
+							
+							<li>
+								<a href="/register">Register</a>
+							</li>
+						@endif
 	                </ul>
 	            </li>
 	            <li>
