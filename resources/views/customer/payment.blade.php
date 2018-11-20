@@ -170,7 +170,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                 <h3>Afterpay</h3>
                                 <img src="/images/payment-afterpay--black.png" alt="">
                                 <p>Receive your item(s) now and pay later with<br/>
-                                    4x fortnightly payments of $80.00</p>
+                                    4x fortnightly payments of ${{ @number_format(($subtotal/4), 2) }}</p>
                             </div>
                             <div class="payment-schedule">
                                 <h3>Your payment schedule</h3>

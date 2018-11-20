@@ -52,7 +52,7 @@
 				<div class="info-wrapper">
 					<p>The GTS 19 has landed. Very softly, thanks to it’s new DNA Loft cushioning and GuideRails support.</p>
 					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
 			</div>
