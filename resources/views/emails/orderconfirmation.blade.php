@@ -107,7 +107,13 @@
                                         <table width="85%" border="0" cellspacing="0" cellpadding="8" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;line-height:16px;color:#6d665f;background:#f4f3ee;padding:10px;">
                                             <tr> 
                                                 <td width="60%" align="left">Subtotal:</td>
-                                                <td width="40%" align="left">$ {{  @number_format($order->total, 2) }}</td>
+                                                <td width="40%" align="left">
+                                                @if(isset($coup_discount) && $coup_discount > 0)
+                                                $ {{  @number_format(($order->total + $coup_discount), 2) }}
+                                                @else
+                                                $ {{  @number_format($order->total, 2) }}
+                                                @endif
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td align="left">Delivery:</td>
