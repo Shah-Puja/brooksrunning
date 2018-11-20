@@ -40,6 +40,7 @@ class BillingShippingController extends Controller
         if (@$this->cart->order->address) {
             $orderAddress = $this->cart->order->address;
         }
+        
         if (! @$orderAddress && auth()->check() ) {
             $usersLastOrder = Order::where('user_id', auth()->id())
                                 ->orderBy('updated_at', 'desc')
@@ -47,9 +48,15 @@ class BillingShippingController extends Controller
             $orderAddress = $usersLastOrder ? $usersLastOrder->address : null; 
         }
         if (! @$orderAddress) {
-            $orderAddress = new Order_address;
+            $orderAddress = User::where('id', auth()->id())
+                            ->orderBy('updated_at', 'desc')
+                            ->first();
         }
-
+        
+        // echo "<pre>";
+        // print_r($orderAddress);
+        // echo "</pre>";
+        // exit;
         return view( 'customer.shipping', compact('orderAddress','cart') );
     }
     

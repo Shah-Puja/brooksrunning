@@ -154,7 +154,14 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
-                                        <input type="text" name="s_fname" value="{{(isset(auth()->user()->first_name) && auth()->user()->first_name!='')?auth()->user()->first_name:''}}" class="input-field" data-label-name="first name">
+                                        @php
+                                            if(isset($orderAddress->s_fname)){
+                                                $fname = $orderAddress->s_fname;
+                                            }else{
+                                                $fname = (isset(auth()->user()->first_name) && auth()->user()->first_name!='') ? auth()->user()->first_name:'';
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_fname" value="{{ $fname }}" class="input-field" data-label-name="first name">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -166,7 +173,14 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
-                                        <input type="text" name="s_lname" value="{{(isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:''}}" class="input-field" data-label-name="last name">
+                                        @php
+                                            if(isset($orderAddress->s_lname)){
+                                                $lname = $orderAddress->s_lname;
+                                            }else{
+                                                $lname = (isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:'';
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_lname" value="{{ $lname }}" class="input-field" data-label-name="last name">
                                     </div>
                                 </div>
                             </div>
@@ -180,13 +194,25 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Address 1: {!! $error_s_add1 !!}</label>
-                                        <input type="text" name="s_add1" class="input-field" data-label-name="address 1">
+                                        @php
+                                            $s_add1 = '';
+                                            if(isset($orderAddress->s_add1)){
+                                                $s_add1 = $orderAddress->s_add1;
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field" data-label-name="address 1">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="input-wrapper">
                                         <label for="">Address 2:</label>
-                                        <input type="text" name="s_add2" class="input-field" data-label-name="address 2">
+                                        @php
+                                            $s_add2 = '';
+                                            if(isset($orderAddress->s_add2)){
+                                                $s_add2 = $orderAddress->s_add2;
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_add2" value="{{ $s_add2 }}" class="input-field" data-label-name="address 2">
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +226,13 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Suburb: {!! $error_s_city !!}</label>
-                                        <input type="text" name="s_city" class="input-field" data-label-name="suburb">
+                                        @php
+                                            $s_city = '';
+                                            if(isset($orderAddress->s_city)){
+                                                $s_city = $orderAddress->s_city;
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_city" value="{{ $s_city }}" class="input-field" data-label-name="suburb">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -213,18 +245,25 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>State / Country: {!! $error_s_state !!}</label>
+                                        @php
+                                            if(isset($orderAddress->s_state)){
+                                                $s_state = $orderAddress->s_state;
+                                            }else{
+                                                $s_state = (isset(auth()->user()->state) && auth()->user()->state!='')? auth()->user()->state:"";
+                                            }
+                                        @endphp
                                         <select class="select-field" name="s_state" data-label-name="state">
                                             <option value="" selected="selected">Select State</option>
-                                            <option value="ACT" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
-                                            <option value="NSW" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
-                                            <option value="NT" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='NT' ? "selected='selected'": "" }}>ACT</option>
-                                            <option value="QLD" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
-                                            <option value="SA" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
-                                            <option value="TAS" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
-                                            <option value="VIC" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
-                                            <option value="WA" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
-                                            <option value="New Zealand" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
-                                            <option value="Other" {{(isset(auth()->user()->state) && auth()->user()->state!='')?"selected='selected":""}} {{ $state =='Other' ? "selected='selected'": "" }}>Other</option>
+                                            <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
+                                            <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
+                                            <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>ACT</option>
+                                            <option value="QLD" {{ (isset($s_state) &&  $s_state =='QLD' )?"selected='selected":"" }}>QLD</option>
+                                            <option value="SA"  {{ (isset($s_state) &&  $s_state =='SA' )?"selected='selected":"" }}>SA</option>
+                                            <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
+                                            <option value="VIC" {{ (isset($s_state) &&  $s_state =='VIC' )?"selected='selected":"" }}>VIC</option>
+                                            <option value="WA"  {{ (isset($s_state) &&  $s_state =='WA' )?"selected='selected":"" }}>WA</option>
+                                            <option value="New Zealand" {{ (isset($s_state) &&  $s_state =='New Zealand' )?"selected='selected":"" }}>New Zealand</option>
+                                            <option value="Other" {{ (isset($s_state) &&  $s_state =='Other' )?"selected='selected":"" }}>Other</option>
                                         </select>
                                     </div>
                                 </div>
@@ -239,7 +278,14 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        <input type="text" class="input-field" value="{{(isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:''}}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                        @php
+                                            if(isset($orderAddress->s_postcode)){
+                                                $s_postcode = $orderAddress->s_postcode;
+                                            }else{
+                                                $s_postcode = (isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:'';
+                                            }
+                                        @endphp
+                                        <input type="text" class="input-field" value="{{ $s_postcode }}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -251,7 +297,14 @@
                                             endif;
                                         ?>
                                         <label for=""><sup>*</sup>Phone: {!! $error_s_phone !!}</label>
-                                        <input type="text" name="s_phone" value="{{(isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:''}}" class="input-field" data-label-name="phone">
+                                        @php
+                                            if(isset($orderAddress->s_phone)){
+                                                $s_phone = $orderAddress->s_phone;
+                                            }else{
+                                                $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
+                                            }
+                                        @endphp
+                                        <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
                                     </div>
                                 </div>
                             </div>
