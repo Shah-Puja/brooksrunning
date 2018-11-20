@@ -303,7 +303,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
 <script src="https://js.braintreegateway.com/web/3.34.1/js/client.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.34.1/js/paypal-checkout.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.34.1/js/hosted-fields.min.js"></script>
-<script src="{{ env('AFTERPAY_CAPTURE_URL') }}" async></script>
+<script src="https://portal-sandbox.afterpay.com/afterpay.js" async></script>
 <script>
 $("#afterpay_submit").click(function () {
         $.ajax({
