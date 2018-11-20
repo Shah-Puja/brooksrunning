@@ -58,7 +58,8 @@ class CartController extends Controller {
                 }
 
                 $data = $this->cart_api($cart_arr);
-
+                
+                $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
                 if ($cart->gift_pin != "") {
                     $AvailableAmount = $cart->gift_available_amount;
                     $cartTotal = $cart->cart_total;
