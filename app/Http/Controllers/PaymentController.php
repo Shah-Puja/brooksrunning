@@ -76,6 +76,7 @@ class PaymentController extends Controller {
             $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
+            echo $this->order->id;die;
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
 
 
@@ -195,11 +196,7 @@ class PaymentController extends Controller {
     public function afterpay_cancel(Request $request) {
         $this->order->update(array('status' => 'Order Incomplete', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()));
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
-    }
-
-    public function discount_order(Request $request){
-        echo "<pre>";print_r($this->order);print_r($request->all());die;
-    }
+    } 
 
     public function store() {
         $transation_result = $this->processor->charge($this->order); 
