@@ -238,7 +238,7 @@ $(document).ready(function(){
                         // 		// }
                         // 	}
                         // });
-                        window.location.href = "http://brooksrunning.test/password/reset";
+                        window.location.href = "/password/reset";
                     }else{
                         $('#popup_email').addClass("needsfilled");
                         $('#popup_email').val("");
