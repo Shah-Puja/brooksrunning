@@ -76,7 +76,8 @@ class PaymentController extends Controller {
             $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
-            echo $this->order->id;die;
+            Order::where('id', $this->order->id)->update(['status' => 'Order Completed','payment_status' => Carbon::now()]);
+             
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
 
 
