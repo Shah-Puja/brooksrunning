@@ -58,8 +58,9 @@ class CartController extends Controller {
                 }
 
                 $data = $this->cart_api($cart_arr);
-                
-                $this->check_valid_gift_voucher($cart->gift_id,$cart->pin);
+                $gift_arr = array( 'gift_id' => $cart->gift_id, 'pin' => $cart->pin);
+                  
+                $this->check_valid_gift_voucher($gift_arr);
                  
             }
 
