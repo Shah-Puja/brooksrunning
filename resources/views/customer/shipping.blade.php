@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 <style type="text/css">
-	 .cart-mark{
+	 .br-mark-text{
     display: -moz-inline-box !important;
   }	
 </style>
@@ -315,7 +315,7 @@
                                             <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
                                             <label for="signme">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text cart-mark">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                    <div class="text br-mark-text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
                                             </label>
                                         </div>
                                     </div>
@@ -339,14 +339,14 @@
                                             <input type="radio" class="input-radio" name="flag_same_shipping" value="Yes" id="same-address" checked="checked">
                                             <label for="same-address">
                                                 <div class="mark"><span></span></div>
-                                                <div class="text cart-mark">Same as Shipping address</div>
+                                                <div class="text br-mark-text">Same as Shipping address</div>
                                             </label>
                                         </div>
                                         <div class="radio-inline">
                                             <input type="radio" id="different-address" class="input-radio" name="flag_same_shipping" value="No">
                                             <label for="different-address">
                                                 <div class="mark"><span></span></div>
-                                                <div class="text cart-mark">Different Billing Address</div>
+                                                <div class="text br-mark-text">Different Billing Address</div>
                                             </label>
                                         </div>
                                     </div>
@@ -478,7 +478,7 @@
                                             <input type="checkbox" name="terms" id="already-read" value='1' id="already-read">
                                             <label for="already-read">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text cart-mark">
+                                                    <div class="text br-mark-text">
                                                         I have read and agree to the <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
                                                     </div><br>
                                                     {!! $error_terms !!}

@@ -48,7 +48,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     <input type="radio" name="sizechart" id="tab-opt1" checked="checked">
                                     <label for="tab-opt1">
                                         <div class="mark"><span></span></div>
-                                        <div class="text">
+                                        <div class="text br-mark-text">
                                             <img src="/images/icon-visa-master.png" alt="">
                                         </div>
                                     </label>
@@ -61,7 +61,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     <input type="radio" name="sizechart" id="tab-opt2">
                                     <label for="tab-opt2">
                                         <div class="mark"><span></span></div>
-                                        <div class="text">
+                                        <div class="text br-mark-text">
                                             <img src="/images/icon-paypal-blue.png" alt="">
                                         </div>
                                     </label>
@@ -74,7 +74,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                 <div class="radio-inline">
                                     <input type="radio" name="sizechart" id="tab-opt3">
                                     <label for="tab-opt3">
-                                        <div class="mark"><span></span></div>
+                                        <div class="mark br-mark-text"><span></span></div>
                                         <div class="text">
                                             <img src="/images/payment-afterpay--black.png" alt="">
                                             <span class="info afterpay-popup--control">info</span>

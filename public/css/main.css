@@ -511,6 +511,12 @@
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
 }
+.input-wrapper .radio-inline label .br-mark-text {
+  display: inherit !important;
+}
+.input-wrapper .radio-inline label .cart-mark {
+  display: inline-grid !important;
+}
 .input-wrapper .radio-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;
 }
@@ -557,6 +563,12 @@
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
+}
+.input-wrapper .checklist-inline label .br-mark-text {
+  display: inherit !important;
+}
+.input-wrapper .checklist-inline label .cart-mark {
+  display: inline-grid !important;
 }
 .input-wrapper .checklist-inline input:checked ~ label .mark {
   border: 1px solid #0263f7;

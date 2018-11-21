@@ -541,6 +541,13 @@
         .text{
           padding-left: 30px;
         }
+        .br-mark-text{
+          display: inherit !important;
+        }
+        .cart-mark{
+          display: inline-grid !important;
+        }
+        
       }
       input:checked ~ label{
         .mark{
@@ -590,7 +597,12 @@
         }
         .text{
            padding-left: 30px;
-          // display: inline-block;
+        }
+        .br-mark-text{
+          display: inherit !important;
+        }
+        .cart-mark{
+          display: inline-grid !important;
         }
       }
       input:checked ~ label{
@@ -645,9 +657,6 @@
       }
     }
   }
-  .cart-mark{
-    display: -moz-inline-box !important;
-  }	
   
   .custom-select{
     position: relative;
