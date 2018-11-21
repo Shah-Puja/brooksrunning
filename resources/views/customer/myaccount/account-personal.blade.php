@@ -186,22 +186,22 @@
 							<label>What Brooks Shoes do you wear?</label>
                             <select name="shoe_wear" class="select-field">
                                 <option value="" selected="selected">Select Brooks Shoes you wear</option>
-                                <option value="Addiction">Addiction</option>
-                                <option value="Addiction Walker">Addiction Walker</option>
-                                <option value="Adrenaline GTS">Adrenaline GTS</option>
-								<option value="Ariel">Ariel</option>
-								<option value="Beast">Beast</option>
-								<option value="Cascadia">Cascadia</option>
-								<option value="Dyad">Dyad</option>
-								<option value="Ghost">Ghost</option>
-								<option value="Glycerin">Glycerin</option>
-								<option value="Launch">Launch</option>
-								<option value="Levitate">Levitate</option>
-								<option value="PureCadance">PureCadance</option>
-								<option value="PureFlow">PureFlow</option>
-								<option value="Ravenna">Ravenna</option>
-								<option value="Transcend">Transcend</option>
-								<option value="Other">Other</option> 
+                                <option value="Addiction" @if(auth()->user()->shoe_wear=="Addiction") selected @endif>Addiction</option>
+                                <option value="Addiction Walker" @if(auth()->user()->shoe_wear=="Addiction Walker") selected @endif>Addiction Walker</option>
+                                <option value="Adrenaline GTS" @if(auth()->user()->shoe_wear=="Adrenaline GTS") selected @endif>Adrenaline GTS</option>
+								<option value="Ariel" @if(auth()->user()->shoe_wear=="Ariel") selected @endif>Ariel</option>
+								<option value="Beast" @if(auth()->user()->shoe_wear=="Beast") selected @endif>Beast</option>
+								<option value="Cascadia" @if(auth()->user()->shoe_wear=="Cascadia") selected @endif>Cascadia</option>
+								<option value="Dyad" @if(auth()->user()->shoe_wear=="Dyad") selected @endif>Dyad</option>
+								<option value="Ghost" @if(auth()->user()->shoe_wear=="Ghost") selected @endif>Ghost</option>
+								<option value="Glycerin" @if(auth()->user()->shoe_wear=="Glycerin") selected @endif>Glycerin</option>
+								<option value="Launch" @if(auth()->user()->shoe_wear=="Launch") selected @endif>Launch</option>
+								<option value="Levitate" @if(auth()->user()->shoe_wear=="Levitate") selected @endif>Levitate</option>
+								<option value="PureCadance" @if(auth()->user()->shoe_wear=="PureCadance") selected @endif>PureCadance</option>
+								<option value="PureFlow" @if(auth()->user()->shoe_wear=="PureFlow") selected @endif>PureFlow</option>
+								<option value="Ravenna" @if(auth()->user()->shoe_wear=="Ravenna") selected @endif>Ravenna</option>
+								<option value="Transcend" @if(auth()->user()->shoe_wear=="Transcend") selected @endif>Transcend</option>
+								<option value="Other" @if(auth()->user()->shoe_wear=="Other") selected @endif>Other</option> 
                             </select>
 						</div>
 					</div>

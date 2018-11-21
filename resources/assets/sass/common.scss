@@ -171,6 +171,7 @@
         .search--container{
           background-color: $white;
           padding-top: 10px;
+         
           .homepage-new--arrival{
              padding-bottom: 30px;
               .main-heading{
@@ -183,6 +184,20 @@
               display: block;
               position: relative;
               @extend %bold-font;
+              .close{
+                width: 27px;
+                height: 27px;
+                color: $black;
+                font-size: 25px;
+                margin: 0;
+                line-height: 0;
+                position: absolute;
+                right: 30px;
+                cursor: pointer;
+                &:hover{
+                  color: $blue;
+                }
+              }
               .owl-carousel{
                 width: calc(100% - 80px);
                 margin: auto;
@@ -4875,7 +4890,7 @@ a {
     font-weight: normal;
     font-size: 2em;
     color: #6d665f;
-    line-height:0.5px;
+    line-height:45px;
   }
 }
 
