@@ -11,14 +11,12 @@ use App\Models\Seo;
 class CategoryController extends Controller
 {
     public function index($category) {
-        $cat_info= \App\Models\Category::where('slug',$category)->first();
-        if (empty($cat_info)) {
-            abort(404);
-        }else{
-            $gender = $cat_info->gender;            
-            $prod_type = $cat_info->prod_type;
-            $depth = $cat_info->depth;
-            $name = $cat_info->name; 
+        $cat_info= \App\Models\Category::where('slug',$category)->firstOrFail();
+
+        $gender = $cat_info->gender;            
+        $prod_type = $cat_info->prod_type;
+        $depth = $cat_info->depth;
+        $name = $cat_info->name; 
             if($depth=='2'){
                 $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
             }elseif($depth=='3'){
@@ -33,8 +31,8 @@ class CategoryController extends Controller
                 $styles = $products->unique('style');                                
                 $filters = \App\Models\Category::provideFilters($products,$prod_type);                
             }            
-            return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
-        }
+        return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
+    
     }
     public function index_trunal($category) {
 
