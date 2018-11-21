@@ -664,7 +664,7 @@ class PaymentController extends Controller {
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
-        $ordernum = $order->order_no; //change Order No with new series when site goes live
+        $ordernum = "BRN-" .$order->order_no; //change Order No with new series when site goes live
        
         if (!empty($this->order->coupon_code)) {
            $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
