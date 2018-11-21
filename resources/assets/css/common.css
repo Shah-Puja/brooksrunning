@@ -1400,6 +1400,18 @@ textarea {
         .header-desktop .search-container .search-wrapper .search--container .new-arrival--container {
           display: block;
           position: relative; }
+          .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .close {
+            width: 27px;
+            height: 27px;
+            color: #000000;
+            font-size: 25px;
+            margin: 0;
+            line-height: 0;
+            position: absolute;
+            right: 30px;
+            cursor: pointer; }
+            .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .close:hover {
+              color: #0263f7; }
           .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel {
             width: calc(100% - 80px);
             margin: auto; }

@@ -26,9 +26,18 @@ $(document).ready(function () {
     $(".header-desktop .search-header--popup").click(function () {
         $("#header-search--popup").show();
     });
-
+    
     $("#header-search--popup .close").click(function () {
         $("#header-search--popup").hide();
+        $(".search-container .search-wrapper").find(".search-product-content").html("");
+        $("form[name='searchproduct'] input[name='q']").val("");
+        return false;
+    });
+    $(".new-arrival--container .close").click(function () {
+        $(".new-arrival--container").hide();
+        $(".search-container .search-wrapper").find(".search-product-content").html("");
+        $("form[name='searchproduct'] input[name='q']").val("");
+        return false;
     });
 });
 $(document).ready(function () {
@@ -512,7 +521,7 @@ function search_product(){
         data: { q: search },
         success: function(response) {
             $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".new-arrival--container .owl-carousel");
+            var owl = $(".search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
                 items: 4,
                 itemsDesktop: [1000, 4],
@@ -541,7 +550,7 @@ function mob_search_product(){
         data: { q: search },
         success: function(response) {
             $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".new-arrival--container .owl-carousel");
+            var owl = $(".search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
                 items: 4,
                 itemsTablet : [768,4],
