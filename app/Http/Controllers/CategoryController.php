@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function index($category) {
         $cat_info= \App\Models\Category::where('slug',$category)->first();
-        if ($cat_info->count() < 1) {
+        if (empty($cat_info)) {
             abort(404);
         }else{
             $gender = $cat_info->gender;            
@@ -25,7 +25,7 @@ class CategoryController extends Controller
                 $products = \App\Models\Category::getProducts($category);
             }
             
-            if ($products->count() < 1) {
+            if (empty($products)) {
                 $styles=$flag_bra="";              
                 $filters=[];  
             }
