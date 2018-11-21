@@ -79,7 +79,7 @@
 	                            <li>
 	                                <a href="/womens-competition-running-shoes">Competition Running</a>
 	                                <p>Fast and built for speed, on the road or track.</p>
-	                            </li>
+	                            </li> 
 								<li>
                             		<a href="/womens-trail-running-shoes">Trail Running</a>
                                 </li>
