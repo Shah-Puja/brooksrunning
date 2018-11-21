@@ -904,9 +904,9 @@ sub {
   vertical-align: baseline; }
 
 sup {
-  top: -.2em;
+  top: -.1em;
   position: relative;
-  font-size: 120%;
+  font-size: 115%;
   line-height: 0;
   vertical-align: baseline; }
 
