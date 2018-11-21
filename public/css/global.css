@@ -497,8 +497,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .input-wrapper .radio-inline label .text {
   padding-left: 30px;
-}
-.input-wrapper .radio-inline label .br-mark-text {
   display: inherit !important;
 }
 .input-wrapper .radio-inline label .cart-mark {
@@ -550,8 +548,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .input-wrapper .checklist-inline label .text {
   padding-left: 30px;
-}
-.input-wrapper .checklist-inline label .br-mark-text {
   display: inherit !important;
 }
 .input-wrapper .checklist-inline label .cart-mark {
