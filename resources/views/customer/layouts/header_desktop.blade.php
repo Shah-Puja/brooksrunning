@@ -98,7 +98,7 @@
                                                         <a href="/womens-running-shoes-sale">Sale Shoes</a>
                                                     </li>
                                                 </ul>
-                                                <ul class="tab-2 sub-menu-margin">
+                                                <ul class="tab-2">
                                                     <li class="submenu-main">
                                                         <a href="/footwear/women/best_selling">Best Sellers</a>
                                                     </li>
@@ -202,7 +202,7 @@
                                                         <a href="/mens-running-shoes-sale">Sale Shoes</a>
                                                     </li>
                                                 </ul>
-                                                <ul class="tab-2 sub-menu-margin">
+                                                <ul class="tab-2">
                                                     <li class="submenu-main">
                                                         <a href="/footwear/men/best_selling">Best Sellers</a>
                                                     </li>

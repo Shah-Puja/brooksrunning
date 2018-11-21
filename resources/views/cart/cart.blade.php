@@ -61,7 +61,7 @@
                                                 <input type="radio" id="standard" name="d-options" {{(isset($cart->delivery_type) && $cart->delivery_type == 'standard') ? $checked : ''}} value="standard">
                                                 <label for="standard">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">
+                                                    <div class="text cart-mark">
                                                         <h3 class="bold-font">Standard Delivery</h3>
                                                         <p class="area">Australia</p>
                                                         <p class="rate">$10 or <span>FREE for orders over $50</span></p>
@@ -77,7 +77,7 @@
                                                 <input type="radio" id="express" name="d-options" {{(isset($cart->delivery_type) && $cart->delivery_type == 'express') ? $checked : ''}} value="express">
                                                 <label for="express">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">
+                                                    <div class="text cart-mark">
                                                         <h3 class="bold-font">Express Delivery</h3>
                                                         <p class="area">(Australia Only)</p>
                                                         <p class="rate">$15 flat rate</span></p>
@@ -93,7 +93,7 @@
                                                 <input type="radio" id="new_zealand" name="d-options"  {{(isset($cart->delivery_type) && $cart->delivery_type == 'new_zealand') ? $checked : ''}}  value="new_zealand">
                                                 <label for="new_zealand">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">
+                                                    <div class="text cart-mark">
                                                         <h3 class="bold-font">Standard Delivery</h3>
                                                         <p class="area">New Zealand</p>
                                                         <p class="rate">$25 flat rate</span></p>
@@ -136,7 +136,7 @@
                                                     <input type="radio" id="gift_voucher" name="promotion" checked="checked">
                                                     <label for="gift_voucher">
                                                         <div class="mark"><span></span></div>
-                                                        <div class="text">
+                                                        <div class="text cart-mark">
                                                             <form name="check_valid_gift_voucher" id="ajaxgift"> 
                                                             <h3 class="bold-font">Gift Voucher</h3> 
                                                             @php $display = "";
@@ -176,7 +176,7 @@
                                                     <input type="radio" id="promotion" name="promotion" checked="checked">
                                                     <label for="promotion">
                                                         <div class="mark"><span></span></div>
-                                                        <div class="text">
+                                                        <div class="text cart-mark">
                                                             <h3 class="bold-font">Promotion Code</h3>
                                                             @if (isset($cart->promo_string) && $cart->promo_string != "") 
                                                         <form action='cart/removecoupon' method="post" name="dwfrm_cart" id="ajaxremovecoupon"> 

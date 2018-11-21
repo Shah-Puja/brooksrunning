@@ -32,20 +32,7 @@
 	<div class="row">
 		<div class="tab-4">
 			<div class="overgray-wrapper">
-				<div class="img-wrapper">
-					<img src="/images/home/hp_sm1.jpg">
-			        <h3>&nbsp;<br/>Levitate 2  </h3>
-				</div>
-				<div class="info-wrapper">
-					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
-					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
-				</div>
-			</div>
-		</div>
-		<div class="tab-4">
-			<div class="overgray-wrapper">
-				<div class="img-wrapper">
+				<div class="img-wrapper"> 
 					<img src="/images/home/hp_sm2.jpg">
 			        <h3>New! <br/>Adrenaline GTS 19</h3>
 				</div>
@@ -54,6 +41,19 @@
 					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
+				</div>
+			</div>
+		</div>
+		<div class="tab-4">
+			<div class="overgray-wrapper">
+				<div class="img-wrapper">
+					<img src="/images/home/hp_sm1.jpg">
+			        <h3>&nbsp;<br/>Levitate 2  </h3>
+				</div>
+				<div class="info-wrapper">
+					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
+					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
