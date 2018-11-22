@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\ContactUsEnquiry;
-use Illuminate\Support\Facades\Mail;
+//use Illuminate\Support\Facades\Mail;
+use Mail;
 use App\Mail\EnquirySubmittedNotification;
 
 class ContactUsEnquiryController extends Controller
