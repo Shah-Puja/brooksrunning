@@ -39,9 +39,15 @@ class ContactUsEnquiryController extends Controller
 		]);
 		
 		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
-		Mail::to($toemails)
-                ->cc( config('site.syg_notify_email') )
-                ->queue( new EnquirySubmittedNotification($enquiry) );
+		// Mail::to($toemails)
+        //         ->cc( config('site.syg_notify_email') )
+		// 		->queue( new EnquirySubmittedNotification($enquiry) );
+				
+		Mail::send('emails.enquirysubmittednotification', $enquiry, function($message)
+				{
+					$message->to($toemails)->cc(config('site.syg_notify_email'));
+					$message->replyTo($enquiry->email, $enquiry->fname.' '.$enquiry->lname);
+				});
 
     	return response()->json([ 'success' => 'Thank you for your enquiry, someone will be in touch soon.' ]);
 
