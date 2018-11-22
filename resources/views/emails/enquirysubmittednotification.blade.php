@@ -16,7 +16,9 @@ Phone : {{ $enquiry->phone }}<br />
 Subject : {{ $enquiry->subject }}<br />
 category: {{ $enquiry->category }}<br />
 question: {{ $enquiry->message }} <br>
-@if($enquiry->order_no!='') question: {{ $enquiry->order_no }}
+@if($enquiry->order_no!='') 
+    question: {{ $enquiry->order_no }}
+@endif
 </body>
 </html>
         
