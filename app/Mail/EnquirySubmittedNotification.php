@@ -31,6 +31,6 @@ class EnquirySubmittedNotification extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->from($this->enquiry->email,$this->enquiry->fname.' ',$this->enquiry->lname)->view('emails.enquirysubmittednotification');
+        return $this->view('emails.enquirysubmittednotification');
     }
 }
