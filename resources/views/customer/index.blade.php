@@ -150,7 +150,7 @@
 			</div>
 		</div>
 	</div>
-	@if(!empty($product))
+	@if(!empty($product)  && count($product) > 0 )
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
 			<div class="col-12">
