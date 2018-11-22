@@ -117,11 +117,12 @@
                                         <td style="border-bottom: 1px dashed rgb(0, 0, 0); margin: 10px 0px;" width="15%" align="left"><strong>Total $</strong></td>
                                     </tr>
                                     <tr> 
-                                    @php $coup_discount = 0; @endphp
+                                        @php $coup_discount = 0; @endphp
                                         @if (! $order->orderItems->isEmpty() ) 
                                         @foreach($order->orderItems as $item)
-                                        @php $coup_discount += ($item->discount > 0) ? $item->discount : 0;
-                                    $coup_discount = number_format($coup_discount, 2); @endphp
+                                            @php $coup_discount += ($item->discount > 0) ? $item->discount : 0;
+                                                 $coup_discount = number_format($coup_discount, 2); 
+                                            @endphp
                                     <tr>
                                         <td>{{ $item->qty }}</td>
                                         <td align='left'>
@@ -163,29 +164,25 @@
                                         </b></td>
                                     </tr> 
                                     
+                                    @if (isset($order->coupon_code) && $order->coupon_code != '')
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right'><b>Coupon Discounts</b></td>
-                                        @if (isset($order->coupon_code) && $order->coupon_code != '')
-                                        <td align='left'><b>$ {{  $coup_discount }}</b></td>
-                                        @else
-                                        <td align='left'><b>$ 0.00</b></td>
-                                        @endif
+                                        <td align='right'><b>Coupon Discounts</b></td> 
+                                        <td align='left'><b>$ {{  $coup_discount }}</b></td> 
                                     </tr>
+                                    @endif
 
+                                    @if(isset($order->gift_amount) && $order->gift_amount!="")
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right'><b>Gift Discounts</b></td>
-                                        @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                        <td align='right'><b>Gift Discounts</b></td> 
                                         <td align='left'><b>$ {{  @number_format($order->gift_amount, 2) }}</b></td>
-                                        @else
-                                        <td align='left'><b>$ 0.00</b></td>
-                                        @endif
                                     </tr>
+                                    @endif
 
                                     <tr>
                                         <td>&nbsp;</td>
@@ -212,7 +209,7 @@
                                         <td align='right'><b>Promo String </b></td>
                                         <td align='left'><b> {{ $order->coupon_code }} </b></td>
                                     </tr>
-                                    @endif
+                        @endif
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
