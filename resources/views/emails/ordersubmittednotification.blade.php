@@ -154,6 +154,40 @@
                                         <td align='left'><b>$ {{  @number_format($order->total, 2) }}</b></td>
                                     </tr>
 
+                                    @if(isset($order->coupon_code) && $order->coupon_code!=""))
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Promo String </b></td>
+                                        <td align='left'><b> {{ $order->coupon_code }} </b></td>
+                                    </tr>
+                                    @endif
+                                    
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Coupon Discounts</b></td>
+                                        @if (isset($order->coupon_code) && $order->coupon_code != '')
+                                        <td align='left'><b>$ {{  $coup_discount }}</b></td>
+                                        @else
+                                        <td align='left'><b>$ 0.00</b></td>
+                                        @endif
+                                    </tr>
+
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Gift Discounts</b></td>
+                                        @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                        <td align='left'><b>$ {{  @number_format($order->gift_amount, 2) }}</b></td>
+                                        @else
+                                        <td align='left'><b>$ 0.00</b></td>
+                                        @endif
+                                    </tr>
+
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
