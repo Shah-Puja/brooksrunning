@@ -529,7 +529,26 @@ function search_product(){
                 itemsCustom: false,
                 pagination: false,
                 rewindNav: false,
-                dots: true
+                dots: true,
+                afterAction: function(){
+                    if ( this.maximumItem > 4 ) {
+                      $('.next').show();
+                      $('.prev').show();
+                  
+                      $('.next').removeClass('disabled');
+                      $('.prev').removeClass('disabled');
+                      if ( this.currentItem == 0 ) {
+                        $('.prev').addClass('disabled');
+                      }
+                      if ( this.currentItem == this.maximumItem ) {
+                        $('.next').addClass('disabled');
+                      }
+                  
+                    } else {
+                      $('.next').hide();
+                      $('.prev').hide();
+                    }
+                  }
             });
             $("form[name='searchproduct']").find("button img").hide();
             $("form[name='searchproduct']").find("button i").show();
@@ -558,7 +577,26 @@ function mob_search_product(){
                 itemsCustom: false,
                 pagination: false,
                 rewindNav: false,
-                dots: true
+                dots: true,
+                afterAction: function(){
+                    if ( this.maximumItem > 2 ) {
+                      $('.next').show();
+                      $('.prev').show();
+                  
+                      $('.next').removeClass('disabled');
+                      $('.prev').removeClass('disabled');
+                      if ( this.currentItem == 0 ) {
+                        $('.prev').addClass('disabled');
+                      }
+                      if ( this.currentItem == this.maximumItem ) {
+                        $('.next').addClass('disabled');
+                      }
+                  
+                    } else {
+                      $('.next').hide();
+                      $('.prev').hide();
+                    }
+                  }
             });
             $("form[name='mob_searchproduct']").find("button img").hide();
             $("form[name='mob_searchproduct']").find("button i").show();
