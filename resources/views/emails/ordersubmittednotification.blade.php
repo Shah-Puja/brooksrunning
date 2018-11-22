@@ -117,8 +117,11 @@
                                         <td style="border-bottom: 1px dashed rgb(0, 0, 0); margin: 10px 0px;" width="15%" align="left"><strong>Total $</strong></td>
                                     </tr>
                                     <tr> 
+                                    @php $coup_discount = 0; @endphp
                                         @if (! $order->orderItems->isEmpty() ) 
                                         @foreach($order->orderItems as $item)
+                                        @php $coup_discount += ($item->discount > 0) ? $item->discount : 0;
+                                    $coup_discount = number_format($coup_discount, 2); @endphp
                                     <tr>
                                         <td>{{ $item->qty }}</td>
                                         <td align='left'>
@@ -151,18 +154,14 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Subtotal</b></td>
-                                        <td align='left'><b>$ {{  @number_format($order->total, 2) }}</b></td>
-                                    </tr>
-
-                                    @if(isset($order->coupon_code) && $order->coupon_code!=""))
-                                    <tr>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        <td align='right'><b>Promo String </b></td>
-                                        <td align='left'><b> {{ $order->coupon_code }} </b></td>
-                                    </tr>
-                                    @endif
+                                        <td align='left'><b>
+                                                @if(isset($coup_discount) && $coup_discount > 0)
+                                                $ {{  @number_format(($order->total + $coup_discount), 2) }}
+                                                @else
+                                                $ {{  @number_format($order->total, 2) }}
+                                                @endif
+                                        </b></td>
+                                    </tr> 
                                     
                                     <tr>
                                         <td>&nbsp;</td>
@@ -205,10 +204,20 @@
 
                             </table><br/>
                         </td>
+                        @if(isset($order->coupon_code) && $order->coupon_code!=""))
+                                    <tr>
+                                        <td align="right">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Promo String </b></td>
+                                        <td align='left'><b> {{ $order->coupon_code }} </b></td>
+                                    </tr>
+                                    @endif
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
+                    
                     <tr>
                         <td align="left">
                             <h3 style ="background: none repeat scroll 0 0 #57A7D7; color: #FFFFFF; font-size: 16px; font-weight: normal; height: 30px; line-height: 30px; padding: 0 10px;">Order Processing Info:</h3>
