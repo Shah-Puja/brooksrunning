@@ -103,7 +103,7 @@
                                                         <a href="/footwear/women/best_selling">Best Sellers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/adrenaline-gts-18-womens-running-shoes/120268_516.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a> 
+                                                        <a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16 </a> 
@@ -207,7 +207,7 @@
                                                         <a href="/footwear/men/best_selling">Best Sellers</a>
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/adrenaline-gts-18-mens-running-shoes/110271_438.html" title="Adrenaline GTS 18">Adrenaline GTS 18</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin 16">Glycerin 16 </a> 
