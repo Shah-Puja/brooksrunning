@@ -179,7 +179,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right' colspan='2'><b>Gift Discounts</b></td> 
+                                        <td align='right'><b>Gift Discounts</b></td> 
                                         <td align='left'><b>$ {{  @number_format($order->gift_amount, 2) }}</b></td>
                                     </tr>
                                     @endif
