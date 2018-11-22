@@ -40,7 +40,6 @@ class ContactUsEnquiryController extends Controller
 		
 		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
 		Mail::to($toemails)
-		        ->from(request('email'), request('fname').' '.request('lname'))
                 ->cc( config('site.syg_notify_email') )
                 ->queue( new EnquirySubmittedNotification($enquiry) );
 
