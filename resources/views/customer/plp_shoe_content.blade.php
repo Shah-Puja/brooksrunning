@@ -83,7 +83,7 @@
 				<div class="owl-carousel owl-theme">
 				
 				@if($colors_option[$style->style]!='' &&  count($colors_option[$style->style]) > 0 )
-					@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
+					@foreach(collect($colors_option[$style->style])->unique('color_code')->sortBy('seqno') as $color_product)
 						@if(!empty($color_product))
 						   <!-- @php
 								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
