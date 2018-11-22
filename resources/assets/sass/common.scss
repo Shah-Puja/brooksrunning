@@ -229,7 +229,6 @@
                 position: absolute;
                 z-index: 2;
                 top: 40%;
-                cursor: pointer;
                 left: 0;
                 font-size: 30px;
                 font-weight: 700;
@@ -237,7 +236,12 @@
                 &.icon-next-arrow.next {
                   right: 0 !important;
                   left: auto !important;
+                  cursor: pointer;
                 }
+              }
+              .disabled{
+                cursor: default !important;
+                color: #f4f6f9 !important;
               }
           }
           .info-wrapper{
@@ -744,6 +748,10 @@
             right: 0 !important;
             left: auto !important;
           }
+        }
+        .disabled{
+          cursor: default !important;
+          color: #f4f6f9;
         }
     }
     .info-wrapper{
@@ -1538,7 +1546,6 @@
           position: absolute;
           z-index: 2;
           top: 40%;
-          cursor: pointer;
           left: 0;
           font-size: 30px;
           font-weight: 700;
@@ -1546,8 +1553,14 @@
           &.icon-next-arrow.next {
             right: 0 !important;
             left: auto !important;
+            cursor: pointer;
           }
         }
+        .disabled{
+          cursor: default !important;
+          color: #f4f6f9 !important;
+        }
+       
     }
     .info-wrapper{
       padding: 0 15px;
@@ -2256,6 +2269,10 @@
                         bottom: 3px;
                       }
                     }
+                    .disabled{
+                      cursor: default !important;
+                      color: #f4f6f9 !important;
+                    }
                     .owl-carousel .owl-wrapper{
                       width: 100% !important;
                     }
@@ -2325,6 +2342,10 @@
                   left: auto;
                   right:0;
                 }
+              }
+              .disabled{
+                cursor: default !important;
+                color: #f4f6f9 !important;
               }
               .owl-carousel{
                 width: 80%;
@@ -3942,6 +3963,10 @@
                     left: auto;
                     right:0;
                   }
+                }
+                .disabled{
+                  cursor: default !important;
+                  color: #f4f6f9 !important;
                 }
                 .owl-carousel{
                   width: 100%;
