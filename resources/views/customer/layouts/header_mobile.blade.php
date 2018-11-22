@@ -359,7 +359,7 @@
 	                        </a>
 	                        <ul>
 							<li>
-								<a href="/shoes/adrenaline-asr">Adrenaline ASR</a>
+								<!-- <a href="/shoes/adrenaline-asr">Adrenaline ASR</a> -->
 							</li>
 							<li>
 								<a href="/shoes/caldera">Caldera</a>
