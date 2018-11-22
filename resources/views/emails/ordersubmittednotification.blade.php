@@ -203,7 +203,7 @@
                         </td>
                     </tr>
 
-                    @if(isset($order->coupon_code) && $order->coupon_code!=""))
+                    @if(isset($order->coupon_code) && $order->coupon_code!="")
                     <tr>
                         <td>Promo String: {{ $order->coupon_code }}</td>
                         <td>&nbsp;</td> 
