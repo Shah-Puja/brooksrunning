@@ -1810,7 +1810,6 @@ textarea {
   position: absolute;
   z-index: 2;
   top: 40%;
-  cursor: pointer;
   left: 0;
   font-size: 30px;
   font-weight: 700;
@@ -1819,6 +1818,11 @@ textarea {
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style.icon-next-arrow.next {
   right: 0 !important;
   left: auto !important;
+  cursor: pointer;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .disabled {
+  cursor: default !important;
+  color: #f4f6f9 !important;
 }
 .header-desktop .search-container .search-wrapper .search--container .info-wrapper {
   padding: 0 15px;
@@ -2306,6 +2310,10 @@ textarea {
 .header-mobile .mob-search--product .search--container .new-arrival--container .icon-style.icon-next-arrow.next {
   right: 0 !important;
   left: auto !important;
+}
+.header-mobile .mob-search--product .search--container .new-arrival--container .disabled {
+  cursor: default !important;
+  color: #f4f6f9;
 }
 .header-mobile .mob-search--product .search--container .info-wrapper {
   padding: 0 15px;
@@ -3119,7 +3127,6 @@ textarea {
   position: absolute;
   z-index: 2;
   top: 40%;
-  cursor: pointer;
   left: 0;
   font-size: 30px;
   font-weight: 700;
@@ -3128,6 +3135,11 @@ textarea {
 .homepage-gray--container .new-arrival--container .icon-style.icon-next-arrow.next {
   right: 0 !important;
   left: auto !important;
+  cursor: pointer;
+}
+.homepage-gray--container .new-arrival--container .disabled {
+  cursor: default !important;
+  color: #f4f6f9 !important;
 }
 .homepage-gray--container .info-wrapper {
   padding: 0 15px;
@@ -3838,6 +3850,12 @@ textarea {
   }
 }
 @media only screen and (max-width: 767px) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container.more-clothing .disabled {
+    cursor: default !important;
+    color: #f4f6f9 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container.more-clothing .owl-carousel .owl-wrapper {
     width: 100% !important;
   }
@@ -3913,6 +3931,10 @@ textarea {
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .icon-style.icon-next-arrow {
   left: auto;
   right: 0;
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .disabled {
+  cursor: default !important;
+  color: #f4f6f9 !important;
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel {
   width: 80%;
@@ -5513,6 +5535,10 @@ textarea {
 .new-arrival .new-arrival--container .icon-style.icon-next-arrow {
   left: auto;
   right: 0;
+}
+.new-arrival .new-arrival--container .disabled {
+  cursor: default !important;
+  color: #f4f6f9 !important;
 }
 .new-arrival .new-arrival--container .owl-carousel {
   width: 100%;
