@@ -66,7 +66,7 @@
 									<span class="icon-style icon-back-arrow prev"></span>
 									<div class="owl-carousel owl-theme">
                                     @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
-                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code') as $color_product)
+                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
                                             @if(!empty($color_product))
                                         <div class="item">
                                             <picture>
