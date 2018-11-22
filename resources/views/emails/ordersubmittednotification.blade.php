@@ -169,7 +169,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right'><b>Coupon Discounts</b></td> 
+                                        <td align='right' colspan='2'><b>Coupon Discounts</b></td> 
                                         <td align='left'><b>$ {{  $coup_discount }}</b></td> 
                                     </tr>
                                     @endif
