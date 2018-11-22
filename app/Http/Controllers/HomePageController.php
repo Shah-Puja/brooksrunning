@@ -21,7 +21,11 @@ class HomePageController extends Controller
                     ['color_code', '=', $slider_shoe[1]],
                     ['style', '=', $slider_shoe[0]],
                 ]
-            )->with('variants')
+            )
+            ->whereHas('variants' , function($query)  {
+                return $query->where('visible', '=', 'Yes');
+            })
+            ->with('variants')
             ->first();            
         }
 
