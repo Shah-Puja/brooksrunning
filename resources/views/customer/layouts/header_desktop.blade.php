@@ -317,7 +317,7 @@
                                                             <a href="/shoes/addiction">Addiction</a>
                                                         </li>
                                                         <li>
-                                                            <!-- <a href="/shoes/adrenaline-gts">Adrenaline GTS</a> -->
+                                                            <a href="/shoes/adrenaline-gts">Adrenaline GTS</a>
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/ariel">Ariel</a>
@@ -346,9 +346,9 @@
 														<li class="submenu-main">
 	                                                        <a href="/trail-running-shoes">Trail Running Shoes</a>
 	                                                    </li>
-                                                        <li>
-                                                            <a href="/shoes/adrenaline-asr">Adrenaline ASR</a>
-                                                        </li>
+                                                        <!-- <li>
+                                                           <a href="/shoes/adrenaline-asr">Adrenaline ASR</a> 
+                                                        </li> -->
                                                         <li>
                                                             <a href="/shoes/caldera">Caldera</a>
                                                         </li>
