@@ -8,7 +8,7 @@
 @php  $date = date("d M Y H:s:i");  @endphp
 An Inquiry has been made at {{ env('APP_URL') }}
 <br />
-Date: $date
+Date: {{ $date }}
 <br />
 Name : {{ $enquiry->fname .' '.$enquiry->lname }} <br />
 Email : {{ $enquiry->email }}<br />
