@@ -317,7 +317,7 @@
                                                             <a href="/shoes/addiction">Addiction</a>
                                                         </li>
                                                         <li>
-                                                            <a href="/shoes/adrenaline-gts">Adrenaline GTS</a>
+                                                            <!-- <a href="/shoes/adrenaline-gts">Adrenaline GTS</a> -->
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/ariel">Ariel</a>
