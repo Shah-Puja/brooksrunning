@@ -160,12 +160,9 @@
             font-size: 24px;
             border-radius: 0 6px 6px 0;
             outline: 0;
-              // &:active, &:focus{
-              //   background: $gray !important;
-              // }
-            .formsearchbtn{
-              background: $gray !important;
-            }
+              &:active, &:focus{
+                background: $gray !important;
+              }
           }
         }
 
@@ -209,11 +206,12 @@
                 .prd_caption h3 {
                    margin: 0px;
                    text-align: center;
+                   font-size: 14px;
                 }
                 .price{
                     margin: 5px;
                     text-align: center;
-                    font-size: 20px;
+                    font-size: 14px;
                     font-weight: bold;
                     span.red{
                       text-decoration:none;
@@ -226,6 +224,12 @@
                       color:$black;
                     }
                  }
+                }
+                .owl-item
+                {
+                  .item{
+                    width: 186px !important;
+                  }
                 }
               }
               .icon-style {
@@ -686,10 +690,7 @@
           font-size: 24px;
           border-radius: 0 6px 6px 0;
           outline: 0;
-            // &:active, &:focus{
-            //   background: $gray !important;
-            // }
-            .formsearchbtn{
+            &:active, &:focus{
               background: $gray !important;
             }
         }
@@ -740,6 +741,7 @@
               }
            }
           }
+          
         }
         .icon-style {
           position: absolute;

@@ -14,10 +14,10 @@
 				<div class="breadcrumbs2 hidden-tab hidden-mob">
 						<ul>
 							<li>
-								<a href="#">Home</a>
+								<a href="/">Home</a>
 							</li>
 							<li>
-								<a href="#">Shoes</a>
+								<a href="/shoefinder">Shoes</a>
 							</li>
 							<li>
 								<a href="#" class="active">{{$str}}</a>
@@ -50,7 +50,7 @@
 <section class="ctg-container ">
 	<div class="wrapper">
 		<div class="heading">
-					<h3 class="br-shoe-heading">Shop All Liberty Cross Training Shoes</h3>
+					<h3 class="br-shoe-heading">Shop All Brooks Addiction Walker Shoes</h3>
 				</div>
 		<div class="row detail-shoe-pg">
 			<div class="ctg-wrapper-container">
