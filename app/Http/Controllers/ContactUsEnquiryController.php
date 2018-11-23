@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\ContactUsEnquiry;
-//use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\EnquirySubmittedNotification;
-use Mail;
 
 class ContactUsEnquiryController extends Controller
 {
@@ -41,13 +40,9 @@ class ContactUsEnquiryController extends Controller
 		
 		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
 
-		Mail::send('emails.enquirysubmittednotification', $enquiry, function ($message) {
-			$message->to($toemails)->cc(config('site.syg_notify_email'))->replyTo('trunaltamore@gmail.com','trunal');
-		});
-
-		/*Mail::to($toemails)
+		Mail::to($toemails)
                 ->cc( config('site.syg_notify_email') )
-				->queue( new EnquirySubmittedNotification($enquiry) );*/
+				->queue( new EnquirySubmittedNotification($enquiry) );
 
     	return response()->json([ 'success' => 'Thank you for your enquiry, someone will be in touch soon.' ]);
 
