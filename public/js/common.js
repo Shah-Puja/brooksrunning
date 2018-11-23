@@ -558,6 +558,14 @@ function search_product(){
     
     return false; 
 }	
+
+$("document").on('keypress','form[name="searchproduct"] input[name="q"]',function(){
+    var key = e.which;
+    if(key == 13){
+        $('form[name="searchproduct"]').find("button").trigger('click');
+     }
+     return false;
+});
 function mob_search_product(){
     var search = $("form[name='mob_searchproduct'] input[name='q']").val();
     $("form[name='mob_searchproduct']").find("button img").show();
