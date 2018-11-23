@@ -31,6 +31,6 @@ class OrderConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.orderconfirmation')->subject('Brooks Running Order #'.$this->order->orderno);
+        return $this->view('emails.orderconfirmation');
     }
 }

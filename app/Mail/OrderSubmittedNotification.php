@@ -31,7 +31,6 @@ class OrderSubmittedNotification extends Mailable
      */
     public function build()
     {
-        echo "<pre>";print_r($this->order);die;
-        return $this->view('emails.ordersubmittednotification')->subject('Brooks Running Purchase Order #'.$this->order->orderno);
+        return $this->view('emails.ordersubmittednotification');
     }
 }
