@@ -520,18 +520,18 @@ function search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
-            $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".search-container .new-arrival--container .owl-carousel");
+            $("#header-search--popup .search-wrapper").find(".search-product-content").html(response);
+            var owl = $("#header-search--popup .new-arrival--container .owl-carousel");
             owl.owlCarousel({
-                items: 4,
+                items: 6,
                 itemsDesktop: [1000, 6],
-                itemsDesktopSmall: [900, 4],
+                itemsDesktopSmall: [900, 6],
                 itemsCustom: false,
                 pagination: false,
                 rewindNav: false,
                 dots: true,
                 afterAction: function(){
-                    if ( this.maximumItem > 4 ) {
+                    if ( owl.find(".owl-item").length > 6 ) {
                       $('.next').show();
                       $('.prev').show();
                   
@@ -562,7 +562,7 @@ function search_product(){
 $("document").on('keypress','form[name="searchproduct"] input[name="q"]',function(){
     var key = e.which;
     if(key == 13){
-        $('form[name="searchproduct"]').find("button").trigger('click');
+        $('form[name="searchproduct"]').submit();
      }
      return false;
 });
@@ -576,8 +576,8 @@ function mob_search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
-            $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".search-container .new-arrival--container .owl-carousel");
+            $(".mob-search--product .search-container .search-wrapper").find(".search-product-content").html(response);
+            var owl = $(".mob-search--product .search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
                 items: 4,
                 itemsTablet : [768,4],
@@ -587,7 +587,7 @@ function mob_search_product(){
                 rewindNav: false,
                 dots: true,
                 afterAction: function(){
-                    if ( this.maximumItem > 2 ) {
+                    if ( owl.find(".owl-item").length > 2 ) {
                       $('.next').show();
                       $('.prev').show();
                   
