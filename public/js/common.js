@@ -524,7 +524,7 @@ function search_product(){
             var owl = $(".search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
                 items: 4,
-                itemsDesktop: [1000, 4],
+                itemsDesktop: [1000, 6],
                 itemsDesktopSmall: [900, 4],
                 itemsCustom: false,
                 pagination: false,
