@@ -28,12 +28,15 @@ $(document).ready(function () {
     });
     
     $("#header-search--popup .close").click(function () {
+        console.log("desktop");
         $("#header-search--popup").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
         $("form[name='searchproduct'] input[name='q']").val("");
         return false;
     });
-    $(".new-arrival--container .close").click(function () {
+
+    $(".mob-search--product .search-container .new-arrival--container .close").click(function () {
+        console.log("mob");
         $(".new-arrival--container").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
         $("form[name='searchproduct'] input[name='q']").val("");

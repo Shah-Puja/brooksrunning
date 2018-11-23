@@ -2,7 +2,7 @@
 <section class="search--container">
     <div class="wrapper homepage-new--arrival">
         <div class="new-arrival--container">
-				<!-- <div class="close hidden-col hidden-tab visible-mob"><i class="icon-close"></i></div> -->
+			<!-- <div class="close hidden-col hidden-tab visible-mob"><i class="icon-close"></i></div>  -->
             <span class="icon-style icon-back-arrow prev"></span>
             <div class="owl-carousel">
             @foreach($styles as $style)
