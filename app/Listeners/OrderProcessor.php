@@ -31,10 +31,10 @@ class OrderProcessor implements ShouldQueue
     {
         //echo "<pre>";print_r($event);die;
         Mail::to($event->order->address->email)
-                ->cc( config('site.syg_notify_email') )->subject('Brooks Running Order #BRN-'.$event->order->orderno)
+                ->cc( config('site.syg_notify_email') )
                 ->send( new OrderConfirmation($event->order) );
         Mail::to( config('site.notify_email') )
-                ->cc( config('site.syg_notify_email') )->subject('Brooks Running Purchase Order #BRN-'.$event->order->orderno)
+                ->cc( config('site.syg_notify_email') )
                 ->send( new OrderSubmittedNotification($event->order) );
     }
 }

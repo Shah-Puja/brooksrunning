@@ -30,7 +30,7 @@ class OrderSubmittedNotification extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->view('emails.ordersubmittednotification');
+    { 
+        return $this->view('emails.ordersubmittednotification')->subject('Brooks Running Purchase Order #BRN-'.$order->order_no);
     }
 }
