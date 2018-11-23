@@ -2284,11 +2284,12 @@ textarea {
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
   margin: 0px;
   text-align: center;
+  font-size: 14px;
 }
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .price {
   margin: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
 }
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
@@ -3112,11 +3113,12 @@ textarea {
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
   margin: 0px;
   text-align: center;
+  font-size: 14px;
 }
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price {
   margin: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
 }
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
