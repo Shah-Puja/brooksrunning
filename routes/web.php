@@ -140,6 +140,8 @@ Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
 // Route::get('/orderfailed', 'CategoryController@orderfailed');
 
+Route::get('/order-confirmation', 'CategoryController@order_confirmation');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 

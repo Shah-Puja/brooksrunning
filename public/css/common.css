@@ -1746,7 +1746,7 @@ textarea {
   border-radius: 0 6px 6px 0;
   outline: 0;
 }
-.header-desktop .search-container .search-wrapper form button:active, .header-desktop .search-container .search-wrapper form button:focus {
+.header-desktop .search-container .search-wrapper form button .formsearchbtn {
   background: #f1f1f1 !important;
 }
 .header-desktop .search-container .search-wrapper .search--container {
@@ -2251,7 +2251,7 @@ textarea {
   border-radius: 0 6px 6px 0;
   outline: 0;
 }
-.header-mobile .mob-search--product .search-container .search-wrapper form button:active, .header-mobile .mob-search--product .search-container .search-wrapper form button:focus {
+.header-mobile .mob-search--product .search-container .search-wrapper form button .formsearchbtn {
   background: #f1f1f1 !important;
 }
 .header-mobile .mob-search--product .search--container {
