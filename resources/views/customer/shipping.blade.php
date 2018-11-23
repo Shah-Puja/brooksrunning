@@ -256,7 +256,7 @@
                                             <option value="" selected="selected">Select State</option>
                                             <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
                                             <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
-                                            <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>ACT</option>
+                                            <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>NT</option>
                                             <option value="QLD" {{ (isset($s_state) &&  $s_state =='QLD' )?"selected='selected":"" }}>QLD</option>
                                             <option value="SA"  {{ (isset($s_state) &&  $s_state =='SA' )?"selected='selected":"" }}>SA</option>
                                             <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
@@ -426,7 +426,7 @@
                                                 <option value="" selected="selected">Select State</option>
                                                 <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
                                                 <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
-                                                <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>ACT</option>
+                                                <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>NT</option>
                                                 <option value="QLD" {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
                                                 <option value="SA" {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
                                                 <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
