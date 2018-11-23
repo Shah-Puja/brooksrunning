@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,5 +27,9 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+    
+    protected $dispatchesEvents = [
+        'created' => SubscriptionReceived::class,
     ];
 }

@@ -53,5 +53,12 @@ return [
         'tagmanager_account_id' => env('GTM_ACCOUNT', 'GTM-XXXX123'),
         'maps_api_key' => env('GOOGLE_MAP_API'),
     ],
+    'aweber' => [
+        'consumerkey' => env('AWEBER_CONSUMERKEY'),
+        'consumersecret' => env('AWEBER_CONSUMERSECRET'),
+        'accesskey' => env('AWEBER_ACCESSKEY'),
+        'accesssecret' => env('AWEBER_ACCESSSECRET'),
+        'listid' => env('AWEBER_LISTID'),
+    ],
 
 ];
