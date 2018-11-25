@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\SYG\Subscribers\SubscriberInterface;
 
-class SendSubscriptionReceivedNotification
+class SendSubscriptionReceivedNotification implements ShouldQueue
 {
     protected $subscriptionService;
     /**
