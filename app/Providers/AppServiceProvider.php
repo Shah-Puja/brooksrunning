@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use AWeberAPI;
 use App\Payments\Processor;
 use App\Payments\AfterpayApiClient;
 use App\Payments\AfterpayProcessor;
