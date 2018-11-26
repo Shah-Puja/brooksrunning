@@ -2258,6 +2258,21 @@ textarea {
 .header-mobile .mob-search--product .search-container .search-wrapper form button:active, .header-mobile .mob-search--product .search-container .search-wrapper form button:focus {
   background: #f1f1f1 !important;
 }
+.header-mobile .mob-search--product .search-container .search-wrapper .close {
+  width: 27px;
+  height: 27px;
+  color: #000000;
+  font-size: 20px;
+  margin: 0;
+  line-height: 3;
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  z-index: 99999;
+}
+.header-mobile .mob-search--product .search-container .search-wrapper .close:hover {
+  color: #0263f7;
+}
 .header-mobile .mob-search--product .search--container {
   background-color: #ffffff;
   padding-top: 10px;
@@ -2319,20 +2334,6 @@ textarea {
 .header-mobile .mob-search--product .search--container .new-arrival--container .disabled {
   cursor: default !important;
   color: #f4f6f9;
-}
-.header-mobile .mob-search--product .search--container .new-arrival--container .close {
-  width: 5px;
-  height: 5px;
-  color: #000000;
-  font-size: 20px;
-  margin: 0;
-  line-height: 0;
-  position: absolute;
-  right: 0px;
-  cursor: pointer;
-}
-.header-mobile .mob-search--product .search--container .new-arrival--container .close:hover {
-  color: #0263f7;
 }
 .header-mobile .mob-search--product .search--container .info-wrapper {
   padding: 0 15px;
