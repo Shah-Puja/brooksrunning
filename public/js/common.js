@@ -35,11 +35,12 @@ $(document).ready(function () {
         return false;
     });
 
-    $(".mob-search--product .search-container .new-arrival--container .close").click(function () {
+    $(".mob-search--product .search-container .search-wrapper .close").click(function () {
         console.log("mob");
         $(".new-arrival--container").hide();
+        $(".mob-search--product .search-container .search-wrapper .close").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
-        $("form[name='searchproduct'] input[name='q']").val("");
+        $("form[name='mob_searchproduct'] input[name='q']").val("");
         return false;
     });
 });
@@ -579,6 +580,7 @@ function mob_search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
+            $(".mob-search--product .search-container .search-wrapper .close").show();
             $(".mob-search--product .search-container .search-wrapper").find(".search-product-content").html(response);
             var owl = $(".mob-search--product .search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({

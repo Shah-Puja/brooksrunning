@@ -695,6 +695,21 @@
             }
         }
       }
+      .close{
+        width: 27px;
+        height: 27px;
+        color: $black;
+        font-size: 20px;
+        margin: 0;
+        line-height: 3;
+        position: absolute;
+        right: 12px;
+        cursor: pointer;
+        z-index: 99999;
+        &:hover{
+          color: $blue;
+        }
+      }
     }
     
   }
@@ -742,11 +757,6 @@
               }
            }
           }
-        //   .owl-wrapper{ 
-        //     @media #{$mobile-only}{
-        //       width: 2640px;
-        //   }
-        // }
           
         }
         .icon-style {
@@ -767,20 +777,7 @@
           cursor: default !important;
           color: #f4f6f9;
         }
-        .close{
-          width: 5px;
-          height: 5px;
-          color: $black;
-          font-size: 20px;
-          margin: 0;
-          line-height: 0;
-          position: absolute;
-          right: 0px;
-          cursor: pointer;
-          &:hover{
-            color: $blue;
-          }
-        }
+    
     }
     .info-wrapper{
       padding: 0 15px;
