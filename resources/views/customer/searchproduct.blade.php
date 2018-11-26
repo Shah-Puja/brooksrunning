@@ -1,6 +1,6 @@
 @if($styles!='' && count($styles) >0)
 <section class="search--container">
-    <div class="wrapper homepage-new--arrival">
+    <div class="wrapper homepage-new--arrival"> 
         <div class="new-arrival--container">
             <span class="icon-style icon-back-arrow prev"></span>
             <div class="owl-carousel">
