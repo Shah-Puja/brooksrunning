@@ -100,7 +100,7 @@
 								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 								@php  $width_count = count( $filters_array[$style->style]['width']); @endphp
 									<ul>
-										<li>{{ count($colors_option[$style->style]) }} Colours</li>
+										<li>{{ count(collect($colors_option[$style->style])->unique('color_code')) }} Colours</li>
 										<li class="no-pad">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }}  Available</li>
 									</ul>
 								</a>
