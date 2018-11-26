@@ -13,10 +13,10 @@ use App\Models\Order_address;
 use App\Models\User;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
-use App\Mail\OrderConfirmation;
-use App\Mail\OrderAlert;
+use App\Mail\OrderUser;
+use App\Mail\OrderAp21Alert;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\OrderSubmittedNotification;
+use App\Mail\OrderAdmin;
 use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
@@ -539,7 +539,7 @@ class PaymentController extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                 $userid = false;
                 break;
         }
@@ -645,7 +645,7 @@ class PaymentController extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
 
                 $returnVal = false;
 
@@ -892,7 +892,7 @@ if($order->payment_type == "AfterPay"){
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                 break;
 
             default:
@@ -916,7 +916,7 @@ if($order->payment_type == "AfterPay"){
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
 
                 $returnVal = false;
 
@@ -967,7 +967,7 @@ if($order->payment_type == "AfterPay"){
                     );
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                     $dataValue = false;
                     break;
             }
