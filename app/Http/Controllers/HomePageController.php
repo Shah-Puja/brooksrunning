@@ -12,7 +12,7 @@ class HomePageController extends Controller
     public function index(){
 
         //Featured product(homepage slider)
-        $shoe_info = array('120278_494','110289_050','120277_017','110288_038');
+        $shoe_info = array('120278_494','110289_050','120277_017','110288_038', '120284_080');
         $product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
@@ -21,7 +21,11 @@ class HomePageController extends Controller
                     ['color_code', '=', $slider_shoe[1]],
                     ['style', '=', $slider_shoe[0]],
                 ]
-            )->with('variants')
+            )
+            ->whereHas('variants' , function($query)  {
+                return $query->where('visible', '=', 'Yes');
+            })
+            ->with('variants')
             ->first();            
         }
 

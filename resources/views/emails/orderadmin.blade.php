@@ -116,9 +116,13 @@
                                         <td style="border-bottom: 1px dashed rgb(0, 0, 0); margin: 10px 0px;" width="10%" align="left"><strong>Price $</strong></td>
                                         <td style="border-bottom: 1px dashed rgb(0, 0, 0); margin: 10px 0px;" width="15%" align="left"><strong>Total $</strong></td>
                                     </tr>
-                                    <tr> 
-                                        @if (! $order->orderItems->isEmpty() ) 
-                                        @foreach($order->orderItems as $item)
+
+                                    @php $coup_discount = 0; @endphp
+                                    @if (! $order->orderItems->isEmpty() ) 
+                                    @foreach($order->orderItems as $item)
+                                    @php $coup_discount += ($item->discount > 0) ? $item->discount : 0;
+                                    $coup_discount = number_format($coup_discount, 2); 
+                                    @endphp
                                     <tr>
                                         <td>{{ $item->qty }}</td>
                                         <td align='left'>
@@ -130,18 +134,18 @@
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)
-										$ {{ number_format($item->variant->price, 2) }}
-										 @endif
-								@if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
-										<del>$ {{ number_format($item->variant->price, 2) }}</del> 
-								$ {{ number_format($item->variant->price_sale, 2) }} 
-								@endif  </td>
+                                            $ {{ number_format($item->variant->price, 2) }}
+                                            @endif
+                                            @if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
+                                            <del>$ {{ number_format($item->variant->price, 2) }}</del> 
+                                            $ {{ number_format($item->variant->price_sale, 2) }} 
+                                            @endif  </td>
                                         <td align='left'>
-                                        @if($item->variant->price_sale == 0)
-										$ {{ number_format($item->variant->price * $item->qty, 2) }}
-										@else
-										$ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
-										 @endif </td>
+                                            @if($item->variant->price_sale == 0)
+                                            $ {{ number_format($item->variant->price * $item->qty, 2) }}
+                                            @else
+                                            $ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
+                                            @endif </td>
                                     </tr>
                                     @endforeach
                                     @endif
@@ -151,8 +155,34 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Subtotal</b></td>
-                                        <td align='left'><b>$ {{  @number_format($order->total, 2) }}</b></td>
+                                        <td align='left'><b>
+                                                @if(isset($coup_discount) && $coup_discount > 0)
+                                                $ {{  @number_format(($order->total + $coup_discount), 2) }}
+                                                @else
+                                                $ {{  @number_format($order->total, 2) }}
+                                                @endif
+                                            </b></td>
+                                    </tr> 
+
+                                    @if (isset($order->coupon_code) && $order->coupon_code != '')
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Coupon Discounts</b></td> 
+                                        <td align='left'><b>$ {{  $coup_discount }}</b></td> 
                                     </tr>
+                                    @endif
+
+                                    @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right'><b>Gift Discounts</b></td> 
+                                        <td align='left'><b>$ {{  @number_format($order->gift_amount, 2) }}</b></td>
+                                    </tr>
+                                    @endif
 
                                     <tr>
                                         <td>&nbsp;</td>
@@ -171,10 +201,19 @@
 
                             </table><br/>
                         </td>
+                    </tr>
+
+                    @if(isset($order->coupon_code) && $order->coupon_code!="")
+                    <tr>
+                        <td>Promo String: {{ $order->coupon_code }}</td>
+                        <td>&nbsp;</td> 
+                    </tr>
+                    @endif
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
+
                     <tr>
                         <td align="left">
                             <h3 style ="background: none repeat scroll 0 0 #57A7D7; color: #FFFFFF; font-size: 16px; font-weight: normal; height: 30px; line-height: 30px; padding: 0 10px;">Order Processing Info:</h3>

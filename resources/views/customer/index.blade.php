@@ -150,6 +150,7 @@
 			</div>
 		</div>
 	</div>
+	@if(!empty($product)  && count($product) > 0 )
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
 			<div class="col-12">
@@ -180,6 +181,7 @@
 	       <span class="icon-style icon-next-arrow next"></span>
 	    </div>
 	</div>
+	@endif
 </section>
 <section class="homepage-footer">
 	<div class="wrapper">

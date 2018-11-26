@@ -36,11 +36,13 @@ class ContactUsEnquiryController extends Controller
             'order_no' => request('order_no'),
 	    'category' => request('category'),
 	    'message' => request('message'),
-    	]);
+		]);
+		
+		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
 
-        Mail::to( config('site.notify_email') )
+		Mail::to($toemails)
                 ->cc( config('site.syg_notify_email') )
-                ->queue( new EnquirySubmittedNotification($enquiry) );
+				->queue( new EnquirySubmittedNotification($enquiry) );
 
     	return response()->json([ 'success' => 'Thank you for your enquiry, someone will be in touch soon.' ]);
 

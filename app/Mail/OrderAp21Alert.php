@@ -8,7 +8,7 @@ use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderAlert extends Mailable
+class OrderAp21Alert extends Mailable
 {
     use Queueable, SerializesModels;
 

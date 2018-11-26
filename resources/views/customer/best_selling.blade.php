@@ -66,18 +66,20 @@
 									<span class="icon-style icon-back-arrow prev"></span>
 									<div class="owl-carousel owl-theme">
                                     @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
-                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code') as $color_product)
+                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
                                             @if(!empty($color_product))
                                         <div class="item">
+                                            <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
                                                 <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
                                             </picture>
+                                            </a>
                                             <div class="plp-mob--info visible-mob">
                                                 <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
-                                                        <li>{{ count($colors_option[$curr_ele->style]) }} Colours</li>
+                                                        <li>{{ count(collect($colors_option[$curr_ele->style])->unique('color_code')) }} Colours</li>
                                                         <li class="no-pad">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }}  Available</li>
                                                     </ul>
                                                 </a>

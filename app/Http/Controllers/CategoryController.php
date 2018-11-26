@@ -350,5 +350,9 @@ class CategoryController extends Controller
         }
         return view( 'customer.best_selling',compact('colour_options','products','gender'));
     }
+    public function order_confirmation()
+	{
+		return view( 'emails.order-confirmation');
+    }
 
 }

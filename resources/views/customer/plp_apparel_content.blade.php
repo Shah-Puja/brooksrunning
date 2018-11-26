@@ -78,7 +78,7 @@
 			<div class="more-color--container more-clothing hidden-mob">
 				<span class="icon-style icon-back-arrow prev"></span>
 				<div class="owl-carousel-clothing owl-theme">
-				@foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
+				@foreach(collect($colors_option[$style->style])->unique('color_code')->sortBy('seqno') as $color_product)
 					@if(!empty($color_product))
 						<!--@php
 							$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
@@ -100,7 +100,7 @@
 						$i = 1; 
 						$remaining_count = 0;
 					@endphp
-				    @foreach(collect($colors_option[$style->style])->unique('color_code') as $color_product)
+				    @foreach(collect($colors_option[$style->style])->unique('color_code')->sortBy('seqno') as $color_product)
 					    @php 
 						   $add_class = '';
 						   $add_css = '';

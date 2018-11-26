@@ -28,12 +28,15 @@ $(document).ready(function () {
     });
     
     $("#header-search--popup .close").click(function () {
+        console.log("desktop");
         $("#header-search--popup").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
         $("form[name='searchproduct'] input[name='q']").val("");
         return false;
     });
-    $(".new-arrival--container .close").click(function () {
+
+    $(".mob-search--product .search-container .new-arrival--container .close").click(function () {
+        console.log("mob");
         $(".new-arrival--container").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
         $("form[name='searchproduct'] input[name='q']").val("");
@@ -520,16 +523,35 @@ function search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
-            $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".search-container .new-arrival--container .owl-carousel");
+            $("#header-search--popup .search-wrapper").find(".search-product-content").html(response);
+            var owl = $("#header-search--popup .new-arrival--container .owl-carousel");
             owl.owlCarousel({
-                items: 4,
-                itemsDesktop: [1000, 4],
-                itemsDesktopSmall: [900, 4],
+                items: 6,
+                itemsDesktop: [1000, 6],
+                itemsDesktopSmall: [900, 6],
                 itemsCustom: false,
                 pagination: false,
                 rewindNav: false,
-                dots: true
+                dots: true,
+                afterAction: function(){
+                    if ( owl.find(".owl-item").length > 6 ) {
+                      $('.next').show();
+                      $('.prev').show();
+                  
+                      $('.next').removeClass('disabled');
+                      $('.prev').removeClass('disabled');
+                      if ( this.currentItem == 0 ) {
+                        $('.prev').addClass('disabled');
+                      }
+                      if ( this.currentItem == this.maximumItem ) {
+                        $('.next').addClass('disabled');
+                      }
+                  
+                    } else {
+                      $('.next').hide();
+                      $('.prev').hide();
+                    }
+                  }
             });
             $("form[name='searchproduct']").find("button img").hide();
             $("form[name='searchproduct']").find("button i").show();
@@ -539,6 +561,14 @@ function search_product(){
     
     return false; 
 }	
+
+$("document").on('keypress','form[name="searchproduct"] input[name="q"]',function(){
+    var key = e.which;
+    if(key == 13){
+        $('form[name="searchproduct"]').submit();
+     }
+     return false;
+});
 function mob_search_product(){
     var search = $("form[name='mob_searchproduct'] input[name='q']").val();
     $("form[name='mob_searchproduct']").find("button img").show();
@@ -549,8 +579,8 @@ function mob_search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
-            $(".search-container .search-wrapper").find(".search-product-content").html(response);
-            var owl = $(".search-container .new-arrival--container .owl-carousel");
+            $(".mob-search--product .search-container .search-wrapper").find(".search-product-content").html(response);
+            var owl = $(".mob-search--product .search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
                 items: 4,
                 itemsTablet : [768,4],
@@ -558,7 +588,26 @@ function mob_search_product(){
                 itemsCustom: false,
                 pagination: false,
                 rewindNav: false,
-                dots: true
+                dots: true,
+                afterAction: function(){
+                    if ( owl.find(".owl-item").length > 2 ) {
+                      $('.next').show();
+                      $('.prev').show();
+                  
+                      $('.next').removeClass('disabled');
+                      $('.prev').removeClass('disabled');
+                      if ( this.currentItem == 0 ) {
+                        $('.prev').addClass('disabled');
+                      }
+                      if ( this.currentItem == this.maximumItem ) {
+                        $('.next').addClass('disabled');
+                      }
+                  
+                    } else {
+                      $('.next').hide();
+                      $('.prev').hide();
+                    }
+                  }
             });
             $("form[name='mob_searchproduct']").find("button img").hide();
             $("form[name='mob_searchproduct']").find("button i").show();

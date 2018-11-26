@@ -13,18 +13,25 @@
                             </li>
                             @if ($product->gender=='M' or $product->gender=='W')
                             <li>
-                                @switch($product->gender)
-                                    @case('M')
+                                   @switch($product->gender)
+                                        @case('M')
+                                           @php  $gender_type ="mens"; @endphp
                                         <a href="/mens-running-shoes-and-clothing">Men's</a>
                                         @break
-                                    @case('W')
+                                        @case('W')
+                                            @php $gender_type ="womens"; @endphp
                                         <a href="/womens-running-shoes-and-clothing">Women's</a>
                                         @break
-                                    
-                                @endswitch
+                                    @endswitch
                             </li>
                             <li>
-                                <a href="#">{{ $product->prod_type }}</a>
+                                    @if (strtolower($product->flag_bra) =='yes')
+                                        <a href="/womens-sports-bras">Sports Bras</a>
+                                    @elseif(strtolower($product->prod_type) =='footwear')
+                                         <a href='/{{$gender_type}}-running-shoes'>Running Shoes</a>
+                                    @else 
+                                         <a href="/{{$gender_type}}-running-clothes">Running Clothing</a>
+                                    @endif
                             </li>
                             @endif
                             <li>
@@ -66,15 +73,23 @@
                                 <li>
                                     @switch($product->gender)
                                         @case('M')
+                                           @php  $gender_type ="mens"; @endphp
                                         <a href="/mens-running-shoes-and-clothing">Men's</a>
                                         @break
                                         @case('W')
+                                            @php $gender_type ="womens"; @endphp
                                         <a href="/womens-running-shoes-and-clothing">Women's</a>
                                         @break
                                     @endswitch
                                 </li>
                                 <li>
-                                    <a href="#">{{ $product->prod_type }}</a>
+                                    @if (strtolower($product->flag_bra) =='yes')
+                                        <a href="/womens-sports-bras">Sports Bras</a>
+                                    @elseif(strtolower($product->prod_type) =='footwear')
+                                         <a href='/{{$gender_type}}-running-shoes'>Running Shoes</a>
+                                    @else 
+                                         <a href="/{{$gender_type}}-running-clothes">Running Clothing</a>
+                                    @endif
                                 </li>
                                 @endif
                                 <li>
