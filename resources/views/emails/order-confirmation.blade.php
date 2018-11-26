@@ -4,10 +4,35 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A responsive two column example</title>
+    <title>Brooks Emailers</title>
     <style>
   
         /* A simple css reset */
+        @media screen {
+                @font-face {
+            font-family: 'ProximaNova-Regular';
+            src: url('../webfonts/ProximaNova-Regular.eot');
+            src: url('../webfonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+                url('../webfonts/ProximaNova-Regular.woff2') format('woff2'),
+                url('../webfonts/ProximaNova-Regular.woff') format('woff'),
+                url('../webfonts/ProximaNova-Regular.ttf') format('truetype'),
+                url('../webfonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+                }
+                @font-face {
+                    font-family: 'ProximaNova-Bold';
+                    src: url('../webfonts/ProximaNova-Bold.eot');
+                    src: url('../webfonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+                        url('../webfonts/ProximaNova-Bold.woff2') format('woff2'),
+                        url('../webfonts/ProximaNova-Bold.woff') format('woff'),
+                        url('../webfonts/ProximaNova-Bold.ttf') format('truetype'),
+                        url('../webfonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+                    font-weight: bold;
+                    font-style: normal;
+                    }
+            }
+        body{ font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
         body,table,thead,tbody,tr,td, img{
             padding: 0;
             margin: 0;
@@ -31,11 +56,6 @@
             padding: 0;
             padding-bottom: 20px;
             line-height: 1.6;
-            font-family: 'Helvetica', 'Arial', sans-serif;
-        }
-
-        p,a,li {
-            font-family: 'Helvetica', 'Arial', sans-serif;
         }
 
         img {
@@ -45,13 +65,13 @@
         .name-link{
             text-decoration: none;
             color: #000;
-            font-weight: bold;
+            font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
             text-align: center !important;
             font-size: 14px;
         }
         .mailto{
             text-decoration: none;
-            font-weight: bold;
+            font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
             color: #005cfb;
             font-size: 14px;
         }
@@ -59,10 +79,10 @@
             font-size: 1em;
         }
         .br-header{
-            text-align:justify; font-weight: bold; color: #005cfb; line-height: 0.4;
+            text-align:justify; font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; color: #005cfb; line-height: 0.4;
         }
         .br-item-total{
-           font-weight: bold; color: #005cfb;
+            font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; color: #005cfb;
         }
         .padd_top{
             padding-top: 12px;
