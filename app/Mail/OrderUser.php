@@ -8,22 +8,22 @@ use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderAlert extends Mailable
+class OrderUser extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $order,$data;
+    public $order;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $order,$data)
+    public function __construct(Order $order)
     {
         $this->order = $order;
-        $this->data = $data;
     }
+
     /**
      * Build the message.
      *
@@ -31,6 +31,6 @@ class OrderAlert extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.apialert',['order'=> $this->order,'data'=>$this->data]);
+        return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
     }
 }
