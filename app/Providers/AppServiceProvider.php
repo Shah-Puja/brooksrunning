@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use AWeberAPI;
 use App\Payments\Processor;
 use App\Payments\AfterpayApiClient;
 use App\Payments\AfterpayProcessor;
@@ -63,7 +64,7 @@ class AppServiceProvider extends ServiceProvider {
         $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
             $aweber = new AWeberAPI( config('services.aweber.consumerkey'), config('services.aweber.consumersecret') );
             return new \App\SYG\Subscribers\AweberSubscriber($aweber);
-        });
+        });        
 
     }
 
