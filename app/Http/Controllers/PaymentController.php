@@ -447,8 +447,8 @@ class PaymentController extends Controller {
             $order_data = array(
                 'order_id' => $order_id
             );
-            $order_number_insert = Order_number::create($order_data);
-            if($order_number_insert){
+            
+            if($order_number_insert = Order_number::create($order_data)){
                 $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
                 $status = 'Order Number';
             }
