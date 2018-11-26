@@ -69,7 +69,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                             </div>
                         </li>
                         @if($subtotal < 1000)
-                        {{-- <li class="tab-link" data-tab="tab-3">
+                        <!-- <li class="tab-link" data-tab="tab-3">
                             <div class="input-wrapper">
                                 <div class="radio-inline">
                                     <input type="radio" name="sizechart" id="tab-opt3">
@@ -82,7 +82,7 @@ $subtotal = ($cart->gift_discount != "") ? ($cart->grand_total - $cart->gift_dis
                                     </label>
                                 </div>
                             </div>
-                        </li> --}}
+                        </li> -->
                         @endif
                     </ul>
                     <div id="tab-1" class="tab-content current">

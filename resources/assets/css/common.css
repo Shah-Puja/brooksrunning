@@ -434,7 +434,10 @@
         border-radius: 100%;
         transition: all 1s ease; }
     .input-wrapper .radio-inline label .text {
-      padding-left: 30px; }
+      padding-left: 30px;
+      display: inherit !important; }
+    .input-wrapper .radio-inline label .cart-mark {
+      display: inline-grid !important; }
   .input-wrapper .radio-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .radio-inline input:checked ~ label .mark span {
@@ -473,7 +476,10 @@
         border-left: 2px solid #ffffff;
         border-bottom: 2px solid #ffffff; }
     .input-wrapper .checklist-inline label .text {
-      padding-left: 30px; }
+      padding-left: 30px;
+      display: inherit !important; }
+    .input-wrapper .checklist-inline label .cart-mark {
+      display: inline-grid !important; }
   .input-wrapper .checklist-inline input:checked ~ label .mark {
     border: 1px solid #0263f7; }
     .input-wrapper .checklist-inline input:checked ~ label .mark span {
@@ -513,9 +519,6 @@
   cursor: pointer; }
   .input-wrapper .select-field option {
     outline: 0; }
-
-.cart-mark {
-  display: -moz-inline-box !important; }
 
 .custom-select {
   position: relative;
@@ -912,15 +915,18 @@ a {
   text-decoration: none;
   outline: 0; }
 
-sub,
-sup {
+sub {
   position: relative;
   font-size: 75%;
   line-height: 0;
   vertical-align: baseline; }
 
 sup {
-  top: -.5em; }
+  top: -.1em;
+  position: relative;
+  font-size: 115%;
+  line-height: 0;
+  vertical-align: baseline; }
 
 sub {
   bottom: -.25em; }
@@ -1394,6 +1400,18 @@ textarea {
         .header-desktop .search-container .search-wrapper .search--container .new-arrival--container {
           display: block;
           position: relative; }
+          .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .close {
+            width: 27px;
+            height: 27px;
+            color: #000000;
+            font-size: 25px;
+            margin: 0;
+            line-height: 0;
+            position: absolute;
+            right: 30px;
+            cursor: pointer; }
+            .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .close:hover {
+              color: #0263f7; }
           .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel {
             width: calc(100% - 80px);
             margin: auto; }
@@ -3719,8 +3737,8 @@ textarea {
       .afterpay--popup .afterpay-info .info-wrapper {
         width: 50%; } }
     .afterpay--popup .afterpay-info .info-wrapper .icon {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       margin: 0 auto;
       position: relative; }
       .afterpay--popup .afterpay-info .info-wrapper .icon .img1 {
@@ -4879,7 +4897,7 @@ textarea {
   font-weight: normal;
   font-size: 2em;
   color: #6d665f;
-  line-height: 0.5px; }
+  line-height: 45px; }
 
 /*  Shipping Page Start */
 .input-wrapper .checklist-inline .run-happy {

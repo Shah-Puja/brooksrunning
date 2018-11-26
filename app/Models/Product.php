@@ -28,8 +28,10 @@ class Product extends Model
     {
         return [
             'name' => $this->stylename,
+            'product_type' => $this->prod_type,
             'colour' => $this->tags->where('key', 'C_F_COLOUR')->implode('value', ','),
-            'activity' => $this->tags->where('key', 'C_F_COLOUR')->implode('value', ','),
+            'width_name' => $this->variants->pluck('width_name')->unique()->implode(", "),
+            'activity' => $this->tags->where('key', 'PF_F_ACTIVITY')->implode('value', ','),
             'style' => $this->style,
             'description' => $this->prod_desc,
             'specifications' => $this->specifications,

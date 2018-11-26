@@ -52,16 +52,18 @@ class MyaccountController extends Controller {
         User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
             'last_name' => isset($request->last_name) ? $request->last_name : "",
             'gender' => isset($request->gender) ? ucfirst($request->gender) : "",
-            'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "",
-            'birth_date' => (isset($request->birth_date)) ? $request->birth_date : "",
-            'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "",
+            'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "0",
+            'birth_date' => (isset($request->birth_date)) ? $request->birth_date : "0",
+            'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "0",
             'age_group' => (isset($request->age_group)) ? $request->age_group : "",
             'state' => isset($request->state) ? $request->state : "",
-            'postcode' => isset($request->postcode) ? $request->postcode : "",
-            'shoe_wear' => isset($request->shoe_wear) ? $request->shoe_wear : '',
-            'password' => isset($request->password) ? Hash::make($request->password) : "",
+            'postcode' => isset($request->postcode) ? $request->postcode : "0",
+            'shoe_wear' => isset($request->shoe_wear) ? $request->shoe_wear : '', 
             'newsletter' => @$request->newsletter ? 1 : 0
         ]);
+        if(isset($request->password) && $request->password!=""){
+            User::where('id', auth()->id())->update(['password' => Hash::make($request->password) ]);
+        }
         return redirect('account-personal');
     }
 
