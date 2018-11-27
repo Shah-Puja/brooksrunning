@@ -2,8 +2,7 @@
 @extends('customer.layouts.master')
 
 @section('gtm-datalayer')
-    'pageType': 'checkout: order confirmed page',
-	'transactionId': {{ $order->order_no }},
+	'transactionId': 'BRN-{{ $order->order_no }}',
 	'transactionAffiliation': '{{ config('app.name') }}',
 	'transactionTotal': {{ @number_format($order->grand_total, 2) }},
 	'transactionShipping': {{ @number_format($order->freight_cost, 2) }},
