@@ -619,8 +619,11 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
 }
 .custom-select.gray-bg .select-option--wrapper .disable {
   background-color: #f1f1f1;
-  color: #000000;
-  cursor: auto;
+  cursor: no-drop;
+  color: #dedcda;
+}
+.custom-select.gray-bg .select-option--wrapper .disable:hover {
+  border: 1px solid #d3d0cd;
 }
 .custom-select .label-heading {
   height: 36px;
@@ -664,6 +667,11 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
   border: 1px solid #d3d0cd;
   list-style: none;
 }
+.custom-select .select-option--wrapper .disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  color: #dedcda;
+}
 .custom-select .option-value {
   padding: 4px 10px;
   font-size: 14px;
@@ -697,7 +705,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
   font-size: 14px;
   border-bottom: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
-  cursor: pointer !important;
 }
 .custom-select .option-value-data:not(.disable):hover {
   background-color: #0263f7;
