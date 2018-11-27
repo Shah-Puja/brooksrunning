@@ -203,7 +203,7 @@
 						<h4>Get fit</h4>
 						<p>Whenever possible, visit your local running and walking footwear store for a proper fitting.</p>
 						<h4>Can't make it to a store?</h4>
-						<p>Our online tools can help you out. Shoefitr compares the fit of your current shoe with other models and finds your perfect fit. If you're switching to Brooks, check out our Shoe Finder, where you can either tell us what brand of shoe you wear and we'll show you something better – or you can answer five simple questions and we'll introduce you to your sole mate. And, our International Size Chart can help make the size translations for the UK, Europe, and Japan.</p>
+						<p>To find your perfect shoe, check out our <a href="https://brooksrunning.com.au/shoefinder">Shoe Finder</a> tool. Simply answer a few questions and we'll introduce you to your sole mate. Also our International Size Chart can help make the size translations from UK, Europe and Japan measurements. </p>
 					</div>
 				</div>
 				<div id="tab-2" class="tab-content">
