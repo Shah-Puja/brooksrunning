@@ -216,7 +216,7 @@ class Manual_ap21order_push extends Controller {
     // Step 2: Generate Ap21_xml if not available in order_mast,else skip this step.
     public function app21Order($order_id) {
         $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
-        $PersonID = $order->person_idx;
+        $PersonId = $order->person_idx;
         $this->init($order_id, $order);
         echo "<br> order id :" . $order_id;
         echo "<br> person id :" . $PersonId;
