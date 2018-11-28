@@ -8,7 +8,7 @@ use App\Models\User;
 class InfoController extends Controller {
 
     public function index($pg) {
-
+        if(!view()->exists('info.' . $pg)) return abort(404);
         return view('info.' . $pg);
     }
 
