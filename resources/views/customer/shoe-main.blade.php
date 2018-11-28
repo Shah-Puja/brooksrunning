@@ -166,7 +166,7 @@
 		<div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
 			<div class="uTube-info">
-				<iframe src="https://www.youtube.com/embed/{{ $shoe_info->video_link }}?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+				<iframe class="shoe--vdo-show-iframe" src="https://www.youtube.com/embed/{{ $shoe_info->video_link }}/" frameborder="0" allowfullscreen ></iframe>
 			</div>
 		</div>
 	</div>

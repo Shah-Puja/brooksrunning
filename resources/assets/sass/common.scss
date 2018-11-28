@@ -2491,10 +2491,12 @@
               display: block;
               position: relative;
               padding: 17px 0 8px;
+              height: 122px;
               border-bottom: 1px solid #f2f2f2;
               @media #{$mobile-only} {
                 padding: 2px 0 3px;
                 z-index: -90;
+                height: 90px;
               }
               h3{
                 @extend %bold-font;

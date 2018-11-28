@@ -4100,12 +4100,14 @@ textarea {
   display: block;
   position: relative;
   padding: 17px 0 8px;
+  height: 122px;
   border-bottom: 1px solid #f2f2f2;
 }
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .info {
     padding: 2px 0 3px;
     z-index: -90;
+    height: 90px;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3 {

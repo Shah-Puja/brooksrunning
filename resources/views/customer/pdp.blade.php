@@ -123,10 +123,10 @@
                             @else
                                 @php $show_afterpay_prod_price = number_format(($product->price/4), 2); @endphp
                             @endif
-                            {{-- <div class="afterpay">
+                            <div class="afterpay">
                                 <span>or 
                                 4 payments of ${{ $show_afterpay_prod_price }} with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-                            </div> --}}
+                            </div> 
                         @endif 
                         <!--afterpay popup -->
                         <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
@@ -139,22 +139,22 @@
                                     </div>
                                     <div class="afterpay-info clearfix">
                                         <div class="info-wrapper">
-                                            <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
+                                            <div class="icon" style="background: url(/images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
                                             <p class="heading">Pay in 4 installments</p>
                                             <p class="text">Pay for your order in equal fortnightly payments</p>
                                         </div>
                                         <div class="info-wrapper">
-                                            <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
+                                            <div class="icon" style="background: url(/images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
                                             <p class="heading">Get your items now</p>
                                             <p class="text">Your order will be shipped now, just like a normal order</p>
                                         </div>
                                         <div class="info-wrapper">
-                                            <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
+                                            <div class="icon" style="background: url(/images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
                                             <p class="heading">Nothing extra to pay</p>
                                             <p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
                                         </div>
                                         <div class="info-wrapper">
-                                            <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
+                                            <div class="icon" style="background: url(/images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
                                             <p class="heading">Spend up to $1000</p>
                                             <p class="text">You can use Afterpay for orders up to $1000</p>
                                         </div>
