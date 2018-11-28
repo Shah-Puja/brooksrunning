@@ -207,7 +207,7 @@
 				<p class="br-info" style="font-size: 10px;">&nbsp;</p>
 				<ul class="child-list">
 					<li>
-						<a href="/info/contact">Contact Us</a>
+						<a href="/info/contact-us">Contact Us</a>
 					</li>
 					<li>
 						<a href="/info/shipping-information">Shipping Information</a>
