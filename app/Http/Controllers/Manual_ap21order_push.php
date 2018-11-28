@@ -171,7 +171,7 @@ class Manual_ap21order_push extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->_order, $data));
                 $userid = false;
                 break;
         }
@@ -514,7 +514,7 @@ class Manual_ap21order_push extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                        ->send(new OrderAp21Alert($order, $data));
                 break;
 
             default:
@@ -522,7 +522,7 @@ class Manual_ap21order_push extends Controller {
                 $returnVal = false;
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                 $logger = array(
-                    'order_id' => $this->order->id,
+                    'order_id' => $order->id,
                     'log_title' => 'Order',
                     'log_type' => 'Response',
                     'log_status' => 'Error While Creating Order',
@@ -538,7 +538,7 @@ class Manual_ap21order_push extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                        ->send(new OrderAp21Alert($order, $data));
 
                 $returnVal = false;
 
