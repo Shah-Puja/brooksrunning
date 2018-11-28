@@ -138,7 +138,7 @@ class Manual_ap21order_push extends Controller {
                 $response_xml = @simplexml_load_string($response->getBody()->getContents());
                 $userid = $response_xml->Person->Id;
                 $logger = array(
-                    'order_id' => $order_id,
+                    'order_id' => $this->_order_id,
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => 'Person Id Found',
