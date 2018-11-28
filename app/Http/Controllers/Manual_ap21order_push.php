@@ -88,6 +88,7 @@ class Manual_ap21order_push extends Controller {
                     'log_type' => 'Response',
                     'log_status' => '201 Person ID Created',
                     'result' => $person_idx,
+                    'xml' => $person_xml
                 );
                 Order_log::createNew($logger);
                 $returnVal = $person_idx;
@@ -199,10 +200,14 @@ class Manual_ap21order_push extends Controller {
     public function manual_ap21order_push($order_id) {
         $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
         $this->init($order_id, $order);
-        $this->pushap21_person($order_id, $order);
-        $this->app21Order($order_id, $order);
+        if ($order->person_idx == "") {
+            $this->pushap21_person($order_id, $order);
+        }
+        if ($order->ap21_xml == "") {
+            $this->app21Order($order_id, $order);
+        }
         $this->send_manual_ap21($order_id, $order);
-        echo "<br>"."Order push process completed";
+        echo "<br>" . "Order push process completed";
     }
 
     public function giftVoucherGvvalid() {
