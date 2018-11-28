@@ -60,6 +60,11 @@ class AppServiceProvider extends ServiceProvider {
             // return new \App\SYG\Bridges\EntrezoBridge;
         });
 
+        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+            $aweber = new AWeberAPI( config('services.aweber.consumerkey'), config('services.aweber.consumersecret') );
+            return new \App\SYG\Subscribers\AweberSubscriber($aweber);
+        });
+
     }
 
 }
