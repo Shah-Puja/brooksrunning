@@ -182,9 +182,9 @@ $(document).ready(function(){
     });
     $(".uTube-popup--close").on('click',function(){
         $("#uTube-popup--wrapper").removeClass("show");
-        $('.uTube-info iframe').attr('src', '');
-        //$('.uTube-info iframe').attr('src').get(0).stopVideo();
-        //$('.uTube-info iframe').attr('src', $('iframe').attr('src'));
+        // $('.shoe--vdo-show-iframe').attr('src', '');
+        $('.shoe--vdo-show-iframe').attr('src', $('.shoe--vdo-show-iframe').attr('src'));
+        stopVideo($('.shoe--vdo-show-iframe'));
         return false;
     });
 });

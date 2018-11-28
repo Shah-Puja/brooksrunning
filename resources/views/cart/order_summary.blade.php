@@ -55,10 +55,10 @@
                             </div>
                         </div>	
                         @if(isset($cart->grand_total) && $cart->grand_total <1000)
-                        {{-- <div class="afterpay">
+                         <div class="afterpay">
                             <span>or 
                             4 payments of ${{ @number_format(($subtotal/4), 2) }} with <img src="/images/payment-afterpay--black.png" alt=""> <a href="JavaScript:Void(0);" class="afterpay-popup--control">info</a></span>
-                        </div> --}}
+                        </div> 
                         @endif 
                     </div>
 

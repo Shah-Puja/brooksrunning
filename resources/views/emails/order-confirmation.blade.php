@@ -45,7 +45,6 @@
             margin: 0 auto;
         }
 
-        /* Add some padding for small screens */
         .wrapper {
             padding-left: 10px;
             padding-right: 10px;
@@ -87,7 +86,11 @@
         .padd_top{
             padding-top: 12px;
         }
+        .section-mob{
+            display:none !important;
+        }
 
+        /* Add some padding for small screens */
         @media only screen and (max-width: 620px) {
             .centered-table{
                 margin: 0 auto;
@@ -99,6 +102,7 @@
             }
             .name-link{
                 font-size: 16px;
+                line-height: 20px;
             }
 
             .wrapper .section {
@@ -113,7 +117,9 @@
                 display: block;
             }
             .thumbnail tr:last-child {  display: block;}
-            .hidden-mob{display: none !important;}
+            .hidden-mob{display:none !important;}
+            .section-mob{
+            display:inline !important;}
         }
     </style>
 </head>
@@ -170,7 +176,7 @@
                                                     Address Line 4
                                                 </p>
                                                 <p style="text-align:justify;">
-                                                <a href="#" class="mailto">customeremail@gmail.com</a>
+                                                <a href="mailto:customeremail@gmail.com" target="_top" class="mailto">customeremail@gmail.com</a>
                                                 </p>
                                             </td>
                                         </tr>
@@ -477,11 +483,11 @@
                                     <tbody>
                                         <tr>
                                             <td align="left">
-                                                <p style="text-align:justify;">To find out more about our shipping policy <a href="#">click here</a>.</p>
-                                                <p style="text-align:justify;">For more information on our returns and exchanges policy <a href="#">click here</a>.
+                                                <p style="text-align:justify;">To find out more about our shipping policy <a href="https://brooksrunning.com.au/info/shipping-information">click here</a>.</p>
+                                                <p style="text-align:justify;">For more information on our returns and exchanges policy <a href="https://brooksrunning.com.au/info/returns-exchange">click here</a>.
                                                 </p>
                                                 <p style="text-align:justify;">Unfortunately we are unable to make changes to your shipping information once your order is dispatched.</p>
-                                                <p style="text-align:justify;">If you have any questions regarding your order, please send them to <a href="#">shoptibrooksrunning.com.au</a> quoting your order number stated above.</p>
+                                                <p style="text-align:justify;">If you have any questions regarding your order, please send them to <a href="mailto:customeremail@gmail.com" target="_top">shoptibrooksrunning.com.au</a> quoting your order number stated above.</p>
                                             </td>
                                         </tr>
                                          <tr>
@@ -583,7 +589,7 @@
                         </table>
 
                        <!-- Three columns -->
-                    <table class="section centered-table" cellpadding="0" width="600" cellspacing="0">
+                    <table class="section centered-table hidden-mob" cellpadding="0" width="600" cellspacing="0">
                          <tr>
                             <td colspan="5">
                                 &nbsp;
@@ -604,7 +610,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="center">
-                                                <a href="#" class="name-link">Shipping Info</a>
+                                                <a href="https://brooksrunning.com.au/info/shipping-information" class="name-link">Shipping Info</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -616,13 +622,13 @@
                                     <tbody>
                                         <tr>
                                             <td align="center" >
-                                                <a href="#" class="name-link">Returns &amp; Exchange</a>
+                                                <a href="https://brooksrunning.com.au/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
-                            <td class="full-width hidden-mob" width="55" valign="top" style="text-align:center">
+                            <td class="full-width" width="55" valign="top" style="text-align:center">
                                  <table>
                                     <tbody>
                                         <tr>
@@ -636,7 +642,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="center">
-                                               <a href="#" class="name-link">Contact us</a>
+                                               <a href="https://brooksrunning.com.au/info/contact-us" class="name-link">Contact us</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -650,7 +656,24 @@
                             </td>
                         </tr>
                     </table>
-                    <!-- Three columns end -->  
+                    <!-- Three columns end --> 
+                    <table class="section-mob" width="600" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" >
+                                    <a href="https://brooksrunning.com.au/info/shipping-information" class="name-link">Shipping Info</a>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <a href="https://brooksrunning.com.au/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <a href="https://brooksrunning.com.au/info/contact-us" class="name-link">Contact us</a>
+                                </td>
+                            </tr>
+                    </table>
                 </td>
             </tr>
 
