@@ -471,6 +471,7 @@ class Manual_ap21order_push extends Controller {
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
         $returnCode = $response->getStatusCode();
+        //echo "<pre>";print_r($response);print_r($returnCode);die;
         switch ($returnCode) {
             case 201:
                 $location = $response->getHeader('Location')[0];
