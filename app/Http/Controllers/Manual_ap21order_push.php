@@ -457,11 +457,93 @@ class Manual_ap21order_push extends Controller {
     //Step 3: Send ap21_xml to Ap21.
     public function send_manual_ap21($order_id) {
         $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
-        $PersonId = $order->person_idx;
-        echo "<pre>";
-        print_r($order->ap21_xml);
-        die;
-        //$this->init($order_id, $order);
+        $person_id = $order->person_idx;
+        $xml_data = $order->ap21_xml;
+        /* echo "<pre>";
+          print_r($order->ap21_xml);
+          die; */
+        $response = $this->bridge->processOrder($person_id, $xml_data);
+        $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
+        $returnCode = $response->getStatusCode();
+        switch ($returnCode) {
+            case 201:
+                $location = $response->getHeader('Location')[0];
+                $str_arr = explode("/", $location);
+                $last_seg = $str_arr[count($str_arr) - 1];
+                $last_seg_arr = explode("?", $last_seg);
+                $order_id = $last_seg_arr[0];
+                $order_url = env('AP21_URL') . "/Persons/$person_id/Orders/$order_id?countryCode=" . env('AP21_COUNTRYCODE');
+
+                $returnVal = $order_id;
+                $logger = array(
+                    'order_id' => $order->id,
+                    'log_title' => 'Order',
+                    'log_type' => 'Response',
+                    'log_status' => '201 Order Created',
+                    'result' => $response->getBody(),
+                    'xml' => $xml_data
+                );
+
+                Order_log::createNew($logger);
+
+                $orderDataUpdate = array(
+                    'status' => 'Completed',
+                    'app21_order' => $returnVal,
+                    'app21_order_status' => date('Y-m-d H:i:s')
+                );
+                Order::where('id', $order->id)->update($orderDataUpdate);
+                break;
+            case 400 :
+
+                $returnVal = false;
+                $logger = array(
+                    'order_id' => $order->id,
+                    'log_title' => 'Order',
+                    'log_type' => 'Response',
+                    'log_status' => '400 Order exists',
+                    'result' => $response->getBody(),
+                );
+                Order_log::createNew($logger);
+
+                // Send ap21 alert  
+                $data = array(
+                    'api_name' => 'Order Exists',
+                    'URL' => $URL,
+                    'Result' => $returnVal,
+                    'Parameters' => $xml_data,
+                );
+                Mail::to(config('site.notify_email'))
+                        ->cc(config('site.syg_notify_email'))
+                        ->send(new OrderAp21Alert($this->order, $data));
+                break;
+
+            default:
+
+                $returnVal = false;
+                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                $logger = array(
+                    'order_id' => $this->order->id,
+                    'log_title' => 'Order',
+                    'log_type' => 'Response',
+                    'log_status' => 'Error While Creating Order',
+                    'result' => $result,
+                );
+                Order_log::createNew($logger);
+                // Send ap21 alert 
+                $data = array(
+                    'api_name' => 'Create Order Error',
+                    'URL' => $URL,
+                    'Result' => $returnVal,
+                    'Parameters' => $xml_data,
+                );
+                Mail::to(config('site.notify_email'))
+                        ->cc(config('site.syg_notify_email'))
+                        ->send(new OrderAp21Alert($this->order, $data));
+
+                $returnVal = false;
+
+                break;
+        }
     }
 
 }
