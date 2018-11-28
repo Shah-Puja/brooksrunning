@@ -4,6 +4,7 @@
 /public/.htaccess
 /public/ad.php
 /public/robots.txt
+/public/blog_assets
 /storage/*.key
 /vendor
 /.idea
