@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\Order;
 use App\Models\Order_log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderAp21Alert;
 
 class Manual_ap21order_push extends Controller {
 
@@ -63,7 +65,7 @@ class Manual_ap21order_push extends Controller {
         $response = $this->bridge->processPerson($person_xml);
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
         $logger = array(
-            'order_id' => $this->order->id,
+            'order_id' => $order_id,
             'log_title' => 'Person',
             'log_type' => 'Response',
             'log_status' => 'Generate Person XML',
@@ -81,7 +83,7 @@ class Manual_ap21order_push extends Controller {
                 $person_idx = $last_seg_arr[0];
 
                 $logger = array(
-                    'order_id' => $this->order->id,
+                    'order_id' => $order_id,
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => '201 Person ID Created',
@@ -96,7 +98,7 @@ class Manual_ap21order_push extends Controller {
             default:
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                 $logger = array(
-                    'order_id' => $this->order->id,
+                    'order_id' => $order_id,
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => 'Error While Creating Person ID',
@@ -124,9 +126,8 @@ class Manual_ap21order_push extends Controller {
         return $returnVal;
     }
 
-    public function get_personid($email, $fname = '', $lname = '', $phone = '', $b_add1 = '', $b_add2 = '', $s_add1) {
-
-        $response = $this->bridge->getPersonid($email);
+    public function get_personid() {
+        $response = $this->bridge->getPersonid($this->_email);
         //print_r($response);
         //exit;      
         $returnCode = $response->getStatusCode();
@@ -137,7 +138,7 @@ class Manual_ap21order_push extends Controller {
                 $response_xml = @simplexml_load_string($response->getBody()->getContents());
                 $userid = $response_xml->Person->Id;
                 $logger = array(
-                    'order_id' => $this->order->id,
+                    'order_id' => $order_id,
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => 'Person Id Found',
@@ -147,13 +148,13 @@ class Manual_ap21order_push extends Controller {
                 break;
 
             case '404':
-                $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+                $userid = $this->create_user($email, $fname, $lname, $phone, $country);
                 break;
 
             default:
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
                 $logger = array(
-                    'order_id' => $this->order->id,
+                    'order_id' => $this->_order_id,
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => 'Error While Getting Person ID',
@@ -162,7 +163,7 @@ class Manual_ap21order_push extends Controller {
 
                 Order_log::createNew($logger);
 
-                $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
+                $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $this->_email;
                 $data = array(
                     'api_name' => 'Get PersonID Error',
                     'URL' => $URL,
@@ -175,20 +176,51 @@ class Manual_ap21order_push extends Controller {
                 $userid = false;
                 break;
         }
-        return $userid;
+        $orderDataUpdate = array(
+            'person_idx' => $userid,
+            'personid_status' => date('Y-m-d H:i:s')
+        );
+        Order::where('id', $this->_order_id)->update($orderDataUpdate);
+        //return $userid;
+    }
+
+    public function init($order_id, $order) {
+        $this->_fullname = $order->address->s_fname . " " . $order->address->l_fname;
+        $this->_fname = $order->address->s_fname;
+        $this->_lname = $order->address->l_fname;
+        $this->_email = $order->address->email;
+        $this->_phone = $order->address->s_phone;
+        $this->_addressbill = (isset($order->address->b_add1) && $order->address->b_add1 != "") ? $order->address->b_add1 : $order->address->s_add1;
+        $this->_addressbill2 = (isset($order->address->b_add2) && $order->address->b_add2 != "") ? $order->address->b_add2 : $order->address->s_add2;
+        $this->_addressship = $order->address->s_add1;
+        $this->_order_id = $order_id;
     }
 
     public function manual_ap21_push($order_id) {
         $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
-        echo env('AP21_STATUS');echo "<pre>";
-        print_r($order);
-        die;
+        $this->init($order_id, $order);
+    }
+
+    // Step 1 :Get person id from AP21 else generate
+    public function pushap21_person($order_id) {
+        $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
         $PersonID = $order->person_idx;
         if (env('AP21_STATUS') == 'ON') {
             if (empty($PersonID)) {
-                $PersonID = $this->get_personid($order->address->email, $order->address->s_fname, $order->address->s_lname, $order->address->s_phone, $order->address->b_add1, $order->address->b_add2, $order->address->s_add1);
+                $this->init($order_id, $order);
+                $PersonID = $this->get_personid();
             }
         }
+    }
+
+    // Step 2: Generate Ap21_xml if not available in order_mast,else skip this step.
+    public function app21Order($order_id) {
+        $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
+        $PersonID = $order->person_idx;
+        $this->init($order_id, $order);
+        echo "<br> order id :" . $order_id;
+        echo "<br> person id :" . $PersonId;
+        die;
     }
 
 }
