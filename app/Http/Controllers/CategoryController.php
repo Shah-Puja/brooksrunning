@@ -29,7 +29,7 @@ class CategoryController extends Controller
             }
             else{
                 $styles = $products->unique('style');                                
-                $filters = \App\Models\Category::provideFilters($products,$prod_type);                
+                $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
         return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
     
