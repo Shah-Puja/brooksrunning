@@ -1,5 +1,29 @@
 
 @extends('customer.layouts.master')
+
+@section('gtm-datalayer')
+	'transactionId': 'BRN-{{ $order->order_no }}',
+	'transactionAffiliation': '{{ config('app.name') }}',
+	'transactionTotal': {{ @number_format($order->grand_total, 2) }},
+	'transactionShipping': {{ @number_format($order->freight_cost, 2) }},
+	@if (! $order->orderItems->isEmpty() )
+	'transactionProducts': [
+	@foreach($order->orderItems as $item)
+		{
+			'sku': '{{ $item->variant->product_id }}',
+			'name': '{{ $item->variant->product->stylename }}',
+			'price': {{ number_format($item->variant->price_sale, 2) }},
+			'quantity': {{ $item->qty }}
+		@if ($loop->last)
+		}
+		@else
+		},
+	    @endif
+	@endforeach
+	]
+	@endif
+@endsection
+
 @section('content')
 <section class="wrapper cart-breadcrumb--header">
     @php
