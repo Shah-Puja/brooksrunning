@@ -70,10 +70,14 @@ class Category extends Model
         
     }
 
-    public static function provideFilters($products,$prod_type)
+    public static function provideFilters($products,$prod_type,$gender,$depth)
     {   
         $filters =[];
         $key_names = __($prod_type."_Filter");
+
+        if($depth=='2' && $gender=='W' && $prod_type='Apparel'){ //womens-running-clothes
+            $key_names =  collect($key_names)->merge('Cup Size')->all();
+        }
 
         foreach($key_names as $key){
             
@@ -91,7 +95,10 @@ class Category extends Model
                         return $product->seqno;
                     });
 
-                    $filters['Size'] = $sorted->pluck('size')->unique()->values();
+                    $sizes = $sorted->pluck('size')->unique()->values();
+                    $filters['Size'] = $sizes->filter(function ($value, $key){
+                        return  (!strpos($value,'(') !== false) ? $value :'';
+                    });
                     
                  break;
 
