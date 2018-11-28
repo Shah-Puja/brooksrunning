@@ -180,7 +180,7 @@ class Manual_ap21order_push extends Controller {
 
     public function manual_ap21_push($order_id) {
         $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
-        echo "<pre>";
+        echo env('AP21_STATUS');echo "<pre>";
         print_r($order);
         die;
         $PersonID = $order->person_idx;
