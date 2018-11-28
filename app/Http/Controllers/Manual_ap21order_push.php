@@ -201,18 +201,6 @@ class Manual_ap21order_push extends Controller {
         $this->init($order_id, $order);
     }
 
-    // Step 1 :Get person id from AP21 else generate
-    public function pushap21_person($order_id) {
-        $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
-        $PersonID = $order->person_idx;
-        if (env('AP21_STATUS') == 'ON') {
-            if (empty($PersonID)) {
-                $this->init($order_id, $order);
-                $PersonID = $this->get_personid();
-            }
-        }
-    }
-
     public function giftVoucherGvvalid() {
         $dataValue = false;
         if ($this->_order->gift_amount > 0) {
@@ -255,6 +243,18 @@ class Manual_ap21order_push extends Controller {
             }
         }
         return $dataValue;
+    }
+
+    // Step 1 :Get person id from AP21 else generate
+    public function pushap21_person($order_id) {
+        $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
+        $PersonID = $order->person_idx;
+        if (env('AP21_STATUS') == 'ON') {
+            if (empty($PersonID)) {
+                $this->init($order_id, $order);
+                $PersonID = $this->get_personid();
+            }
+        }
     }
 
     // Step 2: Generate Ap21_xml if not available in order_mast,else skip this step.
@@ -452,6 +452,16 @@ class Manual_ap21order_push extends Controller {
         );
         Order::where('id', $order_id)->update($orderDataUpdate);
         echo "<br>Ap21 Xml Updated in orders";
+    }
+
+    //Step 3: Send ap21_xml to Ap21.
+    public function send_manual_ap21($order_id) {
+        $order = Order::where('id', $order_id)->with('orderItems.variant.product', 'address')->first();
+        $PersonId = $order->person_idx;
+        echo "<pre>";
+        print_r($order->ap21_xml);
+        die;
+        //$this->init($order_id, $order);
     }
 
 }

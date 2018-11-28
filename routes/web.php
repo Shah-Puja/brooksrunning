@@ -160,3 +160,4 @@ Route::post('/cart/removecoupon', 'CartController@removecoupon');
 Route::get('/manual_ap21_push/{order_id}', 'Manual_ap21order_push@manual_ap21_push');
 Route::get('/pushap21_person/{order_id}', 'Manual_ap21order_push@pushap21_person');
 Route::get('/app21Order/{order_id}', 'Manual_ap21order_push@app21Order');
+Route::get('/send_manual_ap21/{order_id}', 'Manual_ap21order_push@send_manual_ap21');
