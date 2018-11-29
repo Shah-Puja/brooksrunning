@@ -639,6 +639,7 @@ class PaymentController extends Controller {
                     'log_type' => 'Response',
                     'log_status' => '201 Person ID Created',
                     'result' => $person_idx,
+                    'xml'=> $person_xml ? $person_xml : "",
                 );
                 Order_log::createNew($logger);
                 $returnVal = $person_idx;
