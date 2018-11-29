@@ -65,9 +65,9 @@ return [
         ],
 		'sftp' => [
 			'driver' => 'sftp',
-			'host' => 'brooksrunning.texaspeak.com.au',
-			'username' => 'newsletter',
-			'password' => 'G;hHz6N9{=Q}DuD4',
+			'host' => env('IMAGE_SERVER'), 
+			'username' => env('IMAGE_SERVER_USER'), 
+			'password' => env('IMAGE_SERVER_PSWD'), 
 
 			// Settings for SSH key based authentication...
 			// 'privateKey' => '/path/to/privateKey',
