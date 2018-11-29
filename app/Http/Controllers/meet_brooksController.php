@@ -202,7 +202,7 @@ class meet_brooksController extends Controller
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>' ]);
         }else{
-            User::where('email',request('email'))->update(['subscribed' => 'Yes','user_type' => 'Subscriber', 'contest_code' => request('contest_code')]);
+            User::where('email',request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
             return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
         }
     }
