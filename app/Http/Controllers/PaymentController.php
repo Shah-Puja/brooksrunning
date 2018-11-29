@@ -196,6 +196,15 @@ class PaymentController extends Controller {
 
     public function afterpay_cancel(Request $request) {
         $this->order->update(array('status' => 'Order Incomplete', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()));
+        $logger = array(
+            'order_id' => $this->order->id,
+            'log_title' => 'AfterPay Payment',
+            'log_type' => 'Response',
+            'log_status' => 'AfterPay Processor Declined',
+            'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'], 
+            'nab_result' => 'Failed'
+        );
+        Order_log::insert($logger);
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
     } 
 
@@ -204,6 +213,18 @@ class PaymentController extends Controller {
         $this->order->updateOrder($transation_result);
 
         if (!$transation_result) {
+            /*echo "<pre>";print_r($transation_result);die;
+            $logger = array(
+                'order_id' => $this->order->id,
+                'log_title' => 'Braintree Payment',
+                'log_type' => 'Response',
+                'log_status' => 'Braintree Processor Declined',
+                'result' => 'Failed',
+                /*'xml' => (!empty($xml)) ? $xml : '',
+                'nab_txnid' => $transaction_id,
+                'nab_result' => $braintree_result*/
+            );
+            Order_log::insert($logger);*/
             return back()->withErrors(['payment' => 'Your payment was declined']);
         }
 

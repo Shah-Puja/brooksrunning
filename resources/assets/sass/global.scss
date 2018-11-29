@@ -555,11 +555,12 @@
           }
         }
       } 
-    }
+    } 
     .checklist-inline{
       display: inline-block;
       margin-right: 10px;
       margin-top: 5px;
+      width: calc(100% - -4px);
       input{
         display: none;
       }

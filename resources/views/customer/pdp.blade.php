@@ -40,20 +40,20 @@
                         </ul>
                     </div>
                     <div class="pdp-container--image">
-                        <div class="zoomwindowfull-icon" id="zoomWindowFullShowIn" onclick="launchFullscreen(document.getElementById('zoomWindowFullShow'));">
+                        <div class="zoomwindowfull-icon  hidden-mob" id="zoomWindowFullShowIn" onclick="launchFullscreen(document.getElementById('zoomWindowFullShow'));">
                             <span class="icon-enlarge2"></span>
                         </div>
                         <div class="pdp-zoom--container" id="zoomWindowFullShow">
-                            <div class="zoomwindowfull-icon display-none" id="zoomWindowFullShowOut" onclick="exitFullscreen();">
+                            <div class="zoomwindowfull-icon display-none  hidden-mob" id="zoomWindowFullShowOut" onclick="exitFullscreen();">
                                 <span class="icon-enlarge"></span>
                             </div>
                             <ul id="pdp-zoom--image">
-                                <li data-thumb="{{ $product->image->image1Thumbnail() }}">
-                                    <img src="{{ $product->image->image1Large() }}" />
+                                <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
+                                    <img src="{{ $product->image->image1Large() }}"/>
                                 </li>
                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
-                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
+                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
                                         <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
