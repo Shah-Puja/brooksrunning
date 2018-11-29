@@ -7,11 +7,12 @@ $(document).ready(function () {
         });
     }
     else {
-        $("#desktop-navigation .main").on("mouseenter", function () {
+        $("#desktop-navigation .main").on("click", function () {
+            console.log("clicked");
             $("#desktop-navigation .main .main-nav").next().removeClass("active");
             $(this).find(".main-nav").next().addClass("active");
         });
-        $("#desktop-navigation .main").on("mouseleave", function () {
+        $("#desktop-navigation .main").on("click", function () {
             $("#desktop-navigation .main .main-nav").next().removeClass("active");
         });
     }
