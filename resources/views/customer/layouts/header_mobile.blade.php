@@ -271,7 +271,7 @@
 	            
 				<li>
 	                <a href="javascript:;">
-	                    <span class="title">Shoe Finder</span>
+	                    <span class="title">Shoes</span>
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
@@ -549,7 +549,7 @@
 	            </li>
 	            <li>
 	                <a href="/shoefinder">
-	                    <span class="title">Find A Shoe</span>
+	                    <span class="title">Shoe Finder</span>
 	                </a>
 	            </li>
 	            <li>
