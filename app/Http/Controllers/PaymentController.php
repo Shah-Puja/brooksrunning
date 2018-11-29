@@ -810,8 +810,9 @@ if($order->payment_type == "AfterPay"){
 						<Origin>CreditCard</Origin>
 						<MerchantId>".$merchant_id."</MerchantId>
 						<CardType>AFTERPAY</CardType>
-						<Stan>".$this->order->id."</Stan>
-						<Reference>".$this->order->id."</Reference>
+                        <Stan>".$this->order->id."</Stan>
+                        <Settlement>".$this->order->id."</Settlement>
+						<Reference>".$this->order->transaction_id."</Reference>
 						<Amount>".$subtotal."</Amount>
 						</PaymentDetail>\n\t\t";
 }else{
@@ -819,13 +820,13 @@ if($order->payment_type == "AfterPay"){
                             <Id>7781</Id>
                             <Origin>CreditCard</Origin>
                             <CardType>MASTERCARD / VISA</CardType>
-                            <Stan>986516</Stan>
+                            <Stan>".$this->order->id."</Stan>                            
+                            <Settlement>".$this->order->id."</Settlement>
                             <AuthCode/>
-                            <AccountType/>
-                            <Settlement>20111129</Settlement>";
+                            <AccountType/>";
 
-        if (!empty($this->order->nab_trans_id)) {
-            $xml_data .= "<Reference>" . $this->order->nab_trans_id . "</Reference>";
+        if (!empty($this->order->transaction_id)) {
+            $xml_data .= "<Reference>" . $this->order->transaction_id . "</Reference>";
         } else {
             $xml_data .= "<Reference>Ref1</Reference>";
         }
