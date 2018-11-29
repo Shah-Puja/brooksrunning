@@ -1159,10 +1159,7 @@ function launchFullscreen(element) {
     }
 }
 function exitFullscreen() {
-    $("#pdp-zoom--image li").each(function(){
-        var src = $(this).data('src');
-        $(this).find('img').attr('src',src);
-    });
+    
     $("#zoomWindowFullShow").removeClass("product-zoom--Window");
     $("#zoomWindowFullShowIn").removeClass("display-none");
     $("#zoomWindowFullShowOut").addClass("display-none");
@@ -1173,8 +1170,17 @@ function exitFullscreen() {
     } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
     }
+    $("#pdp-zoom--image li").each(function(){
+        var src = $(this).data('src');
+        console.log(src);
+        $(this).find('img').attr('src',src);
+    });
 }
 
+$(document).bind('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function (e) {
+	var fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
+	if (!fullscreenElement) exitFullscreen();
+});
 // number quantity count
 $(document).on('click', '#quantity-selector #adds', function add() {
     var $rooms = $("#quantity-selector #noOfRoom");
