@@ -18,8 +18,8 @@ return [
 			'small' => env('BASE_PRODUCT_IMAGES_URL') .'u/',
 			'medium' => env('BASE_PRODUCT_IMAGES_URL').'v/',
 			'mediumx' => env('BASE_PRODUCT_IMAGES_URL').'x/',
-			'large' => env('BASE_PRODUCT_IMAGES_URL') .'z/',
-			'zoom' => env('BASE_PRODUCT_IMAGES_URL') ,
+			'large' => env('BASE_PRODUCT_IMAGES_URL') .'y/',
+			'zoom' => env('BASE_PRODUCT_IMAGES_URL') .'z/',
         ],
     ],
  	'image_extensions' => [
@@ -28,8 +28,8 @@ return [
 		'small' => "_u",
 		'medium' => "_v",
 		'mediumx' => "_x",
-		'large' => "_z",
-		'zoom' => "",
+		'large' => "_y",
+		'zoom' => "_z",
 	],
 	'featured_categories' => [
     	['id' => 1, 'name' => 'Featured Skates'],

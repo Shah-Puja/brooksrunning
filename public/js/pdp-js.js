@@ -1141,6 +1141,10 @@
 
 // fullscreen API Code
 function launchFullscreen(element) {
+    $("#pdp-zoom--image li").each(function(){
+        var zomm_src = $(this).data('zoomsrc');
+        $(this).find('img').attr('src',zomm_src);
+    });
     $("#zoomWindowFullShow").addClass("product-zoom--Window");
     $("#zoomWindowFullShowIn").addClass("display-none");
     $("#zoomWindowFullShowOut").removeClass("display-none");
@@ -1155,6 +1159,10 @@ function launchFullscreen(element) {
     }
 }
 function exitFullscreen() {
+    $("#pdp-zoom--image li").each(function(){
+        var src = $(this).data('src');
+        $(this).find('img').attr('src',src);
+    });
     $("#zoomWindowFullShow").removeClass("product-zoom--Window");
     $("#zoomWindowFullShowIn").removeClass("display-none");
     $("#zoomWindowFullShowOut").addClass("display-none");
