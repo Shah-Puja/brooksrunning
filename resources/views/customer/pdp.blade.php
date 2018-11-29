@@ -44,7 +44,7 @@
                             <span class="icon-enlarge2"></span>
                         </div>
                         <div class="pdp-zoom--container" id="zoomWindowFullShow">
-                            <div class="zoomwindowfull-icon display-none  hidden-mob" id="zoomWindowFullShowOut" onclick="exitFullscreen();">
+                            <div class="zoomwindowfull-icon display-none" id="zoomWindowFullShowOut" onclick="exitFullscreen();">
                                 <span class="icon-enlarge"></span>
                             </div>
                             <ul id="pdp-zoom--image">
