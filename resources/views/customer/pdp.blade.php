@@ -48,12 +48,12 @@
                                 <span class="icon-enlarge"></span>
                             </div>
                             <ul id="pdp-zoom--image">
-                                <li data-thumb="{{ $product->image->image1Thumbnail() }}">
-                                    <img src="{{ $product->image->image1Large() }}" />
+                                <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
+                                    <img src="{{ $product->image->image1Large() }}"/>
                                 </li>
                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
-                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}">
+                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
                                         <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
