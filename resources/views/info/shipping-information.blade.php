@@ -33,7 +33,7 @@
                
                 <h3 class="br-heading">Important information about delivery times </h3>
 				<ul class="br-info">
-					<li>Pease note that all orders placed after 3pm will be despatched the next business day.</li>
+					<li>Please note that all orders placed after 3pm will be despatched the next business day.</li>
 					<li>Our warehouse is based in Victoria and does not operate on Victorian Public Holidays. Please be aware that there may be some delay to your order if placed during these periods.  </li>
 					<li>Once your order has been dispatched from Brooks we are unable to change the delivery address or redirect it to another address.</li>
 					<li>All orders should include a daytime delivery address and contact details.</li>

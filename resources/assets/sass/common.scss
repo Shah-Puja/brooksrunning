@@ -206,11 +206,12 @@
                 .prd_caption h3 {
                    margin: 0px;
                    text-align: center;
+                   font-size: 14px;
                 }
                 .price{
                     margin: 5px;
                     text-align: center;
-                    font-size: 20px;
+                    font-size: 14px;
                     font-weight: bold;
                     span.red{
                       text-decoration:none;
@@ -223,6 +224,12 @@
                       color:$black;
                     }
                  }
+                }
+                .owl-item
+                {
+                  .item{
+                    width: 186px !important;
+                  }
                 }
               }
               .icon-style {
@@ -688,6 +695,21 @@
             }
         }
       }
+      .close{
+        width: 27px;
+        height: 27px;
+        color: $black;
+        font-size: 20px;
+        margin: 0;
+        line-height: 3;
+        position: absolute;
+        right: 12px;
+        cursor: pointer;
+        z-index: 99999;
+        &:hover{
+          color: $blue;
+        }
+      }
     }
     
   }
@@ -716,11 +738,12 @@
           .prd_caption h3 {
              margin: 0px;
              text-align: center;
+             font-size: 14px;
           }
           .price{
               margin: 5px;
               text-align: center;
-              font-size: 20px;
+              font-size: 14px;
               font-weight: bold;
               span.red{
                 text-decoration:none;
@@ -734,6 +757,7 @@
               }
            }
           }
+          
         }
         .icon-style {
           position: absolute;
@@ -753,6 +777,7 @@
           cursor: default !important;
           color: #f4f6f9;
         }
+    
     }
     .info-wrapper{
       padding: 0 15px;
@@ -1525,11 +1550,12 @@
           .prd_caption h3 {
              margin: 0px;
              text-align: center;
+             font-size: 14px;
           }
           .price {
               margin: 5px;
               text-align: center;
-              font-size: 20px;
+              font-size: 14px;
               font-weight: bold;
               span.red{
                 text-decoration:none;
@@ -2465,10 +2491,12 @@
               display: block;
               position: relative;
               padding: 17px 0 8px;
+              height: 122px;
               border-bottom: 1px solid #f2f2f2;
               @media #{$mobile-only} {
                 padding: 2px 0 3px;
                 z-index: -90;
+                height: 90px;
               }
               h3{
                 @extend %bold-font;

@@ -13,10 +13,10 @@ use App\Models\Order_address;
 use App\Models\User;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
-use App\Mail\OrderConfirmation;
-use App\Mail\OrderAlert;
+use App\Mail\OrderUser;
+use App\Mail\OrderAp21Alert;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\OrderSubmittedNotification;
+use App\Mail\OrderAdmin;
 use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
@@ -196,6 +196,15 @@ class PaymentController extends Controller {
 
     public function afterpay_cancel(Request $request) {
         $this->order->update(array('status' => 'Order Incomplete', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()));
+        $logger = array(
+            'order_id' => $this->order->id,
+            'log_title' => 'AfterPay Payment',
+            'log_type' => 'Response',
+            'log_status' => 'AfterPay Processor Declined',
+            'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'], 
+            'nab_result' => 'Failed'
+        );
+        Order_log::insert($logger);
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
     } 
 
@@ -203,7 +212,17 @@ class PaymentController extends Controller {
         $transation_result = $this->processor->charge($this->order); 
         $this->order->updateOrder($transation_result);
 
-        if (!$transation_result) {
+        if (!$transation_result) { 
+            $logger = array(
+                'order_id' => $this->order->id,
+                'log_title' => 'Braintree Payment',
+                'log_type' => 'Response',
+                'log_status' => 'Braintree Processor Declined',
+                'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
+                'xml' => (!empty($xml)) ? $xml : '', 
+                'nab_result' => 'Failed'
+            );
+            Order_log::insert($logger);
             return back()->withErrors(['payment' => 'Your payment was declined']);
         }
 
@@ -447,6 +466,7 @@ class PaymentController extends Controller {
             $order_data = array(
                 'order_id' => $order_id
             );
+            
             $order_number_insert = Order_number::create($order_data);
             if($order_number_insert){
                 $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
@@ -539,7 +559,7 @@ class PaymentController extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                 $userid = false;
                 break;
         }
@@ -617,6 +637,7 @@ class PaymentController extends Controller {
                     'log_type' => 'Response',
                     'log_status' => '201 Person ID Created',
                     'result' => $person_idx,
+                    'xml'=> $person_xml ? $person_xml : "",
                 );
                 Order_log::createNew($logger);
                 $returnVal = $person_idx;
@@ -645,7 +666,7 @@ class PaymentController extends Controller {
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
 
                 $returnVal = false;
 
@@ -809,8 +830,9 @@ if($order->payment_type == "AfterPay"){
 						<Origin>CreditCard</Origin>
 						<MerchantId>".$merchant_id."</MerchantId>
 						<CardType>AFTERPAY</CardType>
-						<Stan>".$this->order->id."</Stan>
-						<Reference>".$this->order->id."</Reference>
+                        <Stan>".$this->order->id."</Stan>
+                        <Settlement>".$this->order->id."</Settlement>
+						<Reference>".$this->order->transaction_id."</Reference>
 						<Amount>".$subtotal."</Amount>
 						</PaymentDetail>\n\t\t";
 }else{
@@ -818,13 +840,13 @@ if($order->payment_type == "AfterPay"){
                             <Id>7781</Id>
                             <Origin>CreditCard</Origin>
                             <CardType>MASTERCARD / VISA</CardType>
-                            <Stan>986516</Stan>
+                            <Stan>".$this->order->id."</Stan>                            
+                            <Settlement>".$this->order->id."</Settlement>
                             <AuthCode/>
-                            <AccountType/>
-                            <Settlement>20111129</Settlement>";
+                            <AccountType/>";
 
-        if (!empty($this->order->nab_trans_id)) {
-            $xml_data .= "<Reference>" . $this->order->nab_trans_id . "</Reference>";
+        if (!empty($this->order->transaction_id)) {
+            $xml_data .= "<Reference>" . $this->order->transaction_id . "</Reference>";
         } else {
             $xml_data .= "<Reference>Ref1</Reference>";
         }
@@ -892,7 +914,7 @@ if($order->payment_type == "AfterPay"){
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                 break;
 
             default:
@@ -916,7 +938,7 @@ if($order->payment_type == "AfterPay"){
                 );
                 Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
 
                 $returnVal = false;
 
@@ -967,7 +989,7 @@ if($order->payment_type == "AfterPay"){
                     );
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAlert($this->order, $data));
+                        ->send(new OrderAp21Alert($this->order, $data));
                     $dataValue = false;
                     break;
             }

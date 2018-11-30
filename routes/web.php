@@ -140,6 +140,8 @@ Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
 // Route::get('/orderfailed', 'CategoryController@orderfailed');
 
+Route::get('/order-confirmation', 'CategoryController@order_confirmation');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
@@ -153,3 +155,6 @@ Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
 Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
 Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
+/* Manual Order Push */ 
+
+Route::get('/manual_ap21order_push/{order_id}', 'Manual_ap21order_push@manual_ap21order_push');

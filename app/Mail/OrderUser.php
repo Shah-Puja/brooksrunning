@@ -8,7 +8,7 @@ use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderConfirmation extends Mailable
+class OrderUser extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,6 +31,6 @@ class OrderConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.orderconfirmation');
+        return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
     }
 }

@@ -525,6 +525,7 @@
   display: inline-block;
   margin-right: 10px;
   margin-top: 5px;
+  width: calc(100% - -4px);
 }
 .input-wrapper .checklist-inline input {
   display: none;
@@ -631,8 +632,11 @@
 }
 .custom-select.gray-bg .select-option--wrapper .disable {
   background-color: #f1f1f1;
-  color: #000000;
-  cursor: auto;
+  cursor: no-drop;
+  color: #dedcda;
+}
+.custom-select.gray-bg .select-option--wrapper .disable:hover {
+  border: 1px solid #d3d0cd;
 }
 .custom-select .label-heading {
   height: 36px;
@@ -676,6 +680,11 @@
   border: 1px solid #d3d0cd;
   list-style: none;
 }
+.custom-select .select-option--wrapper .disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  color: #dedcda;
+}
 .custom-select .option-value {
   padding: 4px 10px;
   font-size: 14px;
@@ -709,7 +718,6 @@
   font-size: 14px;
   border-bottom: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
-  cursor: pointer !important;
 }
 .custom-select .option-value-data:not(.disable):hover {
   background-color: #0263f7;
@@ -1716,7 +1724,7 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .landingpage-banner .opacity-cover {
-    height: 70%;
+    height: 100%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

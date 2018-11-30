@@ -2,6 +2,9 @@
 /public/hot
 /public/storage
 /public/.htaccess
+/public/ad.php
+/public/robots.txt
+/public/blog_assets
 /storage/*.key
 /vendor
 /.idea
@@ -14,4 +17,5 @@ yarn-error.log
 .env
 .env.prod
 .env.staging
+.env.dev
 .phpunit.result.cache

@@ -555,11 +555,12 @@
           }
         }
       } 
-    }
+    } 
     .checklist-inline{
       display: inline-block;
       margin-right: 10px;
       margin-top: 5px;
+      width: calc(100% - -4px);
       input{
         display: none;
       }
@@ -670,9 +671,12 @@
         background-color: $gray;
         .disable{
           background-color: #f1f1f1;
-          color: $black;
-          cursor:auto;
+          cursor:no-drop;
+          color: #dedcda;
+          &:hover{
+            border: 1px solid $border;
           }
+        }
       }
     }
     .label-heading{
@@ -714,6 +718,11 @@
       background-color: $white;
       border: 1px solid $border;
       list-style: none;
+      .disable{
+        background-color: #f1f1f1;
+        cursor: no-drop;
+        color: #dedcda;
+      }
     }
     .option-value{
           padding: 4px 10px;
@@ -747,7 +756,6 @@
         font-size: 14px;
         border-bottom: 1px solid #ffffff;
         transition: all 0.5s ease-in-out;
-        cursor: pointer !important;
         &:not(.disable):hover {
           background-color: #0263f7;
           color: $white;

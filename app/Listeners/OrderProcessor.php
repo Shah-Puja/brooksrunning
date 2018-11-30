@@ -3,9 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\OrderReceived;
-use App\Mail\OrderConfirmation;
+use App\Mail\OrderUser;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\OrderSubmittedNotification;
+use App\Mail\OrderAdmin;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -31,10 +31,10 @@ class OrderProcessor implements ShouldQueue
     {
         //echo "<pre>";print_r($event);die;
         Mail::to($event->order->address->email)
-                ->cc( config('site.syg_notify_email') )->subject('Brooks Running Order #BRN-'.$event->order->orderno)
-                ->send( new OrderConfirmation($event->order) );
+                ->bcc( config('site.syg_notify_email') )
+                ->send( new OrderUser($event->order) );
         Mail::to( config('site.notify_email') )
-                ->cc( config('site.syg_notify_email') )->subject('Brooks Running Purchase Order #BRN-'.$event->order->orderno)
-                ->send( new OrderSubmittedNotification($event->order) );
+                ->bcc( config('site.syg_notify_email') )
+                ->send( new OrderAdmin($event->order) );
     }
 }

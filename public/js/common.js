@@ -28,15 +28,19 @@ $(document).ready(function () {
     });
     
     $("#header-search--popup .close").click(function () {
+        console.log("desktop");
         $("#header-search--popup").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
         $("form[name='searchproduct'] input[name='q']").val("");
         return false;
     });
-    $(".new-arrival--container .close").click(function () {
+
+    $(".mob-search--product .search-container .search-wrapper .close").click(function () {
+        console.log("mob");
         $(".new-arrival--container").hide();
+        $(".mob-search--product .search-container .search-wrapper .close").hide();
         $(".search-container .search-wrapper").find(".search-product-content").html("");
-        $("form[name='searchproduct'] input[name='q']").val("");
+        $("form[name='mob_searchproduct'] input[name='q']").val("");
         return false;
     });
 });
@@ -178,9 +182,9 @@ $(document).ready(function(){
     });
     $(".uTube-popup--close").on('click',function(){
         $("#uTube-popup--wrapper").removeClass("show");
-        $('.uTube-info iframe').attr('src', '');
-        //$('.uTube-info iframe').attr('src').get(0).stopVideo();
-        //$('.uTube-info iframe').attr('src', $('iframe').attr('src'));
+        // $('.shoe--vdo-show-iframe').attr('src', '');
+        $('.shoe--vdo-show-iframe').attr('src', $('.shoe--vdo-show-iframe').attr('src'));
+        stopVideo($('.shoe--vdo-show-iframe'));
         return false;
     });
 });
@@ -576,6 +580,7 @@ function mob_search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
+            $(".mob-search--product .search-container .search-wrapper .close").show();
             $(".mob-search--product .search-container .search-wrapper").find(".search-product-content").html(response);
             var owl = $(".mob-search--product .search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({

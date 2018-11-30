@@ -36,17 +36,17 @@
 					<div class="row">
 					<div class="tab-12">
 						<div class="input-wrapper">
-							<label>
-								<div class="row">
-									<div class="mob-6">Password<sup>*</sup></div>
-									<div class="mob-6">
+							<div class="row">
+								<div class="mob-6"><label>Password<sup>*</sup></label></div>
+								<div class="mob-6">
+									<label>
 										<div class="show-pass">
-										    <input type="checkbox" id="show_password" name="show_password">Show Password
-									    </div>
-								    </div>
+											<input type="checkbox" id="show_password" name="show_password">Show Password
+										</div>
+									</label>
 								</div>
-							</label>
-							<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} input-field" name="password" required>
+							</div>
+						<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} input-field" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">

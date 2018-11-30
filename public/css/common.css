@@ -534,6 +534,7 @@
   display: inline-block;
   margin-right: 10px;
   margin-top: 5px;
+  width: calc(100% - -4px);
 }
 .input-wrapper .checklist-inline input {
   display: none;
@@ -640,8 +641,11 @@
 }
 .custom-select.gray-bg .select-option--wrapper .disable {
   background-color: #f1f1f1;
-  color: #000000;
-  cursor: auto;
+  cursor: no-drop;
+  color: #dedcda;
+}
+.custom-select.gray-bg .select-option--wrapper .disable:hover {
+  border: 1px solid #d3d0cd;
 }
 .custom-select .label-heading {
   height: 36px;
@@ -685,6 +689,11 @@
   border: 1px solid #d3d0cd;
   list-style: none;
 }
+.custom-select .select-option--wrapper .disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  color: #dedcda;
+}
 .custom-select .option-value {
   padding: 4px 10px;
   font-size: 14px;
@@ -718,7 +727,6 @@
   font-size: 14px;
   border-bottom: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
-  cursor: pointer !important;
 }
 .custom-select .option-value-data:not(.disable):hover {
   background-color: #0263f7;
@@ -1789,11 +1797,12 @@ textarea {
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
   margin: 0px;
   text-align: center;
+  font-size: 14px;
 }
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price {
   margin: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
 }
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
@@ -1805,6 +1814,9 @@ textarea {
 }
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .product_arrive .price del {
   color: #000000;
+}
+.header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
+  width: 186px !important;
 }
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style {
   position: absolute;
@@ -2254,6 +2266,21 @@ textarea {
 .header-mobile .mob-search--product .search-container .search-wrapper form button:active, .header-mobile .mob-search--product .search-container .search-wrapper form button:focus {
   background: #f1f1f1 !important;
 }
+.header-mobile .mob-search--product .search-container .search-wrapper .close {
+  width: 27px;
+  height: 27px;
+  color: #000000;
+  font-size: 20px;
+  margin: 0;
+  line-height: 3;
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  z-index: 99999;
+}
+.header-mobile .mob-search--product .search-container .search-wrapper .close:hover {
+  color: #0263f7;
+}
 .header-mobile .mob-search--product .search--container {
   background-color: #ffffff;
   padding-top: 10px;
@@ -2280,11 +2307,12 @@ textarea {
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
   margin: 0px;
   text-align: center;
+  font-size: 14px;
 }
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .price {
   margin: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
 }
 .header-mobile .mob-search--product .search--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
@@ -3108,11 +3136,12 @@ textarea {
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 {
   margin: 0px;
   text-align: center;
+  font-size: 14px;
 }
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price {
   margin: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
 }
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price span.red {
@@ -4072,12 +4101,14 @@ textarea {
   display: block;
   position: relative;
   padding: 17px 0 8px;
+  height: 122px;
   border-bottom: 1px solid #f2f2f2;
 }
 @media only screen and (max-width: 767px) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .info {
     padding: 2px 0 3px;
     z-index: -90;
+    height: 90px;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .info h3 {

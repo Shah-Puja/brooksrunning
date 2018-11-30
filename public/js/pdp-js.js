@@ -1141,6 +1141,10 @@
 
 // fullscreen API Code
 function launchFullscreen(element) {
+    $("#pdp-zoom--image li").each(function(){
+        var zomm_src = $(this).data('zoomsrc');
+        $(this).find('img').attr('src',zomm_src);
+    });
     $("#zoomWindowFullShow").addClass("product-zoom--Window");
     $("#zoomWindowFullShowIn").addClass("display-none");
     $("#zoomWindowFullShowOut").removeClass("display-none");
@@ -1155,6 +1159,7 @@ function launchFullscreen(element) {
     }
 }
 function exitFullscreen() {
+    
     $("#zoomWindowFullShow").removeClass("product-zoom--Window");
     $("#zoomWindowFullShowIn").removeClass("display-none");
     $("#zoomWindowFullShowOut").addClass("display-none");
@@ -1165,8 +1170,17 @@ function exitFullscreen() {
     } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
     }
+    $("#pdp-zoom--image li").each(function(){
+        var src = $(this).data('src');
+        console.log(src);
+        $(this).find('img').attr('src',src);
+    });
 }
 
+$(document).bind('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function (e) {
+	var fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullscreenElement || document.msFullscreenElement;
+	if (!fullscreenElement) exitFullscreen();
+});
 // number quantity count
 $(document).on('click', '#quantity-selector #adds', function add() {
     var $rooms = $("#quantity-selector #noOfRoom");

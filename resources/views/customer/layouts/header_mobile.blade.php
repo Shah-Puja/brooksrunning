@@ -38,10 +38,10 @@
 				<div class="search-container">
 				<div class="search-wrapper">
 					<form name="mob_searchproduct" role="search" method="get" onsubmit="return mob_search_product()">
-						<input type="search" name="q"  class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off">
-
+						<input type="search" name="q"  class="o-header__search small valid" placeholder="SEARCH PRODUCTS" itemprop="query-input" autocomplete="off" required>
 						<button type="submit"><i class="icon-next-arrow"></i> <img src="/images/bx_loader.gif" alt="loading" style="display:none"/></button>
 					</form>
+					<div class="close" style="display:none"><i class="icon-close"></i></div> 
 					<div class="search-product-content"></div>
 
 				</div>
@@ -271,7 +271,7 @@
 	            
 				<li>
 	                <a href="javascript:;">
-	                    <span class="title">Shoe Finder</span>
+	                    <span class="title">Shoes</span>
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
@@ -549,7 +549,7 @@
 	            </li>
 	            <li>
 	                <a href="/shoefinder">
-	                    <span class="title">Find A Shoe</span>
+	                    <span class="title">Shoe Finder</span>
 	                </a>
 	            </li>
 	            <li>

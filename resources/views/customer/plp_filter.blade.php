@@ -75,7 +75,7 @@
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
 																<div class="mark" style="background-color: {{ $filter_value }}"><span></span></div>
-																<div class="text">{{ $filter_value }}</div>
+																<div class="text">{{ ucwords(strtolower($filter_value)) }}</div>
 														</label>
 													</div>
 												</div>	
