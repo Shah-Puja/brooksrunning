@@ -194,6 +194,12 @@ $(document).on("click", "#sizechart-popup--control", function () {
 $(document).on("click", "#sizechart-popup--close", function () {
     $("#sizechart-popup--wrapper").removeClass("show");
 });
+$("#expertadv-popup--control").click(function(){
+    $("#expertadv-popup--wrapper").addClass("show");
+});
+$("#expertadv-popup--close").click(function(){
+    $("#expertadv-popup--wrapper").removeClass("show");
+});
 $(document).on("click", ".close-popup", function () {
     $(".password-popup").css("display", "none");
 });

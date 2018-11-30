@@ -230,7 +230,12 @@
                                         <div class="main">SIZE <span></span></div>
                                     </div>
                                     <div class="mob-6">
-                                        <div class="main size-chart"><a href="JavaScript:Void(0);" id="sizechart-popup--control">Size Chart</a></div>
+                                        <div class="main size-chart">
+                                        <a href="JavaScript:Void(0);" id="sizechart-popup--control">Size Chart</a>
+                                        @if (strtolower($product->flag_bra) =='yes')
+                                        <a href="JavaScript:Void(0);" id="expertadv-popup--control">Expert Advice</a>
+                                        @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <ul class="size-show">
