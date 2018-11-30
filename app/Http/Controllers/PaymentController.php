@@ -212,19 +212,17 @@ class PaymentController extends Controller {
         $transation_result = $this->processor->charge($this->order); 
         $this->order->updateOrder($transation_result);
 
-        if (!$transation_result) {
-            echo "<pre>";print_r($transation_result);die;
-            /*$logger = array(
+        if (!$transation_result) { 
+            $logger = array(
                 'order_id' => $this->order->id,
                 'log_title' => 'Braintree Payment',
                 'log_type' => 'Response',
                 'log_status' => 'Braintree Processor Declined',
-                'result' => 'Failed',
-                'xml' => (!empty($xml)) ? $xml : '',
-                'nab_txnid' => $transaction_id,
-                'nab_result' => $braintree_result
+                'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
+                'xml' => (!empty($xml)) ? $xml : '', 
+                'nab_result' => 'Failed'
             );
-            Order_log::insert($logger);*/
+            Order_log::insert($logger);
             return back()->withErrors(['payment' => 'Your payment was declined']);
         }
 
