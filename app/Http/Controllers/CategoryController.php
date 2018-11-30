@@ -54,7 +54,7 @@ class CategoryController extends Controller
     public function womens_landing(){
 
         //NEW ARRIVALS
-        $shoe_info = array('120278_494','120277_461','120268_146','120269_452');
+        $shoe_info = array('120278_494','120277_461','120284_080','120269_452');
         $shoes_product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
@@ -86,7 +86,7 @@ class CategoryController extends Controller
     public function mens_landing(){
 
         //NEW ARRIVALS
-        $shoe_info = array('110289_050','110288_038','110271_026','110280_471');
+        $shoe_info = array('110289_050','110288_038','110294_058','110280_471');
         $shoes_product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
