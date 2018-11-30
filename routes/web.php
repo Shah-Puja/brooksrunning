@@ -155,3 +155,6 @@ Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
 Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
 Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
+/* Manual Order Push */ 
+
+Route::get('/manual_ap21order_push/{order_id}', 'Manual_ap21order_push@manual_ap21order_push');
