@@ -28,7 +28,7 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
      */
     public function handle(SubscriptionReceived $event)
     {        
-        //dd($event);        
+        dd($event);        
         $subscriber = $event->user;
         $subscriber->name = $event->user->first_name . " " . $event->user->last_name;
         $this->subscriptionService->add($subscriber);
