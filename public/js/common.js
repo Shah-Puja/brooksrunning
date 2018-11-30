@@ -208,7 +208,26 @@ $(document).ready(function () {
         itemsCustom: false,
         pagination: false,
         rewindNav: false,
-        dots: true
+        dots: true,
+        afterAction: function(elem){
+          if ( elem.find(".owl-item").length > this.options.items ) {
+            elem.parent().find('.next').show();
+            elem.parent().find('.prev').show();
+        
+            elem.parent().find('.next').removeClass('disabled');
+            elem.parent().find('.prev').removeClass('disabled');
+            if ( this.currentItem == 0 ) {
+              elem.parent().find('.prev').addClass('disabled');
+            }
+            if ( this.currentItem == this.maximumItem ) {
+              elem.parent().find('.next').addClass('disabled');
+            }
+        
+          } else {
+            elem.parent().find('.next').addClass('disabled');
+            elem.parent().find('.prev').addClass('disabled');
+          }
+        }
     });
     $(".next").click(function () {
         $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.next');
@@ -534,25 +553,25 @@ function search_product(){
                 pagination: false,
                 rewindNav: false,
                 dots: true,
-                afterAction: function(){
-                    if ( owl.find(".owl-item").length > 6 ) {
-                      $('.next').show();
-                      $('.prev').show();
-                  
-                      $('.next').removeClass('disabled');
-                      $('.prev').removeClass('disabled');
-                      if ( this.currentItem == 0 ) {
-                        $('.prev').addClass('disabled');
+                    afterAction: function(elem){
+                      if ( elem.find(".owl-item").length > this.options.items ) {
+                        elem.parent().find('.next').show();
+                        elem.parent().find('.prev').show();
+                    
+                        elem.parent().find('.next').removeClass('disabled');
+                        elem.parent().find('.prev').removeClass('disabled');
+                        if ( this.currentItem == 0 ) {
+                          elem.parent().find('.prev').addClass('disabled');
+                        }
+                        if ( this.currentItem == this.maximumItem ) {
+                          elem.parent().find('.next').addClass('disabled');
+                        }
+                    
+                      } else {
+                        elem.parent().find('.next').addClass('disabled');
+                        elem.parent().find('.prev').addClass('disabled');
                       }
-                      if ( this.currentItem == this.maximumItem ) {
-                        $('.next').addClass('disabled');
-                      }
-                  
-                    } else {
-                      $('.next').hide();
-                      $('.prev').hide();
                     }
-                  }
             });
             $("form[name='searchproduct']").find("button img").hide();
             $("form[name='searchproduct']").find("button i").show();
@@ -591,25 +610,25 @@ function mob_search_product(){
                 pagination: false,
                 rewindNav: false,
                 dots: true,
-                afterAction: function(){
-                    if ( owl.find(".owl-item").length > 2 ) {
-                      $('.next').show();
-                      $('.prev').show();
-                  
-                      $('.next').removeClass('disabled');
-                      $('.prev').removeClass('disabled');
-                      if ( this.currentItem == 0 ) {
-                        $('.prev').addClass('disabled');
-                      }
-                      if ( this.currentItem == this.maximumItem ) {
-                        $('.next').addClass('disabled');
-                      }
-                  
-                    } else {
-                      $('.next').hide();
-                      $('.prev').hide();
+                afterAction: function(elem){
+                  if ( elem.find(".owl-item").length > this.options.items ) {
+                    elem.parent().find('.next').show();
+                    elem.parent().find('.prev').show();
+                
+                    elem.parent().find('.next').removeClass('disabled');
+                    elem.parent().find('.prev').removeClass('disabled');
+                    if ( this.currentItem == 0 ) {
+                      elem.parent().find('.prev').addClass('disabled');
                     }
+                    if ( this.currentItem == this.maximumItem ) {
+                      elem.parent().find('.next').addClass('disabled');
+                    }
+                
+                  } else {
+                    elem.parent().find('.next').addClass('disabled');
+                    elem.parent().find('.prev').addClass('disabled');
                   }
+                }
             });
             $("form[name='mob_searchproduct']").find("button img").hide();
             $("form[name='mob_searchproduct']").find("button i").show();
