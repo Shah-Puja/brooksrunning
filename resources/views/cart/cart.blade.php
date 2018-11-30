@@ -108,8 +108,14 @@
                         </div>
                     </div>
                     <div class="shopping-delevery--option">
-                        <div class="tab-vertical">
+                        <div class="tab-vertical"> 
+                            @if(isset($cart->gift_id) && $cart->gift_id!="") 
+                            <input id="tab-two" type="checkbox" class="tab-checkbox" name="tabs" checked>
+                            @elseif(isset($cart->promo_string) && $cart->promo_string != "")
+                            <input id="tab-two" type="checkbox" class="tab-checkbox" name="tabs" checked>
+                            @else
                             <input id="tab-two" type="checkbox" class="tab-checkbox" name="tabs">
+                            @endif
                             <div class="tab-header">
                                 <label for="tab-two" class="bold-font">
                                     <h3 class="br-heading bold-font">Gift Voucher or Promotion code</h3>
@@ -191,6 +197,9 @@
                                                                             }
                                                                             ?>
                                                                         </a>
+                                                                        @if((strtolower($cart->promo_string) == 'brisbane') OR (strtolower($cart->promo_string) == 'adelaide') OR (strtolower($cart->promo_string) == 'express18'))
+                                                                                   <p> (Upgrade to Express Shipping has been applied) </p>
+                                                                               @endif
                                                                     </td>
                                                                 <input type="hidden" name="coupon_code" id="coupon_code" value="{{ (!empty($cart->promo_code)) ? $cart->promo_code : '' }}">
                                                                 </tr>

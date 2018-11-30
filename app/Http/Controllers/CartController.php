@@ -21,7 +21,7 @@ class CartController extends Controller {
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
-
+//echo "<pre>";print_r($cart);die;
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);
 
@@ -168,8 +168,10 @@ class CartController extends Controller {
                         $freight_charges = '0';
                     }
                 } else {
-                    if (!empty($cart_mast_detail)) {
-                        $freight_charges = $cart->freight_cost;
+                    //echo $delivery_option;die;
+                    //echo "<pre>";print_r($cart['freight_cost']);die;
+                    if (!empty($cart)) {
+                        $freight_charges = $cart['freight_cost'];
                     }
                 }
                 $total_disc = (array) $xml->TotalDiscount;
