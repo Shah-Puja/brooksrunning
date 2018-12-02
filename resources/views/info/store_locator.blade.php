@@ -67,6 +67,7 @@
         geocoder.geocode({
             componentRestrictions: {
                 country: 'AU',
+                country: 'NZ',
             }
             , 'address': address}, function (results, status) {
             if (status == 'OK') {
