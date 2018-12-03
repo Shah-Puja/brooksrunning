@@ -119,6 +119,7 @@ Route::get('/footwear/{gender}/best_selling', 'CategoryController@bestselling');
 Route::get('/events', 'EventController@events_view'); 
 Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
+Route::get('/month', 'EventController@events_default'); 
 
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');

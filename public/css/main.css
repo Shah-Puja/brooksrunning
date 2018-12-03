@@ -1970,7 +1970,7 @@ textarea {
   .pr-landing-page .prod-desc--wrapper .lp-info-block .primary-button {
     padding: 22px 20px;
     font-size: 18px;
-    max-width: 225px;
+    max-width: 245px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2778,12 +2778,12 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .technology-page--header h1 {
-    text-align: center;
+    text-align: left;
   }
 }
 @media only screen and (max-width: 767px) {
   .technology-page--header .sub-info {
-    text-align: center;
+    text-align: left;
   }
 }
 .technology-page--header p {
@@ -2803,7 +2803,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .technology-page--footwear h1 {
-    text-align: center;
+    text-align: left;
   }
 }
 .technology-page--footwear .sub-info {
@@ -2811,7 +2811,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .technology-page--footwear .sub-info {
-    text-align: center;
+    text-align: left;
   }
 }
 .technology-page--footwear p {

@@ -2213,7 +2213,7 @@ textarea {
 .header-mobile .mob-search--product {
   position: relative;
   display: block;
-  padding: 8px 15px 0px;
+  padding: 8px 8px 0px;
 }
 .header-mobile .mob-search--product input {
   width: 100%;
@@ -2234,7 +2234,7 @@ textarea {
 }
 @media screen and (max-width: 950px) {
   .header-mobile .mob-search--product .search-container .search-wrapper form {
-    width: 330px;
+    width: auto;
   }
 }
 .header-mobile .mob-search--product .search-container .search-wrapper form input {
@@ -2897,9 +2897,9 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .homepage-container .top_prd_sec .button_fixed {
-    padding: 0 7px;
+    padding: 0 1px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 10px;
     bottom: 0;
   }
 }
@@ -3267,7 +3267,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .create-account--header h1 {
-    text-align: center;
+    text-align: left;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -3578,6 +3578,11 @@ textarea {
   letter-spacing: 1px;
   line-height: 20px;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 767px) {
+  .plp-filter--wrapper .filter-menu .label {
+    line-height: 40px;
+  }
 }
 .plp-filter--wrapper .filter-menu .label.category-heading {
   width: 100%;
@@ -4230,6 +4235,13 @@ textarea {
   .mobile-plp--filter .mobile-plp--main .filter-heading {
     padding: 0 35px;
   }
+}
+@media only screen and (max-width: 767px) and (max-width: 767px) {
+  .mobile-plp--filter .mobile-plp--main .filter-heading {
+    padding: 5px 35px;
+  }
+}
+@media only screen and (max-width: 767px) {
   .mobile-plp--filter .plp-filter {
     width: 100%;
     max-width: 350px;
@@ -4240,6 +4252,8 @@ textarea {
   .mobile-plp--filter .plp-filter .plp-filter--wrapper .filter-menu {
     margin: 0 auto 20px;
   }
+}
+@media only screen and (max-width: 767px) {
   .mobile-plp--filter .plp-store-finder {
     background-color: #00d3d6;
     text-align: center;

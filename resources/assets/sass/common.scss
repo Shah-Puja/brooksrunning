@@ -641,7 +641,7 @@
     .mob-search--product{
       position: relative;
       display: block;
-      padding: 8px 15px 0px;
+      padding: 8px 8px 0px;
       input{
           @extend %info-font;
           width: 100%;
@@ -662,7 +662,7 @@
         margin: auto;
         position: relative;
         @media screen and (max-width: 950px){
-          width: 330px;
+          width: auto;
         }
         input{
           @extend %info-font;
@@ -1337,9 +1337,9 @@
           max-width: 250px;
         }
         @media #{$mobile-only}{
-          padding: 0 7px;
+          padding: 0 1px;
           position: relative;
-          margin-top: 20px;
+          margin-top: 10px;
           bottom: 0;
         }
       }
@@ -1678,7 +1678,7 @@
       h1{
         margin:0;
         @media #{$mobile-only}{
-          text-align: center;
+          text-align: left;
         }
       }
       .sub-info{
@@ -2004,6 +2004,9 @@
               letter-spacing: 1px;
               line-height: 20px;
               text-transform: uppercase;
+              @media #{$mobile-only}{
+                line-height: 40px;
+              }
               &.category-heading{
                   width: 100%;
                   display: block;
@@ -2616,6 +2619,9 @@
         }
         .filter-heading{
           padding: 0 35px;
+          @media #{$mobile-only}{
+            padding: 5px 35px;
+          }
         }
       }
       .plp-filter{
