@@ -2,7 +2,8 @@
 
 return [
     'SHIPPING_SET_LIMIT' => env('SHIPPING_SET_LIMIT'),
-    'SHIPPING_SET_PRICE'=> env('SHIPPING_SET_PRICE'),
+	'SHIPPING_SET_PRICE'=> env('SHIPPING_SET_PRICE'),
+	'SHIPPING_NZ_PRICE'=> env('SHIPPING_NZ_PRICE'),
     'notify_email' => env('CLIENT_NOTIFY_EMAIL'),
 	'syg_notify_email' => env('SYG_NOTIFY_EMAIL'),
 	'image_url'=> [
