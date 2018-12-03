@@ -785,7 +785,7 @@ $(document).on("click",".next",function () {
     $(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.next');
 })
 $(document).on("click",".prev",function () {
-	$(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.next');
+	$(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.prev');
 })  
 
 		   </script>
