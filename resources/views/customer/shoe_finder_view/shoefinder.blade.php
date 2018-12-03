@@ -782,10 +782,10 @@
 
 			   
 $(document).on("click",".next",function () {
-    $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.next');
+    $(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.next');
 })
 $(document).on("click",".prev",function () {
-    $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.prev');
+	$(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.next');
 })  
 
 		   </script>
