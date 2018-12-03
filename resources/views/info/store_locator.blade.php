@@ -66,9 +66,8 @@
         var address = document.getElementById('addressInput').value;
         geocoder.geocode({
             componentRestrictions: {
-                country: ['AU', 'NZ']
-            }
-            , 'address': address}, function (results, status) {
+                country: ['AU', 'NZ'],
+            }, 'address': address}, function (results, status) {
             if (status == 'OK') {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
