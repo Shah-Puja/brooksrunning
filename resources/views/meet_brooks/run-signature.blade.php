@@ -5,7 +5,7 @@
     <div class="row">
       <div class="tab-7">
             <h1 class="br-mainheading">Run Signature</h1>
-            <p>Brooks assesses the way your body naturally runs and offers the right shoe to fit your run, your way. Celebrate your individuality with every step you take.</p>
+            <p>Brooks assesses the way your body naturally runs and offers the right shoe to fit your run, your way. Celebrate your individuality with every step you take.</p>
       </div>
       <div class="tab-5">
       	 <div class="run-signature--img">
