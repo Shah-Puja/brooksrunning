@@ -64,8 +64,8 @@ class meet_brooksController extends Controller
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 
-                                      ['fname' => request('fname'),
-                                       'lname' => request('lname'),
+                                      ['first_name' => request('fname'),
+                                       'last_name' => request('lname'),
                                        'tag' => request('comp_name'),
                                        'gender' => request('gender'),
                                        'dob' => request('custom_Birth_Month').'-'.request('custom_Birth_Date'),

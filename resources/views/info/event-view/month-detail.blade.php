@@ -5,8 +5,9 @@
     <section class="event-banner">
         <div class="event-banner--wrapper">
             <picture>
-                <source media="(max-width: 595px)" srcset="/images/events/banner/{{ $event->banner }}">
-                <img src="/images/events/banner/{{ $event->banner }}" alt="Header Images">
+                @php $banner_img=(isset($event->banner)) ? $event->banner : ""; @endphp
+                <source media="(max-width: 595px)" srcset="/images/events/banner/{{$banner_img }}">
+                <img src="/images/events/banner/{{$banner_img }}" alt="Header Images">
             </picture>
         </div>
     </section>
