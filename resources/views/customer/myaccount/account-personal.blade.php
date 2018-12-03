@@ -4,8 +4,12 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 class="br-mainheading">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h1>
-				<p>Not {{ auth()->user()->first_name }}? <a href="logout">Logout</a></p>
+				@php 
+					$first_name=(isset(auth()->user()->first_name)) ? auth()->user()->first_name : '';
+					$last_name=(isset(auth()->user()->last_name)) ? auth()->user()->last_name : '';
+				@endphp
+				<h1 class="br-mainheading">Welcome, {{$first_name}} {{$last_name}}</h1>
+				<p>Not {{$first_name}}? <a href="logout">Logout</a></p>
 			</div>
 		</div>
 	</div>
@@ -23,13 +27,13 @@
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for="">First Name<sup>*</sup></label>
-							<input type="text" name="first_name" class="input-field" value="{{auth()->user()->first_name}}">
+							<input type="text" name="first_name" class="input-field" value="{{$first_name}}">
 						</div>
 					</div>
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label for="">Last Name<sup>*</sup></label>
-							<input type="text" name="last_name" class="input-field" value="{{auth()->user()->last_name}}">
+							<input type="text" name="last_name" class="input-field" value="{{$last_name}}">
 						</div>
 					</div>
 				</div>
