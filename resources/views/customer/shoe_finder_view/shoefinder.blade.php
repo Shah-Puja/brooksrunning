@@ -696,7 +696,26 @@
 										itemsMobile : [667,1],
 										itemsCustom : false,
 										pagination : false,
-										rewindNav : false
+										rewindNav : false,
+										afterAction: function(elem){
+											if ( elem.find(".owl-item").length > this.options.items ) {
+												elem.parent().find('.next').show();
+												elem.parent().find('.prev').show();
+											
+												elem.parent().find('.next').removeClass('disabled');
+												elem.parent().find('.prev').removeClass('disabled');
+												if ( this.currentItem == 0 ) {
+												elem.parent().find('.prev').addClass('disabled');
+												}
+												if ( this.currentItem == this.maximumItem ) {
+												elem.parent().find('.next').addClass('disabled');
+												}
+											
+											} else {
+												elem.parent().find('.next').addClass('disabled');
+												elem.parent().find('.prev').addClass('disabled');
+											}
+										}
 									});
                                     return false;
                                 },
