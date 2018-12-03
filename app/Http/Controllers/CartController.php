@@ -21,7 +21,7 @@ class CartController extends Controller {
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
-
+//echo "<pre>";print_r($cart);die;
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);
 
@@ -57,8 +57,8 @@ class CartController extends Controller {
                     }
                 }
 
-                $data = $this->cart_api($cart_arr); 
-                $this->check_gift_voucher(); 
+                $data = $this->cart_api($cart_arr);
+                $this->check_gift_voucher();
             }
 
 
@@ -98,6 +98,11 @@ class CartController extends Controller {
         /* echo $cart_total;
           die; */
         //return $data;
+
+        if (isset($cart->promo_code) && $cart->promo_code != "") {
+            $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
+            $cart['promo_display_text'] = $promo_code->promo_display_text;
+        }
         return view('cart.cart', compact('cart'));
     }
 
@@ -168,8 +173,10 @@ class CartController extends Controller {
                         $freight_charges = '0';
                     }
                 } else {
-                    if (!empty($cart_mast_detail)) {
-                        $freight_charges = $cart->freight_cost;
+                    //echo $delivery_option;die;
+                    //echo "<pre>";print_r($cart['freight_cost']);die;
+                    if (!empty($cart)) {
+                        $freight_charges = $cart['freight_cost'];
                     }
                 }
                 $total_disc = (array) $xml->TotalDiscount;
@@ -221,7 +228,7 @@ class CartController extends Controller {
                 $gift_cart_total = $cartTotal - $AvailableAmount;
             }
             Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-            $cart = Cart::where('id', session('cart_id'))->where('gift_id',$cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
+            $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         }
         return view('cart.order_summary', compact('cart'));
     }
@@ -255,7 +262,7 @@ class CartController extends Controller {
 
         switch ($returnCode) {
             case 200:
-                $response_body = $response->getBody()->getContents(); 
+                $response_body = $response->getBody()->getContents();
                 $xml = simplexml_load_string($vouchervalid);
                 $gift_number = (int) ($xml->VoucherNumber);
                 $gift_pin = $giftcert_pin;
@@ -267,10 +274,9 @@ class CartController extends Controller {
                 } else {
                     $gift_discount = $AvailableAmount;
                     $gift_cart_total = $cartTotal - $AvailableAmount;
-                } 
+                }
                 Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
                 break;
-             
         }
     }
 
