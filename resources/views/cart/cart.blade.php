@@ -197,8 +197,8 @@
                                                                             }
                                                                             ?>
                                                                         </a>
-                                                                        @if((strtolower($cart->promo_string) == 'brisbane') OR (strtolower($cart->promo_string) == 'adelaide') OR (strtolower($cart->promo_string) == 'express18'))
-                                                                                   <p> (Upgrade to Express Shipping has been applied) </p>
+                                                                        @if(isset($cart->promo_display_text) && $cart->promo_display_text!="")
+                                                                                   <p> {{ $cart->promo_display_text }} </p>
                                                                                @endif
                                                                     </td>
                                                                 <input type="hidden" name="coupon_code" id="coupon_code" value="{{ (!empty($cart->promo_code)) ? $cart->promo_code : '' }}">
