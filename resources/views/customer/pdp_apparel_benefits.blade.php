@@ -238,7 +238,7 @@
 								<td width="52%" valign="top" style="text-align: left;">With arms relaxed down at sides, measure fullest part of bust/chest, keeping tape parallel to the floor.</td>
 								<td width="28%" valign="top" rowspan="4" class="white-bg">
 									<div align="center">
-										<img height="210" width="101" border="0" src="http://demandware.edgesuite.net/aaev_prd/on/demandware.static/Sites-BrooksRunning-Site/Sites-BrooksRunning-Library/default/v1430053324817/images/content/sizing/measurefit.gif" alt="">
+										<img height="210" width="101" border="0" src="/images/apparel/measurefit.gif" alt="">
 									</div>
 								</td>
 							</tr>
