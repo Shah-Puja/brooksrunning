@@ -3,7 +3,6 @@
     <head>
         <title>Order Notification to Admin</title> 
     </head>
-    @php echo "<pre>";print_r($order->address);die;@endphp
     <body>
         <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;">
             <center>
@@ -58,7 +57,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left">Order Details</td>
-                                    <td align="left">{{ ($order->address->order_info!='') ? $order->address->order_info : " - " }}</td>
+                                    <td align="left">{{ (($order->address->order_info!="") ? $order->address->order_info : "-") }}</td>
                                 </tr>
                             </table>
                         </td>
