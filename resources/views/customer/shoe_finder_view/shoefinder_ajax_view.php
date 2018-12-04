@@ -294,14 +294,14 @@ case 5:?>
 					<p>Sorry to hear that, tell us where it is/was?</p>
 					<div class="grid-container grid">
 						<label class="two columns block-label">
-							<input type="checkbox" name="val1[]" value="0" <?=(in_array(0, $val1) ? 'checked' : '');?> onclick="clickFunction();" > <span class='label-title'>Knee</span> </label>
+							<input type="checkbox" name="val1[]" value="0" <?=(in_array(0, $val1) ? 'checked' : '');?> onclick="clickFunction6($(this));" > <span class='label-title'>Knee</span> </label>
 						<label class="two columns block-label">
-							<input type="checkbox" name="val1[]" value="1" <?=(in_array(1, $val1) ? 'checked' : '');?> onclick="clickFunction();" > <span class='label-title'>Lower leg</span> </label>
+							<input type="checkbox" name="val1[]" value="1" <?=(in_array(1, $val1) ? 'checked' : '');?> onclick="clickFunction6($(this));" > <span class='label-title'>Lower leg</span> </label>
 						<label class="two columns block-label">
-							<input type="checkbox" name="val1[]" value="2" <?=(in_array(2, $val1) ? 'checked' : '');?> onclick="clickFunction();" > <span class='label-title'>Arch <span class='label-title-small'>or </span>foot</span>
+							<input type="checkbox" name="val1[]" value="2" <?=(in_array(2, $val1) ? 'checked' : '');?> onclick="clickFunction6($(this));" > <span class='label-title'>Arch <span class='label-title-small'>or </span>foot</span>
 						</label>
 						<label class="two columns block-label">
-							<input type="checkbox" name="val1[]" value="3" <?=(in_array(3, $val1) ? 'checked' : '');?> onclick="clickFunction();" > <span class='label-title'>None of these</span> </label>
+							<input type="checkbox" name="val1[]" value="3" <?=(in_array(3, $val1) ? 'checked' : '');?> onclick="clickFunction6($(this));" > <span class='label-title'>None of these</span> </label>
 					</div>
 				</li>
 				<li class="" <?=($val0 == 0 ? 'style=display:none' : '');?>></li>

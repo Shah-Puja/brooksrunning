@@ -15,7 +15,7 @@
 
         <div class="search_store">
             <h2>Find a retail store</h2>
-            <input type="text" id="addressInput" placeholder="LOCATION OR POSTCODE" ><br>
+            <input type="text" id="addressInput" placeholder="LOCATION" ><br>
             <div class="mapLoader" style="display: none;"><img src="/images/loader.gif" alt="Loading..."></div>
             <div class="findBtn" onclick="searchLocations()"></div>
         </div>
@@ -64,12 +64,7 @@
     function searchLocations() {
         $(".mapLoader").show();
         var address = document.getElementById('addressInput').value;
-        geocoder.geocode({
-            componentRestrictions: {
-                country: 'AU',
-                country: 'NZ',
-            }
-            , 'address': address}, function (results, status) {
+        geocoder.geocode({'address': address}, function (results, status) {
             if (status == 'OK') {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();

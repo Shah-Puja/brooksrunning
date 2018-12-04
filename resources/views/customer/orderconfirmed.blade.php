@@ -12,6 +12,7 @@
 		{
 			'sku': '{{ $item->variant->product_id }}',
 			'name': '{{ $item->variant->product->stylename }}',
+            'style': '{{ $item->variant->product->style }}',
 			'price': {{ number_format($item->variant->price_sale, 2) }},
 			'quantity': {{ $item->qty }}
 		@if ($loop->last)

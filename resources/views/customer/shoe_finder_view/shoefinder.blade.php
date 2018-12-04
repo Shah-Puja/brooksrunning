@@ -16,8 +16,14 @@
 	   function clickFunction(){
 		  $(".ui-accordion-content-active" ).find('.ss-continue').triggerHandler( "click" );
 	   }
+	   function clickFunction6(t){
+		  if (t.is(':checked')) {
+		  	$(".ui-accordion-content-active" ).find('.ss-continue').triggerHandler( "click" );
+		  }
+	   }
 	   function step6radio(id){
 		   var abc=document.getElementById(id).value;
+		   $(".question5_div").find("input[type='checkbox']").prop('checked',false);
 		   if(abc==1){
 			   $(".ui-accordion-content-active" ).find('.ss-continue').triggerHandler( "click" );
 		   }
@@ -286,19 +292,19 @@
 							   </p>
 							   <div class="flex-container">
 								   <label class="two columns block-label">
-								   <input type="checkbox" name="val1[]" value="0" onclick="clickFunction();">
+								   <input type="checkbox" name="val1[]" value="0" onclick="clickFunction6($(this));">
 								   <span class='label-title'>Knee</span>
 								   </label>
 								   <label class="two columns block-label">
-								   <input type="checkbox" name="val1[]" value="1" onclick="clickFunction();">
+								   <input type="checkbox" name="val1[]" value="1" onclick="clickFunction6($(this));">
 								   <span class='label-title'>Lower leg</span>
 								   </label>
 								   <label class="two columns block-label">
-								   <input type="checkbox" name="val1[]" value="2" onclick="clickFunction();">
+								   <input type="checkbox" name="val1[]" value="2" onclick="clickFunction6($(this));">
 								   <span class='label-title'>Arch <span class='label-title-small'>or </span>foot</span>
 								   </label>
 								   <label class="two columns block-label">
-								   <input type="checkbox" name="val1[]" value="3" onclick="clickFunction();">
+								   <input type="checkbox" name="val1[]" value="3" onclick="clickFunction6($(this));">
 								   <span class='label-title'>None of these</span>
 								   </label>
 							   </div>
@@ -690,7 +696,26 @@
 										itemsMobile : [667,1],
 										itemsCustom : false,
 										pagination : false,
-										rewindNav : false
+										rewindNav : false,
+										afterAction: function(elem){
+											if ( elem.find(".owl-item").length > this.options.items ) {
+												elem.parent().find('.next').show();
+												elem.parent().find('.prev').show();
+											
+												elem.parent().find('.next').removeClass('disabled');
+												elem.parent().find('.prev').removeClass('disabled');
+												if ( this.currentItem == 0 ) {
+												elem.parent().find('.prev').addClass('disabled');
+												}
+												if ( this.currentItem == this.maximumItem ) {
+												elem.parent().find('.next').addClass('disabled');
+												}
+											
+											} else {
+												elem.parent().find('.next').addClass('disabled');
+												elem.parent().find('.prev').addClass('disabled');
+											}
+										}
 									});
                                     return false;
                                 },
@@ -756,7 +781,12 @@
 			   })();
 
 			   
-			   
+$(document).on("click",".next",function () {
+    $(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.next');
+})
+$(document).on("click",".prev",function () {
+	$(this).parent(".more-color--container").find(".owl-carousel").trigger('owl.prev');
+})  
 
 		   </script>
 
