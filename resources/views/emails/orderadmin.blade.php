@@ -57,7 +57,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left">Order Details</td>
-                                    <td align="left">{{ $order->address->order_info }}</td>
+                                    <td align="left">{{ ($order->address->order_info!='') ? $order->address->order_info : " - " }}</td>
                                 </tr>
                             </table>
                         </td>
