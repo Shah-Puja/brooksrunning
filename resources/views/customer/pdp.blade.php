@@ -1,4 +1,12 @@
 @extends('customer.layouts.master')
+
+@section('gtm-datalayer')
+	'pagetype': 'PDP',
+	'product_id': '{{ $product->style }}',
+	'product_rrp': {{ @number_format($product->price, 2) }},
+	'product_price': {{ @number_format($product->price_sale, 2) }}
+@endsection
+
 @section('content')
 
 <div id="data-load">
