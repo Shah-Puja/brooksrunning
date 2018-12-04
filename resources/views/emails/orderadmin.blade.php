@@ -3,6 +3,7 @@
     <head>
         <title>Order Notification to Admin</title> 
     </head>
+    @php echo "<pre>";print_r($order->address);die;@endphp
     <body>
         <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;">
             <center>
