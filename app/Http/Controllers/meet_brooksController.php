@@ -23,6 +23,7 @@ class meet_brooksController extends Controller
     }
 
     public function competition($slug){
+
         $competition = Competition::where('slug',$slug)->first();
         if(!$competition){
             return abort(404);
@@ -43,6 +44,8 @@ class meet_brooksController extends Controller
             'email' => 'required|email',
      		'country' => 'required',
             'postcode' => 'required',
+            'store_name' => 'sometimes|required',
+            'shoe_size' => 'sometimes|required',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
@@ -58,14 +61,17 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer')
+                'answer'=>request('custom_Answer'),
+                'store_name'=>request('store_name'),
+                'shoe_size'=>request('shoe_size')
+
             ]
         );
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 
-                                      ['fname' => request('fname'),
-                                       'lname' => request('lname'),
+                                      ['first_name' => request('fname'),
+                                       'last_name' => request('lname'),
                                        'tag' => request('comp_name'),
                                        'gender' => request('gender'),
                                        'dob' => request('custom_Birth_Month').'-'.request('custom_Birth_Date'),
@@ -97,6 +103,13 @@ class meet_brooksController extends Controller
 	{
 		return view( 'meet_brooks.roadtester');
     }
+
+    public function TAFwintranscend()
+	{
+		return view( 'meet_brooks.TAFwintranscend');
+    }
+
+
 
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country='') {
 
