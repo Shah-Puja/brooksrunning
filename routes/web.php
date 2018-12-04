@@ -70,6 +70,8 @@ Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 // static success page for newsletter
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
+/* Static competition pages */
+Route::get('/TAFwintranscend', 'meet_brooksController@competition');
 
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
