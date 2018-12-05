@@ -262,7 +262,7 @@
                                 <div class="col-6">
                                     <div class="input-wrapper width-wrapper">
                                         <label for="" class="main"> {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH <span></span></label>
-                                        <div class="custom-select">
+                                        <!-- <div class="custom-select">
                                             <div class = "select-box">
                                                 <div class = "label-heading">
                                                     <span class="text">-</span> 
@@ -281,7 +281,21 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> -->
+                                        <!-- Select -->
+                                        <div class="input-wrapper">
+                                            <select class="select-field" name="custom_width" id="custom_width" style="margin-bottom: 0px;">
+                                                 @if(count($width_names) > 1)
+                                                <option class="option-value" data-value="" value="">Select Width</option>
+                                                @endif
+                                                @foreach($width_names as $width_code => $width_name)
+                                                    @if($width_name!='')
+                                                        <option class="option-value" data-value="{{ $width_code }}"  value="{{ $width_code }}" {{ (count($width_names) == 1) ? 'selected' : '' }}>{{ $width_name }}</option>
+                                                     @endif
+                                                @endforeach
+                                            </select>
+                                            </div>
+                                            <!-- /Select -->
                                     </div>
                                 </div>
                                 <input type="hidden" name="width_code" value="" />
@@ -676,14 +690,14 @@
 </section>-->
 <script>
  $(document).ready(function(){
-     var target = $(".width-wrapper ul").find(".selected");
-     var width_name = target.text();
-     var width_code = target.data('value');
-     $(".width-wrapper").find(".label-heading .text").text(width_name);
-     $("#detail input[name='width_code']").val(width_code);
+     var custom_width = $("#custom_width").val();
+     //var width_name = target.text();
+     //var width_code = target.data('value');
+     //$(".width-wrapper").find(".label-heading .text").text(width_name);
+     $("#detail input[name='width_code']").val(custom_width);
 
  });
- $(document).on('click', '.size-show li:not(".disable")', function () {
+ /*$(document).on('click', '.size-show li:not(".disable")', function () {
     if ($(this).data('value') != '') {
         $(".size-show li").removeClass("selected");
         $(this).addClass("selected");
@@ -698,9 +712,27 @@
         $("#detail input[name='size']").val(size_val);
     }
     return false;
+});*/
+
+
+$(document).on('click', '.size-show li:not(".disable")', function () {
+    if ($(this).data('value') != '') {
+        $(".size-show li").removeClass("selected");
+        $(this).addClass("selected");
+        var size_val = $(this).data('value');
+        let data = $.grep( variants, function( n, i ) {
+            if(n) return n['size']==size_val && n['visible']=='Yes';
+         });
+        $("#custom_width").find("option:not([data-value=''])").attr("disabled",true);
+        for(i = 0; i< data.length; i++){
+            $("#custom_width").find("[data-value='"+data[i]['width_code']+"']").attr("disabled",false);
+        }
+        $("#detail input[name='size']").val(size_val);
+    }
+    return false;
 });
 
-$(document).on('click', '.width-wrapper li:not(".disable")', function (event) {
+/*$(document).on('click', '.width-wrapper li:not(".disable")', function (event) {
     let value = $(this).data('value');
     if(value!=''){
         $(".select-option--wrapper li").removeClass("selected");
@@ -719,6 +751,21 @@ $(document).on('click', '.width-wrapper li:not(".disable")', function (event) {
         }
     }
     event.stopPropagation();
+});*/
+
+$(document).on('change', '#custom_width', function () {
+    let value = $(this).val();
+    if(value!=''){
+        $("#detail input[name='width_code']").val(value);
+        let data = $.grep( variants, function( n, i ) {
+            if(n) return n['width_code']==value && n['visible']=='Yes';
+            });
+        $(".size-show li").addClass("disable");
+        for(i = 0; i< data.length; i++){
+            $(".size-show").find("[data-value='"+data[i]['size']+"']").removeClass("disable");
+        }
+    }
+    return false;
 });
 
 </script>
