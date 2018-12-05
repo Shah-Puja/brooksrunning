@@ -47,13 +47,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm1.jpg">
-			        <h3>&nbsp;<br/>Levitate 2  </h3>
+					<img src="/images/home/hp_sm_xmas_levitate.jpg">
+			        <h3>&nbsp;<br/>&nbsp;  </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Give energy. Get energy. Repeat. DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort. </p>
-					<a href="/brooks-running-shoes-levitate-2-womens/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-levitate-2-mens/110290_060.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>This is the season to Run Happy in this limited edition Christmas Levitate 2. The same responsive DNA AMP midsole to energize your run, wrapped in a festive ugly sweater design. </p>
+					<a href="/levitate-2-womens-running-shoes/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/levitate-2-mens-running-shoes/110290_322.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
