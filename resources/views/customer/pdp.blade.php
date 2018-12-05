@@ -284,7 +284,7 @@
                                         </div> -->
                                         <!-- Select -->
                                         <div class="input-wrapper">
-                                            <select class="select-field" name="custom_width" id="custom_width" style="margin-bottom: 0px;">
+                                            <select class="pdp-select-field" name="custom_width" id="custom_width" style="margin-bottom: 0px;">
                                                  @if(count($width_names) > 1)
                                                 <option class="option-value" data-value="" value="">Select Width</option>
                                                 @endif

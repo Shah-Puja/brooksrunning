@@ -126,7 +126,7 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -597,6 +597,20 @@ body, html, .alert-msg p, .br-info, .input-wrapper .select-field, .input-wrapper
   cursor: pointer;
 }
 .input-wrapper .select-field option {
+  outline: 0;
+}
+.input-wrapper .pdp-select-field {
+  width: 100%;
+  padding: 6px 7px;
+  height: 38px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d3d0cd;
+  outline: 0;
+  cursor: pointer;
+}
+.input-wrapper .pdp-select-field option {
   outline: 0;
 }
 
