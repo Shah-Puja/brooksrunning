@@ -28,6 +28,7 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
      */
     public function handle(SubscriptionReceived $event)
     {        
+        echo "<hr> In Listner";        
         dd($event);        
         $subscriber = $event->user;
         $subscriber->name = $event->user->first_name . " " . $event->user->last_name;
