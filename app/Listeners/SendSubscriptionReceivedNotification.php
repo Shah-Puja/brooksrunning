@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Listeners;
 
 use App\Events\SubscriptionReceived;
@@ -19,7 +18,6 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
     {
         $this->subscriptionService = $subscriptionService;
     }
-
     /**
      * Handle the event.
      *
@@ -27,11 +25,10 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
      * @return void
      */
     public function handle(SubscriptionReceived $event)
-    {        
-        echo "<hr> In Listner";        
-        dd($event);        
+    {
         $subscriber = $event->user;
         $subscriber->name = $event->user->first_name . " " . $event->user->last_name;
         $this->subscriptionService->add($subscriber);
     }
 }
+
