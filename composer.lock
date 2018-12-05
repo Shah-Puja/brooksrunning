@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "4cf68ab16fd4e27ae29f82249bb1221b",
+=======
     "content-hash": "eba902b280df18e08ced992334b41b07",
+>>>>>>> 8f8ea5c0b61c8a07c7d978570de8560591fcc1c5
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -61,6 +65,51 @@
             "description": "Algolia Search API Client for PHP",
             "homepage": "https://github.com/algolia/algoliasearch-client-php",
             "time": "2018-11-06T10:48:00+00:00"
+        },
+        {
+            "name": "aweber/aweber",
+            "version": "v1.1.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aweber/AWeber-API-PHP-Library.git",
+                "reference": "2ee27a5ed68e477c4cedfed3ae1daf310ae65845"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aweber/AWeber-API-PHP-Library/zipball/2ee27a5ed68e477c4cedfed3ae1daf310ae65845",
+                "reference": "2ee27a5ed68e477c4cedfed3ae1daf310ae65845",
+                "shasum": ""
+            },
+            "require-dev": {
+                "bamboohr/phpcs": "^0.1.4",
+                "mayflower/php-codebrowser": "^1.1",
+                "pdepend/pdepend": "^2.2",
+                "php-di/phpdoc-reader": "^2.0",
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phploc/phploc": "^3.0",
+                "phpmd/phpmd": "^2.4",
+                "phpunit/phpunit": "^5.6",
+                "sebastian/phpcpd": "^2.0",
+                "squizlabs/php_codesniffer": "^2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "aweber_api/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "The official AWeber API client library.",
+            "homepage": "https://www.aweber.com",
+            "keywords": [
+                "api",
+                "client",
+                "email"
+            ],
+            "time": "2017-09-13T17:29:18+00:00"
         },
         {
             "name": "braintree/braintree_php",
