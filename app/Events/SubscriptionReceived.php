@@ -19,7 +19,9 @@ class SubscriptionReceived
      */
     public function __construct(User $user)
     {
-        $this->user = $user;        
+        $this->user = $user;    
+        echo "<hr> In event";
+        dd($user);        
     }
 
 }
