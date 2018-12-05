@@ -31,7 +31,7 @@ class Processor
 		]);
 
 		if (! $result->success) {
-			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->order_id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
+			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
 			Log::info($message);
 			return false;		
 		}

@@ -23,6 +23,7 @@ class meet_brooksController extends Controller
     }
 
     public function competition($slug){
+
         $competition = Competition::where('slug',$slug)->first();
         if(!$competition){
             return abort(404);
@@ -59,13 +60,14 @@ class meet_brooksController extends Controller
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
                 'answer'=>request('custom_Answer')
+
             ]
         );
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 
-                                      ['fname' => request('fname'),
-                                       'lname' => request('lname'),
+                                      ['first_name' => request('fname'),
+                                       'last_name' => request('lname'),
                                        'tag' => request('comp_name'),
                                        'gender' => request('gender'),
                                        'dob' => request('custom_Birth_Month').'-'.request('custom_Birth_Date'),
@@ -97,6 +99,8 @@ class meet_brooksController extends Controller
 	{
 		return view( 'meet_brooks.roadtester');
     }
+
+
 
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country='') {
 

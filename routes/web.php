@@ -70,7 +70,6 @@ Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 // static success page for newsletter
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
-
 Route::get('/shipping','BillingShippingController@create');
 Route::post('/shipping','BillingShippingController@store');
 Route::post('/shipping-check-email','BillingShippingController@check_email');
@@ -119,6 +118,7 @@ Route::get('/footwear/{gender}/best_selling', 'CategoryController@bestselling');
 Route::get('/events', 'EventController@events_view'); 
 Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
+Route::get('/month', 'EventController@events_default'); 
 
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');

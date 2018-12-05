@@ -96,7 +96,11 @@
                                 <tr>
                                     <td align="left">Email</td>
                                     <td align="left">{{ $order->address->email }}</td>
-                                </tr>  
+                                </tr> 
+                                <tr>
+                                    <td align="left">Order Details</td>
+                                    <td align="left">{{ (($order->address->order_info!="") ? $order->address->order_info : "-") }}</td>
+                                </tr> 
                             </table>
 
                         </td>

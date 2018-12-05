@@ -323,8 +323,14 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-wrapper">
+                                        @php
+                                            $order_info = '';
+                                            if(isset($orderAddress->order_info)){
+                                                $order_info = $orderAddress->order_info;
+                                            }
+                                        @endphp
                                         <label for="comment">Delivery Comments :</label>
-                                        <textarea name="order_info" class="input-textarea"></textarea>
+                                        <textarea name="order_info" class="input-textarea">{{ $order_info }}</textarea>
                                     </div>
                                 </div>
                             </div>

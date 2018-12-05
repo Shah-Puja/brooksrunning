@@ -31,4 +31,9 @@ class EventController extends Controller {
         return view('info.event-view.month-detail', compact('event'));
     }
 
+    public function events_default()
+	{
+		return view( 'info.event-view.month');
+    }
+
 }
