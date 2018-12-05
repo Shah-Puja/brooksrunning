@@ -44,8 +44,6 @@ class meet_brooksController extends Controller
             'email' => 'required|email',
      		'country' => 'required',
             'postcode' => 'required',
-            'store_name' => 'sometimes|required',
-            'shoe_size' => 'sometimes|required',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
@@ -61,9 +59,7 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer'),
-                'store_name'=>request('store_name'),
-                'shoe_size'=>request('shoe_size')
+                'answer'=>request('custom_Answer')
 
             ]
         );
@@ -102,11 +98,6 @@ class meet_brooksController extends Controller
     public function roadtester()
 	{
 		return view( 'meet_brooks.roadtester');
-    }
-
-    public function TAFwintranscend()
-	{
-		return view( 'meet_brooks.TAFwintranscend');
     }
 
 
