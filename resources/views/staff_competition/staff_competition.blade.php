@@ -10,8 +10,8 @@
 		<div class="row">
 			<div class="col-12">
 				<picture>
-					<source media="(max-width: 595px)" srcset="/images/competition-single/{{ $competition->banner_mobile }}">
-					<img src="/images/competition-single/{{ $competition->banner_desktop }}" alt="Header Images">
+					<source media="(max-width: 595px)" srcset="/images/staff_competition/{{ $competition->banner_mobile }}">
+					<img src="/images/staff_competition/{{ $competition->banner_desktop }}" alt="Header Images">
 				</picture>
 			</div>
 		</div>
