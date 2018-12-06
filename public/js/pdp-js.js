@@ -1342,6 +1342,7 @@ function detail_validation() {
             $('body,html').animate({ scrollTop: 0 }, 800);
             //$(".cart-product--popup").slideDown();
             $(".cart-popup-desktop").slideDown();
+            dataLayer.push({'event' : 'SuccessfulAddToCart'});
         },
         error: function (error) {
             let obj = JSON.parse(error.responseText);
