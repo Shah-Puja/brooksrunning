@@ -144,6 +144,7 @@ Route::get('/order-confirmation', 'CategoryController@order_confirmation');
 
 // staff competition 
 
+Route::get('/TAFwintranscend', 'StaffcompetitionController@index');
 Route::get('/tafwintranscend', 'StaffcompetitionController@index');
 Route::get('/wintranscend', 'StaffcompetitionController@index');
 Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
