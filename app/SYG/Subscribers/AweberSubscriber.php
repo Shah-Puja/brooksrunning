@@ -20,7 +20,7 @@ class AweberSubscriber implements SubscriberInterface {
         $subscriber = array(
             'email' => $subscriber->email,
 			'name' => $subscriber->name,
-			'ad_tracking' => $subscriber->ad_tracking
+			'ad_tracking' => 'Subscribe'
         );
         $list->subscribers->create($subscriber);
     }
