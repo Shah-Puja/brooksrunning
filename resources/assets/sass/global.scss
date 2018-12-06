@@ -659,9 +659,9 @@
       height: 38px;
       font-size: 14px;
       margin-bottom: 20px;
-      background-color: $white;
       @extend %info-font;
-      border: 1px solid #d3d0cd;
+      background-color: #f1f1f1;
+      border: 0;
       outline: 0;
       cursor: pointer;
       option{

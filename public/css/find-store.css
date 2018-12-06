@@ -606,8 +606,8 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   height: 38px;
   font-size: 14px;
   margin-bottom: 20px;
-  background-color: #ffffff;
-  border: 1px solid #d3d0cd;
+  background-color: #f1f1f1;
+  border: 0;
   outline: 0;
   cursor: pointer;
 }
