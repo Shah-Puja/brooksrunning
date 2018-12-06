@@ -661,7 +661,7 @@
       margin-bottom: 20px;
       background-color: $white;
       @extend %info-font;
-      border: 1px solid #d3d0cd;
+      border: 1px solid #98938f; 
       outline: 0;
       cursor: pointer;
       option{
@@ -780,7 +780,7 @@
   }
   .quantity-selector{
     background-color: $white;
-    border: 1px solid $border;
+    border: 1px solid #98938f;
     width: 100%;
     max-width: 150px;
     input{

@@ -52,7 +52,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>This is the season to Run Happy in this limited edition Christmas Levitate 2. The same responsive DNA AMP midsole to energize your run, wrapped in a festive ugly sweater design. </p>
-					<a href="/levitate-2-womens-running-shoes/120279_678.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/levitate-2-womens-running-shoes/120279_322.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/levitate-2-mens-running-shoes/110290_322.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>

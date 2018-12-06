@@ -619,7 +619,7 @@
   font-size: 14px;
   margin-bottom: 20px;
   background-color: #ffffff;
-  border: 1px solid #d3d0cd;
+  border: 1px solid #98938f;
   outline: 0;
   cursor: pointer;
 }
@@ -741,7 +741,7 @@
 
 .quantity-selector {
   background-color: #ffffff;
-  border: 1px solid #d3d0cd;
+  border: 1px solid #98938f;
   width: 100%;
   max-width: 150px;
 }
