@@ -142,6 +142,12 @@ Route::get('/walking-shoes', 'CategoryController@shoes_category');
 
 Route::get('/order-confirmation', 'CategoryController@order_confirmation');
 
+// staff competition 
+
+Route::get('/tafwintranscend', 'StaffcompetitionController@index');
+Route::get('/wintranscend', 'StaffcompetitionController@index');
+Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
