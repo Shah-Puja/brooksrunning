@@ -134,7 +134,7 @@
 					<p>It's a simple yet powerful combo that makes for enjoyable runs every time you lace up.</p>
 					<p>Geek out on the science behind the philosophy by reading our Run Signature white paper.</p>
 					<div class="btn">
-						<a href="https://www.brooksrunning.com.au/images/SS/RunSignatureWhitePaper.pdf" class="primary-button">Learn more</a>
+						<a href="/images/SS/RunSignatureWhitePaper.pdf" class="primary-button">Learn more</a>
 					</div>
 				</div>
 			</div>
