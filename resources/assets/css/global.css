@@ -119,7 +119,7 @@
 .accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .alert-msg h2, .tab-vertical .tab-header label h3 {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .br-info, .alert-msg p, html, body {
+.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .input-wrapper .pdp-select-field, .br-info, .alert-msg p, html, body {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
 
 .bold-font {
@@ -502,6 +502,18 @@
   cursor: pointer; }
   .input-wrapper .select-field option {
     outline: 0; }
+.input-wrapper .pdp-select-field {
+  width: 100%;
+  padding: 6px 7px;
+  height: 38px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #98938f;
+  outline: 0;
+  cursor: pointer; }
+  .input-wrapper .pdp-select-field option {
+    outline: 0; }
 
 .custom-select {
   position: relative;
@@ -597,7 +609,7 @@
 
 .quantity-selector {
   background-color: #ffffff;
-  border: 1px solid #d3d0cd;
+  border: 1px solid #98938f;
   width: 100%;
   max-width: 150px; }
   .quantity-selector input {
