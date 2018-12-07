@@ -289,8 +289,8 @@ class Manual_ap21order_push extends Controller {
             $add_description .= ' Gift Code :- ' . $order->giftcert_ap21code;
         }
 
-        if (!empty($order->nab_trans_id)) {
-            $add_description .= ' Transaction Id :- ' . $order->nab_trans_id;
+        if (!empty($order->transaction_id)) {
+            $add_description .= ' Transaction Id :- ' . $order->transaction_id;
         }
 
         $fullname = $order->address->b_fname . ' ' . $order->address->b_lname;
@@ -438,8 +438,8 @@ class Manual_ap21order_push extends Controller {
                             <AccountType/>
                             <Settlement>20111129</Settlement>";
 
-            if (!empty($order->nab_trans_id)) {
-                $xml_data .= "<Reference>" . $order->nab_trans_id . "</Reference>";
+            if (!empty($order->transaction_id)) {
+                $xml_data .= "<Reference>" . $order->transaction_id . "</Reference>";
             } else {
                 $xml_data .= "<Reference>Ref1</Reference>";
             }
