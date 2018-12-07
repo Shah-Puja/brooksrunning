@@ -126,15 +126,15 @@ class PaymentController extends Controller {
                     'log_status' => $log_status,
                     'result' => $orderReport,
                     'xml' => (!empty($xml)) ? $xml : '',
-                    'nab_txnid' => $transaction_id,
-                    'nab_result' => $braintree_result
+                    'transaction_id' => $transaction_id,
+                    'transaction_result' => $braintree_result
                 );
                 Order_log::insert($logger);
 
                 $orderDataUpdate = array( 
                     'transaction_status' => 'Succeeded',
-                    'nab_trans_id' => $transaction_id,
-                    'nab_order_dt' => date('Y-m-d H:i:s'),
+                    'transaction_id' => $transaction_id,
+                    'transaction_dt' => date('Y-m-d H:i:s'),
                     'payment_status' => date('Y-m-d H:i:s')
                 );
                 $order_no = $this->addOrderNo($this->order->id);
@@ -183,8 +183,8 @@ class PaymentController extends Controller {
                     'log_type' => 'Response',
                     'log_status' => 'AfterPay Processor Declined',
                     'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
-                    'nab_txnid' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "",
-                    'nab_result' => 'Failed'
+                    'transaction_id' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "",
+                    'transaction_result' => 'Failed'
                 );
                 Order_log::insert($logger);
                 return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
@@ -202,7 +202,7 @@ class PaymentController extends Controller {
             'log_type' => 'Response',
             'log_status' => 'AfterPay Processor Declined',
             'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'], 
-            'nab_result' => 'Failed'
+            'transaction_result' => 'Failed'
         );
         Order_log::insert($logger);
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
@@ -220,7 +220,7 @@ class PaymentController extends Controller {
                 'log_status' => 'Braintree Processor Declined',
                 'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
                 'xml' => (!empty($xml)) ? $xml : '', 
-                'nab_result' => 'Failed'
+                'transaction_result' => 'Failed'
             );
             Order_log::insert($logger);
             return back()->withErrors(['payment' => 'Your payment was declined']);
@@ -250,8 +250,8 @@ class PaymentController extends Controller {
                 'log_status' => $log_status,
                 'result' => $orderReport,
                 'xml' => (!empty($xml)) ? $xml : '',
-                'nab_txnid' => $transaction_id,
-                'nab_result' => $braintree_result
+                'transaction_id' => $transaction_id,
+                'transaction_result' => $braintree_result
             );
             Order_log::insert($logger);
 
@@ -279,7 +279,7 @@ class PaymentController extends Controller {
 
             } else {
                 
-                $nab_result = "Failed";
+                $transaction_result = "Failed";
                 // $transaction = $transation_result->transaction;
                 $transaction_id = $transation_result->id;
                 // $vault_result_message = $transation_result->message;
@@ -311,7 +311,7 @@ class PaymentController extends Controller {
                     $log_title = "Braintree Payment";
                     $log_type = "Response";
                     $log_status = "Braintree Processor Declined";
-                    $nab_result = "Failed";
+                    $transaction_result = "Failed";
 
                     $logger = array(
                         'order_id' => $order_id,
@@ -320,8 +320,8 @@ class PaymentController extends Controller {
                         'log_status' => $log_status,
                         'result' => $orderReport,
                         'xml' => (!empty($xml)) ? $xml : '',
-                        'nab_txnid' => $transaction_id,
-                        'nab_result' => $nab_result
+                        'transaction_id' => $transaction_id,
+                        'transaction_result' => $transaction_result
                     );
                     Order_log::insert($logger);
 
@@ -418,8 +418,8 @@ class PaymentController extends Controller {
                     $orderDataUpdate = array(
                         'payment_type' => $payment,
                         'transaction_status' => 'Succeeded',
-                        'nab_trans_id' => $transaction_id,
-                        'nab_order_dt' => date('Y-m-d H:i:s'),
+                        'transaction_id' => $transaction_id,
+                        'transaction_dt' => date('Y-m-d H:i:s'),
                         'payment_status' => date('Y-m-d H:i:s')
                     );
                     break;
@@ -695,8 +695,8 @@ class PaymentController extends Controller {
            $add_description .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
         } 
 
-        if (!empty($this->order->nab_trans_id)) {
-            $add_description .= ' Transaction Id :- ' . $this->order->nab_trans_id;
+        if (!empty($this->order->transaction_id)) {
+            $add_description .= ' Transaction Id :- ' . $this->order->transaction_id;
         }
 
         $fullname = $this->order->address->b_fname . ' ' . $this->order->address->b_lname;
