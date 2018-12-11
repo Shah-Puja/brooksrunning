@@ -85,7 +85,7 @@
 							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 						@endphp-->
 						<div class="item">
-							<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
+							<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
 						</div>
 					@endif
 				@endforeach
@@ -112,7 +112,7 @@
 						@endphp
 						
 						<div class="swatches-icon {{ $add_class }} "  {{ $add_css }}>
-						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
+						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
 					    </div>
 					   @php $i++  @endphp
 					@endforeach
