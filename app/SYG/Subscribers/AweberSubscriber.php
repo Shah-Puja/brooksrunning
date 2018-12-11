@@ -19,10 +19,7 @@ class AweberSubscriber implements SubscriberInterface {
         $list = $account->loadFromUrl($listUrl);
         $subscriber = array(
             'email' => $subscriber->email,
-			'name' => $subscriber->name,
-            'custom_fields' => array(
-                'State' => 'VIC'
-            )
+			'name' => $subscriber->name
         );
         $list->subscribers->create($subscriber);
     }
