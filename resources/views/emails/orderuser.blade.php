@@ -245,8 +245,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="left">
-                                                                        <img src="/images/emailers/apparel1-details.jpg" alt="picsum" width="300" />
-                                                                        
+                                                                        <img src="{{ $item->variant->product->image->image1Medium() }}" alt="picsum" width="300" />
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -267,13 +266,13 @@
                                                                 <tr>
                                                                     <td align="left">
                                                                         <p style="text-align:justify;">
-                                                                            Item #{{ $item->variant->product->style }}
+                                                                            Item: #{{ $item->variant->product->style }}
                                                                             <br/>
-                                                                            Colour: {{$item->variant->product->color_code}}  {{ $item->variant->product->color_name}}
+                                                                            Colour: {{ $item->variant->product->color_name }}
                                                                             <br/>
                                                                             Size: {{ $item->variant->size }}
                                                                             <br/>
-                                                                            Width: {{ $item->variant->width_code }} {{ $item->variant->width_name }}
+                                                                            Width: {{ $item->variant->width_name }}
                                                                         </p>
                                                                     </td>
                                                                 </tr>
@@ -295,9 +294,9 @@
                                                                 <tr>
                                                                     <td align="left">
                                                                         <p style="text-align:justify;">
-                                                                            Qty {{ sprintf("%02d", $item->qty) }}
+                                                                            Qty: {{ sprintf("%02d", $item->qty) }}
                                                                             <br/>
-                                                                            Unit price-  
+                                                                            Unit price: 
                                                                             @if($item->variant->price_sale < $item->variant->price)
                                                                                 <del>${{ number_format($item->variant->price, 2) }}</del> 
                                                                                     ${{ number_format($item->variant->price_sale, 2) }}
@@ -305,13 +304,13 @@
                                                                                 ${{ number_format($item->variant->price_sale, 2) }}
                                                                             @endif
                                                                             <br/>
-                                                                            Discount-  @if($item->discount!=0.00)
-                                                                                ${{ number_format($item->discount, 2) }}
+                                                                            Discount:  @if($item->discount!=0.00)
+                                                                                -${{ number_format($item->discount, 2) }}
                                                                             @else
-                                                                                $ 0.00
+                                                                                $0.00
                                                                             @endif
                                                                             <br/>
-                                                                            <span class="br-item-total">Item Total-</span> $000.00
+                                                                            <span class="br-item-total">Item Total:</span> $000.00
                                                                         </p>
                                                                     </td>
                                                                 </tr>
@@ -388,7 +387,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">$000.00</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">$0.00</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p class="br-header">Order Total:</p></td>
@@ -464,8 +463,7 @@
                                         <tbody>
                                             <tr>
                                                 <td align="left" >
-                                                    <img src="/images/emailers/insta_logo.png" alt="insta"  />
-                                                    
+                                                <a href="https://www.instagram.com/brooksrunningau/"><img src="https://brooksrunning.com.au/images/emailers/insta_logo.png" alt="insta"></a> 
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -485,7 +483,7 @@
                                         <tbody>
                                             <tr>
                                                 <td align="left">
-                                                <img src="/images/emailers/facebook_logo.png" alt="fb" class="fb-logo" />
+                                                <a href="https://www.facebook.com/BrooksrunningAU/"><img src="https://brooksrunning.com.au/images/emailers/facebook_logo.png" alt="fb" class="fb-logo" /></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -496,7 +494,7 @@
                                         <tbody>
                                             <tr>
                                                 <td align="left">
-                                                <img src="/images/emailers/twitter_logo.png" alt="twitter"  />
+                                                <a href="https://twitter.com/brooksrunningau"><img src="https://brooksrunning.com.au/images/emailers/twitter_logo.png" alt="twitter"  /></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -543,7 +541,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="center">
-                                                <a href="/info/shipping-information" class="name-link">Shipping Info</a>
+                                                <a href="https://brooksrunning.com.au/info/shipping-information" class="name-link">Shipping Info</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -555,7 +553,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="center" >
-                                                <a href="/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
+                                                <a href="https://brooksrunning.com.au/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -575,7 +573,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="center">
-                                               <a href="/info/contact-us" class="name-link">Contact us</a>
+                                               <a href="https://brooksrunning.com.au/info/contact-us" class="name-link">Contact us</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -593,17 +591,17 @@
                     <table class="section-mob" width="600" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="center" >
-                                    <a href="/info/shipping-information" class="name-link">Shipping Info</a>  
+                                    <a href="https://brooksrunning.com.au/info/shipping-information" class="name-link">Shipping Info</a>  
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center">
-                                    <a href="/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
+                                    <a href="https://brooksrunning.com.au/info/returns-exchange" class="name-link">Returns &amp; Exchange</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center">
-                                    <a href="/info/contact-us" class="name-link">Contact us</a>
+                                    <a href="https://brooksrunning.com.au/info/contact-us" class="name-link">Contact us</a>
                                 </td>
                             </tr>
                     </table>
