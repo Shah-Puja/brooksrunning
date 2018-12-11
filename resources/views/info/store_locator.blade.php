@@ -64,6 +64,10 @@
     function searchLocations() {
         $(".mapLoader").show();
         var address = document.getElementById('addressInput').value;
+        if(!(isNaN(address))){
+            address+=" Australia";
+        }  
+        //alert(address);
         geocoder.geocode({'address': address}, function (results, status) {
             if (status == 'OK') {
                 var latitude = results[0].geometry.location.lat();
