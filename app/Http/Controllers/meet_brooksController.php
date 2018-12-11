@@ -8,6 +8,7 @@ use App\Models\Competition;
 use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
+use App\Events\SubscriptionReceived;
 
 class meet_brooksController extends Controller
 {   
@@ -87,7 +88,7 @@ class meet_brooksController extends Controller
                 User::where('email',request('email'))->update(['person_idx' => $PersonID ]);
             }
         } 
-        
+        event(new SubscriptionReceived($competition));
         if($competition->wasRecentlyCreated){
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
