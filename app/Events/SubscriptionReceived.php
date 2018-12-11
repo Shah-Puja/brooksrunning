@@ -14,7 +14,7 @@ class SubscriptionReceived
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(App\Models\User $user)
     {
         $this->user = $user;        
     }
