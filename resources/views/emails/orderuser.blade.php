@@ -170,9 +170,10 @@
                                             <tr>
                                                 <td align="left">
                                                     <h2 class="title">Shipping Address</h2> 
-                                                    <p style="text-align:justify;">{{ (isset($order->address->s_add1) && $order->address->s_add1!= "") ? $order->address->s_add1."<br/>" : "" }} 
-                                                        {{ (isset($order->address->s_add2) && $order->address->s_add2!="") ? $order->address->s_add2."<br/>" : "" }} 
-                                                        {{ (isset($order->address->s_city) && $order->address->s_city!="") ? $order->address->s_city."<br/>" : "" }} 
+                                                    <p style="text-align:justify;">
+                                                        {!! (isset($order->address->s_add1) && $order->address->s_add1!= "") ? $order->address->s_add1."<br/>" : "" !!}
+                                                        {!! (isset($order->address->s_add2) && $order->address->s_add2!="") ? $order->address->s_add2."<br/>" : "" !!}
+                                                        {!! (isset($order->address->s_city) && $order->address->s_city!="") ? $order->address->s_city."<br/>" : "" !!} 
                                                         {{ (isset($order->address->s_state) && $order->address->s_state!="") ? $order->address->s_state : "" }} {{ (isset($order->address->s_postcode) && $order->address->s_postcode!="") ? $order->address->s_postcode : "" }}
                                                     </p>
                                                     <p style="text-align:justify;">
