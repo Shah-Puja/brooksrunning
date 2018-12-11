@@ -206,7 +206,7 @@
                         <div class="swatches">
                             <ul>
                                 @foreach($colour_options as $color_data)
-                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $product->seo_name.'/'.$product->style.'_'.$color_data ->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}" title="{{ $color_data->color_code }}"></li>
+                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $color_data->seo_name.'/'.$product->style.'_'.$color_data->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}" title="{{ $color_data->color_code }}"></li>
                                 @endforeach
                             </ul>
                         </div>

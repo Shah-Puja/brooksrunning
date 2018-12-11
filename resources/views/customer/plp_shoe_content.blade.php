@@ -90,14 +90,14 @@
 								$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 							@endphp -->
 							<div class="item">
-								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
+								<a href="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 								<picture>
 								<source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-								<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-big="{{ $color_product->image->image1Medium() }}" data-url="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" class="plp-thumb" alt="">
+								<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-big="{{ $color_product->image->image1Medium() }}" data-url="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" class="plp-thumb" alt="">
 								</picture>
 								</a>
 								<div class="plp-mob--info visible-mob">
-								<a href="/{{$style->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
+								<a href="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 								@php  $width_count = count( $filters_array[$style->style]['width']); @endphp
 									<ul>
 										<li>{{ count(collect($colors_option[$style->style])->unique('color_code')) }} Colours</li>
