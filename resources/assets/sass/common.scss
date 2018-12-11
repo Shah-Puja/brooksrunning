@@ -501,6 +501,27 @@
             }
           }
        }
+       .tab-active{
+        display: block;
+        position: relative;
+        cursor: pointer;
+        color: $black;
+        margin-right: 20px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid transparent;
+        &:after{
+            content: "";
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 0;
+            height: 3px;
+            display: block;
+            background: $blue;
+            margin: 0;
+            transition: width .5s ease, background-color .5s ease;
+        }
+     }
        .desktop-navigation--sub{
           @extend %info-font;
           background-color: $gray;
