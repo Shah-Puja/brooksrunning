@@ -644,6 +644,32 @@ function mob_search_product(){
     
     return false; 
 }	
+
+// Header Menu Script for ipad views
+if ($(window).width() >= 768 && $(window).width() <= 1024) {
+    var clickBtn = false;
+    var data = false;
+    var data1 = '';
+    $('.sm-navigation--menu').click(function (e) {
+        var set_data = $(this).attr("data");
+        $(".desktop-navigation--sub").hide();
+        if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
+            data1 = set_data;
+            $(this).find(".desktop-navigation--sub").show();
+            e.preventDefault();
+        } else {
+            data1 = '';
+        }
+        if (set_data == data1 && data1 != '') {
+            clickBtn = true;
+            data = true;
+        } else {
+            clickBtn = false;
+            data = false;
+        }
+    });
+}
+
   /*Map Js*/  
 
  /* /Map Js*/  
