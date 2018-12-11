@@ -2100,6 +2100,27 @@ textarea {
 .desktop-navigation .main:hover .main-nav:after {
   width: 100%;
 }
+.desktop-navigation .main .tab-active {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: #000000;
+  margin-right: 20px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
+}
+.desktop-navigation .main .tab-active:after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  background: #0263f7;
+  margin: 0;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
 .desktop-navigation .main .desktop-navigation--sub {
   background-color: #f1f1f1;
   opacity: 0;
