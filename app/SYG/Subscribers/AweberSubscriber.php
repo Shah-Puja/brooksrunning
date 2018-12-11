@@ -18,12 +18,13 @@ class AweberSubscriber implements SubscriberInterface {
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
         $subscriber = array(
-            'email' => $subscriber->email,
-            'name' => $subscriber->name,
             'ad_tracking' => 'SYG_API_example',
             'custom_fields' => array(
                 'State' => 'VIC'
-            )
+            ),
+            'email' => $subscriber->email,
+            'name' => $subscriber->name,
+            
         );
         $list->subscribers->create($subscriber);
     }
