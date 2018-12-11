@@ -170,7 +170,7 @@
                                         <tr>
                                             <td align="left">
                                                 <h2 class="title">Shipping Address</h2>
-                                                @php echo "<pre>";print_r($order);@endphp
+                                                @php echo "<pre>";print_r($order);die;@endphp
                                                 <p style="text-align:justify;">Address Line1 <br/>
                                                     Address Line 2 <br/>
                                                     Address Line 3 <br/>
