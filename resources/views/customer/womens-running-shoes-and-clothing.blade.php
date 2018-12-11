@@ -41,12 +41,12 @@
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-							<a href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html">
+							<a href = "/{{(isset($shoes_arrival->seo_name)) ? $shoes_arrival->seo_name : ''}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html">
 								<img src="{{$shoes_arrival->image->image1Medium()}}">
 							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
+			              	 <h3><a class="name-link" href = "/{{(isset($shoes_arrival->seo_name)) ? $shoes_arrival->seo_name : ''}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
 			                 <h4 class="price"><span class="black">${{$shoes_arrival->variants[$prod_key]->price}}</span></h4>
 		                </div>
 		            </div>
@@ -154,12 +154,12 @@
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-							<a href = "/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html">
+							<a href = "/{{(isset($cloths_arrival->seo_name)) ? $cloths_arrival->seo_name : ''}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html">
 								<img src="{{$cloths_arrival->image->image1Medium()}}">
 							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	<h3><a class="name-link" href="/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
+			              	<h3><a class="name-link" href="/{{(isset($cloths_arrival->seo_name)) ? $cloths_arrival->seo_name : ''}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
 							<h4 class="price"><span class="black">${{$cloths_arrival->variants[$prod_key]->price}}</span></h4>
 		                </div>
 		            </div>

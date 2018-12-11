@@ -178,7 +178,7 @@
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-						   <a href = "/{{$Featured_prod->seo_name}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
+						   <a href = "/{{(isset($Featured_prod->seo_name)) ? $Featured_prod->seo_name : ''}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
 						   <img src="{{$Featured_prod->image->image1Medium()}}">
 							</a>
 		                </div>
