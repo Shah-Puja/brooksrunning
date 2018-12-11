@@ -57,7 +57,7 @@
                 </div>
                 <div class="bottom clearfix">
                     <ul class="desktop-navigation" id="desktop-navigation">
-                        <li class="main"><a href="/womens-running-shoes-and-clothing" class="main-nav">Women</a>
+                        <li class="main sm-navigation--menu" data="women"><a href="/womens-running-shoes-and-clothing" class="main-nav">Women</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="/mens-running-shoes-and-clothing" class="main-nav">Men</a>
+                        <li class="main sm-navigation--menu" data="men"><a href="/mens-running-shoes-and-clothing" class="main-nav">Men</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -262,7 +262,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="/shoefinder" class="main-nav">Shoe Finder</a>
+                        <li class="main sm-navigation--menu" data="shoefinder"><a href="/shoefinder" class="main-nav">Shoe Finder</a>
 								<div class="desktop-navigation--sub">
 									<div class="wrapper">
 										<div class="row">
@@ -417,7 +417,7 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main"><a href="javascript:;" class="main-nav">Meet Brooks</a>
+                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">Meet Brooks</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -455,7 +455,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="main"><a href="/running-shoes-and-apparel-sale" class="main-nav">Sale</a>
+                        <li class="main sm-navigation--menu" data="sale"><a href="/running-shoes-and-apparel-sale" class="main-nav">Sale</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
