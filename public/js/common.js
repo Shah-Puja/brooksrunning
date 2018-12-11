@@ -5,11 +5,14 @@ $(document).ready(function () {
         var clickBtn = false;
         var data = false;
         var data1 = '';
-        $('.sm-navigation--menu').click(function (e) {
+        $('.sm-navigation--menu').on("touchstart", function(e) {
+            console.log("ipad clicked");
             var set_data = $(this).attr("data");
+            $(".sm-navigation--menu").removeClass("tab-active");
             $(".desktop-navigation--sub").removeClass("active");
             if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
                 data1 = set_data;
+                $(this).find(".main-nav").addClass("tab-active");
                 $(this).find(".desktop-navigation--sub").addClass("active");
                 e.preventDefault();
             } else {
