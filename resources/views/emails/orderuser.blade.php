@@ -295,7 +295,7 @@
                                                                 <tr>
                                                                     <td align="left">
                                                                         <p style="text-align:justify;">
-                                                                            Qty {{ sprintf("%02d", $item->qty); }}
+                                                                            Qty {{ sprintf("%02d", $item->qty) }}
                                                                             <br/>
                                                                             Unit price-  
                                                                             @if($item->variant->price_sale < $item->variant->price)
