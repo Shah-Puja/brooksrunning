@@ -578,6 +578,7 @@ function search_product(){
         method: "get", 
         data: { q: search },
         success: function(response) {
+            dataLayer.push({'event' : 'SearchResults'});
             $("#header-search--popup .search-wrapper").find(".search-product-content").html(response);
             var owl = $("#header-search--popup .new-arrival--container .owl-carousel");
             owl.owlCarousel({
@@ -635,6 +636,7 @@ function mob_search_product(){
         data: { q: search },
         success: function(response) {
             $(".mob-search--product .search-container .search-wrapper .close").show();
+            dataLayer.push({'event' : 'SearchResults'});
             $(".mob-search--product .search-container .search-wrapper").find(".search-product-content").html(response);
             var owl = $(".mob-search--product .search-container .new-arrival--container .owl-carousel");
             owl.owlCarousel({
