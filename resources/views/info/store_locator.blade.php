@@ -67,7 +67,7 @@
         if(!(isNaN(address))){
             address+=" Australia";
         }  
-        //alert(address);
+        console.log(address);
         geocoder.geocode({'address': address}, function (results, status) {
             if (status == 'OK') {
                 var latitude = results[0].geometry.location.lat();
