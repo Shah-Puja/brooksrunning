@@ -10,7 +10,7 @@
       	<div class="breadcrumbs">
 					<ul>
 						<li>
-							<a href="#">Home</a>
+							<a href="/">Home</a>
 						</li>
 						<li>
 							<a href="JavaScript:Void(0);" class="active">Neutral Running Shoes</a>

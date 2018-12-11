@@ -1,5 +1,17 @@
 @extends('customer.layouts.master')
 @section('content')
+<!-- <section class="homepage-container">
+<div class="wrapper">
+	<div class="row">
+		<div class="mob-12 col-12 pr-0">
+				<picture>
+							<source media="(max-width: 595px)" srcset="/images/home/sale-banners/competition-single/bedlam_comp_800x450.jpg">
+							<img src="/images/home/sale-banners/transcend6_retailrundown_comp_1430x350.jpg" alt="Header Images">
+				</picture>
+		</div>
+	</div>
+</div>
+</section> -->
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">
