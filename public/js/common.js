@@ -1,20 +1,46 @@
 // Header JS
 $(document).ready(function () {
-    if ($(window).width() < 1025) {
-        $("#desktop-navigation .main-nav").click(function () {
-            $("#desktop-navigation .main-nav").next().removeClass("active");
-            $(this).next().toggleClass("active");
+    // Header Menu Script for ipad views
+    if ($(window).width() >= 768 && $(window).width() <= 1024) {
+        var clickBtn = false;
+        var data = false;
+        var data1 = '';
+        $('.sm-navigation--menu').click(function (e) {
+            var set_data = $(this).attr("data");
+            $(".desktop-navigation--sub").removeClass("active");
+            if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
+                data1 = set_data;
+                $(this).find(".desktop-navigation--sub").addClass("active");
+                e.preventDefault();
+            } else {
+                data1 = '';
+            }
+            if (set_data == data1 && data1 != '') {
+                clickBtn = true;
+                data = true;
+            } else {
+                clickBtn = false;
+                data = false;
+            }
         });
+    }else{
+        if ($(window).width() < 1025) {
+            $("#desktop-navigation .main-nav").click(function () {
+                $("#desktop-navigation .main-nav").next().removeClass("active");
+                $(this).next().toggleClass("active");
+            });
+        }
+        else {
+            $("#desktop-navigation .main").on("mouseenter", function () {
+                $("#desktop-navigation .main .main-nav").next().removeClass("active");
+                $(this).find(".main-nav").next().addClass("active");
+            });
+            $("#desktop-navigation .main").on("mouseleave", function () {
+                $("#desktop-navigation .main .main-nav").next().removeClass("active");
+            });
+        }
     }
-    else {
-        $("#desktop-navigation .main").on("mouseenter", function () {
-            $("#desktop-navigation .main .main-nav").next().removeClass("active");
-            $(this).find(".main-nav").next().addClass("active");
-        });
-        $("#desktop-navigation .main").on("mouseleave", function () {
-            $("#desktop-navigation .main .main-nav").next().removeClass("active");
-        });
-    }
+
     // header submenu top height fixed
     var headHeight = $(".header-desktop").height() - 5;
     $(".desktop-navigation--sub").css("top", headHeight);
@@ -645,30 +671,7 @@ function mob_search_product(){
     return false; 
 }	
 
-// Header Menu Script for ipad views
-if ($(window).width() >= 768 && $(window).width() <= 1024) {
-    var clickBtn = false;
-    var data = false;
-    var data1 = '';
-    $('.sm-navigation--menu').click(function (e) {
-        var set_data = $(this).attr("data");
-        $(".desktop-navigation--sub").hide();
-        if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
-            data1 = set_data;
-            $(this).find(".desktop-navigation--sub").show();
-            e.preventDefault();
-        } else {
-            data1 = '';
-        }
-        if (set_data == data1 && data1 != '') {
-            clickBtn = true;
-            data = true;
-        } else {
-            clickBtn = false;
-            data = false;
-        }
-    });
-}
+
 
   /*Map Js*/  
 
