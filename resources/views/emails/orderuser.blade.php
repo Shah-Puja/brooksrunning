@@ -137,7 +137,7 @@
                                         <tbody>
                                             <tr>
                                                 <td align="center">
-                                                    <img src="/images/emailers/Brooks-logo.jpg" alt="logo" style="width:200px;" />
+                                                    <img src="https://brooksrunning.com.au/images/emailers/Brooks-logo.jpg" alt="logo" style="width:200px;" />
                                                 </td>
                                             </tr>
                                             <tr>
