@@ -12,7 +12,7 @@ class AweberSubscriber implements SubscriberInterface {
         $this->client = $client;
     }
 
-    public function add($subscriber) {
+    /*public function add($subscriber) {
         
         $subscriber = array(
             'ad_tracking' => 'syg_api_example',
@@ -27,9 +27,9 @@ class AweberSubscriber implements SubscriberInterface {
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
         $this->findSubscriber($subscriber);
-    }
+    }*/
 
-    public function findSubscriber($subscriber) {
+    public function updateoradd_Subscriber($subscriber) {
         $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);

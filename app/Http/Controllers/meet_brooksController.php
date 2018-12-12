@@ -65,19 +65,7 @@ class meet_brooksController extends Controller
                 'answer'=>request('custom_Answer')
 
             ]
-        );
-        // competition user added in Aweber
-        $subscriber = array(
-            'ad_tracking' => 'competition',
-            'custom_fields' => array(
-                'State' => 'vic'
-            ),
-            'email' => request('email'),
-            'name' => request('fname'),
-            'custom' => '',
-            
-        );
-        $this->client->findSubscriber($subscriber);
+        );        
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 
@@ -91,6 +79,26 @@ class meet_brooksController extends Controller
                                        'shoe_wear' => request('custom_Shoes_you_wear'),
                                        'source' => 'Competition',
                                        'user_type' => 'Competition']);
+        
+        // Update Or Create competition user in Aweber               
+        $subscriber = array(
+            'email' => request('email'),
+            'name' => request('fname')." ".request('lname'),
+            'ad_tracking' => 'Competition',
+            'misc_notes' => request('comp_name'),
+            'custom_fields' => array(
+                'Post Code' => request('postcode'),
+                'Gender' => request('gender'),
+                'Birth Day'=> request('custom_Birth_Date'),
+                'Birth Month' => request('custom_Birth_Month'),
+                'Age' => request('custom_Age'),
+                'Country' => request('country'),
+                'Shoes you wear' => request('custom_Shoes_you_wear'),
+                'Contest Code' => request('comp_name'),
+            ),                        
+        );
+        $this->client->updateoradd_Subscriber($subscriber);
+
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
