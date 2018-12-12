@@ -2938,89 +2938,122 @@ textarea {
     bottom: 0;
   }
 }
-.homepage-container .homepage-salebanner--info {
+
+.homepage-banner--container {
+  position: relative;
+  display: block;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-banner--container {
+    padding: 0 !important;
+  }
+}
+.homepage-banner--container .wrapper {
+  width: 100%;
+  max-width: 1300px;
+}
+.homepage-banner--container .pl-0 {
+  padding-left: 0 !important;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-banner--container .pl-0 {
+    padding: 0 !important;
+  }
+}
+.homepage-banner--container .pr-0 {
+  padding-right: 0 !important;
+}
+@media only screen and (max-width: 991px) {
+  .homepage-banner--container .pr-0 {
+    padding: 0 !important;
+  }
+}
+.homepage-banner--container .homepage-salebanner--info {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: -65%;
+  top: 0;
   left: 0;
   z-index: 2;
 }
-.homepage-container .homepage-salebanner--info .banner--info {
-  padding-top: 145px;
+.homepage-banner--container .homepage-salebanner--info .banner--info {
+  padding-top: 15px;
   max-width: 250px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-container .homepage-salebanner--info .banner--info {
-    padding-top: 35%;
+  .homepage-banner--container .homepage-salebanner--info .banner--info {
+    padding-top: 2%;
+    max-width: 180px;
   }
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .homepage-container .homepage-salebanner--info .banner--info {
-    padding-top: 40%;
+  .homepage-banner--container .homepage-salebanner--info .banner--info {
+    padding-top: 10%;
   }
 }
 @media only screen and (max-width: 767px) {
-  .homepage-container .homepage-salebanner--info .banner--info {
+  .homepage-banner--container .homepage-salebanner--info .banner--info {
     padding-top: 95%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-container .homepage-salebanner--info .banner--info .homepage-sale--btn {
-    margin-top: 12px;
+  .homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn {
+    margin-top: 8px;
     padding: 12px 15px;
     font-size: 13px;
   }
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .homepage-container .homepage-salebanner--info .banner--info .homepage-sale--btn {
-    margin-top: 12px;
-    padding: 12px 15px;
-    font-size: 13px;
+  .homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn {
+    margin-top: 8px;
+    padding: 12px 8px;
+    font-size: 12px;
   }
 }
-.homepage-container .homepage-salebanner--info .br-info {
+.homepage-banner--container .homepage-salebanner--info .br-info {
   font-size: 16px;
   line-height: 1.4;
 }
-.homepage-container .homepage-salebanner--info .secondary-button {
+.homepage-banner--container .homepage-salebanner--info .secondary-button {
   margin-top: 15px;
 }
-.homepage-container .homepage-salebanner--info .primary-button {
+.homepage-banner--container .homepage-salebanner--info .primary-button {
   margin-top: 15px;
 }
 @media only screen and (max-width: 767px) {
-  .homepage-container .homepage-salebanner--info {
+  .homepage-banner--container .homepage-salebanner--info {
     top: 30%;
   }
 }
-.homepage-container .homepage-salebanner--info .sl-pl-0 {
+.homepage-banner--container .homepage-salebanner--info .sl-pl-0 {
   padding-left: 5px !important;
 }
-.homepage-container .homepage-salebanner--info .sl-pr-0 {
+.homepage-banner--container .homepage-salebanner--info .sl-pr-0 {
   padding-right: 5px !important;
 }
 @media screen and (orientation: landscape) {
-  .homepage-container .homepage-bannersale--mobportrait {
+  .homepage-banner--container .homepage-bannersale--mobportrait {
     display: none !important;
   }
-  .homepage-container .homepage-bannersale--moblandscape {
-    top: -65% !important;
+  .homepage-banner--container .homepage-bannersale--moblandscape {
+    top: 0;
   }
-  .homepage-container .homepage-bannersale--moblandscape .banner--info {
-    padding-top: 145px;
+  .homepage-banner--container .homepage-bannersale--moblandscape .banner--info {
+    padding-top: 15px;
     max-width: 250px;
-    padding-top: 35%;
+    padding-top: 5%;
   }
-  .homepage-container .homepage-bannersale--moblandscape .homepage-sale--btn {
-    margin-top: 12px;
-    padding: 8px 12px;
-    font-size: 13px;
+  .homepage-banner--container .homepage-bannersale--moblandscape .homepage-sale--btn {
+    margin-top: 8px;
+    padding: 8px 8px !important;
+    font-size: 12px;
   }
 }
 @media screen and (orientation: portrait) {
-  .homepage-container .homepage-bannersale--moblandscape {
+  .homepage-banner--container .homepage-bannersale--moblandscape {
     display: none !important;
   }
 }

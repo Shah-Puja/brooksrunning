@@ -1,6 +1,8 @@
 @extends('customer.layouts.master')
 @section('content')
-<section class="homepage-container">
+
+
+<section class="homepage-banner--container">
 <div class="wrapper">
 	<div class="row">
 		<div class="mob-12 col-12 pr-0">
