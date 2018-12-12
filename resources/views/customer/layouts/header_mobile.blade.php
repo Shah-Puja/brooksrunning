@@ -562,11 +562,15 @@
 	                    <span class="title">My Account</span>
 	                </a>
 	                <!-- Level Two-->
-	                <ul>
+	                <ul class="header-utality">
 						@if(auth()->user())
+							<li>
+                                <a href="/home">Dashboard</a>
+                            </li>
 							<li>
 								<a href="/account-order-history">My Orders</a>
 							</li>
+							
 							<li>
 								<a href="{{ route('logout') }}">Logout</a>
 							</li>

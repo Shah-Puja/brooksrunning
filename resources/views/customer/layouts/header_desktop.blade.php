@@ -19,6 +19,9 @@
                             <ul class="header-utality__submenu">
                                 @if(auth()->user())
                                     <li>
+                                        <a href="/home">Dashboard</a>
+                                    </li>
+                                    <li>
                                         <a href="/account-order-history">My Orders</a>
                                     </li>
                                     <li>
