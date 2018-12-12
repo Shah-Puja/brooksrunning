@@ -26,7 +26,7 @@ class AweberSubscriber implements SubscriberInterface {
         $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
-        $list->subscribers->findSubscriber($subscriber);
+        $this->findSubscriber($subscriber);
     }
 
     public function findSubscriber($subscriber) {
@@ -36,7 +36,7 @@ class AweberSubscriber implements SubscriberInterface {
         $email = array('email'=> $subscriber['email']);
         $response = $list->subscribers->find($email);
         if($response->total_size > 0){
-            $list->subscribers->update($response,$subscriber);
+            $this->update($response,$subscriber);
         }else{
             $list->subscribers->create($subscriber);
         }
