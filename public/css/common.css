@@ -2938,6 +2938,92 @@ textarea {
     bottom: 0;
   }
 }
+.homepage-container .homepage-salebanner--info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -65%;
+  left: 0;
+  z-index: 2;
+}
+.homepage-container .homepage-salebanner--info .banner--info {
+  padding-top: 145px;
+  max-width: 250px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-container .homepage-salebanner--info .banner--info {
+    padding-top: 35%;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .homepage-container .homepage-salebanner--info .banner--info {
+    padding-top: 40%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .homepage-container .homepage-salebanner--info .banner--info {
+    padding-top: 95%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-container .homepage-salebanner--info .banner--info .homepage-sale--btn {
+    margin-top: 12px;
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .homepage-container .homepage-salebanner--info .banner--info .homepage-sale--btn {
+    margin-top: 12px;
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+}
+.homepage-container .homepage-salebanner--info .br-info {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.homepage-container .homepage-salebanner--info .secondary-button {
+  margin-top: 15px;
+}
+.homepage-container .homepage-salebanner--info .primary-button {
+  margin-top: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .homepage-container .homepage-salebanner--info {
+    top: 30%;
+  }
+}
+.homepage-container .homepage-salebanner--info .sl-pl-0 {
+  padding-left: 5px !important;
+}
+.homepage-container .homepage-salebanner--info .sl-pr-0 {
+  padding-right: 5px !important;
+}
+@media screen and (orientation: landscape) {
+  .homepage-container .homepage-bannersale--mobportrait {
+    display: none !important;
+  }
+  .homepage-container .homepage-bannersale--moblandscape {
+    top: -65% !important;
+  }
+  .homepage-container .homepage-bannersale--moblandscape .banner--info {
+    padding-top: 145px;
+    max-width: 250px;
+    padding-top: 35%;
+  }
+  .homepage-container .homepage-bannersale--moblandscape .homepage-sale--btn {
+    margin-top: 12px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+@media screen and (orientation: portrait) {
+  .homepage-container .homepage-bannersale--moblandscape {
+    display: none !important;
+  }
+}
 
 .overgray-wrapper {
   margin: 25px 0;
