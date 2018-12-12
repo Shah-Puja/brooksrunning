@@ -74,6 +74,7 @@ class meet_brooksController extends Controller
             ),
             'email' => request('email'),
             'name' => request('fname'),
+            'custom' => '',
             
         );
         $this->client->findSubscriber($subscriber);
