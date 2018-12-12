@@ -8,13 +8,13 @@ use App\Models\Competition;
 use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
-use AWeberAPI;
+use App\SYG\Subscribers\SubscriberInterface;
 
 class meet_brooksController extends Controller
 {   
     protected $bridge;
     protected $client;
-    public function __construct(BridgeInterface $bridge,AWeberAPI $client) {
+    public function __construct(BridgeInterface $bridge,SubscriberInterface $client) {
         $this->bridge = $bridge;
         $this->client = $client;
     }
@@ -67,18 +67,16 @@ class meet_brooksController extends Controller
             ]
         );
         // competition user added in Aweber
-        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
-        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
-        $list = $account->loadFromUrl($listUrl);
         $subscriber = array(
             'ad_tracking' => 'competition',
             'custom_fields' => array(
                 'State' => 'vic'
             ),
-            'email' => $subscriber->email,
-            'name' => $subscriber->name,
+            'email' => request('email'),
+            'name' => request('fname'),
+            
         );
-        $list->subscribers->create($subscriber);
+        $this->client->comp_add($subscriber);
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 

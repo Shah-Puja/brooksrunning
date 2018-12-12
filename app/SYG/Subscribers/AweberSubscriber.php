@@ -29,4 +29,11 @@ class AweberSubscriber implements SubscriberInterface {
         $list->subscribers->create($subscriber);
     }
 
+    public function comp_add($subscriber) {
+        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
+        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
+        $list = $account->loadFromUrl($listUrl);
+        $list->subscribers->create($subscriber);
+    }
+
 }
