@@ -4,7 +4,6 @@ namespace App\SYG\Subscribers;
 
 use AWeberAPI;
 use App\SYG\Subscribers\SubscriberInterface;
-use Illuminate\Http\Response;
 
 class AweberSubscriber implements SubscriberInterface {
 
@@ -36,7 +35,7 @@ class AweberSubscriber implements SubscriberInterface {
         $list = $account->loadFromUrl($listUrl);
         $email = array('email'=> $subscriber['email']);
         $response = $list->subscribers->find($email);
-        print_r($response->status());
+        print_r($response->getStatusCode());
         exit;
         $list->subscribers->create($subscriber);
     }
