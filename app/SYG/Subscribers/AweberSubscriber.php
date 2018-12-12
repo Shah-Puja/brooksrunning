@@ -35,7 +35,7 @@ class AweberSubscriber implements SubscriberInterface {
         $list = $account->loadFromUrl($listUrl);
         $email = array('email'=> $subscriber['email']);
         $response = $list->subscribers->find($email);
-        print_r($response);
+        print_r($response->status());
         exit;
         $list->subscribers->create($subscriber);
     }
