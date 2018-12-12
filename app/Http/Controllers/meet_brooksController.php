@@ -79,25 +79,7 @@ class meet_brooksController extends Controller
                                        'shoe_wear' => request('custom_Shoes_you_wear'),
                                        'source' => 'Competition',
                                        'user_type' => 'Competition']);
-        
-        // Update Or Create competition user in Aweber               
-        $subscriber = array(
-            'email' => request('email'),
-            'name' => request('fname')." ".request('lname'),
-            'ad_tracking' => 'Competition',
-            'misc_notes' => request('comp_name'),
-            'custom_fields' => array(
-                'Post Code' => request('postcode'),
-                'Gender' => request('gender'),
-                'Birth Day'=> request('custom_Birth_Date'),
-                'Birth Month' => request('custom_Birth_Month'),
-                'Age' => request('custom_Age'),
-                'Country' => request('country'),
-                'Shoes you wear' => request('custom_Shoes_you_wear'),
-                'Contest Code' => request('comp_name'),
-            ),                        
-        );
-        $this->client->updateoradd_Subscriber($subscriber);
+                
 
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
@@ -112,6 +94,24 @@ class meet_brooksController extends Controller
         } 
         
         if($competition->wasRecentlyCreated){
+            // Update Or Create competition user in Aweber               
+            $subscriber = array(
+            'email' => request('email'),
+            'name' => request('fname')." ".request('lname'),
+            'ad_tracking' => 'Competition',
+            'misc_notes' => request('comp_name'),
+            'custom_fields' => array(
+                'Post Code' => request('postcode'),
+                'Gender' => request('gender'),
+                'Birth Day'=> request('custom_Birth_Date'),
+                'Birth Month' => request('custom_Birth_Month'),
+                'Age' => request('custom_Age'),
+                'Country' => request('country'),
+                'Shoes you wear' => request('custom_Shoes_you_wear'),
+                'Contest Code' => request('comp_name'),
+                ),                        
+            );
+            $this->client->updateoradd_Subscriber($subscriber);
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
             return response()->json([ 'success' => '<p class="heading">Thank for your interest! </p> <p class="thankyou_heading">You have already entered the competition.</p>' ]);
