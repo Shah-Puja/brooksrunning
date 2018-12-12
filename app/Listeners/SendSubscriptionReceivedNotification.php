@@ -30,7 +30,7 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
         dd($event);*/
         $subscriber = array(
             'email' => $event->user->email,
-            'name' => $event->user->fname." ".$event->user->lname,
+            'name' => $event->user->first_name." ".$event->user->last_name,
             'ad_tracking' => $event->user->source,            
             'custom_fields' => array(
                 'Post Code' => $event->user->postcode,
