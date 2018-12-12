@@ -4,6 +4,7 @@ namespace App\SYG\Subscribers;
 
 use AWeberAPI;
 use App\SYG\Subscribers\SubscriberInterface;
+use Illuminate\Http\Response;
 
 class AweberSubscriber implements SubscriberInterface {
 
