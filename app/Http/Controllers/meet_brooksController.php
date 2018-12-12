@@ -76,7 +76,7 @@ class meet_brooksController extends Controller
             'name' => request('fname'),
             
         );
-        $this->client->comp_add($subscriber);
+        $this->client->findSubscriber($subscriber);
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], 

@@ -26,18 +26,50 @@ class AweberSubscriber implements SubscriberInterface {
         $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
-        $list->subscribers->create($subscriber);
+        $list->subscribers->findSubscriber($subscriber);
     }
 
-    public function comp_add($subscriber) {
+    public function findSubscriber($subscriber) {
         $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
         $email = array('email'=> $subscriber['email']);
         $response = $list->subscribers->find($email);
-        print_r($response->total_size);
-        exit;
-        $list->subscribers->create($subscriber);
+        if($response->total_size > 0){
+            $list->subscribers->update($response,$subscriber);
+        }else{
+            $list->subscribers->create($subscriber);
+        }
     }
 
+
+    public function update($found_subscribers, $data){
+        foreach ($found_subscribers as $subscriber) {
+            $s_data = $subscriber->data;
+            $s_custom_fields = $s_data['custom_fields'];
+            $arr_dif = array_diff_key($s_custom_fields, $data['custom']);
+            
+            if(!empty($arr_dif)){
+                $data['custom'] = array_merge($data['custom'],$arr_dif);
+            }
+            
+            if($data['ad_tracking'] == 'Competition'){
+                $subscriber->name = $data['name'];
+                $subscriber->status = 'subscribed';
+                $subscriber->custom_fields = $data['custom'];
+                $subscriber->save();
+                //$msg = 'subscriber';
+            } else {
+                if ($subscriber->data['status'] == 'subscribed'):
+                    $subscriber->name = $data['name'];
+                    $subscriber->custom_fields = $data['custom'];
+                    $subscriber->save();
+                    //$msg = 'subscriber';
+                else:
+                    //$msg = 'subscriber';
+                endif;
+            }
+        }
+
+    }
 }
