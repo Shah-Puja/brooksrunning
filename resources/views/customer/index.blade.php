@@ -1,17 +1,46 @@
 @extends('customer.layouts.master')
 @section('content')
-<!-- <section class="homepage-container">
+<section class="homepage-container">
 <div class="wrapper">
 	<div class="row">
 		<div class="mob-12 col-12 pr-0">
 				<picture>
-							<source media="(max-width: 595px)" srcset="/images/home/sale-banners/competition-single/bedlam_comp_800x450.jpg">
-							<img src="/images/home/sale-banners/transcend6_retailrundown_comp_1430x350.jpg" alt="Header Images">
+							<source media="(max-width: 595px)" srcset="/images/home/sale-banners/sale_mobile_500x500_noctas.png">
+							<img src="/images/home/sale-banners/sale_desktop_1270x200_noctas.png" alt="Header Images">
 				</picture>
+				<div class="homepage-salebanner--info hidden-mob">
+					<div class="wrapper">
+						<div class="row">
+							<div class="col-8 tab-8">&nbsp;</div>
+							<div class="col-4 tab-4">
+								<div class="banner--info">
+									<a class="secondary-button homepage-sale--btn" href="/womens-running-shoes-and-clothing">Shop Women's</a>
+									<a class="secondary-button homepage-sale--btn" href="/mens-running-shoes-and-clothing">Shop Men's</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="homepage-salebanner--info hidden-col hidden-tab visible-mob">
+					<div class="wrapper">
+						<div class="row">
+							<div class="mob-6 sl-pr-0">
+								<div class="banner--info">
+									<a class="secondary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
+								</div>	
+							</div>
+							<div class="mob-6 sl-pl-0">
+								<div class="banner--info">
+									<a class="secondary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 		</div>
 	</div>
 </div>
-</section> -->
+</section>
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">
