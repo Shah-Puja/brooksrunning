@@ -30,11 +30,11 @@ class AweberSubscriber implements SubscriberInterface {
     }
 
     public function comp_add($subscriber) {
-        
+        dd($response);
         $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
         $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
         $list = $account->loadFromUrl($listUrl);
-        $email = array('email' => $subscriber->email);
+        $email = array('email'=> $subscriber['email']);
         $response = $this->list->subscribers->find($email);
         dd($response);
         $list->subscribers->create($subscriber);
