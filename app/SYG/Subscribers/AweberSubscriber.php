@@ -8,14 +8,7 @@ use App\SYG\Subscribers\SubscriberInterface;
 class AweberSubscriber implements SubscriberInterface {
 
     protected $client;
-
     public function __construct(AWeberAPI $client) {
-        $this->middleware(function ($request, $next) {
-            $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
-            $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
-            $this->list = $account->loadFromUrl($listUrl);
-            return $next($request);
-        });
         $this->client = $client;
     }
 
@@ -30,14 +23,21 @@ class AweberSubscriber implements SubscriberInterface {
             'name' => $subscriber->name,
             
         );
-        $this->list->subscribers->create($subscriber);
+        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
+        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
+        $list = $account->loadFromUrl($listUrl);
+        $list->subscribers->create($subscriber);
     }
 
     public function comp_add($subscriber) {
+        
+        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
+        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
+        $list = $account->loadFromUrl($listUrl);
         $email = array('email' => $subscriber->email);
         $response = $this->list->subscribers->find($email);
         dd($response);
-        $this->list->subscribers->create($subscriber);
+        $list->subscribers->create($subscriber);
     }
 
 }
