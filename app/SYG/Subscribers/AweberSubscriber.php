@@ -10,13 +10,17 @@ class AweberSubscriber implements SubscriberInterface {
     protected $client;
 
     public function __construct(AWeberAPI $client) {
+        $this->middleware(function ($request, $next) {
+            $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
+            $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
+            $this->list = $account->loadFromUrl($listUrl);
+            return $next($request);
+        });
         $this->client = $client;
     }
 
     public function add($subscriber) {
-        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
-        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
-        $list = $account->loadFromUrl($listUrl);
+        
         $subscriber = array(
             'ad_tracking' => 'syg_api_example',
             'custom_fields' => array(
@@ -26,14 +30,14 @@ class AweberSubscriber implements SubscriberInterface {
             'name' => $subscriber->name,
             
         );
-        $list->subscribers->create($subscriber);
+        $this->list->subscribers->create($subscriber);
     }
 
     public function comp_add($subscriber) {
-        $account = $this->client->getAccount(config('services.aweber.accesskey'), config('services.aweber.accesssecret'));
-        $listUrl = "/accounts/$account->id/lists/" . config('services.aweber.listid');
-        $list = $account->loadFromUrl($listUrl);
-        $list->subscribers->create($subscriber);
+        $email = array('email' => $subscriber->email);
+        $response = $this->list->subscribers->find($email);
+        dd($response);
+        $this->list->subscribers->create($subscriber);
     }
 
 }
