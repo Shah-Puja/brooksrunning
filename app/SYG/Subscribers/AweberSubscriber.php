@@ -47,22 +47,22 @@ class AweberSubscriber implements SubscriberInterface {
         foreach ($found_subscribers as $subscriber) {
             $s_data = $subscriber->data;
             $s_custom_fields = $s_data['custom_fields'];
-            $arr_dif = array_diff_key($s_custom_fields, $data['custom']);
+            $arr_dif = array_diff_key($s_custom_fields, $data['custom_fields']);
             
             if(!empty($arr_dif)){
-                $data['custom'] = array_merge($data['custom'],$arr_dif);
+                $data['custom'] = array_merge($data['custom_fields'],$arr_dif);
             }
             
             if($data['ad_tracking'] == 'Competition'){
                 $subscriber->name = $data['name'];
                 $subscriber->status = 'subscribed';
-                $subscriber->custom_fields = $data['custom'];
+                $subscriber->custom_fields = $data['custom_fields'];
                 $subscriber->save();
                 //$msg = 'subscriber';
             } else {
                 if ($subscriber->data['status'] == 'subscribed'):
                     $subscriber->name = $data['name'];
-                    $subscriber->custom_fields = $data['custom'];
+                    $subscriber->custom_fields = $data['custom_fields'];
                     $subscriber->save();
                     //$msg = 'subscriber';
                 else:
