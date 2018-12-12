@@ -8,7 +8,7 @@
 							<source media="(max-width: 595px)" srcset="/images/home/sale-banners/sale_mobile_500x500_noctas.png">
 							<img src="/images/home/sale-banners/sale_desktop_1270x200_noctas.png" alt="Header Images">
 				</picture>
-				<div class="homepage-salebanner--info hidden-mob">
+				<div class="homepage-salebanner--info hidden-mob ">
 					<div class="wrapper">
 						<div class="row">
 							<div class="col-8 tab-8">&nbsp;</div>
@@ -22,7 +22,7 @@
 					</div>
 				</div>
 				<div class="homepage-salebanner--info hidden-col hidden-tab visible-mob">
-					<div class="wrapper">
+					<div class="wrapper homepage-bannersale--mobportrait">
 						<div class="row">
 							<div class="mob-6 sl-pr-0">
 								<div class="banner--info">
@@ -32,6 +32,21 @@
 							<div class="mob-6 sl-pl-0">
 								<div class="banner--info">
 									<a class="secondary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Landscape View -->
+				<div class="homepage-salebanner--info hidden-col hidden-tab visible-mob homepage-bannersale--moblandscape">
+					<div class="wrapper">
+						<div class="row">
+							<div class="mob-8">&nbsp;</div>
+							<div class="mob-4">
+								<div class="banner--info">
+									<a class="secondary-button homepage-sale--btn" href="/womens-running-shoes-and-clothing">Shop Women's</a>
+									<a class="secondary-button homepage-sale--btn" href="/mens-running-shoes-and-clothing">Shop Men's</a>
 								</div>
 							</div>
 						</div>
