@@ -309,8 +309,8 @@
                                                                                     @if(isset($item->discount) && $item->discount!=0.00)
                                                                                     Discount:   
                                                                                     -${{ number_format($item->discount, 2) }} 
-                                                                                    @endif
                                                                                     <br/>
+                                                                                    @endif
                                                                                     <span class="br-item-total">Item Total:</span> ${{ $item->total }}
                                                                                 </p>
                                                                             </td>
