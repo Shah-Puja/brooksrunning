@@ -62,7 +62,7 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer')
+                'answer'=>request('custom_Answer')                
 
             ]
         );        
@@ -112,6 +112,7 @@ class meet_brooksController extends Controller
                 ),                        
             );
             $this->client->updateoradd_Subscriber($subscriber);
+            Competition_user::where('email',request('email'))->where('comp_name',request('comp_name'))->update(['comp_aweber_exist' => 'Yes' ]);
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
             return response()->json([ 'success' => '<p class="heading">Thank for your interest! </p> <p class="thankyou_heading">You have already entered the competition.</p>' ]);
@@ -255,7 +256,7 @@ class meet_brooksController extends Controller
                     ),                        
                 );
                 $this->client->updateoradd_Subscriber($subscriber);
-                Competition_user::where('email',$curr_user->email)->update(['comp_aweber_exist' => 'Yes' ]);
+                Competition_user::where('id',$curr_user->id)->update(['comp_aweber_exist' => 'Yes' ]);
             //exit;           
         }
     }
