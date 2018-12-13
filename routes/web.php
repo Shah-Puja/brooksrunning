@@ -61,6 +61,7 @@ Route::get('/sitemap', 'InfoController@sitemap');
 
 /* meet_brooks competition pages */
 Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@competition');
+Route::get('/meet_brooks/update_previous_competitions', 'meet_brooksController@update_previous_competitions');
 Route::post('/meet_brooks/competition', 'meet_brooksController@store');
 Route::post('/meet_brooks/enewsletter_post', 'meet_brooksController@enewsletter_store');
 Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
