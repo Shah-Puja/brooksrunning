@@ -233,5 +233,30 @@ class meet_brooksController extends Controller
             return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
         }
     }
+    
+    public function update_previous_competitions(){
+        ini_set('max_execution_time', 300);
+        $competition_user = Competition_user::where('comp_aweber_exist','No')->limit(15)->get();
+        foreach($competition_user as $curr_user){
+            echo"<br>".$curr_user->id."-".$curr_user->email. " - ".$curr_user->comp_name;
+            //print_r($curr_user);
+            $subscriber = array(
+                'email' => $curr_user->email,
+                'name' => $curr_user->fname." ".$curr_user->lname,
+                'ad_tracking' => 'Competition',
+                'misc_notes' => $curr_user->comp_name,
+                'custom_fields' => array(
+                    'Post Code' => $curr_user->postcode,
+                    'Gender' => $curr_user->gender,
+                    'Age' => $curr_user->age_group,
+                    'Country' => $curr_user->country,
+                    'Shoes you wear' => $curr_user->shoes_wear,
+                    'Contest Code' => $curr_user->comp_name,
+                    ),                        
+                );
+                $this->client->updateoradd_Subscriber($subscriber);
+                Competition_user::where('email',$curr_user->email)->update(['comp_aweber_exist' => 'Yes' ]);
+            //exit;           
+        }
+    }
 }
-
