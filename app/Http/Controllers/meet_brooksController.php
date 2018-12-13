@@ -9,7 +9,6 @@ use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\SYG\Subscribers\SubscriberInterface;
-use Queue;
 
 class meet_brooksController extends Controller
 {   
@@ -112,7 +111,7 @@ class meet_brooksController extends Controller
                 'Contest Code' => request('comp_name'),
                 ),                        
             );
-            Queue::push($this->client->updateoradd_Subscriber($subscriber));
+            $this->client->updateoradd_Subscriber($subscriber);
             Competition_user::where('email',request('email'))->where('comp_name',request('comp_name'))->update(['comp_aweber_exist' => 'Yes' ]);
             return response()->json([ 'success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>' ]);
         }else{
