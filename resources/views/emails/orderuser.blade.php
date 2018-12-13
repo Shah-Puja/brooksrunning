@@ -152,7 +152,7 @@
                                                 <td align="center">
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 
-                                                    <h3 style="line-height: 0.2px; font-weight: normal;">Order Date : {{ date('d/F/Y', strtotime($order->transaction_dt)) }}</h3>
+                                                    <h3 style="line-height: 0.2px; font-weight: normal;">Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}</h3>
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                 </td>
                                             </tr>
@@ -311,7 +311,7 @@
                                                                                         $0.00
                                                                                     @endif
                                                                                     <br/>
-                                                                                    <span class="br-item-total">Item Total:</span> ${{ $item->total }};
+                                                                                    <span class="br-item-total">Item Total:</span> ${{ $item->total }}
                                                                                 </p>
                                                                             </td>
                                                                         </tr>
@@ -416,11 +416,11 @@
                                         <tbody>
                                             <tr>
                                                 <td align="left">
-                                                    <p style="text-align:justify;">To find out more about our shipping policy <a href="/info/shipping-information">click here</a>.</p>
-                                                    <p style="text-align:justify;">For more information on our returns and exchanges policy <a href="/info/returns-exchange">click here</a>.
+                                                    <p style="text-align:left;">To find out more about our shipping policy <a href="/info/shipping-information">click here</a>.</p>
+                                                    <p style="text-align:left;">For more information on our returns and exchanges policy <a href="/info/returns-exchange">click here</a>.
                                                     </p>
-                                                    <p style="text-align:justify;">Unfortunately we are unable to make changes to your shipping information once your order is dispatched.</p>
-                                                    <p style="text-align:justify;">If you have any questions regarding your order, please send them to <a href="mailto:shop@brooksrunning.com.au" target="_top">shop@brooksrunning.com.au</a> quoting your order number stated above.</p>
+                                                    <p style="text-align:left;">Unfortunately we are unable to make changes to your shipping information once your order is dispatched.</p>
+                                                    <p style="text-align:left;">If you have any questions regarding your order, please send them to <a href="mailto:shop@brooksrunning.com.au" target="_top">shop@brooksrunning.com.au</a> quoting your order number stated above.</p>
                                                 </td>
                                             </tr>
                                             <tr>
