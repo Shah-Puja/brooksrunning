@@ -28,9 +28,20 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
     {
         /*echo "eeeeeeeeeeeeeeeeeeeee";echo "<pre>";print_r($event);die;
         dd($event);*/
-        $subscriber = $event->user;
-        $subscriber->name = $event->user->first_name . " " . $event->user->last_name; 
-        $this->subscriptionService->add($subscriber);
+        $subscriber = array(
+            'email' => $event->user->email,
+            'name' => $event->user->first_name." ".$event->user->last_name,
+            'ad_tracking' => $event->user->source,            
+            'custom_fields' => array(
+                'Post Code' => $event->user->postcode,
+                'Gender' => $event->user->gender,
+                'Birth Day'=> $event->user->birth_date,
+                'Birth Month' => $event->user->birth_month,
+                'Age' => $event->user->age_group,
+                'State' => $event->user->state
+                ),                        
+            );          
+        $this->subscriptionService->updateoradd_Subscriber($subscriber);
     }
 }
 
