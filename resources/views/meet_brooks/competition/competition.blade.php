@@ -63,6 +63,8 @@
 
 <script>
 function insert_competition(){
+	$("#comp_loader").show();
+	$("#comp_submit_btn").addClass("disable");
 	$("#competition input,#competition select").removeClass("error-border");
 	$("#competition input,#competition select").parent().find('label span').remove();
 	var form_data =  $('#competition').serialize();
@@ -78,6 +80,8 @@ function insert_competition(){
 			return false;
 		},
 		error: function(error){
+			$("#comp_loader").hide();
+			$("#comp_submit_btn").removeClass("disable");
 			let obj = JSON.parse(error.responseText);
 			let response = grecaptcha.getResponse();
 			if(response==''){;

@@ -6710,6 +6710,33 @@ textarea {
   line-height: 45px;
 }
 
+.comp-submit .alignleft {
+  float: left;
+  width: 90%;
+}
+.comp-submit .disable {
+  background-color: #f1f1f1;
+  color: #dedcda;
+  cursor: no-drop;
+}
+.comp-submit .disable:hover {
+  border: 1px solid #d3d0cd;
+  background: #f1f1f1;
+  color: #e1e1e1;
+}
+.comp-submit .disable:active {
+  background-color: #f1f1f1;
+  background-size: 100%;
+}
+.comp-submit .alignright {
+  float: right;
+  width: 5%;
+  margin-top: 20px;
+}
+.comp-submit .inline-loader {
+  display: inline-block;
+}
+
 /*  Shipping Page Start */
 .input-wrapper .checklist-inline .run-happy {
   margin-top: -24px;
