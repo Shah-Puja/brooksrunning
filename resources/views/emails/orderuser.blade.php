@@ -272,7 +272,9 @@
                                                                                     <br/>
                                                                                     Size: {{ $item->variant->size }}
                                                                                     <br/>
+                                                                                    @if(isset($item->variant->width_name) && $item->variant->width_name!="")
                                                                                     Width: {{ $item->variant->width_name }}
+                                                                                    @endif
                                                                                 </p>
                                                                             </td>
                                                                         </tr>
@@ -304,11 +306,9 @@
                                                                                     ${{ number_format($item->variant->price_sale, 2) }}
                                                                                     @endif
                                                                                     <br/>
-                                                                                    Discount:  
-                                                                                    @if($item->discount!=0.00)
-                                                                                        -${{ number_format($item->discount, 2) }}
-                                                                                    @else
-                                                                                        $0.00
+                                                                                    @if(isset($item->discount) && $item->discount!=0.00)
+                                                                                    Discount:   
+                                                                                    -${{ number_format($item->discount, 2) }} 
                                                                                     @endif
                                                                                     <br/>
                                                                                     <span class="br-item-total">Item Total:</span> ${{ $item->total }}
@@ -378,10 +378,21 @@
                                                                         @endif
                                                                     </p></td>
                                                             </tr>
+
+                                                            @if (isset($order->coupon_code) && $order->coupon_code != '')
                                                             <tr>
-                                                                <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Discount:</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Coupon Discounts:</p></td>
                                                                 <td><p style="text-align:justify; line-height: 0.4;">-${{ $coup_discount }}</p></td>
                                                             </tr>
+                                                            @endif
+
+                                                            @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                                            <tr>
+                                                                <td align="left">Gift Discounts:</td>
+                                                                <td align="left">$ {{  @number_format($order->gift_amount, 2) }}</td>
+                                                            </tr>
+                                                            @endif
+
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Shipping:</p></td>
                                                                 <td><p style="text-align:justify; line-height: 0.4;">${{  @number_format($order->freight_cost, 2) }}</p></td>
