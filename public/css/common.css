@@ -2963,11 +2963,16 @@ textarea {
   }
 }
 .homepage-banner--container .pr-0 {
-  padding-right: 0 !important;
+  padding-right: 0;
 }
 @media only screen and (max-width: 991px) {
   .homepage-banner--container .pr-0 {
     padding: 0 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .homepage-banner--container .pr-0 {
+    padding: 0px 15px;
   }
 }
 .homepage-banner--container .homepage-salebanner--info {
@@ -2989,9 +2994,9 @@ textarea {
     max-width: 180px;
   }
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .homepage-banner--container .homepage-salebanner--info .banner--info {
-    padding-top: 10%;
+    max-width: 215px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -3006,11 +3011,11 @@ textarea {
     font-size: 13px;
   }
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn {
     margin-top: 8px;
-    padding: 12px 8px;
-    font-size: 12px;
+    padding: 12px 5px;
+    font-size: 17px;
   }
 }
 .homepage-banner--container .homepage-salebanner--info .br-info {
@@ -3042,9 +3047,9 @@ textarea {
     top: 0;
   }
   .homepage-banner--container .homepage-bannersale--moblandscape .banner--info {
-    padding-top: 15px;
-    max-width: 250px;
-    padding-top: 5%;
+    padding-top: 2% !important;
+    max-width: 180px !important;
+    padding-top: 3% !important;
   }
   .homepage-banner--container .homepage-bannersale--moblandscape .homepage-sale--btn {
     margin-top: 8px;
