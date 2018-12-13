@@ -199,7 +199,7 @@
                                             <tr>
                                                 <td align="left">
                                                     <h2 class="title">Payment Method</h2>
-                                                    <p style="text-align:justify;">{{ $order->payment_type }}</p>
+                                                    <p style="text-align:justify;">{{ $order->payment_type }} {{ $order->card_type }} </p>
                                                     <p style="text-align:justify; font-size: 14px;">All charges will appear as Fit Chain Pty.Ltd.</p>
                                                 </td>
                                             </tr>

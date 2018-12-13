@@ -228,6 +228,7 @@ class PaymentController extends Controller {
 
         if ($transation_result->processorResponseCode == "1000" && $transation_result->processorResponseText == "Approved") {
             $order_id = $transation_result->orderId;
+            $card_type = (isset($transation_result->creditCard['cardType']) && $transation_result->creditCard['cardType']!="") ? $transation_result->creditCard['cardType'] : "";
             $braintree_result = 'Success';
             $transaction_id = $transation_result->id;
             $log_title = "Braintree Payment";
@@ -239,6 +240,7 @@ class PaymentController extends Controller {
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
             $orderDataUpdate = array(
+                'card_type' => $card_type,
                 'status' => 'Order Completed'
             );
             Order::where('id', $order_id)->update($orderDataUpdate);
