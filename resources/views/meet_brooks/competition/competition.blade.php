@@ -22,19 +22,25 @@
 		<div class="col-9">
 			<div class="create-account--left">
 			    @if($competition->status == 'Open')
-				<div class="row">
-					<div class="col-10">
-						<p>{!! $competition->comp_text !!}</p>
-					</div>
-				</div>
-				<hr>
 				<div class="response_content">
+					<div class="row">
+						<div class="col-10">
+							<p>{!! $competition->comp_text !!}</p>
+						</div>
+					</div>
+					<hr>
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 						@if(!empty($competition->comp_form))
 							@include('meet_brooks.competition.'.$competition->comp_form)
 						@endif
-					@endif
 				</div>
+				@else
+				<div class="row">
+					<div class="col-10">
+						{!! $competition->close_text !!}
+					</div>
+				</div>
+				@endif
 				<div class="row">
 					<div class="tab-12">
 						<div class="comp_bottom">
