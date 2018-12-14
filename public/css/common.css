@@ -127,7 +127,7 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
-.pdp-container--info .shoe-info-wrapper, .pdp-container--info .offer-info span, .plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span {
+.closedbelow, .pdp-container--info .shoe-info-wrapper, .pdp-container--info .offer-info span, .plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
@@ -6684,6 +6684,14 @@ textarea {
   text-decoration: none;
 }
 
+.closedbelow {
+  color: #666;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 1em 0;
+}
+
 .comp_bottom .notice {
   color: #666;
   font-size: 0.9em;
@@ -6692,6 +6700,7 @@ textarea {
 .comp_bottom p {
   line-height: 1.5em;
   margin: 1em 0;
+  font-size: 1em;
 }
 
 .response_content .heading {

@@ -123,7 +123,7 @@
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/global\.scss}line{font-family:\00003151}}
-.plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span, .pdp-container--info .offer-info span, .pdp-container--info .shoe-info-wrapper {
+.plp-wrapper-container .plp-wrapper__sub .plp-product .offer-info span, .pdp-container--info .offer-info span, .pdp-container--info .shoe-info-wrapper, .closedbelow {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/global\.scss}line{font-family:\00003152}}
@@ -6456,17 +6456,26 @@ textarea {
     color: #42bac5;
     text-decoration: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035165}}
+.closedbelow {
+  color: #666;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 1em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035174}}
 .comp_bottom .notice {
   color: #666;
   font-size: 0.9em;
   font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035180}}
 .comp_bottom p {
   line-height: 1.5em;
-  margin: 1em 0; }
+  margin: 1em 0;
+  font-size: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035187}}
 .response_content .heading {
   color: #0263f7;
   font-size: 42px;
@@ -6475,42 +6484,42 @@ textarea {
   margin: 0 0 5px 0;
   padding: 0 0 10px 0;
   text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035197}}
 .response_content .thankyou_heading {
   font-weight: normal;
   font-size: 2em;
   color: #6d665f;
   line-height: 45px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035205}}
 .comp-submit .alignleft {
   float: left;
   width: 90%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035209}}
 .comp-submit .disable {
   background-color: #f1f1f1;
   color: #dedcda;
   cursor: no-drop; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035213}}
   .comp-submit .disable:hover {
     border: 1px solid #d3d0cd;
     background: #f1f1f1;
     color: #e1e1e1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035209}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035218}}
   .comp-submit .disable:active {
     background-color: #f1f1f1;
     background-size: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035223}}
 .comp-submit .alignright {
   float: right;
   width: 5%;
   margin-top: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035228}}
 .comp-submit .inline-loader {
   display: inline-block; }
 
 /*  Shipping Page Start */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035238}}
 .input-wrapper .checklist-inline .run-happy {
   margin-top: -24px; }
 
