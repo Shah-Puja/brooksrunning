@@ -5170,6 +5170,15 @@ a {
     margin: 1em 0;
   @extend %bold-italic-font;
 }
+.closed{
+  color: #1678bd;
+  @extend %extrabold-font;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
 .comp_bottom{
 .notice {
   color: #666;
