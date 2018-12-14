@@ -5192,6 +5192,36 @@ a {
     line-height:45px;
   }
 }
+.comp-submit{
+  .alignleft {
+    float: left;
+    width: 90%;
+  }
+  .disable{
+    background-color: #f1f1f1;
+    color: #dedcda;
+    cursor:no-drop;
+    &:hover{
+      border: 1px solid $border;
+      background: #f1f1f1;
+      color: #e1e1e1;
+    }
+    &:active {
+      background-color: #f1f1f1;
+      background-size: 100%;
+    }
+  }
+  .alignright {
+      float: right;
+      width: 5%;
+      margin-top: 20px;
+  }
+  .inline-loader
+  {
+      display: inline-block;
+  }
+}
+
 
 /*  Shipping Page Start */
 .input-wrapper {

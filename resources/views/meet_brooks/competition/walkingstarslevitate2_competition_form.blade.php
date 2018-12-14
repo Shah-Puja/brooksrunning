@@ -188,8 +188,18 @@
 	</div>
 	<div class="row">
 		<div class="tab-12">
-			<div class="cart-btn">
+			<!-- <div class="cart-btn">
 				<button class="primary-button">Enter</button>
+			</div> -->
+			<div class="cart-btn comp-submit" >
+				<div class="alignleft inline-loader">
+					<button class="primary-button" id="comp_submit_btn">Enter</button>
+				</div>
+				<div class="alignright inline-loader">
+					<div id = "comp_loader" style="display:none">
+						<img src = "/images/loader.gif" alt="comp-loader"/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
