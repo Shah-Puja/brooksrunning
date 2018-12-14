@@ -30,7 +30,7 @@ class HomePageController extends Controller
             ->first();            
         }
         /// Homepage banner 
-        $banner = Promo_banners::where('active','Y')
+        $banner = \App\Models\Promo_banners::where('active','Y')
                                 ->where('banner_type','homepage-banner1')
                                 ->first();
         if((!empty($banner->start_date) && $banner->start_date!='0000-00-00 00:00:00') && (!empty($banner->end_date)  && $banner->end_date!='0000-00-00 00:00:00') ){
