@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Variant;
+use App\Models\Promo_banners;
 
 class HomePageController extends Controller
 {
@@ -28,8 +29,14 @@ class HomePageController extends Controller
             ->with('variants')
             ->first();            
         }
-
-        return view ('customer.index',compact('product'));
+        /// Homepage banner 
+        $banner = Promo_banners::where('active','Y')
+                                ->where('banner_type','homepage-banner1')
+                                ->first();
+        if((!empty($banner->start_date) && $banner->start_date!='0000-00-00 00:00:00') && (!empty($banner->end_date)  && $banner->end_date!='0000-00-00 00:00:00') ){
+            $banner = ($banner->start_date <= now() && $banner->end_date >=now() ) ? $banner : '';
+        }
+        return view ('customer.index',compact('product','banner'));
     }
 
 }
