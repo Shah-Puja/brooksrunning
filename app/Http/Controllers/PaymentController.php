@@ -111,7 +111,7 @@ class PaymentController extends Controller {
                 $transaction_id = $charge_payment['id'];
                 $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id, 'transaction_status' => 'Succeeded', 'payment_status' => Carbon::now())); 
                 $xml = '';
-                $braintree_result = 'Success';
+                $afterpay_result = 'Success';
                 $log_title = "AfterPay Payment";
                 $log_type = "Response";
                 $log_status = "AfterPay Payment Process Completed"; 
@@ -127,7 +127,8 @@ class PaymentController extends Controller {
                     'result' => $orderReport,
                     'xml' => (!empty($xml)) ? $xml : '',
                     'transaction_id' => $transaction_id,
-                    'transaction_result' => $braintree_result
+                    'transaction_result' => $afterpay_result,
+                    'transaction_data' => $charge_payment
                 );
                 Order_log::insert($logger);
 
@@ -253,7 +254,8 @@ class PaymentController extends Controller {
                 'result' => $orderReport,
                 'xml' => (!empty($xml)) ? $xml : '',
                 'transaction_id' => $transaction_id,
-                'transaction_result' => $braintree_result
+                'transaction_result' => $braintree_result,
+                'transaction_data' => $transation_result
             );
             Order_log::insert($logger);
 
