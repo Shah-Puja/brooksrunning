@@ -119,7 +119,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.response_content .heading, .comp_bottom .notice, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -6690,6 +6690,15 @@ textarea {
   font-weight: normal;
   line-height: 1.5em;
   margin: 1em 0;
+}
+
+.closed {
+  color: #1678bd;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 .comp_bottom .notice {
