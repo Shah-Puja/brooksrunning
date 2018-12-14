@@ -1,8 +1,10 @@
 @extends('customer.layouts.master')
 @section('content')
 
-
-<!-- <section class="homepage-banner--container">
+@if(!empty($banner))
+	{!! $banner->html_section !!}
+@endif
+<section class="homepage-banner--container">
 <div class="wrapper">
 	<div class="row">
 		<div class="mob-12 col-12 pr-0">
@@ -41,7 +43,7 @@
 				</div>
 
 				<!-- Landscape View -->
-				<!-- <div class="homepage-salebanner--info hidden-col hidden-tab visible-mob homepage-bannersale--moblandscape">
+				<div class="homepage-salebanner--info hidden-col hidden-tab visible-mob homepage-bannersale--moblandscape">
 					<div class="wrapper">
 						<div class="row">
 							<div class="mob-8">&nbsp;</div>
@@ -57,7 +59,7 @@
 		</div>
 	</div>
 </div>
-</section> --> 
+</section> 
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">
