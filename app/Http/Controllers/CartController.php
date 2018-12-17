@@ -195,40 +195,43 @@ class CartController extends Controller {
     public function update_delivery_option() {
         $delivery_option = request('delivery_option_value');
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
-
-        $cart_total = $cart->total;
-        if ($delivery_option == 'express') {
-            $freight_charges = '15';
-            //config('site.freight_cost')
-        } else if ($delivery_option == 'new_zealand') {
-            $freight_charges = 25;
-        } else {
-            if ($cart_total <= 50) {
-                $freight_charges = 10;
+        if(!empty($cart)){
+            $cart_total = $cart->total;
+            if ($delivery_option == 'express') {
+                $freight_charges = '15';
+                //config('site.freight_cost')
+            } else if ($delivery_option == 'new_zealand') {
+                $freight_charges = 25;
             } else {
-                $freight_charges = '0.00';
+                if ($cart_total <= 50) {
+                    $freight_charges = 10;
+                } else {
+                    $freight_charges = '0.00';
+                }
             }
+            echo session('cart_id');
+            $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
+            echo "success";
         }
-        echo session('cart_id');
-        $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
-        echo "success";
     }
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
-        if ($cart->gift_pin != "") {
-            $AvailableAmount = $cart->gift_available_amount;
-            $cartTotal = $cart->cart_total;
-
-            if ($AvailableAmount > $cartTotal) {
-                $gift_discount = $cartTotal;
-                $gift_cart_total = 0;
-            } else {
-                $gift_discount = $AvailableAmount;
-                $gift_cart_total = $cartTotal - $AvailableAmount;
+        if(!empty($cart)){
+            if ($cart->gift_pin != "") {
+                $AvailableAmount = $cart->gift_available_amount;
+                $cartTotal = $cart->cart_total;
+    
+                if ($AvailableAmount > $cartTotal) {
+                    $gift_discount = $cartTotal;
+                    $gift_cart_total = 0;
+                } else {
+                    $gift_discount = $AvailableAmount;
+                    $gift_cart_total = $cartTotal - $AvailableAmount;
+                }
+                Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
+                $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
             }
-            Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-            $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         }
         return view('cart.order_summary', compact('cart'));
     }
