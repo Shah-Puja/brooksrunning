@@ -47,7 +47,7 @@ class meet_brooksController extends Controller
     		'gender' => 'required',    		
             'email' => 'required|email',
      		'country' => 'required',
-            'postcode' => 'required',
+            'postcode' => 'required|integer',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
@@ -198,7 +198,7 @@ class meet_brooksController extends Controller
     		'gender' => 'required',    		
             'email' => 'required|email',
      		'country' => 'required',
-            'postcode' => 'required',
+            'postcode' => 'required|integer',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
