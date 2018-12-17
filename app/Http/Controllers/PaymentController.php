@@ -128,7 +128,7 @@ class PaymentController extends Controller {
                     'xml' => (!empty($xml)) ? $xml : '',
                     'transaction_id' => $transaction_id,
                     'transaction_result' => $afterpay_result,
-                    'transaction_data' => $charge_payment
+                    'transaction_data' => json_encode($charge_payment)
                 );
                 Order_log::insert($logger);
 
