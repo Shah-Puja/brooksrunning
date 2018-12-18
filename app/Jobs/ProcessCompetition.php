@@ -27,7 +27,7 @@ class ProcessCompetition implements ShouldQueue
  
     public function handle(SubscriberInterface $client)
     {
-        //Log::info($this->subscriber);
+        //Log::info($client);
         $client->updateoradd_Subscriber($this->subscriber);
     }
 }
