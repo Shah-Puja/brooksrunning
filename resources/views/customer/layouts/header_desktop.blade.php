@@ -378,15 +378,15 @@
                                                         <li>
                                                             <a href="/shoes/hyperion">Hyperion</a>
                                                         </li>
-                                                        <!-- <li class="submenu-main">
+                                                        <li class="submenu-main">
 	                                                        <a href="/cross-trainer-shoes">Cross Training Shoes</a>
-	                                                    </li> -->
-                                                        <!-- <li>
+	                                                    </li>
+                                                        <li>
                                                             <a href="/shoes/liberty">Liberty</a>
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/maximus">Maximus</a>
-                                                        </li> -->
+                                                        </li>
                                                         <li class="submenu-main">
 	                                                        <a href="/walking-shoes">Walking Shoes</a>
 	                                                    </li>
