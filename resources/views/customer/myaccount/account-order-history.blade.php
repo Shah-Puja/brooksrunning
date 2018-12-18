@@ -4,8 +4,8 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 class="br-mainheading">Welcome, {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}!</h1>
-				<p>Not {{ auth()->user()->first_name }}? <a href="/logout">Logout</a></p>
+				<h1 class="br-mainheading">Welcome, {{ (isset(auth()->user()->first_name) && auth()->user()->first_name!="") ? auth()->user()->first_name : "" }} {{ (isset(auth()->user()->last_name) && auth()->user()->last_name!="") ? auth()->user()->last_name : "" }}!</h1>
+				<p>Not {{ (isset(auth()->user()->first_name) && auth()->user()->first_name!="") ? auth()->user()->first_name : "" }}? <a href="/logout">Logout</a></p>
 			</div>
 		</div>
 	</div>
