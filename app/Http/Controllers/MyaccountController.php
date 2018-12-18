@@ -16,8 +16,12 @@ class MyaccountController extends Controller {
     }
 
     public function account_order_history() {
-        $user_order_details = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->with('address')->get(); 
-        return view('customer.myaccount.account-order-history', compact('user_order_details'));
+        if(auth()->id()=="") {
+            return redirect('login');
+        }else{
+            $user_order_details = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->with('address')->get(); 
+            return view('customer.myaccount.account-order-history', compact('user_order_details'));
+        }
     }
 
     public function view_order(Request $request) {
