@@ -38,36 +38,41 @@ class AweberSubscriber implements SubscriberInterface {
         if($response->total_size > 0){
             $this->update($response,$subscriber);
         }else{
-            $list->subscribers->create($subscriber);
+            try {
+                $list->subscribers->create($subscriber);
+            } catch (Exception $e) {
+                //echo 'Caught exception: ',  $e->getMessage(), "\n";
+            }
         }
     }
 
-
     public function update($found_subscribers, $data){
-        foreach ($found_subscribers as $subscriber) {
-            $s_data = $subscriber->data;
-            $s_custom_fields = $s_data['custom_fields'];
-            $arr_dif = array_diff_key($s_custom_fields, $data['custom_fields']);
-            
-            if(!empty($arr_dif)){
-                $data['custom'] = array_merge($data['custom_fields'],$arr_dif);
-            }
-            
-            if($data['ad_tracking'] == 'Competition'){
-                $subscriber->name = $data['name'];
-                $subscriber->status = 'subscribed';
-                $subscriber->custom_fields = $data['custom_fields'];
-                $subscriber->save();
-                //$msg = 'subscriber';
-            } else {
-                if ($subscriber->data['status'] == 'subscribed'):
+        if(!empty($found_subscribers)){
+            foreach ($found_subscribers as $subscriber) {
+                $s_data = $subscriber->data;
+                $s_custom_fields = $s_data['custom_fields'];
+                $arr_dif = array_diff_key($s_custom_fields, $data['custom_fields']);
+                
+                if(!empty($arr_dif)){
+                    $data['custom'] = array_merge($data['custom_fields'],$arr_dif);
+                }
+                
+                if($data['ad_tracking'] == 'Competition'){
                     $subscriber->name = $data['name'];
+                    $subscriber->status = 'subscribed';
                     $subscriber->custom_fields = $data['custom_fields'];
                     $subscriber->save();
                     //$msg = 'subscriber';
-                else:
-                    //$msg = 'subscriber';
-                endif;
+                } else {
+                    if ($subscriber->data['status'] == 'subscribed'):
+                        $subscriber->name = $data['name'];
+                        $subscriber->custom_fields = $data['custom_fields'];
+                        $subscriber->save();
+                        //$msg = 'subscriber';
+                    else:
+                        //$msg = 'subscriber';
+                    endif;
+                }
             }
         }
 
