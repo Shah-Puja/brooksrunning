@@ -279,18 +279,19 @@ class Manual_ap21order_push extends Controller {
         $returnData = array();
         $returnOrderNum = $order_id;
         $add_description = '';
+        $order_instruction = '';
         $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
 
         if (!empty($order->coupon_code)) {
-            $add_description .= ' Coupon Code :- ' . $order->coupon_code;
+            $order_instruction .= ' Coupon Code :- ' . $order->coupon_code;
         }
 
         if (!empty($order->giftcert_ap21code)) {
-            $add_description .= ' Gift Code :- ' . $order->giftcert_ap21code;
+            $order_instruction .= ' Gift Code :- ' . $order->giftcert_ap21code;
         }
 
         if (!empty($order->transaction_id)) {
-            $add_description .= ' Transaction Id :- ' . $order->transaction_id;
+            $add_description .= $order->address->order_info;
         }
 
         $fullname = $order->address->b_fname . ' ' . $order->address->b_lname;
@@ -312,6 +313,7 @@ class Manual_ap21order_push extends Controller {
                 <PersonId>$PersonId</PersonId>
                 <OrderNumber>" . $ordernum . "</OrderNumber>";
         $xml_data .= "<DeliveryInstructions>" . $add_description . "</DeliveryInstructions>";
+        $xml_data .= "<OrderInstructions>" . $order_instruction . "</OrderInstructions>";
         $xml_data .= "<Addresses>
                     <Billing>
                       <ContactName>" . htmlspecialchars(((isset($fullname) && $fullname != "") ? $fullname : "")) . "</ContactName>
