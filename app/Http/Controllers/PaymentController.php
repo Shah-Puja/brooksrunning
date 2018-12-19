@@ -689,18 +689,19 @@ class PaymentController extends Controller {
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
+        $order_instruction = '';
         $ordernum = "BRN-" .$order->order_no; //change Order No with new series when site goes live
        
         if (!empty($this->order->coupon_code)) {
-           $add_description .= ' Coupon Code :- ' . $this->order->coupon_code;
+           $order_instruction .= ' Coupon Code :- ' . $this->order->coupon_code;
         }
 
         if (!empty($this->order->giftcert_ap21code)) {
-           $add_description .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
+           $order_instruction .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
         } 
 
-        if (!empty($this->order->transaction_id)) {
-            $add_description .= ' Transaction Id :- ' . $this->order->transaction_id;
+        if (!empty($this->order->address->order_info)) {
+            $add_description .= $this->order->address->order_info;
         }
 
         $fullname = $this->order->address->b_fname . ' ' . $this->order->address->b_lname;
@@ -722,6 +723,7 @@ class PaymentController extends Controller {
                 <PersonId>$person_id</PersonId>
                 <OrderNumber>" . $ordernum . "</OrderNumber>";
         $xml_data .= "<DeliveryInstructions>" . $add_description . "</DeliveryInstructions>";
+        $xml_data .= "<OrderInstructions>" . $order_instruction . "</OrderInstructions>";
         $xml_data .= "<Addresses>
                     <Billing>
                       <ContactName>" . htmlspecialchars(((isset($fullname) && $fullname != "") ? $fullname : "")) . "</ContactName>
