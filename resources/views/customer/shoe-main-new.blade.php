@@ -54,6 +54,7 @@
 				</div>
 		<div class="row detail-shoe-pg">
 			<div class="ctg-wrapper-container">
+			
 			@foreach($shoes_detail as $prod_key => $shoes_value)	
 				<div class="mob-6 tab-4 col-4">
 					<div class="shoe-wrapper__sub">
