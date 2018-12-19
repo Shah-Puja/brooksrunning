@@ -103,18 +103,29 @@
 	                                <a href="/footwear/women/best_selling">Best Sellers</a>
 	                            </li>
 	                            <li>
-									<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a>
-	                            </li>
-	                            <li>
-									<a  href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a>
-	                            </li>
-	                            <li>
-									<a  href="/ghost-11-womens-running-shoes/120277_493.html" title="Ghost 11">Ghost 11</a>
-	                            </li>
-	                            <li>
-									<a  href="/ravenna-9-womens-running-shoes/120269_027.html" title="Ravenna 9">Ravenna 9</a>
-	                            </li>
-	                          
+									<a href="/ravenna-9-womens-running-shoes/120269_452.html" title="Ravenna 9">Ravenna 9</a> 
+								</li>
+								<li>
+									<a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
+								</li>
+								<li>
+									<a href="/glycerin-16-womens-running-shoes/120278_034.html" title="Glycerin 16">Glycerin 16</a> 
+								</li>
+								<li>
+									<a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 
+								</li>
+								<li>
+									<a href="/revel-2-womens-running-shoes/120281_028.html" title="Revel 2">Revel 2</a> 
+								</li>
+								<li>
+									<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19 </a> 
+								</li>
+								<li>
+									<a href="/brooks-running-shoes-launch-6-womens/120285_027.html" title="Levitate 2">Launch 6</a> 
+								</li>
+								<li>
+									<a href="/brooks-running-shoes-transcend-6-womens/120287_531.html" title="Transcend 6">Transcend 6</a> 
+								</li>
 	                        </ul>
 	                    </li>
 						<li>
@@ -215,19 +226,30 @@
 	                            <li>
 	                                <a href="/footwear/men/best_selling">Best Sellers</a>
 	                            </li>
-	                            <li>
-									<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a>
-	                            </li>
-	                            <li>
-									<a  href="/glycerin-16-mens-running-shoes/110289_069.html" title="Glycerin 16">Glycerin 16</a>
-	                            </li>
-	                            <li>
-									<a  href="/ghost-11-mens-running-shoes/110288_093.html" title="Ghost 11">Ghost 11</a>
-	                            </li>
-	                            <li>
-									<a  href="/beast-18-mens-running-shoes/110282_015.html" title="Beast 18">Beast 18</a>
-	                            </li>
-	                          
+								<li>
+									<a class="name-link" href="/ravenna-9-mens-running-shoes/110280_471.html" title="Ravenna 9">Ravenna 9</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/brooks-running-shoes-ghost-11-mens/110288_038.html" title="Ghost 11">Ghost 11</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/glycerin-16-mens-running-shoes/110289_071.html" title="Glycerin 16">Glycerin 16</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/levitate-2-mens-running-shoes/110290_689.html" title="Levitate 2">Levitate 2</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/brooks-running-shoes-revel-2-mens/110292_061.html" title="Revel 2">Revel 2</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/brooks-running-shoes-launch-6-mens/110297_419.html" title="Launch 6">Launch 6</a> 
+								</li>
+								<li>
+									<a class="name-link" href="/brooks-running-shoes-transcend-6-mens/110299_419.html" title="Transcend 6">Transcend 6</a> 
+								</li>
 	                        </ul>
 	                    </li>
 						<li>
