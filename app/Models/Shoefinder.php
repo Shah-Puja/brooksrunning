@@ -38,16 +38,31 @@ class Shoefinder extends Model
         if(!$styles){
              return '';
         }
-        $product=$styles->whereIn("color_code",$items_data->pluck('color_code')); // single product data 
+        /*$product=$styles->whereIn("color_code",$items_data->pluck('color_code')); // single product data 
         if(!$product){
             return '';
         }
         $colour_options=$styles->unique('color_code'); // all unique colors data
         $product = $product->unique(function ($item) {
             return $item['style'].$item['color_code'];
+        })->unique('style');*/
+
+
+        $products = $styles->filter(function ($value, $key) use ($items_data) {
+            $data=[];
+                  foreach($items_data as $value_array){
+                     if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                        $data[] = $value;
+                     }
+                  }
+                return $data;
         })->unique('style');
        
-        $result['product_details'] = $product;
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
+       
+        $result['product_details'] = $products;
         $result['shoe_detail'] = $shoe_detail;
         $result['colour_options'] = $colour_options;
         return $result;

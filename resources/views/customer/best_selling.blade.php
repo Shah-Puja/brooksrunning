@@ -50,9 +50,11 @@
                             $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
                             $min_price = $curr_ele->variants->pluck('price')->min();
                             $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
-                            $width_array[$curr_ele->style]['width'] = collect($colors_option[$curr_ele->style])->transform(function ($product) {
-														return $product->variants->where('visible','Yes')->pluck('width_name');
-												 })->flatten()->unique()->values()->sort();
+                            if(!empty($colors_option[$curr_ele->style])){
+                                $width_array[$curr_ele->style]['width'] = collect($colors_option[$curr_ele->style])->transform(function ($product) {
+                                                            return $product->variants->where('visible','Yes')->pluck('width_name');
+                                                    })->flatten()->unique()->values()->sort();
+                            }
                         @endphp
 
 						<div class="mob-6 col-3 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
@@ -65,7 +67,7 @@
 								<div class="more-color--container">
 									<span class="icon-style icon-back-arrow prev"></span>
 									<div class="owl-carousel owl-theme">
-                                    @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
+                                    @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
                                         @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
                                             @if(!empty($color_product))
                                         <div class="item">

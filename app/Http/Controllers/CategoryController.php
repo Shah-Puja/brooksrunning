@@ -320,7 +320,6 @@ class CategoryController extends Controller
                                 ->where('gender',$gender)
                                 ->where('status','active')
                                 ->first();
-        $data ='';
         if($special_prod){
             $prod_list = ($special_prod->prod_list!='') ? explode(",",$special_prod->prod_list) : '';
             if($prod_list!=''){
@@ -332,19 +331,25 @@ class CategoryController extends Controller
                     $data_array[] = array('style'=> $style,'color_code'=> $color_code);
                 }
                 $style_array = collect($data_array)->pluck('style');
-                $color_code_array = collect($data_array)->pluck('color_code');
-
+                  
                 $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
                                     })->get();
-                if(!$styles) $data = '';
-                $product=$styles->whereIn("color_code",$color_code_array); // single product data 
-                if(!$product) $data = '';
-                $colour_options=$styles->unique('color_code'); // all unique colors data
-                $products = $product->unique(function ($item) {
-                    return $item['style'].$item['color_code'];
+            
+                $products = $styles->filter(function ($value, $key) use ($data_array) {
+                    $data=[];
+                          foreach($data_array as $value_array){
+                             if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                                $data[] = $value;
+                             }
+                          }
+                        return $data;
                 })->unique('style');
+               
+                $colour_options = $styles->unique(function ($item){
+                    return $item['style'].$item['color_code'];
+                });
 
             } 
         }
