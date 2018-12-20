@@ -253,7 +253,8 @@ class meet_brooksController extends Controller
                     'Contest Code' => $curr_user->comp_name,
                     ),                        
                 );
-                $this->client->updateoradd_Subscriber($subscriber);
+                //$this->client->updateoradd_Subscriber($subscriber);
+                ProcessCompetition::dispatch($subscriber);
                 Competition_user::where('id',$curr_user->id)->update(['comp_aweber_exist' => 'Yes' ]);
             //exit;           
         }
