@@ -50,8 +50,14 @@
 <section class="ctg-container ">
 	<div class="wrapper">
 		<div class="heading">
+				@if($str == "Maximus")
+					<h3 class="br-shoe-heading">Shop all Brooks Maximus Shoes</h3>
+				@elseif($str == "Liberty")
+					<h3 class="br-shoe-heading">Shop all Brooks Liberty Shoes</h3>
+				@else
 					<h3 class="br-shoe-heading">Shop All Brooks Addiction Walker Shoes</h3>
-				</div>
+				@endif
+		</div>
 		<div class="row detail-shoe-pg">
 			<div class="ctg-wrapper-container">
 			

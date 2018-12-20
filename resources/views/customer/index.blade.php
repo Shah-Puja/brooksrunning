@@ -52,13 +52,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_xmas_levitate.jpg">
-			        <h3>&nbsp;<br/>&nbsp;  </h3>
+					<img src="/images/home/hp_transcend_6.jpg">
+			        <h3>&nbsp;<br/>Transcend 6 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>This is the season to Run Happy in this limited edition Christmas Levitate 2. The same responsive DNA AMP midsole to energize your run, wrapped in a festive ugly sweater design. </p>
-					<a href="/levitate-2-womens-running-shoes/120279_322.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/levitate-2-mens-running-shoes/110290_322.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>Our softest cushioning paired with GuideRails support to keep your body moving the way it wants from start to finish. </p>
+					<a href="/brooks-running-shoes-transcend-6-womens/120287_531.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-transcend-6-mens/110299_419.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
