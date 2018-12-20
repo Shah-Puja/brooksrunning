@@ -427,8 +427,8 @@
                                         <tbody>
                                             <tr>
                                                 <td align="left">
-                                                    <p style="text-align:left;">To find out more about our shipping policy <a href="/info/shipping-information">click here</a>.</p>
-                                                    <p style="text-align:left;">For more information on our returns and exchanges policy <a href="/info/returns-exchange">click here</a>.
+                                                    <p style="text-align:left;">To find out more about our shipping policy <a href="https://brooksrunning.com.au/info/shipping-information">click here</a>.</p>
+                                                    <p style="text-align:left;">For more information on our returns and exchanges policy <a href="https://brooksrunning.com.au/info/returns-exchange">click here</a>.
                                                     </p>
                                                     <p style="text-align:left;">Unfortunately we are unable to make changes to your shipping information once your order is dispatched.</p>
                                                     <p style="text-align:left;">If you have any questions regarding your order, please send them to <a href="mailto:shop@brooksrunning.com.au" target="_top">shop@brooksrunning.com.au</a> quoting your order number stated above.</p>
