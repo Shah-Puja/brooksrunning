@@ -235,7 +235,7 @@
                             <div class="size">
                                 <div class="row">
                                     <div class="mob-6">
-                                        <div class="main">SIZE <span></span></div>
+                                        <div class="main">SIZE @if(strtolower($product->prod_type) =='footwear') (US) @endif<span></span></div>
                                     </div>
                                     <div class="mob-6">
                                         <div class="main size-chart">
