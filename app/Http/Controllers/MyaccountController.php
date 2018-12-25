@@ -55,7 +55,7 @@ class MyaccountController extends Controller {
           print_r($request->all());die; */
         User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
             'last_name' => isset($request->last_name) ? $request->last_name : "",
-            'gender' => isset($request->gender) ? ucfirst($request->gender) : "",
+            'gender' => isset($request->gender) ? ucfirst($request->gender) : NULL,
             'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "0",
             'birth_date' => (isset($request->birth_date)) ? $request->birth_date : "0",
             'birth_month' => (isset($request->birth_month)) ? $request->birth_month : "0",
