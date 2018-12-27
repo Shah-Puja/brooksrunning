@@ -51,6 +51,19 @@ class AppServiceProvider extends ServiceProvider {
             return new Processor($paymentgateway);
         });
 
+        // For when we need to send subscriber records to Aweber and/or iContact
+        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+            $client = \App\SYG\Subscribers\iContactProApi::getInstance();
+            $client->setConfig(array(
+                    'appId' => config('services.icontact.appid'),
+                    'apiPassword' => config('services.icontact.apipassword'),
+                    'apiUsername' => config('services.icontact.apiusername'),
+                    'companyId' => config('services.icontact.companyid'),
+                    'profileId' => config('services.icontact.profileid')
+            ));
+            return new \App\SYG\Subscribers\iContactSubscriber($client);
+        });
+
         $this->app->bind('App\SYG\Bridges\BridgeInterface', function ($app) {
             $apiClient = new \GuzzleHttp\Client([ 
                 'base_uri' => env('AP21_URL'),  
