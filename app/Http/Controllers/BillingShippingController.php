@@ -88,7 +88,8 @@ class BillingShippingController extends Controller
         if(auth()->user()){
             if($this->cart['user_id']==''){
                 $user_data = User::where("email","=",$validatedAddress['email'])->first();
-                $user_id = $user_data->id;
+                //$user_id = $user_data->id;
+                $user_id = (!empty($user_data) && isset($user_data->id)) ? $user_data->id : '';
             }
         }
         Order::createNew($this->cart, $user_id, $validatedAddress);
