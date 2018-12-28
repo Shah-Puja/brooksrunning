@@ -20,6 +20,11 @@ class AppServiceProvider extends ServiceProvider {
     public function boot() {
         //
         Schema::defaultStringLength(191);
+
+        view()->composer('*', function($view){
+            $view_name = str_replace('.', '-', $view->getName());
+            view()->share('view_name', $view_name);
+        });
     }
 
     /**

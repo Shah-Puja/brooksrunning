@@ -222,7 +222,7 @@ class ShoefinderController extends Controller
 		$user_actions = $request->all();
 		$points =0;
 		foreach ($user_actions as $key => $value) {
-			if($key!='surface' && $key!='feel' && $key!='impact'){ // skip question 1 step
+			if($key!='surface' && $key!='feel' && $key!='impact' && $key!='id'){ // skip question 1 step
 				if($key=='training'){
 					$sub_key = request('run_distance');
 					$points +=$array[$key][$sub_key][$value];
@@ -253,8 +253,9 @@ class ShoefinderController extends Controller
 
 	public function ajax_checkpoint_new(Request $request){
 		//$score = $request->session()->get('score');
-		$score = \Session::get('score');
+		$this->ajax_data_new($request);
 		if(request('id')=='2'){
+			$score = Session::get('score');
 			if($score <= 50 ){
 				// its neutral
 				$tag  = 'neutral';

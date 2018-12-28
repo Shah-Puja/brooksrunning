@@ -150,6 +150,7 @@
 	</style>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/listing.js"></script>
+@if($view_name=='customer-pdp')
 <!-- details page js -->
 <script src="/js/pdp-js.js"></script>
 <script>
@@ -165,6 +166,7 @@
                         });
 						
 </script>
+@endif
 @if(request()->is('register'))
 <!-- Register page js please write here-->
 @endif
