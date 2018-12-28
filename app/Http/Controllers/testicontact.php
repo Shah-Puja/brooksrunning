@@ -15,7 +15,7 @@ protected $client;
 
     public function addiContact() {
         //$subscriber->email = 'puja_shah10@yahoo.co.in';
-        $response = $this->client->addContact('puja_shah10@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
+        $response = $this->client->addiContact('puja_shah10@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
         dump($response->contactId);
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
         // dump($response);
