@@ -3,6 +3,7 @@
 <link href="/css/shoefinder-new/idangerous.swiper.css" rel="stylesheet">
 <link href="/css/shoefinder-new/ss.min.css" rel="stylesheet">
 
+<div class="shoefinder-container" >
 <div class="wrapper" style="padding-bottom:30%;">
   	<div class="row">
    		<div class="col-12">
@@ -1843,5 +1844,6 @@
 	</script>
 </div>
 </div>
+</div>	
 </div>	
 @endsection
