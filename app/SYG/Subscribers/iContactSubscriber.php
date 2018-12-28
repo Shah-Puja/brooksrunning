@@ -9,10 +9,11 @@ class iContactSubscriber implements SubscriberInterface
 	{
 		$this->client = $client;
 	}
-	public function add($subscriber)
+	public function addiContact($subscriber)
 	{
+		echo "eeeeeee";
 		$response = $this->client->addContact($subscriber->email, null, null, null, null, null, null, null, null, null, null, null, null, null);
-		dump($response->contactId);
+		dump($response->contactId);die;
 		$response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
 		// dump($response);
 	}
