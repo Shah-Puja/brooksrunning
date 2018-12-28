@@ -13,7 +13,7 @@ protected $client;
         $this->client = $client;
     }
 
-    public function add() {
+    public function addiContact() {
         //$subscriber->email = 'puja_shah10@yahoo.co.in';
         $response = $this->client->addContact('puja_shah10@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
         dump($response->contactId);
