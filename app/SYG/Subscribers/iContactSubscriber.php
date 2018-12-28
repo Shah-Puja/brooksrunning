@@ -13,7 +13,7 @@ class iContactSubscriber implements SubscriberInterface
 	{
 		echo "eeeeeee";
 		$response = $this->client->addContact($subscriber->email, null, null, null, null, null, null, null, null, null, null, null, null, null);
-		dump($response->contactId);die;
+		dump($response->contactId);
 		$response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
 		// dump($response);
 	}
