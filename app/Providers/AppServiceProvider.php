@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+
 use AWeberAPI;
 use App\Payments\Processor;
 use App\Payments\AfterpayApiClient;
@@ -8,7 +9,6 @@ use App\Payments\AfterpayProcessor;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Braintree\Gateway as PaymentGateway;
-
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -27,9 +27,8 @@ class AppServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-
     public function register() {
-        
+
         $this->app->singleton(AfterpayProcessor::class, function () {
             $afterPayApiClient = new AfterpayApiClient([
                 'Accept' => 'application/json',
@@ -52,26 +51,26 @@ class AppServiceProvider extends ServiceProvider {
         });
 
         // For when we need to send subscriber records to Aweber and/or iContact
-        /*$this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
-            $client = \App\SYG\Subscribers\iContactProApi::getInstance();
-            $client->setConfig(array(
-                    'appId' => config('services.icontact.appid'),
-                    'apiPassword' => config('services.icontact.apipassword'),
-                    'apiUsername' => config('services.icontact.apiusername'),
-                    'companyId' => config('services.icontact.companyid'),
-                    'profileId' => config('services.icontact.profileid')
-            ));
-            return new \App\SYG\Subscribers\iContactSubscriber($client);
-        });*/
+        /* $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+          $client = \App\SYG\Subscribers\iContactProApi::getInstance();
+          $client->setConfig(array(
+          'appId' => config('services.icontact.appid'),
+          'apiPassword' => config('services.icontact.apipassword'),
+          'apiUsername' => config('services.icontact.apiusername'),
+          'companyId' => config('services.icontact.companyid'),
+          'profileId' => config('services.icontact.profileid')
+          ));
+          return new \App\SYG\Subscribers\iContactSubscriber($client);
+          }); */
 
         $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
-            $client = new iContactProApi( config('services.icontact.appid'), config('services.icontact.apipassword'), config('services.icontact.apiusername'), config('services.icontact.companyid'), config('services.icontact.profileid') );
+            $client = new iContactProApi(config('services.icontact.appid'), config('services.icontact.apipassword'), config('services.icontact.apiusername'), config('services.icontact.companyid'), config('services.icontact.profileid'));
             return new \App\SYG\Subscribers\iContactSubscriber($client);
         });
 
         $this->app->bind('App\SYG\Bridges\BridgeInterface', function ($app) {
-            $apiClient = new \GuzzleHttp\Client([ 
-                'base_uri' => env('AP21_URL'),  
+            $apiClient = new \GuzzleHttp\Client([
+                'base_uri' => env('AP21_URL'),
                 'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'],
             ]);
             return new \App\SYG\Bridges\AP21Bridge($apiClient);
@@ -79,11 +78,9 @@ class AppServiceProvider extends ServiceProvider {
         });
 
         $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
-            $aweber = new AWeberAPI( config('services.aweber.consumerkey'), config('services.aweber.consumersecret') );
+            $aweber = new AWeberAPI(config('services.aweber.consumerkey'), config('services.aweber.consumersecret'));
             return new \App\SYG\Subscribers\AweberSubscriber($aweber);
         });
-
-
     }
 
 }
