@@ -1,5 +1,7 @@
 <?php
 namespace App\SYG\Subscribers;
+
+use App\SYG\Subscribers\SubscriberInterface;
 /**
  * @name iContactProApi
  * @package iContactPro

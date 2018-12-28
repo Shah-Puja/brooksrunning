@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider {
         });
 
         // For when we need to send subscriber records to Aweber and/or iContact
-        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+        /*$this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
             $client = \App\SYG\Subscribers\iContactProApi::getInstance();
             $client->setConfig(array(
                     'appId' => config('services.icontact.appid'),
@@ -61,6 +61,11 @@ class AppServiceProvider extends ServiceProvider {
                     'companyId' => config('services.icontact.companyid'),
                     'profileId' => config('services.icontact.profileid')
             ));
+            return new \App\SYG\Subscribers\iContactSubscriber($client);
+        });*/
+
+        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+            $client = new iContactProApi( config('services.icontact.appid'), config('services.icontact.apipassword'), config('services.icontact.apiusername'), config('services.icontact.companyid'), config('services.icontact.profileid') );
             return new \App\SYG\Subscribers\iContactSubscriber($client);
         });
 

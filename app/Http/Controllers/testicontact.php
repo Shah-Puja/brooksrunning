@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\SYG\Subscribers\iContactProApi;
-//use App\SYG\Subscribers\SubscriberInterface;
+use App\SYG\Subscribers\SubscriberInterface;
 
 class testicontact extends Controller {
 protected $client;
     public function __construct(iContactProApi $client) { 
+        //$client = \App\SYG\Subscribers\iContactProApi::getInstance();
         $this->client = $client;
     }
 
