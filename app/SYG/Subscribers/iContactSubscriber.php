@@ -15,12 +15,12 @@ class iContactSubscriber implements SubscriberInterface {
 
     public function addiContact($subscriber) {
 
-        $response = $this->client->addContact('puja_shah14@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
+        /*$response = $this->client->addContact('puja_shah14@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
       
-        $responses = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
-        echo "<pre>";
-        print_r($responses);
-        die;
+        $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
+          echo "<pre>";
+        print_r($response);
+        die;*/
     }
 
 }
