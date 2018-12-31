@@ -1,8 +1,8 @@
 <?php
 namespace App\SYG\Subscribers;
 use App\SYG\Subscribers\iContactProApi;
-use App\SYG\Subscribers\SubscriberInterface;
-class iContactSubscriber implements SubscriberInterface
+use App\SYG\Subscribers\iContactSubscriberInterface;
+class iContactSubscriber implements iContactSubscriberInterface
 {
 	protected $client;
 	public function __construct(iContactProApi $client)
