@@ -18,7 +18,7 @@ protected $client;
     public function add() { 
         //$subscriber = new testicontact;
         //$subscriber->email = 'puja_shah10@yahoo.co.in';
-        $response = $this->client->addiContact('puja_shah10@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
+        $response = $this->client->addiContact('puja_shah11@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
         echo "<pre>";print_r($response);die;
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
         // dump($response);
