@@ -17,10 +17,11 @@ class testicontact extends Controller {
 
     public function add() {
         $subscriber = new testicontact($this->client);
-        echo "<pre>";print_R($subscriber);die;
-        $response = $this->client->addiContact('puja_shah11@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
-        dump($response->contactId);
+        //echo "<pre>";print_R($subscriber);die;
+        $response = $this->client->addiContact($subscriber->email, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        echo "<pre>";print_R($response->contactId);
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
+        echo "In TestiContact Controller";die;
         // dump($response);
     }
 

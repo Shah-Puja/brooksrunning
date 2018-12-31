@@ -20,8 +20,8 @@ class iContactSubscriber implements SubscriberInterface {
         print_r($response);
         
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
-        echo "<pre>";
-        print_r($response);die;
+        echo "In iContactSubscriber";echo "<pre>";
+        print_r($response);
     }
 
 }
