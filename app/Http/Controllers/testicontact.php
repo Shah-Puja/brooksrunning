@@ -16,9 +16,9 @@ class testicontact extends Controller {
     }
 
     public function add() {
-        $subscriber = new testicontact($this->client);
-        echo "<pre>";print_R($subscriber);die;
-        $response = $this->client->addiContact($subscriber->email, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        $subscriber = new testicontact($this->client); 
+        //here to fetch user input details and pass email id in following lines
+        $response = $this->client->addiContact('puja_shah101@yahoo.com', null, null, null, null, null, null, null, null, null, null, null, null, null);
         echo "<pre>";print_R($response->contactId);
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
         echo "In TestiContact Controller";die;
