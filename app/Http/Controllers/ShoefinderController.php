@@ -280,7 +280,7 @@ class ShoefinderController extends Controller
 	}
 
 	public function ajax_result_new(Request $request){
-
+		return view('customer.shoe_finder_view_new.shoefinder_result_new');
 	}
 
 	
