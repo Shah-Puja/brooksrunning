@@ -24,7 +24,7 @@ class testicontact extends Controller {
         $response = $this->client->addiContact('puja_shah101@yahoo.com', null, null, null, null, null, null, null, null, null, null, null, null, null);
         echo "<pre>";print_R($response->contactId);
         $response = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
-        echo "In TestiContact Controller";die;
+        echo "In TestiContact for testing Controller";die;
         // dump($response);
     }
 
