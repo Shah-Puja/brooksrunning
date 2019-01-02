@@ -4,7 +4,7 @@
 <link href="/css/shoefinder-new/ss.min.css" rel="stylesheet">
 
 <div class="shoefinder-container" >
-<div class="wrapper" style="padding-bottom:30%;">
+<div class="wrapper" >
   	<div class="row">
    		<div class="col-12">
 			<article class="bf pt_shoefinder" data-bf-document="" data-bf-app="">		
