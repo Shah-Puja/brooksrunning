@@ -5,15 +5,16 @@ $(document).ready(function () {
         var clickBtn = false;
         var data = false;
         var data1 = '';
-        $('.sm-navigation--menu').on("touchstart", function(e) {
+        $('.sm-navigation--menu .main-nav').on("touchstart", function(e) {
             console.log("ipad clicked");
-            var set_data = $(this).attr("data");
+            var set_data = $(this).closest(".sm-navigation--menu").attr("data");
+            console.log(set_data);
             $(".sm-navigation--menu").removeClass("tab-active");
             $(".desktop-navigation--sub").removeClass("active");
             if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
                 data1 = set_data;
-                $(this).find(".main-nav").addClass("tab-active");
-                $(this).find(".desktop-navigation--sub").addClass("active");
+                $(this).addClass("tab-active");
+                $(this).closest(".sm-navigation--menu").find(".desktop-navigation--sub").addClass("active");
                 e.preventDefault();
             } else {
                 data1 = '';
