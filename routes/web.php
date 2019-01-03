@@ -110,13 +110,7 @@ Route::post('/order/view_order','MyaccountController@view_order');
 /* shoefinder page */
 Route::get('/shoefinder', 'ShoefinderController@shoefinder');  
 Route::post('/shoefinder-ajax', 'ShoefinderController@ajax_data')->middleware('allowOnlyAjax');
-Route::get('/shoefinder-getshoe', 'ShoefinderController@get_shoe')->middleware('allowOnlyAjax');
-
-Route::get('/shoefinder-new', 'ShoefinderController@shoefinder_new');
-Route::get('/ShoeFinder-Progress', 'ShoefinderController@ajax_data_new')->middleware('allowOnlyAjax'); 
-Route::get('/ShoeFinder-Checkpoint', 'ShoefinderController@ajax_checkpoint_new')->middleware('allowOnlyAjax');   
-Route::post('/ShoeFinder-Checkpoint', 'ShoefinderController@ajax_checkpoint_new')->middleware('allowOnlyAjax');  
-Route::get('/ShoeFinder-ResultsShow', 'ShoefinderController@ajax_result_new')->middleware('allowOnlyAjax');   
+Route::get('/shoefinder-getshoe', 'ShoefinderController@get_shoe')->middleware('allowOnlyAjax'); 
 
 /* Best selling page */
 Route::get('/footwear/{gender}/best_selling', 'CategoryController@bestselling');  
