@@ -26,7 +26,7 @@ $(document).ready(function () {
                 clickBtn = false;
                 data = false;
             }
-        });
+        }); 
     }else{
         if ($(window).width() < 1025) {
             $("#desktop-navigation .main-nav").click(function () {

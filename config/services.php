@@ -59,6 +59,13 @@ return [
         'accesskey' => env('AWEBER_ACCESSKEY'),
         'accesssecret' => env('AWEBER_ACCESSSECRET'),
         'listid' => env('AWEBER_LISTID'),
+    ], 
+    'icontact' => [
+        'appid' => env('ICONTACT_APPID'),
+        'apipassword' => env('ICONTACT_APIPASSWORD'),
+        'apiusername' => env('ICONTACT_APIUSERNAME'),
+        'companyid' =>  env('ICONTACT_COMPANYID'),
+        'profileid' => env('ICONTACT_PROFILEID'),
     ],
 
 ];
