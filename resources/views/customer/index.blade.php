@@ -155,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-	@if(isset($product) && count(array_filter($product)) == 0)
+	@if(isset($product) && count(array_filter($product)) != 0)
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
 			<div class="col-12">
