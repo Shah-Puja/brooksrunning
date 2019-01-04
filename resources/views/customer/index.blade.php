@@ -164,6 +164,7 @@
 			    </div>
 			</div>
 		</div>
+		
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
