@@ -160,11 +160,10 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="main-heading">
-				    <h3 class="br-heading">Featured</h3>
+				    <h3 class="br-heading">Featuredeeeeeeee</h3>
 			    </div>
 			</div>
 		</div>
-		@php echo "eeeeeeeeeeee";die; @endphp
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
