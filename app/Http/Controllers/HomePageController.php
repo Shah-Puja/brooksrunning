@@ -11,7 +11,7 @@ class HomePageController extends Controller
 {
 
     public function index(){
-           echo "ddddddd";die;
+           
         //Featured product(homepage slider)
         $shoe_info = array('120285_027','110297_419','120272_585','110283_449','120284_080','110294_010','110288_428','120277_017');
         $product=[];
