@@ -155,19 +155,18 @@
 			</div>
 		</div>
 	</div>
-	@if(!empty($product)  && count($product) > 0 )
+	@if(isset($product) && count(array_filter($product)) == 0)
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
 			<div class="col-12">
 				<div class="main-heading">
-				    <h3 class="br-heading">Featuredeeeeeeee</h3>
+				    <h3 class="br-heading">Featured</h3>
 			    </div>
 			</div>
 		</div>
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
-			@if(isset($product) && count(array_filter($product)) != 0)
 				@foreach($product as $prod_key => $Featured_prod)
 	       		<div class="item">
 		         	<div class="product_arrive">
@@ -183,7 +182,6 @@
 		            </div>
 				</div>
 				@endforeach
-			@endif
 	       </div>
 	       <span class="icon-style icon-next-arrow next"></span>
 	    </div>
