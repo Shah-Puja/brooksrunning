@@ -164,7 +164,7 @@
 			    </div>
 			</div>
 		</div>
-		
+		@php echo "eeeeeeeeeeee";die; @endphp
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
