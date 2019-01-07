@@ -14,7 +14,9 @@ class iContactSubscriber implements SubscriberInterface {
     }
 
     public function addiContact($subscriber) {
-        $response = $this->client->addContact('puja_shah21@yahoo.co.in', null, null, null, null, null, null, null, null, null, null, null, null, null);
+        /*echo "<pre>";
+        print_r($subscriber);die;*/
+        $response = $this->client->addContact($subscriber->email, null, null, null, null, null, null, null, null, null, null, null, null, null);
         echo "<pre>";
         print_r($response);
         print_r($response->contactId);
