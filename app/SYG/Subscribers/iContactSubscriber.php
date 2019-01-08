@@ -23,7 +23,7 @@ class iContactSubscriber implements SubscriberInterface {
         //$contact = $oiCP->addContact($email, null, null, $fname, $lname, null, '', '', '', '', '', '', '', null, 'subscribers');
         /*echo "<pre>";
         print_r($response);
-        print_r($response->contactId);*/
+        print_r($response->contactId);*/ 
 
         $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 1, 'normal');
         //echo "<br>" . "In iContactSubscriber";
