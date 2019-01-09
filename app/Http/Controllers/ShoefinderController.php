@@ -187,4 +187,117 @@ class ShoefinderController extends Controller
 
 	}
 
+	public function shoefinder_new(Request $request){
+		Session::put('score', '0');
+		Session::put('experiencetype','');
+		Session::put('experience','');
+		Session::put('tag','');
+		//$request->session()->put('score','0');
+		//$request->session()->put('experiencetype','');
+		//$request->session()->put('expnew','');
+		return view( 'customer.shoe_finder_view_new.shoefinder');
+
+	}
+
+	public function ajax_data_new(Request $request){
+		$array = [
+			'run_distance'=>
+				['0'=>'10','1'=>'5','2'=>'0'],
+			'training'=>
+				[
+					'0' =>['0'=>'0','1'=>'0','2'=>'15','3'=>'15','4'=>'0'],
+					'1' =>['0'=>'0','1'=>'0','2'=>'5','3'=>'10','4'=>'0'],
+					'2' =>['0'=>'0','1'=>'0','2'=>'0','3'=>'5','4'=>'0'],
+				],
+			'injury'=> 
+				['knees'=>'15','leg'=>'5','foot'=>'10','none'=>'0'],
+			'feet'=> 
+				['0'=>'0','1'=>'10','2'=>'15'],
+			'balance'=> 
+				['0'=>'0','1'=>'15'],
+			'knee'=> 
+				['0'=>'15','1'=>'10','2'=>'0'],
+			'flexibility'=> 
+				['0'=>'25','1'=>'0'],
+		];
+		$user_actions = $request->all();
+		$points =0;
+		foreach ($user_actions as $key => $value) {
+			if($key!='surface' && $key!='feel' && $key!='impact' && $key!='id' && $key!='gender'){ // skip question 1 step
+				if($key=='training'){
+					$sub_key = request('run_distance');
+					$points +=$array[$key][$sub_key][$value];
+				}else{
+					$points +=$array[$key][$value];
+				}
+				
+			}
+
+			if($key=='feel'){
+				Session::put('experiencetype', ($value == 0 ? 'feel' : 'float'));
+				//$request->session()->put('experiencetype', ($value == 0 ? 'feel' : 'float'));
+			}
+
+			if($key=='impact'){
+				if(request('feel') == 0){
+					//$request->session()->put('expnew', ($value == 0 ? 'energize_me' : 'connect_me'));
+					Session::put('experience', ($value == 0 ? 'propel_me' : 'connect_me'));
+				}else{
+					//$request->session()->put('expnew', ($value == 2 ? 'cushion_me' : 'propel_me'));
+					 Session::put('experience', ($value == 2 ? 'cushion_me' : 'energize_me'));
+				}
+			}
+		}
+		Session::put('score',$points);
+		//$request->session()->put('score',$points);
+	}
+
+	public function ajax_checkpoint_new(Request $request){
+		//$score = $request->session()->get('score');
+		$this->ajax_data_new($request);
+		if(request('id')=='2'){
+			$score = Session::get('score');
+			if($score <= 50 ){
+				// its neutral
+				$tag  = 'neutral';
+				$text = "Looks like you've got flexible ligaments, stable ankles, feet that point straight,  and a steady training regimen. We recommend your shoes should be:";
+			}
+			elseif($score > 50 && $score <= 90){
+				// its support
+				$tag  = 'support';
+				$text ="Looks like you've got a recent injury, knees and hips that aren't aligned, less flexible ligaments, unstable ankles, feet that don't point straight,  and a desire to significantly increase your mileage. We recommend your shoes should be:";
+			}
+			elseif($score >= 90){
+				$tag  = 'support_max';
+				$text = "Looks like you've got a recent injury, knees and hips that aren't aligned, less flexible ligaments, unstable ankles, feet that don't point straight,  and a desire to significantly increase your mileage. We recommend your shoes should be:";
+			}
+			Session::put('tag',$tag);
+			return view('customer.shoe_finder_view_new.shoefinder_checkpoint2',compact('tag','text'));
+		}
+
+		if(request('id')=='3'){
+			return view('customer.shoe_finder_view_new.shoefinder_checkpoint3');
+		}
+
+	}
+
+	public function ajax_result_new(Request $request){
+		$experience_type = Session::get('experiencetype');
+		$experience = Session::get('experience');
+		$gender = $data['gender'] = request('gender');
+		$trail_status = (request('surface') == 'trail' ? 'yes' : 'no');
+		$tag = Session::get('tag');
+		$surface = request('surface');
+		$result = Shoefinder::getshoe($tag,$experience_type,$experience,$gender,$trail_status);
+		//echo "<pre>";
+		//print_r($result);
+		//exit;
+		return view('customer.shoe_finder_view_new.shoefinder_result_new',compact('result','tag','surface','experience_type','experience','gender'));
+	}
+
+	public function ajax_getscore(){
+	    return Session::get('score');
+	}
+
+	
 }
