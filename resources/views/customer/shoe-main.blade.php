@@ -92,7 +92,7 @@
 	<div class="wrapper">
 		<div class="row">
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
-				<div id="desk" class="col-8 tab-8 mob-12">
+				<div id="desk" class="col-8 tab-8 mob-12"> 
 					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
 							<div class="module-img">
 									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
