@@ -95,7 +95,15 @@
 				<div id="desk" class="col-8 tab-8 mob-12"> 
 					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
 							<div class="module-img">
+							@php
+							$url_segment=Request::segment(2);
+
+							@endphp
+							@if($url_segment=='levitate')
+									<img src="{{ env('SHOE_PAGE_URL')}}/thumbnail-images/82018_Levitate2_SHY_LP_VIDEO_5_BIG.jpg" />
+							@else
 									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
+							@endif
 							</div>
 						<div class="play"></div>
 					</a>
