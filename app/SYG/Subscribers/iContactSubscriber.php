@@ -33,4 +33,9 @@ class iContactSubscriber implements SubscriberInterface {
         
     }
 
+    public function fetch_unsubscription_info(){
+        $response = $this->client->fetch_unsubscription_info();
+        return $response;
+    }
+
 }

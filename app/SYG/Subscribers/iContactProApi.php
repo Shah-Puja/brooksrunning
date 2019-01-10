@@ -1024,4 +1024,10 @@ class iContactProApi {
         }
     }
 
+    public function fetch_unsubscription_info($sStatus = 'unsubscribed') {
+        $unsubscibed_users = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/subscriptions?status=$sStatus", 'GET');
+        //$unsubscibed_users = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/subscriptions?status=$sStatus&addDate=$date&addDateSearchType=gte", 'GET');
+        return $unsubscibed_users;
+    }
+
 }
