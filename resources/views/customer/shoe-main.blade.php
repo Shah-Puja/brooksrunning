@@ -96,11 +96,11 @@
 					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
 							<div class="module-img">
 							@php
-							$url_segment=Request::segment(2);
+							 $url_segment=Request::segment(2);
 
 							@endphp
 							@if($url_segment=='levitate')
-									<img src="{{ env('SHOE_PAGE_URL')}}/thumbnail-images/82018_Levitate2_SHY_LP_VIDEO_5_BIG.jpg" />
+									<img src="{{ config('site.image_url.base_shoe_img_thumb')}}levitate2_video_img.jpg" />
 							@else
 									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
 							@endif
