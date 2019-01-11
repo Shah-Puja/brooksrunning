@@ -1765,7 +1765,6 @@
 	<!-- START: Shoe Finder Scripts -->
 	<script src="/js/shoefinder-new/ss-vendor.min.js" type="text/javascript"></script>
 	<script src="/js/shoefinder-new/ss-nonmin.js" type="text/javascript"></script>
-    
 
 	<!-- END: Shoe Finder Scripts -->
 

@@ -54,5 +54,10 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT', ['http_errors' => false]);
 	}	
 
+	public function sync_ap21_sku($prod_styleidx)
+	{
+		return $this->apiClient->get('Products/'.$prod_styleidx.'?countryCode=AUFIT', ['http_errors' => false]);
+	}
+
 }
 

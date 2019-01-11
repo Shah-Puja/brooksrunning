@@ -282,12 +282,26 @@ class ShoefinderController extends Controller
 	}
 
 	public function ajax_result_new(Request $request){
+		
 		$experience_type = Session::get('experiencetype');
 		$experience = Session::get('experience');
 		$gender = $data['gender'] = request('gender');
 		$trail_status = (request('surface') == 'trail' ? 'yes' : 'no');
-		$tag = Session::get('tag');
+		//$tag = Session::get('tag');
 		$surface = request('surface');
+		$score = Session::get('score');
+		if($score <= 50 ){
+			// its neutral
+			$tag  = 'neutral';
+		}
+		elseif($score > 50 && $score <= 90){
+			// its support
+			$tag  = 'support';
+		}
+		elseif($score >= 90){
+			$tag  = 'support_max';
+		}
+
 		$result = Shoefinder::getshoe($tag,$experience_type,$experience,$gender,$trail_status);
 		//echo "<pre>";
 		//print_r($result);
