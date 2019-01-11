@@ -38,11 +38,12 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->limit(1)->get();
+        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
         //echo "<pre>";print_r($users);die;
         foreach ($users as $user) {
             $email = $user->email;
             $name = $user->first_name . " " . $user->last_name;
+            echo $email."<br>";
             $arr = array('name' => $name, 'email' => $email);
             $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
         }
