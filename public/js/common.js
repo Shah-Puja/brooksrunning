@@ -1,7 +1,7 @@
 // Header JS
 $(document).ready(function () {
     // Header Menu Script for ipad views
-    if ($(window).width() >= 768 && $(window).width() <= 1024) {
+    /*if ($(window).width() >= 768 && $(window).width() <= 1025) {
         var clickBtn = false;
         var data = false;
         var data1 = '';
@@ -43,6 +43,67 @@ $(document).ready(function () {
                 $("#desktop-navigation .main .main-nav").next().removeClass("active");
             });
         }
+    }*/
+
+
+    if ($(window).width() >= 768 && $(window).width() <= 1025) {
+        var clickBtn = false;
+        var data = false;
+        var data1 = '';
+        $('.sm-navigation--menu .main-nav').on("touchstart", function(e) {
+            console.log("ipad clicked");
+            var set_data = $(this).closest(".sm-navigation--menu").attr("data");
+            console.log(set_data);
+            $(".sm-navigation--menu").removeClass("tab-active");
+            $(".desktop-navigation--sub").removeClass("active");
+            if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
+                data1 = set_data;
+                $(this).addClass("tab-active");
+                $(this).closest(".sm-navigation--menu").find(".desktop-navigation--sub").addClass("active");
+                e.preventDefault();
+            } else {
+                data1 = '';
+            }
+            if (set_data == data1 && data1 != '') {
+                clickBtn = true;
+                data = true;
+            } else {
+                clickBtn = false;
+                data = false;
+            }
+        }); 
+    }else{
+        $("#desktop-navigation .main").on("mouseenter touchstart", function (event) {
+            console.log(event.type);
+            if(event.type=='touchstart'){
+                event.stopPropagation();
+                var set_data = $(this).closest(".sm-navigation--menu").attr("data");
+                console.log(set_data);
+                $(".sm-navigation--menu").removeClass("tab-active");
+                $(".desktop-navigation--sub").removeClass("active");
+                if ((clickBtn == false && data == false) || (set_data != data1 && data1 != '')) {
+                    data1 = set_data;
+                    $(this).addClass("tab-active");
+                    $(this).closest(".sm-navigation--menu").find(".desktop-navigation--sub").addClass("active");
+                    event.preventDefault();
+                } else {
+                    data1 = '';
+                }
+                if (set_data == data1 && data1 != '') {
+                    clickBtn = true;
+                    data = true;
+                } else {
+                    clickBtn = false;
+                    data = false;
+                }
+                //return false;
+            }
+            $("#desktop-navigation .main .main-nav").next().removeClass("active");
+            $(this).find(".main-nav").next().addClass("active");
+        });
+        $("#desktop-navigation .main").on("mouseleave", function () {
+            $("#desktop-navigation .main .main-nav").next().removeClass("active");
+        });
     }
 
     // header submenu top height fixed
