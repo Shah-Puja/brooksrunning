@@ -155,6 +155,7 @@
 			</div>
 		</div>
 	</div>
+
 	@if(isset($product) && count(array_filter($product)) != 0)
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
@@ -168,19 +169,21 @@
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
 				@foreach($product as $prod_key => $Featured_prod)
-	       		<div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-						   <a href = "/{{(isset($Featured_prod->seo_name)) ? $Featured_prod->seo_name : ''}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
-						   <img src="{{$Featured_prod->image->image1Medium()}}">
-							</a>
-		                </div>
-		                <div class="prd_caption">
-							<h3>{{$Featured_prod->stylename}}</h3>
-							<h4 class="price">${{$Featured_prod->variants[$prod_key]->price}}</h4>
-		                </div>
-		            </div>
-				</div>
+					@if(!empty($Featured_prod))
+					<div class="item">
+						<div class="product_arrive">
+							<div class="prd_img">
+							<a href = "/{{(isset($Featured_prod->seo_name)) ? $Featured_prod->seo_name : ''}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
+							<img src="{{$Featured_prod->image->image1Medium()}}">
+								</a>
+							</div>
+							<div class="prd_caption">
+								<h3>{{$Featured_prod->stylename}}</h3>
+								<h4 class="price">${{$Featured_prod->variants[$prod_key]->price}}</h4>
+							</div>
+						</div>
+					</div>
+				    @endif
 				@endforeach
 	       </div>
 	       <span class="icon-style icon-next-arrow next"></span>
