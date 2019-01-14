@@ -1,5 +1,10 @@
 // Listing Page JS
 $(document).ready(function() {
+
+  $(".size-filter").removeClass("selected");
+  $(".filter-list").removeClass("selected");
+  $(".fullbox-filter").removeClass("selected");
+  $(".filter-value").find("input:checkbox").prop("checked", false);
       var owl = $(".more-color--container .owl-carousel");
       owl.owlCarousel({
           items : 4,

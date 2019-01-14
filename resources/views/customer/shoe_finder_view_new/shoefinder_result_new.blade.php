@@ -77,9 +77,9 @@
 		
 				<div class="bf-results-nav__item capitalize"><a data-bf-show-progress-link tabindex="0" data-bf-button data-prevent-default href="" tabindex="0">Edit Answers</a></div>
 			
-		<div class="bf-results-nav__item capitalize"><a href="https://www.brooksrunning.com/en_us/store-locator" target="_blank" tabindex="0">Find A Store</a></div>
+		<div class="bf-results-nav__item capitalize"><a href="/store-locator" target="_blank" tabindex="0">Find A Store</a></div>
 		
-			<div class="bf-results-nav__item capitalize"><a href="https://www.brooksrunning.com/en_us/account" tabindex="0">Save Results</a></div>
+			<div class="bf-results-nav__item capitalize"><a href="/login" tabindex="0">Save Results</a></div>
 		
 	</nav> 
 	<header class="bf-results-header shoefinder-Topresult-container" data-bf-results-header-pad>
@@ -282,6 +282,8 @@
                 </div>
             </section>
             @endforeach
+        @else
+        <h1 class="br-mainheading"> Sorry, No Result Found!</h1>
         @endif
 		    <!-- END: Result 1 -->
         </div>
