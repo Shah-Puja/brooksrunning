@@ -42,7 +42,6 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
                 ),                        
             );          
         $this->subscriptionService->updateoradd_Subscriber($subscriber);
-        
     }
 }
 
