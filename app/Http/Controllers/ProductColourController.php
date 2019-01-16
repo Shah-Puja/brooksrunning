@@ -109,11 +109,12 @@ class ProductColourController extends Controller
 				    $color_code = $curr_color->Code;									
                     $color_name = $curr_color->Name;
                     $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
-                    if ($release_dt == "")
+                    if ($release_dt == ""):
                         $release_dt_str = "0000-00-00";
-                    else
+                    else:
                         $release_dt_str = ($release_dt->release_dt!='') ? date('Y-m-d', strtotime($release_dt->release_dt)) : "0000-00-00"; // to avoid 1970-01-01
-                    foreach ($curr_color->SKUs->SKU as $curr_sku) {
+                    endif;
+                        foreach ($curr_color->SKUs->SKU as $curr_sku) {
                          
                         $org_price 	=$curr_sku->OriginalPrice;
                         $price 		=$curr_sku->Price;
