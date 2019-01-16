@@ -196,7 +196,7 @@ class ProductColourController extends Controller
                         endif;
                 break;
         }
-        exit;
+        //exit;
     }
 
 }
