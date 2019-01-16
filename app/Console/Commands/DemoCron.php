@@ -41,9 +41,9 @@ class DemoCron extends Command {
      * @return mixed
      */
     public function handle() {
-        /*DB::table('items')->insert(['name' => 'Hello World']);
-        $this->info('Demo:Cron Command Run successfully!');*/
-        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
+        DB::table('items')->insert(['name' => 'Hello Test']);
+        $this->info('Demo:Cron Command Run successfully!');
+        /*$users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
         foreach ($users as $user) {
             $email = $user->email;
             $name = $user->first_name . " " . $user->last_name;
@@ -51,7 +51,7 @@ class DemoCron extends Command {
             $arr = array('name' => $name, 'email' => $email);
             $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
         }
-        echo "20 Users inserted in iContact";
+        echo "20 Users inserted in iContact";*/
     }
 
 }
