@@ -171,7 +171,7 @@ class ProductColourController extends Controller
 
                         //echo "sku_id " .$sku_id."<br>";
                         //Update p_variant
-                        ///Variant::where('id',$sku_id)->update($prod_data);
+                        Variant::where('id',$sku_id)->update($prod_data);
 
                     } // second foreach
                 } // first foreach
