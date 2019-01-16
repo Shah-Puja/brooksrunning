@@ -4,7 +4,7 @@ $(document).ready(function() {
   $(".size-filter").removeClass("selected");
   $(".filter-list").removeClass("selected");
   $(".fullbox-filter").removeClass("selected");
-  $(".filter-value").find("input:checkbox").prop("checked", false);
+  $(".filter-value").find("input:checkbox").prop("checked", false).removeAttr ("checked");
       var owl = $(".more-color--container .owl-carousel");
       owl.owlCarousel({
           items : 4,
@@ -130,9 +130,9 @@ var loadmore_count = '12';
 
 $(document).on("click",".filter-value",function(){
 
-  var filterValue='';
   var value = $(this).text();
-	var this_value= $(this).closest("li").data("filter-value");
+  var this_value= $(this).closest("li").data("filter-value");
+  $(this).find("input").attr("checked","checked");
 	$(this).find("input").prop("checked",true);
   var this_closest_group = $(this).closest("ul").data("filter-group");
 	if($(this).closest("li").hasClass("selected")){
@@ -159,7 +159,7 @@ $(document).on("click",".filter-value",function(){
       filters[this_closest_group] = jQuery.grep(filters[this_closest_group], function(value) {
         return value != this_value;
       });
-      $("[data-filter-value='" + this_value + "']").find("input").prop("checked",false);
+      $("[data-filter-value='" + this_value + "']").find("input").prop("checked",false).removeAttr ("checked");
       $("[data-filter-value='" + this_value + "']").removeClass("selected");
       $(".selection-filter--container").find("[data-filter-value='" + this_value + "']").closest(".selection-filter--container").remove();
       if($(".filter-selection-wrapper li").length==0){
@@ -171,19 +171,25 @@ $(document).on("click",".filter-value",function(){
       var comboFilter = getComboFilter( filters );
       $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
   }
+  localStorage.setItem("filters", JSON.stringify(filters));
+  localStorage.setItem("comboFilter", comboFilter);
+  localStorage.setItem("plpfilter", $(".plp-filter").html());
+  localStorage.setItem("listingurl",window.location.pathname);
   counter = 12;
   loadMore(counter);
   return false;
 });
 
-$(document).on('click','.selection-filter--container li',function(){
+$(document).on('click','.selection-filter',function(){
+  //console.log("clicked");
     var removeItem = $(this).find("a").data("filter-value");
     var removeAttribute = $(this).find("a").data("filter-attribute");
-    //console.log("before remove"+filters[removeAttribute]);
+    //console.log("before remove"+removeAttribute);
     filters[removeAttribute] = jQuery.grep(filters[removeAttribute], function(value) {
       return value != removeItem;
     });
-    $("[data-filter-value='" + removeItem + "']").find("input").prop("checked",false);
+    //console.log("before remove"+filters);
+    $("[data-filter-value='" + removeItem + "']").find("input").prop("checked",false).removeAttr ("checked");
     $("[data-filter-value='" + removeItem + "']").removeClass("selected");
     $(this).closest(".selection-filter--container").remove();
     if($(".filter-selection-wrapper li").length==0){
@@ -196,6 +202,10 @@ $(document).on('click','.selection-filter--container li',function(){
     var comboFilter = getComboFilter( filters );
 		//console.log(comboFilter);
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    localStorage.setItem("filters", JSON.stringify(filters));
+    localStorage.setItem("comboFilter", comboFilter);
+    localStorage.setItem("plpfilter", $(".plp-filter").html());
+    localStorage.setItem("listingurl",window.location.pathname);
     counter = 12;
     loadMore(counter);
   return false;
@@ -205,12 +215,14 @@ $(document).on('click','.reset-filter',function(){
   $(".size-filter").removeClass("selected");
   $(".filter-list").removeClass("selected");
   $(".fullbox-filter").removeClass("selected");
-  $(".filter-value").find("input:checkbox").prop("checked", false);
+  $(".filter-value").find("input:checkbox").prop("checked", false).removeAttr ("checked");
   $(".selection-filter--container").remove();
   $(".filter-selection-wrapper").hide();
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
+  localStorage.setItem("comboFilter","");
+  localStorage.setItem("listingurl",window.location.pathname);
   counter = 12;
   loadMore(counter);
   filters = [];
@@ -270,8 +282,25 @@ function getComboFilter( filters ) {
       var sortAscending =  true ;
     }
 
-    $grid.isotope({ sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
+    var comboFilter = localStorage.getItem("comboFilter");
+    var currentURL = window.location.pathname;
+    console.log(currentURL);
+    var listingurl = localStorage.getItem("listingurl");
+    if(currentURL==listingurl && comboFilter!=null && comboFilter!=''){
+      //console.log("storage");
+       var filter_value = comboFilter;
+      $(".plp-filter").html(localStorage.getItem("plpfilter"));
+      filters = JSON.parse(localStorage.getItem("filters"));
+    }else{
+      //console.log("not storage");
+       var filter_value = '*';
+    }
+    $grid.isotope({ filter: filter_value , sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
     loadMore(initShow); 
+    localStorage.removeItem("comboFilter");
+    localStorage.removeItem("plpfilter")
+    localStorage.removeItem("filters")
+
   });
    //execute function onload
 

@@ -18,13 +18,14 @@ class ProductColourController extends Controller
     }
     public function index($name,$style,$color){
    
-        //if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON') {
-        if (env('AP21_STATUS') == 'ON') {
+        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON') {
+          //if (env('AP21_STATUS') == 'ON') {
             ///get product last updated
             $get_product_last_updated = Product::where('style',$style)
                                                 ->where('color_code',$color)
                                                 ->with('variants')
                                                 ->first();
+
             $product_last_updated = $get_product_last_updated->variants->pluck('last_updated')->max();
             if (!empty($product_last_updated)) {
                 $current_time = strtotime(date('Y-m-d h:i:s'));
@@ -37,7 +38,6 @@ class ProductColourController extends Controller
                 }
                
             }
-            //exit;
         }
 
         //After sync with Ap21 call product detail
@@ -63,10 +63,7 @@ class ProductColourController extends Controller
         $product->price = $variants->max('price');
 		$product->price_sale = $variants->max('price_sale');
         $product->stock = $variants->max('stock');
-        //echo "<pre>";
-        //print_r( $variants );
-        //echo "</pre>";
-
+    
         return view ('customer.pdp',compact('product','variants','colour_options'));
     }
 
@@ -92,13 +89,6 @@ class ProductColourController extends Controller
                                 })->get();
         $colour_options = Image::addImagePathsForProducts($colour_options); 
 
-
-        //echo "<pre>";
-        //print_r( $colour_options );
-        //echo "</pre>";
-
-        //exit;
-
         return view ('customer.pdp',compact('product','variants','colour_options'));
     }
     public function list($prodtype){
@@ -107,72 +97,85 @@ class ProductColourController extends Controller
 
     public function product_api($style_idx){
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
+        //echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case '200':
                 $product = @simplexml_load_string($response->getBody()->getContents());
                 //print_r($product);
+                $current_date = date('Y-m-d');
                 foreach ($product->Clrs->Clr as $curr_color) {
                     $color_idx = $curr_color->Id;
-                    foreach ($curr_color->SKUs->SKU as $curr_sku) {
-                        $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
-                        if ($release_dt == "")
-                            $release_dt_str = "0000-00-00";
-                        else
-                            $release_dt_str = ($release_dt->release_dt!='') ? date('Y-m-d', strtotime($release_dt->release_dt)) : "0000-00-00"; // to avoid 1970-01-01
-                        $org_price = $curr_sku->OriginalPrice;
-                        $price = $curr_sku->Price;
-                        $stock = $curr_sku->FreeStock;
-                        $sku_id = $curr_sku->Id;
-
-                        $create_date = date_create(date('Y-m-d H:i:s'), timezone_open("Australia/Brisbane"));
-                        $curr_date = date_format($create_date, "Y-m-d H:i:s");
-                        $current_date = date('Y-m-d');
-                        //echo $release_dt_str;
-                        if ($release_dt_str <= $current_date) {
-                            if ($stock >= 1) {
-                                if (($org_price - $price) == 0) {
-                                    $prod_data = array(
-                                        'visible' => 'Yes',
-                                        'stock' => $stock,
-                                        'price' => $org_price,
-                                        'price_sale' => '0',
-                                        'last_updated' => $curr_date
-                                    );
-                                } else {
-                                    $prod_data = array(
-                                        'visible' => 'Yes',
-                                        'stock' => $stock,
-                                        'price' => $org_price,
-                                        'price_sale' => $price,
-                                        'last_updated' => $curr_date
-                                    );
-                                }//price if over
-                            } else {
-                                $prod_data = array(
-                                    'visible' => 'No',
-                                    'stock' => $stock,
-                                    'price' => $org_price,
-                                    'price_sale' => $price,
-                                    'last_updated' => $curr_date
-                                );
-                            }//stock if over
-                        } else {
+				    $color_code = $curr_color->Code;									
+                    $color_name = $curr_color->Name;
+                    $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
+                    if ($release_dt == ""):
+                        $release_dt_str = "0000-00-00";
+                    else:
+                        $release_dt_str = ($release_dt->release_dt!='') ? date('Y-m-d', strtotime($release_dt->release_dt)) : "0000-00-00"; // to avoid 1970-01-01
+                    endif;
+                        foreach ($curr_color->SKUs->SKU as $curr_sku) {
+                         
+                        $org_price 	=$curr_sku->OriginalPrice;
+                        $price 		=$curr_sku->Price;
+                        $stock 		=$curr_sku->FreeStock;
+                        $sku_id 	=$curr_sku->Id;
+                        $price_sale	=$price;
+                        //echo "<br> $color_idx - $sku_id";
+                        if ($release_dt_str == '0000-00-00'):
+                            //Visible should be No.. its made yes only for testing
                             $prod_data = array(
-                                'visible' => 'No',
                                 'stock' => $stock,
                                 'price' => $org_price,
-                                'price_sale' => $price,
-                                'last_updated' => $curr_date
+                                'price_sale' => $price_sale,
+                                'release_date' => $release_dt_str,
+                                'season' => 'Current',
+                                'visible' => 'No',
+                                'reason_no' => 'Release date blank',
                             );
-                        }
+
+                        elseif($release_dt_str > $current_date):
+                            //Visible should be No.. its made yes only for testing
+                            $prod_data = array(
+                                'stock' => $stock,
+                                'price' => $org_price,
+                                'price_sale' => $price_sale,
+                                'release_date' => $release_dt_str,
+                                'season' => 'Current',
+                                'visible' => 'No',
+                                'reason_no' => 'Release date Future',
+                            );
+                        elseif($release_dt_str <= $current_date):							
+                                if($stock>0):	
+                                    $prod_data = array(
+                                        'stock' => $stock,
+                                        'price' => $org_price,
+                                        'price_sale' => $price_sale,
+                                        'release_date' => $release_dt_str,
+                                        'season' => 'Current',
+                                        'visible' => 'Yes',
+                                        'reason_no' => '',
+                                    );
+                                else:
+                                    $prod_data = array(
+                                        'stock' => $stock,
+                                        'price' => $org_price,
+                                        'price_sale' => $price_sale,
+                                        'release_date' => $release_dt_str,
+                                        'season' => 'Current',
+                                        'visible' => 'No',
+                                        'reason_no' => 'Insufficient Stock',
+                                    );
+                                endif;
+                        endif;
 
                         //echo "sku_id " .$sku_id."<br>";
                         //Update p_variant
-                        //Variant::where('id',$sku_id)->update($prod_data);
-                    }
-                }
+                        Variant::where('id',$sku_id)->update($prod_data);
+
+                    } // second foreach
+                } // first foreach
 
                 
                 break;
