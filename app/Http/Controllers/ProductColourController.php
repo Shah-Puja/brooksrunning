@@ -108,7 +108,6 @@ class ProductColourController extends Controller
                     $color_idx = $curr_color->Id;
 				    $color_code = $curr_color->Code;									
                     $color_name = $curr_color->Name;
-                    echo $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
                     if ($release_dt == ""):
                         $release_dt_str = "0000-00-00";
                     else:
@@ -122,7 +121,7 @@ class ProductColourController extends Controller
                         $sku_id 	=$curr_sku->Id;
                         $price_sale	=$price;
                         
-                        if ($release_dt == ''):
+                        if ($release_dt_str != '0000-00-00'):
                             //Visible should be No.. its made yes only for testing
                             $prod_data = array(
                                 'stock' => $stock,
@@ -134,7 +133,7 @@ class ProductColourController extends Controller
                                 'reason_no' => 'Release date blank',
                             );
 
-                        elseif($release_dt > $current_date):
+                        elseif($release_dt_str > $current_date):
                             //Visible should be No.. its made yes only for testing
                             $prod_data = array(
                                 'stock' => $stock,
@@ -145,7 +144,7 @@ class ProductColourController extends Controller
                                 'visible' => 'No',
                                 'reason_no' => 'Release date Future',
                             );
-                        elseif($release_dt <= $current_date):							
+                        elseif($release_dt_str <= $current_date):							
                                 if($stock>0):	
                                     $prod_data = array(
                                         'stock' => $stock,
