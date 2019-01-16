@@ -18,8 +18,8 @@ class ProductColourController extends Controller
     }
     public function index($name,$style,$color){
    
-        //if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON') {
-          if (env('AP21_STATUS') == 'ON') {
+        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON') {
+          //if (env('AP21_STATUS') == 'ON') {
             ///get product last updated
             $get_product_last_updated = Product::where('style',$style)
                                                 ->where('color_code',$color)
@@ -97,7 +97,7 @@ class ProductColourController extends Controller
 
     public function product_api($style_idx){
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
-        echo "URL ==== $URL";
+        //echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
@@ -122,7 +122,7 @@ class ProductColourController extends Controller
                         $stock 		=$curr_sku->FreeStock;
                         $sku_id 	=$curr_sku->Id;
                         $price_sale	=$price;
-                        echo "<br> $color_idx - $sku_id";
+                        //echo "<br> $color_idx - $sku_id";
                         if ($release_dt_str == '0000-00-00'):
                             //Visible should be No.. its made yes only for testing
                             $prod_data = array(
