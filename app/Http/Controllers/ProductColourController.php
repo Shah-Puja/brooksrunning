@@ -97,6 +97,7 @@ class ProductColourController extends Controller
 
     public function product_api($style_idx){
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
+        echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
