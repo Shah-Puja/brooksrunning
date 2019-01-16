@@ -31,11 +31,11 @@ class ProductColourController extends Controller
                 $current_time = strtotime(date('Y-m-d h:i:s'));
                 $last_updated_time = strtotime($product_last_updated);
                 $minutes = round(abs($current_time - $last_updated_time) / 60);
-                if ($minutes >= 5) {
+                //if ($minutes >= 5) {
                     // product api call 
                     $style_idx  = $get_product_last_updated->style_idx;
                     $this->product_api($style_idx);
-                }
+               // }
                
             }
         }
