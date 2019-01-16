@@ -108,7 +108,7 @@ class ProductColourController extends Controller
                     $color_idx = $curr_color->Id;
 				    $color_code = $curr_color->Code;									
                     $color_name = $curr_color->Name;
-                    $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
+                    echo $release_dt = Ap21_colour::where('clridx',$color_idx)->first();
                     if ($release_dt == ""):
                         $release_dt_str = "0000-00-00";
                     else:
@@ -171,7 +171,7 @@ class ProductColourController extends Controller
 
                         //echo "sku_id " .$sku_id."<br>";
                         //Update p_variant
-                        Variant::where('id',$sku_id)->update($prod_data);
+                        ///Variant::where('id',$sku_id)->update($prod_data);
 
                     } // second foreach
                 } // first foreach
