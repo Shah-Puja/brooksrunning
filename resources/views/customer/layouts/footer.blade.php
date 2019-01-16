@@ -149,7 +149,7 @@
 		}
 	</style>
 <script src="/js/owl.carousel.min.js"></script>
-<script src="/js/listing.js"></script>
+@if($view_name!='customer-pdp') <script src="/js/listing.js"></script> @endif
 @if($view_name=='customer-pdp')
 <!-- details page js -->
 <script src="/js/pdp-js.js"></script>
