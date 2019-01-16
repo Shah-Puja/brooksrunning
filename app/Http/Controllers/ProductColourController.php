@@ -31,11 +31,11 @@ class ProductColourController extends Controller
                 $current_time = strtotime(date('Y-m-d h:i:s'));
                 $last_updated_time = strtotime($product_last_updated);
                 $minutes = round(abs($current_time - $last_updated_time) / 60);
-                //if ($minutes >= 5) {
+                if ($minutes >= 5) {
                     // product api call 
                     $style_idx  = $get_product_last_updated->style_idx;
                     $this->product_api($style_idx);
-               // }
+                }
                
             }
         }
@@ -122,7 +122,7 @@ class ProductColourController extends Controller
                         $sku_id 	=$curr_sku->Id;
                         $price_sale	=$price;
                         
-                        if ($release_dt_str != '0000-00-00'):
+                        if ($release_dt_str == '0000-00-00'):
                             //Visible should be No.. its made yes only for testing
                             $prod_data = array(
                                 'stock' => $stock,
