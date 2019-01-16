@@ -121,7 +121,7 @@ class ProductColourController extends Controller
                         $stock 		=$curr_sku->FreeStock;
                         $sku_id 	=$curr_sku->Id;
                         $price_sale	=$price;
-                        
+                        echo "<br> $color_idx - $sku_id";
                         if ($release_dt_str == '0000-00-00'):
                             //Visible should be No.. its made yes only for testing
                             $prod_data = array(
