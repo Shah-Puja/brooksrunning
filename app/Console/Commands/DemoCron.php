@@ -48,7 +48,7 @@ class DemoCron extends Command {
             $email = $user->email;
             $name = $user->first_name . " " . $user->last_name;
             echo $email."<br>";
-            $arr = array('name' => $name, 'email' => $email);
+            $arr = array('name' => $name, 'email' => trim($email));
             $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
         }
         echo "20 Users inserted in iContact";

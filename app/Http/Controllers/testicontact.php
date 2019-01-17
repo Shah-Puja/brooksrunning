@@ -46,7 +46,7 @@ class testicontact extends Controller {
             $user->last_name = ($user->last_name) ? $user->last_name : "";
             $name = $user->first_name . " " . $user->last_name;
             echo $email."<br>";
-            $arr = array('name' => $name, 'email' => $email);
+            $arr = array('name' => $name, 'email' => trim($email));
             $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
         }
     }
