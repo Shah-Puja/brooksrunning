@@ -106,7 +106,7 @@
                                                         <a href="/footwear/women/best_selling">Best Sellers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/ravenna-9-womens-running-shoes/120269_452.html" title="Ravenna 9">Ravenna 9</a> 
+                                                        <a href="/brooks-running-shoes-ravenna-10-womens/120286_006.html" title="Ravenna 10">Ravenna 10</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
@@ -222,7 +222,7 @@
                                                         <a href="/footwear/men/best_selling">Best Sellers</a>
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/ravenna-9-mens-running-shoes/110280_471.html" title="Ravenna 9">Ravenna 9</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-ravenna-10-mens/110298_082.html" title="Ravenna 10">Ravenna 10</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/brooks-running-shoes-ghost-11-mens/110288_038.html" title="Ghost 11">Ghost 11</a> 
