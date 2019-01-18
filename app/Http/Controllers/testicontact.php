@@ -47,7 +47,7 @@ class testicontact extends Controller {
                  echo "NoT Valid - ".$email;
                 continue;
             }else{
-                echo "Valid";
+                echo "Valid Email";
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;
@@ -56,6 +56,6 @@ class testicontact extends Controller {
             }
             
         }
-		echo "20 Users inserted in iContact";
+		echo "<br>"."20 Users inserted in iContact";
     }
 }
