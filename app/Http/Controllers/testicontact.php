@@ -44,7 +44,7 @@ class testicontact extends Controller {
             $email = $user->email;
             echo "<br>".$email." -- ";
             if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
-                 echo "NoT Valid - ".$email;
+                 echo "Not Valid - ".$email;
                 continue;
             }else{
                 echo "Valid Email";
