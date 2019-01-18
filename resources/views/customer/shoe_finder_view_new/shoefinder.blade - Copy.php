@@ -38,9 +38,9 @@
 										<div class="bf-progress__item__check"><i></i></div>
 										<div class="bf-progress__item__title">Mileage</div>
 										<div class="bf-progress__item__value">
-											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="0" aria-hidden="true" style="display: none;">0-10 miles</div>
-											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="1" aria-hidden="true" style="display: none;">11-30 miles</div>
-											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="2" aria-hidden="true" style="display: none;">31+ miles</div>
+											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="0" aria-hidden="true" style="display: none;">0-15 km</div>
+											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="1" aria-hidden="true" style="display: none;">16-50 km</div>
+											<div data-bf-show-on-form-value="" data-name="run_distance" data-value="2" aria-hidden="true" style="display: none;">50+ km</div>
 										</div>
 									</div>
 									

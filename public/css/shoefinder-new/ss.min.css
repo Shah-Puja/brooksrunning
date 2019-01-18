@@ -1,12 +1,19 @@
 
 .shoefinder-container {background-color:#d8e7ff; }
 .shoefinder-container .wrapper{
-  padding-bottom:12%; 
+  /* padding-bottom:12%;  */
 }
 .bf-content {
-  min-height: 500px !important;
-}
+  min-height: 700px !important;
 
+}
+.bf-content-wrap{
+  overflow:auto;
+  min-height: 650px;
+}
+.bf-content-wrap::-webkit-scrollbar { 
+  display: none; 
+}
 .bf-results-screen{
   position: relative !important;
 }
