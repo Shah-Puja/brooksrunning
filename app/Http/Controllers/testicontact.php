@@ -52,8 +52,7 @@ class testicontact extends Controller {
             } else{
                 continue;
             }
-            echo "20 Users inserted in iContact";
         }
+		echo "20 Users inserted in iContact";
     }
-
 }
