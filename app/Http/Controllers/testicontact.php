@@ -42,14 +42,16 @@ class testicontact extends Controller {
         //echo "<pre>";print_r($users);die;
         foreach ($users as $user) {
             $email = $user->email;
+            echo "<br>".$email." -- ";
             if(filter_var($email, FILTER_VALIDATE_EMAIL) !== false){
+                echo "Valid";
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;
-                echo $email."<br>";
                 $arr = array('name' => $name, 'email' => trim($email));
                 $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
             } else{
+                echo "NoT Valid - ".$email;
                 continue;
             }
         }
