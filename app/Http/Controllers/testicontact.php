@@ -43,17 +43,18 @@ class testicontact extends Controller {
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
-            if(filter_var($email, FILTER_VALIDATE_EMAIL) !== false){
+            if(isset($email) && filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                 echo "NoT Valid - ".$email;
+                continue;
+            }else{
                 echo "Valid";
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;
                 $arr = array('name' => $name, 'email' => trim($email));
                 $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
-            } else{
-                echo "NoT Valid - ".$email;
-                continue;
             }
+            
         }
 		echo "20 Users inserted in iContact";
     }
