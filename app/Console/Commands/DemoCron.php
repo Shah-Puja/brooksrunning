@@ -46,16 +46,20 @@ class DemoCron extends Command {
         $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
         foreach ($users as $user) {
             $email = $user->email;
-            if(filter_var($email, FILTER_VALIDATE_EMAIL) !== false){
+            echo "<br>".$email." -- ";
+            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
+                 echo "Not Valid";
+                continue;
+            }else{
+                echo "Valid Email";
+                $user->first_name = ($user->first_name) ? $user->first_name : "";
+                $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;
-                echo $email."<br>";
                 $arr = array('name' => $name, 'email' => trim($email));
                 $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
-            } else{
-                continue;
             }
+            
         }
-        echo "20 Users inserted in iContact";
+		echo "<br>"."20 Users inserted in iContact";
     }
-
 }
