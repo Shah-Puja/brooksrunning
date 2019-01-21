@@ -47,7 +47,7 @@ class testicontact extends Controller {
                  echo "Not Valid - ".$email;
                 continue;
             }else{
-                echo "Valid Email";
+                echo "Valid Email";die;
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;

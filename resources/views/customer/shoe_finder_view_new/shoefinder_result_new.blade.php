@@ -32,41 +32,17 @@
     width: 500px;
     display: none;
 }
-.bf-section--results{
-	margin-left:-87px;
-	margin-right:-87px;
+.shoefinder-container .wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
 }
-@media (min-width: 596px){
-.bf-section {
-    padding: 10px 0;
+.shoefinder-container .row{
+    margin-right: 0px;
+    margin-left: 0px;
 }
-.bf-feature {
-    padding-top: 15px !important;
-}
-
-}
-
-@media (max-width: 768px){
-.bf-section.bf-section--results{
-	margin: 0 auto;
-}
-
-}
-.bf-product-details__header h1{
-    margin-top:0.5px;
-    margin-bottom:10px;
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
-	.bf-section.bf-section--results{
-		margin-left: -23px;
-    	margin-right: -23px;
-	}
-}
-@media only screen and (min-device-width: 1024px) and (max-device-width: 768px){
-	.bf-section.bf-section--results{
-		margin-left: -40px;
-    	margin-right: -40px;
-	}
+.shoefinder-container .row .col-12{
+    padding-right: 0px;
+    padding-left: 0px;
 }
 </style>
 <article class="bf-results-screen__transition-group-fade">
@@ -190,14 +166,22 @@
                     @if($product->style == $curr_ele->style)
                         @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
-                @endforeach                                                                     
+                @endforeach 
+                @foreach($result['shoe_detail'] as $shoe)
+                    @php $gender_key = ($gender=='mens') ? "men": "women"; @endphp
+                    @if (\strpos($shoe->$gender_key, $curr_ele->style) !== false)
+                        @php $shoefinder_detail[$curr_ele->style][] = $shoe; @endphp
+                    @endif
+                @endforeach                                                                                                             
             <section class="bf-grid bf-grid--full-width bf-grid--large-pad bf-product" data-finder-result>
                 <div class="bf-grid__col-1 bf-grid__col-2-3-desktop bf-product__col">
                     <div class="bf-carousel" data-bf-carousel>
                             <div class="bf-bug">
                                 <img src="/images/shoefinder-new/banner.svg" class="bf-bug__image" />
                                 <div class="bf-bug__text">
-                                    Speed
+                                @if(isset($shoefinder_detail[$curr_ele->style][0]->subtext) && $shoefinder_detail[$curr_ele->style][0]->subtext!='')
+                                        {{ ucwords($shoefinder_detail[$curr_ele->style][0]->subtext) }}
+                                @endif
                                 </div> 
                             </div>
                             <div class="bf-carousel__wrap">
@@ -240,37 +224,47 @@
                                 <img src="{{ $experience_img_url }}" alt="{{ $curr_ele->experience }}" width="100%" height="auto" tab-index="0"/>
                             </div>
                         <div class="bf-features">
-                            
+                            @if(isset($shoefinder_detail[$curr_ele->style][0]->description) && $shoefinder_detail[$curr_ele->style][0]->description!='')
                             <div class="bf-feature" tab-index="0">
                                 <p class="bf-feature__description">
-                                    The Mazama 2 will help you be one with nature &hellip; as it whizzes by. The sticky rubber outsoles make for quick footwork.
+                                   {{ strip_tags($shoefinder_detail[$curr_ele->style][0]->description) }}
                                 </p>
                             </div>
+                            @endif
                             
                             <div class="bf-feature">
-                                
-                                <h2 class="bf-feature__label" tab-index="0">Mazama 2 features</h2>
-                                    
+                            @php  
+                                $benefit_1 = (!empty($curr_ele->benefit_1)) ? explode('#', $curr_ele->benefit_1) : ''; 
+                                $benefit_2 = (!empty($curr_ele->benefit_2)) ? explode('#', $curr_ele->benefit_2) : ''; 
+                                $benefit_3 = (!empty($curr_ele->benefit_3)) ? explode('#', $curr_ele->benefit_3) : ''; 
+                            @endphp
+                                    @if($benefit_1!='')
+                                    <h2 class="bf-feature__label" tab-index="0">{{ $curr_ele->stylename }} features</h2>
                                         <div class="bf-collapsable" data-bf-collapsable tab-index="1">
-                                            <div class="bf-collapsable__label">Powerful Efficiency</div>
+                                            <div class="bf-collapsable__label">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</div>
                                             <div class="bf-collapsable__content">
-                                                What&#39;s the key to a great push-off? Proper alignment. And that&#39;s what the Propulsion Plate delivers, generating power and efficiency by design.
+                                            {{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}
                                             </div>
                                         </div>
+                                    @endif
                                     
+                                    @if($benefit_2!='')
                                         <div class="bf-collapsable" data-bf-collapsable tab-index="2">
-                                            <div class="bf-collapsable__label">Sticky Traction</div>
+                                            <div class="bf-collapsable__label">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</div>
                                             <div class="bf-collapsable__content">
-                                                The sticky rubber outsole and directional lugs make for quick footwork.
+                                            {{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}
                                             </div>
                                         </div>
-                                    
+                                    @endif
+
+                                    @if($benefit_3!='')
                                         <div class="bf-collapsable" data-bf-collapsable tab-index="3">
-                                            <div class="bf-collapsable__label">Fast Drainage</div>
+                                            <div class="bf-collapsable__label">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</div>
                                             <div class="bf-collapsable__content">
-                                                A lightweight mesh upper drains water quickly and provides plenty of breathability&mdash;just what you need when you&#39;re moving fast over muddy trails.
+                                            {{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}
                                             </div>
                                         </div>
+                                    @endif
                                     
                                                     
                                 <div class="bf-product-details__button-wrap" data-gtm-product data-gtm-product-impressions data-gtm-click-event="productClick"  data-gtm-product-id="110279" data-gtm-product-name="{{ $curr_ele->stylename }}" data-gtm-currency-code="USD" data-gtm-product-brand="Mazama 2" data-gtm-product-category="shoes-men-trail" data-gtm-product-variant="null" data-gtm-product-price="90.96" data-gtm-page-list="shoe-finder-results" data-gtm-topResults-crossSell="top results" data-gtm-shoe-pronation="neutral" data-gtm-oos-boolean="false" data-gtm-product-gender="male"  data-gtm-is-recommendation="true">
