@@ -47,10 +47,10 @@ class DemoCron extends Command {
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
-            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
-                 echo "Not Valid";
-                continue;
-            }else{
+            if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)){
+                echo "Not Valid - ".$email;
+               continue;
+            } else{
                 echo "Valid Email";
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
