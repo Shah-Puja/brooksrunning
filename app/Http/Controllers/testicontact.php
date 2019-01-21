@@ -43,7 +43,7 @@ class testicontact extends Controller {
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
-            if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)){
+            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
                  echo "Not Valid - ".$email;
                 continue;
             }else{
