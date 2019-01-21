@@ -25,7 +25,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
-        //          ->hourly();
+        //          ->hourly(); 
+        $schedule->command('demo:cron')
+                 ->everyFiveMinutes();
+        $schedule->command('algolia:sync')
+                 ->everyMinute();
+
+        
     }
 
     /**
