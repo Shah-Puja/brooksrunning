@@ -43,7 +43,7 @@ class DemoCron extends Command {
     public function handle() {
         DB::table('items')->insert(['name' => 'Hello Test']);
         $this->info('Demo:Cron Command Run successfully!');
-        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
+        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(40)->get();
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
