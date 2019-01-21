@@ -5,6 +5,7 @@
 /public/ad.php
 /public/robots.txt
 /public/blog_assets
+/public/feeds
 /storage/*.key
 /vendor
 /.idea
