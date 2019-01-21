@@ -38,16 +38,16 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(30)->get();
+        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(20)->get();
         //echo "<pre>";print_r($users);die;
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
-            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
+            if (!preg_match("/[a-zA-Z0-9_-.+]+@[a-zA-Z0-9_-.]+.[a-zA-Z]+/", $email)){
                  echo "Not Valid - ".$email;
                 continue;
             }else{
-                echo "Valid Email";die;
+                echo "Valid Email";
                 $user->first_name = ($user->first_name) ? $user->first_name : "";
                 $user->last_name = ($user->last_name) ? $user->last_name : "";
                 $name = $user->first_name . " " . $user->last_name;
