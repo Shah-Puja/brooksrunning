@@ -42,11 +42,20 @@ class testicontact extends Controller {
         //echo "<pre>";print_r($users);die;
         foreach ($users as $user) {
             $email = $user->email;
-            $name = $user->first_name . " " . $user->last_name;
-            echo $email."<br>";
-            $arr = array('name' => $name, 'email' => $email);
-            $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
+            echo "<br>".$email." -- ";
+            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
+                 echo "Not Valid - ".$email;
+                continue;
+            }else{
+                echo "Valid Email";
+                $user->first_name = ($user->first_name) ? $user->first_name : "";
+                $user->last_name = ($user->last_name) ? $user->last_name : "";
+                $name = $user->first_name . " " . $user->last_name;
+                $arr = array('name' => $name, 'email' => trim($email));
+                $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
+            }
+            
         }
+		echo "<br>"."20 Users inserted in iContact";
     }
-
 }
