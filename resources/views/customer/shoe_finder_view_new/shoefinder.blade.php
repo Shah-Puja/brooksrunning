@@ -244,7 +244,7 @@
 												<!--  answer is:  false -->
 												<input type="radio" name="run_distance" value="0" id="run_distance_0" tabindex="-1" required="" aria-hidden="true">
 					
-												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="0-10 miles" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">0-10 miles</button>
+												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="0-15 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">0-15 km</button>
 											</div>									
 											
 											<div class="bf-button-wrap__item">
@@ -254,7 +254,7 @@
 												<!--  answer is:  false -->
 												<input type="radio" name="run_distance" value="1" id="run_distance_1" tabindex="-1" required="" aria-hidden="true">
 												
-												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="11-30 miles" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">11-30 miles</button>
+												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="16-50 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">16-50 km</button>
 											</div>									
 											
 											<div class="bf-button-wrap__item">
@@ -264,7 +264,7 @@
 												<!--  answer is:  false -->
 												<input type="radio" name="run_distance" value="2" id="run_distance_2" tabindex="-1" required="" aria-hidden="true">
 				
-												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="31+ miles" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">31+ miles</button>
+												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="50+ km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">50+ km</button>
 											</div>									
 										</div>
 									</div>

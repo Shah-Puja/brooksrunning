@@ -32,41 +32,17 @@
     width: 500px;
     display: none;
 }
-.bf-section--results{
-	margin-left:-87px;
-	margin-right:-87px;
+.shoefinder-container .wrapper {
+  padding-left: 0px;
+  padding-right: 0px;
 }
-@media (min-width: 596px){
-.bf-section {
-    padding: 10px 0;
+.shoefinder-container .row{
+    margin-right: 0px;
+    margin-left: 0px;
 }
-.bf-feature {
-    padding-top: 15px !important;
-}
-
-}
-
-@media (max-width: 768px){
-.bf-section.bf-section--results{
-	margin: 0 auto;
-}
-
-}
-.bf-product-details__header h1{
-    margin-top:0.5px;
-    margin-bottom:10px;
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
-	.bf-section.bf-section--results{
-		margin-left: -23px;
-    	margin-right: -23px;
-	}
-}
-@media only screen and (min-device-width: 1024px) and (max-device-width: 768px){
-	.bf-section.bf-section--results{
-		margin-left: -40px;
-    	margin-right: -40px;
-	}
+.shoefinder-container .row .col-12{
+    padding-right: 0px;
+    padding-left: 0px;
 }
 </style>
 <article class="bf-results-screen__transition-group-fade">
