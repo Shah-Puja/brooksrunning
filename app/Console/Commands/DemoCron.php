@@ -47,7 +47,8 @@ class DemoCron extends Command {
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>".$email." -- ";
-            if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
+            //if (!preg_match("/((\w|\-))+\@((\w|\-))+\.((\w|\-))+/", $email)){
+            if(!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
                 echo "Not Valid - ".$email;
                continue;
             } else{
