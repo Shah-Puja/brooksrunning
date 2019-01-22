@@ -5252,3 +5252,36 @@ a {
 }
 
 /*  Shipping Page End */
+
+/*  Fixed Header Start */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  pointer-events: none;
+  background-color: #fff;
+  .header-desktop--left{
+    a {
+      .logo{
+        pointer-events: auto ;
+      }
+    }
+  } 
+ .desktop-navigation
+ { 
+   .main{ 
+     .main-nav {
+       pointer-events: auto;
+      }
+    }
+  }
+.desktop-navigation{
+  .main {
+     .active{
+    pointer-events: auto;
+     }
+  }
+  } 
+}
+/*  Fixed Header End */

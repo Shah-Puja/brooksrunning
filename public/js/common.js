@@ -740,6 +740,16 @@ function mob_search_product(){
 
 
 
-  /*Map Js*/  
+  /*Freeze top navigation*/  
 
- /* /Map Js*/  
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= 147) {
+            $('.header-desktop').addClass('fixed-header');
+        }
+        else {
+            $('.header-desktop').removeClass('fixed-header');
+        }
+    });
+
+
+ /* /Freeze top navigation*/  
