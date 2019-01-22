@@ -8,7 +8,7 @@ use App\SYG\Subscribers\iContactProApi;
 use App\SYG\Subscribers\SubscriberInterface;
 use App\Models\User;
 
-class DemoCron extends Command {
+class UsersIcontact extends Command {
     protected $client;
 
     /**
@@ -16,7 +16,7 @@ class DemoCron extends Command {
      *
      * @var string
      */
-    protected $signature = 'demo:cron';
+    protected $signature = 'users:icontact';
 
     /**
      * The console command description.
