@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('demo:cron')
                  ->everyFiveMinutes();
         $schedule->command('algolia:sync')
-                 ->everyMinute();
+                 ->daily();
 
         
     }
