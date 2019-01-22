@@ -5268,20 +5268,31 @@ a {
       }
     }
   } 
+ .header-desktop--right{
+  .top {
+    .header-utality{
+      li{
+        a{
+          pointer-events: auto ;
+        }
+      }
+      .cart-popup-desktop{
+        pointer-events: auto ;
+      } 
+    } 
+  }
+ } 
  .desktop-navigation
  { 
    .main{ 
      .main-nav {
        pointer-events: auto;
       }
+      .active{
+        pointer-events: auto;
+         }
     }
   }
-.desktop-navigation{
-  .main {
-     .active{
-    pointer-events: auto;
-     }
-  }
-  } 
+ 
 }
 /*  Fixed Header End */

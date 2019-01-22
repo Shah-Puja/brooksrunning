@@ -6773,6 +6773,12 @@ textarea {
 .fixed-header .header-desktop--left a .logo {
   pointer-events: auto;
 }
+.fixed-header .header-desktop--right .top .header-utality li a {
+  pointer-events: auto;
+}
+.fixed-header .header-desktop--right .top .header-utality .cart-popup-desktop {
+  pointer-events: auto;
+}
 .fixed-header .desktop-navigation .main .main-nav {
   pointer-events: auto;
 }
