@@ -6533,3 +6533,23 @@ textarea {
   margin-top: -24px; }
 
 /*  Shipping Page End */
+/*  Fixed Header Start */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035257}}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  pointer-events: none;
+  background-color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035266}}
+  .fixed-header .header-desktop--left a .logo {
+    pointer-events: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035274}}
+  .fixed-header .desktop-navigation .main .main-nav {
+    pointer-events: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035281}}
+  .fixed-header .desktop-navigation .main .active {
+    pointer-events: auto; }
+
+/*  Fixed Header End */
