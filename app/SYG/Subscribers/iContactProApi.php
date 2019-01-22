@@ -212,7 +212,12 @@ class iContactProApi {
         //echo("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts");
         $aContacts = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts", 'POST', array($aContact), 'contacts');
         // Return the contact
-        return $aContacts[0];
+        if(empty($aContacts)){
+            return false;
+        }else{
+            return $aContacts[0];
+        }
+        
     }
 
     /**
