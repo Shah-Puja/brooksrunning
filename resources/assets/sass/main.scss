@@ -749,7 +749,7 @@
           color: $white;
           margin:0 auto;
           text-align:center;
-          display:none;
+          display:none !important;
           .ctg-benefits--content{
             float: none; 
             margin: 0 auto;
