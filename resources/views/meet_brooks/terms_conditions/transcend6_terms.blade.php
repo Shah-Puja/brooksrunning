@@ -2,11 +2,11 @@
 	<p><strong><u>Gold Coast Running Festival Competition Terms &amp; Conditions</u></strong></p>
 <ol>
   	<li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
-  	<li>Entry is open to Tasmanian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
-  	<li>The entire Promotional period commences on Thursday 17th January and closes on Sunday 17th February 2019. The winner will be selected on 18th February 2019 at 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, Australia. The winner will be notified by email.</li>
+  	<li>Entry is open to Australian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
+  	<li>The entire Promotional period commences on Wednesday 23rd January and closes on Wednesday 6th March 2019. The winner will be selected on 7th March 2019 at 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, <i>Australia</i>. The winner will be notified by email.</li>
   	<li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/gcrf19comp">https://www.brooksrunning.com.au/meet_brooks/competition/gcrf19comp</a> during the dates specified above. It is the participant's responsibility to ensure all details are full and correct before submitting their entry form.</li> 
-  	<li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge’s decision in relation to any aspect of the Promotion is final and binding on every person who enters.</li>
-  	<li>The winner of the Promotion will be chosen at random. The prizes must be claimed before 12pm AEST on the 11th March 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 12th March 2019 at 2:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
+  	<li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge’s decision in relation to any aspect of the Promotion is final and binding on every person who enters. </li>
+  	<li>The winners of the Promotion will be chosen at random. The prizes must be claimed before 12pm AEST on the 27th March 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 28th March 2019 at 2:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
   	<li>Each prize is as follows:
     		<ul>
             	<li> A pair of Brooks Transcend 6 : RRP $259.95</li>          
