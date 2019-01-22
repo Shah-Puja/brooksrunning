@@ -2387,7 +2387,7 @@ textarea {
   color: #ffffff;
   margin: 0 auto;
   text-align: center;
-  display: none;
+  display: none !important;
 }
 .ctg-main-container .ctg-benefits .ctg-benefits--content {
   float: none;
