@@ -38,13 +38,20 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(100)->get();
+        $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(30)->get();
         //echo "<pre>";print_r($users);die;
         foreach ($users as $user) {
             $email = $user->email;
-            echo "<br>".$email." -- ";
+            echo "<br>".$email;
+            
+            $user->first_name = ($user->first_name) ? $user->first_name : "";
+            $user->last_name = ($user->last_name) ? $user->last_name : "";
+            $name = $user->first_name . " " . $user->last_name;
+            $arr = array('name' => $name, 'email' => trim($email));
+            $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
+            
             //if (!preg_match("/[a-zA-Z0-9_-.+]+@[a-zA-Z0-9_-.]+.[a-zA-Z]+/", $email)){
-            if(!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
+            /*if(!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
                  echo "Not Valid - ".$email;
                 continue;
             }else{
@@ -54,9 +61,9 @@ class testicontact extends Controller {
                 $name = $user->first_name . " " . $user->last_name;
                 $arr = array('name' => $name, 'email' => trim($email));
                 $response = $this->client->updateoradd_Subscriber($arr, null, null, null, null, null, null, null, null, null, null, null, null, null);
-            }
+            }*/
             
         }
-		echo "<br>"."20 Users inserted in iContact";
+		echo "<br>"."30 Users inserted in iContact";
     }
 }

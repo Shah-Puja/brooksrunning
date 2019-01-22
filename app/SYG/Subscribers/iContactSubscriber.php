@@ -21,10 +21,14 @@ class iContactSubscriber implements SubscriberInterface {
         $lname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[1] : "";
 
         $response = $this->client->addContact($email, null, null, $fname, $lname, null, '', '', '', '', '', '', '', null, 'subscribers');
-        $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
+        if(empty($response)){
+            User::where('email',$email)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
+        }else{
+            $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
+            //update in user table
+            User::where('email',$email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
+        }
         
-        //update in user table
-        User::where('email',$email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
 
     }
 
