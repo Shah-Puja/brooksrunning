@@ -157,13 +157,15 @@ Route::get('/tafwintranscend', 'StaffcompetitionController@index');
 Route::get('/wintranscend', 'StaffcompetitionController@index');
 Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
 
+/* Collection pages */
+Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@index');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
 
 /* Shoes pages */
 Route::get('/shoes/{shoe_name}', 'CategoryController@shoes_detail');
-
 
 Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
 Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
