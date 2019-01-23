@@ -374,7 +374,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1006;
+  z-index: 99999;
   overflow: auto;
 }
 .popup-container.show {
@@ -6776,13 +6776,22 @@ textarea {
 .fixed-header .header-desktop--right .top .header-utality li a {
   pointer-events: auto;
 }
+.fixed-header .header-desktop--right .top .header-utality li .header-utality__submenu {
+  pointer-events: auto;
+}
 .fixed-header .header-desktop--right .top .header-utality .cart-popup-desktop {
+  pointer-events: auto;
+}
+.fixed-header .header-desktop--right .icon-search {
   pointer-events: auto;
 }
 .fixed-header .desktop-navigation .main .main-nav {
   pointer-events: auto;
 }
 .fixed-header .desktop-navigation .main .active {
+  pointer-events: auto;
+}
+.fixed-header .search-container {
   pointer-events: auto;
 }
 

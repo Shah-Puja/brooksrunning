@@ -5275,11 +5275,17 @@ a {
         a{
           pointer-events: auto ;
         }
+        .header-utality__submenu{
+          pointer-events: auto;
+        }
       }
       .cart-popup-desktop{
         pointer-events: auto ;
       } 
     } 
+  }
+  .icon-search{
+    pointer-events: auto;
   }
  } 
  .desktop-navigation
@@ -5293,6 +5299,8 @@ a {
          }
     }
   }
- 
+  .search-container{
+    pointer-events: auto;
+  }
 }
 /*  Fixed Header End */

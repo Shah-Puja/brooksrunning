@@ -12,7 +12,7 @@
 									<span>Brooks</span> at events
 							</p>
 							<p class="tickLedeSub">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year. We're all about promoting healthy, happy lifestyles, so being able to help provide opportunities for people of all fitness levels and ages to get outdoors and "run happy" is incredibly important to us!
-							<br/>Check out our calendar of events for running events in 2018 - we've listed partnered events in Melbourne, Sydney, Gold Coast, and right around Australia, as well as several events in New Zealand.</p>
+							<br/>Check out our calendar of events for running events in 2019 - we've listed partnered events in Melbourne, Sydney, Gold Coast, and right around Australia, as well as several events in New Zealand.</p>
 						</div>
 						<div class="tab-4">
 							<img src="/images/events/main-banner.png" class="main-banner hidden-mob" align="right">
