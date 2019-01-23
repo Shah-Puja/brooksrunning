@@ -369,7 +369,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1006;
+  z-index: 99999;
   overflow: auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/global\.scss}line{font-family:\00003392}}
   .popup-container.show {
@@ -6548,14 +6548,23 @@ textarea {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035275}}
   .fixed-header .header-desktop--right .top .header-utality li a {
     pointer-events: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035278}}
+  .fixed-header .header-desktop--right .top .header-utality li .header-utality__submenu {
+    pointer-events: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035282}}
   .fixed-header .header-desktop--right .top .header-utality .cart-popup-desktop {
     pointer-events: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035287}}
+  .fixed-header .header-desktop--right .icon-search {
+    pointer-events: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035294}}
   .fixed-header .desktop-navigation .main .main-nav {
     pointer-events: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035291}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035297}}
   .fixed-header .desktop-navigation .main .active {
+    pointer-events: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000035302}}
+  .fixed-header .search-container {
     pointer-events: auto; }
 
 /*  Fixed Header End */
