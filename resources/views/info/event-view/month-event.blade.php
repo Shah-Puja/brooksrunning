@@ -36,12 +36,22 @@
                     <li>
                         @php $event_slug = $event->slug; @endphp
                     <a href="/events/{{ $event_slug }}" class="findout"><div class="event-title"> {{ $event->event_name }} </div></a>
+                        
                     <div class="title eventdate">
                          @php
                               $event_time = strtotime($event->event_timestamp);
                               $event_date = date('D d/m/y',$event_time);
                         @endphp
+
+                        @php $curr_dt = date('Y-m-d');
+                             $event_dt = date('Y-m-d', strtotime($event->event_timestamp));
+                        @endphp
+
+                        @if($event_dt > $curr_dt)
                             {{ $event_date }} 
+                        @else
+                            {{ "TBA" }} 
+                        @endif
                     </div>
                     <div class="event-img-main">
                         <a href="/events/{{ $event_slug }}" class="findout"> 
@@ -53,7 +63,10 @@
                         </a>
                     </div>
                     <a href="/events/{{ $event->slug }}" class="findout"><span class="location">Location, {{ $event->location }}</span></a>
-                    <a href="/events/{{ $event->slug }}" class="findout cta">Find Out More</a>
+                    
+                    @if($event_dt > $curr_dt)
+                        <a href="/events/{{ $event->slug }}" class="findout cta">Find Out More</a>
+                    @endif
                     </li>
                     @endforeach
                 @else
