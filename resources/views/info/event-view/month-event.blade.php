@@ -34,17 +34,24 @@
                 @if(isset($events[0]) && $events[0]!="")  
                     @foreach ($events as $event)
                     <li>
-                        @php $event_slug = $event->slug; @endphp
-                    <a href="/events/{{ $event_slug }}" class="findout"><div class="event-title"> {{ $event->event_name }} </div></a>
-                        
+                        @php 
+                            $curr_dt = date('Y-m-d');
+                            $event_dt = date('Y-m-d', strtotime($event->event_timestamp));
+                            $event_slug = $event->slug; 
+                        @endphp
+
+                    @if($event_dt > $curr_dt)
+                        <a href="/events/{{ $event_slug }}" class="findout">
+                            <div class="event-title"> {{ $event->event_name }} </div>
+                        </a>
+                    @else
+                        <div class="event-title"> {{ $event->event_name }} </div>
+                    @endif
+
                     <div class="title eventdate">
                          @php
                               $event_time = strtotime($event->event_timestamp);
                               $event_date = date('D d/m/y',$event_time);
-                        @endphp
-
-                        @php $curr_dt = date('Y-m-d');
-                             $event_dt = date('Y-m-d', strtotime($event->event_timestamp));
                         @endphp
 
                         @if($event_dt > $curr_dt)
@@ -54,15 +61,30 @@
                         @endif
                     </div>
                     <div class="event-img-main">
-                        <a href="/events/{{ $event_slug }}" class="findout"> 
-                            @if(!empty($event->logo)) 
-                        <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
-                            @else 
-                        <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
-                            @endif   
-                        </a>
+                    @if($event_dt > $curr_dt)
+                    <a href="/events/{{ $event_slug }}" class="findout"> 
+                        @if(!empty($event->logo)) 
+                    <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
+                        @else 
+                    <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
+                        @endif   
+                    </a>
+                    @else
+                        @if(!empty($event->logo)) 
+                    <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
+                        @else 
+                    <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
+                        @endif   
+                    @endif
+                        
                     </div>
-                    <a href="/events/{{ $event->slug }}" class="findout"><span class="location">Location, {{ $event->location }}</span></a>
+                    @if($event_dt > $curr_dt)
+                    <a href="/events/{{ $event->slug }}" class="findout">
+                        <span class="location">Location, {{ $event->location }}</span>
+                    </a>
+                    @else
+                        <span class="location">Location, {{ $event->location }}</span>
+                    @endif
                     
                     @if($event_dt > $curr_dt)
                         <a href="/events/{{ $event->slug }}" class="findout cta">Find Out More</a>
