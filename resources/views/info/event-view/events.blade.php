@@ -122,7 +122,7 @@
             <section id="rnr-highlights">
             <div class="grid-container-1">
                 <div class="content-asset clearfix content-asset-body">
-                    <ul class="main-events">
+                    <!-- <ul class="main-events">
                       <li class="events-list-li-1">
                              <a href="/events/sutherland-to-surf/">
                                 <div class="listevents">
@@ -165,7 +165,7 @@
                             </a>
                         </li>
 
-                    </ul>
+                    </ul>-->
                 </div>
                 <!-- End content-asset -->
             </div>
