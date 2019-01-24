@@ -37,7 +37,7 @@
 	<div class="wrapper">
 		<div class="row">
 					<div class="plp-wrapper-container">
-                    @if($products)
+                    @if($products!=''  && count($products) >0 )
                     @foreach($products as $curr_ele)
                         @foreach($colour_options as $product)
                             @if($product->style == $curr_ele->style)

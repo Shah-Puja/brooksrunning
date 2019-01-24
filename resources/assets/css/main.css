@@ -3147,5 +3147,205 @@ textarea {
   margin-top: 12px; }
 
 /* Events- End*/
+/* Start Collection-Listing
+*/
+.category__hero {
+  height: auto;
+  max-height: 400px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #0363F7; }
+  .category__hero .m-block--hero--basic--collection {
+    background: #0363F7;
+    overflow-x: visible;
+    padding: 8px 0 0;
+    position: relative;
+    border-left: 1px solid black; }
+    .category__hero .m-block--hero--basic--collection .collection-hero-overlay {
+      background: url(../images/Limited-Edition/curve-blue.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 100; }
+    @media only screen and (max-width: 767px) {
+      .category__hero .m-block--hero--basic--collection {
+        background: #0363F7;
+        overflow-x: visible;
+        padding: 8px 0 0;
+        position: relative; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .category__hero .m-block--hero--basic--collection {
+        background: #0363F7;
+        overflow-x: visible;
+        padding: 8px 0 0;
+        position: relative; } }
+  .category__hero .large {
+    font-size: 50px;
+    line-height: 55px; }
+    @media only screen and (max-width: 767px) {
+      .category__hero .large {
+        font-size: 30px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .category__hero .large {
+        font-size: 30px; } }
+  .category__hero .type {
+    font-size: 20px;
+    line-height: 27px; }
+  .category__hero .m-block--hero--collection__content h2 {
+    color: #fff;
+    margin: 1rem 0; }
+    @media only screen and (max-width: 767px) {
+      .category__hero .m-block--hero--collection__content h2 {
+        color: #fff;
+        margin: 1rem 0;
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 23px;
+        text-align: center; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .category__hero .m-block--hero--collection__content h2 {
+        color: #fff;
+        margin: 1rem 0;
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 23px;
+        text-align: center; } }
+  @media only screen and (max-width: 767px) {
+    .category__hero .m-block--hero--collection__content h1 {
+      color: #fff;
+      margin: 0 0 13px;
+      text-align: center;
+      line-height: 34px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .category__hero .m-block--hero--collection__content h1 {
+      color: #fff;
+      margin: 0 0 13px;
+      text-align: center;
+      line-height: 34px; } }
+  .category__hero .m-block--hero--collection__content .m-block--hero__content__copy {
+    color: #0E0E0E;
+    margin: 0; }
+  @media only screen and (max-width: 767px) {
+    .category__hero .m-block--hero--collection__content {
+      margin: 0 20px;
+      padding: 0 0 31px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .category__hero .m-block--hero--collection__content {
+      margin: 0 20px;
+      padding: 0 0 31px; } }
+  .category__hero .m-block--hero--collection__content .breadcrumbs {
+    margin: 0 auto 10px;
+    padding: 0; }
+  @media only screen and (max-width: 767px) {
+    .category__hero .category__hero__image:before {
+      z-index: 1000;
+      border: solid 40px;
+      border-color: transparent;
+      border-radius: 70%/75px 48px 0 0;
+      box-shadow: -20px -40px 0 #0363F7;
+      content: ' ';
+      display: block;
+      height: 0px;
+      left: -57px;
+      position: absolute;
+      top: 0;
+      width: calc(100% - -70px); } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .category__hero .category__hero__image:before {
+      z-index: 1000;
+      border: solid 40px;
+      border-color: transparent;
+      border-radius: 70%/75px 48px 0 0;
+      box-shadow: -20px -40px 0 #0363F7;
+      content: ' ';
+      display: block;
+      height: 0px;
+      left: -57px;
+      position: absolute;
+      top: 0;
+      width: calc(100% - -70px); } }
+  .category__hero .category__hero {
+    height: auto;
+    max-height: 400px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: #0363F7; }
+    @media only screen and (max-width: 767px) {
+      .category__hero .category__hero {
+        overflow: hidden;
+        position: relative;
+        width: 100%; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .category__hero .category__hero {
+        overflow: hidden;
+        position: relative;
+        width: 100%; } }
+  .category__hero .category__hero__image {
+    display: block;
+    position: relative; }
+  @media (min-width: 975px) {
+    .category__hero .m-block--hero--basic--collection {
+      float: left;
+      padding: 23px 0 0;
+      height: 400px; }
+    .category__hero .m-block--hero--collection__content {
+      margin: 0 30px 120px 102px;
+      padding: 0;
+      float: right; }
+      .category__hero .m-block--hero--collection__content .breadcrumbs {
+        margin: 0 0 69px; }
+      .category__hero .m-block--hero--collection__content h1 {
+        margin: 0 0 8px;
+        color: #fff; }
+      .category__hero .m-block--hero--collection__content .breadcrumbs {
+        margin: 0 0 69px; }
+      .category__hero .m-block--hero--collection__content .category__hero__image:before {
+        box-shadow: -20px -40px 0 transparent; }
+      .category__hero .m-block--hero--collection__content .breadcrumbs {
+        padding: 0; }
+    .category__hero .category__hero__image {
+      z-index: 1;
+      border-left: 1px solid #0363F7; }
+      .category__hero .category__hero__image img {
+        height: 100%;
+        min-height: 400px;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 80%;
+        object-position: 80%; }
+    .category__hero .pl-0 {
+      padding-left: 0 !important; }
+    .category__hero .pr-0 {
+      padding-right: 0 !important; } }
+  @media only screen and (max-width: 767px) {
+    .category__hero {
+      overflow: hidden;
+      position: relative;
+      width: 100%; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .category__hero {
+      overflow: hidden;
+      position: relative;
+      width: 100%; } }
+
+.error-msg-listing {
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto; }
+
+/* End Collection-Listing
+*/
 
 /*# sourceMappingURL=main.css.map */
