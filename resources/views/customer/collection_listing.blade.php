@@ -1,8 +1,9 @@
-<!---------------------------------------- Resuls ------------------------------------------------------>
+<!---------------------------------------- Results ------------------------------------------------------>
 @extends('customer.layouts.master')
 @section('content')
 
-<div class="create-account--header plp-header">
+<link rel="stylesheet" href="/css/main.css">
+<!-- <div class="create-account--header plp-header">
   <div class="wrapper">
     <div class="row">
       <div class="col-8">
@@ -12,31 +13,51 @@
 						<li>
 							<a href="/">Home</a>
 						</li>
-                        <li>
-						 @switch($gender)
-                            @case('men')
-								<a href="/mens-running-shoes-and-clothing">Men's</a>
-								@break
-                            @case('women')
-                                <a href="/womens-running-shoes-and-clothing">Women's</a>
-                                @break
-                         @endswitch
-						</li>
 						<li>
-							<a href="JavaScript:Void(0);" class="active">Best Selling Shoes</a>
+							<a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
 						</li>
 					</ul>
 				</div>
-                <h1 class="br-mainheading">Best Selling Shoes</h1>
+                <h1 class="br-mainheading">Special Edition Levitate 2 LE & Ricochet LE</h1>
         </div>
       </div>
     </div>
   </div>
+</div> -->
+<div class="create-account--header plp-header category__hero">
+ 
+        <div class="row">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
+                <div class="m-block--hero--collection__content">
+                    <div class="m-block--hero__content__copy">
+                    <div class="about-header">
+                        <div class="breadcrumbs">
+                                    <ul>
+                                        <li>
+                                            <a href="/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <h1 class="large">Limited Edition Levitate 2 and Ricochet</h1>
+                        <h2 class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.</h2>
+                    </div>
+                </div>
+                <div class="collection-hero-overlay hidden-mob visible-tab"></div>
+            </div>
+            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+                <img src="/images/Limited-Edition/nocategoryimage.jpg">
+            </div>
+        </div>
 </div>
 <section class="plp-container">
 	<div class="wrapper">
 		<div class="row">
 					<div class="plp-wrapper-container">
+                    
                     @if($products!=''  && count($products) >0 )
                     @foreach($products as $curr_ele)
                         @foreach($colour_options as $product)
@@ -133,7 +154,7 @@
 						<!--- div -->
                         @endforeach
 @else
-<p>Sorry, No Result Found! <br />Try Again.</p>
+<p class="error-msg-listing">Sorry, No Result Found! <br />Try Again.</p>
 
 @endif
 					</div>
