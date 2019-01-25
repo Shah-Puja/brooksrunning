@@ -4031,12 +4031,12 @@ textarea {
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: Portrait) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
-    width: 86px !important;
+    width: 54px !important;
   }
 }
 @media screen and (orientation: landscape) {
   .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
-    width: 86px !important;
+    width: 54px !important;
   }
 }
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container.more-clothing .addmore {

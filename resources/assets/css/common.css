@@ -3892,11 +3892,11 @@ textarea {
         @media (min-width: 768px) and (max-width: 1024px) and (orientation: Portrait) {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000032417}}
           .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
-            width: 86px !important; } }
+            width: 54px !important; } }
         @media screen and (orientation: landscape) {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000032422}}
           .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
-            width: 86px !important; } }
+            width: 54px !important; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/brooksrunning\/resources\/assets\/sass\/common\.scss}line{font-family:\000032429}}
         .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container.more-clothing .addmore {
           display: none; }
