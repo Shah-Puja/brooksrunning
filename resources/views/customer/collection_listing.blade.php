@@ -116,7 +116,7 @@
 								</div>
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
-										<h3>{{ $curr_ele->stylename }} </h3>
+										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
 										<div class="price">
                                             @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                                 <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
