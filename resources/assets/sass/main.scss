@@ -2445,7 +2445,7 @@ ul {
     position: relative;
     border-left: 1px solid black;
     .collection-hero-overlay {
-      background: url(../images/Limited-Edition/curve-blue.png);
+      background: url(../images/Limited-Edition/curve-blue-n.png);
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
@@ -2455,6 +2455,18 @@ ul {
       top: 0;
       width: 100%;
       z-index: 100;
+      @media screen and (orientation: landscape) {
+        background: url(../images/Limited-Edition/curve-blue-n.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      }
      }
      @media #{$mobile-only}{
      background: #0363F7;
@@ -2537,55 +2549,38 @@ ul {
   }
 
 }
-.category__hero__image:before {
-  @media #{$mobile-only}{
-    z-index: 1000;
-  border: solid 40px;
-  border-color: transparent;
-  border-radius: 70%/75px 48px 0 0;
-  box-shadow: -20px -40px 0 #0363F7;
-  content: ' ';
-  display: block;
-  height: 0px;
-  left: -57px;
-  position: absolute;
-  top: 0;
-  width: calc(100% - -70px);
-  }
-  @media #{$tab-only}{
-    z-index: 1000;
-  border: solid 40px;
-  border-color: transparent;
-  border-radius: 70%/75px 48px 0 0;
-  box-shadow: -20px -40px 0 #0363F7;
-  content: ' ';
-  display: block;
-  height: 0px;
-  left: -57px;
-  position: absolute;
-  top: 0;
-  width: calc(100% - -70px);
-  }
-}
-.category__hero {
-    height: auto;
-    max-height: 400px;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    background-color: #0363F7;
+.category__hero__image{
+  &:before {
     @media #{$mobile-only}{
-     overflow: hidden;
-    position: relative;
-    width: 100%;
+      z-index: 1000;
+      border: solid 40px;
+      border-color: transparent;
+      border-radius: 70%/75px 48px 0 0;
+      box-shadow: -20px -40px 0 #0363F7;
+      content: ' ';
+      display: block;
+      height: 0px;
+      left: -57px;
+      position: absolute;
+      top: 0;
+      width: calc(100% - -70px);
     }
     @media #{$tab-only}{
-      overflow: hidden;
-     position: relative;
-     width: 100%;
-     }
+      z-index: 1000;
+      border: solid 40px;
+      border-color: transparent;
+      border-radius: 70%/75px 48px 0 0;
+      box-shadow: -20px -40px 0 #0363F7;
+      content: ' ';
+      display: block;
+      height: 0px;
+      left: -57px;
+      position: absolute;
+      top: 0;
+      width: calc(100% - -70px);
+    }
+    
+  }
 }
 .category__hero__image {
     display: block;
@@ -2598,7 +2593,7 @@ ul {
     height: 400px;
 }
 .m-block--hero--collection__content {
-    margin: 0 30px 120px 102px;
+    margin: 0 10px 120px 60px;
     padding: 0;
     float: right;
   .breadcrumbs {
@@ -2611,9 +2606,12 @@ ul {
     .breadcrumbs {
       margin: 0 0 69px;
   }
-  .category__hero__image:before{
-    box-shadow: -20px -40px 0 transparent;
-  }
+  .category__hero__image
+    {
+      &:before{
+      box-shadow: -20px -40px 0 transparent;
+        }
+    }
   .breadcrumbs {
     padding: 0;
   }
@@ -2647,6 +2645,21 @@ width: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
+  }
+
+  .collection-hero-overlay {
+    @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
+    background: url('../images/Limited-Edition/curve-blue-n.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    display: block;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    }
   }
 }
 .error-msg-listing{

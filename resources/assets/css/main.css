@@ -3165,7 +3165,7 @@ textarea {
     position: relative;
     border-left: 1px solid black; }
     .category__hero .m-block--hero--basic--collection .collection-hero-overlay {
-      background: url(../images/Limited-Edition/curve-blue.png);
+      background: url(../images/Limited-Edition/curve-blue-n.png);
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
@@ -3175,6 +3175,18 @@ textarea {
       top: 0;
       width: 100%;
       z-index: 100; }
+      @media screen and (orientation: landscape) {
+        .category__hero .m-block--hero--basic--collection .collection-hero-overlay {
+          background: url(../images/Limited-Edition/curve-blue-n.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          display: block;
+          height: 100%;
+          left: 100%;
+          top: 0;
+          width: 100%;
+          z-index: 100; } }
     @media only screen and (max-width: 767px) {
       .category__hero .m-block--hero--basic--collection {
         background: #0363F7;
@@ -3272,25 +3284,6 @@ textarea {
       position: absolute;
       top: 0;
       width: calc(100% - -70px); } }
-  .category__hero .category__hero {
-    height: auto;
-    max-height: 400px;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    background-color: #0363F7; }
-    @media only screen and (max-width: 767px) {
-      .category__hero .category__hero {
-        overflow: hidden;
-        position: relative;
-        width: 100%; } }
-    @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .category__hero .category__hero {
-        overflow: hidden;
-        position: relative;
-        width: 100%; } }
   .category__hero .category__hero__image {
     display: block;
     position: relative; }
@@ -3300,7 +3293,7 @@ textarea {
       padding: 23px 0 0;
       height: 400px; }
     .category__hero .m-block--hero--collection__content {
-      margin: 0 30px 120px 102px;
+      margin: 0 10px 120px 60px;
       padding: 0;
       float: right; }
       .category__hero .m-block--hero--collection__content .breadcrumbs {
@@ -3339,6 +3332,18 @@ textarea {
       overflow: hidden;
       position: relative;
       width: 100%; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .category__hero .collection-hero-overlay {
+      background: url("../images/Limited-Edition/curve-blue-n.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 100; } }
 
 .error-msg-listing {
   font-size: 25px;

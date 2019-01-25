@@ -4034,6 +4034,11 @@ textarea {
     width: 86px !important;
   }
 }
+@media screen and (orientation: landscape) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+    width: 86px !important;
+  }
+}
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container.more-clothing .addmore {
   display: none;
 }

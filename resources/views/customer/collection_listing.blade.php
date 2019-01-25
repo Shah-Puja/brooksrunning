@@ -46,10 +46,10 @@
                         <h2 class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.</h2>
                     </div>
                 </div>
-                <div class="collection-hero-overlay hidden-mob visible-tab"></div>
+                <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
-                <img src="/images/Limited-Edition/nocategoryimage.jpg">
+                <img src="/images/Limited-Edition/levitate_le_categoryimage.jpg">
             </div>
         </div>
 </div>
