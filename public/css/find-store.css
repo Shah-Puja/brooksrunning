@@ -271,6 +271,14 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   content: "";
 }
 
+.icon-youtube:before {
+  content: url("../images/youtube-with-circle.svg");
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
 /* All Functions and prefixes*/
 /* Closed All Functions and prefixes*/
 /* Common Classes */
