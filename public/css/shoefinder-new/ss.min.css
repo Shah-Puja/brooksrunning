@@ -1,24 +1,25 @@
 .shoefinder-container {background-color:#d8e7ff; }
-.shoefinder-container .wrapper{
-  /* padding-bottom:12%;  */
+body {background-color:#d8e7ff; }
+body header {background-color:#fff; }
+.bf-content-wrap header{ background-color:#d8e7ff; }
+
+.bf-results-screen{
+  position: relative !important;
+}
+.footer-container {
+  background-color: #d8e7ff;
+}
+.footer-container div{
+  display: none; 
 }
 .bf-content {
   min-height: 700px !important;
 }
-.bf-content-wrap{
-  overflow:auto;
-  min-height: 650px;
-}
-.bf-content-wrap::-webkit-scrollbar { 
-  display: none; 
-}
+
 .bf-results-screen{
   position: relative !important;
 }
 
-/* .bf-logo.bf-logo--large{
-  transform: translate(150%, 110%) !important;
-} */
 
 @media only screen and (min-width: 768px){
 .shoefinder-container .wrapper {
@@ -35,7 +36,6 @@
   width: auto;
 }
 }
-
 
 /* Result section */
 .slick-dots {
