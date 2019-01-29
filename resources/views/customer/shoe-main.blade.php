@@ -101,6 +101,10 @@
 							@endphp
 							@if($url_segment=='levitate')
 									<img src="{{ config('site.image_url.base_shoe_img_thumb')}}levitate2_video_img.jpg" />
+							
+							@elseif($url_segment=='addiction')
+									<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Addiction_13.PNG" />
+							
 							@else
 									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
 							@endif
