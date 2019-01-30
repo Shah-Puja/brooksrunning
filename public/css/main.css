@@ -3942,6 +3942,12 @@ textarea {
   line-height: 1.4;
   color: #ffffff;
 }
+@media only screen and (max-width: 767px) {
+  .br-events-months .event-banner .event-banner--info .br-info {
+    line-height: 1.1;
+    font-size: 13px;
+  }
+}
 .br-events-months .content-asset a {
   color: #1678bd;
   text-decoration: none;
@@ -3976,6 +3982,16 @@ textarea {
   min-height: 475px;
   list-style: square outside none;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .content-asset .monthly-event-list li {
+    width: 29%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .br-events-months .content-asset .monthly-event-list li {
+    width: 100%;
+  }
+}
 .br-events-months .content-asset .monthly-event-list .event-title {
   color: #00ae95;
   display: block;
@@ -4000,6 +4016,17 @@ textarea {
 }
 .br-events-months .content-asset .monthly-event-list .event-img-main img {
   max-width: 100%;
+  height: 350px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .content-asset .monthly-event-list .event-img-main img {
+    height: 280px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .br-events-months .content-asset .monthly-event-list {
+    margin-left: 15px;
+  }
 }
 .br-events-months .content-asset ul {
   margin: 0;
