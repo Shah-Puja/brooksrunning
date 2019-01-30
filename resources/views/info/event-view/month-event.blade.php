@@ -87,7 +87,7 @@
                     @endif
                     
                     @if($event_dt > $curr_dt)
-                        <a href="/events/{{ $event->slug }}" class="findout cta">Find Out More</a>
+                        <a href="{{ $event->page_link }}" target="_blank" class="findout cta">Find Out More</a>
                     @endif
                     </li>
                     @endforeach
