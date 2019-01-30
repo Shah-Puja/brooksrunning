@@ -8,6 +8,9 @@ use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\HasOne;
+use Laravel\Nova\Panel;
 
 class Order extends Resource
 {
@@ -16,7 +19,7 @@ class Order extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\Models\Order';
+    public static $model = 'App\Models\Order';
 
    /**
      * Build an "index" query for the given resource.
@@ -58,10 +61,33 @@ class Order extends Resource
             Text::make('Order Number', 'order_no')->sortable(),
             Text::make('Ap21 Order Number', 'app21_order')->sortable(),
             Date::make('Submitted Date', 'updated_at')->sortable(),
-            Currency::make('Order Total', 'grand_total'),
-            Text::make('Delivery Type')->onlyOnDetail(),
+            Text::make('Status', 'status')->sortable(),
+            Text::make('Total', function () {
+                return '$'.$this->total;
+            })->onlyOnDetail(),
+            Text::make('GST', function () {
+                return $this->gst;
+            })->onlyOnDetail(),
+            Text::make('Delivery Type', 'delivery_type')->onlyOnDetail(),
+            Text::make('Freight Cost', function () {
+                return '$'.$this->freight_cost;
+            })->onlyOnDetail(),
+            Text::make('Giftceryt Ap21 Code', 'giftcert_ap21code')->onlyOnDetail(),
+            Text::make('Giftceryt Ap21 Pin', 'giftcert_ap21pin')->onlyOnDetail(),
+            Text::make('Coupon Code', 'coupon_code')->onlyOnDetail(),
+            Text::make('Discount', function () {
+                return '$'.$this->discount;
+            })->onlyOnDetail(),
+            Text::make('Order Total', function () {
+                return '$'.$this->grand_total;
+            }),
             Text::make('Payment Type')->onlyOnDetail(),
-            Text::make('Transaction ID', 'transaction_id')->onlyOnDetail()
+            Text::make('Transaction ID', 'transaction_id')->onlyOnDetail(),
+
+            HasMany::make('Order Items List', 'orderItems', 'App\Nova\Orderitem'),
+
+            HasOne::make('Shipping Information', 'address', 'App\Nova\Orderaddress'),
+            
         ];
     }
 
@@ -73,7 +99,11 @@ class Order extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new Metrics\TotalOrders),
+            (new Metrics\OrderPerDay),
+            (new Metrics\OrdersPlan),
+        ];
     }
 
     /**
@@ -84,7 +114,10 @@ class Order extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\Orderstatus,
+            new Filters\Orderdatewise,
+        ];
     }
 
     /**
