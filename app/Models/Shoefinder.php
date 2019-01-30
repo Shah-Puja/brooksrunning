@@ -19,9 +19,9 @@ class Shoefinder extends Model
                                  ->first();
         if(!$shoefinder_result) return '';
         $gender = ($shoefinder_result->gender=='mens') ? 'men' : 'women';
-        $shoe_version_array =array($shoefinder_result->s1,$shoefinder_result->s2,$shoefinder_result->s3,$shoefinder_result->s4,$shoefinder_result->s5);
+        $shoe_version_array =array($shoefinder_result->s1,$shoefinder_result->s2,$shoefinder_result->s3,$shoefinder_result->s4);
         
-        $shoe_detail = Shoefinder_detail::whereIn('shoe_version',$shoe_version_array)->get();
+        $shoe_detail = Shoefinder_detail::whereIn('shoe_version',$shoe_version_array)->orderByRaw("FIELD(shoe_version ,'$shoefinder_result->s1', '$shoefinder_result->s2', '$shoefinder_result->s3', '$shoefinder_result->s4') ASC")->get();
         if(!$shoe_detail) return '';
         $items = $shoe_detail->flatten()->pluck($gender);
         $items_data = $items->map(function ($item) {
@@ -30,24 +30,18 @@ class Shoefinder extends Model
             $color_code = $i[1];
             return array('style' => $style, 'color_code' => $color_code);
         });
-
+        $orderby_style_string = implode("','",$items_data->pluck('style')->toArray());
+     
         $styles = \App\Models\Product::whereIn("style",$items_data->pluck('style'))
                   ->whereHas('variants', function ( $query ) {
                         $query->where('visible', '=', 'Yes');
-                  })->get();
+                  })
+                  ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC")
+                  ->get();
         if(!$styles){
              return '';
         }
-        /*$product=$styles->whereIn("color_code",$items_data->pluck('color_code')); // single product data 
-        if(!$product){
-            return '';
-        }
-        $colour_options=$styles->unique('color_code'); // all unique colors data
-        $product = $product->unique(function ($item) {
-            return $item['style'].$item['color_code'];
-        })->unique('style');*/
-
-
+        
         $products = $styles->filter(function ($value, $key) use ($items_data) {
             $data=[];
                   foreach($items_data as $value_array){
