@@ -95,6 +95,7 @@
                     <div class="no-result"><h2>No Events Available for this month</h2></div>
                 @endif 
             </ul>
+            
             <div class="linkpages"> 
                 <div class="events-btn">
                     <span><a class="secondary-button" href="/events/month/{{$prev_month}}">Previous Month</a></span>
