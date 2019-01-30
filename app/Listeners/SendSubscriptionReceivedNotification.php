@@ -26,8 +26,12 @@ class SendSubscriptionReceivedNotification implements ShouldQueue
      */
     public function handle(SubscriptionReceived $event)
     {
-        /*echo "eeeeeeeeeeeeeeeeeeeee";echo "<pre>";print_r($event);die;
-        dd($event);*/
+
+        if($event->user->source=='Order'){
+            echo "eeeeeeeeeeeeeeeeeeeee";die;
+        }
+        echo "eeeeeeeeeeeeeeeeeeeee";echo "<pre>";print_r($event);die;
+        dd($event);
         $subscriber = array(
             'email' => $event->user->email,
             'name' => $event->user->first_name." ".$event->user->last_name,
