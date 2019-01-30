@@ -1,9 +1,47 @@
 @extends('customer.layouts.master')
 @section('content')
+    <link href="http://kleber.datatoolscloud.net.au/jquery19/themes/base/jquery.ui.all.css" rel="stylesheet">
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/jquery-1.9.1.js"></script>
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.core.js"></script>
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.widget.js"></script>
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.position.js"></script>
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.autocomplete.js"></script>
+    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.menu.js"></script>
 <style type="text/css">
 	 .br-mark-text{
     display: -moz-inline-box !important;
   }	
+  .ui-autocomplete-loading {
+        background: white url('http://kleber.datatoolscloud.net.au/dt_processing_images/dt20x20.gif') right center no-repeat;
+    }
+    .ui-widget-content{
+        width: 420px;
+    height: auto;
+    max-height: 250px;
+    overflow-Y: auto;
+    margin-top: 21px;
+    font-family: 'ProximaNova-Regular';
+    font-size: 15px;
+    line-height: 1.3;
+    }
+    .ui-widget-content::-webkit-scrollbar {
+            width: 7px;
+        }
+        .ui-widget-content::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+        }
+        .ui-widget-content::-webkit-scrollbar-thumb {
+            background: #0263f7;
+        }
+        .ui-widget-content::-webkit-scrollbar-thumb:hover {
+            background:  #002855; 
+        }
+    @media only screen and (max-width: 600px) {
+        .ui-widget-content{
+        width: auto !important;
+        }
+}
+
 </style>
 <section class="wrapper cart-breadcrumb--header">
 	<div class="row hidden-xs">
@@ -200,7 +238,7 @@
                                                 $s_add1 = $orderAddress->s_add1;
                                             }
                                         @endphp
-                                        <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field" data-label-name="address 1">
+                                        <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field AddressLine" data-label-name="address 1">
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -394,7 +432,7 @@
                                                 endif;
                                             ?>
                                             <label for=""><sup>*</sup>Address 1: {!! $error_b_add1 !!}</label>
-                                            <input type="text" name="b_add1" class="input-field" data-label-name="address 1">
+                                            <input type="text" name="b_add1" class="input-field AddressLine" data-label-name="address 1">
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -598,6 +636,62 @@
 		</div>
     </div>
 </section>
+<script>
+        $(function() {
+
+            $(".AddressLine").autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url: "{{env('KLEBER_URL')}}/KleberWebService/DtKleberService.svc/ProcessQueryStringRequest",
+                        dataType: "jsonp",
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        data: {Method:"DataTools.Capture.Address.Predictive.AuNzPaf.SearchAddress", AddressLine:request.term, ResultLimit:" ", DisplayOnlyCountryCode:"AU", RequestId:" ", RequestKey:"RK-B0446-06E3E-5B1FE-A8EE4-4E108-87D03-CBD26-C560A", DepartmentCode:" ", OutputFormat:"json" },
+                        success: function( data ) {
+                            response( $.map( data.DtResponse.Result, function( item ) {
+                                var Output = (item.AddressLine + ", " + item.Locality + ", " + item.State + ", " + item.Postcode + ", " + item.Country + ", " + item.CountryCode);
+                                return {
+                                    label: Output ,
+                                    //value: Output ,
+                                    //Output: Output,
+                                    array: item
+                                }
+                            }));
+                        }
+                    });
+                },
+
+                select: function( event, ui ) {
+                    ///console.log("selected" + ui.item.array.AddressLine);
+                    //log( ui.item ? ui.item.Output : "Nothing selected, input was " + this.value);
+                    var billing_type = $(this).attr('name');
+                    if(billing_type=='s_add1'){
+                        $("input[name='s_add1']").val(ui.item.array.AddressLine);
+                        $("input[name='s_city']").val(ui.item.array.Locality);
+                        $("input[name='s_postcode']").val(ui.item.array.Postcode);
+                        $("select[name='s_state']").val(ui.item.array.State);
+                        setTimeout(function(){
+                            $("input[name='s_add1']").val(ui.item.array.AddressLine);
+                        }, 200);
+                     }else{
+                        $("input[name='b_add1']").val(ui.item.array.AddressLine);
+                        $("input[name='b_city']").val(ui.item.array.Locality);
+                        $("input[name='b_postcode']").val(ui.item.array.Postcode);
+                        $("select[name='b_state']").val(ui.item.array.State);
+                        setTimeout(function(){
+                            $("input[name='b_add1']").val(ui.item.array.AddressLine);
+                        }, 200);
+                     }
+                
+                },
+            });
+            
+            /*function log( message ) {
+                $( "<div/>" ).text( message ).prependTo( "#log" );
+    			$( "#log" ).scrollTop( 0 );
+    		}*/
+        });
+	</script>
 <script src="/js/shippingbilling.js"></script>
 
 @endsection
