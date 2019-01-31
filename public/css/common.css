@@ -119,7 +119,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.response_content_learn_more .heading_learn_more_big, .response_content_learn_more .heading_learn_more, .response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -6739,6 +6739,24 @@ textarea {
   font-size: 2em;
   color: #6d665f;
   line-height: 45px;
+}
+
+.response_content_learn_more .heading_learn_more {
+  color: #0263f7;
+  font-size: 42px;
+  line-height: 38px;
+  border-bottom: solid 1px #d3d0cd;
+  margin: 0 0 5px 0;
+  padding: 0 0 10px 0;
+  text-transform: capitalize;
+}
+.response_content_learn_more .heading_learn_more_big {
+  color: #0263f7;
+  font-size: 42px;
+  line-height: 28px;
+  margin: 0 0 5px 0;
+  padding: 0 0 10px 0;
+  text-transform: capitalize;
 }
 
 .comp-submit .alignleft {

@@ -3,7 +3,6 @@
 @section('head')
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection
-
 @section('content')
 <section class="header-img--banner">
 	<div class="wrapper">
@@ -57,6 +56,11 @@
 		</div>
 	</div>
 
+	<!-- Learn more -->
+	 @if(!empty($competition->learn_more))
+		 @include('meet_brooks.competition.learn_more.'.$competition->learn_more)
+	@endif
+	<!-- /Learn more -->
   <div class="privacy-terms--wrapper popup-container afterpay--popup">
     <div class="popup-container--wrapper">
         <div class="popup-container--info">
@@ -83,6 +87,7 @@ function insert_competition(){
 		data: form_data,
 		success: function(response) {
 			$(".response_content").html(response.success);
+			$("#learn_more").show();
 			return false;
 		},
 		error: function(error){
