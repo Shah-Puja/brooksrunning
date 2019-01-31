@@ -2297,11 +2297,7 @@ ul {
     text-transform: uppercase;
     height: 100px;
     overflow: hidden;
-      @media #{$tab-only}{
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 3px;
-      }
+   
     }
     .eventdate {
     color: #67c9cf;

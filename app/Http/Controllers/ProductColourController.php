@@ -25,18 +25,19 @@ class ProductColourController extends Controller
                                                 ->where('color_code',$color)
                                                 ->with('variants')
                                                 ->first();
-
-            $product_last_updated = $get_product_last_updated->variants->pluck('last_updated')->max();
-            if (!empty($product_last_updated)) {
-                $current_time = strtotime(date('Y-m-d h:i:s'));
-                $last_updated_time = strtotime($product_last_updated);
-                $minutes = round(abs($current_time - $last_updated_time) / 60);
-                if ($minutes >= 5) {
-                    // product api call 
-                    $style_idx  = $get_product_last_updated->style_idx;
-                    $this->product_api($style_idx);
+            if (!empty($get_product_last_updated->variants)) {
+                $product_last_updated = $get_product_last_updated->variants->pluck('last_updated')->max();
+                if (!empty($product_last_updated)) {
+                    $current_time = strtotime(date('Y-m-d h:i:s'));
+                    $last_updated_time = strtotime($product_last_updated);
+                    $minutes = round(abs($current_time - $last_updated_time) / 60);
+                    if ($minutes >= 5) {
+                        // product api call 
+                        $style_idx  = $get_product_last_updated->style_idx;
+                        $this->product_api($style_idx);
+                    }
+                
                 }
-               
             }
         }
 
