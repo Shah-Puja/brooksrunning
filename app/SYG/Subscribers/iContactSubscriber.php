@@ -20,7 +20,7 @@ class iContactSubscriber implements SubscriberInterface {
         $fname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[0] : "";
         $lname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[1] : "";
 
-        echo "<pre>";print_R($subscriber);die;
+        //echo "<pre>";print_R($subscriber);die;
 
         $response = $this->client->addContact($email, null, null, $fname, $lname, null, '', '', '', '', '', '', '', null, 'subscribers');
         if(empty($response)){

@@ -70,7 +70,7 @@ class AppServiceProvider extends ServiceProvider {
             return new \App\SYG\Subscribers\AweberSubscriber($aweber);
         });
         
-        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
+        /*$this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
             $client = \App\SYG\Subscribers\iContactProApi::getInstance();
             $client->setConfig(array(
                 'appId' => config('services.icontact.appid'),
@@ -80,7 +80,7 @@ class AppServiceProvider extends ServiceProvider {
                 'profileId' => config('services.icontact.profileid')
             ));
             return new \App\SYG\Subscribers\iContactSubscriber($client);
-        });
+        });*/
 
 
     }
