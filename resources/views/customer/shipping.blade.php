@@ -1,18 +1,18 @@
 @extends('customer.layouts.master')
 @section('content')
-    <link href="http://kleber.datatoolscloud.net.au/jquery19/themes/base/jquery.ui.all.css" rel="stylesheet">
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/jquery-1.9.1.js"></script>
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.core.js"></script>
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.widget.js"></script>
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.position.js"></script>
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.autocomplete.js"></script>
-    <script src="http://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.menu.js"></script>
+    <link href="https://kleber.datatoolscloud.net.au/jquery19/themes/base/jquery.ui.all.css" rel="stylesheet">
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/jquery-1.9.1.js"></script>
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.core.js"></script>
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.widget.js"></script>
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.position.js"></script>
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.autocomplete.js"></script>
+    <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.menu.js"></script>
 <style type="text/css">
 	 .br-mark-text{
     display: -moz-inline-box !important;
   }	
   .ui-autocomplete-loading {
-        background: white url('http://kleber.datatoolscloud.net.au/dt_processing_images/dt20x20.gif') right center no-repeat;
+        background: white url('https://kleber.datatoolscloud.net.au/dt_processing_images/dt20x20.gif') right center no-repeat;
     }
     .ui-widget-content{
         width: 420px;
