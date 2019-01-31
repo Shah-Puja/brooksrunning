@@ -41,7 +41,7 @@
                         @endphp
 
                     @if($event_dt > $curr_dt)
-                        <a href="/events/{{ $event_slug }}" class="findout">
+                        <a href="{{ $event->page_link }}" class="findout">
                             <div class="event-title"> {{ $event->event_name }} </div>
                         </a>
                     @else
@@ -62,7 +62,7 @@
                     </div>
                     <div class="event-img-main">
                     @if($event_dt > $curr_dt)
-                    <a href="/events/{{ $event_slug }}" class="findout"> 
+                    <a href="{{ $event->page_link }}" class="findout"> 
                         @if(!empty($event->logo)) 
                     <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
                         @else 
@@ -79,7 +79,7 @@
                         
                     </div>
                     @if($event_dt > $curr_dt)
-                    <a href="/events/{{ $event->slug }}" class="findout">
+                    <a href="{{ $event->page_link }}" class="findout">
                         <span class="location">Location, {{ $event->location }}</span>
                     </a>
                     @else
