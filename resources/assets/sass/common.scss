@@ -5215,6 +5215,27 @@ a {
     line-height:45px;
   }
 }
+.response_content_learn_more{
+  .heading_learn_more{
+    color: $blue;
+    font-size: 42px;
+    line-height: 38px;
+    @extend %extrabold-font;
+    border-bottom: solid 1px $border;
+    margin: 0 0 5px 0;
+    padding: 0 0 10px 0;
+    text-transform: capitalize;
+  }
+  .heading_learn_more_big{
+    color: $blue;
+    font-size: 42px;
+    line-height: 28px;
+    @extend %extrabold-font;
+    margin: 0 0 5px 0;
+    padding: 0 0 10px 0;
+    text-transform: capitalize;
+  }
+}
 .comp-submit{
   .alignleft {
     float: left;
