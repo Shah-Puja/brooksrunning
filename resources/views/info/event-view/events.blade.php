@@ -33,7 +33,7 @@
                                 @if(!empty($upcoming_events))
                                     @foreach ($upcoming_events as $events) 
                                     <li>
-                                        <a href="/events/{{ $events->slug }}">
+                                        <a target="_blank" href="{{ $events->page_link }}">
                                             <p class="title">{{ $events->event_name }}</p>
                                         @if(!empty($events->event_date))
                                             <p>{{$events->event_date}}</p>
