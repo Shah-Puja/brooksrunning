@@ -4003,6 +4003,13 @@ textarea {
   height: 100px;
   overflow: hidden;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .br-events-months .content-asset .monthly-event-list .event-title {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 3px;
+  }
+}
 .br-events-months .content-asset .monthly-event-list .eventdate {
   color: #67c9cf;
   display: block;
