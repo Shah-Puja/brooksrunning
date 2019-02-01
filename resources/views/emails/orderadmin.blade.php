@@ -204,7 +204,7 @@
                                     <tr>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right' colspan='2'><b>GST</b></td>
+                                        <td align='right' colspan='2'><b>INCL. GST</b></td>
                                         <td align='left'><b>${{ @number_format(($subtotal / 11), 2) }}</b></td>
                                     </tr>
 
