@@ -400,7 +400,7 @@
 
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Shipping:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">${{  @number_format($order->freight_cost, 2) }}</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">${{ @number_format($order->freight_cost, 2) }}</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
