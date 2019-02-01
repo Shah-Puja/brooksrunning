@@ -404,7 +404,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">$ {{ @number_format(($subtotal / 11), 2) }}</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">${{ @number_format(($subtotal / 11), 2) }}</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p class="br-header">Order Total:</p></td>
