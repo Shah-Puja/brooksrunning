@@ -372,9 +372,9 @@
                                                                     $subtotal = 0;
                                                         @endphp
                                                                     @if(isset($coup_discount) && $coup_discount > 0)
-                                                                        $subtotal =  @number_format(($order->total + $coup_discount), 2);
+                                                                    @php $subtotal =  @number_format(($order->total + $coup_discount), 2);  @endphp
                                                                     @else
-                                                                        $subtotal =  @number_format($order->total, 2);
+                                                                    @php $subtotal =  @number_format($order->total, 2);  @endphp
                                                                     @endif
                                                                 
                                                             <tr>
