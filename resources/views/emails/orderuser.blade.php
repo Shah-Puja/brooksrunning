@@ -370,12 +370,13 @@
                                                         <tbody>
                                                         @php 
                                                                     $subtotal = 0;
+                                                        @endphp
                                                                     @if(isset($coup_discount) && $coup_discount > 0)
                                                                         $subtotal =  @number_format(($order->total + $coup_discount), 2);
                                                                     @else
                                                                         $subtotal =  @number_format($order->total, 2);
                                                                     @endif
-                                                                @endphp
+                                                                
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Subtotal:</p></td>
                                                                 <td><p style="text-align:justify; line-height: 0.4;"> 
