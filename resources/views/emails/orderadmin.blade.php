@@ -155,16 +155,22 @@
                                     @endif
 
                                     <tr>
+                                    @php 
+                                        $subtotal = 0;
+                                    @endphp
+                                    
+                                    @if(isset($coup_discount) && $coup_discount > 0)
+                                    @php $subtotal =  @number_format(($order->total + $coup_discount), 2);  @endphp
+                                    @else
+                                    @php $subtotal =  @number_format($order->total, 2);  @endphp
+                                    @endif
+
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Subtotal</b></td>
-                                        <td align='left'><b>
-                                                @if(isset($coup_discount) && $coup_discount > 0)
-                                                $ {{  @number_format(($order->total + $coup_discount), 2) }}
-                                                @else
-                                                $ {{  @number_format($order->total, 2) }}
-                                                @endif
+                                        <td align='left'><b> 
+                                                ${{ $subtotal }}
                                             </b></td>
                                     </tr> 
 
@@ -193,6 +199,13 @@
                                         <td>&nbsp;</td>
                                         <td align='right' colspan='2'><b>Freight {{ ucfirst($order->delivery_type) }}</b></td>
                                         <td align='left'><b>$ {{  @number_format($order->freight_cost, 2) }} </b></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td align='right' colspan='2'><b>GST</b></td>
+                                        <td align='left'><b>${{ @number_format(($subtotal / 11), 2) }}</b></td>
                                     </tr>
 
                                     <tr>
