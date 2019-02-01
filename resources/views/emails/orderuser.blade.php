@@ -368,15 +368,20 @@
                                                 <td align="left">
                                                     <table class="section" style="margin-top: 12px">
                                                         <tbody>
+                                                        @php 
+                                                                    $subtotal = 0;
+                                                                    @if(isset($coup_discount) && $coup_discount > 0)
+                                                                        $subtotal =  @number_format(($order->total + $coup_discount), 2);
+                                                                    @else
+                                                                        $subtotal =  @number_format($order->total, 2);
+                                                                    @endif
+                                                                @endphp
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Subtotal:</p></td>
                                                                 <td><p style="text-align:justify; line-height: 0.4;"> 
-                                                                        @if(isset($coup_discount) && $coup_discount > 0)
-                                                                        ${{  @number_format(($order->total + $coup_discount), 2) }}
-                                                                        @else
-                                                                        ${{  @number_format($order->total, 2) }}
-                                                                        @endif
-                                                                    </p></td>
+                                                                        ${{ $subtotal }}
+                                                                    </p>
+                                                                </td>
                                                             </tr>
 
                                                             @if (isset($order->coupon_code) && $order->coupon_code != '')
@@ -399,7 +404,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">$0.00</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">$ {{ @number_format(($subtotal / 11), 2) }}</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p class="br-header">Order Total:</p></td>
