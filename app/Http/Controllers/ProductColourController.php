@@ -16,10 +16,10 @@ class ProductColourController extends Controller
     public function __construct(BridgeInterface $bridge) {
         $this->bridge = $bridge;
     }
-    public function index($name,$style,$color){
+    public function index($name,$style,$color,Request $request){
    
-        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON') {
-          //if (env('AP21_STATUS') == 'ON') {
+        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
+          //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
             ///get product last updated
             $get_product_last_updated = Product::where('style',$style)
                                                 ->where('color_code',$color)
@@ -34,7 +34,7 @@ class ProductColourController extends Controller
                     if ($minutes >= 5) {
                         // product api call 
                         $style_idx  = $get_product_last_updated->style_idx;
-                        $this->product_api($style_idx);
+                        //$this->product_api($style_idx);
                     }
                 
                 }
