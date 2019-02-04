@@ -259,4 +259,8 @@ class meet_brooksController extends Controller
             //exit;           
         }
     }
+    public function rh_comp_thank_you()
+	{
+		return view( 'meet_brooks.competition.thank_you');
+    }
 }

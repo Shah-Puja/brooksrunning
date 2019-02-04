@@ -3484,6 +3484,8 @@ textarea {
 }
 .create-account--left .privacy {
   font-size: 14px;
+  border-bottom: solid 1px #d3d0cd;
+  padding-bottom: 30px;
 }
 .create-account--left .privacy a {
   color: #000000;

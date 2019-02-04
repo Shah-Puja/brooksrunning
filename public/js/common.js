@@ -116,6 +116,7 @@ $(document).ready(function () {
     // Search Box show for desktop
     $(".header-desktop .search-header--popup").click(function () {
         $("#header-search--popup").show();
+        $("#header-search--popup .search-wrapper #q").focus();
     });
     
     $("#header-search--popup .close").click(function () {
@@ -740,16 +741,3 @@ function mob_search_product(){
 
 
 
-  /*Freeze top navigation*/  
-
-    $(window).scroll(function(){
-        if ($(window).scrollTop() >= 147) {
-            $('.header-desktop').addClass('fixed-header');
-        }
-        else {
-            $('.header-desktop').removeClass('fixed-header');
-        }
-    });
-
-
- /* /Freeze top navigation*/  

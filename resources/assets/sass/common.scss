@@ -1860,6 +1860,8 @@
        }
        .privacy{
          font-size: 14px;
+         border-bottom: solid 1px #d3d0cd;
+         padding-bottom: 30px;
          a{
           color: $black;
           text-decoration: underline;
@@ -5198,6 +5200,7 @@ a {
   }
 }
 .response_content{
+ 
   .heading{
     color: $blue;
     font-size: 42px;

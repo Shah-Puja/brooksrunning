@@ -19,7 +19,9 @@ body header {background-color:#fff; }
 .bf-results-screen{
   position: relative !important;
 }
-
+.bf-info-overlay .bf-info-overlay__close{
+  border: none;
+}
 
 @media only screen and (min-width: 768px){
 .shoefinder-container .wrapper {
