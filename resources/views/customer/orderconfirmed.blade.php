@@ -146,6 +146,16 @@
                                             <p class="right">$ {{ number_format($order->total,2) }}</p>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="mob-7">
+                                            <p>GST</p>
+                                        </div>
+                                        <div class="mob-5">
+                                            <p class="right">$ {{ number_format(($order->total / 11),2) }}</p>
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <div class="mob-7">
                                             @php 
