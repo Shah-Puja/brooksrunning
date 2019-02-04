@@ -154,16 +154,16 @@
 <!-- details page js -->
 <script src="/js/pdp-js.js"></script>
 <script>
-                        $(document).ready(function () {
+	$(document).ready(function () {
 
-                            $('#pdp-zoom--image').lightSlider({
-                                gallery: true,
-                                item: 1,
-                                slideMargin: 0,
-                                thumbItem: 9
-                            });
+		$('#pdp-zoom--image').lightSlider({
+			gallery: true,
+			item: 1,
+			slideMargin: 0,
+			thumbItem: 9
+		});
 
-                        });
+	});
 						
 </script>
 @endif
@@ -175,32 +175,43 @@
 <script src="/js/common.js"></script>
 <!-- Subscribers js -->
 <script>
-                        function check_subscribers() {
-                            let email = $("form[name='form_subscribers'] input[name='email']").val();
-                            $.ajax({
-                                url: "/subscribers/new",
-                                method: "post", 
-                                data: {email: email},
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                },
-                                success: function (response) {
-                                    $(".bottom-signup").find("p").text(response.success);
-                                    return false;
-                                },
-                                error: function (error) { 
-                                    let obj = JSON.parse(error.responseText); 
-                                    $(".error").text(obj.errors.email);
-                                },
-                                statusCode: {
-                                    419: function () {
-                                        return false;
-                                    }
-                                }
-                            });
-                            return false;
-                        }
+	function check_subscribers() {
+		let email = $("form[name='form_subscribers'] input[name='email']").val();
+		$.ajax({
+			url: "/subscribers/new",
+			method: "post", 
+			data: {email: email},
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			},
+			success: function (response) {
+				$(".bottom-signup").find("p").text(response.success);
+				return false;
+			},
+			error: function (error) { 
+				let obj = JSON.parse(error.responseText); 
+				$(".error").text(obj.errors.email);
+			},
+			statusCode: {
+				419: function () {
+					return false;
+				}
+			}
+		});
+		return false;
+	}
 </script>
-
+<script>
+  /*Freeze top navigation*/  
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= 147) {
+            $('.header-desktop').addClass('fixed-header');
+        }
+        else {
+            $('.header-desktop').removeClass('fixed-header');
+        }
+    });
+ /* /Freeze top navigation*/  
+</script>
 </body>
 </html>

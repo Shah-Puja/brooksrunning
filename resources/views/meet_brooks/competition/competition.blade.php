@@ -86,6 +86,9 @@ function insert_competition(){
 		method: "post", 
 		data: form_data,
 		success: function(response) {
+			@if(!empty($competition->learn_more))
+			   window.location.href="/meet_brooks/competition/thank_you";
+			@endif
 			$(".response_content").html(response.success);
 			$("#learn_more").show();
 			return false;

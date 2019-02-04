@@ -21,7 +21,7 @@
 												</div>
 												<div class="info">
 													<div class="shoes-detail-btn">
-														<span><a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_058.html">Shop Men's</a></span>
+														<span><a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_058.html">Men's</a></span>
 													</div>
 												</div>
 											</div>
@@ -35,7 +35,7 @@
 												</div>
 												<div class="info">
 													<div class="shoes-detail-btn">
-														<span><a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop Women's</a></span>
+														<span><a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Women's</a></span>
 													</div>
 												</div>
 											</div>

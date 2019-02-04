@@ -5196,8 +5196,12 @@ a {
     margin: 1em 0;
     font-size: 1em;
   }
+  
+  border-bottom: solid 1px $border;
+  padding-bottom: 30px;
 }
 .response_content{
+ 
   .heading{
     color: $blue;
     font-size: 42px;
@@ -5221,7 +5225,6 @@ a {
     font-size: 42px;
     line-height: 38px;
     @extend %extrabold-font;
-    border-bottom: solid 1px $border;
     margin: 0 0 5px 0;
     padding: 0 0 10px 0;
     text-transform: capitalize;
