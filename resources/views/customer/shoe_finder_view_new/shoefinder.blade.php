@@ -469,7 +469,7 @@
 																<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/21k.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
 															</script>
 															</div>
-															<div class="bf-media-button__text" id="training_3Label">Half Marathon</div>
+															<div class="bf-media-button__text" id="training_3Label">21k</div>
 														</div>
 													</div>
 											</div>
@@ -485,15 +485,15 @@
 								
 												<div class="bf-media-button__content">
 													<div class="bf-media-button__media">
-														<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/26_2.svg" data-bf-stepped-animation="" data-active-screens="Training">
+														<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/42k.svg" data-bf-stepped-animation="" data-active-screens="Training">
 															
 														</div>
 																			
 														<script type="text/template" id="Training26_template">
-															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/26_2.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
+															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/42k.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
 														</script>
 													</div>
-													<div class="bf-media-button__text" id="training_4Label">Marathon or more</div>
+													<div class="bf-media-button__text" id="training_4Label">42k</div>
 												</div>
 											</div>
 											</div>
