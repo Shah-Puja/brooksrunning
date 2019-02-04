@@ -1860,8 +1860,6 @@
        }
        .privacy{
          font-size: 14px;
-         border-bottom: solid 1px #d3d0cd;
-         padding-bottom: 30px;
          a{
           color: $black;
           text-decoration: underline;
@@ -5198,6 +5196,9 @@ a {
     margin: 1em 0;
     font-size: 1em;
   }
+  
+  border-bottom: solid 1px $border;
+  padding-bottom: 30px;
 }
 .response_content{
  
@@ -5224,7 +5225,6 @@ a {
     font-size: 42px;
     line-height: 38px;
     @extend %extrabold-font;
-    border-bottom: solid 1px $border;
     margin: 0 0 5px 0;
     padding: 0 0 10px 0;
     text-transform: capitalize;

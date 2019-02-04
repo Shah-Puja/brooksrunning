@@ -3484,8 +3484,6 @@ textarea {
 }
 .create-account--left .privacy {
   font-size: 14px;
-  border-bottom: solid 1px #d3d0cd;
-  padding-bottom: 30px;
 }
 .create-account--left .privacy a {
   color: #000000;
@@ -6716,6 +6714,10 @@ textarea {
   text-transform: uppercase;
 }
 
+.comp_bottom {
+  border-bottom: solid 1px #d3d0cd;
+  padding-bottom: 30px;
+}
 .comp_bottom .notice {
   color: #666;
   font-size: 0.9em;
@@ -6747,7 +6749,6 @@ textarea {
   color: #0263f7;
   font-size: 42px;
   line-height: 38px;
-  border-bottom: solid 1px #d3d0cd;
   margin: 0 0 5px 0;
   padding: 0 0 10px 0;
   text-transform: capitalize;
