@@ -17,7 +17,7 @@ class OrderItem extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Models\Order_Item';
+    public static $model = 'App\Models\Order_item';
     public static $displayInNavigation = false;
 
     /**
