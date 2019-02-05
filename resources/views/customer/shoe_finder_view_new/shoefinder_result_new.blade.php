@@ -111,9 +111,9 @@
 				</div>				
 				{{ ($gender=='mens') ? "Men's": "Women's" }} {{ ucwords($surface) }} Shoes
 				</h1>
-			<div class="bf-results-screen__transition-group-3">
+			<!--<div class="bf-results-screen__transition-group-3">
 				<div data-bf-behind-the-science-link data-template-id="ResultsInfo" data-gtm-screen-title="Results" data-gtm-click-event="shoe-finder-behind-the-science"  ></div>
-			</div>
+			</div>-->
 			<!-- START: Behind the Science Template -->
 			
 				<script type="text/template" id="ResultsInfo">
@@ -159,123 +159,275 @@
 
 	</header>
     <div class="bf-section bf-section--results bf-bg-white">
-        <div class="bf-results-screen__transition-group-5">    
-        @if(!empty($result['product_details']))
-            @foreach($result['product_details'] as $curr_ele)
-                @foreach($result['colour_options'] as $product)
-                    @if($product->style == $curr_ele->style)
-                        @php $colors_option[$curr_ele->style][] = $product; @endphp
-                    @endif
-                @endforeach 
-                @foreach($result['shoe_detail'] as $shoe)
-                    @php $gender_key = ($gender=='mens') ? "men": "women"; @endphp
-                    @if (\strpos($shoe->$gender_key, $curr_ele->style) !== false)
-                        @php $shoefinder_detail[$curr_ele->style][] = $shoe; @endphp
-                    @endif
-                @endforeach                                                                                                             
-            <section class="bf-grid bf-grid--full-width bf-grid--large-pad bf-product" data-finder-result>
-                <div class="bf-grid__col-1 bf-grid__col-2-3-desktop bf-product__col">
-                    <div class="bf-carousel" data-bf-carousel>
-                            <div class="bf-bug">
-                                <img src="/images/shoefinder-new/banner.svg" class="bf-bug__image" />
-                                <div class="bf-bug__text">
-                                @if(isset($shoefinder_detail[$curr_ele->style][0]->subtext) && $shoefinder_detail[$curr_ele->style][0]->subtext!='')
-                                        {{ ucwords($shoefinder_detail[$curr_ele->style][0]->subtext) }}
-                                @endif
-                                </div> 
-                            </div>
-                            <div class="bf-carousel__wrap">
-                                <div class="bf-carousel__images" data-items>				
-                                    @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
-                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
-                                            @if(!empty($color_product))
-                                                <img src="{{ $color_product->image->image1Large() }}" alt="{{ $curr_ele->stylename }}" />
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </div>				
-                            </div>
-                        <div class="bf-carousel__thumbnails" data-thumbnails></div>
-            
-                    </div>
-                </div>
-                <div class="bf-grid__col-1 bf-grid__col-1-3-desktop bf-product__col">
-                    <div class="bf-product-details">
-                        <div class="bf-product-details__header">
-                            <h1>{{ $curr_ele->stylename }}</h1>
-                        </div>
-                        @if(!empty($curr_ele->experience))
-                            @switch($curr_ele->experience)
-                                @case('Cushion')
-                                  @php $experience_img_url = '/images/shoefinder-new/cushion_horizontal.svg'; @endphp
-                                @break
-                                @case('Speed')
-                                  @php $experience_img_url = '/images/shoefinder-new/speed_horizontal.svg'; @endphp
-                                @break
-                                @case('Energize')
-                                  @php $experience_img_url = '/images/shoefinder-new/energize_horizontal.svg'; @endphp
-                                @break
-                                @case('Connect')
-                                  @php $experience_img_url = '/images/shoefinder-new/connect_horizontal.svg'; @endphp
-                                @break
-                            @endswitch
-                        @endif
-                            <div class="bf-small-experience-icon">
-                                <img src="{{ $experience_img_url }}" alt="{{ $curr_ele->experience }}" width="100%" height="auto" tab-index="0"/>
-                            </div>
-                        <div class="bf-features">
-                            @if(isset($shoefinder_detail[$curr_ele->style][0]->description) && $shoefinder_detail[$curr_ele->style][0]->description!='')
-                            <div class="bf-feature" tab-index="0">
-                                <p class="bf-feature__description">
-                                   {{ strip_tags($shoefinder_detail[$curr_ele->style][0]->description) }}
-                                </p>
-                            </div>
-                            @endif
-                            
-                            <div class="bf-feature">
-                            @php  
-                                $benefit_1 = (!empty($curr_ele->benefit_1)) ? explode('#', $curr_ele->benefit_1) : ''; 
-                                $benefit_2 = (!empty($curr_ele->benefit_2)) ? explode('#', $curr_ele->benefit_2) : ''; 
-                                $benefit_3 = (!empty($curr_ele->benefit_3)) ? explode('#', $curr_ele->benefit_3) : ''; 
-                            @endphp
-                                    @if($benefit_1!='')
-                                    <h2 class="bf-feature__label" tab-index="0">{{ $curr_ele->stylename }} features</h2>
-                                        <div class="bf-collapsable" data-bf-collapsable tab-index="1">
-                                            <div class="bf-collapsable__label">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</div>
-                                            <div class="bf-collapsable__content">
-                                            {{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}
-                                            </div>
-                                        </div>
-                                    @endif
-                                    
-                                    @if($benefit_2!='')
-                                        <div class="bf-collapsable" data-bf-collapsable tab-index="2">
-                                            <div class="bf-collapsable__label">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</div>
-                                            <div class="bf-collapsable__content">
-                                            {{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}
-                                            </div>
-                                        </div>
-                                    @endif
+        <div class="bf-results-screen__transition-group-5"> 
 
-                                    @if($benefit_3!='')
-                                        <div class="bf-collapsable" data-bf-collapsable tab-index="3">
-                                            <div class="bf-collapsable__label">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</div>
-                                            <div class="bf-collapsable__content">
-                                            {{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}
-                                            </div>
-                                        </div>
+
+
+        @switch($experience)
+            @case('propel_me')	
+                @php  $user_experience = 'Speed'; @endphp 
+            @break
+            @case('connect_me')
+                @php  $user_experience ='Connect'; @endphp 
+            @break
+            @case('cushion_me')
+                @php  $user_experience ='Cushion'; @endphp 
+            @break
+            @case('energize_me')
+                @php  $user_experience ='Energize'; @endphp 
+            @break
+        @endswitch
+        @php
+        $filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
+            return ($value->experience == $user_experience) ? $value : '';
+        });
+       
+        $notmatch_filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
+            return ($value->experience != $user_experience) ? $value : '';
+        });
+        @endphp   
+        @if(!empty($result['product_details']))
+            <!--matched experience products -->
+            @if(!empty($filtered_experience)) 
+                @foreach($filtered_experience as $curr_ele)
+                    @foreach($result['colour_options'] as $product)
+                        @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                        @endif
+                    @endforeach 
+                    @foreach($result['shoe_detail'] as $shoe)
+                        @php $gender_key = ($gender=='mens') ? "men": "women"; @endphp
+                        @if (\strpos($shoe->$gender_key, $curr_ele->style) !== false)
+                            @php $shoefinder_detail[$curr_ele->style][] = $shoe; @endphp
+                        @endif
+                    @endforeach                                                                                                             
+                <section class="bf-grid bf-grid--full-width bf-grid--large-pad bf-product" data-finder-result>
+                    <div class="bf-grid__col-1 bf-grid__col-2-3-desktop bf-product__col">
+                        <div class="bf-carousel" data-bf-carousel>
+                                <div class="bf-bug">
+                                    <img src="/images/shoefinder-new/banner.svg" class="bf-bug__image" />
+                                    <div class="bf-bug__text">
+                                    @if(isset($shoefinder_detail[$curr_ele->style][0]->subtext) && $shoefinder_detail[$curr_ele->style][0]->subtext!='')
+                                            {{ ucwords($shoefinder_detail[$curr_ele->style][0]->subtext) }}
                                     @endif
-                                    
-                                                    
-                                <div class="bf-product-details__button-wrap" data-gtm-product data-gtm-product-impressions data-gtm-click-event="productClick"  data-gtm-product-id="110279" data-gtm-product-name="{{ $curr_ele->stylename }}" data-gtm-currency-code="USD" data-gtm-product-brand="Mazama 2" data-gtm-product-category="shoes-men-trail" data-gtm-product-variant="null" data-gtm-product-price="90.96" data-gtm-page-list="shoe-finder-results" data-gtm-topResults-crossSell="top results" data-gtm-shoe-pronation="neutral" data-gtm-oos-boolean="false" data-gtm-product-gender="male"  data-gtm-is-recommendation="true">
-                                    <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="bf-button bf-button--full-width" tab-index="0">Shop the {{ $curr_ele->stylename }}</a>
+                                    </div> 
+                                </div>
+                                <div class="bf-carousel__wrap">
+                                    <div class="bf-carousel__images" data-items>				
+                                        @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
+                                            @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
+                                                @if(!empty($color_product))
+                                                    <img src="{{ $color_product->image->image1Large() }}" alt="{{ $curr_ele->stylename }}" />
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    </div>				
+                                </div>
+                            <div class="bf-carousel__thumbnails" data-thumbnails></div>
+                
+                        </div>
+                    </div>
+                    <div class="bf-grid__col-1 bf-grid__col-1-3-desktop bf-product__col">
+                        <div class="bf-product-details">
+                            <div class="bf-product-details__header">
+                                <h1>{{ $curr_ele->stylename }}</h1>
+                            </div>
+                            @if(!empty($curr_ele->experience))
+                                @switch($curr_ele->experience)
+                                    @case('Cushion')
+                                    @php $experience_img_url = '/images/shoefinder-new/cushion_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Speed')
+                                    @php $experience_img_url = '/images/shoefinder-new/speed_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Energize')
+                                    @php $experience_img_url = '/images/shoefinder-new/energize_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Connect')
+                                    @php $experience_img_url = '/images/shoefinder-new/connect_horizontal.svg'; @endphp
+                                    @break
+                                @endswitch
+                            @endif
+                                <div class="bf-small-experience-icon">
+                                    <img src="{{ $experience_img_url }}" alt="{{ $curr_ele->experience }}" width="100%" height="auto" tab-index="0"/>
+                                </div>
+                            <div class="bf-features">
+                                @if(isset($shoefinder_detail[$curr_ele->style][0]->description) && $shoefinder_detail[$curr_ele->style][0]->description!='')
+                                <div class="bf-feature" tab-index="0">
+                                    <p class="bf-feature__description">
+                                    {{ strip_tags($shoefinder_detail[$curr_ele->style][0]->description) }}
+                                    </p>
+                                </div>
+                                @endif
+                                
+                                <div class="bf-feature">
+                                @php  
+                                    $benefit_1 = (!empty($curr_ele->benefit_1)) ? explode('#', $curr_ele->benefit_1) : ''; 
+                                    $benefit_2 = (!empty($curr_ele->benefit_2)) ? explode('#', $curr_ele->benefit_2) : ''; 
+                                    $benefit_3 = (!empty($curr_ele->benefit_3)) ? explode('#', $curr_ele->benefit_3) : ''; 
+                                @endphp
+                                        @if($benefit_1!='')
+                                        <h2 class="bf-feature__label" tab-index="0">{{ $curr_ele->stylename }} features</h2>
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="1">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+                                        
+                                        @if($benefit_2!='')
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="2">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+
+                                        @if($benefit_3!='')
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="3">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+                                        
+                                                        
+                                    <div class="bf-product-details__button-wrap" data-gtm-product data-gtm-product-impressions data-gtm-click-event="productClick"  data-gtm-product-id="110279" data-gtm-product-name="{{ $curr_ele->stylename }}" data-gtm-currency-code="USD" data-gtm-product-brand="Mazama 2" data-gtm-product-category="shoes-men-trail" data-gtm-product-variant="null" data-gtm-product-price="90.96" data-gtm-page-list="shoe-finder-results" data-gtm-topResults-crossSell="top results" data-gtm-shoe-pronation="neutral" data-gtm-oos-boolean="false" data-gtm-product-gender="male"  data-gtm-is-recommendation="true">
+                                        <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="bf-button bf-button--full-width" tab-index="0">Shop the {{ $curr_ele->stylename }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            @endforeach
+                </section>
+                @endforeach
+            @endif
+
+            @if(!empty($notmatch_filtered_experience)) 
+                <!--notmatched experience products -->
+                @foreach($notmatch_filtered_experience as $curr_ele)
+                    @foreach($result['colour_options'] as $product)
+                        @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                        @endif
+                    @endforeach 
+                    @foreach($result['shoe_detail'] as $shoe)
+                        @php $gender_key = ($gender=='mens') ? "men": "women"; @endphp
+                        @if (\strpos($shoe->$gender_key, $curr_ele->style) !== false)
+                            @php $shoefinder_detail[$curr_ele->style][] = $shoe; @endphp
+                        @endif
+                    @endforeach 
+                <h1 class="br-heading">you might also be interested in:</h1>                                                                                                          
+                <section class="bf-grid bf-grid--full-width bf-grid--large-pad bf-product" data-finder-result>
+                    <div class="bf-grid__col-1 bf-grid__col-2-3-desktop bf-product__col">
+                        <div class="bf-carousel" data-bf-carousel>
+                                <div class="bf-bug">
+                                    <img src="/images/shoefinder-new/banner.svg" class="bf-bug__image" />
+                                    <div class="bf-bug__text">
+                                    @if(isset($shoefinder_detail[$curr_ele->style][0]->subtext) && $shoefinder_detail[$curr_ele->style][0]->subtext!='')
+                                            {{ ucwords($shoefinder_detail[$curr_ele->style][0]->subtext) }}
+                                    @endif
+                                    </div> 
+                                </div>
+                                <div class="bf-carousel__wrap">
+                                    <div class="bf-carousel__images" data-items>				
+                                        @if($colors_option[$curr_ele->style]!='' &&  count($colors_option[$curr_ele->style]) > 0 )
+                                            @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
+                                                @if(!empty($color_product))
+                                                    <img src="{{ $color_product->image->image1Large() }}" alt="{{ $curr_ele->stylename }}" />
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    </div>				
+                                </div>
+                            <div class="bf-carousel__thumbnails" data-thumbnails></div>
+                
+                        </div>
+                    </div>
+                    <div class="bf-grid__col-1 bf-grid__col-1-3-desktop bf-product__col">
+                        <div class="bf-product-details">
+                            <div class="bf-product-details__header">
+                                <h1>{{ $curr_ele->stylename }}</h1>
+                            </div>
+                            @if(!empty($curr_ele->experience))
+                                @switch($curr_ele->experience)
+                                    @case('Cushion')
+                                    @php $experience_img_url = '/images/shoefinder-new/cushion_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Speed')
+                                    @php $experience_img_url = '/images/shoefinder-new/speed_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Energize')
+                                    @php $experience_img_url = '/images/shoefinder-new/energize_horizontal.svg'; @endphp
+                                    @break
+                                    @case('Connect')
+                                    @php $experience_img_url = '/images/shoefinder-new/connect_horizontal.svg'; @endphp
+                                    @break
+                                @endswitch
+                            @endif
+                                <div class="bf-small-experience-icon">
+                                    <img src="{{ $experience_img_url }}" alt="{{ $curr_ele->experience }}" width="100%" height="auto" tab-index="0"/>
+                                </div>
+                            <div class="bf-features">
+                                @if(isset($shoefinder_detail[$curr_ele->style][0]->description) && $shoefinder_detail[$curr_ele->style][0]->description!='')
+                                <div class="bf-feature" tab-index="0">
+                                    <p class="bf-feature__description">
+                                    {{ strip_tags($shoefinder_detail[$curr_ele->style][0]->description) }}
+                                    </p>
+                                </div>
+                                @endif
+                                
+                                <div class="bf-feature">
+                                @php  
+                                    $benefit_1 = (!empty($curr_ele->benefit_1)) ? explode('#', $curr_ele->benefit_1) : ''; 
+                                    $benefit_2 = (!empty($curr_ele->benefit_2)) ? explode('#', $curr_ele->benefit_2) : ''; 
+                                    $benefit_3 = (!empty($curr_ele->benefit_3)) ? explode('#', $curr_ele->benefit_3) : ''; 
+                                @endphp
+                                        @if($benefit_1!='')
+                                        <h2 class="bf-feature__label" tab-index="0">{{ $curr_ele->stylename }} features</h2>
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="1">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+                                        
+                                        @if($benefit_2!='')
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="2">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+
+                                        @if($benefit_3!='')
+                                            <div class="bf-collapsable" data-bf-collapsable tab-index="3">
+                                                <div class="bf-collapsable__label">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</div>
+                                                <div class="bf-collapsable__content">
+                                                {{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}
+                                                </div>
+                                            </div>
+                                        @endif
+                                        
+                                                        
+                                    <div class="bf-product-details__button-wrap" data-gtm-product data-gtm-product-impressions data-gtm-click-event="productClick"  data-gtm-product-id="110279" data-gtm-product-name="{{ $curr_ele->stylename }}" data-gtm-currency-code="USD" data-gtm-product-brand="Mazama 2" data-gtm-product-category="shoes-men-trail" data-gtm-product-variant="null" data-gtm-product-price="90.96" data-gtm-page-list="shoe-finder-results" data-gtm-topResults-crossSell="top results" data-gtm-shoe-pronation="neutral" data-gtm-oos-boolean="false" data-gtm-product-gender="male"  data-gtm-is-recommendation="true">
+                                        <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="bf-button bf-button--full-width" tab-index="0">Shop the {{ $curr_ele->stylename }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @endforeach
+            @endif
+
+
+            
         @else
         <h1 class="br-mainheading"> Sorry, No Result Found!</h1>
         @endif
@@ -284,4 +436,10 @@
     </div>
 </div>	
 </div>	
+
+@php 
+
+
+
+@endphp
 

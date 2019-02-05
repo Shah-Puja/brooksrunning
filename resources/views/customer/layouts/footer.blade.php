@@ -170,7 +170,6 @@
 @if(request()->is('register'))
 <!-- Register page js please write here-->
 @endif
-
 <!-- common js -->
 <script src="/js/common.js"></script>
 <!-- Subscribers js -->
@@ -201,7 +200,13 @@
 		return false;
 	}
 </script>
+@php 
+preg_match("/[^\-]+$/", $view_name, $matches); 
+$last_word = $matches[0];
+@endphp 
+@if($last_word!='shoefinder')
 <script>
+  
   /*Freeze top navigation*/  
     $(window).scroll(function(){
         if ($(window).scrollTop() >= 147) {
@@ -213,5 +218,6 @@
     });
  /* /Freeze top navigation*/  
 </script>
+@endif
 </body>
 </html>
