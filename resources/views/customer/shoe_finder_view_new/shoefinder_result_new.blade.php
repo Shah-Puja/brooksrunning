@@ -308,6 +308,7 @@
 
             @if(!empty($notmatch_filtered_experience)) 
                 <!--notmatched experience products -->
+                <h1 class="br-heading">you might also be interested in:</h1> 
                 @foreach($notmatch_filtered_experience as $curr_ele)
                     @foreach($result['colour_options'] as $product)
                         @if($product->style == $curr_ele->style)
@@ -319,8 +320,7 @@
                         @if (\strpos($shoe->$gender_key, $curr_ele->style) !== false)
                             @php $shoefinder_detail[$curr_ele->style][] = $shoe; @endphp
                         @endif
-                    @endforeach 
-                <h1 class="br-heading">you might also be interested in:</h1>                                                                                                          
+                    @endforeach                                                                                                      
                 <section class="bf-grid bf-grid--full-width bf-grid--large-pad bf-product" data-finder-result>
                     <div class="bf-grid__col-1 bf-grid__col-2-3-desktop bf-product__col">
                         <div class="bf-carousel" data-bf-carousel>
