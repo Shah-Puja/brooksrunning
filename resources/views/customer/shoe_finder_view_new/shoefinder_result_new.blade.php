@@ -1,37 +1,5 @@
 <style>
-.slick-slider .slick-track, .slick-slider .slick-list {
-    transform: translate3d(0, 0, 0);
-}
-.slick-list {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-.slick-slider{
-    position:relative;
-    display:block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color:transparent;
-}
-.slick-initialized .slick-slide {
-    display: block;
-}
-.slick-slide {
-    float: left;
-    height: 100%;
-    min-height: 1px;
-    width: 500px;
-    display: none;
-}
+
 .shoefinder-container .wrapper {
   padding-left: 0px;
   padding-right: 0px;
@@ -44,6 +12,38 @@
     padding-right: 0px;
     padding-left: 0px;
 }
+.result-header{
+    margin-left:-750px;
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  { 
+    .result-header{
+    margin-left:-500px ;
+    }
+
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape) { 
+.result-header{
+    margin-left:-300px ;
+    }
+
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+  
+    .result-header{
+    margin-left:-300px ;
+    }
+  
+}
+
 </style>
 <article class="bf-results-screen__transition-group-fade">
 	<div class=" shoefinder-Topresult-container bf-line-background bf-line-background--alt bf-hide-small-screen bf-results-screen__transition-group-fade">
@@ -188,7 +188,7 @@
         @endphp   
         @if(!empty($result['product_details']))
             <!--matched experience products -->
-            @if(!empty($filtered_experience)) 
+            @if(!empty($filtered_experience)  && count($filtered_experience) >0) 
                 @foreach($filtered_experience as $curr_ele)
                     @foreach($result['colour_options'] as $product)
                         @if($product->style == $curr_ele->style)
@@ -304,11 +304,14 @@
                     </div>
                 </section>
                 @endforeach
+            @else
+                    <h1 class="br-mainheading"> Sorry, No Result Found!</h1>
             @endif
 
-            @if(!empty($notmatch_filtered_experience)) 
+            @if(!empty($notmatch_filtered_experience)  && count($notmatch_filtered_experience) >0) 
                 <!--notmatched experience products -->
-                <h1 class="br-heading">you might also be interested in:</h1> 
+                <h1 class="br-heading result-header hidden-mob">You might also be interested in:</h1> 
+                <h1 class="br-heading visible-mob hidden-col hidden-tab">You might also be interested in:</h1> 
                 @foreach($notmatch_filtered_experience as $curr_ele)
                     @foreach($result['colour_options'] as $product)
                         @if($product->style == $curr_ele->style)
