@@ -1,5 +1,7 @@
 <style>
-
+.bf-progress.bf-progress--open{
+    width: 98vw;
+}
 .shoefinder-container .wrapper {
   padding-left: 0px;
   padding-right: 0px;
@@ -15,6 +17,12 @@
 .result-header{
     margin-left:-750px;
 }
+.bf-progress .bf-progress__item .bf-progress__item__value{
+    padding-top: 10px;
+}
+.bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
+    top: 35px;
+}
 
 @media only screen 
 and (min-width : 768px) 
@@ -22,24 +30,34 @@ and (max-width : 1024px)  {
     .result-header{
     margin-left:-500px ;
     }
-
+    .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
+        left: 70% !important;
+        top: 20px !important;
+    }
 }
 
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1024px) 
 and (orientation : landscape) { 
-.result-header{
-    margin-left:-300px ;
+    .result-header{
+        margin-left:-300px ;
     }
-
+    .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
+        left: 70%;
+        top: 20px;
+    }
 }
 
 
 @media (min-width: 481px) and (max-width: 768px) {
   
     .result-header{
-    margin-left:-300px ;
+        margin-left:-300px ;
+    }
+    .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
+        left: 70% !important;
+        top: 20px !important;
     }
   
 }
