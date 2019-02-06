@@ -34,11 +34,11 @@ class ProductColourController extends Controller
                         return $product->style_idx;
                     })->flatten()->unique();
 
-                    //print_r($all_style_idx);
+                     //print_r($all_style_idx);
               
                 if (!empty($product_last_updated)) {
                     $current_time = strtotime(date('Y-m-d h:i:s'));
-                    $last_updated_time = strtotime($product_last_updated);
+                    $last_updated_time = strtotime((string)$product_last_updated);
                     $minutes = round(abs($current_time - $last_updated_time) / 60);
                     if ($minutes >= 5) {
                         // product api call 
