@@ -53,7 +53,7 @@
 												<div class="bf-progress__item__check"><i></i></div>
 												<div class="bf-progress__item__title">Training</div>
 												<div class="bf-progress__item__value">
-													<div data-bf-show-on-form-value="" data-name="training" data-value="0" aria-hidden="true" style="display: none;">Health</div>
+													<div data-bf-show-on-form-value="" data-name="training" data-value="0" aria-hidden="true" style="display: none;">Health & Wellbeing</div>
 													<div data-bf-show-on-form-value="" data-name="training" data-value="1" aria-hidden="true" style="display: none;">5k</div>
 													<div data-bf-show-on-form-value="" data-name="training" data-value="2" aria-hidden="true" style="display: none;">10k</div>
 													<div data-bf-show-on-form-value="" data-name="training" data-value="3" aria-hidden="true" style="display: none;">Half Marathon</div>
@@ -302,13 +302,13 @@
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
 												<input type="radio" name="training" value="0" id="training_0" tabindex="-1" required="" aria-hidden="true">
-													<div role="button" aria-labelledby="training_0Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="Health" data-gtm-question="What are you training for?" tabindex="0">
+													<div role="button" aria-labelledby="training_0Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="Health & Wellbeing" data-gtm-question="What are you training for?" tabindex="0">
 											
 													<div class="bf-media-button__content">
 														<div class="bf-media-button__media">
 															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/heart.svg" data-bf-stepped-animation="" data-active-screens="Training">
 																<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="image">
-																<title>Health</title>
+																<title>Health & Wellbeing</title>
 																<g id="Fills1">
 																<g>
 																<path style="fill:#ABC0DE;" d="M101.8,68.5c0.5-0.6,0.7-1.8,1.1-2.4c2-3.2,4-4.5,5.9-7.8c2.9-5.1,5.6-7.6,10.4-10.7    c1.2-0.8,2.7-1.1,4.1-1.5c1.6-0.5,3.1-0.9,4.7-1.3c9-2,16.8-0.3,22.8,7.2c0.8,1,1.5,1.2,2,2.4c1.5,3.6,2.8,7.3,4.2,11    c0.2,0.6,0.4,1.3,0.4,1.9c0,6.2-0.3,12.4-3.9,17.9c-0.5,0.8-1,1.8-1.1,2.7c-0.2,3.6-2.2,6.4-3.8,9.5c-8.8,17-20.2,32.4-32.3,47.2    c-3.6,4.4-7.7,8.4-10.9,13.2c-1.3,1.8-0.1,3-5.1,3c-4.8-5.3-9.8-10.6-14.7-16c-0.1-0.1-0.2-0.2-0.3-0.4c-4.9-6.5-9.9-13-14.8-19.5    c-1.4-1.8-2.8-3.6-4.2-5.4c-1.8-2.3-3.7-4.6-5.5-6.9c-0.8-1-1.5-2.2-2.5-3c-5.3-4.8-8.4-11.1-11.8-17.2c-0.9-1.6-1.7-3.2-2.3-4.8    c-0.6-1.5-1.2-3-1.5-4.6c-0.6-3.7-0.9-7.4-1.4-11.2c-0.8-6,0.3-12.2,3.2-17.2c0.6-1.1,2-1.6,2.9-2.5c3.8-3.7,8.5-5.4,13.5-6.5    c1.7-0.4,4.2-1.4,5.8-1c4.9,1.2,10.2,1.1,14.5,3.8c2,1.3,6.5,4.3,8.2,6c2.2,2.2,4.4,5.1,6.6,7.3C98,63.8,99.4,66.2,101.8,68.5z"></path>
@@ -355,7 +355,7 @@
 															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/heart.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
 															</script>
 														</div>
-														<div class="bf-media-button__text" id="training_0Label">Health</div>
+														<div class="bf-media-button__text" id="training_0Label">Health & Wellbeing</div>
 													</div>
 												</div>
 											</div>
@@ -1406,7 +1406,7 @@
 					
 						<p>Comparing your running habits with what you plan to achieve allows us to better prepare you for success in reaching your goals.</p>
 					
-						<p>For example, someone who is currently running 0-10 miles a week and plans to train for a marathon will be ramping up their mileage, therefore benefiting from a little more support.</p>
+						<p>For example, someone who is currently running 0-15km a week and plans to train for a marathon will be ramping up their mileage, therefore benefiting from a little more support.</p>
 					
 						<p>Likewise, someone who runs two miles a week, but does it to stay healthy is not likely to dramatically ramp up their miles.</p>
 					
