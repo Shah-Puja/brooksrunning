@@ -37,13 +37,16 @@ class ProductColourController extends Controller
                      //print_r($all_style_idx);
               
                 if (!empty($product_last_updated)) {
+                    echo date('Y-m-d h:i:s')."<br>";
+                    echo (string)$product_last_updated."<br>";
                     $current_time = strtotime(date('Y-m-d h:i:s'));
                     $last_updated_time = strtotime((string)$product_last_updated);
                     $minutes = round(abs($current_time - $last_updated_time) / 60);
                     if ($minutes >= 5) {
+                        echo "inside";
                         // product api call 
                         foreach($all_style_idx as $style_idx):
-                            $this->product_api($style_idx);
+                           // $this->product_api($style_idx);
                         endforeach;
                     }
                 
