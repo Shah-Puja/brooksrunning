@@ -9,6 +9,7 @@ use App\SYG\Bridges\BridgeInterface;
 use App\Mail\ProductAp21Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class ProductColourController extends Controller
 {   
@@ -37,6 +38,7 @@ class ProductColourController extends Controller
                      //print_r($all_style_idx);
               
                 if (!empty($product_last_updated)) {
+                   echo $current_time = Carbon::now()->toDateTimeString();
                     echo date('Y-m-d h:i:s')."<br>";
                     echo (string)$product_last_updated."<br>";
                     $current_time = strtotime(date('Y-m-d h:i:s'));
