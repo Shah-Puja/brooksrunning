@@ -28,7 +28,7 @@ class ProductColourController extends Controller
             if (!empty($get_product_last_updated)) {
                     $product_last_updated =$get_product_last_updated->map(function($product) {
                         return $product->variants;
-                    })->flatten()->pluck('last_updated')->max();
+                    })->flatten()->pluck('updated_at')->max();
 
                     $all_style_idx =$get_product_last_updated->map(function($product) {
                         return $product->style_idx;
