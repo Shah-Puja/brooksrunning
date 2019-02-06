@@ -9,6 +9,7 @@ use App\SYG\Bridges\BridgeInterface;
 use App\Mail\ProductAp21Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class ProductColourController extends Controller
 {   
@@ -22,19 +23,29 @@ class ProductColourController extends Controller
           //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
             ///get product last updated
             $get_product_last_updated = Product::where('style',$style)
-                                                ->where('color_code',$color)
                                                 ->with('variants')
-                                                ->first();
-            if (!empty($get_product_last_updated->variants)) {
-                $product_last_updated = $get_product_last_updated->variants->pluck('last_updated')->max();
+                                                ->get();
+            //print_r($get_product_last_updated);
+            if (!empty($get_product_last_updated)) {
+                    $product_last_updated =$get_product_last_updated->map(function($product) {
+                        return $product->variants;
+                    })->flatten()->pluck('updated_at')->max();
+
+                    $all_style_idx =$get_product_last_updated->map(function($product) {
+                        return $product->style_idx;
+                    })->flatten()->unique();
+
+                     //print_r($all_style_idx);
+              
                 if (!empty($product_last_updated)) {
-                    $current_time = strtotime(date('Y-m-d h:i:s'));
-                    $last_updated_time = strtotime($product_last_updated);
+                    $current_time = strtotime(Carbon::now()->toDateTimeString());
+                    $last_updated_time = strtotime((string)$product_last_updated);
                     $minutes = round(abs($current_time - $last_updated_time) / 60);
                     if ($minutes >= 5) {
                         // product api call 
-                        $style_idx  = $get_product_last_updated->style_idx;
-                        //$this->product_api($style_idx);
+                        foreach($all_style_idx as $style_idx):
+                            $this->product_api($style_idx);
+                        endforeach;
                     }
                 
                 }
