@@ -260,18 +260,37 @@ class ShoefinderController extends Controller
 			if($score <= 50 ){
 				// its neutral
 				$tag  = 'neutral';
-				$text = "Looks like you've got flexible ligaments, stable ankles, feet that point straight,  and a steady training regimen. We recommend your shoes should be:";
+				$text="Looks like you've got ";
+				if (request('injury') =="none") $text.="no recent injuries, ";
+				if (request('flexibility')=='1') $text.="flexible ligaments, ";
+				if (request('balance')=='0') $text.="stable ankles, ";
+				if (request('feet')=='0') $text.="feet that point straight, ";
+				$text.="and a steady training regimen. We recommend your shoes should be:";
+			
 			}
 			elseif($score > 50 && $score <= 90){
 				// its support
 				$tag  = 'support';
-				$text ="Looks like you've got a recent injury, knees and hips that aren't aligned, less flexible ligaments, unstable ankles, feet that don't point straight,  and a desire to significantly increase your mileage. We recommend your shoes should be:";
+				$text="Looks like you've got ";
+				if (request('injury') !="none") $text.="recent injury, knees and hips that aren't aligned, ";
+				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
+				if (request('balance')!='0') $text.="unstable ankles, ";
+				if (request('feet')!='0') $text.="feet that don't point straight, ";
+				$text.="and a desire to significantly increase your mileage. We recommend your shoes should be:";
+				
 			}
 			elseif($score >= 90){
 				$tag  = 'support_max';
-				$text = "Looks like you've got a recent injury, knees and hips that aren't aligned, less flexible ligaments, unstable ankles, feet that don't point straight,  and a desire to significantly increase your mileage. We recommend your shoes should be:";
+				$text="Looks like you've got ";
+				if (request('injury') !="none") $text.="recent injury, knees and hips that aren't aligned, ";
+				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
+				if (request('balance')!='0') $text.="unstable ankles, ";
+				if (request('feet')!='0') $text.="feet that don't point straight, ";
+				$text.="and a desire to significantly increase your mileage. We recommend your shoes should be:";
 			}
 			Session::put('tag',$tag);
+			$text =str_replace(', and',' and ',$text);
+			
 			return view('customer.shoe_finder_view_new.shoefinder_checkpoint2',compact('tag','text'));
 		}
 
