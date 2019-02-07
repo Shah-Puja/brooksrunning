@@ -61,6 +61,7 @@
 						<li><a href="https://www.facebook.com/BrooksrunningAU/">Facebook</a></li>
 						<li><a href="https://twitter.com/brooksrunningau">Twitter</a></li>
 						<li><a href="https://www.instagram.com/brooksrunningau/">Instagram</a></li>
+						<li><a href="https://www.youtube.com/channel/UCo41nrNj5UQCp6k2EUG4nVw/">Youtube</a></li>
 	                </ul>
 				</div>
 				<div class="footer-navbar-info">
@@ -84,6 +85,7 @@
 						<a href="https://twitter.com/brooksrunningau"><span class="icon-social-twitter"></span></a>
 						<a href="https://www.instagram.com/brooksrunningau/"><span class="icon-social-insta"></span></a>
 						<a href="https://www.facebook.com/BrooksrunningAU/"><span class="icon-social-fb"></span></a>
+						<a href="https://www.youtube.com/channel/UCo41nrNj5UQCp6k2EUG4nVw"><span class="icon-youtube-with-circle"></span></a>
 					</div>
 				</div>
 				<div class="col-6 tab-7">

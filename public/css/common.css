@@ -167,16 +167,16 @@
   content: "";
 }
 
-.icon-cart-mob:before {
-  content: "";
+.icon-navigation-toggle:before {
+  content: "";
 }
 
 .icon-cart-icon:before {
   content: "";
 }
 
-.icon-navigation-toggle:before {
-  content: "";
+.icon-cart-mob:before {
+  content: "";
 }
 
 .icon-top-arrow:before {
@@ -251,6 +251,14 @@
   content: "";
 }
 
+.icon-enlarge:before {
+  content: "";
+}
+
+.icon-enlarge2:before {
+  content: "";
+}
+
 .icon-plus:before {
   content: "";
 }
@@ -271,12 +279,8 @@
   content: "";
 }
 
-.icon-enlarge:before {
-  content: "";
-}
-
-.icon-enlarge2:before {
-  content: "";
+.icon-youtube-with-circle:before {
+  content: "";
 }
 
 .icon-youtube:before {

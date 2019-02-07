@@ -177,17 +177,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   .icon-close-icon:before {
     content: "\e900";
   }
-  .icon-cart-mob:before {
-    content: "\e904";
+  .icon-navigation-toggle:before {
+    content: "\e901";
   }
   .icon-cart-icon:before {
     content: "\e902";
   }
-  .icon-navigation-toggle:before {
-    content: "\e901";
+  .icon-cart-mob:before {
+    content: "\e904";
   }
   .icon-top-arrow:before {
     content: "\e905";
@@ -243,12 +244,18 @@
   .icon-download:before {
     content: "\e935";
   }
+  .icon-enlarge:before {
+    content: "\e989";
+  }
+  .icon-enlarge2:before {
+    content: "\e98b";
+  }
   .icon-plus:before {
     content: "\ea0a";
   }
   .icon-minus:before {
     content: "\ea0b";
-  }
+  } 
   .icon-play2:before {
     content: "\ea15";
   }
@@ -258,11 +265,8 @@
   .icon-stop:before {
     content: "\ea17";
   }
-  .icon-enlarge:before {
-  content: "\e989";
-  }
-  .icon-enlarge2:before {
-    content: "\e98b";
+  .icon-youtube-with-circle:before {
+    content: "\e903";
   }
   .icon-youtube:before{
     content:url('../images/youtube-with-circle.svg'); 

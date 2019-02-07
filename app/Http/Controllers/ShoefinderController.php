@@ -272,21 +272,32 @@ class ShoefinderController extends Controller
 				// its support
 				$tag  = 'support';
 				$text="Looks like you've got ";
-				if (request('injury') !="none") $text.="recent injury, knees and hips that aren't aligned, ";
+				if (request('injury') !="none") $text.="recent injury, ";
 				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
 				if (request('balance')!='0') $text.="unstable ankles, ";
 				if (request('feet')!='0') $text.="feet that don't point straight, ";
-				$text.="and a desire to significantly increase your mileage. We recommend your shoes should be:";
+				if (request('training') =='0') $text.="and a desire to maintain your health";
+				if (request('training') =='1') $text.="and you are training for a 5k. ";
+				if (request('training') =='2') $text.="and you are training for a 10k. ";
+				if (request('training') =='3') $text.="and you are training for a 21k. ";
+				if (request('training') == '4') $text.="and you are training for a 42k. ";
+				$text.="We recommend your shoes should be:";
 				
 			}
 			elseif($score >= 90){
 				$tag  = 'support_max';
 				$text="Looks like you've got ";
-				if (request('injury') !="none") $text.="recent injury, knees and hips that aren't aligned, ";
+				if (request('injury') !="none") $text.="recent injury, ";
 				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
 				if (request('balance')!='0') $text.="unstable ankles, ";
 				if (request('feet')!='0') $text.="feet that don't point straight, ";
-				$text.="and a desire to significantly increase your mileage. We recommend your shoes should be:";
+				if (request('training') =='0') $text.="and a desire to maintain your health";
+				if (request('training') =='1') $text.="and you are training for a 5k. ";
+				if (request('training') =='2') $text.="and you are training for a 10k. ";
+				if (request('training') =='3') $text.="and you are training for a 21k. ";
+				if (request('training') == '4') $text.="and you are training for a 42k. ";
+				$text.="We recommend your shoes should be:";
+				
 			}
 			Session::put('tag',$tag);
 			$text =str_replace(', and',' and ',$text);
