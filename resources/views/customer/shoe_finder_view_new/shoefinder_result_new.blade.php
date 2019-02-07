@@ -93,7 +93,7 @@ and (orientation : landscape) {
 		<!-- END: Sticky Nav -->
 		<hgroup>
 			<p class="bf-results-screen__transition-group" data-focus-first tabindex="0">The results are in. We suggest:</p>
-			<h1 class="bf-results-screen__transition-group-2 capitalize">{{ ucwords($tag) }}
+			<h1 class="bf-results-screen__transition-group-2 capitalize">{{ ucwords(str_replace('_',' ',$tag)) }}
 				<div class="bf-results-header__image">
                 @if(!empty($experience))
                     @switch($experience)
