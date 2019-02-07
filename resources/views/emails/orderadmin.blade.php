@@ -200,7 +200,7 @@
                                     @endphp
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td align='right' colspan='2'><b>Freight {{ ucfirst($delivery_type) }}</b></td>
+                                        <td align='right' colspan='2'><b>Freight {{ ucwords($delivery_type) }}</b></td>
                                         <td align='left'><b>$ {{  @number_format($order->freight_cost, 2) }} </b></td>
                                     </tr>
 
