@@ -192,6 +192,8 @@ and (orientation : landscape) {
                 @php  $user_experience ='Energize'; @endphp 
             @break
         @endswitch
+        
+        @if(!empty($result['product_details']))
         @php
         $filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
             return ($value->experience == $user_experience) ? $value : '';
@@ -200,8 +202,7 @@ and (orientation : landscape) {
         $notmatch_filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
             return ($value->experience != $user_experience) ? $value : '';
         });
-        @endphp   
-        @if(!empty($result['product_details']))
+        @endphp  
             <!--matched experience products -->
             @if(!empty($filtered_experience)  && count($filtered_experience) >0) 
                 @foreach($filtered_experience as $curr_ele)
