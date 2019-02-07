@@ -156,19 +156,19 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
 }
 
 .icon-close-icon:before {
-  content: "";
+  content: "";
+}
+
+.icon-navigation-toggle:before {
+  content: "";
+}
+
+.icon-cart-icon:before {
+  content: "";
 }
 
 .icon-cart-mob:before {
   content: "";
-}
-
-.icon-cart-icon:before {
-  content: "";
-}
-
-.icon-navigation-toggle:before {
-  content: "";
 }
 
 .icon-top-arrow:before {
@@ -243,6 +243,14 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   content: "";
 }
 
+.icon-enlarge:before {
+  content: "";
+}
+
+.icon-enlarge2:before {
+  content: "";
+}
+
 .icon-plus:before {
   content: "";
 }
@@ -263,12 +271,8 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   content: "";
 }
 
-.icon-enlarge:before {
-  content: "";
-}
-
-.icon-enlarge2:before {
-  content: "";
+.icon-social-youtube:before {
+  content: "";
 }
 
 .icon-youtube:before {
