@@ -1,15 +1,11 @@
 $(document).ready(function () {
     var selected_delivery_type_text = '';
     var selected_delivery_type = $.trim($('#selected_delivery_type').text());
-    //alert(selected_delivery_type);
+
     if (selected_delivery_type == "New Zealand Standard Delivery") {
-        //$('select[name="s_state"] option[value="New Zealand"]').attr("selected","selected");
         $('select[name="s_state').val("New Zealand");
     }
     $('select[name=s_state]').on('change', function () {
-        //alert($(this).val());
-        //alert(selected_delivery_type);
-
         if (selected_delivery_type == "Express Delivery") {
             var selected_delivery_type_text = "express";
         } else if (selected_delivery_type == "Standard Delivery") {
