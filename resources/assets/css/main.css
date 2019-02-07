@@ -150,13 +150,13 @@
   -moz-osx-font-smoothing: grayscale; }
 
 .icon-close-icon:before {
-  content: "\e901"; }
+  content: "\e900"; }
 
 .icon-navigation-toggle:before {
-  content: "\e902"; }
+  content: "\e901"; }
 
 .icon-cart-icon:before {
-  content: "\e903"; }
+  content: "\e902"; }
 
 .icon-cart-mob:before {
   content: "\e904"; }
@@ -236,8 +236,8 @@
 .icon-stop:before {
   content: "\ea17"; }
 
-.icon-social-youtube:before {
-  content: "\e900"; }
+.icon-youtube-with-circle:before {
+  content: "\e903"; }
 
 .icon-youtube:before {
   content: url("../images/youtube-with-circle.svg");
