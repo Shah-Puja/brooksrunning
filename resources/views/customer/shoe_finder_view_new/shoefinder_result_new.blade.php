@@ -49,9 +49,7 @@ and (orientation : landscape) {
     }
 }
 
-
 @media (min-width: 481px) and (max-width: 768px) {
-  
     .result-header{
         margin-left:-300px ;
     }
@@ -59,7 +57,6 @@ and (orientation : landscape) {
         left: 70% !important;
         top: 20px !important;
     }
-  
 }
 
 </style>
