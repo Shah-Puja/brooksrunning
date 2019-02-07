@@ -276,7 +276,7 @@ class ShoefinderController extends Controller
 				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
 				if (request('balance')!='0') $text.="unstable ankles, ";
 				if (request('feet')!='0') $text.="feet that don't point straight, ";
-				if (request('training') =='0') $text.="and a desire to maintain your health";
+				if (request('training') =='0') $text.="and a desire to maintain your health. ";
 				if (request('training') =='1') $text.="and you are training for a 5k. ";
 				if (request('training') =='2') $text.="and you are training for a 10k. ";
 				if (request('training') =='3') $text.="and you are training for a 21k. ";
@@ -291,7 +291,7 @@ class ShoefinderController extends Controller
 				if (request('flexibility')=='0') $text.="less flexible ligaments, ";
 				if (request('balance')!='0') $text.="unstable ankles, ";
 				if (request('feet')!='0') $text.="feet that don't point straight, ";
-				if (request('training') =='0') $text.="and a desire to maintain your health";
+				if (request('training') =='0') $text.="and a desire to maintain your health. ";
 				if (request('training') =='1') $text.="and you are training for a 5k. ";
 				if (request('training') =='2') $text.="and you are training for a 10k. ";
 				if (request('training') =='3') $text.="and you are training for a 21k. ";
