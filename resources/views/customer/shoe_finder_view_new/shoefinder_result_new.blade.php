@@ -93,7 +93,7 @@ and (orientation : landscape) {
 		<!-- END: Sticky Nav -->
 		<hgroup>
 			<p class="bf-results-screen__transition-group" data-focus-first tabindex="0">The results are in. We suggest:</p>
-			<h1 class="bf-results-screen__transition-group-2 capitalize">{{ ucwords($tag) }}
+			<h1 class="bf-results-screen__transition-group-2 capitalize">{{ ucwords(str_replace('_',' ',$tag)) }}
 				<div class="bf-results-header__image">
                 @if(!empty($experience))
                     @switch($experience)
@@ -192,6 +192,8 @@ and (orientation : landscape) {
                 @php  $user_experience ='Energize'; @endphp 
             @break
         @endswitch
+        
+        @if(!empty($result['product_details']))
         @php
         $filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
             return ($value->experience == $user_experience) ? $value : '';
@@ -200,8 +202,7 @@ and (orientation : landscape) {
         $notmatch_filtered_experience = collect($result['product_details'])->filter(function ($value, $key) use ($user_experience) {
             return ($value->experience != $user_experience) ? $value : '';
         });
-        @endphp   
-        @if(!empty($result['product_details']))
+        @endphp  
             <!--matched experience products -->
             @if(!empty($filtered_experience)  && count($filtered_experience) >0) 
                 @foreach($filtered_experience as $curr_ele)
