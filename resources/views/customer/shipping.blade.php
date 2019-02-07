@@ -507,9 +507,9 @@
 		<div class="col-3 tab-4">
 			<div class="cart-right--container">
 				<div class="order hidden-mob">
-                        <div class="order order_summary">
+                        <!-- <div class="order order_summary">-->
                                 @include('cart.order_summary') 
-                        </div>
+                       <!--  </div>-->
 				</div>
 				<!--afterpay popup -->
 				<div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
