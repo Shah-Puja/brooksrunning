@@ -196,7 +196,7 @@
 
                                     <tr>
                                     @php 
-                                        $delivery_type = preg_match('/\s/',$order->delivery_type) ? str_replace("_", " ", ucfirst($order->delivery_type)) : ucfirst($order->delivery_type);
+                                        $delivery_type =  (strpos($order->delivery_type, '_') !== false) ? str_replace("_", " ", ucfirst($order->delivery_type)) : ucfirst($order->delivery_type);
                                     @endphp
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
