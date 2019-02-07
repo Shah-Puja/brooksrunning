@@ -56,8 +56,8 @@
 													<div data-bf-show-on-form-value="" data-name="training" data-value="0" aria-hidden="true" style="display: none;">Health & Wellbeing</div>
 													<div data-bf-show-on-form-value="" data-name="training" data-value="1" aria-hidden="true" style="display: none;">5k</div>
 													<div data-bf-show-on-form-value="" data-name="training" data-value="2" aria-hidden="true" style="display: none;">10k</div>
-													<div data-bf-show-on-form-value="" data-name="training" data-value="3" aria-hidden="true" style="display: none;">Half Marathon</div>
-													<div data-bf-show-on-form-value="" data-name="training" data-value="4" aria-hidden="true" style="display: none;">Marathon or more</div>
+													<div data-bf-show-on-form-value="" data-name="training" data-value="3" aria-hidden="true" style="display: none;">21k</div>
+													<div data-bf-show-on-form-value="" data-name="training" data-value="4" aria-hidden="true" style="display: none;">42k</div>
 												</div>
 											</div>
 											
