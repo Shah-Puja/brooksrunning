@@ -1,4 +1,49 @@
 $(document).ready(function(){
+    var selected_delivery_type_text = '';
+    var selected_delivery_type = $.trim($('#selected_delivery_type').text());
+    //alert(selected_delivery_type);
+    
+    $('select[name=s_state]').on('change', function() {
+        //alert($(this).val());
+        //alert(selected_delivery_type);
+        
+        if(selected_delivery_type == "Express Delivery"){
+            var selected_delivery_type_text = "express";
+        }else if(selected_delivery_type == "Standard Delivery"){
+            var selected_delivery_type_text = "standard";
+        }else if(selected_delivery_type == "New Zealand Standard Delivery"){
+            var selected_delivery_type_text = "new_zealand";
+        }
+
+        if(selected_delivery_type=="New Zealand Standard Delivery" && $(this).val()=='New Zealand'){
+            var delivery_option_value = "new_zealand";
+        }else if(selected_delivery_type=="New Zealand Standard Delivery" && $(this).val()!='New Zealand'){ 
+            var delivery_option_value = "standard";
+        } else if((selected_delivery_type == "Express Delivery" || selected_delivery_type=="Standard Delivery") && $(this).val()==='New Zealand'){
+             var delivery_option_value = 'new_zealand'; 
+        }else{
+           var delivery_option_value = selected_delivery_type_text; 
+        }
+        var overlay = $('<div id="overlay"> </div>');
+        overlay.appendTo(document.body);
+        var url = "cart/update_delivery_option"; 
+        $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: url,
+                method: "POST",
+                data: {delivery_option_value: delivery_option_value},
+                success: function (result) {
+                    //alert(result);
+                    $(".order").load("cart/get_cart_order_total");
+                    $("#overlay").remove();
+                },
+                error: function () {
+                    return false;
+                }
+        });
+    });
 
     $("#different-address").change(function () {
         if ($("this.checked")) {

@@ -1,3 +1,4 @@
+<div class="order order_summary">
 <h3 class="bold-font">Order Summary</h3>
 @php //echo "<pre>";print_r($cart);die;@endphp
                     <div class="order-info">
@@ -10,7 +11,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="mob-7">
+                            <div class="mob-7" id="selected_delivery_type">
                             @php 
                             if(isset($cart->delivery_type) && $cart->delivery_type == 'standard'){
                                 $delivery_type = 'Standard';
@@ -126,3 +127,4 @@
                     </div>
                 </div>
                 <!--/afterpay popup -->
+                </div>
