@@ -915,7 +915,7 @@ if($order->payment_type == "AfterPay"){
                 $data = array(
                     'api_name' => 'Order Exists',
                     'URL' => $URL,
-                    'Result' => $returnVal,
+                    'Result' => $response->getBody(),
                     'Parameters' => $xml_data,
                 );
                 Mail::to(config('site.notify_email'))
@@ -939,7 +939,7 @@ if($order->payment_type == "AfterPay"){
                 $data = array(
                     'api_name' => 'Create Order Error',
                     'URL' => $URL,
-                    'Result' => $returnVal,
+                    'Result' => $result,
                     'Parameters' => $xml_data,
                 );
                 Mail::to(config('site.notify_email'))
