@@ -640,19 +640,18 @@
         $(function() {
             $(".AddressLine").autocomplete({
                 source: function( request, response ) {
+                    var RequestKey = "{{env('KLEBER_REQUESTKEY')}}";
                     $.ajax({
                         url: "{{env('KLEBER_URL')}}/KleberWebService/DtKleberService.svc/ProcessQueryStringRequest",
                         dataType: "jsonp",
                         type: "GET",
                         contentType: "application/json; charset=utf-8",
-                        data: {Method:"DataTools.Capture.Address.Predictive.AuPaf.SearchAddress", AddressLine:request.term, ResultLimit:" ", RequestId:" ", RequestKey:"RK-B0446-06E3E-5B1FE-A8EE4-4E108-87D03-CBD26-C560A", DepartmentCode:" ", OutputFormat:"json" },
+                        data: {Method:"DataTools.Capture.Address.Predictive.AuNzPaf.SearchAddress", AddressLine:request.term,  ResultLimit:" ", DisplayOnlyCountryCode:"", RequestId:" ", RequestKey:RequestKey, DepartmentCode:" ", OutputFormat:"json" },
                         success: function( data ) {
                             response( $.map( data.DtResponse.Result, function( item ) {
-                                var Output = (item.AddressLine + ", " + item.Locality + ", " + item.State + ", " + item.Postcode);
+                                var Output = (item.AddressLine + ", " + item.Locality + ", " + item.State + ", " + item.Postcode + ", " + item.Country + ", " + item.CountryCode);
                                 return {
                                     label: Output ,
-                                    //value: Output ,
-                                    //Output: Output,
                                     array: item
                                 }
                             }));
@@ -660,34 +659,79 @@
                     });
                 },
                 select: function( event, ui ) {
-                    ///console.log("selected" + ui.item.array.AddressLine);
-                    //log( ui.item ? ui.item.Output : "Nothing selected, input was " + this.value);
-                    var billing_type = $(this).attr('name');
-                    if(billing_type=='s_add1'){
-                        $("input[name='s_add1']").val(ui.item.array.AddressLine);
-                        $("input[name='s_city']").val(ui.item.array.Locality);
-                        $("input[name='s_postcode']").val(ui.item.array.Postcode);
-                        $("select[name='s_state']").val(ui.item.array.State);
-                        setTimeout(function(){
-                            $("input[name='s_add1']").val(ui.item.array.AddressLine);
-                        }, 200);
-                     }else{
-                        $("input[name='b_add1']").val(ui.item.array.AddressLine);
-                        $("input[name='b_city']").val(ui.item.array.Locality);
-                        $("input[name='b_postcode']").val(ui.item.array.Postcode);
-                        $("select[name='b_state']").val(ui.item.array.State);
-                        setTimeout(function(){
-                            $("input[name='b_add1']").val(ui.item.array.AddressLine);
-                        }, 200);
-                     }
+                    var country_code = ui.item.array.CountryCode;
+                    if(country_code=='AU'){
+                        var method = 'DataTools.Capture.Address.Predictive.AuPaf.RetrieveAddress';
+                    }else{
+                        var method = 'DataTools.Capture.Address.Predictive.NzPaf.RetrieveAddress';
+                    }
+                    var RecordId = ui.item.array.RecordId;
+                    var RequestKey = "{{env('KLEBER_REQUESTKEY')}}";
+                    var attr_name = $(this).attr('name');
+
+                    $.ajax({
+                        url: "https://kleber.datatoolscloud.net.au/KleberWebService/DtKleberService.svc/ProcessQueryStringRequest",
+                        dataType: "jsonp",
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        data: {
+
+                            Method: method,
+                            RecordId: "" + RecordId,
+                            RequestId: "",
+                            RequestKey: "" + RequestKey,
+                            DepartmentCode: "" ,
+                            OutputFormat: "json"
+                        },
+                        success: function (data) {
+                            $.map(data.DtResponse.Result, function (item) {
+                                var billing_type = attr_name;
+                                if(billing_type=='s_add1'){
+                                    $("input[name='s_add1']").val(item.AddressLine);
+                                    $("input[name='s_city']").val(item.Locality);
+                                    $("input[name='s_postcode']").val(item.Postcode);
+                                    $("select[name='s_state']").val(item.State);
+                                    setTimeout(function(){
+                                        $("input[name='s_add1']").val(item.AddressLine);
+                                    }, 200);
+                                }else{
+                                    $("input[name='b_add1']").val(item.AddressLine);
+                                    $("input[name='b_city']").val(item.Locality);
+                                    $("input[name='b_postcode']").val(item.Postcode);
+                                    $("select[name='b_state']").val(item.State);
+                                    setTimeout(function(){
+                                        $("input[name='b_add1']").val(item.AddressLine);
+                                    }, 200);
+                                }
+                                /*$('#DPID').val(item.DPID);
+                                $('#UnitType').val(item.UnitType);
+                                $('#UnitNumber').val(item.UnitNumber);
+                                $('#LevelType').val(item.LevelType);
+                                $('#LevelNumber').val(item.LevelNumber);
+                                $('#LotNumber').val(item.LotNumber);
+                                $('#StreetNumber1').val(item.StreetNumber1);
+                                $('#StreetNumberSuffix1').val(item.StreetNumberSuffix1);
+                                $('#StreetNumber2').val(item.StreetNumber2);
+                                $('#StreetNumberSuffix2').val(item.StreetNumberSuffix2);
+                                $('#PostBoxNumber').val(item.PostBoxNumber);
+                                $('#PostBoxNumberPrefix').val(item.PostBoxNumberPrefix);
+                                $('#PostBoxNumberSuffix').val(item.PostBoxNumberSuffix);
+                                $('#StreetName').val(item.StreetName);
+                                $('#StreetType').val(item.StreetType);
+                                $('#StreetSuffix').val(item.StreetSuffix);
+                                $('#PostBoxType').val(item.PostBoxType);
+                                $('#BuildingName').val(item.BuildingName);
+                                $('#AddressLine').val(item.AddressLine);
+                                $('#Locality').val(item.Locality);
+                                $('#State').val(item.State);
+                                $('#Postcode').val(item.Postcode);*/
+                            });
+                        }
+                    });
                 
                 },
             });
             
-            /*function log( message ) {
-                $( "<div/>" ).text( message ).prependTo( "#log" );
-    			$( "#log" ).scrollTop( 0 );
-    		}*/
         });
 	</script>
 <script src="/js/shippingbilling.js"></script>
