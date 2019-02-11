@@ -43,7 +43,8 @@
                                 </div>
                             </div>
                         <h1 class="large">Limited Edition Levitate 2 and Ricochet</h1>
-                        <h2 class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.</h2>
+                        <p class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.<br/>
+                        <br/>The Levitate 2 LE is all DNA AMP for maximum  energy return, while the Ricochet strikes a  lighter balance. Both help you run farther,  faster. And with once-in-a-lifetime colorways, these Limited-Edition releases are gonna  make the sneakerheads sweat too.</p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
