@@ -43,7 +43,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Experience incredible DNA LOFT cushioning and super soft transitions in the Glycerin 16.</p>
-					<br/><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120278_115.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120278_115.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110289_426.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
@@ -70,7 +70,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>New TrailTack Rubber sole in the Caldera 3 offers sticky traction to wet and dry trails.</p>
-					<br/><a href="/brooks-running-shoes-caldera-3-womens/120288_080.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/brooks-running-shoes-caldera-3-womens/120288_080.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-caldera-3-mens/110295_493.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
