@@ -65,7 +65,7 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_ghost11.jpg">
+						<img src="/images/landingpage/Womens/women_bedlam-2.jpg">
 					    <div class="title">
 					       <h2 class="happy left">New Colours<br>Ghost 11</h2>
 					    </div>
@@ -78,7 +78,7 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_gts19.jpg">
+							<img src="/images/landingpage/Womens/women_glycerin16.jpg">
 						    <div class="title">
 						        <h2 class="happy left">New<br>Adrenaline GTS 19</h2>
 						    </div>

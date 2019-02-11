@@ -2451,8 +2451,8 @@ ul {
 
 /* Events- End*/
 
-/* Start Collection-Listing
-*/
+/* Start Collection-Listing */
+
 .category__hero{
   height: auto;
   max-height: 400px;
@@ -2505,9 +2505,9 @@ ul {
     }
   }
   .large {
-    font-size: 50px;
-    line-height: 55px;
-
+    font-size: 35px;
+    line-height: 40px;
+    
     @media #{$mobile-only}{
       font-size: 30px;
     }
@@ -2521,9 +2521,10 @@ ul {
     line-height: 27px;
 }
 .m-block--hero--collection__content{
-  h2 {
+  p {
     color: #fff;
     margin: 1rem 0;
+    @extend %info-font;
     @media #{$mobile-only} {
       color: #fff;
       margin: 1rem 0;
@@ -2542,6 +2543,7 @@ ul {
         }
   }
   h1 {
+    @extend %extrabold-font;
     @media #{$mobile-only}{
        color: #fff;
       margin: 0 0 13px;
