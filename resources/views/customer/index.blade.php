@@ -65,7 +65,7 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm3.jpg">
+					<img src="/images/home/hp_sm_caldera3-w.jpg">
 			        <h3>&nbsp; <br/>Caldera </h3>
 				</div>
 				<div class="info-wrapper">
