@@ -3244,7 +3244,8 @@ textarea {
     line-height: 27px; }
   .category__hero .m-block--hero--collection__content p {
     color: #fff;
-    margin: 1rem 0; }
+    margin: 1rem 0;
+    text-align: center; }
     @media only screen and (max-width: 767px) {
       .category__hero .m-block--hero--collection__content p {
         color: #fff;
