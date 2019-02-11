@@ -65,7 +65,7 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Mens/men_ravenna9.jpg">
+						<img src="/images/landingpage/Mens/men_ravenna10-2.jpg">
 					    <div class="title">
 					       <h2 class="happy left">Energize your run<br>with Ravenna</h2>
 					    </div>
@@ -78,7 +78,7 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Mens/men_glycerin16.jpg">
+							<img src="/images/landingpage/Mens/men_ghost11-2.jpg">
 						    <div class="title">
 						        <h2 class="happy left">New Colours<br>Glycerin 16</h2>
 						    </div>
