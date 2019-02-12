@@ -119,7 +119,7 @@ public function create_order($person_id='115414'){
                 break;
         }       
     }
-    public function create_user(){
+    public function xcreate_user(){
         $person_xml="<Person>
                         <Firstname>Test f</Firstname>
                         <Surname>test l</Surname>
@@ -174,6 +174,117 @@ public function create_order($person_id='115414'){
         echo "<pre>";print_r($returnCode);die;
        //echo "<br>";
         //echo "test ap21";die;
+    }
+
+    public function create_user() {
+
+        $fullname = 'David'. ' ' . 'Mamea';
+        $fname = 'David';
+        $lname = 'Mamea';
+        $returnVal = false;
+        $returnData = '';
+
+        if (!empty($fname) && !empty($lname)) {
+
+            $firstname = $fname;
+            $lastname = $lname;
+        } else {
+            list($firstname, $lastname) = explode(' ', $fullname);
+        }
+
+        $person_xml = "<Person>
+                        <Firstname>$firstname</Firstname>
+                        <Surname>$lastname</Surname>
+                        <Contacts>
+                          <Email>" . "dfmamea@gmail.com" . "</Email>
+                          <Phones>
+                            <Home>" . "+64 21 668 346" . "</Home>
+                          </Phones>
+                        </Contacts>
+                        <Addresses>
+                            <Billing>
+                              <AddressLine1>" . htmlspecialchars("71 Revelry Lane, RD9") . "</AddressLine1>
+                              <AddressLine2>" . htmlspecialchars("") . "</AddressLine2>
+                              <City>" . htmlspecialchars("Whangārei") . "</City>
+                              <State>" . htmlspecialchars("New Zealand") . "</State>
+                              <Postcode>" . "0179" . "</Postcode>
+                              <Country></Country>
+                            </Billing>
+                            <Delivery>
+                              <AddressLine1>" . htmlspecialchars("71 Revelry Lane, RD9") . "</AddressLine1>
+                              <AddressLine2>" . htmlspecialchars("") . "</AddressLine2>
+                              <City>" . htmlspecialchars("Whangārei") . "</City>
+                              <State>" . htmlspecialchars("New Zealand") . "</State>
+                              <Postcode>" . "0179" . "</Postcode>
+                              <Country></Country>
+                            </Delivery>
+                        </Addresses>
+                      </Person>";
+
+        $response = $this->bridge->processPerson($person_xml);
+        echo "<pre>";print_r($response);die;
+        $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
+        $logger = array(
+            'order_id' => $this->order->id,
+            'log_title' => 'Person',
+            'log_type' => 'Response',
+            'log_status' => 'Generate Person XML',
+            'result' => 'Created Person xml and submitted to app21 url:- ' . $URL,
+            'xml' => $person_xml
+        );
+        Order_log::createNew($logger);
+        $returnCode = $response->getStatusCode();
+        switch ($returnCode) {
+            case 201:
+                $location = $response->getHeader('Location')[0];
+                $str_arr = explode("/", $location);
+                $last_seg = $str_arr[count($str_arr) - 1];
+                $last_seg_arr = explode("?", $last_seg);
+                $person_idx = $last_seg_arr[0];
+
+                $logger = array(
+                    'order_id' => $this->order->id,
+                    'log_title' => 'Person',
+                    'log_type' => 'Response',
+                    'log_status' => '201 Person ID Created',
+                    'result' => $person_idx,
+                    'xml'=> $person_xml ? $person_xml : "",
+                );
+                Order_log::createNew($logger);
+                $returnVal = $person_idx;
+
+
+                break;
+
+            default:
+                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                $logger = array(
+                    'order_id' => $this->order->id,
+                    'log_title' => 'Person',
+                    'log_type' => 'Response',
+                    'log_status' => 'Error While Creating Person ID',
+                    'result' => $result,
+                );
+                Order_log::createNew($logger);
+
+                // Send ap21 alert  
+                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                $data = array(
+                    'api_name' => 'Create Person Error',
+                    'URL' => $URL,
+                    'Result' => $result,
+                    'Parameters' => $person_xml,
+                );
+                Mail::to(config('site.notify_email'))
+                        ->cc(config('site.syg_notify_email'))
+                        ->send(new OrderAp21Alert($this->order, $data));
+
+                $returnVal = false;
+
+                break;
+        }
+
+        return $returnVal;
     }
 
 }
