@@ -128,7 +128,6 @@
                                     $coup_discount = number_format($coup_discount, 2); 
                                     @endphp
                                     <tr>
-                                    @php echo "<pre>";print_r($item->variant->product); @endphp
                                         <td>{{ $item->qty }}</td>
                                         <td align='left'>
                                             {{ $item->variant->product->stylename }}
@@ -136,6 +135,9 @@
                                             <br /><span>Colour : </span><span> {{$item->variant->product->color_code}}  {{ $item->variant->product->color_name}}  </span> 
                                             <br /><span>Width : </span><span>{{ $item->variant->width_code }} {{ $item->variant->width_name }}</span>
                                             <br /><span>Size : </span><span>{{ $item->variant->size }}</span>
+                                            @if(isset($item->variant->product->cart_blurb) && $item->variant->product->cart_blurb!='')
+                                            <br /><span style="color: red;"><b>{{ $item->variant->product->cart_blurb }}</b></span>
+                                            @endif
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)
