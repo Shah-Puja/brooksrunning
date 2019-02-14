@@ -691,7 +691,7 @@
                                 if(billing_type=='s_add1'){
                                     if(item.BuildingName!=''){
                                         $("input[name='s_add1']").val(item.BuildingName);
-                                        $("input[name='s_add2']").val(item.BuildingName);
+                                        $("input[name='s_add2']").val(item.AddressLine);
                                     }else{
                                         $("input[name='s_add1']").val(item.AddressLine);
                                     }
@@ -704,7 +704,7 @@
                                 }else{
                                     if(item.BuildingName!=''){
                                         $("input[name='b_add1']").val(item.BuildingName);
-                                        $("input[name='b_add2']").val(item.BuildingName);
+                                        $("input[name='b_add2']").val(item.AddressLine);
                                     }else{
                                         $("input[name='b_add1']").val(item.AddressLine);
                                     }
