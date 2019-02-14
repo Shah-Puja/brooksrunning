@@ -1,3 +1,5 @@
+@php echo "<pre>";print_R($item->variant->product);die; @endphp
+
 <!DOCTYPE html>
 <html>
     <head>
