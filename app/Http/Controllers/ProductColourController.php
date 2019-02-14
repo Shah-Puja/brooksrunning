@@ -141,7 +141,7 @@ class ProductColourController extends Controller
                                 'stock' => $stock,
                                 'price' => $org_price,
                                 'price_sale' => $price_sale,
-                                'release_date' => $release_dt_str,
+                                'release_date' => '',
                                 'season' => 'Current',
                                 'visible' => 'No',
                                 'reason_no' => 'Release date blank',

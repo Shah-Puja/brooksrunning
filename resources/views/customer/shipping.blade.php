@@ -641,22 +641,24 @@
             $(".AddressLine").autocomplete({
                 source: function( request, response ) {
                     var RequestKey = "{{env('KLEBER_REQUESTKEY')}}";
-                    $.ajax({
-                        url: "{{env('KLEBER_URL')}}/KleberWebService/DtKleberService.svc/ProcessQueryStringRequest",
-                        dataType: "jsonp",
-                        type: "GET",
-                        contentType: "application/json; charset=utf-8",
-                        data: {Method:"DataTools.Capture.Address.Predictive.AuNzPaf.SearchAddress", AddressLine:request.term,  ResultLimit:" ", DisplayOnlyCountryCode:"", RequestId:" ", RequestKey:RequestKey, DepartmentCode:" ", OutputFormat:"json" },
-                        success: function( data ) {
-                            response( $.map( data.DtResponse.Result, function( item ) {
-                                var Output = (item.AddressLine + ", " + item.Locality + ", " + item.State + ", " + item.Postcode + ", " + item.Country + ", " + item.CountryCode);
-                                return {
-                                    label: Output ,
-                                    array: item
-                                }
-                            }));
-                        }
-                    });
+                    //if(request.term.length > 3){
+                        $.ajax({
+                            url: "{{env('KLEBER_URL')}}/KleberWebService/DtKleberService.svc/ProcessQueryStringRequest",
+                            dataType: "jsonp",
+                            type: "GET",
+                            contentType: "application/json; charset=utf-8",
+                            data: {Method:"DataTools.Capture.Address.Predictive.AuNzPaf.SearchAddress", AddressLine:request.term,  ResultLimit:" ", DisplayOnlyCountryCode:"", RequestId:" ", RequestKey:RequestKey, DepartmentCode:" ", OutputFormat:"json" },
+                            success: function( data ) {
+                                response( $.map( data.DtResponse.Result, function( item ) {
+                                    var Output = (item.AddressLine + ", " + item.Locality + ", " + item.State + ", " + item.Postcode + ", " + item.Country + ", " + item.CountryCode);
+                                    return {
+                                        label: Output ,
+                                        array: item
+                                    }
+                                }));
+                            }
+                        });
+                    //}
                 },
                 select: function( event, ui ) {
                     var country_code = ui.item.array.CountryCode;
@@ -687,7 +689,12 @@
                             $.map(data.DtResponse.Result, function (item) {
                                 var billing_type = attr_name;
                                 if(billing_type=='s_add1'){
-                                    $("input[name='s_add1']").val(item.AddressLine);
+                                    if(item.BuildingName!=''){
+                                        $("input[name='s_add1']").val(item.BuildingName);
+                                        $("input[name='s_add2']").val(item.BuildingName);
+                                    }else{
+                                        $("input[name='s_add1']").val(item.AddressLine);
+                                    }
                                     $("input[name='s_city']").val(item.Locality);
                                     $("input[name='s_postcode']").val(item.Postcode);
                                     $("select[name='s_state']").val(item.State);
@@ -695,7 +702,12 @@
                                         $("input[name='s_add1']").val(item.AddressLine);
                                     }, 200);
                                 }else{
-                                    $("input[name='b_add1']").val(item.AddressLine);
+                                    if(item.BuildingName!=''){
+                                        $("input[name='b_add1']").val(item.BuildingName);
+                                        $("input[name='b_add2']").val(item.BuildingName);
+                                    }else{
+                                        $("input[name='b_add1']").val(item.AddressLine);
+                                    }
                                     $("input[name='b_city']").val(item.Locality);
                                     $("input[name='b_postcode']").val(item.Postcode);
                                     $("select[name='b_state']").val(item.State);
