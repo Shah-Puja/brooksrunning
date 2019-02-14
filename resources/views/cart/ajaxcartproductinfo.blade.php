@@ -82,7 +82,7 @@
 							</div>
 						</div>
 						@if(isset($cartItem->variant->product->cart_blurb) && $cartItem->variant->product->cart_blurb!='')
-						<p style="text-align: center; color: red;">{{ $cartItem->variant->product->cart_blurb }}</p>
+						<p style="padding-right: 210px; text-align: center; color: red;">{{ $cartItem->variant->product->cart_blurb }}</p>
 						@endif
 					</div>  
         @endforeach
