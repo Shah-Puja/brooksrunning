@@ -128,7 +128,7 @@
                                     $coup_discount = number_format($coup_discount, 2); 
                                     @endphp
                                     <tr>
-                                    @php echo "<pre>";print_r($item->variant->product);die; @endphp
+                                    @php echo "<pre>";print_r($item->variant->product); @endphp
                                         <td>{{ $item->qty }}</td>
                                         <td align='left'>
                                             {{ $item->variant->product->stylename }}
