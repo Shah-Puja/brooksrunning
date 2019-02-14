@@ -689,30 +689,29 @@
                             $.map(data.DtResponse.Result, function (item) {
                                 var billing_type = attr_name;
                                 if(billing_type=='s_add1'){
-                                    if(item.BuildingName!=''){
-                                        $("input[name='s_add1']").val(item.BuildingName);
-                                        $("input[name='s_add2']").val(item.AddressLine);
-                                    }else{
-                                        $("input[name='s_add1']").val(item.AddressLine);
-                                    }
+                                    
                                     $("input[name='s_city']").val(item.Locality);
                                     $("input[name='s_postcode']").val(item.Postcode);
                                     $("select[name='s_state']").val(item.State);
                                     setTimeout(function(){
-                                        $("input[name='s_add1']").val(item.AddressLine);
+                                        if(item.BuildingName!=''){
+                                            $("input[name='s_add1']").val(item.BuildingName);
+                                            $("input[name='s_add2']").val(item.AddressLine);
+                                        }else{
+                                            $("input[name='s_add1']").val(item.AddressLine);
+                                        }
                                     }, 200);
                                 }else{
-                                    if(item.BuildingName!=''){
-                                        $("input[name='b_add1']").val(item.BuildingName);
-                                        $("input[name='b_add2']").val(item.AddressLine);
-                                    }else{
-                                        $("input[name='b_add1']").val(item.AddressLine);
-                                    }
                                     $("input[name='b_city']").val(item.Locality);
                                     $("input[name='b_postcode']").val(item.Postcode);
                                     $("select[name='b_state']").val(item.State);
                                     setTimeout(function(){
-                                        $("input[name='b_add1']").val(item.AddressLine);
+                                        if(item.BuildingName!=''){
+                                            $("input[name='b_add1']").val(item.BuildingName);
+                                            $("input[name='b_add2']").val(item.AddressLine);
+                                        }else{
+                                            $("input[name='b_add1']").val(item.AddressLine);
+                                        }
                                     }, 200);
                                 }
                                 /*$('#DPID').val(item.DPID);
