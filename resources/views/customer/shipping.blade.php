@@ -699,6 +699,7 @@
                                             $("input[name='s_add2']").val(item.AddressLine);
                                         }else{
                                             $("input[name='s_add1']").val(item.AddressLine);
+                                            $("input[name='s_add2']").val("");
                                         }
                                     }, 200);
                                 }else{
@@ -711,6 +712,7 @@
                                             $("input[name='b_add2']").val(item.AddressLine);
                                         }else{
                                             $("input[name='b_add1']").val(item.AddressLine);
+                                            $("input[name='b_add2']").val("");
                                         }
                                     }, 200);
                                 }
