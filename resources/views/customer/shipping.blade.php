@@ -1,5 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
+@if(env('KLEBER_STATUS')=='ON')
 <link href="https://kleber.datatoolscloud.net.au/jquery19/themes/base/jquery.ui.all.css" rel="stylesheet">
     <script src="https://kleber.datatoolscloud.net.au/jquery19/jquery-1.9.1.js"></script>
     <script src="https://kleber.datatoolscloud.net.au/jquery19/ui/jquery.ui.core.js"></script>
@@ -43,6 +44,7 @@
 }
 
 </style>
+@endif
 <section class="wrapper cart-breadcrumb--header">
 	<div class="row hidden-xs">
 		<div class="col-9">
@@ -636,6 +638,7 @@
 		</div>
     </div>
 </section>
+@if(env('KLEBER_STATUS')=='ON')
 <script>
         $(function() {
             $(".AddressLine").autocomplete({
@@ -766,6 +769,7 @@
             
         });
 	</script>
+@endif
 <script src="/js/shippingbilling.js"></script>
 
 @endsection
