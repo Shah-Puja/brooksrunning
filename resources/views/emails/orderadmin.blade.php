@@ -1,4 +1,4 @@
-@php echo "<pre>";print_R($item->variant->product);die; @endphp
+@php echo "<pre>";print_r($item->variant->product); @endphp
 
 <!DOCTYPE html>
 <html>
