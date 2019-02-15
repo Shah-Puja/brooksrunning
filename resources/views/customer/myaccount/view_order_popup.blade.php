@@ -102,7 +102,7 @@
                                         <p>Subtotal</p>
                                     </div>
                                     <div class="mob-5">
-                                        <p class="right">$ {{$order->total}}</p>
+                                        <p class="right">${{$order->total}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -121,7 +121,7 @@
                                         <p>{{ $delivery_type }} Delivery</p>
                                     </div>
                                     <div class="mob-5">
-                                        <p class="right">$ {{$order->freight_cost}}</p>
+                                        <p class="right">${{$order->freight_cost}}</p>
                                     </div>
                                 </div>
                                 @if(isset($order->gift_amount) && $order->gift_amount!="")
@@ -130,7 +130,7 @@
                                             <p>Gift Discount</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right" style="color:red;">-$ {{ @number_format($order->gift_amount, 2) }}</p>
+                                            <p class="right" style="color:red;">-${{ @number_format($order->gift_amount, 2) }}</p>
                                         </div>
                                     </div>
                                 @endif
@@ -139,7 +139,7 @@
                                         <p class="bold-font blue">Order Total:</p>
                                     </div>
                                     <div class="mob-5">
-                                        <p class="bold-font blue right">$ {{$order->grand_total}}</p>
+                                        <p class="bold-font blue right">${{$order->grand_total}}</p>
                                     </div>
                                 </div>
                             </div>

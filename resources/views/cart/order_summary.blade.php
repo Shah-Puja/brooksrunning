@@ -7,7 +7,7 @@
                                 <p>Subtotal</p>
                             </div>
                             <div class="mob-5">
-                                <p class="right">$ {{ @number_format($cart->total, 2) }}</p>
+                                <p class="right">${{ @number_format($cart->total, 2) }}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -26,7 +26,7 @@
                                 <p>{{ $delivery_type }} Delivery</p>
                             </div>
                             <div class="mob-5">
-                                <p class="right">$ {{ @number_format($cart->freight_cost, 2) }}</p>
+                                <p class="right">${{ @number_format($cart->freight_cost, 2) }}</p>
                             </div>
                         </div>
                             @if(isset($cart->gift_discount) && $cart->gift_discount!=0)
@@ -35,7 +35,7 @@
                                 <p>Gift Discount</p>
                             </div>
                             <div class="mob-5">
-                                <p class="right" style="color:red;">-$ {{ @number_format($cart->gift_discount, 2) }}</p>
+                                <p class="right" style="color:red;">-${{ @number_format($cart->gift_discount, 2) }}</p>
                             </div>
                         </div>
                         @endif
@@ -52,7 +52,7 @@
                             }
                             @endphp
                             <div class="mob-5">
-                                <p class="bold-font blue right">$ {{ $subtotal }}</p>
+                                <p class="bold-font blue right">${{ $subtotal }}</p>
                             </div>
                         </div>	
                         @if(isset($cart->grand_total) && $cart->grand_total <1000)

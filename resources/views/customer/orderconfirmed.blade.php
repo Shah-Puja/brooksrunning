@@ -103,10 +103,10 @@
                                         <div class="mob-7">
                                             <p class="bold-font blue right">
                                                 @if($orderItem->variant->price_sale < $orderItem->variant->price)
-                                                <del>$ {{ number_format($orderItem->variant->price, 2) }}</del> 
-                                                $ {{ number_format($orderItem->variant->price_sale, 2) }}
+                                                <del>${{ number_format($orderItem->variant->price, 2) }}</del> 
+                                                ${{ number_format($orderItem->variant->price_sale, 2) }}
                                                 @else 
-                                                $ {{ number_format($orderItem->variant->price_sale, 2) }}
+                                                ${{ number_format($orderItem->variant->price_sale, 2) }}
                                                 @endif
 
                                             </p>
@@ -143,7 +143,7 @@
                                             <p>Subtotal</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right">$ {{ number_format($order->total,2) }}</p>
+                                            <p class="right">${{ number_format($order->total,2) }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -170,7 +170,7 @@
                                             <p>GST</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right">$ {{ number_format(($order->total / 11),2) }}</p>
+                                            <p class="right">${{ number_format(($order->total / 11),2) }}</p>
                                         </div>
                                     </div>
                                     @if(isset($order->gift_amount) && $order->gift_amount!="")
@@ -179,7 +179,7 @@
                                             <p>Gift Discount</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right" style="color:red;">-$ {{ @number_format($order->gift_amount, 2) }}</p>
+                                            <p class="right" style="color:red;">-${{ @number_format($order->gift_amount, 2) }}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -189,7 +189,7 @@
                                             <p class="bold-font blue">Order Total</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="bold-font blue right">$ {{ number_format($order->grand_total,2) }}</p>
+                                            <p class="bold-font blue right">${{ number_format($order->grand_total,2) }}</p>
                                         </div>
                                     </div>
                                 </div>
