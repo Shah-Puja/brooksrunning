@@ -308,7 +308,7 @@
                                                                                     <br/>
                                                                                     @if(isset($item->discount) && $item->discount!=0.00)
                                                                                     Discount:   
-                                                                                    -${{ number_format($item->discount, 2) }} 
+                                                                                    <span style="color:red;">-${{ number_format($item->discount, 2) }}</span>
                                                                                     <br/>
                                                                                     @endif
                                                                                     <span class="br-item-total">Item Total:</span> ${{ $item->total }}
