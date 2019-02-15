@@ -395,7 +395,7 @@
                                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                                             <tr>
                                                                 <td align="left"><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Gift Discounts:</p></td>
-                                                                <td align="left"><p style="color:red; text-align:justify; line-height: 0.4;">-$ {{  @number_format($order->gift_amount, 2) }}</p></td>
+                                                                <td align="left"><p style="color:red; text-align:justify; line-height: 0.4;">-${{  @number_format($order->gift_amount, 2) }}</p></td>
                                                             </tr>
                                                             @endif
 
