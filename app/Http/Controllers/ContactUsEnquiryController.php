@@ -40,12 +40,15 @@ class ContactUsEnquiryController extends Controller
 		
 		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
 
-		if(Mail::to($toemails)
+		Mail::to($toemails)
                 ->cc( config('site.syg_notify_email') )
-				->queue( new EnquirySubmittedNotification($enquiry) )){
-					echo "success";die;
-				}
-
+				->queue( new EnquirySubmittedNotification($enquiry) );
+		
+				/**if(count(Mail::failures()) > 0 ) {
+			echo "Mail failed";die;
+		} else {
+			echo "Mail sent successfully!";die;
+		} */
     	return response()->json([ 'success' => 'Thank you for your enquiry, someone will be in touch soon.' ]);
 
 	}
