@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CollectionController extends Controller
 {
     public function index(){
-        // $array = ['120292_030','120291_073','110303_008','110302_040'];
+        // $array = ['120292_030','120291_073','110303_008','110302_040']; 
         $array = ['120292_030','120291_073','110303_008','110302_040', '110294_096'];
         $data_array = [];
         foreach($array as $item){
