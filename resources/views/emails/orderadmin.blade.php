@@ -135,6 +135,9 @@
                                             <br /><span>Colour : </span><span> {{$item->variant->product->color_code}}  {{ $item->variant->product->color_name}}  </span> 
                                             <br /><span>Width : </span><span>{{ $item->variant->width_code }} {{ $item->variant->width_name }}</span>
                                             <br /><span>Size : </span><span>{{ $item->variant->size }}</span>
+                                            @if(isset($item->variant->product->cart_blurb) && $item->variant->product->cart_blurb!='')
+                                            <br /><span style="color: red;">{{ $item->variant->product->cart_blurb }}</span>
+                                            @endif
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)

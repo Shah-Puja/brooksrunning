@@ -67,5 +67,10 @@ class Product extends Model
         return $this->hasOne('App\Models\Image');
     }
 
+    public function groups()
+    {
+    	return $this->hasMany('App\Models\Group','product_id','id');
+    }
+
     
 }

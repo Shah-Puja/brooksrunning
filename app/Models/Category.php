@@ -32,7 +32,7 @@ class Category extends Model
     
     public static function getProducts($category) {              
 
-        return \App\Models\Product::query() 
+        $products =  \App\Models\Product::query() 
             ->whereHas('categories', function($query) use ($category) { 
                 return $query->whereSlug($category); 
                 })
@@ -40,11 +40,18 @@ class Category extends Model
                 return $query->where('visible', '=', 'Yes');
             })
             ->with('variants')
+            ->with('groups')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
-            //->get(['id','style','stylename', 'seqno', 'color_code']);
-            //->values();   
+
+            $sorted_products = $products->sortBy(function ($product, $key) {
+                        foreach($product->groups as $group):
+                            return $group->display_rank;
+                        endforeach;
+                      });
+               
+            return $sorted_products;
         
         
     }
