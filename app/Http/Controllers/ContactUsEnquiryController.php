@@ -40,13 +40,13 @@ class ContactUsEnquiryController extends Controller
 		
 		$toemails = explode(',',env('ENQUIRY_NOTIFY_EMAIL'));
 
-		Mail::to($toemails)
+		if(Mail::to($toemails)
                 ->cc( config('site.syg_notify_email') )
-				->queue( new EnquirySubmittedNotification($enquiry) );
-		$automessage = 'Hi'.request('fname').' '. request('lname');
-		$automessage .= 'Thanks for your email enquiry! <br/> We are working on your request and will respond to your email on the next business day. We are open Monday – Friday (9am to 5pm)';
-		$automessage .= 'Team Brooks <br/>';
-    	return response()->json([ 'success' => $automessage ]);
+				->queue( new EnquirySubmittedNotification($enquiry) )){
+					echo "success";die;
+				}
+
+    	return response()->json([ 'success' => 'Thank you for your enquiry, someone will be in touch soon.' ]);
 
 	}
 }
