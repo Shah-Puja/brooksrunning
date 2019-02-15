@@ -22,9 +22,8 @@
                                 </div>
                             </div>
                         <h1 class="large">Abstract Collection Adrenaline &amp; Ghost</h1>
-                        <h2 class="sub-title">Hidden in plain sight</h2>
-                        <p class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.<br/>
-                        </p>
+                       
+                        <p class="type">Hidden in plain sight</p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
