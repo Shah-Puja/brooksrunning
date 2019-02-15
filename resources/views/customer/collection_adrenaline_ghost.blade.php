@@ -1,29 +1,8 @@
-<!---------------------------------------- Results ------------------------------------------------------>
 @extends('customer.layouts.master')
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css">
-<!-- <div class="create-account--header plp-header">
-  <div class="wrapper">
-    <div class="row">
-      <div class="col-8">
-      	<div class="about-header">
-      	<div class="breadcrumbs">
-					<ul>
-						<li>
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
-						</li>
-					</ul>
-				</div>
-                <h1 class="br-mainheading">Special Edition Levitate 2 LE & Ricochet LE</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -37,12 +16,13 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
+                                            <a href="JavaScript:Void(0);" class="active">Abstract Collection Adrenaline &amp; Ghost</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Limited Edition Levitate 2 and Ricochet</h1>
+                        <h1 class="large">Abstract Collection Adrenaline &amp; Ghost</h1>
+                        <h2 class="sub-title">Hidden in plain sight</h2>
                         <p class="type">Is it a sneaker? Is it a high-performance running shoe? Yes.<br/>
                         </p>
                     </div>
@@ -50,7 +30,7 @@
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
-                <img src="/images/Limited-Edition/levitate_le_categoryimage.jpg">
+                <img src="/images/Limited-Edition/gts19-ghost11-camo_le-categoryimage.jpg">
             </div>
         </div>
 </div>
@@ -60,8 +40,8 @@
     <div class="col-2"></div>
       <div class="col-8">
       	<div class="about-header">
-            <h1 class="br-mainheading">Likes to go fast. Looks to go anywhere.</h1>
-            <p>The Levitate 2 LE is all DNA AMP for maximum energy return, while the Ricochet strikes a lighter balance. Both help you run farther, faster. And with once-in-a-lifetime colours, these Limited-Edition releases are gonna make the sneakerheads sweat too.</p>
+            <h1 class="br-mainheading">Take a closer look.</h1>
+            <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p>
         </div>
       </div>
       <div class="col-2"></div>
