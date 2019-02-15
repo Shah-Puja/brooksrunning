@@ -388,14 +388,14 @@
                                                             @if (isset($order->coupon_code) && $order->coupon_code != '')
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Coupon Discounts:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">-${{ $coup_discount }}</p></td>
+                                                                <td><p style="color:red; text-align:justify; line-height: 0.4;">-${{ $coup_discount }}</p></td>
                                                             </tr>
                                                             @endif
 
                                                             @if(isset($order->gift_amount) && $order->gift_amount!="")
                                                             <tr>
-                                                                <td align="left">Gift Discounts:</td>
-                                                                <td align="left">$ {{  @number_format($order->gift_amount, 2) }}</td>
+                                                                <td align="left"><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Gift Discounts:</p></td>
+                                                                <td align="left"><p style="color:red; text-align:justify; line-height: 0.4;">-$ {{  @number_format($order->gift_amount, 2) }}</p></td>
                                                             </tr>
                                                             @endif
 

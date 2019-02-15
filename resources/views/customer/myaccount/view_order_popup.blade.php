@@ -130,7 +130,7 @@
                                             <p>Gift Discount</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right">-$ {{ @number_format($order->gift_amount, 2) }}</p>
+                                            <p class="right" style="color:red;">-$ {{ @number_format($order->gift_amount, 2) }}</p>
                                         </div>
                                     </div>
                                 @endif
