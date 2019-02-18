@@ -17,10 +17,11 @@ class CategoryController extends Controller
         $prod_type = $cat_info->prod_type;
         $depth = $cat_info->depth;
         $name = $cat_info->name; 
+        $cat_id = $cat_info->id; 
             if($depth=='2'){
                 $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
             }elseif($depth=='3'){
-                $products = \App\Models\Category::getProducts($category);
+                $products = \App\Models\Category::getProducts($category,$cat_id);
             }
             
             if (empty($products)) {
