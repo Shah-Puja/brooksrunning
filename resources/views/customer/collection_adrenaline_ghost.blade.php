@@ -2,7 +2,24 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css">
+<style>
+  @media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 640px) 
+                   and (orientation: landscape) {
 
+.visible-mob-landscape{
+        display:block !important;
+    }
+} 
+@media only screen and (max-width: 767px) {
+    .visible-mob-landscape{
+        display:block !important;
+    }
+    .more-color--container-landscape{
+        display:none !important;
+    }
+}
+    </style>
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -74,13 +91,13 @@
 
 						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob main_link">
-									<div class="img img-shoes">
-										<img id="plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
+								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob visible-mob-landscape main_link">
+									<div class="img img-collection-shoes">
+										<img id="plp-img" class="collection-plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
 									</div>
 								</a>
-								<!-- <div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
+								<div class="more-color--container more-color--container-landscape hidden-col hidden-tab">
+									<!-- <span class="icon-style icon-back-arrow prev"></span> -->
 									<div class="owl-carousel owl-theme">
                                     @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
                                         @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
@@ -89,10 +106,12 @@
                                             <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
+                                                <source media="(min-width: 480px)and (max-width: 640px) and (orientation: landscape)" srcset="{{ $color_product->image->image1Medium() }}">
+                                                <img src="" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
+                                                <!-- src="{{ $color_product->image->image1Thumbnail() }}" -->
                                             </picture>
                                             </a>
-                                            <div class="plp-mob--info visible-mob">
+                                            <div class="plp-mob--info hidden-mob hidden-col hidden-tab">
                                                 <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
@@ -106,8 +125,8 @@
                                         @endforeach
 				                    @endif
 									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div> -->
+									<!-- <span class="icon-style icon-next-arrow next"></span> -->
+								</div>
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
 										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>

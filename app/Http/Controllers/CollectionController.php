@@ -49,13 +49,17 @@ class CollectionController extends Controller
             $color_code = $item[1];
             $data_array[] = array('style'=> $style,'color_code'=> $color_code);
         }   
+        $orderby_style_string = implode("','",collect($data_array)->pluck('style')->toArray());
+        $orderby_color_string = implode("','",collect($data_array)->pluck('color_code')->toArray());
         
         $style_array = collect($data_array)->pluck('style');
                   
         $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
-                                    })->get();
+                                    })
+                                    ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC,FIELD(color_code ,'$orderby_color_string') ASC")
+                                    ->get();
             
         $products = $styles->filter(function ($value, $key) use ($data_array) {
                 $data=[];
