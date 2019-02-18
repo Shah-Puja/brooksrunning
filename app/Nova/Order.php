@@ -20,6 +20,8 @@ class Order extends Resource
      * @var string
      */
     public static $model = 'App\Models\Order';
+    public static $displayInNavigation = false;
+
 
    /**
      * Build an "index" query for the given resource.

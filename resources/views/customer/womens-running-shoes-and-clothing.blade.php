@@ -65,27 +65,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_ghost11.jpg">
+						<img src="/images/landingpage/Womens/women_bedlam-2.jpg">
 					    <div class="title">
-					       <h2 class="happy left">New Colours<br>Ghost 11</h2>
+					       <h2 class="happy left">New Colours<br>Bedlam</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="/ghost-11-womens-running-shoes/120277_017.html">Shop Ghost 11</a>
+							<p>Featuring GuideRails Holistic Support, a secure fit and our most responsive midsole, the Bedlam is endless energy for your feet. </p>
+							<a class="primary-button" href="/brooks-running-shoes-bedlam-womens/120272_080.html">Shop Bedlam</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_gts19.jpg">
+							<img src="/images/landingpage/Womens/women_glycerin16.jpg">
 						    <div class="title">
-						        <h2 class="happy left">New<br>Adrenaline GTS 19</h2>
+						        <h2 class="happy left">&nbsp;<br>Glycerin 16</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>The Adrenaline GTS 19 features an innovative GuideRails support system, soft cushioning, and smooth heel-to-toe transitions. </p>
-							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html">Shop Adrenaline GTS 19</a>
+							<p>DNA LOFT cushioning, plush fit and super soft transitions make every stride in the Glycerin 16 a luxury. </p>
+							<a class="primary-button" href="/glycerin-16-womens-running-shoes/120278_070.html">Shop Glycerin 16</a>
 					</div> 
 				</div>
 			</div>

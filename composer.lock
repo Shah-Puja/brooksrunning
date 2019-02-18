@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c5004a1408045073ed1638ccd14b677",
+    "content-hash": "014280e2c56961aafec23637cd45a8c7",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -387,6 +387,47 @@
                 "time"
             ],
             "time": "2018-10-18T22:02:21+00:00"
+        },
+        {
+            "name": "chaseconey/nova-external-image",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chaseconey/nova-external-image.git",
+                "reference": "f99e5a2565b3ba031f94620a8280fb4f18dc0648"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chaseconey/nova-external-image/zipball/f99e5a2565b3ba031f94620a8280fb4f18dc0648",
+                "reference": "f99e5a2565b3ba031f94620a8280fb4f18dc0648",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Chaseconey\\ExternalImage\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Chaseconey\\ExternalImage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-10-10T02:16:52+00:00"
         },
         {
             "name": "composer/ca-bundle",

@@ -65,27 +65,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Mens/men_ravenna9.jpg">
+						<img src="/images/landingpage/Mens/men_ravenna10-2.jpg">
 					    <div class="title">
 					       <h2 class="happy left">Energize your run<br>with Ravenna</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Feel more connected than ever to the trail and let your feet lead the way, with lightweight cushioning and rugged protection against rocky terrain. </p>
-							<a class="primary-button" href="/ravenna-9-mens-running-shoes/110280_025.html">Shop Ravenna 9</a>
+							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-mens/110298_082.html">Shop Ravenna 10</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Mens/men_glycerin16.jpg">
+							<img src="/images/landingpage/Mens/men_ghost11-2.jpg">
 						    <div class="title">
-						        <h2 class="happy left">New Colours<br>Glycerin 16</h2>
+						        <h2 class="happy left">New Colours<br>Ghost 11</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>With Brooks latest cushioning technology, DNA LOFT, the Glycerin 16 is engineered to provide a luxurious feeling underfoot. </p>
-							<a class="primary-button" href="/brooks-running-shoes-glycerin-17-mens/110289_050.html">Shop Glycerin 16</a>
+							<p>Experience the Ghost 11's super-soft cushioning and plush heel-to-toe transition, now available in new colours.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-11-mens/110288_003.html">Shop Ghost 11</a>
 					</div> 
 				</div>
 			</div>

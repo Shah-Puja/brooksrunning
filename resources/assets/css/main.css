@@ -116,7 +116,7 @@
   src: url("../webfonts/ProximaNova-BoldIt.eot?#iefix") format("embedded-opentype"), url("../webfonts/ProximaNova-BoldIt.woff2") format("woff2"), url("../webfonts/ProximaNova-BoldIt.woff") format("woff"), url("../webfonts/ProximaNova-BoldIt.ttf") format("truetype"), url("../webfonts/ProximaNova-BoldIt.svg#ProximaNova-BoldIt") format("svg");
   font-weight: bold;
   font-style: italic; }
-.br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .landingpage-banner .landingpage-banner--info .label--underline, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-info .para .features p strong, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtFeeling, .rhi-header2 .info-wrapper .txtOffice, .br-events .module .info-wrapper .tickLedeHead span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .events-months .title, .br-events .events-information .events-months li, .br-events .events-information h4, .br-events .content-asset .main-events li a .listevents h2, .br-events .cta, .br-events-content .create-account--header .event-date, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-months .content-asset .cta {
+.br-mainheading, .br-heading, .secondary-button, .secondary-button2, .transparent-button, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .landingpage-banner .landingpage-banner--info .label--underline, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-info .para .features p strong, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtFeeling, .rhi-header2 .info-wrapper .txtOffice, .br-events .module .info-wrapper .tickLedeHead span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .events-months .title, .br-events .events-information .events-months li, .br-events .events-information h4, .br-events .content-asset .main-events li a .listevents h2, .br-events .cta, .br-events-content .create-account--header .event-date, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-months .content-asset .cta, .category__hero .m-block--hero--collection__content h1, .collection-intro h1 {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif; }
 
 .accordian-tab label, .input-wrapper .radio-inline label, .br-info .bold, .primary-button, .shoe-button, .pdp-button, .alert-msg h2, .tab-vertical .tab-header label h3, .new-arrival .new-arrival--container, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .info .ctg-btn, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info h3, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .info .ctg-btn, .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product .info .shoes-detail-btn, .br-events .content-asset .main-events li a .listevents p, .br-events-months .content-asset .main-events li a .listevents p {
@@ -125,7 +125,7 @@
 .ctg-main-container .ctg-container .ctg-wrapper-container .ctg-wrapper__sub .ctg-product .offer-info img, .ctg-main-container .ctg-container .ctg-wrapper-container .shoe-wrapper__sub .ctg-product .offer-info img, .brooksrunhappyis .module .info-wrapper .txtOurflag {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif; }
 
-.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .input-wrapper .pdp-select-field, .br-info, .alert-msg p, html, body, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun {
+.accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .input-wrapper .pdp-select-field, .br-info, .alert-msg p, html, body, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .category__hero .m-block--hero--collection__content p, .collection-intro p {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif; }
 
 .bold-font {
@@ -3179,8 +3179,7 @@ textarea {
   margin-top: 12px; }
 
 /* Events- End*/
-/* Start Collection-Listing
-*/
+/* Start Collection-Listing */
 .category__hero {
   height: auto;
   max-height: 400px;
@@ -3243,11 +3242,11 @@ textarea {
   .category__hero .type {
     font-size: 20px;
     line-height: 27px; }
-  .category__hero .m-block--hero--collection__content h2 {
+  .category__hero .m-block--hero--collection__content p {
     color: #fff;
-    margin: 1rem 0; }
+    margin: 3rem 0; }
     @media only screen and (max-width: 767px) {
-      .category__hero .m-block--hero--collection__content h2 {
+      .category__hero .m-block--hero--collection__content p {
         color: #fff;
         margin: 1rem 0;
         font-size: 17px;
@@ -3255,7 +3254,7 @@ textarea {
         line-height: 23px;
         text-align: center; } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
-      .category__hero .m-block--hero--collection__content h2 {
+      .category__hero .m-block--hero--collection__content p {
         color: #fff;
         margin: 1rem 0;
         font-size: 17px;
@@ -3274,6 +3273,16 @@ textarea {
       margin: 0 0 13px;
       text-align: center;
       line-height: 34px; } }
+  .category__hero .m-block--hero--collection__content h2 {
+    font-size: 30px;
+    line-height: 35px;
+    color: #ffffff; }
+    @media only screen and (max-width: 767px) {
+      .category__hero .m-block--hero--collection__content h2 {
+        font-size: 18px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .category__hero .m-block--hero--collection__content h2 {
+        font-size: 18px; } }
   .category__hero .m-block--hero--collection__content .m-block--hero__content__copy {
     color: #0E0E0E;
     margin: 0; }
@@ -3376,6 +3385,19 @@ textarea {
       top: 0;
       width: 100%;
       z-index: 100; } }
+
+.collection-intro {
+  background-color: #fff;
+  text-align: center !important; }
+  .collection-intro h1 {
+    color: #0E0E0E;
+    margin: 0 0 9px;
+    text-align: center; }
+  .collection-intro p {
+    max-width: 100%;
+    color: #0E0E0E;
+    font-size: 22px;
+    line-height: 30px; }
 
 .error-msg-listing {
   font-size: 25px;

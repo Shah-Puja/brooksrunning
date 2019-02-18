@@ -39,4 +39,44 @@ class CollectionController extends Controller
 
         return view( 'customer.collection_listing',compact('colour_options','products'));
     }
+
+    public function adreline_ghost(){
+        $array = ['110294_096','120284_096','120284_484','120277_495','110288_096'];
+        $data_array = [];
+        foreach($array as $item){
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        }   
+        $orderby_style_string = implode("','",collect($data_array)->pluck('style')->toArray());
+        $orderby_color_string = implode("','",collect($data_array)->pluck('color_code')->toArray());
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })
+                                    ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC,FIELD(color_code ,'$orderby_color_string') ASC")
+                                    ->get();
+            
+        $products = $styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        })->unique(function ($item) {
+            return $item['style'].$item['color_code'];
+        });
+        
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
+
+        return view( 'customer.collection_adrenaline_ghost',compact('colour_options','products'));
+    }
 }

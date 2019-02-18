@@ -60,14 +60,14 @@
 							<div class="custom-select">
 						        <div class = "select-box">
 								    <div class = "label-heading">
-								    	<span class="text">Sort by latest</span> 
+								    	<span class="text">-</span> 
 								    	<div class="sel-icon">
 								    		<span class="icon-down-arrow"></span>
 								    	</div>
 								    </div>
 								    <ul class="select-option--wrapper">
 								    	<li class="option-value" data-value="">-</li>
-										<li class="option-value selected" data-sorttype="new" value="date">Sort by latest</li>
+										  <li class="option-value" data-sorttype="new" value="date">Sort by latest</li>
 								    	<li class="option-value" data-sorttype="ass" value="price">Price (High To Low)</li>
 								    	<li class="option-value" data-sorttype="dec" value="price">Price (Low To High)</li>
 								    	<li class="option-value" data-sorttype="name" value="name">Product Name (A To Z)</li>

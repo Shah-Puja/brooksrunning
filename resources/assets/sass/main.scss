@@ -2451,8 +2451,8 @@ ul {
 
 /* Events- End*/
 
-/* Start Collection-Listing
-*/
+/* Start Collection-Listing */
+
 .category__hero{
   height: auto;
   max-height: 400px;
@@ -2507,7 +2507,7 @@ ul {
   .large {
     font-size: 50px;
     line-height: 55px;
-
+    
     @media #{$mobile-only}{
       font-size: 30px;
     }
@@ -2521,9 +2521,10 @@ ul {
     line-height: 27px;
 }
 .m-block--hero--collection__content{
-  h2 {
+  p {
     color: #fff;
-    margin: 1rem 0;
+    margin: 3rem 0;
+    @extend %info-font;
     @media #{$mobile-only} {
       color: #fff;
       margin: 1rem 0;
@@ -2542,6 +2543,8 @@ ul {
         }
   }
   h1 {
+    @extend %extrabold-font;
+    
     @media #{$mobile-only}{
        color: #fff;
       margin: 0 0 13px;
@@ -2554,6 +2557,17 @@ ul {
      text-align:center;
      line-height: 34px;
    }
+  }
+  h2{
+    font-size: 30px;
+    line-height: 35px;
+    color: $white;
+    @media #{$mobile-only}{
+      font-size: 18px;
+    }
+    @media #{$tab-only}{
+      font-size: 18px;
+    }
   }
   .m-block--hero__content__copy {
     color: #0E0E0E;
@@ -2685,6 +2699,24 @@ width: 100%;
     z-index: 100;
     }
   }
+}
+.collection-intro{
+  background-color: #fff;
+  text-align: center !important;
+  h1{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    text-align: center;
+  }
+  p{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 22px;
+    line-height: 30px;
+    @extend %info-font;
+  }
+  
 }
 .error-msg-listing{
   font-size: 25px;

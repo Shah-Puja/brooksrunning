@@ -135,20 +135,23 @@
                                             <br /><span>Colour : </span><span> {{$item->variant->product->color_code}}  {{ $item->variant->product->color_name}}  </span> 
                                             <br /><span>Width : </span><span>{{ $item->variant->width_code }} {{ $item->variant->width_name }}</span>
                                             <br /><span>Size : </span><span>{{ $item->variant->size }}</span>
+                                            @if(isset($item->variant->product->cart_blurb) && $item->variant->product->cart_blurb!='')
+                                            <br /><span style="color: red;">{{ $item->variant->product->cart_blurb }}</span>
+                                            @endif
                                         </td>
                                         <td>{{ $item->variant->style }}</td>
                                         <td align='left'> @if($item->variant->price_sale == 0)
-                                            $ {{ number_format($item->variant->price, 2) }}
+                                            ${{ number_format($item->variant->price, 2) }}
                                             @endif
                                             @if (($item->variant->price_sale > 0) && ($item->variant->price_sale < $item->variant->price))
-                                            <del>$ {{ number_format($item->variant->price, 2) }}</del> 
-                                            $ {{ number_format($item->variant->price_sale, 2) }} 
+                                            <del>${{ number_format($item->variant->price, 2) }}</del> 
+                                            ${{ number_format($item->variant->price_sale, 2) }} 
                                             @endif  </td>
                                         <td align='left'>
                                             @if($item->variant->price_sale == 0)
-                                            $ {{ number_format($item->variant->price * $item->qty, 2) }}
+                                            ${{ number_format($item->variant->price * $item->qty, 2) }}
                                             @else
-                                            $ {{ number_format($item->variant->price_sale * $item->qty, 2) }}
+                                            ${{ number_format($item->variant->price_sale * $item->qty, 2) }}
                                             @endif </td>
                                     </tr>
                                     @endforeach
@@ -180,7 +183,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Coupon Discounts</b></td> 
-                                        <td align='left'><b>$ {{  $coup_discount }}</b></td> 
+                                        <td align='left' style="color:red;"><b>-${{  $coup_discount }}</b></td> 
                                     </tr>
                                     @endif
 
@@ -190,7 +193,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Gift Discounts</b></td> 
-                                        <td align='left'><b>$ {{  @number_format($order->gift_amount, 2) }}</b></td>
+                                        <td align='left' style="color:red;"><b>-${{  @number_format($order->gift_amount, 2) }}</b></td>
                                     </tr>
                                     @endif
 
@@ -201,7 +204,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right' colspan='2'><b>Freight {{ ucwords($delivery_type) }}</b></td>
-                                        <td align='left'><b>$ {{  @number_format($order->freight_cost, 2) }} </b></td>
+                                        <td align='left'><b>${{  @number_format($order->freight_cost, 2) }} </b></td>
                                     </tr>
 
                                     <tr>
@@ -216,7 +219,7 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right'><b>Total</b></td>
-                                        <td align='left'><b>$ {{  @number_format($order->grand_total, 2) }}</b></td>
+                                        <td align='left'><b>${{  @number_format($order->grand_total, 2) }}</b></td>
                                     </tr>
 
                             </table><br/>
@@ -240,7 +243,7 @@
                             <p>
                                 TRANSACTIONID: {{ $order->transaction_id }}<br />
                                 ORDERTIME:  {{ date("Y-m-d H:i:s", strtotime($order->created_at)) }}<br />
-                                AMT: $ {{  @number_format($order->grand_total, 2) }}<br />
+                                AMT: ${{  @number_format($order->grand_total, 2) }}<br />
                                 PAYMENTSTATUS: {{ $order->transaction_status }}<br />
                             </p>
                         </td>

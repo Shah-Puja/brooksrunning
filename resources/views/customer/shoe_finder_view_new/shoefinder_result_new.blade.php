@@ -126,45 +126,148 @@ and (orientation : landscape) {
 				</div>				
 				{{ ($gender=='mens') ? "Men's": "Women's" }} {{ ucwords($surface) }} Shoes
 				</h1>
-			<!--<div class="bf-results-screen__transition-group-3">
+			<div class="bf-results-screen__transition-group-3">
 				<div data-bf-behind-the-science-link data-template-id="ResultsInfo" data-gtm-screen-title="Results" data-gtm-click-event="shoe-finder-behind-the-science"  ></div>
-			</div>-->
+			</div>
 			<!-- START: Behind the Science Template -->
 			
 				<script type="text/template" id="ResultsInfo">
 					<aside>
 					<h3>Behind the Science</h3>
 					<div class=\"bf-behind-science\" data-bf-svg data-url="/images/shoefinder-new/science_equipment.svg" data-bf-stepped-animation></div>
-					<h4>Why am I Neutral?</h4>
-					<p>Your body is aligned during your stride, meaning you don't need much additional support. </p>
-					<h5>Biomechanics</h5>
-					<ul>
-						<li>Your ankles are stable</li>
-						<li>Your weight does not distribute evenly across your feet</li>
-						<li>You have decreased flexibility</li>
-						<li>Your knees and hips are aligned</li>
-					</ul>
+					@if($tag=='neutral')
+                        <h4>Why am I Neutral?</h4>
+                        <p>Your body is aligned during your stride, meaning you don't need much additional support. </p>
+                        <h5>Biomechanics</h5>
+                        <ul>
+                            @if (request('balance')=='0')
+                                <li>Your ankles are stable</li>
+                            @endif
 
-					<h5>Training</h5>
-					<ul>
-						<li>You have a steady training regiment</li>
-					</ul>
-					<h5>Injuries</h5>
-					<ul>
-						<li>You've had a recent injury</li>
-					</ul>
-					<h4>Why am I Speed?</h4>
-					<p>Shoes in this category are built for speed &mdash; lightweight and fast is the way to your next PR.</p>
+                            @if (request('feet')=='0')
+                                <li>Your weight distributes evenly across your feet </li>
+                            @endif
 
-					<h5>Impact</h5>
-					<ul>
-					<li>You're looking for a shoe that's low to the ground and fast. </li>
-					</ul>
+                            @if(request('flexibility')=='1')
+                                <li>You have good flexibility</li>
+                            @endif
 
-					<h5>Feel</h5>
-					<ul>
-					<li>These shoes will minimize the distance between you and the pavement, track, or trail so you can feel the ground. </li>
-					</ul>
+                            @if(request('knee')=='0')
+                                <li>Your knees and hips are aligned</li>
+                            @endif
+                        </ul>
+
+                        <h5>Training</h5>
+                        <ul>
+                            <li>You have a steady training regiment</li>
+                        </ul>
+                        
+                        @if (request('injury') =="none") 
+                            <h5>Injuries</h5>
+                            <ul>
+                                <li>You don’t have a recent injury</li>
+                            </ul>
+                        @endif
+                        </ul>
+                	
+                    @else
+                        <h4>Why am I {{ ucwords(str_replace('_',' ',$tag)) }}?</h4>
+                        <p>You may require a little extra help in keeping your knees and hips aligned during your run. </p>
+                        <h5>Biomechanics</h5>
+                        <ul>
+                            @if (request('balance')!='0')
+                                <li>Your ankles could use some support</li>
+                            @endif
+
+                            @if (request('feet')!='0')
+                                <li>Your weight does not distribute evenly across your feet</li>
+                            @endif
+
+                            @if(request('flexibility')=='0')
+                                <li>You have decreased flexibility</li>
+                            @endif
+
+                            @if(request('knee')!='0')
+                                <li>Your knees and hips are not aligned </li>
+                            @endif
+                        </ul>
+
+                        <h5>Training</h5>
+                        <ul>
+                            <li>You plan to significantly increase your mileage</li>
+                        </ul>
+                        @if (request('injury') !="none") 
+                        <h5>Injuries</h5>
+                        <ul>
+                            <li>You've had a recent injury </li>
+                        </ul>
+                        @endif
+                	
+                    @endif
+
+                    @if(!empty($experience))
+                        @switch($experience)
+                            @case('propel_me')				
+                                <h4>Why am I Speed?</h4>
+                                <p>Shoes in this category are built for speed &mdash; lightweight and fast is the way to your next PR.</p>
+                            
+                                <h5>Impact</h5>
+                                <ul>
+                                    <li>You're looking for a shoe that's low to the ground and fast. </li>
+                                </ul>
+
+                                <h5>Feel</h5>
+                                <ul>
+                                    <li>These shoes will minimize the distance between you and the pavement, track, or trail so you can feel the ground. </li>
+                                </ul>
+                            @break
+                            @case('connect_me')
+                                <h4>Why am I Connect?</h4>
+                                <p>Shoes in this category act as a minimal barrier between you and the ground, giving you a more connected run.</p>
+                            
+                                <h5>Impact</h5>
+                                <ul>
+                                    <li>You're looking for a shoe that brings you closer to the ground without losing its form. </li>
+                                </ul>
+
+                                <h5>Feel</h5>
+                                <ul>
+                                    <li>These shoes will minimize the distance between you and the pavement, track, or trail so you can feel the ground.  </li>
+                                </ul>
+                            @break
+                            @case('cushion_me')
+                                <h4>Why am I Cushion?</h4>
+                                <p>You're looking for a shoe that's soft and minimizes impact without losing responsiveness. </p>
+                            
+                                <h5>Impact</h5>
+                                <ul>
+                                    <li>You're looking for a shoe that's soft and minimizes impact without losing responsiveness.</li>
+                                </ul>
+
+                                <h5>Float</h5>
+                                <ul>
+                                    <li>These shoes will provide more substance, floating you higher off the ground.  </li>
+                                </ul>
+                            @break
+                            @case('energize_me')
+                                <h4>Why am I Energize?</h4>
+                                <p>Shoes in this category work to give more energy back to you, pushing you further and faster.</p>
+                            
+                                <h5>Impact</h5>
+                                <ul>
+                                    <li>You're looking for a shoe that's responsive and ready for the long haul.  </li>
+                                </ul>
+
+                                <h5>Float</h5>
+                                <ul>
+                                    <li>These shoes will provide more substance, floating you higher off the ground.  </li>
+                                </ul>
+                            @break
+                        @endswitch
+                    @endif
+				
+
+				
 				
 					</aside>
 				</script>

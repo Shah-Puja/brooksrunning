@@ -44,6 +44,8 @@ class Product extends Model
     {
     	return $this->morphedByMany('App\Models\Category', 'group');
     }
+
+
     public function variants()
     {
     	return $this->hasMany('App\Models\Variant','product_id','id');
@@ -65,6 +67,17 @@ class Product extends Model
     public function image()
     {
         return $this->hasOne('App\Models\Image');
+    }
+
+    public function groups()
+    {
+        return $this->hasMany('App\Models\Group','product_id','id');
+        
+    }
+
+    public function csvranks()
+    {
+        return $this->hasMany('App\Models\Csv_rank','product_id','id');
     }
 
     

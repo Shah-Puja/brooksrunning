@@ -17,10 +17,11 @@ class CategoryController extends Controller
         $prod_type = $cat_info->prod_type;
         $depth = $cat_info->depth;
         $name = $cat_info->name; 
+        $cat_id = $cat_info->id; 
             if($depth=='2'){
                 $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
             }elseif($depth=='3'){
-                $products = \App\Models\Category::getProducts($category);
+                $products = \App\Models\Category::getProducts($category,$cat_id);
             }
             
             if (empty($products)) {
@@ -28,7 +29,9 @@ class CategoryController extends Controller
                 $filters=[];  
             }
             else{
-                $styles = $products->unique('style');                                
+                $styles = $products->unique('style');
+                //print_r($styles);  
+               //exit;                          
                 $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
         return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
@@ -54,7 +57,7 @@ class CategoryController extends Controller
     public function womens_landing(){
 
         //NEW ARRIVALS
-        $shoe_info = array('120279_596','120272_585','120284_450','120287_531');
+        $shoe_info = array('120285_092','120272_080','120284_151','120291_073');
         $shoes_product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
@@ -86,7 +89,7 @@ class CategoryController extends Controller
     public function mens_landing(){
 
         //NEW ARRIVALS
-        $shoe_info = array('110290_689','110283_449','110294_010','110299_419');
+        $shoe_info = array('110297_081','110283_069','110294_071','110302_040');
         $shoes_product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 

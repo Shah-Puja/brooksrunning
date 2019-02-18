@@ -17,6 +17,8 @@ class User extends Resource
      * @var string
      */
     public static $model = 'App\Models\User';
+    public static $displayInNavigation = false;
+
 
     /**
      * The single value that should be used to represent the resource when being displayed.

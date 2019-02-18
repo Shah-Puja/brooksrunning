@@ -59,7 +59,7 @@
 									@if (!empty($cartItem->discount_detail) && $cartItem->discount_detail != 0) 
 									<div class="row price">
                                                                             <div class="mob-5"><p>Discount:</p></div>
-                                                                            <div class="mob-7"><p class="right">&dollar;{{ number_format($cartItem->discount_detail, 2) }}
+                                                                            <div class="mob-7"><p class="right" style="color:red;">-&dollar;{{ number_format($cartItem->discount_detail, 2) }}
                                                                             </div>
 									</div>
                                                                         @endif
@@ -81,6 +81,9 @@
 								</div>
 							</div>
 						</div>
+						@if(isset($cartItem->variant->product->cart_blurb) && $cartItem->variant->product->cart_blurb!='')
+						<p style="padding-right: 210px; text-align: center; color: red;">{{ $cartItem->variant->product->cart_blurb }}</p>
+						@endif
 					</div>  
         @endforeach
 @else
