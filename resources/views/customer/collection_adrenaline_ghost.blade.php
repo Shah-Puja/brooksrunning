@@ -23,7 +23,7 @@
                             </div>
                         <h1 class="large">Abstract Collection Adrenaline &amp; Ghost</h1>
                        
-                        <p class="type">Hidden in plain sight</p>
+                        <p class="type">Shop the limited-release Adrenaline GTS 19 and Ghost 11</p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
@@ -72,14 +72,14 @@
                             }
                         @endphp
 
-						<div class="mob-6 col-3 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
+						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob main_link">
 									<div class="img img-shoes">
 										<img id="plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
 									</div>
 								</a>
-								<div class="more-color--container">
+								<!-- <div class="more-color--container">
 									<span class="icon-style icon-back-arrow prev"></span>
 									<div class="owl-carousel owl-theme">
                                     @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
@@ -107,7 +107,7 @@
 				                    @endif
 									</div>
 									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								</div> -->
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
 										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
@@ -132,7 +132,7 @@
 										</div>
 										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
 									</div>
-									<div class="info-sub">
+									<!-- <div class="info-sub">
 										<div class="row">
 											<div class="mob-6">
 								
@@ -141,7 +141,7 @@
 												<p class="right">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</a>
 							</div>
 						</div>

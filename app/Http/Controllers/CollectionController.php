@@ -41,7 +41,7 @@ class CollectionController extends Controller
     }
 
     public function adreline_ghost(){
-        $array = ['120277_495','120284_484','120284_096','110294_096','110288_096'];
+        $array = ['110294_096','120284_096','120284_484','120277_495','110288_096'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
@@ -65,7 +65,9 @@ class CollectionController extends Controller
                         }
                 }
             return $data;
-        })->unique('style');
+        })->unique(function ($item) {
+            return $item['style'].$item['color_code'];
+        });
         
         $colour_options = $styles->unique(function ($item){
             return $item['style'].$item['color_code'];
