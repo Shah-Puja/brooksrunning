@@ -65,7 +65,9 @@ class CollectionController extends Controller
                         }
                 }
             return $data;
-        })->unique('style');
+        })->unique(function ($item) {
+            return $item['style'].$item['color_code'];
+        });
         
         $colour_options = $styles->unique(function ($item){
             return $item['style'].$item['color_code'];

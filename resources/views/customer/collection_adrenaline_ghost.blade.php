@@ -72,7 +72,7 @@
                             }
                         @endphp
 
-						<div class="mob-6 col-3 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
+						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob main_link">
 									<div class="img img-shoes">
