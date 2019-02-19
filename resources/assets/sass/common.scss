@@ -2624,20 +2624,45 @@
                  }
               }
               &.img-collection-shoes{
-                height: 225px;
+                height: 325px;
                 width: 100%;
                 position: relative;
                 @media #{$tab-only}{
-                   height: 220px;
+                   height: 260px;
                  }
                  @media #{$mobile-only}{
-                   height: 150px;
+                   height: 220px;
                  }
                 img{
-                 position: relative;
+                 position: absolute;
                  bottom:0;
                  left:0;
-                 margin: 0 auto;
+                }
+              }
+              img{
+                width: auto;
+                max-width: 100%;
+              }
+            }
+            .collection-img{
+              background-color: $darkgray;
+              text-align: center;
+              height: 325px;
+              &.img-collection-shoes{
+                width: 100%;
+                position: relative;
+                @media #{$tab-only}{
+                   height: 260px;
+                 }
+                 @media #{$mobile-only}{
+                   height: 220px;
+                 }
+                img{
+                 position: absolute;
+                 margin: auto;
+                 left: 0;
+                 right: 0;
+                 bottom: 0;
                 }
               }
               img{
