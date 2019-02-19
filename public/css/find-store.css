@@ -301,7 +301,6 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   position: relative;
   font-size: 24px;
   display: block;
-  font-weight: bold;
   line-height: 1.4;
   padding: 10px 15px;
   cursor: pointer;
