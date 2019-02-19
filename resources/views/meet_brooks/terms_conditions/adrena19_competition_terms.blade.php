@@ -2,7 +2,7 @@
 	<p><strong><u>Win an Adrenaline GTS 19 Competition Terms &amp; Conditions</u></strong></p>
 <ol>
   	<li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
-  	<li>Entry is open to Victorian, Queensland, Australian Capital Territory, South Australian, Northern Territory, Tasmanian, New South Wales or Western Australian residents, except employees of Fit Chain Pty Ltd and their immediate families.</li>
+  	<li>Entry is open to Victorian, Queensland, Australian Capital Territory, South Australian, Northern Territory, Tasmanian, New South Wales, Western Australian and New Zealand residents, except employees of Fit Chain Pty Ltd and their immediate families.</li>
   	<li>The entire promotional period for the NSW trade promotion lottery permit commences on Wednesday 21st November 2018 and concludes Wednesday 20th November 2019. </li>
   	<li>The entire promotional period for this competition commences on Tuesday 5th February and concludes Thursday 28th February 2019. The winner will be selected on Monday 4th March 2019 at 12:00pm AEST on the premises of Fit Chain, 30 Tullamarine Park Rd, Tullamarine VIC, Australia. The winner will be notified by email.</li> 
   	<li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/rh_competition">https://www.brooksrunning.com.au/meet_brooks/competition/rh_competition</a>  during the dates specified above. It is the participant’s responsibility to ensure all details are full and correct before submitting their entry form.</li>
