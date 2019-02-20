@@ -19,7 +19,10 @@ class MyaccountController extends Controller {
         if(auth()->id()=="") {
             return redirect('login');
         }else{
-            $user_order_details = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->with('address')->get(); 
+            $user_order_details = Order::where('user_id', auth()->id())
+                ->where('status','Completed')
+                ->orderBy('updated_at', 'desc')
+                ->with('address')->get(); 
             return view('customer.myaccount.account-order-history', compact('user_order_details'));
         }
     }
