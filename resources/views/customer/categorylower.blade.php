@@ -60,14 +60,31 @@
 							<div class="custom-select">
 						        <div class = "select-box">
 								    <div class = "label-heading">
-								    	<span class="text">-</span> 
+										@php $select_option = $select_option_text = ''; @endphp
+										  @switch($depth)
+                          @case('2')
+													  @php 
+														    $select_option = 'selected';
+																$select_option_text = 'Sort by latest';
+														@endphp
+													@break
+													@case('3')
+														  @if(env('RELEASE_DATE_SORTING')=='ON')
+															  @php 
+																	$select_option = 'selected';
+																	$select_option_text = 'Sort by latest';
+																@endphp
+															@endif
+													@break
+											@endswitch
+								    	<span class="text">{{ ($select_option_text!='') ? $select_option_text : '-' }} </span> 
 								    	<div class="sel-icon">
 								    		<span class="icon-down-arrow"></span>
 								    	</div>
 								    </div>
 								    <ul class="select-option--wrapper">
 								    	<li class="option-value" data-value="">-</li>
-										  <li class="option-value" data-sorttype="new" value="date">Sort by latest</li>
+										  <li class="option-value {{ $select_option }}" data-sorttype="new" value="date">Sort by latest</li>
 								    	<li class="option-value" data-sorttype="ass" value="price">Price (High To Low)</li>
 								    	<li class="option-value" data-sorttype="dec" value="price">Price (Low To High)</li>
 								    	<li class="option-value" data-sorttype="name" value="name">Product Name (A To Z)</li>
