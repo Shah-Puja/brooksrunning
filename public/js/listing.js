@@ -281,6 +281,10 @@ function getComboFilter( filters ) {
     }else{
       var sortAscending =  true ;
     }
+    var selected_text = $(".select-option--wrapper .selected").text();
+    if(selected_text!=''){
+        $(".custom-select .select-box").find(".label-heading .text").html(selected_text);
+    }
 
     var comboFilter = localStorage.getItem("comboFilter");
     var currentURL = window.location.pathname;
