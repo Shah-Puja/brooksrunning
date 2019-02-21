@@ -20,7 +20,7 @@
 			<div class="create-account--left">
 			    <div class="response_content">
 					<h3 class="br-heading">The Run Down</h3>
-					<p>Sign up to Brooks ‘The Run Down’ to receive the inside story on new and <br/>upcoming product info, exclusing offers and inspiration to keep you running.</p>
+					<p>Sign up to Brooks ‘The Run Down’ to receive the inside story on new and <br/>upcoming product info, exclusive offers and inspiration to keep you running.</p>
 					<hr>
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 					<form name="enewsletter" id='enewsletter' method="post"  onsubmit="return insert_enewsletter()">
