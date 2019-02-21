@@ -34,7 +34,7 @@ class CategoryController extends Controller
                //exit;                          
                 $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
-        return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender') );                
+        return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender','depth') );                
     
     }
     public function index_trunal($category) {
