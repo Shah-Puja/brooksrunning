@@ -6,8 +6,12 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Trix;
-use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+use Fourstacks\NovaCheckboxes\Checkboxes;
 
 class Competition extends Resource
 {
@@ -51,14 +55,32 @@ class Competition extends Resource
             Text::make('Title','title')->hideFromIndex(),
             Text::make('Title Color','title_color', function () {
                 return $this->title_color." <span style='background-color:".$this->title_color.";padding: 2px 22px;'>&nbsp;</span>";
-            })->asHtml()->hideFromIndex(),
+            })->asHtml()->onlyOnDetail(),
+            Text::make('Title Color','title_color')->onlyOnForms(),
             Text::make('Slug','slug')->sortable(),
             Text::make('Description','desc')->hideFromIndex(),
-            Trix::make('Text','comp_text')->hideFromIndex(),
+            Textarea::make('Text','comp_text')->hideFromIndex(),
+            Textarea::make('Footer Text','footer_text')->hideFromIndex(),
+            Textarea::make('Close Text','close_text')->hideFromIndex(),
+            Image::make('Banner','banner')->disk('public')->path('images/competition-single')->hideFromIndex(),
+            Text::make('Banner Color','banner_color', function () {
+                return $this->banner_color." <span style='background-color:".$this->banner_color.";padding: 2px 22px;'>&nbsp;</span>";
+            })->asHtml()->onlyOnDetail(),
+            Text::make('Banner Color','banner_color')->onlyOnForms(),
+            Image::make('Banner Mobile','banner_mobile')->disk('public')->path('images/competition-single')->hideFromIndex(),
             Select::make('Status','status')->options([
                 'Open' => 'Open',
                 'Close' => 'Close',
             ])->sortable(),
+            Checkboxes::make('Hobbies')
+                ->options([
+                    'sailing' => 'Sailing',
+                    'rock_climbing' => 'Rock Climbing',
+                    'archery' => 'Archery'
+                ])
+                ->saveAsString()
+
+        
         ];
     }
 
