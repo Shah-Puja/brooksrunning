@@ -60,7 +60,7 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer')                
+                'answer'=>request('answer')                
 
             ]
         );        
