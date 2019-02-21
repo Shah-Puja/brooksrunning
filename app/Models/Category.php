@@ -30,7 +30,7 @@ class Category extends Model
 	    return 'slug';
     }
     
-    public static function getProducts($category) {              
+    public static function getProducts($category,$cat_id) {              
 
         $products =  \App\Models\Product::query() 
             ->whereHas('categories', function($query) use ($category) { 
@@ -40,14 +40,16 @@ class Category extends Model
                 return $query->where('visible', '=', 'Yes');
             })
             ->with('variants')
-            ->with('groups')
+            ->with('csvranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
 
-            $sorted_products = $products->sortBy(function ($product, $key) {
-                        foreach($product->groups as $group):
-                            return $group->display_rank;
+            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+                        foreach($product->csvranks as $csvrank):
+                            if($cat_id==$csvrank->group_id):
+                              return  $csvrank->display_rank;
+                            endif;
                         endforeach;
                       });
                

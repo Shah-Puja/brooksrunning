@@ -41,7 +41,7 @@ class CollectionController extends Controller
     }
 
     public function adreline_ghost(){
-        $array = ['120277_495','120284_484','120284_096','110294_096','110288_096'];
+        $array = ['110294_096','120284_096','120284_484','120277_495','110288_096'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
@@ -49,13 +49,17 @@ class CollectionController extends Controller
             $color_code = $item[1];
             $data_array[] = array('style'=> $style,'color_code'=> $color_code);
         }   
+        $orderby_style_string = implode("','",collect($data_array)->pluck('style')->toArray());
+        $orderby_color_string = implode("','",collect($data_array)->pluck('color_code')->toArray());
         
         $style_array = collect($data_array)->pluck('style');
                   
         $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
-                                    })->get();
+                                    })
+                                    ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC,FIELD(color_code ,'$orderby_color_string') ASC")
+                                    ->get();
             
         $products = $styles->filter(function ($value, $key) use ($data_array) {
                 $data=[];
@@ -65,7 +69,9 @@ class CollectionController extends Controller
                         }
                 }
             return $data;
-        })->unique('style');
+        })->unique(function ($item) {
+            return $item['style'].$item['color_code'];
+        });
         
         $colour_options = $styles->unique(function ($item){
             return $item['style'].$item['color_code'];
