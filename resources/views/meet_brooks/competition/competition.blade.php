@@ -29,9 +29,11 @@
 					</div>
 					<hr>
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
-						@if(!empty($competition->comp_form))
-							@include('meet_brooks.competition.'.$competition->comp_form)
-						@endif
+					
+					@if(!empty($competition->comp_form))
+						@include('meet_brooks.competition.'.$competition->comp_form)
+					@endif
+				
 				</div>
 				@else
 				<div class="row">

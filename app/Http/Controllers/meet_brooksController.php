@@ -60,7 +60,7 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer')                
+                'answer'=>request('answer')                
 
             ]
         );        
@@ -107,6 +107,7 @@ class meet_brooksController extends Controller
                 'Country' => request('country'),
                 'Shoes you wear' => request('custom_Shoes_you_wear'),
                 'Contest Code' => request('comp_name'),
+                'Competition Answer' => request('answer'),
                 ),                        
             );
             ProcessCompetition::dispatch($subscriber);
