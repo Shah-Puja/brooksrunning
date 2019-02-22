@@ -201,8 +201,9 @@ class PaymentController extends Controller {
                     'log_status' => 'AfterPay Processor Declined',
                     'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
                     'transaction_id' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "0",
+                    'xml' => $this->order,
                     'transaction_result' => 'Failed',
-                    'transaction_data' => ($charge_payment) ? json_encode($charge_payment) : "No response from afterpay"
+                    'transaction_data' => $request->all()
                 );
                 Order_log::insert($logger);
                 return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
