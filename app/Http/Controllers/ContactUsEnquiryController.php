@@ -44,7 +44,8 @@ class ContactUsEnquiryController extends Controller
                 ->cc( config('site.syg_notify_email') )
 				->queue( new EnquirySubmittedNotification($enquiry) );
 		
-				/**if(count(Mail::failures()) > 0 ) {
+				/**send an email to user send in EnquirySubmittedNotification then chk following condition
+				 * if(count(Mail::failures()) > 0 ) {
 			echo "Mail failed";die;
 		} else {
 			echo "Mail sent successfully!";die;
