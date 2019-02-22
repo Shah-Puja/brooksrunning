@@ -163,7 +163,9 @@
 							<option class="option-value" value="PureFlow">PureFlow</option>
 							<option class="option-value" value="Ravenna">Ravenna</option>
 							<option class="option-value" value="Transcend">Transcend</option>
+							<option class="option-value" value="I do not currently wear Brooks Shoes">I do not currently wear Brooks Shoes</option>
 							<option class="option-value" value="Other">Other</option>
+							
 						</select>
 			</div>
 		</div>
