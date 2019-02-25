@@ -31,8 +31,9 @@ class transfer_tables extends Command
     {
         parent::__construct();
         //$cmd="mysqldump uroot brooks_2018 shoe_mast > 20190215_shoe.sql";
-        $cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
-        $this->process = new Process($cmd);
+        
+        //$cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
+        //$this->process = new Process($cmd);
         /*$this->process = new Process(sprintf(
             'mysqldump -u%s -p%s %s > %s',
             config('database.connections.mysql.username'),
@@ -51,8 +52,13 @@ class transfer_tables extends Command
     public function handle()
     {
         //
+        echo env('DB_DATABASE');
+        $cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";        
+        //$process = new Process($cmd);
+        
         try {
-            $this->process->mustRun();
+            //$process->mustRun();
+            Process::mustRun($cmd);
             $this->info('The Transfer has been proceed successfully.');
         } catch (ProcessFailedException $exception) {
             $this->error('The Transfer process has been failed.');
