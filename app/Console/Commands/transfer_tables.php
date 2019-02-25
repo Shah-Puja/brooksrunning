@@ -53,6 +53,8 @@ class transfer_tables extends Command
     {
         echo env("DB_DATABASE");
         $cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
+        echo $cmd;
+        exit;
         $process = new Process($cmd);
         try {
             $process->mustRun();
