@@ -17,6 +17,7 @@ class CartController extends Controller {
     }
 
     public function show() {
+        Cart::createOrGetForUser();
         $cart_arr = array();
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
