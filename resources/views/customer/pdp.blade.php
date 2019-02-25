@@ -412,7 +412,7 @@
                                             <p>{{ $spec_name }}</p>
                                         </td>
                                         <td class="label--info">
-                                            <p>{{ $spec_value }}</p>
+                                            <p>{!! html_entity_decode($spec_value) !!}</p>
                                         </td>
                                     </tr>
                                     @endif
@@ -430,7 +430,7 @@
                                         @if ($product_feature != '')
                                         <tr class="specs__row">
                                             <td class="label--info">
-                                                <p style="text-align:left">{{ $product_feature }}</p>
+                                                <p style="text-align:left">{!! html_entity_decode($product_feature) !!} </p>
                                             </td>
                                         </tr>
                                         @endif
@@ -442,7 +442,7 @@
                         
                         @if(!empty($fabric))
                             <h3 class="br-heading">Fabric</h3>
-                            <p class="br-info">{!! $fabric !!}</p>
+                            <p class="br-info">{!! html_entity_decode($fabric) !!}</p>
                         @endif
                     </div>
                     @endif
