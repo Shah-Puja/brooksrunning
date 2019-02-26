@@ -4026,7 +4026,7 @@ textarea {
 }
 .br-events-months .content-asset .monthly-event-list .event-img-main img {
   max-width: 100%;
-  height: 350px;
+  height: 200px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .br-events-months .content-asset .monthly-event-list .event-img-main img {
