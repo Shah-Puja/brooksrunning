@@ -394,9 +394,9 @@ function getComboFilter( filters ) {
         $(".owl-item").each(function(){
             //console.log(jQuery.inArray(value, yourArray) !== -1);
             //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
-            if(status=='ON'){
+            /*if(yourArray.length > 0){
               for ( var i = 0; i < yourArray.length; i++ ){
-                //console.log(yourArray[i] +"yourarrsy");
+                console.log(yourArray[i] +"yourarrsy");
                 if ($(this).find(".item").hasClass(yourArray[i])){
                     $(this).show();
                     break;  
@@ -407,7 +407,23 @@ function getComboFilter( filters ) {
                
             }else{
                 $(this).show();
-            }
+            }*/
+            let if_condition = "";
+            if(yourArray.length > 0){
+              for ( var i = 0; i < yourArray.length; i++ ){
+                if_condition += " $(this).find('.item').hasClass('"+yourArray[i]+"')  && ";
+              }
+              if_condition =if_condition.substring(0, if_condition.length - 3);
+              console.log(if_condition);
+                if(eval(if_condition)){
+                  $(this).show();
+                }else{
+                  $(this).hide();
+              }
+            }else{
+              $(this).show();
+          }
+
             var style = $(this).find(".item").data('style');
             if(style!=data1){
               if($(this).is(':visible')){
@@ -432,7 +448,7 @@ function getComboFilter( filters ) {
         $(".swatches-icon").each(function(){
             //console.log(jQuery.inArray(value, yourArray) !== -1);
             //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
-            if(status=='ON'){
+            if(yourArray.length > 0 ){
               for ( var i = 0; i < yourArray.length; i++ ){
                 //console.log(yourArray[i] +"yourarrsy");
                 if ($(this).hasClass(yourArray[i])){
