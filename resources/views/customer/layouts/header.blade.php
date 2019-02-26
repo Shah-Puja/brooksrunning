@@ -25,7 +25,7 @@
                 <title>Brooks Running Men's Running Shoes Sale</title>
                 @break;
             @default
-                <title>Brooks Running</title>
+                <title>Brooks Running Shoes, Clothing & Sports Bras | Brooks Running</title>
                 @break;
         @endswitch
         <!-- lightslider file -->
