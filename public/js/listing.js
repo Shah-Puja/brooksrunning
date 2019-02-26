@@ -154,7 +154,9 @@ $(document).on("click",".filter-value",function(){
     filters[ this_closest_group ].push(this_value);
 		var comboFilter = getComboFilter( filters );
 	
-		$grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+    var status = 'ON';
+  
   }else{
       filters[this_closest_group] = jQuery.grep(filters[this_closest_group], function(value) {
         return value != this_value;
@@ -168,13 +170,21 @@ $(document).on("click",".filter-value",function(){
       }else{
           $(".filter-selection-wrapper").show();
       }
+     
       var comboFilter = getComboFilter( filters );
       $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
+      
+       var status = 'OFF';
   }
-  localStorage.setItem("filters", JSON.stringify(filters));
-  localStorage.setItem("comboFilter", comboFilter);
-  localStorage.setItem("plpfilter", $(".plp-filter").html());
-  localStorage.setItem("listingurl",window.location.pathname);
+ 
+ 
+  setTimeout(function(){
+    localStorage.setItem("filters", JSON.stringify(filters));
+    localStorage.setItem("comboFilter", comboFilter);
+    localStorage.setItem("plpfilter", $(".plp-filter").html());
+    localStorage.setItem("listingurl",window.location.pathname);
+    check_swatches(this_value,status);
+  }, 500);
   counter = 12;
   loadMore(counter);
   return false;
@@ -202,10 +212,13 @@ $(document).on('click','.selection-filter',function(){
     var comboFilter = getComboFilter( filters );
 		//console.log(comboFilter);
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    localStorage.setItem("filters", JSON.stringify(filters));
-    localStorage.setItem("comboFilter", comboFilter);
-    localStorage.setItem("plpfilter", $(".plp-filter").html());
-    localStorage.setItem("listingurl",window.location.pathname);
+    check_swatches(removeItem,'OFF');
+    setTimeout(function(){
+      localStorage.setItem("filters", JSON.stringify(filters));
+      localStorage.setItem("comboFilter", comboFilter);
+      localStorage.setItem("plpfilter", $(".plp-filter").html());
+      localStorage.setItem("listingurl",window.location.pathname);
+    }, 500);
     counter = 12;
     loadMore(counter);
   return false;
@@ -221,8 +234,11 @@ $(document).on('click','.reset-filter',function(){
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  localStorage.setItem("comboFilter","");
-  localStorage.setItem("listingurl",window.location.pathname);
+  check_swatches('','OFF');
+  setTimeout(function(){
+    localStorage.setItem("comboFilter","");
+    localStorage.setItem("listingurl",window.location.pathname);
+  }, 500);
   counter = 12;
   loadMore(counter);
   filters = [];
@@ -295,11 +311,15 @@ function getComboFilter( filters ) {
        var filter_value = comboFilter;
       $(".plp-filter").html(localStorage.getItem("plpfilter"));
       filters = JSON.parse(localStorage.getItem("filters"));
+      var status ='ON';
     }else{
       //console.log("not storage");
        var filter_value = '*';
+       var status ='OFF';
     }
+    console.log("filter_value"+filter_value);
     $grid.isotope({ filter: filter_value , sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
+    check_swatches('',status);
     loadMore(initShow); 
     localStorage.removeItem("comboFilter");
     localStorage.removeItem("plpfilter")
@@ -357,3 +377,91 @@ function getComboFilter( filters ) {
      $(this).closest(".color-wrapper--more--container").find(".color-wrapper--more .remaining").toggle();
      return false;
   });
+
+  function check_swatches(value,status){
+     $(".owl-item .item").show();
+      value = value.replace(".", "").trim();
+      //console.log(value + status);
+      var yourArray = [];
+      $(".selection-filter--container").each(function(){
+          var selection_value = $(this).find('a').data("filter-value");
+          selection_value = selection_value.replace(".", "").trim();
+          yourArray.push(selection_value);
+      });
+      //console.log(yourArray);
+      var data1 = '';
+      if($(".more-color--container").is(":visible")){
+        $(".owl-item").each(function(){
+            //console.log(jQuery.inArray(value, yourArray) !== -1);
+            //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
+            if(status=='ON'){
+              for ( var i = 0; i < yourArray.length; i++ ){
+                //console.log(yourArray[i] +"yourarrsy");
+                if ($(this).find(".item").hasClass(yourArray[i])){
+                    $(this).show();
+                    break;  
+                  }else{
+                    $(this).hide();
+                }
+              }
+               
+            }else{
+                $(this).show();
+            }
+            var style = $(this).find(".item").data('style');
+            if(style!=data1){
+              if($(this).is(':visible')){
+                var big_img = $(this).find(".item img").data("big");
+                var href = $(this).find(".item img").data("url");
+                $(this).closest(".element-item").find(".img img").attr('src',big_img);
+                $(this).closest(".element-item").find('.plp-main--img--wrapper').css({backgroundImage: "url("+big_img+")"});
+                $(this).closest(".element-item").find(".main_link").attr('href',href);
+                
+                 //console.log(style+"not mached");
+                 data1 = style
+              }
+               
+            }else{
+              //console.log(style+"mached");
+            }
+        });
+        
+      }
+
+      if($(".color-wrapper--more--container").is(":visible")){
+        $(".swatches-icon").each(function(){
+            //console.log(jQuery.inArray(value, yourArray) !== -1);
+            //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
+            if(status=='ON'){
+              for ( var i = 0; i < yourArray.length; i++ ){
+                //console.log(yourArray[i] +"yourarrsy");
+                if ($(this).hasClass(yourArray[i])){
+                    $(this).show();
+                    break;  
+                  }else{
+                    $(this).hide();
+                }
+              }
+               
+            }else{
+                $(this).show();
+            }
+            var style = $(this).data('style');
+            if(style!=data1){
+              if($(this).is(':visible')){
+                var big_img = $(this).find("img").data("big");
+                var href = $(this).find("img").data("url");
+                $(this).closest(".element-item").find(".img img").attr('src',big_img);
+                $(this).closest(".element-item").find('.plp-main--img--wrapper').css({backgroundImage: "url("+big_img+")"});
+                $(this).closest(".element-item").find(".main_link").attr('href',href);
+                
+                 //console.log(style+"not mached");
+                 data1 = style
+              }
+               
+            }else{
+              //console.log(style+"mached");
+            }
+        });
+      }
+  }

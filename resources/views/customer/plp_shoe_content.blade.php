@@ -89,7 +89,45 @@
 								$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
 								$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 							@endphp -->
-							<div class="item">
+
+							@php 
+
+							$filters_array_color[$style->style][$color_product->color_code]['size'] =  collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+					            return $product->variants->pluck('size');
+							})->flatten()->unique()->values();
+
+							$filters_array_color[$style->style][$color_product->color_code]['width']=collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+														return $product->variants->where('visible','Yes')->pluck('width_name');
+												 })->flatten()->unique()->values()->sort();
+
+							$filters_array_color[$style->style][$color_product->color_code]['color'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+					            return $product->tags->Where('key','C_F_COLOUR');
+							})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['support_level'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PF_F_SLEVEL');
+											})->flatten()->pluck('value')->unique();
+
+							
+							$filters_array_color[$style->style][$color_product->color_code]['Arch'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PF_F_ARCH');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Activity'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PF_F_ACTIVITY');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Midsole_Drop'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PF_F_DROP');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['experience'] = $style->experience;
+							
+							$filter_arrays_color = collect($filters_array_color[$style->style][$color_product->color_code])->flatten()->unique()->all();
+							$replace_word = array('.',' ','/'); 
+							$filter_class_color = implode(' ',str_replace($replace_word,'-',$filter_arrays_color));
+							@endphp 
+							<div class="item {{ $filter_class_color}}" data-style="{{$style->style}}">
 								<a href="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html">
 								<picture>
 								<source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
