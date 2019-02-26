@@ -52,8 +52,8 @@ class transfer_tables extends Command
     public function handle()
     {
         echo env("DB_DATABASE");
-        $curr_dt=date('Y-m-d_H:i:s');
-        $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." p_products > ".$curr_dt."_products.sql";        
+        $curr_dt=date('Ymd_His');
+        $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." p_products > storage/data/products/".$curr_dt."_products.sql";        
         $process = new Process($cmd);
         try {
             $process->mustRun();
