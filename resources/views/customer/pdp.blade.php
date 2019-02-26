@@ -367,7 +367,8 @@
                     @if($product->prod_desc!='')
                     <div class="info--left tab-6">
                         <h3 class="br-heading">Product Description</h3>
-                        <p class="br-info">{{ strip_tags($product->prod_desc) }}</p>
+                        <p class="br-info">
+                        {!! html_entity_decode(strip_tags($product->prod_desc)) !!}</p>
                         
 
                         @php  $prod_desc_bullet_points = (!empty($product->prod_desc_bullet_points)) ? explode('#', $product->prod_desc_bullet_points) : ''; @endphp
