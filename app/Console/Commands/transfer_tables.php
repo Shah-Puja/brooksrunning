@@ -57,18 +57,20 @@ class transfer_tables extends Command
         $process = new Process($cmd);
         try {
             $process->mustRun();
-            $this->info('The Transfer has been proceed successfully.');
+            $this->info('MysqlDump is created successfully.');
         } catch (ProcessFailedException $exception) {
-            $this->error('The Transfer process has been failed.');
+            $this->error('The MysqlDump process has been failed.');
             print_r($exception);
         }
-        /*
+        mysql -uxxeepxbnah -paWUnvU95KT xxeepxbnah < 20190215_cat.sql
+        $import_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < storage/data/products/".$curr_dt."_products.sql";        
+        $import_process = new Process($import_cmd);
         try {
-            $this->process->mustRun();
-            $this->info('The Transfer has been proceed successfully.');
+            $import_process->mustRun();
+            $this->info('Mysql import is done successfully.');
         } catch (ProcessFailedException $exception) {
-            $this->error('The Transfer process has been failed.');
+            $this->error('The Mysql import has failed.');
             print_r($exception);
-        }*/
+        }        
     }
 }
