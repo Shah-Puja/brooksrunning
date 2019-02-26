@@ -127,8 +127,6 @@ class CartController extends Controller {
             $cart_xml .= "
                             </CartDetails>
 						</Cart>";
-            echo "<pre>";
-                        print_r($cart_xml);die;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
             $xml = simplexml_load_string($bridge);
