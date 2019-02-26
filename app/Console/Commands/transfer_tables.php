@@ -32,8 +32,8 @@ class transfer_tables extends Command
         parent::__construct();
         //$cmd="mysqldump uroot brooks_2018 shoe_mast > 20190215_shoe.sql";
         
-        $cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
-        $this->process = new Process($cmd);
+        //$cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
+        //$this->process = new Process($cmd);
         /*$this->process = new Process(sprintf(
             'mysqldump -u%s -p%s %s > %s',
             config('database.connections.mysql.username'),
@@ -52,9 +52,8 @@ class transfer_tables extends Command
     public function handle()
     {
         echo env("DB_DATABASE");
-        $cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
-        echo $cmd;
-        exit;
+        $curr_dt=date('Y-m-d_H:i:s');
+        $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." p_products > ".$curr_dt."_products.sql";        
         $process = new Process($cmd);
         try {
             $process->mustRun();
