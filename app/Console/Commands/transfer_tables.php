@@ -62,7 +62,7 @@ class transfer_tables extends Command
             $this->error('The MysqlDump process has been failed.');
             print_r($exception);
         }
-        mysql -uxxeepxbnah -paWUnvU95KT xxeepxbnah < 20190215_cat.sql
+        //mysql -uxxeepxbnah -paWUnvU95KT xxeepxbnah < 20190215_cat.sql
         $import_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < storage/data/products/".$curr_dt."_products.sql";        
         $import_process = new Process($import_cmd);
         try {
