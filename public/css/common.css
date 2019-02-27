@@ -322,7 +322,6 @@
   position: relative;
   font-size: 24px;
   display: block;
-  font-weight: bold;
   line-height: 1.4;
   padding: 10px 15px;
   cursor: pointer;
@@ -3563,7 +3562,7 @@ textarea {
   margin: 60px 0;
   background-color: #d3d0cd;
   text-align: center;
-  padding: 62px 20px;
+  padding: 55px 20px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .create-account--homepage {
@@ -4279,7 +4278,57 @@ textarea {
   bottom: 0;
   left: 0;
 }
+.plp-wrapper-container .plp-wrapper__sub .plp-product .img.img-collection-shoes {
+  height: 325px;
+  width: 100%;
+  position: relative;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .img.img-collection-shoes {
+    height: 260px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .img.img-collection-shoes {
+    height: 220px;
+  }
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .img.img-collection-shoes img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 .plp-wrapper-container .plp-wrapper__sub .plp-product .img img {
+  width: auto;
+  max-width: 100%;
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img {
+  background-color: #f2f2f2;
+  text-align: center;
+  height: 325px;
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img.img-collection-shoes {
+  width: 100%;
+  position: relative;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img.img-collection-shoes {
+    height: 260px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img.img-collection-shoes {
+    height: 220px;
+  }
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img.img-collection-shoes img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.plp-wrapper-container .plp-wrapper__sub .plp-product .collection-img img {
   width: auto;
   max-width: 100%;
 }
