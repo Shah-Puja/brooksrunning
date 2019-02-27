@@ -13,7 +13,7 @@ class HomePageController extends Controller
     public function index(){
            
         //Featured product(homepage slider)
-        $shoe_info = array('110303_008','120292_030','110302_040','120291_073','110289_429','120278_115','110288_006','120277_006');
+        $shoe_info = array('120286_615','110298_429','120291_073','110302_040','120285_542','110297_081');
         $product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
