@@ -53,7 +53,8 @@ class transfer_tables extends Command
     {
         echo env("DB_DATABASE");
         $curr_dt=date('Ymd_His');
-        $prod_tables="p_products p_variants p_images p_tags group";
+        //$prod_tables="p_products p_variants p_images p_tags group";
+        $prod_tables="p_products p_variants";
         $sql_path="storage/data/products/".$curr_dt."_products.sql";
         $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$prod_tables." > ".$sql_path ;        
         $process = new Process($cmd);
