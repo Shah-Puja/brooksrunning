@@ -53,7 +53,9 @@ class transfer_tables extends Command
     {
         echo env("DB_DATABASE");
         $curr_dt=date('Ymd_His');
-        $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." p_products > storage/data/products/".$curr_dt."_products.sql";        
+        $prod_tables="p_products p_variants p_images p_tags group";
+        $sql_path="storage/data/products/".$curr_dt."_products.sql";
+        $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$prod_tables > ".$sql_path ;        
         $process = new Process($cmd);
         try {
             $process->mustRun();
@@ -63,7 +65,7 @@ class transfer_tables extends Command
             print_r($exception);
         }
         //mysql -uxxeepxbnah -paWUnvU95KT xxeepxbnah < 20190215_cat.sql
-        $import_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < storage/data/products/".$curr_dt."_products.sql";        
+        $import_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < ".$sql_path;        
         $import_process = new Process($import_cmd);
         try {
             $import_process->mustRun();
