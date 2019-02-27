@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use DB;
 
 class transfer_tables extends Command
 {
@@ -51,7 +52,7 @@ class transfer_tables extends Command
      */
     public function handle()
     {
-        echo env("DB_DATABASE");
+        
         $curr_dt=date('Ymd_His');
         //$prod_tables="p_products p_variants p_images p_tags group";
         $prod_tables="p_products p_variants";
@@ -75,6 +76,10 @@ class transfer_tables extends Command
         } catch (ProcessFailedException $exception) {
             $this->error('The Mysql import has failed.');
             print_r($exception);
-        }        
+        }
+        
+        DB::connection('future')->table("p_variants")->update(['visible' => 'No','reason_no'=>'Initial Setup']);
+        DB::connection('future')->table("p_variants")->where('release_date','>',Date('Y-m-d'))->update(['visible' => 'Yes','reason_no'=>'']);
+        
     }
 }
