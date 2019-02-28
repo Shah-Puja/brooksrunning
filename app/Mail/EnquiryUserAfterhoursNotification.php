@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use App\Models\ContactUsEnquiry;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue
+{
+    use Queueable, SerializesModels;
+
+    public $enquiry;
+
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+    public function __construct(ContactUsEnquiry $enquiry)
+    {
+        $this->enquiry = $enquiry;
+    }
+
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->replyTo($this->enquiry->email,$this->enquiry->fname.' '.$this->enquiry->lname)->view('emails.enquiryuserafterhoursnotification');
+    }
+}
