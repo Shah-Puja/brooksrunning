@@ -70,7 +70,7 @@ class transfer_tables extends Command
         DB::connection('future')->table("p_variants")->update(['visible' => 'No','reason_no'=>'Initial Setup']);
         DB::connection('future')->table("p_variants")->where('release_date','>',Date('Y-m-d'))->update(['visible' => 'Yes','reason_no'=>'']);
 
-        $msg = 'Mail set to run from cron at 6PM(18:00hrs)| ran at - '.date('Y-m-d H:i:s');
+        $msg = 'Mail set to run from cron at 6:05PM(18:05hrs)| ran at - '.date('Y-m-d H:i:s');
         Mail::raw($msg, function ($message) {
                     $message->to('purvi.cshah@gmail.com');
                     $message->from('sygtest@gmail.com');
