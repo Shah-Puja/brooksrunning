@@ -47,27 +47,15 @@ class transfer_tables extends Command
         $prod_tables="p_products p_variants p_images p_tags groups";        
         $sql_path="storage/data/products/".$curr_dt."_products.sql";
         $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$prod_tables." > ".$sql_path ;        
-        $this->run_process($cmd);
-        /*$process = new Process($cmd);
-        try {
-            $process->mustRun();
-            $this->info('MysqlDump is created successfully.');
-        } catch (ProcessFailedException $exception) {
-            $this->error('The MysqlDump process has been failed.');
-            print_r($exception);
-        }*/
-        
+        $this->run_process($cmd,'dump');
+
+
+        $import_staging_cmd="mysql -u".env("STAGING_DB_USERNAME")."  -p".env("STAGING_DB_PASSWORD")." ".env("STAGING__DB_DATABASE")." < ".$sql_path;        
+        $this->run_process($import_staging_cmd,'Staging');  
+                
     
-        $import_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < ".$sql_path;        
-        $this->run_process($import_cmd);
-        /*$import_process = new Process($import_cmd);
-        try {
-            $import_process->mustRun();
-            $this->info('Mysql import is done successfully.');
-        } catch (ProcessFailedException $exception) {
-            $this->error('The Mysql import has failed.');
-            print_r($exception);
-        }*/
+        $import_future_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < ".$sql_path;        
+        $this->run_process($import_future_cmd,'Future');        
         
         DB::connection('future')->table("p_variants")->update(['visible' => 'No','reason_no'=>'Initial Setup']);
         DB::connection('future')->table("p_variants")->where('release_date','>',Date('Y-m-d'))->update(['visible' => 'Yes','reason_no'=>'']);
@@ -81,14 +69,14 @@ class transfer_tables extends Command
         
     }
 
-    public function run_process($cmd)
+    public function run_process($cmd,$cmd_name)
     {   
         $process = new Process($cmd);
         try {
             $process->mustRun();
-            $this->info('Process got executed successfully.');
+            $this->info($cmd_name.' Process got executed successfully.');
         } catch (ProcessFailedException $exception) {
-            $this->error('Process failed.');
+            $this->error($cmd_name.' Process failed.');
             print_r($exception);
         }
     }
