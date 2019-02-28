@@ -50,8 +50,8 @@ class transfer_tables extends Command
         $this->run_process($cmd,'dump');
 
 
-        $import_staging_cmd="mysql -u".env("STAGING_DB_USERNAME")."  -p".env("STAGING_DB_PASSWORD")." ".env("STAGING__DB_DATABASE")." < ".$sql_path;        
-        $this->run_process($import_staging_cmd,'Staging');  
+        /*$import_staging_cmd="mysql -u".env("STAGING_DB_USERNAME")."  -p".env("STAGING_DB_PASSWORD")." ".env("STAGING__DB_DATABASE")." < ".$sql_path;        
+        $this->run_process($import_staging_cmd,'Staging'); */ 
                 
     
         $import_future_cmd="mysql -u".env("FUTURE_DB_USERNAME")."  -p".env("FUTURE_DB_PASSWORD")." ".env("FUTURE_DB_DATABASE")." < ".$sql_path;        
