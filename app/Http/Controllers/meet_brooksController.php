@@ -9,6 +9,7 @@ use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\Jobs\ProcessCompetition;
+use App\Events\SubscriptionReceived;
 
 class meet_brooksController extends Controller
 {   
@@ -237,7 +238,13 @@ class meet_brooksController extends Controller
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>' ]);
         }else{
             User::where('email',request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
-            return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            $user = User::where('email',request('email'))->first();
+            event(new SubscriptionReceived($user));
+            if(request('contest_code')!=''){
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">Thank you for signing up.</p>' ]);
+            }else{ 
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            }
         }
     }
     
