@@ -30,19 +30,7 @@ class transfer_tables extends Command
      */
     public function __construct()
     {
-        parent::__construct();
-        //$cmd="mysqldump uroot brooks_2018 shoe_mast > 20190215_shoe.sql";
-        
-        //$cmd="mysqldump -uftfjkzaeke  -pBBSdKev5ZJ ftfjkzaeke categories > 20190215_cat.sql";
-        //$this->process = new Process($cmd);
-        /*$this->process = new Process(sprintf(
-            'mysqldump -u%s -p%s %s > %s',
-            config('database.connections.mysql.username'),
-            config('database.connections.mysql.password'),
-            config('database.connections.mysql.database'),
-            storage_path('backups/backup.sql')
-        
-        ));*/
+        parent::__construct();        
     }
 
     /**
@@ -52,6 +40,13 @@ class transfer_tables extends Command
      */
     public function handle()
     {
+        $msg = 'Laravel mail | ran at - '.date('Y-m-d H:i:s');
+        Mail::raw($msg, function ($message) {
+                    $message->to('purvi.cshah@gmail.com');
+                    $message->from('sygtest@gmail.com');
+                    $message->Subject('Laravel mail');
+                 });
+        exit;
         
         $curr_dt=date('Ymd_His');
         $prod_tables="p_products p_variants p_images p_tags groups";
