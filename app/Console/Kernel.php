@@ -25,13 +25,14 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
-        //          ->hourly(); 
-        $schedule->command('users:icontact')
+        /*/          ->hourly(); 
+        /$schedule->command('users:icontact')
                  ->everyFiveMinutes();
+                 */
         /*$schedule->command('algolia:sync')
                  ->daily();*/
-
-        
+        $schedule->command('brooks:transfer-product-tables')
+                 ->everyFiveMinutes();        
     }
 
     /**
