@@ -41,17 +41,10 @@ class transfer_tables extends Command
      */
     public function handle()
     {
-        $msg = 'Laravel mail set to run from cron at 5.50PM(17:50hrs)| ran at - '.date('Y-m-d H:i:s');
-        Mail::raw($msg, function ($message) {
-                    $message->to('purvi.cshah@gmail.com');
-                    $message->from('sygtest@gmail.com');
-                    $message->Subject('Laravel mail');
-                 });
-        exit;
+                
         
         $curr_dt=date('Ymd_His');
-        $prod_tables="p_products p_variants p_images p_tags groups";
-        //$prod_tables="p_products p_variants";
+        $prod_tables="p_products p_variants p_images p_tags groups";        
         $sql_path="storage/data/products/".$curr_dt."_products.sql";
         $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$prod_tables." > ".$sql_path ;        
         $process = new Process($cmd);
@@ -76,6 +69,13 @@ class transfer_tables extends Command
         
         DB::connection('future')->table("p_variants")->update(['visible' => 'No','reason_no'=>'Initial Setup']);
         DB::connection('future')->table("p_variants")->where('release_date','>',Date('Y-m-d'))->update(['visible' => 'Yes','reason_no'=>'']);
+
+        $msg = 'Mail set to run from cron at 6PM(18:00hrs)| ran at - '.date('Y-m-d H:i:s');
+        Mail::raw($msg, function ($message) {
+                    $message->to('purvi.cshah@gmail.com');
+                    $message->from('sygtest@gmail.com');
+                    $message->Subject('Laravel mail');
+                 });
         
     }
 }
