@@ -41,7 +41,7 @@ class transfer_tables extends Command
      */
     public function handle()
     {
-        $msg = 'Laravel mail set to run from cron at every 5 minutes of 5PM(17hrs)| ran at - '.date('Y-m-d H:i:s');
+        $msg = 'Laravel mail set to run from cron at 5.50PM(17:50hrs)| ran at - '.date('Y-m-d H:i:s');
         Mail::raw($msg, function ($message) {
                     $message->to('purvi.cshah@gmail.com');
                     $message->from('sygtest@gmail.com');

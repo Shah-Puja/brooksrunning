@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
         /*$schedule->command('algolia:sync')
                  ->daily();*/
         $schedule->command('brooks:transfer-product-tables')                                    
-                 ->cron('45 17 * * *');
+                 ->cron('50 17 * * *');
     }
 
     /**
