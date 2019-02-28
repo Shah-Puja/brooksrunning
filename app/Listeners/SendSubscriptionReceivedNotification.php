@@ -28,8 +28,8 @@ class SendSubscriptionReceivedNotification implements ShouldQueue {
      * @return void
      */
     public function handle(SubscriptionReceived $event) {
-        /* echo "eeeeeeeeeeeeeeeeeeeee";echo "<pre>";print_r($event);die;
-          dd($event); */
+         //echo "eeeeeeeeeeeeeeeeeeeee";echo "<pre>";print_r($event);die;
+          
 
         $subscriber = array(
             'email' => $event->user->email,
@@ -41,7 +41,9 @@ class SendSubscriptionReceivedNotification implements ShouldQueue {
                 'Birth Day' => $event->user->birth_date,
                 'Birth Month' => $event->user->birth_month,
                 'Age' => $event->user->age_group,
-                'State' => $event->user->state
+                'Country' => $event->user->state,
+                'Shoes you wear' => $event->user->shoe_wear,
+                'HappyRunner Comp' => $event->user->contest_code,
             ),
         );
 

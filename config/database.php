@@ -55,20 +55,20 @@ return [
         ],
 
         # Our secondary database connection
-        /*'mysql2' => [
+        'future' => [
             'driver' => 'mysql',
-            'host' => env('DB_LIVE_HOST', '127.0.0.1'),
+            'host' => env('FUTURE_DB_HOST', '127.0.0.1'),
             'port' => env('DB_LIVE_PORT', '3306'),
-            'database' => env('DB_LIVE_DATABASE', 'forge'),
-            'username' => env('DB_LIVE_USERNAME', 'forge'),
-            'password' => env('DB_LIVE_PASSWORD', ''),
-            'unix_socket' => env('DB_LIVE_SOCKET', ''),
+            'database' => env('FUTURE_DB_DATABASE', 'forge'),
+            'username' => env('FUTURE_DB_USERNAME', 'forge'),
+            'password' => env('FUTURE_DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-        ],*/
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
