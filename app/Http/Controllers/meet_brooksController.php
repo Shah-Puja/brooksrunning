@@ -240,7 +240,11 @@ class meet_brooksController extends Controller
             User::where('email',request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
             $user = User::where('email',request('email'))->first();
             event(new SubscriptionReceived($user));
-            return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            if(request('contest_code')!=''){
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">Thank you for signing up.</p>' ]);
+            }else{ 
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            }
         }
     }
     
