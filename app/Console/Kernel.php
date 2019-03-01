@@ -29,10 +29,17 @@ class Kernel extends ConsoleKernel
         /$schedule->command('users:icontact')
                  ->everyFiveMinutes();
                  */
-        /*$schedule->command('algolia:sync')
-                 ->daily();*/
-        $schedule->command('s7_transfer_product_tables')                                    
-                 ->cron('35 2 * * *');
+        switch (env("APP_ENV")):
+            case 'production':
+                $schedule->command('algolia:sync')
+                    ->daily();            
+                break;
+            case 'dev' : 
+                $schedule->command('s7_transfer_product_tables')                                    
+                    ->cron('50 18 * * *');
+                    //->cron('35 2 * * *'); //Actual time
+                break;
+        endswitch;
     }
 
     /**
