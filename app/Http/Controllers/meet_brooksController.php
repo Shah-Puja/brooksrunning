@@ -279,12 +279,12 @@ class meet_brooksController extends Controller
 
     public function our_purpose()
 	{
-		return view( 'meet_brooks.our-purpose');
+		return view( 'meet_brooks.our_purpose');
     }
 
     public function our_history()
 	{
-		return view( 'meet_brooks.our-history');
+		return view( 'meet_brooks.our_history');
     }
 
 }

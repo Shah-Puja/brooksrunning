@@ -455,13 +455,13 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/what-makes-us-tick">
-										What Makes Us Tick
+	                                <a href="/meet_brooks/our_history">
+										Our History
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/run-happy-is">
-										Run Happy is
+	                                <a href="/meet_brooks/our_purpose">
+										Our Purpose
 	                                </a>
 	                            </li>
 								<li>
