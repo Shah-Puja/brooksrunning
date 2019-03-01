@@ -19,10 +19,10 @@
         <br/><br/>
         Some quick links:
         <br/>
-        - <a href ="{{ env('APP_URL').'info/shipping-information' }}">Shipping Information</a>
+        - <a href ="{{ env('APP_URL').'/info/shipping-information' }}">Shipping Information</a>
         <br/>
-        - <a href ="{{ env('APP_URL').'info/returns-exchange' }}">Returns & Exchanges</a>
+        - <a href ="{{ env('APP_URL').'/info/returns-exchange' }}">Returns & Exchanges</a>
         <br/>
-        - <a href ="{{ env('APP_URL').'shoefinder' }}">Find Your Perfect Shoe</a>
+        - <a href ="{{ env('APP_URL').'/shoefinder' }}">Find Your Perfect Shoe</a>
     </body>
 </html>
