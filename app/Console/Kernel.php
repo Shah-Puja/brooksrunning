@@ -36,7 +36,7 @@ class Kernel extends ConsoleKernel
                 break;
             case 'dev' : 
                 $schedule->command('s7_transfer_product_tables')                                    
-                    ->cron('50 18 * * *');
+                    ->cron('55 21 * * *');
                     //->cron('35 2 * * *'); //Actual time
                 break;
         endswitch;
