@@ -8,7 +8,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
 use Illuminate\Support\Facades\Mail;
 
-class transfer_tables extends Command
+class s7_transfer_tables extends Command
 {
     /**
      * The name and signature of the console command.
@@ -22,7 +22,7 @@ class transfer_tables extends Command
      *
      * @var string
      */
-    protected $description = 'Copy Product Table from one Db to another';
+    protected $description = 'Copy Product Table from Live Db to Staging and Future';
 
     /**
      * Create a new command instance.
