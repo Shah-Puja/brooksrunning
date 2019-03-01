@@ -5,7 +5,7 @@
     </head> 
     <body>
         <!-- New Template -->
-        Hi $enquiry->fname .' '.$enquiry->lname,
+        Hi {{ $enquiry->fname .' '.$enquiry->lname }},
         <br /><br/>
         Thanks for your email enquiry!
         <br /><br />
