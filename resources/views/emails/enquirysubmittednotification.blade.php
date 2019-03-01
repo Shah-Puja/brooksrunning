@@ -14,10 +14,10 @@ Name : {{ $enquiry->fname .' '.$enquiry->lname }} <br />
 Email : {{ $enquiry->email }}<br />
 Phone : {{ $enquiry->phone }}<br />
 Subject : {{ $enquiry->subject }}<br />
-category: {{ $enquiry->category }}<br />
-question: {{ $enquiry->message }} <br>
+Category: {{ $enquiry->category }}<br />
+Question: {{ $enquiry->message }} <br>
 @if($enquiry->order_no!='') 
-    question: {{ $enquiry->order_no }}
+    Order Number: {{ $enquiry->order_no }}
 @endif
 </body>
 </html>
