@@ -454,8 +454,8 @@
                                                     <li class="submenu-main">
                                                         <a href="/info/about-us">About Us</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/what-makes-us-tick">What Makes Us Tick</a></li>
-                                                    <li><a href="/meet_brooks/run-happy-is">Run Happy is</a></li>
+                                                    <li><a href="/meet_brooks/our_history">Our History</a></li>
+                                                    <li><a href="/meet_brooks/our_purpose">Our Purpose</a></li>
                                                     <li><a href="/meet_brooks/technology">Technology</a></li>
                                                     <li><a href="/meet_brooks/run-signature">Run Signature</a></li>
                                                 </ul>
