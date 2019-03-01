@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use App\Models\Promo_mast;
+use App\Models\User;
 
 class CartController extends Controller {
 
@@ -118,8 +119,13 @@ class CartController extends Controller {
                             <CartDetails>\n\t";*/
             $cart_xml = "<Cart>";
             if(auth()->id()!=0){
-                $personid = User::where('id', auth()->id())->select('person_idx')->first(); 
-                $cart_xml .= "<PersonId>$personid->person_idx</PersonId>";  
+                $personid = User::where('id', auth()->id())->select('person_idx')->first();
+                if($personid->person_idx!=''){
+                    $personidx = $personid->person_idx;
+                }else{
+                    $personidx = '115414';
+                } 
+                $cart_xml .= "<PersonId>$personidx</PersonId>";  
             }else{
                 $cart_xml .= "<PersonId>115414</PersonId>";
             }
