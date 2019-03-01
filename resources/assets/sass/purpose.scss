@@ -1,0 +1,911 @@
+@import 'owl.carousel.css';
+@import 'common.css';
+@import 'global.scss';
+
+.site__wrapper--padding {
+  padding: 0 20px
+}
+
+@media (min-width:595px) {
+  .site__wrapper--padding {
+      padding: 0 40px
+  }
+}
+
+@media (min-width:1080px) {
+  .site__wrapper--padding {
+      padding: 0 60px
+  }
+}
+
+.site__wrapper--margin {
+  margin: 0 auto 60px
+}
+
+@media (min-width:768px) {
+  .site__wrapper--margin {
+      margin: 0 auto 80px
+  }
+}
+
+@media (min-width:975px) {
+  .site__wrapper--margin {
+      margin: 0 auto 120px
+  }
+}
+
+.col-sm-2 {
+  width: 100%
+}
+
+.col-sm-2--site__wrapper {
+  float: left;
+  width: calc(100% * 1 - 40px)
+}
+
+@media (min-width:595px) {
+  .col-md-4 {
+      float: left;
+      width: 66.66667%
+  }
+}
+
+@media (min-width:975px) {
+  .col-lg-4 {
+      width: 33.33333%
+  }
+}
+
+@media (min-width:975px) {
+  .col-lg-10 {
+      width: 83.33333%
+  }
+}
+
+.no-float {
+  float: none
+}
+
+::selection {
+  background: #0363f7;
+  color: #fff
+}
+
+::-moz-selection {
+  background: #0363f7;
+  color: #fff
+}
+
+p {
+  margin-bottom: 0;
+  max-width: 560px
+}
+
+.is-hidden {
+  display: none!important;
+  visibility: hidden!important
+}
+
+img.isLoading {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0)
+}
+
+img.isLoading.loaded {
+  opacity: 1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: all .6s ease
+}
+
+.ratio-container {
+  position: relative
+}
+
+.ratio-container:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 100%;
+  padding-bottom: 42.93%
+}
+
+.ratio-container>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+.ratio-container--benefits:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 100%;
+  padding-bottom: 125%
+}
+
+@media (min-width:595px) {
+  .ratio-container--benefits:after {
+      padding-bottom: 56.25%
+  }
+}
+
+.ratio-container--benefits>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+body {
+  background: #fff;
+  color: #0e0e0e;
+  font: 100%/1.5 HelveticaNeue, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden
+}
+
+* {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased
+}
+
+body,
+div,
+figure,
+html,
+iframe,
+p,
+section {
+  margin: 0;
+  padding: 0
+}
+
+figure,
+section {
+  display: block
+}
+
+.m-block--video-player {
+  display: block;
+  z-index: 100
+}
+
+.m-block--video-player img {
+  opacity: 1;
+  height: 100%!important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  z-index: 200
+}
+
+.m-block--video-player--overlay {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .8));
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 300
+}
+
+.m-block--video-player--overlay .icon-video-play {
+  cursor: pointer;
+  fill: #0363f7;
+  height: 60px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: fill .6s ease-in-out;
+  width: 60px
+}
+
+@media (min-width:595px) {
+  .m-block--video-player--overlay .icon-video-play {
+      height: 80px;
+      width: 80px
+  }
+}
+
+.m-block--video-player--overlay .icon-video-play:hover {
+  fill: #002855
+}
+
+.m-block--video-player--overlay__meta {
+  bottom: 20px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100%
+}
+
+@media (min-width:768px) {
+  .m-block--video-player--overlay__meta {
+      bottom: 50px
+  }
+}
+
+.m-block--video-player--overlay__meta span {
+  color: #fff;
+  display: block;
+  width: 100%
+}
+
+.m-block--video-player__video--overlay {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity .6s ease-in-out;
+  width: 100%
+}
+
+.m-block--video-player__video--overlay .icon-video-pause {
+  cursor: pointer;
+  fill: #fff;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 50px
+}
+
+.m-block--video-player {
+  max-width: 1095px
+}
+
+
+.icon {
+  background: none;
+  margin: 0
+}
+
+.icon-long-arrow {
+  fill: none;
+  stroke: #0363f7
+}
+
+.icon-video-pause,
+.icon-video-play {
+  fill: #fff
+}
+
+
+p {
+  font-family: Proxima, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23px
+}
+
+@media (min-width:768px) {
+  p {
+      font-size: 18px;
+      line-height: 24px
+  }
+}
+
+@media (min-width:1280px) {
+  p {
+      font-size: 20px;
+      line-height: 27px
+  }
+}
+
+.type {
+  font-family: Proxima, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23px
+}
+
+@media (min-width:768px) {
+  .type {
+      font-size: 18px;
+      line-height: 24px
+  }
+}
+
+@media (min-width:1280px) {
+  .type {
+      font-size: 20px;
+      line-height: 27px
+  }
+}
+
+.large {
+  @extend %extrabold-font;
+  font-size: 30px;
+  line-height: 34px
+}
+
+@media (min-width:768px) {
+  .large {
+      font-size: 40px;
+      line-height: 45px
+  }
+}
+
+@media (min-width:1080px) {
+  .large {
+      font-size: 50px;
+      line-height: 55px
+  }
+}
+
+.medium {
+  @extend %bold-font;
+  font-size: 22px;
+  line-height: 25px
+}
+
+@media (min-width:768px) {
+  .medium {
+      font-size: 26px;
+      line-height: 30px;
+  }
+}
+
+@media (min-width:1080px) {
+  .medium {
+      font-size: 30px;
+      line-height: 35px;
+  }
+}
+
+.small--bold {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.small--bold,
+.x-small--bold {
+  @extend %extrabold-font;
+}
+
+.x-small--bold {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+a {
+  color: #0e0e0e;
+  text-decoration: none;
+  outline: 0;
+  transition: all .2s ease;
+}
+
+a:focus,
+a:hover {
+  color: #0363f7;
+}
+
+.meet {
+  padding: 1vh 7vw 2vh;
+}
+
+.graf {
+  padding: 1em 0;
+}
+
+.graf--wide {
+  width: 95%;
+  max-width: 1100px;
+}
+
+.graf--center {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 750px;
+}
+
+.graf--white,
+.graf--white:hover {
+  color: #fff;
+}
+
+.graf--italic {
+  @extend %info-italic-font;
+}
+
+.meet-title {
+  color: #fff;
+  @extend %extrabold-font;
+  font-size: 1rem;
+  letter-spacing: .12rem;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.subhed {
+  text-align: center;
+  padding: 0;
+}
+
+.subhed--wide {
+  width: 95.5%;
+  max-width: 1100px;
+}
+
+.subhed--white {
+  color: #fff;
+}
+
+.subhed--large {
+  color: #000;
+}
+
+.bottom-links {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  a{
+    display: inline-block;
+    font-size: 15px;
+    color: $blue;
+    @extend %bold-font;
+    &:hover{
+      color: $lightblue;
+       #br-home{
+      content: url(../images/home/link-arrow-lightblue--icon.png);
+      }
+    }
+   
+    img{
+      width: 14px;
+      vertical-align: baseline;
+      display: inline-block;
+    }
+     @media #{$tab-only}{
+      font-size: 13px !important;
+       img{
+        width: 12px;
+      }
+    }
+  }
+}
+
+@media (min-width:600px) {
+  .bottom-links {
+      flex-direction: row;
+      width: 300px;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+  }
+}
+
+@media (min-width:375px) and (max-width:599px) {
+  .bottom-link {
+      padding: 1vh;
+  }
+}
+
+.timeline-date {
+  padding: 2vh 0;
+  color: #0363f7;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  text-align: center;
+}
+
+.timeline-date--white {
+  color: #fff;
+}
+
+.timeline-date:after,
+.timeline-date:before {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 35vw;
+  height: 2px;
+  content: "\A0";
+  background-color: #d9d9d9;
+}
+
+@media (min-width:600px) {
+  .timeline-date:after,
+  .timeline-date:before {
+      width: 40%;
+  }
+}
+
+.timeline-date:before {
+  right: 60%;
+  margin-right: 20px;
+}
+
+.timeline-date:after {
+  left: 60%;
+  margin-left: 20px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.center-y {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#links {
+  padding-top: 8%;
+  background-color: #fff;
+  height: 50vh;
+  min-height: 250px;
+}
+
+@media (min-width:375px) and (max-width:599px) {
+  #links {
+      height: 35vh;
+  }
+}
+
+#top #header_small {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width:600px) {
+  #top #header_small {
+      display: none;
+  }
+}
+
+#top #header_large {
+  display: none;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width:600px) {
+  #top #header_large {
+      display: inline;
+  }
+}
+
+.section_block {
+  top: 20%;
+  position: absolute;
+  padding: 3%;
+}
+
+.section_block._top {
+  top: 5%;
+}
+
+@media (min-width:600px) {
+  .section_block {
+      position: unset;
+  }
+}
+
+#meet-purpose {
+  min-height: 100vh;
+}
+
+#top {
+  background-color: #3caf8c;
+}
+
+#purpose-video {
+  background-color: #d6f3fc;
+  padding-top: 5%;
+}
+
+#the-run,
+#the-run img {
+  position: relative;
+}
+
+#the-run img {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width:600px) {
+  #the-run img {
+      display: none;
+  }
+}
+
+@media (min-width:600px) {
+  #the-run {
+      background-repeat: no-repeat;
+      background-color: #d9e7f5;
+      background-size: cover;
+      background-position: 50%;
+      padding-top: 5%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_1_med");
+      min-height: 900px;
+      height: 100vh;
+  }
+}
+
+@media (min-width:900px) {
+  #the-run {
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_1");
+      min-height: 1200px;
+  }
+}
+
+@media (min-width:1800px) {
+  #the-run {
+      height: 120vh;
+      min-height: 1500px;
+  }
+}
+
+#one-thing {
+  padding-top: 30%;
+  background-color: #d9e7f5;
+  background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_2_mobile");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 80vh;
+  min-height: 800px;
+}
+
+@media (min-width:375px) and (max-width:599px) {
+  #one-thing {
+      padding-top: 60%;
+  }
+}
+
+@media (min-width:600px) {
+  #one-thing {
+      padding-top: 30%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_2_med")
+  }
+}
+
+@media (min-width:900px) {
+  #one-thing {
+      padding-top: 18%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_2")
+  }
+}
+
+@media (min-width:1200px) {
+  #one-thing {
+      padding-top: 25vh;
+      height: 100vh;
+  }
+}
+
+@media (min-width:1800px) {
+  #one-thing {
+      padding-top: 30vh;
+  }
+}
+
+#third-sect {
+  position: relative;
+  background-color: #d9e7f5;
+}
+
+@media (min-width:600px) {
+  #third-sect {
+      background-repeat: no-repeat;
+      height: 100vh;
+      background-position: 50%;
+      padding-top: 5%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_3_med");
+      background-size: cover;
+  }
+}
+
+@media (min-width:900px) {
+  #third-sect {
+      background-size: cover;
+      background-position: 50%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_3")
+  }
+}
+
+@media (min-width:1200px) {
+  #third-sect {
+      height: 120vh;
+  }
+}
+
+#runners {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width:600px) {
+  #runners {
+      display: none;
+  }
+}
+
+#sweat {
+  background-color: #4088d6;
+  position: relative;
+}
+
+#sweat img {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width:600px) {
+  #sweat img {
+      display: none;
+  }
+}
+
+@media (min-width:600px) {
+  #sweat {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      height: 100vh;
+      min-height: 800px;
+      padding-top: 5%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_4_med.png");
+  }
+}
+
+@media (min-width:1200px) {
+  #sweat {
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_4.png");
+  }
+}
+
+.sweat-text {
+  position: absolute;
+  top: 22%;
+  padding: 3%;
+}
+
+@media (min-width:600px) {
+  .sweat-text {
+      position: unset;
+      padding-top: 180px;
+  }
+}
+
+#community {
+  position: relative;
+  background-color: #f4f6f8;
+}
+
+#community img {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width:600px) {
+  #community img {
+      display: none;
+  }
+}
+
+@media (min-width:600px) {
+  #community {
+      background-color: #d9e7f5;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      padding-top: 5%;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_5_med.png");
+      height: 100vh;
+      background-size: cover;
+      min-height: 800px;
+  }
+}
+
+@media (min-width:900px) {
+  #community {
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_5.png");
+  }
+}
+
+@media (min-width:1200px) {
+  #community {
+      height: 120vh;
+  }
+}
+
+#we-run {
+  position: relative;
+  background-color: #d6e7f6;
+}
+
+@media (min-width:600px) {
+  #we-run {
+      padding-top: 5%;
+      background-size: cover;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-color: #d9e7f5;
+      height: 100vh;
+      min-height: 800px;
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_6_med.png");
+  }
+}
+
+@media (min-width:900px) {
+  #we-run {
+      background-image: url("https://content.brooksrunning.com/-/media/Project/Brooks-Running/Content/Evergreen/Meet-Brooks-Refresh/purpose_6.png");
+  }
+}
+
+@media (min-width:1200px) {
+  #we-run {
+      height: 120vh;
+  }
+}
+
+#we-run img {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width:600px) {
+  #we-run img {
+      display: none;
+  }
+}
+
+#message {
+  padding-top: 3%;
+  background-color: #d9e7f5;
+  min-height: 300px;
+}
+
+
+.hide {
+  display: none;
+}
+
+.Black {
+  color: #0E0E0E;
+}
+
+.White {
+  color: #FFFFFF;
+}
+
+.sc-edit-placeholder {
+  border: #0363F7 dashed 1px;
+  text-align: center;
+  margin: 0px 0px 50px 0px;
+  padding: 30px;
+}
+
+.sc-edit-placeholder:hover {
+  background-color: #D3D0CD;
+  @extend %extrabold-font;
+}

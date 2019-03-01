@@ -124,8 +124,6 @@ class meet_brooksController extends Controller
 		return view( 'meet_brooks.roadtester');
     }
 
-
-
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country='') {
 
         $response = $this->bridge->getPersonid($email);
@@ -278,4 +276,15 @@ class meet_brooksController extends Controller
 	{
 		return view( 'meet_brooks.competition.thank_you');
     }
+
+    public function our_purpose()
+	{
+		return view( 'meet_brooks.our-purpose');
+    }
+
+    public function our_history()
+	{
+		return view( 'meet_brooks.our-history');
+    }
+
 }
