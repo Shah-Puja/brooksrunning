@@ -126,7 +126,7 @@ var $grid = $('.grid').isotope({
 });
 
 var filters = {};
-var loadmore_count = '12'; 
+var loadmore_count = '15'; 
 
 $(document).on("click",".filter-value",function(){
 
@@ -175,7 +175,7 @@ $(document).on("click",".filter-value",function(){
   localStorage.setItem("comboFilter", comboFilter);
   localStorage.setItem("plpfilter", $(".plp-filter").html());
   localStorage.setItem("listingurl",window.location.pathname);
-  counter = 12;
+  counter = 15;
   loadMore(counter);
   return false;
 });
@@ -206,7 +206,7 @@ $(document).on('click','.selection-filter',function(){
     localStorage.setItem("comboFilter", comboFilter);
     localStorage.setItem("plpfilter", $(".plp-filter").html());
     localStorage.setItem("listingurl",window.location.pathname);
-    counter = 12;
+    counter = 15;
     loadMore(counter);
   return false;
 });
@@ -223,7 +223,7 @@ $(document).on('click','.reset-filter',function(){
   $grid.isotope({ filter: reset_filter });
   localStorage.setItem("comboFilter","");
   localStorage.setItem("listingurl",window.location.pathname);
-  counter = 12;
+  counter = 15;
   loadMore(counter);
   filters = [];
   return false;
@@ -269,7 +269,7 @@ function getComboFilter( filters ) {
     //****************************
   // Isotope Load more button
   //****************************
-  var initShow = 12; //number of images loaded on init & onclick load more button
+  var initShow = 15; //number of images loaded on init & onclick load more button
   var counter = initShow; //counter for load more button
   var iso = $grid.data('isotope'); // get Isotope instance
 
