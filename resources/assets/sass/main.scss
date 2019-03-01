@@ -2725,3 +2725,73 @@ width: 100%;
 }
 /* End Collection-Listing
 */
+
+/* Start Our-purpose */
+.brooksourpurpose{
+  #top {
+    background-color: #3caf8c;
+    #header_small {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .meet {
+    padding: 1vh 7vw 2vh;
+  }
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .meet-title{   
+    color: #fff;
+    @extend %extrabold-font;
+    font-size: 1rem;
+    letter-spacing: .12rem;
+    padding: 1rem 0;
+    text-transform: uppercase;
+  }
+
+  // 
+  #purpose-video {
+    background-color: #d6f3fc;
+    padding-top: 5%;
+  } 
+}
+
+/* End Our-purpose */
+
+/* Start Our-history */
+.brooksourhistory{
+  #top {
+    background-color: #3caf8c;
+    #header_small {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .meet {
+    padding: 1vh 7vw 2vh;
+  }
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .meet-title{   
+    color: #fff;
+    @extend %extrabold-font;
+    font-size: 1rem;
+    letter-spacing: .12rem;
+    padding: 1rem 0;
+    text-transform: uppercase;
+  }
+
+  // 
+  #purpose-video {
+    background-color: #d6f3fc;
+    padding-top: 5%;
+  } 
+}
+
+/* End Our-history */
