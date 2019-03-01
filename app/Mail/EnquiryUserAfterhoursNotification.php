@@ -8,9 +8,10 @@ use App\Models\ContactUsEnquiry;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue
-{
-    use Queueable, SerializesModels;
+class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue {
+
+    use Queueable,
+        SerializesModels;
 
     public $enquiry;
 
@@ -19,8 +20,7 @@ class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(ContactUsEnquiry $enquiry)
-    {
+    public function __construct(ContactUsEnquiry $enquiry) {
         $this->enquiry = $enquiry;
     }
 
@@ -29,8 +29,8 @@ class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue
      *
      * @return $this
      */
-    public function build()
-    {
-        return $this->replyTo($this->enquiry->email,$this->enquiry->fname.' '.$this->enquiry->lname)->view('emails.enquiryuserafterhoursnotification');
+    public function build() {
+        return $this->view('emails.enquiryuserafterhoursnotification')->subject('Brooks Running Auto reply - Enquiry Email');
     }
+
 }
