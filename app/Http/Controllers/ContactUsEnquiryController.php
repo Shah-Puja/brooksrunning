@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\ContactUsEnquiry;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnquirySubmittedNotification;
+use App\Mail\EnquiryUserAfterhoursNotification;
 
 class ContactUsEnquiryController extends Controller {
 
