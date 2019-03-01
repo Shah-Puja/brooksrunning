@@ -15,7 +15,7 @@ class s7_transfer_tables extends Command
      *
      * @var string
      */
-    protected $signature = 'transfer-product-tables';
+    protected $signature = 's7_transfer_product_tables';
 
     /**
      * The console command description.
