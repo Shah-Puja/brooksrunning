@@ -269,10 +269,7 @@
 			We're proud of who we are and where we come from. Read on to learn more.
 	</p>
 	<div class="bottom-links center">
-			<div class="center bottom-link">
-					<a href="/meet_brooks/our_company/" class="a-text-btn a-text-btn--secondary small--bold">Our Company 
-						<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-			</div>
+			
 			<div class="center bottom-link">
 					<a href="/meet_brooks/our_history/" class="a-text-btn a-text-btn--secondary small--bold">Our History
 					<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
