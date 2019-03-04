@@ -32,13 +32,12 @@ class Kernel extends ConsoleKernel
         switch (env("APP_ENV")):
             case 'production':
                 $schedule->command('algolia:sync')
-                    ->daily();            
-                break;
-            case 'dev' : 
+                    ->daily();    
                 $schedule->command('s7_transfer_product_tables')                                    
-                    ->cron('35 2 * * *');
-                    //->cron('35 2 * * *'); //Actual time
+                    ->cron('35 2 * * *');       
                 break;
+            /*case 'dev' :                 
+                break;*/                
         endswitch;
     }
 
