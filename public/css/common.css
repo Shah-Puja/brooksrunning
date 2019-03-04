@@ -6881,6 +6881,9 @@ textarea {
 .fixed-header .search-container {
   pointer-events: auto;
 }
+.fixed-header .mob-2 .mob-icon {
+  pointer-events: auto;
+}
 
 /*  Fixed Header End */
 
