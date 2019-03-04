@@ -5378,5 +5378,16 @@ a {
       pointer-events: auto;
     }
   }
+  .mobile-navbar--container{
+    z-index: 99999 !important;
+    .mobile-navbar > li > a
+    { 
+      pointer-events: auto;
+     }
+     .mobile-navbar > li > ul.sub-menu > li a{ 
+      pointer-events: auto;
+  }
+  }
+
 }
 /*  Fixed Header End */

@@ -6884,6 +6884,15 @@ textarea {
 .fixed-header .mob-2 .mob-icon {
   pointer-events: auto;
 }
+.fixed-header .mobile-navbar--container {
+  z-index: 99999 !important;
+}
+.fixed-header .mobile-navbar--container .mobile-navbar > li > a {
+  pointer-events: auto;
+}
+.fixed-header .mobile-navbar--container .mobile-navbar > li > ul.sub-menu > li a {
+  pointer-events: auto;
+}
 
 /*  Fixed Header End */
 
