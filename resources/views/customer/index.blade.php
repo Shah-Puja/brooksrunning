@@ -52,7 +52,7 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_gts19-ghost11-camo-2.jpg">
+					<img src="/images/home/hp_sm_gts19-ghost11-camo.jpg">
 			        <h3>&nbsp;<br/>Abstract Series </h3>
 				</div>
 				<div class="info-wrapper">
