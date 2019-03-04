@@ -112,7 +112,7 @@
                                                         <a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/glycerin-16-womens-running-shoes/120278_034.html" title="Glycerin 16">Glycerin 16</a> 
+                                                        <a href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 
@@ -454,8 +454,8 @@
                                                     <li class="submenu-main">
                                                         <a href="/info/about-us">About Us</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/what-makes-us-tick">What Makes Us Tick</a></li>
-                                                    <li><a href="/meet_brooks/run-happy-is">Run Happy is</a></li>
+                                                    <li><a href="/meet_brooks/our_history">Our History</a></li>
+                                                    <li><a href="/meet_brooks/our_purpose">Our Purpose</a></li>
                                                     <li><a href="/meet_brooks/technology">Technology</a></li>
                                                     <li><a href="/meet_brooks/run-signature">Run Signature</a></li>
                                                 </ul>
