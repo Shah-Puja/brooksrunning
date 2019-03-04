@@ -6569,16 +6569,16 @@ a:hover {
   content: url(../images/home/link-arrow-lightblue--icon.png);
 }
 .bottom-links a img {
-  width: 14px;
+  width: 14px !important;
   vertical-align: baseline;
   display: inline-block;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .bottom-links a {
-    font-size: 13px !important;
+    font-size: 18px !important;
   }
   .bottom-links a img {
-    width: 12px;
+    width: 12px !important;
   }
 }
 
@@ -6810,6 +6810,11 @@ a:hover {
     padding-right: 0;
     padding-bottom: 2em;
     width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #meet-history .main-container {
+    padding: 3% !important;
   }
 }
 .is-hidden {
