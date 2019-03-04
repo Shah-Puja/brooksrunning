@@ -33,7 +33,7 @@
                 </div>
             </div>
         </section>
-        <div class="wrapper main-container" style="margin-top:5%;">
+        <div class="wrapper" style="margin-top:5%;">
         <div class="row">
         <div id="start">
             <section class="meet">
@@ -612,7 +612,7 @@
             </p>
             <div class="bottom-links center">
                 <div class="center bottom-link">
-                        <a href="/meet_brooks/our_history" class="a-text-btn a-text-btn--secondary small--bold">Our History
+                        <a href="/meet_brooks/our_purpose" class="a-text-btn a-text-btn--secondary small--bold">Our Purpose
                         <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
                 </div>
             </div>
