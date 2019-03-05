@@ -118,11 +118,12 @@ class CartController extends Controller {
 						</Contacts>
                             <CartDetails>\n\t";*/
             $cart_xml = "<Cart>";
-            if(auth()->id()!=0){
+            if(auth()->id()!=0){ //check user is logged in or not for Loyalty program
                 $personid = User::where('id', auth()->id())->select('person_idx')->first();
                 if($personid->person_idx!=''){
                     $personidx = $personid->person_idx;
                 }else{
+                    //create ap21 prsonidx, if person idx is not there.
                     $personidx = '115414';
                 } 
                 $cart_xml .= "<PersonId>$personidx</PersonId>";  

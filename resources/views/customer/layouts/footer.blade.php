@@ -213,9 +213,11 @@ $last_word = $matches[0];
     $(window).scroll(function(){
         if ($(window).scrollTop() >= 147) {
             $('.header-desktop').addClass('fixed-header');
+			$('.header-mobile').addClass('fixed-header');
         }
         else {
             $('.header-desktop').removeClass('fixed-header');
+			$('.header-mobile').removeClass('fixed-header');
         }
     });
  /* /Freeze top navigation*/  

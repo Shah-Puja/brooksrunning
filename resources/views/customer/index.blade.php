@@ -52,12 +52,12 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_le_levitate-ricochet.jpg">
-			        <h3>&nbsp;<br/>LE Series </h3>
+					<img src="/images/home/hp_sm_gts19-ghost11-camo.jpg">
+			        <h3>&nbsp;<br/>Abstract Series </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Are they sneakers? Are they high-performance  running shoes? Yes. </p>
-					<a href="/limited-edition-levitate-ricochet-shoes">Shop the LE Series <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<p>Run with the Adrenaline GTS 19 and Ghost 11 in these limited release colours. </p>
+					<a href="/abstract-collection-adrenaline-ghost">Shop Abstract Series <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-transcend-6-mens/110299_419.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
 				</div>
 			</div>
