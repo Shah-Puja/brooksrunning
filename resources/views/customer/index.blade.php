@@ -5,6 +5,8 @@
 	{!! $banner->html_section !!}
 @endif
 
+@include('customer.medibank.medibank_header')
+
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">

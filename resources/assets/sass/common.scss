@@ -1475,6 +1475,293 @@
       }
     }
   }
+/*Start Medibank Styles*/
+
+.homepage-medibank--container{
+  position:relative;
+  display:block;
+  padding:0px 15px;
+  margin-bottom:10px;
+  @media #{$tabmob-only}{
+    padding:0 !important;
+  }
+  .wrapper{
+    width: 100%;
+    max-width: 1300px;
+  }
+  .pl-0{
+    padding-left:0 !important;
+    @media #{$tabmob-only}{
+      padding:0 !important;
+    }
+  }
+  .pr-0{
+    padding-right: 0;
+    @media #{$tabmob-only}{
+      padding:0 !important;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+      padding:0px 15px;
+      
+    }
+  }
+  .homepage-medibank--info{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #D90432;
+    a{
+      display: block;
+      .logo{
+        // width: 100%;
+        // max-width: 216px;
+        // margin-top: 28px;
+        width: 100%;
+        max-width: 220px;
+        margin-top: 10px;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .medibank--subinfo--login{
+        margin: 0 auto;
+        
+        .homepage-medibank--btn{
+          
+          @media #{$tab-only}{
+            margin-top: 8px;
+            padding: 12px 15px;
+            font-size: 13px;
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            margin-top: 8px;
+            padding: 12px 5px;
+            font-size: 17px;
+          }
+        }
+
+        .medibank--content{
+          padding-top: 30px;
+          max-width: 250px;
+          text-align:center;
+          label{
+            color:$white;
+            font-size: 12px;
+            }
+          @media #{$tab-only}{
+            padding-top: 2%;
+            max-width: 180px;
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            
+            max-width: 215px;
+          }
+          @media #{$mobile-only}{
+            padding-top: 95%;
+          }
+         
+          }
+        .medibank--login{
+          label{
+            color: $white;
+            text-decoration-line: underline; 
+            font-size: 18px;
+          }
+          .form--option{
+            margin-bottom: 3px;
+              .input-wrapper{
+                .medibank-input{
+                  display: block;
+                  color: $black;
+                  @extend %info-font;
+                  font-size: 14px;
+                  padding: 7px;
+                  height: 34px;
+                  width: 100%;
+                  max-width: 250px;
+                  border: 0;
+                  outline: 0;
+                  margin-bottom: 12px;
+              }
+              .medibank-button{
+                width: 100%;
+                max-width: 250px;
+              }
+              .pdp-button{
+                min-width: 110px;
+                padding: 15px 25px;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+    }
+    .medibank--subinfo--login--failed{
+      margin: 0 auto;
+      
+      .homepage-medibank--btn{
+        
+        @media #{$tab-only}{
+          margin-top: 8px;
+          padding: 12px 15px;
+          font-size: 13px;
+        }
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+          margin-top: 8px;
+          padding: 12px 5px;
+          font-size: 17px;
+        }
+      }
+      .medibank--login--failed{
+        label{
+          color: $white;
+          text-decoration-line: underline; 
+          font-size: 18px;
+        }
+        .login_failed{
+          .failed-text{
+            color: $white;
+            font-size: 18px;
+          }
+          .ctg-btn{
+            @extend %bold-font;
+            font-size: 20px;
+            margin-bottom: 12px;
+            margin-top: 12px;
+            
+             @media #{$tab-up} {
+                padding:0px 45px 10px 0px;
+              }
+             @media #{$tab-only}{
+                padding:0px 45px 10px 0px;
+             }
+            span{
+               float:left;
+               width:50%;
+               padding-right:12px;
+                @media #{$mobile-only}{
+                  padding-right:8px;
+                }
+            }
+                .secondary-button{
+                  text-align:center;
+                  border: 2px solid $white;
+                  color: $blue;
+                  background-color: $white;
+                    &:hover {
+                        color: $white;
+                        background-color: $blue;
+                        border: 2px solid $blue;
+                      }
+                    @media #{$mobile-only}{ 
+                      width:100%;
+                      min-width:70px;
+                      padding: 6px 5px;
+                      font-size: 10px;
+                    }
+                     @media #{$tab-only}{ 
+                      width:100%;
+                      min-width:70px;
+                      padding: 6px 5px;
+                      font-size: 12px;
+                    }
+                }
+                .primary-button{
+                  text-align:center;
+                    &:hover {
+                        color: $white;
+                      }
+                    @media #{$mobile-only}{ 
+                      width:100%;
+                      min-width:70px;
+                      padding: 6px 5px;
+                      font-size: 10px;
+                    }
+                     @media #{$tab-only}{ 
+                      width:100%;
+                      min-width:70px;
+                      padding: 6px 5px;
+                      font-size: 12px;
+                    }
+                }
+          }
+        }
+      }
+      
+    }
+    .medibank--subinfo--login--success{
+      margin: 0 auto;
+      .medibank--login--success{
+        label{
+          color: $white;
+          text-decoration-line: underline; 
+          font-size: 18px;
+        }
+        .login_success{
+          .success-text{
+            color: $white;
+            font-size: 20px;
+            text-align: right;
+            span
+            .user-name{
+              color: $white;
+            }
+          }
+        }
+      }
+  }
+    
+    .br-info{
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .secondary-button{
+      margin-top:15px;
+    }
+    .primary-button{
+      margin-top:15px;
+    }
+    @media #{$mobile-only}{
+      top: 30%;
+    }
+    .sl-pl-0{
+      padding-left: 5px !important;
+      }
+      .sl-pr-0{
+        padding-right: 5px !important;
+      }
+  }
+  @media screen and (orientation: landscape) {
+    .homepage-medibank--mobportrait{
+      display:none !important;
+    }
+    .homepage-medibank--moblandscape{
+      top: 0;
+      .banner--info{
+          padding-top: 2% !important;
+          max-width: 180px !important;
+          padding-top: 3% !important;
+      }
+      .homepage-medibank--btn{
+        margin-top: 8px;
+        padding: 8px 8px !important;
+        font-size: 12px;
+      }
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .homepage-medibank--moblandscape{
+      display:none !important;
+    }
+  }
+}
+
+/*End Medibank Styles*/
+
   .overgray-wrapper{
     margin: 25px 0;
     @media #{$mobile-only}{
