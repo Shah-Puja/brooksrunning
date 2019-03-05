@@ -37,11 +37,11 @@ class AlgoliaSync extends Command {
      *
      * @return mixed
      */
-    public function handle() {
-        //$this->call('scout:flush "App\Models\Product"');
+    public function handle() {        
         $this->call('scout:flush', ['model' => 'App\Models\Product']);
         $this->call('scout:import', ['model' => 'App\Models\Product']);
         $this->info('algolia:sync Command ran successfully!');
-        echo "successsssss";die;
+        echo "success";
+        die;
     }
 }
