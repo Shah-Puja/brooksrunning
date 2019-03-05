@@ -1485,6 +1485,23 @@
   @media #{$tabmob-only}{
     padding:0 !important;
   }
+   
+  @media #{$mobile-only}{
+    .padding_left-0{
+      padding-left:0px !important;
+    }
+    .padding_right-0{
+      padding-right: 0px !important;
+    }
+  }
+  @media #{$tab-only}{
+    .padding_left-0{
+      padding-left:0px !important;
+    }
+    .padding_right-0{
+      padding-right: 0px !important;
+    }
+  }
   .wrapper{
     width: 100%;
     max-width: 1300px;
@@ -1513,12 +1530,10 @@
     left: 0;
     z-index: 2;
     background-color: #D90432;
+   
     a{
       display: block;
       .logo{
-        // width: 100%;
-        // max-width: 216px;
-        // margin-top: 28px;
         width: 100%;
         max-width: 220px;
         margin-top: 10px;
@@ -1548,6 +1563,9 @@
           padding-top: 30px;
           max-width: 250px;
           text-align:center;
+          @media #{$mobile-only}{
+            padding-top: 0px;
+          }
           label{
             color:$white;
             font-size: 12px;
@@ -1559,9 +1577,6 @@
           @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             
             max-width: 215px;
-          }
-          @media #{$mobile-only}{
-            padding-top: 95%;
           }
          
           }
@@ -1599,10 +1614,13 @@
             }
           }
         }
-    }
+    
+      }
     .medibank--subinfo--login--failed{
       margin: 0 auto;
-      
+      @media #{$mobile-only}{
+        padding: 20px;
+      }
       .homepage-medibank--btn{
         
         @media #{$tab-only}{
@@ -1617,6 +1635,7 @@
         }
       }
       .medibank--login--failed{
+        margin-top: 15px;
         label{
           color: $white;
           text-decoration-line: underline; 
@@ -1647,47 +1666,53 @@
                   padding-right:8px;
                 }
             }
-                .secondary-button{
-                  text-align:center;
-                  border: 2px solid $white;
-                  color: $blue;
-                  background-color: $white;
-                    &:hover {
-                        color: $white;
-                        background-color: $blue;
-                        border: 2px solid $blue;
-                      }
-                    @media #{$mobile-only}{ 
-                      width:100%;
-                      min-width:70px;
-                      padding: 6px 5px;
-                      font-size: 10px;
+              .secondary-button{
+                text-align:center;
+                border: 2px solid $white;
+                color: $blue;
+                background-color: $white;
+                font-size:16px;
+                max-width: 220px;
+                padding: 12px 10px;
+                  &:hover {
+                      color: $white;
+                      background-color: $blue;
+                      border: 2px solid $blue;
                     }
-                     @media #{$tab-only}{ 
-                      width:100%;
-                      min-width:70px;
-                      padding: 6px 5px;
-                      font-size: 12px;
+                  @media #{$mobile-only}{ 
+                    width:100%;
+                    min-width:70px;
+                    padding: 6px 5px;
+                    font-size: 10px;
+                  }
+                    @media #{$tab-only}{ 
+                    width:100%;
+                    min-width:70px;
+                    padding: 6px 5px;
+                    font-size: 12px;
+                  }
+              }
+              .primary-button{
+                text-align:center;
+                font-size:16px;
+                max-width: 220px;
+                padding: 12px 10px;
+                  &:hover {
+                      color: $white;
                     }
-                }
-                .primary-button{
-                  text-align:center;
-                    &:hover {
-                        color: $white;
-                      }
-                    @media #{$mobile-only}{ 
-                      width:100%;
-                      min-width:70px;
-                      padding: 6px 5px;
-                      font-size: 10px;
-                    }
-                     @media #{$tab-only}{ 
-                      width:100%;
-                      min-width:70px;
-                      padding: 6px 5px;
-                      font-size: 12px;
-                    }
-                }
+                  @media #{$mobile-only}{ 
+                    width:100%;
+                    min-width:70px;
+                    padding: 6px 5px;
+                    font-size: 10px;
+                  }
+                    @media #{$tab-only}{ 
+                    width:100%;
+                    min-width:70px;
+                    padding: 6px 5px;
+                    font-size: 12px;
+                  }
+              }
           }
         }
       }
@@ -1695,7 +1720,11 @@
     }
     .medibank--subinfo--login--success{
       margin: 0 auto;
+      @media #{$mobile-only}{
+        padding: 20px;
+      }
       .medibank--login--success{
+        margin-right: 30px;
         label{
           color: $white;
           text-decoration-line: underline; 
@@ -1706,14 +1735,24 @@
             color: $white;
             font-size: 20px;
             text-align: right;
+            @extend %bold-font;
             span
             .user-name{
               color: $white;
+              @extend %extrabold-font;
             }
+          }
+          .login-text{
+            color: $white;
+            font-size: 20px;
+            text-align: right;
+            @extend %bold-font;
+            cursor:pointer;
+            text-decoration-line: underline; 
           }
         }
       }
-  }
+    }
     
     .br-info{
         font-size: 16px;
@@ -3489,6 +3528,20 @@
             }
           }
         }
+      }
+      p{
+        font-size: 12px;
+      }
+    }
+    &--medibank{
+      background-color: #D90432;
+      max-width: 280px;
+      h3{
+        @extend %bold-font;
+        color: $white;
+        padding: 10px;
+        line-height: 1.3;
+        font-size: 16px;
       }
       p{
         font-size: 12px;

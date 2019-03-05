@@ -320,6 +320,8 @@
                         </form>
                     </div>
                     
+                    @include('customer.medibank.medibank_pdp')
+
                     <div class="pdp-container--offer">
                         <h3>Free Shipping on all orders over $50. Australia Wide</h3>
                         <ul>

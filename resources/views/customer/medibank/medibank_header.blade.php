@@ -1,8 +1,8 @@
 <section class="homepage-medibank--container">
-<div class="wrapper">
+<div class="wrapper  padding_left-0 padding_right-0">
 	<div class="row">
-		<div class="mob-12 col-12 pr-0">
-			<div class="homepage-medibank--info hidden-mob ">
+		<div class="mob-12 col-12">
+			<div class="homepage-medibank--info">
 				<div class="wrapper">
 					<div class="row">
 						<div class="col-6 tab-6">
@@ -12,11 +12,11 @@
 			                    </div>
 			                </a>
 						</div>
-						<div class="col-6 tab-6  pl-0">
-							<div class="medibank--subinfo--login" style="display: none;">
-								<!-- <a class="secondary-button homepage-sale--btn" href="/womens-running-shoes-sale">Shop Women's</a>
-								<a class="secondary-button homepage-sale--btn" href="/mens-running-shoes-sale">Shop Men's</a> -->
+						<div class="col-6 tab-6">
+							<div class="medibank--subinfo--login">
 								<div class="row">
+									<div class="col-2">&nbsp;
+										</div>
 									<div class="col-4">
 										<div class="medibank--content">
 											<label>Please log in with your
@@ -27,8 +27,9 @@
 											</label>
 										</div>
 									</div>
-									<div class="col-8">
-										<div class="medibank--login" style="display:none;">
+									
+									<div class="col-6">
+										<div class="medibank--login">
 											<label>Log In</label>
 											<div class="form--option">
 												<div class="input-wrapper">
@@ -43,23 +44,15 @@
 												</div>
 											</div>
 										</div>
-										<div class="medibank--login--failed">
-											<label>Log In</label>
-											<div class="login_failed">
-											<p class="failed-text">Sorry your member number could not be validated. Please try again. </p>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
 
 							<div class="medibank--subinfo--login--failed" style="display:none;">
-								<!-- <a class="secondary-button homepage-sale--btn" href="/womens-running-shoes-sale">Shop Women's</a>
-								<a class="secondary-button homepage-sale--btn" href="/mens-running-shoes-sale">Shop Men's</a> -->
 								<div class="row">
-									<div class="col-4">&nbsp;
+									<div class="col-5">&nbsp;
 									</div>
-									<div class="col-8">
+									<div class="col-7">
 										<div class="medibank--login--failed">
 											<label>Log In</label>
 											<div class="login_failed">
@@ -74,20 +67,21 @@
 								</div>
 							</div>
 
-							<div class="medibank--subinfo--login--success" >
-							<section class="wrapper">
-								<div class="row">
-									<div class="col-4">&nbsp;
-									</div>
-									<div class="col-8">
-										<div class="medibank--login--success">
-											<div class="login_success">
-											<p class="success-text">Welcome, <span class="user-name">Lydia</span>!</p>
+							<div class="medibank--subinfo--login--success medibank-log-in" style="display:none;">
+								<section class="wrapper">
+									<div class="row">
+										<div class="col-4">&nbsp;
+										</div>
+										<div class="col-8">
+											<div class="medibank--login--success">
+												<div class="login_success">
+												<p class="success-text" style="display:none;" >Welcome, <span class="user-name">Lydia</span>!</p>
+												<p class="login-text">Log In</p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</section>
+								</section>
 							</div>
 						</div>
 					</div>
@@ -97,3 +91,13 @@
 	</div>
 </div>
 </section> 
+
+
+<script>
+$(document).ready(function(){
+  $(".medibank-log-in").click(function(){
+    $(".medibank--subinfo--login").css("display", "block");
+    $(".medibank--subinfo--login--success").css("display", "none");
+  });
+});
+</script>
