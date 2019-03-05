@@ -109,7 +109,7 @@
 									<a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
 								</li>
 								<li>
-									<a href="/glycerin-16-womens-running-shoes/120278_034.html" title="Glycerin 16">Glycerin 16</a> 
+									<a href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a> 
 								</li>
 								<li>
 									<a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 

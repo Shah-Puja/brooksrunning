@@ -62,7 +62,7 @@
                 </div>
             </section>
             <section id="baseball" class="timeline-entry">
-                <picture class="col-4  tab-2">
+                <picture>
                     <source media="(min-width: 900px)" srcset="/images/Meet-Brooks-Refresh/baseball.png">
                     <source media="(min-width: 600px)" srcset="/images/Meet-Brooks-Refresh/baseball_med.png">
                     <img srcset="/images/Meet-Brooks-Refresh/baseball_mobile.png" alt="First Brooks baseball cleats">
@@ -103,7 +103,7 @@
                 </div>
             </section>
             <section id="football" class="timeline-entry timeline-entry--left">
-                <picture class="center col-4  tab-2 img-top-big">
+                <picture class="img-top-big">
                     <source media="(min-width: 900px)" srcset="/images/Meet-Brooks-Refresh/football.png">
                     <source media="(min-width: 600px)" srcset="/images/Meet-Brooks-Refresh/football_med.png">
                     <img srcset="/images/Meet-Brooks-Refresh/football_mobile.png" alt="Brooks football cleats">
@@ -137,7 +137,7 @@
                 <p class="timeline-date center large ">1940</p>
             </div>
             <section id="softball" class="timeline-entry timeline-entry--left">
-                <picture class="col-4  tab-2">
+                <picture>
                     <source media="(min-width: 900px)" srcset="/images/Meet-Brooks-Refresh/softball.png">
                     <source media="(min-width: 600px)" srcset="/images/Meet-Brooks-Refresh/softball_med.png">
                     <img srcset="/images/Meet-Brooks-Refresh/softball_med.png" alt="Brooks softball cleats">
@@ -612,11 +612,7 @@
             </p>
             <div class="bottom-links center">
                 <div class="center bottom-link">
-                        <a href="/meet_brooks/our_company" class="a-text-btn a-text-btn--secondary small--bold">Our Company 
-                            <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-                </div>
-                <div class="center bottom-link">
-                        <a href="/meet_brooks/our_history" class="a-text-btn a-text-btn--secondary small--bold">Our History
+                        <a href="/meet_brooks/our_purpose" class="a-text-btn a-text-btn--secondary small--bold">Our Purpose
                         <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
                 </div>
             </div>

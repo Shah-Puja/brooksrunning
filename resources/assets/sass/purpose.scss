@@ -469,14 +469,14 @@ a:hover {
     }
    
     img{
-      width: 14px;
-      vertical-align: baseline;
+      width: 14px !important;
+      vertical-align: middle;
       display: inline-block;
     }
      @media #{$tab-only}{
-      font-size: 13px !important;
+      font-size: 18px !important;
        img{
-        width: 12px;
+        width: 12px !important;;
       }
     }
   }
