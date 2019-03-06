@@ -86,7 +86,7 @@
 															<form name="medibank-login" method="POST">
 																<input type="email" class="medibank-input" name="email" placeholder="Email Address" required>
 																<input type="text" class="medibank-input" name="medibank_id" placeholder="Medibank ID" required>
-																<button class="pdp-button medibank-login-button">Verify</button>
+																<button name="button"  class="pdp-button medibank-login-button">Verify</button>
 															</form>
 											      	    </div>
 											       </label>

@@ -773,7 +773,7 @@ function mob_search_product(){
     return false;
 });*/
 
-$(document).on('click','.medibank-login-button',function(){
+$(document).on('submit','form[name="medibank-login"]',function(){
     var form_data = $("form[name='medibank-login']").serialize();
     $.ajax({
         headers: {
