@@ -737,7 +737,63 @@ function mob_search_product(){
     });
     
     return false; 
-}	
+}
+
+
+/*$(document).on('click','.medibank-login-button',function(){
+    var form_data = $("form[name='medibank-login']").serialize();
+    var client_id  = '0oagjutu0tOK9j6Fx0h7';
+    var client_secret = 'VLxFvn2LJoHKOUB35_bPw98VAEBcfS18gRUnmjG6';
+    $.ajax({
+        headers: {
+            'Accept' : "application/json",
+            'Authorization': "Basic " + btoa(client_id + ":" + client_secret),
+            'Content-Type' : "application/x-www-form-urlencoded",
+            
+        },
+        url: "https://loyalty-api.digidev.ha-medibank.com/",
+        data: JSON.stringify({
+            scope: "Any",
+            grant_type: 'client_credentials'
+        }),
+        method: "POST",
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (error) {
+            let obj = JSON.parse(error.responseText);
+            console.log(obj.errors);
+            // $(".button").before("<p class='error'>" + obj.errors + "</p>");
+            // setTimeout(function () {
+            //     $(".error").val("1");
+            //     $(".error").remove();
+            // }, 3000);
+        }
+    });
+    return false;
+});*/
+
+$(document).on('click','.medibank-login-button',function(){
+    var form_data = $("form[name='medibank-login']").serialize();
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: "/medibank_check_user",
+        method: "post",
+        success: function (result) {
+               var href = window.location.href;
+               //console.log(href);
+               window.location.href=href;
+        },
+        error: function (error) {
+            let obj = JSON.parse(error.responseText);
+            console.log(obj.errors);
+        }
+    });
+    return false;
+
+});
 
 
 

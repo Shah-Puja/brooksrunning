@@ -579,6 +579,7 @@
 	                 <span class="title">Help</span>
 	                </a>
 	            </li>
+				@if(Session::get('medibank_gateway')!='Yes')
 	            <li>
 	                <a href="javascript:;">
 	                    <span class="title">My Account</span>
@@ -607,6 +608,7 @@
 						@endif
 	                </ul>
 	            </li>
+				@endif
 	            <li>
 	                <a href="/meet_brooks/enewsletter">
 	                    <span class="title">Email Sign Up - The Run down</span>

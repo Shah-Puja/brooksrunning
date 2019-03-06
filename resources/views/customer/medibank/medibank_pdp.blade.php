@@ -1,3 +1,9 @@
+@if(Session::get('medibank_gateway')=='Yes')
 <div class="pdp-container--medibank">
-    <h3>Earn XX live better points when you purchase the Ghost 11</h3>
+    @if($product->price_sale < $product->price)
+        <h3>For every $1 on spent on sale Brooks items, receive xx Live Better Points</h3>
+    @else
+        <h3>For every $1 spent at Brooks on full price items, receive xx Live Better points</h3>
+    @endif
 </div>
+@endif

@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Variant;
 use App\Models\Promo_banners;
+use Session;
 
 class HomePageController extends Controller
 {
 
     public function index(){
-           
+
+        Session::put('medibank_gateway', 'Yes');
         //Featured product(homepage slider)
         $shoe_info = array('120286_615','110298_429','120291_073','110302_040','120285_542','110297_081');
         $product=[];
@@ -38,5 +40,16 @@ class HomePageController extends Controller
         }
         return view ('customer.index',compact('product','banner'));
     }
+
+    public function medibank_check_user(){
+        if(Session::get('medibank_gateway')!='No'){
+            Session::put('medibank_user','Yes');
+            return 'true';
+        }else{
+            return 'false';
+        }
+       
+    }
+
 
 }
