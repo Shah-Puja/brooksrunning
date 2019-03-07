@@ -124,6 +124,14 @@ class CartController extends Controller {
 									<Quantity>$qty</Quantity>
 								</CartDetail>\n\t";
             }
+            if(Session::get('medibank_gateway')=='Yes'){
+                $medi_sku = 232661;
+                $medi_qty = 1;
+                $cart_xml .= "		<CartDetail>		
+									<SkuId>$medi_sku</SkuId>
+									<Quantity>$medi_qty</Quantity>
+								</CartDetail>\n\t";
+            }
             $cart_xml .= "
                             </CartDetails>
 						</Cart>";
