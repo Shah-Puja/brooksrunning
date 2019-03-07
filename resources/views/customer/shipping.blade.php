@@ -102,7 +102,7 @@
                                     endif;
                                 ?>
 								<label for="email1"><sup>*</sup>Email Address</label>
-                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+                            <input type="text" name="medibank_email" id="medibank_email" class="input-field check_email_field" data-label-name="email">
 							</div>
 						</div>
 					</div>
@@ -116,19 +116,25 @@
                                     endif;
                                 ?>
 								<label for="email1"><sup>*</sup>Medibank ID</label>
-                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+                            <input type="text" name="medibank_id" id="medibank_id" class="input-field check_email_field" data-label-name="email">
 							</div>
 						</div>
 					</div>
-					<div class="row">
+                    <div id="medibank-failed-msg" style="font-size:20px;color:red;"></div>
+                    <button style="display:none; margin-top:30px;" class="primary-button pdp-button medibank-cancel-button" id="medibank-cancel-button" type="submit">Cancel</button>
+                    <button style="display:none; margin-top:30px;" class="primary-button pdp-button medibank-tryagain-button" id="medibank-tryagain-button" type="submit">Try Again</button>
+					<a style="display:none;" href="#" id="medibank-proceed-without-verification">Proceed without verification</a>
+                    <div class="row">
 						<div class="col-6">
 							<div class="cart-btn">
 								<button class="primary-button pdp-button" id="medibank-verify-button" type="submit">Verify</button>
 							</div>
 						</div>
                     </div>
-                </form>
+                </form> 
 			    </div>
+                <div id="medibank-success-msg" style="font-size:30px;"></div>
+                <button style="display:none; margin-top:30px;" class="primary-button pdp-button medibank-continue-button" id="medibank-continue-button" type="submit">Continue</button>
                 @else
 				<!--/Password popup -->
 				<!--Password popup Success -->
@@ -825,8 +831,42 @@
 <script src="/js/shippingbilling.js"></script>
 
 <script>
+
+ $('.medibank-continue-button').click()
+
  function medibank_email_check_validate() {
-    
+     var email = $('#medibank_email').val();
+    $.ajax({
+        headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "/medibank_shipping_verify_login",
+            type: "POST",
+            data: $('#medibank_email_check').serialize(),
+            success: function (data) {
+                console.log(data);
+                //alert(data);
+                if (data == "success") {
+                    $('#shipping-form').css('display', 'none');
+                    $('#billing_shipping').css('display', 'none');
+                    $('.medibank-shipping-form').css('display', 'none');
+                    $('.medibank-continue-button').css('display', 'block');
+                    $('#medibank-success-msg').html('Your member number has been validated.');
+                    //below things will be on continue button click  
+                    $('.shipping-main-form').css('display', 'block');
+                    $('.password-wrapper').css('display', 'block');
+                   // $('.main_email_field').val(email);
+                } else { 
+                     $('#medibank-verify-button').css('display', 'none');
+                     $('#medibank-failed-msg').html('Sorry your member number could not been validated. <br/>Please try again.');
+                     $('.medibank-cancel-button').css('display', 'block');
+                     $('.medibank-tryagain-button').css('display', 'block');
+                     $('#medibank-proceed-without-verification').css('display', 'block');
+                     $('.shipping-main-form').css('display', 'none');
+                      
+                }
+            }
+        });
     return false;
 }  
 
