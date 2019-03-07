@@ -85,6 +85,51 @@
 						</div>
 					</div>
 				</div>
+
+                @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
+                <h1 class="br-heading">Verification</h1>
+                <div class="medibank-shipping-form" id="medibank-shipping-form" @if(Session::get('medibank_user')=='Yes') style="display: none;" @else style="display: block;" @endif>
+                <form name="medibank_email_check" id="medibank_email_check" method="post" onsubmit="return medibank_email_check_validate()">
+                    @csrf
+					<p class="email-msg">Please enter your email address and Medibank ID</p>
+					<div class="row">
+						<div class="col-6">
+							<div class="input-wrapper">
+                                <?php
+                                    $error_email="";
+                                    if ($errors->has('email') ):
+                                        $error_email="<span class='error'>".$errors->first('email')."</span>";
+                                    endif;
+                                ?>
+								<label for="email1"><sup>*</sup>Email Address</label>
+                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+							</div>
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-6">
+							<div class="input-wrapper">
+                                <?php
+                                    $error_email="";
+                                    if ($errors->has('email') ):
+                                        $error_email="<span class='error'>".$errors->first('email')."</span>";
+                                    endif;
+                                ?>
+								<label for="email1"><sup>*</sup>Medibank ID</label>
+                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="cart-btn">
+								<button class="primary-button pdp-button" id="medibank-verify-button" type="submit">Verify</button>
+							</div>
+						</div>
+                    </div>
+                </form>
+			    </div>
+                @else
 				<!--/Password popup -->
 				<!--Password popup Success -->
 				<div class="popup-container password-popup popup-success" style="display: none;">
@@ -130,6 +175,7 @@
                     </div>
                 </form>
 			    </div>
+                @endif
                 <!--/Shipping first step -->
                 <input type="hidden" id ="guest" name="guest">
                 <!-- Shipping Final step -->
@@ -152,7 +198,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if(!auth()->user())
+                            @if(!auth()->user() && Session::get('medibank_gateway')!='Yes')
                             <!-- Password Wrapper -->
                             <div class="password-wrapper">
                                 <div class="row">
@@ -771,5 +817,13 @@
 	</script>
 @endif
 <script src="/js/shippingbilling.js"></script>
+
+<script>
+ function medibank_email_check_validate() {
+    
+    return false;
+}  
+
+</script>
 
 @endsection
