@@ -1954,10 +1954,12 @@ textarea {
   text-align: right;
   margin: 0;
   font-size: 12px;
+  width: 250px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-desktop .header-desktop--right .top .header-utality {
     font-size: 11px;
+    width: auto;
   }
 }
 .header-desktop .header-desktop--right .top .header-utality li {
@@ -3078,8 +3080,8 @@ textarea {
 .homepage-medibank--container {
   position: relative;
   display: block;
-  padding: 0px 15px;
-  margin-bottom: 10px;
+  padding: 0 0 20px;
+  margin-bottom: 5px;
 }
 @media only screen and (max-width: 991px) {
   .homepage-medibank--container {
@@ -3106,30 +3108,8 @@ textarea {
   width: 100%;
   max-width: 1300px;
 }
-.homepage-medibank--container .pl-0 {
-  padding-left: 0 !important;
-}
-@media only screen and (max-width: 991px) {
-  .homepage-medibank--container .pl-0 {
-    padding: 0 !important;
-  }
-}
-.homepage-medibank--container .pr-0 {
-  padding-right: 0;
-}
-@media only screen and (max-width: 991px) {
-  .homepage-medibank--container .pr-0 {
-    padding: 0 !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .homepage-medibank--container .pr-0 {
-    padding: 0px 15px;
-  }
-}
 .homepage-medibank--container .homepage-medibank--info {
   width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   z-index: 2;
@@ -3334,13 +3314,13 @@ textarea {
 .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success {
   margin: 0 auto;
 }
-@media only screen and (max-width: 767px) {
-  .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success {
-    padding: 20px;
-  }
-}
 .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success .medibank--login--success {
   margin-right: 30px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success .medibank--login--success {
+    margin-top: -30px;
+  }
 }
 .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success .medibank--login--success label {
   color: #ffffff;
@@ -3361,6 +3341,11 @@ textarea {
   text-align: right;
   cursor: pointer;
   text-decoration-line: underline;
+}
+@media only screen and (max-width: 767px) {
+  .homepage-medibank--container .homepage-medibank--info .medibank--subinfo--login--success .medibank--login--success .login_success .login-text {
+    text-align: left;
+  }
 }
 .homepage-medibank--container .homepage-medibank--info .br-info {
   font-size: 16px;
