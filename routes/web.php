@@ -188,3 +188,5 @@ Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
 
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
+
+Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');
