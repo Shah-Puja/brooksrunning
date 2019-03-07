@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use App\Models\Promo_mast;
+use Session;
 
 class CartController extends Controller {
 
