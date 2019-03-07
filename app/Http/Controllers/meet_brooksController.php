@@ -195,7 +195,7 @@ class meet_brooksController extends Controller
     		'gender' => 'required',    		
             'email' => 'required|email',
      		'country' => 'required',
-            'postcode' => 'required|integer',
+            'postcode' => 'required|numeric',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
 
