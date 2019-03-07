@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use App\Models\Promo_mast;
-use Session;
 
 class CartController extends Controller {
 
@@ -123,14 +122,6 @@ class CartController extends Controller {
                 $cart_xml .= "		<CartDetail>		
 									<SkuId>$sku</SkuId>
 									<Quantity>$qty</Quantity>
-								</CartDetail>\n\t";
-            }
-            if(Session::get('medibank_gateway')=='Yes'){
-                $medi_sku = 232661;
-                $medi_qty = 1;
-                $cart_xml .= "		<CartDetail>		
-									<SkuId>$medi_sku</SkuId>
-									<Quantity>$medi_qty</Quantity>
 								</CartDetail>\n\t";
             }
             $cart_xml .= "

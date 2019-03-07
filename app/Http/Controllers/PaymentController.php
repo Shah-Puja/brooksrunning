@@ -21,6 +21,7 @@ use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class PaymentController extends Controller {
 
@@ -771,6 +772,17 @@ class PaymentController extends Controller {
         $i = 0;
 
         $subtotal = 0;
+
+        if(Session::get('medibank_gateway')=='Yes'){
+            $xml_data .= "
+                        <OrderDetail>
+                          <SkuId>232661</SkuId>
+                          <Quantity>1</Quantity>
+                          <Price>0</Price>";
+            $xml_data .= " <Value>0</Value>
+                          </OrderDetail>";
+        }
+
         foreach ($this->order->orderItems as $item) {
 
             $sku = $item->variant->id;
