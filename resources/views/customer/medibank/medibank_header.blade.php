@@ -132,40 +132,6 @@ $(document).ready(function(){
   });
 });
 
-$(document).on('submit','form[name="medibank-login"]',function(){
-    var form_data = $("form[name='medibank-login']").serialize();
-    var client_id  = '0oac03wmfZlVFvy46356';
-    var client_secret = 'tpMuQ-P_St-BfrskTz3lZ8ExQ1cSGbm_a3asL_1J';
-    $.ajax({
-			"async": true,
-			"crossDomain": true,
-			"url": "https://dev-224070.okta.com/oauth2/default",
-			"method": "POST",
-			"headers": {
-				"Accept": "application/json",
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Authorization": "Basic MG9hYzAzd21mWmxWRnZ5NDYzNTY6dHBNdVEtUF9TdC1CZnJza1R6M2xaOEV4UTFjU0dibV9hM2FzTF8xSg==",
-				"cache-control": "no-cache",
-				"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
-			},
-			"data": {
-				"scope": "openid profile",
-				"grant_type": "client_credentials"
-			},
-        success: function (result) {
-            console.log(result);
-        },
-        error: function (error) {
-            let obj = JSON.parse(error.responseText);
-            console.log(obj.errors);
-            // $(".button").before("<p class='error'>" + obj.errors + "</p>");
-            // setTimeout(function () {
-            //     $(".error").val("1");
-            //     $(".error").remove();
-            // }, 3000);
-        }
-    });
-    return false;
-});
 </script>
+
 @endif

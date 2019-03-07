@@ -742,7 +742,7 @@ function mob_search_product(){
 
 
 
-/*$(document).on('submit','form[name="medibank-login"]',function(){
+$(document).on('submit','form[name="medibank-login"]',function(){
     var form_data = $("form[name='medibank-login']").serialize();
     $.ajax({
         headers: {
@@ -762,7 +762,45 @@ function mob_search_product(){
     });
     return false;
 
-});*/
+});
 
 
 
+
+/*$(document).on('submit','form[name="medibank-login"]',function(){
+    /*var form_data = $("form[name='medibank-login']").serialize();
+    var client_id  = '0oac03wmfZlVFvy46356';
+    var client_secret = 'tpMuQ-P_St-BfrskTz3lZ8ExQ1cSGbm_a3asL_1J';
+    $.ajax({
+			url: "https://dev-224070.okta.com/oauth2/default/v1/token",
+			type: "POST",
+			headers: {
+				"Accept": "application/json",
+				"Authorization": "Basic "+ btoa(client_id +":"+client_secret),
+				"cache-control": "no-cache",
+				"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content'),
+				"Access-Control-Allow-Origin": '*',
+				"Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS",
+				"Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+			},
+			data: {
+				"scope": "openid2 profile",
+				"grant_type": "client_credentials"
+			},
+			crossDomain: true,
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (error) {
+						let obj = JSON.parse(error.responseText);
+						//00SXIefe6583QXKvJYhwytLM9NyM-QZg3Ltws12lJV
+            console.log(obj.errors);
+            // $(".button").before("<p class='error'>" + obj.errors + "</p>");
+            // setTimeout(function () {
+            //     $(".error").val("1");
+            //     $(".error").remove();
+            // }, 3000);
+        }
+    });
+		return false;*/
+	
