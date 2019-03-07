@@ -103,7 +103,7 @@
 				<h1 class="br-heading">Shipping Address</h1>
 				<p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
                 <!-- Shipping first step -->
-				<div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
+				<div class="shipping-form" id="shipping-form"  @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
                 <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
                     @csrf
 					<p class="email-msg">Please enter your email address</p>
@@ -118,19 +118,25 @@
                                 ?>
 								<label for="email1"><sup>*</sup>Email Address</label>
                             <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
-							</div>
+                            </div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
 							<div class="cart-btn">
 								<button class="primary-button pdp-button" type="submit">Submit</button>
-							</div>
+                            </div>
 						</div>
                     </div>
                 </form>
 			    </div>
                 <!--/Shipping first step -->
+
+                <!-- Medibank first step -->
+                <!-- @include('customer.medibank.medibank_login_verification') -->
+                <!--/Medibank first step -->
+
+
                 <input type="hidden" id ="guest" name="guest">
                 <!-- Shipping Final step -->
 			    <div class="shipping-main-form" @if(auth()->user()) style="display: block;" @else style="display: none;" @endif>
