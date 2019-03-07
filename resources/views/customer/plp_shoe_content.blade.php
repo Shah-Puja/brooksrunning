@@ -60,13 +60,17 @@
 														return $product->variants->where('visible','Yes')->pluck('width_name');
 												 })->flatten()->unique()->values()->sort();
 
+			$release_date = collect($colors_option[$style->style])->transform(function ($product) {
+														return $product->variants->where('visible','Yes')->pluck('release_date')->first();
+												 })->flatten()->max();
+
 	     	$filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
 			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}" data-main-id="{{ $style->style }}">
-		<div class="plp-product" data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
+		<div class="plp-product" data-release-dt ="{{$release_date}}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
 				@if($price_sale < $price)
