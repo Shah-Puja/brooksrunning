@@ -781,6 +781,7 @@ class PaymentController extends Controller {
             $discount = ($item->discount!= 0) ? $item->discount : 0;
             $promo_code = $item->promo_code;
             $promo_string = $item->promo_string;
+            $loyalty_id = $item->loyalty_id;
 
 
             $xml_data .= "
@@ -795,7 +796,8 @@ class PaymentController extends Controller {
                             $xml_data.="<Discounts>
                     <Discount>
                     <DiscountType>LoyaltyDiscount</DiscountType>
-                    <DiscountTypeId>3</DiscountTypeId>"; 
+                    <DiscountTypeId>3</DiscountTypeId> "; 
+                    $xml_data.="  <LoyaltyId>$loyalty_id</LoyaltyId>"; 
                     $xml_data.=" <Description>Loyalty discount A Level</Description>"; 
                     $xml_data.= "<Value>$discount</Value>
                     </Discount>
@@ -893,7 +895,7 @@ if($order->payment_type == "AfterPay"){
 
         $xml_data .= "</Order>";
 
-        echo $xml_data;die;
+        //echo $xml_data;
         
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
