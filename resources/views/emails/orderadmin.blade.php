@@ -226,6 +226,13 @@
                         </td>
                     </tr>
 
+                    @if(isset($order->giftcert_ap21code) && $order->giftcert_ap21code!="")
+                    <tr>
+                        <td>Gift Voucher: {{ $order->giftcert_ap21code }}</td>
+                        <td>&nbsp;</td> 
+                    </tr>
+                    @endif
+
                     @if(isset($order->coupon_code) && $order->coupon_code!="")
                     <tr>
                         <td>Promo String: {{ $order->coupon_code }}</td>
