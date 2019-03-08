@@ -159,11 +159,10 @@ class CartController extends Controller {
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                     echo "<pre>";
-                      print_r($curr_detail);
+                      $curr_detail = mysql_real_escape_string($curr_detail);
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
-                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => mysql_real_escape_string($curr_detail)]);
+                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
                         //$result = $this->cart_model->get_prod_type($sku, $user_id);
                         if (!empty($result)) {
