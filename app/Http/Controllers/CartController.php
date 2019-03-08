@@ -164,13 +164,11 @@ class CartController extends Controller {
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
                 if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
-                    if(isset($curr_detail->Discounts) && !empty($curr_detail->Discounts)){
-                        echo "<pre>";
-                      print_r($curr_detail);
-                      echo "<hr>";
-                      print_r($curr_detail->Discounts->Discount);die;
+                    if(isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType =="LoyaltyDiscount"){
+                       $loyalty_id = $curr_detail->Discounts->Discount->LoyaltyId;
+                       Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['loyalty_id' => $loyalty_id]);
                     }
-                    echo "Dsicounts";die;
+                     
                     //pending     //Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
                    
                         //$result = $this->cart_model->get_prod_type($sku, $user_id);
