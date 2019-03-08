@@ -150,10 +150,6 @@ class CartController extends Controller {
             //echo "<pre>";print_r($cart_xml);die;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
-            echo "<pre>";print_r($bridge->CartDetails);die;
-            /*foreach($bridge->children() as $cart_detail) {
-
-            }*/
             $xml = simplexml_load_string($bridge);
             //echo "<pre>";print_r($xml);die;
             //$xml = $xml->simplexml_load_string();
@@ -163,8 +159,8 @@ class CartController extends Controller {
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                    /* echo "<pre>";
-                      print_r($curr_detail);die; */
+                     echo "<pre>";
+                      print_r($curr_detail);die; 
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
