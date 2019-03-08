@@ -5,7 +5,7 @@
     </head> 
     <body>
         <!-- New Template -->
-        @php  $date = date("d M Y H:s:i");  @endphp
+        @php  $date = date("d M Y H:i:s");  @endphp
         An Inquiry has been made at {{ env('APP_URL') }}
         <br />
         Date: {{ $date }}

@@ -42,12 +42,12 @@ class ContactUsEnquiryController extends Controller {
         //auto reply check and send email (on after hours- Sat Sunday & (after 9-5 on Monday to Friday))
         if (((!(in_array(date('N'), array(6, 7)))) && date('G') >= 17) || in_array(date('N'), array(6, 7)) || ((!(in_array(date('N'), array(6, 7)))) && date('G') < 9)) {
             Mail::to(request('email'))
-                    ->cc(config('site.syg_notify_email'))
+                    ->bcc(config('site.syg_notify_email'))
                     ->queue(new EnquiryUserAfterhoursNotification($enquiry));
         }
 
         Mail::to($toemails)
-                ->cc(config('site.syg_notify_email'))
+                ->bcc(config('site.syg_notify_email'))
                 ->queue(new EnquirySubmittedNotification($enquiry));
 
         return response()->json(['success' => 'Thank you for your enquiry, someone will be in touch soon.']);

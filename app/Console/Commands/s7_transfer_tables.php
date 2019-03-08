@@ -64,14 +64,15 @@ class s7_transfer_tables extends Command
         Mail::raw($msg, function ($message) {
                     $message->to('purvi.cshah@gmail.com');
                     $message->from('sygtest@gmail.com');
-                    $message->Subject('Laravel mail');
+                    $message->Subject('Prod Tables are transferred');
                  });
         
     }
 
     public function run_process($cmd,$cmd_name)
     {   
-        $process = new Process($cmd);
+		//echo "Command = $cmd";
+		$process = new Process($cmd);
         try {
             $process->mustRun();
             $this->info($cmd_name.' Process got executed successfully.');
