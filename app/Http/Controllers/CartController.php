@@ -159,12 +159,20 @@ class CartController extends Controller {
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                     echo "<pre>";
-                      print_r($curr_detail);die;
+                     /*echo "<pre>";
+                      print_r($curr_detail);die;*/
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
-               //pending     //Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
-                    if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
+                if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
+                    if(isset($curr_detail->Discounts) && !empty($curr_detail->Discounts)){
+                        echo "<pre>";
+                      print_r($curr_detail);
+                      echo "<hr>";
+                      print_r($curr_detail->Discounts->Discount);die;
+                    }
+                    echo "Dsicounts";die;
+                    //pending     //Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
+                   
                         //$result = $this->cart_model->get_prod_type($sku, $user_id);
                         if (!empty($result)) {
                             //$temp['prod_type'] = $result->prod_type;
