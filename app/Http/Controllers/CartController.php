@@ -123,7 +123,7 @@ class CartController extends Controller {
                 if($personid->person_idx!=''){
                     $personidx = $personid->person_idx;
                 }else{
-                    //create ap21 prsonidx, if person idx is not there.
+                    //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
                     $personidx = '115414';
                 } 
                 $cart_xml .= "<PersonId>$personidx</PersonId>";  
@@ -150,8 +150,8 @@ class CartController extends Controller {
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
             $xml = simplexml_load_string($bridge);
             //$xml = $xml->simplexml_load_string();
-            /* echo "<pre>";
-              print_r($xml);die; */
+             echo "<pre>";
+              print_r($xml);die; 
             //dd($xml);
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
