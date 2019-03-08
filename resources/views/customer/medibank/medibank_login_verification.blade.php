@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/medibank-styles.css">
    <h1 class="br-heading">Verification</h1>
                 
     <div class="shipping-form" id="shipping-form" >

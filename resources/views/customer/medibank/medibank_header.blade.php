@@ -1,4 +1,5 @@
 @if(Session::get('medibank_gateway')=='Yes')
+<link rel="stylesheet" href="/css/medibank-styles.css">
 <section class="homepage-medibank--container">
 <div class="wrapper  padding_left-0 padding_right-0">
 	<div class="row">
@@ -60,7 +61,7 @@
 									   		$medibank_home_login_class = 'hidden';
 									   endif;
 									@endphp 
-							<div class="medibank--subinfo--login medibank--div {{$medibank_home_login_class}}"">
+							<div class="medibank--subinfo--login medibank--div {{$medibank_home_login_class}}">
 								<div class="row">
 									<div class="col-2">&nbsp;
 										</div>
