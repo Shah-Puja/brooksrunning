@@ -150,7 +150,7 @@ class CartController extends Controller {
             //echo "<pre>";print_r($cart_xml);die;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
-            echo "<pre>";print_r($bridge->children());die;
+            echo "<pre>";print_r($bridge->CartDetails->CartDetail);die;
             /*foreach($bridge->children() as $cart_detail) {
 
             }*/
