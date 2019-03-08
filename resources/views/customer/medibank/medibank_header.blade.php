@@ -1,4 +1,5 @@
 @if(Session::get('medibank_gateway')=='Yes')
+<link rel="stylesheet" href="/css/medibank-styles.css">
 <section class="homepage-medibank--container">
 <div class="wrapper  padding_left-0 padding_right-0">
 	<div class="row">
