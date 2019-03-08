@@ -159,10 +159,11 @@ class CartController extends Controller {
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                      $curr_detail = mysql_real_escape_string($curr_detail);
+                     /*echo "<pre>";
+                      print_r($curr_detail);die;*/
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
-                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
+               //pending     //Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
                         //$result = $this->cart_model->get_prod_type($sku, $user_id);
                         if (!empty($result)) {
@@ -176,7 +177,7 @@ class CartController extends Controller {
                         }
                     }
                     $cartdetail_arr[] = $temp;
-                }die;
+                }
                 $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
                 $total_due = (array) $xml->TotalDue;
                 $cart_total = $total_due[0];

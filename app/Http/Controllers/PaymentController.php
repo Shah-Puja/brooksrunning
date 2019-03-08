@@ -791,20 +791,33 @@ class PaymentController extends Controller {
 
 
              if (!empty($discount)) {
-              $xml_data.="<Discounts>
-              <Discount>
-              <DiscountType>ManualDiscount</DiscountType>
-              <DiscountTypeId>1</DiscountTypeId>
-              <ReasonId>720</ReasonId>>";
-
-              if ($promo_code == 'BROOKS30' && $promo_string != ''):
-              $xml_data.="<Description>$promo_string</Description>";
-              else:
-              $xml_data.="<Description>$promo_code</Description>";
-              endif;
-              $xml_data.= "<Value>$discount</Value>
-              </Discount>
-              </Discounts>";
+                 if(auth()->id()!=0){ //check user is logged in or not for Loyalty program
+                            $xml_data.="<Discounts>
+                    <Discount>
+                    <DiscountType>LoyaltyDiscount</DiscountType>
+                    <DiscountTypeId>3</DiscountTypeId>"; 
+                    $xml_data.=" <Description>Loyalty discount A Level</Description>"; 
+                    $xml_data.= "<Value>$discount</Value>
+                    </Discount>
+                    </Discounts>";
+                }else{
+                $xml_data.="<Discounts>
+                <Discount>
+                <DiscountType>ManualDiscount</DiscountType>
+                <DiscountTypeId>1</DiscountTypeId>
+                <ReasonId>720</ReasonId>";
+  
+                if ($promo_code == 'BROOKS30' && $promo_string != ''):
+                $xml_data.="<Description>$promo_string</Description>";
+                else:
+                $xml_data.="<Description>$promo_code</Description>";
+                endif;
+                $xml_data.= "<Value>$discount</Value>
+                </Discount>
+                </Discounts>";
+                
+            }
+              
               } 
 
             $xml_data .= " <Value>$value</Value>
