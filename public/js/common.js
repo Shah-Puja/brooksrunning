@@ -742,7 +742,7 @@ function mob_search_product(){
 
 
 
-$(document).on('submit','form[name="medibank-login"]',function(){
+/*$(document).on('submit','form[name="medibank-login"]',function(){
     var form_data = $("form[name='medibank-login']").serialize();
     $.ajax({
         headers: {
@@ -802,5 +802,6 @@ $(document).on('submit','form[name="medibank-login"]',function(){
             // }, 3000);
         }
     });
-		return false;*/
+        return false;
+});*/
 	

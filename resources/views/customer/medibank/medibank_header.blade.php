@@ -31,7 +31,7 @@
 									</div>
 								</section>
 							</div>
-							@elseif(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')=='No')
+							@elseif(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user_failed')=='Yes')
 
 							<div class="medibank--subinfo--login--failed medibank--div" >
 								<div class="row">
@@ -43,8 +43,8 @@
 											<div class="login_failed">
 											<p class="failed-text">Sorry your member number could not be validated. Please try again. </p>
 											<div class="ctg-btn clearfix">
-												<span><a class="secondary-button" href="/">Cancel</a></span>
-												<span><a class="primary-button" href="/">Try Again</a></span>
+												<span><a class="secondary-button" href="{{URL::previous()}}">Cancel</a></span>
+												<span><a class="primary-button" href="{{URL::previous()}}">Try Again</a></span>
 												</div>
 											</div>
 										</div>
@@ -83,9 +83,10 @@
 											      <label for="email">
 											      	    <div class="mark"><span></span></div>
 											      	    <div class="text">
-															<form name="medibank-login" method="POST">
+															<form name="medibank-login" method="POST" action="/medibank_check_user">
 																<input type="email" class="medibank-input" name="email" placeholder="Email Address" required>
 																<input type="text" class="medibank-input" name="medibank_id" placeholder="Medibank ID" required>
+																{!! csrf_field() !!}
 																<button name="button"  class="pdp-button medibank-login-button">Verify</button>
 															</form>
 											      	    </div>

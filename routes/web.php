@@ -41,7 +41,7 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/medibank_check_user', 'HomePageController@medibank_check_user')->middleware('allowOnlyAjax');
+Route::post('/medibank_check_user', 'MedibankController@medibank_check_user');
 Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 
 
