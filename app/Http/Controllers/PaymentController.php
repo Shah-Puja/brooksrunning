@@ -893,7 +893,7 @@ if($order->payment_type == "AfterPay"){
 
         $xml_data .= "</Order>";
 
-        //echo $xml_data;
+        echo $xml_data;die;
         
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
