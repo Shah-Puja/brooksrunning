@@ -773,7 +773,7 @@ class PaymentController extends Controller {
 
         $subtotal = 0;
 
-        if(Session::get('medibank_gateway')=='Yes'){
+        if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')=='Yes'){
             $xml_data .= "
                         <OrderDetail>
                           <SkuId>232661</SkuId>
