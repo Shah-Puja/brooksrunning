@@ -159,6 +159,7 @@ class CartController extends Controller {
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) { 
+                    $curr_detail_arr = array();
                     $curr_detail_arr = json_decode(json_encode((array)$curr_detail),1);
                     echo "<pre>";
                       print_r($curr_detail_arr);
