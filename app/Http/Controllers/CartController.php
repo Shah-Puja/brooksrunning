@@ -173,7 +173,7 @@ class CartController extends Controller {
 
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
                         if (isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType == "LoyaltyDiscount") {
-                            $loyalty_id = isset($curr_detail->Discounts->Discount->LoyaltyId) ? $curr_detail->Discounts->Discount->LoyaltyId : '';
+                            $loyalty_id = (isset($curr_detail->Discounts->Discount->LoyaltyId) && $curr_detail->Discounts->Discount->LoyaltyId != '') ? $curr_detail->Discounts->Discount->LoyaltyId : '';
                             Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['loyalty_id' => $loyalty_id]);
                         }
 
