@@ -151,7 +151,9 @@ class CartController extends Controller {
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
             $xml = simplexml_load_string($bridge);
-            //echo "<pre>";print_r($xml);die;
+
+            $array = json_decode(json_encode((array)$xml),1);
+            echo "<pre>";print_r($xml);die;
             //$xml = $xml->simplexml_load_string();
             /* echo "<pre>";
               print_r($xml);die; */
