@@ -162,12 +162,12 @@ class CartController extends Controller {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
                     $curr_detail_arr = '';
                     $curr_detail_arr = json_encode((array) $curr_detail);
-                    echo "<pre>";
-                    print_r($curr_detail_arr);echo "<hr>";
+                    /*echo "<pre>";
+                    print_r($curr_detail_arr);echo "<hr>";*/
                     Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail_arr]);
 
-                     echo "<pre>";
-                      print_r($curr_detail);die; 
+                     /*echo "<pre>";
+                      print_r($curr_detail);die; */
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
