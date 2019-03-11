@@ -157,20 +157,20 @@ class CartController extends Controller {
               print_r($xml);die; */
             //dd($xml);
             $cartdetail_arr = array();
-           
-            if (!empty($xml) && !isset($xml->ErrorCode)) { 
-                foreach ($xml->CartDetails->CartDetail as $curr_detail) { 
+
+            if (!empty($xml) && !isset($xml->ErrorCode)) {
+                foreach ($xml->CartDetails->CartDetail as $curr_detail) {
                     $curr_detail_arr = '';
                     $sku = $curr_detail->SkuId;
-                    $curr_detail_arr = json_encode((array) $curr_detail); 
-                    /*echo "<pre>";
-                    print_r($curr_detail_arr);echo "<hr>";*/
+                    $curr_detail_arr = json_encode((array) $curr_detail);
+                    /* echo "<pre>";
+                      print_r($curr_detail_arr);echo "<hr>"; */
                     Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['cart_xml' => $curr_detail_arr]);
 
-                     /*echo "<pre>";
+                    /* echo "<pre>";
                       print_r($curr_detail);die; */
                     $temp = (array) $curr_detail;
-                    
+
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
                         if (isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType == "LoyaltyDiscount") {
                             $loyalty_id = $curr_detail->Discounts->Discount->LoyaltyId;
