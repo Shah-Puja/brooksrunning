@@ -163,7 +163,7 @@ class CartController extends Controller {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
                     $curr_detail_arr = json_encode((array) $curr_detail);
                     echo "<pre>";
-                    print_r($curr_detail);echo "<hr>";
+                    print_r($curr_detail_arr);echo "<hr>";
                     Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail_arr]);
 
                      echo "<pre>";
