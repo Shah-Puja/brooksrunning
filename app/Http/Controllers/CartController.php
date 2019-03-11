@@ -112,25 +112,25 @@ class CartController extends Controller {
         $freight_charges = 0;
 
         if (!empty($cart)) {
-            /*$cart_xml = "<Cart>
-						<PersonId>115414</PersonId>
-						<Contacts>
-						</Contacts>
-                            <CartDetails>\n\t";*/
+            /* $cart_xml = "<Cart>
+              <PersonId>115414</PersonId>
+              <Contacts>
+              </Contacts>
+              <CartDetails>\n\t"; */
             $cart_xml = "<Cart>";
-            if(auth()->id()!=0){ //check user is logged in or not for Loyalty program
+            if (auth()->id() != 0) { //check user is logged in or not for Loyalty program
                 $personid = User::where('id', auth()->id())->select('person_idx')->first();
-                if($personid->person_idx!=''){
+                if ($personid->person_idx != '') {
                     $personidx = $personid->person_idx;
-                }else{
+                } else {
                     //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
                     $personidx = '115414';
-                } 
-                $cart_xml .= "<PersonId>$personidx</PersonId>";  
-            }else{
+                }
+                $cart_xml .= "<PersonId>$personidx</PersonId>";
+            } else {
                 $cart_xml .= "<PersonId>115414</PersonId>";
             }
-            
+
             $cart_xml .= "
 						<Contacts>
 						</Contacts>
@@ -146,7 +146,7 @@ class CartController extends Controller {
             $cart_xml .= "
                             </CartDetails>
                         </Cart>";
-            
+
             //echo "<pre>";print_r($cart_xml);die;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
@@ -158,24 +158,21 @@ class CartController extends Controller {
             //dd($xml);
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
-                foreach ($xml->CartDetails->CartDetail as $curr_detail) {  
-                    $curr_detail_arr = json_encode((array)$curr_detail);
-                    echo "<pre>";
-                      print_r($curr_detail_arr);
+                foreach ($xml->CartDetails->CartDetail as $curr_detail) {
+                    $curr_detail_arr = json_encode((array) $curr_detail);
                     Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail_arr]);
-                    die;
-                     /*echo "<pre>";
-                      print_r($curr_detail);die;*/
+
+                    /* echo "<pre>";
+                      print_r($curr_detail);die; */
                     $temp = (array) $curr_detail;
                     $sku = $curr_detail->SkuId;
-                if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
-                    if(isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType =="LoyaltyDiscount"){
-                       $loyalty_id = $curr_detail->Discounts->Discount->LoyaltyId;
-                       Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['loyalty_id' => $loyalty_id]);
-                    }
-                     
-                    //pending     //Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail]);
-                   
+                    if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
+                        if (isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType == "LoyaltyDiscount") {
+                            $loyalty_id = $curr_detail->Discounts->Discount->LoyaltyId;
+                            Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['loyalty_id' => $loyalty_id]);
+                        }
+
+
                         //$result = $this->cart_model->get_prod_type($sku, $user_id);
                         if (!empty($result)) {
                             //$temp['prod_type'] = $result->prod_type;
@@ -229,7 +226,7 @@ class CartController extends Controller {
     public function update_delivery_option() {
         $delivery_option = request('delivery_option_value');
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             $cart_total = $cart->total;
             if ($delivery_option == 'express') {
                 $freight_charges = '15';
@@ -251,11 +248,11 @@ class CartController extends Controller {
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
-    
+
                 if ($AvailableAmount > $cartTotal) {
                     $gift_discount = $cartTotal;
                     $gift_cart_total = 0;
