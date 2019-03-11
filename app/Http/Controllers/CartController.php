@@ -160,6 +160,7 @@ class CartController extends Controller {
            
             if (!empty($xml) && !isset($xml->ErrorCode)) { 
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) { 
+                    $curr_detail_arr = '';
                     $sku = $curr_detail->SkuId;
                     $curr_detail_arr = json_encode((array) $curr_detail); 
                     /*echo "<pre>";
