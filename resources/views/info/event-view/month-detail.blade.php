@@ -6,8 +6,8 @@
         <div class="event-banner--wrapper">
             <picture>
                 @php $banner_img=(isset($event->banner)) ? $event->banner : ""; @endphp
-                <source media="(max-width: 595px)" srcset="/images/events/banner/{{$banner_img }}">
-                <img src="/images/events/banner/{{$banner_img }}" alt="Header Images">
+                <source media="(max-width: 595px)" srcset="/storage/images/events/banner/{{$banner_img }}">
+                <img src="/storage/images/events/banner/{{$banner_img }}" alt="Header Images">
             </picture>
         </div>
     </section>
@@ -44,7 +44,7 @@
                 <div class="col-2 tab-1">&nbsp;</div>
                 <div class="col-5 tab-5 event-img">
                     @if(!empty($event->image)) 
-                    <img src="/images/events/main/{{ $event->image }}" alt="{{ $event->event_name }}" />
+                    <img src="/storage/images/events/main/{{ $event->image }}" alt="{{ $event->event_name }}" />
                     @else 
                     <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
                     @endif           

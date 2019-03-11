@@ -9,8 +9,8 @@
 		<div class="row">
 			<div class="col-12">
 				<picture>
-					<source media="(max-width: 595px)" srcset="/storage/{{ $competition->banner_mobile }}">
-					<img src="/storage/{{ $competition->banner }}" alt="Header Images">
+					<source media="(max-width: 595px)" srcset="/storage/images/competitions/{{$competition->slug}}/{{ $competition->banner_mobile }}">
+					<img src="/storage/images/competitions/{{$competition->slug}}/{{ $competition->banner }}" alt="Header Images">
 				</picture>
 			</div>
 		</div>

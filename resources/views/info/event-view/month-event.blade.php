@@ -64,14 +64,14 @@
                     @if($event_dt > $curr_dt)
                     <a href="{{ $event->page_link }}" class="findout"> 
                         @if(!empty($event->logo)) 
-                    <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
+                    <img src="/storage/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
                         @else 
                     <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
                         @endif   
                     </a>
                     @else
                         @if(!empty($event->logo)) 
-                    <img src="/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
+                    <img src="/storage/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
                         @else 
                     <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
                         @endif   
