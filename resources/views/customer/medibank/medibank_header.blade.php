@@ -24,8 +24,7 @@
 										<div class="col-8">
 											<div class="medibank--login--success">
 												<div class="login_success">
-												<p class="success-text" >Welcome, <span class="user-name">Lydia</span>!</p>
-												<p class="login-text" style="display:none;">Log In</p>
+													<p class="success-text" >Welcome, <span class="user-name">{{Session::get('medibank_user_id')}}</span>!</p>
 												</div>
 											</div>
 										</div>

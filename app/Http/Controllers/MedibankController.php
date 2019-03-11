@@ -75,6 +75,7 @@ class MedibankController extends Controller
                                 $verified = $response1['Verified'];
                                 if($verified){
                                     Session::put('medibank_user','Yes');
+                                    Session::put('medibank_user_id',$PolicyNumber);
                                 }else{
                                     Session::flash('medibank_user_failed','Yes');
                                 }

@@ -13,7 +13,10 @@ class HomePageController extends Controller
 
     public function index(){
 
-        Session::put('medibank_gateway', 'Yes');
+        if(url()->current()==env('MEDIBANK_GATEWAY_URL')):
+            Session::put('medibank_gateway', 'Yes');
+        endif;
+
         //Featured product(homepage slider)
         $shoe_info = array('120286_615','110298_429','120291_073','110302_040','120285_542','110297_081');
         $product=[];
