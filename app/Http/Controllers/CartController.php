@@ -164,7 +164,7 @@ class CartController extends Controller {
                     $curr_detail_arr = json_encode((array) $curr_detail); 
                     /*echo "<pre>";
                     print_r($curr_detail_arr);echo "<hr>";*/
-                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_xml' => $curr_detail_arr]);
+                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['cart_xml' => $curr_detail_arr]);
 
                      /*echo "<pre>";
                       print_r($curr_detail);die; */
