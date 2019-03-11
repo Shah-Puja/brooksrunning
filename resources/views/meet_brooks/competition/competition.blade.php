@@ -9,8 +9,8 @@
 		<div class="row">
 			<div class="col-12">
 				<picture>
-					<source media="(max-width: 595px)" srcset="/images/competition-single/{{ $competition->banner_mobile }}">
-					<img src="/images/competition-single/{{ $competition->banner }}" alt="Header Images">
+					<source media="(max-width: 595px)" srcset="/storage/{{ $competition->banner_mobile }}">
+					<img src="/storage/{{ $competition->banner }}" alt="Header Images">
 				</picture>
 			</div>
 		</div>
@@ -64,8 +64,10 @@
   <div class="privacy-terms--wrapper popup-container afterpay--popup">
     <div class="popup-container--wrapper">
         <div class="popup-container--info">
-			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>        
+			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>  
+			@if(!empty($competition->terms_conditions))      
             <div class="privacy-content">@include('meet_brooks.terms_conditions.'.$competition->terms_conditions)</div>
+			@endif
 		</div>
 	</div>
     </div>
