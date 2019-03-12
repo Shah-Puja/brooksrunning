@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Session;
 
 class OrderUser extends Mailable
 {
@@ -31,6 +32,11 @@ class OrderUser extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
+        if (Session::get('medibank_gateway') == 'Yes') {
+            return $this->view('emails.orderuser')->subject('Brooks Running Order #7BRN-'.$this->order->order_no);
+        }else{
+            return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
+        }
+            
     }
 }

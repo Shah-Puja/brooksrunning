@@ -30,7 +30,11 @@
 
                     <br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We’re available to help Mon-Fri between 9am-5AEST.</p>
                     </div>
-                      <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>
+                    @if (Session::get('medibank_gateway') == 'Yes') 
+                    <p class="order"><span>Order No:</span> 7BRN-{{$order->address->order_id}}</p>
+                    @else
+                    <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>
+                    @endif 
                       {{-- <p class="order"><span>Your transaction no:</span> paypal#2225999</p> --}}
                       <p>N.B.: The information is at your disposal for a possible request to the customer support and it does not confirm the validation of the payment in any case.</p>
                     <div class="cart-btn" style="padding-bottom: 25px;">
