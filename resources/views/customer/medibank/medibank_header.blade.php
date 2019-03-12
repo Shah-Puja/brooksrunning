@@ -24,7 +24,7 @@
 										<div class="col-8">
 											<div class="medibank--login--success">
 												<div class="login_success">
-													<p class="success-text" >Welcome, <span class="user-name">{{Session::get('medibank_user_id')}}</span>!</p>
+													<p class="success-text" ><span class="user-name">{{Session::get('medibank_user_email')}}</span></p>
 												</div>
 											</div>
 										</div>
@@ -53,14 +53,14 @@
 							</div>
 							
 							@else 
-							@php $medibank_home_login_class = $medibank_other_class = '';
+							<!--@php $medibank_home_login_class = $medibank_other_class = '';
 									   if($view_name=='customer-index'): 
 									   		$medibank_other_class= 'hidden';
 									   else:
 									   		$medibank_home_login_class = 'hidden';
 									   endif;
-									@endphp 
-							<div class="medibank--subinfo--login medibank--div {{$medibank_home_login_class}}">
+									@endphp -->
+							<div class="medibank--subinfo--login medibank--div ">
 								<div class="row">
 									<div class="col-2">&nbsp;
 										</div>
@@ -98,7 +98,7 @@
 								</div>
 							</div>
 
-							<div class="medibank--subinfo--login--success medibank-log-in medibank--div {{$medibank_other_class}}">
+							<!--<div class="medibank--subinfo--login--success medibank-log-in medibank--div {{$medibank_other_class}}">
 								<section class="wrapper">
 									<div class="row">
 										<div class="col-4">&nbsp;
@@ -112,7 +112,7 @@
 										</div>
 									</div>
 								</section>
-							</div>
+							</div>-->
 							@endif
 							
 						</div>
