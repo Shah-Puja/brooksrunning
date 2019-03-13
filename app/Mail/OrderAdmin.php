@@ -35,7 +35,7 @@ class OrderAdmin extends Mailable
         if (Session::get('medibank_gateway') == 'Yes') {
             return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #7BRN-'.$this->order->order_no);
         }else{
-            return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #7BRN-'.$this->order->order_no);
+            return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #BRN-'.$this->order->order_no);
         }
         
     }
