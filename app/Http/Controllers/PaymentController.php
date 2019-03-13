@@ -490,9 +490,6 @@ class PaymentController extends Controller {
 
             $order_no = env('ORDER_PREFIX') . $order_id;
         }
-        if (Session::get('medibank_gateway') == 'Yes') {
-            $order_no = "MEDIBANK-" . $order_no;
-        }
         Order::where('id', $order_id)
                 ->update(['status' => $status, 'order_no' => $order_no]);
 
