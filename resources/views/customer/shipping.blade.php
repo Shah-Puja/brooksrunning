@@ -103,386 +103,7 @@
                 <h1 class="br-heading">Shipping Address</h1>
                 <p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
                 <!-- Shipping first step -->
-                @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')=='Yes')
-                <div class="medibank-shipping-main-form" >
-                     <form name="medibank_billing_shipping" id="medibank_billing_shipping" method="post" action="/shipping">
-                        @csrf
-                        <div class="shipping-form">
-                            <p class="email-msg">Please enter your email address</p>				
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_email = "";
-                                        if ($errors->has('email')):
-                                            $error_email = "<span class='error'>" . $errors->first('email') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
-                                        <input type="text" id ="medibank_email" value="{{(Session::get('medibank_user_email')) ? Session::get('medibank_user_email'):''}}" name="email" class="input-field main_email_field" data-label-name="email">
-                                    </div>
-                                </div>
-                            </div>
-                             
-                
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                    <?php
-                                    $error_s_fname = "";
-                                    if ($errors->has('s_fname')):
-                                        $error_s_fname = "<span class='error'>" . $errors->first('s_fname') . "</span>";
-                                    endif;
-                                    ?>
-                                        <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_fname)){
-                                        $fname = $orderAddress->s_fname;
-                                        }else{
-                                        $fname = (isset(auth()->user()->first_name) && auth()->user()->first_name!='') ? auth()->user()->first_name:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_fname" value="{{ $fname }}" class="input-field" data-label-name="first name">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_lname = "";
-                                        if ($errors->has('s_lname')):
-                                            $error_s_lname = "<span class='error'>" . $errors->first('s_lname') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_lname)){
-                                        $lname = $orderAddress->s_lname;
-                                        }else{
-                                        $lname = (isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_lname" value="{{ $lname }}" class="input-field" data-label-name="last name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_add1 = "";
-                                        if ($errors->has('s_add1')):
-                                            $error_s_add1 = "<span class='error'>" . $errors->first('s_add1') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Address 1: {!! $error_s_add1 !!}</label>
-                                        @php
-                                        $s_add1 = '';
-                                        if(isset($orderAddress->s_add1)){
-                                        $s_add1 = $orderAddress->s_add1;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field AddressLine" data-label-name="address 1">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <label for="">Address 2:</label>
-                                        @php
-                                        $s_add2 = '';
-                                        if(isset($orderAddress->s_add2)){
-                                        $s_add2 = $orderAddress->s_add2;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_add2" value="{{ $s_add2 }}" class="input-field" data-label-name="address 2">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_city = "";
-                                        if ($errors->has('s_city')):
-                                            $error_s_city = "<span class='error'>" . $errors->first('s_city') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Suburb: {!! $error_s_city !!}</label>
-                                        @php
-                                        $s_city = '';
-                                        if(isset($orderAddress->s_city)){
-                                        $s_city = $orderAddress->s_city;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_city" value="{{ $s_city }}" class="input-field" data-label-name="suburb">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_state = "";
-                                        $state = old('s_state');
-                                        if ($errors->has('s_state')):
-                                            $error_s_state = "<span class='error'>" . $errors->first('s_state') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>State / Country: {!! $error_s_state !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_state)){
-                                        $s_state = $orderAddress->s_state;
-                                        }else{
-                                        $s_state = (isset(auth()->user()->state) && auth()->user()->state!='')? auth()->user()->state:"";
-                                        }
-                                        @endphp
-                                        <select class="select-field" name="s_state" data-label-name="state">
-                                            <option value="" selected="selected">Select State</option>
-                                            <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
-                                            <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
-                                            <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>NT</option>
-                                            <option value="QLD" {{ (isset($s_state) &&  $s_state =='QLD' )?"selected='selected":"" }}>QLD</option>
-                                            <option value="SA"  {{ (isset($s_state) &&  $s_state =='SA' )?"selected='selected":"" }}>SA</option>
-                                            <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
-                                            <option value="VIC" {{ (isset($s_state) &&  $s_state =='VIC' )?"selected='selected":"" }}>VIC</option>
-                                            <option value="WA"  {{ (isset($s_state) &&  $s_state =='WA' )?"selected='selected":"" }}>WA</option>
-                                            <option value="New Zealand" {{ (isset($s_state) &&  $s_state =='New Zealand' )?"selected='selected":"" }}>New Zealand</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_postcode = "";
-                                        if ($errors->has('s_postcode')):
-                                            $error_s_postcode = "<span class='error'>" . $errors->first('s_postcode') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_postcode)){
-                                        $s_postcode = $orderAddress->s_postcode;
-                                        }else{
-                                        $s_postcode = (isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:'';
-                                        }
-                                        @endphp
-                                        <input type="text" class="input-field" value="{{ $s_postcode }}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_phone = "";
-                                        if ($errors->has('s_phone')):
-                                            $error_s_phone = "<span class='error'>" . $errors->first('s_phone') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Phone: {!! $error_s_phone !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_phone)){
-                                        $s_phone = $orderAddress->s_phone;
-                                        }else{
-                                        $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        <div class="checklist-inline">
-                                            <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
-                                                   <label for="signme">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        @php
-                                        $order_info = '';
-                                        if(isset($orderAddress->order_info)){
-                                        $order_info = $orderAddress->order_info;
-                                        }
-                                        @endphp
-                                        <label for="comment">Delivery Comments :</label>
-                                        <textarea name="order_info" class="input-textarea">{{ $order_info }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="billing-form">
-                            <h1 class="br-heading">Billing Address</h1>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper address-change">
-                                        <div class="radio-inline">
-                                            <input type="radio" class="input-radio" name="flag_same_shipping" value="Yes" id="same-address" checked="checked">
-                                            <label for="same-address">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Same as Shipping address</div>
-                                            </label>
-                                        </div>
-                                        <div class="radio-inline">
-                                            <input type="radio" id="different-address" class="input-radio" name="flag_same_shipping" value="No">
-                                            <label for="different-address">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Different Billing Address</div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="billing-address">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_fname = "";
-                                            if ($errors->has('b_fname')):
-                                                $error_b_fname = "<span class='error'>" . $errors->first('b_fname') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>First Name: {!! $error_b_fname !!}</label>
-                                            <input type="text" name="b_fname" class="input-field" data-label-name="first name">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_lname = "";
-                                            if ($errors->has('b_lname')):
-                                                $error_b_lname = "<span class='error'>" . $errors->first('b_lname') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>Last Name: {!! $error_b_lname !!}</label>
-                                            <input type="text" name="b_lname" class="input-field" data-label-name="last name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_add1 = "";
-                                            if ($errors->has('b_add1')):
-                                                $error_b_add1 = "<span class='error'>" . $errors->first('b_add1') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>Address 1: {!! $error_b_add1 !!}</label>
-                                            <input type="text" name="b_add1" class="input-field AddressLine" data-label-name="address 1">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <label for="">Address 2</label>
-                                            <input type="text" name="b_add2" class="input-field" data-label-name="address 2">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_city = "";
-                                            if ($errors->has('b_city')):
-                                                $error_b_city = "<span class='error'>" . $errors->first('b_city') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>Suburb: {!! $error_b_city !!}</label>
-                                            <input type="text" name="b_city" class="input-field" data-label-name="suburb">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_state = "";
-                                            $state = old('b_state');
-                                            if ($errors->has('b_state')):
-                                                $error_b_state = "<span class='error'>" . $errors->first('b_state') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>State / Country: {!! $error_b_state !!}</label>
-                                            <select class="select-field" name="b_state" data-label-name="state">
-                                                <option value="" selected="selected">Select State</option>
-                                                <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
-                                                <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
-                                                <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>NT</option>
-                                                <option value="QLD" {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
-                                                <option value="SA" {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
-                                                <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
-                                                <option value="VIC" {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
-                                                <option value="WA" {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
-                                                <option value="New Zealand" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_postcode = "";
-                                            if ($errors->has('b_postcode')):
-                                                $error_b_postcode = "<span class='error'>" . $errors->first('b_postcode') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>Postal Code: {!! $error_b_postcode !!}</label>
-                                            <input type="text" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-wrapper">
-                                            <?php
-                                            $error_b_phone = "";
-                                            if ($errors->has('b_phone')):
-                                                $error_b_phone = "<span class='error'>" . $errors->first('b_phone') . "</span>";
-                                            endif;
-                                            ?>
-                                            <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
-                                            <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_terms = "";
-                                        if ($errors->has('terms')):
-                                            $error_terms = "<span class='error'>" . $errors->first('terms') . "</span>";
-                                        endif;
-                                        ?>
-                                        <div class="checklist-inline">
-                                            <input type="checkbox" name="terms" id="already-read" value='1' id="already-read">
-                                            <label for="already-read">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">
-                                                    I have read and agree to the <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
-                                                </div><br>
-                                                {!! $error_terms !!}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="cart-btn">
-                                        <button type="submit" name="shipping_to_payment" class="primary-button pdp-button">Continue to payment</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                @else
+                @if(Session::get('medibank_gateway')!='Yes')
                 <div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
                      <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
                         @csrf
@@ -510,299 +131,89 @@
                         </div>
                     </form>
                 </div>
-
-                
+                @endif
                 <!--/Shipping first step -->
                 <input type="hidden" id ="guest" name="guest">
+
                 <!-- Shipping Final step -->
-                <div class="shipping-main-form" @if(auth()->user()) style="display: block;" @else style="display: none;" @endif>
+
+                @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
+                <div class="medibank_guest_div">
+                    <p style="color:red;"> Please enter your Medibank details in the Medibank bar or to continue without logging into Medibank click below button</p>
+                    <a href='javascript:void(0)' class="primary-button pdp-button medibank_guest_user" id="medibank_guest_user">Skip Medibank login</a>
+                </div>
+                @endif
+
+                @if(Session::get('medibank_gateway')=='Yes')
+                <div class="shipping-main-form" @if(Session::get('medibank_user')=='Yes') style="display: block;" @else style="display: none;" @endif>
+                     @else
+                     <div class="shipping-main-form" @if(auth()->user()) style="display: block;" @else style="display: none;" @endif>
+                     @endif 
+
                      <form name="billing_shipping" id="billing_shipping" method="post" action="/shipping" onsubmit="return shippingform_validate()">
-                        @csrf
-                        <div class="shipping-form">
-                            <p class="email-msg">Please enter your email address</p>				
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_email = "";
-                                        if ($errors->has('email')):
-                                            $error_email = "<span class='error'>" . $errors->first('email') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
-                                        <input type="text" id ="reset_email" value="{{(isset(auth()->user()->email) && auth()->user()->email!='')?auth()->user()->email:''}}" name="email" class="input-field main_email_field" data-label-name="email">
-                                    </div>
-                                </div>
-                            </div>
-                            @if(!auth()->user())
-                            <!-- Password Wrapper -->
-                            <div class="password-wrapper">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p class="email-msg">Looks like you have an account. Enter your password for faster checkout.</p>	
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-9">
-                                        <div class="input-wrapper">
-                                            <label for="password"><sup>*</sup>Password</label>
-                                            <input type="password" id="password_field" name="password" class="input-field">
-                                        </div>
-                                        <div class="reset-text">Forgot your password? Reset it <a href="javascript:void(0)" id="reset-pass-open">here</a></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-9">
-                                        <div class="cart-btn cart-btn--password">
-                                            <!--<a href='javascript:void(0)' class="primary-button pdp-button login_user">Login</a>-->
-                                            <button class="primary-button pdp-button login_user" type="submit">Login</button>
-                                    {{-- <button class="secondary-button2" onclick="gest_user()">Checkout as guest</button> --}}
-                                            <a href='javascript:void(0)' class="secondary-button2 gest_user">Checkout as guest</a>
-                                    {{-- <a href='javascript:void(0)' class="continue-step" onclick="gest_user()">Continue without login</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-                            <!-- /Password Wrapper -->
-                
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                    <?php
-                                    $error_s_fname = "";
-                                    if ($errors->has('s_fname')):
-                                        $error_s_fname = "<span class='error'>" . $errors->first('s_fname') . "</span>";
-                                    endif;
-                                    ?>
-                                        <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_fname)){
-                                        $fname = $orderAddress->s_fname;
-                                        }else{
-                                        $fname = (isset(auth()->user()->first_name) && auth()->user()->first_name!='') ? auth()->user()->first_name:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_fname" value="{{ $fname }}" class="input-field" data-label-name="first name">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_lname = "";
-                                        if ($errors->has('s_lname')):
-                                            $error_s_lname = "<span class='error'>" . $errors->first('s_lname') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_lname)){
-                                        $lname = $orderAddress->s_lname;
-                                        }else{
-                                        $lname = (isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_lname" value="{{ $lname }}" class="input-field" data-label-name="last name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_add1 = "";
-                                        if ($errors->has('s_add1')):
-                                            $error_s_add1 = "<span class='error'>" . $errors->first('s_add1') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Address 1: {!! $error_s_add1 !!}</label>
-                                        @php
-                                        $s_add1 = '';
-                                        if(isset($orderAddress->s_add1)){
-                                        $s_add1 = $orderAddress->s_add1;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field AddressLine" data-label-name="address 1">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <label for="">Address 2:</label>
-                                        @php
-                                        $s_add2 = '';
-                                        if(isset($orderAddress->s_add2)){
-                                        $s_add2 = $orderAddress->s_add2;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_add2" value="{{ $s_add2 }}" class="input-field" data-label-name="address 2">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_city = "";
-                                        if ($errors->has('s_city')):
-                                            $error_s_city = "<span class='error'>" . $errors->first('s_city') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Suburb: {!! $error_s_city !!}</label>
-                                        @php
-                                        $s_city = '';
-                                        if(isset($orderAddress->s_city)){
-                                        $s_city = $orderAddress->s_city;
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_city" value="{{ $s_city }}" class="input-field" data-label-name="suburb">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_state = "";
-                                        $state = old('s_state');
-                                        if ($errors->has('s_state')):
-                                            $error_s_state = "<span class='error'>" . $errors->first('s_state') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>State / Country: {!! $error_s_state !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_state)){
-                                        $s_state = $orderAddress->s_state;
-                                        }else{
-                                        $s_state = (isset(auth()->user()->state) && auth()->user()->state!='')? auth()->user()->state:"";
-                                        }
-                                        @endphp
-                                        <select class="select-field" name="s_state" data-label-name="state">
-                                            <option value="" selected="selected">Select State</option>
-                                            <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
-                                            <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
-                                            <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>NT</option>
-                                            <option value="QLD" {{ (isset($s_state) &&  $s_state =='QLD' )?"selected='selected":"" }}>QLD</option>
-                                            <option value="SA"  {{ (isset($s_state) &&  $s_state =='SA' )?"selected='selected":"" }}>SA</option>
-                                            <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
-                                            <option value="VIC" {{ (isset($s_state) &&  $s_state =='VIC' )?"selected='selected":"" }}>VIC</option>
-                                            <option value="WA"  {{ (isset($s_state) &&  $s_state =='WA' )?"selected='selected":"" }}>WA</option>
-                                            <option value="New Zealand" {{ (isset($s_state) &&  $s_state =='New Zealand' )?"selected='selected":"" }}>New Zealand</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_postcode = "";
-                                        if ($errors->has('s_postcode')):
-                                            $error_s_postcode = "<span class='error'>" . $errors->first('s_postcode') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_postcode)){
-                                        $s_postcode = $orderAddress->s_postcode;
-                                        }else{
-                                        $s_postcode = (isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:'';
-                                        }
-                                        @endphp
-                                        <input type="text" class="input-field" value="{{ $s_postcode }}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_s_phone = "";
-                                        if ($errors->has('s_phone')):
-                                            $error_s_phone = "<span class='error'>" . $errors->first('s_phone') . "</span>";
-                                        endif;
-                                        ?>
-                                        <label for=""><sup>*</sup>Phone: {!! $error_s_phone !!}</label>
-                                        @php
-                                        if(isset($orderAddress->s_phone)){
-                                        $s_phone = $orderAddress->s_phone;
-                                        }else{
-                                        $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
-                                        }
-                                        @endphp
-                                        <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        <div class="checklist-inline">
-                                            <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
-                                                   <label for="signme">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        @php
-                                        $order_info = '';
-                                        if(isset($orderAddress->order_info)){
-                                        $order_info = $orderAddress->order_info;
-                                        }
-                                        @endphp
-                                        <label for="comment">Delivery Comments :</label>
-                                        <textarea name="order_info" class="input-textarea">{{ $order_info }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="billing-form">
-                            <h1 class="br-heading">Billing Address</h1>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper address-change">
-                                        <div class="radio-inline">
-                                            <input type="radio" class="input-radio" name="flag_same_shipping" value="Yes" id="same-address" checked="checked">
-                                            <label for="same-address">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Same as Shipping address</div>
-                                            </label>
-                                        </div>
-                                        <div class="radio-inline">
-                                            <input type="radio" id="different-address" class="input-radio" name="flag_same_shipping" value="No">
-                                            <label for="different-address">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">Different Billing Address</div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="billing-address">
+                            @csrf
+                            <div class="shipping-form">
+                                <p class="email-msg">Please enter your email address</p>				
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_fname = "";
-                                            if ($errors->has('b_fname')):
-                                                $error_b_fname = "<span class='error'>" . $errors->first('b_fname') . "</span>";
+                                            $error_email = "";
+                                            if ($errors->has('email')):
+                                                $error_email = "<span class='error'>" . $errors->first('email') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>First Name: {!! $error_b_fname !!}</label>
-                                            <input type="text" name="b_fname" class="input-field" data-label-name="first name">
+                                            <label for="email"><sup>*</sup>Email Address {!! $error_email !!}</label>
+                                            @if(Session::get('medibank_gateway')=='Yes')
+                                            <input type="text" id ="reset_email" value="{{Session::get('medibank_user_email')}}" name="email" class="input-field main_email_field" data-label-name="email">
+                                            @else
+                                            <input type="text" id ="reset_email" value="{{(isset(auth()->user()->email) && auth()->user()->email!='')?auth()->user()->email:''}}" name="email" class="input-field main_email_field" data-label-name="email">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                @if(!auth()->user() && Session::get('medibank_gateway')!='Yes') 
+                                @include('customer.shipping_login_form') 
+                                @endif
+                                <!-- /Password Wrapper -->
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="input-wrapper">
+                                            <?php
+                                            $error_s_fname = "";
+                                            if ($errors->has('s_fname')):
+                                                $error_s_fname = "<span class='error'>" . $errors->first('s_fname') . "</span>";
+                                            endif;
+                                            ?>
+                                            <label for=""><sup>*</sup>First Name: {!! $error_s_fname !!}</label>
+                                            @php
+                                            if(isset($orderAddress->s_fname)){
+                                            $fname = $orderAddress->s_fname;
+                                            }else{
+                                            $fname = (isset(auth()->user()->first_name) && auth()->user()->first_name!='') ? auth()->user()->first_name:'';
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_fname" value="{{ $fname }}" class="input-field" data-label-name="first name">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_lname = "";
-                                            if ($errors->has('b_lname')):
-                                                $error_b_lname = "<span class='error'>" . $errors->first('b_lname') . "</span>";
+                                            $error_s_lname = "";
+                                            if ($errors->has('s_lname')):
+                                                $error_s_lname = "<span class='error'>" . $errors->first('s_lname') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>Last Name: {!! $error_b_lname !!}</label>
-                                            <input type="text" name="b_lname" class="input-field" data-label-name="last name">
+                                            <label for=""><sup>*</sup>Last Name: {!! $error_s_lname !!}</label>
+                                            @php
+                                            if(isset($orderAddress->s_lname)){
+                                            $lname = $orderAddress->s_lname;
+                                            }else{
+                                            $lname = (isset(auth()->user()->last_name) && auth()->user()->last_name!='')?auth()->user()->last_name:'';
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_lname" value="{{ $lname }}" class="input-field" data-label-name="last name">
                                         </div>
                                     </div>
                                 </div>
@@ -810,19 +221,31 @@
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_add1 = "";
-                                            if ($errors->has('b_add1')):
-                                                $error_b_add1 = "<span class='error'>" . $errors->first('b_add1') . "</span>";
+                                            $error_s_add1 = "";
+                                            if ($errors->has('s_add1')):
+                                                $error_s_add1 = "<span class='error'>" . $errors->first('s_add1') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>Address 1: {!! $error_b_add1 !!}</label>
-                                            <input type="text" name="b_add1" class="input-field AddressLine" data-label-name="address 1">
+                                            <label for=""><sup>*</sup>Address 1: {!! $error_s_add1 !!}</label>
+                                            @php
+                                            $s_add1 = '';
+                                            if(isset($orderAddress->s_add1)){
+                                            $s_add1 = $orderAddress->s_add1;
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_add1" value="{{ $s_add1 }}" class="input-field AddressLine" data-label-name="address 1">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
-                                            <label for="">Address 2</label>
-                                            <input type="text" name="b_add2" class="input-field" data-label-name="address 2">
+                                            <label for="">Address 2:</label>
+                                            @php
+                                            $s_add2 = '';
+                                            if(isset($orderAddress->s_add2)){
+                                            $s_add2 = $orderAddress->s_add2;
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_add2" value="{{ $s_add2 }}" class="input-field" data-label-name="address 2">
                                         </div>
                                     </div>
                                 </div>
@@ -830,36 +253,49 @@
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_city = "";
-                                            if ($errors->has('b_city')):
-                                                $error_b_city = "<span class='error'>" . $errors->first('b_city') . "</span>";
+                                            $error_s_city = "";
+                                            if ($errors->has('s_city')):
+                                                $error_s_city = "<span class='error'>" . $errors->first('s_city') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>Suburb: {!! $error_b_city !!}</label>
-                                            <input type="text" name="b_city" class="input-field" data-label-name="suburb">
+                                            <label for=""><sup>*</sup>Suburb: {!! $error_s_city !!}</label>
+                                            @php
+                                            $s_city = '';
+                                            if(isset($orderAddress->s_city)){
+                                            $s_city = $orderAddress->s_city;
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_city" value="{{ $s_city }}" class="input-field" data-label-name="suburb">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_state = "";
-                                            $state = old('b_state');
-                                            if ($errors->has('b_state')):
-                                                $error_b_state = "<span class='error'>" . $errors->first('b_state') . "</span>";
+                                            $error_s_state = "";
+                                            $state = old('s_state');
+                                            if ($errors->has('s_state')):
+                                                $error_s_state = "<span class='error'>" . $errors->first('s_state') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>State / Country: {!! $error_b_state !!}</label>
-                                            <select class="select-field" name="b_state" data-label-name="state">
+                                            <label for=""><sup>*</sup>State / Country: {!! $error_s_state !!}</label>
+                                            @php
+                                            if(isset($orderAddress->s_state)){
+                                            $s_state = $orderAddress->s_state;
+                                            }else{
+                                            $s_state = (isset(auth()->user()->state) && auth()->user()->state!='')? auth()->user()->state:"";
+                                            }
+                                            @endphp
+                                            <select class="select-field" name="s_state" data-label-name="state">
                                                 <option value="" selected="selected">Select State</option>
-                                                <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
-                                                <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
-                                                <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>NT</option>
-                                                <option value="QLD" {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
-                                                <option value="SA" {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
-                                                <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
-                                                <option value="VIC" {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
-                                                <option value="WA" {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
-                                                <option value="New Zealand" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
+                                                <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
+                                                <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
+                                                <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>NT</option>
+                                                <option value="QLD" {{ (isset($s_state) &&  $s_state =='QLD' )?"selected='selected":"" }}>QLD</option>
+                                                <option value="SA"  {{ (isset($s_state) &&  $s_state =='SA' )?"selected='selected":"" }}>SA</option>
+                                                <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
+                                                <option value="VIC" {{ (isset($s_state) &&  $s_state =='VIC' )?"selected='selected":"" }}>VIC</option>
+                                                <option value="WA"  {{ (isset($s_state) &&  $s_state =='WA' )?"selected='selected":"" }}>WA</option>
+                                                <option value="New Zealand" {{ (isset($s_state) &&  $s_state =='New Zealand' )?"selected='selected":"" }}>New Zealand</option>
                                             </select>
                                         </div>
                                     </div>
@@ -868,159 +304,332 @@
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_postcode = "";
-                                            if ($errors->has('b_postcode')):
-                                                $error_b_postcode = "<span class='error'>" . $errors->first('b_postcode') . "</span>";
+                                            $error_s_postcode = "";
+                                            if ($errors->has('s_postcode')):
+                                                $error_s_postcode = "<span class='error'>" . $errors->first('s_postcode') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>Postal Code: {!! $error_b_postcode !!}</label>
-                                            <input type="text" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                            <label for=""><sup>*</sup>Postal Code: {!! $error_s_postcode !!}</label>
+                                            @php
+                                            if(isset($orderAddress->s_postcode)){
+                                            $s_postcode = $orderAddress->s_postcode;
+                                            }else{
+                                            $s_postcode = (isset(auth()->user()->postcode) && auth()->user()->postcode!='')?auth()->user()->postcode:'';
+                                            }
+                                            @endphp
+                                            <input type="text" class="input-field" value="{{ $s_postcode }}" name="s_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-wrapper">
                                             <?php
-                                            $error_b_phone = "";
-                                            if ($errors->has('b_phone')):
-                                                $error_b_phone = "<span class='error'>" . $errors->first('b_phone') . "</span>";
+                                            $error_s_phone = "";
+                                            if ($errors->has('s_phone')):
+                                                $error_s_phone = "<span class='error'>" . $errors->first('s_phone') . "</span>";
                                             endif;
                                             ?>
-                                            <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
-                                            <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
+                                            <label for=""><sup>*</sup>Phone: {!! $error_s_phone !!}</label>
+                                            @php
+                                            if(isset($orderAddress->s_phone)){
+                                            $s_phone = $orderAddress->s_phone;
+                                            }else{
+                                            $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
+                                            }
+                                            @endphp
+                                            <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-wrapper">
+                                            <div class="checklist-inline">
+                                                <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
+                                                       <label for="signme">
+                                                    <div class="mark"><span></span></div>
+                                                    <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-wrapper">
+                                            @php
+                                            $order_info = '';
+                                            if(isset($orderAddress->order_info)){
+                                            $order_info = $orderAddress->order_info;
+                                            }
+                                            @endphp
+                                            <label for="comment">Delivery Comments :</label>
+                                            <textarea name="order_info" class="input-textarea">{{ $order_info }}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="input-wrapper">
-                                        <?php
-                                        $error_terms = "";
-                                        if ($errors->has('terms')):
-                                            $error_terms = "<span class='error'>" . $errors->first('terms') . "</span>";
-                                        endif;
-                                        ?>
-                                        <div class="checklist-inline">
-                                            <input type="checkbox" name="terms" id="already-read" value='1' id="already-read">
-                                            <label for="already-read">
-                                                <div class="mark"><span></span></div>
-                                                <div class="text">
-                                                    I have read and agree to the <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
-                                                </div><br>
-                                                {!! $error_terms !!}
-                                            </label>
+                            <div class="billing-form">
+                                <h1 class="br-heading">Billing Address</h1>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-wrapper address-change">
+                                            <div class="radio-inline">
+                                                <input type="radio" class="input-radio" name="flag_same_shipping" value="Yes" id="same-address" checked="checked">
+                                                <label for="same-address">
+                                                    <div class="mark"><span></span></div>
+                                                    <div class="text">Same as Shipping address</div>
+                                                </label>
+                                            </div>
+                                            <div class="radio-inline">
+                                                <input type="radio" id="different-address" class="input-radio" name="flag_same_shipping" value="No">
+                                                <label for="different-address">
+                                                    <div class="mark"><span></span></div>
+                                                    <div class="text">Different Billing Address</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="billing-address">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_fname = "";
+                                                if ($errors->has('b_fname')):
+                                                    $error_b_fname = "<span class='error'>" . $errors->first('b_fname') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>First Name: {!! $error_b_fname !!}</label>
+                                                <input type="text" name="b_fname" class="input-field" data-label-name="first name">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_lname = "";
+                                                if ($errors->has('b_lname')):
+                                                    $error_b_lname = "<span class='error'>" . $errors->first('b_lname') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>Last Name: {!! $error_b_lname !!}</label>
+                                                <input type="text" name="b_lname" class="input-field" data-label-name="last name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_add1 = "";
+                                                if ($errors->has('b_add1')):
+                                                    $error_b_add1 = "<span class='error'>" . $errors->first('b_add1') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>Address 1: {!! $error_b_add1 !!}</label>
+                                                <input type="text" name="b_add1" class="input-field AddressLine" data-label-name="address 1">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <label for="">Address 2</label>
+                                                <input type="text" name="b_add2" class="input-field" data-label-name="address 2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_city = "";
+                                                if ($errors->has('b_city')):
+                                                    $error_b_city = "<span class='error'>" . $errors->first('b_city') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>Suburb: {!! $error_b_city !!}</label>
+                                                <input type="text" name="b_city" class="input-field" data-label-name="suburb">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_state = "";
+                                                $state = old('b_state');
+                                                if ($errors->has('b_state')):
+                                                    $error_b_state = "<span class='error'>" . $errors->first('b_state') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>State / Country: {!! $error_b_state !!}</label>
+                                                <select class="select-field" name="b_state" data-label-name="state">
+                                                    <option value="" selected="selected">Select State</option>
+                                                    <option value="ACT" {{ $state =='ACT' ? "selected='selected'": "" }}>ACT</option>
+                                                    <option value="NSW" {{ $state =='NSW' ? "selected='selected'": "" }}>NSW</option>
+                                                    <option value="NT" {{ $state =='NT' ? "selected='selected'": "" }}>NT</option>
+                                                    <option value="QLD" {{ $state =='QLD' ? "selected='selected'": "" }}>QLD</option>
+                                                    <option value="SA" {{ $state =='SA' ? "selected='selected'": "" }}>SA</option>
+                                                    <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
+                                                    <option value="VIC" {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
+                                                    <option value="WA" {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
+                                                    <option value="New Zealand" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_postcode = "";
+                                                if ($errors->has('b_postcode')):
+                                                    $error_b_postcode = "<span class='error'>" . $errors->first('b_postcode') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>Postal Code: {!! $error_b_postcode !!}</label>
+                                                <input type="text" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-wrapper">
+                                                <?php
+                                                $error_b_phone = "";
+                                                if ($errors->has('b_phone')):
+                                                    $error_b_phone = "<span class='error'>" . $errors->first('b_phone') . "</span>";
+                                                endif;
+                                                ?>
+                                                <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
+                                                <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-wrapper">
+                                            <?php
+                                            $error_terms = "";
+                                            if ($errors->has('terms')):
+                                                $error_terms = "<span class='error'>" . $errors->first('terms') . "</span>";
+                                            endif;
+                                            ?>
+                                            <div class="checklist-inline">
+                                                <input type="checkbox" name="terms" id="already-read" value='1' id="already-read">
+                                                <label for="already-read">
+                                                    <div class="mark"><span></span></div>
+                                                    <div class="text">
+                                                        I have read and agree to the <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions" class="shipping--popup">Terms and Conditions</a>.
+                                                    </div><br>
+                                                    {!! $error_terms !!}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="cart-btn">
+                                            <button type="submit" name="shipping_to_payment" class="primary-button pdp-button">Continue to payment</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="cart-btn">
-                                        <button type="submit" name="shipping_to_payment" class="primary-button pdp-button">Continue to payment</button>
+                        </form>
+                    </div>
+                    <!-- /Shipping Final step -->
+                </div>
+            </div>
+            <div class="col-3 tab-4">
+                <div class="cart-right--container">
+                    <div class="order hidden-mob">
+                        <!-- <div class="order order_summary">-->
+                        @include('cart.order_summary') 
+                        <!--  </div>-->
+                    </div>
+                    <!--afterpay popup -->
+                    <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
+                        <div class="popup-container--wrapper">
+                            <div class="popup-container--info">
+                                <div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
+                                <div class="header-info">
+                                    <img src="/images/afterpay_logo-colour.svg" alt="">
+                                    <h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
+                                </div>
+                                <div class="afterpay-info clearfix">
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
+                                        <p class="heading">Pay in 4 installments</p>
+                                        <p class="text">Pay for your order in equal fortnightly payments</p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
+                                        <p class="heading">Get your items now</p>
+                                        <p class="text">Your order will be shipped now, just like a normal order</p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
+                                        <p class="heading">Nothing extra to pay</p>
+                                        <p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
+                                        <p class="heading">Spend up to $1000</p>
+                                        <p class="text">You can use Afterpay for orders up to $1000</p>
+                                    </div>
+                                </div>
+                                <div class="footer-info clearfix">
+                                    <div class="left-block">
+                                        <p class="heading">
+                                            Pay in 4 installments
+                                        </p>
+                                        <ul class="text">
+                                            <li>An Australian debit or credit card</li>
+                                            <li>To be over 18 years of age</li>
+                                            <li> To live in Australia</li>
+                                        </ul>
+                                        <br/>
+                                        <p class="heading">To use this service</p>
+                                        <ul class="text">
+                                            <li>Add your items to your bag and checkout as normal</li>
+                                            <li>In checkout select Afterpay as your payment method</li>
+                                            <li>Enter your details with Afterpay and you're done!</li>
+                                            <li>Your payment schedule will be emailed to you</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right-block">
+                                        <p class="heading">Other things to note</p>
+                                        <ul class="text">
+                                            <li>Repayments will need to be made fortnightly either over a 6 or 8 week period. Your payment schedule will be shown to you by Afterpay before you confirm your purchase.</li>
+                                            <li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
+                                            <li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
+                                        </ul>
+                                        <a href="#" class="moreinfo">For full terms and conditions please visit Afterpay</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                @endif
-                <!-- /Shipping Final step -->
-            </div>
-        </div>
-
-        <div class="col-3 tab-4">
-            <div class="cart-right--container">
-                <div class="order hidden-mob">
-                    <!-- <div class="order order_summary">-->
-                    @include('cart.order_summary') 
-                    <!--  </div>-->
-                </div>
-                <!--afterpay popup -->
-                <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
-                    <div class="popup-container--wrapper">
-                        <div class="popup-container--info">
-                            <div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
-                            <div class="header-info">
-                                <img src="/images/afterpay_logo-colour.svg" alt="">
-                                <h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
-                            </div>
-                            <div class="afterpay-info clearfix">
-                                <div class="info-wrapper">
-                                    <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
-                                    <p class="heading">Pay in 4 installments</p>
-                                    <p class="text">Pay for your order in equal fortnightly payments</p>
-                                </div>
-                                <div class="info-wrapper">
-                                    <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
-                                    <p class="heading">Get your items now</p>
-                                    <p class="text">Your order will be shipped now, just like a normal order</p>
-                                </div>
-                                <div class="info-wrapper">
-                                    <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
-                                    <p class="heading">Nothing extra to pay</p>
-                                    <p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
-                                </div>
-                                <div class="info-wrapper">
-                                    <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
-                                    <p class="heading">Spend up to $1000</p>
-                                    <p class="text">You can use Afterpay for orders up to $1000</p>
-                                </div>
-                            </div>
-                            <div class="footer-info clearfix">
-                                <div class="left-block">
-                                    <p class="heading">
-                                        Pay in 4 installments
-                                    </p>
-                                    <ul class="text">
-                                        <li>An Australian debit or credit card</li>
-                                        <li>To be over 18 years of age</li>
-                                        <li> To live in Australia</li>
-                                    </ul>
-                                    <br/>
-                                    <p class="heading">To use this service</p>
-                                    <ul class="text">
-                                        <li>Add your items to your bag and checkout as normal</li>
-                                        <li>In checkout select Afterpay as your payment method</li>
-                                        <li>Enter your details with Afterpay and you're done!</li>
-                                        <li>Your payment schedule will be emailed to you</li>
-                                    </ul>
-                                </div>
-                                <div class="right-block">
-                                    <p class="heading">Other things to note</p>
-                                    <ul class="text">
-                                        <li>Repayments will need to be made fortnightly either over a 6 or 8 week period. Your payment schedule will be shown to you by Afterpay before you confirm your purchase.</li>
-                                        <li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
-                                        <li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
-                                    </ul>
-                                    <a href="#" class="moreinfo">For full terms and conditions please visit Afterpay</a>
-                                </div>
-                            </div>
+                    </div>
+                    <!--/afterpay popup -->
+                    <div class="address">
+                        <h3 class="bold-font">Have a Question?</h3>
+                        <div class="info-why">
+                            <p>Call us</p>
+                            <p>Australia: 1300 735 099</p>
+                            <p>New Zealand: 08 0061 3502</p>
+                            <p>Mon-Fri: 9am-5pm AEST</p>
+                            <p>30 Tullamarine Park Rd.</p>
+                            <p>Tullamarine, Vic 3043 </p> 
+                            <p>Australia.</p>
                         </div>
                     </div>
-                </div>
-                <!--/afterpay popup -->
-                <div class="address">
-                    <h3 class="bold-font">Have a Question?</h3>
-                    <div class="info-why">
-                        <p>Call us</p>
-                        <p>Australia: 1300 735 099</p>
-                        <p>New Zealand: 08 0061 3502</p>
-                        <p>Mon-Fri: 9am-5pm AEST</p>
-                        <p>30 Tullamarine Park Rd.</p>
-                        <p>Tullamarine, Vic 3043 </p> 
-                        <p>Australia.</p>
+                    <div class="payment">
+                        <h3 class="bold-font center">We accept these payments</h3>
+                        <img src="/images/payment-option.jpg" alt="">
+                        <p class="braintree-txt">Safe and Secure Payments</p>
+                        <p class="braintree-txt">enabled by</p>
+                        <img src="/images/payment-braintree-black.jpg" alt="">
                     </div>
-                </div>
-                <div class="payment">
-                    <h3 class="bold-font center">We accept these payments</h3>
-                    <img src="/images/payment-option.jpg" alt="">
-                    <p class="braintree-txt">Safe and Secure Payments</p>
-                    <p class="braintree-txt">enabled by</p>
-                    <img src="/images/payment-braintree-black.jpg" alt="">
                 </div>
             </div>
         </div>
-    </div>
 </section>
 @if(env('KLEBER_STATUS')=='ON')
 <script>
@@ -1155,5 +764,10 @@
 </script>
 @endif
 <script src="/js/shippingbilling.js"></script>
-
+<script>
+    $('#medibank_guest_user').on('click', function () {
+        $('.medibank_guest_div').hide();
+        $('.shipping-main-form').show();
+    });
+</script>
 @endsection
