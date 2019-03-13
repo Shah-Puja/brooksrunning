@@ -35,7 +35,7 @@ class OrderUser extends Mailable
         if (Session::get('medibank_gateway') == 'Yes') {
             return $this->view('emails.orderuser')->subject('Brooks Running Order #7BRN-'.$this->order->order_no);
         }else{
-            return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
+            return $this->view('emails.orderuser')->subject('Brooks Running Order #7BRN-'.$this->order->order_no);
         }
             
     }
