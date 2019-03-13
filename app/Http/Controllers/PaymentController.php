@@ -68,6 +68,9 @@ class PaymentController extends Controller {
 
     public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        if (Session::get('medibank_gateway') == 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank']);
+        }
         if (isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total == 0.00) {
             $logger = array(
                 'order_id' => $this->order->id,
@@ -77,10 +80,6 @@ class PaymentController extends Controller {
             $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
-
-            if (Session::get('medibank_gateway') == 'Yes') {
-                Order::where('id', $this->order->id)->update(['order_type' => 'medibank']);
-            }
             Order::where('id', $this->order->id)->update(['status' => 'Order Completed', 'payment_status' => Carbon::now()]);
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
             $order = $this->order->load('orderItems.variant.product', 'address');
