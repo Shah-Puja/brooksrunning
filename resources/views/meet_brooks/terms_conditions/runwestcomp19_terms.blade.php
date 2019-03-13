@@ -24,6 +24,7 @@
           <li>Distance Short sleeve (RRP: $60)</li>
           <li>Run in three (RRP: $40) </li>            
     </ul>
+    <p>&nbsp;</p>
   	</li>
   	<li>The Promoter reserves the right to request winners to provide proof of their identity and proof of Australian residency in order to claim the prize. Proof of identification and residency is at the judgment of the promoter.</li>
     <li>Entrants must be over 18 years of age, or have permission from their Parent or Guardian.</li>
