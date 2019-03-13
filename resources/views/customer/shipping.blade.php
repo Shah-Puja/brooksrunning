@@ -139,7 +139,7 @@
 
                 @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
                 <div class="medibank_guest_div">
-                    <p style="color:red;">Please enter your Medibank Details in Medibank Band</p>
+                    <p style="color:red;">Please enter your Medibank details in Medibank band</p>
                     <a href='javascript:void(0)' class="primary-button pdp-button medibank_guest_user" id="medibank_guest_user">Skip Medibank login</a>
                 </div>
                 @endif
