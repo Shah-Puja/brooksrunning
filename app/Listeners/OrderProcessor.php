@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderAdmin;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Session;
 
 class OrderProcessor implements ShouldQueue
 {
@@ -30,6 +31,8 @@ class OrderProcessor implements ShouldQueue
     public function handle(OrderReceived $event)
     {
         //echo "<pre>";print_r($event);die;
+        echo "eeeeeeeeeeeee".Session::get('medibank_gateway');
+        echo "<pre>";print_r($event);die;
         Mail::to($event->order->address->email)
                 ->bcc( config('site.syg_notify_email') )
                 ->send( new OrderUser($event->order) );
