@@ -9,8 +9,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Session;
 
-class OrderAdmin extends Mailable
-{
+class OrderAdmin extends Mailable {
+
     use Queueable, SerializesModels;
 
     public $order;
@@ -20,15 +20,13 @@ class OrderAdmin extends Mailable
      *
      * @return void
      */
-    public function __construct(Order $order)
-    {
-        if (Session::get('medibank_gateway') == 'Yes') {
-            echo "Yes Session";
-        }else{
-            echo "NO";
-        }
-        echo "<pre>";print_r($order);die;
+    public function __construct(Order $order) {
         $this->order = $order;
+        if (Session::get('medibank_gateway') == 'Yes') {
+            $subject = 'Brooks Running Purchase Order #7BRN';
+        } else {
+            $subject = 'Brooks Running Purchase Order #BRN';
+        }
     }
 
     /**
@@ -36,13 +34,8 @@ class OrderAdmin extends Mailable
      *
      * @return $this
      */
-    public function build()
-    { 
-        if (Session::get('medibank_gateway') == 'Yes') {
-            return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #7BRN-'.$this->order->order_no);
-        }else{
-            return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #BRN-'.$this->order->order_no);
-        }
-        
+    public function build() {
+        return $this->view('emails.orderadmin')->subject($subject . '-' . $this->order->order_no);
     }
+
 }
