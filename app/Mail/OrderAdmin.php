@@ -22,6 +22,12 @@ class OrderAdmin extends Mailable
      */
     public function __construct(Order $order)
     {
+        if (Session::get('medibank_gateway') == 'Yes') {
+            echo "Yes Session";
+        }else{
+            echo "NO";
+        }
+        echo "<pre>";print_r($order);die;
         $this->order = $order;
     }
 
