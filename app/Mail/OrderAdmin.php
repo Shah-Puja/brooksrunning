@@ -22,6 +22,7 @@ class OrderAdmin extends Mailable {
      */
     public function __construct(Order $order) {
         $this->order = $order;
+        echo "eeeeeeeeeeeee".Session::get('medibank_gateway');die;
         if (Session::get('medibank_gateway') == 'Yes') {
             $subject = 'Brooks Running Purchase Order #7BRN';
         } else {
