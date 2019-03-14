@@ -5,6 +5,7 @@ namespace App\Events;
 use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
+use Session;
 
 class OrderReceived
 {
@@ -18,7 +19,8 @@ class OrderReceived
      */
     public function __construct(Order $order)
     {
-        //echo "<pre>";print_r($order);die;
+        echo "eeeeeeeeeeeee".Session::get('medibank_gateway');
+        echo "<pre>";print_r($order);die;
         $this->order = $order;
     }
 
