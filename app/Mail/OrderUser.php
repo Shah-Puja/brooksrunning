@@ -8,8 +8,8 @@ use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderUser extends Mailable {
-
+class OrderUser extends Mailable
+{
     use Queueable, SerializesModels;
 
     public $order;
@@ -19,7 +19,8 @@ class OrderUser extends Mailable {
      *
      * @return void
      */
-    public function __construct(Order $order) {
+    public function __construct(Order $order)
+    {
         $this->order = $order;
     }
 
@@ -28,8 +29,8 @@ class OrderUser extends Mailable {
      *
      * @return $this
      */
-    public function build() {
-        return $this->view('emails.orderuser');
+    public function build()
+    {
+        return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);
     }
-
 }

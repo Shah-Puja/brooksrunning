@@ -5,7 +5,6 @@ namespace App\Events;
 use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
-use Session;
 
 class OrderReceived
 {
@@ -19,13 +18,7 @@ class OrderReceived
      */
     public function __construct(Order $order)
     {
-        if (Session::get('medibank_gateway') == 'Yes') {
-            $order->mail_admin_subject = 'Brooks Purchase Running Order #7BRN-'.$order->order_no;
-            $order->mail_user_subject = 'Brooks Running Order #7BRN-'.$order->order_no;
-        } else {
-            $order->mail_admin_subject = 'Brooks Purchase Running Order #BRN-'.$order->order_no;
-            $order->mail_user_subject = 'Brooks Running Order #BRN-'.$order->order_no;
-        }
+        //echo "<pre>";print_r($order);die;
         $this->order = $order;
     }
 

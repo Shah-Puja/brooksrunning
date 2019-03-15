@@ -8,11 +8,8 @@
             <center>
                 <table width="620" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px;">
                     <tr>
-                    @if (Session::get('medibank_gateway') == 'Yes') 
-                        <td align="left"> Customer Order Number: 7BRN-{{ $order->order_no }}</td>
-                    @else
-                        <td align="left"> Customer Order Number: BRN-{{ $order->order_no }}</td>
-                    @endif
+                        <td align="left">            
+                            Customer Order Number: BRN-{{ $order->order_no }}</td>
                         <td align="right">Date: {{ date("D j M Y G:i:s T") }}
                         </td>
                     </tr>
