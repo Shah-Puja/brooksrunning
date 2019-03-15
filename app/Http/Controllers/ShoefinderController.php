@@ -189,10 +189,10 @@ class ShoefinderController extends Controller
 	}
 
 	public function shoefinder_new(Request $request){
-		Session::put('score', '0');
-		Session::put('experiencetype','');
-		Session::put('experience','');
-		Session::put('tag','');
+		//Session::put('score', '0');
+		//Session::put('experiencetype','');
+		//Session::put('experience','');
+		//Session::put('tag','');
 		//$request->session()->put('score','0');
 		//$request->session()->put('experiencetype','');
 		//$request->session()->put('expnew','');
