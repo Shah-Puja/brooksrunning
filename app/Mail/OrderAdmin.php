@@ -31,6 +31,6 @@ class OrderAdmin extends Mailable
      */
     public function build()
     { 
-        return $this->view('emails.orderadmin')->subject($this->order->mail_admin_subject);
+        return $this->view('emails.orderadmin');
     }
 }
