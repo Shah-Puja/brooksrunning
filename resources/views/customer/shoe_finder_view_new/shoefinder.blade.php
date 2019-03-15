@@ -7,7 +7,14 @@
 		display:none !important;
 	}
 </style>
-
+@if(!empty($shoefinder_user_details))
+@php
+	echo $url = $shoefinder_user_details->string;
+	$parts = parse_url($url);
+	parse_str($parts['query'], $query);
+	//echo $query['balance'];
+@endphp
+@endif
 <div class="shoefinder-container" >
 <div class="wrapper">
   	<div class="row">
@@ -17,7 +24,7 @@
 					<div class="bf-content-wrap">
 						<!-- START: Page Header -->
 						<header class="bf-header" data-bf-header="">
-							<a href="/shofinder-new" class="bf-header__logo bf-logo bf-logo--visible bf-logo--large" data-bf-logo="" data-bf-change-screen-link="" data-id="Start" tabindex="0" title="Go to start screen">
+							<a href="" class="bf-header__logo bf-logo bf-logo--visible bf-logo--large" data-bf-logo="" data-bf-change-screen-link="" data-id="Start" tabindex="0" title="Go to start screen">
 								<img src="/images/shoefinder-new/shoefinder_logo.svg" alt="Brooks Shoe Finder" role="logo">
 							</a>
 							<div class="bf-header__progress-wrap">
@@ -26,7 +33,7 @@
 									<nav class="bf-progress bf-progress--can-hover" data-bf-progress="">
 										<div class="bf-progress__close" data-bf-close-progress-link=""><i class="bf-close-icon"></i></div>
 										<div class="bf-progress__indicator-wrap" aria-hidden="true">
-											<div class="bf-progress__indicator" data-active-indicator="" style="opacity: 1; transform: translateX(0px); top: 0%;">1</div>
+											<div class="bf-progress__indicator" data-active-indicator="" style="opacity: 1; transform: translateX(0px); top: 0%;"></div>
 										</div>
 										<div class="bf-progress__items-wrap" data-items="">
 										
@@ -211,7 +218,7 @@
 												<!--  valueOverride road -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="surface" value="road" id="surface_0" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['surface']) && $query['surface']=='road') checked="" @endif type="radio" name="surface" value="road" id="surface_0" tabindex="-1" required="" aria-hidden="true">
 
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="surface_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Terrain" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="1" data-gtm-screen-title="Terrain" data-gtm-user-response="SurfaceRoad" data-gtm-question="Where do you want to run?" data-gtm-question-category="Demographics">Road / Gym</button>
 											</div>				
@@ -220,7 +227,7 @@
 												<!--  valueOverride trail -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="surface" value="trail" id="surface_1" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['surface']) && $query['surface']=='trail') checked="" @endif type="radio" name="surface" value="trail" id="surface_1" tabindex="-1" required="" aria-hidden="true">
 
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="surface_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Terrain" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="1" data-gtm-screen-title="Terrain" data-gtm-user-response="SurfaceTrail" data-gtm-question="Where do you want to run?" data-gtm-question-category="Demographics">Trail</button>
 											</div>	
@@ -242,7 +249,7 @@
 												<!--  valueOverride 0 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="0" id="run_distance_0" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='0') checked="" @endif type="radio" name="run_distance" value="0" id="run_distance_0" tabindex="-1" required="" aria-hidden="true">
 					
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="0-15 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">0-15 km</button>
 											</div>									
@@ -252,7 +259,7 @@
 												<!--  valueOverride 1 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="1" id="run_distance_1" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='1') checked="" @endif type="radio" name="run_distance" value="1" id="run_distance_1" tabindex="-1" required="" aria-hidden="true">
 												
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="16-50 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">16-50 km</button>
 											</div>									
@@ -262,7 +269,7 @@
 												<!--  valueOverride 2 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="2" id="run_distance_2" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='2') checked="" @endif type="radio" name="run_distance" value="2" id="run_distance_2" tabindex="-1" required="" aria-hidden="true">
 				
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="50+ km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">50+ km</button>
 											</div>									
@@ -407,7 +414,7 @@
 											  <!--  valueOverride 2 -->
 											  <!--  answered? No -->
 											  <!--  answer is:  false -->
-												<input type="radio" name="training" value="2" id="training_2" tabindex="-1" required="" aria-hidden="true">
+												<input checked="" type="radio" name="training" value="2" id="training_2" tabindex="-1" required="" aria-hidden="true">
 														
 
 												<div role="button" aria-labelledby="training_2Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="10k" data-gtm-question="What are you training for?" tabindex="2">

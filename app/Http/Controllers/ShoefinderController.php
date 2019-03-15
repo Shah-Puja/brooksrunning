@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Shoefinder;
+use App\Models\Shoefinder_user;
 use Session;
 
 class ShoefinderController extends Controller
@@ -195,7 +196,8 @@ class ShoefinderController extends Controller
 		//$request->session()->put('score','0');
 		//$request->session()->put('experiencetype','');
 		//$request->session()->put('expnew','');
-		return view( 'customer.shoe_finder_view_new.shoefinder');
+		$shoefinder_user_details = Shoefinder_user::createOrGetForUser($request);
+		return view( 'customer.shoe_finder_view_new.shoefinder',compact('shoefinder_user_details'));
 
 	}
 
@@ -249,6 +251,8 @@ class ShoefinderController extends Controller
 			}
 		}
 		Session::put('score',$points);
+
+		Shoefinder_user::updateOrGetForUser($request);
 		//$request->session()->put('score',$points);
 	}
 

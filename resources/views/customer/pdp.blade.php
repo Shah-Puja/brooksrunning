@@ -247,8 +247,8 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                 @php $sizes = collect($sizes)->unique('size')->sortBy('seqno'); @endphp
-                                    @foreach($sizes as $size)
+                                 @php $sizes = collect($sizes)->sortByDesc('visible')->unique('size'); @endphp
+                                    @foreach($sizes->sortBy('seqno') as $size)
                                        @if($size['size']!='')
                                         <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
                                        @endif
