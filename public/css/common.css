@@ -3104,10 +3104,15 @@ textarea {
   }
 }
 .overgray-wrapper .info-wrapper {
-  padding: 0 15px;
+  padding: 0 5px;
 }
 .overgray-wrapper .info-wrapper p {
   margin: 10px 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .overgray-wrapper .info-wrapper p {
+    font-size: 14px;
+  }
 }
 .overgray-wrapper .info-wrapper a {
   display: inline-block;
@@ -3178,11 +3183,22 @@ textarea {
     padding: 6px 5px;
   }
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .homepage-cate--link.shoe-finder {
+    min-height: 190px;
+    padding: 12px 5px;
+  }
+}
 .homepage-cate--link.shoe-finder h3 {
   margin: 0;
   font-size: 20px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-cate--link.shoe-finder h3 {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .homepage-cate--link.shoe-finder h3 {
     font-size: 15px !important;
   }
@@ -3193,6 +3209,12 @@ textarea {
   font-size: 17px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-cate--link.shoe-finder p {
+    margin-bottom: 2px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .homepage-cate--link.shoe-finder p {
     margin-bottom: 2px;
     font-size: 14px;
@@ -3209,12 +3231,26 @@ textarea {
     font-size: 13px;
   }
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .homepage-cate--link.shoe-finder .btn {
+    bottom: 12px;
+  }
+  .homepage-cate--link.shoe-finder .btn .secondary-button {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+}
 .homepage-cate--link.shoe-finder img {
   width: auto;
   max-width: 100%;
   margin: auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-cate--link.shoe-finder img {
+    width: 35%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .homepage-cate--link.shoe-finder img {
     width: 35%;
   }
@@ -3340,7 +3376,7 @@ textarea {
   color: #f4f6f9 !important;
 }
 .homepage-gray--container .info-wrapper {
-  padding: 0 15px;
+  padding: 0 16px 0px 5px;
   margin-top: -10px;
 }
 .homepage-gray--container .info-wrapper .br-heading {
@@ -3355,6 +3391,11 @@ textarea {
   margin: 10px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .homepage-gray--container .info-wrapper p {
+    font-size: 12px !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .homepage-gray--container .info-wrapper p {
     font-size: 12px !important;
   }
@@ -3389,11 +3430,6 @@ textarea {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .homepage-gray--container .info-wrapper .right-link {
     margin-left: 8px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-gray--container .info-wrapper {
-    padding: 0 5px;
   }
 }
 

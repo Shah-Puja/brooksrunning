@@ -1501,9 +1501,12 @@
       }
     }
     .info-wrapper{
-      padding: 0 15px;
+      padding: 0 5px;
       p{
         margin: 10px 0;
+        @media #{$desktop-only}{
+          font-size: 14px;
+        }
       }
       a{
         display: inline-block;
@@ -1536,6 +1539,7 @@
         }
       }
     }
+    
   }
   .homepage-cate--link{
     position: relative;
@@ -1567,10 +1571,17 @@
         min-height: 145px;
         padding: 6px 5px;
       }
+      @media #{$desktop-only}{
+        min-height: 190px;
+        padding: 12px 5px;
+      }
       h3{
         margin: 0;
         font-size: 20px;
          @media #{$tab-only}{
+          font-size: 15px !important;
+        }
+        @media #{$desktop-only}{
           font-size: 15px !important;
         }
       }
@@ -1579,6 +1590,10 @@
         margin-bottom: 2px;
         font-size: 17px;
         @media #{$tab-only}{
+          margin-bottom: 2px;
+          font-size: 14px;
+        }
+        @media #{$desktop-only}{
           margin-bottom: 2px;
           font-size: 14px;
         }
@@ -1593,12 +1608,22 @@
           font-size: 13px;
         }
        }
+       @media #{$desktop-only}{
+        bottom: 12px;
+        .secondary-button {
+          padding: 10px 12px;
+          font-size: 16px;
+        }
+       }
       }
       img{
         width: auto;
         max-width: 100%;
         margin: auto;
         @media #{$tab-only}{
+        width:35%;
+       }
+       @media #{$desktop-only}{
         width:35%;
        }
       }
@@ -1718,7 +1743,7 @@
        
     }
     .info-wrapper{
-      padding: 0 15px;
+      padding: 0 16px 0px 5px;
       margin-top: -10px;
       .br-heading{
         margin: 0px;
@@ -1729,6 +1754,9 @@
       p{
         margin: 10px 0;
          @media #{$tab-only}{
+          font-size: 12px !important;
+        }
+        @media #{$desktop-only}{
           font-size: 12px !important;
         }
       }
@@ -1762,9 +1790,7 @@
           margin-left: 8px;
         }
       }
-      @media #{$tab-only}{
-           padding: 0 5px;
-        }
+      
     }
   }
   .homepage-footer{
