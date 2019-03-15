@@ -38,6 +38,16 @@
                     <img src="images/accounts/account-banner.png" alt="">
                 </div>
             </div>
+            <div class="tab-4">
+                <div class="create-account--homepage shoefinder">
+                    <div class="icon-img">
+                         <img src="/images/br-shoefinder-logo.png" alt="">
+                    </div>
+                    <h3 class="br-heading">Need help choosing a shoe?</h3>
+                    <div class="br-info">Uses your biomechanics, preferences and running science to find the ideal shoe for you.</div>
+                    <a href="/shoefinder" class="primary-button">Try the Shoe Finder</a>
+                </div>
+            </div>
         </div>
     </section>
 @endsection

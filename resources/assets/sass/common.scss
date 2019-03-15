@@ -1963,11 +1963,16 @@
     }
     &--homepage{
       margin: 60px 0;
-      background-color: $border;
+      background-color: #D3D2D2;
       text-align: center;
       padding: 55px 20px;
       @media #{$desktop-only}{
         padding: 15px 20px;
+        margin: 48px 0;
+      }
+      @media #{$tab-only}{
+        padding: 15px 20px;
+        margin: 48px 0;
       }
       .icon{
         font-size: 60px;
@@ -1990,6 +1995,17 @@
           margin: 0 0 10px;
           line-height: 1.4;
           font-size: 14px;
+        }
+      }
+      &.shoefinder{
+        background-color: $lightblue;
+        margin: -15px 0px 15px 0px;
+        padding: 38px 20px;
+        @media #{$tab-only}{
+          padding: 18px 20px;
+        }
+        @media #{$mobile-only}{
+          margin: 60px 0;
         }
       }
     }
