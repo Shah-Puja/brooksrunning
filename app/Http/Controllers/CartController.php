@@ -53,7 +53,7 @@ class CartController extends Controller {
                     }
                     if (empty($check_promo_code)) {
                         //remove_promo_code
-                        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => '']);
+                        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
                     }
                 }
 
