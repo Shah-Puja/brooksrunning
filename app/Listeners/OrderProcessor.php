@@ -36,7 +36,6 @@ class OrderProcessor implements ShouldQueue
                 ->send( new OrderUser($event->order) );
         Mail::to( config('site.notify_email') )
                 ->bcc( config('site.syg_notify_email') )
-                ->subject($admin_subject.$this->order->order_no)
                 ->send( new OrderAdmin($event->order) );
     }
 }

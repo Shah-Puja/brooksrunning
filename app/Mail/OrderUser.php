@@ -29,7 +29,7 @@ class OrderUser extends Mailable {
      * @return $this
      */
     public function build() {
-        return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-' . $this->order->order_no);
+        return $this->view('emails.orderuser')->subject($this->order->mail_user_subject);
     }
 
 }
