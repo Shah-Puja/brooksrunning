@@ -29,13 +29,14 @@ class OrderProcessor implements ShouldQueue
      */
     public function handle(OrderReceived $event)
     {
-        //echo "<pre>";print_r($event);die;
-        $admin_subject = 'Brooks Running Purchase Order #BRN-';
+        //echo "<pre>";print_r($event);die; 
         Mail::to($event->order->address->email)
                 ->bcc( config('site.syg_notify_email') )
+                ->subject($event->order->mail_user_subject)
                 ->send( new OrderUser($event->order) );
         Mail::to( config('site.notify_email') )
                 ->bcc( config('site.syg_notify_email') )
+                ->subject($event->order->mail_admin_subject)
                 ->send( new OrderAdmin($event->order) );
     }
 }
