@@ -23,9 +23,9 @@
             <div class="cart-left--container">
                 <div class="heading">
                     <h3 class="br-heading">Shopping Cart</h3>
-                    @if(session('promo_expire') == "Promo Expired") 
+                     
                         <div class="promo-code-warning"><span class="icon-notification"></span><span class="notification">Promotion Code has expired so we could not proceed to Payment. Please check your Cart Details. </span></div>
-                    @endif
+                     
                     <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
                 @if(!empty($cart))
