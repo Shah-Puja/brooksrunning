@@ -614,14 +614,11 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper b
             if (cart_page == 'Yes' && action == 'update') {
                 let target = $(".ajax_cart").find('[data-main-sku="' + sku + '"]');
                 let replace_qty = target.find("input[name=qty]").data("qty");
-                //target.find(".mob-btn").prepend("<p class='error'>" + obj.errors + "</p>");
-                $.each( obj.errors, function( key, value ) {
-                    target.find(".mob-btn").prepend("<p class='error'>Quantity must be an integer</p>");
-                });
+                target.find(".mob-btn").prepend("<p class='error'>" + obj.errors + "</p>");
                 setTimeout(function () {
                     target.find("input[name=qty]").val(replace_qty);
                     target.find(".mob-btn .error").remove();
-                }, 5500);
+                }, 2500);
             }
         },
         statusCode: {

@@ -69,11 +69,7 @@ class CartItemsController extends Controller {
         ]);
     }
 
-    public function update(Request $request) {
-        $request->validate([
-            'qty' => 'required|integer',
-            'qty.required' => 'We need to know your e-mail address!', 
-        ]);
+    public function update() {
         $cart = Cart::createOrGetForUser();
 
         if (request('qty') > 0) {
