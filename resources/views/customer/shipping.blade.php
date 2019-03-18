@@ -100,8 +100,13 @@
                     </div>
                 </div>
                 <!--/Password popup Success-->
+                @if(Session::get('medibank_gateway')!='Yes' || (Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')=='Yes'))
                 <h1 class="br-heading">Shipping Address</h1>
                 <p class="br-info">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
+                @elseif(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
+                <h1 class="br-heading medibank-heading">Medibank Login</h1>
+                <p class="br-info medi-info" style="display:none;">Your order requires a signature on delivery therefore we recommend a business address.<br/>If the address is unattended a card will be left to pick up the parcel at your nearest post office.</p>
+                @endif
                 <!-- Shipping first step -->
                 @if(Session::get('medibank_gateway')!='Yes')
                 <div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
@@ -139,7 +144,7 @@
 
                 @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
                 <div class="medibank_guest_div">
-                    <p style="color:red;">Please enter your Medibank details in Medibank band</p>
+                    <p style="color:red;">Pease enter your Medibank details in <b>Medibank - Live better</b> band in header section</p>
                     <a href='javascript:void(0)' class="primary-button pdp-button medibank_guest_user" id="medibank_guest_user">Skip Medibank Verification</a>
                 </div>
                 @endif
@@ -766,6 +771,8 @@
 <script src="/js/shippingbilling.js"></script>
 <script>
     $('#medibank_guest_user').on('click', function () {
+        $('.medibank-heading').html('Shipping Address');
+        $('.medi-info').show();
         $('.medibank_guest_div').hide();
         $('.shipping-main-form').show();
     });
