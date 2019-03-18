@@ -68,8 +68,13 @@ class PaymentController extends Controller {
 
     public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        if (Session::get('medibank_gateway') == 'Yes') {
+        /*if (Session::get('medibank_gateway') == 'Yes') {
             Order::where('id', $this->order->id)->update(['order_type' => 'medibank']);
+        }*/
+        if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-user']);
+        }else if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') != 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-guest']);
         }
         if (isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total == 0.00) {
             $logger = array(

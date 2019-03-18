@@ -31,7 +31,7 @@ class OrderAdmin extends Mailable
      */
     public function build()
     { 
-        if($this->order->order_type=='medibank'){
+        if (strpos($this->order->order_type, 'medibank') !== false) {
             return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #7BRN-'.$this->order->order_no);
         } else{
             return $this->view('emails.orderadmin')->subject('Brooks Running Purchase Order #BRN-'.$this->order->order_no);
