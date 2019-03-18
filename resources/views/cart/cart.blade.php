@@ -23,9 +23,11 @@
             <div class="cart-left--container">
                 <div class="heading">
                     <h3 class="br-heading">Shopping Cart</h3>
-                    <span class="offer">Promotion Code has expired so we could not proceed to Payment. Please check your Cart Details. </span>
-                
-                    <span class="offer"><br/>Free shipping on orders over $50 Australia wide.</span>
+                    <!-- @if(session('promo_expire') == "Promo Expired") 
+                            <span class="offer">Promotion Code has expired so we could not proceed to Payment. Please check your Cart Details. </span>
+                    @endif  -->
+                    <br/>
+                    <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
                 @if(!empty($cart))
                 <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
