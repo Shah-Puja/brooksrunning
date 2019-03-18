@@ -89,3 +89,14 @@
 @else
  <h3>YOUR SHOPPING CART DOES NOT HAVE ANY PRODUCTS.</h3>
 @endif
+
+<script>
+
+$(document).ready(function () {
+	$(".cart_qty_update").keypress(function (e) {
+    	if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) { 
+               return false;
+		}
+   	});
+});
+</script>
