@@ -30,7 +30,7 @@
 										<p class="bold-font">Quantity:</p>
 									</div>
 									<div class="input-wrapper">
-									<input type="text" class="input-field" name='qty' value="{{ $cartItem->qty }}" data-qty="{{ $cartItem->qty }}"> 
+									<input type="text" class="input-field cart_qty_update" name='qty' value="{{ $cartItem->qty }}" data-qty="{{ $cartItem->qty }}"> 
 									</div>
 									<div class="mob-btn">
 									 <button type="submit" data-cart-page="Yes" data-action="update" data-sku="{{ $cartItem->variant->id }}" class="bold-font action">Update</button>
