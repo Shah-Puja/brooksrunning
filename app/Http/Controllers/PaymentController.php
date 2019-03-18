@@ -49,14 +49,8 @@ class PaymentController extends Controller {
             $this->order = $this->cart->order;
 
             if ($this->order->coupon_code != "" && $this->order->discount > 0) {
-                //check promo code validity
-                $promo_code_expiry = promo_mast::where('promo_string', $this->order->coupon_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
-                if (empty($promo_code_expiry)) {
-                    //remove_promo_code
-                    Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
-                    //return redirect('cart');
-                    return redirect('/cart')->with('promo_expire', 'Promo Expired');
-                }
+                check_promo_validity($this->order); 
+                return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
 
             if (!$this->order) {

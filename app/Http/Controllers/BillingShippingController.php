@@ -37,6 +37,11 @@ class BillingShippingController extends Controller
             if ( ! $this->cart || $this->cart->items_count < 1 ) {
                 return redirect('cart');
             }
+            if ($this->cart->promo_string != "" && $this->cart->discount > 0) {
+                $this->cart->coupon_code = $this->cart->promo_string;
+                check_promo_validity($this->cart); 
+                return redirect('cart')->with('promo_expire', 'Promo Expired');
+            }
             return $next($request);
         });
     } 
@@ -157,6 +162,18 @@ class BillingShippingController extends Controller
         }else{
             return 'false';
         }*/
+    }
+
+    public function verify_medibank_login(Request $request){
+
+        // Verification process is pending here
+        
+        //echo "<pre>";print_r($request->all());die;
+        if($request->medibank_email != "" && $request->medibank_id!=""){
+            echo "success";
+        }else{
+            echo "failed";
+        }
     }
 
 }
