@@ -3147,21 +3147,24 @@ textarea {
   }
 }
 
-.homepage-cate--link {
-  position: relative;
-  margin: 20px 0;
-  text-align: center;
+.hpgray-wrapper {
+  margin: 25px 0;
 }
 @media only screen and (max-width: 767px) {
-  .homepage-cate--link {
+  .hpgray-wrapper {
     max-width: 400px;
-    margin: 20px auto;
+    margin: 25px auto;
   }
 }
-.homepage-cate--link img {
+.hpgray-wrapper .homepage-cate--link {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hpgray-wrapper .homepage-cate--link img {
   width: 100%;
 }
-.homepage-cate--link .btn {
+.hpgray-wrapper .homepage-cate--link .btn {
   position: absolute;
   left: 0;
   right: 0;
@@ -3171,87 +3174,87 @@ textarea {
   padding: 0 15px;
   margin: auto;
 }
-.homepage-cate--link.shoe-finder {
+.hpgray-wrapper .homepage-cate--link.shoe-finder {
   background-color: #00d3d6;
   padding: 18px 10px;
   text-align: center;
   min-height: 240px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-cate--link.shoe-finder {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder {
     min-height: 145px;
     padding: 6px 5px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .homepage-cate--link.shoe-finder {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder {
     min-height: 190px;
     padding: 12px 5px;
   }
 }
-.homepage-cate--link.shoe-finder h3 {
+.hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
   margin: 0;
   font-size: 20px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-cate--link.shoe-finder h3 {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
     font-size: 15px !important;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .homepage-cate--link.shoe-finder h3 {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
     font-size: 15px !important;
   }
 }
-.homepage-cate--link.shoe-finder p {
+.hpgray-wrapper .homepage-cate--link.shoe-finder p {
   margin: 0;
   margin-bottom: 2px;
   font-size: 17px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-cate--link.shoe-finder p {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder p {
     margin-bottom: 2px;
     font-size: 14px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .homepage-cate--link.shoe-finder p {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder p {
     margin-bottom: 2px;
     font-size: 14px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-cate--link.shoe-finder .btn {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
     bottom: 5px;
     max-width: 145px;
     padding: 0px 18px;
   }
-  .homepage-cate--link.shoe-finder .btn .secondary-button {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
     padding: 10px 12px;
     font-size: 13px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .homepage-cate--link.shoe-finder .btn {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
     bottom: 12px;
   }
-  .homepage-cate--link.shoe-finder .btn .secondary-button {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
     padding: 10px 12px;
     font-size: 16px;
   }
 }
-.homepage-cate--link.shoe-finder img {
+.hpgray-wrapper .homepage-cate--link.shoe-finder img {
   width: auto;
   max-width: 100%;
   margin: auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .homepage-cate--link.shoe-finder img {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder img {
     width: 35%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .homepage-cate--link.shoe-finder img {
+  .hpgray-wrapper .homepage-cate--link.shoe-finder img {
     width: 35%;
   }
 }
