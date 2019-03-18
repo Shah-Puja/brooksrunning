@@ -117,6 +117,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
 					<img src="/images/home/hp_sm4.jpg">
 				</div>
@@ -127,7 +128,9 @@
 					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
+			</div>
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link shoe-finder">
 					<h3 class="br-heading">Need help choosing a shoe?</h3>
 					<p class="br-info">Try the shoe finder</p>
@@ -143,7 +146,9 @@
 					
 				</div>
 			</div>
+			</div>
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
 					<img src="/images/home/hp_sm6.jpg">
 				</div>
@@ -152,6 +157,7 @@
 					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
 					<a href="/events">Running Events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>
