@@ -31,7 +31,7 @@ class OrderUser extends Mailable
      */
     public function build()
     {
-        if(strstr($this->order->order_type, '-', true) == 'medibank'){
+        if($this->order->order_type == 'medibank-user'){
             return $this->view('emails.orderuser')->subject('Brooks Running Order #7BRN-'.$this->order->order_no);
         } else{
             return $this->view('emails.orderuser')->subject('Brooks Running Order #BRN-'.$this->order->order_no);

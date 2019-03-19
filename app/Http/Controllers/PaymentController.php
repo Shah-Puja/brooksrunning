@@ -695,9 +695,9 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        //echo "<pre>";
-        //print_r($this->order);
-        //exit;
+        echo "<pre>";
+        print_r($this->order);
+        exit;
         $order = Order::where('id', $this->order->id)->first();
         $returnVal = false;
         $returnData = array();

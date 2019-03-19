@@ -151,7 +151,7 @@
                                             <tr>
                                                 <td align="center">
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
-                                                    @if(strstr($order->order_type, '-', true) == 'medibank')
+                                                    @if($order->order_type == 'medibank-user')
                                                     <h2><span style="color:#005cfb;">Order Number</span> 7BRN-{{ $order->order_no }}</h2> 
                                                     @else
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 

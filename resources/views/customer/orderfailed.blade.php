@@ -30,7 +30,7 @@
 
                     <br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We’re available to help Mon-Fri between 9am-5AEST.</p>
                     </div>
-                    @if (Session::get('medibank_gateway') == 'Yes') 
+                    @if($order->order_type == 'medibank-user')
                     <p class="order"><span>Order No:</span> 7BRN-{{$order->address->order_id}}</p>
                     @else
                     <p class="order"><span>Order No:</span> BRN-{{$order->address->order_id}}</p>

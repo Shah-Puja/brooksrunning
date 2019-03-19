@@ -55,7 +55,7 @@
                     <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
                 </div>
                 <div class="cart-success--info">
-                @if (Session::get('medibank_gateway') == 'Yes') 
+                @if($order->order_type == 'medibank-user')
                 <p class="order"><span>Order No:</span> 7BRN-{{$order->order_no}}</p>
                 @else
                 <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>

@@ -8,8 +8,8 @@
             <center>
                 <table width="620" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px;">
                     <tr>
-                        <td align="left">
-                        @if(strstr($order->order_type, '-', true) == 'medibank')
+                        <td align="left"> 
+                        @if($order->order_type == 'medibank-user')
                             Customer Order Number: 7BRN-{{ $order->order_no }}
                         @else         
                             Customer Order Number: BRN-{{ $order->order_no }}
