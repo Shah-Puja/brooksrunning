@@ -695,16 +695,16 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        echo "<pre>";
-        print_r($this->order);
-        exit;
+        //echo "<pre>";
+        //print_r($this->order);
+        //exit;
         $order = Order::where('id', $this->order->id)->first();
         $returnVal = false;
         $returnData = array();
         $returnOrderNum = $this->order->id;
         $add_description = '';
         $order_instruction = '';
-        if (Session::get('medibank_gateway') == 'Yes') {
+        if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
             $ordernum = "7BRN-" . $order->order_no;
         } else {
             $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
