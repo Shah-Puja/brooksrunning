@@ -144,7 +144,7 @@
 
                 @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
                 <div class="medibank_guest_div">
-                    <p style="color:red;">Please enter your Medibank details in <b>Medibank - Live better</b> band in header section</p>
+                    <p>Please enter your Medibank ID and email in the verification fields above to ensure your LiveBetter points are recorded.</p>
                     <a href='javascript:void(0)' class="primary-button pdp-button medibank_guest_user" id="medibank_guest_user">Skip Medibank Verification</a>
                 </div>
                 @endif
