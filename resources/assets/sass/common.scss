@@ -308,6 +308,8 @@
       position: relative;
       a{
         display: block;
+        outline: 0;
+        transition: all 0.2s ease;
         .logo{
           // width: 100%;
           // max-width: 216px;
@@ -317,6 +319,23 @@
           margin-top: 30px;
           img{
             width: 100%;
+          }
+          .icon{
+            width: 100%;
+            &:hover {
+              #Brooks_Logo { 
+                fill: #002855;
+              }
+            }
+            #Brooks_Logo { 
+              transition:  0.6s;
+              transition-timing-function: ease-in-out;
+              -webkit-transition:  0.6s;
+              -webkit-transition-timing-function: ease-in-out;
+            }
+          }
+          .icon-logo {
+            transition: fill 0.6s ease;
           }
         }
       }
@@ -858,6 +877,25 @@
         width: 138px;
         margin-bottom: 5px;
         max-width: 100%;
+      }
+      .icon{
+        width: 138px;
+        margin-bottom: 5px;
+        max-width: 100%;
+        &:hover {
+          #Brooks_Logo { 
+            fill: #002855;
+          }
+        }
+        #Brooks_Logo { 
+          transition:  0.6s;
+          transition-timing-function: ease-in-out;
+          -webkit-transition:  0.6s;
+          -webkit-transition-timing-function: ease-in-out;
+        }
+      }
+      .icon-logo {
+        transition: fill 0.6s ease;
       }
     }
     .mob-icon{
