@@ -65,27 +65,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Mens/men_ravenna10-2.jpg">
+						<img src="/images/landingpage/Mens/men_levitate2.jpg">
 					    <div class="title">
-					       <h2 class="happy left">Energize your run<br>with Ravenna</h2>
+					       <h2 class="happy left">&nbsp;<br>Levitate 2</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-mens/110298_082.html">Shop Ravenna 10</a>
+							<p>Tap into your own endless energy in the Levitate 2. Featuring DNA AMP midsole technology to keep you going farther and faster.</p>
+							<a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop Levitate 2</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Mens/men_ghost11-2.jpg">
+							<img src="/images/landingpage/Mens/men_gts19_blk.jpg">
 						    <div class="title">
-						        <h2 class="happy left">New Colours<br>Ghost 11</h2>
+						        <h2 class="happy left">&nbsp;<br> Adrenaline GTS 19</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>Experience the Ghost 11's super-soft cushioning and plush heel-to-toe transition, now available in new colours.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ghost-11-mens/110288_003.html">Shop Ghost 11</a>
+							<p>The legendary Adrenaline GTS has learned new tricks. Now you can experience GuideRails support in the GTS 19.</p>
+							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop Adrenaline GTS 19</a>
 					</div> 
 				</div>
 			</div>
