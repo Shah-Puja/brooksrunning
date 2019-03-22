@@ -29,11 +29,10 @@ if (!function_exists('benefit_img_check')) {
 
 if (!function_exists('check_promo_validity')) {
 
-    function check_promo_validity($cart) {
-        if (isset($cart->promo_string) && $cart->promo_string != '') {
-            $promo_validity = promo_mast::where('promo_string', $cart->promo_string)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+    function check_promo_validity($promo_string) {
+        if (isset($promo_string) && $promo_string != '') {
+            $promo_validity = promo_mast::where('promo_string', $promo_string)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
             if (empty($promo_validity)) {
-                Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
                 return false;
             } else {
                 return true;
