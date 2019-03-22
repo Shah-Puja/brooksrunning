@@ -72,7 +72,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Experience super-soft cusioning and plush heel-to-toe transition in the Ghost 11. Awarded the 2018 Runner's World Editor's Choice.</p>
-							<a class="primary-button" href="/shoes/ghost">Shop Ghost 11</a>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop Ghost 11</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -85,7 +85,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/shoes/ravenna">Shop Ravenna 10</a>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a>
 					</div> 
 				</div>
 			</div>
