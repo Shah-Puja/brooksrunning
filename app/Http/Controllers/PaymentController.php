@@ -50,8 +50,7 @@ class PaymentController extends Controller {
 
             if (!check_promo_validity($this->order->coupon_code)) {
                 Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]); 
-                //Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
-                //Order::where('id', $this->order->id)->update(['status' => 'Order Completed', 'payment_status' => Carbon::now()]);
+                Order::where('id', $this->order->id)->update(['discount' => '0.00','coupon_code' => '']);
                 return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
 
