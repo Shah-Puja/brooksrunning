@@ -48,13 +48,15 @@ class PaymentController extends Controller {
 
             $this->order = $this->cart->order;
 
+            echo $this->order->coupon_code;
             if (!check_promo_validity($this->order->coupon_code)) {
+                echo "dddddddddddd";
                 Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]); 
                 echo $this->order->id;die;
                 Order::where('id', $this->order->id)->update(['discount' => '0.00','coupon_code' => '']);
-                return redirect('cart')->with('promo_expire', 'Promo Expired');
+                //return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
-
+            echo "eeeeeeeeeeee";die;
             if (!$this->order) {
                 return redirect('shipping');
             }
