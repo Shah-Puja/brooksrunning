@@ -7,7 +7,16 @@
 		display:none !important;
 	}
 </style>
-
+@if(!empty($shoefinder_user_details))
+@php
+	$url = $shoefinder_user_details->string;
+	$parts = parse_url($url);
+	if(isset($parts['query'])){
+		parse_str($parts['query'], $query);
+		//echo $query['balance'];
+	}
+@endphp
+@endif
 <div class="shoefinder-container" >
 <div class="wrapper">
   	<div class="row">
@@ -17,7 +26,7 @@
 					<div class="bf-content-wrap">
 						<!-- START: Page Header -->
 						<header class="bf-header" data-bf-header="">
-							<a href="/shofinder-new" class="bf-header__logo bf-logo bf-logo--visible bf-logo--large" data-bf-logo="" data-bf-change-screen-link="" data-id="Start" tabindex="0" title="Go to start screen">
+							<a href="" class="bf-header__logo bf-logo bf-logo--visible bf-logo--large" data-bf-logo="" data-bf-change-screen-link="" data-id="Start" tabindex="0" title="Go to start screen">
 								<img src="/images/shoefinder-new/shoefinder_logo.svg" alt="Brooks Shoe Finder" role="logo">
 							</a>
 							<div class="bf-header__progress-wrap">
@@ -26,7 +35,7 @@
 									<nav class="bf-progress bf-progress--can-hover" data-bf-progress="">
 										<div class="bf-progress__close" data-bf-close-progress-link=""><i class="bf-close-icon"></i></div>
 										<div class="bf-progress__indicator-wrap" aria-hidden="true">
-											<div class="bf-progress__indicator" data-active-indicator="" style="opacity: 1; transform: translateX(0px); top: 0%;">1</div>
+											<div class="bf-progress__indicator" data-active-indicator="" style="opacity: 1; transform: translateX(0px); top: 0%;"></div>
 										</div>
 										<div class="bf-progress__items-wrap" data-items="">
 										
@@ -211,7 +220,7 @@
 												<!--  valueOverride road -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="surface" value="road" id="surface_0" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['surface']) && $query['surface']=='road') checked="" @endif type="radio" name="surface" value="road" id="surface_0" tabindex="-1" required="" aria-hidden="true">
 
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="surface_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Terrain" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="1" data-gtm-screen-title="Terrain" data-gtm-user-response="SurfaceRoad" data-gtm-question="Where do you want to run?" data-gtm-question-category="Demographics">Road / Gym</button>
 											</div>				
@@ -220,7 +229,7 @@
 												<!--  valueOverride trail -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="surface" value="trail" id="surface_1" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['surface']) && $query['surface']=='trail') checked="" @endif type="radio" name="surface" value="trail" id="surface_1" tabindex="-1" required="" aria-hidden="true">
 
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="surface_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Terrain" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="1" data-gtm-screen-title="Terrain" data-gtm-user-response="SurfaceTrail" data-gtm-question="Where do you want to run?" data-gtm-question-category="Demographics">Trail</button>
 											</div>	
@@ -242,7 +251,7 @@
 												<!--  valueOverride 0 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="0" id="run_distance_0" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='0') checked="" @endif type="radio" name="run_distance" value="0" id="run_distance_0" tabindex="-1" required="" aria-hidden="true">
 					
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="0-15 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">0-15 km</button>
 											</div>									
@@ -252,7 +261,7 @@
 												<!--  valueOverride 1 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="1" id="run_distance_1" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='1') checked="" @endif type="radio" name="run_distance" value="1" id="run_distance_1" tabindex="-1" required="" aria-hidden="true">
 												
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="16-50 km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">16-50 km</button>
 											</div>									
@@ -262,7 +271,7 @@
 												<!--  valueOverride 2 -->
 												<!--  answered? No -->
 												<!--  answer is:  false -->
-												<input type="radio" name="run_distance" value="2" id="run_distance_2" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['run_distance']) && $query['run_distance']=='2') checked="" @endif type="radio" name="run_distance" value="2" id="run_distance_2" tabindex="-1" required="" aria-hidden="true">
 				
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="run_distance_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-event="questionAnswered" data-event-label="Distance" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="2" data-gtm-screen-title="Mileage" data-gtm-user-response="50+ km" data-gtm-question="In the past six months, about how much did you run each week?" data-gtm-question-category="Demographics">50+ km</button>
 											</div>									
@@ -301,7 +310,7 @@
 													  <!--  valueOverride 0 -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-												<input type="radio" name="training" value="0" id="training_0" tabindex="-1" required="" aria-hidden="true">
+												<input  @if(isset($query['training']) && $query['training']=='0') checked="" @endif type="radio" name="training" value="0" id="training_0" tabindex="-1" required="" aria-hidden="true">
 													<div role="button" aria-labelledby="training_0Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="Health & Wellbeing" data-gtm-question="What are you training for?" tabindex="0">
 											
 													<div class="bf-media-button__content">
@@ -366,7 +375,7 @@
 												  <!--  valueOverride 1 -->
 												  <!--  answered? No -->
 												  <!--  answer is:  false -->
-												<input type="radio" name="training" value="1" id="training_1" tabindex="-1" required="" aria-hidden="true">
+												<input  @if(isset($query['training']) && $query['training']=='1') checked="" @endif type="radio" name="training" value="1" id="training_1" tabindex="-1" required="" aria-hidden="true">
 
 												<div role="button" aria-labelledby="training_1Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="5k" data-gtm-question="What are you training for?" tabindex="1">
 										
@@ -407,7 +416,7 @@
 											  <!--  valueOverride 2 -->
 											  <!--  answered? No -->
 											  <!--  answer is:  false -->
-												<input type="radio" name="training" value="2" id="training_2" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['training']) && $query['training']=='2') checked="" @endif type="radio" name="training" value="2" id="training_2" tabindex="-1" required="" aria-hidden="true">
 														
 
 												<div role="button" aria-labelledby="training_2Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="10k" data-gtm-question="What are you training for?" tabindex="2">
@@ -456,7 +465,7 @@
 											  <!--  valueOverride 3 -->
 											  <!--  answered? No -->
 											  <!--  answer is:  false -->
-												<input type="radio" name="training" value="3" id="training_3" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['training']) && $query['training']=='3') checked="" @endif type="radio" name="training" value="3" id="training_3" tabindex="-1" required="" aria-hidden="true">
 												<div role="button" aria-labelledby="training_3Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-square" data-bf-input-button="" data-input-id="training_3" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-question-category="Demographics" data-gtm-user-response="Half Marathon" data-gtm-question="What are you training for?" tabindex="3">
 															
 													<div class="bf-media-button__content">
@@ -544,7 +553,7 @@
 											  <!--  valueOverride 4 -->
 											  <!--  answered? No -->
 											  <!--  answer is:  false -->
-											<input type="radio" name="training" value="4" id="training_4" tabindex="-1" required="" aria-hidden="true">
+											<input @if(isset($query['training']) && $query['training']=='4') checked="" @endif type="radio" name="training" value="4" id="training_4" tabindex="-1" required="" aria-hidden="true">
 											<div role="button" aria-labelledby="training_4Label" class="bf-media-button bf-media-button--aspect bf-media-button--aspect-short" data-bf-input-button="" data-input-id="training_4" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Training" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="3" data-gtm-screen-title="Training" data-gtm-user-response="Marathon or more" data-gtm-question="What are you training for?" data-gtm-question-category="Demographics" tabindex="4">
 								
 												<div class="bf-media-button__content">
@@ -666,7 +675,7 @@
 														  <!--  valueOverride knees -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="checkbox" name="injury" value="knees" id="injury_1" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['injury']) && $query['injury']=='knees') checked="" @endif type="checkbox" name="injury" value="knees" id="injury_1" tabindex="-1" required="" aria-hidden="true">
 				
 
 															<span class="bf-select"><i></i><span class="bf-select__text">Knees</span>
@@ -677,7 +686,7 @@
 														  <!--  valueOverride leg -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="checkbox" name="injury" value="leg" id="injury_2" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['injury']) && $query['injury']=='leg') checked="" @endif type="checkbox" name="injury" value="leg" id="injury_2" tabindex="-1" required="" aria-hidden="true">
 																
 																<span class="bf-select"><i></i><span class="bf-select__text">Lower Leg</span>
 															</span>
@@ -687,7 +696,7 @@
 															  <!--  valueOverride foot -->
 															  <!--  answered? No -->
 															  <!--  answer is:  false -->
-															<input type="checkbox" name="injury" value="foot" id="injury_3" tabindex="-1" required="" aria-hidden="true">
+															<input @if(isset($query['injury']) && $query['injury']=='foot') checked="" @endif    type="checkbox" name="injury" value="foot" id="injury_3" tabindex="-1" required="" aria-hidden="true">
 					
 
 																<span class="bf-select"><i></i><span class="bf-select__text">Foot or Arch</span>
@@ -700,7 +709,7 @@
 			  							<div class="bf-button-wrap bf-button-wrap--list bf-injuries-screen__transition-group-5">
 												<div class="bf-button-wrap__item" data-no-injuries-button="" style="display: block;">
 													
-															<input type="checkbox" name="injury" value="none" tabindex="-1" id="NoInjuries" data-no-injuries-input="" aria-hidden="true">
+															<input  @if(isset($query['injury']) && $query['injury']=='none') checked="" @endif type="checkbox" name="injury" value="none" tabindex="-1" id="NoInjuries" data-no-injuries-input="" aria-hidden="true">
 													  											  								
 					  							<button type="button" class="bf-button" data-bf-event="questionAnswered" data-event-label="Injuries" data-bf-input-button="" data-bf-next-screen-link="" data-bf-send-form-progress="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="4" data-gtm-screen-title="Recent Injuries" data-gtm-user-response="none" data-gtm-question="In the past six months, have you had any pain or injuries in these areas?" data-gtm-question-category="Biomechanics">None of these</button>			  							
 					  						</div>
@@ -783,7 +792,8 @@
 														  <!--  valueOverride 0 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="feet" value="0" id="FeetParallel" tabindex="-1" required="" aria-hidden="true">
+														<input  @if(isset($query['feet']) && $query['feet']=='0') checked="" @endif  
+														type="radio" name="feet" value="0" id="FeetParallel" tabindex="-1" required="" aria-hidden="true">
 																
 
 															<div role="button" aria-labelledby="FeetParallelLabel" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="FeetParallel" data-bf-alert-link="" data-template-id="TooltipAlert_5_option_0" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Foot Angle" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="5" data-gtm-screen-title="Foot Angle" data-gtm-user-response="My feet stay parallel" data-gtm-question="Walk around. What are your feet up to?" data-gtm-question-category="Biomechanics" tabindex="0">
@@ -817,7 +827,7 @@
 															  <!--  valueOverride 1 -->
 															  <!--  answered? No -->
 															  <!--  answer is:  false -->
-															<input type="radio" name="feet" value="1" id="FeetInward" tabindex="-1" required="" aria-hidden="true">
+															<input @if(isset($query['feet']) && $query['feet']=='1') checked="" @endif type="radio" name="feet" value="1" id="FeetInward" tabindex="-1" required="" aria-hidden="true">
 																	
 
 															<div role="button" aria-labelledby="FeetInwardLabel" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="FeetInward" data-bf-alert-link="" data-template-id="TooltipAlert_5_option_1" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Foot Angle" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="5" data-gtm-screen-title="Foot Angle" data-gtm-user-response="My feet pointed inward" data-gtm-question="Walk around. What are your feet up to?" data-gtm-question-category="Biomechanics" tabindex="0">
@@ -850,7 +860,7 @@
 														  <!--  valueOverride 2 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="feet" value="2" id="FeetOutward" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['feet']) && $query['feet']=='2') checked="" @endif type="radio" name="feet" value="2" id="FeetOutward" tabindex="-1" required="" aria-hidden="true">
 					
 
 															<div role="button" aria-labelledby="FeetOutwardLabel" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="FeetOutward" data-bf-alert-link="" data-template-id="TooltipAlert_5_option_2" data-bf-button="" data-bf-event="questionAnswered" data-event-label="Foot Angle" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="5" data-gtm-screen-title="Foot Angle" data-gtm-user-response="My feet pointed outward" data-gtm-question="Walk around. What are your feet up to?" data-gtm-question-category="Biomechanics" tabindex="0">
@@ -913,7 +923,7 @@
 													  <!--  valueOverride 0 -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-													<input type="radio" name="balance" value="0" id="BalanceStable" tabindex="-1" required="" aria-hidden="true">
+													<input @if(isset($query['balance']) && $query['balance']=='0') checked="" @endif type="radio" name="balance" value="0" id="BalanceStable" tabindex="-1" required="" aria-hidden="true">
 				
 														<div role="button" aria-labelledby="BalanceStableLabel" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="BalanceStable" data-bf-alert-link="" data-template-id="TooltipAlert_6_option_0" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="6" data-gtm-screen-title="Balance" data-gtm-user-response="I feel stable" data-gtm-question="Stand on one leg and feel how balanced you are." data-gtm-question-category="Biomechanics" tabindex="0">
 															<div class="bf-media-button__content">
@@ -935,7 +945,7 @@
 														  <!--  valueOverride 1 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="balance" value="1" id="BalanceUnstable" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['balance']) && $query['balance']=='1') checked="" @endif type="radio" name="balance" value="1" id="BalanceUnstable" tabindex="-1" required="" aria-hidden="true">
 														<div role="button" aria-labelledby="BalanceStableLabel" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="BalanceUnstable" data-bf-alert-link="" data-template-id="TooltipAlert_6_option_1" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="6" data-gtm-screen-title="Balance" data-gtm-user-response="I feel a bit unstable" data-gtm-question="Stand on one leg and feel how balanced you are." data-gtm-question-category="Biomechanics" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__media">
@@ -999,7 +1009,7 @@
 												  <!--  valueOverride 0 -->
 												  <!--  answered? No -->
 												  <!--  answer is:  false -->
-												<input type="radio" name="knee" value="0" id="Knee0" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['knee']) && $query['knee']=='0') checked="" @endif type="radio" name="knee" value="0" id="Knee0" tabindex="-1" required="" aria-hidden="true">
 
 													<button type="button" class="bf-button" data-bf-input-button="" data-input-id="Knee0" data-bf-alert-link="" data-template-id="TooltipAlert_7_option_0" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="7" data-gtm-screen-title="Knee Bend" data-gtm-user-response="The pressure increases" data-gtm-question="Stand with your feet touching each other. Put your hand between your knees and do a few shallow squats." data-gtm-question-category="Biomechanics">The pressure increases</button>
 											</div>
@@ -1008,7 +1018,7 @@
 												  <!--  valueOverride 1 -->
 												  <!--  answered? No -->
 												  <!--  answer is:  false -->
-												<input type="radio" name="knee" value="1" id="Knee1" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['knee']) && $query['knee']=='1') checked="" @endif type="radio" name="knee" value="1" id="Knee1" tabindex="-1" required="" aria-hidden="true">
 														
 
 													<button type="button" class="bf-button" data-bf-input-button="" data-input-id="Knee1" data-bf-alert-link="" data-template-id="TooltipAlert_7_option_1" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="7" data-gtm-screen-title="Knee Bend" data-gtm-user-response="The pressure decreases" data-gtm-question="Stand with your feet touching each other. Put your hand between your knees and do a few shallow squats." data-gtm-question-category="Biomechanics">The pressure decreases</button>
@@ -1019,7 +1029,7 @@
 												  <!--  valueOverride 2 -->
 												  <!--  answered? No -->
 												  <!--  answer is:  false -->
-												<input type="radio" name="knee" value="2" id="Knee2" tabindex="-1" required="" aria-hidden="true">
+												<input @if(isset($query['knee']) && $query['knee']=='2') checked="" @endif type="radio" name="knee" value="2" id="Knee2" tabindex="-1" required="" aria-hidden="true">
 														
 
 												<button type="button" class="bf-button" data-bf-input-button="" data-input-id="Knee2" data-bf-alert-link="" data-template-id="TooltipAlert_7_option_2" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="7" data-gtm-screen-title="Knee Bend" data-gtm-user-response="The pressure doesn't change" data-gtm-question="Stand with your feet touching each other. Put your hand between your knees and do a few shallow squats." data-gtm-question-category="Biomechanics">The pressure doesn't change</button>
@@ -1059,7 +1069,7 @@
 													  <!--  valueOverride 0 -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-													<input type="radio" name="flexibility" value="0" id="Flexibility0" tabindex="-1" required="" aria-hidden="true">
+													<input @if(isset($query['flexibility']) && $query['flexibility']=='0') checked="" @endif type="radio" name="flexibility" value="0" id="Flexibility0" tabindex="-1" required="" aria-hidden="true">
 														<div role="button" aria-label="Not that flexible" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="Flexibility0" data-bf-alert-link="" data-template-id="TooltipAlert_8_option_0" data-gtm-click-event="shoe-finder-step" data-bf-button="" data-gtm-step-number="8" data-gtm-screen-title="Flexibility" data-gtm-user-response="Not that flexible" data-gtm-question="Place your hand on a table and bend your index finger back. How flexible is it?" data-gtm-question-category="Biomechanics" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__media">
@@ -1080,7 +1090,7 @@
 													  <!--  valueOverride 1 -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-														<input type="radio" name="flexibility" value="1" id="Flexibility1" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['flexibility']) && $query['flexibility']=='1') checked="" @endif type="radio" name="flexibility" value="1" id="Flexibility1" tabindex="-1" required="" aria-hidden="true">
 					
 
 														<div role="button" aria-label="Very Flexible" class="bf-media-button bf-media-button--video" data-bf-input-button="" data-input-id="Flexibility1" data-bf-alert-link="" data-template-id="TooltipAlert_8_option_1" data-gtm-click-event="shoe-finder-step" data-bf-button="" data-gtm-step-number="8" data-gtm-screen-title="Flexibility" data-gtm-user-response="Very Flexible" data-gtm-question="Place your hand on a table and bend your index finger back. How flexible is it?" data-gtm-question-category="Biomechanics" tabindex="0">
@@ -1138,7 +1148,7 @@
 														  <!--  valueOverride 0 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="feel" value="0" id="Feel0" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['feel']) && $query['feel']=='0') checked="" @endif type="radio" name="feel" value="0" id="Feel0" tabindex="-1" required="" aria-hidden="true">
 															<div role="button" aria-label="I want a lightweight shoe that allows me to feel the ground." class="bf-media-button bf-media-button--large" data-bf-clear-form-value-on-click="impact" data-bf-input-button="" data-input-id="Feel0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="9" data-gtm-screen-title="Shoe Feel" data-gtm-user-response="Feel" data-gtm-question="When picking a shoe I want to:" data-gtm-question-category="Experience" tabindex="0">
 																<div class="bf-media-button__content">
 																	<div class="bf-media-button__label">Feel</div>
@@ -1159,7 +1169,7 @@
 														  <!--  valueOverride 1 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="feel" value="1" id="Feel1" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['feel']) && $query['feel']=='1') checked="" @endif type="radio" name="feel" value="1" id="Feel1" tabindex="-1" required="" aria-hidden="true">
 														<div role="button" aria-label="I want more substance below my foot for a floating feeling." class="bf-media-button bf-media-button--large" data-bf-clear-form-value-on-click="impact" data-bf-input-button="" data-input-id="Feel1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="9" data-gtm-screen-title="Shoe Feel" data-gtm-user-response="Float" data-gtm-question="When picking a shoe I want to:" data-gtm-question-category="Experience" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__label">Float</div>
@@ -1195,7 +1205,7 @@
 													  <!--  valueOverride 0 -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-													<input type="radio" name="impact" value="0" id="Impact0" tabindex="-1" required="" aria-hidden="true">	
+													<input @if(isset($query['impact']) && $query['impact']=='0') checked="" @endif type="radio" name="impact" value="0" id="Impact0" tabindex="-1" required="" aria-hidden="true">	
 													<div role="button" aria-label="Fast. I want a lightweight shoe that helps me run faster." class="bf-media-button bf-media-button--large" data-bf-input-button="" data-input-id="Impact0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="10" data-gtm-screen-title="Shoe Impact" data-gtm-user-response="Fast" data-gtm-question="I want each step to feel:" data-gtm-question-category="Experience" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__label">Fast</div>
@@ -1216,7 +1226,7 @@
 														  <!--  valueOverride 1 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="impact" value="1" id="Impact1" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['impact']) && $query['impact']=='1') checked="" @endif type="radio" name="impact" value="1" id="Impact1" tabindex="-1" required="" aria-hidden="true">
 														<div role="button" aria-label="Connected. I want a minimal shoe so I can feel the ground." class="bf-media-button bf-media-button--large" data-bf-input-button="" data-input-id="Impact1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="10" data-gtm-screen-title="Shoe Impact" data-gtm-user-response="Connected" data-gtm-question="I want each step to feel:" data-gtm-question-category="Experience" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__label">Connected</div>
@@ -1237,7 +1247,7 @@
 														  <!--  valueOverride 2 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="impact" value="2" id="Impact2" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['impact']) && $query['impact']=='2') checked="" @endif type="radio" name="impact" value="2" id="Impact2" tabindex="-1" required="" aria-hidden="true">
 														<div role="button" aria-label="Soft. I want a comfier shoe that cushions every step." class="bf-media-button bf-media-button--large" data-bf-input-button="" data-input-id="Impact2" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="10" data-gtm-screen-title="Shoe Impact" data-gtm-user-response="Soft" data-gtm-question="I want each step to feel:" data-gtm-question-category="Experience" tabindex="0">
 															<div class="bf-media-button__content">
 																<div class="bf-media-button__label">Soft</div>
@@ -1258,7 +1268,7 @@
 														  <!--  valueOverride 3 -->
 														  <!--  answered? No -->
 														  <!--  answer is:  false -->
-														<input type="radio" name="impact" value="3" id="Impact3" tabindex="-1" required="" aria-hidden="true">
+														<input @if(isset($query['impact']) && $query['impact']=='3') checked="" @endif type="radio" name="impact" value="3" id="Impact3" tabindex="-1" required="" aria-hidden="true">
 																
 														<div role="button" aria-label="Springy. I want my shoe to help propel me forward." class="bf-media-button bf-media-button--large" data-bf-input-button="" data-input-id="Impact3" data-bf-next-screen-link="" data-bf-send-form-progress="" data-bf-button="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="10" data-gtm-screen-title="Shoe Impact" data-gtm-user-response="Springy" data-gtm-question="I want each step to feel:" data-gtm-question-category="Experience" tabindex="0">
 															<div class="bf-media-button__content">
@@ -1320,7 +1330,7 @@
 													  <!--  valueOverride womens -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-													<input type="radio" name="gender" value="womens" id="Gender0" tabindex="-1" required="" aria-hidden="true">
+													<input @if(isset($query['gender']) && $query['gender']=='womens') checked="" @endif type="radio" name="gender" value="womens" id="Gender0" tabindex="-1" required="" aria-hidden="true">
 															
 
 													<button type="button" class="bf-button" data-bf-input-button="" data-input-id="Gender0" data-bf-next-screen-link="" data-bf-send-form-progress="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="11" data-gtm-screen-title="Shoe Preference" data-gtm-user-response="Women's" data-gtm-question="Which type of shoes do you prefer to run in?" data-gtm-question-category="Demographics" data-event-label="Shoe Preference">Women's</button>
@@ -1331,7 +1341,7 @@
 													  <!--  valueOverride mens -->
 													  <!--  answered? No -->
 													  <!--  answer is:  false -->
-													<input type="radio" name="gender" value="mens" id="Gender1" tabindex="-1" required="" aria-hidden="true">					
+													<input @if(isset($query['gender']) && $query['gender']=='mens') checked="" @endif type="radio" name="gender" value="mens" id="Gender1" tabindex="-1" required="" aria-hidden="true">					
 													<button type="button" class="bf-button" data-bf-input-button="" data-input-id="Gender1" data-bf-next-screen-link="" data-bf-send-form-progress="" data-gtm-click-event="shoe-finder-step" data-gtm-step-number="11" data-gtm-screen-title="Shoe Preference" data-gtm-user-response="Men's" data-gtm-question="Which type of shoes do you prefer to run in?" data-gtm-question-category="Demographics" data-event-label="Shoe Preference">Men's</button>
 												</div>
 											

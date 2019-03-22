@@ -741,5 +741,21 @@ function mob_search_product(){
     
     return false; 
 }	
-
+var twice_27 = 0;
+$(document).on('keyup',function(e) {
+    if(e.which===27){         // If left arrow    
+        if(twice_27===1 && $("#header-search--popup").is(":visible")){       // (remember that twice_37 is 0 initially)
+          //console.log('Do something! (you pressed Left twice!)');
+            $("#header-search--popup").hide();
+            $(".search-container .search-wrapper").find(".search-product-content").html("");
+            $("form[name='searchproduct'] input[name='q']").val("");
+        }
+        twice_27 = 1;          // Set to 1 and...
+        setTimeout(function(){ // ...reset to 0 after 1s
+            twice_27 = 0; 
+        }, 1000);
+    
+      }
+    
+});
 

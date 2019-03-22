@@ -138,10 +138,10 @@
 							<a href="/info/sitemap">Site Map</a>
 						</li>
 						<li>
-							<a href="/info/about-us">About Brooks</a>
+							<a href="/images/PDF/Supply_Chain_Transparency_Statement_2018.pdf" target="_blank">Supply Chain Transparency</a>
 						</li>
 						<li>
-							<a href="/images/PDF/Supply_Chain_Transparency_Statement_2018.pdf" target="_blank">Supply Chain Transparency</a>
+							<a href="/info/about-us">About Brooks</a>
 						</li>
 					</ul>
 				</div>
