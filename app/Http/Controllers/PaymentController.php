@@ -43,6 +43,7 @@ class PaymentController extends Controller {
             }
 
             if (!$this->cart || $this->cart->items_count < 1) {
+                echo "fffffffff";die;
                 return redirect('cart');
             }
 
