@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Models\Shoefinder;
+use App\Models\Shoefinder_user;
 use Session;
 
 class ShoefinderController extends Controller
@@ -188,18 +189,27 @@ class ShoefinderController extends Controller
 	}
 
 	public function shoefinder_new(Request $request){
-		Session::put('score', '0');
-		Session::put('experiencetype','');
-		Session::put('experience','');
-		Session::put('tag','');
+		//Session::put('score', '0');
+		//Session::put('experiencetype','');
+		//Session::put('experience','');
+		//Session::put('tag','');
 		//$request->session()->put('score','0');
 		//$request->session()->put('experiencetype','');
 		//$request->session()->put('expnew','');
-		return view( 'customer.shoe_finder_view_new.shoefinder');
+		Session::put('shoefinder_completed','N');
+		$shoefinder_user_details = Shoefinder_user::createOrGetForUser($request);
+		if(!empty($shoefinder_user_details)){
+			($shoefinder_user_details->score!='') ? Session::put('score', $shoefinder_user_details->score) : '';
+			($shoefinder_user_details->experience!='') ? Session::put('experience', $shoefinder_user_details->experience) : '';
+			($shoefinder_user_details->experiencetype!='') ? Session::put('experiencetype', $shoefinder_user_details->experiencetype) : '';
+
+		}
+		return view( 'customer.shoe_finder_view_new.shoefinder',compact('shoefinder_user_details'));
 
 	}
 
 	public function ajax_data_new(Request $request){
+		$shoefinder_user = Shoefinder_user::updateOrGetForUser($request);
 		$array = [
 			'run_distance'=>
 				['0'=>'10','1'=>'5','2'=>'0'],
@@ -234,6 +244,8 @@ class ShoefinderController extends Controller
 			}
 
 			if($key=='feel'){
+				Shoefinder_user::where('id',$shoefinder_user->id)
+				                ->update(['experiencetype' => ($value == 0 ? 'feel' : 'float')]);
 				Session::put('experiencetype', ($value == 0 ? 'feel' : 'float'));
 				//$request->session()->put('experiencetype', ($value == 0 ? 'feel' : 'float'));
 			}
@@ -241,14 +253,22 @@ class ShoefinderController extends Controller
 			if($key=='impact'){
 				if(request('feel') == 0){
 					//$request->session()->put('expnew', ($value == 0 ? 'energize_me' : 'connect_me'));
+					Shoefinder_user::where('id',$shoefinder_user->id)
+				                    ->update(['experience' => ($value == 0 ? 'propel_me' : 'connect_me')]);
 					Session::put('experience', ($value == 0 ? 'propel_me' : 'connect_me'));
 				}else{
 					//$request->session()->put('expnew', ($value == 2 ? 'cushion_me' : 'propel_me'));
+					Shoefinder_user::where('id',$shoefinder_user->id)
+				                	->update(['experience' => ($value == 2 ? 'cushion_me' : 'energize_me')]);
 					 Session::put('experience', ($value == 2 ? 'cushion_me' : 'energize_me'));
 				}
 			}
 		}
+		Shoefinder_user::where('id',$shoefinder_user->id)
+				        ->update(['score' => $points]);
 		Session::put('score',$points);
+
+		
 		//$request->session()->put('score',$points);
 	}
 
@@ -333,6 +353,11 @@ class ShoefinderController extends Controller
 		}
 
 		$result = Shoefinder::getshoe($tag,$experience_type,$experience,$gender,$trail_status);
+		if(!empty($result)){
+			Shoefinder_user::where('id',session('shoefinder_user_id'))
+						->update(['status' => 'Y']);
+			Session::put('shoefinder_completed','Y');
+		}
 		//echo "<pre>";
 		//print_r($result);
 		//exit;
