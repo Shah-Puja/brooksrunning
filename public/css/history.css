@@ -3258,6 +3258,7 @@ textarea {
   min-height: 10px;
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder {
+  display: none !important;
   background-color: #00d3d6;
   text-align: center;
   padding: 25px 15px;
