@@ -15,7 +15,7 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="secondary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
+							<a class="primary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
@@ -124,7 +124,7 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="secondary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
+							<a class="primary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">

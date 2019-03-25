@@ -3258,6 +3258,7 @@ textarea {
   min-height: 10px;
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder {
+  display: none !important;
   background-color: #00d3d6;
   text-align: center;
   padding: 25px 15px;
@@ -3361,7 +3362,7 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .landingpage-banner .opacity-cover {
-    height: 90%;
+    height: 80%;
   }
 }
 .landingpage-banner .landingpage-banner--info {
@@ -3387,7 +3388,7 @@ textarea {
   .landingpage-banner .landingpage-banner--info .banner--info {
     padding-top: 20px;
   }
-  .landingpage-banner .landingpage-banner--info .banner--info .secondary-button {
+  .landingpage-banner .landingpage-banner--info .banner--info .primary-button {
     max-width: 220px;
   }
 }
@@ -3409,6 +3410,11 @@ textarea {
   font-size: 46px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .landingpage-banner .landingpage-banner--info h1 {
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .landingpage-banner .landingpage-banner--info h1 {
     font-size: 25px;
   }
