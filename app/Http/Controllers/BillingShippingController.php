@@ -36,10 +36,10 @@ class BillingShippingController extends Controller {
             if (!$this->cart || $this->cart->items_count < 1) {
                 return redirect('cart');
             }
-            /*if (!check_promo_validity($this->cart->promo_string)) {
+            if (!check_promo_validity($this->cart->promo_string)) {
                 Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
                 return redirect('cart')->with('promo_expire', 'Promo Expired');
-            }*/
+            }
             return $next($request);
         });
     }
