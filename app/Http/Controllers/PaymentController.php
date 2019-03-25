@@ -48,7 +48,8 @@ class PaymentController extends Controller {
 
             $this->order = $this->cart->order;
 
-            echo $this->order->coupon_code;die;
+            echo $this->order->coupon_code;
+            echo "<pre>";print_r($this->order);die;
             if (!check_promo_validity($this->order->coupon_code)) {  
                 return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
