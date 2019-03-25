@@ -147,11 +147,11 @@ class CartController extends Controller {
                             </CartDetails>
                         </Cart>";
 
-            echo "<pre>";print_r($cart_xml);
-
-            echo "<hr>";
+            //echo "<pre>";print_r($cart_xml);die;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
+            echo "<pre>";print_r($bridge);
+            echo "<hr>";
             $xml = simplexml_load_string($bridge); 
             echo "<pre>";print_r($xml);die;
             $cartdetail_arr = array();
