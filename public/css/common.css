@@ -1843,6 +1843,16 @@ textarea {
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
   width: 186px !important;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
+    width: auto !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
+    width: auto !important;
+  }
+}
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style {
   position: absolute;
   z-index: 2;
