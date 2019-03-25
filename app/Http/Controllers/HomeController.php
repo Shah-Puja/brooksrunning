@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Shoefinder_user;
 
 class HomeController extends Controller
 {
@@ -22,9 +23,18 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    {   
+        /*** Shoefinder save ****/
+        $shoefinder_user_details = Shoefinder_user::where('user_id', auth()->id())->first();
+        if(!empty($shoefinder_user_details) && session('shoefinder_completed')=='Y' && session('shoefinder_user_id')!=''){
+                Shoefinder_user::where('user_id',auth()->id())->where('id','!=',session('shoefinder_user_id'))->delete();
+                Shoefinder_user::where('id' ,session('shoefinder_user_id'))->update(['user_id' => auth()->id()]);
+        }else if(session('shoefinder_completed')=='Y' && session('shoefinder_user_id')!=''){
+            Shoefinder_user::where('id' ,session('shoefinder_user_id'))->update(['user_id' => auth()->id()]);
+        }
+        /******/
+        
+        return view('home',compact('shoefinder_user_details'));
     }
-
 
 }

@@ -43,6 +43,7 @@
     .br-shoefinder-subBanner{
     min-height: 10px;
     .horizontal-shoe-finder{
+        display:none !important;
         background-color: $lightblue;
         text-align: center;
         padding: 25px 15px;
@@ -141,7 +142,7 @@
              height: 100%;
            }
             @media #{$desktop-only}{
-               height: 90%;
+               height: 80%;
              }
       }
 
@@ -162,7 +163,7 @@
           color: $white;
             @media #{$tab-only}{ 
               padding-top: 20px;
-              .secondary-button{
+              .primary-button{
                 max-width: 220px;
               }
             }
@@ -186,6 +187,9 @@
         margin-bottom: 22px;
         font-size: 46px;
            @media #{$tab-only}{ 
+            font-size:25px;
+           }
+           @media #{$desktop-only}{ 
             font-size:25px;
            }
       }

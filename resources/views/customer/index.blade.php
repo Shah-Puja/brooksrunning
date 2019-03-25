@@ -38,13 +38,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/hp_sm_glycerin16.jpg">
-			        <h3>&nbsp; <br/>Glycerin 16</h3>
+					<img src="/images/home/hp_sm_launch6.jpg">
+			        <h3>&nbsp; <br/>Launch 6</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Experience incredible DNA LOFT cushioning and super soft transitions in the Glycerin 16.</p>
-					<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120278_115.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-mens/110289_426.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>The Launch 6 is built to be fast and springy, with zero distractions.</p>
+					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
 			</div>
@@ -65,13 +65,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_caldera3-w.jpg">
-			        <h3>&nbsp; <br/>Caldera </h3>
+					<img src="/images/home/hp_sm_ricochet.jpg">
+			        <h3>&nbsp; <br/>Ricochet </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>New TrailTack Rubber sole in the Caldera 3 offers sticky traction to wet and dry trails.</p>
-					<a href="/brooks-running-shoes-caldera-3-womens/120288_080.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-caldera-3-mens/110295_493.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>Experience maximum energy return in the Ricochet, now lighter than ever before.</p>
+					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
@@ -117,6 +117,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
 					<img src="/images/home/hp_sm4.jpg">
 				</div>
@@ -127,7 +128,9 @@
 					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
+			</div>
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link shoe-finder">
 					<h3 class="br-heading">Need help choosing a shoe?</h3>
 					<p class="br-info">Try the shoe finder</p>
@@ -143,7 +146,9 @@
 					
 				</div>
 			</div>
+			</div>
 			<div class="tab-4">
+			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
 					<img src="/images/home/hp_sm6.jpg">
 				</div>
@@ -152,6 +157,7 @@
 					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
 					<a href="/events">Running Events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>
