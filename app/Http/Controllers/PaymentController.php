@@ -42,18 +42,18 @@ class PaymentController extends Controller {
                 }
             }
 
-            if (!$this->cart || $this->cart->items_count < 1) { 
+            if (!$this->cart || $this->cart->items_count < 1) {
                 return redirect('cart');
             }
 
             $this->order = $this->cart->order;
-            
-            if (!check_promo_validity($this->order->coupon_code)) {  
+
+            if (!check_promo_validity($this->order->coupon_code)) {
                 Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
-                Order::where('id', $this->order->id)->update(['total' => $this->order->total + $this->order->discount, 'discount' => 0.00, 'grand_total'=> $this->order->freight_cost + $this->order->total + $this->order->discount]);
+                Order::where('id', $this->order->id)->update(['coupon_code' => '', 'discount' => 0.00, 'total' => $this->order->total + $this->order->discount, 'grand_total' => $this->order->freight_cost + $this->order->total + $this->order->discount]);
                 return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
-            
+
             if (!$this->order) {
                 return redirect('shipping');
             }
