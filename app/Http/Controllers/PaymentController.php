@@ -786,15 +786,7 @@ class PaymentController extends Controller {
 
             if (!empty($discount)) {
                 if (auth()->id() != 0 && $loyalty_id != '') { //check user is logged in or not for Loyalty program
-                    $xml_data .= "<Discounts>
-                    <Discount>
-                    <DiscountType>LoyaltyDiscount</DiscountType>
-                    <DiscountTypeId>3</DiscountTypeId> ";
-                    $xml_data .= "  <LoyaltyId>$loyalty_id</LoyaltyId>";
-                    $xml_data .= " <Description>Loyalty discount A Level</Description>";
-                    $xml_data .= "<Value>$discount</Value>
-                    </Discount>
-                    </Discounts>";
+                    $xml_data .= $item->ap21_discount_xml;
                 } else {
                     $xml_data .= "<Discounts>
                 <Discount>

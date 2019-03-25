@@ -73,7 +73,7 @@ class Order extends Model {
                 'price' => $item->price,
                 'price_sale' => $item->price_sale,
                 'discount' => ($item->discount_detail != 0.00) ? $item->discount_detail : "0.00",
-                'cart_xml' => ($item->cart_xml != '') ? $item->cart_xml : "",
+                'ap21_discount_xml' => ($item->ap21_discount_xml != '') ? $item->ap21_discount_xml : "",
                 'loyalty_id' => ($item->loyalty_id != '') ? $item->loyalty_id : "",
                 'total' => $item_total
             ]);
