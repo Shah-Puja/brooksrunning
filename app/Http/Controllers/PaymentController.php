@@ -21,6 +21,7 @@ use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Promo_mast;
 
 class PaymentController extends Controller {
 
@@ -46,6 +47,12 @@ class PaymentController extends Controller {
             }
 
             $this->order = $this->cart->order;
+
+            if (!check_promo_validity($this->order->coupon_code)) {
+                Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
+                Order::where('id', $this->order->id)->update(['coupon_code' => '', 'discount' => 0.00, 'total' => $this->order->total + $this->order->discount, 'grand_total' => $this->order->freight_cost + $this->order->total + $this->order->discount]);
+                return redirect('cart')->with('promo_expire', 'Promo Expired');
+            }
 
             if (!$this->order) {
                 return redirect('shipping');

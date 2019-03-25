@@ -11,16 +11,15 @@ use Illuminate\Http\Request;
 use Hash;
 use Illuminate\Support\Facades\Auth;
 
+class BillingShippingController extends Controller {
 
-class BillingShippingController extends Controller
-{    
     protected $cart;
-    public function __construct()
-    { 
+
+    public function __construct() {
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-            if(isset($this->cart->order->address->s_state) && $this->cart->order->address->s_state=='New Zealand'){
+            if (isset($this->cart->order->address->s_state) && $this->cart->order->address->s_state == 'New Zealand') {
                 $delivery_option = "new_zealand";
                 $freight_charges = config('site.SHIPPING_NZ_PRICE');
                 $grand_total = $this->cart->total + $freight_charges;
@@ -28,31 +27,34 @@ class BillingShippingController extends Controller
                 $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
                 Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
             }
-            if(empty($this->cart)){
+            if (empty($this->cart)) {
                 return redirect('cart');
             }
-            foreach($this->cart->cartItems as $cart_item){
+            foreach ($this->cart->cartItems as $cart_item) {
                 $this->cart['items_count'] += $cart_item->qty;
             }
-            if ( ! $this->cart || $this->cart->items_count < 1 ) {
+            if (!$this->cart || $this->cart->items_count < 1) {
                 return redirect('cart');
+            }
+            if (!check_promo_validity($this->cart->promo_string)) {
+                Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
+                return redirect('cart')->with('promo_expire', 'Promo Expired');
             }
             return $next($request);
         });
-    } 
+    }
 
-    public function create()
-    {
+    public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        
+
         if (@$this->cart->order->address) {
             $orderAddress = $this->cart->order->address;
         }
-        if (! @$orderAddress && auth()->check() ) {
+        if (!@$orderAddress && auth()->check()) {
             $usersLastOrder = Order::where('user_id', auth()->id())
-                                ->orderBy('updated_at', 'desc')
-                                ->first();
-            if(isset($usersLastOrder->address->s_state) && $usersLastOrder->address->s_state=='New Zealand'){
+                    ->orderBy('updated_at', 'desc')
+                    ->first();
+            if (isset($usersLastOrder->address->s_state) && $usersLastOrder->address->s_state == 'New Zealand') {
                 $delivery_option = "new_zealand";
                 $freight_charges = config('site.SHIPPING_NZ_PRICE');
                 $grand_total = $this->cart->total + $freight_charges;
@@ -60,21 +62,21 @@ class BillingShippingController extends Controller
                 $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
                 Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
             }
-            $orderAddress = $usersLastOrder ? $usersLastOrder->address : null; 
+            $orderAddress = $usersLastOrder ? $usersLastOrder->address : null;
         }
-        if (! @$orderAddress) {
+        if (!@$orderAddress) {
             $orderAddress = new Order_address;
         }
 
-        return view( 'customer.shipping', compact('orderAddress','cart') );
+        return view('customer.shipping', compact('orderAddress', 'cart'));
     }
-    
-    public function store(){
+
+    public function store() {
         $validatedAddress = request()->validate([
-    		'email' => 'required|email',
-    		's_fname' => 'required',    		
-    		's_lname' => 'required',
-     		's_add1' => 'required',
+            'email' => 'required|email',
+            's_fname' => 'required',
+            's_lname' => 'required',
+            's_add1' => 'required',
             's_add2' => '',
             's_city' => 'required',
             's_state' => 'required',
@@ -94,16 +96,16 @@ class BillingShippingController extends Controller
             'signme' => '',
             'flag_same_shipping' => '',
         ]);
-        
+
         //  echo "<pre>";
         //  print_r($validatedAddress);
         //  echo "</pre>";
         //  exit;
-        
+
         $user_id = $this->cart->user_id;
-        if(auth()->user()){
-            if($this->cart['user_id']==''){
-                $user_data = User::where("email","=",$validatedAddress['email'])->first();
+        if (auth()->user()) {
+            if ($this->cart['user_id'] == '') {
+                $user_data = User::where("email", "=", $validatedAddress['email'])->first();
                 //$user_id = $user_data->id;
                 $user_id = (!empty($user_data) && isset($user_data->id)) ? $user_data->id : '';
             }
@@ -112,20 +114,19 @@ class BillingShippingController extends Controller
         return redirect("payment");
     }
 
-    public function check_email(){
-        $email= request()->email;
-        $user = User::where("email", "=",  $email)
-        ->where("user_type", "=",  'User')
-        ->first();
-        if($user){
+    public function check_email() {
+        $email = request()->email;
+        $user = User::where("email", "=", $email)
+                ->where("user_type", "=", 'User')
+                ->first();
+        if ($user) {
             echo "true";
-        }else{
+        } else {
             echo "false";
-        }   
+        }
     }
 
-
-    public function verify_password(Request $request){
+    public function verify_password(Request $request) {
         //$email= $request->email;
         //$password= $request->password;
         $credentials = $request->only('email', 'password');
@@ -133,30 +134,41 @@ class BillingShippingController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return "true";
-        }else{
+        } else {
             return "false";
         }
-        /*$user_data = User::where("email", "=",  $email)->first();
-        $password_check = Hash::check($password,$user_data->password);
-        if($password_check){
-            $user_verify = User::where("email", "=",  $email)->where("password",$user_data->password)->first();
-            if($user_verify){
-                $orderadd_data = Order_address::where("email", "=",  $email)->orderBy('id', 'desc')->first();
-                if($orderadd_data){
-                    $orderadd_data['pass_data'] = 'order_address';
-                    $orderadd_data['pass_status'] = 'true';
-                    return $orderadd_data;
-                }else{
-                    $user_verify['pass_data'] = 'user';
-                    $user_verify['pass_status'] = 'true';
-                    return $user_verify;
-               }            
-            }else{
-                 return 'false';
-            }
-        }else{
-            return 'false';
-        }*/
+        /* $user_data = User::where("email", "=",  $email)->first();
+          $password_check = Hash::check($password,$user_data->password);
+          if($password_check){
+          $user_verify = User::where("email", "=",  $email)->where("password",$user_data->password)->first();
+          if($user_verify){
+          $orderadd_data = Order_address::where("email", "=",  $email)->orderBy('id', 'desc')->first();
+          if($orderadd_data){
+          $orderadd_data['pass_data'] = 'order_address';
+          $orderadd_data['pass_status'] = 'true';
+          return $orderadd_data;
+          }else{
+          $user_verify['pass_data'] = 'user';
+          $user_verify['pass_status'] = 'true';
+          return $user_verify;
+          }
+          }else{
+          return 'false';
+          }
+          }else{
+          return 'false';
+          } */
+    }
+
+    public function verify_medibank_login(Request $request) {
+
+        // Verification process is pending here
+        //echo "<pre>";print_r($request->all());die;
+        if ($request->medibank_email != "" && $request->medibank_id != "") {
+            echo "success";
+        } else {
+            echo "failed";
+        }
     }
 
 }
