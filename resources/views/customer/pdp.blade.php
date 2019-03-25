@@ -193,7 +193,7 @@
                                                 <li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
                                                 <li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
                                             </ul>
-                                            <a href="#" class="moreinfo">For full terms and conditions please visit Afterpay</a>
+                                            <a href="https://www.afterpay.com/en-AU/terms-of-service" class="moreinfo">For full terms and conditions please visit Afterpay</a>
                                         </div>
                                     </div>
                                 </div>

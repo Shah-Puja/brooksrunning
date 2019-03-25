@@ -29,8 +29,8 @@
 	                    <li><a href="/info/terms-conditions">Terms &amp; Conditions</a></li>
 	                    <li><a href="/info/terms-of-use">Terms of Use</a></li>
 	                    <li><a href="/shoefinder">Shoe Finder</a></li>
-	                    <li><a href="/store-locator">Find A Store</a></li>
-	                </ul>
+						<li><a href="/store-locator">Find A Store</a></li>
+					 </ul>
 				</div>
 				<div class="footer-navbar-info">
 					<input id="tab-two" type="checkbox" class="tab-checkbox" name="tabs">
@@ -138,6 +138,9 @@
 							<a href="/info/sitemap">Site Map</a>
 						</li>
 						<li>
+							<a href="/images/PDF/Supply_Chain_Transparency_Statement_2018.pdf" target="_blank">Supply Chain Transparency</a>
+						</li>
+						<li>
 							<a href="/info/about-us">About Brooks</a>
 						</li>
 					</ul>
@@ -222,6 +225,7 @@ $last_word = $matches[0];
     });
  /* /Freeze top navigation*/  
 </script>
+
 @endif
 </body>
 </html>

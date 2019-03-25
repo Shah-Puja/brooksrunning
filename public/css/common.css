@@ -1843,6 +1843,16 @@ textarea {
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
   width: 186px !important;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
+    width: auto !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .owl-carousel .owl-item .item {
+    width: auto !important;
+  }
+}
 .header-desktop .search-container .search-wrapper .search--container .new-arrival--container .icon-style {
   position: absolute;
   z-index: 2;
@@ -1923,6 +1933,8 @@ textarea {
 }
 .header-desktop .header-desktop--left a {
   display: block;
+  outline: 0;
+  transition: all 0.2s ease;
 }
 .header-desktop .header-desktop--left a .logo {
   width: 100%;
@@ -1931,6 +1943,21 @@ textarea {
 }
 .header-desktop .header-desktop--left a .logo img {
   width: 100%;
+}
+.header-desktop .header-desktop--left a .logo .icon {
+  width: 100%;
+}
+.header-desktop .header-desktop--left a .logo .icon:hover #Brooks_Logo {
+  fill: #002855;
+}
+.header-desktop .header-desktop--left a .logo .icon #Brooks_Logo {
+  transition: 0.6s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 0.6s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.header-desktop .header-desktop--left a .logo .icon-logo {
+  transition: fill 0.6s ease;
 }
 .header-desktop .header-desktop--right {
   padding-top: 12px;
@@ -2453,6 +2480,23 @@ textarea {
   width: 138px;
   margin-bottom: 5px;
   max-width: 100%;
+}
+.header-mobile .mob-logo .icon {
+  width: 138px;
+  margin-bottom: 5px;
+  max-width: 100%;
+}
+.header-mobile .mob-logo .icon:hover #Brooks_Logo {
+  fill: #002855;
+}
+.header-mobile .mob-logo .icon #Brooks_Logo {
+  transition: 0.6s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 0.6s;
+  -webkit-transition-timing-function: ease-in-out;
+}
+.header-mobile .mob-logo .icon-logo {
+  transition: fill 0.6s ease;
 }
 .header-mobile .mob-icon {
   font-size: 22px;
@@ -3598,13 +3642,20 @@ textarea {
 }
 .create-account--homepage {
   margin: 60px 0;
-  background-color: #d3d0cd;
+  background-color: #D3D2D2;
   text-align: center;
   padding: 55px 20px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .create-account--homepage {
     padding: 15px 20px;
+    margin: 48px 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage {
+    padding: 15px 20px;
+    margin: 48px 0;
   }
 }
 .create-account--homepage .icon {
@@ -3630,6 +3681,21 @@ textarea {
     margin: 0 0 10px;
     line-height: 1.4;
     font-size: 14px;
+  }
+}
+.create-account--homepage.shoefinder {
+  background-color: #00d3d6;
+  margin: -15px 0px 15px 0px;
+  padding: 38px 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage.shoefinder {
+    padding: 18px 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .create-account--homepage.shoefinder {
+    margin: 60px 0;
   }
 }
 

@@ -15,7 +15,7 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="secondary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
+							<a class="primary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
@@ -65,27 +65,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_bedlam-2.jpg">
+						<img src="/images/landingpage/Womens/women_ghost11_406.jpg">
 					    <div class="title">
-					       <h2 class="happy left">New Colours<br>Bedlam</h2>
+					       <h2 class="happy left">&nbsp;<br>Ghost 11</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Featuring GuideRails Holistic Support, a secure fit and our most responsive midsole, the Bedlam is endless energy for your feet. </p>
-							<a class="primary-button" href="/brooks-running-shoes-bedlam-womens/120272_080.html">Shop Bedlam</a>
+							<p>Experience super-soft cusioning and plush heel-to-toe transition in the Ghost 11. Awarded the 2018 Runner's World Editor's Choice.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop Ghost 11</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_glycerin16.jpg">
+							<img src="/images/landingpage/Womens/women_ravenna10.jpg">
 						    <div class="title">
-						        <h2 class="happy left">&nbsp;<br>Glycerin 16</h2>
+						        <h2 class="happy left">Meet the <br>Ravenna 10</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>DNA LOFT cushioning, plush fit and super soft transitions make every stride in the Glycerin 16 a luxury. </p>
-							<a class="primary-button" href="/glycerin-16-womens-running-shoes/120278_070.html">Shop Glycerin 16</a>
+							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a>
 					</div> 
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="secondary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
+							<a class="primary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
