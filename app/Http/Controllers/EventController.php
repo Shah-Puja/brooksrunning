@@ -36,4 +36,9 @@ class EventController extends Controller {
 		return view( 'info.event-view.month');
     }
 
+    public function new_events_listing()
+	{
+		return view( 'info.New-event-view.events-listing');
+    }
+
 }

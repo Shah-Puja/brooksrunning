@@ -132,6 +132,11 @@ Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
 Route::get('/month', 'EventController@events_default'); 
 
+/* New events page */
+Route::get('/events-listing', 'EventController@new_events_listing'); 
+
+
+
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
