@@ -38,7 +38,18 @@
                     <img src="images/accounts/account-banner.png" alt="">
                 </div>
             </div>
-            <!--@if($shoefinder_user_details && $shoefinder_user_details->status=='Y')-->
+            @if($shoefinder_user_details && $shoefinder_user_details->status=='Y')
+            <div class="tab-4">
+                <div class="create-account--homepage shoefinder">
+                    <div class="icon-img">
+                         <img src="/images/br-shoefinder-logo.png" alt="">
+                    </div>
+                    <h3 class="br-heading">Shoe Finder</h3>
+                    <div class="br-info">View your shoe finder results, or retake <br>the shoe finder.</div>
+                    <a href="/shoefinder" class="primary-button">View Shoes</a>
+                </div>
+            </div>
+            @else
             <div class="tab-4">
                 <div class="create-account--homepage shoefinder">
                     <div class="icon-img">
@@ -49,7 +60,7 @@
                     <a href="/shoefinder" class="primary-button">Try the Shoe Finder</a>
                 </div>
             </div>
-            <!--@endif-->
+            @endif
         </div>
     </section>
 @endsection
