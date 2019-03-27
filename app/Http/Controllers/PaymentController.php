@@ -191,7 +191,22 @@ class PaymentController extends Controller {
                 return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
             }
         } else {
-            return redirect('/cart');
+            //return redirect('/cart');
+            $this->order->update(array('status' => 'AfterPay Processor Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
+                ));
+                $logger = array(
+                    'order_id' => ($this->order->id) ? $this->order->id : 0,
+                    'log_title' => 'AfterPay Payment',
+                    'log_type' => 'Response',
+                    'log_status' => 'AfterPay Processor Declined',
+                    'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
+                    'transaction_id' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "0",
+                    'xml' => $this->order,
+                    'transaction_result' => 'Failed',
+                    'transaction_data' => $request->all()
+                );
+                Order_log::insert($logger);
+                return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
         }
     }
 

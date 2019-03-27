@@ -9,6 +9,7 @@ use App\Models\Competition_user;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\Jobs\ProcessCompetition;
+use App\Events\SubscriptionReceived;
 
 class meet_brooksController extends Controller
 {   
@@ -60,7 +61,7 @@ class meet_brooksController extends Controller
                 'postcode' => request('postcode'),
                 'shoe_wear' => request('custom_Shoes_you_wear'),
                 'country' => request('country'),
-                'answer'=>request('custom_Answer')                
+                'answer'=>request('answer')                
 
             ]
         );        
@@ -107,6 +108,7 @@ class meet_brooksController extends Controller
                 'Country' => request('country'),
                 'Shoes you wear' => request('custom_Shoes_you_wear'),
                 'Contest Code' => request('comp_name'),
+                'Competition Answer' => request('answer'),
                 ),                        
             );
             ProcessCompetition::dispatch($subscriber);
@@ -121,8 +123,6 @@ class meet_brooksController extends Controller
 	{
 		return view( 'meet_brooks.roadtester');
     }
-
-
 
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country='') {
 
@@ -195,9 +195,13 @@ class meet_brooksController extends Controller
     		'gender' => 'required',    		
             'email' => 'required|email',
      		'country' => 'required',
-            'postcode' => 'required|integer',
+            'postcode' => 'required|numeric',
             'g-recaptcha-response' => ['required', $recaptcha],
             ]);
+
+        $contest_code = request('contest_code');
+        $shoe_wear = request('custom_Shoes_you_wear');
+        $state = request('country');
 
         $Person = User::firstOrCreate(['email' => request('email')], 
                                       ['first_name' => request('fname'),
@@ -205,10 +209,13 @@ class meet_brooksController extends Controller
                                        'tag' => request('comp_name'),
                                        'gender' => request('gender'),
                                        'dob' => request('custom_Birth_Month').'-'.request('custom_Birth_Date'),
+                                       'birth_date' => request('custom_Birth_Date'),
+                                       'birth_month' => request('custom_Birth_Month'),
                                        'age_group' => request('custom_Age'),
                                        'postcode' => request('postcode'),
-                                       'shoe_wear' => request('custom_Shoes_you_wear'),
-                                       'contest_code' => request('postcode'),
+                                       'shoe_wear' => $shoe_wear,
+                                       'state' => $state,
+                                       'contest_code' => $contest_code,
                                        'source' => 'Subscriber',
                                        'subscribed' => 'Yes',
                                        'user_type' => 'Subscriber']);
@@ -229,7 +236,13 @@ class meet_brooksController extends Controller
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>' ]);
         }else{
             User::where('email',request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
-            return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            $user = User::where('email',request('email'))->first();
+            event(new SubscriptionReceived($user));
+            if(request('contest_code')!=''){
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">Thank you for signing up.</p>' ]);
+            }else{ 
+                return response()->json([ 'success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>' ]);
+            }
         }
     }
     
@@ -263,4 +276,15 @@ class meet_brooksController extends Controller
 	{
 		return view( 'meet_brooks.competition.thank_you');
     }
+
+    public function our_purpose()
+	{
+		return view( 'meet_brooks.our_purpose');
+    }
+
+    public function our_history()
+	{
+		return view( 'meet_brooks.our_history');
+    }
+
 }

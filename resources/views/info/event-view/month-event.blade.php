@@ -41,13 +41,12 @@
                         @endphp
 
                     @if($event_dt > $curr_dt)
-                        <a href="{{ $event->page_link }}" class="findout">
+                        <a href="{{ $event->page_link }}" class="findout" target="_blank">
                             <div class="event-title"> {{ $event->event_name }} </div>
                         </a>
                     @else
                         <div class="event-title"> {{ $event->event_name }} </div>
                     @endif
-
                     <div class="title eventdate">
                          @php
                               $event_time = strtotime($event->event_timestamp);
@@ -62,7 +61,7 @@
                     </div>
                     <div class="event-img-main">
                     @if($event_dt > $curr_dt)
-                    <a href="{{ $event->page_link }}" class="findout"> 
+                    <a href="{{ $event->page_link }}" class="findout" target="_blank"> 
                         @if(!empty($event->logo)) 
                     <img src="/storage/images/events/monthly/logo/{{ $event->logo }}" alt="{{ $event->event_name }}" />
                         @else 
@@ -79,7 +78,7 @@
                         
                     </div>
                     @if($event_dt > $curr_dt)
-                    <a href="{{ $event->page_link }}" class="findout">
+                    <a href="{{ $event->page_link }}" class="findout" target="_blank">
                         <span class="location">Location, {{ $event->location }}</span>
                     </a>
                     @else

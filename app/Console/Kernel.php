@@ -23,15 +23,17 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')
-        //          ->hourly(); 
-        $schedule->command('users:icontact')
-                 ->everyFiveMinutes();
-        /*$schedule->command('algolia:sync')
-                 ->daily();*/
-
-        
+    {        
+        switch (env("APP_ENV")):
+            case 'production':
+                $schedule->command('s7_transfer_product_tables')                                    					
+                    ->cron('35 2 * * *');       
+                $schedule->command('algolia:sync')
+                    ->cron('40 2 * * *'); 					   
+                break;
+            /*case 'dev' :                 
+                break;*/                
+        endswitch;
     }
 
     /**

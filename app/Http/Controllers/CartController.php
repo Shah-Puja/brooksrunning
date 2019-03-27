@@ -40,7 +40,7 @@ class CartController extends Controller {
 
         if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
-            if (!empty($cart)) {
+            if (!empty($cart) && isset($cart['items_count']) && $cart['items_count'] > 0) {
                 if (isset($cart->promo_code) && $cart->promo_code != "") {
                     $check_promo_code = promo_mast::where('promo_string', $cart->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
                     if (!empty($check_promo_code)) {
@@ -53,7 +53,7 @@ class CartController extends Controller {
                     }
                     if (empty($check_promo_code)) {
                         //remove_promo_code
-                        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => '']);
+                        Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
                     }
                 }
 

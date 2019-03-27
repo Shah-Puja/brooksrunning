@@ -13,7 +13,8 @@ class HomePageController extends Controller
     public function index(){
            
         //Featured product(homepage slider)
-        $shoe_info = array('110303_008','120292_030','110302_040','120291_073','110289_429','120278_115','110288_006','120277_006');
+        // $shoe_info = array('120286_615','110298_429','120291_073','110302_040','120285_542','110297_081');
+        $shoe_info = array('120284_484','110294_096','120282_080','110293_038','120281_050','110292_135','120278_115','110289_050');
         $product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
@@ -31,7 +32,7 @@ class HomePageController extends Controller
         }
         /// Homepage banner 
         $banner = \App\Models\Promo_banners::where('active','Y')
-                                ->where('banner_type','homepage-eoysale')
+                                ->where('banner_type','homepage-afterpaysale')
                                 ->first();
         if((!empty($banner->start_date) && $banner->start_date!='0000-00-00 00:00:00') && (!empty($banner->end_date)  && $banner->end_date!='0000-00-00 00:00:00') ){
             $banner = ($banner->start_date <= now() && $banner->end_date >=now() ) ? $banner : '';

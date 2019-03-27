@@ -60,12 +60,16 @@
 					            return $product->tags->Where('key','PS_F_PREFERENCE');
 							})->flatten()->pluck('value')->unique();
 
+			$release_date = collect($colors_option[$style->style])->transform(function ($product) {
+														return $product->variants->where('visible','Yes')->pluck('release_date')->first();
+												 })->flatten()->max();
+
 		    $filter_arrays = collect($filters_array[$style->style])->flatten()->unique()->all();
 			$replace_word = array('.',' ','/'); 
 			$filter_class = implode(' ',str_replace($replace_word,'-',$filter_arrays));
 		@endphp
 	<div class="mob-6 col-4 plp-wrapper__sub element-item {{ $filter_class }}" data-main-id="{{ $style->style }}">
-		<div class="plp-product"  data-release-dt ="{{ str_replace('-','',$style->variants->pluck('release_date')->first()) }}">
+		<div class="plp-product"  data-release-dt ="{{$release_date}}">
 			<div class="offer-info">
 				<!--<span>NEW</span>-->
 				@if($price_sale < $price)
@@ -84,7 +88,45 @@
 							$img_url = config('site.image_url.products.thumbnail') .str_replace(".jpg","_t.jpg",$color_product['image']['image1']);
 							$img_url_medium = config('site.image_url.products.medium') .str_replace(".jpg","_v.jpg",$color_product['image']['image1']);
 						@endphp-->
-						<div class="item">
+						@php 
+
+							$filters_array_color[$style->style][$color_product->color_code]['size'] =  collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+								return $product->variants->pluck('size');
+							})->flatten()->unique()->values();
+
+							$filters_array_color[$style->style][$color_product->color_code]['color'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+					            return $product->tags->Where('key','C_F_COLOUR');
+							})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['impact'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_IMPACT');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['cup_size'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_CUP');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Great_For'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_GREATFOR');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Breast_Shape'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_SHAPE');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Support_Preference'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_SUPPORT');
+											})->flatten()->pluck('value')->unique();	
+
+							$filters_array_color[$style->style][$color_product->color_code]['Feature_Preferences'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_PREFERENCE');
+											})->flatten()->pluck('value')->unique();
+
+							$filter_arrays_color = collect($filters_array_color[$style->style][$color_product->color_code])->flatten()->unique()->all();
+							$replace_word = array('.',' ','/'); 
+							$filter_class_color = implode(' ',str_replace($replace_word,'-',$filter_arrays_color));
+						@endphp 
+						<div class="item {{ $filter_class_color}}" data-style="{{$style->style}}">
 							<img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
 						</div>
 					@endif
@@ -110,8 +152,47 @@
                                 $remaining_count++;
 						   }
 						@endphp
+
+						@php 
+
+							$filters_array_color[$style->style][$color_product->color_code]['size'] =  collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+								return $product->variants->pluck('size');
+							})->flatten()->unique()->values();
+
+							$filters_array_color[$style->style][$color_product->color_code]['color'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+								return $product->tags->Where('key','C_F_COLOUR');
+							})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['impact'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_IMPACT');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['cup_size'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_CUP');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Great_For'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_GREATFOR');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Breast_Shape'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_SHAPE');
+											})->flatten()->pluck('value')->unique();
+
+							$filters_array_color[$style->style][$color_product->color_code]['Support_Preference'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_SUPPORT');
+											})->flatten()->pluck('value')->unique();	
+
+							$filters_array_color[$style->style][$color_product->color_code]['Feature_Preferences'] = collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
+												return $product->tags->Where('key','PS_F_PREFERENCE');
+											})->flatten()->pluck('value')->unique();
+
+							$filter_arrays_color = collect($filters_array_color[$style->style][$color_product->color_code])->flatten()->unique()->all();
+							$replace_word = array('.',' ','/'); 
+							$filter_class_color = implode(' ',str_replace($replace_word,'-',$filter_arrays_color));
+							@endphp 
 						
-						<div class="swatches-icon {{ $add_class }} "  {{ $add_css }}>
+						<div class="swatches-icon {{ $add_class }} {{ $filter_class_color}}" data-style="{{$style->style}}"  {{ $add_css }}>
 						  <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$style->style}}" data-url="/{{$color_product->seo_name}}/{{$style->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
 					    </div>
 					   @php $i++  @endphp

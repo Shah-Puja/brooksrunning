@@ -44,22 +44,29 @@ class Category extends Model
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
-
-            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
-                        foreach($product->csvranks as $csvrank):
-                            if($cat_id==$csvrank->group_id):
-                              return  $csvrank->display_rank;
-                            endif;
+            
+            /*$sorted_products = $products->sortByd(function ($product, $key) use ($cat_id) {
+                foreach($product->csvranks as $csvrank):
+                    if($cat_id==$csvrank->group_id):
+                      return  $csvrank->display_rank;
+                    endif;
+                endforeach;
+              });
+              */
+            $sorted_products = $products->sortByDesc(function ($product, $key) {
+                        foreach($product->variants as $variant):
+                              return $variant->release_date;
                         endforeach;
                       });
                
+        
             return $sorted_products;
         
         
     }
 
     public static function getProducts_main($gender,$prod_type,$name) {              
-       return  \App\Models\Product::where('gender',$gender)
+        $products =  \App\Models\Product::where('gender',$gender)
             ->where('prod_type',$prod_type)
             ->whereHas('variants' , function($query) use ($name)  {
                 if($name=='sale'){
@@ -74,7 +81,16 @@ class Category extends Model
             ->orderBy('seqno')
             ->get();
             //->get(['id','style','stylename', 'seqno', 'color_code']);
-            //->values();   
+            //->values(); 
+            
+            $sorted_products = $products->sortByDesc(function ($product, $key){
+                foreach($product->variants as $variant):
+                      return $variant->release_date;
+                endforeach;
+              });
+       
+
+             return $sorted_products;
         
         
     }
@@ -126,10 +142,11 @@ class Category extends Model
                  break;
 
                  case 'Width':
-                    $filters['Width'] = 
-                    $products->map(function($product) {
+                    $width_array = $products->map(function($product) {
                         return $product->variants->where('visible','Yes')->pluck('width_name');
                     })->flatten()->unique()->values()->sort();
+
+                    $filters['Width'] = (new static)->sort_width_array($width_array);
                  break;
 
                  case 'Support Level':
@@ -256,5 +273,18 @@ class Category extends Model
         
         
     }
+
+    public static function sort_width_array($width_array){
+        $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Extra-Wide", "2E-Wide", "4E-Extra-Wide");
+        $sorted_array=array();
+        foreach ($width_array as $key => $value) {		
+            $curr_order=array_search($value, $order_array);
+            $sorted_array[$value]=$curr_order;		
+        } 
+        asort($sorted_array);
+        return array_keys($sorted_array);
+        
+    }
+    
 
 }

@@ -69,6 +69,8 @@ Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
+
+
 // static success page for newsletter
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 

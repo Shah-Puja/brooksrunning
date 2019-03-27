@@ -193,7 +193,7 @@
                                                 <li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
                                                 <li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
                                             </ul>
-                                            <a href="#" class="moreinfo">For full terms and conditions please visit Afterpay</a>
+                                            <a href="https://www.afterpay.com/en-AU/terms-of-service" class="moreinfo">For full terms and conditions please visit Afterpay</a>
                                         </div>
                                     </div>
                                 </div>
@@ -247,8 +247,8 @@
                                     </div>
                                 </div>
                                 <ul class="size-show">
-                                 @php $sizes = collect($sizes)->unique('size')->sortBy('seqno'); @endphp
-                                    @foreach($sizes as $size)
+                                 @php $sizes = collect($sizes)->sortByDesc('visible')->unique('size'); @endphp
+                                    @foreach($sizes->sortBy('seqno') as $size)
                                        @if($size['size']!='')
                                         <li @if($size['visible']=='No') class="disable" @endif  data-width='{{  $size['width'] }}' data-value='{{ $size['size'] }}' >{{ $size['size'] }}</li>
                                        @endif
@@ -367,7 +367,8 @@
                     @if($product->prod_desc!='')
                     <div class="info--left tab-6">
                         <h3 class="br-heading">Product Description</h3>
-                        <p class="br-info">{{ strip_tags($product->prod_desc) }}</p>
+                        <p class="br-info">
+                        {!! html_entity_decode(strip_tags($product->prod_desc)) !!}</p>
                         
 
                         @php  $prod_desc_bullet_points = (!empty($product->prod_desc_bullet_points)) ? explode('#', $product->prod_desc_bullet_points) : ''; @endphp
@@ -412,7 +413,7 @@
                                             <p>{{ $spec_name }}</p>
                                         </td>
                                         <td class="label--info">
-                                            <p>{{ $spec_value }}</p>
+                                            <p>{!! html_entity_decode($spec_value) !!}</p>
                                         </td>
                                     </tr>
                                     @endif
@@ -430,7 +431,7 @@
                                         @if ($product_feature != '')
                                         <tr class="specs__row">
                                             <td class="label--info">
-                                                <p style="text-align:left">{{ $product_feature }}</p>
+                                                <p style="text-align:left">{!! html_entity_decode($product_feature) !!} </p>
                                             </td>
                                         </tr>
                                         @endif
@@ -442,7 +443,7 @@
                         
                         @if(!empty($fabric))
                             <h3 class="br-heading">Fabric</h3>
-                            <p class="br-info">{!! $fabric !!}</p>
+                            <p class="br-info">{!! html_entity_decode($fabric) !!}</p>
                         @endif
                     </div>
                     @endif

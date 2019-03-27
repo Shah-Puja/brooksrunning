@@ -5,8 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link href="/images/favicon.ico" rel="shortcut icon">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
-        <title>Brooks Running</title>
+        @switch(Request::segment(1))
+            @case("shoefinder")
+                <title>Brooks Running Shoe Finder | Brooks Running Australia</title>
+                @break;
+            @case("womens-sports-bras")
+                <title>Brooks Sports Bras | Brooks Running Australia</title>
+                @break;
+            @case("womens-running-shoes")
+                <title>Brooks Running Women's Running Shoes</title>
+                @break;
+            @case("mens-running-shoes")
+                <title>Brooks Running Men's Running Shoes</title>
+                @break;
+            @case("womens-running-shoes-sale")
+                <title>Brooks Running Women's Running Shoes Sale</title>
+                @break;
+            @case("mens-running-shoes-sale")
+                <title>Brooks Running Men's Running Shoes Sale</title>
+                @break;
+            @default
+                <title>Brooks Running Shoes, Clothing & Sports Bras | Brooks Running</title>
+                @break;
+        @endswitch
         <!-- lightslider file -->
         <link rel="stylesheet" href="/css/lightslider.css">
         <!-- common file -->
