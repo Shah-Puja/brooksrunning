@@ -84,6 +84,7 @@
 									</button>
 							</div>
 							<p class="privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
+							<a class="br-heading" href="/register" style="color:red; font-size:16px; text-decoration:underline;">Don't have an account? Sign up now</a>
 						</div>
 					</div>
 			</form>
