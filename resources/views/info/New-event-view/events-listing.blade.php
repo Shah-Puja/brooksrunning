@@ -20,7 +20,7 @@
     }
 }
     </style>
-<div class="create-account--header plp-header category__hero">
+<div class="create-account--header event__hero">
  
         <div class="row">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
@@ -33,24 +33,24 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">Abstract Collection Adrenaline &amp; Ghost</a>
+                                            <a href="JavaScript:Void(0);" class="active">Events</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Abstract Collection Adrenaline &amp; Ghost</h1>
+                        <h1 class="large">Brooks at Events</h1>
                        
-                        <p class="type">Shop the limited-release Adrenaline GTS 19 and Ghost 11</p>
+                        <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
-                <img src="/images/Limited-Edition/gts19-ghost11-camo_le-categoryimage.jpg">
+                <img src="/images/new-events/banner/brooks-events-header-image.jpg">
             </div>
         </div>
 </div>
-<div class="create-account--header plp-header collection-intro">
+<!-- <div class="create-account--header event-header event-intro">
   <div class="wrapper">
     <div class="row">
     <div class="col-2"></div>
@@ -63,1108 +63,225 @@
       <div class="col-2"></div>
     </div>
   </div>
-</div>
-<section class="plp-container">
+</div> -->
+<section class="event-filters">
+	<div class="event-background wrapper">
+	<h1 class="br-mainheading">Find an Event</h1>
+		<div class="row">
+			<form name="event_filter" method='post' action='/meet_brooks/events'>
+				<div class="col-4 tab-6">
+					<div class="event-filters--wrapper">
+						<div class="input-wrapper">
+							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+								<option value="">Where</option>
+								<option value="order info">Order Info</option>
+								<option value="return info">Return Info</option>
+								<option value="selecting correct product">Selecting a correct product</option>
+								<option  value="product questions">Product questions / feedback</option>
+								<option value="sponsorship">Sponsorship</option>
+								<option value="technical support">Technical support</option>
+								<option value="media enquiries">Media enquiries</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 tab-6">
+					<div class="event-filters--wrapper">
+						<div class="input-wrapper">
+							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+								<option value="">When</option>
+								<option value="order info">Order Info</option>
+								<option value="return info">Return Info</option>
+								<option value="selecting correct product">Selecting a correct product</option>
+								<option  value="product questions">Product questions / feedback</option>
+								<option value="sponsorship">Sponsorship</option>
+								<option value="technical support">Technical support</option>
+								<option value="media enquiries">Media enquiries</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 tab-12">
+					<div class="event-filters--wrapper">
+						<div class="btn">
+							<button type="submit" class="primary-button">Find Events</button>
+						</div>
+					</div>
+				</div>
+			</form>
+	    </div>
+	</div>
+</section>
+<section class="event-container">
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-12 tab-12">
 				<div class="row">
-					<div class="plp-wrapper-container">
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+					<div class="event-wrapper-container">
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
+										<h3>International Women's Day Fun Run</h3>
+										<div class="date">
+										3 March 2019 
 										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<div class="location">Melbourne, VIC</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/SunsetSeries_logo.jpg" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
+										<h3>Sunset Series Race 3</h3>
+										<div class="date">
+										6 March 2019
 										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<div class="location"> Princess Park, VIC</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/PortMac_RF_logo.jpg" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
+										<h3>Port Macquarie Running Festival</h3>
+										<div class="date">
+										9 March 2019 
 										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<div class="location">Port Macquarie, NSW</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/Christchurch-City-to-Surf_logo.jpg" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
-										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<h3>City 2 Surf Christchurch</h3>
+										<div class="date">24 March 2019 </div>
+										<div class="location">Christchurch, NZ</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/albany_lakes_logo.png" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
-										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<h3>Albany Lakes Summer Series Race 3</h3>
+										<div class="date">24 March 2019</div>
+										<div class="location">Albany, NZ</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/X-Adventure_logo.jpg" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
-										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<h3>X-Adventure Triathlon</h3>
+										<div class="date">30-31 March 2019</div>
+										<div class="location">Dunsborough, WA</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
+										<h3>International Women's Day Fun Run</h3>
+										<div class="date">
+										3 March 2019 
 										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<div class="location">Melbourne, VIC</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 plp-wrapper__sub">
-							<div class="plp-product">
-								<div class="offer-info">
-									<span>NEW</span>
-									<span class="sale">SALE</span>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-product">
+								
+								<a href="detail-shoes.php" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
-								<a href="detail-shoes.php" class="hidden-mob">
-									<div class="img img-shoes">
-										<img id="plp-img" src="images/shoes/shoes1-listing.jpg" alt="">
-									</div>
 								</a>
-								<div class="more-color--container">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Widths Available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes2-listing.jpg">
-									        <img src="images/shoes/shoes2-swatches.jpg" data-big="images/shoes/shoes2-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									  <div class="item">
-									  	 <picture>
-									        <source media="(max-width: 667px)" srcset="images/shoes/shoes1-listing.jpg">
-									        <img src="images/shoes/shoes1-swatches.jpg" data-big="images/shoes/shoes1-listing.jpg" class="plp-thumb" alt="">
-									      </picture>
-									  	 <div class="plp-mob--info visible-mob">
-									  	 	<a href="detail-apparel.php">
-									  	 		<ul>
-										  	 		<li>3 Colours</li>
-										  	 		<li class="no-pad">Width available</li>
-										  	 	</ul>
-									  	 	</a>
-									  	 </div>
-									  </div>
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
+								
 								<a href="detail-shoes.php">
 									<div class="info">
-										<h3>Adrenaline GTS 18</h3>
-										<div class="price">
-											<span>&dollar;89.95</span>
+										<h3>International Women's Day Fun Run</h3>
+										<div class="date">
+										3 March 2019 
 										</div>
-										<div class="shoes-type">Women's Running Tops</div>
-									</div>
-									<div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-												<p>Neutral Speed</p>
-											</div>
-											<div class="mob-6">
-												<p class="right">Width Available</p>
-											</div>
-										</div>
+										<div class="location">Melbourne, VIC</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="plp-load-more">
+						
+						<div class="event-load-more">
 							<a href="#">Load More (15 Remaining)</a>
 						</div>
 					</div>
 			    </div>
 			</div>
-			<div class="filter-mob--apply plp-mob-filter__control">
+			<div class="filter-mob--apply event-mob-filter__control">
 				<a href="#">Apply</a>
 			</div>
 	    </div>
