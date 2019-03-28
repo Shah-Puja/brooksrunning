@@ -47,6 +47,7 @@ class PaymentController extends Controller {
             }
 
             $this->order = $this->cart->order;
+            check_state_and_update_delivery_option();
 
             if (!check_promo_validity($this->order->coupon_code)) {
                 Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);

@@ -19,15 +19,8 @@ class BillingShippingController extends Controller {
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-            if (isset($this->cart->order->address->s_state) && $this->cart->order->address->s_state == 'New Zealand') {
-                $delivery_option = "new_zealand";
-                $freight_charges = config('site.SHIPPING_NZ_PRICE');
-                $grand_total = $this->cart->total + $freight_charges;
-                Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
-                $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-                Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
-            }
-            if (empty($this->cart)) {
+            check_state_and_update_delivery_option();
+            if(empty($this->cart)){
                 return redirect('cart');
             }
             foreach ($this->cart->cartItems as $cart_item) {
@@ -111,6 +104,8 @@ class BillingShippingController extends Controller {
             }
         }
         Order::createNew($this->cart, $user_id, $validatedAddress);
+        check_state_and_update_delivery_option();
+        
         return redirect("payment");
     }
 
