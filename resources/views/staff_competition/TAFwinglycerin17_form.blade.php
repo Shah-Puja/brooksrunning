@@ -1,5 +1,5 @@
 <form name="staff_competition" id='staff_competition' method="post"  onsubmit="return insert_staff_competition()">
-	<div class="row">
+	<div class="row"> 
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label for=""><sup>*</sup>Name</label>
