@@ -69,9 +69,9 @@ and (orientation : landscape) {
 				<div class="bf-results-nav__item capitalize"><a data-bf-show-progress-link tabindex="0" data-bf-button data-prevent-default href="" tabindex="0">Edit Answers</a></div>
 			
 		<div class="bf-results-nav__item capitalize"><a href="/store-locator" target="_blank" tabindex="0">Find A Store</a></div>
-		
-			<!-- <div class="bf-results-nav__item capitalize"><a href="/login" tabindex="0">Save Results</a></div> -->
-		
+        @if(!auth()->user())
+		<div class="bf-results-nav__item capitalize"><a href="/login" tabindex="0">Save Results</a></div>
+		@endif
 	</nav> 
 	<header class="bf-results-header shoefinder-Topresult-container" data-bf-results-header-pad>
 		<!-- START: Sticky Nav -->
