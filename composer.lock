@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "026022cefa2465ddd96b95bd7342f95f",
+    "content-hash": "3e9bc021666f53a1ccb521d3b1d25243",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2145,6 +2145,49 @@
             "time": "2017-02-16T16:54:46+00:00"
         },
         {
+            "name": "naxon/nova-field-sortable",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Naxon/nova-field-sortable.git",
+                "reference": "d176154c5d4e300c6bd3cfe00577a5c368375992"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Naxon/nova-field-sortable/zipball/d176154c5d4e300c6bd3cfe00577a5c368375992",
+                "reference": "d176154c5d4e300c6bd3cfe00577a5c368375992",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "spatie/eloquent-sortable": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Naxon\\NovaFieldSortable\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Naxon\\NovaFieldSortable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-10-01T15:14:19+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.36.1",
             "source": {
@@ -3150,6 +3193,56 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "spatie/eloquent-sortable",
+            "version": "3.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/eloquent-sortable.git",
+                "reference": "340c7338031338aba47c41836e335bf9a5ef0216"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/340c7338031338aba47c41836e335bf9a5ef0216",
+                "reference": "340c7338031338aba47c41836e335bf9a5ef0216",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0|~5.8.0",
+                "phpunit/phpunit": "^6.2|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\EloquentSortable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be"
+                }
+            ],
+            "description": "Sortable behaviour for eloquent models",
+            "homepage": "https://github.com/spatie/eloquent-sortable",
+            "keywords": [
+                "behaviour",
+                "eloquent",
+                "laravel",
+                "model",
+                "sort",
+                "sortable"
+            ],
+            "time": "2019-02-27T00:18:34+00:00"
         },
         {
             "name": "spatie/once",

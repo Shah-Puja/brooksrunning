@@ -20,6 +20,12 @@ class Category extends Model
     	return $this->hasMany('App\Models\group','group_id','id');
     }
 
+
+    public function groups_ranks()
+    {
+    	return $this->hasMany('App\Models\Group_ranks','group_id','id');
+    }
+
     /**
 	 * Get the route key for the model.
 	 *
