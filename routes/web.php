@@ -164,6 +164,8 @@ Route::get('/order-confirmation', 'CategoryController@order_confirmation');
 Route::get('/TAFwintranscend', 'StaffcompetitionController@index');
 Route::get('/tafwintranscend', 'StaffcompetitionController@index');
 Route::get('/wintranscend', 'StaffcompetitionController@index');
+Route::get('/TAFwinglycerin17', 'StaffcompetitionController@index');
+Route::get('/winglycerin17', 'StaffcompetitionController@index');
 Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
 
 /* Collection pages */
