@@ -1,24 +1,43 @@
 <?php
 
-if (!function_exists('benefit_img_check')) {
-    function benefit_img_check($img) 
-    { 
-        if($img!=''){
-            $img = config('site.image_url.base_banefit').$img;
+use App\Models\Cart;
+use App\Models\Order;
 
-            if(@fopen($img.".png",'r')){
-                $img_url = $img.".png";
-            }else if(@fopen($img.".jpg",'r')){
-                $img_url = $img.".jpg";
-            }else{
+if (!function_exists('benefit_img_check')) {
+
+    function benefit_img_check($img) {
+        if ($img != '') {
+            $img = config('site.image_url.base_banefit') . $img;
+
+            if (@fopen($img . ".png", 'r')) {
+                $img_url = $img . ".png";
+            } else if (@fopen($img . ".jpg", 'r')) {
+                $img_url = $img . ".jpg";
+            } else {
                 //$img_url = "/images/no_image.png";
                 $img_url = "";
             }
-        }else{
+        } else {
             //$img_url = "/images/no_image.png";
             $img_url = "";
         }
 
         return $img_url;
-    } 
+    }
+
+}
+
+if (!function_exists('check_state_and_update_delivery_option')) {
+
+    function check_state_and_update_delivery_option() {
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
+        if (isset($cart->order->address->s_state) && $cart->order->address->s_state == 'New Zealand') {
+            $delivery_option = "new_zealand";
+            $freight_charges = config('site.SHIPPING_NZ_PRICE');
+            $grand_total = $cart->total + $freight_charges;
+            Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
+            Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
+        }
+    }
+
 }
