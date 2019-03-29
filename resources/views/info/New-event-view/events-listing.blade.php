@@ -74,13 +74,19 @@
 						<div class="input-wrapper">
 							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 								<option value="">Where</option>
-								<option value="order info">Order Info</option>
-								<option value="return info">Return Info</option>
-								<option value="selecting correct product">Selecting a correct product</option>
-								<option  value="product questions">Product questions / feedback</option>
-								<option value="sponsorship">Sponsorship</option>
-								<option value="technical support">Technical support</option>
-								<option value="media enquiries">Media enquiries</option>
+								<option value="March 2019">March 2019</option>
+								<option value="April 2019">April 2019</option>
+								<option  value="May 2019">May 2019</option>
+								<option value="June 2019">June 2019</option>
+								<option value="July 2019">July 2019</option>
+								<option value="August 2019">August 2019</option>
+								<option value="September 2019">September 2019</option>
+								<option value="October 2019">October 2019</option>
+								<option value="November 2019">November 2019</option>
+								<option value="December 2019">December 2019</option>
+								<option value="January 2020">January 2020</option>
+								<option value="February 2020">February 2020</option>
+								<option value="March 2020">March 2020</option>
 								<option value="other">Other</option>
 							</select>
 						</div>
@@ -91,13 +97,19 @@
 						<div class="input-wrapper">
 							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 								<option value="">When</option>
-								<option value="order info">Order Info</option>
-								<option value="return info">Return Info</option>
-								<option value="selecting correct product">Selecting a correct product</option>
-								<option  value="product questions">Product questions / feedback</option>
-								<option value="sponsorship">Sponsorship</option>
-								<option value="technical support">Technical support</option>
-								<option value="media enquiries">Media enquiries</option>
+								<option value="March 2019">March 2019</option>
+								<option value="April 2019">April 2019</option>
+								<option  value="May 2019">May 2019</option>
+								<option value="June 2019">June 2019</option>
+								<option value="July 2019">July 2019</option>
+								<option value="August 2019">August 2019</option>
+								<option value="September 2019">September 2019</option>
+								<option value="October 2019">October 2019</option>
+								<option value="November 2019">November 2019</option>
+								<option value="December 2019">December 2019</option>
+								<option value="January 2020">January 2020</option>
+								<option value="February 2020">February 2020</option>
+								<option value="March 2020">March 2020</option>
 								<option value="other">Other</option>
 							</select>
 						</div>
@@ -121,7 +133,7 @@
 				<div class="row">
 					<div class="event-wrapper-container">
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -141,7 +153,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -161,7 +173,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -181,7 +193,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -199,7 +211,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -217,7 +229,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -235,7 +247,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
@@ -255,7 +267,7 @@
 							</div>
 						</div>
 						<div class="mob-6 col-4 event-wrapper__sub">
-							<div class="event-product">
+							<div class="event-section">
 								
 								<a href="detail-shoes.php" >
 								<div class="img">
