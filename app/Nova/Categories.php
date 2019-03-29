@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\MorphToMany;
 
 class Categories extends Resource
 {
@@ -46,7 +47,7 @@ class Categories extends Resource
             Text::make('Slug','slug')->sortable(),
             Text::make('Product Type','prod_type')->sortable(),
 
-            HasMany::make('Groups Items List', 'groups_ranks', 'App\Nova\Group_ranks'),
+            HasMany::make('Style List', 'group_ranks', 'App\Nova\Group_rank'),
         ];
     }
 

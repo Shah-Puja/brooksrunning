@@ -9,7 +9,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Naxon\NovaFieldSortable\Concerns\SortsIndexEntries;
 use Naxon\NovaFieldSortable\Sortable;
 
-class Group_ranks extends Resource
+class Group_rank extends Resource
 {
     /**
      * The model the resource corresponds to.

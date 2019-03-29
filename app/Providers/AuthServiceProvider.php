@@ -18,6 +18,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Models\Order_item' => 'App\Policies\OrderitemPolicy',
         'App\Models\Order_address' => 'App\Policies\OrderaddressPolicy',
         'App\Models\Category' => 'App\Policies\CategoryPolicy',
+        'App\Models\Group_ranks' => 'App\Policies\GroupranksPolicy',
     ];
 
     /**

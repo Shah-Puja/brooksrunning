@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e9bc021666f53a1ccb521d3b1d25243",
+    "content-hash": "b0c7aa3a4623bb6d2b8c087e16095c0c",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -484,6 +484,49 @@
                 "tls"
             ],
             "time": "2018-10-18T06:09:13+00:00"
+        },
+        {
+            "name": "dillingham/nova-field-sortable",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dillingham/nova-field-sortable.git",
+                "reference": "09cedbec24d08dc88d27382285488bdb45baa585"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dillingham/nova-field-sortable/zipball/09cedbec24d08dc88d27382285488bdb45baa585",
+                "reference": "09cedbec24d08dc88d27382285488bdb45baa585",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "spatie/eloquent-sortable": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Naxon\\NovaFieldSortable\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Naxon\\NovaFieldSortable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-01-04T23:33:12+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

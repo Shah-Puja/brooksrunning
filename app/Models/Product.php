@@ -80,5 +80,10 @@ class Product extends Model
         return $this->hasMany('App\Models\Csv_rank','product_id','id');
     }
 
+    public function groupranks()
+    {
+        return $this->hasMany('App\Models\Group_ranks','style','style');
+    }
+
     
 }
