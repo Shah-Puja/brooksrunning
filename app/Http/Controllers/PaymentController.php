@@ -46,6 +46,7 @@ class PaymentController extends Controller {
             }
 
             $this->order = $this->cart->order;
+            check_state_and_update_delivery_option();
 
             if (!$this->order) {
                 return redirect('shipping');
