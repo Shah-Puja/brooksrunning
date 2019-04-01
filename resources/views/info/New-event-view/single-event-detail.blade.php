@@ -1,56 +1,84 @@
 @extends('customer.layouts.master')
 @section('content')
+
 <link rel="stylesheet" href="/css/main.css">
-<section class="br-events-content">
-    <section class="event-banner">
-        <div class="event-banner--wrapper">
-            <picture>
-                @php $banner_img=(isset($event->banner)) ? $event->banner : ""; @endphp
-                <source media="(max-width: 595px)" srcset="/images/events/banner/{{$banner_img }}">
-                <img src="/images/events/banner/{{$banner_img }}" alt="Header Images">
-            </picture>
-        </div>
-    </section>
-    <section class="create-account--header plp-header">
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-5 tab-6">
-                    <div class="breadcrumbs">
-                        <ul>
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/events">Events</a>
-                            </li>
-                            <li>
-                                <a href="/events/month/{{ $event->month }}">Running Events {{ $event->month }}</a>
-                            </li>
-                            <li>
-                                <a href="JavaScript:Void(0);" class="active">{{ $event->event_name }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="sub-header">{{ $event->event_name }}</h3>
-                    <h3 class="event-date">{{ $event->event_date }} </h3>
-                    <p> {!! $event->content !!} </p>
-                    <!-- <a target="_blank" class="registration-cta button no-mobile" href="http://bridgetobrisbaneday.com.au/">
-                            Register Now
-                        </a> -->
-                    <div class="regNow-btn">
-                        <a class="secondary-button" href="{{ $event->page_link }}">Register now</a>
+
+<div class="create-account--header event__hero">
+ 
+        <div class="row">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
+                <div class="m-block--hero--collection__content">
+                    <div class="m-block--hero__content__copy">
+                    <div class="about-header">
+                        <div class="breadcrumbs">
+                                    <ul>
+                                        <li>
+                                            <a href="/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="/events-listing">Events</a>
+                                        </li>
+                                        <li>
+                                            <a href="JavaScript:Void(0);" class="active">International Women’s Day Fun Run</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <h1 class="event-title">International Women's Day Fun Run</h1>
                     </div>
                 </div>
-                <div class="col-2 tab-1">&nbsp;</div>
-                <div class="col-5 tab-5 event-img">
-                    @if(!empty($event->image)) 
-                    <img src="/images/events/main/{{ $event->image }}" alt="{{ $event->event_name }}" />
-                    @else 
-                    <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
-                    @endif           
-                </div>
+                <div class="collection-hero-overlay hidden-mob"></div>
+            </div>
+            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+                <img src="/images/new-events/banner/iwdfr-event-header-image.jpg">
             </div>
         </div>
-    </section>
+</div>
+<div class="create-account--header event-header event-intro">
+  <div class="wrapper">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+      	    <div class="about-header">
+            <div class="event-logo">
+            <img src="/images/new-events/logo/iwdfr_logo.png">
+            </div>
+            <h2>Date TBA March, 2020 </h1>
+            <h2>Brisbane, QLD</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <div class="stay-tuned" style="display:none;">
+                <p class="info">Stay tuned for more details on this event.</p>
+		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
+            </div>  
+            <div class="find-more">
+                    <div class="btn">
+                        <button type="submit" class="primary-button">Find Out More </button>
+                    </div>
+            </div>  
+        </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    </div>
+  </div>
+</div>
+<section class="event-footer">
+	<div class="wrapper">
+		<div class="row">
+	  		<div class="col-12 tab-12">
+	    		<div class="event-footer--wrapper info">
+                    <div class="btn">
+                        <button type="submit" class="secondary-button">See More Events </button>
+                    </div>
+		     	</div>
+	        </div>
+	    </div>
+	</div>
 </section>
-@endsection
+
+
+<!-- /Updated Section -->
+    
+@endsection       
+      
+

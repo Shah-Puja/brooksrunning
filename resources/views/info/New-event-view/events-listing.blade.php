@@ -2,24 +2,7 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css">
-<style>
-  @media only screen and (min-device-width: 480px) 
-                   and (max-device-width: 640px) 
-                   and (orientation: landscape) {
 
-.visible-mob-landscape{
-        display:block !important;
-    }
-} 
-@media only screen and (max-width: 767px) {
-    .visible-mob-landscape{
-        display:block !important;
-    }
-    .more-color--container-landscape{
-        display:none !important;
-    }
-}
-    </style>
 <div class="create-account--header event__hero">
  
         <div class="row">
@@ -50,20 +33,6 @@
             </div>
         </div>
 </div>
-<!-- <div class="create-account--header event-header event-intro">
-  <div class="wrapper">
-    <div class="row">
-    <div class="col-2"></div>
-      <div class="col-8">
-      	<div class="about-header">
-            <h1 class="br-mainheading">Take a closer look.</h1>
-            <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p>
-        </div>
-      </div>
-      <div class="col-2"></div>
-    </div>
-  </div>
-</div> -->
 <section class="event-filters">
 	<div class="event-background wrapper">
 	<h1 class="br-mainheading">Find an Event</h1>
@@ -74,20 +43,16 @@
 						<div class="input-wrapper">
 							<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 								<option value="">Where</option>
-								<option value="March 2019">March 2019</option>
-								<option value="April 2019">April 2019</option>
-								<option  value="May 2019">May 2019</option>
-								<option value="June 2019">June 2019</option>
-								<option value="July 2019">July 2019</option>
-								<option value="August 2019">August 2019</option>
-								<option value="September 2019">September 2019</option>
-								<option value="October 2019">October 2019</option>
-								<option value="November 2019">November 2019</option>
-								<option value="December 2019">December 2019</option>
-								<option value="January 2020">January 2020</option>
-								<option value="February 2020">February 2020</option>
-								<option value="March 2020">March 2020</option>
-								<option value="other">Other</option>
+								<option value="Australia ">Australia </option>
+								<option value="ACT">ACT</option>
+								<option  value="NSW">NSW</option>
+								<option value="NT">NT</option>
+								<option value="QLD">QLD</option>
+								<option value="SA">SA</option>
+								<option value="TAS">TAS</option>
+								<option value="VIC">VIC</option>
+								<option value="WA">WA</option>
+								<option value="New Zealand">New Zealand</option>
 							</select>
 						</div>
 					</div>
@@ -124,6 +89,10 @@
 				</div>
 			</form>
 	    </div>
+		<div class="no-result" style="display:none;">
+			<p class="error">Sorry, currently no events match those selections. Please try again.</p>
+			<p class="clear-filter">clear filters <a href="#"><span>&#9746;</span></a></p>
+		</div>
 	</div>
 </section>
 <section class="event-container">
@@ -135,13 +104,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>International Women's Day Fun Run</h3>
 										<div class="date">
@@ -155,13 +124,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/SunsetSeries_logo.jpg" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>Sunset Series Race 3</h3>
 										<div class="date">
@@ -175,13 +144,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/PortMac_RF_logo.jpg" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>Port Macquarie Running Festival</h3>
 										<div class="date">
@@ -195,13 +164,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/Christchurch-City-to-Surf_logo.jpg" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>City 2 Surf Christchurch</h3>
 										<div class="date">24 March 2019 </div>
@@ -213,13 +182,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/albany_lakes_logo.png" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>Albany Lakes Summer Series Race 3</h3>
 										<div class="date">24 March 2019</div>
@@ -231,13 +200,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/X-Adventure_logo.jpg" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>X-Adventure Triathlon</h3>
 										<div class="date">30-31 March 2019</div>
@@ -249,13 +218,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>International Women's Day Fun Run</h3>
 										<div class="date">
@@ -269,13 +238,13 @@
 						<div class="mob-6 col-4 event-wrapper__sub">
 							<div class="event-section">
 								
-								<a href="detail-shoes.php" >
+								<a href="#" >
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
 								</div>
 								</a>
 								
-								<a href="detail-shoes.php">
+								<a href="#">
 									<div class="info">
 										<h3>International Women's Day Fun Run</h3>
 										<div class="date">

@@ -2864,7 +2864,19 @@ width: 100%;
       font-size: 30px;
     }
 }
-
+.event-title {
+  font-size: 55px;
+  width: 80%;
+  line-height:1.1;
+  @media #{$mobile-only}{
+    font-size: 30px;
+    width: 100%;
+  }
+  @media #{$tab-only}{
+    font-size: 30px;
+    width: 100%;
+  }
+}
 .type {
     font-size: 20px;
     line-height: 27px;
@@ -3061,6 +3073,22 @@ width: 100%;
     @extend %extrabold-font;
     text-align: center;
   }
+  h2{
+    color:#0E0E0E;
+    margin-bottom: 0px;
+    font-size:24px;
+    line-height: .5;
+    @extend %extrabold-font;
+    text-align: center;
+  }
+  .event-logo{
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 60%;
+    @media #{$mobile-only}{
+      width:100%;
+    }
+  }
   p{
     max-width: 100%;
     color:#0E0E0E;
@@ -3068,7 +3096,22 @@ width: 100%;
     line-height: 30px;
     @extend %info-font;
   }
-  
+  .info{
+    font-size: 22px;
+    line-height: 1.1;
+    @extend %bold-font;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    color:$black;
+  }
+  .event-signup{
+    font-size: 22px;
+    line-height: 1.1;
+    @extend %bold-font;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    color:$black;
+  }
 }
 
 .event-filters{
@@ -3089,6 +3132,21 @@ width: 100%;
       text-align: center;
       margin : 0 auto;
       font-size:28px;
+    }
+    .no-result{
+      p{
+        text-align: center;
+        margin : 0 auto;
+        font-size:18px;
+        .clear-filter{
+          font-size:14px;
+          a{
+            span{
+              color:$black !important;
+            }
+          }
+        }
+      }
     }
   }
   &--wrapper{
@@ -3131,7 +3189,6 @@ width: 100%;
   }
 }
 .event-container{
- 
   .event-wrapper-container{
     @extend %display-flex;
     flex-flow: row wrap;
@@ -3145,10 +3202,10 @@ width: 100%;
           position: relative;
           background-color: $darkgray;
           padding: 15px 0 30px; 
-
+          border: 1px solid  $darkgray;
+          transition: border-width 0.6s linear;
           &:hover {
             border: 1px solid  #005CFB;
-            flex-shrink: 0;
             .info{
               h3{
                 color: #0262F7;
@@ -3164,6 +3221,7 @@ width: 100%;
           @media #{$mobile-only} {
             max-width: 240px;
             margin: auto;
+            padding: 10px 0 10px;
           }
          
           .eventSub-info{
@@ -3215,7 +3273,8 @@ width: 100%;
             height: 185px;
             border-bottom: 1px solid #f2f2f2;
             @media #{$mobile-only} {
-              padding: 8px 10px 4px;
+              padding: 0px 10px 0px;
+              height:145px;
             }
             h3{
               @extend %extrabold-font;
@@ -3225,8 +3284,14 @@ width: 100%;
               color:$black;
               height:60px;
               @media #{$mobile-only}{
-                font-size: 20px;
-                margin: 10px 10px 55px 0px;
+                font-size: 18px;
+                margin: 20px auto;
+                line-height: 1.2;
+              }
+              
+              @media #{$desktop-only}{
+                font-size: 25px;
+                margin: 0 auto;
                 line-height: 1.2;
               }
             }
@@ -3263,6 +3328,7 @@ width: 100%;
           }
         }
     }
+ 
 }
 }
 .event-load-more{
@@ -3288,6 +3354,57 @@ width: 100%;
       background-color: #002855;
       color: $white;
     }
+  }
+}
+.event-footer{
+  padding: 20px 25px;
+  background-color: #F2F2F2;
+  margin: 10px 0 0;
+  @media #{$tabmob-only}{
+    padding: 20px 0;
+  }
+  @media #{$mobile-only}{
+    padding: 20px;
+    text-align: center;
+  }
+  &--wrapper{
+    padding: 20px 0;
+    text-align:center;
+    margin: 0 auto;
+    .btn{
+      padding-top: 12px;
+      max-width: 300px;
+      margin: auto;
+      .secondary-button{
+          background-color: transparent;
+          color: $blue;
+          border: 2px solid $blue;
+        &:hover{
+          background-color: $blue;
+          color: $white;
+          border: 2px solid $white;
+        }
+      }
+    }
+    &.info{
+      @media #{$mobile-only}{
+        padding-bottom: 20px;
+      }
+    }
+    @media #{$tabmob-only}{
+      padding: 0 0;
+    }
+    h3,p{
+      margin: 0;
+      font-size: 22px;
+    }
+    p{
+      line-height: 1.5;
+      a{
+        text-decoration: underline;
+      }
+    }
+   
   }
 }
 /* End New Event Layout*/

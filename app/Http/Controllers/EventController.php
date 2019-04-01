@@ -40,5 +40,8 @@ class EventController extends Controller {
 	{
 		return view( 'info.New-event-view.events-listing');
     }
-
+    public function new_single_event()
+	{
+		return view( 'info.New-event-view.single-event-detail');
+    }
 }

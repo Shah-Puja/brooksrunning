@@ -134,6 +134,7 @@ Route::get('/month', 'EventController@events_default');
 
 /* New events page */
 Route::get('/events-listing', 'EventController@new_events_listing'); 
+Route::get('/events-listing/single-event', 'EventController@new_single_event'); 
 
 
 
