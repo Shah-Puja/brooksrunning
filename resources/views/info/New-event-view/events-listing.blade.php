@@ -113,10 +113,12 @@
 								<a href="#">
 									<div class="info">
 										<h3>International Women's Day Fun Run</h3>
+										<div class="event-info-sub">
 										<div class="date">
 										3 March 2019 
 										</div>
 										<div class="location">Melbourne, VIC</div>
+										</div>
 									</div>
 								</a>
 							</div>
@@ -133,10 +135,12 @@
 								<a href="#">
 									<div class="info">
 										<h3>Sunset Series Race 3</h3>
-										<div class="date">
-										6 March 2019
+										<div class="event-info-sub">
+											<div class="date">
+											6 March 2019
+											</div>
+											<div class="location"> Princess Park, VIC</div>
 										</div>
-										<div class="location"> Princess Park, VIC</div>
 									</div>
 								</a>
 							</div>
@@ -153,10 +157,12 @@
 								<a href="#">
 									<div class="info">
 										<h3>Port Macquarie Running Festival</h3>
-										<div class="date">
-										9 March 2019 
+										<div class="event-info-sub">
+											<div class="date">
+											9 March 2019 
+											</div>
+											<div class="location">Port Macquarie, NSW</div>
 										</div>
-										<div class="location">Port Macquarie, NSW</div>
 									</div>
 								</a>
 							</div>
@@ -173,8 +179,10 @@
 								<a href="#">
 									<div class="info">
 										<h3>City 2 Surf Christchurch</h3>
-										<div class="date">24 March 2019 </div>
-										<div class="location">Christchurch, NZ</div>
+										<div class="event-info-sub">
+											<div class="date">24 March 2019 </div>
+											<div class="location">Christchurch, NZ</div>
+										</div>
 									</div>
 								</a>
 							</div>
@@ -191,8 +199,10 @@
 								<a href="#">
 									<div class="info">
 										<h3>Albany Lakes Summer Series Race 3</h3>
-										<div class="date">24 March 2019</div>
-										<div class="location">Albany, NZ</div>
+										<div class="event-info-sub">
+											<div class="date">24 March 2019</div>
+											<div class="location">Albany, NZ</div>
+										</div>
 									</div>
 								</a>
 							</div>
@@ -209,8 +219,10 @@
 								<a href="#">
 									<div class="info">
 										<h3>X-Adventure Triathlon</h3>
-										<div class="date">30-31 March 2019</div>
-										<div class="location">Dunsborough, WA</div>
+										<div class="event-info-sub">
+											<div class="date">30-31 March 2019</div>
+											<div class="location">Dunsborough, WA</div>
+										</div>
 									</div>
 								</a>
 							</div>
@@ -220,17 +232,17 @@
 								
 								<a href="#" >
 								<div class="img">
-										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
+										<img id="event-img" src="images/new-events/logo/run_the_west_logo.jpg" alt="">
 								</div>
 								</a>
 								
 								<a href="#">
 									<div class="info">
-										<h3>International Women's Day Fun Run</h3>
-										<div class="date">
-										3 March 2019 
+										<h3>Run The West</h3>
+										<div class="event-info-sub">
+											<div class="date">31 March 2019</div>
+											<div class="location"> West Sydney, NSW </div>
 										</div>
-										<div class="location">Melbourne, VIC</div>
 									</div>
 								</a>
 							</div>
@@ -240,30 +252,122 @@
 								
 								<a href="#" >
 								<div class="img">
-										<img id="event-img" src="images/new-events/logo/iwdfr_logo.png" alt="">
+										<img id="event-img" src="images/new-events/logo/MS_Walk&FunRun_logo.jpg" alt="">
 								</div>
 								</a>
 								
 								<a href="#">
 									<div class="info">
-										<h3>International Women's Day Fun Run</h3>
-										<div class="date">
-										3 March 2019 
+										<h3>MS Walk & Fun Run</h3>
+										<div class="event-info-sub">
+											<div class="date">31 March 2019</div>
+											<div class="location"> Canberra, ACT</div>
 										</div>
-										<div class="location">Melbourne, VIC</div>
 									</div>
 								</a>
 							</div>
 						</div>
-						
-						<div class="event-load-more">
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-section">
+								
+								<a href="#" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/MS_Walk&FunRun_logo.jpg" alt="">
+								</div>
+								</a>
+								
+								<a href="#">
+									<div class="info">
+										<h3>MS Walk & Fun Run</h3>
+										<div class="event-info-sub">
+											<div class="date">7 April 2019</div>
+											<div class="location"> Pyrmont, NSW</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- <div class="event-load-more">
 							<a href="#">Load More (15 Remaining)</a>
-						</div>
+						</div> -->
 					</div>
 			    </div>
 			</div>
-			<div class="filter-mob--apply event-mob-filter__control">
-				<a href="#">Apply</a>
+	    </div>
+	</div>
+</section>
+
+<section class="event-container">
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-12 tab-12">
+				<div class="row">
+					<div class="event-wrapper-container">
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-section">
+								
+								<a href="#" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/X-Adventure_logo.jpg" alt="">
+								</div>
+								</a>
+								
+								<a href="#">
+									<div class="info">
+										<h3>Olivia Newton John Wellness Walk & Research Run</h3>
+										
+										<div class="event-info-sub"><div class="date">September 2019</div>
+										<div class="location">Melbourne, VIC</div></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-section">
+								
+								<a href="#" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/Point-Pinnacle_logo.png" alt="">
+								</div>
+								</a>
+								
+								<a href="#">
+									<div class="info">
+										<h3>Point To Pinnacle</h3>
+										<div class="event-info-sub">
+										<div class="date">November 2019</div>
+										<div class="location">Hobart, TAS</div>
+									</div></div>
+								</a>
+							</div>
+						</div>
+						<div class="mob-6 col-4 event-wrapper__sub">
+							<div class="event-section">
+								
+								<a href="#" >
+								<div class="img">
+										<img id="event-img" src="images/new-events/logo/PortMac_RF_logo.jpg" alt="">
+								</div>
+								</a>
+								
+								<a href="#">
+									<div class="info">
+										<h3>Run The Bridge Hobart</h3>
+										<div class="event-info-sub">
+										<div class="date">
+										February 2020
+										</div>
+										<div class="location">Hobart, TAS</div></div>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<!-- <div class="event-load-more">
+							<a href="#">Load More (15 Remaining)</a>
+						</div> -->
+					</div>
+			    </div>
 			</div>
 	    </div>
 	</div>
