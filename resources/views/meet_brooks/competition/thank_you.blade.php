@@ -22,7 +22,7 @@
 				<div class="row">
 					<div class="tab-12">
 						<div class="comp_bottom">
-							<p>Competition Closes: 28th February 2019 </p><p class="notice">Brooks Sports will not use your email address or information for any purpose other than notifying the winner of the competition and distributing our email newsletter.  </p>
+							<p>Competition Closes: 30th April 2019 </p><p class="notice">Brooks Sports will not use your email address or information for any purpose other than notifying the winner of the competition and distributing our email newsletter.  </p>
 							<p class="privacy">Click here to view the <a class="privacy-terms--popup" href="javascript:void(0)">Terms &amp; Conditions of Entry</a></p>                      
 						</div>
 					</div>
@@ -113,7 +113,7 @@
 						 <li>The Promoter may use information it collects in relation to you, to provide you with information regarding further offers, promotions or goods and services provided by the Promoter and/or the Promoter’s partners and sponsors. To remove your information from the Promoter’s records, send an email to <a href="mailto:privacyofficer@brooksrunning.com.au" target="_top">privacyofficer@brooksrunning.com.au</a> with your name, phone number and your request to cancel the Service. </li>
 						 <li>The Promoter is not responsible for any error, omission, destruction or unauthorised access to, or alteration of entries occurring in relation to the conduct of the Promotion.</li>
 						 <li>To the full extent permitted by law, the Promoter will not be liable to you in respect of any claim for any loss or damage whatsoever (including, without limitation, any consequential, indirect, special, punitive or incidental damages) or for any personal injury suffered by you as a result of or in connection with the Promotion.</li>
-						<li>18.	The Promoter is Fit Chain Pty Ltd, 30 Tullamarine Park Rd, Tullamarine VIC 3043. ABN 46125569039</li>
+						<li>The Promoter is Fit Chain Pty Ltd, 30 Tullamarine Park Rd, Tullamarine VIC 3043. ABN 46125569039</li>
 					</ol>
 			 </div>
 		</div>
