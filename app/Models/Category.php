@@ -55,7 +55,9 @@ class Category extends Model
                     if(isset($product->groupranks) && count($product->groupranks) >0){
                         foreach($product->groupranks as $group_rank):
                             if($cat_id==$group_rank->group_id):
-                                return  $group_rank->display_rank;
+                                return $group_rank->display_rank;
+                            else:
+                                return '1000000000';
                             endif;
                         endforeach;
                     }else{
@@ -97,6 +99,8 @@ class Category extends Model
                     foreach($product->groupranks as $group_rank):
                         if($cat_id==$group_rank->group_id):
                             return  $group_rank->display_rank;
+                        else:
+                            return '1000000000';
                         endif;
                     endforeach;
                 }else{
