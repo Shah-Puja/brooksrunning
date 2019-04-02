@@ -18,6 +18,9 @@ class meet_brooksController extends Controller
         $this->bridge = $bridge;
     }
     public function index($meet_brooks_pg){
+        if($meet_brooks_pg == 'run-happy-is'){
+            return redirect('/meet_brooks/our_purpose');
+        }
         if(!view()->exists('meet_brooks.'.$meet_brooks_pg)){
            return abort(404);
         }
