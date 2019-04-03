@@ -6,7 +6,7 @@
   	<li>The entire Promotional period commences on Friday 5th April 2019 and concludes Sunday 28th April 2019. The winner will be selected on Monday 29th April 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, <i>Australia</i>. The winner will be notified by email.</li>
   	<li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/twilightcomp19">https://www.brooksrunning.com.au/meet_brooks/competition/twilightcomp19</a> during the dates specified above. It is the participant&apos;s responsibility to ensure all details are full and correct before submitting their entry form.</li> 
   	<li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters.</li>
-  	<li>The winner of the Promotion will be chosen at random. The prizes must be claimed before 5pm AEST on 11th March 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 12th March 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
+  	<li>The winner of the Promotion will be chosen at random. The prizes must be claimed before 5pm AEST on 12th May 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 13th May 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
   	<li>Each prize is as follows:
 		<ul>
         	<li>-  A pair of Bedlam (RRP: $259.95) 
@@ -15,7 +15,7 @@
 		</ul>
     The winner receives one prize. They have the choice of which prize they will recieve.
   	</li>
-  	<li>The Promoter reserves the right to request winners to provide proof of their identity and proof of New Zealand residency in order to claim the prize. Proof of identification and residency is at the judgment of the promoter.</li>
+  	<li>The Promoter reserves the right to request winners to provide proof of their identity and proof of Australian residency in order to claim the prize. Proof of identification and residency is at the judgment of the promoter.</li>
     <li>Entrants must be over 18 years of age, or have permission from their Parent or Guardian.</li>
     <li>All prizes must be taken as offered. The prize, or any unused portion of the prize, is not transferable or exchangeable and cannot be taken as cash. The Promoter accepts no responsibility for any variation in the prize value.</li>
 	<li>If for any reason this competition is not capable of running as planned (including but not limited to) infection by computer virus, bugs, tampering, unauthorised intervention, fraud, technical failures or any other causes beyond the control of the Promoter which corrupts or affects the administration security, fairness, integrity or proper conduct of this competition, the Promoter reserves the right in its sole discretion to cancel, terminate, modify or suspend the competition in accordance with all state and territory regulations.</li>
