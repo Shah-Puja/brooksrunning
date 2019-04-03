@@ -23,7 +23,10 @@
             <div class="cart-left--container">
                 <div class="heading">
                     <h3 class="br-heading">Shopping Cart</h3>
-                     <span class="offer">Free shipping on orders over $50 Australia wide.</span>
+                    @if(session('promo_expire') == "Promo Expired") 
+                        <div class="promo-code-warning"><span class="icon-notification"></span><span class="notification">Promotion Code has expired so we could not proceed to Payment. Please check your Cart Details. </span></div>
+                    @endif
+                    <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
                 @if(!empty($cart))
                 <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
@@ -233,11 +236,11 @@
                             <div class="order order_summary">
                                 @include('cart.order_summary') 
                             </div>
-@if(!empty($cart))
-<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
-@else
-<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/cart'">Proceed to Purchase</button>
-@endif
+                @if(!empty($cart))
+                    <button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
+                @else
+                    <button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/cart'">Proceed to Purchase</button>
+                @endif
                             
 
                         </div>

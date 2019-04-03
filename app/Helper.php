@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Promo_mast;
 use App\Models\Cart;
 use App\Models\Order;
 
@@ -23,6 +24,23 @@ if (!function_exists('benefit_img_check')) {
         }
 
         return $img_url;
+    }
+
+}
+
+if (!function_exists('check_promo_validity')) {
+
+    function check_promo_validity($promo_string) {
+        if (isset($promo_string) && $promo_string != '') {
+            $promo_validity = promo_mast::where('promo_string', $promo_string)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+            if (empty($promo_validity)) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return true;
+        }
     }
 
 }

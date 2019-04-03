@@ -1584,97 +1584,93 @@
     }
     
   }
-  .hpgray-wrapper{
-    margin: 25px 0;
+  .homepage-cate--link{
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
     @media #{$mobile-only}{
        max-width: 400px;
-       margin: 25px auto;
+       margin: 20px auto;
     }
-    .homepage-cate--link{
-      position: relative;
+    img{
+      width:100%;
+    }
+    .btn{
+      position: absolute;
+      left:0;
+      right:0;
+      bottom: 20px; 
+      max-width: 220px;
+      margin: auto;
+      padding: 0 15px;
+      margin: auto;
+    }
+    &.shoe-finder{
+      background-color: $lightblue;
+      padding: 18px 10px;
       text-align: center;
-      margin-bottom: 20px;
-      img{
-        width:100%;
+      min-height: 240px;
+      @media #{$tab-only}{
+        min-height: 145px;
+        padding: 6px 5px;
       }
-      .btn{
-        position: absolute;
-        left:0;
-        right:0;
-        bottom: 20px; 
-        max-width: 220px;
-        margin: auto;
-        padding: 0 15px;
-        margin: auto;
+      @media #{$desktop-only}{
+        min-height: 190px;
+        padding: 12px 5px;
       }
-      &.shoe-finder{
-        background-color: $lightblue;
-        padding: 18px 10px;
-        text-align: center;
-        min-height: 240px;
-        @media #{$tab-only}{
-          min-height: 145px;
-          padding: 6px 5px;
+      h3{
+        margin: 0;
+        font-size: 20px;
+         @media #{$tab-only}{
+          font-size: 15px !important;
         }
         @media #{$desktop-only}{
-          min-height: 190px;
-          padding: 12px 5px;
-        }
-        h3{
-          margin: 0;
-          font-size: 20px;
-           @media #{$tab-only}{
-            font-size: 15px !important;
-          }
-          @media #{$desktop-only}{
-            font-size: 15px !important;
-          }
-        }
-        p{
-          margin: 0;
-          margin-bottom: 2px;
-          font-size: 17px;
-          @media #{$tab-only}{
-            margin-bottom: 2px;
-            font-size: 14px;
-          }
-          @media #{$desktop-only}{
-            margin-bottom: 2px;
-            font-size: 14px;
-          }
-        }
-        .btn{
-        @media #{$tab-only}{
-          bottom: 5px;
-          max-width: 145px;
-          padding: 0px 18px;
-          .secondary-button {
-            padding: 10px 12px;
-            font-size: 13px;
-          }
-         }
-         @media #{$desktop-only}{
-          bottom: 12px;
-          .secondary-button {
-            padding: 10px 12px;
-            font-size: 16px;
-          }
-         }
-        }
-        img{
-          width: auto;
-          max-width: 100%;
-          margin: auto;
-          @media #{$tab-only}{
-          width:35%;
-         }
-         @media #{$desktop-only}{
-          width:35%;
-         }
+          font-size: 15px !important;
         }
       }
+      p{
+        margin: 0;
+        margin-bottom: 2px;
+        font-size: 17px;
+        @media #{$tab-only}{
+          margin-bottom: 2px;
+          font-size: 14px;
+        }
+        @media #{$desktop-only}{
+          margin-bottom: 2px;
+          font-size: 14px;
+        }
+      }
+      .btn{
+      @media #{$tab-only}{
+        bottom: 5px;
+        max-width: 145px;
+        padding: 0px 18px;
+        .secondary-button {
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+       }
+       @media #{$desktop-only}{
+        bottom: 12px;
+        .secondary-button {
+          padding: 10px 12px;
+          font-size: 16px;
+        }
+       }
+      }
+      img{
+        width: auto;
+        max-width: 100%;
+        margin: auto;
+        @media #{$tab-only}{
+        width:35%;
+       }
+       @media #{$desktop-only}{
+        width:35%;
+       }
+      }
     }
-    
   }
   .homepage-signup{
     background-color: $blue;
@@ -3851,6 +3847,21 @@
         }
         .offer{
          color: $red;
+        }
+        .promo-code-warning{
+          color: red;
+          font-size: 16px;
+          padding: 5px;
+          margin-bottom: 6px;
+          margin-top: 6px;
+          @extend %extrabold-font;
+          border: 2px solid  red;
+           .icon-notification{
+             margin-right: 5px;
+           }
+           .notification{
+             line-height:22px;
+           }
         }
      }
      .pdp-proceed-mob{

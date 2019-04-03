@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use App\Models\Promo_mast;
+use App\Models\User;
 
 class CartController extends Controller {
 
@@ -111,8 +112,26 @@ class CartController extends Controller {
         $freight_charges = 0;
 
         if (!empty($cart)) {
-            $cart_xml = "<Cart>
-						<PersonId>115414</PersonId>
+            /* $cart_xml = "<Cart>
+              <PersonId>115414</PersonId>
+              <Contacts>
+              </Contacts>
+              <CartDetails>\n\t"; */
+            $cart_xml = "<Cart>";
+            if (auth()->id() != 0) { //check user is logged in or not for Loyalty program
+                $personid = User::where('id', auth()->id())->select('person_idx')->first();
+                if ($personid->person_idx != '') {
+                    $personidx = $personid->person_idx;
+                } else {
+                    //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
+                    $personidx = '115414';
+                }
+                $cart_xml .= "<PersonId>$personidx</PersonId>";
+            } else {
+                $cart_xml .= "<PersonId>115414</PersonId>";
+            }
+
+            $cart_xml .= "
 						<Contacts>
 						</Contacts>
 							<CartDetails>\n\t";
@@ -126,31 +145,33 @@ class CartController extends Controller {
             }
             $cart_xml .= "
                             </CartDetails>
-						</Cart>";
+                        </Cart>";
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
             $xml = simplexml_load_string($bridge);
-            //$xml = $xml->simplexml_load_string();
-            /* echo "<pre>";
-              print_r($xml);die; */
-            //dd($xml);
             $cartdetail_arr = array();
+
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                    /* echo "<pre>";
-                      print_r($curr_detail);die; */
-                    $temp = (array) $curr_detail;
+                    $curr_detail_arr = '';
                     $sku = $curr_detail->SkuId;
+                    $ap21_discount_xml = $curr_detail->Discounts->asXML();
+
+                    Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['ap21_discount_xml' => $ap21_discount_xml]);
+                    $temp = (array) $curr_detail;
+
                     if (!empty($curr_detail->Price) && $curr_detail->ProductCode != 'EXPRESS') {
-                        //$result = $this->cart_model->get_prod_type($sku, $user_id);
+                        if (isset($curr_detail->Discounts) && $curr_detail->Discounts->Discount->DiscountType == "LoyaltyDiscount") {
+                            $loyalty_id = (isset($curr_detail->Discounts->Discount->LoyaltyId) && $curr_detail->Discounts->Discount->LoyaltyId != '') ? $curr_detail->Discounts->Discount->LoyaltyId : '';
+                            Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['loyalty_id' => $loyalty_id]);
+                        }
+
                         if (!empty($result)) {
-                            //$temp['prod_type'] = $result->prod_type;
                             $temp['cart_id'] = $result->cart_id;
                             $temp['original_price'] = $result->original_price;
                             $temp['code'] = $result->code; //Style
                             $temp['product_id'] = $result->product_id;
                             $temp['color'] = $result->color;
-                            //$temp['price_sale']= $result->price_sale;
                         }
                     }
                     $cartdetail_arr[] = $temp;
@@ -158,9 +179,7 @@ class CartController extends Controller {
                 $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
                 $total_due = (array) $xml->TotalDue;
                 $cart_total = $total_due[0];
-                //$cart->delivery_type
-                /* echo "<pre>";
-                  print_r();die; */
+
                 $delivery_option = $cart['delivery_type'];
                 if ($delivery_option == 'new_zealand') {
                     $freight_charges = config('site.SHIPPING_NZ_PRICE');
@@ -173,8 +192,6 @@ class CartController extends Controller {
                         $freight_charges = '0';
                     }
                 } else {
-                    //echo $delivery_option;die;
-                    //echo "<pre>";print_r($cart['freight_cost']);die;
                     if (!empty($cart)) {
                         $freight_charges = $cart['freight_cost'];
                     }
@@ -195,7 +212,7 @@ class CartController extends Controller {
     public function update_delivery_option() {
         $delivery_option = request('delivery_option_value');
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             $cart_total = $cart->total;
             if ($delivery_option == 'express') {
                 $freight_charges = '15';
@@ -217,11 +234,11 @@ class CartController extends Controller {
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
-    
+
                 if ($AvailableAmount > $cartTotal) {
                     $gift_discount = $cartTotal;
                     $gift_cart_total = 0;

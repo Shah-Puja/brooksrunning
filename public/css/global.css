@@ -274,6 +274,10 @@ body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wra
   content: "";
 }
 
+.icon-notification:before {
+  content: "";
+}
+
 .icon-youtube:before {
   content: url("../images/youtube-with-circle.svg");
   width: 38px;
