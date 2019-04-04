@@ -3248,7 +3248,7 @@ width: 100%;
             }
           }
           @media #{$mobile-only} {
-            max-width: 168px;
+            // max-width: 168px;
             margin: auto;
             padding: 10px 0 10px;
           }
