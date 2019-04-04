@@ -22,7 +22,7 @@
 				<div class="row">
 					<div class="tab-12">
 						<div class="comp_bottom">
-							<p>Competition Closes: 28th February 2019 </p><p class="notice">Brooks Sports will not use your email address or information for any purpose other than notifying the winner of the competition and distributing our email newsletter.  </p>
+							<p>Competition Closes: 30th April 2019 </p><p class="notice">Brooks Sports will not use your email address or information for any purpose other than notifying the winner of the competition and distributing our email newsletter.  </p>
 							<p class="privacy">Click here to view the <a class="privacy-terms--popup" href="javascript:void(0)">Terms &amp; Conditions of Entry</a></p>                      
 						</div>
 					</div>
