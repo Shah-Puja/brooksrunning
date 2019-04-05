@@ -48,7 +48,7 @@
 										<div class="input-wrapper">
 											<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
 												<option value="">Where</option>
-												<option value="Australia ">Australia </option>
+												<option  style="font-weight:bold;color:#000;" value="Australia ">Australia</option>
 												<option value="ACT">ACT</option>
 												<option  value="NSW">NSW</option>
 												<option value="NT">NT</option>
@@ -57,7 +57,7 @@
 												<option value="TAS">TAS</option>
 												<option value="VIC">VIC</option>
 												<option value="WA">WA</option>
-												<option value="New Zealand">New Zealand</option>
+												<option  style="font-weight:bold;color:#000;" value="New Zealand">New Zealand</option>
 											</select>
 										</div>
 									</div>
@@ -80,7 +80,6 @@
 												<option value="January 2020">January 2020</option>
 												<option value="February 2020">February 2020</option>
 												<option value="March 2020">March 2020</option>
-												<option value="other">Other</option>
 											</select>
 										</div>
 									</div>
