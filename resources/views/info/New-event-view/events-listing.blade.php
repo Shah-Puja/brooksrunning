@@ -243,7 +243,7 @@
 								<div class="img">
 										<img id="event-img" src="images/new-events/logo/run_the_west_logo.jpg" alt="">
 								</div>
-								</a>
+								</a> 
 								
 								<a href="#">
 									<div class="info">
