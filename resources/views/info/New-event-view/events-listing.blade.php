@@ -34,16 +34,16 @@
         </div>
 </div>
 <section class="event-filters">
-<div class="wrapper">
+<div class="event-full-background  wrapper">
 		<div class="row">
 			<div class="col-12 tab-12">
 				<div class="row">
-					<div class="wrapper">
+					<div class="wrapper pr-0 pl-0">
 						<div class="event-background wrapper">
 							<form name="event_filter" method='post' action='/meet_brooks/events'>
 							
 							<h1 class="br-mainheading">Find an Event</h1>
-								<div class="col-4 tab-4">
+								<div class="col-4 tab-4 mob-6">
 									<div class="event-filters--wrapper">
 										<div class="input-wrapper">
 											<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
@@ -62,7 +62,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-4 tab-4">
+								<div class="col-4 tab-4 mob-6">
 									<div class="event-filters--wrapper">
 										<div class="input-wrapper">
 											<select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-4 tab-4">
+								<div class="col-4 tab-4 mob-12">
 									<div class="event-filters--wrapper">
 										<div class="btn">
 											<button type="submit" class="primary-button">Find Events</button>
@@ -110,7 +110,7 @@
 			<div class="col-12 tab-12">
 				<div class="row">
 					<div class="event-wrapper-container">
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -132,12 +132,12 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
 								<div class="img">
-										<img id="event-img" src="images/new-events/logo/SunsetSeries_logo.jpg" alt="">
+										<img id="event-img" src="images/new-events/logo/SunsetSeries_logo.png" alt="">
 								</div>
 								</a>
 								
@@ -154,7 +154,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -176,7 +176,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -196,7 +196,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -216,7 +216,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -236,7 +236,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -256,7 +256,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -276,7 +276,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -311,8 +311,9 @@
 		<div class="row">
 			<div class="col-12 tab-12">
 				<div class="row">
-					<div class="event-wrapper-container">
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<h1 class="br-mainheading">Other Upcoming Events</h1>
+					<div class="event-wrapper-container">	
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -323,7 +324,7 @@
 								
 								<a href="#">
 									<div class="info">
-										<h3>Olivia Newton John Wellness Walk & Research Run</h3>
+										<h3>Olivia Newton John Wellness Walk &amp; Research Run</h3>
 										
 										<div class="event-info-sub"><div class="date">September 2019</div>
 										<div class="location">Melbourne, VIC</div></div>
@@ -331,7 +332,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -350,7 +351,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
 							<div class="event-section">
 								
 								<a href="#" >
