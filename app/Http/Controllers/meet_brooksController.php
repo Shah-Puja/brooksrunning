@@ -33,9 +33,9 @@ class meet_brooksController extends Controller
         if(!$competition){
             return abort(404);
         }
-        if(!view()->exists('meet_brooks.competition.'.$competition->comp_form)){
+        /*if(!view()->exists('meet_brooks.competition.'.$competition->comp_form)){
             return abort(404);
-         }
+         }*/
         return view('meet_brooks.competition.competition',compact('competition'));
 
     }

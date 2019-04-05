@@ -31,7 +31,8 @@
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 					
 					@if(!empty($competition->comp_form))
-						@include('meet_brooks.competition.'.$competition->comp_form)
+						<!--@include('meet_brooks.competition.'.$competition->comp_form)-->
+						{!!$competition->comp_form!!}
 					@endif
 				
 				</div>
@@ -68,7 +69,8 @@
         <div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>  
 			@if(!empty($competition->terms_conditions))      
-            <div class="privacy-content">@include('meet_brooks.terms_conditions.'.$competition->terms_conditions)</div>
+            <!--<div class="privacy-content">@include('meet_brooks.terms_conditions.'.$competition->terms_conditions)</div>-->
+			<div class="privacy-content">{!!$competition->terms_conditions!!}</div>
 			@endif
 		</div>
 	</div>

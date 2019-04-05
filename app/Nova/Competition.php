@@ -59,6 +59,8 @@ class Competition extends Resource
             Text::make('Slug','slug')->sortable(),
             Text::make('Description','desc')->hideFromIndex(),
             Textarea::make('Text','comp_text')->hideFromIndex(),
+            Textarea::make('Form','comp_form')->hideFromIndex(),
+            Textarea::make('Terms Conditions','terms_conditions')->hideFromIndex(),
             Textarea::make('Footer Text','footer_text')->hideFromIndex(),
             Textarea::make('Close Text','close_text')->hideFromIndex(),
             Image::make('Banner','banner')->disk('public')->path('images/competitions/'.$request->slug)->storeAs(function (Request $request) {

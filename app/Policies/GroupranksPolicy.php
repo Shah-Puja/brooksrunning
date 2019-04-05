@@ -29,7 +29,7 @@ class GroupranksPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class GroupranksPolicy
      */
     public function delete(User $user)
     {
-        return true;
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class GroupranksPolicy
      */
     public function restore(User $user)
     {
-        return true;
+        return false;
     }
 
     /**
@@ -77,6 +77,6 @@ class GroupranksPolicy
      */
     public function forceDelete(User $user)
     {
-        return true;
+        return false;
     }
 }

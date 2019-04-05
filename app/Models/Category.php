@@ -50,10 +50,18 @@ class Category extends Model
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
+
             
             $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
                     if(isset($product->groupranks) && count($product->groupranks) >0){
-                        foreach($product->groupranks as $group_rank):
+                        $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
+                            $data=[];
+                                     if($value->group_id==$cat_id){
+                                        $data[] = $value;
+                                     }
+                                return $data;
+                        });
+                        foreach(collect($filter_product) as $group_rank):
                             if($cat_id==$group_rank->group_id):
                                 return $group_rank->display_rank;
                             else:
@@ -88,27 +96,34 @@ class Category extends Model
                 }
             })
             ->with('variants')
+            ->with('groupranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
             //->get(['id','style','stylename', 'seqno', 'color_code']);
             //->values(); 
+   
 
-            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
-                if(isset($product->groupranks) && count($product->groupranks) >0){
-                    foreach($product->groupranks as $group_rank):
-                        if($cat_id==$group_rank->group_id):
-                            return  $group_rank->display_rank;
-                        else:
-                            return '1000000000';
-                        endif;
-                    endforeach;
-                }else{
-                    return '1000000000';
-                }
-          });
-
-            
+        $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+            if(isset($product->groupranks) && count($product->groupranks) >0){
+                $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
+                    $data=[];
+                             if($value->group_id==$cat_id){
+                                $data[] = $value;
+                             }
+                        return $data;
+                });
+                foreach(collect($filter_product) as $group_rank):
+                    if($cat_id==$group_rank->group_id):
+                        return $group_rank->display_rank;
+                    else:
+                        return '1000000000';
+                    endif;
+                endforeach;
+            }else{
+                return '1000000000';
+            }
+      });
             /*$sorted_products = $products->sortByDesc(function ($product, $key){
                 foreach($product->variants as $variant):
                       return $variant->release_date;
