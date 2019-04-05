@@ -402,7 +402,7 @@
                         <table class="table__specs">
                             <tbody>
                                 @foreach($specification_info as $curr_specs)
-                                    @if ($curr_specs != '')
+                                    @if (trim($curr_specs) != '')
                                         @php
                                             $spec_arr = explode(':', $curr_specs);
                                             $spec_name = $spec_arr['0'];
@@ -427,13 +427,13 @@
                             <h3 class="br-heading">Product Features</h3>
                             <table class="table__specs">
                                 <tbody>
-                                    @foreach($product_features as $product_feature)
-                                        @if ($product_feature != '')
-                                        <tr class="specs__row">
-                                            <td class="label--info">
-                                                <p style="text-align:left">{!! html_entity_decode($product_feature) !!} </p>
-                                            </td>
-                                        </tr>
+                                    @foreach(array_filter($product_features) as $key=>$product_feature)
+                                        @if (!empty(trim($product_feature)))
+                                            <tr class="specs__row">
+                                                <td class="label--info">
+                                                    <p style="text-align:left">{!! html_entity_decode($product_feature) !!} </p>
+                                                </td>
+                                            </tr>
                                         @endif
                                     @endforeach
                                 </tbody>
@@ -441,7 +441,7 @@
                             <br>
                         @endif
                         
-                        @if(!empty($fabric))
+                        @if(!empty(trim($fabric)))
                             <h3 class="br-heading">Fabric</h3>
                             <p class="br-info">{!! html_entity_decode($fabric) !!}</p>
                         @endif
