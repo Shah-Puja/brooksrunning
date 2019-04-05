@@ -19,12 +19,12 @@
                                             <a href="/events-listing">Events</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">International Women’s Day Fun Run</a>
+                                            <a href="JavaScript:Void(0);" class="active">Albany Lakes Summer Series</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="event-title">Sunset Series</h1>
+                        <h1 class="event-title">Albany Lakes Summer Series</h1>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>

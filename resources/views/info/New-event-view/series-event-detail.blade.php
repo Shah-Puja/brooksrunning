@@ -19,7 +19,7 @@
                                             <a href="/events-listing">Events</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">International Women’s Day Fun Run</a>
+                                            <a href="JavaScript:Void(0);" class="active">Sunset Series</a>
                                         </li>
                                     </ul>
                                 </div>
