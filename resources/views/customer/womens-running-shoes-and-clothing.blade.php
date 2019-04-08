@@ -178,27 +178,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_sportsbras.jpg">
+							<img src="/images/landingpage/Womens/women_tights.jpg">
 						    <div class="title">
-						       <h1 class="happy left">Women's <br/> Sports Bra's</h2>
+						       <h1 class="happy left">Women's  <br/>  Tights</h2>
 						    </div>
-					 </div>
+					 </div> 
 					 <div class="lp-info-block">
 							<p>A great sports bra is at the center of every woman's run. Every Brooks sports bra is engineered to support the unique needs of women everywhere. Experience the difference a Brooks Sports bra can make.</p>
-							<a class="primary-button" href="/womens-sports-bras">Shop Sports Bras</a>
+							<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Tights</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_tops.jpg">
+							<img src="/images/landingpage/Womens/women_jackets.jpg">
 						    <div class="title">
-						        <h1 class="happy left">Women's<br>Tops</h2>
+						        <h1 class="happy left">Women's<br>Jackets</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
 							<p>Whether you’re training for a marathon or enjoying a run around the neighbourhood, Brooks’ running tops will ensure practical functionality and a stylish look. </p>
-							<a class="primary-button" href="/womens-running-tops">Shop tops</a>
+							<a class="primary-button" href="/womens-running-pants-tights">Shop Jackets</a>
 					</div>
 				</div>
 			</div>
