@@ -182,7 +182,7 @@
 						    <div class="title">
 						       <h1 class="happy left">Women's  <br/>  Tights</h2>
 						    </div>
-					 </div>
+					 </div> 
 					 <div class="lp-info-block">
 							<p>A great sports bra is at the center of every woman's run. Every Brooks sports bra is engineered to support the unique needs of women everywhere. Experience the difference a Brooks Sports bra can make.</p>
 							<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Tights</a>
