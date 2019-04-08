@@ -2,7 +2,8 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css">
-
+<style>
+	</style>
 <div class="create-account--header event__hero">
  
         <div class="row">
@@ -109,7 +110,7 @@
 			<div class="col-12 tab-12">
 				<div class="row">
 					<div class="event-wrapper-container">
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -131,7 +132,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -153,7 +154,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -175,7 +176,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -195,7 +196,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -215,7 +216,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -235,7 +236,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -254,7 +255,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -274,7 +275,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -311,7 +312,7 @@
 				<div class="row">
 						<h1 class="br-mainheading">Other Upcoming Events</h1>
 					<div class="event-wrapper-container">	
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -330,7 +331,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
@@ -349,7 +350,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="mob-6 col-4 tab-4 event-wrapper__sub">
+						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">
 								
 								<a href="#" >
