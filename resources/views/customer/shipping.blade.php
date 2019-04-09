@@ -343,7 +343,7 @@
                                                 $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
                                             }
                                         @endphp
-                                        <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
+                                        <input type="number" pattern="\d*" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
                                     </div>
                                 </div>
                             </div>
@@ -504,7 +504,7 @@
                                                 endif;
                                             ?>
                                             <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
-                                            <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
+                                            <input type="number" pattern="\d*" name="b_phone" class="input-field phone-number" data-label-name="phone">
                                         </div>
                                     </div>
                                 </div>
