@@ -3873,7 +3873,7 @@ textarea {
         .event-filters--wrapper .input-wrapper .input-field {
           margin-bottom: 7px; } }
       .event-filters--wrapper .input-wrapper .select-field {
-        background-color: #ffffff; }
+        background: #fff; }
         .event-filters--wrapper .input-wrapper .select-field option {
           color: #000000;
           font-size: 18px; }

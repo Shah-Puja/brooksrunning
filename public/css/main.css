@@ -5071,7 +5071,7 @@ textarea {
   }
 }
 .event-filters--wrapper .input-wrapper .select-field {
-  background-color: #ffffff;
+  background: #fff;
 }
 .event-filters--wrapper .input-wrapper .select-field option {
   color: #000000;
