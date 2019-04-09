@@ -114,7 +114,7 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_clothingbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_clothingbanner.jpg">
 	        <img src="/images/landingpage/Mens/men_clothingbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
