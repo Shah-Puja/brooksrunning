@@ -6814,6 +6814,22 @@ textarea {
     max-width: 150px;
   }
 }
+.event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub {
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  max-width: 268px;
+}
+@media only screen and (max-width: 767px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub {
+    height: 1px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub {
+    height: auto;
+  }
+}
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date {
   font-size: 18px;
 }

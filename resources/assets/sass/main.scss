@@ -3450,10 +3450,14 @@ width: 100%;
               
             }
             .event-info-sub{
-              // height:40px;
-              // position:absolute;
-              // bottom:0; 
-              // max-width:268px;
+              height:10px;
+              position:absolute;
+              bottom:0; 
+              max-width:268px;
+              
+              @media #{$mobile-only}{ height:1px;}
+              
+               @media #{$tab-only}{ height:auto;}
               .date{
                 @extend %info-font;
                 font-size: 18px;
