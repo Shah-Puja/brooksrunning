@@ -6679,6 +6679,7 @@ textarea {
 }
 .event-filters--wrapper .input-wrapper .select-field {
   background: #fff;
+  font-size: 18px;
 }
 .event-filters--wrapper .input-wrapper .select-field option {
   color: #000000;
