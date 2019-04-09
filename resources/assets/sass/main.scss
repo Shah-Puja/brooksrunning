@@ -2804,19 +2804,39 @@ width: 100%;
 /* Start New Event Layout*/
 .event__hero{
   height: auto;
-  max-height: 400px;
+  max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-color: #0363F7;
+  @media #{$mobile-only}{
+  height: auto;
+  max-height: 500px;
+  .pl-0{
+    padding-left:0 !important;
+    }
+    .pr-0{
+        padding-right: 0 !important;
+    } 
+  }
+  @media #{$tab-only}{
+    
+  max-height: 500px;
+    .pl-0{
+      padding-left:0 !important;
+      }
+      .pr-0{
+          padding-right: 0 !important;
+      } 
+  }
   .m-block--hero--basic--collection {
     background: #0363F7;
     overflow-x: visible;
     padding: 8px 0 0;
     position: relative;
-    border-left: 1px solid black;
     .collection-hero-overlay {
       background: url(../images/Limited-Edition/curve-blue-n.png);
       background-repeat: no-repeat;
@@ -2854,8 +2874,8 @@ width: 100%;
     }
   }
   .large {
-    font-size: 50px;
-    line-height: 55px;
+    font-size: 45px;
+    line-height: 0.5;
     
     @media #{$mobile-only}{
       font-size: 30px;
@@ -2865,8 +2885,8 @@ width: 100%;
     }
 }
 .event-title {
-  font-size: 55px;
-  width: 80%;
+  font-size: 45px;
+  width: 60%;
   line-height:1.1;
   @media #{$mobile-only}{
     font-size: 30px;
@@ -2885,7 +2905,7 @@ width: 100%;
 .m-block--hero--collection__content{
   p {
     color: #fff;
-    margin: 3rem 0;
+    margin: 2rem 0;
     @extend %info-font;
     @media #{$mobile-only} {
       color: #fff;
@@ -2934,6 +2954,11 @@ width: 100%;
   .m-block--hero__content__copy {
     color: #0E0E0E;
     margin: 0;
+    .about-header{
+      @media #{$mobile-only}{
+      text-align: center;
+      }
+    }
   }
   @media #{$mobile-only}{
   margin: 0 20px;
@@ -2964,6 +2989,7 @@ width: 100%;
       position: absolute;
       top: 0;
       width: calc(100% - -70px);
+      background-size: cover;
     }
     @media #{$tab-only}{
       z-index: 1000;
@@ -2974,10 +3000,11 @@ width: 100%;
       content: ' ';
       display: block;
       height: 0px;
-      left: -57px;
+      left: -47px;
       position: absolute;
       top: 0;
       width: calc(100% - -70px);
+      background-size: cover;
     }
     
   }
@@ -2985,15 +3012,16 @@ width: 100%;
 .category__hero__image {
     display: block;
     position: relative;
+   
 }
 @media (min-width: 975px){
 .m-block--hero--basic--collection {
     float: left;
-    padding: 23px 0 0;
-    height: 400px;
+    padding: 15px 0 0;
+    height: 300px;
 }
 .m-block--hero--collection__content {
-    margin: 0 10px 120px 95px;
+    margin: 15px 0px 0px 15px;
     padding: 0;
     // float: right;
   .breadcrumbs {
@@ -3020,9 +3048,14 @@ width: 100%;
 .category__hero__image {
   z-index: 1;
   border-left: 1px solid #0363F7;
+  position: absolute ;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%,-50%);
+  -ms-transform: translate(0%,-50%);
   img {
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -3062,6 +3095,10 @@ width: 100%;
     z-index: 100;
     }
   }
+
+ 
+
+
 }
 .event-intro{
   background-color: #fff;
@@ -3097,7 +3134,7 @@ width: 100%;
   p{
     max-width: 100%;
     color:#0E0E0E;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
     margin-bottom: 20px;
     @extend %info-font;
@@ -3131,9 +3168,10 @@ width: 100%;
       }
   }
   .event-findmore-btn{
-    padding-top: 12px;
+    padding-top: 18px;
     max-width: 320px;
     margin: auto;
+    
   }
   .eventunderline{
     height:10px; color: #000; background-color: #000; margin: 5px auto;
@@ -3202,7 +3240,8 @@ width: 100%;
     .pr-0{
         padding-right: 0 !important;
     }
-  margin: 10px 0 0;
+  margin: 20px 0 0;
+  width:100%;
   @media #{$tabmob-only}{
     padding: 20px 0;
   }
@@ -3211,12 +3250,14 @@ width: 100%;
     text-align: center;
   }
   .event-full-background{
+  max-width:1170px;
+  margin : 0 auto;
     @media #{$mobile-only}{
     background-color: #F2F2F2;
     }
   }
   .event-background{
-    padding: 10px 60px;
+    padding: 10px 45px;
     background-color: #F2F2F2;
     color: $black;
     @media #{$tab-only}{
@@ -3285,13 +3326,18 @@ width: 100%;
       option{
         color:$black;
         @extend %info-font;
+        font-size: 18px;
       }
      } 
     }
     .btn{
       padding-top: 12px;
-      max-width: 320px;
-      margin: auto;
+      max-width: 300px;
+      margin: 0 10px auto;
+      
+      @media #{$mobile-only}{
+        margin: 0px auto;
+      }
     }
   }
 }
@@ -3320,10 +3366,16 @@ width: 100%;
           border: 1px solid  $darkgray;
           transition: border-width 0.6s linear;
           // max-width:330px;
-          //  height:435px;
-        
+          //  height:405px;
+          max-width: 330px;
+           height: 350px;
           &:hover {
-            border: 1px solid  #005CFB;
+            // border: 1px solid  #005CFB;
+            -webkit-box-shadow: 1px 1px 8px 0px rgba(0,92,251,1);
+            -moz-box-shadow: 1px 1px 8px 0px rgba(0,92,251,1);
+            box-shadow: 1px 1px 8px 0px rgba(0,92,251,1);
+            max-width: 335px;
+           height: 355px;
             .info{
               h3{
                 color: #0262F7;
@@ -3337,11 +3389,15 @@ width: 100%;
             }
           }
           @media #{$mobile-only} {
-            // max-width: 168px;
+            height: 300px;
             margin: auto;
             padding: 2px 0 2px;
           }
-         
+          @media #{$tab-only} {
+            height: 300px;
+            margin: auto;
+            padding: 2px 0 2px;
+          }
           a{
             display: block;
             color: $black;
@@ -3354,7 +3410,6 @@ width: 100%;
             width: 65%;
             @media #{$mobile-only}{
               height:110px;
-            // width:150px;
                width: 90%;
             }
             img{
@@ -3368,38 +3423,28 @@ width: 100%;
             display: block;
             position: relative;
             padding-left:20px;
-  
-            // max-width:268px;
             height:150px;
             @media #{$mobile-only} {
               padding: 0px 10px 0px;
-              height: 140px;
+              height: 100px;
             }
-            // @media #{$tab-only} {
-            //   height:130px;
-            // }
             h3{
               @extend %extrabold-font;
               font-size: 22px;
               line-height: 1.1;
               color:$black;
-              // max-width:268px;
               max-width:200px;
               position:relative;
               height:82px;
               @media #{$mobile-only}{
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 1.2;
-                height: 72px;
+                height: 90px;
               }
-              // @media #{$desktop-only}{
-              //   font-size: 20px;
-              //   line-height: 1.1;
-              //   height: 72px;
-              // }
                @media #{$tab-only} {
                 font-size: 18px;
                 line-height: 1.1;
+                 max-width: 150px;
               }
               
             }
@@ -3415,7 +3460,6 @@ width: 100%;
                   font-size: 14px;
                   margin-bottom: 0px;
                 }
-                // @media #{$tab-only} { font-size: 15px;}
               }
               .location{
                 @extend %info-font;
@@ -3423,7 +3467,6 @@ width: 100%;
                 @media #{$mobile-only}{
                   font-size: 14px;
                 }
-                // @media #{$tab-only} { font-size: 15px;}
               }
             }
           
@@ -3437,6 +3480,19 @@ width: 100%;
     text-align: left;
     margin : 0px 80px;
     font-size:28px;
+    @media #{$mobile-only}{
+      margin : 0px 25px;
+      font-size:22px;
+    }
+    @media #{$tab-only}{
+      margin : 0px 25px;
+      font-size:22px;
+    }
+  }
+  .br-more-event{
+    text-align: left;
+    margin : 0px 80px;
+    @extend  %info-font;
     @media #{$mobile-only}{
       margin : 0px 25px;
       font-size:22px;
@@ -3498,9 +3554,10 @@ width: 100%;
         &:hover{
           background-color: $blue;
           color: $white;
-          border: 2px solid $white;
+          border: 2px solid $blue;
         }
       }
+     
     }
     &.info{
       @media #{$mobile-only}{

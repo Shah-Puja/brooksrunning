@@ -1,38 +1,50 @@
 @extends('customer.layouts.master')
 @section('content')
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css">
-<style>
+	<style>
+		@media only screen and (max-width: 767px) and (orientation: landscape) {
+		.event-mob-lanscape{
+			width: 33.3333333333%;
+			float: left;
+		}
+		.eventfilter-mob-landscape{
+
+		}
+	}
 	</style>
 <div class="create-account--header event__hero">
- 
+	<div class="wrapper pr-0 pl-0">	
         <div class="row">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
-                <div class="m-block--hero--collection__content">
-                    <div class="m-block--hero__content__copy">
-                    <div class="about-header">
-                        <div class="breadcrumbs">
-                                    <ul>
-                                        <li>
-                                            <a href="/">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="JavaScript:Void(0);" class="active">Events</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        <h1 class="large">Brooks at Events</h1>
-                       
-                        <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p>
-                    </div>
-                </div>
-                <div class="collection-hero-overlay hidden-mob"></div>
-            </div>
+			
+				<div class="m-block--hero--collection__content">
+						<div class="m-block--hero__content__copy">
+						<div class="about-header">
+							<div class="breadcrumbs">
+										<ul>
+											<li>
+												<a href="/">Home</a>
+											</li>
+											<li>
+												<a href="JavaScript:Void(0);" class="active">Events</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							<h1 class="large">Brooks at Events</h1>
+						
+							<p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p>
+						</div>
+					</div>
+					<div class="collection-hero-overlay hidden-mob"></div>
+				</div>
+			
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
                 <img src="/images/new-events/banner/brooks-events-header-image.jpg">
             </div>
-        </div>
+		</div>
+	</div>
 </div>
 <section class="event-filters">
 <div class="event-full-background  wrapper">
@@ -311,6 +323,7 @@
 			<div class="col-12 tab-12">
 				<div class="row">
 						<h1 class="br-mainheading">Other Upcoming Events</h1>
+						<p class="br-more-event">Check out upcoming events near you.</p>
 					<div class="event-wrapper-container">	
 						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">

@@ -132,7 +132,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.event-container .br-more-event, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -4520,20 +4520,43 @@ textarea {
 /* Start New Event Layout*/
 .event__hero {
   height: auto;
-  max-height: 400px;
+  max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-color: #0363F7;
+}
+@media only screen and (max-width: 767px) {
+  .event__hero {
+    height: auto;
+    max-height: 500px;
+  }
+  .event__hero .pl-0 {
+    padding-left: 0 !important;
+  }
+  .event__hero .pr-0 {
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event__hero {
+    max-height: 500px;
+  }
+  .event__hero .pl-0 {
+    padding-left: 0 !important;
+  }
+  .event__hero .pr-0 {
+    padding-right: 0 !important;
+  }
 }
 .event__hero .m-block--hero--basic--collection {
   background: #0363F7;
   overflow-x: visible;
   padding: 8px 0 0;
   position: relative;
-  border-left: 1px solid black;
 }
 .event__hero .m-block--hero--basic--collection .collection-hero-overlay {
   background: url(../images/Limited-Edition/curve-blue-n.png);
@@ -4578,8 +4601,8 @@ textarea {
   }
 }
 .event__hero .large {
-  font-size: 50px;
-  line-height: 55px;
+  font-size: 45px;
+  line-height: 0.5;
 }
 @media only screen and (max-width: 767px) {
   .event__hero .large {
@@ -4592,8 +4615,8 @@ textarea {
   }
 }
 .event__hero .event-title {
-  font-size: 55px;
-  width: 80%;
+  font-size: 45px;
+  width: 60%;
   line-height: 1.1;
 }
 @media only screen and (max-width: 767px) {
@@ -4615,7 +4638,7 @@ textarea {
 }
 .event__hero .m-block--hero--collection__content p {
   color: #fff;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 @media only screen and (max-width: 767px) {
   .event__hero .m-block--hero--collection__content p {
@@ -4673,6 +4696,11 @@ textarea {
   margin: 0;
 }
 @media only screen and (max-width: 767px) {
+  .event__hero .m-block--hero--collection__content .m-block--hero__content__copy .about-header {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
   .event__hero .m-block--hero--collection__content {
     margin: 0 20px;
     padding: 0 0 31px;
@@ -4702,6 +4730,7 @@ textarea {
     position: absolute;
     top: 0;
     width: calc(100% - -70px);
+    background-size: cover;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -4714,10 +4743,11 @@ textarea {
     content: " ";
     display: block;
     height: 0px;
-    left: -57px;
+    left: -47px;
     position: absolute;
     top: 0;
     width: calc(100% - -70px);
+    background-size: cover;
   }
 }
 .event__hero .category__hero__image {
@@ -4727,11 +4757,11 @@ textarea {
 @media (min-width: 975px) {
   .event__hero .m-block--hero--basic--collection {
     float: left;
-    padding: 23px 0 0;
-    height: 400px;
+    padding: 15px 0 0;
+    height: 300px;
   }
   .event__hero .m-block--hero--collection__content {
-    margin: 0 10px 120px 95px;
+    margin: 15px 0px 0px 15px;
     padding: 0;
   }
   .event__hero .m-block--hero--collection__content .breadcrumbs {
@@ -4754,10 +4784,15 @@ textarea {
   .event__hero .category__hero__image {
     z-index: 1;
     border-left: 1px solid #0363F7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
   }
   .event__hero .category__hero__image img {
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -4836,7 +4871,7 @@ textarea {
 .event-intro p {
   max-width: 100%;
   color: #0E0E0E;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   margin-bottom: 20px;
 }
@@ -4873,7 +4908,7 @@ textarea {
   }
 }
 .event-intro .event-findmore-btn {
-  padding-top: 12px;
+  padding-top: 18px;
   max-width: 320px;
   margin: auto;
 }
@@ -4937,7 +4972,8 @@ textarea {
 }
 
 .event-filters {
-  margin: 10px 0 0;
+  margin: 20px 0 0;
+  width: 100%;
 }
 .event-filters .pl-0 {
   padding-left: 0 !important;
@@ -4956,13 +4992,17 @@ textarea {
     text-align: center;
   }
 }
+.event-filters .event-full-background {
+  max-width: 1170px;
+  margin: 0 auto;
+}
 @media only screen and (max-width: 767px) {
   .event-filters .event-full-background {
     background-color: #F2F2F2;
   }
 }
 .event-filters .event-background {
-  padding: 10px 60px;
+  padding: 10px 45px;
   background-color: #F2F2F2;
   color: #000000;
 }
@@ -5035,11 +5075,17 @@ textarea {
 }
 .event-filters--wrapper .input-wrapper .select-field option {
   color: #000000;
+  font-size: 18px;
 }
 .event-filters--wrapper .btn {
   padding-top: 12px;
-  max-width: 320px;
-  margin: auto;
+  max-width: 300px;
+  margin: 0 10px auto;
+}
+@media only screen and (max-width: 767px) {
+  .event-filters--wrapper .btn {
+    margin: 0px auto;
+  }
 }
 
 .event-container .event-wrapper-container {
@@ -5072,9 +5118,15 @@ textarea {
   padding: 15px;
   border: 1px solid #f2f2f2;
   transition: border-width 0.6s linear;
+  max-width: 330px;
+  height: 350px;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section:hover {
-  border: 1px solid #005CFB;
+  -webkit-box-shadow: 1px 1px 8px 0px #005cfb;
+  -moz-box-shadow: 1px 1px 8px 0px #005cfb;
+  box-shadow: 1px 1px 8px 0px #005cfb;
+  max-width: 335px;
+  height: 355px;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section:hover .info h3 {
   color: #0262F7;
@@ -5087,6 +5139,14 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section {
+    height: 300px;
+    margin: auto;
+    padding: 2px 0 2px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section {
+    height: 300px;
     margin: auto;
     padding: 2px 0 2px;
   }
@@ -5121,7 +5181,7 @@ textarea {
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info {
     padding: 0px 10px 0px;
-    height: 140px;
+    height: 100px;
   }
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .info h3 {
@@ -5134,15 +5194,16 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info h3 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.2;
-    height: 72px;
+    height: 90px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info h3 {
     font-size: 18px;
     line-height: 1.1;
+    max-width: 150px;
   }
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date {
@@ -5175,6 +5236,22 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event-container .br-mainheading {
+    margin: 0px 25px;
+    font-size: 22px;
+  }
+}
+.event-container .br-more-event {
+  text-align: left;
+  margin: 0px 80px;
+}
+@media only screen and (max-width: 767px) {
+  .event-container .br-more-event {
+    margin: 0px 25px;
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .br-more-event {
     margin: 0px 25px;
     font-size: 22px;
   }
@@ -5239,7 +5316,7 @@ textarea {
 .event-footer--wrapper .btn .secondary-button:hover {
   background-color: #0263f7;
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #0263f7;
 }
 @media only screen and (max-width: 767px) {
   .event-footer--wrapper.info {
