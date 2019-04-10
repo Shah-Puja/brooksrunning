@@ -86,7 +86,8 @@
 		            <p>Keep up to date with all the latest news, special offers, events, competitions and tips to keep you running happy!</p>
 	            </div>
 	        </div>
-			<form name="subscriber_news1" method='post' action='/meet_brooks/enewsletter'>
+			<!--<form name="subscriber_news1" method='post' action='/meet_brooks/enewsletter'>-->
+			<form name="subscriber_news1" method='post' action='/meet_brooks/newsletter_signup'>
 				@csrf
 				<div class="col-3 tab-6">
 					<div class="homepage-signup--wrapper">
