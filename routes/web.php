@@ -72,6 +72,8 @@ Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 
 // static success page for newsletter
+// Route::get('/meet_brooks/thank-you-signup', 'meet_brooksController@newsletter_thankyou_signup');
+
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
 Route::get('/shipping','BillingShippingController@create');
