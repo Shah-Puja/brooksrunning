@@ -34,7 +34,7 @@
 								</div>
 							<h1 class="large">Brooks at Events</h1>
 						
-							<p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p>
+							<p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year. Check out upcoming events near you.</p>
 						</div>
 					</div>
 					<div class="collection-hero-overlay hidden-mob"></div>
@@ -323,7 +323,6 @@
 			<div class="col-12 tab-12">
 				<div class="row">
 						<h1 class="br-mainheading">Other Upcoming Events</h1>
-						<p class="br-more-event">Check out upcoming events near you.</p>
 					<div class="event-wrapper-container">	
 						<div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
 							<div class="event-section">

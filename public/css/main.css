@@ -4639,14 +4639,16 @@ textarea {
 .event__hero .m-block--hero--collection__content p {
   color: #fff;
   margin: 2rem 0;
+  font-size: 18px;
+  line-height: 26px;
 }
 @media only screen and (max-width: 767px) {
   .event__hero .m-block--hero--collection__content p {
     color: #fff;
     margin: 1rem 0;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
-    line-height: 23px;
+    line-height: 24px;
     text-align: center;
   }
 }
@@ -4654,9 +4656,9 @@ textarea {
   .event__hero .m-block--hero--collection__content p {
     color: #fff;
     margin: 1rem 0;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
-    line-height: 23px;
+    line-height: 24px;
     text-align: center;
   }
 }
@@ -4699,6 +4701,9 @@ textarea {
   .event__hero .m-block--hero--collection__content .m-block--hero__content__copy .about-header {
     text-align: center;
   }
+}
+.event__hero .m-block--hero--collection__content .m-block--hero__content__copy .about-header .breadcrumbs {
+  margin: 0 0 30px;
 }
 @media only screen and (max-width: 767px) {
   .event__hero .m-block--hero--collection__content {
@@ -4763,9 +4768,6 @@ textarea {
   .event__hero .m-block--hero--collection__content {
     margin: 15px 0px 0px 15px;
     padding: 0;
-  }
-  .event__hero .m-block--hero--collection__content .breadcrumbs {
-    margin: 0 0 69px;
   }
   .event__hero .m-block--hero--collection__content h1 {
     margin: 0 0 8px;
@@ -4919,6 +4921,14 @@ textarea {
   margin: 5px auto;
   width: 8%;
 }
+.event-intro .serieseventunderline {
+  height: 8px;
+  color: #000;
+  background-color: #000;
+  margin: 0px auto;
+  vertical-align: bottom;
+  width: 50%;
+}
 .event-intro .event-single-underline {
   height: 10px;
   color: #000;
@@ -4948,11 +4958,15 @@ textarea {
   background: none;
   color: #222;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   cursor: pointer;
 }
 .tabbedcontent ul.event_tabs li.current {
   color: #000;
+  border-bottom: 1px solid black;
+  margin: 0px;
+  padding: 0px 2px 2px 3px;
+  border-width: 8px;
 }
 .tabbedcontent .tab-content {
   display: none;
@@ -4968,6 +4982,48 @@ textarea {
   color: #000;
 }
 .tabbedcontent .tab-content.current {
+  display: inherit;
+}
+
+.seriescontent {
+  margin: 0 auto;
+}
+.seriescontent.blurb-per-race {
+  margin: 20px auto;
+}
+.seriescontent.blurb-per-race p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 25px;
+}
+.seriescontent ul.event_tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.seriescontent ul.event_tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+}
+.seriescontent ul.event_tabs li.current {
+  color: #000;
+}
+.seriescontent .tab-content {
+  display: none;
+  padding: 15px;
+}
+.seriescontent .tab-content p {
+  font-size: 15px;
+  line-height: 22px;
+}
+.seriescontent .event-series-header h3 {
+  line-height: 10px;
+  margin: 15px auto;
+  color: #000;
+}
+.seriescontent .tab-content.current {
   display: inherit;
 }
 
@@ -5018,7 +5074,7 @@ textarea {
 }
 .event-filters .event-background .br-mainheading {
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
   font-size: 28px;
 }
 @media only screen and (max-width: 767px) {
@@ -5038,7 +5094,7 @@ textarea {
   color: #000000 !important;
 }
 .event-filters--wrapper {
-  padding: 20px 0px;
+  padding: 5px 0px;
 }
 @media only screen and (max-width: 767px) {
   .event-filters--wrapper {
@@ -5123,11 +5179,9 @@ textarea {
   height: 350px;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section:hover {
-  -webkit-box-shadow: 1px 1px 8px 0px #005cfb;
-  -moz-box-shadow: 1px 1px 8px 0px #005cfb;
-  box-shadow: 1px 1px 8px 0px #005cfb;
-  max-width: 335px;
-  height: 355px;
+  -webkit-box-shadow: 1px 1px 8px 0px #f2f2f2;
+  -moz-box-shadow: 1px 1px 8px 0px #f2f2f2;
+  box-shadow: 1px 1px 8px 0px #f2f2f2;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section:hover .info h3 {
   color: #0262F7;
