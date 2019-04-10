@@ -283,10 +283,6 @@ class meet_brooksController extends Controller {
         return view('meet_brooks.our_history');
     }
 
-    public function newsletter_thankyou_signup() {
-        return view('meet_brooks.thank-you-signup');
-    }
-
     public function newsletter_signup() {
         $fname = $lname = "";
         if (strpos(request('name'), ' ') !== false) {

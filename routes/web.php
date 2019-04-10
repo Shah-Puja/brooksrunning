@@ -70,13 +70,9 @@ Route::post('/meet_brooks/newsletter_signup', 'meet_brooksController@newsletter_
 Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
-Route::get('/meet_brooks/thank-you-signup', 'meet_brooksController@newsletter_thankyou_signup');
 
 
 
-
-
-// static success page for newsletter
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
 Route::get('/shipping','BillingShippingController@create');

@@ -232,6 +232,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div> 
     </div>
 </section>
@@ -240,11 +241,55 @@
         $("#newsletter_signup_form input,#newsletter_signup_form select").removeClass("error-border");
         $("#newsletter_signup_form input,#newsletter_signup_form select").parent().find('label span').remove();
         var form_data = $('#newsletter_signup_form').serialize();
+=======
+        </div>
+        <!--		<div class="col-3">
+                                <div class="create-account--right">
+                                        <div class="header">
+                                                <div class="icon-img">
+                                                        <img src="/images/accounts/icon-profile.png" alt="">
+                                                </div>					
+                                                <h3>Why Create An Account?</h3>
+                                        </div>
+                                        <div class="row">
+                                                <div class="tab-4 col-12">
+                                                        <div class="info">
+                                                                <h4>Faster Checkout</h4>
+                                                            <p>Save your billing and shipping information to make it easier to buy your favourite gear.</p>
+                                                        </div>
+                                                </div>
+                                                <div class="tab-4 col-12">
+                                                        <div class="info">
+                                                                <h4>Order History</h4>
+                                                            <p>Look up important information about your current and past orders.</p>
+                                                        </div>
+                                                </div>
+                                                <div class="tab-4 col-12">
+                                                        <div class="info">
+                                                                <h4>News and Exclusive Offers</h4>
+                                                            <p>Sign up to receive email updates on special promotions, new product announcements, gift ideas, and more.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>-->
+    </div>
+</section>
+<script>
+    function insert_enewsletter() {
+        $("#enewsletter input,#enewsletter select").removeClass("error-border");
+        $("#enewsletter input,#enewsletter select").parent().find('label span').remove();
+        var form_data = $('#enewsletter').serialize();
+>>>>>>> 195e8f8a7c7594648c89104edb312b4b4f52f277
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
+<<<<<<< HEAD
             url: "/meet_brooks/newsletter_update",
+=======
+            url: "/meet_brooks/enewsletter_post",
+>>>>>>> 195e8f8a7c7594648c89104edb312b4b4f52f277
             method: "post",
             data: form_data,
             success: function (response) {
