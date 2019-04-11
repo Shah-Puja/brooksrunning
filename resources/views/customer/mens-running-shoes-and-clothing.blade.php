@@ -15,13 +15,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="/mens-running-shoes">Shop Men's Shoes</a>
+							<a class="primary-button" href="/mens-running-shoes">Shop men's shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="/mens-running-shoes">Shop Men's Shoes</a>
+							<a class="primary-button" href="/mens-running-shoes">Shop men's shoes</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -96,7 +96,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Tap into your own endless energy in the Levitate 2. Featuring DNA AMP midsole technology to keep you going farther and faster.</p>
-							<a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop Levitate 2</a>
+							<a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop levitate 2</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -109,7 +109,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The legendary Adrenaline GTS has learned new tricks. Now you can experience GuideRails support in the GTS 19.</p>
-							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop Adrenaline GTS 19</a>
+							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop adrenaline gts 19</a>
 					</div> 
 				</div>
 			</div>
@@ -148,13 +148,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="/mens-running-clothes">Shop Men's Clothing</a>
+							<a class="primary-button" href="/mens-running-clothes">Shop men's clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">MEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="/mens-running-clothes">Shop Men's Clothing</a>
+							<a class="primary-button" href="/mens-running-clothes">Shop men's clothing</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -233,7 +233,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Brooks running shorts allow for breathability and optimal freedom of movement, to help make your run more comfortable.</p>
-							<a class="primary-button" href="/mens-running-shorts">Shop Shorts</a>
+							<a class="primary-button" href="/mens-running-shorts">Shop shorts</a>
 					</div> 
 				</div>
 				<div class="tab-6">

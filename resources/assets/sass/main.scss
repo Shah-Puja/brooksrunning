@@ -361,7 +361,7 @@
           margin: auto;
           text-align:center;
           .primary-button{
-            text-transform: capitalize;
+            // text-transform: capitalize;
              max-width: 310px;
              @media #{$tab-only}{
               max-width: 190px;
