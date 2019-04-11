@@ -19,7 +19,7 @@
 						<img src="/images/sale/w_sale_shoes.jpg" alt="">
 						<div class="img-info">
 							<h3>Women's<br/>Sale Shoes</h3>
-							<a href="/womens-running-shoes-sale" class="secondary-button btn">Shop Now</a>
+							<a href="/womens-running-shoes-sale" class="secondary-button btn">Shop now</a>
 						</div>
 					</div>
 					<div class="info-wrapper">
@@ -34,7 +34,7 @@
 						<img src="/images/sale/m_sale_shoes.jpg" alt="">
 						<div class="img-info">
 							<h3>Men's <br/>Sale Shoes</h3>
-							<a href="/mens-running-shoes-sale" class="secondary-button btn">Shop Now</a>
+							<a href="/mens-running-shoes-sale" class="secondary-button btn">Shop now</a>
 						</div>
 					</div>
 					<div class="info-wrapper">
@@ -54,7 +54,7 @@
 							<img src="/images/sale/w_sale_clothing.jpg" alt="">
 							<div class="img-info">
 								<h3>Women's Sale <br/>Clothing &amp; Accessories</h3>
-								<a href="/womens-running-clothes-sale" class="secondary-button btn">Shop Now</a>
+								<a href="/womens-running-clothes-sale" class="secondary-button btn">Shop now</a>
 							</div>
 						</div>
 						<div class="info-wrapper">
@@ -69,7 +69,7 @@
 							<img src="/images/sale/m_sale_clothing.jpg" alt="">
 							<div class="img-info">
 								<h3>Men's Sale <br/>Clothing & Accessories</h3>
-								<a href="/mens-running-clothes-sale" class="secondary-button btn">Shop Now</a>
+								<a href="/mens-running-clothes-sale" class="secondary-button btn">Shop now</a>
 							</div>
 						</div>
 						<div class="info-wrapper">
