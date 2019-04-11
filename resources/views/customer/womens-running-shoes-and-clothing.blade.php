@@ -85,7 +85,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop ravenna 10</a>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop ravenna 10</a> 
 					</div> 
 				</div>
 			</div>

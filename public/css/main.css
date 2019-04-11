@@ -1989,7 +1989,6 @@ textarea {
   text-align: center;
 }
 .pr-landing-page .prod-desc--wrapper .lp-info-block .primary-button {
-  text-transform: capitalize;
   max-width: 310px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
