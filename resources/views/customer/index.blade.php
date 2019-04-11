@@ -57,7 +57,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Run with the Adrenaline GTS 19 and Ghost 11 in these limited release colours. </p>
-					<a href="/abstract-collection-adrenaline-ghost">Shop Abstract Series <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/abstract-collection-adrenaline-ghost">Shop abstract series <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-transcend-6-mens/110299_419.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
 				</div>
 			</div>
@@ -155,7 +155,7 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Events</h3>
 					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
-					<a href="/events">Running Events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/events">Running events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 			</div>
