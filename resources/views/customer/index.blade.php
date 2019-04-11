@@ -82,7 +82,7 @@
 		<div class="row">
 	  		<div class="col-4 tab-12">
 	    		<div class="homepage-signup--wrapper info">
-		     		<h3 class="br-heading">Sign up to the Run Down</h3>
+		     		<h3 class="br-heading">Sign up to the run down</h3>
 		            <p>Keep up to date with all the latest news, special offers, events, competitions and tips to keep you running happy!</p>
 	            </div>
 	        </div>
