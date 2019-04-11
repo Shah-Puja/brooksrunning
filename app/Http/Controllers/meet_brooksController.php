@@ -299,6 +299,11 @@ class meet_brooksController extends Controller {
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
+        if ($Person->wasRecentlyCreated) {
+            $signup = 1;
+        } else {
+            $signup = 0;
+        }
         if (env('AP21_STATUS') == 'ON') {
             if (empty($PersonID)) {
                 //$PersonID = $this->get_personid(request('email'), request('fname'), request('lname'), request('gender'), request('country'));
@@ -310,7 +315,7 @@ class meet_brooksController extends Controller {
         }
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user));
-        return view('meet_brooks.thank-you-signup', compact(request()->all()));
+        return view('meet_brooks.thank-you-signup', compact('signup', request()->all()));
     }
 
     public function newsletter_update(Recaptcha $recaptcha) {
@@ -333,9 +338,17 @@ class meet_brooksController extends Controller {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
         $user = User::where('email', request('email'))->first();
-        event(new SubscriptionReceived($user));
-        return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
+        event(new SubscriptionReceived($user)); // to update the other details in aweber
+        if (request('signup') == 1) {
+            return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
+        } else {
+            if (request('contest_code') != '') {
+                return response()->json(['success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">Thank you for signing up.</p>']);
+            } else {
+                return response()->json(['success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">You are already on our subscriber list.</p>']);
+            }
+        }
     }
 
 }

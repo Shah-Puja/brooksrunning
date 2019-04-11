@@ -9,7 +9,7 @@
     <div class="wrapper">
         <div class="row">
             <div class="col-12">
-                <h1 class="br-mainheading">Brooks E-newsletter</h1>
+                <h1 class="br-mainheading">Thank you for signing up!</h1>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-9">
             <div class="create-account--left">
                 <div class="response_content">
-                    <h3 class="br-heading">Thank you for signing up to The Run Down</h3>
+                    <h3 class="br-heading">Update your details</h3>
                     <p>You have now successfully signed up to receive communication from Brooks Running. To help us keep our emails as relevant to you as possible, please tell us a little more about you:</p>
                     <hr>
                     <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
@@ -36,6 +36,7 @@
                             <div class="tab-6">
                                 <div class="input-wrapper">
                                     <label for=""><sup>*</sup>First Name</label>
+                                    <input type="hidden" name="signup" value="{{ $signup }}">
                                     <input type="text" name="fname" value="{{ $fname }} " class="input-field">
                                 </div>
                             </div>
