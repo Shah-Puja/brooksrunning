@@ -57,7 +57,7 @@
                     </div>
                     <h3 class="br-heading">Need help choosing a shoe?</h3>
                     <div class="br-info">Uses your biomechanics, preferences and running science to find the ideal shoe for you.</div>
-                    <a href="/shoefinder" class="primary-button">Try the Shoe Finder</a>
+                    <a href="/shoefinder" class="primary-button">Try The Shoe Finder</a>
                 </div>
             </div>
             @endif
