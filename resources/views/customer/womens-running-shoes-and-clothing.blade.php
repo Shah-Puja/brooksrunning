@@ -15,13 +15,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
+							<a class="primary-button" href="/womens-running-shoes">Shop women's shoes</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Shoes</h1>
-							<a class="primary-button" href="/womens-running-shoes">Shop Women's Shoes</a>
+							<a class="primary-button" href="/womens-running-shoes">Shop women's shoes</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -72,7 +72,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Experience super-soft cusioning and plush heel-to-toe transition in the Ghost 11. Awarded the 2018 Runner's World Editor's Choice.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop Ghost 11</a>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop ghost 11</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -85,7 +85,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop ravenna 10</a>
 					</div> 
 				</div>
 			</div>
@@ -124,13 +124,13 @@
 	      				<div class="banner--info hidden-mob">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
+							<a class="primary-button" href="/womens-running-clothes">Shop women's clothing</a>
 	      				</div>
 	      				<div class="landing-info visible-mob">
 	      					<div class="banner--info">
 	      					<p class="label--underline">WOMEN'S</p>
 							<h1 class="br-mainheading">Running Clothes</h1>
-							<a class="primary-button" href="/womens-running-clothes">Shop Women's Clothing</a>
+							<a class="primary-button" href="/womens-running-clothes">Shop women's clothing</a>
 	      				</div>
 	      			</div>
 	      		</div>
@@ -185,7 +185,7 @@
 					 </div> 
 					 <div class="lp-info-block">
 							<p>Our women's tights hug your body for a supportive fit and a flattering look that that won't budge during your workout.</p>
-							<a class="primary-button" href="/womens-running-pants-tights">Shop Tights</a>
+							<a class="primary-button" href="/womens-running-pants-tights">Shop tights</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -198,7 +198,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Keep yourself warm when the weather takes a turn with our range of weather-resistant running jackets and vests.</p>
-							<a class="primary-button" href="/womens-running-jackets-vests">Shop Jackets</a>
+							<a class="primary-button" href="/womens-running-jackets-vests">Shop jackets</a>
 					</div>
 				</div>
 			</div>
