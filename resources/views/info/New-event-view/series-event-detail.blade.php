@@ -48,7 +48,7 @@
             </div>
 
 
-            <div class="tabbedcontent hidden-mob hidden-col hidden-tab ">
+            <div class="tabbedcontent hidden-mob visible-col visible-tab ">
 
                     <ul class="event_tabs">
                         <li class="tab-link current" data-tab="tab-1">
@@ -87,7 +87,7 @@
             </div>
 
             <!-- For mobile only -->
-            <div class="new-event--container ">
+            <div class="new-event--container visible-mob hidden-col hidden-tab">
                     <div class="tabbedmobcontent">
                         <ul class="event_mob_tabs">
                         <div id="event-carousel">
