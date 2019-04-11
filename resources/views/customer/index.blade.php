@@ -43,8 +43,8 @@
 				</div>
 				<div class="info-wrapper">
 					<p>The Launch 6 is built to be fast and springy, with zero distractions.</p>
-					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
 				</div>
 			</div>
@@ -70,8 +70,8 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Experience maximum energy return in the Ricochet, now lighter than ever before.</p>
-					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
@@ -82,7 +82,7 @@
 		<div class="row">
 	  		<div class="col-4 tab-12">
 	    		<div class="homepage-signup--wrapper info">
-		     		<h3 class="br-heading">Sign up to the Run Down</h3>
+		     		<h3 class="br-heading">Sign up to the run down</h3>
 		            <p>Keep up to date with all the latest news, special offers, events, competitions and tips to keep you running happy!</p>
 	            </div>
 	        </div>
@@ -124,8 +124,8 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
 					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
-					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/womens-running-clothes">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-running-clothes">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			</div>
@@ -142,7 +142,7 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
 					<p>Our Shoe Finder is like Tinder for your feet. Uses your biomechanics, preferences and running science to find the ideal shoe for you. </p>
-					<a href="/shoefinder">Shoe finder <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/shoefinder">Shoe Finder <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>
 			</div>
