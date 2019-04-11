@@ -339,8 +339,26 @@ $(document).on("click",".next",function () {
 })
 $(document).on("click",".prev",function () {
     $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.prev');
-})
+});
 
+// New Event Page
+
+$(document).ready(function () {
+    var owl = $("#event-carousel");
+    owl.owlCarousel({//Set AutoPlay to 3 seconds
+        dots: true,
+        items: 3,
+        itemsDesktop: [1199, 3],
+        itemsDesktopSmall: [979, 3],
+        afterMove: function (elem) {
+            var current = this.currentItem;
+            var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
+            $(".event-content").hide();
+		    $("#"+id).show();
+        }
+    });
+ 
+});
 
 // shipping page 
 $(document).ready(function () {

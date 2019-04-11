@@ -3106,7 +3106,10 @@ width: 100%;
 .event-intro{
   background-color: #fff;
   text-align: center !important;
-
+  padding: 0px;
+  @media #{$mobile-only}{
+  padding: 0px;
+  }
   h1{
     color:#0E0E0E;
     margin: 0 0 9px;
@@ -3121,7 +3124,7 @@ width: 100%;
     @extend %extrabold-font;
     text-align: center;
     @media #{$mobile-only}{
-      font-size:18px;
+      font-size:22px;
     line-height: .4;
       }
   }
@@ -3132,6 +3135,7 @@ width: 100%;
     @media #{$mobile-only}{
       width: 100%;
       max-width: 320px;
+    padding-bottom: 10px;
     }
   }
   p{
@@ -3197,7 +3201,7 @@ width: 100%;
       p{
         font-size: 16px;
         line-height: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
       }
     }
   ul.event_tabs{
@@ -3211,17 +3215,30 @@ width: 100%;
     display: inline-block;
     padding: 5px 15px;
     cursor: pointer;
+    position:relative;
+    margin  : 0 auto;
   }
 
   ul.event_tabs li.current{
     // background: #ededed;
     color: #000;
-    border-bottom: 1px solid black;
-    margin:0px;  
-   padding: 0px 2px 2px 3px;    
-   border-width: 8px;
+    .event-series-header{
+     
+        
+      //  padding: 0px 2px 2px 3px;    
+       border-width: 8px;
+       &:before {
+        content : "";
+        position: absolute;
+        left    : 45px;
+        bottom  : 0;
+        height  : 1px;
+        width   : 45%;  /* or 100px */
+        border-bottom:5px solid $black;
+      }
+    }
+   
   }
-
   .tab-content{
     display: none;
     padding: 15px;
@@ -3242,6 +3259,86 @@ width: 100%;
   }
 }
 
+.new-event--container{
+  .tabbedmobcontent{
+      margin: 0 auto;
+      ul.event_mob_tabs{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      ul.event_mob_tabs li{
+        background: none;
+        color: #222;
+        display: inline-block;
+        padding: 5px 15px;
+        cursor: pointer;
+        position:relative;
+        margin  : 0 auto;
+      }
+      ul.event_mob_tabs li.current{
+        color: #000;
+      }
+      .event-content{
+        display: none;
+        padding: 15px;
+        p{
+          font-size: 15px;
+          line-height: 22px;
+        text-align: center;
+        }
+      }
+      .event-series-header{
+        h3{
+          line-height: 10px;
+          margin: 15px auto;
+          color:#000;
+        }
+      }
+      .event-content.current{
+        display: inherit;
+      }
+      // Carousel
+      #event-carousel {
+        .item {
+          margin: 3px auto;
+        }
+      }
+
+    .owl-carousel{
+      .owl-wrapper-outer{
+        margin: 0 auto;
+      }
+    } 
+    .owl-theme{
+      .owl-controls{
+        text-align:center;
+        .owl-pagination {
+          .owl-page.active {
+            span{
+              background: #49504e;
+            }
+          }
+        }
+      }
+      .owl-page {
+        display: inline-block;
+        span {
+          background: none repeat scroll 0 0 transparent;
+          border-radius: 20px;
+          border: 1px solid black;
+          display: block;
+          height: 12px;
+          margin: 5px 7px;
+          opacity: 0.5;
+          width: 12px;
+        }
+      }
+    } 
+  }
+}
+
+
 .seriescontent{
   margin: 0 auto;
     &.blurb-per-race{
@@ -3249,7 +3346,7 @@ width: 100%;
       p{
         font-size: 16px;
         line-height: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
       }
     }
   ul.event_tabs{
@@ -3313,14 +3410,15 @@ width: 100%;
     }
   }
   .event-background{
-    padding: 10px 45px;
+    padding: 10px 75px;
     background-color: #F2F2F2;
     color: $black;
+    
     @media #{$tab-only}{
-      padding: 5px 0px;
+      padding: 15px 0px;
     }
     @media #{$mobile-only}{
-      padding: 5px 0px;
+      padding: 15px 0px;
     }
    
     .br-mainheading{
@@ -3387,7 +3485,7 @@ width: 100%;
     }
     .btn{
       padding-top: 12px;
-      max-width: 300px;
+      max-width: 280px;
       margin: 0 10px auto;
       
       @media #{$mobile-only}{
@@ -3402,7 +3500,7 @@ width: 100%;
     flex-flow: row wrap;
     justify-content: flex-start;
     margin: 20px auto;
-    width:90%;
+    width:85%;
     @media #{$mobile-only} {
       width:100%;
     }

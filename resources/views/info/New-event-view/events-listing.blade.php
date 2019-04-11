@@ -8,9 +8,6 @@
 			width: 33.3333333333%;
 			float: left;
 		}
-		.eventfilter-mob-landscape{
-
-		}
 	}
 	</style>
 <div class="create-account--header event__hero">
