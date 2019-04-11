@@ -8,7 +8,7 @@
   	<li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters.  </li>
   	<li>The winner of the Promotion will be chosen at random. The prizes must be claimed before 5pm AEST on 10th June 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 11th June 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
   	<li>The prize is as follows:
-    		<ul>
+    		<ul style="margin-left: 35px; margin-top:15px; margin-bottom: 15px;">
             	<li>FitBit Ionic (RRP:$399.95)</li>
 				<li>Brooks Footwear (Valued up to RRP: $259.95)</li>
 				<li>LSD Jacket (RRP: $119.95)</li>
