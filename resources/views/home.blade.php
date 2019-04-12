@@ -20,7 +20,7 @@
                     </div>
                     <h3 class="br-heading">Personal Details</h3>
                     <div class="br-info">Manage your name, email and password</div>
-                    <a href="account-personal" class="primary-button">View details</a>
+                    <a href="account-personal" class="primary-button">View Details</a>
                 </div>
             </div>
             <div class="tab-4">
@@ -30,7 +30,7 @@
                     </div>
                     <h3 class="br-heading">Order History</h3>
                     <div class="br-info">Manage your name, email and password</div>
-                    <a href="account-order-history" class="primary-button">View order history</a>
+                    <a href="account-order-history" class="primary-button">View Order History</a>
                 </div>
             </div>
             <div class="tab-4">
@@ -46,7 +46,7 @@
                     </div>
                     <h3 class="br-heading">Shoe Finder</h3>
                     <div class="br-info">View your shoe finder results, or retake <br>the shoe finder.</div>
-                    <a href="/shoefinder" class="primary-button">View shoes</a>
+                    <a href="/shoefinder" class="primary-button">View Shoes</a>
                 </div>
             </div>
             @else
@@ -57,7 +57,7 @@
                     </div>
                     <h3 class="br-heading">Need help choosing a shoe?</h3>
                     <div class="br-info">Uses your biomechanics, preferences and running science to find the ideal shoe for you.</div>
-                    <a href="/shoefinder" class="primary-button">Try the shoe finder</a>
+                    <a href="/shoefinder" class="primary-button">Try The Shoe Finder</a>
                 </div>
             </div>
             @endif

@@ -9,7 +9,7 @@
     <div class="wrapper">
         <div class="row">
             <div class="col-12">
-                <h1 class="br-mainheading">Brooks E-newsletter</h1>
+                <h1 class="br-mainheading">Thank you for signing up!</h1>
             </div>
         </div>
     </div>
@@ -19,14 +19,11 @@
         <div class="col-9">
             <div class="create-account--left">
                 <div class="response_content">
-                    <h3 class="br-heading">Thank you for signing-up</h3>
-                    <p>You have successfully subscribed to receive email. Welcome to the Brooks Running family.<br/>
-                        We look forward to sharing the latest news about our products, events and specials with you.<br/>
-                        Stay tuned and Run Happy!
-                    </p>
+                    <h3 class="br-heading">Update your details</h3>
+                    <p>You have now successfully signed up to receive communication from Brooks Running. To help us keep our emails as relevant to you as possible, please tell us a little more about you:</p>
                     <hr>
                     <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
-                    <form name="enewsletter" id='enewsletter' method="post"  onsubmit="return insert_enewsletter()">
+                    <form name="newsletter_signup_form" id='newsletter_signup_form' method="post"  onsubmit="return update_newsletter()">
                         <div class="row">
                             @php $fname = $lname ='';
                             if(request('name')!=''){
@@ -39,6 +36,7 @@
                             <div class="tab-6">
                                 <div class="input-wrapper">
                                     <label for=""><sup>*</sup>First Name</label>
+                                    <input type="hidden" name="signup" value="{{ $signup }}">
                                     <input type="text" name="fname" value="{{ $fname }} " class="input-field">
                                 </div>
                             </div>
@@ -235,49 +233,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--		<div class="col-3">
-                                <div class="create-account--right">
-                                        <div class="header">
-                                                <div class="icon-img">
-                                                        <img src="/images/accounts/icon-profile.png" alt="">
-                                                </div>					
-                                                <h3>Why Create An Account?</h3>
-                                        </div>
-                                        <div class="row">
-                                                <div class="tab-4 col-12">
-                                                        <div class="info">
-                                                                <h4>Faster Checkout</h4>
-                                                            <p>Save your billing and shipping information to make it easier to buy your favourite gear.</p>
-                                                        </div>
-                                                </div>
-                                                <div class="tab-4 col-12">
-                                                        <div class="info">
-                                                                <h4>Order History</h4>
-                                                            <p>Look up important information about your current and past orders.</p>
-                                                        </div>
-                                                </div>
-                                                <div class="tab-4 col-12">
-                                                        <div class="info">
-                                                                <h4>News and Exclusive Offers</h4>
-                                                            <p>Sign up to receive email updates on special promotions, new product announcements, gift ideas, and more.</p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>-->
+        </div> 
     </div>
 </section>
 <script>
-    function insert_enewsletter() {
-        $("#enewsletter input,#enewsletter select").removeClass("error-border");
-        $("#enewsletter input,#enewsletter select").parent().find('label span').remove();
-        var form_data = $('#enewsletter').serialize();
+    function update_newsletter() {
+        $("#newsletter_signup_form input,#newsletter_signup_form select").removeClass("error-border");
+        $("#newsletter_signup_form input,#newsletter_signup_form select").parent().find('label span').remove();
+        var form_data = $('#newsletter_signup_form').serialize();
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: "/meet_brooks/enewsletter_post",
+            url: "/meet_brooks/newsletter_update",
             method: "post",
             data: form_data,
             success: function (response) {
