@@ -104,7 +104,7 @@
 						Phone: 03 9338 5099
 					</p>
 					<br />
-					<p class="br-info">To download this document please <a href="/images/pdf/Supply_Chain_Transparency_Statement_2018.pdf" target="_blank">click here</a></p>
+					<p class="br-info">To download this document please <a href="/images/PDF/Privacy_Policy_Brooks.pdf" target="_blank">click here</a></p>
 			</div>
 		</div>
 		<div class="col-3 contact-details--right">
