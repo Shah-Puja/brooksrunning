@@ -65,14 +65,13 @@ Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@compet
 Route::get('/meet_brooks/update_previous_competitions', 'meet_brooksController@update_previous_competitions');
 Route::post('/meet_brooks/competition', 'meet_brooksController@store');
 Route::post('/meet_brooks/enewsletter_post', 'meet_brooksController@enewsletter_store');
+Route::post('/meet_brooks/newsletter_update', 'meet_brooksController@newsletter_update');
+Route::post('/meet_brooks/newsletter_signup', 'meet_brooksController@newsletter_signup');
 Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 
-
-// static success page for newsletter
-// Route::get('/meet_brooks/thank-you-signup', 'meet_brooksController@newsletter_thankyou_signup');
 
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
