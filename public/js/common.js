@@ -341,8 +341,8 @@ $(document).on("click",".prev",function () {
     $(this).parent(".new-arrival--container").find(".owl-carousel").trigger('owl.prev');
 });
 
-// New Event Page
 
+// New Event Page
 $(document).ready(function () {
     var owl = $("#event-carousel");
     owl.owlCarousel({//Set AutoPlay to 3 seconds
