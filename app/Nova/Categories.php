@@ -40,6 +40,12 @@ class Categories extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->where('depth','3');
+    }
+
     public function fields(Request $request)
     {
         return [

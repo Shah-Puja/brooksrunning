@@ -52,7 +52,7 @@ class Category extends Model
             ->get();
 
             
-            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+            $sorted_products = $products->sortByDesc(function ($product, $key) use ($cat_id) {
                     if(isset($product->groupranks) && count($product->groupranks) >0){
                         $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
                             $data=[];
@@ -104,7 +104,7 @@ class Category extends Model
             //->values(); 
    
 
-        $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+        /*$sorted_products = $products->sortByDesc(function ($product, $key) use ($cat_id) {
             if(isset($product->groupranks) && count($product->groupranks) >0){
                 $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
                     $data=[];
@@ -123,12 +123,12 @@ class Category extends Model
             }else{
                 return '1000000000';
             }
-      });
-            /*$sorted_products = $products->sortByDesc(function ($product, $key){
+      });*/
+            $sorted_products = $products->sortByDesc(function ($product, $key){
                 foreach($product->variants as $variant):
                       return $variant->release_date;
                 endforeach;
-              });*/
+              });
        
 
              return $sorted_products;
