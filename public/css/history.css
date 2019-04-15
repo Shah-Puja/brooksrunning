@@ -6139,6 +6139,7 @@ textarea {
   .event__hero {
     height: auto;
     max-height: 500px;
+    margin-bottom: 0px;
   }
   .event__hero .pl-0 {
     padding-left: 0 !important;
@@ -6222,7 +6223,7 @@ textarea {
 }
 .event__hero .event-title {
   font-size: 45px;
-  width: 60%;
+  width: 100%;
   line-height: 1.1;
 }
 @media only screen and (max-width: 767px) {
@@ -6279,8 +6280,7 @@ textarea {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event__hero .m-block--hero--collection__content h1 {
     color: #fff;
-    margin: 0 0 13px;
-    text-align: center;
+    margin: 0 15px 13px;
     line-height: 34px;
   }
 }
@@ -6344,23 +6344,6 @@ textarea {
     background-size: cover;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event__hero .category__hero__image:before {
-    z-index: 1000;
-    border: solid 40px;
-    border-color: transparent;
-    border-radius: 70%/75px 48px 0 0;
-    box-shadow: -20px -40px 0 #0363F7;
-    content: " ";
-    display: block;
-    height: 0px;
-    left: -47px;
-    position: absolute;
-    top: 0;
-    width: calc(100% - -70px);
-    background-size: cover;
-  }
-}
 .event__hero .category__hero__image {
   display: block;
   position: relative;
@@ -6394,7 +6377,7 @@ textarea {
     border-left: 1px solid #0363F7;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50.1%;
     transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
   }
@@ -6412,6 +6395,26 @@ textarea {
   }
   .event__hero .pr-0 {
     padding-right: 0 !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event__hero .category__hero__image {
+    z-index: 1;
+    border-left: 1px solid #0363F7;
+    position: absolute;
+    top: 50%;
+    left: 50.1%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+  }
+  .event__hero .category__hero__image img {
+    height: 100%;
+    min-height: 300px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 80%;
+    object-position: 80%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -6512,8 +6515,7 @@ textarea {
 .event-intro .event-signup {
   font-size: 22px;
   line-height: 1.1;
-  margin-bottom: 0px;
-  margin-top: 5px;
+  margin: 5px auto;
   color: #000000;
 }
 @media only screen and (max-width: 767px) {
@@ -6523,19 +6525,24 @@ textarea {
   }
 }
 .event-intro .event-findmore-btn {
-  padding-top: 18px;
+  padding-top: 15px;
   max-width: 320px;
-  margin: auto;
+  margin: 20px auto;
 }
 .event-intro .eventunderline {
-  height: 10px;
+  height: 5px;
   color: #000;
   background-color: #000;
   margin: 5px auto;
   width: 8%;
 }
+@media only screen and (max-width: 767px) {
+  .event-intro .eventunderline {
+    width: 25%;
+  }
+}
 .event-intro .serieseventunderline {
-  height: 8px;
+  height: 5px;
   color: #000;
   background-color: #000;
   margin: 0px auto;
@@ -6543,11 +6550,14 @@ textarea {
   width: 50%;
 }
 .event-intro .event-single-underline {
-  height: 10px;
+  height: 5px;
   color: #000;
   background-color: #000;
   margin: 25px auto;
   width: 8%;
+}
+.event-intro .stay-tuned {
+  margin: 20px auto;
 }
 
 .tabbedcontent {
@@ -6559,8 +6569,8 @@ textarea {
 }
 .tabbedcontent.blurb-per-race p {
   font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 50px;
+  line-height: 24px;
+  margin-bottom: 20px;
 }
 .tabbedcontent ul.event_tabs {
   margin: 0px;
@@ -6597,8 +6607,8 @@ textarea {
   padding: 15px;
 }
 .tabbedcontent .tab-content p {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .tabbedcontent .event-series-header h3 {
   line-height: 10px;
@@ -6656,7 +6666,7 @@ textarea {
   text-align: center;
 }
 .new-event--container .tabbedmobcontent .owl-theme .owl-controls .owl-pagination .owl-page.active span {
-  background: #49504e;
+  background: #005CFB;
 }
 .new-event--container .tabbedmobcontent .owl-theme .owl-page {
   display: inline-block;
@@ -6664,7 +6674,7 @@ textarea {
 .new-event--container .tabbedmobcontent .owl-theme .owl-page span {
   background: none repeat scroll 0 0 transparent;
   border-radius: 20px;
-  border: 1px solid black;
+  border: 1px solid #005CFB;
   display: block;
   height: 12px;
   margin: 5px 7px;
@@ -6702,8 +6712,8 @@ textarea {
   padding: 15px;
 }
 .seriescontent .tab-content p {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .seriescontent .event-series-header h3 {
   line-height: 10px;
@@ -6733,6 +6743,7 @@ textarea {
   .event-filters {
     padding: 0px;
     text-align: center;
+    margin: 0px auto;
   }
 }
 .event-filters .event-full-background {
@@ -6756,7 +6767,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-filters .event-background {
-    padding: 15px 0px;
+    padding: 20px 0px;
   }
 }
 .event-filters .event-background .br-mainheading {
@@ -6829,6 +6840,7 @@ textarea {
 @media only screen and (max-width: 767px) {
   .event-filters--wrapper .btn {
     margin: 0px auto;
+    padding-bottom: 20px;
   }
 }
 
@@ -7043,7 +7055,7 @@ textarea {
 .event-footer {
   padding: 20px 25px;
   background-color: #F2F2F2;
-  margin: 10px 0 0;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 991px) {
   .event-footer {
@@ -7062,9 +7074,8 @@ textarea {
   margin: 0 auto;
 }
 .event-footer--wrapper .btn {
-  padding-top: 12px;
   max-width: 300px;
-  margin: auto;
+  margin: 20px auto;
 }
 .event-footer--wrapper .btn .secondary-button {
   background-color: transparent;

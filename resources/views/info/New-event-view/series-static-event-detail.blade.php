@@ -6,7 +6,7 @@
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
         <div class="row">
-            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
 				<div class="m-block--hero--collection__content">
 						<div class="m-block--hero__content__copy">
 						<div class="about-header">
@@ -32,7 +32,7 @@
 					<div class="collection-hero-overlay hidden-mob"></div>
 				</div>
 			
-            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+            <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 <img src="/images/new-events/banner/sunset-series-event-header-image.jpg">
             </div>
 		</div>
@@ -72,14 +72,8 @@
                         </li>
                     </ul>
                     <hr  class="eventunderline"/>
-                    <div id="tab-1" class="tab-content current">
+                    <div class="tab-content current">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    </div>
-                    <div id="tab-2" class="tab-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab.</p>
-                    </div>
-                    <div id="tab-3" class="tab-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                     </div>
             </div>
             <div class="stay-tuned" style="display:none;">

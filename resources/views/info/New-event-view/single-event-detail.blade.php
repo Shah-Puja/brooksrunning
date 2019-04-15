@@ -6,7 +6,7 @@
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
         <div class="row">
-            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
 				<div class="m-block--hero--collection__content">
 						<div class="m-block--hero__content__copy">
 						<div class="about-header">
@@ -32,7 +32,7 @@
 					<div class="collection-hero-overlay hidden-mob"></div>
 				</div>
 			
-            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+            <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 <img src="/images/new-events/banner/iwdfr-event-header-image.jpg">
             </div>
 		</div>
