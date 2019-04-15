@@ -6767,7 +6767,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-filters .event-background {
-    padding: 20px 0px;
+    padding: 0px 0px;
   }
 }
 .event-filters .event-background .br-mainheading {
