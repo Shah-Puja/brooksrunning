@@ -4770,7 +4770,7 @@ textarea {
     border-left: 1px solid #0363F7;
     position: absolute;
     top: 50%;
-    left: 50.1%;
+    left: 50.3%;
     transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
   }
@@ -4796,7 +4796,7 @@ textarea {
     border-left: 1px solid #0363F7;
     position: absolute;
     top: 50%;
-    left: 50.1%;
+    left: 50%;
     transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
   }
@@ -4877,19 +4877,20 @@ textarea {
     width: 100%;
     max-width: 320px;
     padding-bottom: 10px;
+    padding-top: 10px;
   }
 }
 .event-intro p {
   max-width: 100%;
   color: #0E0E0E;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 26px;
   margin-bottom: 20px;
 }
 @media only screen and (max-width: 767px) {
   .event-intro p {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 24px;
   }
 }
 .event-intro .info {
@@ -4961,9 +4962,15 @@ textarea {
   margin: 20px auto;
 }
 .tabbedcontent.blurb-per-race p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .tabbedcontent.blurb-per-race p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 .tabbedcontent ul.event_tabs {
   margin: 0px;
@@ -5000,8 +5007,14 @@ textarea {
   padding: 15px;
 }
 .tabbedcontent .tab-content p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media only screen and (max-width: 767px) {
+  .tabbedcontent .tab-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 .tabbedcontent .event-series-header h3 {
   line-height: 10px;
@@ -5105,8 +5118,14 @@ textarea {
   padding: 15px;
 }
 .seriescontent .tab-content p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
+}
+@media only screen and (max-width: 767px) {
+  .seriescontent .tab-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 .seriescontent .event-series-header h3 {
   line-height: 10px;
