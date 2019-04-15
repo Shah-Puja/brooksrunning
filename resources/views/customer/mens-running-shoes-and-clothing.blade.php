@@ -38,6 +38,12 @@
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
 			@foreach($shoes_product as $prod_key => $shoes_arrival)
+			@php
+                $max_price =$shoes_arrival->variants->pluck('price')->max();
+                $max_price_sale = $shoes_arrival->variants->pluck('price_sale')->max();
+                $min_price = $shoes_arrival->variants->pluck('price')->min();
+				$min_price_sale = $shoes_arrival->variants->pluck('price_sale')->min();
+			@endphp
 				<div class="item">
 					<div class="product_arrive">
 						<div class="prd_img">
@@ -47,7 +53,25 @@
 						</div>
 						<div class="prd_caption">
 							<h3><a class="name-link" href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
-							<h4 class="price"><span class="black">${{$shoes_arrival->variants[$prod_key]->price}}</span></h4>
+							<h4 class="price">
+							@if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @else
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                            	<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+							@endif
+							</h4>					
 						</div>
 					</div>
 				</div>
@@ -114,7 +138,7 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_clothingbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Mens/men_clothingbanner.jpg">
 	        <img src="/images/landingpage/Mens/men_clothingbanner.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
@@ -151,6 +175,12 @@
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
 			@foreach($cloths_product as $prod_key => $cloths_arrival)
+			@php
+                $max_price =$cloths_arrival->variants->pluck('price')->max();
+                $max_price_sale = $cloths_arrival->variants->pluck('price_sale')->max();
+                $min_price = $cloths_arrival->variants->pluck('price')->min();
+				$min_price_sale = $cloths_arrival->variants->pluck('price_sale')->min();
+			@endphp
 				<div class="item">
 					<div class="product_arrive">
 						<div class="prd_img">
@@ -160,7 +190,25 @@
 						</div>
 						<div class="prd_caption">
 							<h3><a class="name-link" href="/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
-							<h4 class="price"><span class="black">${{$cloths_arrival->variants[$prod_key]->price}}</span></h4>
+							<h4 class="price">
+							@if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @else
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                            	<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+							@endif
+							</h4>					
 						</div>
 					</div>
 				</div>
@@ -198,7 +246,7 @@
 					 </div>
 					 <div class="lp-info-block">
 							<p>Made from lightweight, highly absorbent fabrics that are designed to not weigh you down, our running tops will help you make light work of your next run. </p>
-							<a class="primary-button" href="/mens-running-tops">Shop tops</a>
+							<a class="primary-button" href="/mens-running-tops">Shop Tops</a>
 					</div>
 				</div>
 			</div>

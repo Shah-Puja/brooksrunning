@@ -176,12 +176,22 @@
 			</div>
 		</div>
 	</div>-->
-	<input type="hidden" name="comp_name" value="{!!html_entity_decode($competition->comp_name)!!}" />
-	<input type="hidden" name="comp_slug" value="{!!html_entity_decode($competition->slug)!!}" />
+	@if(!empty($competition->comp_answer) && $competition->comp_answer == 'Yes')
+		<div class="row">
+			<div class="col-12">
+				<div class="input-wrapper">
+					<label for="">Competition Answer (if applicable)</label>
+					<textarea  name="answer" placeholder="Competition Answer - 25 words or less" style="width: 300px; height:150px;"  class="input-field"></textarea>
+				</div>
+			</div>
+		</div>
+	@endif
+	<input type="hidden" name="comp_name" value="{{ $competition->comp_name }} " />
+	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
 	<div class="row" style="margin-top:20px;">
 		<div class="tab-6">
 			<div class="input-wrapper">
-				<div class="g-recaptcha captcha" data-sitekey="{!!html_entity_decode(config('services.google.recaptcha_key')!!}"></div>
+				<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
 				<label class="recaptcha-label"></label>
 			</div>
 		</div>

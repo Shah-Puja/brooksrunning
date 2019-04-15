@@ -30,9 +30,8 @@
 					<hr>
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 					
-					@if(!empty($competition->comp_form))
-						<!--@include('meet_brooks.competition.'.$competition->comp_form)-->
-						{!!$competition->comp_form!!}
+					@if(!empty($competition->comp_form_html))
+						{!!$competition->comp_form_html!!}
 					@endif
 				
 				</div>
@@ -48,7 +47,7 @@
 						<div class="comp_bottom">
 							{!! $competition->footer_text !!}
 							@if($competition->status == 'Open')
-								@if(!empty($competition->terms_conditions))
+								@if(!empty($competition->terms_conditions_html))
 								<p class="privacy">Click here to view the <a class="privacy-terms--popup" href="javascript:void(0)">Terms &amp; Conditions of Entry</a></p>                            
 								@endif
 							@endif
@@ -68,9 +67,8 @@
     <div class="popup-container--wrapper">
         <div class="popup-container--info">
 			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>  
-			@if(!empty($competition->terms_conditions))      
-            <!--<div class="privacy-content">@include('meet_brooks.terms_conditions.'.$competition->terms_conditions)</div>-->
-			<div class="privacy-content">{!!$competition->terms_conditions!!}</div>
+			@if(!empty($competition->terms_conditions_html))      
+			<div class="privacy-content">{!!$competition->terms_conditions_html!!}</div>
 			@endif
 		</div>
 	</div>
