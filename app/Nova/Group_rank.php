@@ -65,7 +65,6 @@ class Group_rank extends Resource
         return [
             Text::make('Style','style')->hideWhenUpdating(),
             Text::make('Style Name','stylename')->hideWhenUpdating(),
-            Text::make('display rank','display_rank'),
             Sortable::make('Order', 'id'),
         ];
     }

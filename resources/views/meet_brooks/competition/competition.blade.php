@@ -31,7 +31,7 @@
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 					
 					@if(!empty($competition->comp_form_html))
-						{!!$competition->comp_form_html!!}
+						{!! $competition->comp_form_html !!}
 					@endif
 				
 				</div>
