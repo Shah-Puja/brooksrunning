@@ -627,8 +627,15 @@ class PaymentController extends Controller {
                               <State>" . htmlspecialchars($this->order->address->s_state) . "</State>
                               <Postcode>" . $this->order->address->s_postcode . "</Postcode>
                               <Country></Country>
-                            </Delivery>
+                            </Delivery>";
+                            $person_xml .=  '<References Type="Array">';
+                                    $person_xml .= "<Reference>
+                                    <ReferenceTypeId>1701</ReferenceTypeId>
+                                    <Id>18643</Id>
+                                    </Reference>";
+                            $person_xml .= "</References>
                         </Addresses>
+
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
