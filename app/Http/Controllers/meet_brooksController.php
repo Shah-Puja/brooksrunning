@@ -163,7 +163,13 @@ class meet_brooksController extends Controller {
                           <State></State>
                           <Country>$country</Country>
                           </Billing>
-                        </Addresses>
+                        </Addresses>";
+                        $person_xml .=  '<References Type="Array">';
+                                $person_xml .= "<Reference>
+                                <ReferenceTypeId>1701</ReferenceTypeId>
+                                <Id>18643</Id>
+                                </Reference>";
+                        $person_xml .= "</References> 
 	                  </Person>";
 
         $response = $this->bridge->processPerson($person_xml);

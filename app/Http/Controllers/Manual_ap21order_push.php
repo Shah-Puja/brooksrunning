@@ -59,8 +59,14 @@ class Manual_ap21order_push extends Controller {
                               <Postcode>" . $this->_order->address->s_postcode . "</Postcode>
                               <Country></Country>
                             </Delivery>
-                        </Addresses>
-                      </Person>";
+                        </Addresses>";
+                        $person_xml .=  '<References Type="Array">';
+                                $person_xml .= "<Reference>
+                                <ReferenceTypeId>1701</ReferenceTypeId>
+                                <Id>18643</Id>
+                                </Reference>";
+                        $person_xml .= "</References>
+                     </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
