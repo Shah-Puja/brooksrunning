@@ -160,8 +160,11 @@ class Category extends Model
                     $sorted = $p->sortBy(function ($product, $key) {
                         return $product->seqno;
                     });
-
+                    //print_r($sorted);
                     $sizes = $sorted->pluck('size')->unique()->values();
+                    
+                    $sizes = ($prod_type!='Apparel') ? $sizes->sort() : $sizes;
+
                     $filters['Size'] = $sizes->filter(function ($value, $key){
                         return  (!strpos($value,'(') !== false) ? $value :'';
                     });
