@@ -32,7 +32,7 @@
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
-                <img src="/images/Limited-Edition/levitate_le_categoryimage.jpg">
+                <img src="/images/Limited-Edition/nocategoryimage.jpg">
             </div>
         </div>
 </div>
