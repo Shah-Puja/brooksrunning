@@ -484,7 +484,7 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">Meet Brooks</a>
+                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">@if(rand(0,1)==1) Meet Brooks @else About @endif</a>
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">

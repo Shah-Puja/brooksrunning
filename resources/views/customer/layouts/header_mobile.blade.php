@@ -486,7 +486,7 @@
 	            </li>
 	            <li>
 	                <a href="javascript:;">
-	                    <span class="title">Meet Brooks</span>
+	                    <span class="title">@if(rand(0,1)==1) Meet Brooks @else About @endif</span>
 	                </a>
 	                <!-- Level Two-->
 	                <ul>
