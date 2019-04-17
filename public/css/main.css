@@ -120,7 +120,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.brooksourhistory .meet-title, .brooksourpurpose .meet-title, .collection-intro h1, .category__hero .m-block--hero--collection__content h1, .br-events-months .content-asset .cta, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-content .create-account--header .event-date, .br-events .cta, .br-events .content-asset .main-events li a .listevents h2, .br-events .events-information h4, .br-events .events-information .events-months li, .br-events .events-information .events-months .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .module .info-wrapper .tickLedeHead span, .rhi-header2 .info-wrapper .txtOffice, .brooksrunhappyis .module .info-wrapper .txtFeeling, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .shoe-main-container .shoes-info .para .features p strong, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .landingpage-banner .landingpage-banner--info .label--underline, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .transparent-button, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.brooksourhistory .meet-title, .brooksourpurpose .meet-title, .collection-intro h1, .category__hero .m-block--hero--collection__content h1, .br-events-months .content-asset .cta, .br-events-months .content-asset .main-events li a .listevents h2, .br-events-content .create-account--header .event-date, .br-events .cta, .br-events .content-asset .main-events li a .listevents h2, .br-events .events-information h4, .br-events .events-information .events-months li, .br-events .events-information .events-months .title, .br-events .events-information .upcoming-events .upcoming-list .viewmore-p span, .br-events .events-information .upcoming-events .upcoming-list .title, .br-events .module .info-wrapper .tickLedeHead span, .rhi-header2 .info-wrapper .txtOffice, .brooksrunhappyis .module .info-wrapper .txtFeeling, .brooksrunhappyis .module .info-wrapper .txtYoung, .brooksrunhappyis .module .info-wrapper .txtTap, .brooksrunhappyis .module .info-wrapper .txtReminds, .brooksrunhappyis .module .info-wrapper .tip, .brooksrunhappyis .module .info-wrapper .txtMeaningful, .tech-short-desc .info-wrapper .tech-short-blurb .tech-short-info h2, .shoe-main-container .shoes-info .para .features .shoe-experience strong, .shoe-main-container .shoes-info .para .features p strong, .shoe-main-container .shoes-info .para h1, .shoe-main-container .shoes-benefits #module1 h2, .shoe-main-container .shoes-benefits #module2 h2, .shoe-main-container .shoes-benefits #module3 h2, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title .left, .pr-landing-page .prod-desc--wrapper .lp-cate--link .title, .new-arrival .new-arrival--container .owl-carousel .product_arrive .prd_caption h3 .name-link, .landingpage-banner .landingpage-banner--info .label--underline, .br-shoefinder-subBanner .horizontal-shoe-finder .br-heading-mob .finder-heading-mob, .transparent-button, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -2551,7 +2551,6 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product {
-    max-width: 240px;
     margin: auto;
   }
 }
@@ -2657,41 +2656,109 @@ textarea {
   display: inline-block;
 }
 .shoe-main-container .shoes-info #desk a.utube .module-img {
-  max-width: 950px;
-  margin: 30px auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 .shoe-main-container .shoes-info #desk a.utube .module-img img {
   width: 100%;
 }
+@media only screen and (max-width: 767px) {
+  .shoe-main-container .shoes-info #desk a.utube .module-img {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
 .shoe-main-container .shoes-info .para {
-  margin: 0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 @media only screen and (max-width: 767px) {
   .shoe-main-container .shoes-info .para {
     margin: 0 auto;
+    width: 100%;
   }
 }
 .shoe-main-container .shoes-info .para h1 {
   color: #000000;
   font-size: 28px;
   margin-bottom: 0px !important;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .shoe-main-container .shoes-info .para h1 {
+    text-align: left;
+  }
 }
 .shoe-main-container .shoes-info .para p {
   margin-top: 0px !important;
   font-size: 16px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .shoe-main-container .shoes-info .para p {
+    text-align: justify;
+  }
+}
+.shoe-main-container .shoes-info .para p a {
+  color: #005cfb;
+  text-decoration: underline;
+}
+.shoe-main-container .shoes-info .para p a :visited {
+  color: #005cfb;
 }
 .shoe-main-container .shoes-info .para .features {
   line-height: 10px;
   margin-top: 30px;
+  position: relative;
 }
 .shoe-main-container .shoes-info .para .features p {
   font-size: 25px;
+  width: 33%;
+  float: left;
 }
 .shoe-main-container .shoes-info .para .features p strong {
   font-size: 28px;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .shoe-main-container .shoes-info .para .features p strong {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .shoe-main-container .shoes-info .para .features p {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .shoe-main-container .shoes-info .para .features p {
+    text-align: justify;
+    width: 100%;
+  }
+}
 .shoe-main-container .shoes-info .para .features .shoe-experience {
-  margin-top: -5% !important;
+  margin-top: -20px !important;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .shoe-main-container .shoes-info .para .features .shoe-experience {
+    margin-top: -23px !important;
+  }
+}
+.shoe-main-container .shoes-info .para .features .shoe-experience strong {
+  font-size: 28px;
+  margin-left: 3px;
+  display: inline;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .shoe-main-container .shoes-info .para .features .shoe-experience strong {
+    font-size: 18px;
+  }
+}
+.shoe-main-container .shoes-info .para .features .shoe-experience img {
+  display: inline;
 }
 .shoe-main-container .uTube--popup .popup-container--wrapper {
   max-width: 1050px;

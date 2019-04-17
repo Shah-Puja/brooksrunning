@@ -893,7 +893,7 @@
       .shoe-product{
         position: relative;
         @media #{$mobile-only} {
-          max-width: 240px;
+          // max-width: 240px;
           margin: auto;
         }
         a{
@@ -1001,41 +1001,90 @@
             position: relative;
             display: inline-block;
             .module-img{
-                max-width: 950px;
-                margin: 30px auto;
+                // max-width: 950px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 70%;
                   img{
                     width: 100%;
                   }
+                  @media #{$mobile-only} {
+                    margin: 0 auto;
+                    width: 100%;
+                }
               }
             }
           .para{
-                margin: 0 auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
                 @media #{$mobile-only} {
                     margin: 0 auto;
+                    width: 100%;
                 }
                   h1{
                     color: $black;
                     @extend %extrabold-font;
                     font-size:28px;
                     margin-bottom: 0px !important;
+                    text-align:center;
+                    @media #{$mobile-only} { text-align:left;}
                   }
                   p{
                     margin-top: 0px !important;
                     font-size:16px;
+                    text-align:center;
+                    @media #{$mobile-only} { text-align:justify;}
+                    a{
+                      color:#005cfb;
+                      text-decoration: underline;
+                      :visited { 
+                        color:#005cfb;
+                      }
+                    }
                   }
                   .features{
                       line-height: 10px;
                       margin-top: 30px;
+                      position:relative;
                            p{
                                font-size:25px;
+                               width: 33%;
+                                float: left;
                                  strong{
                                        font-size: 28px;
                                        @extend %extrabold-font;
+                                       @media #{$tab-only} {
+                                        font-size:18px;
+                                      }
                                   }
+                                @media #{$tab-only} {
+                                  font-size:15px;
+                                }
+                               @media #{$mobile-only} { text-align:justify; width: 100%;}
                              }
-                           .shoe-experience{
-                               margin-top: -5% !important;
-                            }
+                             .shoe-experience{
+                              margin-top: -20px !important;
+                              @media #{$tab-only} {
+                                margin-top: -23px !important;
+                              }
+                              strong{
+                                font-size: 28px;
+                                margin-left: 3px;
+                                @extend %extrabold-font;
+                                display: inline;
+                                @media #{$tab-only} {
+                                 font-size:18px;
+                               }
+                              }
+                              img{
+                                display: inline;
+                               
+                              }
+                              
+                           }
                     }
                }
         }
