@@ -5846,20 +5846,44 @@ textarea {
 /* Start Collection-Listing */
 .category__hero {
   height: auto;
-  max-height: 400px;
+  max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-color: #0363F7;
+}
+@media only screen and (max-width: 767px) {
+  .category__hero {
+    height: auto;
+    max-height: 500px;
+    margin-bottom: 0px;
+  }
+  .category__hero .pl-0 {
+    padding-left: 0 !important;
+  }
+  .category__hero .pr-0 {
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .category__hero {
+    max-height: 500px;
+  }
+  .category__hero .pl-0 {
+    padding-left: 0 !important;
+  }
+  .category__hero .pr-0 {
+    padding-right: 0 !important;
+  }
 }
 .category__hero .m-block--hero--basic--collection {
   background: #0363F7;
   overflow-x: visible;
   padding: 8px 0 0;
   position: relative;
-  border-left: 1px solid black;
 }
 .category__hero .m-block--hero--basic--collection .collection-hero-overlay {
   background: url(../images/Limited-Edition/curve-blue-n.png);
@@ -5904,8 +5928,8 @@ textarea {
   }
 }
 .category__hero .large {
-  font-size: 50px;
-  line-height: 55px;
+  font-size: 45px;
+  line-height: 0.5;
 }
 @media only screen and (max-width: 767px) {
   .category__hero .large {
@@ -5923,15 +5947,17 @@ textarea {
 }
 .category__hero .m-block--hero--collection__content p {
   color: #fff;
-  margin: 3rem 0;
+  margin: 2rem 0;
+  font-size: 18px;
+  line-height: 26px;
 }
 @media only screen and (max-width: 767px) {
   .category__hero .m-block--hero--collection__content p {
     color: #fff;
     margin: 1rem 0;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
-    line-height: 23px;
+    line-height: 24px;
     text-align: center;
   }
 }
@@ -5939,9 +5965,9 @@ textarea {
   .category__hero .m-block--hero--collection__content p {
     color: #fff;
     margin: 1rem 0;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
-    line-height: 23px;
+    line-height: 24px;
     text-align: center;
   }
 }
@@ -5956,8 +5982,7 @@ textarea {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .category__hero .m-block--hero--collection__content h1 {
     color: #fff;
-    margin: 0 0 13px;
-    text-align: center;
+    margin: 0 15px 13px;
     line-height: 34px;
   }
 }
@@ -5979,6 +6004,14 @@ textarea {
 .category__hero .m-block--hero--collection__content .m-block--hero__content__copy {
   color: #0E0E0E;
   margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .category__hero .m-block--hero--collection__content .m-block--hero__content__copy .about-header {
+    text-align: center;
+  }
+}
+.category__hero .m-block--hero--collection__content .m-block--hero__content__copy .about-header .breadcrumbs {
+  margin: 0 0 30px;
 }
 @media only screen and (max-width: 767px) {
   .category__hero .m-block--hero--collection__content {
@@ -6010,22 +6043,7 @@ textarea {
     position: absolute;
     top: 0;
     width: calc(100% - -70px);
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .category__hero .category__hero__image:before {
-    z-index: 1000;
-    border: solid 40px;
-    border-color: transparent;
-    border-radius: 70%/75px 48px 0 0;
-    box-shadow: -20px -40px 0 #0363F7;
-    content: " ";
-    display: block;
-    height: 0px;
-    left: -57px;
-    position: absolute;
-    top: 0;
-    width: calc(100% - -70px);
+    background-size: cover;
   }
 }
 .category__hero .category__hero__image {
@@ -6035,11 +6053,11 @@ textarea {
 @media (min-width: 975px) {
   .category__hero .m-block--hero--basic--collection {
     float: left;
-    padding: 23px 0 0;
-    height: 400px;
+    padding: 15px 0 0;
+    height: 300px;
   }
   .category__hero .m-block--hero--collection__content {
-    margin: 0 10px 120px 60px;
+    margin: 15px 0px 0px 15px;
     padding: 0;
     float: right;
   }
@@ -6049,6 +6067,7 @@ textarea {
   .category__hero .m-block--hero--collection__content h1 {
     margin: 0 0 8px;
     color: #fff;
+    padding: 0 15px;
   }
   .category__hero .m-block--hero--collection__content .breadcrumbs {
     margin: 0 0 69px;
@@ -6062,10 +6081,15 @@ textarea {
   .category__hero .category__hero__image {
     z-index: 1;
     border-left: 1px solid #0363F7;
+    position: absolute;
+    top: 50%;
+    left: 50.3%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
   }
   .category__hero .category__hero__image img {
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -6077,6 +6101,26 @@ textarea {
   }
   .category__hero .pr-0 {
     padding-right: 0 !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .category__hero .category__hero__image {
+    z-index: 1;
+    border-left: 1px solid #0363F7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+  }
+  .category__hero .category__hero__image img {
+    height: 100%;
+    min-height: 300px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 80%;
+    object-position: 80%;
   }
 }
 @media only screen and (max-width: 767px) {

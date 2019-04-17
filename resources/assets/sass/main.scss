@@ -2508,19 +2508,40 @@ ul {
 
 .category__hero{
   height: auto;
-  max-height: 400px;
+  max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   width: 100%;
   background-color: #0363F7;
+  @media #{$mobile-only}{
+  height: auto;
+  max-height: 500px;
+  margin-bottom: 0px;
+  .pl-0{
+    padding-left:0 !important;
+    }
+    .pr-0{
+        padding-right: 0 !important;
+    } 
+  }
+  @media #{$tab-only}{
+    
+    max-height: 500px;
+    .pl-0{
+      padding-left:0 !important;
+      }
+      .pr-0{
+          padding-right: 0 !important;
+      } 
+  }
   .m-block--hero--basic--collection {
     background: #0363F7;
     overflow-x: visible;
     padding: 8px 0 0;
     position: relative;
-    border-left: 1px solid black;
     .collection-hero-overlay {
       background: url(../images/Limited-Edition/curve-blue-n.png);
       background-repeat: no-repeat;
@@ -2558,8 +2579,8 @@ ul {
     }
   }
   .large {
-    font-size: 50px;
-    line-height: 55px;
+    font-size: 45px;
+    line-height: 0.5;
     
     @media #{$mobile-only}{
       font-size: 30px;
@@ -2576,22 +2597,24 @@ ul {
 .m-block--hero--collection__content{
   p {
     color: #fff;
-    margin: 3rem 0;
+    margin: 2rem 0;
+    font-size:18px;
+    line-height:26px;
     @extend %info-font;
     @media #{$mobile-only} {
       color: #fff;
       margin: 1rem 0;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: normal;
-      line-height: 23px;
+      line-height: 24px;
       text-align:center;
       }
       @media #{$tab-only} {
         color: #fff;
         margin: 1rem 0;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: normal;
-        line-height: 23px;
+        line-height: 24px;
         text-align:center;
         }
   }
@@ -2606,8 +2629,7 @@ ul {
     }
     @media #{$tab-only}{
       color: #fff;
-     margin: 0 0 13px;
-     text-align:center;
+     margin: 0 15px 13px;
      line-height: 34px;
    }
   }
@@ -2625,6 +2647,14 @@ ul {
   .m-block--hero__content__copy {
     color: #0E0E0E;
     margin: 0;
+    .about-header{
+      @media #{$mobile-only}{
+      text-align: center;
+      }
+      .breadcrumbs {
+        margin: 0 0 30px;
+      }
+    }
   }
   @media #{$mobile-only}{
   margin: 0 20px;
@@ -2655,21 +2685,9 @@ ul {
       position: absolute;
       top: 0;
       width: calc(100% - -70px);
+      background-size: cover;
     }
-    @media #{$tab-only}{
-      z-index: 1000;
-      border: solid 40px;
-      border-color: transparent;
-      border-radius: 70%/75px 48px 0 0;
-      box-shadow: -20px -40px 0 #0363F7;
-      content: ' ';
-      display: block;
-      height: 0px;
-      left: -57px;
-      position: absolute;
-      top: 0;
-      width: calc(100% - -70px);
-    }
+  
     
   }
 }
@@ -2680,12 +2698,12 @@ ul {
 @media (min-width: 975px){
 .m-block--hero--basic--collection {
     float: left;
-    padding: 23px 0 0;
-    height: 400px;
+    padding: 15px 0 0;
+    height: 300px;
 }
 .m-block--hero--collection__content {
-    margin: 0 10px 120px 60px;
-    padding: 0;
+  margin: 15px 0px 0px 15px;
+  padding: 0;
     float: right;
   .breadcrumbs {
     margin: 0 0 69px;
@@ -2693,6 +2711,7 @@ ul {
   h1 {
     margin: 0 0 8px;
     color :#fff;
+    padding: 0 15px;
     } 
     .breadcrumbs {
       margin: 0 0 69px;
@@ -2710,15 +2729,20 @@ ul {
 .category__hero__image {
   z-index: 1;
   border-left: 1px solid #0363F7;
+  position: absolute ;
+  top: 50%;
+  left: 50.3%;
+  transform: translate(0%,-50%);
+  -ms-transform: translate(0%,-50%);
   img {
     height: 100%;
-    min-height: 400px;
+    min-height: 300px;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: 80%;
     object-position: 80%;
-  }
+    }
   }
   .pl-0{
     padding-left:0 !important;
@@ -2727,6 +2751,27 @@ ul {
         padding-right: 0 !important;
     } 
 }
+@media #{$tab-only}{
+  .category__hero__image {
+    z-index: 1;
+    border-left: 1px solid #0363F7;
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,-50%);
+    -ms-transform: translate(0%,-50%);
+
+      img {
+        height: 100%;
+        min-height: 300px;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 80%;
+        object-position: 80%;
+      }
+    }
+  }
 @media #{$mobile-only}{
 overflow: hidden;
 position: relative;
@@ -2740,16 +2785,16 @@ width: 100%;
 
   .collection-hero-overlay {
     @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-    background: url('../images/Limited-Edition/curve-blue-n.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    display: block;
-    height: 100%;
-    left: 100%;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+      background: url('../images/Limited-Edition/curve-blue-n.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      display: block;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      z-index: 100;
     }
   }
 }
@@ -2771,6 +2816,7 @@ width: 100%;
   }
   
 }
+
 .error-msg-listing{
   font-size: 25px;
   text-align: center;
