@@ -2579,9 +2579,9 @@ ul {
     }
   }
   .large {
-    font-size: 50px;
+    font-size: 45px;
     line-height: 1.0;
-    width:50%;
+    width:100%;
     letter-spacing: 2px;
     @media #{$mobile-only}{
       font-size: 30px;
@@ -2591,6 +2591,20 @@ ul {
       font-size: 30px;
       width:100%;
     }
+}
+.title {
+  font-size: 50px;
+  line-height: 1.0;
+  width:50%;
+  letter-spacing: 2px;
+  @media #{$mobile-only}{
+    font-size: 30px;
+    width:100%;
+  }
+  @media #{$tab-only}{
+    font-size: 30px;
+    width:100%;
+  }
 }
 
 .type {
