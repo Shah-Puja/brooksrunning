@@ -2579,14 +2579,17 @@ ul {
     }
   }
   .large {
-    font-size: 45px;
-    line-height: 0.5;
+    font-size: 50px;
+    line-height: 1.0;
+    width:50%;
     
     @media #{$mobile-only}{
       font-size: 30px;
+      width:100%;
     }
     @media #{$tab-only}{
       font-size: 30px;
+      width:100%;
     }
 }
 
@@ -2601,6 +2604,8 @@ ul {
     font-size:18px;
     line-height:26px;
     @extend %info-font;
+    padding: 0 15px;
+    width:70%;
     @media #{$mobile-only} {
       color: #fff;
       margin: 1rem 0;
@@ -2608,6 +2613,7 @@ ul {
       font-weight: normal;
       line-height: 24px;
       text-align:center;
+      width:100%;
       }
       @media #{$tab-only} {
         color: #fff;
@@ -2615,7 +2621,7 @@ ul {
         font-size: 16px;
         font-weight: normal;
         line-height: 24px;
-        text-align:center;
+        width:70%;
         }
   }
   h1 {
@@ -2702,7 +2708,7 @@ ul {
     height: 300px;
 }
 .m-block--hero--collection__content {
-  margin: 15px 0px 0px 15px;
+  margin: 15px 0px 0px 96px;
   padding: 0;
     float: right;
   .breadcrumbs {
@@ -2711,7 +2717,7 @@ ul {
   h1 {
     margin: 0 0 8px;
     color :#fff;
-    padding: 0 15px;
+    padding: 0 10px;
     } 
     .breadcrumbs {
       margin: 0 0 69px;
@@ -2800,12 +2806,18 @@ width: 100%;
 }
 .collection-intro{
   background-color: #fff;
-  text-align: center !important;
   h1{
     color:#0E0E0E;
     margin: 0 0 9px;
     @extend %extrabold-font;
     text-align: center;
+  }
+  h2{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    font-size:25px;
+    text-align:left;
   }
   p{
     max-width: 100%;
@@ -2813,10 +2825,24 @@ width: 100%;
     font-size: 22px;
     line-height: 30px;
     @extend %info-font;
+    text-align: center;
   }
-  
+  div{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 18px;
+    line-height: 26px;
+    @extend %info-font;
+    .shop-all{
+      text-align:left !important;
+      color: #0263f7;
+    }
+  }
+   
 }
-
+.collection-listing-conatiner{
+  padding-top: 25px;
+}
 .error-msg-listing{
   font-size: 25px;
   text-align: center;

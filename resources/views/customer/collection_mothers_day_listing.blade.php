@@ -6,7 +6,7 @@
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
-            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
                 <div class="m-block--hero--collection__content">
                     <div class="m-block--hero__content__copy">
                     <div class="about-header">
@@ -24,24 +24,28 @@
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Gifts for women</h1>
+                        <h1 class="large">Gifts for Women</h1>
                         <p class="type">Treat the runner in your life with the latest in Brooks performance running gear<br/>
                         </p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
-            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+            <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 <img src="/images/Limited-Edition/nocategoryimage.jpg">
             </div>
         </div>
 </div>
 <!-- Women running shoes section -->
 @if(!empty($women_running_shoes))
-<section class="plp-container">
+<section class="plp-container collection-listing-conatiner">
 	<div class="wrapper">
 		<div class="row">
-            <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
+            <div class="col-3 tab-4 ">
+                <div class="collection-intro">
+                    <h2>Women's Running Shoes</h2>
+                    <div><a href="/" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                </div>
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
@@ -151,10 +155,14 @@
 
 <!-- Women running clothing section -->
 @if(!empty($women_running_clothing))
-<section class="plp-container">
+<section class="plp-container collection-listing-conatiner">
 	<div class="wrapper">
 		<div class="row">
-            <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
+            <div class="col-3 tab-4">
+                <div class="collection-intro">
+                    <h2>Women's Running Clothing</h2>
+                    <div><a href="/" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                </div>
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
@@ -289,10 +297,14 @@
 
 <!-- Sports bras section -->
 @if(!empty($sports_bras))
-<section class="plp-container">
+<section class="plp-container collection-listing-conatiner">
 	<div class="wrapper">
 		<div class="row">
-            <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
+            <div class="col-3 tab-4">
+                <div class="collection-intro">
+                    <h2>Sports Bra's</h2>
+                    <div><a href="/" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                </div>
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
@@ -427,10 +439,14 @@
 
 <!-- Accessories section -->
 @if(!empty($accessories))
-<section class="plp-container">
+<section class="plp-container collection-listing-conatiner">
 	<div class="wrapper">
 		<div class="row">
-            <div class="col-3 tab-4 mobile-plp--filter plp-mob-filter__control">
+            <div class="col-3 tab-4">
+                <div class="collection-intro">
+                    <h2>Accessories</h2>
+                    <div><a href="/" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                </div>
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
