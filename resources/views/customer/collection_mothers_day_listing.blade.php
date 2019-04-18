@@ -24,7 +24,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Gifts for Women</h1>
+                        <h1 class="title">Gifts for Women</h1>
                         <p class="type">Treat the runner in your life with the latest in Brooks performance running gear<br/>
                         </p>
                     </div>

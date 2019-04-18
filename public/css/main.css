@@ -4321,9 +4321,9 @@ textarea {
   }
 }
 .category__hero .large {
-  font-size: 50px;
+  font-size: 45px;
   line-height: 1;
-  width: 50%;
+  width: 100%;
   letter-spacing: 2px;
 }
 @media only screen and (max-width: 767px) {
@@ -4334,6 +4334,24 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .category__hero .large {
+    font-size: 30px;
+    width: 100%;
+  }
+}
+.category__hero .title {
+  font-size: 50px;
+  line-height: 1;
+  width: 50%;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 767px) {
+  .category__hero .title {
+    font-size: 30px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .category__hero .title {
     font-size: 30px;
     width: 100%;
   }
