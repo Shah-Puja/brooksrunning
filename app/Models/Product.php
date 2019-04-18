@@ -79,6 +79,40 @@ class Product extends Model
     {
         return $this->hasMany('App\Models\Csv_rank','product_id','id');
     }
-
+    
+    public static function getProducts_array($array) {
+        $data_array = [];
+        foreach($array as $item){
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        }   
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })
+                                    ->with('variants')
+                                    ->get();
+            
+        $products = $styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        })->unique('style');
+        
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
+        
+        return [ 'products' => $products ,'colour_options' => $colour_options ];
+    }
     
 }
