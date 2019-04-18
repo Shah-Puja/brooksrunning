@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Naxon\NovaFieldSortable\Concerns\SortsIndexEntries;
 use Naxon\NovaFieldSortable\Sortable;
+use Chaseconey\ExternalImage\ExternalImage;
 
 class Group_rank extends Resource
 {
@@ -52,21 +53,45 @@ class Group_rank extends Resource
      */
 
     public static function indexQuery(NovaRequest $request, $query)
-    {
-        if (empty($request->get('orderBy'))) {
-            $query->getQuery()->orders = [];
-            return $query->orderBy(key(static::$indexDefaultOrder), reset(static::$indexDefaultOrder));
-        }
-        return $query;
+    {   
+        $query =  $query->select('p_products.style','p_products.stylename','group_ranks.display_rank','group_ranks.id','p_images.image1','p_variants.price_sale')
+                        ->distinct()
+                        ->join('p_products', 'p_products.style', '=', 'group_ranks.style')
+                        ->join('p_images', 'p_products.id', '=', 'p_images.product_id')
+                        ->join('p_variants', 'p_products.id', '=', 'p_variants.product_id')
+                        ->where('p_variants.visible' ,'Yes');
+                        if (empty($request->get('orderBy'))) {
+                            $query->getQuery()->orders = [];
+                            return $query->orderBy(key(static::$indexDefaultOrder), reset(static::$indexDefaultOrder));
+                        }
+                         return $query;
     }
     
     public function fields(Request $request)
     {
         return [
+            ExternalImage::make('Image', function () {
+                return $this->handleImageRequest($this->image1, 'thumbnail');
+            }),
             Text::make('Style','style')->hideWhenUpdating(),
             Text::make('Style Name','stylename')->hideWhenUpdating(),
+            Text::make('Price', function () {
+                return '$'.$this->price_sale;
+            }),
             Sortable::make('Order', 'id'),
         ];
+    }
+
+    private function handleImageRequest($image, $size)
+    {   
+        $fullImageName = strtolower($image);
+        $style = explode("_",$fullImageName);
+		$imageName = substr( $fullImageName, 0, strrpos($fullImageName, ".") );
+		$imageExtension = substr( $fullImageName, strrpos($fullImageName, ".") );
+		return config('site.image_url.products.' . $size) .
+				$imageName . 
+				config('site.image_extensions.' . $size) .
+				$imageExtension;
     }
 
     /**

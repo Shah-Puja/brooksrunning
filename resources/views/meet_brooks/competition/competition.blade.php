@@ -32,6 +32,34 @@
 					
 					@if(!empty($competition->comp_form_html))
 						{!! $competition->comp_form_html !!}
+							<input type="hidden" name="comp_name" value="{{ $competition->comp_name }}" />
+							<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
+							<div class="row" style="margin-top:20px;">
+								<div class="tab-6">
+									<div class="input-wrapper">
+										<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
+										<label class="recaptcha-label"></label>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="tab-12">
+									<!-- <div class="cart-btn">
+										<button class="primary-button">Enter</button>
+									</div> -->
+									<div class="cart-btn comp-submit" >
+										<div class="alignleft inline-loader">
+											<button class="primary-button" id="comp_submit_btn">Enter</button>
+										</div>
+										<div class="alignright inline-loader">
+											<div id = "comp_loader" style="display:none">
+												<img src = "/images/loader.gif" alt="comp-loader"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
 					@endif
 				
 				</div>

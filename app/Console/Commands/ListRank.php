@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\Group_ranks;
+use DB;
 
 class ListRank extends Command
 {
@@ -38,7 +38,11 @@ class ListRank extends Command
      */
     public function handle()
     {
-        $a = Group_ranks::distinct()->get(['group_id']);
-        print_r($a);
+        DB::insert('Insert ignore into group_ranks(group_id,style,stylename,display_rank) 
+        select distinct group_id,b.style,b.stylename,0 from groups a,p_products b
+        where a.product_id=b.id order by group_id');
+
+        DB::update('update group_ranks set display_rank=id where display_rank=0');
+
     }
 }
