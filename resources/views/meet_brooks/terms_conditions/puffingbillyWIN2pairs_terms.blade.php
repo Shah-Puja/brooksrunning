@@ -1,16 +1,16 @@
 <div class="privacy-content">
-  <p><strong><u>Gold Coast Running Festival 2019 Competition Terms &amp; Conditions</u></strong></p>
+  <p><strong><u>Puffing Billy WIN 2 Pairs Competition Terms &amp; Conditions</u></strong></p>
 <ol>
     <li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
-    <li>Entry is open to Australian residents, except employees of Texas Peak Pty Ltd.</li>
-    <li>The entire Promotional period commences on Tuesday 23rd April 2019 and concludes Sunday 28th April 2019 at 12.00am. The winner will be selected on Monday 29th May at 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, <i>Australia</i>. The winner will be notified by email</li>
-    <li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/gcrfguessracetimecomp">https://www.brooksrunning.com.au/meet_brooks/competition/gcrfguessracetimecomp</a>  during the dates specified above. It is the participant&apos;s responsibility to ensure all details are full and correct before submitting their entry form.</li> 
-    <li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters.  </li>
-    <li>The winner of the Promotion will be chosen based on the accuracy of their estimate of the winning race time of the 2019 Gold Coast Running Festival half marathon event. The prizes must be claimed before 5pm AEST on Monday 19th May 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 20th May 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
+    <li>Entry is open to Australian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
+    <li>The entire Promotional period commences on Tuesday 23rd April 2019 and concludes Sunday 5th May 2019. The winner will be selected on Monday 6th May 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, <i>Australia</i>. The winner will be notified by email.</li>
+    <li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/puffingbillyWIN2pairs">https://www.brooksrunning.com.au/meet_brooks/competition/puffingbillyWIN2pairs</a> during the dates specified above. It is the participant&apos;s responsibility to ensure all details are full and correct before submitting their entry form.</li> 
+    <li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters. </li>
+    <li>The winner of the Promotion will be chosen at random. The prizes must be claimed before 5pm AEST on 26th May 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 27th May 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
     <li>Each prize is as follows:
         <ul style="margin-left: 35px; margin-top:15px; margin-bottom: 15px;">
-              <li>A Brooks Running $300RRP voucher redeemable at <a href="www.brooksrunning.com.au">www.brooksrunning.com.au</a> </li>
-            
+              <li>A pair of Brooks footwear of your choice</li>
+              <li>A pair of Brooks footwear of your friend&apos;s choice</li>
         </ul>
     </li>
     <li>The Promoter reserves the right to request winners to provide proof of their identity and proof of Australian residency in order to claim the prize. Proof of identification and residency is at the judgment of the promoter.</li>
