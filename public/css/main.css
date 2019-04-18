@@ -2721,7 +2721,7 @@ textarea {
   float: left;
 }
 .shoe-main-container .shoes-info .para .features p strong {
-  font-size: 28px;
+  font-size: 22px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .shoe-main-container .shoes-info .para .features p strong {
@@ -2748,7 +2748,7 @@ textarea {
   }
 }
 .shoe-main-container .shoes-info .para .features .shoe-experience strong {
-  font-size: 28px;
+  font-size: 22px;
   margin-left: 3px;
   display: inline;
 }
