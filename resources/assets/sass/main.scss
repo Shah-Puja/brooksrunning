@@ -3261,7 +3261,7 @@ width: 100%;
   }
   h2{
     color:#0E0E0E;
-    margin-bottom: 0px;
+    margin-top: 40px;
     font-size:24px;
     line-height: .5;
     @extend %extrabold-font;
@@ -3350,7 +3350,6 @@ width: 100%;
       p{
         font-size: 18px;
         line-height: 26px;
-        margin-bottom: 20px;
         @media #{$mobile-only}{
           font-size: 16px;
           line-height: 24px;
@@ -3485,7 +3484,6 @@ width: 100%;
           display: block;
           height: 12px;
           margin: 5px 7px;
-          opacity: 0.5;
           width: 12px;
         }
       }
@@ -3586,7 +3584,8 @@ width: 100%;
       margin : 10px auto;
       font-size:28px;
       @media #{$mobile-only}{
-        margin : 10px auto;
+        margin : 20px auto;
+        font-size:25px;
       }
     }
     .no-result{
@@ -3663,7 +3662,7 @@ width: 100%;
     margin: 20px auto;
     width:85%;
     @media #{$mobile-only} {
-      width:100%;
+      width:95%;
     }
     @media #{$tab-only} {
       width:100%;

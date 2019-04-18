@@ -5012,7 +5012,7 @@ textarea {
 }
 .event-intro h2 {
   color: #0E0E0E;
-  margin-bottom: 0px;
+  margin-top: 40px;
   font-size: 24px;
   line-height: 0.5;
   text-align: center;
@@ -5120,7 +5120,6 @@ textarea {
 .tabbedcontent.blurb-per-race p {
   font-size: 18px;
   line-height: 26px;
-  margin-bottom: 20px;
 }
 @media only screen and (max-width: 767px) {
   .tabbedcontent.blurb-per-race p {
@@ -5240,7 +5239,6 @@ textarea {
   display: block;
   height: 12px;
   margin: 5px 7px;
-  opacity: 0.5;
   width: 12px;
 }
 
@@ -5345,7 +5343,8 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-filters .event-background .br-mainheading {
-    margin: 10px auto;
+    margin: 20px auto;
+    font-size: 25px;
   }
 }
 .event-filters .event-background .no-result p {
@@ -5420,7 +5419,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container {
-    width: 100%;
+    width: 95%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
