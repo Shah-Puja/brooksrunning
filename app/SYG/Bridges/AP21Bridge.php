@@ -12,7 +12,7 @@ class AP21Bridge implements BridgeInterface {
 
 	public function processCart($data)
 	{
-		$response = $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getStatusCode();
+		$response = $this->apiClient->put('Carts/1234?countryCode=AUFITs', ['body' => $data])->getStatusCode();
 		echo "<pre>";print_r($response);die;
 	}
 
