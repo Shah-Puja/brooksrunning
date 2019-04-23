@@ -104,7 +104,7 @@
 							</form>
 							<div class="no-result" >
 								<p class="error">Sorry, currently no events match those selections. Please try again.</p>
-								<p class="clear-filter">clear filters <a href="#"><span>&#9746;</span></a></p>
+								<p class="clear-filter">clear filters <a href="#"><span style="color:#000;">&#9746;</span></a></p>
 							</div>
 						</div>
 				</div>
