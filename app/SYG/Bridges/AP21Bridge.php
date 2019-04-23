@@ -12,7 +12,8 @@ class AP21Bridge implements BridgeInterface {
 
 	public function processCart($data)
 	{
-		return $this->apiClient->put('Carts/1234?countryCode=AUFITs', ['body' => $data])->getBody();
+		$cart = $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getBody();
+		echo "<pre>";print_r($cart);die;
 	}
 
 	public function allProducts()
