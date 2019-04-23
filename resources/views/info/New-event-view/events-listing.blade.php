@@ -102,12 +102,13 @@
 									</div>
 								</div>
 							</form>
+							<div class="no-result" >
+								<p class="error">Sorry, currently no events match those selections. Please try again.</p>
+								<p class="clear-filter">clear filters <a href="#"><span>&#9746;</span></a></p>
+							</div>
 						</div>
 				</div>
-				<div class="no-result" style="display:none;">
-					<p class="error">Sorry, currently no events match those selections. Please try again.</p>
-					<p class="clear-filter">clear filters <a href="#"><span>&#9746;</span></a></p>
-				</div>
+				
 			</div>
 		</div>
 	</div>

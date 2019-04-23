@@ -3058,7 +3058,7 @@ width: 100%;
         font-size: 16px;
         font-weight: normal;
         line-height: 24px;
-        text-align:center;
+        text-align:left;
         }
   }
   h1 {
@@ -3262,6 +3262,18 @@ width: 100%;
   h2{
     color:#0E0E0E;
     margin-top: 40px;
+    font-size:24px;
+    line-height: .5;
+    @extend %extrabold-font;
+    text-align: center;
+    @media #{$mobile-only}{
+      font-size:22px;
+    line-height: .4;
+      }
+  }
+  h3{
+    color:#0E0E0E;
+    margin-top: 10px;
     font-size:24px;
     line-height: .5;
     @extend %extrabold-font;
@@ -3596,6 +3608,7 @@ width: 100%;
         .clear-filter{
           font-size:14px;
           a{
+            color:$black !important;
             span{
               color:$black !important;
             }
