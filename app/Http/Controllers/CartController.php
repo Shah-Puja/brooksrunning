@@ -19,8 +19,7 @@ class CartController extends Controller {
     public function show() {
         $cart = array();
         $cart_arr = array();
-        //session(['cart_id' => '1']); //comment this static after add to cart functionality
-        //echo "<pre>";print_r(session()->all());die;
+       
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);
@@ -30,14 +29,7 @@ class CartController extends Controller {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
-        // echo "<pre>";print_r($cart);die;
-        /* checking stock - Not required
-          if ($cart && !$cart->verifyItems()) {
-          $cart->deleteUnavaliableItems();
-          } */
-
-
-
+       
         if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
             if (!empty($cart) && isset($cart['items_count']) && $cart['items_count'] > 0) {
@@ -75,6 +67,10 @@ class CartController extends Controller {
 
                 $cart_details = $data['cart_detail'];
             }else{ 
+                echo "Cart items";echo "<pre>";
+              print_r($cart['cart_items']);
+              die;
+                /*foreach ($cart['cart_items'] as $item) {}*/
                 $total_discount = 0;
                 Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
             }
