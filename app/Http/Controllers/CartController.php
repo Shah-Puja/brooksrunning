@@ -94,7 +94,7 @@ class CartController extends Controller {
             
                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
              $qty = $item['qty']; 
-                         $price_sale = isset($item['price_sale']) ? $item['price_sale'] : $item['price'];
+                         $price_sale = isset($item['price_sale']) ? $item['price_sale'] : 0;
              Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
                 
          }die;
