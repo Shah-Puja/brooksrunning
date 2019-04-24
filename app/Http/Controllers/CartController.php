@@ -68,7 +68,7 @@ class CartController extends Controller {
                 $cart_details = $data['cart_detail'];
             }else{ 
                 echo "Cart items";echo "<pre>";
-              print_r($cart['cart_items']);
+              print_r($cart_arr['cart_items']);
               die;
                 /*foreach ($cart['cart_items'] as $item) {}*/
                 $total_discount = 0;
