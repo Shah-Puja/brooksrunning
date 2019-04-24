@@ -22,7 +22,6 @@ class CartController extends Controller {
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-echo "<pre>";print_r($cart);die;
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);
 
@@ -75,10 +74,10 @@ echo "<pre>";print_r($cart);die;
                 Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
 
                 $cart_details = $data['cart_detail'];
+            }else{
+                $cart_details = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
             }
-            echo "<pre>";
-            print_r($cart_details);
-            die;
+             
             if (!empty($cart_details)) {
                 foreach ($cart_details as $item):
                     if ($item['ProductCode'] == 'EXPRESS') {
