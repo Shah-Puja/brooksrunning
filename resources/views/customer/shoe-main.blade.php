@@ -114,6 +114,9 @@
 								@elseif($url_segment=='addiction')
 										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Addiction_13.PNG" />
 								
+								@elseif($url_segment=='glycerin')
+										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Glycerin_17.JPG" />
+								
 								@else
 										<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
 								@endif
