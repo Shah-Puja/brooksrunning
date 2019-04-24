@@ -76,7 +76,9 @@ class CartController extends Controller {
 
                 $cart_details = $data['cart_detail'];
             }
-
+            echo "<pre>";
+            print_r($cart_details);
+            die;
             if (!empty($cart_details)) {
                 foreach ($cart_details as $item):
                     if ($item['ProductCode'] == 'EXPRESS') {
