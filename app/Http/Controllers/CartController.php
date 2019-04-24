@@ -17,7 +17,6 @@ class CartController extends Controller {
     }
 
     public function show() {
-        $cart = array();
         $cart_arr = array();
 
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
