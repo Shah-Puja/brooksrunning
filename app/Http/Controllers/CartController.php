@@ -61,9 +61,6 @@ class CartController extends Controller {
 
                 $cart_details = $data['cart_detail'];
             } else {
-                /* echo "Cart items";echo "<pre>";
-                  print_r($cart_arr['cart_items']);
-                  die; */
                 $total = 0;
                 if (!empty($cart_arr)) {
                     foreach ($cart_arr['cart_items'] as $item) {
@@ -75,15 +72,11 @@ class CartController extends Controller {
                             Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
                         }
                     }
-
-
                     $cart_total = $total;
                     $total_discount = 0;
                     $freight_charges = $cart_arr['freight_cost'];
-
                     Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
                 }
-                $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
             }
             if (!empty($cart_details)) {
                 foreach ($cart_details as $item):
@@ -101,6 +94,7 @@ class CartController extends Controller {
                     }
                 endforeach;
             }
+            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         }
 
         if (isset($cart->promo_code) && $cart->promo_code != "") {
