@@ -74,11 +74,10 @@ class CartController extends Controller {
                 Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
 
                 $cart_details = $data['cart_detail'];
-            }else{
-                $cart_details = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-               echo "ssssssssssss"; echo "<pre>";
-                print_r($cart_details);
-                die;}
+            }else{ 
+                $total_discount = 0;
+                Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
+            }
              
             if (!empty($cart_details)) {
                 foreach ($cart_details as $item):
