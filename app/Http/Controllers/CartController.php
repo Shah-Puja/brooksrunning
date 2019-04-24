@@ -89,6 +89,9 @@ class CartController extends Controller {
            print_r($cart_arr['cart_items']);
            die;*/
            foreach ($cart_arr['cart_items'] as $item) {
+            echo "Cart items";echo "<pre>";
+            print_r($item);
+            die;
                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
              $qty = $item['qty']; 
                          $price_sale = $item['price_sale'];
