@@ -17,6 +17,7 @@ class Categories extends Resource
      * @var string
      */
     public static $model = 'App\Models\Category';
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

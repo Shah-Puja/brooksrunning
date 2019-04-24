@@ -51,37 +51,17 @@ class Category extends Model
             ->orderBy('seqno')
             ->get();
 
-            
-            $sorted_products = $products->sortByDesc(function ($product, $key) use ($cat_id) {
-                    if(isset($product->groupranks) && count($product->groupranks) >0){
-                        $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
-                            $data=[];
-                                     if($value->group_id==$cat_id){
-                                        $data[] = $value;
-                                     }
-                                return $data;
-                        });
-                        foreach(collect($filter_product) as $group_rank):
-                            if($cat_id==$group_rank->group_id):
-                                return $group_rank->display_rank;
-                            else:
-                                return '1000000000';
-                            endif;
-                        endforeach;
-                    }else{
-                        return '1000000000';
-                    }
-              });
+            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+                if(isset($product->groupranks) && count($product->groupranks) >0){
+                    foreach($product->groupranks->where('group_id',$cat_id) as $group_rank):
+                        return $group_rank->display_rank;
+                    endforeach;
+                }else{
+                    return '100';
+                }
+            });
 
-           /* $sorted_products = $products->sortByDesc(function ($product, $key) {
-                        foreach($product->variants as $variant):
-                              return $variant->release_date;
-                        endforeach;
-                      });*/
-               
             return  $sorted_products;
-        
-        
     }
 
     public static function getProducts_main($gender,$prod_type,$name,$cat_id) {              
