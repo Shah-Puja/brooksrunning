@@ -135,6 +135,8 @@ class CartController extends Controller {
                 $bridge = $cart_xml_response->getContents();
             $xml = simplexml_load_string($bridge);
         }
+        echo "wwwwwwwwww"; echo "<pre>";
+              print_r($xml);die;
             
             //$xml = $xml->simplexml_load_string();
             /* echo "<pre>";
