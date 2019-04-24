@@ -94,15 +94,16 @@ class CartController extends Controller {
                             Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
                         }
                     }
+
+
+                    $cart_total = $total;
+                    $total_discount = 0;
+                    $freight_charges = $cart_arr['freight_cost'];
+
+                    Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
                 }
-
-                $cart_total = $total;
-                $total_discount = 0;
-                $freight_charges = $cart_arr['freight_cost'];
-
-                Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
             }
-            $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         }
 
         if (isset($cart->promo_code) && $cart->promo_code != "") {
