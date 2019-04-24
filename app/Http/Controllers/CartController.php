@@ -91,13 +91,13 @@ class CartController extends Controller {
            foreach ($cart_arr['cart_items'] as $item) {
             echo "Cart items";echo "<pre>";
             print_r($item);
-            die;
+            
                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
              $qty = $item['qty']; 
-                         $price_sale = $item['price_sale'];
+                         $price_sale = isset($item['price_sale']) ? $item['price_sale'] : $item['price'];
              Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
                 
-         }
+         }die;
              $total_discount = 0;
              Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
          }
