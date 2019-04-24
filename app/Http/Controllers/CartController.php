@@ -129,14 +129,10 @@ class CartController extends Controller {
                         </Cart>";
                         $xml = array();
                         $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
-                        echo "<pre>";print_r($cart_xml_response);
             if(!empty($cart_xml_response)){
-                echo "dddddd";die;
                 $bridge = $cart_xml_response->getContents();
             $xml = simplexml_load_string($bridge);
         }
-        echo "wwwwwwwwww"; echo "<pre>";
-              print_r($xml);die;
             
             //$xml = $xml->simplexml_load_string();
             /* echo "<pre>";
@@ -196,6 +192,8 @@ class CartController extends Controller {
                 $data['total_discount'] = $total_discount;
                 $data['freight_charges'] = $freight_charges;
             }
+            echo "<pre>";
+            print_r($data);die;
             return $data;
         }
     }
