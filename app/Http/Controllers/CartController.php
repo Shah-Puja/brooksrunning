@@ -17,6 +17,7 @@ class CartController extends Controller {
     }
 
     public function show() {
+        $cart = array();
         $cart_arr = array();
         //session(['cart_id' => '1']); //comment this static after add to cart functionality
         //echo "<pre>";print_r(session()->all());die;
@@ -192,8 +193,6 @@ class CartController extends Controller {
                 $data['total_discount'] = $total_discount;
                 $data['freight_charges'] = $freight_charges;
             }
-            echo "<pre>";
-            print_r($data);die;
             return $data;
         }
     }
