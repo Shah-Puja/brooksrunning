@@ -19,7 +19,7 @@ class CartController extends Controller {
     public function show() {
         $cart = array();
         $cart_arr = array();
-       
+
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if (isset($cart) && !empty($cart)) {
             $cart_arr = json_decode(json_encode($cart), true);
@@ -29,7 +29,7 @@ class CartController extends Controller {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
-       
+
         if (env('AP21_STATUS') == "ON") {
             $cart_details = $skuidx_arr = array();
             if (!empty($cart) && isset($cart['items_count']) && $cart['items_count'] > 0) {
@@ -53,11 +53,6 @@ class CartController extends Controller {
                 $this->check_gift_voucher();
             }
 
-
-
-            /* echo "<pre>";
-              print_r($data);
-              die; */
             if (!empty($data)) {
                 $cart_total = $data['cart_total'];
                 $total_discount = $data['total_discount'];
@@ -66,54 +61,48 @@ class CartController extends Controller {
                 Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
 
                 $cart_details = $data['cart_detail'];
-            
-             
-            if (!empty($cart_details)) {
-                foreach ($cart_details as $item):
-                    if ($item['ProductCode'] == 'EXPRESS') {
-                        $cart_total = $cart_total - $item['Value'];
-                        $freight_charges = $item['Value'];
-                        $cart_total = $cart_total;
-                        Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
-                    }
 
-                    if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
-                        $cart_api_price_sale = $item['Price'];
-                        $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
-                        Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+
+                if (!empty($cart_details)) {
+                    foreach ($cart_details as $item):
+                        if ($item['ProductCode'] == 'EXPRESS') {
+                            $cart_total = $cart_total - $item['Value'];
+                            $freight_charges = $item['Value'];
+                            $cart_total = $cart_total;
+                            Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
+                        }
+
+                        if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
+                            $cart_api_price_sale = $item['Price'];
+                            $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
+                            Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+                        }
+                    endforeach;
+                }
+            } else {
+                /* echo "Cart items";echo "<pre>";
+                  print_r($cart_arr['cart_items']);
+                  die; */
+                foreach ($cart_arr['cart_items'] as $item) {
+                    $price_sale = isset($item['price_sale']) ? $item['price_sale'] : 0;
+                    if (isset($price_sale) && $price_sale != 0) {
+                        $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
+                        $qty = $item['qty'];
+
+                        Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
                     }
-                endforeach;
+                }
+                $total_discount = 0;
+                Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
             }
-        }else{ 
-            /* echo "Cart items";echo "<pre>";
-           print_r($cart_arr['cart_items']);
-           die;*/
-           foreach ($cart_arr['cart_items'] as $item) {
-            echo "Cart items";echo "<pre>";
-            print_r($item);
-            
-               $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
-             $qty = $item['qty']; 
-                         $price_sale = isset($item['price_sale']) ? $item['price_sale'] : 0;
-             Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
-                
-         }die;
-             $total_discount = 0;
-             Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
-         }
             $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         }
-
-        /* echo $cart_total;
-          die; */
-        //return $data;
 
         if (isset($cart->promo_code) && $cart->promo_code != "") {
             $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
             $cart['promo_display_text'] = $promo_code->promo_display_text;
         }
-        /*echo "<pre>";
-              print_r($cart);die; */
+
         return view('cart.cart', compact('cart'));
     }
 
@@ -138,13 +127,13 @@ class CartController extends Controller {
             $cart_xml .= "
                             </CartDetails>
                         </Cart>";
-                        $xml = array();
-                        $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
-            if(!empty($cart_xml_response)){
+            $xml = array();
+            $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
+            if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
-            $xml = simplexml_load_string($bridge);
-        }
-            
+                $xml = simplexml_load_string($bridge);
+            }
+
             //$xml = $xml->simplexml_load_string();
             /* echo "<pre>";
               print_r($xml);die; */
@@ -210,7 +199,7 @@ class CartController extends Controller {
     public function update_delivery_option() {
         $delivery_option = request('delivery_option_value');
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             $cart_total = $cart->total;
             if ($delivery_option == 'express') {
                 $freight_charges = '15';
@@ -232,11 +221,11 @@ class CartController extends Controller {
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        if(!empty($cart)){
+        if (!empty($cart)) {
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
-    
+
                 if ($AvailableAmount > $cartTotal) {
                     $gift_discount = $cartTotal;
                     $gift_cart_total = 0;
