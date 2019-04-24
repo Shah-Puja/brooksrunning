@@ -67,10 +67,23 @@ class CartController extends Controller {
 
                 $cart_details = $data['cart_detail'];
             }else{ 
-                echo "Cart items";echo "<pre>";
+               /* echo "Cart items";echo "<pre>";
               print_r($cart_arr['cart_items']);
-              die;
-                /*foreach ($cart['cart_items'] as $item) {}*/
+              die;*/
+              foreach ($cart_arr['cart_items'] as $item) {
+                echo "<pre>"; print_r($item);
+                
+                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
+                $qty = $item['qty'];
+                echo "<hr>"; echo $sku;echo "  --  ".$item['price_sale'];die;
+                /* $cart_details['cart_id'] = $result->cart_id;
+                            $temp['original_price'] = $result->original_price;
+                            $temp['code'] = $result->code; //Style
+                            $temp['product_id'] = $result->product_id;
+                            $temp['color'] = $result->color;*/
+                           // Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+                   
+            }
                 $total_discount = 0;
                 Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
             }
