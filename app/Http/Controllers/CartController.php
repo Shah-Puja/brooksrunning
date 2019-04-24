@@ -66,27 +66,7 @@ class CartController extends Controller {
                 Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
 
                 $cart_details = $data['cart_detail'];
-            }else{ 
-               /* echo "Cart items";echo "<pre>";
-              print_r($cart_arr['cart_items']);
-              die;*/
-              foreach ($cart_arr['cart_items'] as $item) {
-                echo "<pre>"; print_r($item);
-                
-                $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
-                $qty = $item['qty'];
-                echo "<hr>"; echo $sku;echo "  --  ".$item['price_sale'];die;
-                /* $cart_details['cart_id'] = $result->cart_id;
-                            $temp['original_price'] = $result->original_price;
-                            $temp['code'] = $result->code; //Style
-                            $temp['product_id'] = $result->product_id;
-                            $temp['color'] = $result->color;*/
-                           // Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
-                   
-            }
-                $total_discount = 0;
-                Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
-            }
+            
              
             if (!empty($cart_details)) {
                 foreach ($cart_details as $item):
@@ -104,6 +84,20 @@ class CartController extends Controller {
                     }
                 endforeach;
             }
+        }else{ 
+            /* echo "Cart items";echo "<pre>";
+           print_r($cart_arr['cart_items']);
+           die;*/
+           foreach ($cart_arr['cart_items'] as $item) {
+               $sku = isset($item['variant_id']) ? $item['variant_id'] : $item['skuidx'];
+             $qty = $item['qty']; 
+                         $price_sale = $item['price_sale'];
+             Cart_item::where('variant_id', $sku)->where('cart_id', session('cart_id'))->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
+                
+         }
+             $total_discount = 0;
+             Cart::where('id', session('cart_id'))->update(['discount' => $total_discount]);
+         }
             $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         }
 
@@ -115,8 +109,8 @@ class CartController extends Controller {
             $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
             $cart['promo_display_text'] = $promo_code->promo_display_text;
         }
-        echo "<pre>";
-              print_r($cart);die; 
+        /*echo "<pre>";
+              print_r($cart);die; */
         return view('cart.cart', compact('cart'));
     }
 
