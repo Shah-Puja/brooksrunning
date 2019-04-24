@@ -106,8 +106,7 @@ class CartController extends Controller {
             $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
             $cart['promo_display_text'] = $promo_code->promo_display_text;
         }
-        echo "<pre>";
-              print_r($cart);die; 
+         
         return view('cart.cart', compact('cart'));
     }
 
