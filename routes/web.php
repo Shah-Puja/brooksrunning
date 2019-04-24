@@ -167,7 +167,7 @@ Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
 /* Collection pages */
 Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@index');
 Route::get('/abstract-collection-adrenaline-ghost', 'CollectionController@adreline_ghost');
-Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
+// Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 
 
 Route::get('/{category}', 'CategoryController@index');
