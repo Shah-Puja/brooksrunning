@@ -32,10 +32,140 @@
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/Limited-Edition/giftsforwomen-categoryimage.jpg">
+                <img src="/images/Limited-Edition/mothersday-categoryimage.jpg">
             </div>
         </div>
 </div>
+
+<!-- Carousel -->
+<div class="wrapper visible-mob hidden-tab hidden-col">
+    <div class="mp-lp--container">
+    <div class="collection-intro">
+        <h2>Women's Running Clothing</h2>
+        <div><a href="/womens-running-clothes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+    </div>
+        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
+        <div class="owl-carousel md-lp-carousal owl-centered">
+            <div class="item">
+                <div class="product_arrive plp-product">
+                    <div class="prd_img">
+                        <a href = "/">
+                        <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
+                        </a>
+                    </div>
+                    <a href="/" class="main_link">
+                        <div class="info">
+                            <h3>Women's LSD Jacket </h3>
+                            <div class="price">
+                                <span class="black price_text">$179.95</span>
+                            </div>
+                            <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
+                        </div>
+                        <div class="info-sub">
+                            <div class="row">
+                                <div class="mob-6">
+                    
+                                </div>
+                                <div class="mob-6">
+                                    <p class="right">1 Width Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/">
+                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
+                            </a>
+                        </div>
+                        <a href="/" class="main_link">
+                            <div class="info">
+                                <h3>Women's LSD Jacket </h3>
+                                <div class="price">
+                                    <span class="black price_text">$179.95</span>
+                                </div>
+                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
+                            </div>
+                            <div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/">
+                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
+                            </a>
+                        </div>
+                        <a href="/" class="main_link">
+                            <div class="info">
+                                <h3>Women's LSD Jacket </h3>
+                                <div class="price">
+                                    <span class="black price_text">$179.95</span>
+                                </div>
+                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
+                            </div>
+                            <div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/">
+                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
+                            </a>
+                        </div>
+                        <a href="/" class="main_link">
+                            <div class="info">
+                                <h3>Women's LSD Jacket </h3>
+                                <div class="price">
+                                    <span class="black price_text">$179.95</span>
+                                </div>
+                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
+                            </div>
+                            <div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <!--  -->
+        </div>
+        <!-- <span class="icon-style icon-next-arrow next"></span> -->
+    </div>
+</div>
+
+<!-- End Carousel -->
+
 
 <!-- Women running clothing section -->
 @if(!empty($women_running_clothing))
@@ -537,7 +667,24 @@
 </section>
 @endif
 <!-- End accessories section -->
-    
+
+
+
+
+<script>
+$(document).ready(function () {
+    $(".md-lp-carousal").owlCarousel({
+
+        dots: true,
+        singleItem: true,
+        items: 1
+        
+    });
+});
+</script>
+
+
+
 @endsection       
       
 
