@@ -52,7 +52,7 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									@if(isset($shop_men_url))
+									@if(isset($shop_women_url))
 									<a href="/{{$shop_women_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt=""></a>
 									@else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
