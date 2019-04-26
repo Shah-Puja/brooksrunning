@@ -9,8 +9,8 @@
 		<div class="row">
 			<div class="col-12">
 				<picture>
-					<source media="(max-width: 595px)" srcset="/storage/images/competitions/{{$competition->slug}}/{{ $competition->banner_mobile }}">
-					<img src="/storage/images/competitions/{{$competition->slug}}/{{ $competition->banner }}" alt="Header Images">
+					<source media="(max-width: 595px)" srcset="/storage/{{ $competition->banner_mobile }}">
+					<img src="/storage/{{ $competition->banner }}" alt="Header Images">
 				</picture>
 			</div>
 		</div>
@@ -32,6 +32,16 @@
 					
 					@if(!empty($competition->comp_form_html))
 						{!! $competition->comp_form_html !!}
+						    @if(!empty($competition->comp_answer) && $competition->comp_answer == 'Yes')
+								<div class="row">
+									<div class="col-12">
+										<div class="input-wrapper">
+											<label for="">Competition Answer (if applicable)</label>
+											<textarea  name="answer" placeholder="Competition Answer - 25 words or less" style="width: 300px; height:150px;"  class="input-field"></textarea>
+										</div>
+									</div>
+								</div>
+							@endif
 							<input type="hidden" name="comp_name" value="{{ $competition->comp_name }}" />
 							<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
 							<div class="row" style="margin-top:20px;">

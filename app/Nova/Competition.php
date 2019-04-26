@@ -34,7 +34,7 @@ class Competition extends Resource
      * @var array
      */
     public static $search = [
-        'comp_id','comp_name','slug'
+        'comp_id','comp_name','slug','status'
     ];
 
     /**
@@ -75,6 +75,7 @@ class Competition extends Resource
             Image::make('Banner Mobile','banner_mobile')->disk('public')->path('images/competitions/'.$request->slug)->storeAs(function (Request $request) {
                 return $request->banner_mobile->getClientOriginalName();
             })->hideFromIndex(),
+            Text::make('Learn More Section','learn_more')->hideFromIndex(),
             Select::make('Competion Answer','comp_answer')->options([
                 'NO' => 'No',
                 'Yes' => 'Yes',
