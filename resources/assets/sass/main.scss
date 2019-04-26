@@ -2820,6 +2820,44 @@ width: 100%;
 }
 .collection-intro{
   background-color: #fff;
+  
+  h1{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    text-align: center;
+  }
+  h2{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    font-size:25px;
+    text-align:left;
+  }
+  p{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 22px;
+    line-height: 30px;
+    @extend %info-font;
+    text-align: center;
+  }
+  div{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 18px;
+    line-height: 26px;
+    @extend %info-font;
+    .shop-all{
+      text-align:left !important;
+      color: #0263f7;
+    }
+  }
+   
+}
+.collection-header-intro{
+  background-color: #fff;
+  margin :20px auto;
   h1{
     color:#0E0E0E;
     margin: 0 0 9px;
@@ -2942,10 +2980,10 @@ width: 100%;
   display: block;
   position: relative;
   @extend %bold-font;
-  padding-bottom: 25px;
+  padding-bottom: 35px;
   .collection-intro{
     background-color: #fff;
-    margin: 20px auto;
+  
     h1{
       color:#0E0E0E;
       margin: 0 0 9px;
@@ -3048,9 +3086,10 @@ width: 100%;
       text-align: center;
     }
     .owl-pagination{
-        position: absolute;
-      top: 50%;
-      left: 25%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
     }
     .plp-product{
       .info{
@@ -3059,35 +3098,38 @@ width: 100%;
         padding: 17px 0 8px;
         height: 122px;
         border-bottom: 1px solid #f2f2f2;
+        border-left: 1px solid #fff;
         @media #{$mobile-only} {
           padding: 2px 0 3px;
-          z-index: -90;
-          height: 90px;
+          height: 95px;
         }
         h3{
-          @extend %bold-font;
+          @extend %extrabold-font;
           font-size: 16px;
           line-height: 1.4;
           margin: 0 0 5px;
           @media #{$mobile-only}{
-            font-size: 13px;
             margin:0;
-            line-height: 1.2;
+            font-size: 18px;
+            line-height: 1.4;
           }
         }
         .price{
-          @extend %bold-font;
-          font-size: 20px;
-          margin-bottom: 12px;
+          @extend %info-font;
+          font-size: 15px;
+          line-height: 20px;
+          padding: 0 0 5px;
           @media #{$mobile-only}{
             font-size: 15px;
-            margin-bottom: 5px;
           }
           span{
               &.red{
                 color: $red;
               }
           }
+        }
+        .shoes-type{
+          font-size: 12px;
         }
       }
       

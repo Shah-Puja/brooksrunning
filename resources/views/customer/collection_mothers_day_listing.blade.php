@@ -123,7 +123,7 @@
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
-                <div class="collection-intro">
+                <div class="collection-header-intro">
                     <h2>Women's Running Clothing</h2>
                     <div><a href="/womens-running-clothes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
@@ -336,7 +336,7 @@
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4 ">
-                <div class="collection-intro">
+                <div class="collection-header-intro">
                     <h2>Women's Running Shoes</h2>
                     <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
@@ -532,7 +532,7 @@
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
-                <div class="collection-intro">
+                <div class="collection-header-intro">
                     <h2>Sports Bras</h2>
                     <div><a href="/womens-sports-bras" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
@@ -738,7 +738,7 @@
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
-                <div class="collection-intro">
+                <div class="collection-header-intro">
                     <h2>Accessories</h2>
                     <div><a href="/womens-running-accessories" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
