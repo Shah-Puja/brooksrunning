@@ -38,6 +38,7 @@
 </div>
 
 <!-- Carousel -->
+@if(!empty($women_running_clothing))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="mp-lp--container">
     <div class="collection-intro">
@@ -46,130 +47,79 @@
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
-            <div class="item">
-                <div class="product_arrive plp-product">
-                    <div class="prd_img">
-                        <a href = "/">
-                        <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
+        @if($women_running_clothing!='')
+            @foreach($women_running_clothing['products'] as $curr_ele)
+                @foreach($women_running_clothing['colour_options'] as $product)
+                    @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                    @endif
+                    @endforeach
+                @php
+                    $price_sale = $curr_ele->variants->max('price_sale');
+                    $price = $curr_ele->variants->max('price');
+                    $max_price =$curr_ele->variants->pluck('price')->max();
+                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
+                    $min_price = $curr_ele->variants->pluck('price')->min();
+                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
+                @endphp
+                <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
+                            <img src="{{ $curr_ele->image->image1Mediumx() }}">
+                            </a>
+                        </div>
+                        <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
+                            <div class="info">
+                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
+                                <div class="price">
+                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @else
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @endif
+                                </div>
+                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                            </div>
+                            <!--<div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>-->
                         </a>
                     </div>
-                    <a href="/" class="main_link">
-                        <div class="info">
-                            <h3>Women's LSD Jacket </h3>
-                            <div class="price">
-                                <span class="black price_text">$179.95</span>
-                            </div>
-                            <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
-                        </div>
-                        <div class="info-sub">
-                            <div class="row">
-                                <div class="mob-6">
-                    
-                                </div>
-                                <div class="mob-6">
-                                    <p class="right">1 Width Available</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
                 </div>
-            </div>
-            <div class="item">
-                    <div class="product_arrive plp-product">
-                        <div class="prd_img">
-                            <a href = "/">
-                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
-                            </a>
-                        </div>
-                        <a href="/" class="main_link">
-                            <div class="info">
-                                <h3>Women's LSD Jacket </h3>
-                                <div class="price">
-                                    <span class="black price_text">$179.95</span>
-                                </div>
-                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
-                            </div>
-                            <div class="info-sub">
-                                <div class="row">
-                                    <div class="mob-6">
-                        
-                                    </div>
-                                    <div class="mob-6">
-                                        <p class="right">1 Width Available</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
-            <div class="item">
-                    <div class="product_arrive plp-product">
-                        <div class="prd_img">
-                            <a href = "/">
-                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
-                            </a>
-                        </div>
-                        <a href="/" class="main_link">
-                            <div class="info">
-                                <h3>Women's LSD Jacket </h3>
-                                <div class="price">
-                                    <span class="black price_text">$179.95</span>
-                                </div>
-                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
-                            </div>
-                            <div class="info-sub">
-                                <div class="row">
-                                    <div class="mob-6">
-                        
-                                    </div>
-                                    <div class="mob-6">
-                                        <p class="right">1 Width Available</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
-            <div class="item">
-                    <div class="product_arrive plp-product">
-                        <div class="prd_img">
-                            <a href = "/">
-                            <img src="https://brooksrunning.texaspeak.com.au/product/x/221135_545_mf_wr_x.jpg">
-                            </a>
-                        </div>
-                        <a href="/" class="main_link">
-                            <div class="info">
-                                <h3>Women's LSD Jacket </h3>
-                                <div class="price">
-                                    <span class="black price_text">$179.95</span>
-                                </div>
-                                <div class="shoes-type">Buy Women's LSD Jacket by Brooks</div>
-                            </div>
-                            <div class="info-sub">
-                                <div class="row">
-                                    <div class="mob-6">
-                        
-                                    </div>
-                                    <div class="mob-6">
-                                        <p class="right">1 Width Available</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
             <!--  -->
+            @endforeach
+        @endif
         </div>
         <!-- <span class="icon-style icon-next-arrow next"></span> -->
     </div>
 </div>
-
+@endif
 <!-- End Carousel -->
 
 
 <!-- Women running clothing section -->
 @if(!empty($women_running_clothing))
-<section class="plp-container collection-listing-conatiner">
+<section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
@@ -295,9 +245,94 @@
 @endif
 <!-- End women running clothing section -->
 
+
+<!-- Carousel -->
+@if(!empty($women_running_shoes))
+<div class="wrapper visible-mob hidden-tab hidden-col">
+    <div class="mp-lp--container">
+    <div class="collection-intro">
+        <h2>Women's Running Shoes</h2>
+        <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+    </div>
+        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
+        <div class="owl-carousel md-lp-carousal owl-centered">
+        @if($women_running_shoes!='')
+            @foreach($women_running_shoes['products'] as $curr_ele)
+                @foreach($women_running_shoes['colour_options'] as $product)
+                    @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                    @endif
+                    @endforeach
+                @php
+                    $price_sale = $curr_ele->variants->max('price_sale');
+                    $price = $curr_ele->variants->max('price');
+                    $max_price =$curr_ele->variants->pluck('price')->max();
+                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
+                    $min_price = $curr_ele->variants->pluck('price')->min();
+                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
+                    if(!empty($colors_option[$curr_ele->style])){
+                        $width_array[$curr_ele->style]['width'] = collect($colors_option[$curr_ele->style])->transform(function ($product) {
+                                                    return $product->variants->where('visible','Yes')->pluck('width_name');
+                                                    })->flatten()->unique()->values()->sort();
+                    }
+                @endphp
+                <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
+                            <img src="{{ $curr_ele->image->image1Mediumx() }}">
+                            </a>
+                        </div>
+                        <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
+                            <div class="info">
+                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
+                                <div class="price">
+                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @else
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @endif
+                                </div>
+                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                            </div>
+                            <div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                                    @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            <!--  -->
+            @endforeach
+        @endif
+        </div>
+        <!-- <span class="icon-style icon-next-arrow next"></span> -->
+    </div>
+</div>
+@endif
+<!-- End Carousel -->
+
 <!-- Women running shoes section -->
 @if(!empty($women_running_shoes))
-<section class="plp-container collection-listing-conatiner">
+<section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4 ">
@@ -412,11 +447,88 @@
 @endif
 <!-- End women running shoes section -->
 
-
+<!-- Carousel -->
+@if(!empty($sports_bras))
+<div class="wrapper visible-mob hidden-tab hidden-col">
+    <div class="mp-lp--container">
+    <div class="collection-intro">
+        <h2>Sports Bras</h2>
+        <div><a href="/womens-sports-bras" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+    </div>
+        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
+        <div class="owl-carousel md-lp-carousal owl-centered">
+        @if($sports_bras!='')
+            @foreach($sports_bras['products'] as $curr_ele)
+                @foreach($sports_bras['colour_options'] as $product)
+                    @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                    @endif
+                    @endforeach
+                @php
+                    $price_sale = $curr_ele->variants->max('price_sale');
+                    $price = $curr_ele->variants->max('price');
+                    $max_price =$curr_ele->variants->pluck('price')->max();
+                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
+                    $min_price = $curr_ele->variants->pluck('price')->min();
+                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
+                @endphp
+                <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
+                            <img src="{{ $curr_ele->image->image1Mediumx() }}">
+                            </a>
+                        </div>
+                        <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
+                            <div class="info">
+                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
+                                <div class="price">
+                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @else
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @endif
+                                </div>
+                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                            </div>
+                            <!--<div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </a>
+                    </div>
+                </div>
+            <!--  -->
+            @endforeach
+        @endif
+        </div>
+        <!-- <span class="icon-style icon-next-arrow next"></span> -->
+    </div>
+</div>
+@endif
+<!-- End Carousel -->
 
 <!-- Sports bras section -->
 @if(!empty($sports_bras))
-<section class="plp-container collection-listing-conatiner">
+<section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
@@ -541,9 +653,88 @@
 @endif
 <!-- End sports bras section -->
 
+<!-- Carousel -->
+@if(!empty($accessories))
+<div class="wrapper visible-mob hidden-tab hidden-col">
+    <div class="mp-lp--container">
+    <div class="collection-intro">
+        <h2>Accessories</h2>
+        <div><a href="/womens-running-accessories" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+    </div>
+        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
+        <div class="owl-carousel md-lp-carousal owl-centered">
+        @if($accessories!='')
+            @foreach($accessories['products'] as $curr_ele)
+                @foreach($accessories['colour_options'] as $product)
+                    @if($product->style == $curr_ele->style)
+                            @php $colors_option[$curr_ele->style][] = $product; @endphp
+                    @endif
+                    @endforeach
+                @php
+                    $price_sale = $curr_ele->variants->max('price_sale');
+                    $price = $curr_ele->variants->max('price');
+                    $max_price =$curr_ele->variants->pluck('price')->max();
+                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
+                    $min_price = $curr_ele->variants->pluck('price')->min();
+                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
+                @endphp
+                <div class="item">
+                    <div class="product_arrive plp-product">
+                        <div class="prd_img">
+                            <a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
+                            <img src="{{ $curr_ele->image->image1Mediumx() }}">
+                            </a>
+                        </div>
+                        <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
+                            <div class="info">
+                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
+                                <div class="price">
+                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @else
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @endif
+                                </div>
+                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                            </div>
+                            <!--<div class="info-sub">
+                                <div class="row">
+                                    <div class="mob-6">
+                        
+                                    </div>
+                                    <div class="mob-6">
+                                        <p class="right">1 Width Available</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </a>
+                    </div>
+                </div>
+            <!--  -->
+            @endforeach
+        @endif
+        </div>
+        <!-- <span class="icon-style icon-next-arrow next"></span> -->
+    </div>
+</div>
+@endif
+<!-- End Carousel -->
+
 <!-- Accessories section -->
 @if(!empty($accessories))
-<section class="plp-container collection-listing-conatiner">
+<section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
             <div class="col-3 tab-4">
