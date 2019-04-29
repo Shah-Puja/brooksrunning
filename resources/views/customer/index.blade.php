@@ -70,8 +70,8 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Experience maximum energy return in the Ricochet, now lighter than ever before. <br/>&nbsp; </p>
-					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
