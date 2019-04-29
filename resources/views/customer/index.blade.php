@@ -42,7 +42,7 @@
 			        <h3>&nbsp; <br/>Launch 6</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>The Launch 6 is built to be fast and springy, with zero distractions.</p>
+					<p>The Launch 6 is built to be fast and springy, with zero distractions. <br/>&nbsp; </p>
 					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				
@@ -69,7 +69,7 @@
 			        <h3>&nbsp; <br/>Ricochet </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Experience maximum energy return in the Ricochet, now lighter than ever before.</p>
+					<p>Experience maximum energy return in the Ricochet, now lighter than ever before. <br/>&nbsp; </p>
 					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
