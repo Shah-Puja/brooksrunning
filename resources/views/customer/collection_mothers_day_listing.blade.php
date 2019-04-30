@@ -32,7 +32,7 @@
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/Limited-Edition/mothersday-categoryimage.jpg">
+                <img src="/images/Limited-Edition/giftsforwomen-categoryimage_updated.jpg">
             </div>
         </div>
 </div>
