@@ -4821,7 +4821,7 @@ textarea {
 @media only screen and (max-width: 767px) {
   .mp-lp--container .plp-product .info {
     padding: 2px 0 3px;
-    height: 95px;
+    height: 105px;
   }
 }
 .mp-lp--container .plp-product .info h3 {
