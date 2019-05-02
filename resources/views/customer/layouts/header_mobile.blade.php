@@ -485,15 +485,10 @@
 	                </ul>
 	            </li>
 	            <li> 
-					@if(rand(0,1)==1)
-						<a href="javascript:;" id='mob-nav-meetbrooks'>
-							<span class="title">Meet Brooks</span>
-						</a>
-					@else 
-						<a href="javascript:;" id='mob-nav-meetbrooks'>
-							<span class="title">About</span>
-						</a>						
-					@endif
+				<li>
+	                <a href="javascript:;">
+	                    <span class="title">Meet Brooks</span>
+	                </a>
 	                <!-- Level Two-->
 	                <ul>
 	                    <li>
