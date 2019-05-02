@@ -484,7 +484,8 @@
 	                    </li>
 	                </ul>
 	            </li>
-	            <li>
+	            <li> 
+				<li>
 	                <a href="javascript:;">
 	                    <span class="title">Meet Brooks</span>
 	                </a>

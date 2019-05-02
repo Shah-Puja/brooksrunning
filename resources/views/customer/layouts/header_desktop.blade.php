@@ -484,7 +484,9 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">Meet Brooks</a>
+                        <li class="main sm-navigation--menu" data="meetbrooks">
+                            <a href="javascript:;" class="main-nav">Meet Brooks</a>
+                          
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
