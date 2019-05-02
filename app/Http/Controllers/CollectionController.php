@@ -82,7 +82,7 @@ class CollectionController extends Controller
 
     public function mothers_day(){
         $women_running_shoes = \App\Models\Product::getProducts_array(['120277_406','120279_509','120284_028','120287_531','120292_030','120285_092']);
-        $women_running_clothing = \App\Models\Product::getProducts_array(['221255_182','221135_545','221364_068','221221_594','221349_561','221350_182']);
+        $women_running_clothing = \App\Models\Product::getProducts_array(['221364_563', '221255_182','221135_182','221221_594','221349_561','221350_182']);
         $sports_bras = \App\Models\Product::getProducts_array(['350064_568','350037_052','350071_001']);
         $accessories = \App\Models\Product::getProducts_array(['280404_517','280356_520','280409_081']);
         $products = '';
