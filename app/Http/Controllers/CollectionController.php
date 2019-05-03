@@ -89,4 +89,12 @@ class CollectionController extends Controller
         $colour_options ='';
         return view( 'customer.collection_mothers_day_listing',compact('women_running_shoes','women_running_clothing','sports_bras','accessories','colour_options','products'));
     }
+
+    public function energize_collection(){
+        $support_shoes = \App\Models\Product::getProducts_array(['120272_321','110283_449','120286_615','110298_429']);
+        $neutral_shoes = \App\Models\Product::getProducts_array(['110290_057', '120279_520','110293_428','120282_080','110297_488','120285_542','110295_493','120288_080']);
+        $products = '';
+        $colour_options ='';
+        return view( 'customer.collection_energize_listing',compact('support_shoes','neutral_shoes','colour_options','products'));
+    }
 }
