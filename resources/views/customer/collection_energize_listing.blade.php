@@ -24,15 +24,15 @@
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="title">Explore the Energize Experience</h1>
-                        <p class="type">Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customized to you.<br/>
+                        <h1 class="large">Explore the Energize Experience</h1>
+                        <p class="type" style="margin: 1rem 0;">Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customized to you.<br/>
                         </p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/Limited-Edition/giftsforwomen-categoryimage_updated.jpg">
+                <img src="/images/Limited-Edition/energize-categoryimage.jpg">
             </div>
         </div>
 </div>
@@ -43,7 +43,7 @@
     <div class="mp-lp--container">
     <div class="collection-intro">
         <h2>Support Energize Shoes</h2>
-        <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+        <div class="cat-desc">From your hips down to your ankles, your body has a natural alignment it wants to follow as you run. GuideRails support keeps you in stride so your body stays in alignment.</div>
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
@@ -129,7 +129,7 @@
             <div class="col-3 tab-4 ">
                 <div class="collection-header-intro">
                     <h2>Support Energize Shoes</h2>
-                    <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                    <div class="cat-desc">From your hips down to your ankles, your body has a natural alignment it wants to follow as you run. GuideRails support keeps you in stride so your body stays in alignment.</div>
                 </div>
             </div>
             <div class="col-9 tab-8">
@@ -245,7 +245,7 @@
     <div class="mp-lp--container">
     <div class="collection-intro">
         <h2>Neutral Energize Shoes</h2>
-        <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+        <div class="cat-desc">Neutral shoes are designed to let your body run without any disruption. You get all the benefits of an advanced running shoe without the specific technology that guides and corrects your body's alignment.</div>
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
@@ -331,7 +331,7 @@
             <div class="col-3 tab-4 ">
                 <div class="collection-header-intro">
                     <h2>Neutral Energize Shoes</h2>
-                    <div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
+                    <div class="cat-desc">Neutral shoes are designed to let your body run without any disruption. You get all the benefits of an advanced running shoe without the specific technology that guides and corrects your body's alignment.</div>
                 </div>
             </div>
             <div class="col-9 tab-8">

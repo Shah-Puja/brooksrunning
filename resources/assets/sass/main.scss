@@ -2848,6 +2848,7 @@ width: 100%;
     font-size: 18px;
     line-height: 26px;
     @extend %info-font;
+    
     .shop-all{
       text-align:left !important;
       color: #0263f7;
@@ -3005,7 +3006,7 @@ width: 100%;
       @extend %info-font;
       text-align: center;
     }
-    div{
+    div{ 
       max-width: 100%;
       color:#0E0E0E;
       font-size: 18px;
@@ -3015,6 +3016,13 @@ width: 100%;
       .shop-all{
         text-align:center !important;
         color: #0263f7;
+      }
+      &.cat-desc{
+        margin:10px 20px 15px 30px;
+        text-align:left;
+        font-size: 16px;
+        line-height: 22px;
+      
       }
     }
      
