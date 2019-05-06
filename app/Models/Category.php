@@ -148,8 +148,8 @@ class Category extends Model
                     $width_array = $products->map(function($product) {
                         return $product->variants->where('visible','Yes')->pluck('width_name');
                     })->flatten()->unique()->values()->sort();
-
-                    $filters['Width'] = (new static)->sort_width_array($width_array);
+                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Extra-Wide", "2E-Wide", "4E-Extra-Wide");
+                    $filters['Width'] = (new static)->sort_array($width_array,$order_array);
                  break;
 
                  case 'Support Level':
@@ -181,10 +181,12 @@ class Category extends Model
                  break;
 
                  case 'Activity':
-                    $filters['Activity'] = 
-                    $products->map(function($product) {
+                    $activity_array =  $products->map(function($product) {
                         return $product->tags->Where('key','PF_F_ACTIVITY');
                     })->flatten()->pluck('value')->unique()->sort();
+
+                    $order_array = array("Road/Track","Offroad/Trail", "Court Sport" ,"Training");
+                    $filters['Activity'] = (new static)->sort_array($activity_array,$order_array);
                  break;
 
                  case 'Midsole Drop':
@@ -277,10 +279,9 @@ class Category extends Model
         
     }
 
-    public static function sort_width_array($width_array){
-        $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Extra-Wide", "2E-Wide", "4E-Extra-Wide");
+    public static function sort_array($array,$order_array){
         $sorted_array=array();
-        foreach ($width_array as $key => $value) {		
+        foreach ($array as $key => $value) {		
             $curr_order=array_search($value, $order_array);
             $sorted_array[$value]=$curr_order;		
         } 
@@ -288,6 +289,8 @@ class Category extends Model
         return array_keys($sorted_array);
         
     }
+
+
     
 
 }
