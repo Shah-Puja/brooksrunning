@@ -1370,6 +1370,8 @@
 							<!-- START: Results Screen -->
 								<section class="bf-screen bf-results-screen" data-bf-screen="" data-id="Results" data-wait-for="results" data-bf-gtm-screen-active-event="results">
 									<div class="bf-screen__content" data-bf-dynamic-template-container="" data-screen-id="Results"></div>
+									
+										
 								</section>
 							<!-- END: Results Screen -->
 							<!-- START: City / Trail Image -->
@@ -1751,6 +1753,7 @@
 			</script>
 
 		</div>
+		
 	</div>
 </div>
 </div>
