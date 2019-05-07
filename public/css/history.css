@@ -6350,6 +6350,12 @@ textarea {
   text-align: center !important;
   color: #0263f7;
 }
+.mp-lp--container .collection-intro div.cat-desc {
+  margin: 10px 20px 15px 30px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 22px;
+}
 .mp-lp--container .owl-carousel {
   width: calc(100% - 80px);
   margin: auto;
