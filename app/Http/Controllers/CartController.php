@@ -103,7 +103,7 @@ class CartController extends Controller {
             $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
             $cart['promo_display_text'] = $promo_code->promo_display_text;
         }
-        if(isset($total_discount) && $total_discount == 0){
+        if(isset($total_discount) && $total_discount == 0 && (isset($cart->promo_code) && $cart->promo_code == "HEROES")){
             $cart['subcode_text'] = "This promotion code does not apply to your product selection.";
         }
         return view('cart.cart', compact('cart'));
