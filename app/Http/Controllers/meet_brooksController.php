@@ -38,7 +38,7 @@ class meet_brooksController extends Controller {
         if (!view()->exists('meet_brooks.competition.' . $competition->comp_form)) {
             return abort(404);
         }
-        return view('meet_brooks.competition.competition', compact('comp_name', 'competition'));
+        return view('meet_brooks.competition.competition', compact('competition'));
     }
 
     public function store(Recaptcha $recaptcha, Request $request) {
