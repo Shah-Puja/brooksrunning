@@ -31,6 +31,8 @@
                 @if(Request::segment(2) == "competition" && Request::segment(3) == "hbfrunforareasoncomp")
                     <title>Win a $1000 Running Kit!</title>
                     <meta name="description" content="Get prepared for HBF Run for a Reason">
+                @else
+                    <title>Brooks Running Shoes, Clothing & Sports Bras | Brooks Running</title>
                 @endif
                 @break;
             @default
