@@ -103,6 +103,9 @@ class CartController extends Controller {
             $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
             $cart['promo_display_text'] = $promo_code->promo_display_text;
         }
+        if(isset($total_discount) && $total_discount == 0){
+            $cart['subcode_text'] = "This promotion code does not apply to your product selection.";
+        }
         return view('cart.cart', compact('cart'));
     }
 
@@ -188,7 +191,6 @@ class CartController extends Controller {
                 $data['total_discount'] = $total_discount;
                 $data['freight_charges'] = $freight_charges;
             }
-            echo "<pre>";print_r($data);die;
             return $data;
         }
     }
