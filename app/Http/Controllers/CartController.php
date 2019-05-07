@@ -188,6 +188,7 @@ class CartController extends Controller {
                 $data['total_discount'] = $total_discount;
                 $data['freight_charges'] = $freight_charges;
             }
+            echo "<pre>";print_r($data);die;
             return $data;
         }
     }
