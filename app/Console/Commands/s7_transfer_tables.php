@@ -77,7 +77,7 @@ class s7_transfer_tables extends Command
 
     public function run_process($cmd,$cmd_name)
     {   
-		//echo "Command = $cmd";
+		echo "Command = $cmd";
 		$process = new Process($cmd);
         try {
             $process->mustRun();
