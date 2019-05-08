@@ -66,6 +66,12 @@ class s7_transfer_tables extends Command
                     $message->from('sygtest@gmail.com');
                     $message->Subject('Prod Tables are transferred');
                  });
+
+        //Take Order Tables backup
+        $order_tables="orders order_items order_addresses order_number";        
+        $order_sql_path="storage/data/orders/".$curr_dt."_orders.sql";
+        $order_cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$order_tables." > ".$order_sql_path ;        
+        $this->run_process($order_cmd,'Order-Backup');
         
     }
 
