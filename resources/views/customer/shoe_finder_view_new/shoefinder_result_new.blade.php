@@ -23,7 +23,7 @@
 .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
     top: 35px;
 }
-.result-login{font-size:24px; color: #000;}
+.result-login{font-size:24px; color: #000; text-align:center;}
 
 @media only screen 
 and (min-width : 768px) 
@@ -284,7 +284,7 @@ and (orientation : landscape) {
         <div class="bf-results-screen__transition-group-5"> 
         @if(!auth()->user())
            <div class="login-section top-login-section">
-                <p class="result-login">Sign up for brooks running account to access your shoe finder results,receive news and exclusive offers:</p>
+                <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
                 <div class="button_fixed">
                     <a class="bf-button bf-button--full-width savemyresults" href="javascript:void(0);">Save my results</a>
                 </div>
@@ -641,7 +641,7 @@ and (orientation : landscape) {
             <!-- END: Result 1 -->
         @if(!auth()->user())
         <div class="login-section bottom-login-section">
-            <p class="result-login">Sign up for brooks running account to access your shoe finder results,receive news and exclusive offers:</p>
+            <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
             <div class="button_fixed">
 		       	<a class="bf-button bf-button--full-width savemyresults" href="javascript:void(0);">Save my results</a>
             </div>
