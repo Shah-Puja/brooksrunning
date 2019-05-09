@@ -197,6 +197,9 @@
                                                                             }
                                                                             ?>
                                                                         </a>
+                                                                        @if(isset($cart->subcode_text) && $cart->subcode_text!="")
+                                                                                   <p style="color:red;"> {{ $cart->subcode_text }} </p>
+                                                                               @endif
                                                                         @if(isset($cart->promo_display_text) && $cart->promo_display_text!="")
                                                                                    <p> {{ $cart->promo_display_text }} </p>
                                                                                @endif
