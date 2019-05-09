@@ -4848,14 +4848,29 @@ textarea {
   display: inline-block;
   margin: 10px 3px 0;
   cursor: pointer;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  max-width: 62px;
+}
+.pdp-container--info .swatches ul li.selected {
+  border: none;
+}
+.pdp-container--info .swatches ul li:hover {
+  border: none;
+}
+.pdp-container--info .swatches ul li img {
+  width: auto;
+  max-width: 100%;
+}
+.pdp-container--info .swatches ul li div {
+  display: inline-block;
+  margin: 10px 3px 0;
+  cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
   width: 100%;
   max-width: 62px;
-  text-align: center;
-}
-.pdp-container--info .swatches ul li div {
-  border: 1px solid transparent;
 }
 .pdp-container--info .swatches ul li div.selected {
   border: 1px solid #0263f7;
@@ -4863,7 +4878,7 @@ textarea {
 .pdp-container--info .swatches ul li div:hover {
   border: 1px solid #000000;
 }
-.pdp-container--info .swatches ul li img {
+.pdp-container--info .swatches ul li div img {
   width: auto;
   max-width: 100%;
 }
@@ -4987,7 +5002,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .pdp-container--info .pdp-width .pdp-width-show li {
-    min-width: 150px;
+    min-width: 180px;
   }
 }
 .pdp-container--info .select-width {

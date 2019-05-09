@@ -1,10 +1,10 @@
 @extends('customer.layouts.master')
 
 @section('gtm-datalayer')
-	'pagetype': 'PDP',
-	'product_id': '{{ $product->style }}',
-	'product_rrp': {{ @number_format($product->price, 2) }},
-	'product_price': {{ @number_format($product->price_sale, 2) }}
+    'pagetype': 'PDP',
+    'product_id': '{{ $product->style }}',
+    'product_rrp': {{ @number_format($product->price, 2) }},
+    'product_price': {{ @number_format($product->price_sale, 2) }}
 @endsection
 
 @section('content')
@@ -213,8 +213,8 @@
                                     @endforeach
                                     @php 
                                         $width_counts = collect($colors_option[$color_data->color_code])->transform(function ($product) {
-														return $product->variants->where('visible','Yes')->pluck('width_name');
-												 })->flatten()->unique()->values();
+                                                        return $product->variants->where('visible','Yes')->pluck('width_name');
+                                                 })->flatten()->unique()->values();
                                     @endphp
                                 <li><span>{{ (count($width_counts) > 1) ? 'WIDTHS' : '' }}</span><div @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $color_data->seo_name.'/'.$product->style.'_'.$color_data->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}" title="{{ $color_data->color_code }}"></div></li>
                                 @endforeach
@@ -229,7 +229,7 @@
                             <div class="overlayloader">
                             <div class="imgloader"><img src="/images/ajax-loader.gif" alt=""></div>
                             </div>
-				        </div>
+                        </div>
                         @php $sizes = $width_names = []; @endphp
                         @foreach($variants as $variant) 
                             @php
@@ -267,6 +267,51 @@
                             </div> <!-- end size -->
                             <input type="hidden" name="size" value="" />
                             @endif
+                            
+                            <!--   <div class="row select-width">
+                            @if(!empty($width_names))
+                            <div class="col-4">
+                                <div class="input-wrapper width-wrapper">
+                                    <label for="" class="main"> {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH <span></span></label>
+                                    <!already commented <div class="custom-select">
+                                        <div class = "select-box">
+                                            <div class = "label-heading">
+                                                <span class="text">-</span> 
+                                                <div class="sel-icon">
+                                                    <span class="icon-down-arrow"></span>
+                                                </div>
+                                            </div>
+                                            <ul class="select-option--wrapper">
+                                                @if(count($width_names) > 1)
+                                                    <li class="option-value-data " data-value="">-</li>
+                                                @endif
+                                                @foreach($width_names as $width_code => $width_name)
+                                                @if($width_name!='')
+                                                    <li class="option-value-data {{ (count($width_names) == 1) ? 'selected' : '' }}" data-value="{{ $width_code }}" >{{ $width_name }}</li>
+                                                @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div> already commented-->
+                                    <!-- Select already commented-->
+                                    <!-- <div class="input-wrapper">
+                                        <select class="pdp-select-field" name="custom_width" id="custom_width" style="margin-bottom: 0px;">
+                                                @if(count($width_names) > 1)
+                                            <option class="option-value" data-value="" value="">Select Width</option>
+                                            @endif
+                                            @foreach($width_names as $width_code => $width_name)
+                                                @if($width_name!='')
+                                                    <option class="option-value" data-value="{{ $width_code }}"  value="{{ $width_code }}" {{ (count($width_names) == 1) ? 'selected' : '' }}>{{ $width_name }}</option>
+                                                    @endif
+                                            @endforeach
+                                        </select>
+                                        </div> -->
+                                        <!-- /Select already commented-->
+                                <!-- </div>
+                            </div>
+                            <input type="hidden" name="width_code" value="" />
+                            @endif -->
+
                             <div class="pdp-width pdp-width-title">
                                 <div class="row">
                                     <div class="mob-6">

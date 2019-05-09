@@ -3173,23 +3173,38 @@
             display: inline-block;
             margin: 10px 3px 0;
             cursor: pointer;
-            border: 1px solid transparent;
+            border: none;
             transition: all 0.5s ease-in-out;
             width: 100%;
             max-width: 62px;
-            text-align: center;
-            div{
-              border: 1px solid transparent;
+            &.selected{
+              border: none;
             }
-            div.selected{
-              border: 1px solid $blue;
-            }
-            div:hover{
-              border: 1px solid $black;
+            &:hover{
+              border: none;
             }
             img{
               width: auto;
               max-width: 100%;
+            }
+            div{
+              display: inline-block;
+              margin: 10px 3px 0;
+              cursor: pointer;
+              border: 1px solid transparent;
+              transition: all 0.5s ease-in-out;
+              width: 100%;
+              max-width: 62px;
+              &.selected{
+                border: 1px solid $blue;
+              }
+              &:hover{
+                border: 1px solid $black;
+              }
+              img{
+                width: auto;
+                max-width: 100%;
+              }
             }
           }
         }
@@ -3314,7 +3329,7 @@
               min-width: 220px;
             }
             @media #{$mobile-only} {
-              min-width: 150px;
+              min-width: 180px;
             }
           }
         }
