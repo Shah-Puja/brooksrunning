@@ -640,7 +640,7 @@ and (orientation : landscape) {
         @endif
             <!-- END: Result 1 -->
 
-        <hr style="width:90%; background-color:#ecebeb;"/>
+        <hr style="width:90%; background-color:#ecebeb; margin-bottom: 26px;"/>
         @if(!auth()->user())
         <div class="login-section bottom-login-section">
             <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
