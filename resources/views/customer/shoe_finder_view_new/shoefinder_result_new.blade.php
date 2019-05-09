@@ -23,7 +23,7 @@
 .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
     top: 35px;
 }
-.result-login{font-size:24px; color: #000; text-align:center;}
+.result-login{font-size:20px; color: #000; text-align:center;}
 
 @media only screen 
 and (min-width : 768px) 
