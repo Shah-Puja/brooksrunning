@@ -639,6 +639,8 @@ and (orientation : landscape) {
         <h1 class="br-mainheading"> Sorry, No Result Found!</h1>
         @endif
             <!-- END: Result 1 -->
+
+        <hr style="width:90%; background-color:#ecebeb;"/>
         @if(!auth()->user())
         <div class="login-section bottom-login-section">
             <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
