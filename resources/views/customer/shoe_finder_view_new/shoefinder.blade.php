@@ -1370,6 +1370,8 @@
 							<!-- START: Results Screen -->
 								<section class="bf-screen bf-results-screen" data-bf-screen="" data-id="Results" data-wait-for="results" data-bf-gtm-screen-active-event="results">
 									<div class="bf-screen__content" data-bf-dynamic-template-container="" data-screen-id="Results"></div>
+									
+										
 								</section>
 							<!-- END: Results Screen -->
 							<!-- START: City / Trail Image -->
@@ -1747,10 +1749,48 @@
 				$(function() {			
 				   BF.start();
 				});
+
+				$(document).on('click','.savemyresults',function(){
+					$(this).closest(".login-section").find(".shoefinder-create-account").slideDown("slow");
+					$(this).hide();
+				});
+
+          function registervalidation(form_name){
+			$("form[name='"+form_name+"'] #comp_loader").show();
+	        $("form[name='"+form_name+"'] #comp_submit_btn").addClass("disable");
+			$("form[name='"+form_name+"'] input").removeClass("error-border");
+			$("form[name='"+form_name+"'] ").parent().find('label span').remove();
+			var form_data =  $("form[name='"+form_name+"']").serialize();
+		 	$.ajax({
+	            url: "{{ route('register') }}", 
+	            method: "post", 
+	            data: form_data,
+	            success: function(response) {
+					window.location.href='/home';
+	            	// /return false;
+	            },
+	            error: function(error){
+					$("form[name='"+form_name+"'] #comp_loader").hide();
+	                $("form[name='"+form_name+"'] #comp_submit_btn").removeClass("disable");
+					let obj = JSON.parse(error.responseText);
+					$.each( obj.errors, function( key, value ) {
+						let input_label = $("form[name='"+form_name+"'] input[id="+key+"]").parent().find('label');
+						let label_text = input_label.html();
+						let error_span = " <span class='error'>"+ value +"</span>";
+						let error = label_text + error_span ;
+						input_label.html(error);
+						$("form[name='"+form_name+"'] input[id="+key+"]").addClass("error-border");
+					
+					});
+	            }
+	        });
+	 		return false;
+	 	}
 				
 			</script>
 
 		</div>
+		
 	</div>
 </div>
 </div>
