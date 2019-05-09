@@ -51,8 +51,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'first_name' => 'sometimes|required|string|max:255',
+            'last_name' => 'sometimes|required|string|max:255',
             //'email' => 'required|string|email|max:255|unique:users',
             'email' => [
                 'required',
@@ -61,12 +61,13 @@ class RegisterController extends Controller
                 }),
             ],
             'password' => 'required|string|min:6|confirmed',
-            'gender' => 'required|in:Male,Female',
+            'password_confirmation' => 'required|string|min:6',
+            'gender' => 'sometimes|required|in:Male,Female',
             'birthday_date' => '',
             'birthday_month' => '',
             'age_group' => '',
-            'state' => 'required',
-            'postcode' => 'required|numeric',
+            'state' => 'sometimes|required',
+            'postcode' => 'sometimes|required|numeric',
             'newsletter_subscription' => '',
             'source' => '',
             'user_type' => '', 
@@ -85,15 +86,15 @@ class RegisterController extends Controller
         $user =  User::updateorcreate(
             ['email' => $data['email'] ],
             [
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+            'first_name' => (isset($data['first_name'])) ? $data['first_name'] : '',
+            'last_name' => (isset($data['last_name'])) ? $data['last_name'] : '',
             'password' => Hash::make($data['password']),
-            'gender' => $data['gender'],
-            'birth_date' => $data['birthday_date'],
-            'birth_month' => $data['birthday_month'],
-            'age_group' => $data['age_group'],
-            'state' => $data['state'],
-            'postcode' => $data['postcode'],
+            'gender' => (isset($data['gender'])) ? $data['gender'] : null,
+            'birth_date' => (isset($data['birthday_date'])) ? $data['birthday_date'] : null,
+            'birth_month' => (isset($data['birthday_month'])) ? $data['birthday_month'] : null,
+            'age_group' => (isset($data['age_group'])) ? $data['age_group'] : '',
+            'state' => (isset($data['state'])) ? $data['state'] : '',
+            'postcode' => (isset($data['postcode'])) ? $data['postcode'] : null,
             'newsletter' => @$data['newsletter_subscription'] ? 1 : 0, 
             'user_type' => "User",      
         ]);
