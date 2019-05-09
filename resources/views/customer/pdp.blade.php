@@ -206,7 +206,17 @@
                         <div class="swatches">
                             <ul>
                                 @foreach($colour_options as $color_data)
-                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $color_data->seo_name.'/'.$product->style.'_'.$color_data->color_code.'.html' }}'><img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}" title="{{ $color_data->color_code }}"></li>
+                                    @foreach($styles as $product)
+                                        @if($product->color_code== $color_data->color_code)
+                                                @php $colors_option[$color_data->color_code][] = $product; @endphp
+                                        @endif
+                                    @endforeach
+                                    @php 
+                                        $width_counts = collect($colors_option[$color_data->color_code])->transform(function ($product) {
+														return $product->variants->where('visible','Yes')->pluck('width_name');
+												 })->flatten()->unique()->values();
+                                    @endphp
+                                <li @if($color_data->color_code == $product->color_code) class="selected" @endif data-url='/{{ $color_data->seo_name.'/'.$product->style.'_'.$color_data->color_code.'.html' }}'>{{ (count($width_counts) > 1) ? 'WIDTHS' : '' }}<img src="{{ $color_data->image->image1Thumbnail() }}" alt="{{ $color_data->color_name }}" title="{{ $color_data->color_code }}"></li>
                                 @endforeach
                             </ul>
                         </div>
