@@ -81,7 +81,7 @@
                                                         <h3 class="bold-font">Express Delivery</h3>
                                                         <p class="area">(Australia Only)</p>
                                                         <p class="rate">$15 flat rate</span></p>
-                                                        <p class="day">1-2 business days to Australian metro areas<sup>*</sup></p>
+                                                        <p class="day">1-3 business days to Australian metro areas<sup>*</sup></p>
                                                     </div>
                                                 </label>
                                             </div>
