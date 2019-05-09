@@ -1204,7 +1204,7 @@ $(document).on('click', '#quantity-selector #subs', function subst() {
     }
 });
 
-$(document).on('click', '.swatches li:not(".selected")', function () {
+$(document).on('click', '.swatches li div:not(".selected")', function () {
     $(".overlayloader").show();
     $("#zoomWindowFullShowIn").css("z-index", "2");
     let url = $(this).data('url');
