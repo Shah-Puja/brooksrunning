@@ -74,7 +74,7 @@
 													<div class="checklist-inline">
 														<input type="checkbox" id="{{ $filter_value }}">
 														<label for="{{ $filter_value }}">
-																<div class="mark" style="background-color: {{ $filter_value }}"><span></span></div>
+																<div class="mark" style="background-color: {{ ($filter_value=='Bone') ? '#C8C2B0' : $filter_value }}"><span></span></div>
 																<div class="text">{{ ucwords(strtolower($filter_value)) }}</div>
 														</label>
 													</div>

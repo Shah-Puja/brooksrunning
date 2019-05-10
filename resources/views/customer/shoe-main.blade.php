@@ -52,7 +52,7 @@
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									@if(isset($shop_men_url))
+									@if(isset($shop_women_url))
 									<a href="/{{$shop_women_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt=""></a>
 									@else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
@@ -113,6 +113,9 @@
 								
 								@elseif($url_segment=='addiction')
 										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Addiction_13.PNG" />
+								
+								@elseif($url_segment=='glycerin')
+										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Glycerin_17.JPG" />
 								
 								@else
 										<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />

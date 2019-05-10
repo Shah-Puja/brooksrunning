@@ -2820,6 +2820,45 @@ width: 100%;
 }
 .collection-intro{
   background-color: #fff;
+  
+  h1{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    text-align: center;
+  }
+  h2{
+    color:#0E0E0E;
+    margin: 0 0 9px;
+    @extend %extrabold-font;
+    font-size:25px;
+    text-align:left;
+  }
+  p{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 22px;
+    line-height: 30px;
+    @extend %info-font;
+    text-align: center;
+  }
+  div{
+    max-width: 100%;
+    color:#0E0E0E;
+    font-size: 18px;
+    line-height: 26px;
+    @extend %info-font;
+    
+    .shop-all{
+      text-align:left !important;
+      color: #0263f7;
+    }
+  }
+   
+}
+.collection-header-intro{
+  background-color: #fff;
+  margin :20px auto;
   h1{
     color:#0E0E0E;
     margin: 0 0 9px;
@@ -2935,6 +2974,7 @@ width: 100%;
 
 /* End Our-history */
 
+<<<<<<< HEAD
 /* Start New Event Layout*/
 .event__hero{
   height: auto;
@@ -3911,3 +3951,193 @@ width: 100%;
   }
 }
 /* End New Event Layout*/
+=======
+
+// Mothersday Listing
+
+.mp-lp--container{
+  display: block;
+  position: relative;
+  @extend %bold-font;
+  padding-bottom: 35px;
+  .collection-intro{
+    background-color: #fff;
+    padding-top: 35px; 
+    h1{
+      color:#0E0E0E;
+      margin: 0 0 9px;
+      @extend %extrabold-font;
+      text-align: center;
+    }
+    h2{
+      color:#0E0E0E;
+      margin: 0 0 9px;
+      @extend %extrabold-font;
+      font-size:25px;
+      text-align:center;
+    }
+    p{
+      max-width: 100%;
+      color:#0E0E0E;
+      font-size: 22px;
+      line-height: 30px;
+      @extend %info-font;
+      text-align: center;
+    }
+    div{ 
+      max-width: 100%;
+      color:#0E0E0E;
+      font-size: 18px;
+      line-height: 26px;
+      @extend %info-font;
+      text-align: center;
+      .shop-all{
+        text-align:center !important;
+        color: #0263f7;
+      }
+      &.cat-desc{
+        margin:10px 20px 15px 30px;
+        text-align:left;
+        font-size: 16px;
+        line-height: 22px;
+      
+      }
+    }
+     
+  }
+
+
+  .owl-carousel{
+    width: calc(100% - 80px);
+    margin: auto;
+    .product_arrive{
+    padding:0px;
+    .prd_caption h3 {
+       margin: -5px auto;
+        padding-top: 15px;
+      .name-link{
+        text-align:center;
+        text-decoration:none;
+        color: $black;
+         @extend %extrabold-font;
+          &:hover{
+          color: $lightblue;
+          }
+        }
+      }
+    .price {
+        margin: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        span.black{
+          text-decoration:none;
+          color:$black;
+        }
+     }
+    }
+  }
+  .icon-style {
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    cursor: pointer;
+    left: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #91a1b3;
+    &.icon-next-arrow.next {
+      right: 0 !important;
+      left: auto !important;
+    }
+  }
+
+  .owl-theme .owl-controls .owl-page {
+      display: inline-block;
+    }
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls.clickable .owl-page:hover span{
+      background: $black;
+    }
+    .owl-theme .owl-controls .owl-page span {
+        background: none repeat scroll 0 0 $border;
+        border-radius: 20px;
+        display: block;
+        height: 12px;
+        margin: 5px 7px;
+        opacity: 0.5;
+        width: 12px;
+    }
+    .owl-controls{
+        position: relative;
+      text-align: center;
+    }
+    .owl-pagination{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+    }
+    .plp-product{
+      .info{
+        display: block;
+        position: relative;
+        padding: 17px 0 8px;
+        height: 122px;
+        border-bottom: 1px solid #f2f2f2;
+        border-left: 1px solid #fff;
+        @media #{$mobile-only} {
+          padding: 2px 0 3px;
+          height: 105px;
+        }
+        h3{
+          @extend %extrabold-font;
+          font-size: 16px;
+          line-height: 1.4;
+          margin: 0 0 5px;
+          @media #{$mobile-only}{
+            margin:0;
+            font-size: 18px;
+            line-height: 1.4;
+          }
+        }
+        .price{
+          @extend %info-font;
+          font-size: 15px;
+          line-height: 20px;
+          padding: 0 0 5px;
+          @media #{$mobile-only}{
+            font-size: 15px;
+          }
+          span{
+              &.red{
+                color: $red;
+              }
+          }
+        }
+        .shoes-type{
+          font-size: 12px;
+        }
+      }
+      
+        a {
+          display: block;
+          color: #000000;
+
+          .info-sub{
+            p{
+              font-size: 16px;
+              margin: 5px 0;
+              @media #{$mobile-only}{
+                font-size: 12px;
+              }
+              &.right{
+                text-align: right;
+              }
+            }
+          }
+      }
+
+    }
+  }
+  // /Mothrsday collection
+>>>>>>> 79a6feb57fbf641bc40580ec705834b6e70ae9e5
