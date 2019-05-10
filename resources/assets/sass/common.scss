@@ -3321,6 +3321,16 @@
               border: solid 1px $blue;
               color: $white;
             }
+            
+            @media #{$mobile-only} {
+              float:none;
+            }
+            @media #{$tab-only} {
+              float:none;
+            }
+            @media #{$desktop-only} {
+              float:none;
+            }
           }
         }
         &.pdp-width-title{

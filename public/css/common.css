@@ -4990,6 +4990,21 @@ textarea {
   border: solid 1px #0263f7;
   color: #ffffff;
 }
+@media only screen and (max-width: 767px) {
+  .pdp-container--info .pdp-width .pdp-width-show li {
+    float: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pdp-container--info .pdp-width .pdp-width-show li {
+    float: none;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pdp-container--info .pdp-width .pdp-width-show li {
+    float: none;
+  }
+}
 .pdp-container--info .pdp-width.pdp-width-title {
   max-width: 333px;
   margin-top: 15px;
