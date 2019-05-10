@@ -3178,6 +3178,7 @@
             width: 100%;
             max-width: 62px;
             height: 62px;
+            box-sizing: border-box;
             text-align:center;
             font-size:13px;
             &.selected{
@@ -3284,6 +3285,7 @@
         .pdp-width-show{
           li{
             cursor: pointer;
+            float: left;
             display: inline-block;
             border: 1px solid $border;
             padding: 8px 5px;

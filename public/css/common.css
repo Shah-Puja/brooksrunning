@@ -4853,6 +4853,7 @@ textarea {
   width: 100%;
   max-width: 62px;
   height: 62px;
+  box-sizing: border-box;
   text-align: center;
   font-size: 13px;
 }
@@ -4952,6 +4953,7 @@ textarea {
 }
 .pdp-container--info .pdp-width .pdp-width-show li {
   cursor: pointer;
+  float: left;
   display: inline-block;
   border: 1px solid #d3d0cd;
   padding: 8px 5px;
