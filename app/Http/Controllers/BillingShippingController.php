@@ -20,7 +20,7 @@ class BillingShippingController extends Controller
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-            check_state_and_update_delivery_option();
+            //check_state_and_update_delivery_option();
             if(empty($this->cart)){
                 return redirect('cart');
             }
@@ -101,8 +101,8 @@ class BillingShippingController extends Controller
                 $user_id = (!empty($user_data) && isset($user_data->id)) ? $user_data->id : '';
             }
         }
-        Order::createNew($this->cart, $user_id, $validatedAddress);
-        check_state_and_update_delivery_option();
+        $order_id = Order::createNew($this->cart, $user_id, $validatedAddress);
+        check_state_and_update_delivery_option($order_id);
         
         return redirect("payment");
     }

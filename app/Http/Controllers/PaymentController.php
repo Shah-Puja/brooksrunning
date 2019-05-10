@@ -46,13 +46,13 @@ class PaymentController extends Controller {
             }
 
             $this->order = $this->cart->order;
-            check_state_and_update_delivery_option();
+            check_state_and_update_delivery_option($this->order->id);
 
             if (!$this->order) {
                 return redirect('shipping');
             }
 
-            if (!$this->order->address->isValid()) {
+            if (isset($this->order->address) && !$this->order->address->isValid()) {
                 return redirect('shipping');
             }
             
