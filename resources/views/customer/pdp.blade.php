@@ -314,7 +314,7 @@
 
                             <div class="pdp-width pdp-width-title">
                                 <div class="row">
-                                    <div class="mob-6">
+                                    <div class="mob-6  width-wrapper">
                                         <div class="main">
                                           {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH  <span></span>
                                         </div>
@@ -323,16 +323,20 @@
                              </div>
                             <div class="row select-width">
                                 @if(!empty($width_names))
-                                <div class="col-4 tab-4 mob-6">
-                                    <div class="pdp-width">
-                                        <ul class="pdp-width-show">
-                                            <li>D-Normal</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                    @foreach($width_names as $width_code => $width_name)
+                                        @if($width_name!='')
+                                        <div class="col-4 tab-4 mob-6">
+                                            <div class="pdp-width">
+                                                <ul class="pdp-width-show">
+                                                    <li data-value="{{ $width_code }}">{{ $width_name }}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        @endif
+                                    @endforeach
                                 <input type="hidden" name="width_code" value="" />
                                 @endif
-                                <div class="col-4 tab-4 mob-6">
+                                <!--<div class="col-4 tab-4 mob-6">
                                     <div class="pdp-width">
                                         <ul class="pdp-width-show">
                                             <li>2E-Wide</li>
@@ -345,7 +349,7 @@
                                             <li>4E-Extra Wide</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="row select-width">
                             <div class="col-6">
@@ -772,9 +776,9 @@ $(document).on('click', '.size-show li:not(".disable")', function () {
         let data = $.grep( variants, function( n, i ) {
             if(n) return n['size']==size_val && n['visible']=='Yes';
          });
-        $("#custom_width").find("option:not([data-value=''])").attr("disabled",true);
+        $(".pdp-width-show").find("li:not([data-value=''])").attr("disabled",true);
         for(i = 0; i< data.length; i++){
-            $("#custom_width").find("[data-value='"+data[i]['width_code']+"']").attr("disabled",false);
+            $(".pdp-width-show").find("[data-value='"+data[i]['width_code']+"']").attr("disabled",false);
         }
         $("#detail input[name='size']").val(size_val);
     }
@@ -802,9 +806,11 @@ $(document).on('click', '.size-show li:not(".disable")', function () {
     event.stopPropagation();
 });*/
 
-$(document).on('change', '#custom_width', function () {
-    let value = $(this).val();
+$(document).on('click', '.pdp-width-show li:not(".disable")', function () {
+    let value = $(this).data('value');
     if(value!=''){
+        $(".pdp-width-show li").removeClass("selected");
+        $(this).addClass("selected");
         $("#detail input[name='width_code']").val(value);
         let data = $.grep( variants, function( n, i ) {
             if(n) return n['width_code']==value && n['visible']=='Yes';
