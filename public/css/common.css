@@ -4945,20 +4945,15 @@ textarea {
 }
 .pdp-container--info .pdp-width {
   position: relative;
-  max-width: 344px;
-}
-.pdp-container--info .pdp-width.pdp-width-title {
-  max-width: 333px;
-  margin-top: 15px;
-  margin-bottom: -10px;
-  position: relative;
+  max-width: 1000px;
 }
 .pdp-container--info .pdp-width .pdp-width-show li {
   cursor: pointer;
   display: inline-block;
   border: 1px solid #d3d0cd;
   padding: 8px 5px;
-  min-width: 140px;
+  min-width: 142px;
+  min-height: 38px;
   text-align: center;
   margin: 0 3px 7px 0;
   font-size: 15px;
@@ -4990,18 +4985,61 @@ textarea {
   border: solid 1px #0263f7;
   color: #ffffff;
 }
+.pdp-container--info .pdp-width.pdp-width-title {
+  max-width: 333px;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  position: relative;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #d3d0cd;
+  padding: 8px 5px;
+  min-width: 140px;
+  text-align: center;
+  margin: 0 3px 7px 0;
+  font-size: 15px;
+  transition: all 0.5s ease-in-out;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li.selected {
+  border: 1px solid #0263f7;
+  background-color: #0263f7;
+  color: #ffffff;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li.disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  color: #dedcda;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li.disable:hover {
+  border: 1px solid #d3d0cd;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li:hover {
+  border: 1px solid #000000;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li .disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  color: #d4d3d4;
+}
+.pdp-container--info .pdp-width .pdp-width-show_detail li .selected {
+  background-color: #0263f7;
+  border: solid 1px #0263f7;
+  color: #ffffff;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
+  .pdp-container--info .pdp-width .pdp-width-show_detail li {
     min-width: 105px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
+  .pdp-container--info .pdp-width .pdp-width-show_detail li {
     min-width: 220px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
+  .pdp-container--info .pdp-width .pdp-width-show_detail li {
     min-width: 180px;
   }
 }

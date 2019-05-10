@@ -321,19 +321,19 @@
                                     </div>
                                 </div>
                              </div>
-                            <div class="row select-width">
+                            <div class="select-width">
                                 @if(!empty($width_names))
-                                    @foreach($width_names as $width_code => $width_name)
-                                        @if($width_name!='')
-                                        <div class="col-4 tab-4 mob-6">
+                                    
                                             <div class="pdp-width">
                                                 <ul class="pdp-width-show">
+                                                @foreach($width_names as $width_code => $width_name)
+                                        @if($width_name!='')
                                                     <li data-value="{{ $width_code }}">{{ $width_name }}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        @endif
+                                                    @endif
                                     @endforeach
+                                                </ul>
+                                              </div>
+                                      
                                 <input type="hidden" name="width_code" value="" />
                                 @endif
                                 <!--<div class="col-4 tab-4 mob-6">
