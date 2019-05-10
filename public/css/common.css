@@ -4852,6 +4852,9 @@ textarea {
   transition: all 0.5s ease-in-out;
   width: 100%;
   max-width: 62px;
+  height: 72px;
+  text-align: center;
+  font-size: 12px;
 }
 .pdp-container--info .swatches ul li.selected {
   border: none;
@@ -4865,7 +4868,7 @@ textarea {
 }
 .pdp-container--info .swatches ul li div {
   display: inline-block;
-  margin: 10px 3px 0;
+  margin: 0px 3px 0;
   cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.5s ease-in-out;
