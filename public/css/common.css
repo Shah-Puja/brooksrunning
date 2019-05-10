@@ -4953,7 +4953,6 @@ textarea {
 }
 .pdp-container--info .pdp-width .pdp-width-show li {
   cursor: pointer;
-  float: left;
   display: inline-block;
   border: 1px solid #d3d0cd;
   padding: 8px 5px;
@@ -4989,21 +4988,6 @@ textarea {
   background-color: #0263f7;
   border: solid 1px #0263f7;
   color: #ffffff;
-}
-@media only screen and (max-width: 767px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
-    float: none;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
-    float: none;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .pdp-container--info .pdp-width .pdp-width-show li {
-    float: none;
-  }
 }
 .pdp-container--info .pdp-width.pdp-width-title {
   max-width: 333px;

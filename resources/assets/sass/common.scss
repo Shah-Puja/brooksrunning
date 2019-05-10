@@ -3285,7 +3285,6 @@
         .pdp-width-show{
           li{
             cursor: pointer;
-            float: left;
             display: inline-block;
             border: 1px solid $border;
             padding: 8px 5px;
@@ -3321,16 +3320,7 @@
               border: solid 1px $blue;
               color: $white;
             }
-            
-            @media #{$mobile-only} {
-              float:none;
-            }
-            @media #{$tab-only} {
-              float:none;
-            }
-            @media #{$desktop-only} {
-              float:none;
-            }
+          
           }
         }
         &.pdp-width-title{
