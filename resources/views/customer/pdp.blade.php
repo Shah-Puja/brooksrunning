@@ -776,9 +776,9 @@ $(document).on('click', '.size-show li:not(".disable")', function () {
         let data = $.grep( variants, function( n, i ) {
             if(n) return n['size']==size_val && n['visible']=='Yes';
          });
-        $(".pdp-width-show").find("li:not([data-value=''])").attr("disabled",true);
+        $(".pdp-width-show").find("li:not([data-value=''])").addClass("disable");
         for(i = 0; i< data.length; i++){
-            $(".pdp-width-show").find("[data-value='"+data[i]['width_code']+"']").attr("disabled",false);
+            $(".pdp-width-show").find("[data-value='"+data[i]['width_code']+"']").removeClass("disable");
         }
         $("#detail input[name='size']").val(size_val);
     }
