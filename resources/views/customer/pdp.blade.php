@@ -328,7 +328,7 @@
                                                 <ul class="pdp-width-show">
                                                 @foreach($width_names as $width_code => $width_name)
                                         @if($width_name!='')
-                                                    <li data-value="{{ $width_code }}">{{ $width_name }}</li>
+                                                    <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
                                                     @endif
                                     @endforeach
                                                 </ul>
@@ -743,12 +743,15 @@
 </section>-->
 <script>
  $(document).ready(function(){
-     var custom_width = $("#custom_width").val();
+     var custom_width = $(".pdp-width-show li").length;
+     if(custom_width==1){
+        var width_value = $(".pdp-width-show li:first").data("value");
+        $("#detail input[name='width_code']").val(width_value);
+     }
      //var width_name = target.text();
      //var width_code = target.data('value');
      //$(".width-wrapper").find(".label-heading .text").text(width_name);
-     $("#detail input[name='width_code']").val(custom_width);
-
+     
  });
  /*$(document).on('click', '.size-show li:not(".disable")', function () {
     if ($(this).data('value') != '') {
