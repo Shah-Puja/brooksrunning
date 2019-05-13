@@ -341,7 +341,7 @@
                                             $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
                                             }
                                             @endphp
-                                            <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
+                                            <input type="number" pattern="\d*" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
                                         </div>
                                     </div>
                                 </div>
@@ -502,7 +502,7 @@
                                                 endif;
                                                 ?>
                                                 <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
-                                                <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
+                                                <input type="number" pattern="\d*" name="b_phone" class="input-field phone-number" data-label-name="phone">
                                             </div>
                                         </div>
                                     </div>
@@ -542,100 +542,100 @@
                     <!-- /Shipping Final step -->
                 </div>
             </div>
-            
-		<div class="col-3 tab-4">
-			<div class="cart-right--container">
-				<div class="order hidden-mob">
+
+            <div class="col-3 tab-4">
+                <div class="cart-right--container">
+                    <div class="order hidden-mob">
                         <!-- <div class="order order_summary">-->
-                                @include('cart.order_summary') 
-                       <!--  </div>-->
-				</div>
-				<!--afterpay popup -->
-				<div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
-					<div class="popup-container--wrapper">
-						<div class="popup-container--info">
-							<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
-							<div class="header-info">
-								<img src="/images/afterpay_logo-colour.svg" alt="">
-								<h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
-							</div>
-							<div class="afterpay-info clearfix">
-								<div class="info-wrapper">
-									<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
-									<p class="heading">Pay in 4 installments</p>
-									<p class="text">Pay for your order in equal fortnightly payments</p>
-								</div>
-								<div class="info-wrapper">
-									<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
-									<p class="heading">Get your items now</p>
-									<p class="text">Your order will be shipped now, just like a normal order</p>
-								</div>
-								<div class="info-wrapper">
-									<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
-									<p class="heading">Nothing extra to pay</p>
-									<p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
-								</div>
-								<div class="info-wrapper">
-									<div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
-									<p class="heading">Spend up to $1000</p>
-									<p class="text">You can use Afterpay for orders up to $1000</p>
-								</div>
-							</div>
-							<div class="footer-info clearfix">
-								<div class="left-block">
-									<p class="heading">
-										Pay in 4 installments
-									</p>
-									<ul class="text">
-										<li>An Australian debit or credit card</li>
-										<li>To be over 18 years of age</li>
-										<li> To live in Australia</li>
-									</ul>
-									<br/>
-									<p class="heading">To use this service</p>
-									<ul class="text">
-										<li>Add your items to your bag and checkout as normal</li>
-										<li>In checkout select Afterpay as your payment method</li>
-										<li>Enter your details with Afterpay and you're done!</li>
-										<li>Your payment schedule will be emailed to you</li>
-									</ul>
-								</div>
-								<div class="right-block">
-									<p class="heading">Other things to note</p>
-									<ul class="text">
-										<li>Repayments will need to be made fortnightly either over a 6 or 8 week period. Your payment schedule will be shown to you by Afterpay before you confirm your purchase.</li>
-										<li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
-										<li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
-									</ul>
-									<a href="https://www.afterpay.com/en-AU/terms-of-service" class="moreinfo">For full terms and conditions please visit Afterpay</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/afterpay popup -->
-				<div class="address">
-					<h3 class="bold-font">Have a Question?</h3>
-					<div class="info-why">
-					    <p>Call us</p>
-					    <p>Australia: 1300 735 099</p>
-					    <p>New Zealand: 08 0061 3502</p>
-					    <p>Mon-Fri: 9am-5pm AEST</p>
-					    <p>30 Tullamarine Park Rd.</p>
-					    <p>Tullamarine, Vic 3043 </p> 
-					    <p>Australia.</p>
-					</div>
-				</div>
-				<div class="payment">
-				    <h3 class="bold-font center">We accept these payments</h3>
-				    <img src="/images/payment-option.jpg" alt="">
-				    <p class="braintree-txt">Safe and Secure Payments</p>
-				    <p class="braintree-txt">enabled by</p>
-				    <img src="/images/payment-braintree-black.jpg" alt="">
-			    </div>
-			</div>
-		</div>
-    </div>
+                        @include('cart.order_summary') 
+                        <!--  </div>-->
+                    </div>
+                    <!--afterpay popup -->
+                    <div id="afterpay-popup--wrapper" class="popup-container afterpay--popup">
+                        <div class="popup-container--wrapper">
+                            <div class="popup-container--info">
+                                <div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>
+                                <div class="header-info">
+                                    <img src="/images/afterpay_logo-colour.svg" alt="">
+                                    <h3 class="br-heading">Shop now. Wear now. Pay later. Interest-free</h3>
+                                </div>
+                                <div class="afterpay-info clearfix">
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -28px 4px;"></div>
+                                        <p class="heading">Pay in 4 installments</p>
+                                        <p class="text">Pay for your order in equal fortnightly payments</p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -31px -74px;"></div>
+                                        <p class="heading">Get your items now</p>
+                                        <p class="text">Your order will be shipped now, just like a normal order</p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -23px -152px;"></div>
+                                        <p class="heading">Nothing extra to pay</p>
+                                        <p class="text">No interest, no additional fees in you pay on time<sup>*</sup></p>
+                                    </div>
+                                    <div class="info-wrapper">
+                                        <div class="icon" style="background: url(images/icon-all-in-one-afterpay.png); background-position: -18px -251px;"></div>
+                                        <p class="heading">Spend up to $1000</p>
+                                        <p class="text">You can use Afterpay for orders up to $1000</p>
+                                    </div>
+                                </div>
+                                <div class="footer-info clearfix">
+                                    <div class="left-block">
+                                        <p class="heading">
+                                            Pay in 4 installments
+                                        </p>
+                                        <ul class="text">
+                                            <li>An Australian debit or credit card</li>
+                                            <li>To be over 18 years of age</li>
+                                            <li> To live in Australia</li>
+                                        </ul>
+                                        <br/>
+                                        <p class="heading">To use this service</p>
+                                        <ul class="text">
+                                            <li>Add your items to your bag and checkout as normal</li>
+                                            <li>In checkout select Afterpay as your payment method</li>
+                                            <li>Enter your details with Afterpay and you're done!</li>
+                                            <li>Your payment schedule will be emailed to you</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right-block">
+                                        <p class="heading">Other things to note</p>
+                                        <ul class="text">
+                                            <li>Repayments will need to be made fortnightly either over a 6 or 8 week period. Your payment schedule will be shown to you by Afterpay before you confirm your purchase.</li>
+                                            <li>If you wish to return your items you can choose an exchange, or the payment plan can be cancelled.</li>
+                                            <li>*If you fail to make payment, you will be charged a late payment fee of $10 with a further $7 fee added 7 days later if the payment is still unpaid.</li>
+                                        </ul>
+                                        <a href="https://www.afterpay.com/en-AU/terms-of-service" class="moreinfo">For full terms and conditions please visit Afterpay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/afterpay popup -->
+                    <div class="address">
+                        <h3 class="bold-font">Have a Question?</h3>
+                        <div class="info-why">
+                            <p>Call us</p>
+                            <p>Australia: 1300 735 099</p>
+                            <p>New Zealand: 08 0061 3502</p>
+                            <p>Mon-Fri: 9am-5pm AEST</p>
+                            <p>30 Tullamarine Park Rd.</p>
+                            <p>Tullamarine, Vic 3043 </p> 
+                            <p>Australia.</p>
+                        </div>
+                    </div>
+                    <div class="payment">
+                        <h3 class="bold-font center">We accept these payments</h3>
+                        <img src="/images/payment-option.jpg" alt="">
+                        <p class="braintree-txt">Safe and Secure Payments</p>
+                        <p class="braintree-txt">enabled by</p>
+                        <img src="/images/payment-braintree-black.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 </section>
 @if(env('KLEBER_STATUS')=='ON')
 <script>
