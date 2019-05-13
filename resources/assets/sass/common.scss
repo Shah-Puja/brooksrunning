@@ -3180,7 +3180,7 @@
             height: 62px;
             box-sizing: border-box;
             text-align:center;
-            font-size:13px;
+            font-size:11px;
             &.selected{
               border: none;
             }
@@ -3320,7 +3320,8 @@
               border: solid 1px $blue;
               color: $white;
             }
-          
+            
+           
           }
         }
         &.pdp-width-title{

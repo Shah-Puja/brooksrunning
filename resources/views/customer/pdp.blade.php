@@ -321,36 +321,19 @@
                                     </div>
                                 </div>
                              </div>
-                            <div class="select-width">
-                                @if(!empty($width_names))
-                                    
-                                            <div class="pdp-width">
-                                                <ul class="pdp-width-show">
-                                                @foreach($width_names as $width_code => $width_name)
-                                        @if($width_name!='')
-                                                    <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
-                                                    @endif
-                                    @endforeach
-                                                </ul>
-                                              </div>
-                                      
-                                <input type="hidden" name="width_code" value="" />
-                                @endif
-                                <!--<div class="col-4 tab-4 mob-6">
-                                    <div class="pdp-width">
-                                        <ul class="pdp-width-show">
-                                            <li>2E-Wide</li>
-                                        </ul>
-                                    </div>
+                             <div class="select-width"> 
+                                <div class="pdp-width">
+                                    <ul class="pdp-width-show">
+                                        <li data-value="" >B-NORMAL</li>
+                                        <li data-value="" >2A-Narrow</li>
+                                        <li data-value="" >D-Wide</li>
+                                        <li data-value="" >2E-Extra-Wide</li>
+                                        <li data-value="" >B-NORMAL</li>
+                                        <li data-value="" >2A-Narrow</li>
+                                        <li data-value="" >D-Wide</li>
+                                    </ul>
                                 </div>
-                                <div class="col-4 tab-4 mob-12">
-                                    <div class="pdp-width">
-                                        <ul class="pdp-width-show">
-                                            <li>4E-Extra Wide</li>
-                                        </ul>
-                                    </div>
-                                </div>-->
-                            </div>
+                              </div>
                             <div class="row select-width">
                             <div class="col-6">
                                     <div class="quantity-wrapper">
