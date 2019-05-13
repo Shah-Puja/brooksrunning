@@ -28,6 +28,21 @@ if (!function_exists('benefit_img_check')) {
 
 }
 
+/* if (!function_exists('check_state_and_update_delivery_option')) {
+
+    function check_state_and_update_delivery_option() {
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
+        if (isset($cart->order->address->s_state) && $cart->order->address->s_state == 'New Zealand') {
+            $delivery_option = "new_zealand";
+            $freight_charges = config('site.SHIPPING_NZ_PRICE');
+            $grand_total = $cart->total + $freight_charges;
+            Cart::where('id', session('cart_id'))->first()->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
+            Order::where('cart_id', session('cart_id'))->first()->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
+        }
+    }
+
+} */
+
 if (!function_exists('check_state_and_update_delivery_option')) {
 
     function check_state_and_update_delivery_option($order_id) {
