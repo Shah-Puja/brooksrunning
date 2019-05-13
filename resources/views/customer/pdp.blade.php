@@ -322,34 +322,22 @@
                                 </div>
                              </div>
                             <div class="select-width">
-                                @if(!empty($width_names))
-                                    
-                                            <div class="pdp-width">
-                                                <ul class="pdp-width-show">
-                                                @foreach($width_names as $width_code => $width_name)
-                                        @if($width_name!='')
-                                                    <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
-                                                    @endif
-                                    @endforeach
-                                                </ul>
-                                              </div>
-                                      
+                            @if(!empty($width_names))  
+                                @php
+                                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
+                                    $width_names_orderby = \App\Models\category::sort_array($width_names,$order_array);
+                                @endphp
+                                <div class="pdp-width">
+                                    <ul class="pdp-width-show">
+                                        @foreach($width_names_orderby as $width_code => $width_name)
+                                            @if($width_name!='')
+                                                <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>   
                                 <input type="hidden" name="width_code" value="" />
-                                @endif
-                                <!--<div class="col-4 tab-4 mob-6">
-                                    <div class="pdp-width">
-                                        <ul class="pdp-width-show">
-                                            <li>2E-Wide</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-4 tab-4 mob-12">
-                                    <div class="pdp-width">
-                                        <ul class="pdp-width-show">
-                                            <li>4E-Extra Wide</li>
-                                        </ul>
-                                    </div>
-                                </div>-->
+                            @endif
                             </div>
                             <div class="row select-width">
                             <div class="col-6">
