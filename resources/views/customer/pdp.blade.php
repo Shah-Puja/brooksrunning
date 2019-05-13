@@ -325,7 +325,7 @@
                             @if(!empty($width_names))  
                                 @php
                                     $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
-                                    $width_names_orderby = \App\Models\category::sort_array($width_names,$order_array);
+                                    $width_names_orderby = App\Models\Category::sort_array($width_names,$order_array);
                                 @endphp
                                 <div class="pdp-width">
                                     <ul class="pdp-width-show">
