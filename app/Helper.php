@@ -52,7 +52,7 @@ if (!function_exists('check_state_and_update_delivery_option')) {
             $delivery_option = "new_zealand";
             $freight_charges = config('site.SHIPPING_NZ_PRICE');
             $grand_total = $order->total + $freight_charges;
-            //Cart::where('id', session('cart_id'))->first()->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
+            Cart::where('id', session('cart_id'))->first()->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
             Order::where('id', $order_id)->first()->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
         }
     }
