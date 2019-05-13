@@ -461,6 +461,8 @@
 @else 
     @include('customer.pdp_apparel_benefits')
 @endif
+
+@include('customer.medibank.medibank_pdp_disclaimer')
 <!--
 <section class="pdp-recommended-products">
         <div class="wrapper">

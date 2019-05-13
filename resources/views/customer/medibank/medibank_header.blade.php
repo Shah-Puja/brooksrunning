@@ -24,7 +24,7 @@
 										<div class="col-8">
 											<div class="medibank--login--success">
 												<div class="login_success">
-													<p class="success-text" ><span class="user-name">{{Session::get('medibank_user_email')}}</span></p>
+													<p class="success-text" ><span class="user-name">{{Session::get('medibank_user_memberid')}}</span></p>
 												</div>
 											</div>
 										</div>
@@ -66,7 +66,7 @@
 										</div>
 									<div class="col-4">
 										<div class="medibank--content">
-											<label>Please log in with your Medibank policy number and the email address registered with Live Better
+											<label>Please log in with your Medibank policy number and the email address registered with Live Better.
 											</label>
 										</div>
 									</div>

@@ -80,6 +80,7 @@ class MedibankController extends Controller
                                 if($verified){
                                     Session::put('medibank_user','Yes');
                                     Session::put('medibank_user_email',$email);
+                                    Session::put('medibank_user_memberid',$PolicyNumber);
                                 }else{
                                     Session::flash('medibank_user_failed','Yes');
                                 }
