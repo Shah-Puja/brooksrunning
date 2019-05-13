@@ -20,7 +20,7 @@
             <div class="col-6">
                 <div class="medibankverification-error" style="display:none;">
                     <div class="medibankError-content">
-                        <p class="medibankError-msg">Sorry your member number could not be validated. Please try again.</p>
+                        <p class="medibankError-msg">edibank policy number could not be validated. Please try again</p>
                         <div class="medibank-btn clearfix">
                             <span><a class="secondary-button" href="#">Cancel</a></span>
                             <span><a class="primary-button" href="#">Try Again</a></span>

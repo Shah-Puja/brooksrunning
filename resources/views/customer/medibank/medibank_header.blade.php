@@ -41,7 +41,7 @@
 										<div class="medibank--login--failed">
 											<label>Log In</label>
 											<div class="login_failed">
-											<p class="failed-text">Sorry your member number could not be validated. Please try again. </p>
+											<p class="failed-text">Sorry your Medibank policy number could not be validated. Please try again </p>
 											<div class="ctg-btn clearfix">
 												<span><a class="secondary-button" href="{{URL::previous()}}">Cancel</a></span>
 												<span><a class="primary-button" href="{{URL::previous()}}">Try Again</a></span>
@@ -66,11 +66,7 @@
 										</div>
 									<div class="col-4">
 										<div class="medibank--content">
-											<label>Please log in with your
-													Medibank ID and the
-													email address registered
-													with Medibank to claim
-													your earn points
+											<label>Please log in with your Medibank policy number and the email address registered with Live Better
 											</label>
 										</div>
 									</div>
