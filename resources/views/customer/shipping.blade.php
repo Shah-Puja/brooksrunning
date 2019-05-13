@@ -82,7 +82,51 @@
                             <div id="shippingbilling_popup">@include('customer.ajax_shippingbilling_popup')</div>
 
 
-                        </div>
+						</div>
+					</div>
+				</div>
+				<!--/Password popup -->
+				<!--Password popup Success -->
+				<div class="popup-container password-popup popup-success" style="display: none;">
+					<div class="popup-container--wrapper">
+						<div class="popup-container--info">
+							<div class="close-me"><span class="icon-close-icon close-popup"></span></div>
+							<h3 class="br-heading">Request to Reset Your Password Received</h3>
+							<p class="br-info">Thanks for submitting your email address. We have sent you an email with the information needed to reset your password. The email might take a couple of minutes to reach your account. Please check your junk mail to ensure you receive it.</p>
+							<div class="cart-btn">
+								<a href="/" class="primary-button pdp-button">Go to Homepage</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/Password popup Success-->
+				<h1 class="br-heading">Shipping Address</h1>
+				<p class="br-info">Your order requires a signature on delivery, therefore we recommend a business address. If the address is unattended a card will be left with information on a pickup location or re-delivery.</p>
+                <!-- Shipping first step -->
+				<div class="shipping-form" id="shipping-form" @if(auth()->user()) style="display: none;" @else style="display: block;" @endif>
+                <form name="email_check" id="email_check" method="post" onsubmit="return email_check_validate()">
+                    @csrf
+					<p class="email-msg">Please enter your email address</p>
+					<div class="row">
+						<div class="col-6">
+							<div class="input-wrapper">
+                                <?php
+                                    $error_email="";
+                                    if ($errors->has('email') ):
+                                        $error_email="<span class='error'>".$errors->first('email')."</span>";
+                                    endif;
+                                ?>
+								<label for="email1"><sup>*</sup>Email Address</label>
+                            <input type="text" name="email" id="email" class="input-field check_email_field" data-label-name="email">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="cart-btn">
+								<button class="primary-button pdp-button" type="submit">Submit</button>
+							</div>
+						</div>
                     </div>
                 </div>
                 <!--/Password popup -->
@@ -340,9 +384,8 @@
                                             }else{
                                             $s_phone = (isset(auth()->user()->phone) && auth()->user()->phone!='')?auth()->user()->phone:'';
                                             }
-                                            @endphp
-                                            <input type="text" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
-                                        </div>
+                                        @endphp
+                                        <input type="number" pattern="\d*" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -500,10 +543,9 @@
                                                 if ($errors->has('b_phone')):
                                                     $error_b_phone = "<span class='error'>" . $errors->first('b_phone') . "</span>";
                                                 endif;
-                                                ?>
-                                                <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
-                                                <input type="text" name="b_phone" class="input-field phone-number" data-label-name="phone">
-                                            </div>
+                                            ?>
+                                            <label for=""><sup>*</sup>Phone: {!! $error_b_phone !!}</label>
+                                            <input type="number" pattern="\d*" name="b_phone" class="input-field phone-number" data-label-name="phone">
                                         </div>
                                     </div>
                                 </div>

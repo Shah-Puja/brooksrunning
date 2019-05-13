@@ -66,13 +66,14 @@ Route::get('/meet_brooks/competition/{comp_name}', 'meet_brooksController@compet
 Route::get('/meet_brooks/update_previous_competitions', 'meet_brooksController@update_previous_competitions');
 Route::post('/meet_brooks/competition', 'meet_brooksController@store');
 Route::post('/meet_brooks/enewsletter_post', 'meet_brooksController@enewsletter_store');
+Route::post('/meet_brooks/newsletter_update', 'meet_brooksController@newsletter_update');
+Route::post('/meet_brooks/newsletter_signup', 'meet_brooksController@newsletter_signup');
 Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 
 
-// static success page for newsletter
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
 Route::get('/shipping','BillingShippingController@create');
@@ -167,6 +168,9 @@ Route::post('/staffcompetition/insert', 'StaffcompetitionController@store');
 /* Collection pages */
 Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@index');
 Route::get('/abstract-collection-adrenaline-ghost', 'CollectionController@adreline_ghost');
+Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
+Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
+
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

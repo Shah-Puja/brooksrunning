@@ -23,6 +23,7 @@
 .bf-progress.bf-progress--can-hover .bf-progress__item .bf-progress__item__value{
     top: 35px;
 }
+.result-login{font-size:20px; color: #000; text-align:center;}
 
 @media only screen 
 and (min-width : 768px) 
@@ -34,6 +35,7 @@ and (max-width : 1024px)  {
         left: 70% !important;
         top: 20px !important;
     }
+    
 }
 
 @media only screen 
@@ -128,7 +130,7 @@ and (orientation : landscape) {
 				</h1>
 			<div class="bf-results-screen__transition-group-3">
 				<div data-bf-behind-the-science-link data-template-id="ResultsInfo" data-gtm-screen-title="Results" data-gtm-click-event="shoe-finder-behind-the-science"  ></div>
-			</div>
+            </div>
 			<!-- START: Behind the Science Template -->
 			
 				<script type="text/template" id="ResultsInfo">
@@ -277,9 +279,92 @@ and (orientation : landscape) {
 
 	</header>
     <div class="bf-section bf-section--results bf-bg-white">
+
+    
         <div class="bf-results-screen__transition-group-5"> 
+        @if(!auth()->user())
+           <div class="login-section top-login-section">
+                <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
+                <div class="button_fixed">
+                    <a class="bf-button bf-button--full-width savemyresults" href="javascript:void(0);">Save my results</a>
+                </div>
+                    <!-- Login Form -->
+                        <section class="create-account wrapper shoefinder-create-account" >
+                            <form name="registerform1" method="POST" action="{{ route('register') }}" onsubmit="return registervalidation('registerform1')">
+                            @csrf   
+                            <div class="row">
+                                    <div class="col-9">
+                                        <div class="create-account--left" style="margin: 0 auto;">
+                                        <div class="row">
+                                            <div class="tab-6">
+                                                <div class="input-wrapper">
+                                                    <label for="" style="text-align:left;"><sup>*</sup>Email Address :@if ($errors->has('email')) <span class="error invalid-feedback">{{ $errors->first('email') }} </span> @endif</label>
+                                                    <input type="text" id='email' name="email" class="input-field">
+                                                </div>
+                                            </div>
+                                            <div class="tab-6">
+                                                &nbsp;
+                                            </div>
+                                        </div>
 
+                                        <div class="row">
+                                            <div class="tab-6">
+                                                <div class="input-wrapper">
+                                                    <label for="password" style="text-align:left;"><sup>*</sup>Password :  @if ($errors->has('password')) <span class="error error invalid-feedback"> <strong>{{ $errors->first('password') }}</strong> </span> @endif</label>
+                                                    <input type="password" id='password' name="password" class="input-field">
+                                                </div>
+                                            </div>
+                                            <div class="tab-6">
+                                                <div class="input-wrapper">
+                                                    <label for="password" style="text-align:left;"><sup>*</sup>Confirm Password</label>
+                                                    <input type="password" id="password_confirmation" name="password_confirmation" class="input-field">
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="row">
+                                            <div class="tab-12">
+                                                <div class="input-wrapper">
+                                                    <div class="checklist-inline" style="text-align:left;">
+                                                            <input type="checkbox" id="signme" name="newsletter_subscription" value="1">
+                                                        <label for="signme">
+                                                                <div class="mark"><span></span></div>
+                                                                <div class="text">Please sign me up to receive Brooks email newsletter The Run Down.</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="button_bottom">
+                                                    <!--<button type="submit" class="bf-button bf-button--full-width" href="/">Create an account</button>-->
+                                                    <div class="cart-btn comp-submit" >
+                                                        <div class="alignleft inline-loader">
+                                                            <button class="primary-button" id="comp_submit_btn">Create an account</button>
+                                                        </div>
+                                                        <div class="alignright inline-loader">
+                                                            <div id = "comp_loader"  style="display:none">
+                                                                <img src = "/images/loader.gif" alt="comp-loader" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<br>
+                                                <p class="privacy" style="text-align:left; color:#000;">Have an account? <a href="/login" style="color:#000; font-size:14px; text-decoration:none;">Log in now <img style="width:14px;" src="/images/home/link-arrow--icon.png" alt=""></a></p>-->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="tab-12">
+                                            <p class="privacy" style="text-align:left; color:#000;">Have an account? <a href="/login" style="color:#000; font-size:14px; text-decoration:none;">Log in now <img style="width:14px;" src="/images/home/link-arrow--icon.png" alt=""></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    <!-- End Login Form -->
+            </div>
+            @endif
+            <hr style="width:90%; background-color:#ecebeb;"/>
 
         @switch($experience)
             @case('propel_me')	
@@ -553,15 +638,95 @@ and (orientation : landscape) {
         @else
         <h1 class="br-mainheading"> Sorry, No Result Found!</h1>
         @endif
-		    <!-- END: Result 1 -->
+            <!-- END: Result 1 -->
+
+        <hr style="width:90%; background-color:#ecebeb; margin-bottom: 26px;"/>
+        @if(!auth()->user())
+        <div class="login-section bottom-login-section">
+            <p class="result-login">Sign up for a Brooks Running account to access your shoe finder results, receive news and exclusive offers:</p>
+            <div class="button_fixed">
+		       	<a class="bf-button bf-button--full-width savemyresults" href="javascript:void(0);">Save my results</a>
+            </div>
+                   <!-- Login Form -->
+                   <section class="create-account wrapper shoefinder-create-account" >
+                       
+                   <form name="registerform2" method="POST" action="{{ route('register') }}" onsubmit="return registervalidation('registerform2')">
+                        @csrf   
+                        <div class="row">
+                                <div class="col-9">
+                                    <div class="create-account--left" style="margin: 0 auto;">
+                                    <div class="row">
+                                        <div class="tab-6">
+                                            <div class="input-wrapper">
+                                                <label for="" style="text-align:left;"><sup>*</sup>Email Address :@if ($errors->has('email')) <span class="error invalid-feedback">{{ $errors->first('email') }} </span> @endif</label>
+                                                <input type="text" id='email' name="email" class="input-field">
+                                            </div>
+                                        </div>
+                                        <div class="tab-6">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="tab-6">
+                                            <div class="input-wrapper">
+                                                <label for="password" style="text-align:left;"><sup>*</sup>Password :  @if ($errors->has('password')) <span class="error error invalid-feedback"> <strong>{{ $errors->first('password') }}</strong> </span> @endif</label>
+                                                <input type="password" id='password' name="password" class="input-field">
+                                            </div>
+                                        </div>
+                                        <div class="tab-6">
+                                            <div class="input-wrapper">
+                                                <label for="password" style="text-align:left;"><sup>*</sup>Confirm Password</label>
+                                                <input type="password" id="password_confirmation" name="password_confirmation" class="input-field">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="tab-12">
+                                            <div class="input-wrapper">
+                                                <div class="checklist-inline" style="text-align:left;">
+                                                        <input type="checkbox" id="signme" name="newsletter_subscription" value="1">
+                                                    <label for="signme">
+                                                            <div class="mark"><span></span></div>
+                                                            <div class="text">Please sign me up to receive Brooks email newsletter The Run Down.</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="button_bottom">
+                                                <!--<button type="submit" class="bf-button bf-button--full-width" href="/">Create an account</button>-->
+                                                <div class="cart-btn comp-submit" >
+                                                    <div class="alignleft inline-loader">
+                                                        <button class="primary-button" id="comp_submit_btn">Create an account</button>
+                                                    </div>
+                                                    <div class="alignright inline-loader">
+                                                        <div id = "comp_loader"  style="display:none">
+                                                            <img src = "/images/loader.gif" alt="comp-loader" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<br>
+                                            <p class="privacy" style="text-align:left; color:#000;">Have an account? <a href="/login" style="color:#000; font-size:14px; text-decoration:none;">Log in now <img style="width:14px;" src="/images/home/link-arrow--icon.png" alt=""></a></p>-->
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tab-12">
+                                        <p class="privacy" style="text-align:left; color:#000;">Have an account? <a href="/login" style="color:#000; font-size:14px; text-decoration:none;">Log in now <img style="width:14px;" src="/images/home/link-arrow--icon.png" alt=""></a></p>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                      </section>
+                   <!-- End Login Form -->
+         </div>
+            
         </div>
+        @endif
     </div>
 </div>	
 </div>	
-
-@php 
-
-
-
-@endphp
 

@@ -26,7 +26,7 @@
                      <span class="offer">Free shipping on orders over $50 Australia wide.</span>
                 </div>
                 @if(!empty($cart))
-                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
+                <button class="pdp-button pdp-proceed-mob proceed-to-purchase visible-mob" onclick="window.location.href = '/shipping'">Proceed to purchase</button> 
                 @endif
                 <div class="shopping-heading">
                     <div class="row">
@@ -81,7 +81,7 @@
                                                         <h3 class="bold-font">Express Delivery</h3>
                                                         <p class="area">(Australia Only)</p>
                                                         <p class="rate">$15 flat rate</span></p>
-                                                        <p class="day">1-2 business days to Australian metro areas<sup>*</sup></p>
+                                                        <p class="day">1-3 business days to Australian metro areas<sup>*</sup></p>
                                                     </div>
                                                 </label>
                                             </div>
@@ -197,6 +197,9 @@
                                                                             }
                                                                             ?>
                                                                         </a>
+                                                                        @if(isset($cart->subcode_text) && $cart->subcode_text!="")
+                                                                                   <p style="color:red;"> {{ $cart->subcode_text }} </p>
+                                                                               @endif
                                                                         @if(isset($cart->promo_display_text) && $cart->promo_display_text!="")
                                                                                    <p> {{ $cart->promo_display_text }} </p>
                                                                                @endif
@@ -234,9 +237,9 @@
                                 @include('cart.order_summary') 
                             </div>
 @if(!empty($cart))
-<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to Purchase</button>
+<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/shipping'">Proceed to purchase</button>
 @else
-<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/cart'">Proceed to Purchase</button>
+<button class="proceed-to-purchase pdp-button" onclick="window.location.href = '/cart'">Proceed to purchase</button>
 @endif
                             
 
@@ -248,9 +251,9 @@
         <div class="col-3 tab-4">
             <div class="cart-right--container">
             @if(!empty($cart))
-                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/shipping'">Proceed to Purchase</button> 
+                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/shipping'">Proceed to purchase</button> 
             @else
-                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/cart'">Proceed to Purchase</button> 
+                <button class="proceed-to-purchase pdp-button hidden-mob" onclick="window.location.href = '/cart'">Proceed to purchase</button> 
             @endif
                 <div class="order hidden-mob order_summary">
                     @include('cart.order_summary')

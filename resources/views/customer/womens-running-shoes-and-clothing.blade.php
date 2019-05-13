@@ -38,16 +38,40 @@
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
 			@foreach($shoes_product as $prod_key => $shoes_arrival)
+			@php
+                $max_price =$shoes_arrival->variants->pluck('price')->max();
+                $max_price_sale = $shoes_arrival->variants->pluck('price_sale')->max();
+                $min_price = $shoes_arrival->variants->pluck('price')->min();
+				$min_price_sale = $shoes_arrival->variants->pluck('price_sale')->min();
+			@endphp
 	       		<div class="item">
 		         	<div class="product_arrive">
 		           		<div class="prd_img">
-							<a href = "/{{(isset($shoes_arrival->seo_name)) ? $shoes_arrival->seo_name : ''}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html">
+							<a href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html">
 								<img src="{{$shoes_arrival->image->image1Medium()}}">
 							</a>
 		                </div>
 		                <div class="prd_caption">
-			              	 <h3><a class="name-link" href = "/{{(isset($shoes_arrival->seo_name)) ? $shoes_arrival->seo_name : ''}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
-			                 <h4 class="price"><span class="black">${{$shoes_arrival->variants[$prod_key]->price}}</span></h4>
+			              	 <h3><a class="name-link" href = "/{{$shoes_arrival->seo_name}}/{{$shoes_arrival->style}}_{{$shoes_arrival->color_code}}.html" title="{{$shoes_arrival->stylename}}">{{$shoes_arrival->stylename}}</a></h3>
+							   <h4 class="price">
+								@if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+									<span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+								@elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+									<del><span class="black">&dollar;{{ $max_price }}</span></del>
+									<span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+								@elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+									<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+								@elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+									<del><span class="black">&dollar;{{ $max_price }}</span></del>
+									<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+								@elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+									<del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+									<span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+								@else
+									<del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+									<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+								@endif
+								</h4>
 		                </div>
 		            </div>
 				</div>
@@ -85,7 +109,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a>
+							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a> 
 					</div> 
 				</div>
 			</div>
@@ -114,7 +138,7 @@
 	<div class="landingpage-banner--wrapper">
 		<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="/images/landingpage/Womens/women_clothingbanner_mob.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/Womens/women_clothingbanner.jpg">
 	        <img src="/images/landingpage/Womens/women_clothingbanner.jpg" alt="clothing">
 	      </picture>
 	      <div class="landingpage-banner--info">
@@ -150,21 +174,45 @@
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev hidden-col"></span>
 	     	<div class="owl-carousel">
-			@foreach($cloths_product as $prod_key => $cloths_arrival)
-	       		<div class="item">
-		         	<div class="product_arrive">
-		           		<div class="prd_img">
-							<a href = "/{{(isset($cloths_arrival->seo_name)) ? $cloths_arrival->seo_name : ''}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html">
+			 @foreach($cloths_product as $prod_key => $cloths_arrival)
+				@php
+					$max_price =$cloths_arrival->variants->pluck('price')->max();
+					$max_price_sale = $cloths_arrival->variants->pluck('price_sale')->max();
+					$min_price = $cloths_arrival->variants->pluck('price')->min();
+					$min_price_sale = $cloths_arrival->variants->pluck('price_sale')->min();
+				@endphp
+				<div class="item">
+					<div class="product_arrive">
+						<div class="prd_img">
+							<a href = "/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html">
 								<img src="{{$cloths_arrival->image->image1Medium()}}">
 							</a>
-		                </div>
-		                <div class="prd_caption">
-			              	<h3><a class="name-link" href="/{{(isset($cloths_arrival->seo_name)) ? $cloths_arrival->seo_name : ''}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
-							<h4 class="price"><span class="black">${{$cloths_arrival->variants[$prod_key]->price}}</span></h4>
-		                </div>
-		            </div>
-		        </div>
-		    @endforeach    
+						</div>
+						<div class="prd_caption">
+							<h3><a class="name-link" href="/{{$cloths_arrival->seo_name}}/{{$cloths_arrival->style}}_{{$cloths_arrival->color_code}}.html" title="{{$cloths_arrival->stylename}}">{{$cloths_arrival->stylename}}</a></h3>
+							<h4 class="price">
+							@if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                            @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                            @else
+                                <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                            	<span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+							@endif
+							</h4>					
+						</div>
+					</div>
+				</div>
+			@endforeach 
 	       </div>
 	       <span class="icon-style icon-next-arrow next hidden-col"></span>
 	    </div>
@@ -178,27 +226,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_sportsbras.jpg">
+							<img src="/images/landingpage/Womens/women_tights.jpg">
 						    <div class="title">
-						       <h1 class="happy left">Women's <br/> Sports Bra's</h2>
+						       <h1 class="happy left">Women's  <br/>  Tights</h2>
 						    </div>
-					 </div>
+					 </div> 
 					 <div class="lp-info-block">
-							<p>A great sports bra is at the center of every woman's run. Every Brooks sports bra is engineered to support the unique needs of women everywhere. Experience the difference a Brooks Sports bra can make.</p>
-							<a class="primary-button" href="/womens-sports-bras">Shop Sports Bras</a>
+							<p>Our women's tights hug your body for a supportive fit and a flattering look that that won't budge during your workout.</p>
+							<a class="primary-button" href="/womens-running-pants-tights">Shop Tights</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_tops.jpg">
+							<img src="/images/landingpage/Womens/women_jackets.jpg">
 						    <div class="title">
-						        <h1 class="happy left">Women's<br>Tops</h2>
+						        <h1 class="happy left">Women's<br>Jackets</h2>
 						    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Whether you’re training for a marathon or enjoying a run around the neighbourhood, Brooks’ running tops will ensure practical functionality and a stylish look. </p>
-							<a class="primary-button" href="/womens-running-tops">Shop tops</a>
+							<p>Keep yourself warm when the weather takes a turn with our range of weather-resistant running jackets and vests.</p>
+							<a class="primary-button" href="/womens-running-jackets-vests">Shop Jackets</a>
 					</div>
 				</div>
 			</div>

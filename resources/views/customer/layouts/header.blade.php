@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link href="/images/favicon.ico" rel="shortcut icon">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
+       
+
         @switch(Request::segment(1))
             @case("shoefinder")
                 <title>Brooks Running Shoe Finder | Brooks Running Australia</title>
@@ -23,6 +26,14 @@
                 @break;
             @case("mens-running-shoes-sale")
                 <title>Brooks Running Men's Running Shoes Sale</title>
+                @break;
+            @case("meet_brooks")
+                @if(Request::segment(2) == "competition" && Request::segment(3) == "hbfrunforareasoncomp")
+                    <title>Win a $1000 Running Kit!</title>
+                    <meta name="description" content="Get prepared for HBF Run for a Reason">
+                @else
+                    <title>Brooks Running Shoes, Clothing & Sports Bras | Brooks Running</title>
+                @endif
                 @break;
             @default
                 <title>Brooks Running Shoes, Clothing & Sports Bras | Brooks Running</title>

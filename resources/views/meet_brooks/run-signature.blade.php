@@ -43,13 +43,13 @@
 			<div class="tab-4">
 				<div class="work-wrapper">
 					<h3>2</h3>
-					<p>We learn how<br/>your body runs</p>
+					<p>You tell us<br/> the experience you like</p>
 				</div>
 			</div>
 			<div class="tab-4">
 				<div class="work-wrapper">
 					<h3>3</h3>
-					<p>We learn how<br/>your body runs</p>
+					<p>We pair you<br/>with your perfect shoe</p>
 				</div>
 			</div>
 		</div>
