@@ -38,13 +38,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/hp_sm_launch6.jpg">
-			        <h3>&nbsp; <br/>Launch 6</h3>
+					<img src="/images/home/hp_sm_energize.jpg">
+			        <h3>&nbsp;<br/>&nbsp;</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>The Launch 6 is built to be fast and springy, with zero distractions. <br/>&nbsp; </p>
-					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customised to you.</p>
+					<a href="/collections/energize-running-shoes">Shop the Energize collection<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<!-- <span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
 				
 				</div>
 			</div>
