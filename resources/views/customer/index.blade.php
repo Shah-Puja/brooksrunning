@@ -39,7 +39,7 @@
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
 					<img src="/images/home/hp_sm_energize.jpg">
-			        <h3>&nbsp; <br/>&nbsp;</h3>
+			        <h3>&nbsp;<br/>&nbsp;</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customised to you.</p>
