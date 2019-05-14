@@ -43,7 +43,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customised to you.</p>
-					<a href="/collections/energize-running-shoes">Shop the Energize collection<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/collections/energize-running-shoes">Shop the Energize collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
 				
 				</div>
