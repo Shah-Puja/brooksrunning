@@ -148,7 +148,7 @@ class Category extends Model
                     $width_array = $products->map(function($product) {
                         return $product->variants->where('visible','Yes')->pluck('width_name');
                     })->flatten()->unique()->values()->sort();
-                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Extra-Wide", "2E-Wide", "4E-Extra-Wide");
+                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
                     $filters['Width'] = (new static)->sort_array($width_array,$order_array);
                  break;
 
