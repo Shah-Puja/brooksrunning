@@ -51,7 +51,7 @@ class CartController extends Controller {
                 $data = $this->cart_api($cart_arr);
                 $this->check_gift_voucher();
             }
-
+            echo "<pre>";print_r($data);die;
             if (!empty($data)) {
                 $cart_total = $data['cart_total'];
                 $total_discount = $data['total_discount'];
