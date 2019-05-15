@@ -241,6 +241,46 @@
                         @endforeach
                         <form id="detail" action='' method='post' name='add_to_cart' onsubmit="return detail_validation();">
                             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}"> 
+                            
+                            <div class="pdp-width pdp-width-title">
+                                <div class="row">
+                                    <div class="mob-6  width-wrapper">
+                                        <div class="main">
+                                          {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH  <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                            <div class="select-width">
+                            @if(!empty($width_names))  
+                                @php
+                                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
+                                    $sorted_array=array();
+                                    foreach ($width_names as $key => $value) {		
+                                        $curr_order=array_search($value, $order_array);
+                                        $sorted_array[$key."_____".$value]=$curr_order;		
+                                    } 
+                                    asort($sorted_array);
+                                    $width_names_orderby = array_keys($sorted_array);
+                                @endphp
+                                <div class="pdp-width">
+                                    <ul class="pdp-width-show">
+                                        @foreach($width_names_orderby as $key => $width_data)
+                                            @php
+                                                $width = explode("_____",$width_data);
+                                                $width_code = (isset($width[0]) && $width[0]!='') ? $width[0] : '';
+                                                $width_name = (isset($width[1]) && $width[1]!='') ? $width[1] : '';
+                                            @endphp
+                                            @if($width_name!='')
+                                                <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>   
+                                <input type="hidden" name="width_code" value="" />
+                            @endif
+                            </div>
+
                             @if(!empty($sizes))
                             <div class="size">
                                 <div class="row">
@@ -312,44 +352,6 @@
                             <input type="hidden" name="width_code" value="" />
                             @endif -->
 
-                            <div class="pdp-width pdp-width-title">
-                                <div class="row">
-                                    <div class="mob-6  width-wrapper">
-                                        <div class="main">
-                                          {{ ($product->gender == 'M') ? "MENS" : "WOMENS" }} WIDTH  <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                            <div class="select-width">
-                            @if(!empty($width_names))  
-                                @php
-                                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
-                                    $sorted_array=array();
-                                    foreach ($width_names as $key => $value) {		
-                                        $curr_order=array_search($value, $order_array);
-                                        $sorted_array[$key."_____".$value]=$curr_order;		
-                                    } 
-                                    asort($sorted_array);
-                                    $width_names_orderby = array_keys($sorted_array);
-                                @endphp
-                                <div class="pdp-width">
-                                    <ul class="pdp-width-show">
-                                        @foreach($width_names_orderby as $key => $width_data)
-                                            @php
-                                                $width = explode("_____",$width_data);
-                                                $width_code = (isset($width[0]) && $width[0]!='') ? $width[0] : '';
-                                                $width_name = (isset($width[1]) && $width[1]!='') ? $width[1] : '';
-                                            @endphp
-                                            @if($width_name!='')
-                                                <li data-value="{{ $width_code }}"  {{ (count($width_names) == 1) ? 'class=selected' : '' }}>{{ $width_name }}</li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>   
-                                <input type="hidden" name="width_code" value="" />
-                            @endif
-                            </div>
                             <div class="row select-width">
                             <div class="col-6">
                                     <div class="quantity-wrapper">
