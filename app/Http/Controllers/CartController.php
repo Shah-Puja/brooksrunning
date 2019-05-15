@@ -89,6 +89,8 @@ class CartController extends Controller {
                         $cart_api_price_sale = $item['Price'];
                         $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
                         Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+                    }else{
+                        echo "<pre>";print_r($cart);die;
                     }
                 endforeach;
             }
