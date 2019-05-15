@@ -51,7 +51,7 @@ class CartController extends Controller {
                 $data = $this->cart_api($cart_arr);
                 $this->check_gift_voucher();
             }
-            echo "<pre>";print_r($data);die;
+            
             if (!empty($data)) {
                 $cart_total = $data['cart_total'];
                 $total_discount = $data['total_discount'];
@@ -136,8 +136,8 @@ class CartController extends Controller {
             }
 
             //$xml = $xml->simplexml_load_string();
-            /* echo "<pre>";
-              print_r($xml);die; */
+             echo "<pre>";
+              print_r($xml);die; 
             //dd($xml);
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
