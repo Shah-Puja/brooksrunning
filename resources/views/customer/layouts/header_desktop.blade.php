@@ -152,7 +152,7 @@
                                                         <a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a> 
+                                                        <a href="/brooks-running-shoes-glycerin-17-womens/120283_070.html" title="Glycerin 17">Glycerin 17</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 
@@ -268,7 +268,7 @@
                                                         <a class="name-link" href="/brooks-running-shoes-ghost-11-mens/110288_038.html" title="Ghost 11">Ghost 11</a> 
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/glycerin-16-mens-running-shoes/110289_071.html" title="Glycerin 16">Glycerin 16</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-glycerin-17-mens/110296_015.html" title="Glycerin 17">Glycerin 17</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/levitate-2-mens-running-shoes/110290_689.html" title="Levitate 2">Levitate 2</a> 
@@ -484,7 +484,9 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">Meet Brooks</a>
+                        <li class="main sm-navigation--menu" data="meetbrooks">
+                            <a href="javascript:;" class="main-nav">Meet Brooks</a>
+                          
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">

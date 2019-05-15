@@ -12,6 +12,8 @@ class HomeController extends Controller
      *
      * @return void
      */
+    protected $shoefinder_user_details;
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -32,6 +34,7 @@ class HomeController extends Controller
         }else if(session('shoefinder_completed')=='Y' && session('shoefinder_user_id')!=''){
             Shoefinder_user::where('id' ,session('shoefinder_user_id'))->update(['user_id' => auth()->id()]);
         }
+        $shoefinder_user_details = Shoefinder_user::where('user_id', auth()->id())->first();
         /******/
         
         return view('home',compact('shoefinder_user_details'));
