@@ -96,12 +96,13 @@ class Product extends Model
         }   
         
         $style_array = collect($data_array)->pluck('style');
-                  
+        $orderby_style_string = implode("','",$style_array->toArray());      
         $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
                                     })
                                     ->with('variants')
+                                    ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC")
                                     ->get();
             
         $products = $styles->filter(function ($value, $key) use ($data_array) {

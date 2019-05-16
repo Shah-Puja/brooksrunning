@@ -54,6 +54,8 @@
 					<h3 class="br-shoe-heading">Shop all Brooks Maximus Shoes</h3>
 				@elseif($str == "Liberty")
 					<h3 class="br-shoe-heading">Shop all Brooks Liberty Shoes</h3>
+				@elseif($str == "Dyad-Walker")
+					<h3 class="br-shoe-heading">Shop All Brooks Dyad Walker Shoes</h3>
 				@else
 					<h3 class="br-shoe-heading">Shop All Brooks Addiction Walker Shoes</h3>
 				@endif

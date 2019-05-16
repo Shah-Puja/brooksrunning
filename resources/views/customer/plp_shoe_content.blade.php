@@ -1,4 +1,5 @@
-<div class="plp-wrapper-container grid">
+<div class="plp-wrapper-container grid" style="overflow: hidden;">
+<div class="grid-sizer"></div>
 @if($styles!='' && count($styles) >0 )
     @php $colors_option=array(); @endphp
 	@foreach($styles as $style)

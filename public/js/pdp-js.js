@@ -1242,6 +1242,9 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
             //$(".width-wrapper").find(".label-heading .text").text(width_name);
             $("#detail input[name='width_code']").val(custom_width);
             $(".overlayloader").hide();
+            if($(".size-show li").length==1 && $(".size-show li:first").data('value') =='OSFA'){
+                $(".size-show li:first").trigger("click");
+            }
             return false;
         }
     });
@@ -1357,5 +1360,11 @@ function detail_validation() {
     return false;
 
 }
+/// OSFA pre-selected size
+$(document).ready(function(){
+    if($(".size-show li").length==1 && $(".size-show li:first").data('value') =='OSFA'){
+        $(".size-show li:first").trigger("click");
+    }
+});
 
 

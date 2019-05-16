@@ -86,7 +86,7 @@ class Order extends Model
         $order->orderItems()->update([
             'promo_code' => ($promo_code) ? $promo_code : ""
         ]);
-        
+        return $order_id;
     }
 
     public function getItemsCount() {
