@@ -36,4 +36,24 @@ class EventController extends Controller {
 		return view( 'info.event-view.month');
     }
 
+    public function new_events_listing()
+	{
+		return view( 'info.New-event-view.events-listing');
+    }
+    public function new_single_event()
+	{
+		return view( 'info.New-event-view.single-event-detail');
+    }
+    public function new_series_event()
+	{
+		return view( 'info.New-event-view.series-event-detail');
+    }
+    public function new_series_static_event()
+	{
+		return view( 'info.New-event-view.series-static-event-detail');
+    }
+    public function new_series_blurb_per_race_event()
+	{
+		return view( 'info.New-event-view.series-event-blurb-per-race-detail');
+    }
 }
