@@ -333,6 +333,7 @@ and (orientation : landscape) {
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="source" value="Shoe Finder"/>
                                                 <div class="button_bottom">
                                                     <!--<button type="submit" class="bf-button bf-button--full-width" href="/">Create an account</button>-->
                                                     <div class="cart-btn comp-submit" >
@@ -693,6 +694,7 @@ and (orientation : landscape) {
                                                     </label>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="source" value="Shoe Finder"/>
                                             <div class="button_bottom">
                                                 <!--<button type="submit" class="bf-button bf-button--full-width" href="/">Create an account</button>-->
                                                 <div class="cart-btn comp-submit" >
