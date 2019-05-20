@@ -38,7 +38,9 @@ class EventController extends Controller {
 
     public function new_events_listing()
 	{
-		return view( 'info.New-event-view.events-listing');
+        $all_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        //echo "<pre>";print_r($all_events);die;
+        return view( 'info.New-event-view.events-listing', compact('all_events'));
     }
     public function new_single_event()
 	{
