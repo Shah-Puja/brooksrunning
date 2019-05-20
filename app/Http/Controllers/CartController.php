@@ -288,7 +288,6 @@ class CartController extends Controller {
 
     public function check_valid_gift_voucher(Request $request) {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-       echo "<pre>";print_r($cart);die;
         $cartTotal = $cart->total;
 
         $giftcert_code = $request->voucher_number;
