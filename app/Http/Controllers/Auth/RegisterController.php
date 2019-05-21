@@ -100,7 +100,7 @@ class RegisterController extends Controller
         ]);
 
         if($user->wasRecentlyCreated){
-            $user->update(['source' => "User"]);
+            $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User']);
         }
         return $user;
     }
