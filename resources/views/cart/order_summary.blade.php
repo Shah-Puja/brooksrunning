@@ -46,7 +46,8 @@
                             </div>
                             @php 
                             if(isset($cart->gift_discount) && $cart->gift_discount!=0){
-                                $subtotal = @number_format(($cart->grand_total - $cart->gift_discount), 2);
+                                //$subtotal = @number_format(($cart->grand_total - $cart->gift_discount), 2);
+                                $subtotal = @number_format($cart->grand_total, 2);
                             }else{
                                 $subtotal = @number_format($cart->grand_total, 2);
                             }
