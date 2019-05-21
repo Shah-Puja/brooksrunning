@@ -292,6 +292,7 @@ class CartController extends Controller {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
             $cartTotal = $cart->total;
+            $freight_cost = $cart->freight_cost;
 
             $giftcert_code = $request->voucher_number;
             $giftcert_pin = $request->voucher_pin;
@@ -308,12 +309,12 @@ class CartController extends Controller {
                     $gift_pin = $giftcert_pin;
                     $ExpiryDate = (int) ($xml->ExpiryDate);
                     $AvailableAmount = (int) ($xml->AvailableAmount);
-                    if ($AvailableAmount > $cartTotal) {
-                        $gift_discount = $cartTotal;
+                    if ($AvailableAmount > ($cartTotal + $freight_cost)) {
+                        $gift_discount = $cartTotal + $freight_cost;
                         $gift_cart_total = 0;
                     } else {
                         $gift_discount = $AvailableAmount;
-                        $gift_cart_total = $cartTotal - $AvailableAmount;
+                        $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
                     }
                     //$cart_total = $gift_cart_total + $cart_mast['freight_charges'];
                     Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
