@@ -135,6 +135,7 @@ Route::get('/month', 'EventController@events_default');
 
 /* New events page */
 Route::get('/events-listing', 'EventController@new_events_listing'); 
+Route::post('/events-listing', 'EventController@new_events_listing'); 
 Route::get('/events-listing/single-event', 'EventController@new_single_event'); 
 Route::get('/events-listing/series-event', 'EventController@new_series_event'); 
 Route::get('/events-listing/series-blurb-event', 'EventController@new_series_blurb_per_race_event'); 

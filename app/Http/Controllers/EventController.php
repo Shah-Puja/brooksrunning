@@ -36,11 +36,39 @@ class EventController extends Controller {
 		return view( 'info.event-view.month');
     }
 
-    public function new_events_listing()
+    public function new_events_listing(Request $request)
 	{
-        $all_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        $month=$year=$where='';
+        if ($request->isMethod('post')) {
+            //echo "<pre>";print_r(request()->all());die;
+            if($request->when!=''){
+                $splitarr = explode(' ', $request->when);
+                $month = $splitarr[0];
+                $year = $splitarr[1];
+            }
+
+            if($request->where != ''){
+                $where = $request->where;
+            }
+              
+            
+            $all_events = event_mast::where('status', 'Y')
+            ->where(function($q) use ($where) {
+                $q->where('state', 'like', '%' . $where . '%')
+                  ->orWhere('country', 'like', '%'.$where.'%');
+            })
+            ->when($month, function ($query) use ($month) {  
+                return $query->whereMonth('event_timestamp', $month); 
+            }) 
+            ->when($month, function ($query) use ($year) {  
+                return $query->whereYear('event_timestamp', $year); 
+            }) 
+            ->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        }else{
+            $all_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        }
         //echo "<pre>";print_r($all_events);die;
-        $past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+        //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         //echo "<pre>";print_r($past_events);die;
         return view( 'info.New-event-view.events-listing', compact('all_events'));
     }

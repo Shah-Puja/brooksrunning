@@ -50,13 +50,13 @@
                 <div class="row">
                     <div class="wrapper pr-0 pl-0">
                         <div class="event-background wrapper">
-                            <form name="event_filter" method='post' action='/meet_brooks/events'>
-
+                            <form name="event_filter" method='post' action='/events-listing'>
+                            @csrf
                                 <h1 class="br-mainheading">Find an Event</h1>
                                 <div class="col-4 tab-4 mob-6">
                                     <div class="event-filters--wrapper">
                                         <div class="input-wrapper">
-                                            <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+                                            <select class="select-field" name="where" id="where" style="margin-bottom: 0px;">
                                                 <option value="">Where</option>
                                                 <option  style="font-weight:bold;color:#000;" value="Australia ">Australia</option>
                                                 <option value="ACT">ACT</option>
@@ -75,21 +75,21 @@
                                 <div class="col-4 tab-4 mob-6">
                                     <div class="event-filters--wrapper">
                                         <div class="input-wrapper">
-                                            <select class="select-field" name="category" id="category" style="margin-bottom: 0px;">
+                                            <select class="select-field" name="when" id="when" style="margin-bottom: 0px;">
                                                 <option value="">When</option>
-                                                <option value="March 2019">March 2019</option>
-                                                <option value="April 2019">April 2019</option>
-                                                <option  value="May 2019">May 2019</option>
-                                                <option value="June 2019">June 2019</option>
-                                                <option value="July 2019">July 2019</option>
-                                                <option value="August 2019">August 2019</option>
-                                                <option value="September 2019">September 2019</option>
-                                                <option value="October 2019">October 2019</option>
-                                                <option value="November 2019">November 2019</option>
-                                                <option value="December 2019">December 2019</option>
-                                                <option value="January 2020">January 2020</option>
-                                                <option value="February 2020">February 2020</option>
-                                                <option value="March 2020">March 2020</option>
+                                                <option value="03 2019">March 2019</option>
+                                                <option value="04 2019">April 2019</option>
+                                                <option  value="05 2019">May 2019</option>
+                                                <option value="06 2019">June 2019</option>
+                                                <option value="07 2019">July 2019</option>
+                                                <option value="08 2019">August 2019</option>
+                                                <option value="09 2019">September 2019</option>
+                                                <option value="10 2019">October 2019</option>
+                                                <option value="11 2019">November 2019</option>
+                                                <option value="12 2019">December 2019</option>
+                                                <option value="01 2020">January 2020</option>
+                                                <option value="02 2020">February 2020</option>
+                                                <option value="03 2020">March 2020</option>
                                             </select>
                                         </div>
                                     </div>
