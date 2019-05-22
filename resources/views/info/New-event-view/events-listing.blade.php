@@ -51,23 +51,23 @@
                     <div class="wrapper pr-0 pl-0">
                         <div class="event-background wrapper">
                             <form name="event_filter" method='post' action='/events-listing'>
-                            @csrf
+                                @csrf
                                 <h1 class="br-mainheading">Find an Event</h1>
                                 <div class="col-4 tab-4 mob-6">
                                     <div class="event-filters--wrapper">
                                         <div class="input-wrapper">
                                             <select class="select-field" name="where" id="where" style="margin-bottom: 0px;">
                                                 <option value="">Where</option>
-                                                <option  style="font-weight:bold;color:#000;" value="Australia ">Australia</option>
-                                                <option value="ACT">ACT</option>
-                                                <option  value="NSW">NSW</option>
-                                                <option value="NT">NT</option>
-                                                <option value="QLD">QLD</option>
-                                                <option value="SA">SA</option>
-                                                <option value="TAS">TAS</option>
-                                                <option value="VIC">VIC</option>
-                                                <option value="WA">WA</option>
-                                                <option  style="font-weight:bold;color:#000;" value="New Zealand">New Zealand</option>
+                                                <option  style="font-weight:bold;color:#000;" <?php echo ($where == "Australia") ? "selected=selected" : ""; ?> value="Australia ">Australia</option>
+                                                <option <?php echo ($where == "ACT") ? "selected=selected" : ""; ?> value="ACT">ACT</option>
+                                                <option  <?php echo ($where == "NSW") ? "selected=selected" : ""; ?> value="NSW">NSW</option>
+                                                <option <?php echo ($where == "NT") ? "selected=selected" : ""; ?> value="NT">NT</option>
+                                                <option <?php echo ($where == "QLD") ? "selected=selected" : ""; ?> value="QLD">QLD</option>
+                                                <option <?php echo ($where == "SA") ? "selected=selected" : ""; ?> value="SA">SA</option>
+                                                <option <?php echo ($where == "TAS") ? "selected=selected" : ""; ?> value="TAS">TAS</option>
+                                                <option <?php echo ($where == "VIC") ? "selected=selected" : ""; ?> value="VIC">VIC</option>
+                                                <option <?php echo ($where == "WA") ? "selected=selected" : ""; ?> value="WA">WA</option>
+                                                <option  style="font-weight:bold;color:#000;" <?php echo ($where == "New Zealand") ? "selected=selected" : ""; ?> value="New Zealand">New Zealand</option>
                                             </select>
                                         </div>
                                     </div>
@@ -77,19 +77,17 @@
                                         <div class="input-wrapper">
                                             <select class="select-field" name="when" id="when" style="margin-bottom: 0px;">
                                                 <option value="">When</option>
-                                                <option value="03 2019">March 2019</option>
-                                                <option value="04 2019">April 2019</option>
-                                                <option  value="05 2019">May 2019</option>
-                                                <option value="06 2019">June 2019</option>
-                                                <option value="07 2019">July 2019</option>
-                                                <option value="08 2019">August 2019</option>
-                                                <option value="09 2019">September 2019</option>
-                                                <option value="10 2019">October 2019</option>
-                                                <option value="11 2019">November 2019</option>
-                                                <option value="12 2019">December 2019</option>
-                                                <option value="01 2020">January 2020</option>
-                                                <option value="02 2020">February 2020</option>
-                                                <option value="03 2020">March 2020</option>
+                                                <?php
+                                                $month = strtotime(date('Y') . '-' . date('m') . '-' . date('j') . ' + 0 months');
+                                                $end = strtotime(date('Y') . '-' . date('m') . '-' . date('j') . ' + 13 months');
+                                                while ($month < $end) {
+                                                    ?>
+                                                    <option <?php echo (date('m Y', $month) == $when) ? 'selected=selected' : ''; ?> value="<?php echo date('m Y', $month); ?>" ><?php echo date('F Y', $month); ?></option>
+                                                    <?php
+                                                    echo "\n";
+                                                    $month = strtotime("+1 month", $month);
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -102,13 +100,17 @@
                                     </div>
                                 </div>
                             </form>
+
                             <div class="no-result" >
+                                @if(count($all_events) == 0)
                                 <p class="error">Sorry, currently no events match those selections. Please try again.</p>
-                                <p class="clear-filter">clear filters <a href="#"><span style="color:#000;">&#9746;</span></a></p>
+                                @endif
+                                @if(($when!='') OR ($where!=''))
+                                <p class="clear-filter">clear filters <a id="clear_filter" href=""><span style="color:#000;">&#9746;</span></a></p>
+                                @endif
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -120,8 +122,7 @@
             <div class="col-12 tab-12">
                 <div class="row">
                     <div class="event-wrapper-container">
-
-                        @if ( count($all_events) > 0 )
+                        @if (count($all_events) > 0)
                         @foreach($all_events as $events)
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section"> 
@@ -161,6 +162,9 @@
     </div>
 </section>
 
+@php
+echo "<pre>";print_r($other_upcoming_events);die;
+@endphp
 <section class="event-container">
     <div class="wrapper">
         <div class="row">
@@ -170,17 +174,14 @@
                     <div class="event-wrapper-container">	
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
-
                                 <a href="#" >
                                     <div class="img">
                                         <img id="event-img" src="images/new-events/logo/X-Adventure_logo.jpg" alt="">
                                     </div>
                                 </a>
-
                                 <a href="#">
                                     <div class="info">
                                         <h3>Olivia Newton John Wellness Walk &amp; Research Run</h3>
-
                                         <div class="event-info-sub"><div class="date">September 2019</div>
                                             <div class="location">Melbourne, VIC</div></div>
                                     </div>
@@ -189,13 +190,11 @@
                         </div>
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
-
                                 <a href="#" >
                                     <div class="img">
                                         <img id="event-img" src="images/new-events/logo/Point-Pinnacle_logo.png" alt="">
                                     </div>
                                 </a>
-
                                 <a href="#">
                                     <div class="info">
                                         <h3>Point To Pinnacle</h3>
@@ -208,13 +207,11 @@
                         </div>
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
-
                                 <a href="#" >
                                     <div class="img">
                                         <img id="event-img" src="images/new-events/logo/PortMac_RF_logo.jpg" alt="">
                                     </div>
                                 </a>
-
                                 <a href="#">
                                     <div class="info">
                                         <h3>Run The Bridge Hobart</h3>
@@ -227,7 +224,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <!-- <div class="event-load-more">
                                 <a href="#">Load More (15 Remaining)</a>
                         </div> -->
@@ -239,7 +235,14 @@
 </section>
 
 <!-- /Updated Section -->
-
+<script>
+    $(document).ready(function () {
+        $('#clear_filter').click(function () {
+            $('#when').prop('selectedIndex', 0);
+            $('#where').prop('selectedIndex', 0);
+        })
+    });
+</script>
 @endsection       
 
 

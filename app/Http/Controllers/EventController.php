@@ -38,10 +38,11 @@ class EventController extends Controller {
 
     public function new_events_listing(Request $request)
 	{
-        $month=$year=$where='';
+        $month=$year=$when=$where='';
         if ($request->isMethod('post')) {
             //echo "<pre>";print_r(request()->all());die;
             if($request->when!=''){
+                $when = $request->when;
                 $splitarr = explode(' ', $request->when);
                 $month = $splitarr[0];
                 $year = $splitarr[1];
@@ -70,7 +71,7 @@ class EventController extends Controller {
         //echo "<pre>";print_r($all_events);die;
         //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         //echo "<pre>";print_r($past_events);die;
-        return view( 'info.New-event-view.events-listing', compact('all_events'));
+        return view( 'info.New-event-view.events-listing', compact('all_events','when','where'));
     }
     public function new_single_event()
 	{
