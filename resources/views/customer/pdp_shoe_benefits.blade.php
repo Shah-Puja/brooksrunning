@@ -199,7 +199,7 @@
 						<h4>Select width</h4>
 						<p>For women's footwear, B is the standard width. 2A is narrow, D is wide, and 2E is extra wide. For men's footwear, D is standard, B is narrow, 2E is wide, and 4E is extra wide.</p>
 						<h4>Unisex sizing</h4>
-						<p>Ladies, when orderding "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
+						<p>Ladies, when ordering "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
 						<h4>Get fit</h4>
 						<p>Whenever possible, visit your local running and walking footwear store for a proper fitting.</p>
 						<h4>Can't make it to a store?</h4>
