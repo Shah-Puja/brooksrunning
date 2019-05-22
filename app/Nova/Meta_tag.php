@@ -7,8 +7,9 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Support\Facades\Storage;
 
-class Meta extends Resource
+class Meta_tag extends Resource
 {
     /**
      * The model the resource corresponds to.
@@ -39,12 +40,20 @@ class Meta extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
+    public static function label()
+    {
+        return 'Add Meta Tag';
+    }
+
     public function fields(Request $request)
     {
         return [
             ID::make()->sortable(),
-            Text::make('Page Url','url')->sortable(),
-            Textarea::make('Title','title')->sortable(),
+            Text::make('Page Url','url')->withMeta(['extraAttributes' => [
+                'placeholder' => 'e.g: /womens-running-shoes']
+            ])->sortable(),
+            text::make('Title','title')->sortable(),
             Textarea::make('Description','description')->sortable(),
         ];
     }

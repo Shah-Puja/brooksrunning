@@ -55,6 +55,33 @@ return [
             'visibility' => 'public',
         ],
 
+        'uploads_event_logo' => [
+            'driver' => 'local',
+            'root'   => public_path('images/events/monthly/logo'),
+            'url' => env('APP_URL')."/images/events/monthly/logo",
+        ],
+
+        'uploads_event_banner' => [
+            'driver' => 'local',
+            'root'   => public_path('images/events/banner'),
+            'url' => env('APP_URL')."/images/events/banner",
+        ],
+
+        'uploads_event_main' => [
+            'driver' => 'local',
+            'root'   => public_path('images/events/main'),
+            'url' => env('APP_URL')."/images/events/main",
+        ],
+
+        'uploads_competition' => [
+            'driver' => 'local',
+            'root'   => public_path('images/competition-single'),
+            'url' => env('APP_URL')."/images/competition-single",
+        ],
+
+
+
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

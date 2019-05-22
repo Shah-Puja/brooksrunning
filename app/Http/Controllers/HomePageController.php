@@ -37,6 +37,8 @@ class HomePageController extends Controller
         if((!empty($banner->start_date) && $banner->start_date!='0000-00-00 00:00:00') && (!empty($banner->end_date)  && $banner->end_date!='0000-00-00 00:00:00') ){
             $banner = ($banner->start_date <= now() && $banner->end_date >=now() ) ? $banner : '';
         }
+
+        echo public_path('images');
         return view ('customer.index',compact('product','banner'));
     }
 

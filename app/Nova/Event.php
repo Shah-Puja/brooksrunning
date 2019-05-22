@@ -51,10 +51,10 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('ID','event_id')->sortable(),
+            Text::make('ID','event_id')->onlyOnIndex(),
             Text::make('Event Name','event_name')->sortable(),
             Text::make('Slug','slug')->hideFromIndex(),
-            Image::make('Logo','logo')->disk('public')->path('images/events/logo')->storeAs(function (Request $request) {
+            Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Location','location')->hideFromIndex(),
@@ -69,11 +69,11 @@ class Event extends Resource
             Text::make('H1 Tag','h1_tag')->hideFromIndex(),
             Textarea::make('Content','content')->hideFromIndex(),
             Text::make('Page Link','page_link')->hideFromIndex(),
-            Image::make('Main Image','image')->disk('public')->path('images/events/main')->storeAs(function (Request $request) {
+            Image::make('Main Image','image')->disk('uploads_event_main')->storeAs(function (Request $request) {
                 return $request->image->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Background Colour','bg_color')->hideFromIndex(),
-            Image::make('Banner','banner')->disk('public')->path('images/events/banner')->storeAs(function (Request $request) {
+            Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),

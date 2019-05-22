@@ -65,14 +65,14 @@ class Competition extends Resource
             Textarea::make('Terms Conditions HTML','terms_conditions_html')->hideFromIndex(),
             Textarea::make('Footer Text','footer_text')->hideFromIndex(),
             Textarea::make('Close Text','close_text')->hideFromIndex(),
-            Image::make('Banner','banner')->disk('public')->path('images/competitions/'.$request->slug)->storeAs(function (Request $request) {
+            Image::make('Banner','banner')->disk('uploads_competition')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Banner Color','banner_color', function () {
                 return $this->banner_color." <span style='background-color:".$this->banner_color.";padding: 2px 22px;'>&nbsp;</span>";
             })->asHtml()->onlyOnDetail(),
             Text::make('Banner Color','banner_color')->onlyOnForms(),
-            Image::make('Banner Mobile','banner_mobile')->disk('public')->path('images/competitions/'.$request->slug)->storeAs(function (Request $request) {
+            Image::make('Banner Mobile','banner_mobile')->disk('uploads_competition')->storeAs(function (Request $request) {
                 return $request->banner_mobile->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Learn More Section','learn_more')->hideFromIndex(),
