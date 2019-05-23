@@ -20,7 +20,7 @@
             <div class="col-6">
                 <div class="medibankverification-error" style="display:none;">
                     <div class="medibankError-content">
-                        <p class="medibankError-msg">Please log in with your Medibank Membership number and the email address registered with your MyMedibank account.</p>
+                        <p class="medibankError-msg">Sorry your Medibank policy number could not be validated. Please try again </p>
                         <div class="medibank-btn clearfix">
                             <span><a class="secondary-button" href="#">Cancel</a></span>
                             <span><a class="primary-button" href="#">Try Again</a></span>
