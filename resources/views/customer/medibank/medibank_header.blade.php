@@ -66,7 +66,7 @@
 										</div>
 									<div class="col-4">
 										<div class="medibank--content">
-											<label>Please log in with your Medibank policy number and the email address registered with Live Better.
+											<label>Please log in with your Medibank Membership number and the email address registered with your MyMedibank account.
 											</label>
 										</div>
 									</div>
