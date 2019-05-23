@@ -131,7 +131,7 @@ class CartController extends Controller {
                             </CartDetails>
                         </Cart>";
                         
-                        echo $cart_xml;
+            //echo $cart_xml;
 
             $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
             $xml = simplexml_load_string($bridge);
@@ -226,13 +226,13 @@ class CartController extends Controller {
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
-    
-                if ($AvailableAmount > $cartTotal) {
-                    $gift_discount = $cartTotal;
+                $freight_cost = $cart->freight_cost;
+                if ($AvailableAmount > ($cartTotal + $freight_cost)) {
+                    $gift_discount = ($cartTotal + $freight_cost);
                     $gift_cart_total = 0;
                 } else {
                     $gift_discount = $AvailableAmount;
-                    $gift_cart_total = $cartTotal - $AvailableAmount;
+                    $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
                 }
                 Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
                 $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
@@ -313,7 +313,7 @@ class CartController extends Controller {
                     $ExpiryDate = (int) ($xml->ExpiryDate);
                     $AvailableAmount = (int) ($xml->AvailableAmount);
                     if ($AvailableAmount > ($cartTotal + $freight_cost)) {
-                        $gift_discount = $cartTotal + $freight_cost;
+                        $gift_discount = ($cartTotal + $freight_cost);
                         $gift_cart_total = 0;
                     } else {
                         $gift_discount = $AvailableAmount;
