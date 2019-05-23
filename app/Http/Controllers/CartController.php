@@ -224,6 +224,7 @@ class CartController extends Controller {
     public function get_cart_order_total() {
         echo "dddddddddddddddd";
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
+        echo "<pre>";print_R($cart);die;
         if(!empty($cart)){
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
