@@ -41,6 +41,7 @@ Route::get('/data','DataController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/medibank_check_user', 'MedibankController@medibank_check_user');
 Route::get('/search', 'SearchController@index')->middleware('allowOnlyAjax');
 
 
@@ -193,3 +194,5 @@ Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
 
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
+
+Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');

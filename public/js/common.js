@@ -756,3 +756,24 @@ $(document).on('keyup',function(e) {
     
 });
 
+/*$(document).on('submit','form[name="medibank-login"]',function(){
+    var form_data = $("form[name='medibank-login']").serialize();
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: "/medibank_check_user",
+        method: "post",
+        success: function (result) {
+               var href = window.location.href;
+               //console.log(href);
+               window.location.href=href;
+        },
+        error: function (error) {
+            let obj = JSON.parse(error.responseText);
+            console.log(obj.errors);
+        }
+    });
+    return false;
+
+});*/

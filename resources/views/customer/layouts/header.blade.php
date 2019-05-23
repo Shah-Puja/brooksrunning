@@ -51,4 +51,4 @@
         @include('digitalmarketingsnippets.gtmnoscript')
         @include('customer.layouts.header_desktop')
         @include('customer.layouts.header_mobile')
-
+        @include('customer.medibank.medibank_header')

@@ -368,7 +368,7 @@ function shippingform_validate() {
 
     let email = $("#billing_shipping input[name='email']");
     if (email.val() != '') {
-        if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
+        if (!/^([a-zA-Z0-9_+\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
             email.addClass("needsfilled");
             let input_label = email.parent().find('label');
             let label_text = input_label.html();

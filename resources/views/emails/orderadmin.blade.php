@@ -8,8 +8,13 @@
             <center>
                 <table width="620" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:16px;">
                     <tr>
-                        <td align="left">            
-                            Customer Order Number: BRN-{{ $order->order_no }}</td>
+                        <td align="left"> 
+                        @if($order->order_type == 'medibank-user')
+                            Customer Order Number: 7BRN-{{ $order->order_no }}
+                        @else         
+                            Customer Order Number: BRN-{{ $order->order_no }}
+                        @endif
+                        </td>
                         <td align="right">Date: {{ date("D j M Y G:i:s T") }}
                         </td>
                     </tr>
