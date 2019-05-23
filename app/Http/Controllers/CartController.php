@@ -216,11 +216,13 @@ class CartController extends Controller {
             }
             echo session('cart_id');
             $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
+            $this->get_cart_order_total();
             echo "success";
         }
     }
 
     public function get_cart_order_total() {
+        echo "dddddddddddddddd";
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
             if ($cart->gift_pin != "") {
