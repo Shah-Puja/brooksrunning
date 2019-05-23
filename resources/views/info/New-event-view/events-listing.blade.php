@@ -102,7 +102,7 @@
                             </form>
 
                             <div class="no-result" >
-                                @if(count($all_events) == 0)
+                                @if(count($all_events) == 0 && count($other_upcoming_events) == 0)
                                 <p class="error">Sorry, currently no events match those selections. Please try again.</p>
                                 @endif
                                 @if(($when!='') OR ($where!=''))
@@ -162,9 +162,7 @@
     </div>
 </section>
 
-@php
-echo "<pre>";print_r($other_upcoming_events);die;
-@endphp
+@if (count($other_upcoming_events) > 0) 
 <section class="event-container">
     <div class="wrapper">
         <div class="row">
@@ -172,58 +170,36 @@ echo "<pre>";print_r($other_upcoming_events);die;
                 <div class="row">
                     <h1 class="br-mainheading">Other Upcoming Events</h1>
                     <div class="event-wrapper-container">	
+                        @foreach($other_upcoming_events as $upcoming_events)
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
                                 <a href="#" >
                                     <div class="img">
-                                        <img id="event-img" src="images/new-events/logo/X-Adventure_logo.jpg" alt="">
+                                        @if(!empty($upcoming_events->logo))  
+                                        <img id="event-img" src="/images/events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
+                                        @else 
+                                        <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
+                                        @endif  
                                     </div>
                                 </a>
                                 <a href="#">
                                     <div class="info">
-                                        <h3>Olivia Newton John Wellness Walk &amp; Research Run</h3>
-                                        <div class="event-info-sub"><div class="date">September 2019</div>
-                                            <div class="location">Melbourne, VIC</div></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
-                            <div class="event-section">
-                                <a href="#" >
-                                    <div class="img">
-                                        <img id="event-img" src="images/new-events/logo/Point-Pinnacle_logo.png" alt="">
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="info">
-                                        <h3>Point To Pinnacle</h3>
+                                        <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
-                                            <div class="date">November 2019</div>
-                                            <div class="location">Hobart, TAS</div>
-                                        </div></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
-                            <div class="event-section">
-                                <a href="#" >
-                                    <div class="img">
-                                        <img id="event-img" src="images/new-events/logo/PortMac_RF_logo.jpg" alt="">
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="info">
-                                        <h3>Run The Bridge Hobart</h3>
-                                        <div class="event-info-sub">
-                                            <div class="date">
-                                                February 2020
-                                            </div>
-                                            <div class="location">Hobart, TAS</div></div>
+                                            @if(!empty($upcoming_events->event_timestamp))
+                                            @php 
+                                            $time=strtotime($upcoming_events->event_timestamp);
+                                            $month=date("F",$time);
+                                            $year=date("Y",$time);
+                                            @endphp
+                                            <div class="date">{{ $month." ".$year}}</div>
+                                            @endif 
+                                            <div class="location">{{ $upcoming_events->location }}</div></div>
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> 
+                        @endforeach
                         <!-- <div class="event-load-more">
                                 <a href="#">Load More (15 Remaining)</a>
                         </div> -->
@@ -233,6 +209,8 @@ echo "<pre>";print_r($other_upcoming_events);die;
         </div>
     </div>
 </section>
+@endif
+
 
 <!-- /Updated Section -->
 <script>
