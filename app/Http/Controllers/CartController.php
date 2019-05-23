@@ -229,6 +229,8 @@ class CartController extends Controller {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
                 $freight_cost = $cart->freight_cost;
+                echo "Available amt: ".$AvailableAmount;
+                echo "  ---   ";echo $cartTotal + $freight_cost;
                 if ($AvailableAmount > ($cartTotal + $freight_cost)) {
                     $gift_discount = ($cartTotal + $freight_cost);
                     $gift_cart_total = 0;
