@@ -217,6 +217,7 @@ class CartController extends Controller {
             echo session('cart_id');
             $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
             $this->calculate_and_update_gift_voucher_details();
+            echo "sssssssssssss";
             echo "success";
         }
     }
