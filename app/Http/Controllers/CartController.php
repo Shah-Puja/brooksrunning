@@ -230,7 +230,7 @@ class CartController extends Controller {
             echo "cart gift pin ".$cart->pin;
             if ($cart->pin != "") { 
                 $AvailableAmount = $cart->gift_available_amount;
-                $cartTotal = $cart->cart_total;
+                $cartTotal = $cart->total;
                 $freight_cost = $cart->freight_cost;
                 if ($AvailableAmount > ($cartTotal + $freight_cost)) {
                     $gift_discount = ($cartTotal + $freight_cost);
