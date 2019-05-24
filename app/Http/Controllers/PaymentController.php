@@ -106,7 +106,7 @@ class PaymentController extends Controller {
         if ($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0) {
             $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
-            echo "<pre>";print_r($charge_payment);die;
+            
             if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
                 Order::where('id', $this->order->id)->update(['payment_type' => 'AfterPay']);
                 $transaction_id = $charge_payment['id'];
@@ -136,7 +136,7 @@ class PaymentController extends Controller {
                 $orderDataUpdate = array( 
                     'transaction_status' => 'Succeeded',
                     'transaction_id' => $transaction_id,
-                    'transaction_amount' => '',
+                    'transaction_amount' => $charge_payment['totalAmount']['amount'],
                     'transaction_dt' => date('Y-m-d H:i:s'),
                     'payment_status' => date('Y-m-d H:i:s')
                 );
