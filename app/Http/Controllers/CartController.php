@@ -216,6 +216,7 @@ class CartController extends Controller {
             }
             echo session('cart_id');
             $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
+            get_cart_order_total();
             echo "success";
         }
     }
@@ -223,10 +224,9 @@ class CartController extends Controller {
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
-            echo "<pre>";print_r($cart);
-            if ($cart->gift_pin != "") {
+            if ($cart->pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
-                $cartTotal = $cart->cart_total;
+                $cartTotal = $cart->total;
                 $freight_cost = $cart->freight_cost;
                 if ($AvailableAmount > ($cartTotal + $freight_cost)) {
                     $gift_discount = ($cartTotal + $freight_cost);
