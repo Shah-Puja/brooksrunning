@@ -225,9 +225,9 @@ class CartController extends Controller {
     public function calculate_and_update_gift_voucher_details(){
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         echo "aaaaaaaaaaaaaaaa";
-        if(!empty($cart)){
-            echo "eeeeeeeeeeeeeee";die;
+        if(!empty($cart)){ 
             if ($cart->gift_pin != "") {
+                echo "xxxxxxxxxxx";die;
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
                 $freight_cost = $cart->freight_cost;
