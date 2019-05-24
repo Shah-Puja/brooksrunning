@@ -226,7 +226,7 @@ class CartController extends Controller {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         echo "aaaaaaaaaaaaaaaa";
         if(!empty($cart)){ 
-            echo "<pre>";print_r($cart);die;
+            echo "<pre>";print_r($cart);
             echo "cart gift pin ".$cart->pin;
             if ($cart->pin != "") { 
                 $AvailableAmount = $cart->gift_available_amount;
