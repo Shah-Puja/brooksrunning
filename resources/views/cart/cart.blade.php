@@ -416,6 +416,7 @@
                 method: "POST",
                 data: {delivery_option_value: delivery_option_value},
                 success: function (result) {
+                    console.log(result);
                     $(".order").load("cart/get_cart_order_total");
                     $("#overlay").remove();
                 },
