@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Variant;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CartController;
 
 class CartItemsController extends Controller {
 
@@ -61,6 +62,7 @@ class CartItemsController extends Controller {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
+        $summary = (new CartController)->get_cart_order_total();
         return response()->json([
                     'cartitemshtml' => view('cart.ajaxpopupcart', compact('cart'))->render(),
                     'cart_count' => $cart->items_count,
