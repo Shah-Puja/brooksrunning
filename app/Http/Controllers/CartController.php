@@ -227,9 +227,8 @@ class CartController extends Controller {
         echo "aaaaaaaaaaaaaaaa";
         if(!empty($cart)){ 
             echo "<pre>";print_r($cart);die;
-            echo "cart gift pin ".$cart->gift_pin;
-            if ($cart->gift_pin != "") {
-                echo "xxxxxxxxxxx";die;
+            echo "cart gift pin ".$cart->pin;
+            if ($cart->pin != "") { 
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
                 $freight_cost = $cart->freight_cost;
