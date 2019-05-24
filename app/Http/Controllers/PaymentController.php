@@ -136,6 +136,7 @@ class PaymentController extends Controller {
                 $orderDataUpdate = array( 
                     'transaction_status' => 'Succeeded',
                     'transaction_id' => $transaction_id,
+                    'transaction_amount' => '',
                     'transaction_dt' => date('Y-m-d H:i:s'),
                     'payment_status' => date('Y-m-d H:i:s')
                 );
@@ -228,7 +229,7 @@ class PaymentController extends Controller {
     public function store() {
         $transation_result = $this->processor->charge($this->order); 
         $this->order->updateOrder($transation_result);
-        echo "<pre>";print_r($transation_result);die;
+
         if (!$transation_result) { 
             $logger = array(
                 'order_id' => $this->order->id,
@@ -258,6 +259,7 @@ class PaymentController extends Controller {
             $timestamp = $time->format('Y-m-d H:i:s');
             $orderDataUpdate = array(
                 'card_type' => $card_type,
+                'transaction_amount' => $transation_result->amount,
                 'status' => 'Order Completed'
             );
             Order::where('id', $order_id)->update($orderDataUpdate);
