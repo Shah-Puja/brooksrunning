@@ -216,38 +216,14 @@ class CartController extends Controller {
             }
             echo session('cart_id');
             $UpdateDetails = Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $freight_charges + $cart->total]);
-            $this->calculate_and_update_gift_voucher_details();
-            echo "sssssssssssss";
             echo "success";
-        }
-    }
-
-    public function calculate_and_update_gift_voucher_details(){
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        echo "aaaaaaaaaaaaaaaa";
-        if(!empty($cart)){ 
-            echo "<pre>";print_r($cart);
-            echo "cart gift pin ".$cart->pin;
-            if ($cart->pin != "") { 
-                $AvailableAmount = $cart->gift_available_amount;
-                $cartTotal = $cart->total;
-                $freight_cost = $cart->freight_cost;
-                if ($AvailableAmount > ($cartTotal + $freight_cost)) {
-                    $gift_discount = ($cartTotal + $freight_cost);
-                    $gift_cart_total = 0;
-                } else {
-                    $gift_discount = $AvailableAmount;
-                    $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
-                }
-                Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-                $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-            }
         }
     }
 
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
+            echo "<pre>";print_r($cart);
             if ($cart->gift_pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
                 $cartTotal = $cart->cart_total;
