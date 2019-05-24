@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Variant;
 use Illuminate\Http\Request;
-use App\Http\Controllers\CartController;
 
 class CartItemsController extends Controller {
 
@@ -51,7 +50,8 @@ class CartItemsController extends Controller {
     }
 
     public function destroy() {
-        $cart = Cart::createOrGetForUser();
+        //$cart = Cart::createOrGetForUser();
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         $cart->deleteItem(request('id'));
         if (count($cart->cartItems) == 0) { 
             $cart_id = session('cart_id');
@@ -62,7 +62,6 @@ class CartItemsController extends Controller {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
-        $summary = (new CartController)->get_cart_order_total();
         return response()->json([
                     'cartitemshtml' => view('cart.ajaxpopupcart', compact('cart'))->render(),
                     'cart_count' => $cart->items_count,
