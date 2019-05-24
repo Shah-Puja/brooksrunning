@@ -61,8 +61,6 @@ class CartItemsController extends Controller {
                 $cart['items_count'] += $cart_item->qty;
             }
         }
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
-        
         return response()->json([
                     'cartitemshtml' => view('cart.ajaxpopupcart', compact('cart'))->render(),
                     'cart_count' => $cart->items_count,
