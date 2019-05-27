@@ -405,7 +405,13 @@
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">${{ @number_format(($subtotal / 11), 2) }}</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">
+                                                                @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                                                    ${{ @number_format(((($subtotal + $order->freight_cost) - $order->gift_amount) / 11), 2) }}
+                                                                @else
+                                                                    ${{ @number_format((($subtotal + $order->freight_cost) / 11), 2) }}
+                                                                @endif
+                                                                </p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p class="br-header">Order Total:</p></td>
