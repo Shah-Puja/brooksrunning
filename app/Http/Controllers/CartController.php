@@ -75,9 +75,6 @@ class CartController extends Controller {
 
                 $cart_details = $data['cart_detail'];
             } else {
-                echo "Cart Array: ";echo "<pre>";
-              print_r($cart_arr);
-              die;
                 $total = 0;
                 if (!empty($cart_arr)) {
                     foreach ($cart_arr['cart_items'] as $item) {
