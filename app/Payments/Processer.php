@@ -19,15 +19,29 @@ class Processor
 	}
 
 	public function charge($order)
-	{
+	{   
 		$amount = number_format($order->grand_total, 2, '.', '');
+		$order_items=[];
+		foreach($order->orderItems as $item){
+			$order_items[]=[
+				'name' => 'Product',
+				'quantity' => $item->qty,
+				'unitAmount' => $item->price_sale,
+				//'unitOfMeasure' => 'unit',
+				'totalAmount' => $item->total,
+				//'taxAmount' => '5.00',
+				'discountAmount' => $item->discount,
+				'productCode' => $item->style,
+			];
+		}
 		$result = $this->paymentgateway->transaction()->sale([
 		  'amount' => $amount,
 		  'orderId' => $order->id,
 		  'paymentMethodNonce' => request('payment_method_nonce'),
 		  'options' => [
 		    'submitForSettlement' => True
-		  ]
+		  ],
+		  'lineItems' => [$order_items],
 		]);
 
 		if (! $result->success) {
