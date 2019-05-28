@@ -1,6 +1,7 @@
 <?php
 
 namespace App\SYG\Bridges;
+use GuzzleHttp\Exception\RequestException;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -19,6 +20,15 @@ class AP21Bridge implements BridgeInterface {
 				echo "<pre>";print_R($response->getBody());die;
 				return $response->getBody();
 			}
+		}
+		catch (RequestException $e) {
+			// Catch all 4XX errors 
+		
+			// To catch exactly error 400 use 
+			if ($e->getResponse()->getStatusCode() == '400') {
+					echo "Got response 400";
+			}
+		
 		}
 		catch (\Exception $exception) {
 			throw $exception;
