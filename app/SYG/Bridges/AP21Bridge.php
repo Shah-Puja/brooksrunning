@@ -21,6 +21,7 @@ class AP21Bridge implements BridgeInterface {
 			}
 		}
 		catch (\Exception $e) {
+			echo "<pre>";print_r($e);die;
 			return null;
 		}
 	}
