@@ -251,7 +251,7 @@
                                     </div>
                                 </div>
                              </div>
-                            <div class="select-width">
+                            <div>
                             @if(!empty($width_names))  
                                 @php
                                     $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
@@ -282,7 +282,7 @@
                             </div>
 
                             @if(!empty($sizes))
-                            <div class="size">
+                            <div class="size info-wrapper-field">
                                 <div class="row">
                                     <div class="mob-6">
                                         <div class="main">SIZE @if(strtolower($product->prod_type) =='footwear') (US) @endif<span></span></div>
@@ -352,9 +352,9 @@
                             <input type="hidden" name="width_code" value="" />
                             @endif -->
 
-                            <div class="row select-width">
+                            <div class="row">
                             <div class="col-6">
-                                    <div class="quantity-wrapper">
+                                    <div class="quantity-wrapper info-wrapper-field">
                                         <div class="input-wrapper">
                                             <label class="main" for="">QUANTITY <span></span></label>
                                             <div class="quantity-selector" id="quantity-selector">
