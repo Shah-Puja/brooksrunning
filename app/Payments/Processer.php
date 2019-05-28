@@ -21,7 +21,7 @@ class Processor
 	public function charge($order)
 	{   
 		$amount = number_format($order->grand_total, 2, '.', '');
-		$order_items='';
+		$order_items=[];
 		foreach($order->orderItems as $item){
 			$order_items[]=[
 				'name' => 'Product',
@@ -34,6 +34,7 @@ class Processor
 				'productCode' => $item->style,
 			];
 		}
+
 		$result = $this->paymentgateway->transaction()->sale([
 		  'amount' => $amount,
 		  'orderId' => $order->id,
@@ -41,7 +42,7 @@ class Processor
 		  'options' => [
 		    'submitForSettlement' => True
 		  ],
-		  'lineItems' => [$order_items],
+		  'lineItems' => $order_items,
 		]);
 
 		if (! $result->success) {
