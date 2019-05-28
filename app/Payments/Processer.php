@@ -21,7 +21,7 @@ class Processor
 	public function charge($order)
 	{   
 		$amount = number_format($order->grand_total, 2, '.', '');
-		$order_items=[];
+		$order_items='';
 		foreach($order->orderItems as $item){
 			$order_items[]=[
 				'name' => 'Product',
