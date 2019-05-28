@@ -35,7 +35,7 @@
 				<div class="info-wrapper clearfix">
 					<div class="info right">
 					 	<h3 class="br-heading">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}</p>
+						<p class="br-info">{!! (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -59,7 +59,7 @@
 					<div class="info-wrapper clearfix">
 						<div class="info">
 							<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-							<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+							<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 						</div>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 					<div class="info-wrapper clearfix">
 						<div class="info">
 							<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-							<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+							<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 					<div class="info-wrapper clearfix">
 						<div class="info right">
 							<h3 class="br-heading">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</h3>
-							<p class="br-info">{{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}</p>
+							<p class="br-info">{!! (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" !!}</p>
 						</div>
 					</div>
 				</div>
@@ -124,14 +124,14 @@
 			<div class="col-4">
 				<div class="info">
 					<h4>{{ (isset($add_benefit_1[1]) &&  $add_benefit_1[1]!='') ? $add_benefit_1[1] : "" }}</h4>
-					<p>{{ (isset($add_benefit_1[2]) &&  $add_benefit_1[2]!='') ? $add_benefit_1[2] : "" }}</p>
+					<p>{!! (isset($add_benefit_1[2]) &&  $add_benefit_1[2]!='') ? $add_benefit_1[2] : "" !!}</p>
 				</div>
 			</div>
 			@if($add_benefit_2!='' && isset($add_benefit_2[1]) &&  $add_benefit_2[1]!='')
 			<div class="col-4">
 				<div class="info">
 					<h4>{{ (isset($add_benefit_2[1]) &&  $add_benefit_2[1]!='') ? $add_benefit_2[1] : "" }}</h4>
-					<p>{{ (isset($add_benefit_2[2]) &&  $add_benefit_2[2]!='') ? $add_benefit_2[2] : "" }}</p>
+					<p>{!! (isset($add_benefit_2[2]) &&  $add_benefit_2[2]!='') ? $add_benefit_2[2] : "" !!}</p>
 				</div>
 			</div>
 			@endif
@@ -139,7 +139,7 @@
 			<div class="col-4">
 				<div class="info">
 					<h4>{{ (isset($add_benefit_3[1]) &&  $add_benefit_3[1]!='') ? $add_benefit_3[1] : "" }}</h4>
-					<p>{{ (isset($add_benefit_3[2]) &&  $add_benefit_3[2]!='') ? $add_benefit_3[2] : "" }}</p>
+					<p>{!! (isset($add_benefit_3[2]) &&  $add_benefit_3[2]!='') ? $add_benefit_3[2] : "" !!}</p>
 				</div>
 			</div>
 			
@@ -199,7 +199,7 @@
 						<h4>Select width</h4>
 						<p>For women's footwear, B is the standard width. 2A is narrow, D is wide, and 2E is extra wide. For men's footwear, D is standard, B is narrow, 2E is wide, and 4E is extra wide.</p>
 						<h4>Unisex sizing</h4>
-						<p>Ladies, when orderding "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
+						<p>Ladies, when ordering "unisex" shoes, order 1.5 sizes smaller than your usual women's size.</p>
 						<h4>Get fit</h4>
 						<p>Whenever possible, visit your local running and walking footwear store for a proper fitting.</p>
 						<h4>Can't make it to a store?</h4>
