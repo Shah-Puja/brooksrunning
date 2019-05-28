@@ -25,6 +25,7 @@ class Processor
 		foreach($order->orderItems as $item){
 			$order_items[]=[
 				'name' => 'Product',
+				'kind' => 'debit',
 				'quantity' => $item->qty,
 				'unitAmount' => $item->price_sale,
 				//'unitOfMeasure' => 'unit',
@@ -44,7 +45,7 @@ class Processor
 		  ],
 		  'lineItems' => $order_items,
 		]);
-
+		
 		if (! $result->success) {
 			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
 			Log::info($message);
