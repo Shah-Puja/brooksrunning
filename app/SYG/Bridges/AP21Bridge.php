@@ -1,6 +1,7 @@
 <?php
 
 namespace App\SYG\Bridges;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -20,7 +21,7 @@ class AP21Bridge implements BridgeInterface {
 				return $response->getBody();
 			}
 		}
-		catch (\Exception $exception) {
+		catch (ClientErrorResponseException $exception) {
 			dd($exception);
 			return null;
 		}
