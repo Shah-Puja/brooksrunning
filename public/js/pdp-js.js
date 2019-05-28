@@ -1239,7 +1239,16 @@ $(document).on('click', '.swatches li div:not(".selected")', function () {
             if(custom_width==1){
                 var width_value = $(".pdp-width-show li:first").data("value");
                 $("#detail input[name='width_code']").val(width_value);
+            }else{
+                var filterwidth = localStorage.getItem("filterwidth");
+                if(filterwidth){
+                    filterwidth = filterwidth.replace(".", "").trim();
+                    if($(".pdp-width-show li:contains('"+filterwidth+"')").length > 0) {
+                        $(".pdp-width-show li:contains('"+filterwidth+"')").trigger("click");
+                    }
+                }
             }
+            
             $(".overlayloader").hide();
             if($(".size-show li").length==1 && $(".size-show li:first").data('value') =='OSFA'){
                 $(".size-show li:first").trigger("click");
