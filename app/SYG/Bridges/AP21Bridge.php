@@ -23,7 +23,7 @@ class AP21Bridge implements BridgeInterface {
 		}
 		catch (RequestException $e) {
 			// Catch all 4XX errors 
-		echo $e->getResponse()->getStatusCode();
+		//echo $e->getResponse()->getStatusCode();
 			// To catch exactly error 400 use 
 			if ($e->getResponse()->getStatusCode() == '400') {
 				throw $e;
