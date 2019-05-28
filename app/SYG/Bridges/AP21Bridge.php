@@ -20,8 +20,8 @@ class AP21Bridge implements BridgeInterface {
 				return $response->getBody();
 			}
 		}
-		catch (\Exception $e) {
-			echo "errrrrrrrror";echo "<pre>";print_r($e);die;
+		catch (\Exception $exception) {
+			dd($exception);
 			return null;
 		}
 	}
