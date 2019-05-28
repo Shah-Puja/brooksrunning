@@ -16,9 +16,9 @@ class AP21Bridge implements BridgeInterface {
 		//return $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getBody();
 		try{
 			$response = $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data,'http_errors' => true]);
-			echo $response->getStatusCode();
+			//echo $response->getStatusCode();
 			if($response->getStatusCode()==200){
-				echo "<pre>";print_R($response->getBody());die;
+				//echo "<pre>";print_R($response->getBody());die;
 				return $response->getBody();
 			}
 		}
