@@ -22,15 +22,13 @@ class AP21Bridge implements BridgeInterface {
 				return $response->getBody();
 			}
 		}
-		catch (RequestException $e) { 
-			echo "ddddddddddddd";die;
+		catch (RequestException $e) {  
 			if ($e->getResponse()->getStatusCode() == '400') {
 				throw $e;
 			}
 		
 		}
-		catch (\Exception $exception) {
-			echo "sssssssssss";die;
+		catch (\Exception $exception) { 
 			throw $exception;
 		}
 	}
