@@ -24,7 +24,7 @@ class Processor
 		$order_items=[];
 		foreach($order->orderItems as $item){
 			$order_items[]=[
-				'name' => 'Product',
+				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
 				'quantity' => $item->qty,
 				'unitAmount' => $item->price_sale,
@@ -33,6 +33,7 @@ class Processor
 				//'taxAmount' => '5.00',
 				'discountAmount' => $item->discount,
 				'productCode' => $item->style,
+				'Description' => "Color: ".$item->variant->product->color_name,
 			];
 		}
 
