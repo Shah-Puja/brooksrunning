@@ -27,13 +27,13 @@ class Processor
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
 				'quantity' => $item->qty,
-				'unitAmount' => $item->price_sale,
+				'unitAmount' => number_format($item->price_sale, 2, '.', ''),
 				//'unitOfMeasure' => 'unit',
-				'totalAmount' => $item->total,
+				'totalAmount' => number_format($item->total, 2, '.', ''),
 				//'taxAmount' => '5.00',
-				'discountAmount' => $item->discount,
+				'discountAmount' => number_format($item->discount, 2, '.', ''),
 				'productCode' => $item->style,
-				'Description' => "Color: ".$item->variant->product->color_name,
+				'description' => "Color : ".$item->variant->product->color_name,
 			];
 		}
 
