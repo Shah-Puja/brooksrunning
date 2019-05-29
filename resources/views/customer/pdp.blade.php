@@ -9,6 +9,13 @@
 
 @section('content')
 
+<style>
+.width-disable{
+    background-color: #f1f1f1;
+    color: #dedcda;
+}
+</style>
+
 <div id="data-load">
     <div class="pdp-container">
         <div class="wrapper">
@@ -789,9 +796,9 @@ $(document).on('click', '.size-show li:not(".disable")', function () {
         let data = $.grep( variants, function( n, i ) {
             if(n) return n['size']==size_val && n['visible']=='Yes';
          });
-        $(".pdp-width-show").find("li:not([data-value=''])").addClass("disable");
+        $(".pdp-width-show").find("li:not([data-value=''])").addClass("width-disable");
         for(i = 0; i< data.length; i++){
-            $(".pdp-width-show").find("[data-value='"+data[i]['width_code']+"']").removeClass("disable");
+            $(".pdp-width-show").find("[data-value='"+data[i]['width_code']+"']").removeClass("width-disable");
         }
         $("#detail input[name='size']").val(size_val);
     }
@@ -819,10 +826,15 @@ $(document).on('click', '.size-show li:not(".disable")', function () {
     event.stopPropagation();
 });*/
 
-$(document).on('click', '.pdp-width-show li:not(".disable")', function () {
+$(document).on('click', '.pdp-width-show li', function () {
     let value = $(this).data('value');
+    if($(this).hasClass('width-disable')){
+        $(".size-show li").removeClass("selected");
+        $("#detail input[name='size']").val("");
+    }
     if(value!=''){
         $(".pdp-width-show li").removeClass("selected");
+        $(this).removeClass("width-disable");
         $(this).addClass("selected");
         $("#detail input[name='width_code']").val(value);
         let data = $.grep( variants, function( n, i ) {
