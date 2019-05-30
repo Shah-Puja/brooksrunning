@@ -51,7 +51,7 @@
                     <div class="wrapper pr-0 pl-0">
                         <div class="event-background wrapper">
                             <form name="event_filter" method='post' action='/events-listing'>
-                                @csrf
+                            {{ csrf_field() }}
                                 <h1 class="br-mainheading">Find an Event</h1>
                                 <div class="col-4 tab-4 mob-6">
                                     <div class="event-filters--wrapper">
@@ -92,6 +92,7 @@
                                         </div>
                                     </div>
                                 </div>
+                               
                                 <div class="col-4 tab-4 mob-12">
                                     <div class="event-filters--wrapper">
                                         <div class="btn">
@@ -124,9 +125,10 @@
                     <div class="event-wrapper-container">
                         @if (count($all_events) > 0)
                         @foreach($all_events as $events)
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
-                            <div class="event-section"> 
-                                <a href="#" >
+                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape"  event_id='{{$events->event_id}}'>
+                        
+                             <div class="event-section"> 
+                                <a href="/events-listing/single-event/{{$events->slug}}" >
                                     <div class="img">
                                         @if(!empty($events->logo))  
                                         <img id="event-img" src="/images/events/monthly/logo/{{ $events->logo }}" alt="">
@@ -173,7 +175,7 @@
                         @foreach($other_upcoming_events as $upcoming_events)
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
-                                <a href="#" >
+                                <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
                                         <img id="event-img" src="/images/events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
@@ -220,6 +222,9 @@
             $('#where').prop('selectedIndex', 0);
         })
     });
+
+
+
 </script>
 @endsection       
 

@@ -67,8 +67,10 @@ class EventController extends Controller {
                                 return $query->whereYear('event_timestamp', $year);
                             })
                             ->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+                           
         } else {
             $all_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+            
             $other_upcoming_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         }
         //echo "<pre>";print_r($other_upcoming_events);die;
@@ -77,8 +79,11 @@ class EventController extends Controller {
         return view('info.New-event-view.events-listing', compact('all_events', 'other_upcoming_events', 'when', 'where'));
     }
 
-    public function new_single_event() {
-        return view('info.New-event-view.single-event-detail');
+    public function new_single_event($single_event) {
+
+       $single_event=event_mast::where('slug',$single_event)->first();
+       
+       return view('info.New-event-view.single-event-detail',compact('single_event'));
     }
 
     public function new_series_event() {

@@ -45,7 +45,7 @@
         <div class="col-8">
       	    <div class="about-header">
             <div class="event-logo">
-            <img src="/images/new-events/logo/SunsetSeries_logo.png">
+            <img src="/imagesnew-events/monthly/logo/SunsetSeries_logo.png">
             </div>
             <div class="seriescontent">
                     <ul class="event_tabs">
