@@ -55,8 +55,10 @@ class ProductColourController extends Controller
         //After sync with Ap21 call product detail
         $styles = Product::where('style',$style)
                           ->whereHas('variants', function ( $query ) {
-                               $query->where('visible', '=', 'Yes');
-                           })->get();
+                               return $query->where('visible', '=', 'Yes');
+                           })
+                           ->with('variants')
+                           ->get();
         if(!$styles){
             return abort(404);
         }    
@@ -75,8 +77,8 @@ class ProductColourController extends Controller
         $product->price = $variants->max('price');
 		$product->price_sale = $variants->max('price_sale');
         $product->stock = $variants->max('stock');
-    
-        return view ('customer.pdp',compact('product','variants','colour_options'));
+        
+        return view ('customer.pdp',compact('product','variants','colour_options','styles'));
     }
 
     public function index_bkp($name,$style,$color){

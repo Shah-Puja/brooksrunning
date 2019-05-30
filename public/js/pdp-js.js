@@ -1204,7 +1204,7 @@ $(document).on('click', '#quantity-selector #subs', function subst() {
     }
 });
 
-$(document).on('click', '.swatches li:not(".selected")', function () {
+$(document).on('click', '.swatches li div:not(".selected")', function () {
     $(".overlayloader").show();
     $("#zoomWindowFullShowIn").css("z-index", "2");
     let url = $(this).data('url');
@@ -1235,16 +1235,25 @@ $(document).on('click', '.swatches li:not(".selected")', function () {
                 thumbItem: 9
             });
             ChangeUrl(value, url);
-            var custom_width = $("#custom_width").val();
-           // var target = $(".width-wrapper ul").find(".selected");
-            //var width_name = target.text();
-            ///var width_code = target.data('value');
-            //$(".width-wrapper").find(".label-heading .text").text(width_name);
-            $("#detail input[name='width_code']").val(custom_width);
+            var custom_width = $(".pdp-width-show li").length;
+            if(custom_width==1){
+                var width_value = $(".pdp-width-show li:first").data("value");
+                $("#detail input[name='width_code']").val(width_value);
+            }else{
+                var filterwidth = localStorage.getItem("filterwidth");
+                if(filterwidth){
+                    filterwidth = filterwidth.replace(".", "").trim();
+                    if($(".pdp-width-show li:contains('"+filterwidth+"')").length > 0) {
+                        $(".pdp-width-show li:contains('"+filterwidth+"')").trigger("click");
+                    }
+                }
+            }
+            
             $(".overlayloader").hide();
             if($(".size-show li").length==1 && $(".size-show li:first").data('value') =='OSFA'){
                 $(".size-show li:first").trigger("click");
             }
+            
             return false;
         }
     });
