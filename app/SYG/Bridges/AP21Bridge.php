@@ -23,11 +23,7 @@ class AP21Bridge implements BridgeInterface {
 			}
 		}
 		catch (RequestException $e) { 
-			if ($e->getResponse()->getStatusCode() == '404') {
-				echo $e->getCode();
-				throw $e;
-			}
-		
+			throw $e;
 		}
 		catch (\Exception $exception) {
 			throw $exception;
