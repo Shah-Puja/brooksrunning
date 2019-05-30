@@ -27,6 +27,9 @@
             @case("mens-running-shoes-sale")
                 <title>Brooks Running Men's Running Shoes Sale</title>
                 @break;
+            @case("healthcare-shoes-for-nurses")
+                <title>Nursing Shoes | Buy Brooks Shoes For Nurses</title>
+                @break;
             @case("meet_brooks")
                 @if(Request::segment(2) == "competition" && Request::segment(3) == "hbfrunforareasoncomp")
                     <title>Win a $1000 Running Kit!</title>
