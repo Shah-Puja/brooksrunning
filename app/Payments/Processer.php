@@ -23,6 +23,11 @@ class Processor
 		$amount = number_format($order->grand_total, 2, '.', '');
 		$order_items=[];
 		foreach($order->orderItems as $item){
+			$description = "<p>Color: ".$item->variant->product->color_name."</p>
+							<p>Size: ".$item->variant->size."</p>";
+			if($item->variant->width_name!=""):
+				$description.="<p>".(($item->variant->product->gender == 'M') ? "Mens" : "Womens")." Width: ".$item->variant->width_name."</p>";
+			endif;
 			$order_items[]=[
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
@@ -33,7 +38,7 @@ class Processor
 				//'taxAmount' => '5.00',
 				'discountAmount' => number_format($item->discount, 2, '.', ''),
 				'productCode' => $item->style,
-				'description' => "Color : ".$item->variant->product->color_name,
+				'description' => $description,
 			];
 		}
 
