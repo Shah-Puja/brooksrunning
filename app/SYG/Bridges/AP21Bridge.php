@@ -23,7 +23,7 @@ class AP21Bridge implements BridgeInterface {
 			}
 		}
 		catch (RequestException $e) { 
-			throw $e;
+			echo "eeeeeeeeeeeeeeeeeeeeeeeeeeeee";throw $e;
 		}
 		catch (\Exception $exception) {
 			throw $exception;
