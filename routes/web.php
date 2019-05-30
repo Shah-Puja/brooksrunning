@@ -169,6 +169,7 @@ Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@ind
 Route::get('/abstract-collection-adrenaline-ghost', 'CollectionController@adreline_ghost');
 Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
+Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
 
 
 Route::get('/{category}', 'CategoryController@index');

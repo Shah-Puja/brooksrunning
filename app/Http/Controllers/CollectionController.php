@@ -90,6 +90,40 @@ class CollectionController extends Controller
         return view( 'customer.collection_mothers_day_listing',compact('women_running_shoes','women_running_clothing','sports_bras','accessories','colour_options','products'));
     }
 
+    public function shoes_for_nurses(){
+        $array = ['120292_030','120291_073','110303_008','110302_040'];
+        $data_array = [];
+        foreach($array as $item){
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        }   
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })->get();
+            
+        $products = $styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        })->unique('style');
+        
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
+
+        return view( 'customer.collection_shoes_for_nurses',compact('colour_options','products'));
+     }
+
     public function energize_collection(){
         $support_shoes = \App\Models\Product::getProducts_array(['120272_321','110283_449','120286_615','110298_429']);
         $neutral_shoes = \App\Models\Product::getProducts_array(['110290_057', '120279_520','110293_428','120282_080','110297_488','120285_542','110295_493','120288_080']);
