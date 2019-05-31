@@ -4338,6 +4338,12 @@ textarea {
     width: 100%;
   }
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .category__hero .large {
+    font-size: 30px;
+    width: 100%;
+  }
+}
 .category__hero .title {
   font-size: 50px;
   line-height: 1;
@@ -4359,6 +4365,12 @@ textarea {
 .category__hero .type {
   font-size: 20px;
   line-height: 27px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .category__hero .type {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
 }
 .category__hero .m-block--hero--collection__content p {
   color: #fff;

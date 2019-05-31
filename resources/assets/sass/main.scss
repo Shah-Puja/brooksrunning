@@ -2591,6 +2591,10 @@ ul {
       font-size: 30px;
       width:100%;
     }
+    @media #{$desktop-only}{
+      font-size: 30px;
+      width:100%;
+    }
 }
 .title {
   font-size: 50px;
@@ -2610,6 +2614,10 @@ ul {
 .type {
     font-size: 20px;
     line-height: 27px;
+    @media #{$desktop-only}{
+      font-size: 16px !important;
+      line-height: 20px !important;
+    }
 }
 .m-block--hero--collection__content{
   p {
