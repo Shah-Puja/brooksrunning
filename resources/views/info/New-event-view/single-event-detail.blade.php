@@ -45,12 +45,12 @@
         <div class="col-8">
       	    <div class="about-header">
             <div class="event-logo">
-            <img src="/images/new-events/logo/iwdfr_logo.png">
+            <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
             </div>
-            <h2>Date TBA March, 2020 </h1>
-            <h4>Brisbane, QLD</h4>
+            <h2>{{$single_event->event_date}} </h1>
+            <h4>{{$single_event->location}}</h4>
             <hr  class="event-single-underline"/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p>{!!$single_event->content!!}</p>
             <div class="stay-tuned">
                 <p class="info">Stay tuned for more details on this event.</p>
 		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 

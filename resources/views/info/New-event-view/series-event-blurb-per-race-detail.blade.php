@@ -43,7 +43,7 @@
         <div class="col-8">
       	    <div class="about-header">
             <div class="event-logo">
-            <img src="/images/new-events/logo/albany_lakes_logo.png">
+            <img src="/images/new-events/monthly/logo/albany_lakes_logo.png">
             </div>
             <div class="tabbedcontent blurb-per-race">
                 <div class="event-series-header">
