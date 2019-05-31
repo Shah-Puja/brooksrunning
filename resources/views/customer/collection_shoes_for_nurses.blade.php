@@ -3,27 +3,7 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css">
-<!-- <div class="create-account--header plp-header">
-  <div class="wrapper">
-    <div class="row">
-      <div class="col-8">
-      	<div class="about-header">
-      	<div class="breadcrumbs">
-					<ul>
-						<li>
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
-						</li>
-					</ul>
-				</div>
-                <h1 class="br-mainheading">Special Edition Levitate 2 LE & Ricochet LE</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -37,7 +17,7 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">Special Edition Levitate 2 LE & Ricochet LE</a>
+                                            <a href="JavaScript:Void(0);" class="active">Shoes for Nurses</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -54,7 +34,7 @@
             </div>
         </div>
 </div>
-<div class="create-account--header plp-header collection-intro">
+<!-- <div class="create-account--header plp-header collection-intro">
   <div class="wrapper">
     <div class="row">
     <div class="col-2"></div>
@@ -67,7 +47,7 @@
       <div class="col-2"></div>
     </div>
   </div>
-</div>
+</div> -->
 <section class="plp-container">
 	<div class="wrapper">
 		<div class="row">
