@@ -6714,6 +6714,9 @@ textarea {
     line-height: 24px;
   }
 }
+.event-intro p a {
+  color: #0E0E0E;
+}
 .event-intro .info {
   font-size: 22px;
   line-height: 1.1;
