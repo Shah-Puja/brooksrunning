@@ -28,7 +28,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="shoes-wrapper-container">
-				<div class="mob-12 col-6">
+				<div class="mob-12 {{ (isset($shop_women_url)) ? 'col-6' : 'col-12' }}">
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
@@ -48,7 +48,7 @@
 							</div>
 					</div>
 				</div>
-				<div class="mob-12 col-6">
+				<div class="mob-12 {{ (isset($shop_men_url)) ? 'col-6' : 'col-12' }}">
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
