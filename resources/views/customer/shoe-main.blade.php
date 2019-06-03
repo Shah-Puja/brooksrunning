@@ -28,7 +28,11 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="shoes-wrapper-container">
+			@if(isset($shop_men_url)=='')
+				<div class="mob-12 col-6" style="display:none;">
+			@else
 				<div class="mob-12 {{ (isset($shop_women_url)) ? 'col-6' : 'col-12' }}">
+			@endif
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
@@ -48,7 +52,12 @@
 							</div>
 					</div>
 				</div>
+
+				@if(isset($shop_women_url)=='')
+				<div class="mob-12 col-6" style="display:none;">
+				@else
 				<div class="mob-12 {{ (isset($shop_men_url)) ? 'col-6' : 'col-12' }}">
+				@endif
 					<div class="shoes-wrapper__sub">
 						<div class="shoe-product">
 								<div class="img img-shoes">
