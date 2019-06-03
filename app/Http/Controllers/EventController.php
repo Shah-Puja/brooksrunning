@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Event_mast;
 use App\Models\Event_month;
+use App\Models\Event;
 
 class EventController extends Controller {
 
@@ -50,28 +51,28 @@ class EventController extends Controller {
                 $where = $request->where;
                 //display other upcoming events
                 if ($request->when == '') {
-                    $other_upcoming_events = event_mast::where('status', 'Y')->where(function($q) use ($where) {
+                    $other_upcoming_events = event::where('status', 'Y')->where(function($q) use ($where) {
                                         $q->where('state', 'like', '%' . $where . '%')
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
-                                    ->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+                                    ->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
                 }
             }
-            $all_events = event_mast::where('status', 'Y')->where(function($q) use ($where) {
+            $all_events = event::where('status', 'Y')->where(function($q) use ($where) {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
                             })->when($month, function ($query) use ($month) {
-                                return $query->whereMonth('event_timestamp', $month);
+                                return $query->whereMonth('date', $month);
                             })
                             ->when($month, function ($query) use ($year) {
-                                return $query->whereYear('event_timestamp', $year);
+                                return $query->whereYear('date', $year);
                             })
-                            ->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+                            ->whereRaw('date >= CURDATE()')->orderBy('date', 'asc')->get();
                            
         } else {
-            $all_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp >= CURDATE()')->orderBy('event_timestamp', 'asc')->get();
-            
-            $other_upcoming_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
+            $all_events = event::where('status', 'Y')->whereRaw('date >= CURDATE()')->orderBy('date', 'asc')->get();
+            //dd($all_events)
+            $other_upcoming_events = event::where('status', 'Y')->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
         }
         //echo "<pre>";print_r($other_upcoming_events);die;
         //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
@@ -80,14 +81,25 @@ class EventController extends Controller {
     }
 
     public function new_single_event($single_event) {
-
-       $single_event=event_mast::where('slug',$single_event)->first();
+          
+          
+        $single_event=event::where('slug',$single_event)->first();
+        
+        
        
-       return view('info.New-event-view.single-event-detail',compact('single_event'));
+       return view('info.New-event-view.single-event-detail',compact('single_event'));   
+        
     }
 
-    public function new_series_event() {
-        return view('info.New-event-view.series-event-detail');
+    public function new_series_event($series_event,$city) {
+
+        $event_name=event::where('slug',$series_event)->first();
+
+        $series_event=event::where('slug',$series_event)->get();
+        
+        
+       
+        return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city'));
     }
 
     public function new_series_static_event() {

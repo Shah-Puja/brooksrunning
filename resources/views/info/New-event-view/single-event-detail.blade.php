@@ -16,15 +16,15 @@
 												<a href="/">Home</a>
                                             </li>
                                             <li>
-												<a href="/">Events</a>
+												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-												<a href="JavaScript:Void(0);" class="active"> International Women’s Day Fun Run</a>
+												<a href="JavaScript:Void(0);" class="active">{{ucwords(str_replace("-"," ",$single_event->slug))}}</a>
 											</li>
 										</ul>
 									</div>
 								</div>
-							<h1 class="event-title">International Women's Day Fun Run</h1>
+							<h1 class="event-title">{{ucwords(str_replace("-"," ",$single_event->slug))}}</h1>
 						
 							<!-- <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p> -->
 						</div>
@@ -33,7 +33,7 @@
 				</div>
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/new-events/banner/iwdfr-event-header-image.jpg">
+                <img src="/images/new-events/banner/{{str_replace("_"," ",$single_event->banner)}}">
             </div>
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 	  		<div class="col-12 tab-12">
 	    		<div class="event-footer--wrapper info">
                     <div class="btn">
-                        <button type="submit" class="secondary-button">See More Events </button>
+                        <a href='/events-listing' ><button type="submit" class="secondary-button">See More Events </button></a>
                     </div>
 		     	</div>
 	        </div>
