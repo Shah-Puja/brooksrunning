@@ -42,7 +42,6 @@
         <!-- lightslider file -->
         <link rel="stylesheet" href="/css/lightslider.css">
         <!-- common file -->
-        <!-- <link rel="stylesheet" href="/css/common.css"> -->
         <link rel="stylesheet" href="/css/common_2.css">
         <script src="/js/jquery-2.2.4.min.js"></script>
         @yield('head')
