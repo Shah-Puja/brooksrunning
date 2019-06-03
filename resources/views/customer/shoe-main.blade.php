@@ -39,7 +39,7 @@
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt="">
 								 @endif
 								</div>
-								@if(isset($shop_men_url) && $shop_men_url!='')
+								@if(isset($shop_men_url) && $shop_men_url!='') 
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
