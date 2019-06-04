@@ -1,5 +1,5 @@
 @if(Session::get('medibank_gateway')=='Yes')
-<section class="pdp-container--benefits">
+<section class="pdp-container--benefits" id="disclaimer">
 <div class="full-wrapper module-additional">
 <div class="row cust-grid">
 <div class="col-12">

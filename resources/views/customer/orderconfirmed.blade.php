@@ -52,8 +52,8 @@
         <div class="col-12">
             <div class="cart-left--container">
                 <div class="heading">
-                    <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
-                    <h1 class="br-heading" style="line-height:12px; font-size:22px;">if you’re eligible for Live Better Points they will be displayed in Live Better within 30 days.</h1>
+                    <!-- <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3> -->
+                    <h1 class="br-heading" style="line-height:12px; font-size:22px;">Congratulations on your purchase, if you’re eligible for Live Better Points they will be displayed in Live Better within 30 days.</h1>
                 </div>
                 <div class="cart-success--info">
                 @if($order->order_type == 'medibank-user')

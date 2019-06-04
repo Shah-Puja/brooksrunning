@@ -24,7 +24,8 @@
 										<div class="col-8">
 											<div class="medibank--login--success">
 												<div class="login_success">
-													<p class="success-text" ><span class="user-name">{{Session::get('medibank_user_memberid')}}</span></p>
+													<p class="success-text" >Verification successful<br/>
+													Welcome, <span class="user-name">{{Session::get('medibank_user_memberid')}}</span></p>
 												</div>
 											</div>
 										</div>
@@ -41,7 +42,7 @@
 										<div class="medibank--login--failed">
 											<label>Log In</label>
 											<div class="login_failed">
-											<p class="failed-text">Please log in with your Medibank Membership number and the email address registered with your MyMedibank account. </p>
+											<p class="failed-text">Please log in with your My Medibank email address registered with your account and Medibank Membership number. </p>
 											<div class="ctg-btn clearfix">
 												<span><a class="secondary-button" href="{{URL::previous()}}">Cancel</a></span>
 												<span><a class="primary-button" href="{{URL::previous()}}">Try Again</a></span>
@@ -66,7 +67,7 @@
 										</div>
 									<div class="col-4">
 										<div class="medibank--content">
-											<label>Please log in with your Medibank Membership number and the email address registered with your MyMedibank account.
+											<label>Please log in with your My Medibank email address registered with your account and Medibank Membership number.
 											</label>
 										</div>
 									</div>
@@ -80,8 +81,8 @@
 											      	    <div class="mark"><span></span></div>
 											      	    <div class="text">
 															<form name="medibank-login" method="POST" action="/medibank_check_user">
-																<input type="email" class="medibank-input" name="email" placeholder="Email Address" required>
-																<input type="text" class="medibank-input" name="medibank_id" placeholder="Medibank ID" required>
+																<input type="email" class="medibank-input" name="email" placeholder="My Medibank Email Address" required>
+																<input type="text" class="medibank-input" name="medibank_id" placeholder="Medibank Membership Number" required>
 																{!! csrf_field() !!}
 																<button name="button"  class="pdp-button medibank-login-button">Verify</button>
 															</form>

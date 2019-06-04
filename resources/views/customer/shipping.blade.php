@@ -144,7 +144,7 @@
 
                 @if(Session::get('medibank_gateway')=='Yes' && Session::get('medibank_user')!='Yes')
                 <div class="medibank_guest_div">
-                    <p>Please log in with your Medibank Membership number and the email address registered with your MyMedibank account.</p>
+                    <p>Please log in with your Medibank Membership number and the email address registered with your My Medibank account.</p>
                     <!-- <a href='javascript:void(0)' class="primary-button pdp-button medibank_guest_user" id="medibank_guest_user">Skip Medibank Verification</a> -->
                 </div>
                 @endif
