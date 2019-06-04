@@ -3184,7 +3184,6 @@ width: 100%;
 .category__hero__image {
     display: block;
     position: relative;
-   
 }
 
 @media (min-width: 975px){
@@ -3333,7 +3332,7 @@ width: 100%;
   .event-logo{
     margin: 0 auto;
     padding-bottom: 20px;
-    width: 60%;
+    width: 30%;
     @media #{$mobile-only}{
       width: 100%;
       max-width: 320px;

@@ -6691,7 +6691,7 @@ textarea {
 .event-intro .event-logo {
   margin: 0 auto;
   padding-bottom: 20px;
-  width: 60%;
+  width: 30%;
 }
 @media only screen and (max-width: 767px) {
   .event-intro .event-logo {
