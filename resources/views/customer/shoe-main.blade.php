@@ -29,7 +29,7 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="shoes-wrapper-container">
-				<div class="mob-12 {{ ($shop_women_url=='' && $shop_men_url !='') ? 'col-12 tab-12' : 'col-6 tab-6' }}">
+				<div class="mob-12 {{ ($shop_women_url=='' && $shop_men_url !='') ? 'col-12' : 'col-6' }}">
 					<div class="shoes-wrapper__sub {{ ($shop_men_url==''  && $shop_women_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 
-				<div class="mob-12 {{ ($shop_men_url==''  && $shop_women_url !='') ? 'col-12 tab-12' : 'col-6 tab-6' }}">
+				<div class="mob-12 {{ ($shop_men_url==''  && $shop_women_url !='') ? 'col-12' : 'col-6' }}">
 					<div class="shoes-wrapper__sub {{ ($shop_women_url==''  && $shop_men_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
