@@ -67,7 +67,7 @@
                     @foreach($series_event as $series_events)
                     <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
                     @if(trim(empty($series_events->content)))
-                    <p> This text is for Race 1 at Melbourne Zoo.</p>
+                    <p>  This text is for Race 1 at Melbourne Zoo.</p>
                     @else
                     <p>{{$series_events->content}}</p>
                     @endif 
@@ -122,7 +122,7 @@
             </div>  
             <div class="find-more" >
                     <div class="event-findmore-btn">
-                        <a href="/event-listing" class="primary-button">Find Out More </a>
+                        <a href="/events-listing" class="primary-button">Find Out More </a>
                     </div>
             </div>  
         </div>
@@ -139,7 +139,7 @@
 	  		<div class="col-12 tab-12">
 	    		<div class="event-footer--wrapper info">
                     <div class="btn">
-                        <a href="/event-listing" class="secondary-button">See More Events </a>
+                        <a href="/events-listing" class="secondary-button">See More Events </a>
                     </div>
 		     	</div>
 	        </div>
