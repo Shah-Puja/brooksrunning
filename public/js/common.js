@@ -354,20 +354,15 @@ $(document).ready(function () {
             var current = this.currentItem;
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
-		    $("#"+id).show();
+		    $("#mob-"+id).show();
         },
         afterAction: function(elem){
-            console.log("dfsdf");
             var current = this.currentItem;
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
-            console.log("#"+id);
-		    $("#"+id).show();
+		    $("#mob-"+id).show();
         },
-        
     });
-
-    $("#event-carousel").trigger("to.owl.carousel", [2, 1])
     
 });
 

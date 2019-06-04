@@ -115,7 +115,7 @@
                       
                         </ul>
                         @foreach($series_event as $series_events)
-                        <div id="{{$series_events->id}}" class="event-content @if($city==$series_events->city) current @endif">
+                        <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city) current @endif">
                             <p>{{$series_events->content}}</p>
                             </div>
                             @endforeach
