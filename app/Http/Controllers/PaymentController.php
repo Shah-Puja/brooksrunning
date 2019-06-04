@@ -481,8 +481,8 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
-        $status = 'Order Completed';
-        if (env('AP21_STATUS') == 'ON') {
+        $status ='Order Completed';
+        //if (env('AP21_STATUS') == 'ON') {
             $order_data = array(
                 'order_id' => $order_id
             );
@@ -492,10 +492,11 @@ class PaymentController extends Controller {
                 $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
                 $status = 'Order Number';
             }
-        } else {
+           
+        /*} else {
 
-            $order_no = env('ORDER_PREFIX') . $order_id;
-        }
+            $order_no = env('ORDER_PREFIX').$order_id;
+        }*/
         Order::where('id', $order_id)
                 ->update(['status' => $status, 'order_no' => $order_no]);
 
