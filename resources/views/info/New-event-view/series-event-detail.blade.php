@@ -74,32 +74,24 @@
                     <!-- <hr  class="eventunderline"/> -->
                     @foreach($series_event as $series_events)
                     <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
-                    @if(trim(empty($series_events->content)))
-                     <p> This text is for Race 1 at Melbourne Zoo.</p>
-                    @else
-                    <p>{{$series_events->content}}</p>
-                    @endif 
+                        @if(trim(empty($series_events->content)))
+                        <p> This text is for Race 1 at Melbourne Zoo.</p>
+                        @else
+                        <p>{{$series_events->content}}</p>
+                        @endif 
                     </div>
                     @endforeach
-                    <!-- <div id="tab-2" class="tab-content">
-                    <p>This text is for Race 2 at Melbourne Zoo.</p>
-                    </div>
-                    <div id="tab-3" class="tab-content">
-                    <p>This text is for Race 3 at Melbourne Zoo.</p>
-                    </div> -->
             </div>
 
             <!-- For mobile only -->
             <div class="new-event--container visible-mob hidden-col hidden-tab">
                     <div class="tabbedmobcontent">
                         <ul class="event_mob_tabs">
-                        
                             <div id="event-carousel">
                                 @php $item_count_mob=0; @endphp
                                 @foreach($series_event as $series_events)
                                     @php $active_slide = ($city==$series_events->city) ? $item_count_mob: ""; @endphp
-                                    <div class="item">
-                                
+                                    <div class="item" data-current-tab='{{$active_slide}}' >
                                         <li class="tab-link" data-tab="{{$series_events->id}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_name}} </h2>
@@ -107,21 +99,18 @@
                                             <h3>{{$series_events->city}}</h3>
                                             </div>
                                         </li>
-                                    
                                     </div>
                                 @php $item_count_mob++; @endphp
                                 @endforeach
                             </div>
-                      
                         </ul>
                         @foreach($series_event as $series_events)
-                        <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city) current @endif">
-                            <p>{{$series_events->content}}</p>
+                            <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city) current @endif">
+                                <p>{{$series_events->content}}</p>
                             </div>
-                            @endforeach
-                            
-                        </div>
+                        @endforeach
                     </div>
+                </div>
             </div>
              <!-- End For mobile only -->
             <div class="stay-tuned" style="display:none;">
