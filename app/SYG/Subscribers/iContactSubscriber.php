@@ -3,10 +3,10 @@
 namespace App\SYG\Subscribers;
 
 use App\SYG\Subscribers\iContactProApi;
-use App\SYG\Subscribers\SubscriberInterface;
+use App\SYG\Subscribers\iContactSubscriberInterface;
 use App\Models\User;
 
-class iContactSubscriber implements SubscriberInterface {
+class iContactSubscriber implements iContactSubscriberInterface {
 
     protected $client;
 
