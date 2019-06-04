@@ -32,7 +32,11 @@
 				</div>
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/new-events/banner/{{$event_name->banner}}">
+                @if($event_name->banner!='')
+                    <img src="/images/new-events/banner/{{$event_name->banner}}">
+                @else
+                    <img src="/images/new-events/generic_event_header.png">
+                @endif
             </div>
 		</div>
 	</div>
@@ -40,11 +44,15 @@
 <div class="create-account--header event-header event-intro">
   <div class="wrapper">
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
       	    <div class="about-header">
             <div class="event-logo">
-            <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
+                @if($event_name->logo!='')
+                    <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
+                @else
+                    <img src="/images/new-events/generic_event_image.jpg">
+                @endif
             </div>
 
 
@@ -65,9 +73,9 @@
                    
                     <!-- <hr  class="eventunderline"/> -->
                     @foreach($series_event as $series_events)
-                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
+                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif" style="display:none;">
                     @if(trim(empty($series_events->content)))
-                    <p>  This text is for Race 1 at Melbourne Zoo.</p>
+                     <p> This text is for Race 1 at Melbourne Zoo.</p>
                     @else
                     <p>{{$series_events->content}}</p>
                     @endif 
@@ -127,7 +135,7 @@
             </div>  
         </div>
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     </div>
   </div>
@@ -152,13 +160,11 @@
 	
 	$('ul.event_tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-        console.log(tab_id);
-
 		$('ul.event_tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
+		$('.tab-content').css('display',"none");
 
 		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
+		$("#"+tab_id).css('display',"block");
     });
     
 });

@@ -358,18 +358,17 @@ $(document).ready(function () {
         },
         afterAction: function(elem){
             console.log("dfsdf");
+            var current = this.currentItem;
+            var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
+            $(".event-content").hide();
+            console.log("#"+id);
+		    $("#"+id).show();
         },
         
     });
-   
-    owl1.on('initialized.owl.carousel', function(event){ 
-        console.log("loaded");
-    });
 
-    var toIndex = 2;
-    setTimeout(function(){ 
-    $("#event-carousel").trigger("to.owl.carousel", [toIndex, 1, true]);
-}, 2000);
+    $("#event-carousel").trigger("to.owl.carousel", [2, 1])
+    
 });
 
 // shipping page 
