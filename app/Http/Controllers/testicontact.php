@@ -52,7 +52,7 @@ class testicontact extends Controller {
                 $this->client->add_icontactSubscriber($person_arr);
             }
         }
-        $all_subscribers = $this->client->getContactsAll();
+        //$all_subscribers = $this->client->getContactsAll();
         //echo "<pre>";print_r($all_subscribers);die;
     }
 
