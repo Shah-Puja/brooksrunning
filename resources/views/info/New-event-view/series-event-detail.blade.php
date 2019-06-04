@@ -73,7 +73,7 @@
                    
                     <!-- <hr  class="eventunderline"/> -->
                     @foreach($series_event as $series_events)
-                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif" style="display:none;">
+                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
                     @if(trim(empty($series_events->content)))
                      <p> This text is for Race 1 at Melbourne Zoo.</p>
                     @else
