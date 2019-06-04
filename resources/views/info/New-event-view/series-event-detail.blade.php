@@ -73,9 +73,9 @@
                    
                     <!-- <hr  class="eventunderline"/> -->
                     @foreach($series_event as $series_events)
-                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
+                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif" style="display:none;">
                     @if(trim(empty($series_events->content)))
-                    <p> This text is for Race 1 at Melbourne Zoo.</p>
+                     <p> This text is for Race 1 at Melbourne Zoo.</p>
                     @else
                     <p>{{$series_events->content}}</p>
                     @endif 
@@ -160,13 +160,11 @@
 	
 	$('ul.event_tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-        console.log(tab_id);
-
 		$('ul.event_tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
+		$('.tab-content').css('display',"none");
 
 		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
+		$("#"+tab_id).css('display',"block");
     });
     
 });
