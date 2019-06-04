@@ -33,7 +33,11 @@
 				</div>
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/new-events/banner/{{str_replace("_"," ",$single_event->banner)}}">
+                @if($single_event->banner!='')
+                    <img src="/images/new-events/banner/{{str_replace("_"," ",$single_event->banner)}}">
+                @else
+                    <img src="/images/new-events/generic_event_header.png">
+                @endif
             </div>
 		</div>
 	</div>
@@ -45,7 +49,11 @@
         <div class="col-8">
       	    <div class="about-header">
             <div class="event-logo">
-            <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
+                @if($single_event->logo!='')
+                    <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
+                @else
+                    <img src="/images/new-events/generic_event_image.jpg">
+                @endif
             </div>
             <h2>{{$single_event->event_date}} </h1>
             <h4>{{$single_event->location}}</h4>
