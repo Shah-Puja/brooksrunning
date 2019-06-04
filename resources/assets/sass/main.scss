@@ -3733,7 +3733,8 @@ width: 100%;
       width:100%;
     }
     .event-wrapper__sub{
-        margin: 15px auto;
+        // margin: 15px auto;
+        margin: 15px -1px ;
         @media #{$mobile-only} {
           margin: 10px 0 15px;
         }

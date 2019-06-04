@@ -5497,7 +5497,7 @@ textarea {
   }
 }
 .event-container .event-wrapper-container .event-wrapper__sub {
-  margin: 15px auto;
+  margin: 15px -1px;
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub {
