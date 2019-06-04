@@ -134,7 +134,7 @@ class iContactProApi {
      *
      * @return object
      * */
-    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null) {
+    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null, $gender = null, $birth_date = null, $birth_month = null, $age = null, $ad_tracking = null, $shoe_wear = null, $country=null, $contest_code =null) {
         // Valid statuses
         $aValidStatuses = array('normal', 'bounced', 'donotcontact', 'pending', 'invitable', 'deleted');
         // Contact placeholder
@@ -201,6 +201,39 @@ class iContactProApi {
             // Add the new business
             $aContact['business'] = (string) $sBusiness;
         }
+        if (!empty($birth_date)) {
+            // Add the new birth day
+            $aContact['birth_day'] = (string) $birth_date;
+        }
+        if (!empty($birth_month)) {
+            // Add the new birth month
+            $aContact['birth_month'] = (string) $birth_month;
+        }
+        if (!empty($age)) {
+            // Add the new age
+            $aContact['age'] = (string) $age;
+        }
+        if (!empty($ad_tracking)) {
+            // Add the new ad tracking
+            $aContact['ad_tracking'] = (string) $ad_tracking;
+        }
+        if (!empty($shoe_wear)) {
+            // Add the new shoe wear
+            $aContact['shoe_wear'] = (string) $shoe_wear;
+        }
+        if (!empty($gender)) {
+            // Add the new gender
+            $aContact['gender'] = (string) $gender;
+        }
+
+        if(!empty($country)){
+            $aContact['country'] = (string)$country;
+        }
+
+        if(!empty($contest_code)){
+            $aContact['contest_code'] = (string)$contest_code;
+        }
+       
         // Check for a valid status
         if (!empty($sStatus) && in_array($sStatus, $aValidStatuses)) {
             // Add the new status
@@ -208,16 +241,17 @@ class iContactProApi {
         } else {
             $aContact['status'] = 'normal';
         }
+
+        //echo "<pre>";print_r($aContact);die;
         // Make the call
         //echo("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts");
         $aContacts = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts", 'POST', array($aContact), 'contacts');
         // Return the contact
-        if(empty($aContacts)){
+        if (empty($aContacts)) {
             return false;
-        }else{
+        } else {
             return $aContacts[0];
         }
-        
     }
 
     /**
@@ -766,6 +800,10 @@ class iContactProApi {
         return $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts", 'GET');
     }
 
+    public function getContactsAll($limit, $offset) {  
+        return $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts?limit=$limit&offset=$offset", 'GET');
+    }
+
     /**
      * This method returns any set
      * errors in the current instance
@@ -1029,10 +1067,13 @@ class iContactProApi {
         }
     }
 
-    public function fetch_unsubscription_info($sStatus = 'unsubscribed') {
-        $unsubscibed_users = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/subscriptions?status=$sStatus", 'GET');
-        //$unsubscibed_users = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/subscriptions?status=$sStatus&addDate=$date&addDateSearchType=gte", 'GET');
+    public function fetch_unsubscription_info($sStatus = 'unsubscribed', $listId = '2') {
+        $unsubscibed_users = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/subscriptions?listid=$listId&status=$sStatus", 'GET');
         return $unsubscibed_users;
     }
 
+    public function fetch_icontact_id($email) { 
+        $get_contact_info = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/contacts?email={$email}", 'GET');
+        return $get_contact_info;
+    }
 }
