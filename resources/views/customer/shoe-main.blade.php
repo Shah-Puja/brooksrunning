@@ -1,6 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 <link rel="stylesheet" href="/css/main.css">
+<style>.pdp-display-none{ display:none!important;}</style>
 <section class="shoe-main-container">
 <section class="create-account--header plp-header">
 	<div class="wrapper">
@@ -28,17 +29,17 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="shoes-wrapper-container">
-				<div class="mob-12 col-6">
-					<div class="shoes-wrapper__sub">
+				<div class="mob-12 {{ ($shop_women_url=='' && $shop_men_url !='') ? 'col-12' : 'col-6' }}">
+					<div class="shoes-wrapper__sub {{ ($shop_men_url==''  && $shop_women_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-								 @if(isset($shop_men_url))
+								 @if(isset($shop_men_url) && $shop_men_url!='')
 									<a href="/{{$shop_men_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt=""></a>
 								 @else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt="">
 								 @endif
 								</div>
-								@if(isset($shop_men_url))
+								@if(isset($shop_men_url) && $shop_men_url!='') 
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
@@ -48,17 +49,18 @@
 							</div>
 					</div>
 				</div>
-				<div class="mob-12 col-6">
-					<div class="shoes-wrapper__sub">
+
+				<div class="mob-12 {{ ($shop_men_url==''  && $shop_women_url !='') ? 'col-12' : 'col-6' }}">
+					<div class="shoes-wrapper__sub {{ ($shop_women_url==''  && $shop_men_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
-									@if(isset($shop_women_url))
+									@if(isset($shop_women_url) && $shop_women_url!='')
 									<a href="/{{$shop_women_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt=""></a>
 									@else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
 									@endif
 								</div>
-								@if(isset($shop_women_url))
+								@if(isset($shop_women_url) && $shop_women_url!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_women_url}}">Shop Women's</a></span>
