@@ -39,7 +39,9 @@ class testicontact extends Controller {
 
     public function pull_from_icontact() {
         $icontact_id_arr = array();
-        $list = $this->client->getContacts();
+        $limit=10;
+        $offset=0;
+        $list = $this->client->getContacts($limit,$offset);
         echo "<pre>".print_r($list)."</pre>";
 
         /*foreach ($unsubscribers as $unsubscribed_user) {

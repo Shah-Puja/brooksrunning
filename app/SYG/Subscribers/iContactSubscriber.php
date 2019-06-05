@@ -13,8 +13,8 @@ class iContactSubscriber implements iContactSubscriberInterface {
     public function __construct(iContactProApi $client) {
         $this->client = $client;
     }
-    public function getContacts(){
-        $response = $this->client->getContactsAll(1000, 0);
+    public function getContacts($limit,$offset){
+        $response = $this->client->getContactsAll($limit,$offset);
         return $response;
     }
 
