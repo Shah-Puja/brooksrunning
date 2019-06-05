@@ -14,7 +14,7 @@ class iContactSubscriber implements iContactSubscriberInterface {
         $this->client = $client;
     }
     public function getContacts(){
-        $response = $this->client->getContacts();
+        $response = $this->client->getContactsAll(1000, 0);
         return $response;
     }
 
