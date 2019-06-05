@@ -13,6 +13,10 @@ class iContactSubscriber implements iContactSubscriberInterface {
     public function __construct(iContactProApi $client) {
         $this->client = $client;
     }
+    public function getContacts(){
+        $response = $this->client->getContacts();
+        return $response;
+    }
 
     public function updateoradd_Subscriber($subscriber) {
         $email = $subscriber['email'];

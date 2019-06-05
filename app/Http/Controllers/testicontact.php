@@ -37,6 +37,23 @@ class testicontact extends Controller {
         die;
     }
 
+    public function pull_from_icontact() {
+        $icontact_id_arr = array();
+        $list = $this->client->getContacts();
+        echo "<pre>".print_r($list)."</pre>";
+
+        /*foreach ($unsubscribers as $unsubscribed_user) {
+            //update user table users to unsubscribed status
+            if ($unsubscribed_user->status == "unsubscribed") {
+                $contact_id = $unsubscribed_user->contactId;
+                $icontact_id_arr[] = $contact_id;
+            }
+        }
+        User::whereIn('icontact_id', $icontact_id_arr)->update(['icontact_subscribed' => 'No']);
+        echo "success";
+        die;*/
+    }
+
     public function fetch_icontact_ids_in_web() {
         $user_arr = array();
         $users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(10)->get();
