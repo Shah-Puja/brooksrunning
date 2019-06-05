@@ -56,6 +56,8 @@ class EventController extends Controller {
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
                                     ->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
+                                 //dd($other_upcoming_events);
+              
                 }
             }
             $all_events = event::where('status', 'Y')->where(function($q) use ($where) {
@@ -71,7 +73,6 @@ class EventController extends Controller {
                            
         } else {
             $all_events = event::where('status', 'Y')->whereRaw('date >= CURDATE()')->orderBy('date', 'asc')->get();
-            //dd($all_events)
             $other_upcoming_events = event::where('status', 'Y')->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
         }
         //echo "<pre>";print_r($other_upcoming_events);die;
