@@ -48,6 +48,7 @@ class testicontact extends Controller {
             echo "<br>".$subscriber->email." - ".$subscriber->contactId." - ".$subscriber->status;
             $contact_arr[]=array('email'=>$subscriber->email,'contactid'=>$subscriber->contactId,'status'=>$subscriber->status);
         }
+        DB::table('users_icontact')->insert($contact_arr);
         echo "<pre>".print_r($contact_arr)."</pre>";
 
         /*foreach ($unsubscribers as $unsubscribed_user) {
