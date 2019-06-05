@@ -37,12 +37,15 @@ class testicontact extends Controller {
         die;
     }
 
-    public function pull_from_icontact() {
+    public function pull_from_icontact($runcnt) {
         $icontact_id_arr = array();
         $limit=10;
-        $offset=0;
-        $list = $this->client->getContacts($limit,$offset);
-        echo "<pre>".print_r($list)."</pre>";
+        $offset=($runcnt-1)*$limit;        
+        $subscribers = $this->client->getContacts($limit,$offset);
+        foreach($subscribers->contacts as $subscriber){
+            echo "<br>".$subscriber->email." - ".$subscriber->contactId;
+        }
+        //echo "<pre>".print_r($list)."</pre>";
 
         /*foreach ($unsubscribers as $unsubscribed_user) {
             //update user table users to unsubscribed status
