@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\SYG\Subscribers\iContactProApi;
 use App\SYG\Subscribers\iContactSubscriberInterface;
 use App\Models\User;
+use DB;
 
 class testicontact extends Controller {
 
@@ -42,10 +43,12 @@ class testicontact extends Controller {
         $limit=10;
         $offset=($runcnt-1)*$limit;        
         $subscribers = $this->client->getContacts($limit,$offset);
+        $contact_arr=array();
         foreach($subscribers->contacts as $subscriber){
-            echo "<br>".$subscriber->email." - ".$subscriber->contactId;
+            echo "<br>".$subscriber->email." - ".$subscriber->contactId." - ".$subscriber->status;
+            $contact_arr[]=array('email'=>$subscriber->email,'contactid'=>$subscriber->contactId,'status'=>$subscriber->status);
         }
-        //echo "<pre>".print_r($list)."</pre>";
+        echo "<pre>".print_r($contact_arr)."</pre>";
 
         /*foreach ($unsubscribers as $unsubscribed_user) {
             //update user table users to unsubscribed status
