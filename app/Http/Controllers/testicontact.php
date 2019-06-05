@@ -40,7 +40,7 @@ class testicontact extends Controller {
 
     public function pull_from_icontact($runcnt) {
         $icontact_id_arr = array();
-        $limit=10;
+        $limit=5000;
         $offset=($runcnt-1)*$limit;        
         $subscribers = $this->client->getContacts($limit,$offset);
         $contact_arr=array();
