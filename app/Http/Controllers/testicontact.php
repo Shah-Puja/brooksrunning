@@ -33,7 +33,7 @@ class testicontact extends Controller {
                 $icontact_id_arr[] = $contact_id;
             }
         }
-        User::whereIn('icontact_id', $icontact_id_arr)->first()->update(['icontact_subscribed' => 'No']);
+        User::whereIn('icontact_id', $icontact_id_arr)->update(['icontact_subscribed' => 'No']);
         echo "success";
         die;
     }
@@ -69,7 +69,7 @@ class testicontact extends Controller {
         foreach ($users as $key => $user_info) {
             $icontact_id = $this->client->fetch_icontact_id($user_info->email);
             if ($icontact_id != 0) {
-                User::where('email', $user_info->email)->first()->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $icontact_id]);
+                User::where('email', $user_info->email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $icontact_id]);
             } else {
                 $user = User::where('email', $user_info->email)->first();
                 $person_arr = array('name' => $user->first_name . " " . $user->last_name, 'email' => trim($user->email), 'gender' => $user->gender, 'birth_day' => $user->birth_date,
@@ -84,8 +84,7 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        //$users = User::where('icontact_subscribed', NULL)->orWhere('icontact_subscribed', '')->orderBy('id', 'desc')->limit(10)->get();
-        $users = User::where('icontact_id', 0)->limit(10)->get();
+        $users = User::where('icontact_subscribed', 'Queue')->orderBy('id', 'desc')->limit(1000)->get();
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>" . $email;
@@ -95,7 +94,7 @@ class testicontact extends Controller {
                 'shoe_wear' => $user->shoe_wear, 'happy_runner_comp' => $user->contest_code, 'ad_tracking' => $user->source);
             $this->client->add_icontactSubscriber($person_arr);
         }
-        echo "<br>" . "30 Users inserted in iContact";
+        echo "<br>" . "1000 Users inserted in iContact";
     }
 
 }
