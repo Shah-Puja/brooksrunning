@@ -478,6 +478,8 @@ class iContactProApi {
         }
         // Check for set errors
         if (!empty($this->aErrors)) {
+            print_r($this->aErrors);
+            exit;
             throw new \Exception('Errors have occurred and the system cannot continue.  Use getErrors() for details.');
         }
         // Check for a total
