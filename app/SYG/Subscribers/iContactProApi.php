@@ -3,7 +3,6 @@
 namespace App\SYG\Subscribers;
 
 use App\SYG\Subscribers\SubscriberInterface;
-use Exception;
 
 /**
  * @name iContactProApi
@@ -479,7 +478,7 @@ class iContactProApi {
         }
         // Check for set errors
         if (!empty($this->aErrors)) {
-            throw new Exception('Errors have occurred and the system cannot continue.  Use getErrors() for details.');
+            throw new \Exception('Errors have occurred and the system cannot continue.  Use getErrors() for details.');
         }
         // Check for a total
         if (!empty($aResponse->total)) {
