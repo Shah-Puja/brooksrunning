@@ -121,7 +121,7 @@
                     <div class="event-findmore-btn">
                     @foreach($series_event as $series_events) 
                     @if($city==$series_events->city)    
-                        <a href="{{$series_events->page_link}}" class="primary-button">Find Out More </a>
+                        <a href="{{$series_events->link}}" class="primary-button">Find Out More </a>
                         @endif 
                         @endforeach
                     </div>
