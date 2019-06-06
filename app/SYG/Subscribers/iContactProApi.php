@@ -293,15 +293,9 @@ class iContactProApi {
             'publicname' => $sPublicName
         );
         // Make the call
-        try{
-            $aLists = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/lists", 'POST', array($aList), 'lists');
-            // Return the list
-            return $aLists[0];
-        }
-        catch (Exception $e) {
-            echo "<br> Error Handled";
-            //exit;
-        }
+        $aLists = $this->makeCall("/a/{$this->getCompanyId()}/c/{$this->getProfileId()}/lists", 'POST', array($aList), 'lists');
+        // Return the list
+        return $aLists[0];
     }
 
     /**
