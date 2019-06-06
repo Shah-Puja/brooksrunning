@@ -37,7 +37,9 @@ class EventController extends Controller {
     }
 
     public function new_events_listing(Request $request) {
+        
         $month = $year = $when = $where = '';
+       
         if ($request->isMethod('post')) {
             //echo "<pre>";print_r(request()->all());die;
             if ($request->when != '') {
@@ -56,10 +58,11 @@ class EventController extends Controller {
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
                                     ->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
-                                 //dd($other_upcoming_events);
+                                    //dd($other_upcoming_events);         
               
                 }
             }
+           
             $all_events = event::where('status', 'Y')->where(function($q) use ($where) {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
@@ -70,11 +73,17 @@ class EventController extends Controller {
                                 return $query->whereYear('date', $year);
                             })
                             ->whereRaw('date >= CURDATE()')->orderBy('date', 'asc')->get();
+
+                 if($request->when=='' && $request->where=='' ){
+                    $other_upcoming_events = event::where('status', 'Y')->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
+                 }           
+                               
                            
         } else {
             $all_events = event::where('status', 'Y')->whereRaw('date >= CURDATE()')->orderBy('date', 'asc')->get();
             $other_upcoming_events = event::where('status', 'Y')->whereRaw('date < CURDATE()')->orderBy('date', 'asc')->get();
         }
+       //dd($all_events);
         //echo "<pre>";print_r($other_upcoming_events);die;
         //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         //echo "<pre>";print_r($past_events);die;
