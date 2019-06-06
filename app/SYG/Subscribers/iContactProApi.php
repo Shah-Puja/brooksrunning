@@ -3,6 +3,7 @@
 namespace App\SYG\Subscribers;
 
 use App\SYG\Subscribers\SubscriberInterface;
+use Exception;
 
 /**
  * @name iContactProApi
