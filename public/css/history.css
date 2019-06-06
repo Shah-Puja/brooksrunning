@@ -4150,7 +4150,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub {
-    margin: 0px 0 -15px;
+    margin: 0px 0 5px;
   }
 }
 .shoe-main-container .shoes-container .shoes-wrapper-container .shoes-wrapper__sub .shoe-product {
