@@ -249,7 +249,7 @@
                         <form id="detail" action='' method='post' name='add_to_cart' onsubmit="return detail_validation();">
                             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}"> 
                             @if(!empty($width_names))  
-                            <div class="pdp-width pdp-width-title" style="display:none;">
+                            <div class="pdp-width pdp-width-title">
                                 <div class="row">
                                     <div class="mob-6  width-wrapper">
                                         <div class="main">
