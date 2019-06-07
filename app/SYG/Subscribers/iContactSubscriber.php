@@ -5,6 +5,7 @@ namespace App\SYG\Subscribers;
 use App\SYG\Subscribers\iContactProApi;
 use App\SYG\Subscribers\iContactSubscriberInterface;
 use App\Models\User;
+use DB;
 
 class iContactSubscriber implements iContactSubscriberInterface {
 
@@ -64,11 +65,11 @@ class iContactSubscriber implements iContactSubscriberInterface {
         try{
             $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code);
             if (empty($response)) {
-                User::where('email', $email)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
+                DB::table('users')->where('email', $email)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
             } else {
                 $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
                 //update in user table
-                User::where('email', $email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
+                DB::table('users')->where('email', $email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
             }
         }catch (\Exception $e) {
 
