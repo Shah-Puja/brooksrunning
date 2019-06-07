@@ -888,7 +888,7 @@
       .shoes-wrapper__sub{
           margin: 15px 0 50px;
           @media #{$mobile-only} {
-            margin: 0px 0 -15px;
+            margin: 0px 0 5px;
           }
       .shoe-product{
         position: relative;
