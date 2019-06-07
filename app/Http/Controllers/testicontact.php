@@ -84,7 +84,7 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        $users = User::where('icontact_subscribed', 'Queue')->orderBy('id', 'desc')->limit(1000)->get();
+        $users = User::where('icontact_subscribed', 'Queue')->orderBy('id', 'desc')->limit(6)->get();
         foreach ($users as $user) {
             $email = $user->email;
             echo "<br>" . $email;
