@@ -248,8 +248,8 @@
                         @endforeach
                         <form id="detail" action='' method='post' name='add_to_cart' onsubmit="return detail_validation();">
                             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}"> 
-                            
-                            <div class="pdp-width pdp-width-title">
+                            @if(!empty($width_names))  
+                            <div class="pdp-width pdp-width-title" style="display:none;">
                                 <div class="row">
                                     <div class="mob-6  width-wrapper">
                                         <div class="main">
@@ -259,7 +259,6 @@
                                 </div>
                              </div>
                             <div>
-                            @if(!empty($width_names))  
                                 @php
                                     $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
                                     $sorted_array=array();
@@ -285,8 +284,8 @@
                                     </ul>
                                 </div>   
                                 <input type="hidden" name="width_code" value="" />
-                            @endif
                             </div>
+                            @endif
 
                             @if(!empty($sizes))
                             <div class="size info-wrapper-field">
