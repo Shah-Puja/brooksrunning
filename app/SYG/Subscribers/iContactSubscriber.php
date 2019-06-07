@@ -5,6 +5,7 @@ namespace App\SYG\Subscribers;
 use App\SYG\Subscribers\iContactProApi;
 use App\SYG\Subscribers\iContactSubscriberInterface;
 use App\Models\User;
+use DB;
 
 class iContactSubscriber implements iContactSubscriberInterface {
 
@@ -40,7 +41,7 @@ class iContactSubscriber implements iContactSubscriberInterface {
         
     }
 
-    public function add_icontactSubscriber($subscriber) {
+    public function add_icontactSubscriber($subscriber,$userid) {
         $email = $subscriber['email'];
         $name = explode(" ", $subscriber['name']);
         $fname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[0] : "";
@@ -61,14 +62,18 @@ class iContactSubscriber implements iContactSubscriberInterface {
         $contest_code = isset($subscriber['contest_code']) ? $subscriber['contest_code'] : '';
         $happy_runner_comp = isset($subscriber['happy_runner_comp']) ? $subscriber['happy_runner_comp'] : '';
         //echo "<pre>";print_R($subscriber);die;
+        try{
+            $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code);
+            if (empty($response)) {
+                User::where('id', $userid)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
+            } else {
+                $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
+                //update in user table
+                User::where('id', $userid)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
+            }
+        }catch (\Exception $e) {
 
-        $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code);
-        if (empty($response)) {
-            User::where('email', $email)->first()->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
-        } else {
-            $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
-            //update in user table
-            User::where('email', $email)->first()->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
+            return $e->getMessage();
         }
     }
 
