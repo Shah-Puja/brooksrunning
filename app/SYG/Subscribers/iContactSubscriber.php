@@ -41,7 +41,7 @@ class iContactSubscriber implements iContactSubscriberInterface {
         
     }
 
-    public function add_icontactSubscriber($subscriber) {
+    public function add_icontactSubscriber($subscriber,$userid) {
         $email = $subscriber['email'];
         $name = explode(" ", $subscriber['name']);
         $fname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[0] : "";
@@ -65,11 +65,11 @@ class iContactSubscriber implements iContactSubscriberInterface {
         try{
             $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code);
             if (empty($response)) {
-                User::where('email', $email)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
+                User::where('id', $userid)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
             } else {
                 $subscriberesponse = $this->client->subscribeContactToList($response->contactId, 2, 'normal');
                 //update in user table
-                User::where('email', $email)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
+                User::where('id', $userid)->update(['icontact_subscribed' => 'Yes', 'icontact_id' => $response->contactId]);
             }
         }catch (\Exception $e) {
 
