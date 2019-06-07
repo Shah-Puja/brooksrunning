@@ -84,7 +84,7 @@ class testicontact extends Controller {
 
     //web to icontact
     public function push_to_icontact() {
-        $users = User::where('icontact_subscribed', 'Queue')->orderBy('id', 'desc')->limit(6)->get();
+        $users = User::where('icontact_id', NULL)->orWhere('icontact_id', '0')->orderBy('id', 'desc')->limit(6)->get();
         foreach ($users as $user) {
             $email = $user->email;
             $userid = $user->id;
@@ -93,7 +93,7 @@ class testicontact extends Controller {
             $person_arr = array('name' => $user->first_name . " " . $user->last_name, 'email' => trim($user->email), 'gender' => $user->gender, 'birth_day' => $user->birth_date,
                 'birth_month' => $user->birth_month, 'age' => $user->age_group, 'post_code' => $user->postcode, 'country' => $user->state,
                 'shoe_wear' => $user->shoe_wear, 'happy_runner_comp' => $user->contest_code, 'ad_tracking' => $user->source);
-            $this->client->add_icontactSubscriber($person_arr,$userid);
+            //$this->client->add_icontactSubscriber($person_arr,$userid);
         }
         echo "<br>" . "1000 Users inserted in iContact";
     }
