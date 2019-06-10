@@ -46,7 +46,7 @@ class icontactpush extends Command
     public function handle()
     {
         //
-        $users = User::where('icontact_id', NULL)->orWhere('icontact_id', '0')->orderBy('id', 'desc')->limit(10)->get();
+        $users = User::where('icontact_id', NULL)->orWhere('icontact_id', '0')->orderBy('id', 'desc')->limit(25)->get();
         foreach ($users as $user) {
             $email = $user->email;
             $userid = $user->id;
