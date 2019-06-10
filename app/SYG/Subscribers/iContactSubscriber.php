@@ -63,7 +63,7 @@ class iContactSubscriber implements iContactSubscriberInterface {
         $happy_runner_comp = isset($subscriber['happy_runner_comp']) ? $subscriber['happy_runner_comp'] : '';
         //echo "<pre>";print_R($subscriber);die;
         try{
-            $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code);
+            $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', $street, $street2, $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code, $happy_runner_comp);
             if (empty($response)) {
                 User::where('id', $userid)->update(['icontact_subscribed' => 'Rejected', 'icontact_id' => 0]);
             } else {
