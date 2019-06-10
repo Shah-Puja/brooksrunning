@@ -29,7 +29,12 @@ class Kernel extends ConsoleKernel
                 $schedule->command('s7_transfer_product_tables')                                    					
                     ->cron('35 2 * * *');       
                 $schedule->command('algolia:sync')
-                    ->cron('40 2 * * *'); 					   
+                    ->cron('40 2 * * *'); 
+                $schedule->command('icontact-push')
+                    ->cron('5 * * * *'); 
+                
+                
+                    
                 break;
             /*case 'dev' :                 
                 break;*/                
