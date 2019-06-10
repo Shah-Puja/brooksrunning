@@ -34,7 +34,7 @@ class EventController extends Controller {
 
     public function events_default() {
         return view('info.event-view.month');
-    }
+    } 
 
     public function new_events_listing(Request $request) {
         $month = $year = $when = $where = '';
