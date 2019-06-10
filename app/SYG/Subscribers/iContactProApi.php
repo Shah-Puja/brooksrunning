@@ -134,7 +134,7 @@ class iContactProApi {
      *
      * @return object
      * */
-    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null, $gender = null, $birth_date = null, $birth_month = null, $age = null, $ad_tracking = null, $shoe_wear = null, $country=null, $contest_code =null) {
+    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null, $gender = null, $birth_date = null, $birth_month = null, $age = null, $ad_tracking = null, $shoe_wear = null, $country=null, $contest_code =null, $happy_runner_comp =null) {
         // Valid statuses
         $aValidStatuses = array('normal', 'bounced', 'donotcontact', 'pending', 'invitable', 'deleted');
         // Contact placeholder
@@ -232,6 +232,10 @@ class iContactProApi {
 
         if(!empty($contest_code)){
             $aContact['contest_code'] = (string)$contest_code;
+        }
+
+        if(!empty($happy_runner_comp)){
+            $aContact['happy_runner_comp'] = (string)$happy_runner_comp;
         }
        
         // Check for a valid status
