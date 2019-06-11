@@ -193,21 +193,21 @@
 				<label>Where do you like to run?</label>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="road" name="likes_to_run" value="road">
-						<label for="likes_to_run">
+						<label for="road">
 								<div class="mark"><span></span></div>
 								<div class="text">Road</div>
 						</label>
 					</div>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="trail" name="likes_to_run" value="trail">
-						<label for="likes_to_run">
+						<label for="trail">
 								<div class="mark"><span></span></div>
 								<div class="text">Trail</div>
 						</label>
 					</div>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="gym" name="likes_to_run" value="gym">
-						<label for="likes_to_run">
+						<label for="gym">
 								<div class="mark"><span></span></div>
 								<div class="text">Gym</div>
 						</label>
@@ -221,28 +221,28 @@
 				<label>What experience do you prefer in your shoes?</label>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="cushion" name="experience_preference" value="cushion">
-						<label for="experience_preference">
+						<label for="cushion">
 								<div class="mark"><span></span></div>
 								<div class="text">Cushion (super soft)</div>
 						</label>
 					</div>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="energize" name="experience_preference" value="energize">
-						<label for="experience_preference">
+						<label for="energize">
 								<div class="mark"><span></span></div>
 								<div class="text">Energize (extra spring)</div>
 						</label>
 					</div>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="speed" name="experience_preference" value="speed">
-						<label for="experience_preference">
+						<label for="speed">
 								<div class="mark"><span></span></div>
 								<div class="text">Speed (propel your run)</div>
 						</label>
 					</div>
 					<div class="checklist-inline" style="display:block;">
 						<input type="checkbox" id="connect" name="experience_preference" value="connect">
-						<label for="experience_preference">
+						<label for="connect">
 								<div class="mark"><span></span></div>
 								<div class="text">Connect (lightweight)</div>
 						</label>
