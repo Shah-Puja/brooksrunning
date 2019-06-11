@@ -45,7 +45,7 @@ class meet_brooksController extends Controller {
         request()->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'gender' => 'required',
+            'gender' => 'sometimes|required',
             'email' => 'required|email',
             'country' => 'required',
             'postcode' => 'required|integer',
@@ -63,7 +63,10 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'country' => request('country'),
-                    'answer' => request('answer')
+                    'answer' => request('answer'),
+                    'training_for' => request('training_for'),
+                    'likes_to_run' => request('likes_to_run'),
+                    'experience_preference' => request('experience_preference')
                         ]
         );
 
