@@ -42,7 +42,21 @@
 		<div class="row">
 			<div class="ctg-wrapper-container">
 				@foreach($shoes_category_product as $items)
+				@php
+					$seo_name_women=''; $seo_name_men='';
+					if(isset($items->shop_men) && $items->shop_men!=''){
+						$shop_m = explode('_', $items->shop_men);
+						$seo_name_men = CategoryController::get_seo_name($shop_m['0'],$shop_m['1'],'m');
+						$shop_men_url = $seo_name_men."/".$items->shop_men.".html";
+					}
+					if(isset($items->shop_women) && $items->shop_women!=''){
+						$shop_w = explode('_', $items->shop_women);
+						$seo_name_women = CategoryController::get_seo_name($shop_w['0'],$shop_w['1'],'w');
+						$shop_women_url = $seo_name_women."/".$items->shop_women.".html";
+					}
+				@endphp
 				<div class="mob-6 tab-4 col-4">
+					@if($seo_name_men!='' || $seo_name_women!='')
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
@@ -69,19 +83,7 @@
 								<h3>{{ $items->shoe_name }}</h3>
 								<div class="shoes-type">{{ $items->shoe_category_desc }}</div>
 								<div class="ctg-btn clearfix">
-									@php
-										$seo_name_women=''; $seo_name_men='';
-										if(isset($items->shop_men) && $items->shop_men!=''){
-											$shop_m = explode('_', $items->shop_men);
-											$seo_name_men = CategoryController::get_seo_name($shop_m['0'],$shop_m['1'],'m');
-											$shop_men_url = $seo_name_men."/".$items->shop_men.".html";
-										}
-										if(isset($items->shop_women) && $items->shop_women!=''){
-											$shop_w = explode('_', $items->shop_women);
-											$seo_name_women = CategoryController::get_seo_name($shop_w['0'],$shop_w['1'],'w');
-											$shop_women_url = $seo_name_women."/".$items->shop_women.".html";
-										}
-									@endphp
+									
 									@if($items->shop_men != '' && $seo_name_men!='')
 									<span><a class="secondary-button" href="{{$shop_men_url}}">Men's</a></span>
 									@endif
@@ -92,6 +94,7 @@
 							</div>
 						</div>
 				   </div>
+				   @endif
 			   </div>
 			   @endforeach
 		    </div>

@@ -19,7 +19,7 @@
 				</div>
         
           <h1 class="br-mainheading">Cross Trainning Shoes</h1>
-            <p>Brooks’ cross training shoes are designed for anyone looking for great all-purpose shoes. These high-intensity shoes are constructed with quality materials to provide exceptional support and superior fit, making them suitable for taking you through hops, jumps, sprints and more. 
+            <p>Brook's cross training shoes are designed for anyone looking for great all-purpose shoes. These high-intensity shoes are constructed with quality materials to provide exceptional support and superior fit, making them suitable for taking you through hops, jumps, sprints and more. 
 			Providing flexibility in the forefoot for running, plus excellent lateral control for activities such as aerobics and tennis, our cross trainer shoes are an economical option if you enjoy participating in a variety of sports or like varying your workout routine.</p>
         </div>
       </div>
