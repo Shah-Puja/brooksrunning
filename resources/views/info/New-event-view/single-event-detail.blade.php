@@ -19,12 +19,12 @@
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-												<a href="JavaScript:Void(0);" class="active">{{ucwords(str_replace("-"," ",$single_event->slug))}}</a>
+												<a href="JavaScript:Void(0);" class="active">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</a>
 											</li>
 										</ul>
 									</div>
 								</div>
-							<h1 class="event-title">{{ucwords(str_replace("-"," ",$single_event->slug))}}</h1>
+							<h1 class="event-title">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</h1>
 						
 							<!-- <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p> -->
 						</div>
@@ -55,8 +55,8 @@
                     <img src="/images/new-events/generic_event_image.jpg">
                 @endif
             </div>
-            <h2>{{$single_event->event_date}} </h1>
-            <h4>{{$single_event->location}}</h4>
+            <h2>{{$single_event->date}} </h1>
+            <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>
             <div class="stay-tuned">
