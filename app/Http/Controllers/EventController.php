@@ -73,7 +73,7 @@ class EventController extends Controller {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
                             })->when($month, function ($query) use ($month) {
-                                return $query->whereRaw("MONTH(STR_TO_DATE(date,'%M %Y'))=$month")->whereRaw("MONTH(STR_TO_DATE(date,'%W %D %M %Y'))= $month");
+                                return $query->whereRaw("MONTH(STR_TO_DATE(date,'%M %Y'))=$month")->orwhereRaw("MONTH(STR_TO_DATE(date,'%W %D %M %Y'))= $month");
                             })
                             ->when($month, function ($query) use ($year) {
                                 return $query->whereRaw("YEAR(STR_TO_DATE(date,'%W %D %M %Y'))=$year");
