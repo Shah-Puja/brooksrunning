@@ -56,7 +56,7 @@
 					}
 				@endphp
 				<div class="mob-6 tab-4 col-4">
-					@if(isset($seo_name_men) && isset($seo_name_women))
+					@if($seo_name_men!='' || $seo_name_women!='')
 					<div class="ctg-wrapper__sub">
 						<div class="ctg-product">
 							<div class="offer-info">
