@@ -125,7 +125,7 @@
                     <div class="event-wrapper-container">
                         @if (count($all_events) > 0)
                         @foreach($all_events as $events)
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape"  event_id='{{$events->event_id}}'>
+                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape"  event_id='{{$events->id}}'>
                         
                              <div class="event-section">
                               @if(trim(empty($events->series)))

@@ -223,18 +223,20 @@ class CategoryController extends Controller
         if (in_array($shoe_type,$common_template)){    
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
-            
+            $shop_men_url='';
             if($shoe_info->shop_men != ''){
 				$shop_m = explode('_', $shoe_info->shop_men);
                 $seo_name = $this->get_seo_name($shop_m['0'],$shop_m['1'],'m');
+               
 				if($seo_name != ''){
                     $shop_men_url = $seo_name."/".$shoe_info->shop_men.".html";
 				}
             }
-
+            $shop_women_url='';
             if($shoe_info->shop_women != ''){
 				$shop_w = explode('_', $shoe_info->shop_women);
                 $seo_name = $this->get_seo_name($shop_w['0'],$shop_w['1'],'w');
+                
 				if($seo_name != ''){
                     $shop_women_url = $seo_name."/".$shoe_info->shop_women.".html";
 				}

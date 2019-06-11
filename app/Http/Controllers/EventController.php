@@ -37,7 +37,7 @@ class EventController extends Controller {
 
     public function events_default() {
         return view('info.event-view.month');
-    }
+    } 
 
     public function new_events_listing(Request $request) {
         
@@ -66,39 +66,20 @@ class EventController extends Controller {
                 }
             }
            //dd($year);
-           $event= event::where('status', 'YES')->where(function($q) use ($where) {
-            $q->where('state', 'like', '%' . $where . '%')
-            ->orWhere('country', 'like', '%' . $where . '%');
-        })->when($month, function ($query) use ($month) {
-            return $query->whereRaw(" MONTH(STR_TO_DATE(date,'%W %D %M %Y'))= $month");
-        })
-        ->when($month, function ($query) use ($year) {
-            return $query->whereRaw("YEAR(STR_TO_DATE(date,'%W %D %M %Y'))=$year");
-        })->get();
-
+           
+        
+             
             $all_events = event::where('status', 'YES')->where(function($q) use ($where) {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
                             })->when($month, function ($query) use ($month) {
-                                return $query->whereRaw("MONTH(STR_TO_DATE(date,'%M %Y')");
+                                return $query->whereRaw("MONTH(STR_TO_DATE(date,'%M %Y'))=$month")->whereRaw("MONTH(STR_TO_DATE(date,'%W %D %M %Y'))= $month");
                             })
                             ->when($month, function ($query) use ($year) {
-                                return $query->whereRaw("YEAR(STR_TO_DATE(date,'%M %Y'))");
+                                return $query->whereRaw("YEAR(STR_TO_DATE(date,'%W %D %M %Y'))=$year");
                             })->get();
-            foreach($events as $key=>$events){
-                $all_events[$key]=$events->id;
-                $all_events[$key]=$events->city;
-                $all_events[$key]=$events->state;
-                $all_events[$key]=$events->date;
-                $all_events[$key]=$events->country;
-                $all_events[$key]=$events->series;
-                $all_events[$key]=$events->event_name;
-                $all_events[$key]=$events->link;
-
-            }
-                            
-          dd($all_events);
-
+            
+               
                  if($request->when=='' && $request->where=='' ){
                     $other_upcoming_events = event::where('status', 'YES')->whereRaw("YEAR(STR_TO_DATE(date,'%M %Y')) > YEAR(CURDATE())")->get();
                  }           
@@ -109,7 +90,20 @@ class EventController extends Controller {
            
             $other_upcoming_events = event::where('status', 'YES')->whereRaw("YEAR(STR_TO_DATE(date,'%M %Y')) > YEAR(CURDATE())")->get();
             
-           
+            // $events = event::where('status', 'YES')->get();
+            
+            // $all_events = collect($events)->filter(function ($value, $key) {
+            //     $date = date('Y-m-d',strtotime($value->date));
+            //     $curr_date = date('Y-m-d');
+            //     if($date > $curr_date ) {
+            //         return $value;
+            //     }
+            
+            // });
+            
+            // echo "<pre>";
+            // print_r($all_events);
+            // exit;
         
             
         }

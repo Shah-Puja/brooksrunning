@@ -132,12 +132,10 @@ Route::get('/events', 'EventController@events_view');
 Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
 Route::get('/month', 'EventController@events_default'); 
-
-/* New events page */
 Route::get('/events-listing', 'EventController@new_events_listing'); 
 Route::post('/events-listing', 'EventController@new_events_listing'); 
 Route::get('/events-listing/single-event/{one_event}', 'EventController@new_single_event'); 
-Route::get('/events-listing/series-event/{series_event}/{city}', 'EventController@new_series_event'); 
+Route::get('/events-listing/series-event/{series}/{country}', 'EventController@new_series_event'); 
 Route::get('/events-listing/series-blurb-event', 'EventController@new_series_blurb_per_race_event'); 
 Route::get('/events-listing/series-static-event', 'EventController@new_series_static_event'); 
 
@@ -198,7 +196,8 @@ Route::get('/manual_ap21order_push/{order_id}', 'Manual_ap21order_push@manual_ap
 //Route::get('/move/table', 'MovetableController@index'); 
 
 Route::get('/d/testicontact/add', 'testicontact@add');
+Route::get('/d/testicontact/pull_from_icontact/{run_cnt}', 'testicontact@pull_from_icontact');
 Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
-
+Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
