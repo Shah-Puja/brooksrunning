@@ -6,6 +6,7 @@ use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\Competition;
 use App\Models\Competition_user;
+use App\Models\Icontact_pushmail;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\Jobs\ProcessCompetition;
@@ -69,6 +70,26 @@ class meet_brooksController extends Controller {
                     'experience_preference' => request('experience_preference')
                         ]
         );
+
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+            ['email' => request('email'), 'comp_name' => request('comp_name')], [
+        'source' => 'Competition', 
+        'fname' => request('fname'),
+        'lname' => request('lname'),
+        'gender' => request('gender'),
+        'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
+        'age_group' => request('custom_Age'),
+        'postcode' => request('postcode'),
+        'shoe_wear' => request('custom_Shoes_you_wear'),
+        'country' => request('country'),
+        'answer' => request('answer'),
+        'status'=> 'queue',
+        'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+        'training_for' => request('training_for'),
+        'likes_to_run' => request('likes_to_run'),
+        'experience_preference' => request('experience_preference')
+            ]
+);
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => request('fname'),
