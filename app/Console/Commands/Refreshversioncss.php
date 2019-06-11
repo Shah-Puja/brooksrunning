@@ -38,6 +38,7 @@ class Refreshversioncss extends Command
      */
     public function handle()
     {
+        Cache::forget('css_version_number');
         Cache::rememberForever('css_version_number', function () {
             return time();
         });
