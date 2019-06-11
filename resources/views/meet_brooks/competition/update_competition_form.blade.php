@@ -142,31 +142,7 @@
 				
 			</div>
 		</div>
-		<!-- <div class="tab-6">
-			<div class="input-wrapper">
-				<label>What Brooks Shoes do you wear?</label>
-				
-						<select class="select-field" name="custom_Shoes_you_wear" id="custom_Shoes_you_wear" style="margin-bottom: 0px;">
-							<option class="option-value" value="">Select Brooks Shoes you wear</option>
-							<option class="option-value" value="Addiction">Addiction</option>
-							<option class="option-value" value="Addiction Walker">Addiction Walker</option>
-							<option class="option-value" value="Adrenaline GTS">Adrenaline GTS</option>
-							<option class="option-value" value="Ariel">Ariel</option>
-							<option class="option-value" value="Beast">Beast</option>
-							<option class="option-value" value="Cascadia">Cascadia</option>
-							<option class="option-value" value="Dyad">Dyad</option>
-							<option class="option-value" value="Ghost">Ghost</option>
-							<option class="option-value" value="Glycerin">Glycerin</option>
-							<option class="option-value" value="Launch">Launch</option>
-							<option class="option-value" value="Levitate">Levitate</option>
-							<option class="option-value" value="PureCadance">PureCadance</option>
-							<option class="option-value" value="PureFlow">PureFlow</option>
-							<option class="option-value" value="Ravenna">Ravenna</option>
-							<option class="option-value" value="Transcend">Transcend</option>
-							<option class="option-value" value="Other">Other</option>
-						</select>
-			</div>
-		</div> -->
+		
 	</div>
 	<!--<div class="row">
 		<div class="tab-6">
@@ -180,28 +156,28 @@
 		<div class="tab-6">
 			<div class="input-wrapper">
 				<label>What are you training for?</label>
-				<div class="radio-inline" style="display: block;">
+				<div class="radio-inline new-comp-update-details">
 					<input type="radio" class="input-radio" name="training_for" value="health_and_wellbeing" id="health_and_wellbeing">
 					<label for="health_and_wellbeing">
 						<div class="mark"><span></span></div>
 						<div class="text">Health and wellbeing</div>
 					</label>
 				</div>
-				<div class="radio-inline" style="display: block;">
+				<div class="radio-inline new-comp-update-details">
 					<input type="radio" class="input-radio" name="training_for" value="5k" id="5k">
 					<label for="5k">
 						<div class="mark"><span></span></div>
 						<div class="text">5k</div>
 					</label>
 				</div>
-				<div class="radio-inline" style="display: block;">
+				<div class="radio-inline new-comp-update-details">
 					<input type="radio" class="input-radio" name="training_for" value="10k" id="10k">
 					<label for="10k">
 						<div class="mark"><span></span></div>
 						<div class="text">10k</div>
 					</label>
 				</div>
-				<div class="radio-inline" style="display: block;">
+				<div class="radio-inline new-comp-update-details">
 					<input type="radio" class="input-radio" name="training_for" value="42k" id="42k">
 					<label for="42k">
 						<div class="mark"><span></span></div>

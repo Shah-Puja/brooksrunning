@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <style>
   @media only screen and (min-device-width: 480px) 
                    and (max-device-width: 640px) 
