@@ -6,7 +6,7 @@
 				<input type="text" name="fname"  class="input-field">
 			</div>
 		</div>
-		<div class="tab-6">
+		<div class="tab-6"> 
 			<div class="input-wrapper">
 				<label for=""><sup>*</sup>Last Name</label>
 				<input type="text" name="lname" class="input-field">
