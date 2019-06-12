@@ -157,7 +157,7 @@
 			<div class="input-wrapper">
 				<label>What are you training for?</label>
 				<div class="radio-inline new-comp-update-details">
-					<input type="radio" class="input-radio" name="training_for" value="health_and_wellbeing" id="health_and_wellbeing">
+					<input type="radio" class="input-radio" name="training_for" value="health and wellbeing" id="health_and_wellbeing">
 					<label for="health_and_wellbeing">
 						<div class="mark"><span></span></div>
 						<div class="text">Health and wellbeing</div>
