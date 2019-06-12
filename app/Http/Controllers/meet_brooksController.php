@@ -53,46 +53,46 @@ class meet_brooksController extends Controller {
             'postcode' => 'required|integer',
             'g-recaptcha-response' => ['required', $recaptcha],
         ]);
-        
+
         $competition = Competition_user::firstOrCreate(
                         [
-                            'email' => request('email'), 'comp_name' => request('comp_name')], [
-                            'comp_slug' => request('comp_slug'),
-                            'fname' => request('fname'),
-                            'lname' => request('lname'),
-                            'gender' => request('gender'),
-                            'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
-                            'age_group' => request('custom_Age'),
-                            'postcode' => request('postcode'),
-                            'shoe_wear' => request('custom_Shoes_you_wear'),
-                            'country' => request('country'),
-                            'answer' => request('answer'),
-                            'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
-                            'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',',$request['likes_to_run']) : null,
-                            'experience_preference' => (isset($request['experience_preference'])) ? implode(',',$request['experience_preference']) : null,
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
+                    'comp_slug' => request('comp_slug'),
+                    'fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'answer' => request('answer'),
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
                         ]
         );
 
-        /*$icontact_pushmail = Icontact_pushmail::firstOrCreate(
-            [
-                'email' => request('email'), 'comp_name' => request('comp_name')], [
-                'source' => 'Competition', 
-                'fname' => request('fname'),
-                'lname' => request('lname'),
-                'gender' => request('gender'),
-                'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
-                'age_group' => request('custom_Age'),
-                'postcode' => request('postcode'),
-                'shoe_wear' => request('custom_Shoes_you_wear'),
-                'country' => request('country'),
-                'answer' => request('answer'),
-                'status'=> 'queue',
-                'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-                'training_for' => request('training_for'),
-                'likes_to_run' => (request('likes_to_run')!='') ? implode(',',request('likes_to_run')) : "",
-                'experience_preference' => (request('experience_preference')!='') ? implode(',',request('experience_preference')) : "",
-            ]
-);*/
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        [
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
+                    'source' => 'Competition',
+                    'fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'answer' => request('answer'),
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
+                        ]
+        );
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => request('fname'),
