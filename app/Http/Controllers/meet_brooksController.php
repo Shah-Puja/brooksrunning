@@ -47,13 +47,13 @@ class meet_brooksController extends Controller {
         request()->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'gender' => 'sometimes|required|in:male,female',
+            'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
             'postcode' => 'required|integer',
             'g-recaptcha-response' => ['required', $recaptcha],
         ]);
-
+        
         $competition = Competition_user::firstOrCreate(
                         [
                             'email' => request('email'), 'comp_name' => request('comp_name')], [
@@ -67,9 +67,9 @@ class meet_brooksController extends Controller {
                             'shoe_wear' => request('custom_Shoes_you_wear'),
                             'country' => request('country'),
                             'answer' => request('answer'),
-                            'training_for' => request('training_for'),
-                            'likes_to_run' => (request('likes_to_run')!='') ? implode(',',request('likes_to_run')) : "",
-                            'experience_preference' => (request('experience_preference')!='') ? implode(',',request('experience_preference')) : "",
+                            'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                            'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',',$request['likes_to_run']) : null,
+                            'experience_preference' => (isset($request['experience_preference'])) ? implode(',',$request['experience_preference']) : null,
                         ]
         );
 
