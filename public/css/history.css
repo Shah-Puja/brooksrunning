@@ -6818,7 +6818,7 @@ textarea {
 .tabbedcontent ul.event_tabs li.current .event-series-header:before {
   content: "";
   position: absolute;
-  left: 45px;
+  left: 90px;
   bottom: 0;
   height: 1px;
   width: 45%;
