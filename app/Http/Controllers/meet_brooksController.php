@@ -73,7 +73,7 @@ class meet_brooksController extends Controller {
                         ]
         );
 
-        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+        /*$icontact_pushmail = Icontact_pushmail::firstOrCreate(
             [
                 'email' => request('email'), 'comp_name' => request('comp_name')], [
                 'source' => 'Competition', 
@@ -92,7 +92,7 @@ class meet_brooksController extends Controller {
                 'likes_to_run' => (request('likes_to_run')!='') ? implode(',',request('likes_to_run')) : "",
                 'experience_preference' => (request('experience_preference')!='') ? implode(',',request('experience_preference')) : "",
             ]
-);
+);*/
 
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => request('fname'),
