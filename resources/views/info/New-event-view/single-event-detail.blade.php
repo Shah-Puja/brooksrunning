@@ -34,9 +34,9 @@
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 @if($single_event->banner!='')
-                    <img src="/images/new-events/banner/{{str_replace("_"," ",$single_event->banner)}}">
+                    <img src="{{config('site.image_url.base_event_img')}}banner/{{$single_event->banner}}">
                 @else
-                    <img src="/images/new-events/generic_event_header.png">
+                    <img src="{{config('site.image_url.base_event_img')}}generic_event_header.png">
                 @endif
             </div>
 		</div>
@@ -50,12 +50,12 @@
       	    <div class="about-header">
             <div class="event-logo">
                 @if($single_event->logo!='')
-                    <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
+                    <img src="{{config('site.image_url.base_event_img')}}monthly/logo/{{$single_event->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg">
                 @endif
             </div>
-            <h2>{{$single_event->date}} </h1>
+            <h2>{{date('D d M Y',strtotime($single_event->date_str))}} </h1>
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>

@@ -131,7 +131,7 @@
                               @if(trim(empty($events->series)))
                                 <a href="/events-listing/single-event/{{$events->event_name}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->series}}/{{explode(',', $events->city)[0]}}" >
+                                <a href="/events-listing/series-event/{{$events->series}}/{{$events->city}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($events->logo))  
@@ -144,18 +144,18 @@
                                 @if(trim(empty($events->series)))
                                 <a href="/events-listing/single-event/{{$events->event_name}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->series}}/{{explode(',', $events->city)[0]}}" >
+                                <a href="/events-listing/series-event/{{$events->series}}/{{$events->city}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $events->event_name }}</h3>
                                         <div class="event-info-sub">
-                                            @if(!empty($events->date))
+                                            @if(!empty($events->date_str))
                                             <div class="date">
                                             <!-- @php
                                             $myTime = strtotime($events->date);
                                             $newTime = date('l jS  F Y', $myTime);
                                             @endphp -->
-                                                {{$events->date}}
+                                                {{$events->date_str}}
                                             </div> 
                                             @endif 
                                             <div class="location">{{ $events->city }}</div>
@@ -190,30 +190,27 @@
                             @if(empty(trim($upcoming_events->series)))
                                 <a href="/events-listing/single-event/{{$upcoming_events->event_name}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{explode(',', $upcoming_events->city)[0]}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{$upcoming_events->city}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
-                                        <img id="event-img" src="/images/events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
+                                        <img id="event-img" src="{{config('site.image_url.base_event_img')}}monthly/logo/{{ $upcoming_events->logo }}" alt="">
                                         @else 
-                                        <img src="/images/events/generic_event_image.jpg" alt="mothers-dayimg" />
+                                        <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg" alt="mothers-dayimg" />
                                         @endif  
                                     </div>
                                 </a>
                                 @if(empty(trim($upcoming_events->series)))
                                 <a href="/events-listing/single-event/{{$upcoming_events->event_name}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{explode(',', $upcoming_events->city)[0]}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{$upcoming_events->city}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
-                                        @if(!empty($upcoming_events->date))
-                                             @php 
-                                            $time=strtotime($upcoming_events->date);
-                                            $year=date("Y",$time);
-                                            @endphp
-                                          <div class="date">{{$upcoming_events->date}}</div>
+                                        @if(!empty($upcoming_events->date_str))
+                                             
+                                          <div class="date">{{$upcoming_events->date_str}}</div>
                                            @endif
                                             <div class="location">{{ $upcoming_events->city }}</div></div>
                                     </div>

@@ -33,9 +33,9 @@
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 @if($event_name->banner!='')
-                    <img src="/images/new-events/banner/{{$event_name->banner}}">
+                    <img src="{{config('site.image_url.base_event_img')}}banner/{{$event_name->banner}}">
                 @else
-                    <img src="/images/new-events/generic_event_header.png">
+                    <img src="{{config('site.image_url.base_event_img')}}generic_event_header.png">
                 @endif
             </div>
 		</div>
@@ -49,9 +49,9 @@
       	    <div class="about-header">
             <div class="event-logo">
                 @if($event_name->logo!='')
-                    <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
+                    <img src="{{config('site.image_url.base_event_img')}}monthly/logo/{{$event_name->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg">
                 @endif
             </div>
 
@@ -64,7 +64,8 @@
                         <li class="tab-link @if($city==$series_events->city) echo current @endif " data-tab="{{$series_events->id}}">
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
-                             <h3> {{date('D d M Y',strtotime($series_events->date))}}</h3>
+                              
+                             <h3> {{date('D d M Y',strtotime($series_events->date_str))}}</h3>
                             <h3> {{$series_events->city}}</h3>
                             </div>
                         </li>
@@ -95,8 +96,12 @@
                                         <li class="tab-link" data-tab="{{$series_events->id}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_name}} </h2>
-                                            <h3>{{date('D d M Y',strtotime($series_events->date))}}</h3>
-                                            <h3>{{$series_events->city}}</h3>
+                                           
+                                            
+                                            
+                                             <h3>{{date('D d M Y',strtotime($series_events->date_str))}}</h3>
+                                             
+                                            
                                             </div>
                                         </li>
                                     </div>
