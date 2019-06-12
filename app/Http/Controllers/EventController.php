@@ -147,4 +147,14 @@ class EventController extends Controller {
         return view('info.New-event-view.series-event-blurb-per-race-detail');
     }
 
+
+    public function static() {
+        return view('info.New-event-view.static_single');
+    }
+
+    public function series_static() {
+        return view('info.New-event-view.static_series');
+    }
+
+
 }
