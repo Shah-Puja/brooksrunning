@@ -211,7 +211,6 @@ $last_word = $matches[0];
 @endphp 
 @if($last_word!='shoefinder')
 <script>
-  
   /*Freeze top navigation*/  
     $(window).scroll(function(){
         if ($(window).scrollTop() >= 147) {
