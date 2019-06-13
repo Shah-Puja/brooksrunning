@@ -77,7 +77,7 @@ class EventController extends Controller {
                                 return $query->whereRaw("MONTH(event_dt)=$month");
                             })
                             ->when($month, function ($query) use ($year) {
-                                return $query->whereRaw("YEAR(event_dt)=$year");
+                                return $query->whereRaw("YEAR(event_dt)=$year ");
                             })->whereRaw("event_dt > CURDATE()")->get();
             
                
@@ -87,12 +87,14 @@ class EventController extends Controller {
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->get();
+            $all_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->orderBy('event_dt','ASC')->get();
            
-            $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
+            $other_upcoming_event = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
             
+             $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
+                return $product['year'].$product['month'];
+            });
            
-        
             
         }
     
@@ -120,7 +122,7 @@ class EventController extends Controller {
         $event_name=event::where('series',$series_event)->first();
        
 
-        $series_event=event::where('series',$series_event)->get();
+        $series_event=event::where('series',$series_event)->orderBy('year','ASC')->get();
         
         
        
