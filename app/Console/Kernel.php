@@ -30,7 +30,8 @@ class Kernel extends ConsoleKernel
                     ->cron('45 2 * * *');       
                 $schedule->command('algolia:sync')
                     ->cron('50 2 * * *');
-                        
+                $schedule->command('icontact-queue-push')
+                    ->everyFiveMinutes();        
                 /*$schedule->command('icontact-push')
                     ->everyFiveMinutes(); */                                               
                 break;
