@@ -99,7 +99,7 @@
                                            
                                             
                                             
-                                             <h3>{{date('D d M Y',strtotime($series_events->date_str))}}</h3>
+                                             <h3>{{$series_events->date_str}}</h3>
                                              
                                             
                                             </div>

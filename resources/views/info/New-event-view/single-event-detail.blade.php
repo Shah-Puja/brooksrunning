@@ -55,7 +55,7 @@
                     <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg">
                 @endif
             </div>
-            <h2>{{date('D d M Y',strtotime($single_event->date_str))}} </h1>
+            <h2>{{$single_event->date_str}} </h1>
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>

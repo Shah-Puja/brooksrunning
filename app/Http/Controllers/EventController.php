@@ -60,7 +60,7 @@ class EventController extends Controller {
                                         $q->where('state', 'like', '%' . $where . '%')
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
-                                    ->whereRaw("event_dt > CURDATE()")->get();
+                                    ->whereRaw("event_dt=00")->get();
                                     //dd($other_upcoming_events);         
               
                 }
