@@ -65,7 +65,7 @@
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
-                             <h3> {{date('D d M Y',strtotime($series_events->date_str))}}</h3>
+                             <h3> {{$series_events->date_str}}</h3>
                             <h3> {{$series_events->city}}</h3>
                             </div>
                         </li>
