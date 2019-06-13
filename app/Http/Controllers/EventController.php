@@ -54,6 +54,7 @@ class EventController extends Controller {
             }
             if ($request->where != '') {
                 $where = $request->where;
+               
                 //display other upcoming events
                 if ($request->when == '') {
                     $other_upcoming_events = event::where('status', 'YES')->where(function($q) use ($where) {
@@ -81,7 +82,7 @@ class EventController extends Controller {
             
                
                  if($request->when=='' && $request->where=='' ){
-                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->get();
+                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
                  }           
                                
                            
