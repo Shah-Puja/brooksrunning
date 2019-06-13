@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <section class="header-img--banner">
 <div class="wrapper">
 		<div class="row">
