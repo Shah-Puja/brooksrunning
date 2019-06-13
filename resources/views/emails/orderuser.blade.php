@@ -152,7 +152,13 @@
                                                 <td align="center">
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 
-                                                    <h3 style="line-height: 0.2px; font-weight: normal;">Order Date : {{ date('d F Y', strtotime($order->updated_at)) }}</h3>
+                                                    <h3 style="line-height: 0.2px; font-weight: normal;">
+                                                    @if($order->transaction_dt!='')
+                                                        Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}
+                                                    @else
+                                                        Order Date : {{ date('d F Y', strtotime($order->updated_at)) }}
+                                                    @endif
+                                                    </h3>
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                 </td>
                                             </tr>
@@ -405,13 +411,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
-                                                                <td><p style="text-align:justify; line-height: 0.4;">
-                                                                @if(isset($order->gift_amount) && $order->gift_amount!="")
-                                                                    ${{ @number_format(((($order->total + $order->freight_cost) - $order->gift_amount) / 11), 2) }}
-                                                                @else
-                                                                    ${{ @number_format((($order->total + $order->freight_cost) / 11), 2) }}
-                                                                @endif
-                                                                </p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4;">${{ @number_format(($subtotal / 11), 2) }}</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><p class="br-header">Order Total:</p></td>
