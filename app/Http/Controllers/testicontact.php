@@ -107,8 +107,8 @@ class testicontact extends Controller {
            // $userid = $user->id;
             echo "<br>" . $email;
             $dob = explode("-", $user->dob);
-            $day = (isset($user->dob[0]) && $user->dob[0]!="") ? $user->dob[0] : "";
-            $month = (isset($user->dob[1]) && $user->dob[1]!="") ? $user->dob[1] : "";
+            $month = (isset($user->dob[0]) && $user->dob[0]!="") ? $user->dob[0] : "";
+            $day = (isset($user->dob[1]) && $user->dob[1]!="") ? $user->dob[1] : "";
 
             $person_arr = array('name' => $user->fname . " " . $user->lname, 'email' => trim($user->email),
             'contest_code' => $user->comp_name,'ad_tracking' => $user->source, 'gender' => $user->gender, 
