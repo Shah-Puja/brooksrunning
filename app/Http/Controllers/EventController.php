@@ -98,7 +98,7 @@ class EventController extends Controller {
             
         }
     
-        //dd($other_upcoming_events);
+        //dd($all_events);
         //echo "<pre>";print_r($other_upcoming_events);die;
         //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         //echo "<pre>";print_r($past_events);die;
@@ -109,7 +109,7 @@ class EventController extends Controller {
         
           
           
-        $single_event=event::where('event_name',$single_event)->first();
+        $single_event=event::where('slug',$single_event)->first();
         
         
        
@@ -119,10 +119,10 @@ class EventController extends Controller {
 
     public function new_series_event($series_event,$city) {
 
-        $event_name=event::where('series',$series_event)->first();
+        $event_name=event::where('slug',$series_event)->first();
        
 
-        $series_event=event::where('series',$series_event)->orderBy('year','ASC')->get();
+        $series_event=event::where('series',$event_name->series)->orderBy('year','ASC')->get();
         
         
        

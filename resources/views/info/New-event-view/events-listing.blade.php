@@ -129,9 +129,9 @@
                         
                              <div class="event-section">
                               @if(trim(empty($events->series)))
-                                <a href="/events-listing/single-event/{{$events->event_name}}" >
+                                <a href="/events-listing/single-event/{{$events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->series}}/{{$events->city}}" >
+                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($events->logo))  
@@ -188,9 +188,9 @@
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape">
                             <div class="event-section">
                             @if(empty(trim($upcoming_events->series)))
-                                <a href="/events-listing/single-event/{{$upcoming_events->event_name}}" >
+                                <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{$upcoming_events->city}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
@@ -201,9 +201,9 @@
                                     </div>
                                 </a>
                                 @if(empty(trim($upcoming_events->series)))
-                                <a href="/events-listing/single-event/{{$upcoming_events->event_name}}" >
+                                <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->series}}/{{$upcoming_events->city}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>
