@@ -5479,6 +5479,27 @@ a {
     color: #6d665f;
     line-height:45px;
   }
+
+  .input-wrapper{
+    .radio-inline{
+      &.new-comp-update-details{
+        display: block;
+        margin-right: 10px;
+        margin-top: 5px;
+        input{
+          display: none;
+        }
+        label{
+          display: inline;
+          @extend %info-font;
+          cursor: pointer;
+          transition: 3s all;
+          line-height: 1.7;
+          position: relative;}
+        }
+      }
+    }
+
 }
 .response_content_learn_more{
   .heading_learn_more{

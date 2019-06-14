@@ -134,7 +134,7 @@ class iContactProApi {
      *
      * @return object
      * */
-    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null, $gender = null, $birth_date = null, $birth_month = null, $age = null, $ad_tracking = null, $shoe_wear = null, $country=null, $contest_code =null, $happy_runner_comp =null) {
+    public function addContact($sEmail, $sStatus = 'normal', $sPrefix = null, $sFirstName = null, $sLastName = null, $sSuffix = null, $sStreet = null, $sStreet2 = null, $sCity = null, $sState = null, $sPostalCode = null, $sPhone = null, $sFax = null, $sBusiness = null, $gender = null, $birth_date = null, $birth_month = null, $age = null, $ad_tracking = null, $shoe_wear = null, $country=null, $contest_code =null, $happy_runner_comp =null, $training_for =null,$likes_to_run =null ,$experience_preference =null) {
         // Valid statuses
         $aValidStatuses = array('normal', 'bounced', 'donotcontact', 'pending', 'invitable', 'deleted');
         // Contact placeholder
@@ -236,6 +236,18 @@ class iContactProApi {
 
         if(!empty($happy_runner_comp)){
             $aContact['happy_runner_comp'] = (string)$happy_runner_comp;
+        }
+
+        if(!empty($training_for)){
+            $aContact['training_for'] = (string)$training_for;
+        }
+
+        if(!empty($likes_to_run)){
+            $aContact['likes_to_run'] = (string)$likes_to_run;
+        }
+
+        if(!empty($experience_preference)){
+            $aContact['experience_preference'] = (string)$experience_preference;
         }
        
         // Check for a valid status

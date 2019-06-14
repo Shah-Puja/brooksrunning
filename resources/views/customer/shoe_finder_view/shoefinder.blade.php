@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/shoefinder-css/main.css">
+<link rel="stylesheet" href="/css/shoefinder-css/main.css?v={{ Cache::get('css_version_number') }}">
 <link rel="stylesheet" href="/css/shoefinder-css/ss-newquiz.css" />
 <link rel="stylesheet" href="/css/shoefinder-css/jquery.ui.all.css" />
 <script src="/js/shoefinder.js" type="text/javascript"></script>  
