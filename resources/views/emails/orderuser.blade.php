@@ -152,7 +152,13 @@
                                                 <td align="center">
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 
-                                                    <h3 style="line-height: 0.2px; font-weight: normal;">Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}</h3>
+                                                    <h3 style="line-height: 0.2px; font-weight: normal;">
+                                                    @if($order->transaction_dt!='')
+                                                        Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}
+                                                    @else
+                                                        Order Date : {{ date('d F Y', strtotime($order->updated_at)) }}
+                                                    @endif
+                                                    </h3>
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                 </td>
                                             </tr>
