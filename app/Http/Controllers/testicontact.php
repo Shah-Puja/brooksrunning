@@ -107,10 +107,15 @@ class testicontact extends Controller {
            // $userid = $user->id;
             echo "<br>" . $email; 
 
-            $person_arr = array('name' => $user->fname . " " . $user->lname, 'email' => trim($user->email),
-            'contest_code' => $user->comp_name,'ad_tracking' => $user->source, 'gender' => $user->gender, 
-            'birth_day' => $user->birth_day,'birth_month' => $user->birth_month, 'age' => $user->age_group, 'post_code' => $user->postcode,'shoe_wear' => $user->shoe_wear, 'country' => $user->country,
-            'training_for' => $user->training_for,'likes_to_run' => $user->likes_to_run,'experience_preference' => $user->experience_preference,
+            $person_arr = array('fname' => $user->fname, 'lname' => $user->lname, 'email' => trim($user->email),
+                'contest_code' => $user->comp_name, 'ad_tracking' => $user->source, 'gender' => $user->gender,
+                'city' => $user->city, 'state' => $user->state,
+                'birth_day' => $user->birth_day, 'birth_month' => $user->birth_month,
+                'age' => $user->age_group, 'post_code' => $user->postcode,
+                'phone' => $user->phone, 'shoe_wear' => $user->shoe_wear,
+                'country' => $user->country, 'happy_runner_comp' => $user->happy_runner_comp,
+                'training_for' => $user->training_for, 'likes_to_run' => $user->likes_to_run,
+                'experience_preference' => $user->experience_preference,
             );
             $this->client->add_icontactpushmailSubscriber($person_arr);
         }
