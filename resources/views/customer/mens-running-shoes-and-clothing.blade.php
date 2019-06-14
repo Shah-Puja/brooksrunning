@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/?v={{ Cache::get('css_version_number') }}">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hidden-mob"></div>

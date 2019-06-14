@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <section class="br-events-content">
     <section class="event-banner">
         <div class="event-banner--wrapper" style="background-color: #1a6ec6;">

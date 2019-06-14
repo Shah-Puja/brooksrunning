@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <div class="row" style="display:none;" id="learn_more">
 		<div class="col-9">
 			<div class="create-account--left">

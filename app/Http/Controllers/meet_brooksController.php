@@ -6,10 +6,12 @@ use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\Competition;
 use App\Models\Competition_user;
+use App\Models\Icontact_pushmail;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\Jobs\ProcessCompetition;
 use App\Events\SubscriptionReceived;
+use Illuminate\Validation\Rule;
 
 class meet_brooksController extends Controller {
 
@@ -53,7 +55,8 @@ class meet_brooksController extends Controller {
         ]);
 
         $competition = Competition_user::firstOrCreate(
-                        ['email' => request('email'), 'comp_name' => request('comp_name')], [
+                        [
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
                     'comp_slug' => request('comp_slug'),
                     'fname' => request('fname'),
                     'lname' => request('lname'),
@@ -63,7 +66,32 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'country' => request('country'),
-                    'answer' => request('answer')
+                    'answer' => request('answer'),
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
+                        ]
+        );
+
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        [
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
+                    'source' => 'Competition',
+                    'fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'birth_day' => request('custom_Birth_Date'),
+                    'birth_month'=> request('custom_Birth_Month'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'answer' => request('answer'),
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
                         ]
         );
 
