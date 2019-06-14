@@ -105,14 +105,11 @@ class testicontact extends Controller {
         foreach ($pushmail_users as $user) {
             $email = $user->email;
            // $userid = $user->id;
-            echo "<br>" . $email;
-            $dob = explode("-", $user->dob);
-            $day = (isset($user->dob[0]) && $user->dob[0]!="") ? $user->dob[0] : "";
-            $month = (isset($user->dob[1]) && $user->dob[1]!="") ? $user->dob[1] : "";
+            echo "<br>" . $email; 
 
             $person_arr = array('name' => $user->fname . " " . $user->lname, 'email' => trim($user->email),
             'contest_code' => $user->comp_name,'ad_tracking' => $user->source, 'gender' => $user->gender, 
-            'birth_day' => $day,'birth_month' => $month, 'age' => $user->age_group, 'post_code' => $user->postcode,'shoe_wear' => $user->shoe_wear, 'country' => $user->country,
+            'birth_day' => $user->birth_day,'birth_month' => $user->birth_month, 'age' => $user->age_group, 'post_code' => $user->postcode,'shoe_wear' => $user->shoe_wear, 'country' => $user->country,
             'training_for' => $user->training_for,'likes_to_run' => $user->likes_to_run,'experience_preference' => $user->experience_preference,
             );
             $this->client->add_icontactpushmailSubscriber($person_arr);
