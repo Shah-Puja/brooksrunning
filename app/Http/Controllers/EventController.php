@@ -83,6 +83,7 @@ class EventController extends Controller {
                
                  if($request->when=='' && $request->where=='' ){
                     $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
+                    $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);
                  }           
                                
                            
@@ -90,10 +91,8 @@ class EventController extends Controller {
             $all_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->orderBy('event_dt','ASC')->get();
            
             $other_upcoming_event = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
-            
-             $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
-                return $product['year'].$product['month'];
-            });
+           
+             $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
            
             
         }
@@ -103,6 +102,32 @@ class EventController extends Controller {
         //$past_events = event_mast::where('status', 'Y')->whereRaw('event_timestamp < CURDATE()')->orderBy('event_timestamp', 'asc')->get();
         //echo "<pre>";print_r($past_events);die;
         return view('info.New-event-view.events-listing', compact('all_events', 'other_upcoming_events', 'when', 'where'));
+    }
+
+
+    public function upcoming_helper($other_upcoming_event)
+    {
+        $arr=array();
+            foreach($other_upcoming_event as $events){
+                if($events->month >= date('m')&& $events->year==date('Y')) {
+                    $arr[]=$events;
+                }
+
+            }
+            $arr1=[];
+            foreach($other_upcoming_event as $eve){
+                if($eve->month <= date('m') && $eve->year>date('Y')) {
+                    
+                    $arr1[]=$eve;
+                }
+
+            }
+            $other_upcoming_event=array_merge($arr,$arr1);
+            
+             $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
+                return $product['year'].$product['month'];
+            });
+           return $other_upcoming_events;
     }
 
     public function new_single_event($single_event) {
