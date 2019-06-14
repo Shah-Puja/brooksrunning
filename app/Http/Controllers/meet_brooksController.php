@@ -81,7 +81,7 @@ class meet_brooksController extends Controller {
                     'lname' => request('lname'),
                     'gender' => request('gender'),
                     'birth_day' => request('custom_Birth_Date'),
-                    'birth_month'=> request('custom_Birth_Month'),
+                    'birth_month' => request('custom_Birth_Month'),
                     'age_group' => request('custom_Age'),
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
@@ -245,6 +245,21 @@ class meet_brooksController extends Controller {
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
                     'user_type' => 'Subscriber']);
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        ['email' => request('email')], ['fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'birth_day' => request('custom_Birth_Date'),
+                    'birth_month' => request('custom_Birth_Month'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'happy_runner_comp' => request('contest_code'),
+                    'source' => 'Subscriber',
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID')
+                    ]);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }

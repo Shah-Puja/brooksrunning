@@ -81,29 +81,32 @@ class iContactSubscriber implements iContactSubscriberInterface {
     public function add_icontactpushmailSubscriber($subscriber){
         $ad_tracking = isset($subscriber['ad_tracking']) ? $subscriber['ad_tracking'] : '';
         $contest_code = isset($subscriber['contest_code']) ? $subscriber['contest_code'] : '';
-        $email = $subscriber['email'];
-        $name = explode(" ", $subscriber['name']);
-        $fname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[0] : "";
-        $lname = (isset($subscriber['name']) && !empty($subscriber['name'])) ? $name[1] : "";
+        $email = $subscriber['email']; 
+        $fname = (isset($subscriber['fname']) && !empty($subscriber['fname'])) ? $subscriber['fname'] : "";
+        $lname = (isset($subscriber['lname']) && !empty($subscriber['lname'])) ? $subscriber['lname'] : "";
+        $city = (isset($subscriber['city']) && !empty($subscriber['city'])) ? $subscriber['city'] : "";
+        $state = (isset($subscriber['state']) && !empty($subscriber['state'])) ? $subscriber['state'] : "";
+        $post_code = (isset($subscriber['post_code']) && $subscriber['post_code'] != '') ? $subscriber['post_code'] : "";
+        $phone = (isset($subscriber['phone']) && $subscriber['phone'] != '') ? $subscriber['phone'] : "";
         $gender = (isset($subscriber['gender'])) ? $subscriber['gender'] : '';
         $birth_date = isset($subscriber['birth_day']) && $subscriber['birth_day'] != '' ? $subscriber['birth_day'] : "";
         $birth_month = isset($subscriber['birth_month']) && $subscriber['birth_month'] != '' ? $subscriber['birth_month'] : "";
         $age = (isset($subscriber['age'])) ? $subscriber['age'] : '';
-        $post_code = (isset($subscriber['post_code']) && $subscriber['post_code'] != '') ? $subscriber['post_code'] : "";
         $shoe_wear = (isset($subscriber['shoe_wear'])) ? $subscriber['shoe_wear'] : "";
         $country = isset($subscriber['country']) ? $subscriber['country'] : '';
+        $happy_runner_comp = isset($subscriber['happy_runner_comp']) ? $subscriber['happy_runner_comp'] : '';
         $training_for = isset($subscriber['training_for']) ? $subscriber['training_for'] : '';
         $likes_to_run = isset($subscriber['likes_to_run']) ? $subscriber['likes_to_run'] : '';
         $experience_preference = isset($subscriber['experience_preference']) ? $subscriber['experience_preference'] : '';
         
         try{
-            $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', '', '', '', '', $post_code, '', '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code, '', $training_for, $likes_to_run, $experience_preference);
+            $response = $this->client->addContact($email, 'subscribers', null, $fname, $lname, '', '', '', $city, $state, $post_code, $phone, '', '', $gender, $birth_date, $birth_month, $age, $ad_tracking, $shoe_wear, $country, $contest_code, $happy_runner_comp, $training_for, $likes_to_run, $experience_preference);
             if (empty($response)) {
-                Icontact_pushmail::where('email', $email)->where('comp_name', $contest_code)->update(['status' => 'rejected']);
+                Icontact_pushmail::where('email', $email)->where('status', 'queue')->update(['status' => 'rejected']);
             } else {
                 $subscriberesponse = $this->client->subscribeContactToList($response->contactId, env('ICONTACT_LIST_ID'), 'normal');
                 //update in icontact_pushmail table
-                Icontact_pushmail::where('email', $email)->where('comp_name', $contest_code)->update(['status' => 'sent']);
+                Icontact_pushmail::where('email', $email)->where('status', 'queue')->update(['status' => 'sent']);
             }
         }catch (\Exception $e) {
 
