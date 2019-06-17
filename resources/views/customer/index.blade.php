@@ -70,7 +70,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>The latest Ghost 12 offer a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.<br/>&nbsp; </p>
-					<a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<a href="/brooks-running-shoes-ghost-12-mens/110316_489.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
