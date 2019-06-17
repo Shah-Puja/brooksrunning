@@ -142,9 +142,9 @@
                                     </div>
                                 </a>
                                 @if(trim(empty($events->series)))
-                                <a href="/events-listing/single-event/{{$events->event_name}}" >
+                                <a href="/events-listing/single-event/{{$events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->series}}/{{$events->city}}" >
+                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $events->event_name }}</h3>

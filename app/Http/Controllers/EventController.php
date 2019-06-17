@@ -92,7 +92,7 @@ class EventController extends Controller {
            
             $other_upcoming_event = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
            
-             $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
+            $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
            
             
         }
@@ -135,7 +135,7 @@ class EventController extends Controller {
           
           
         $single_event=event::where('slug',$single_event)->first();
-        
+        //dd($single_event);
         
        
        return view('info.New-event-view.single-event-detail',compact('single_event'));   
