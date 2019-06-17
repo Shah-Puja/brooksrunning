@@ -532,7 +532,7 @@
 	                        <!-- Level Three-->
 	                        <ul>
 	                            <li>
-	                                <a href="/meet_brooks/competition/rh_competition">
+	                                <a href="/meet_brooks/competition/update">
 									Competition
 	                                </a>
 	                            </li>
