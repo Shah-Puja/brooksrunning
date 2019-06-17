@@ -65,13 +65,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_ricochet.jpg">
-			        <h3>&nbsp; <br/>Ricochet </h3>
+					<img src="/images/home/hp_sm_ghost12.jpg">
+			        <h3>&nbsp; <br/>Ghost 12 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Experience maximum energy return in the Ricochet, now lighter than ever before. <br/>&nbsp; </p>
-					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<p>The latest Ghost 12 offer a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.<br/>&nbsp; </p>
+					<a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
