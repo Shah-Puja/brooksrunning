@@ -131,7 +131,7 @@
                               @if(trim(empty($events->series)))
                                 <a href="/events-listing/single-event/{{$events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}" >
+                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}/{{$events->id}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($events->logo))  
@@ -144,7 +144,7 @@
                                 @if(trim(empty($events->series)))
                                 <a href="/events-listing/single-event/{{$events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}" >
+                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}/{{$events->id}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $events->event_name }}</h3>
@@ -190,7 +190,7 @@
                             @if(empty(trim($upcoming_events->series)))
                                 <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}/{{ $upcoming_events->id}}" >
                                 @endif
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
@@ -203,7 +203,7 @@
                                 @if(empty(trim($upcoming_events->series)))
                                 <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}" >
+                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}/{{$upcoming_events->id}}" >
                                 @endif
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>

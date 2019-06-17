@@ -61,7 +61,7 @@
                     <ul class="event_tabs">
                     @foreach($series_event as $series_events)
 
-                        <li class="tab-link @if($city==$series_events->city) echo current @endif " data-tab="{{$series_events->id}}">
+                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " data-tab="{{$series_events->id}}">
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -74,7 +74,7 @@
                    
                     <!-- <hr  class="eventunderline"/> -->
                     @foreach($series_event as $series_events)
-                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city) current @endif">
+                    <div id="{{$series_events->id}}" class="tab-content @if($city==$series_events->city && $id==$series_events->id ) current @endif">
                         @if(trim(empty($series_events->content)))
                         <p> This text is for Race 1 at Melbourne Zoo.</p>
                         @else
@@ -110,7 +110,7 @@
                             </div>
                         </ul>
                         @foreach($series_event as $series_events)
-                            <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city) current @endif">
+                            <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city && $id==$series_events->id) current @endif">
                                 <p>{{$series_events->content}}</p>
                             </div>
                         @endforeach
@@ -125,7 +125,7 @@
             <div class="find-more" >
                     <div class="event-findmore-btn">
                     @foreach($series_event as $series_events) 
-                    @if($city==$series_events->city)    
+                    @if($city==$series_events->city && $id==$series_events->id)    
                         <a href="{{$series_events->link}}" class="primary-button">Find Out More </a>
                         @endif 
                         @endforeach
@@ -164,6 +164,8 @@
 		$(this).addClass('current');
 		$("#"+tab_id).css('display',"block");
     });
+
+    
     
 });
 

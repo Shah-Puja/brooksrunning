@@ -62,7 +62,8 @@ class EventController extends Controller {
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
                                     ->whereRaw("event_dt=00")->get();
-                                    //dd($other_upcoming_events);         
+                                    //dd($other_upcoming_events);  
+                                    $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
               
                 }
             }
@@ -142,7 +143,7 @@ class EventController extends Controller {
         
     }
 
-    public function new_series_event($series_event,$city) {
+    public function new_series_event($series_event,$city,$id) {
 
         $event_name=event::where('slug',$series_event)->first();
        
@@ -151,7 +152,7 @@ class EventController extends Controller {
         
         
        
-        return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city'));
+        return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city','id'));
     }
 
     public function new_series_static_event() {
