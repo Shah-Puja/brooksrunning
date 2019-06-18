@@ -19,12 +19,12 @@
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-                                                <a href="javascript:void(0)" class="active">{{$event_name->series}}</a>
+                                                <a href="javascript:void(0)" class="active">{{$event_name->event_name}}</a>
                                             </li>
 										</ul>
 									</div>
 								</div>
-                                <h1 class="event-title">{{$event_name->series}}</h1>
+                                <h1 class="event-title">{{$event_name->event_name}}</h1>
 							<!-- <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p> -->
 						</div>
 					</div>
