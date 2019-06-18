@@ -44,8 +44,7 @@
 <div class="create-account--header event-header event-intro">
   <div class="wrapper">
     <div class="row">
-        <div class="col-1 tab-0"></div>
-        <div class="col-10 tab-12">
+        <div class="col-12 tab-12">
       	    <div class="about-header">
             <div class="event-logo">
                 @if($event_name->logo!='')
@@ -133,7 +132,6 @@
             </div>  
         </div>
         </div>
-        <div class="col-1 tab-0"></div>
     </div>
     </div>
   </div>

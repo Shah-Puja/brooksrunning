@@ -107,7 +107,7 @@
                                 <p class="error">Sorry, currently no events match those selections. Please try again.</p>
                                 @endif
                                 @if(($when!='') OR ($where!=''))
-                                <p class="clear-filter">clear filters <a id="clear_filter" href=""><span style="color:#000;">&#9746;</span></a></p>
+                                <p class="clear-filter"><a id="clear_filter" href="">clear filters <span style="color:#000;">&#9746;</span></a></p>
                                 @endif
                             </div>
                         </div>

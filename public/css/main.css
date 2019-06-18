@@ -5058,7 +5058,7 @@ textarea {
 .event-intro h2 {
   color: #0E0E0E;
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 0.5;
   text-align: center;
 }
@@ -5088,8 +5088,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-intro .event-logo {
-    width: 100%;
-    max-width: 320px;
+    width: 50%;
     padding-bottom: 10px;
     padding-top: 10px;
   }
@@ -5139,6 +5138,9 @@ textarea {
   padding-top: 15px;
   max-width: 320px;
   margin: 20px auto;
+}
+.event-intro .event-findmore-btn a {
+  text-decoration: none;
 }
 .event-intro .eventunderline {
   height: 5px;
@@ -5203,7 +5205,7 @@ textarea {
   margin: 0 auto;
 }
 .tabbedcontent ul.event_tabs li.current {
-  color: #000;
+  color: #005CFB;
 }
 .tabbedcontent ul.event_tabs li.current .event-series-header {
   border-width: 8px;
@@ -5211,12 +5213,18 @@ textarea {
 .tabbedcontent ul.event_tabs li.current .event-series-header:before {
   content: "";
   position: absolute;
-  left: 91px;
+  left: 25%;
   bottom: 0;
   height: 1px;
-  width: 45%;
+  width: 50%;
   /* or 100px */
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #005CFB;
+}
+.tabbedcontent ul.event_tabs li.current .event-series-header h2 {
+  color: #005CFB;
+}
+.tabbedcontent ul.event_tabs li.current .event-series-header h3 {
+  color: #005CFB;
 }
 .tabbedcontent .tab-content {
   display: none;
@@ -5417,6 +5425,12 @@ textarea {
   .event-filters .event-background .no-result p {
     margin: 10px 20px;
   }
+}
+.event-filters .event-background .no-result p a {
+  color: #000000 !important;
+}
+.event-filters .event-background .no-result p a span {
+  color: #000000 !important;
 }
 .event-filters .event-background .no-result p .clear-filter {
   font-size: 16px;
@@ -5631,7 +5645,7 @@ textarea {
 }
 .event-container .br-mainheading {
   text-align: left;
-  margin: 0px 80px;
+  margin: 0px 100px;
   font-size: 28px;
 }
 @media only screen and (max-width: 767px) {
@@ -5642,7 +5656,13 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event-container .br-mainheading {
-    margin: 0px 25px;
+    margin: 0px 15px;
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .event-container .br-mainheading {
+    margin: 0px 15px;
     font-size: 22px;
   }
 }
