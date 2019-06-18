@@ -3308,7 +3308,7 @@ width: 100%;
   h2{
     color:#0E0E0E;
     margin-top: 40px;
-    font-size:24px;
+    font-size:22px;
     line-height: .5;
     @extend %extrabold-font;
     text-align: center;
@@ -3334,8 +3334,7 @@ width: 100%;
     padding-bottom: 20px;
     width: 30%;
     @media #{$mobile-only}{
-      width: 100%;
-      max-width: 320px;
+      width: 50%;
     padding-bottom: 10px;
     padding-top: 10px;
     }
@@ -3382,6 +3381,9 @@ width: 100%;
     padding-top: 15px;
     max-width: 320px;
     margin: 20px auto;
+    a{
+      text-decoration:none;
+    }
     
   }
   .eventunderline{
@@ -3434,21 +3436,26 @@ width: 100%;
 
   ul.event_tabs li.current{
     // background: #ededed;
-    color: #000;
+    color: #005CFB;
     .event-series-header{
       //  padding: 0px 2px 2px 3px;    
        border-width: 8px;
        &:before {
         content : "";
         position: absolute;
-        left    : 91px;
+        left    : 25%;
         bottom  : 0;
         height  : 1px;
-        width   : 45%;  /* or 100px */
-        border-bottom:5px solid $black;
+        width   : 50%;  /* or 100px */
+        border-bottom:5px solid  #005CFB;;
+      }
+      h2{
+        color: #005CFB;
+      }
+      h3{
+        color: #005CFB;
       }
     }
-   
   }
   .tab-content{
     display: none;
@@ -3657,6 +3664,12 @@ width: 100%;
         @media #{$mobile-only}{
           margin: 10px 20px;
         }
+          a{
+            color:$black !important;
+            span{
+              color:$black !important;
+            }
+          }
         .clear-filter{
           font-size:16px;
           a{
