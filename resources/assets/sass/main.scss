@@ -3859,14 +3859,18 @@ width: 100%;
   }
   .br-mainheading{
     text-align: left;
-    margin : 0px 80px;
+    margin : 0px 100px;
     font-size:28px;
     @media #{$mobile-only}{
       margin : 0px 25px;
       font-size:22px;
     }
     @media #{$tab-only}{
-      margin : 0px 25px;
+      margin : 0px 15px;
+      font-size:22px;
+    }
+    @media #{$desktop-only}{
+      margin : 0px 15px;
       font-size:22px;
     }
   }
