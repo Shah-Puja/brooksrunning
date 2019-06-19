@@ -195,13 +195,8 @@ Route::get('/d/testicontact/add', 'testicontact@add');
 Route::get('/d/testicontact/pull_from_icontact/{run_cnt}', 'testicontact@pull_from_icontact');
 Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
-<<<<<<< HEAD
-
-Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
-
-Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');
-=======
 Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
 Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
->>>>>>> cda289e967a0624aae3d698e4243ad2aff8ac0e6
+
+Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');
