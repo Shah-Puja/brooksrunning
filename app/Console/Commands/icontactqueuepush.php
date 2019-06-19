@@ -42,7 +42,7 @@ class icontactqueuepush extends Command {
      * @return mixed
      */
     public function handle() {
-        $pushmail_users = Icontact_pushmail::where('status', 'queue')->orderBy('pushmail_id', 'desc')->limit(10)->get();
+        $pushmail_users = Icontact_pushmail::where('status', 'queue')->orderBy('pushmail_id', 'asc')->limit(100)->get();
         foreach ($pushmail_users as $user) {
             $email = $user->email;
             // $userid = $user->id;
