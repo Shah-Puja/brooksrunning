@@ -11,6 +11,7 @@ use App\Models\Order_log;
 use App\Models\Order_number;
 use App\Models\Order_address;
 use App\Models\User;
+use App\Models\Icontact_pushmail;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderUser;
@@ -87,6 +88,7 @@ class PaymentController extends Controller {
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
             Order::where('id', $this->order->id)->update(['status' => 'Order Completed', 'payment_status' => Carbon::now()]);
+
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
             $order = $this->order->load('orderItems.variant.product', 'address');
             event(new OrderReceived($order));
@@ -152,6 +154,12 @@ class PaymentController extends Controller {
                 if (isset($Person)) {
                     $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
                 }
+
+                $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
+                if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
+                    $this->add_orders_in_icontact_pushmail($user_addr_detail);
+                }
+
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
                         $PersonID = $this->get_personid($this->order->address->email);
@@ -451,6 +459,12 @@ class PaymentController extends Controller {
             if (isset($Person)) {
                 $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
             }
+
+            $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
+            if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
+                $this->add_orders_in_icontact_pushmail($user_addr_detail);
+            }
+
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
@@ -481,22 +495,22 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
-        $status ='Order Completed';
+        $status = 'Order Completed';
         //if (env('AP21_STATUS') == 'ON') {
-            $order_data = array(
-                'order_id' => $order_id
-            );
+        $order_data = array(
+            'order_id' => $order_id
+        );
 
-            $order_number_insert = Order_number::create($order_data);
-            if ($order_number_insert) {
-                $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
-                $status = 'Order Number';
-            }
-           
-        /*} else {
+        $order_number_insert = Order_number::create($order_data);
+        if ($order_number_insert) {
+            $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
+            $status = 'Order Number';
+        }
 
-            $order_no = env('ORDER_PREFIX').$order_id;
-        }*/
+        /* } else {
+
+          $order_no = env('ORDER_PREFIX').$order_id;
+          } */
         Order::where('id', $order_id)
                 ->update(['status' => $status, 'order_no' => $order_no]);
 
@@ -1032,6 +1046,21 @@ class PaymentController extends Controller {
             }
         }
         return $dataValue;
+    }
+
+    public function add_orders_in_icontact_pushmail($detail) {
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate([
+                    'email' => $detail->email], [
+                    'source' => 'Order',
+                    'fname' => $detail->s_fname,
+                    'lname' => $detail->s_lname,
+                    'postcode' => $detail->s_postcode,
+                    'phone' => $detail->s_phone,
+                    'city' => $detail->s_city,
+                    'state' => $detail->s_state,
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+        ]);
     }
 
 }

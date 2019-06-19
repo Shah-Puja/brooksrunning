@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <style>.pdp-display-none{ display:none!important;}</style>
 <section class="shoe-main-container">
 <section class="create-account--header plp-header">
