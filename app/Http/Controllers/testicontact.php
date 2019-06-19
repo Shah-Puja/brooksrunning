@@ -100,7 +100,7 @@ class testicontact extends Controller {
     }
 
     public function push_queued_records_to_icontact() {
-        $pushmail_users = Icontact_pushmail::where('status', 'queue')->orderBy('pushmail_id', 'desc')->limit(10)->get();
+        $pushmail_users = Icontact_pushmail::where('status', 'queue')->orderBy('pushmail_id', 'asc')->limit(100)->get();
         //echo "<pre>";print_r($pushmail_users);die;
         foreach ($pushmail_users as $user) {
             $email = $user->email;
