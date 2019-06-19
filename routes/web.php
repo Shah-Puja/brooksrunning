@@ -200,3 +200,5 @@ Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
 
 Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');
+
+Route::get('/testmedibankcsv/export_medibank_order_csv', 'testmedibankcsv@export_medibank_order_csv');
