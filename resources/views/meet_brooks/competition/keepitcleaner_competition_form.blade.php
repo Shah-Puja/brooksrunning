@@ -143,7 +143,7 @@
 			</div>
 		</div>
 		<div class="tab-6">
-			<div class="input-wrapper">
+			<!-- <div class="input-wrapper">
 				<label>What Brooks Shoes do you wear?</label>
 				
 						<select class="select-field" name="custom_Shoes_you_wear" id="custom_Shoes_you_wear" style="margin-bottom: 0px;">
@@ -165,6 +165,34 @@
 							<option class="option-value" value="Transcend">Transcend</option>
 							<option class="option-value" value="Other">Other</option>
 						</select>
+			</div> -->
+		</div>
+	</div>
+	<div class="row" style="margin-bottom:20px;">
+	<div class="tab-6">
+			<div class="input-wrapper">
+				<label>Where do you like to run?</label>
+					<div class="checklist-inline" style="display:block;">
+						<input type="checkbox" id="road" name="likes_to_run[]" value="road">
+						<label for="road">
+								<div class="mark"><span></span></div>
+								<div class="text">Road</div>
+						</label>
+					</div>
+					<div class="checklist-inline" style="display:block;">
+						<input type="checkbox" id="trail" name="likes_to_run[]" value="trail">
+						<label for="trail">
+								<div class="mark"><span></span></div>
+								<div class="text">Trail</div>
+						</label>
+					</div>
+					<div class="checklist-inline" style="display:block;">
+						<input type="checkbox" id="gym" name="likes_to_run[]" value="gym">
+						<label for="gym">
+								<div class="mark"><span></span></div>
+								<div class="text">Gym</div>
+						</label>
+					</div>
 			</div>
 		</div>
 	</div>
