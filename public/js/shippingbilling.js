@@ -3,7 +3,7 @@ $(document).ready(function () {
     var selected_delivery_type = $.trim($('#selected_delivery_type').text());
 
     if (selected_delivery_type == "New Zealand Standard Delivery") {
-        $('select[name="s_state').val("New Zealand");
+        $('select[name="s_state').val("NZ");
     }
     $('select[name=s_state]').on('change', function () {
         if (selected_delivery_type == "Express Delivery") {
@@ -14,11 +14,11 @@ $(document).ready(function () {
             var selected_delivery_type_text = "new_zealand";
         }
 
-        if (selected_delivery_type == "New Zealand Standard Delivery" && $(this).val() == 'New Zealand') {
+        if (selected_delivery_type == "New Zealand Standard Delivery" && $(this).val() == 'NZ') {
             var delivery_option_value = "new_zealand";
-        } else if (selected_delivery_type == "New Zealand Standard Delivery" && $(this).val() != 'New Zealand') {
+        } else if (selected_delivery_type == "New Zealand Standard Delivery" && $(this).val() != 'NZ') {
             var delivery_option_value = "standard";
-        } else if ((selected_delivery_type == "Express Delivery" || selected_delivery_type == "Standard Delivery") && $(this).val() === 'New Zealand') {
+        } else if ((selected_delivery_type == "Express Delivery" || selected_delivery_type == "Standard Delivery") && $(this).val() === 'NZ') {
             var delivery_option_value = 'new_zealand';
         } else {
             var delivery_option_value = selected_delivery_type_text;

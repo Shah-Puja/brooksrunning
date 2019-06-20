@@ -48,7 +48,7 @@ if (!function_exists('check_state_and_update_delivery_option')) {
     function check_state_and_update_delivery_option($order_id) {
         $address = Order_address::where("order_id", "=", $order_id)->first();
         $order = Order::where("id", "=", $order_id)->first();
-        if (isset($address->s_state) && $address->s_state == 'New Zealand') {
+        if (isset($address->s_state) && $address->s_state == 'NZ') {
             $delivery_option = "new_zealand";
             $freight_charges = config('site.SHIPPING_NZ_PRICE');
             $grand_total = $order->total + $freight_charges;

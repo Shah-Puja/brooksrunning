@@ -172,7 +172,7 @@
                                         <option value="TAS,Australia" @if(auth()->user()->state=="TAS,Australia") selected @endif>TAS,Australia</option>
                                         <option value="VIC,Australia" @if(auth()->user()->state=="VIC,Australia") selected @endif>VIC,Australia</option>
                                         <option value="WA,Australia" @if(auth()->user()->state=="WA,Australia") selected @endif>WA,Australia</option>
-                                        <option value="New Zealand" @if(auth()->user()->state=="New Zealand") selected @endif>New Zealand</option>
+                                        <option value="NZ" @if(auth()->user()->state=="NZ") selected @endif>New Zealand</option>
                                         <option value="Other" @if(auth()->user()->state=="Other") selected @endif>Other</option>
                                     </select>
 								</div>

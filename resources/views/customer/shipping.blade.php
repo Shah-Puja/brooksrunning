@@ -302,7 +302,7 @@
                                             <option value="TAS" {{ (isset($s_state) &&  $s_state =='TAS' )?"selected='selected":"" }}>TAS</option>
                                             <option value="VIC" {{ (isset($s_state) &&  $s_state =='VIC' )?"selected='selected":"" }}>VIC</option>
                                             <option value="WA"  {{ (isset($s_state) &&  $s_state =='WA' )?"selected='selected":"" }}>WA</option>
-                                            <option value="New Zealand" {{ (isset($s_state) &&  $s_state =='New Zealand' )?"selected='selected":"" }}>New Zealand</option>
+                                            <option value="NZ" {{ (isset($s_state) &&  $s_state =='NZ' )?"selected='selected":"" }}>New Zealand</option>
                                         </select>
                                     </div>
                                 </div>
@@ -477,7 +477,7 @@
                                                 <option value="TAS" {{ $state =='TAS' ? "selected='selected'": "" }}>TAS</option>
                                                 <option value="VIC" {{ $state =='VIC' ? "selected='selected'": "" }}>VIC</option>
                                                 <option value="WA" {{ $state =='WA' ? "selected='selected'": "" }}>WA</option>
-                                                <option value="New Zealand" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
+                                                <option value="NZ" {{ $state =='New Zealand' ? "selected='selected'": "" }}>New Zealand</option>
                                             </select>
                                         </div>
                                     </div>
