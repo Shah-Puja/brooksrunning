@@ -8,7 +8,7 @@
   	<li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/keepitcleaner">https://www.brooksrunning.com.au/meet_brooks/competition/keepitcleaner</a> during the dates specified above. It is the participant&apos;s responsibility to ensure all details are full and correct before submitting their entry form.</li> 
   	<li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters.  </li>
   	<li>The winners of the Promotion will be chosen at random. The prizes must be claimed before 12pm AEST on the 26th August 2019 otherwise a redraw will occur. If in the event the prize is not claimed a redraw will occur on the 27th August 2019 at 12:00pm AEST at the premises of Texas Peak. The winner will be notified by email.</li>
-  	<li>8. There are two prizes available. Each prize is as follows:
+  	<li>There are two prizes available. Each prize is as follows:
     		<ul style="margin-left: 35px; margin-top:15px; margin-bottom: 15px;">
             	<li> A pair of Levitate 2 - $249.95 RRP</li>       
     		</ul>
