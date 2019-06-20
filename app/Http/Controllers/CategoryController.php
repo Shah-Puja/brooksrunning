@@ -57,7 +57,7 @@ class CategoryController extends Controller
     public function womens_landing(){
 
         //NEW ARRIVALS
-        $array = ['120283_070','120272_656','120286_615','120284_028'];
+        $array = ['120282_057','120279_060','120305_040','120285_032'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
@@ -130,7 +130,7 @@ class CategoryController extends Controller
             ->first();            
         }*/
 
-        $array = ['110296_015','110283_449','110294_439','110290_057'];
+        $array = ['110293_057','110290_038','110283_126','110316_489'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
