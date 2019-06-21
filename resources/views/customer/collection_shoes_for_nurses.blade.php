@@ -1,25 +1,9 @@
+<!---------------------------------------- Results ------------------------------------------------------>
 @extends('customer.layouts.master')
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-<style>
-  @media only screen and (min-device-width: 480px) 
-                   and (max-device-width: 640px) 
-                   and (orientation: landscape) {
 
-.visible-mob-landscape{
-        display:block !important;
-    }
-} 
-@media only screen and (max-width: 767px) {
-    .visible-mob-landscape{
-        display:block !important;
-    }
-    .more-color--container-landscape{
-        display:none !important;
-    }
-}
-    </style>
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -33,37 +17,37 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">Abstract Collection Adrenaline &amp; Ghost</a>
+                                            <a href="JavaScript:Void(0);" class="active">Shoes for Nurses</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Abstract Collection Adrenaline &amp; Ghost</h1>
-                       
-                        <p class="type">Shop the limited-release Adrenaline GTS 19 and Ghost 11</p>
+                        <h1 class="large">Brooks Shoes for Nurses</h1>
+                        <p class="type">Nurses and other healthcare professionals are on their feet most of the day, and sometimes that pressure (on your body) is just too much! View our range of comfort nursing shoes designed with cushioning that feels like you're walking on clouds.
+                        </p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
-                <img src="/images/Limited-Edition/gts19-ghost11-camo_le-categoryimage.jpg">
+                <img src="/images/Limited-Edition/nocategoryimage.jpg">
             </div>
         </div>
 </div>
-<div class="create-account--header plp-header collection-intro">
+<!-- <div class="create-account--header plp-header collection-intro">
   <div class="wrapper">
     <div class="row">
     <div class="col-2"></div>
       <div class="col-8">
       	<div class="about-header">
-            <h1 class="br-mainheading">Take a closer look.</h1>
-            <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p>
+            <h1 class="br-mainheading">Likes to go fast. Looks to go anywhere.</h1>
+            <p>The Levitate 2 LE is all DNA AMP for maximum energy return, while the Ricochet strikes a lighter balance. Both help you run farther, faster. And with once-in-a-lifetime colours, these Limited-Edition releases are gonna make the sneakerheads sweat too.</p>
         </div>
       </div>
       <div class="col-2"></div>
     </div>
   </div>
-</div>
+</div> -->
 <section class="plp-container">
 	<div class="wrapper">
 		<div class="row">
@@ -89,15 +73,15 @@
                             }
                         @endphp
 
-						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
+						<div class="mob-6 col-3 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob visible-mob-landscape main_link">
-									<div class="collection-img img-collection-shoes">
-										<img id="plp-img" class="collection-plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
+								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob main_link">
+									<div class="img img-shoes">
+										<img id="plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
 									</div>
 								</a>
-								<div class="more-color--container more-color--container-landscape hidden-col hidden-tab">
-									<!-- <span class="icon-style icon-back-arrow prev"></span> -->
+								<div class="more-color--container">
+									<span class="icon-style icon-back-arrow prev"></span>
 									<div class="owl-carousel owl-theme">
                                     @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
                                         @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
@@ -106,12 +90,10 @@
                                             <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <source media="(min-width: 480px)and (max-width: 640px) and (orientation: landscape)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <img src="" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
-                                                <!-- src="{{ $color_product->image->image1Thumbnail() }}" -->
+                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
                                             </picture>
                                             </a>
-                                            <div class="plp-mob--info hidden-mob hidden-col hidden-tab">
+                                            <div class="plp-mob--info visible-mob">
                                                 <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
@@ -125,7 +107,7 @@
                                         @endforeach
 				                    @endif
 									</div>
-									<!-- <span class="icon-style icon-next-arrow next"></span> -->
+									<span class="icon-style icon-next-arrow next"></span>
 								</div>
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
@@ -151,7 +133,7 @@
 										</div>
 										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
 									</div>
-									<!-- <div class="info-sub">
+									<div class="info-sub">
 										<div class="row">
 											<div class="mob-6">
 								
@@ -160,7 +142,7 @@
 												<p class="right">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
 											</div>
 										</div>
-									</div> -->
+									</div>
 								</a>
 							</div>
 						</div>
