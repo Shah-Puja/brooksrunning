@@ -6,7 +6,7 @@
 	$str = ucwords($str);
 	$str = str_replace(" ", "-", $str);
 @endphp
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <div class="pdp-container">
 	<div class="wrapper detail-shoe-pg">
 		<div class="row">

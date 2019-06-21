@@ -133,6 +133,7 @@ Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
 Route::get('/month', 'EventController@events_default'); 
 
+
 /* quickhelp static pages */
 Route::get('/returns-centre', 'quickhelpController@returns_centre');
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
@@ -169,6 +170,7 @@ Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@ind
 Route::get('/abstract-collection-adrenaline-ghost', 'CollectionController@adreline_ghost');
 Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
+Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
 
 
 Route::get('/{category}', 'CategoryController@index');
@@ -189,7 +191,9 @@ Route::get('/manual_ap21order_push/{order_id}', 'Manual_ap21order_push@manual_ap
 //Route::get('/move/table', 'MovetableController@index'); 
 
 Route::get('/d/testicontact/add', 'testicontact@add');
+Route::get('/d/testicontact/pull_from_icontact/{run_cnt}', 'testicontact@pull_from_icontact');
 Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
-
+Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
+Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
