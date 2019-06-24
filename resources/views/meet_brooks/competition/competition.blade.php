@@ -30,46 +30,8 @@
 					<hr>
 					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
 					
-					@if(!empty($competition->comp_form_html))
-						{!! $competition->comp_form_html !!}
-						    @if(!empty($competition->comp_answer) && $competition->comp_answer == 'Yes')
-								<div class="row">
-									<div class="col-12">
-										<div class="input-wrapper">
-											<label for="">Competition Answer (if applicable)</label>
-											<textarea  name="answer" placeholder="Competition Answer - 25 words or less" style="width: 300px; height:150px;"  class="input-field"></textarea>
-										</div>
-									</div>
-								</div>
-							@endif
-							<input type="hidden" name="comp_name" value="{{ $competition->comp_name }}" />
-							<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
-							<div class="row" style="margin-top:20px;">
-								<div class="tab-6">
-									<div class="input-wrapper">
-										<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
-										<label class="recaptcha-label"></label>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="tab-12">
-									<!-- <div class="cart-btn">
-										<button class="primary-button">Enter</button>
-									</div> -->
-									<div class="cart-btn comp-submit" >
-										<div class="alignleft inline-loader">
-											<button class="primary-button" id="comp_submit_btn">Enter</button>
-										</div>
-										<div class="alignright inline-loader">
-											<div id = "comp_loader" style="display:none">
-												<img src = "/images/loader.gif" alt="comp-loader"/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
+					@if(!empty($competition->comp_form))
+						@include('meet_brooks.competition.'.$competition->comp_form)
 					@endif
 				
 				</div>
@@ -85,7 +47,7 @@
 						<div class="comp_bottom">
 							{!! $competition->footer_text !!}
 							@if($competition->status == 'Open')
-								@if(!empty($competition->terms_conditions_html))
+								@if(!empty($competition->terms_conditions))
 								<p class="privacy">Click here to view the <a class="privacy-terms--popup" href="javascript:void(0)">Terms &amp; Conditions of Entry</a></p>                            
 								@endif
 							@endif
@@ -104,10 +66,8 @@
   <div class="privacy-terms--wrapper popup-container afterpay--popup">
     <div class="popup-container--wrapper">
         <div class="popup-container--info">
-			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>  
-			@if(!empty($competition->terms_conditions_html))      
-			<div class="privacy-content">{!!$competition->terms_conditions_html!!}</div>
-			@endif
+			<div class="close-me"><span class="icon-close-icon afterpay-popup--close"></span></div>        
+            <div class="privacy-content">@include('meet_brooks.terms_conditions.'.$competition->terms_conditions)</div>
 		</div>
 	</div>
     </div>
