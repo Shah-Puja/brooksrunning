@@ -120,7 +120,7 @@
 				<div class="tab-12">
 					<ul>
 						<li><img src="/images/brooks-logo-footer.png" alt=""></li>
-						<li>&copy; 2018 Brooks Australia.</li>
+						<li>&copy; 2019 Brooks Australia.</li>
 					</ul>
 				</div>
 				<div class="col-6 tab-5">
