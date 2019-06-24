@@ -50,7 +50,7 @@ class eventdate extends Command
             
             $format=date('F Y',strtotime('+1 year'.$value->event_dt));
 
-            event::where('id',$value->id)->update(['next_event_dt'=>$format,'event_dt'=>'0000-00-00']);
+            event::where('id',$value->id)->update(['date_str'=>$format,'event_dt'=>'0000-00-00','month'=>date('m',strtotime($value->event_dt)),'year'=>date('Y',strtotime($value->event_dt))]);
          }
 
 
