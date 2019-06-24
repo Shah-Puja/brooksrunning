@@ -1,6 +1,6 @@
 @if(Session::get('medibank_gateway')=='Yes')
 <link rel="stylesheet" href="/css/medibank-styles.css">
-<div class="pdp-container--medibank">
+<div class="pdp-container--medibank" id="disclaimer-link-top">
     @if($product->price_sale < $product->price)
         <h3>For every $1 on spent on sale Brooks items, receive xx Live Better Points.</h3>
     @else
@@ -9,4 +9,12 @@
         <a href="#disclaimer" class="disclaimer-link">For full terms and conditions, please see below.</a>
     @endif
 </div>
+<script>
+$(document).ready(function(){
+    $( "a.disclaimer-link" ).click(function( event ) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top - 50 }, 500);
+    });
+});
+</script>
 @endif

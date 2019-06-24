@@ -11,10 +11,18 @@
         *Must be 18 years or over and have a valid Australian residential address to register for Medibank Live Better. Must be a Medibank member with hospital cover, extras cover, or hospital and extras cover, be up-to-date with premium payments and have signed up to Medibank Live Better with ‘My Medibank’ or have linked their My Medibank account with their Medibank Live Better account to earn Live Better Points for eligible purchases and redeem rewards. Excludes Overseas Visitor health cover, Working Visa health cover, Overseas Student Health Cover (OSHC), Ambulance only cover, ahm covers and other selected covers. Live Better Management Pty Ltd, ACN 003 457 289 has entered into commercial arrangements with Medibank Live Better program partners and may receive commissions. Read full Medibank Live Better terms:  <a href="https://www.medibank.com.au/livebetter/rewards/terms" style="color:#000; text-decoration:underline;">https://www.medibank.com.au/livebetter/rewards/terms</a>
             
         </p>
-        <p style="padding:20px;"><a href="#" style="color:#000; " >Go to top <span style="font-size:23px;">&#8593;</span></a></p>
+        <p style="padding:20px;"><a href="#disclaimer-link-top" style="color:#000; " class="disclaimer-link-top" >Go to top <span style="font-size:23px;">&#8593;</span></a></p>
     </div>
 </div>
 </div>
 </div>
 </section>
+<script>
+$(document).ready(function(){
+    $( "a.disclaimer-link-top" ).click(function( event ) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top - 100}, 500);
+    });
+});
+</script>
 @endif
