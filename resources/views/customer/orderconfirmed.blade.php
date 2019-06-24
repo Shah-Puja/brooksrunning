@@ -175,7 +175,13 @@
                                             <p>GST</p>
                                         </div>
                                         <div class="mob-5">
-                                            <p class="right">${{ number_format(($order->total / 11),2) }}</p>
+                                        <p class="right">
+                                        @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                            ${{ number_format(((($order->total + $order->freight_cost) - $order->gift_amount) / 11),2) }}
+                                        @else
+                                            ${{ number_format((($order->total + $order->freight_cost) / 11),2) }}
+                                        @endif 
+                                            </p> 
                                         </div>
                                     </div>
                                     @if(isset($order->gift_amount) && $order->gift_amount!="")

@@ -19,7 +19,7 @@ class HomePageController extends Controller
 
         //Featured product(homepage slider)
         // $shoe_info = array('120286_615','110298_429','120291_073','110302_040','120285_542','110297_081');
-        $shoe_info = array('120283_070','110296_015','120284_120','110294_069','110288_096','120277_495','120287_531','110299_419');
+        $shoe_info = array('120305_413','110316_489','110293_057','120282_057','120283_070','110296_015','120285_032','110297_424');
         $product=[];
         foreach($shoe_info as $item){
             $slider_shoe = explode('_', $item); 
