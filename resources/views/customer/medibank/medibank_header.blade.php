@@ -25,7 +25,7 @@
 											<div class="medibank--login--success">
 												<div class="login_success">
 													<p class="success-text" >Verification successful<br/>
-													Welcome, <span class="user-name">{{Session::get('medibank_user_memberid')}}</span></p>
+													Medibank Membership Number: <span class="user-name">{{Session::get('medibank_user_memberid')}}</span></p>
 												</div>
 											</div>
 										</div>
