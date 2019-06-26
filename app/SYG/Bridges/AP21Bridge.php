@@ -21,6 +21,9 @@ class AP21Bridge implements BridgeInterface {
 				//echo "<pre>";print_R($response->getBody());die;
 				return $response->getBody();
 			}
+			else{
+				echo "xxxxxxxxxxx";die;
+			}
 		}
 		catch (RequestException $e) { 
 			throw $e;
