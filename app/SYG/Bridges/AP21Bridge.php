@@ -15,7 +15,7 @@ class AP21Bridge implements BridgeInterface {
     public function processCart($data) {
         //return $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getBody();
         try {
-            $response = $this->apiClient->put('Carts/1234?countryCode=AUFITs', ['body' => $data, 'http_errors' => false]);
+            $response = $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
             //echo $response->getStatusCode();
             if ($response->getStatusCode() == 200) {
                 return $response->getBody();
@@ -50,7 +50,7 @@ class AP21Bridge implements BridgeInterface {
     public function vouchervalid($gift, $pin, $amount) {
         //return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT', ['http_errors' => false]);
         try {
-            $response = $this->apiClient->get('Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT', ['http_errors' => false]);
+            $response = $this->apiClient->get('Voucher/GVVxalid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT', ['http_errors' => false]);
 			if ($response->getStatusCode() == 200) {
 				return $response;
 			}
