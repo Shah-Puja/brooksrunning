@@ -280,15 +280,17 @@ class CartController extends Controller {
 
             $giftcert_code = $cart->gift_id;
             $giftcert_pin = $cart->pin;
-            $vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
-            if(!empty($vouchervalid)){
-                $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal);
+            //$vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
+    
+    
+            $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal);
+            if(!empty($response)){
                 $returnCode = $response->getStatusCode();
-        
+    
                 switch ($returnCode) {
                     case 200:
                         $response_body = $response->getBody()->getContents();
-                        $xml = simplexml_load_string($vouchervalid);
+                        $xml = simplexml_load_string($response_body);
                         $gift_number = (int) ($xml->VoucherNumber);
                         $gift_pin = $giftcert_pin;
                         $ExpiryDate = (int) ($xml->ExpiryDate);
@@ -304,7 +306,6 @@ class CartController extends Controller {
                         break;
                 }
             }
-    
             
         }
     }
