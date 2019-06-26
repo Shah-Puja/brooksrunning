@@ -19,12 +19,7 @@ class AP21Bridge implements BridgeInterface {
 			//echo $response->getStatusCode();
 			if($response->getStatusCode()==200){ 
 				return $response->getBody();
-			}
-			else{
-				catch (RequestException $e) { 
-					throw $e;
-				}
-			}
+			} 
 		}
 		catch (RequestException $e) { 
 			throw $e;
