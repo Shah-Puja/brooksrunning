@@ -280,32 +280,30 @@ class CartController extends Controller {
 
             $giftcert_code = $cart->gift_id;
             $giftcert_pin = $cart->pin;
-            //$vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
-             
+            $vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
+    
     
             $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal);
-            if (!empty($response)) {
-                $returnCode = $response->getStatusCode();
-                switch ($returnCode) {
-                    case 200:
-                        $response_body = $response->getBody()->getContents();
-                        $xml = simplexml_load_string($vouchervalid);
-                        $gift_number = (int) ($xml->VoucherNumber);
-                        $gift_pin = $giftcert_pin;
-                        $ExpiryDate = (int) ($xml->ExpiryDate);
-                        $AvailableAmount = (int) ($xml->AvailableAmount);
-                        if ($AvailableAmount > $cartTotal) {
-                            $gift_discount = $cartTotal;
-                            $gift_cart_total = 0;
-                        } else {
-                            $gift_discount = $AvailableAmount;
-                            $gift_cart_total = $cartTotal - $AvailableAmount;
-                        }
-                        Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-                        break;
-                }
+            $returnCode = $response->getStatusCode();
+    
+            switch ($returnCode) {
+                case 200:
+                    $response_body = $response->getBody()->getContents();
+                    $xml = simplexml_load_string($vouchervalid);
+                    $gift_number = (int) ($xml->VoucherNumber);
+                    $gift_pin = $giftcert_pin;
+                    $ExpiryDate = (int) ($xml->ExpiryDate);
+                    $AvailableAmount = (int) ($xml->AvailableAmount);
+                    if ($AvailableAmount > $cartTotal) {
+                        $gift_discount = $cartTotal;
+                        $gift_cart_total = 0;
+                    } else {
+                        $gift_discount = $AvailableAmount;
+                        $gift_cart_total = $cartTotal - $AvailableAmount;
+                    }
+                    Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
+                    break;
             }
-            
         }
     }
 
@@ -316,39 +314,37 @@ class CartController extends Controller {
 
             $giftcert_code = $request->voucher_number;
             $giftcert_pin = $request->voucher_pin;
-            //$vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
+            $vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
     
             $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal);
-            if (!empty($response)) {
-                $returnCode = $response->getStatusCode();
-                switch ($returnCode) {
-                    case 200:
-                        $response_body = $response->getBody()->getContents();
-                        //print_r($response_body);
-                        $xml = simplexml_load_string($vouchervalid);
-                        $gift_number = (int) ($xml->VoucherNumber);
-                        $gift_pin = $giftcert_pin;
-                        $ExpiryDate = (int) ($xml->ExpiryDate);
-                        $AvailableAmount = (int) ($xml->AvailableAmount);
-                        if ($AvailableAmount > $cartTotal) {
-                            $gift_discount = $cartTotal;
-                            $gift_cart_total = 0;
-                        } else {
-                            $gift_discount = $AvailableAmount;
-                            $gift_cart_total = $cartTotal - $AvailableAmount;
-                        }
-                        //$cart_total = $gift_cart_total + $cart_mast['freight_charges'];
-                        Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
-        
-                        echo "success";
-                        break;
-                    case 403 :
-                        echo "Incorrect Voucher";
-                        break;
-                    default:
-                        echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
-                        break;
-                }
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 200:
+                    $response_body = $response->getBody()->getContents();
+                    //print_r($response_body);
+                    $xml = simplexml_load_string($vouchervalid);
+                    $gift_number = (int) ($xml->VoucherNumber);
+                    $gift_pin = $giftcert_pin;
+                    $ExpiryDate = (int) ($xml->ExpiryDate);
+                    $AvailableAmount = (int) ($xml->AvailableAmount);
+                    if ($AvailableAmount > $cartTotal) {
+                        $gift_discount = $cartTotal;
+                        $gift_cart_total = 0;
+                    } else {
+                        $gift_discount = $AvailableAmount;
+                        $gift_cart_total = $cartTotal - $AvailableAmount;
+                    }
+                    //$cart_total = $gift_cart_total + $cart_mast['freight_charges'];
+                    Cart::where('id', session('cart_id'))->update(['gift_id' => $gift_number, 'pin' => $gift_pin, 'gift_available_amount' => $AvailableAmount, 'gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
+    
+                    echo "success";
+                    break;
+                case 403 :
+                    echo "Incorrect Voucher";
+                    break;
+                default:
+                    echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                    break;
             }
         }
     }
