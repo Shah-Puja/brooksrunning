@@ -27,6 +27,9 @@
             @case("mens-running-shoes-sale")
                 <title>Brooks Running Men's Running Shoes Sale</title>
                 @break;
+            @case("healthcare-shoes-for-nurses")
+                <title>Nursing Shoes | Buy Brooks Shoes For Nurses</title>
+                @break;
             @case("meet_brooks")
                 @if(Request::segment(2) == "competition" && Request::segment(3) == "hbfrunforareasoncomp")
                     <title>Win a $1000 Running Kit!</title>
@@ -40,9 +43,9 @@
                 @break;
         @endswitch
         <!-- lightslider file -->
-        <link rel="stylesheet" href="/css/lightslider.css">
+        <link rel="stylesheet" href="/css/lightslider.css"> 
         <!-- common file -->
-        <link rel="stylesheet" href="/css/common_2.css">
+        <link rel="stylesheet" href="/css/common.css?v={{ Cache::get('css_version_number') }}">
         <script src="/js/jquery-2.2.4.min.js"></script>
         @yield('head')
         @include('digitalmarketingsnippets.gtm')

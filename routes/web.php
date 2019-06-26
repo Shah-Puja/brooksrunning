@@ -170,6 +170,7 @@ Route::get('/limited-edition-levitate-ricochet-shoes', 'CollectionController@ind
 Route::get('/abstract-collection-adrenaline-ghost', 'CollectionController@adreline_ghost');
 Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
+Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
 
 
 Route::get('/{category}', 'CategoryController@index');
@@ -194,4 +195,5 @@ Route::get('/d/testicontact/pull_from_icontact/{run_cnt}', 'testicontact@pull_fr
 Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
 Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
 Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
+Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');

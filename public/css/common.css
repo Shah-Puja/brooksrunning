@@ -131,7 +131,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .header-mobile .mob-search--product .search-container .search-wrapper form input, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.response_content .input-wrapper .radio-inline.new-comp-update-details label, .about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .header-mobile .mob-search--product .search-container .search-wrapper form input, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -7026,6 +7026,21 @@ textarea {
   font-size: 2em;
   color: #6d665f;
   line-height: 45px;
+}
+.response_content .input-wrapper .radio-inline.new-comp-update-details {
+  display: block;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.response_content .input-wrapper .radio-inline.new-comp-update-details input {
+  display: none;
+}
+.response_content .input-wrapper .radio-inline.new-comp-update-details label {
+  display: inline;
+  cursor: pointer;
+  transition: 3s all;
+  line-height: 1.7;
+  position: relative;
 }
 
 .response_content_learn_more .heading_learn_more {
