@@ -155,10 +155,6 @@
                                                     <h2><span style="color:#005cfb;">Order Number</span> 7BRN-{{ $order->order_no }}</h2> 
                                                     @else
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 
-<<<<<<< HEAD
-                                                    @endif
-                                                    <h3 style="line-height: 0.2px; font-weight: normal;">Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}</h3>
-=======
                                                     <h3 style="line-height: 0.2px; font-weight: normal;">
                                                     @if($order->transaction_dt!='')
                                                         Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}
@@ -166,7 +162,6 @@
                                                         Order Date : {{ date('d F Y', strtotime($order->updated_at)) }}
                                                     @endif
                                                     </h3>
->>>>>>> cda289e967a0624aae3d698e4243ad2aff8ac0e6
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
                                                 </td>
                                             </tr>
