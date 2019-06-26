@@ -35,7 +35,7 @@
                 @if($event_name->banner!='')
                     <img src="{{config('site.image_url.base_event_img')}}banner/{{$event_name->banner}}">
                 @else
-                    <img src="{{config('site.image_url.base_event_img')}}generic_event_header.png">
+                    <img src="{{config('site.image_url.base_event_img')}}banner/brooks-events-header-image.jpg">
                 @endif
             </div>
 		</div>

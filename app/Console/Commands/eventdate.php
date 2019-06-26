@@ -40,17 +40,21 @@ class eventdate extends Command
     public function handle()
     {  
         DB::statement("SET sql_mode = '' ");
+        
         $year=date('Y');
+        
         $events=event::where('event_dt','!=',00)
                        ->where('event_dt','<',date('Y-m-d'))
                        ->whereYear('event_dt','=',$year)->get(['id','event_dt']);
-        //dd($events);
+        
         
         foreach ($events as $value) {
             
             $format=date('F Y',strtotime('+1 year'.$value->event_dt));
+            $month=date('m',strtotime($format));
+            $year=date('Y',strtotime($format));
 
-            event::where('id',$value->id)->update(['date_str'=>$format,'event_dt'=>'0000-00-00','month'=>date('m',strtotime($value->event_dt)),'year'=>date('Y',strtotime($value->event_dt))]);
+            event::where('id',$value->id)->update(['date_str'=>$format,'event_dt'=>'0000-00-00','month'=>$month,'year'=>$year]);
          }
 
 
