@@ -67,20 +67,11 @@ return [
             'url' => env('APP_URL')."/images/events/banner",
         ],
 
-        'uploads_event_main' => [
-            'driver' => 'local',
-            'root'   => public_path('images/events/main'),
-            'url' => env('APP_URL')."/images/events/main",
-        ],
-
         'uploads_competition' => [
             'driver' => 'local',
             'root'   => public_path('images/competition-single'),
             'url' => env('APP_URL')."/images/competition-single",
         ],
-
-
-
 
         's3' => [
             'driver' => 's3',

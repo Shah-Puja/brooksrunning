@@ -22,7 +22,7 @@ class Event extends Resource
      */
 
 
-    public static $model = 'App\Models\Event_mast';
+    public static $model = 'App\Models\Event';
 
 
     /**
@@ -38,7 +38,7 @@ class Event extends Resource
      * @var array
      */
     public static $search = [
-        'event_id','event_name','event_date'
+        'event_name','event_dt'
     ];
 
    
@@ -51,44 +51,37 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('ID','event_id')->onlyOnIndex(),
+            ID::make()->sortable(),
             Text::make('Event Name','event_name')->sortable(),
             Text::make('Slug','slug')->hideFromIndex(),
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
             })->hideFromIndex(),
-            Text::make('Location','location')->hideFromIndex(),
-            Text::make('Event Date','event_date')->sortable(),
-            Text::make('Event Timestamp','event_timestamp')->withMeta(['extraAttributes' => [
-                'placeholder' => 'yyyy-mm-dd']
-            ])->hideFromIndex(),
-            Text::make('URL','url')->hideFromIndex(),
-            Text::make('Title Tag','title_tag')->hideFromIndex(),
-            Text::make('Meta Desc','meta_desc')->hideFromIndex(),
-            Text::make('Keywords','keywords')->hideFromIndex(),
-            Text::make('H1 Tag','h1_tag')->hideFromIndex(),
-            Textarea::make('Content','content')->hideFromIndex(),
-            Text::make('Page Link','page_link')->hideFromIndex(),
-            Image::make('Main Image','image')->disk('uploads_event_main')->storeAs(function (Request $request) {
-                return $request->image->getClientOriginalName();
-            })->hideFromIndex(),
-            Text::make('Background Colour','bg_color')->hideFromIndex(),
             Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
-            Text::make('Country','country')->hideFromIndex(),
-            Text::make('State','state')->hideFromIndex(),
+            Text::make('Event Date String ','date_str')->sortable(),
+            Text::make('Event Date ','event_dt')->hideFromIndex(),
             Text::make('Month','month')->hideFromIndex(),
-            Text::make('Event Type','event_type')->hideFromIndex(),
+            Text::make('Year','year')->sortable(),
+            Text::make('Next Event Date','next_event_dt')->hideFromIndex(),
+            Text::make('City','city')->hideFromIndex(),
+            Text::make('State','state')->hideFromIndex(),
+            Text::make('Country','country')->hideFromIndex(),
+            Textarea::make('Content','content')->hideFromIndex(),
+            Text::make('H1 Tag','h1_tag')->hideFromIndex(),
+            Text::make('Title Tag','title_tag')->hideFromIndex(),
+            Text::make('Link','link')->hideFromIndex(),
             Select::make('Status','status')->options([
-                'Y' => 'Y',
-                'N' => 'N',
+                'YES' => 'YES',
+                'NO' => 'NO',
             ])->sortable(),
-            Select::make('Featured','featured')->options([
-                'Y' => 'Y',
-                'N' => 'N',
-            ])->sortable(),
+            Select::make('Flag Show','flag_show')->options([
+                'YES' => 'YES',
+                'NO' => 'NO',
+            ])->hideFromIndex(),
+            Text::make('Series','series')->hideFromIndex(),
         ];
     }
 
@@ -117,7 +110,7 @@ class Event extends Resource
     {
         return [
             new Filters\Eventstatus,
-            new Filters\Eventfeatured,
+            //new Filters\Eventfeatured,
             new Filters\Eventdate,
         ];
     }

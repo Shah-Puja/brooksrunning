@@ -12,7 +12,7 @@ class MetaComposer
     public function __construct()
     {   
         $parsed_url=parse_url(url()->current()); 
-        $path  = isset($parsed_url['path']) ? $parsed_url['path'] : ''; 
+        $path  = isset($parsed_url['path']) ? $parsed_url['path'] : '/'; 
         $query = isset($parsed_url['query']) ? '?' . $parsed_url['query'] : ''; 
         $meta_url = $path.''.$query;
         $this->meta = Meta_tag::where( 'url', $meta_url )->first();

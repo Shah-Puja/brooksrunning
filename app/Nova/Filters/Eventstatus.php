@@ -37,8 +37,8 @@ class Eventstatus extends Filter
     public function options(Request $request)
     {
         return [
-            'Y' => 'Y',
-            'N' => 'Ns',
+            'YES' => 'YES',
+            'NO' => 'NO',
         ];
     }
 }
