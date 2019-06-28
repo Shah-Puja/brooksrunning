@@ -43,7 +43,7 @@ class Meta_tag extends Resource
 
     public static function label()
     {
-        return 'Add Meta Tag';
+        return 'Metadata';
     }
 
     public function fields(Request $request)

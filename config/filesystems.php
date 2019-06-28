@@ -57,14 +57,14 @@ return [
 
         'uploads_event_logo' => [
             'driver' => 'local',
-            'root'   => public_path('images/events/monthly/logo'),
-            'url' => env('APP_URL')."/images/events/monthly/logo",
+            'root'   => public_path('images/new-events/monthly/logo'),
+            'url' => env('APP_URL')."/images/new-events/monthly/logo",
         ],
 
         'uploads_event_banner' => [
             'driver' => 'local',
-            'root'   => public_path('images/events/banner'),
-            'url' => env('APP_URL')."/images/events/banner",
+            'root'   => public_path('images/new-events/banner'),
+            'url' => env('APP_URL')."/images/new-events/banner",
         ],
 
         'uploads_competition' => [
