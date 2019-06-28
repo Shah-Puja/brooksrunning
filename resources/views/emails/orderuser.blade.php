@@ -413,11 +413,11 @@
                                                                 <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">GST:</p></td>
                                                                 <td>
                                                                 <p style="text-align:justify; line-height: 0.4;">
-                                                                    @if(isset($order->gift_amount) && $order->gift_amount!="")
-                                                                        ${{ @number_format(((($order->total + $order->freight_cost) - $order->gift_amount) / 11), 2) }}
-                                                                    @else
-                                                                        ${{ @number_format((($order->total + $order->freight_cost) / 11), 2) }}
-                                                                    @endif
+                                                                @if(isset($order->gift_amount) && $order->gift_amount!="")
+                                                                    ${{ @number_format(((($order->total + $order->freight_cost) - $order->gift_amount) / 11), 2) }}
+                                                                @else
+                                                                    ${{ @number_format((($order->total + $order->freight_cost) / 11), 2) }}
+                                                                @endif
                                                                 </p></td>
                                                             </tr>
                                                             <tr>

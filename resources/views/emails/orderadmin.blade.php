@@ -211,7 +211,8 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                         <td align='right' colspan='2'><b>GST</b></td>
-                                        <td align='left'><b>
+                                        <td align='left'>
+                                        <b>
                                         @if(isset($order->gift_amount) && $order->gift_amount!="")
                                             ${{ @number_format(((($order->total + $order->freight_cost) - $order->gift_amount) / 11), 2) }}
                                         @else

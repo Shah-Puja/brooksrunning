@@ -176,7 +176,7 @@
                                         @else
                                             ${{ number_format((($order->total + $order->freight_cost) / 11),2) }}
                                         @endif 
-                                            </p>
+                                            </p> 
                                         </div>
                                     </div>
                                     @if(isset($order->gift_amount) && $order->gift_amount!="")
