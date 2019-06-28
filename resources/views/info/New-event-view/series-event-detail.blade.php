@@ -33,9 +33,9 @@
 			
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 @if($event_name->banner!='')
-                    <img src="{{config('site.image_url.base_event_img')}}banner/{{$event_name->banner}}">
+                    <img src="/images/new-events/banner/{{$event_name->banner}}">
                 @else
-                    <img src="{{config('site.image_url.base_event_img')}}banner/brooks-events-header-image.jpg">
+                    <img src="/images/new-events/banner/brooks-events-header-image.jpg">
                 @endif
             </div>
 		</div>
@@ -48,9 +48,9 @@
       	    <div class="about-header">
             <div class="event-logo">
                 @if($event_name->logo!='')
-                    <img src="{{config('site.image_url.base_event_img')}}monthly/logo/{{$event_name->logo}}">
+                    <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
                 @else
-                    <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg">
+                    <img src="/images/new-events/generic_event_image.jpg">
                 @endif
             </div>
 

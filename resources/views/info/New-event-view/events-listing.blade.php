@@ -135,9 +135,9 @@
                                 @endif
                                     <div class="img">
                                         @if(!empty($events->logo))  
-                                        <img id="event-img" src="{{config('site.image_url.base_event_img')}}monthly/logo/{{ $events->logo }}" alt="">
+                                        <img id="event-img" src="/images/new-events/monthly/logo/{{ $events->logo }}" alt="">
                                         @else 
-                                        <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg" alt="mothers-dayimg" />
+                                        <img src="/images/new-events/generic_event_image.jpg" alt="mothers-dayimg" />
                                         @endif         
                                     </div>
                                 </a>
@@ -194,9 +194,9 @@
                                 @endif
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
-                                        <img id="event-img" src="{{config('site.image_url.base_event_img')}}monthly/logo/{{ $upcoming_events->logo }}" alt="">
+                                        <img id="event-img" src="/images/new-events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
                                         @else 
-                                        <img src="{{config('site.image_url.base_event_img')}}generic_event_image.jpg" alt="mothers-dayimg" />
+                                        <img src="/images/new-events/generic_event_image.jpg" alt="mothers-dayimg" />
                                         @endif  
                                     </div>
                                 </a>
