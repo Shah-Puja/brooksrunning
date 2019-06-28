@@ -43,6 +43,6 @@
 </g>
 </svg>
     <span class="sidebar-label">
-        Category Sort
+        PLP Rank
     </span>
 </router-link>

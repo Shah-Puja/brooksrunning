@@ -21,6 +21,7 @@ class Eventdate extends DateFilter
     {
         $value = Carbon::parse($value);
 
-        return $query->where('event_dt', '<=', $value);
+        return $query->where('event_dt', '<=', date('Y-m-d',strtotime($value)))
+                     ->where('event_dt','!=','0');
     }
 }

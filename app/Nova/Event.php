@@ -52,8 +52,8 @@ class Event extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Event Name','event_name')->sortable(),
-            Text::make('Slug','slug')->hideFromIndex(),
+            Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
+            Text::make('Slug','slug')->hideFromIndex()->rules('required', 'max:255'),
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
             })->hideFromIndex(),
@@ -94,9 +94,9 @@ class Event extends Resource
     public function cards(Request $request)
     {
         return [
-            (new Metrics\TotalEvents),
-            (new Metrics\EventPerDay),
-            (new Metrics\EventsPlan),
+            //(new Metrics\TotalEvents),
+            //(new Metrics\EventPerDay),
+            //(new Metrics\EventsPlan),
         ];
     }
 
@@ -109,6 +109,7 @@ class Event extends Resource
     public function filters(Request $request)
     {
         return [
+            new Filters\EventType,
             new Filters\Eventstatus,
             //new Filters\Eventfeatured,
             new Filters\Eventdate,

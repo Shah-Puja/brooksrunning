@@ -52,8 +52,8 @@ class Meta_tag extends Resource
             ID::make()->sortable(),
             Text::make('Page Url','url')->withMeta(['extraAttributes' => [
                 'placeholder' => 'e.g: /womens-running-shoes']
-            ])->sortable(),
-            text::make('Title','title')->sortable(),
+            ])->sortable()->rules('required', 'max:255'),
+            text::make('Title','title')->sortable()->rules('required', 'max:255'),
             Textarea::make('Description','description')->sortable(),
         ];
     }
