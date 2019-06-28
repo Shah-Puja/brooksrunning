@@ -56,10 +56,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
-        return [
-            new Sales,
-            new Subscribers
-        ];
+        return [];
     }
 
     /**
