@@ -6,8 +6,6 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Naxon\NovaFieldSortable\Concerns\SortsIndexEntries;
-use Naxon\NovaFieldSortable\Sortable;
 use Chaseconey\ExternalImage\ExternalImage;
 
 class Group_rank extends Resource
@@ -21,9 +19,6 @@ class Group_rank extends Resource
     public static $model = 'App\Models\Group_ranks';
     public static $displayInNavigation = false;
     public static $perPageViaRelationship = 50;
-
-
-    use SortsIndexEntries;
     
     public static $defaultSortField ='display_rank';
     public static $indexDefaultOrder = [
