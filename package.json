@@ -13,7 +13,9 @@
         "build-category-sorter": "cd nova-components/CategorySorter && npm run dev",
         "build-category-sorter-prod": "cd nova-components/CategorySorter && npm run prod",
         "build-category-sort": "cd nova-components/CategorySort && npm run dev",
-        "build-category-sort-prod": "cd nova-components/CategorySort && npm run prod"
+        "build-category-sort-prod": "cd nova-components/CategorySort && npm run prod",
+        "build-mising-images": "cd nova-components/MisingImages && npm run dev",
+        "build-mising-images-prod": "cd nova-components/MisingImages && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18",

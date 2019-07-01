@@ -9,6 +9,7 @@ use App\Nova\Metrics\Subscribers;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Syginteractive\CategorySort\CategorySort;
+use Syginteractive\MisingImages\MisingImages;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -68,6 +69,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new CategorySort,
+            new MisingImages,
         ];
     }
 
