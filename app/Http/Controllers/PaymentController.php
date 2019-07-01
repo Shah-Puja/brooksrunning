@@ -778,7 +778,7 @@ class PaymentController extends Controller {
         } else {
             $freight_service_info = DB::table('freight_service')->where('postcode', htmlspecialchars($this->order->address->s_postcode))->get();
             echo "<pre>";
-            echo "eeeeeee ".count($freight_service_info);
+             echo "eeeeeee ".count($freight_service_info);
             print_r($freight_service_info);
             die;
         }
