@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hidden-mob"></div>
@@ -89,27 +89,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_ghost11_406.jpg">
+						<img src="/images/landingpage/Womens/women_levitate2-1.jpg">
 					    <div class="title">
-					       <h2 class="happy left">&nbsp;<br>Ghost 11</h2>
+					       <h2 class="happy left">&nbsp;<br>Levitate 2</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Experience super-soft cusioning and plush heel-to-toe transition in the Ghost 11. Awarded the 2018 Runner's World Editor's Choice.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop Ghost 11</a>
+							<p>Experience the next iteration of infinite energy. Super springy DNA AMP cushioning plus a softer, more flexible Fit Knit upper adds up to total comfort.</p>
+							<a class="primary-button" href="/brooks-running-shoes-levitate-2-womens/120279_060.html">Shop Levitate 2</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_ravenna10.jpg">
+							<img src="/images/landingpage/Womens/women_ghost12_2.jpg">
 						    <div class="title">
-						        <h2 class="happy left">Meet the <br>Ravenna 10</h2>
+						        <h2 class="happy left">&nbsp; <br>Ghost 12</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a> 
+							<p>New look. Same smooth ride. Still an award-winning runner favorite. The Ghost 12 strikes a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop Ghost 12</a> 
 					</div> 
 				</div>
 			</div>

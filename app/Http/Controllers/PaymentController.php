@@ -11,6 +11,7 @@ use App\Models\Order_log;
 use App\Models\Order_number;
 use App\Models\Order_address;
 use App\Models\User;
+use App\Models\Icontact_pushmail;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderUser;
@@ -55,7 +56,7 @@ class PaymentController extends Controller {
             if (isset($this->order->address) && !$this->order->address->isValid()) {
                 return redirect('shipping');
             }
-            
+
             if ($this->order->getItemsCount() != $this->cart->items_count) {
                 return redirect('cart');
             }
@@ -68,7 +69,7 @@ class PaymentController extends Controller {
 
     public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
-        if(isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total==0.00){
+        if (isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total == 0.00) {
             $logger = array(
                 'order_id' => $this->order->id,
                 'log_title' => 'Gift Certificate Payment'
@@ -77,22 +78,20 @@ class PaymentController extends Controller {
             $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
             $time = Carbon::now();
             $timestamp = $time->format('Y-m-d H:i:s');
-            Order::where('id', $this->order->id)->update(['status' => 'Order Completed','payment_status' => Carbon::now()]);
-             
+            Order::where('id', $this->order->id)->update(['status' => 'Order Completed', 'payment_status' => Carbon::now()]);
+
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
 
 
             $order = $this->order->load('orderItems.variant.product', 'address');
             event(new OrderReceived($order));
             return redirect('/order/success');
-
-        }else{
+        } else {
             return view('customer.payment', [
                 'clientToken' => $this->processor->getToken(),
                 'cartGrandTotal' => $this->order->grand_total,
                     ], compact('cart'));
         }
-        
     }
 
     public function create_token(AfterpayProcessor $afterpay_processor) {
@@ -106,16 +105,16 @@ class PaymentController extends Controller {
         if ($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0) {
             $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
-            
+
             if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
                 Order::where('id', $this->order->id)->update(['payment_type' => 'AfterPay']);
                 $transaction_id = $charge_payment['id'];
-                $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id, 'transaction_status' => 'Succeeded', 'payment_status' => Carbon::now())); 
+                $this->order->update(array('status' => 'Order Completed', 'transaction_id' => $transaction_id, 'transaction_status' => 'Succeeded', 'payment_status' => Carbon::now()));
                 $xml = '';
                 $afterpay_result = 'Success';
                 $log_title = "AfterPay Payment";
                 $log_type = "Response";
-                $log_status = "AfterPay Payment Process Completed"; 
+                $log_status = "AfterPay Payment Process Completed";
                 $orderReport = $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'];
                 $time = Carbon::now();
                 $timestamp = $time->format('Y-m-d H:i:s');
@@ -133,14 +132,14 @@ class PaymentController extends Controller {
                 );
                 Order_log::insert($logger);
 
-                $orderDataUpdate = array( 
+                $orderDataUpdate = array(
                     'transaction_status' => 'Succeeded',
                     'transaction_id' => $transaction_id,
                     'transaction_dt' => date('Y-m-d H:i:s'),
                     'payment_status' => date('Y-m-d H:i:s')
                 );
                 $order_no = $this->addOrderNo($this->order->id);
-                if($order_no!=""){
+                if ($order_no != "") {
                     Order::where('id', $this->order->id)->update(['order_no' => $order_no]);
                 }
 
@@ -148,6 +147,12 @@ class PaymentController extends Controller {
                 if (isset($Person)) {
                     $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
                 }
+
+                $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
+                if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
+                    $this->add_orders_in_icontact_pushmail($user_addr_detail);
+                }
+
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
                         $PersonID = $this->get_personid($this->order->address->email);
@@ -194,20 +199,20 @@ class PaymentController extends Controller {
         } else {
             //return redirect('/cart');
             $this->order->update(array('status' => 'AfterPay Processor Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
-                ));
-                $logger = array(
-                    'order_id' => ($this->order->id) ? $this->order->id : 0,
-                    'log_title' => 'AfterPay Payment',
-                    'log_type' => 'Response',
-                    'log_status' => 'AfterPay Processor Declined',
-                    'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
-                    'transaction_id' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "0",
-                    'xml' => $this->order,
-                    'transaction_result' => 'Failed',
-                    'transaction_data' => $request->all()
-                );
-                Order_log::insert($logger);
-                return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
+            ));
+            $logger = array(
+                'order_id' => ($this->order->id) ? $this->order->id : 0,
+                'log_title' => 'AfterPay Payment',
+                'log_type' => 'Response',
+                'log_status' => 'AfterPay Processor Declined',
+                'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
+                'transaction_id' => isset($charge_payment['errorId']) ? $charge_payment['errorId'] : "0",
+                'xml' => $this->order,
+                'transaction_result' => 'Failed',
+                'transaction_data' => $request->all()
+            );
+            Order_log::insert($logger);
+            return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
         }
     }
 
@@ -218,25 +223,25 @@ class PaymentController extends Controller {
             'log_title' => 'AfterPay Payment',
             'log_type' => 'Response',
             'log_status' => 'AfterPay Processor Declined',
-            'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'], 
+            'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
             'transaction_result' => 'Failed'
         );
         Order_log::insert($logger);
         return redirect('/payment')->with('afterpay_cancel', 'AfterPay Cancel');
-    } 
+    }
 
     public function store() {
-        $transation_result = $this->processor->charge($this->order); 
+        $transation_result = $this->processor->charge($this->order);
         $this->order->updateOrder($transation_result);
 
-        if (!$transation_result) { 
+        if (!$transation_result) {
             $logger = array(
                 'order_id' => $this->order->id,
                 'log_title' => 'Braintree Payment',
                 'log_type' => 'Response',
                 'log_status' => 'Braintree Processor Declined',
                 'result' => $_SERVER['PHP_SELF'] . "?" . $_SERVER['QUERY_STRING'],
-                'xml' => (!empty($xml)) ? $xml : '', 
+                'xml' => (!empty($xml)) ? $xml : '',
                 'transaction_result' => 'Failed'
             );
             Order_log::insert($logger);
@@ -245,7 +250,7 @@ class PaymentController extends Controller {
 
         if ($transation_result->processorResponseCode == "1000" && $transation_result->processorResponseText == "Approved") {
             $order_id = $transation_result->orderId;
-            $card_type = (isset($transation_result->creditCard['cardType']) && $transation_result->creditCard['cardType']!="") ? $transation_result->creditCard['cardType'] : "";
+            $card_type = (isset($transation_result->creditCard['cardType']) && $transation_result->creditCard['cardType'] != "") ? $transation_result->creditCard['cardType'] : "";
             $braintree_result = 'Success';
             $transaction_id = $transation_result->id;
             $log_title = "Braintree Payment";
@@ -296,9 +301,8 @@ class PaymentController extends Controller {
                 $order = $this->order->load('orderItems.variant.product', 'address');
                 event(new OrderReceived($order));
                 return redirect('/order/success');
-
             } else {
-                
+
                 $transaction_result = "Failed";
                 // $transaction = $transation_result->transaction;
                 $transaction_id = $transation_result->id;
@@ -306,7 +310,7 @@ class PaymentController extends Controller {
                 $order_id = $transation_result->orderId;
 
                 $check_transaction_status = $this->checkOrderMastTransStatus($order_id);
-                
+
                 if ($check_transaction_status == "Succeeded") {
 
                     $order_no = $this->addOrderNo($order_id);
@@ -317,7 +321,6 @@ class PaymentController extends Controller {
                     $order = $this->order->load('orderItems.variant.product', 'address');
                     event(new OrderReceived($order));
                     return redirect('/order/success');
-                    
                 } else {
 
                     $orderDataUpdate = array(
@@ -356,7 +359,6 @@ class PaymentController extends Controller {
                     // $order = $this->order->load('orderItems.variant.product', 'address');
                     // event(new OrderReceived($order));
                     return redirect('/order/failed');
-
                 }
             }
         }
@@ -373,35 +375,35 @@ class PaymentController extends Controller {
 
     public function order_success() {
 
-        Cache::forget( 'cart'  . $this->order->cart_id );
+        Cache::forget('cart' . $this->order->cart_id);
         $this->cart->delete();
         session()->forget('cart_id');
         $order = $this->order->load('orderItems.variant.product', 'address');
-        $order_email_find = Order_address::where("order_id", "=",  $order->id)->first();
+        $order_email_find = Order_address::where("order_id", "=", $order->id)->first();
         $order_email = $order_email_find->email;
         $user_id = User::where('email', '=', $order_email)->whereNull('password')->first();
-        if($user_id!=''){
+        if ($user_id != '') {
             $user_id = $user_id->id;
-        }else{
+        } else {
             $user_id = "no";
         }
         //print_r($user_id);
-        return view('customer.orderconfirmed', compact('order','user_id','order_email'));
+        return view('customer.orderconfirmed', compact('order', 'user_id', 'order_email'));
     }
 
     public function order_failed() {
 
         $order = $this->order->load('orderItems.variant.product', 'address');
-        $order_email_find = Order_address::where("order_id", "=",  $order->id)->first();
+        $order_email_find = Order_address::where("order_id", "=", $order->id)->first();
         $order_email = $order_email_find->email;
         $user_id = User::where('email', '=', $order_email)->whereNull('password')->first();
-        if($user_id!=''){
+        if ($user_id != '') {
             $user_id = $user_id->id;
-        }else{
+        } else {
             $user_id = "no";
         }
         //print_r($user_id);
-        return view('customer.orderfailed', compact('order','user_id','order_email'));
+        return view('customer.orderfailed', compact('order', 'user_id', 'order_email'));
     }
 
     public function process_order($order_id, $payment, $orderReport, $transaction_id, $timestamp) {
@@ -444,12 +446,18 @@ class PaymentController extends Controller {
                     );
                     break;
             }
-            
+
             //ap21 order process 
-            $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order','user_type' => 'Order']);
+            $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order', 'user_type' => 'Order']);
             if (isset($Person)) {
                 $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
             }
+
+            $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
+            if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
+                $this->add_orders_in_icontact_pushmail($user_addr_detail);
+            }
+
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
@@ -459,7 +467,6 @@ class PaymentController extends Controller {
                     $orderDataUpdate['person_idx'] = $PersonID;
                     $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                 }
-                
             } else {
                 $logger = array(
                     'order_id' => $this->order->id,
@@ -481,24 +488,24 @@ class PaymentController extends Controller {
 
     public function addOrderNo($order_id) {
         $order_no = 0;
-        $status ='Order Completed';
+        $status = 'Order Completed';
         //if (env('AP21_STATUS') == 'ON') {
-            $order_data = array(
-                'order_id' => $order_id
-            );
-            
-            $order_number_insert = Order_number::create($order_data);
-            if($order_number_insert){
-                $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
-                $status = 'Order Number';
-            }
-           
-        /*} else {
+        $order_data = array(
+            'order_id' => $order_id
+        );
 
-            $order_no = env('ORDER_PREFIX').$order_id;
-        }*/
+        $order_number_insert = Order_number::create($order_data);
+        if ($order_number_insert) {
+            $order_no = env('ORDER_PREFIX') . $order_number_insert->id;
+            $status = 'Order Number';
+        }
+
+        /* } else {
+
+          $order_no = env('ORDER_PREFIX').$order_id;
+          } */
         Order::where('id', $order_id)
-        ->update(['status' => $status,'order_no' => $order_no]);
+                ->update(['status' => $status, 'order_no' => $order_no]);
 
         return $order_no;
     }
@@ -522,7 +529,7 @@ class PaymentController extends Controller {
     public function checkOrderMastTransStatus($order_id) {
         $transaction_status = "";
         $result = Order::where('id', '=', $order_id)->first();
-        
+
         if ($result->count()) {
             $transaction_status = $result->transaction_status;
         } else {
@@ -657,7 +664,7 @@ class PaymentController extends Controller {
                     'log_type' => 'Response',
                     'log_status' => '201 Person ID Created',
                     'result' => $person_idx,
-                    'xml'=> $person_xml ? $person_xml : "",
+                    'xml' => $person_xml ? $person_xml : "",
                 );
                 Order_log::createNew($logger);
                 $returnVal = $person_idx;
@@ -706,15 +713,15 @@ class PaymentController extends Controller {
         $returnOrderNum = $this->order->id;
         $add_description = '';
         $order_instruction = '';
-        $ordernum = "BRN-" .$order->order_no; //change Order No with new series when site goes live
-       
+        $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
+
         if (!empty($this->order->coupon_code)) {
-           $order_instruction .= ' Coupon Code :- ' . $this->order->coupon_code;
+            $order_instruction .= ' Coupon Code :- ' . $this->order->coupon_code;
         }
 
         if (!empty($this->order->giftcert_ap21code)) {
-           $order_instruction .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
-        } 
+            $order_instruction .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
+        }
 
         if (!empty($this->order->address->order_info)) {
             $add_description .= $this->order->address->order_info;
@@ -779,7 +786,7 @@ class PaymentController extends Controller {
             $price = $item->price_sale;
             //$value = $qty * $price;
             $value = $item->total;
-            $discount = ($item->discount!= 0) ? $item->discount : 0;
+            $discount = ($item->discount != 0) ? $item->discount : 0;
             $promo_code = $item->promo_code;
             $promo_string = $item->promo_string;
 
@@ -791,22 +798,22 @@ class PaymentController extends Controller {
                           <Price>$price</Price>";
 
 
-             if (!empty($discount)) {
-              $xml_data.="<Discounts>
+            if (!empty($discount)) {
+                $xml_data .= "<Discounts>
               <Discount>
               <DiscountType>ManualDiscount</DiscountType>
               <DiscountTypeId>1</DiscountTypeId>
               <ReasonId>720</ReasonId>>";
 
-              if ($promo_code == 'BROOKS30' && $promo_string != ''):
-              $xml_data.="<Description>$promo_string</Description>";
-              else:
-              $xml_data.="<Description>$promo_code</Description>";
-              endif;
-              $xml_data.= "<Value>$discount</Value>
+                if ($promo_code == 'BROOKS30' && $promo_string != ''):
+                    $xml_data .= "<Description>$promo_string</Description>";
+                else:
+                    $xml_data .= "<Description>$promo_code</Description>";
+                endif;
+                $xml_data .= "<Value>$discount</Value>
               </Discount>
               </Discounts>";
-              } 
+            }
 
             $xml_data .= " <Value>$value</Value>
                         </OrderDetail>";
@@ -831,58 +838,57 @@ class PaymentController extends Controller {
 
         $gift_data = $this->giftVoucherGvvalid();
         //print_r($gift_data);
-        if($gift_data) {
+        if ($gift_data) {
 
-          $gift_amount = $this->order->gift_amount;
-          $subtotal = $subtotal - $gift_amount;
+            $gift_amount = $this->order->gift_amount;
+            $subtotal = $subtotal - $gift_amount;
 
-          $xml_data.=" <PaymentDetail>
+            $xml_data .= " <PaymentDetail>
           <Origin>GiftVoucher</Origin>
           <VoucherNumber>" . $gift_data['VoucherNumber'] . "</VoucherNumber>
           <ValidationId>" . $gift_data['ValidationId'] . "</ValidationId>
           <Amount>" . $gift_amount . "</Amount>
           </PaymentDetail>";
 
-          $subtotal = number_format($subtotal, 2);
-
-          } 
-if($order->payment_type == "AfterPay"){
-    $merchant_id = env('AFTERPAY_MERCHANT_ID');
-    $xml_data.="<PaymentDetail>
+            $subtotal = number_format($subtotal, 2);
+        }
+        if ($order->payment_type == "AfterPay") {
+            $merchant_id = env('AFTERPAY_MERCHANT_ID');
+            $xml_data .= "<PaymentDetail>
 						<Origin>CreditCard</Origin>
-						<MerchantId>".$merchant_id."</MerchantId>
+						<MerchantId>" . $merchant_id . "</MerchantId>
 						<CardType>AFTERPAY</CardType>
-                        <Stan>".$this->order->id."</Stan>
-                        <Settlement>".$this->order->id."</Settlement>
-						<Reference>".$this->order->transaction_id."</Reference>
-						<Amount>".$subtotal."</Amount>
+                        <Stan>" . $this->order->id . "</Stan>
+                        <Settlement>" . $this->order->id . "</Settlement>
+						<Reference>" . $this->order->transaction_id . "</Reference>
+						<Amount>" . $subtotal . "</Amount>
 						</PaymentDetail>\n\t\t";
-}else{
-        $xml_data .= "<PaymentDetail>
+        } else {
+            $xml_data .= "<PaymentDetail>
                             <Id>7781</Id>
                             <Origin>CreditCard</Origin>
                             <CardType>MASTERCARD / VISA</CardType>
-                            <Stan>".$this->order->id."</Stan>                            
-                            <Settlement>".$this->order->id."</Settlement>
+                            <Stan>" . $this->order->id . "</Stan>                            
+                            <Settlement>" . $this->order->id . "</Settlement>
                             <AuthCode/>
                             <AccountType/>";
 
-        if (!empty($this->order->transaction_id)) {
-            $xml_data .= "<Reference>" . $this->order->transaction_id . "</Reference>";
-        } else {
-            $xml_data .= "<Reference>Ref1</Reference>";
-        }
+            if (!empty($this->order->transaction_id)) {
+                $xml_data .= "<Reference>" . $this->order->transaction_id . "</Reference>";
+            } else {
+                $xml_data .= "<Reference>Ref1</Reference>";
+            }
 
-        $xml_data .= "<Amount>" . $subtotal . "</Amount>";
-        $xml_data .= "<Message>payment_statusCURRENTbank_</Message>";
-        $xml_data .= "</PaymentDetail>";
-}
+            $xml_data .= "<Amount>" . $subtotal . "</Amount>";
+            $xml_data .= "<Message>payment_statusCURRENTbank_</Message>";
+            $xml_data .= "</PaymentDetail>";
+        }
         $xml_data .= "</Payments>";
 
         $xml_data .= "</Order>";
 
         //echo $xml_data;
-        
+
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
@@ -970,9 +976,9 @@ if($order->payment_type == "AfterPay"){
         return $returnVal;
     }
 
-    public function giftVoucherGvvalid(){
+    public function giftVoucherGvvalid() {
         $dataValue = false;
-        if($this->order->gift_amount > 0){
+        if ($this->order->gift_amount > 0) {
 
             $gift = $this->order->giftcert_ap21code;
             $pin = $this->order->giftcert_ap21pin;
@@ -1010,13 +1016,28 @@ if($order->payment_type == "AfterPay"){
                         'Parameters' => '',
                     );
                     Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));
                     $dataValue = false;
                     break;
             }
         }
         return $dataValue;
+    }
+
+    public function add_orders_in_icontact_pushmail($detail) {
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate([
+                    'email' => $detail->email], [
+                    'source' => 'Order',
+                    'fname' => $detail->s_fname,
+                    'lname' => $detail->s_lname,
+                    'postcode' => $detail->s_postcode,
+                    'phone' => $detail->s_phone,
+                    'city' => $detail->s_city,
+                    'state' => $detail->s_state,
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+        ]);
     }
 
 }

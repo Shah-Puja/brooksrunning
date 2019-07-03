@@ -6,6 +6,7 @@ use App\SYG\Subscribers\iContactProApi;
 use App\SYG\Subscribers\iContactSubscriberInterface;
 use App\Models\User;
 use DB;
+use App\Models\Icontact_pushmail;
 
 class testicontact extends Controller {
 
@@ -96,6 +97,29 @@ class testicontact extends Controller {
             $this->client->add_icontactSubscriber($person_arr,$userid);
         }
         echo "<br>" . "1000 Users inserted in iContact";
+    }
+
+    public function push_queued_records_to_icontact() {
+        $pushmail_users = Icontact_pushmail::where('status', 'queue')->orderBy('pushmail_id', 'asc')->limit(100)->get();
+        //echo "<pre>";print_r($pushmail_users);die;
+        foreach ($pushmail_users as $user) {
+            $email = $user->email;
+           // $userid = $user->id;
+            echo "<br>" . $email; 
+
+            $person_arr = array('fname' => $user->fname, 'lname' => $user->lname, 'email' => trim($user->email),
+                'contest_code' => $user->comp_name, 'ad_tracking' => $user->source, 'gender' => $user->gender,
+                'city' => $user->city, 'state' => $user->state,
+                'birth_day' => $user->birth_day, 'birth_month' => $user->birth_month,
+                'age' => $user->age_group, 'post_code' => $user->postcode,
+                'phone' => $user->phone, 'shoe_wear' => $user->shoe_wear,
+                'country' => $user->country, 'happy_runner_comp' => $user->happy_runner_comp,
+                'training_for' => $user->training_for, 'likes_to_run' => $user->likes_to_run,
+                'experience_preference' => $user->experience_preference,
+            );
+            $this->client->add_icontactpushmailSubscriber($person_arr);
+        }
+        echo "<br>" . "success";
     }
 
 }

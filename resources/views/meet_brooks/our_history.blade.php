@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <link rel="stylesheet" href="/css/history.css">
 
 <div class="brooksourhistory">
