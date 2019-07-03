@@ -54,8 +54,8 @@ class s8_SendStatusEmail extends Command
         $data['ap21_processed_idx']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','Yes')->count();
         $data['ap21_unprocessed_idx']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','No')->count();
 
-        $data['visible_sku']= DB::connection('future')->table("p_variants")->where('visible','Yes')->count();
-        $data['not_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','No')->count();
+        $data['futurevisible_sku']= DB::connection('future')->table("p_variants")->where('visible','Yes')->count();
+        $data['future_not_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','No')->count();
         
 
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
