@@ -49,8 +49,8 @@ class s8_SendStatusEmail extends Command
         $data['groups']= DB::connection('production')->table("groups")->count();
         $data['ap21_notes']= DB::connection('production')->table("ap21_notes")->count();
         $data['ap21_notes_distinct']= DB::connection('production')->table("ap21_notes_distinct")->count();
-        $data['ap21_notes_processed']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','Yes')->count();
-        $data['ap21_notes_unprocessed']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','No')->count();
+        $data['ap21_processed_idx']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','Yes')->count();
+        $data['ap21_unprocessed_idx']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','No')->count();
 
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
             $message->to('purvi.cshah@gmail.com');
