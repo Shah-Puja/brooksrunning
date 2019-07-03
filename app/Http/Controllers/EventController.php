@@ -152,7 +152,7 @@ class EventController extends Controller {
         $event_name=event::where('slug',$series_event)->first();
        
 
-        $series_event=event::where('series',$event_name->series)->orderBy('year','ASC')->get();
+        $series_event=event::where('series',$event_name->series)->orderBy('year','ASC')->orderBy('month')->get();
         
         
        
