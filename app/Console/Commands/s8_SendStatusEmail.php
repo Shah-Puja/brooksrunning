@@ -40,12 +40,22 @@ class s8_SendStatusEmail extends Command
      */
     public function handle()
     {
-        //
-        $msg = 'Mail sent from s8'.date('Y-m-d H:i:s');
-        Mail::raw($msg, function ($message) {
-                    $message->to('purvi.cshah@gmail.com');
-                    $message->from('sygtest@gmail.com');
-                    $message->Subject('Refresh Status');
-                 });
+        //        
+        
+        $data['products']= DB::connection('production')->table("p_products")->count();
+        $data['variants']= DB::connection('production')->table("p_variants")->count();
+        $data['tags']= DB::connection('production')->table("p_tags")->count();
+        $data['images']= DB::connection('production')->table("p_images")->count();
+        $data['groups']= DB::connection('production')->table("p_groups")->count();
+        $data['ap21_notes']= DB::connection('production')->table("ap21_notes")->count();
+        $data['ap21_notes_distinct']= DB::connection('production')->table("ap21_notes_distinct")->count();
+        $data['ap21_notes_processed']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','Yes')->count();
+        $data['ap21_notes_unprocessed']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','No')->count();
+
+        Mail::send('emails.DailyRefresh', $data, function ($message) { 
+            $message->to('purvi.cshah@gmail.com');
+            $message->from('sygtest@gmail.com');
+            $message->Subject('Refresh Status');
+        });        
     }
 }
