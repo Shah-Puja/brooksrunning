@@ -46,7 +46,7 @@ class s8_SendStatusEmail extends Command
         $data['variants']= DB::connection('production')->table("p_variants")->count();
         $data['tags']= DB::connection('production')->table("p_tags")->count();
         $data['images']= DB::connection('production')->table("p_images")->count();
-        $data['groups']= DB::connection('production')->table("p_groups")->count();
+        $data['groups']= DB::connection('production')->table("groups")->count();
         $data['ap21_notes']= DB::connection('production')->table("ap21_notes")->count();
         $data['ap21_notes_distinct']= DB::connection('production')->table("ap21_notes_distinct")->count();
         $data['ap21_notes_processed']= DB::connection('production')->table("ap21_notes_distinct")->where('processed','Yes')->count();
