@@ -779,17 +779,14 @@ class PaymentController extends Controller {
             $servicetype = 'PUP';
         } else {
             $freight_service_info = DB::table('freight_service')->where('postcode', htmlspecialchars($this->order->address->s_postcode))->first();
-            if(!empty($freight_service_info)){
-                echo "<pre>";
-                print_r($freight_service_info);
-                die;
-            }else{
+            if(!empty($freight_service_info) && $freight_service_info->postcode === $this->order->address->s_postcode){
                 $carrier = 'CPL';
                 $servicetype = 'X31';
-            }
-            
-        }
-
+            }else{
+                $carrier = 'AUS';
+                $servicetype = '03S1';
+            } 
+        } 
         $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
                               <ServiceType><Code>$servicetype</Code></ServiceType>";
         $xml_data .= "<Contacts>
