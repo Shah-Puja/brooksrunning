@@ -779,9 +779,14 @@ class PaymentController extends Controller {
             $servicetype = 'PUP';
         } else {
             $freight_service_info = DB::table('freight_service')->where('postcode', htmlspecialchars($this->order->address->s_postcode))->first();
-            echo "<pre>";
-            print_r($freight_service_info);
-            die;
+            if(!empty($freight_service_info)){
+                echo "<pre>";
+                print_r($freight_service_info);
+                die;
+            }else{
+                echo "No post code, default case would be applied";die;
+            }
+            
         }
 
         $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
