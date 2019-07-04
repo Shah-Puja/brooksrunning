@@ -11,8 +11,8 @@
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_w_mobile.jpg">
-			        <img src="/images/home/hp_shop_w.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/20190703/hp_shop_w_mobile.jpg">
+			        <img src="/images/home/20190703/hp_shop_w.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       			<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
@@ -22,8 +22,8 @@
 		     <div class="mob-6 pl-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_men_mobile.jpg">
-			        <img src="/images/home/hp_shop_m.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/20190703/hp_shop_m_mobile.jpg">
+			        <img src="/images/home/20190703/hp_shop_m.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 				  <a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
