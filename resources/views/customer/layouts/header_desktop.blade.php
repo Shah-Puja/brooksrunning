@@ -339,9 +339,9 @@
 														<li class="submenu-main">
 		                                                    <a href="/neutral-running-shoes">Neutral Running Shoes</a>
 		                                                </li>
-		                                                <li>
+		                                                <!-- <li>
                                                             <a href="/shoes/aduro">Aduro</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li>
                                                             <a href="/shoes/defyance">Defyance</a>
                                                         </li>
