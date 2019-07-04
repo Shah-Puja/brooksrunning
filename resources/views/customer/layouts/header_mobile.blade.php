@@ -344,9 +344,9 @@
 	                            Neutral Running Shoes                      
 	                        </a>
 	                        <ul>
-							<li>
+								<!-- <li>
 									<a href="/shoes/aduro">Aduro</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="/shoes/defyance">Defyance</a>
 								</li>
