@@ -3,7 +3,7 @@ $(document).ready(function () {
     var selected_delivery_type = $.trim($('#selected_delivery_type').text());
 
     if (selected_delivery_type == "New Zealand Standard Delivery") {
-        $('select[name="s_state').val("New Zealand");
+        $('select[name="s_state]').val("New Zealand");
     }
     $('select[name=s_state]').on('change', function () {
         if (selected_delivery_type == "Express Delivery") {
