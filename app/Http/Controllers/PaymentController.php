@@ -784,7 +784,8 @@ class PaymentController extends Controller {
                 print_r($freight_service_info);
                 die;
             }else{
-                echo "No post code, default case would be applied";die;
+                $carrier = 'CPL';
+                $servicetype = 'X31';
             }
             
         }
