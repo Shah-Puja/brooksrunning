@@ -768,8 +768,24 @@ class PaymentController extends Controller {
                       <Postcode>" . htmlspecialchars($this->order->address->s_postcode) . "</Postcode>
                       <Country></Country>
                     </Delivery>
-                </Addresses>
-                <Contacts>
+                </Addresses>";
+        $carrier = $servicetype = '';
+        if ($order->delivery_type == "express") {
+            $carrier = 'AUS';
+            $servicetype = '03X1';
+        } else if ($order->delivery_type == "new_zealand") {
+            $carrier = 'NOC';
+            $servicetype = 'PUP';
+        } else {
+            $freight_service_info = DB::table('freight_service')->where('postcode', htmlspecialchars($this->order->address->s_postcode))->first();
+            echo "<pre>";
+            print_r($freight_service_info);
+            die;
+        }
+
+        $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
+                              <ServiceType><Code>$servicetype</Code></ServiceType>";
+        $xml_data .= "<Contacts>
                     <Email>" . $this->order->address->email . "</Email>
                     <Phones>
                         <Home>" . $this->order->address->s_phone . "</Home>
