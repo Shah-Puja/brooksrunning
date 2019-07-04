@@ -22,6 +22,7 @@ use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class PaymentController extends Controller {
 
