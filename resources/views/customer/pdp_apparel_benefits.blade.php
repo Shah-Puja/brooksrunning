@@ -17,8 +17,8 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-						<h3 class="br-heading">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}</p>
+						<h3 class="br-heading">{!! (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -41,8 +41,8 @@
 			<div class="col-6 visible-mob visible-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-						<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+						<h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -60,8 +60,8 @@
 			<div class="col-6 hidden-mob hidden-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-						<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+						<h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -74,8 +74,8 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-					<h3 class="br-heading">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}</p>
+					<h3 class="br-heading">{!! (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
