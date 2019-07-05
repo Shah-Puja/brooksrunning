@@ -44,14 +44,14 @@ class s8_SendStatusEmail extends Command
     {
         //        
         $new_table_arr = array("new_p_products", "new_p_variants", "new_p_tags","new_groups","new_p_images");
-        $new_table_exist='No';
+        $new_tables_exist='No';
         foreach ($new_table_arr as $table) {
             if (Schema::hasTable($table)) {
-                $new_table_exist='Yes';
+                $new_tables_exist='Yes';
                 break;
             }
         }
-        $data['new_tables_exist']= $new_table_exist;
+        $data['new_tables_exist']= $new_tables_exist;
 
         
         $data['visible_sku']= DB::connection('production')->table("p_variants")->where('visible','Yes')->count();
