@@ -45,7 +45,7 @@ class s8_SendStatusEmail extends Command
         //        
         $new_table_arr = array("new_p_products", "new_p_variants", "new_p_tags","new_groups","new_p_images");
         $new_table_exist='No';
-        foreach ($table_arr as $table) {
+        foreach ($new_table_arr as $table) {
             if (Schema::hasTable($table)) {
                 $new_table_exist='Yes';
                 break;
