@@ -72,8 +72,10 @@ class s8_SendStatusEmail extends Command
         $last_log=DB::connection('production')->table("refresh_log")->latest()->first();
         $last_log_dt=date('Y-m-d',strtotime($last_log->created_at));
         
-        $data['logs']=DB::connection('production')->table("refresh_log")->where('created_at','>=',$last_log_dt)->get();            
-        $mail_subject="Refresh Status : ".($new_tables_exist=="Yes") ? 'Incomplete' :'Successful' ;
+        $data['logs']=DB::connection('production')->table("refresh_log")->where('created_at','>=',$last_log_dt)->get();                    
+        $this->info($new_tables_exist);
+        $mail_subject="Refresh Status : ".(($new_tables_exist=="Yes")?'Incomplete':'Successful');
+        $this->info($mail_subject);
         
         Mail::send('emails.DailyRefresh', $data, function ($message) use ($mail_subject) { 
             $message->to('purvi.cshah@gmail.com');
