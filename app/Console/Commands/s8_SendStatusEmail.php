@@ -73,11 +73,12 @@ class s8_SendStatusEmail extends Command
         $last_log_dt=date('Y-m-d',strtotime($last_log->created_at));
         
         $data['logs']=DB::connection('production')->table("refresh_log")->where('created_at','>=',$last_log_dt)->get();            
+        $mail_subject="Refresh Status : ".($new_tables_exist=="Yes") ? 'Incomplete' :'Successful' ;
         
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
             $message->to('purvi.cshah@gmail.com');
             $message->from('sygtest@gmail.com');
-            $message->Subject('Refresh Status 5-July-2019');
+            $message->Subject('Refresh Status : 5-July-2019');
         });        
     }
 }
