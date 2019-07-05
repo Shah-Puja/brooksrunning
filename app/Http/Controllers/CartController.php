@@ -240,16 +240,16 @@ class CartController extends Controller {
     public function get_cart_order_total() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
-            if ($cart->gift_pin != "") {
+            if ($cart->pin != "") {
                 $AvailableAmount = $cart->gift_available_amount;
-                $cartTotal = $cart->cart_total;
-    
-                if ($AvailableAmount > $cartTotal) {
-                    $gift_discount = $cartTotal;
+                $cartTotal = $cart->total;
+                $freight_cost = $cart->freight_cost;
+                if ($AvailableAmount > ($cartTotal + $freight_cost)) {
+                    $gift_discount = ($cartTotal + $freight_cost);
                     $gift_cart_total = 0;
                 } else {
                     $gift_discount = $AvailableAmount;
-                    $gift_cart_total = $cartTotal - $AvailableAmount;
+                    $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
                 }
                 Cart::where('id', session('cart_id'))->update(['gift_discount' => $gift_discount, 'gift_cart_total' => $gift_cart_total]);
                 $cart = Cart::where('id', session('cart_id'))->where('gift_id', $cart->gift_id)->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
@@ -277,6 +277,7 @@ class CartController extends Controller {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
             $cartTotal = $cart->total;
+            $freight_cost = $cart->freight_cost;
 
             $giftcert_code = $cart->gift_id;
             $giftcert_pin = $cart->pin;
@@ -314,6 +315,7 @@ class CartController extends Controller {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first();
         if(!empty($cart)){
             $cartTotal = $cart->total;
+            $freight_cost = $cart->freight_cost;
 
             $giftcert_code = $request->voucher_number;
             $giftcert_pin = $request->voucher_pin;
