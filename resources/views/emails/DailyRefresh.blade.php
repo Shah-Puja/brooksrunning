@@ -1,3 +1,4 @@
+<h2>Status - Refresh {{ ($new_tables_exist=="Yes") ? 'Incomplete' :'Successful'}}</h2>
 <h2>Live Database</h2>
 # Visible Skus = {{$visible_sku}} <br>
 # Not Visible Skus = {{$not_visible_sku}} <br>
@@ -15,3 +16,13 @@
 <h2>Future Database</h2>
 # Visible Skus = {{$future_visible_sku}} <br>
 # Not Visible Skus = {{$future_not_visible_sku}} <br>
+
+<h2>Last Log Entries</h2>
+<table border=1 cellSpacing=0 cellPadding=0 width=80%>
+@foreach ($logs as $log)
+    <tr>
+    <td>{{$log->tb_name}}</td>
+    <td>{{$log->log_desc}}</td>
+    <td>{{$log->created_at}}</td>
+    </tr>
+@endforeach
