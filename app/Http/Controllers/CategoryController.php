@@ -219,7 +219,7 @@ class CategoryController extends Controller
 
     public function shoes_detail($shoe_type=''){
         //$shoe_name=strtolower($shoe_name);
-        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam");
+        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam","addiction-walker","dyad-walker");
         if (in_array($shoe_type,$common_template)){    
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
@@ -246,7 +246,7 @@ class CategoryController extends Controller
 
         }
 
-        $diff_template=array("liberty","maximus","addiction-walker","dyad-walker");
+        $diff_template=array("liberty","maximus");
         if (in_array($shoe_type,$diff_template)){ 
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             $shoe_specs = shoe_specs::where(['shoe_type'=> $shoe_type])->orderBy('seqno', 'asc')->get();

@@ -139,7 +139,7 @@
 	                    <div id="product-content">
 	                            {!! $shoe_info->description !!}
 								 <div class="features">
-								 	<p><strong>Activity:</strong> Running</p>
+								 	<p><strong>Activity:</strong> {{ (strpos(Request::segment(2), 'walker') !== false) ? 'Walking' : 'Running' }}</p>
 								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->category) }} </p>
 								 	<p class="shoe-experience">
 											<strong>Experience:</strong>
