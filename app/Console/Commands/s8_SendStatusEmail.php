@@ -43,13 +43,17 @@ class s8_SendStatusEmail extends Command
     public function handle()
     {
         //        
-        if (Schema::hasTable('users'))
-        {
-            echo 'table exist';
-        } else {
-            echo 'table not exist';
+        $new_table_arr = array("new_p_products", "new_p_variants", "new_p_tags","new_groups","new_p_images");
+        $new_table_exist='No';
+        foreach ($table_arr as $table) {
+            if (Schema::hasTable($table)) {
+                $new_table_exist='Yes';
+                break;
+            }
         }
-        exit; 
+        $data['new_tables_exist']= $new_table_exist;
+
+        
         $data['visible_sku']= DB::connection('production')->table("p_variants")->where('visible','Yes')->count();
         $data['not_visible_sku']= DB::connection('production')->table("p_variants")->where('visible','No')->count();
         $data['products']= DB::connection('production')->table("p_products")->count();
@@ -70,7 +74,7 @@ class s8_SendStatusEmail extends Command
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
             $message->to('purvi.cshah@gmail.com');
             $message->from('sygtest@gmail.com');
-            $message->Subject('Refresh Status');
+            $message->Subject('Refresh Status 5-July-2019');
         });        
     }
 }
