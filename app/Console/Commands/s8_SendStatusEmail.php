@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+
 use Illuminate\Console\Command;
 use DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Schema;
 
 
 class s8_SendStatusEmail extends Command
@@ -41,6 +43,16 @@ class s8_SendStatusEmail extends Command
     public function handle()
     {
         //        
+        $new_table_arr = array("new_p_products", "new_p_variants", "new_p_tags","new_groups","new_p_images");
+        $new_tables_exist='No';
+        foreach ($new_table_arr as $table) {
+            if (Schema::hasTable($table)) {
+                $new_tables_exist='Yes';
+                break;
+            }
+        }
+        $data['new_tables_exist']= $new_tables_exist;
+
         
         $data['visible_sku']= DB::connection('production')->table("p_variants")->where('visible','Yes')->count();
         $data['not_visible_sku']= DB::connection('production')->table("p_variants")->where('visible','No')->count();
@@ -56,12 +68,19 @@ class s8_SendStatusEmail extends Command
 
         $data['future_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','Yes')->count();
         $data['future_not_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','No')->count();
-        
 
-        Mail::send('emails.DailyRefresh', $data, function ($message) { 
+        $last_log=DB::connection('production')->table("refresh_log")->latest()->first();
+        $last_log_dt=date('Y-m-d',strtotime($last_log->created_at));
+        
+        $data['logs']=DB::connection('production')->table("refresh_log")->where('created_at','>=',$last_log_dt)->orderBy('id','desc')->get();
+        $this->info($new_tables_exist);
+        $mail_subject="Refresh Status : ".(($new_tables_exist=="Yes")?'Incomplete':'Successful');
+        $this->info($mail_subject);
+        
+        Mail::send('emails.DailyRefresh', $data, function ($message) use ($mail_subject) { 
             $message->to('purvi.cshah@gmail.com');
             $message->from('sygtest@gmail.com');
-            $message->Subject('Refresh Status');
+            $message->Subject($mail_subject);
         });        
     }
 }
