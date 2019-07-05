@@ -78,7 +78,7 @@ class s8_SendStatusEmail extends Command
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
             $message->to('purvi.cshah@gmail.com');
             $message->from('sygtest@gmail.com');
-            $message->Subject('Refresh Status : 5-July-2019');
+            $message->Subject($mail_subject);
         });        
     }
 }
