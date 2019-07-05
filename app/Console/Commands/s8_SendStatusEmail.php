@@ -69,8 +69,11 @@ class s8_SendStatusEmail extends Command
         $data['future_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','Yes')->count();
         $data['future_not_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','No')->count();
 
+        $last_log=DB::connection('production')->table("refresh_log")->latest()->first();
+        $last_log_dt=date('Y-m-d',strtotime($last_log->created_at));
         
-
+        $data['logs']=DB::connection('production')->table("refresh_log")->where('created_at','>=',$last_log_dt)->get();            
+        
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
             $message->to('purvi.cshah@gmail.com');
             $message->from('sygtest@gmail.com');
