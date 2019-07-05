@@ -44,14 +44,18 @@ class eventdate extends Command
         $year=date('Y');
         
         $events=event::where('event_dt','!=',00)
+                        ->Where('next_event_dt','!=','')
                        ->where('event_dt','<',date('Y-m-d'))
-                       ->whereYear('event_dt','=',$year)->get(['id','event_dt']);
-        
+                       ->whereYear('event_dt','=',$year)
+                       ->get(['id','event_dt','next_event_dt']);
+            //dd($events);
         
         foreach ($events as $value) {
             
-            $format=date('F Y',strtotime('+1 year'.$value->event_dt));
+            $format=date('F Y',strtotime($value->next_event_dt));
+            
             $month=date('m',strtotime($format));
+
             $year=date('Y',strtotime($format));
 
             event::where('id',$value->id)->update(['date_str'=>$format,'event_dt'=>'0000-00-00','month'=>$month,'year'=>$year]);
