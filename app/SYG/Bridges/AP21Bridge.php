@@ -3,6 +3,7 @@
 namespace App\SYG\Bridges;
 
 use GuzzleHttp\Exception\RequestException;
+use Exception;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -21,9 +22,13 @@ class AP21Bridge implements BridgeInterface {
                 return $response->getBody();
             }
         } catch (RequestException $e) {
-            throw $e;
+            if ($e->getMessage() != '') {
+                return null;
+            }
         } catch (\Exception $exception) {
-            throw $exception;
+            if ($exception->getMessage() != '') {
+                return null;
+            }
         }
     }
 
@@ -51,11 +56,17 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT', ['http_errors' => false]);
         try {
             $response = $this->apiClient->get('Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT', ['http_errors' => false]);
-			if ($response->getStatusCode() == 200) {
-				return $response;
-			}
+            if ($response->getStatusCode() == 200) {
+                return $response;
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                return null;
+            }
         } catch (\Exception $exception) {
-            throw $exception;
+            if ($exception->getMessage() != '') {
+                return null;
+            }
         }
     }
 
