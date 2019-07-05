@@ -1,5 +1,5 @@
 <h2>Live Database</h2>
-New Product tables Exists? = {{$new_table_exist}} *Expected Answer = No (If Yes, refresh incomplete) <br>
+New Product tables Exists? = {{$new_tables_exist}} *Expected Answer = No (If Yes, refresh incomplete) <br>
 aa
 bb
 # Visible Skus = {{$visible_sku}} <br>
