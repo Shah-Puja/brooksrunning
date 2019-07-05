@@ -421,7 +421,9 @@ class CategoryController extends Controller
                 $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
-                                    })->get();
+                                    })
+                                    ->with('variants')
+                                    ->get();
             
                 $products = $styles->filter(function ($value, $key) use ($data_array) {
                     $data=[];
