@@ -41,7 +41,13 @@ class s8_SendStatusEmail extends Command
     public function handle()
     {
         //        
-        
+        if (Schema::hasTable('users'))
+        {
+            echo 'table exist';
+        } else {
+            echo 'table not exist';
+        }
+        exit; 
         $data['visible_sku']= DB::connection('production')->table("p_variants")->where('visible','Yes')->count();
         $data['not_visible_sku']= DB::connection('production')->table("p_variants")->where('visible','No')->count();
         $data['products']= DB::connection('production')->table("p_products")->count();
@@ -56,6 +62,7 @@ class s8_SendStatusEmail extends Command
 
         $data['future_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','Yes')->count();
         $data['future_not_visible_sku']= DB::connection('future')->table("p_variants")->where('visible','No')->count();
+
         
 
         Mail::send('emails.DailyRefresh', $data, function ($message) { 
