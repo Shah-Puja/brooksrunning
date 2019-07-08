@@ -455,7 +455,7 @@
 							</li>
 	                        </ul>
 	                    </li>
-	                    <li>
+	                    <!-- <li>
 	                        <a href="/cross-trainer-shoes">
 	                            Cross Training Shoes                      
 	                        </a>
@@ -467,7 +467,7 @@
 								<a href="/shoes/maximus">Maximus</a>
 							</li>
 	                        </ul>
-	                    </li>
+	                    </li> -->
 	                    <li>
 	                        <a href="/walking-shoes">
 	                            Walking Shoes
