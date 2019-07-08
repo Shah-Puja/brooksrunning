@@ -1,7 +1,7 @@
 @php  
-  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; 
-  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; 
-  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; 
+  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', html_entity_decode($product->benefit_1,ENT_QUOTES)) : ''; 
+  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', html_entity_decode($product->benefit_2,ENT_QUOTES)) : ''; 
+  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', html_entity_decode($product->benefit_3,ENT_QUOTES)) : ''; 
 @endphp
 @if($benefit_1)
 <section class="pdp-container--benefits">
