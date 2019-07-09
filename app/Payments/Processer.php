@@ -28,7 +28,7 @@ class Processor
 			if($item->variant->width_name!=""):
 				$description.="<p>".(($item->variant->product->gender == 'M') ? "Mens" : "Womens")." Width: ".$item->variant->width_name."</p>";
 			endif;
-			/*$order_items[]=[
+			$order_items[]=[
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
 				'quantity' => $item->qty,
@@ -39,17 +39,26 @@ class Processor
 				'discountAmount' => number_format($item->discount, 2, '.', ''),
 				'productCode' => $item->style,
 				'description' => $description,
-			];*/
+			];
 		}
-
+		$discount_amount = 0;
+		if($order->gift_amount > 0){
+			$discount_amount = $order->gift_amount;
+		} 
+		if($order->discount > 0){
+			$discount_amount = $order->discount;
+		} 
 		$result = $this->paymentgateway->transaction()->sale([
 		  'amount' => $amount,
+		  'shippingAmount' => $order->freight_cost,
+		  'discountAmount' => $discount_amount,
+		  //'taxAmount' => '5.00',
 		  'orderId' => $order->id,
 		  'paymentMethodNonce' => request('payment_method_nonce'),
 		  'options' => [
 		    'submitForSettlement' => True
 		  ],
-		  //'lineItems' => $order_items,
+		  'lineItems' => $order_items,
 		]);
 		
 		if (! $result->success) {
