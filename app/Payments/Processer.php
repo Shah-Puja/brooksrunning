@@ -20,7 +20,7 @@ class Processor
 
 	public function charge($order)
 	{   
-		$amount = number_format($order->grand_total, 2, '.', '');
+		
 		$order_items=[];
 		foreach($order->orderItems as $item){
 			$description = "<p>Color: ".$item->variant->product->color_name."</p>
@@ -44,9 +44,13 @@ class Processor
 		$discount_amount = 0;
 		if($order->gift_amount > 0){
 			$discount_amount = $order->gift_amount;
-		} 
+			$amount = number_format($order->total, 2, '.', '');
+		} else{
+			$amount = number_format($order->grand_total, 2, '.', '');
+		}
 		if($order->discount > 0){
 			$discount_amount = $order->discount;
+			$amount = number_format($order->grand_total, 2, '.', '');
 		} 
 		$result = $this->paymentgateway->transaction()->sale([
 		  'amount' => $amount,
