@@ -41,7 +41,7 @@ class Processor
 				'description' => $description,
 			];
 		}
-		$discount_amount = 0;
+		$discount_amount = '0.00';
 		if($order->gift_amount > 0){
 			$discount_amount = $order->gift_amount;
 		} 
@@ -60,7 +60,9 @@ class Processor
 		  ],
 		  'lineItems' => $order_items,
 		]);
-		
+		echo "<pre>";
+		pre($result);
+		exit;
 		if (! $result->success) {
 			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
 			Log::info($message);
