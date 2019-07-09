@@ -61,7 +61,7 @@ class Processor
 		  'lineItems' => $order_items,
 		]);
 		echo "<pre>";
-		pre($result);
+		print_r($result);
 		exit;
 		if (! $result->success) {
 			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
