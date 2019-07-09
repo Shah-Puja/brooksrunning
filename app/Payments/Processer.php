@@ -50,8 +50,8 @@ class Processor
 		} 
 		$result = $this->paymentgateway->transaction()->sale([
 		  'amount' => $amount,
-		  'shippingAmount' => $order->freight_cost,
-		  'discountAmount' => $discount_amount,
+		  'shippingAmount' => number_format($order->freight_cost, 2, '.', ''),
+		  'discountAmount' => number_format($discount_amount, 2, '.', ''),
 		  //'taxAmount' => '5.00',
 		  'orderId' => $order->id,
 		  'paymentMethodNonce' => request('payment_method_nonce'),
