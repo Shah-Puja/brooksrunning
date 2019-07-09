@@ -43,7 +43,7 @@ class EventController extends Controller {
     } 
 
     public function new_events_listing(Request $request) {
-        
+       // DB::statement("SET sql_mode = '' ");
         $month = $year = $when = $where = '';
        
         if ($request->isMethod('post')) {
@@ -92,12 +92,12 @@ class EventController extends Controller {
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->orderBy('event_dt','ASC')->get();
+            $all_events = event::where('status', 'YES')->whereRaw("start_dt > CURDATE()")->whereRaw("end_dt > CURDATE()")->orderBy('start_dt','ASC')->get();
            
-            $other_upcoming_event = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
+            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt=00")->get();
            
-            $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
-           
+           // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
+           $other_upcoming_events=$other_upcoming_event;
             
         }
     
@@ -127,7 +127,7 @@ class EventController extends Controller {
 
             }
             $other_upcoming_event=array_merge($arr,$arr1);
-            
+            //dd($other_upcoming_event);
              $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
                 return $product['year'].$product['month'];
             });
