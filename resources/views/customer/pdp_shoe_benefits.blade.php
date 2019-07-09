@@ -1,11 +1,11 @@
 <section class="pdp-container--benefits">
 @php  
-    $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; 
-    $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; 
-    $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; 
-    $add_benefit_1 = (!empty($product->add_benefit_1)) ? explode('#', $product->add_benefit_1) : ''; 
-    $add_benefit_2 = (!empty($product->add_benefit_2)) ? explode('#', $product->add_benefit_2) : ''; 
-    $add_benefit_3 = (!empty($product->add_benefit_3)) ? explode('#', $product->add_benefit_3) : ''; 
+    $benefit_1 = (!empty($product->benefit_1)) ? explode('#', html_entity_decode($product->benefit_1,ENT_QUOTES)) : ''; 
+    $benefit_2 = (!empty($product->benefit_2)) ? explode('#', html_entity_decode($product->benefit_2,ENT_QUOTES)) : ''; 
+    $benefit_3 = (!empty($product->benefit_3)) ? explode('#', html_entity_decode($product->benefit_3,ENT_QUOTES)) : ''; 
+    $add_benefit_1 = (!empty($product->add_benefit_1)) ? explode('#', html_entity_decode($product->add_benefit_1,ENT_QUOTES)) : ''; 
+    $add_benefit_2 = (!empty($product->add_benefit_2)) ? explode('#', html_entity_decode($product->add_benefit_2,ENT_QUOTES)) : ''; 
+    $add_benefit_3 = (!empty($product->add_benefit_3)) ? explode('#', html_entity_decode($product->add_benefit_3,ENT_QUOTES)) : ''; 
 @endphp
 @if($benefit_1)
 	<div class="wrapper module-header">
