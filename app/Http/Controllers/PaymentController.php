@@ -464,7 +464,7 @@ class PaymentController extends Controller {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
                 }
-                $PersonID = 12345;
+
                 if (!empty($PersonID)) {
                     $this->ap21order($PersonID);
                     $orderDataUpdate['person_idx'] = $PersonID;
