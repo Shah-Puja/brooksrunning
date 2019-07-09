@@ -31,7 +31,7 @@ class Processor
 			$order_items[]=[
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
-				'quantity' => number_format($item->qty, 2, '.', ''),
+				'quantity' => $item->qty,
 				'unitAmount' => number_format($item->price_sale, 2, '.', ''),
 				//'unitOfMeasure' => 'unit',
 				'totalAmount' => number_format($item->total, 2, '.', ''),
