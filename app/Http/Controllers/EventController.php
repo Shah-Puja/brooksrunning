@@ -78,15 +78,15 @@ class EventController extends Controller {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
                             })->when($month, function ($query) use ($month) {
-                                return $query->whereRaw("MONTH(event_dt)=$month");
+                                return $query->whereRaw("MONTH(start_dt)=$month");
                             })
                             ->when($month, function ($query) use ($year) {
-                                return $query->whereRaw("YEAR(event_dt)=$year ");
-                            })->whereRaw("event_dt > CURDATE()")->get();
+                                return $query->whereRaw("YEAR(start_dt)=$year ");
+                            })->whereRaw("start_dt > CURDATE()")->get();
             
                
                  if($request->when=='' && $request->where=='' ){
-                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
+                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("end_dt=00")->get();
                     $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);
                  }           
                                
@@ -94,7 +94,7 @@ class EventController extends Controller {
         } else {
             $all_events = event::where('status', 'YES')->whereRaw("start_dt > CURDATE()")->whereRaw("end_dt > CURDATE()")->orderBy('start_dt','ASC')->get();
            
-            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt=00")->get();
+            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt=00")->whereRaw("end_dt < CURDATE()")->get();
            
            // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
            $other_upcoming_events=$other_upcoming_event;
