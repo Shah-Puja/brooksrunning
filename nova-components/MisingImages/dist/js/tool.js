@@ -60,46 +60,43 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 239);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 239:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(240);
-module.exports = __webpack_require__(317);
+__webpack_require__(1);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
-
-/***/ 240:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Nova.booting(function (Vue, router, store) {
     router.addRoutes([{
         name: 'mising-images',
         path: '/mising-images',
-        component: __webpack_require__(241)
+        component: __webpack_require__(2)
     }]);
 });
 
 /***/ }),
-
-/***/ 241:
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(242)
+  __webpack_require__(3)
 }
-var normalizeComponent = __webpack_require__(246)
+var normalizeComponent = __webpack_require__(8)
 /* script */
-var __vue_script__ = __webpack_require__(247)
+var __vue_script__ = __webpack_require__(9)
 /* template */
-var __vue_template__ = __webpack_require__(316)
+var __vue_template__ = __webpack_require__(10)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -138,18 +135,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-
-/***/ 242:
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(243);
+var content = __webpack_require__(4);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(244)("290c3e45", content, false, {});
+var update = __webpack_require__(6)("290c3e45", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -165,23 +161,103 @@ if(false) {
 }
 
 /***/ }),
-
-/***/ 243:
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(52)(false);
+exports = module.exports = __webpack_require__(5)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n.loader{\n    margin: auto;\n    display: block;\n}\n.total-count\n{\n    font-size: 0.8em;\n    margin: 0.2em 36.00em 0.75em 0.1em;\n}\ntable {\n  border: 1px solid #ccc;\n  border-collapse: collapse;\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  table-layout: fixed;\n}\ntable caption {\n  font-size: 1.5em;\n  margin: .5em 0 .75em;\n}\ntable tr {\n  background-color: #fff;\n  border: 1px solid #ddd;\n  padding: .35em;\n}\ntable td {\nfont-size: .85em;\n}\ntable th,\ntable td {\n  padding: .625em;\n  text-align: center;\n  border: 1px solid #ddd;\n}\n.prod-data{\n    vertical-align: text-top; border: 1px solid #fff;\n}\ntable th {\n  font-size: .80em;\n  letter-spacing: .1em;\n  text-transform: uppercase;\n}\n@media screen and (max-width: 600px) {\ntable {\n    border: 0;\n}\ntable caption {\n    font-size: 1.3em;\n}\ntable thead {\n    border: none;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\ntable tr {\n    border-bottom: 3px solid #ddd;\n    display: block;\n    margin-bottom: .625em;\n}\ntable td {\n    border-bottom: 1px solid #ddd;\n    display: block;\n    font-size: .8em;\n    text-align: right;\n}\ntable td::before {\n    /*\n    * aria-label has no advantage, it won't be read inside a table\n    content: attr(aria-label);\n    */\n    content: attr(data-label);\n    float: left;\n    font-weight: bold;\n    text-transform: uppercase;\n}\ntable td:last-child {\n    border-bottom: 0;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports) {
 
-/***/ 244:
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -200,7 +276,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(245)
+var listToStyles = __webpack_require__(7)
 
 /*
 type StyleObject = {
@@ -409,8 +485,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-
-/***/ 245:
+/* 7 */
 /***/ (function(module, exports) {
 
 /**
@@ -443,8 +518,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-
-/***/ 246:
+/* 8 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -553,12 +627,61 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-
-/***/ 247:
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -575,7 +698,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            categories: []
+            future: [],
+            production: [],
+            showLoader: true
         };
     },
     methods: {},
@@ -583,14 +708,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         Nova.request().get('/nova-vendor/mising-images/data').then(function (response) {
-            _this.categories = response.data;
+            _this.future = response.data.future;
+            _this.production = response.data.production;
+            _this.showLoader = false;
         });
     }
 });
 
 /***/ }),
-
-/***/ 316:
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -602,19 +728,140 @@ var render = function() {
     [
       _c("heading", { staticClass: "mb-6" }, [_vm._v("Mising Images")]),
       _vm._v(" "),
-      _c("card", {
-        staticClass: "bg-90 flex flex-col items-center justify-center",
-        staticStyle: { "min-height": "300px" }
-      }),
+      _c("table", { staticStyle: { "padding-bottom": ".625em" } }, [
+        _c("tbody", [
+          _c("tr", [
+            _c("td", { staticStyle: { border: "1px solid #fff" } }, [
+              _c("table", [
+                _c("caption", [_vm._v("Future")]),
+                _vm._v(" "),
+                _c("caption", { staticClass: "total-count" }, [
+                  _vm._v("Total Count : " + _vm._s(_vm.future.length))
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.future, function(futuredata) {
+                    return _c("tr", [
+                      _c("td", { attrs: { "data-label": "Account" } }, [
+                        _vm._v(_vm._s(futuredata.stylename))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Due Date" } }, [
+                        _vm._v(_vm._s(futuredata.style))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Amount" } }, [
+                        _vm._v(_vm._s(futuredata.style_idx))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Period" } }, [
+                        _vm._v(_vm._s(futuredata.color_code))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Period" } }, [
+                        _vm._v(_vm._s(futuredata.id))
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { staticClass: "prod-data" }, [
+              _c("table", [
+                _c("caption", [_vm._v("Production")]),
+                _vm._v(" "),
+                _c("caption", { staticClass: "total-count" }, [
+                  _vm._v("Total Count : " + _vm._s(_vm.production.length))
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.production, function(productiondata) {
+                    return _c("tr", [
+                      _c("td", { attrs: { "data-label": "Account" } }, [
+                        _vm._v(_vm._s(productiondata.stylename))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Due Date" } }, [
+                        _vm._v(_vm._s(productiondata.style))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Amount" } }, [
+                        _vm._v(_vm._s(productiondata.style_idx))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Period" } }, [
+                        _vm._v(_vm._s(productiondata.color_code))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { "data-label": "Period" } }, [
+                        _vm._v(_vm._s(productiondata.id))
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
-        _vm._v("Primary Alert")
-      ])
+      _vm.showLoader
+        ? _c("img", {
+            staticClass: "loader",
+            attrs: { src: "/images/loader.gif" }
+          })
+        : _vm._e()
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style Idx")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Color Code")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Color Idx")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Style Idx")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Color Code")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Color Idx")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -625,95 +872,10 @@ if (false) {
 }
 
 /***/ }),
-
-/***/ 317:
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
-/***/ }),
-
-/***/ 52:
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
 /***/ })
-
-/******/ });
+/******/ ]);
