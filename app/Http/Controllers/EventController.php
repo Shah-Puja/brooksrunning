@@ -109,31 +109,31 @@ class EventController extends Controller {
     }
 
 
-    public function upcoming_helper($other_upcoming_event)
-    {
-        $arr=array();
-            foreach($other_upcoming_event as $events){
-                if($events->month >= date('m')&& $events->year==date('Y')) {
-                    $arr[]=$events;
-                }
+    // public function upcoming_helper($other_upcoming_event)
+    // {
+    //     $arr=array();
+    //         foreach($other_upcoming_event as $events){
+    //             if($events->month >= date('m')&& $events->year==date('Y')) {
+    //                 $arr[]=$events;
+    //             }
 
-            }
-            $arr1=[];
-            foreach($other_upcoming_event as $eve){
-                if($eve->month <= date('m') && $eve->year>date('Y')) {
+    //         }
+    //         $arr1=[];
+    //         foreach($other_upcoming_event as $eve){
+    //             if($eve->month <= date('m') && $eve->year>date('Y')) {
                     
-                    $arr1[]=$eve;
-                }
+    //                 $arr1[]=$eve;
+    //             }
 
-            }
-            $other_upcoming_event=array_merge($arr,$arr1);
-            //dd($other_upcoming_event);
-             $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
-                return $product['year'].$product['month'];
-            });
+    //         }
+    //         $other_upcoming_event=array_merge($arr,$arr1);
+    //         //dd($other_upcoming_event);
+    //          $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
+    //             return $product['year'].$product['month'];
+    //         });
             
-           return $other_upcoming_events;
-    }
+    //        return $other_upcoming_events;
+    // }
 
     public function new_single_event($single_event) {
         
