@@ -68,8 +68,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            new CategorySort,
-            new MisingImages,
+            (new CategorySort)->canSee(function ($request) {
+                return false;
+            }),
+            (new MisingImages)->canSee(function ($request) {
+                return false;
+            }),
+            //new CategorySort,
+            //new MisingImages,
         ];
     }
 
