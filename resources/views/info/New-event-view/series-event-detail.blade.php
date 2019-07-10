@@ -60,11 +60,15 @@
                     <ul class="event_tabs">
                     @foreach($series_event as $series_events)
 
-                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " data-tab="{{$series_events->id}}">
+                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" data-event_name="{{$series_events->event_name}}">
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
-                             <h3> {{$series_events->date_str}}</h3>
+                            @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
+                                             <h3>{{date('F Y',strtotime($series_events->next_dt))}}</h3>
+                                             @else
+                                             <h3>{{$series_events->date_str}}</h3>
+                                             @endif
                             <h3> {{$series_events->city}}</h3>
                             </div>
                         </li>
@@ -97,9 +101,11 @@
                                             <h2>{{$series_events->event_name}} </h2>
                                            
                                             
-                                            
+                                            @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
+                                             <h3>{{date('F Y',strtotime($series_events->next_dt))}}</h3>
+                                             @else
                                              <h3>{{$series_events->date_str}}</h3>
-                                             
+                                             @endif
                                             
                                             </div>
                                         </li>
@@ -161,6 +167,12 @@
 
 		$(this).addClass('current');
 		$("#"+tab_id).css('display',"block");
+        var logo = $(this).attr('data-logo');
+        var banner = $(this).attr('data-banner');
+        var event_name=$(this).attr('data-event_name');
+        $('.event-title').text(event_name);
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
+        $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
     });
 
     

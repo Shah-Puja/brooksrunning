@@ -209,8 +209,12 @@
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
                                         @if(!empty($upcoming_events->date_str))
+                                             @if($upcoming_events->end_dt < date('Y-m-d') && $upcoming_events->end_dt!=00)
                                              
+                                             <div class="date">{{date('F Y',strtotime($upcoming_events->next_dt))}}</div>
+                                             @else
                                           <div class="date">{{$upcoming_events->date_str}}</div>
+                                          @endif
                                            @endif
                                             <div class="location">{{ $upcoming_events->city }}</div></div>
                                     </div>
