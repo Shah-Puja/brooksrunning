@@ -66,7 +66,7 @@ class EventController extends Controller {
                                     })
                                     ->whereRaw("start_dt=00")->get();
                                     //dd($other_upcoming_events);  
-                                    $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
+                                   // $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
               
                 }
             }
