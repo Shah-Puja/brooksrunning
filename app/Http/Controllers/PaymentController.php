@@ -766,7 +766,7 @@ class PaymentController extends Controller {
                       <AddressLine2>" . htmlspecialchars($this->order->address->s_add2) . "</AddressLine2>
                       <City>" . htmlspecialchars($this->order->address->s_city) . "</City>
                       <State>" . htmlspecialchars($this->order->address->s_state) . "</State>
-                      <Postcode>" . htmlspecialchars($this->order->address->s_postcode) . "</Postcode>
+                      <Postcode>" . $this->order->address->s_postcode . "</Postcode>
                       <Country></Country>
                     </Delivery>
                 </Addresses>";
@@ -778,7 +778,7 @@ class PaymentController extends Controller {
             $carrier = 'NOC';
             $servicetype = 'PUP';
         } else {
-            $freight_service_info = DB::table('freight_service')->where('postcode', htmlspecialchars($this->order->address->s_postcode))->first();
+            $freight_service_info = DB::table('freight_service')->where('postcode', $this->order->address->s_postcode)->first();
             if (!empty($freight_service_info) && $freight_service_info->postcode === $this->order->address->s_postcode) {
                 $carrier = 'AUS';
                 $servicetype = '03S1';
