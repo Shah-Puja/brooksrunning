@@ -27,9 +27,11 @@ class Kernel extends ConsoleKernel
         switch (env("APP_ENV")):
             case 'production':
                 $schedule->command('s7_transfer_product_tables')                                    					
-                    ->cron('45 2 * * *');       
+                    ->cron('55 2 * * *');       
+                $schedule->command('s8_SendStatusEmail')                                    					
+                    ->cron('00 3 * * *');       
                 $schedule->command('algolia:sync')
-                    ->cron('50 2 * * *'); 
+                    ->cron('05 3 * * *'); 
                 $schedule->command('icontact-queue-push')
                     ->everyFifteenMinutes();                  
                 break;        

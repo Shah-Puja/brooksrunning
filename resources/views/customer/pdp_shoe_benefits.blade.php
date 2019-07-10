@@ -1,11 +1,11 @@
 <section class="pdp-container--benefits">
 @php  
-    $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; 
-    $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; 
-    $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; 
-    $add_benefit_1 = (!empty($product->add_benefit_1)) ? explode('#', $product->add_benefit_1) : ''; 
-    $add_benefit_2 = (!empty($product->add_benefit_2)) ? explode('#', $product->add_benefit_2) : ''; 
-    $add_benefit_3 = (!empty($product->add_benefit_3)) ? explode('#', $product->add_benefit_3) : ''; 
+    $benefit_1 = (!empty($product->benefit_1)) ? explode('#', html_entity_decode($product->benefit_1,ENT_QUOTES)) : ''; 
+    $benefit_2 = (!empty($product->benefit_2)) ? explode('#', html_entity_decode($product->benefit_2,ENT_QUOTES)) : ''; 
+    $benefit_3 = (!empty($product->benefit_3)) ? explode('#', html_entity_decode($product->benefit_3,ENT_QUOTES)) : ''; 
+    $add_benefit_1 = (!empty($product->add_benefit_1)) ? explode('#', html_entity_decode($product->add_benefit_1,ENT_QUOTES)) : ''; 
+    $add_benefit_2 = (!empty($product->add_benefit_2)) ? explode('#', html_entity_decode($product->add_benefit_2,ENT_QUOTES)) : ''; 
+    $add_benefit_3 = (!empty($product->add_benefit_3)) ? explode('#', html_entity_decode($product->add_benefit_3,ENT_QUOTES)) : ''; 
 @endphp
 @if($benefit_1)
 	<div class="wrapper module-header">
@@ -34,7 +34,7 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-					 	<h3 class="br-heading">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</h3>
+					 	<h3 class="br-heading">{!! (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" !!}</h3>
 						<p class="br-info">{!! (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" !!}</p>
 					</div>
 			    </div>
@@ -58,7 +58,7 @@
 				<div class="col-6 visible-mob visible-tab">
 					<div class="info-wrapper clearfix">
 						<div class="info">
-							<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
+							<h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
 							<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 				<div class="col-6 hidden-mob hidden-tab">
 					<div class="info-wrapper clearfix">
 						<div class="info">
-							<h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
+							<h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
 							<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 				<div class="col-6">
 					<div class="info-wrapper clearfix">
 						<div class="info right">
-							<h3 class="br-heading">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</h3>
+							<h3 class="br-heading">{!! (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" !!}</h3>
 							<p class="br-info">{!! (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" !!}</p>
 						</div>
 					</div>
@@ -123,14 +123,14 @@
 		<div class="row cust-grid">
 			<div class="col-4">
 				<div class="info">
-					<h4>{{ (isset($add_benefit_1[1]) &&  $add_benefit_1[1]!='') ? $add_benefit_1[1] : "" }}</h4>
+					<h4>{!! (isset($add_benefit_1[1]) &&  $add_benefit_1[1]!='') ? $add_benefit_1[1] : "" !!}</h4>
 					<p>{!! (isset($add_benefit_1[2]) &&  $add_benefit_1[2]!='') ? $add_benefit_1[2] : "" !!}</p>
 				</div>
 			</div>
 			@if($add_benefit_2!='' && isset($add_benefit_2[1]) &&  $add_benefit_2[1]!='')
 			<div class="col-4">
 				<div class="info">
-					<h4>{{ (isset($add_benefit_2[1]) &&  $add_benefit_2[1]!='') ? $add_benefit_2[1] : "" }}</h4>
+					<h4>{!! (isset($add_benefit_2[1]) &&  $add_benefit_2[1]!='') ? $add_benefit_2[1] : "" !!}</h4>
 					<p>{!! (isset($add_benefit_2[2]) &&  $add_benefit_2[2]!='') ? $add_benefit_2[2] : "" !!}</p>
 				</div>
 			</div>
@@ -138,7 +138,7 @@
 			@if($add_benefit_3!='' && isset($add_benefit_3[1]) &&  $add_benefit_3[1]!='') 
 			<div class="col-4">
 				<div class="info">
-					<h4>{{ (isset($add_benefit_3[1]) &&  $add_benefit_3[1]!='') ? $add_benefit_3[1] : "" }}</h4>
+					<h4>{!! (isset($add_benefit_3[1]) &&  $add_benefit_3[1]!='') ? $add_benefit_3[1] : "" !!}</h4>
 					<p>{!! (isset($add_benefit_3[2]) &&  $add_benefit_3[2]!='') ? $add_benefit_3[2] : "" !!}</p>
 				</div>
 			</div>
