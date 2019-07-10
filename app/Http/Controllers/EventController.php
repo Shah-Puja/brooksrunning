@@ -92,7 +92,7 @@ class EventController extends Controller {
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orderBy('start_dt','ASC')->get();
+            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->orwhereRaw("end_dt >= CURDATE()")->orderBy('start_dt','ASC')->get();
            
             $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt < CURDATE()")->orderBy('start_dt','ASC')->get();
            
