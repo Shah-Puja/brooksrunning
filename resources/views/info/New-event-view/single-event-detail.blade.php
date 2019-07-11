@@ -55,7 +55,11 @@
                     <img src="/images/new-events/generic_event_image.jpg">
                 @endif
             </div>
+            @if($single_event->end_dt < date('Y-m-d') && $single_event->end_dt!=00)
+            <h2>{{date('F Y',strtotime($single_event->next_dt))}} </h1>
+            @else
             <h2>{{$single_event->date_str}} </h1>
+            @endif
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>

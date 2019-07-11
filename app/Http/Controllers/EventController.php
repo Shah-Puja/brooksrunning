@@ -64,9 +64,9 @@ class EventController extends Controller {
                                         $q->where('state', 'like', '%' . $where . '%')
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
-                                    ->whereRaw("event_dt=00")->get();
+                                    ->whereRaw("start_dt=00")->get();
                                     //dd($other_upcoming_events);  
-                                    $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
+                                   // $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
               
                 }
             }
@@ -92,12 +92,13 @@ class EventController extends Controller {
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("start_dt > CURDATE()")->whereRaw("end_dt > CURDATE()")->orderBy('start_dt','ASC')->get();
+            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhereRaw("start_dt <= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhere('end_dt',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
            
-            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt=00")->whereRaw("end_dt < CURDATE()")->get();
+            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt < CURDATE()")->orderBy('start_dt','ASC')->get();
            
            // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
            $other_upcoming_events=$other_upcoming_event;
+           //dd($other_upcoming_event);
             
         }
     
@@ -152,8 +153,8 @@ class EventController extends Controller {
         $event_name=event::where('slug',$series_event)->first();
        
 
-        $series_event=event::where('series',$event_name->series)->get();
-        
+        $series_event=event::where('series',$event_name->series)->orderBy('start_dt','DESC')->get();
+        //dd($series_event);
         
        
         return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city','id'));
