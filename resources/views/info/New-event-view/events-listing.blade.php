@@ -1,4 +1,9 @@
 @extends('customer.layouts.master')
+
+@section('head')
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+@endsection
+
 @section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css">
