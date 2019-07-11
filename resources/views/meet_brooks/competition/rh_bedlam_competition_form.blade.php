@@ -176,12 +176,12 @@
 			</div>
 		</div>
 	</div>-->
-	<input type="hidden" name="comp_name" value="{{ $competition->comp_name }} " />
-	<input type="hidden" name="comp_slug" value="{{ $competition->slug }}" />
+	<input type="hidden" name="comp_name" value="{!!html_entity_decode($competition->comp_name)!!}" />
+	<input type="hidden" name="comp_slug" value="{!!html_entity_decode($competition->slug)!!}" />
 	<div class="row" style="margin-top:20px;">
 		<div class="tab-6">
 			<div class="input-wrapper">
-				<div class="g-recaptcha captcha" data-sitekey="{{ config('services.google.recaptcha_key') }}"></div>
+				<div class="g-recaptcha captcha" data-sitekey="{!!html_entity_decode(config('services.google.recaptcha_key')!!}"></div>
 				<label class="recaptcha-label"></label>
 			</div>
 		</div>
