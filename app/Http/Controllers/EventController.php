@@ -92,8 +92,12 @@ class EventController extends Controller {
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhereRaw("start_dt <= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhere('end_dt',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
+            //$all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhereRaw("start_dt <= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhere('end_dt',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
            
+            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")
+                               ->whereRaw("end_dt >= CURDATE()")
+                               ->orwhere('end_dt','>=',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
+
             $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt < CURDATE()")->orderBy('start_dt','ASC')->get();
            
            // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
