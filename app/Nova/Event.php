@@ -21,7 +21,7 @@ class Event extends Resource
      * @var string
      */
 
-    //public static $displayInNavigation = false;
+    public static $displayInNavigation = false;
     public static $model = 'App\Models\Event';
 
 
