@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Support\Facades\Storage;
 
-class Meta_tag extends Resource
+class Metatag extends Resource
 {
     /**
      * The model the resource corresponds to.
