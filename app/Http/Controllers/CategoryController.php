@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $name = $cat_info->name; 
         $cat_id = $cat_info->id; 
             if($depth=='2'){
-                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name,$cat_id);
             }elseif($depth=='3'){
                 $products = \App\Models\Category::getProducts($category,$cat_id);
             }
@@ -27,11 +27,8 @@ class CategoryController extends Controller
             if (empty($products)) {
                 $styles=$flag_bra="";              
                 $filters=[];  
-            }
-            else{
-                $styles = $products->unique('style');
-                //print_r($styles);  
-               //exit;                          
+            }else{
+                $styles = $products->unique('style');                      
                 $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
         return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender','depth') );                

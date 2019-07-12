@@ -20,6 +20,12 @@ class Category extends Model
     	return $this->hasMany('App\Models\group','group_id','id');
     }
 
+
+    public function group_ranks()
+    {
+    	return $this->hasMany('App\Models\Group_ranks','group_id','id');
+    }
+
     /**
 	 * Get the route key for the model.
 	 *
@@ -40,32 +46,25 @@ class Category extends Model
                 return $query->where('visible', '=', 'Yes');
             })
             ->with('variants')
-            ->with('csvranks')
+            ->with('groupranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
-            
-            /*$sorted_products = $products->sortByd(function ($product, $key) use ($cat_id) {
-                foreach($product->csvranks as $csvrank):
-                    if($cat_id==$csvrank->group_id):
-                      return  $csvrank->display_rank;
-                    endif;
-                endforeach;
-              });
-              */
-            $sorted_products = $products->sortByDesc(function ($product, $key) {
-                        foreach($product->variants as $variant):
-                              return $variant->release_date;
-                        endforeach;
-                      });
-               
-        
-            return $sorted_products;
-        
-        
+
+            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+                if(isset($product->groupranks) && count($product->groupranks) >0){
+                    foreach($product->groupranks->where('group_id',$cat_id) as $group_rank):
+                        return $group_rank->display_rank;
+                    endforeach;
+                }else{
+                    return '100';
+                }
+            });
+
+            return  $sorted_products;
     }
 
-    public static function getProducts_main($gender,$prod_type,$name) {              
+    public static function getProducts_main($gender,$prod_type,$name,$cat_id) {              
         $products =  \App\Models\Product::where('gender',$gender)
             ->where('prod_type',$prod_type)
             ->whereHas('variants' , function($query) use ($name)  {
@@ -77,12 +76,34 @@ class Category extends Model
                 }
             })
             ->with('variants')
+            ->with('groupranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
             //->get(['id','style','stylename', 'seqno', 'color_code']);
             //->values(); 
-            
+   
+
+        /*$sorted_products = $products->sortByDesc(function ($product, $key) use ($cat_id) {
+            if(isset($product->groupranks) && count($product->groupranks) >0){
+                $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
+                    $data=[];
+                             if($value->group_id==$cat_id){
+                                $data[] = $value;
+                             }
+                        return $data;
+                });
+                foreach(collect($filter_product) as $group_rank):
+                    if($cat_id==$group_rank->group_id):
+                        return $group_rank->display_rank;
+                    else:
+                        return '1000000000';
+                    endif;
+                endforeach;
+            }else{
+                return '1000000000';
+            }
+      });*/
             $sorted_products = $products->sortByDesc(function ($product, $key){
                 foreach($product->variants as $variant):
                       return $variant->release_date;
