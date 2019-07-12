@@ -144,7 +144,7 @@ Route::get('/events-listing/series-static-event', 'EventController@new_series_st
 
 /* quickhelp static pages */
 // Route::get('/returns-centre', 'quickhelpController@returns_centre');
-Route::get('/error-404', 'quickhelpController@error_404');
+Route::get('/error-404', 'QuickhelpController@error_404');
 
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
 Route::get('/faqs', 'quickhelpController@faqs');
