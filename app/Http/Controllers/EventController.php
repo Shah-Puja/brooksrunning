@@ -152,10 +152,13 @@ class EventController extends Controller {
         
     }
 
-    public function new_series_event($series_event,$city,$id) {
+    public function new_series_event($series_event) {
 
         $event_name=event::where('slug',$series_event)->first();
        
+        $city=$event_name->city;
+        
+        $id=$event_name->id;
 
         $series_event=event::where('series',$event_name->series)->orderBy('start_dt','DESC')->get();
         //dd($series_event);
