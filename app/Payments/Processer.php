@@ -32,7 +32,7 @@ class Processor
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
 				'quantity' => $item->qty,
-				'unitAmount' => number_format(($item->price_sale - $item->discount), 2, '.', ''),
+				'unitAmount' => ($item->discount > 0) ? number_format(($item->price_sale - $item->discount), 2, '.', '') : number_format($item->price_sale, 2, '.', ''),
 				//'unitOfMeasure' => 'unit',
 				'totalAmount' => number_format($item->total, 2, '.', ''),
 				//'taxAmount' => '5.00',
@@ -60,9 +60,9 @@ class Processor
 		  ],
 		  'lineItems' => $order_items,
 		]);
-		/*echo "<pre>";
+		echo "<pre>";
 		print_r($result);
-		exit;*/
+		exit;
 		if (! $result->success) {
 			$message = Carbon::now() . " - Payment Failed! {$amount} for order: {$order->id} cart: {$order->cart_id}, Braintree Transaction ID {$result->transaction->id} - {$result->transaction->status}";
 			Log::info($message);
