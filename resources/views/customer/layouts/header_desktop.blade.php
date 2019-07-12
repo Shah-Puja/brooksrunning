@@ -158,7 +158,7 @@
                                                         <a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/revel-2-womens-running-shoes/120281_028.html" title="Revel 2">Revel 2</a> 
+                                                        <a href="/brooks-running-shoes-revel-3-womens/120302_012.html" title="Revel 3">Revel 3</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19 </a> 
@@ -274,7 +274,7 @@
                                                         <a class="name-link" href="/levitate-2-mens-running-shoes/110290_689.html" title="Levitate 2">Levitate 2</a> 
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/brooks-running-shoes-revel-2-mens/110292_061.html" title="Revel 2">Revel 2</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-revel-3-mens/110314_088.html" title="Revel 3">Revel 3</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
@@ -339,9 +339,9 @@
 														<li class="submenu-main">
 		                                                    <a href="/neutral-running-shoes">Neutral Running Shoes</a>
 		                                                </li>
-		                                                <li>
+		                                                <!-- <li>
                                                             <a href="/shoes/aduro">Aduro</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li>
                                                             <a href="/shoes/defyance">Defyance</a>
                                                         </li>
@@ -442,7 +442,7 @@
                                                         <li>
                                                             <a href="/shoes/hyperion">Hyperion</a>
                                                         </li>
-                                                        <li class="submenu-main">
+                                                        <!-- <li class="submenu-main">
 	                                                        <a href="/cross-trainer-shoes">Cross Training Shoes</a>
 	                                                    </li>
                                                         <li>
@@ -450,7 +450,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/maximus">Maximus</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="submenu-main">
 	                                                        <a href="/walking-shoes">Walking Shoes</a>
 	                                                    </li>

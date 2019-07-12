@@ -55,6 +55,21 @@ return [
         ],
 
         # Our secondary database connection
+        'production' => [
+            'driver' => 'mysql',
+            'host' => env('LIVE_DB_HOST', '127.0.0.1'),
+            'port' => env('DB_LIVE_PORT', '3306'),
+            'database' => env('LIVE_DB_DATABASE', 'forge'),
+            'username' => env('LIVE_DB_USERNAME', 'forge'),
+            'password' => env('LIVE_DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'future' => [
             'driver' => 'mysql',
             'host' => env('FUTURE_DB_HOST', '127.0.0.1'),
@@ -67,6 +82,15 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
+            'modes' => [
+                //'ONLY_FULL_GROUP_BY', // Disable this to allow grouping by one column
+                'STRICT_TRANS_TABLES',
+                'NO_ZERO_IN_DATE',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_AUTO_CREATE_USER',
+                'NO_ENGINE_SUBSTITUTION'
+            ],
             'engine' => null,
         ],
 

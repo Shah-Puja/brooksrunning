@@ -44,7 +44,7 @@ class s7_transfer_tables extends Command
                 
         
         $curr_dt=date('Ymd_His');
-        $prod_tables="p_products p_variants p_images p_tags groups";        
+        $prod_tables="p_products p_variants p_images p_tags groups group_ranks";        
         $sql_path="storage/data/products/".$curr_dt."_products.sql";
         $cmd="mysqldump -u".env("LIVE_DB_USERNAME")."  -p".env("LIVE_DB_PASSWORD")." ".env("LIVE_DB_DATABASE")." ".$prod_tables." > ".$sql_path ;        
         $this->run_process($cmd,'dump');
@@ -59,6 +59,7 @@ class s7_transfer_tables extends Command
         
         DB::connection('future')->table("p_variants")->update(['visible' => 'No','reason_no'=>'Initial Setup']);
         DB::connection('future')->table("p_variants")->where('release_date','>',Date('Y-m-d'))->update(['visible' => 'Yes','reason_no'=>'']);
+        
 
         $msg = 'Mail set to run from cron at 9:55PM(21:55hrs)| ran at - '.date('Y-m-d H:i:s');
         Mail::raw($msg, function ($message) {
