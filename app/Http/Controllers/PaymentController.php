@@ -778,6 +778,7 @@ class PaymentController extends Controller {
             $carrier = 'NOC';
             $servicetype = 'PUP';
         } else {
+            //table name freight_service
             $freight_service_info = DB::table('freight_service')->where('postcode', $this->order->address->s_postcode)->first();
             if (!empty($freight_service_info) && $freight_service_info->postcode === $this->order->address->s_postcode) {
                 $carrier = 'AUS';
