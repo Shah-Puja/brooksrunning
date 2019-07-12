@@ -370,6 +370,7 @@ $(document).ready(function () {
         var event_header=elem.find(".owl-item .tab-link").eq(current).data("event_header");
         var name=event_name+" "+event_header; 
         $('.event-title').text(name);
+        $('.breadcrumbs li span').text(name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=elem.find(".owl-item .tab-link").eq(current).data("event_date");
