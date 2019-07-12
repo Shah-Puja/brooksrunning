@@ -34,7 +34,7 @@ class Processor
 				'quantity' => $item->qty,
 				'unitAmount' => number_format($item->price_sale, 2, '.', ''),
 				//'unitOfMeasure' => 'unit',
-				'totalAmount' => number_format($item->total, 2, '.', ''),
+				'totalAmount' => number_format(($item->qty * $item->price_sale), 2, '.', ''),
 				//'taxAmount' => '5.00',
 				'discountAmount' => number_format($item->discount, 2, '.', ''),
 				'productCode' => $item->style,
