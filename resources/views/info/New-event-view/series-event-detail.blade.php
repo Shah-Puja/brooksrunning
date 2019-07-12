@@ -19,7 +19,7 @@
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-                                                <a href="javascript:void(0)" class="active">{{$event_name->event_name}}</a>
+                                                <span style="color: #ffffff;font-size: 12px;">{{$event_name->event_name}} {{$event_name->event_header}}</span>
                                             </li>
 										</ul>
 									</div>
@@ -101,7 +101,10 @@
                                 @foreach($series_event as $series_events)
                                     @php $active_slide = ($city==$series_events->city) ? $item_count_mob: ""; @endphp
                                     <div class="item" data-current-tab='{{$active_slide}}' >
-                                        <li class="tab-link" data-tab="{{$series_events->id}}">
+                                        <li class="tab-link" data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
+                        data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
+                        data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
+                        data-event_date="{{$series_events->end_dt}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_name}} </h2>
                                            
@@ -192,6 +195,7 @@
         var event_header=$(this).attr('data-event_header');
         var name=event_name+" "+event_header; 
         $('.event-title').text(name);
+        $('.breadcrumbs li span').text(name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=$(this).attr('data-event_date');

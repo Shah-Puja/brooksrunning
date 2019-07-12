@@ -362,6 +362,28 @@ $(document).ready(function () {
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
             $("#mob-"+id).show();
+            console.log("ok");
+
+            var logo = elem.find(".owl-item .tab-link").eq(current).data("logo");
+        var banner = elem.find(".owl-item .tab-link").eq(current).data("banner");
+        var event_name=elem.find(".owl-item .tab-link").eq(current).data("event_name");
+        var event_header=elem.find(".owl-item .tab-link").eq(current).data("event_header");
+        var name=event_name+" "+event_header; 
+        $('.event-title').text(name);
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
+        $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
+        var event_end_date=elem.find(".owl-item .tab-link").eq(current).data("event_date");
+        let now = (new Date()).toISOString().split('T')[0];
+       
+        if(event_end_date <= now || event_end_date==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
+            
+
         },
     });
     var active_index =owl1.find(".owl-item .item:not([data-current-tab=''])").data("current-tab");
