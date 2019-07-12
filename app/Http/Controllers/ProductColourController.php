@@ -19,7 +19,7 @@ class ProductColourController extends Controller
     }
     public function index($name,$style,$color,Request $request){
    
-        if (env('APP_ENV') =='dev' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
+        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
           //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
             ///get product last updated
             $get_product_last_updated = Product::where('style',$style)
@@ -144,7 +144,7 @@ class ProductColourController extends Controller
                                 'stock' => $stock,
                                 'price' => $org_price,
                                 'price_sale' => $price_sale,
-                                'release_date' => '0000-00-00 00:00:00',
+                                'release_date' => null,
                                 'season' => 'Current',
                                 'visible' => 'No',
                                 'reason_no' => 'Release date blank',
