@@ -24,7 +24,7 @@
 										</ul>
 									</div>
 								</div>
-                                <h1 class="event-title">{{$event_name->event_name}}</h1>
+                                <h1 class="event-title">{{$event_name->event_name}} {{$event_name->event_header}}</h1>
 							<!-- <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p> -->
 						</div>
 					</div>
@@ -64,7 +64,8 @@
                         data-tab="{{$series_events->id}}" 
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
-                        data-event_name="{{$series_events->event_name}}" data-event_date="{{$series_events->end_dt}}">
+                        data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
+                        data-event_date="{{$series_events->end_dt}}">
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -129,13 +130,13 @@
              <!-- End For mobile only -->
             <div class="stay-tuned" >
                 <p class="info">Stay tuned for more details on this event.</p>
-		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
+		        <p class="event-signup"><a href="/meet_brooks/enewsletter" target="_blank" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
             </div>  
             <div class="find-more" >
                     <div class="event-findmore-btn">
                     @foreach($series_event as $series_events) 
                     @if($city==$series_events->city && $id==$series_events->id)    
-                        <a href="{{$series_events->link}}" class="primary-button">Find Out More </a>
+                        <a href="{{$series_events->link}}" target="_blank" class="primary-button">Find Out More </a>
                         @endif 
                         @endforeach
                     </div>
@@ -188,7 +189,9 @@
         var logo = $(this).attr('data-logo');
         var banner = $(this).attr('data-banner');
         var event_name=$(this).attr('data-event_name');
-        $('.event-title').text(event_name);
+        var event_header=$(this).attr('data-event_header');
+        var name=event_name+" "+event_header; 
+        $('.event-title').text(name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=$(this).attr('data-event_date');

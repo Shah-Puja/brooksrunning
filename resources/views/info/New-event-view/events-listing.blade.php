@@ -130,11 +130,12 @@
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($events->start_dt)))}}"  event_id='{{$events->id}}'>
                         
                              <div class="event-section">
-                              @if(trim(empty($events->series)))
-                                <a href="/events-listing/single-event/{{$events->slug}}" >
+                                @if(trim(empty($events->series)))
+                                    @php $event_type = 'single-event'; @endphp
                                 @else
-                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}/{{$events->id}}" >
+                                    @php $event_type = 'series-event'; @endphp
                                 @endif
+                                <a href="/events-listing/{{$event_type}}/{{$events->slug}}" >
                                     <div class="img">
                                         @if(!empty($events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $events->logo }}" alt="">
@@ -143,11 +144,7 @@
                                         @endif         
                                     </div>
                                 </a>
-                                @if(trim(empty($events->series)))
-                                <a href="/events-listing/single-event/{{$events->slug}}" >
-                                @else
-                                <a href="/events-listing/series-event/{{$events->slug}}/{{$events->city}}/{{$events->id}}" >
-                                @endif
+                                <a href="/events-listing/{{$event_type}}/{{$events->slug}}" >
                                     <div class="info">
                                         <h3>{{ $events->event_name }}</h3>
                                         <div class="event-info-sub">
@@ -189,11 +186,12 @@
                         @foreach($other_upcoming_events as $upcoming_events)
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$upcoming_events->state)}} {{str_replace(' ','_',$upcoming_events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->start_dt)))}}">
                             <div class="event-section">
-                            @if(empty(trim($upcoming_events->series)))
-                                <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
+                            @if(trim(empty($upcoming_events->series)))
+                                    @php $event_type = 'single-event'; @endphp
                                 @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}/{{ $upcoming_events->id}}" >
+                                    @php $event_type = 'series-event'; @endphp
                                 @endif
+                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}/" >
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
@@ -202,11 +200,7 @@
                                         @endif  
                                     </div>
                                 </a>
-                                @if(empty(trim($upcoming_events->series)))
-                                <a href="/events-listing/single-event/{{$upcoming_events->slug}}" >
-                                @else
-                                <a href="/events-listing/series-event/{{$upcoming_events->slug}}/{{$upcoming_events->city}}/{{$upcoming_events->id}}" >
-                                @endif
+                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}/" >
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
@@ -285,7 +279,8 @@
         $(".no-result .clear-filter").hide();
         $(".no-result .error").hide();
         $("#where").val("");
-        $("#when").val("")
+        $("#when").val("");
+        $('.other_upcoming_events').find('.br-mainheading').show();
         return false;
     });
 </script>
