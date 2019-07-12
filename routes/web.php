@@ -135,7 +135,8 @@ Route::get('/month', 'EventController@events_default');
 
 
 /* quickhelp static pages */
-Route::get('/returns-centre', 'quickhelpController@returns_centre');
+// Route::get('/returns-centre', 'quickhelpController@returns_centre');
+Route::get('/error-404', 'quickhelpController@error_404');
 Route::get('/defective-product-clain', 'quickhelpController@defective_product_clain');
 Route::get('/faqs', 'quickhelpController@faqs');
 Route::get('/fit-sizing', 'quickhelpController@fit_sizing');
@@ -197,3 +198,5 @@ Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
 Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
 Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
+
+Route::get('/error-page', 'QuickhelpController@error_404');
