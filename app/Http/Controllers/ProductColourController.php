@@ -18,11 +18,10 @@ class ProductColourController extends Controller
         $this->bridge = $bridge;
     }
     public function index($name,$style,$color,Request $request){
-   echo env('APP_ENV');
-        if (env('APP_ENV') =='dev' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
+   
+        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
           //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
             ///get product last updated
-            echo "testsssssssssssss";
             $get_product_last_updated = Product::where('style',$style)
                                                 ->with('variants')
                                                 ->get();
