@@ -5636,3 +5636,146 @@ a {
    }
 }
 /*  Fixed Header End */
+
+/* Start Error Page */
+.errorpage-404-container{
+  background-color: $blue;
+  color: $white;
+  @media #{$tabmob-only}{
+    padding: 20px 0;
+  }
+  @media #{$mobile-only}{
+    padding: 20px;
+    text-align: center;
+  }
+  &--wrapper{
+    padding: 20px 0;
+    &.info{
+      @media #{$mobile-only}{
+        padding-bottom: 20px;
+      }
+    }
+    @media #{$tabmob-only}{
+      padding: 0 0;
+    }
+    h3,p{
+      margin: 0;
+    }
+    h3{
+      @media #{$tab-only}{
+        font-size: 25px;
+      }
+      @media #{$mobile-only}{
+        font-size: 25px;
+      }
+    }
+    p{
+      font-size: 13px;
+      line-height: 1.5;
+      @media #{$tab-only}{
+        font-size: 16px;
+      }
+      @media #{$mobile-only}{
+        font-size:16px;
+      }
+    }
+    .input-wrapper{
+      padding-top: 20px;
+      @media #{$mobile-only}{
+        padding-top: 0px;
+      }
+      .input-field{
+        @media #{$mobile-only}{
+          margin-bottom: 7px;
+        }
+      }
+    }
+  
+  }
+  .errorpage-header--wrapper{
+    padding: 18px 10px;
+    text-align: center;
+    p{
+      margin: 0;
+        margin-bottom: 2px;
+        font-size: 18px;
+      text-align:center;
+    }
+    .shoefinder-link{ color:$white;  @extend %extrabold-font; font-size: 18.5px;}
+    .button_fixed{
+      padding-top: 10px;
+      .secondary-button{
+         color: #0263f7;background-color: #ffffff;
+        border: 2px solid #ffffff; margin:auto; max-width: 270px;
+        &:hover {
+          background-color: #0263f7;
+          color: #ffffff;
+        }
+        @media #{$desktop-only}{ 
+          max-width: 200px;     font-size: 14px;  padding:15px 20px;
+        }
+       }
+    }
+  }
+}
+.errorpage-404-section{
+  &.bg {
+		/* The image used */
+		background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
+		-webkit-background-size: 100%;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height:100vh;
+    background-position: center center;
+    @media #{$tab-only}{
+          height: 40vh;
+          background-position: 35% 35%;
+    }
+    @media #{$desktop-only}{
+      height: 55vh;
+      background-position: center center;
+    }
+  
+   
+    @media #{$mobile-only}{
+      height: 40vh;
+      background-position: 90% 30%;
+    }
+		
+  .errorpage-middle--wrapper{
+    margin: 0 auto;
+  
+    .button_fixed_second{
+      padding-top: 20px;
+      text-align: center; 
+      .primary-button{
+        margin: auto; 
+        max-width: 270px;
+        &:hover {
+          background-color: #0263f7;
+          color: #ffffff;
+        }
+        @media #{$mobile-only}{ max-width: 200px;    padding:15px 20px;
+          font-size: 14px;}
+          @media #{$desktop-only}{ 
+            max-width: 200px; font-size: 14px;
+          }
+       }
+       @media #{$mobile-only}{
+        display: inline-block;
+        padding: 1px;
+          width: 135px;
+       }
+    }
+    &.errorpage-middle--wrapper-onmob{
+      @media #{$mobile-only}{ padding-top: 75px;
+      
+      text-align:center;
+      }
+    }
+  }
+ 
+  }
+}
+/* End Error Page*/
