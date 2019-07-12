@@ -13,6 +13,7 @@ return [
 		'base_shoe_new_exp' => env('SHOE_PAGE_URL').'experience/',
 		'base_category_img' => env('SHOE_PAGE_URL').'category/',
 		'base_shoe_img_thumb' => env('SHOE_PAGE_URL').'thumbnail-images/',
+		'base_event_img' => env('BASE_EVENT_IMAGES_URL'),
 
         'products' => [
 			'original' => env('BASE_PRODUCT_IMAGES_URL').'orig/' ,

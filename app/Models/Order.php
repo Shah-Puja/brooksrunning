@@ -112,4 +112,9 @@ class Order extends Model
         $this->ap21_xml = $xml ? $xml : null;
         $this->save();
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'id');
+    }
 }

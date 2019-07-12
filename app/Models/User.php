@@ -32,4 +32,8 @@ class User extends Authenticatable
     protected $dispatchesEvents = [
         'created' => SubscriptionReceived::class,
     ];
+
+    public function orders(){
+        return $this->hasMany('App\Models\Order','user_id','id');
+    }
 }

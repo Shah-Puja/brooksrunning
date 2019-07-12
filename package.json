@@ -7,7 +7,15 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "build-categorysorter": "cd nova-components/Categorysorter && npm run dev",
+        "build-categorysorter-prod": "cd nova-components/Categorysorter && npm run prod",
+        "build-category-sorter": "cd nova-components/CategorySorter && npm run dev",
+        "build-category-sorter-prod": "cd nova-components/CategorySorter && npm run prod",
+        "build-category-sort": "cd nova-components/CategorySort && npm run dev",
+        "build-category-sort-prod": "cd nova-components/CategorySort && npm run prod",
+        "build-mising-images": "cd nova-components/MisingImages && npm run dev",
+        "build-mising-images-prod": "cd nova-components/MisingImages && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18",
