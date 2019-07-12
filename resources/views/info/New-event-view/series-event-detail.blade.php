@@ -60,7 +60,11 @@
                     <ul class="event_tabs">
                     @foreach($series_event as $series_events)
 
-                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" data-event_name="{{$series_events->event_name}}">
+                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " 
+                        data-tab="{{$series_events->id}}" 
+                        data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
+                        data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
+                        data-event_name="{{$series_events->event_name}}" data-event_date="{{$series_events->end_dt}}">
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -123,7 +127,7 @@
                 </div>
             </div>
              <!-- End For mobile only -->
-            <div class="stay-tuned" style="display:none;">
+            <div class="stay-tuned" >
                 <p class="info">Stay tuned for more details on this event.</p>
 		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
             </div>  
@@ -159,11 +163,25 @@
 
 <script>
     $(document).ready(function(){
+
+        var event_end_date=$('ul.event_tabs li.current ').attr('data-event_date');
+        let now = (new Date()).toISOString().split('T')[0];
+       console.log(event_end_date);
+        if(event_end_date <= now || event_end_date==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
 	
 	$('ul.event_tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
 		$('ul.event_tabs li').removeClass('current');
 		$('.tab-content').css('display',"none");
+
+
+
 
 		$(this).addClass('current');
 		$("#"+tab_id).css('display',"block");
@@ -173,6 +191,16 @@
         $('.event-title').text(event_name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
+        var event_end_date=$(this).attr('data-event_date');
+        let now = (new Date()).toISOString().split('T')[0];
+       
+        if(event_end_date <= now || event_end_date==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
     });
 
     

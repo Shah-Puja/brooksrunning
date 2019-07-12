@@ -63,15 +63,18 @@
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>
+            @if($single_event->end_dt < date('Y-m-d') || $single_event->end_dt==00)
             <div class="stay-tuned">
                 <p class="info">Stay tuned for more details on this event.</p>
 		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
-            </div>  
-            <div class="event-findmore-btn" style="display:none;">
+            </div>
+            @else  
+            <div class="event-findmore-btn" >
                     <div class="btn">
-                        <button type="submit" class="primary-button">Find Out More </button>
+                    <a href="{{$single_event->link}}" class="primary-button">Find Out More </a>
                     </div>
             </div>  
+            @endif
         </div>
         </div>
         <div class="col-2"></div>
