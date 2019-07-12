@@ -19,9 +19,10 @@ class ProductColourController extends Controller
     }
     public function index($name,$style,$color,Request $request){
    
-        if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
+        if (env('APP_ENV') =='development' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
           //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
             ///get product last updated
+            echo "test";
             $get_product_last_updated = Product::where('style',$style)
                                                 ->with('variants')
                                                 ->get();
@@ -113,6 +114,7 @@ class ProductColourController extends Controller
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
         //echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
+        if (!empty($response)) { 
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case '200':
@@ -211,6 +213,7 @@ class ProductColourController extends Controller
                         endif;
                 break;
         }
+    }
         //exit;
     }
 

@@ -112,7 +112,21 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function sync_ap21_sku($prod_styleidx) {
-        return $this->apiClient->get('Products/' . $prod_styleidx . '?countryCode=AUFIT', ['http_errors' => false]);
+        //return $this->apiClient->get('Products/' . $prod_styleidx . '?countryCode=AUFIT', ['http_errors' => false]);
+        try {
+            $response = $this->apiClient->get('Products/' . $prod_styleidx . '?countryCode=AUFIT', ['http_errors' => true]);
+            if ($response->getStatusCode() == 200) {
+                return $response;
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                return null;
+            }
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() != '') {
+                return null;
+            }
+        }
     }
 
 }
