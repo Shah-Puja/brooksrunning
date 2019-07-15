@@ -60,12 +60,12 @@
                     <ul class="event_tabs">
                     @foreach($series_event as $series_events)
 
-                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) echo current @endif " 
+                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) current @endif " 
                         data-tab="{{$series_events->id}}" 
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}">
+                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}/' >
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -208,8 +208,22 @@
             $('.stay-tuned').css('display',"none");
             $('.find-more').css('display',"block");
          }
+         var url = $('ul.event_tabs li.current ').attr('data-url');
+         ChangeUrl(event_name,url);
     });
 
+    
+    
+
+    function ChangeUrl(page, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Page: page, Url: url };
+        
+        history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        console.log("Browser does not support HTML5.");
+    }
+}
     
     
 });
