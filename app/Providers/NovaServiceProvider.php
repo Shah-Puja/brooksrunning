@@ -74,8 +74,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new MisingImages)->canSee(function ($request) {
                 return false;
             }),*/
-            new CategorySort,
-            new MisingImages,
+            //new CategorySort,
+            //new MisingImages,
         ];
     }
 
