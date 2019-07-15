@@ -19,7 +19,7 @@
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-												<a href="JavaScript:Void(0);" class="active">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</a>
+												<span style="color: #ffffff;font-size: 12px;">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</span>
 											</li>
 										</ul>
 									</div>
