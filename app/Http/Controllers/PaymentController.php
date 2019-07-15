@@ -157,7 +157,7 @@ class PaymentController extends Controller {
 
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
-                        $PersonID = $this->get_personid($this->order->address->email); 
+                        $PersonID = $this->get_personid($this->order->address->email);
                     }
                     if (!empty($PersonID)) {
                         $this->ap21order($PersonID);
@@ -917,11 +917,7 @@ class PaymentController extends Controller {
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
-        echo "wwwwwwwwwwwwwwwwwwwwwwwww";echo $response->getStatusCode();
         if (!empty($response)) {
-            echo $response->getStatusCode();
-            echo "<pre>";print_r($response);
-            die;
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
