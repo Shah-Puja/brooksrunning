@@ -27,7 +27,7 @@ and (orientation : landscape) { /* STYLES GO HERE */
 					<h3 class="br-heading">Oops! Looks like that page has run off!</h3>
 					<p>Use our menu links or search bar to get you on the right path, <br class="hidden-mob visible-tab visible-col"/> or check out our <a href="/shoefinder" class="shoefinder-link">Shoe Finder</a> to find your match.</p>
 					<div class="button_fixed">
-		       			<a class="secondary-button" href="/">Find shoes for your run</a>
+		       			<a class="secondary-button" href="/shoefinder">Find shoes for your run</a>
 		       	  </div>
 				</div>
 			</div>
