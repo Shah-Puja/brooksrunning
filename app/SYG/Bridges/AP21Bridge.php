@@ -77,11 +77,11 @@ class AP21Bridge implements BridgeInterface {
 
     public function processOrder($PersonId, $data) {
         try {
-            $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+            $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
             echo $response->getStatusCode();
             if ($response->getStatusCode() == 200) {
                 echo "<pre>";print_r($response);die;
-                return $response;
+                return $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
