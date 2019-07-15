@@ -17,7 +17,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getBody();
         try {
             $response = $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
-            if ($response->getStatusCode() == 200) {
+            if (!empty($response)) {
                 return $response->getBody();
             }
         } catch (RequestException $e) {
@@ -43,7 +43,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
         try {
             $response = $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => true]);
-            if ($response->getStatusCode() == 200) {
+            if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
@@ -61,7 +61,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
         try {
             $response = $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
-            if ($response->getStatusCode() == 200) {
+            if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
@@ -78,12 +78,8 @@ class AP21Bridge implements BridgeInterface {
     public function processOrder($PersonId, $data) {
         try {
             $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
-            echo $response->getStatusCode();die;
-            if ($response->getStatusCode() == 200) {
-                echo "<pre>";print_r($response);die;
-                return $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
-            }else{
-                echo "dddddddddddddddddddd";echo "<pre>";print_r($response);die;
+            if (!empty($response)) {
+                return $response;
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
@@ -101,7 +97,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Voucher/GVValid/'.$gift.'?pin='.$pin.'&amount='.$amount.'&countryCode=AUFIT', ['http_errors' => false]);
         try {
             $response = $this->apiClient->get('Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT', ['http_errors' => true]);
-            if ($response->getStatusCode() == 200) {
+            if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
@@ -119,7 +115,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Products/' . $prod_styleidx . '?countryCode=AUFIT', ['http_errors' => false]);
         try {
             $response = $this->apiClient->get('Products/' . $prod_styleidx . '?countryCode=AUFIT', ['http_errors' => true]);
-            if ($response->getStatusCode() == 200) {
+            if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
