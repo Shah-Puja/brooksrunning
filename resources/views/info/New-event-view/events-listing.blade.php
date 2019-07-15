@@ -246,6 +246,9 @@
 @endsection       
 
 @section('footer_js')
+
+
+
 <script>
     var $grid2 = $('.grid2').isotope({
                 itemSelector: '.element-item2',
