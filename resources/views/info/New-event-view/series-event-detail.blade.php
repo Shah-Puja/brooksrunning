@@ -65,7 +65,7 @@
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}/' >
+                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}' >
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -165,7 +165,7 @@
 	</div>
 </section>
 
-<script>
+<script >
     $(document).ready(function(){
 
         var event_end_date=$('ul.event_tabs li.current ').attr('data-event_date');
@@ -224,9 +224,16 @@
         console.log("Browser does not support HTML5.");
     }
 }
+$(window).on('popstate', function(event) {
     
+    console.log(event.originalEvent.state);
+    
+
+});
     
 });
+
+
 
 // $(document).ready(function(){
 	

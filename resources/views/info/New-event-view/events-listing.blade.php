@@ -191,7 +191,7 @@
                                 @else
                                     @php $event_type = 'series-event'; @endphp
                                 @endif
-                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}/" >
+                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}" >
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
@@ -200,7 +200,7 @@
                                         @endif  
                                     </div>
                                 </a>
-                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}/" >
+                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}" >
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
