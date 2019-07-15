@@ -48,7 +48,7 @@
         <div class="col-2"></div>
         <div class="col-8">
       	    <div class="about-header">
-            <div class="event-logo">
+            <div class="event-logo single-event">
                 @if($single_event->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
                 @else
