@@ -344,6 +344,7 @@ $(document).on("click",".prev",function () {
 
 // New Event Page
 $(document).ready(function () {
+    if ($(window).width() < 768) {
     var owl1 = $("#event-carousel");
     owl1.owlCarousel({//Set AutoPlay to 3 seconds
         dots: false,
@@ -389,6 +390,7 @@ $(document).ready(function () {
     });
     var active_index =owl1.find(".owl-item .item:not([data-current-tab=''])").data("current-tab");
     owl1.trigger('owl.goTo', active_index);
+}
 });
 
 // shipping page 
