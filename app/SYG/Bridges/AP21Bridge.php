@@ -78,7 +78,9 @@ class AP21Bridge implements BridgeInterface {
     public function processOrder($PersonId, $data) {
         try {
             $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
-            echo "<pre>";print_r($response);die;
+            echo "<pre>";print_r($response);
+            echo $response->getStatusCode();
+            die;
             if ($response->getStatusCode() == 200) {
                 return $response;
             }
