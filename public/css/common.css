@@ -7147,16 +7147,29 @@ textarea {
 .errorpage-404-container {
   background-color: #0263f7;
   color: #ffffff;
+  height: 220px;
 }
 @media only screen and (max-width: 991px) {
   .errorpage-404-container {
     padding: 20px 0;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .errorpage-404-container {
+    height: auto;
   }
 }
 @media only screen and (max-width: 767px) {
   .errorpage-404-container {
     padding: 20px;
     text-align: center;
+    height: 270px;
   }
 }
 .errorpage-404-container--wrapper {
@@ -7175,19 +7188,26 @@ textarea {
 .errorpage-404-container--wrapper h3, .errorpage-404-container--wrapper p {
   margin: 0;
 }
+.errorpage-404-container--wrapper h3 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .errorpage-404-container--wrapper h3 {
-    font-size: 25px;
+    font-size: 28px;
   }
 }
 @media only screen and (max-width: 767px) {
   .errorpage-404-container--wrapper h3 {
-    font-size: 25px;
+    font-size: 28px;
+    line-height: 26px;
+    margin-bottom: 10px;
   }
 }
 .errorpage-404-container--wrapper p {
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.25;
+  margin-bottom: 5px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .errorpage-404-container--wrapper p {
@@ -7218,13 +7238,26 @@ textarea {
 }
 .errorpage-404-container .errorpage-header--wrapper p {
   margin: 0;
-  margin-bottom: 2px;
+  line-height: 1.25;
+  margin-bottom: 5px;
   font-size: 18px;
   text-align: center;
 }
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper p {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+}
 .errorpage-404-container .errorpage-header--wrapper .shoefinder-link {
   color: #ffffff;
-  font-size: 18.5px;
+  font-size: 18px;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .shoefinder-link {
+    font-size: 16px;
+  }
 }
 .errorpage-404-container .errorpage-header--wrapper .button_fixed {
   padding-top: 10px;
@@ -7242,9 +7275,26 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
-    max-width: 200px;
-    font-size: 14px;
+    max-width: 225px;
+    font-size: 16px;
     padding: 15px 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed {
+    font-size: 16px;
+    margin: 0 auto;
   }
 }
 
@@ -7255,7 +7305,7 @@ textarea {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
   background-position: center center;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7288,7 +7338,7 @@ textarea {
   max-width: 270px;
 }
 .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button:hover {
-  background-color: #0263f7;
+  background-color: #002855;
   color: #ffffff;
 }
 @media only screen and (max-width: 767px) {
@@ -7300,15 +7350,27 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
-    max-width: 200px;
-    font-size: 14px;
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 150px;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 767px) {
   .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second {
     display: inline-block;
     padding: 1px;
-    width: 135px;
+    width: 150px;
   }
 }
 @media only screen and (max-width: 767px) {

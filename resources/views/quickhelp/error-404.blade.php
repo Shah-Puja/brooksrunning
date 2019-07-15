@@ -21,18 +21,17 @@ and (orientation : landscape) { /* STYLES GO HERE */
 <section class="errorpage-404-container ">
 	<div class="wrapper">
 		<div class="row">
-			<div class="col-2 tab-2"></div>
-			<div class="col-8 tab-8">
+			<div class="col-2 tab-1"></div>
+			<div class="col-8 tab-10">
 				<div class="errorpage-404-container--wrapper info errorpage-header--wrapper">
 					<h3 class="br-heading">Oops! Looks like that page has run off!</h3>
-					<p>Use our menu links or search bar to get you on the right path, <br class="hidden-mob hidden-tab visible-col"/> or check out our <a href="/shoefinder" class="shoefinder-link">Shoe Finder</a> to find your match.</p>
+					<p>Use our menu links or search bar to get you on the right path, <br class="hidden-mob visible-tab visible-col"/> or check out our <a href="/shoefinder" class="shoefinder-link">Shoe Finder</a> to find your match.</p>
 					<div class="button_fixed">
 		       			<a class="secondary-button" href="/">Find shoes for your run</a>
 		       	  </div>
 				</div>
 			</div>
-				<!--<form name="subscriber_news1" method='post' action='/meet_brooks/enewsletter'>-->
-			<div class="col-2 tab-2"></div>
+			<div class="col-2 tab-1"></div>
 		</div>
 	</div>
 </section>
@@ -43,14 +42,13 @@ and (orientation : landscape) { /* STYLES GO HERE */
 			<div class="col-8 tab-8">
 				<div class="errorpage-404-container--wrapper info errorpage-middle--wrapper errorpage-middle--wrapper-onmob">
 					<div class="button_fixed_second">
-						<a class="primary-button" href="/">Shop Women</a>
+						<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women</a>
 					</div>
 					<div class="button_fixed_second">
-						<a class="primary-button" href="/">Shop Men</a>
+						<a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men</a>
 					</div>
 				</div>
 			</div>
-				<!--<form name="subscriber_news1" method='post' action='/meet_brooks/enewsletter'>-->
 			<div class="col-2 tab-2"></div>
 		</div>
 	</div>

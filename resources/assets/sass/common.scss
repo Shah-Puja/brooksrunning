@@ -5641,12 +5641,20 @@ a {
 .errorpage-404-container{
   background-color: $blue;
   color: $white;
+  height: 220px;
   @media #{$tabmob-only}{
-    padding: 20px 0;
+    padding: 20px 0;  height: auto;
+  }
+  @media #{$tab-only}{
+    height: auto;
+  }
+  @media #{$desktop-only}{
+    height: auto;
   }
   @media #{$mobile-only}{
     padding: 20px;
     text-align: center;
+    height: 270px;
   }
   &--wrapper{
     padding: 20px 0;
@@ -5662,21 +5670,24 @@ a {
       margin: 0;
     }
     h3{
+      font-size: 32px;
+      margin-bottom: 5px;
       @media #{$tab-only}{
-        font-size: 25px;
+        font-size: 28px;
       }
       @media #{$mobile-only}{
-        font-size: 25px;
+        font-size: 28px; line-height: 26px; margin-bottom: 10px;
       }
     }
     p{
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.25;
+      margin-bottom: 5px;
       @media #{$tab-only}{
         font-size: 16px;
       }
       @media #{$mobile-only}{
-        font-size:16px;
+        font-size:16px; 
       }
     }
     .input-wrapper{
@@ -5696,12 +5707,21 @@ a {
     padding: 18px 10px;
     text-align: center;
     p{
-      margin: 0;
-        margin-bottom: 2px;
+        margin: 0;
+        line-height:1.25;
+        margin-bottom: 5px;
         font-size: 18px;
-      text-align:center;
+        text-align:center;
+        @media #{$mobile-only}{
+          font-size: 16px; line-height:1.25; margin-bottom: 5px;
+        }
     }
-    .shoefinder-link{ color:$white;  @extend %extrabold-font; font-size: 18.5px;}
+    .shoefinder-link{ 
+      color:$white;  @extend %extrabold-font; font-size: 18px;
+      @media #{$mobile-only}{
+        font-size: 16px;
+      }
+    }
     .button_fixed{
       padding-top: 10px;
       .secondary-button{
@@ -5712,9 +5732,18 @@ a {
           color: #ffffff;
         }
         @media #{$desktop-only}{ 
-          max-width: 200px;     font-size: 14px;  padding:15px 20px;
+          max-width: 225px; font-size: 16px;   padding:15px 20px;
+        }
+        @media #{$tab-only}{ 
+          max-width: 225px; font-size: 16px; 
+        }
+        @media #{$mobile-only}{
+          font-size: 16px; 
         }
        }
+       @media #{$mobile-only}{
+        font-size: 16px;  margin: 0 auto;
+      }
     }
   }
 }
@@ -5726,7 +5755,7 @@ a {
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		height:100vh;
+		height:80vh;
     background-position: center center;
     @media #{$tab-only}{
           height: 40vh;
@@ -5735,9 +5764,7 @@ a {
     @media #{$desktop-only}{
       height: 55vh;
       background-position: center center;
-    }
-  
-   
+    } 
     @media #{$mobile-only}{
       height: 40vh;
       background-position: 90% 30%;
@@ -5753,19 +5780,27 @@ a {
         margin: auto; 
         max-width: 270px;
         &:hover {
-          background-color: #0263f7;
+          background-color: #002855;
           color: #ffffff;
         }
-        @media #{$mobile-only}{ max-width: 200px;    padding:15px 20px;
-          font-size: 14px;}
+          @media #{$mobile-only}{ 
+          max-width: 200px;    padding:15px 20px;
+          font-size: 14px;
+          }
           @media #{$desktop-only}{ 
-            max-width: 200px; font-size: 14px;
+            max-width: 225px; font-size: 16px; 
+          }
+          @media #{$tab-only}{ 
+            max-width: 225px; font-size: 16px; 
+          }
+          @media #{$mobile-only}{
+            max-width: 150px; font-size: 16px; 
           }
        }
        @media #{$mobile-only}{
         display: inline-block;
         padding: 1px;
-          width: 135px;
+          width: 150px;
        }
     }
     &.errorpage-middle--wrapper-onmob{
