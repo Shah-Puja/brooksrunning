@@ -154,24 +154,27 @@ class meet_brooksController extends Controller {
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
 
         $response = $this->bridge->getPersonid($email);
-        //print_r($response);
-        //exit;      
-        $returnCode = $response->getStatusCode();
-        $userid = false;
-        switch ($returnCode) {
-            case '200':
-                $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                $userid = $response_xml->Person->Id;
-                break;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    break;
 
-            case '404':
-                $userid = $this->create_user($email, $fname, $lname, $gender, $country);
-                break;
+                case '404':
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+                    break;
 
-            default:
-                $userid = false;
-                break;
+                default:
+                    $userid = false;
+                    break;
+            }
+        } else {
+            $userid = $this->create_user($email, $fname, $lname, $gender, $country);
         }
+
         return $userid;
     }
 
@@ -195,23 +198,23 @@ class meet_brooksController extends Controller {
 	                  </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        $returnCode = $response->getStatusCode();
-        switch ($returnCode) {
-            case 201:
-                $location = $response->getHeader('Location')[0];
-                $str_arr = explode("/", $location);
-                $last_seg = $str_arr[count($str_arr) - 1];
-                $last_seg_arr = explode("?", $last_seg);
-                $person_idx = $last_seg_arr[0];
-                $returnVal = $person_idx;
-                break;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
+                    $returnVal = $person_idx;
+                    break;
 
-            default:
-                $returnVal = false;
-
-                break;
+                default:
+                    $returnVal = false;
+                    break;
+            }
         }
-
         return $returnVal;
     }
 
@@ -259,7 +262,7 @@ class meet_brooksController extends Controller {
                     'source' => 'Subscriber',
                     'status' => 'queue',
                     'list_id' => env('ICONTACT_LIST_ID')
-                    ]);
+        ]);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
