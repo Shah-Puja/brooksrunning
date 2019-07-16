@@ -62,7 +62,7 @@ class Manual_ap21order_push extends Controller {
                         </Addresses>
                       </Person>";
 
-        $response = $this->bridge->processPerson($person_xml);
+        $response = $this->bridge->processPersonManual($person_xml);
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
         $logger = array(
             'order_id' => $this->_order_id,
@@ -128,7 +128,7 @@ class Manual_ap21order_push extends Controller {
     }
 
     public function get_personid() {
-        $response = $this->bridge->getPersonid($this->_email);
+        $response = $this->bridge->getPersonidManual($this->_email);
         //print_r($response);
         //exit;      
         $returnCode = $response->getStatusCode();
@@ -217,7 +217,7 @@ class Manual_ap21order_push extends Controller {
             $pin = $this->_order->giftcert_ap21pin;
             $amount = $this->_order->gift_amount;
             $url = env('AP21_URL') . "/Voucher/GVValid/{$gift}?pin={$pin}&amount={$amount}&countryCode=" . env('AP21_COUNTRYCODE');
-            $response = $this->bridge->vouchervalid($gift, $pin, $amount);
+            $response = $this->bridge->vouchervalidManual($gift, $pin, $amount);
             $returnCode = $response->getStatusCode();
 
             switch ($returnCode) {
@@ -473,7 +473,7 @@ class Manual_ap21order_push extends Controller {
         /* echo "<pre>";
           print_r($order->ap21_xml);
           die; */
-        $response = $this->bridge->processOrder($person_id, $xml_data);
+        $response = $this->bridge->processOrderManual($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
         $returnCode = $response->getStatusCode();
         //echo "<pre>";print_r($response);print_r($returnCode);die;
