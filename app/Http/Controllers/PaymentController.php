@@ -593,7 +593,7 @@ class PaymentController extends Controller {
                     $userid = false;
                     break;
             }
-        }else{
+        } else {
             $userid = $this->create_user();
         }
         return $userid;
