@@ -546,9 +546,10 @@ class PaymentController extends Controller {
     public function get_personid($email) {
         $userid = false;
         $response = $this->bridge->getPersonid($email);
+        echo "eeeeeeeeeee";echo "<pre>";print_r($response);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
-
+            echo $returnCode;die;
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
@@ -593,7 +594,7 @@ class PaymentController extends Controller {
                     $userid = false;
                     break;
             }
-        }
+        }die;
         return $userid;
     }
 
