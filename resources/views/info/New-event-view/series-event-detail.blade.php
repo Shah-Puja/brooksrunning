@@ -20,7 +20,7 @@
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
-                                                <span style="color: #ffffff;font-size: 12px;">{{$event_name->event_name}} {{$event_name->event_header}}</span>
+                                                <span style="color: #ffffff;font-size: 12px;">{{$event_name->event_name}}</span>
                                             </li>
 										</ul>
 									</div>
@@ -61,12 +61,12 @@
                     <ul class="event_tabs">
                     @foreach($series_event as $series_events)
 
-                        <li class="tab-link @if($city==$series_events->city && $id==$series_events->id) current @endif " 
+                        <li class="tab-link {{$series_events->id}} @if($city==$series_events->city && $id==$series_events->id) current @endif " 
                         data-tab="{{$series_events->id}}" 
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}'  >
+                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}' data-slug="{{$series_events->slug}}" >
                             <div class="event-series-header">
                             <h2>{{$series_events->event_header}} </h2>
                               
@@ -102,10 +102,10 @@
                                 @foreach($series_event as $series_events)
                                     @php $active_slide = ($city==$series_events->city) ? $item_count_mob: ""; @endphp
                                     <div class="item" data-current-tab='{{$active_slide}}' >
-                                        <li class="tab-link" data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
+                                        <li class="tab-link " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}">
+                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_name}} </h2>
                                            
@@ -179,6 +179,15 @@
             $('.stay-tuned').css('display',"none");
             $('.find-more').css('display',"block");
          }
+    var e_id,e_logo,e_slug;
+       if ($("ul.event_tabs li").hasClass("current")) {
+         
+          e_slug=$("ul.event_tabs li").attr('data-slug');
+         
+}
+
+
+
 	
 	$('ul.event_tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
@@ -196,7 +205,7 @@
         var event_header=$(this).attr('data-event_header');
         var name=event_name+" "+event_header; 
         $('.event-title').text(event_name);
-        $('.breadcrumbs li span').text(name);
+        $('.breadcrumbs li span').text(event_name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=$(this).attr('data-event_date');
@@ -227,10 +236,44 @@
 }
 $(window).on('popstate', function(event) {
     
-    console.log(event.originalEvent.state.Url);
+    if(event.originalEvent.state== null){
+    
+  
+      console.log('hello');
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('#csrf').val()
+        },
+        url:"{{route('events-slug')}}",
+        method: "get",
+        data:{slug:e_slug},
+        success: function (result) {
+        console.log(result.slug.logo);
+        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+        $('ul.event_tabs li').removeClass('current');
+		$('.tab-content').css('display',"none");
+
+
+
+       
+        $('ul.event_tabs li.'+result.slug.id).addClass('current');
+        $("#"+result.slug.id).css('display',"block");
+
+        if(result.slug.end_dt <= now || result.slug.end_dt==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
+        
+        }
+
+});
+
+  }else{
     var str=event.originalEvent.state.Url;
     var slug = str.split('/')[3];
-
 $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('#csrf').val()
@@ -239,10 +282,30 @@ $.ajax({
         method: "get",
         data:{slug:slug},
         success: function (result) {
-        console.log(result);
+        console.log(result.slug.logo);
+        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+        $('ul.event_tabs li').removeClass('current');
+		$('.tab-content').css('display',"none");
+
+
+
+       
+        $('ul.event_tabs li.'+result.slug.id).addClass('current');
+        $("#"+result.slug.id).css('display',"block");
+
+
+        if(result.slug.end_dt <= now || result.slug.end_dt==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
+        
         }
 
 });
+}
     
 });
 });
