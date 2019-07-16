@@ -105,7 +105,7 @@
                                         <li class="tab-link " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}">
+                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" >
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_name}} </h2>
                                            
@@ -171,7 +171,7 @@
 
         var event_end_date=$('ul.event_tabs li.current ').attr('data-event_date');
         let now = (new Date()).toISOString().split('T')[0];
-       console.log(event_end_date);
+       //console.log(event_end_date);
         if(event_end_date <= now || event_end_date==00){
             $('.stay-tuned').css('display',"block");
             $('.find-more').css('display',"none");
@@ -182,7 +182,8 @@
     var e_id,e_logo,e_slug;
        if ($("ul.event_tabs li").hasClass("current")) {
          
-          e_slug=$("ul.event_tabs li").attr('data-slug');
+          e_slug=$("ul.event_tabs li.current").attr('data-slug');
+          console.log(e_slug);
          
 }
 
@@ -239,7 +240,7 @@ $(window).on('popstate', function(event) {
     if(event.originalEvent.state== null){
     
   
-      console.log('hello');
+      //console.log('hello');
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('#csrf').val()
@@ -248,7 +249,7 @@ $(window).on('popstate', function(event) {
         method: "get",
         data:{slug:e_slug},
         success: function (result) {
-        console.log(result.slug.logo);
+        //console.log(result.slug.logo);
         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
         $('ul.event_tabs li').removeClass('current');
 		$('.tab-content').css('display',"none");
@@ -282,7 +283,7 @@ $.ajax({
         method: "get",
         data:{slug:slug},
         success: function (result) {
-        console.log(result.slug.logo);
+        //console.log(result.slug.logo);
         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
         $('ul.event_tabs li').removeClass('current');
 		$('.tab-content').css('display',"none");
