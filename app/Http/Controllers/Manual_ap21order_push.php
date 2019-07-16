@@ -129,8 +129,8 @@ class Manual_ap21order_push extends Controller {
 
     public function get_personid() {
         $response = $this->bridge->getPersonid($this->_email);
-        //print_r($response);
-        //exit;      
+        if (!empty($response)) {
+                 
         $returnCode = $response->getStatusCode();
         $userid = false;
         switch ($returnCode) {
@@ -182,7 +182,10 @@ class Manual_ap21order_push extends Controller {
         );
         Order::where('id', $this->_order_id)->update($orderDataUpdate);
         //return $userid;
+    }else {
+        $userid = $this->create_user();
     }
+}
 
     public function init($order_id, $order) {
         $this->_fullname = $order->address->s_fname . " " . $order->address->l_fname;
