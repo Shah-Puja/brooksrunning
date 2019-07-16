@@ -155,7 +155,7 @@ class EventController extends Controller {
     public function new_series_event($series_event) {
 
         $event_name=event::where('slug',$series_event)->first();
-       
+       //dd($event_name);
         $city=$event_name->city;
         
         $id=$event_name->id;
@@ -165,6 +165,17 @@ class EventController extends Controller {
         
        
         return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city','id'));
+    }
+
+
+    public function get_event(Request $request)
+    {
+       $slug=$request->slug;
+       
+
+       $event_data=event::where('slug',$slug)->first();
+
+       return response()->json(['slug' => $event_data]);
     }
 
     public function new_series_static_event() {

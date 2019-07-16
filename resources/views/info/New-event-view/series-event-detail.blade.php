@@ -6,6 +6,7 @@
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
         <div class="row">
+        <input type="hidden" id="csrf" name="_token" value="{{ csrf_token() }}">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
 				<div class="m-block--hero--collection__content">
 						<div class="m-block--hero__content__copy">
@@ -65,7 +66,7 @@
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}' >
+                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}'  >
                             <div class="event-series-header">
                             <h2>{{$series_events->event_name}} </h2>
                               
@@ -226,11 +227,24 @@
 }
 $(window).on('popstate', function(event) {
     
-    console.log(event.originalEvent.state);
-    
+    console.log(event.originalEvent.state.Url);
+    var str=event.originalEvent.state.Url;
+    var slug = str.split('/')[3];
+
+$.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('#csrf').val()
+        },
+        url:"{{route('events-slug')}}",
+        method: "get",
+        data:{slug:slug},
+        success: function (result) {
+        console.log(result);
+        }
 
 });
     
+});
 });
 
 
