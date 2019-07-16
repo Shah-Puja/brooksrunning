@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Order_log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderAp21Alert;
+use DB;
 
 class Manual_ap21order_push extends Controller {
 
@@ -333,8 +334,28 @@ class Manual_ap21order_push extends Controller {
                       <Postcode>" . htmlspecialchars($order->address->s_postcode) . "</Postcode>
                       <Country></Country>
                     </Delivery>
-                </Addresses>
-                <Contacts>
+                </Addresses>";
+        $carrier = $servicetype = '';
+        if ($order->delivery_type == "express") {
+            $carrier = 'AUS';
+            $servicetype = '03X1';
+        } else if ($order->delivery_type == "new_zealand") {
+            $carrier = 'NOC';
+            $servicetype = 'PUP';
+        } else {
+            //table name freight_service
+            $freight_service_info = DB::table('freight_service')->where('postcode', $order->address->s_postcode)->first();
+            if (!empty($freight_service_info) && $freight_service_info->postcode === $order->address->s_postcode) {
+                $carrier = 'AUS';
+                $servicetype = '03S1';
+            } else {
+                $carrier = 'CPL';
+                $servicetype = 'X31';
+            }
+        }
+        $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
+                              <ServiceType><Code>$servicetype</Code></ServiceType>";
+        $xml_data .= "<Contacts>
                     <Email>" . $order->address->email . "</Email>
                     <Phones>
                         <Home>" . $order->address->s_phone . "</Home>
