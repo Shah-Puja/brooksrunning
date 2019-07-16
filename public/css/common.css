@@ -119,7 +119,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.response_content_learn_more .heading_learn_more_big, .response_content_learn_more .heading_learn_more, .response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.errorpage-404-container .errorpage-header--wrapper .shoefinder-link, .response_content_learn_more .heading_learn_more_big, .response_content_learn_more .heading_learn_more, .response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -7143,5 +7143,243 @@ textarea {
 }
 
 /*  Fixed Header End */
+/* Start Error Page */
+.errorpage-404-container {
+  background-color: #0263f7;
+  color: #ffffff;
+  height: 220px;
+}
+@media only screen and (max-width: 991px) {
+  .errorpage-404-container {
+    padding: 20px 0;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .errorpage-404-container {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container {
+    padding: 20px;
+    text-align: center;
+    height: 270px;
+  }
+}
+.errorpage-404-container--wrapper {
+  padding: 20px 0;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container--wrapper.info {
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .errorpage-404-container--wrapper {
+    padding: 0 0;
+  }
+}
+.errorpage-404-container--wrapper h3, .errorpage-404-container--wrapper p {
+  margin: 0;
+}
+.errorpage-404-container--wrapper h3 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container--wrapper h3 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container--wrapper h3 {
+    font-size: 28px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+}
+.errorpage-404-container--wrapper p {
+  font-size: 13px;
+  line-height: 1.25;
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container--wrapper p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container--wrapper p {
+    font-size: 16px;
+  }
+}
+.errorpage-404-container--wrapper .input-wrapper {
+  padding-top: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container--wrapper .input-wrapper {
+    padding-top: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container--wrapper .input-wrapper .input-field {
+    margin-bottom: 7px;
+  }
+}
+.errorpage-404-container .errorpage-header--wrapper {
+  padding: 18px 10px;
+  text-align: center;
+}
+.errorpage-404-container .errorpage-header--wrapper p {
+  margin: 0;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper p {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+}
+.errorpage-404-container .errorpage-header--wrapper .shoefinder-link {
+  color: #ffffff;
+  font-size: 18px;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .shoefinder-link {
+    font-size: 16px;
+  }
+}
+.errorpage-404-container .errorpage-header--wrapper .button_fixed {
+  padding-top: 10px;
+}
+.errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+  color: #0263f7;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  margin: auto;
+  max-width: 270px;
+}
+.errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button:hover {
+  background-color: #0263f7;
+  color: #ffffff;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+    max-width: 225px;
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed .secondary-button {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-container .errorpage-header--wrapper .button_fixed {
+    font-size: 16px;
+    margin: 0 auto;
+  }
+}
+
+.errorpage-404-section.bg {
+  /* The image used */
+  background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80vh;
+  background-position: center center;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-section.bg {
+    height: 40vh;
+    background-position: 35% 35%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .errorpage-404-section.bg {
+    height: 55vh;
+    background-position: center center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg {
+    height: 40vh;
+    background-position: 90% 30%;
+  }
+}
+.errorpage-404-section.bg .errorpage-middle--wrapper {
+  margin: 0 auto;
+}
+.errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second {
+  padding-top: 20px;
+  text-align: center;
+}
+.errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+  margin: auto;
+  max-width: 270px;
+}
+.errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button:hover {
+  background-color: #002855;
+  color: #ffffff;
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 200px;
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 225px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second .primary-button {
+    max-width: 150px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper .button_fixed_second {
+    display: inline-block;
+    padding: 1px;
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .errorpage-404-section.bg .errorpage-middle--wrapper.errorpage-middle--wrapper-onmob {
+    padding-top: 75px;
+    text-align: center;
+  }
+}
+
+/* End Error Page*/
 
 /*# sourceMappingURL=common.css.map */

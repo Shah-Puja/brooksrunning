@@ -113,6 +113,7 @@ class ProductColourController extends Controller
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
         //echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
+        if (!empty($response)) { 
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case '200':
@@ -143,7 +144,7 @@ class ProductColourController extends Controller
                                 'stock' => $stock,
                                 'price' => $org_price,
                                 'price_sale' => $price_sale,
-                                'release_date' => '',
+                                'release_date' => null,
                                 'season' => 'Current',
                                 'visible' => 'No',
                                 'reason_no' => 'Release date blank',
@@ -211,6 +212,7 @@ class ProductColourController extends Controller
                         endif;
                 break;
         }
+    }
         //exit;
     }
 
