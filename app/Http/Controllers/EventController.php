@@ -45,7 +45,7 @@ class EventController extends Controller {
     public function new_events_listing(Request $request) {
        // DB::statement("SET sql_mode = '' ");
         $month = $year = $when = $where = '';
-       
+     
         if ($request->isMethod('post')) {
             //echo "<pre>";print_r(request()->all());die;
             if ($request->when != '') {
@@ -67,7 +67,7 @@ class EventController extends Controller {
                                     ->whereRaw("start_dt=00")->get();
                                     //dd($other_upcoming_events);  
                                    // $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
-              
+                                   
                 }
             }
            //dd($year);
@@ -99,10 +99,11 @@ class EventController extends Controller {
                                ->orwhere('end_dt','>=',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
 
             $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt < CURDATE()")->orderBy('start_dt','ASC')->get();
-           
+         
            // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
            $other_upcoming_events=$other_upcoming_event;
            //dd($other_upcoming_event);
+           
             
         }
     

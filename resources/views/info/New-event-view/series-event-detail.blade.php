@@ -25,7 +25,7 @@
 										</ul>
 									</div>
 								</div>
-                                <h1 class="event-title">{{$event_name->event_name}} {{$event_name->event_header}}</h1>
+                                <h1 class="event-title">{{$event_name->event_name}}</h1>
 							<!-- <p class="type">Brooks is proud to partner with a number of major running events around Australia and New Zealand all throughout the year.</p> -->
 						</div>
 					</div>
@@ -68,7 +68,7 @@
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
                         data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}'  >
                             <div class="event-series-header">
-                            <h2>{{$series_events->event_name}} </h2>
+                            <h2>{{$series_events->event_header}} </h2>
                               
                             @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
                                              <h3>{{date('F Y',strtotime($series_events->next_dt))}}</h3>
@@ -195,7 +195,7 @@
         var event_name=$(this).attr('data-event_name');
         var event_header=$(this).attr('data-event_header');
         var name=event_name+" "+event_header; 
-        $('.event-title').text(name);
+        $('.event-title').text(event_name);
         $('.breadcrumbs li span').text(name);
         $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
