@@ -27,4 +27,9 @@ class QuickhelpController extends Controller
 	{
 		return view( 'quickhelp.track_your_order');
     }
+
+    public function error_404()
+    {
+      return view( 'quickhelp.error-404');
+      }
 }
