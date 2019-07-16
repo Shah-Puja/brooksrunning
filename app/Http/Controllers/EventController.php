@@ -34,7 +34,8 @@ class EventController extends Controller {
 
         $event = event_mast::where('slug', 'like', '%' . $event . '%')->first();
 
-        return view('info.event-view.month-detail', compact('event'));
+        //return view('info.event-view.month-detail', compact('event'));
+        return redirect('/events');
 
     }
 
