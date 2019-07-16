@@ -5071,7 +5071,7 @@ textarea {
 .event-intro h4 {
   color: #0E0E0E;
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 0.5;
   text-align: center;
 }
@@ -5084,9 +5084,7 @@ textarea {
 .event-intro .event-logo {
   margin: 0 auto;
   padding-bottom: 20px;
-  width: 25%;
-  height: 280px;
-  object-fit: contain;
+  width: 90%;
 }
 @media only screen and (max-width: 767px) {
   .event-intro .event-logo {
@@ -5103,6 +5101,16 @@ textarea {
 @media only screen and (max-width: 767px) {
   .event-intro .event-logo.single-event {
     width: 50%;
+  }
+}
+.event-intro .event-logo img {
+  max-width: 200px;
+  max-height: 200px;
+}
+@media only screen and (max-width: 767px) {
+  .event-intro .event-logo img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 .event-intro p {
@@ -5247,7 +5255,7 @@ textarea {
   line-height: 26px;
   width: 740px;
   text-align: center;
-  margin: auto;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 767px) {
   .tabbedcontent .tab-content p {
@@ -5722,7 +5730,7 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .event-container .br-mainheading {
-    margin: 0px 15px;
+    margin: 0px 88px;
     font-size: 22px;
   }
 }

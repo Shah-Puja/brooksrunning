@@ -3314,41 +3314,45 @@ width: 100%;
     text-align: center;
     @media #{$mobile-only}{
       font-size:22px;
-    line-height: .4;
+      line-height: .4;
       }
   }
   h4{
     color:#0E0E0E;
     margin-top: 10px;
-    font-size:24px;
+    font-size:22px;
     line-height: .5;
     @extend %extrabold-font;
     text-align: center;
     @media #{$mobile-only}{
       font-size:22px;
-    line-height: .4;
+      line-height: .4;
       }
   }
   .event-logo{
     margin: 0 auto;
     padding-bottom: 20px;
-    width: 25%;
-    height: 280px;
-    object-fit: contain;
+    width: 90%;
     @media #{$mobile-only}{
       width: 50%;
     padding-bottom: 10px;
     padding-top: 10px;
     height: 100%;
     }
-    
-   
-    &.single-event{
-      width: 40%;
-      height: 100%;
-     
+      &.single-event{
+        width: 40%;
+        height: 100%;
+      
+        @media #{$mobile-only}{
+          width: 50%;
+        }
+      }
+    img{
+      max-width: 200px;
+      max-height: 200px;
       @media #{$mobile-only}{
-        width: 50%;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
   }
@@ -3480,7 +3484,7 @@ width: 100%;
       line-height: 26px; 
       width: 740px;
       text-align: center;
-      margin: auto;     
+      margin: 20px auto;  
       @media #{$mobile-only}{
         font-size: 16px;
         line-height: 24px;
@@ -3930,7 +3934,7 @@ width: 100%;
       font-size:22px;
     }
     @media #{$desktop-only}{
-      margin : 0px 15px;
+      margin : 0px 88px;
       font-size:22px;
     }
   }
