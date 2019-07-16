@@ -129,4 +129,24 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
+    public function processCartManual($data) {
+        return $this->apiClient->put('Carts/1234?countryCode=AUFIT', ['body' => $data])->getBody();
+    }
+
+    public function getPersonidManual($email) {
+        return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
+    }
+
+    public function processPersonManual($data) {
+        return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+    }
+
+    public function vouchervalidManual($gift, $pin, $amount) {
+        return $this->apiClient->get('Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT', ['http_errors' => false]);
+    }
+
+    public function processOrderManual($PersonId, $data) {
+        return $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+    }
+
 }
