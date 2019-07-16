@@ -92,12 +92,6 @@
 					<div class="bottom-signup">
 						<h3>Email sign up - The Run Down</h3>
 						<p>Stay up to date with special offers, product updates events, competitions and tips to keep you running happy!</p>
-						<!--<h1 class="error">{{ (!empty($errors)) ? $errors->first('email') : '' }}</h1>-->
-                    <!--<form class="clearfix" method="post" name="form_subscribers" action="" onsubmit="return check_subscribers()">			
-                        @csrf
-                        <input class="input " type="text" name="email" value="{{ old('email') }}" id="email" placeholder="Enter your email address">
-                        <button type="submit" class="btn">go</button>
-                    </form>-->
 					<form class="clearfix" name="subscriber_news2" method='post' action='/meet_brooks/newsletter_signup'>			
                         @csrf
                         <input class="input " type="text" name="email" value="{{ old('email') }}"  placeholder="Enter your email address" required>
