@@ -51,8 +51,11 @@ class Metatag extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Page Url','url')->withMeta(['extraAttributes' => [
-                'placeholder' => 'e.g: /womens-running-shoes']
-            ])->sortable()->rules('required', 'max:255'),
+                                        'placeholder' => 'e.g: /womens-running-shoes']
+                                    ])->help("Note : Please don't include the https://www.brooksrunning.com.au")->sortable()
+                                    ->rules('required', 'max:255')
+                                    ->creationRules('unique:meta_details,url')
+                                    ->updateRules('unique:meta_details,url'),
             text::make('Title','title')->sortable()->rules('required', 'max:255'),
             Textarea::make('Description','description')->sortable(),
         ];
