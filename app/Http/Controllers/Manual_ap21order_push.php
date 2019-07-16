@@ -185,9 +185,9 @@ class Manual_ap21order_push extends Controller {
     }
 
     public function init($order_id, $order) {
-        $this->_fullname = $order->address->s_fname . " " . $order->address->l_fname;
+        $this->_fullname = $order->address->s_fname . " " . $order->address->s_lname;
         $this->_fname = $order->address->s_fname;
-        $this->_lname = $order->address->l_fname;
+        $this->_lname = $order->address->s_lname;
         $this->_email = $order->address->email;
         $this->_phone = $order->address->s_phone;
         $this->_addressbill = (isset($order->address->b_add1) && $order->address->b_add1 != "") ? $order->address->b_add1 : $order->address->s_add1;
