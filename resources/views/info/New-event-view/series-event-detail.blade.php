@@ -51,7 +51,7 @@
                 @if($event_name->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.png">
+                    <img src="/images/new-events/event-logo-placeholder.png">
                 @endif
             </div>
 
@@ -87,7 +87,7 @@
                         @if(trim(empty($series_events->content)))
                         <p> This text is for Race 1 at Melbourne Zoo.</p>
                         @else
-                        <p>{{$series_events->content}}</p>
+                        <p>{!!$series_events->content!!}</p>
                         @endif 
                     </div>
                     @endforeach
