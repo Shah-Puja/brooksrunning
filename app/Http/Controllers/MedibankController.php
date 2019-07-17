@@ -36,7 +36,7 @@ class MedibankController extends Controller
 
             if(!$err) {
                 $response = json_decode($response,true);
-                if(!empty($response)){
+                if(isset($response['access_token'])){
                     
                    $access_token = $response['access_token'];
 
@@ -90,6 +90,9 @@ class MedibankController extends Controller
                         }
                         return back();
                     } 
+                }else{
+                    Session::flash('medibank_user_failed','Yes');
+                    return back();
                 }
             } else {
                 //echo "cURL Error #:" . $err;
