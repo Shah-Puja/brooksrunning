@@ -8,6 +8,8 @@ use Laravel\Nova\Cards\Help;
 use App\Nova\Metrics\Subscribers;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Syginteractive\CategorySort\CategorySort;
+use Syginteractive\MisingImages\MisingImages;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -55,10 +57,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
-        return [
-            new Sales,
-            new Subscribers
-        ];
+        return [];
     }
 
     /**
@@ -68,7 +67,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+           /* (new CategorySort)->canSee(function ($request) {
+                return false;
+            }),
+            (new MisingImages)->canSee(function ($request) {
+                return false;
+            }),*/
+            //new CategorySort,
+            //new MisingImages,
+        ];
     }
 
     /**

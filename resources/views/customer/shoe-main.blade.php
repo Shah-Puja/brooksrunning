@@ -139,8 +139,8 @@
 	                    <div id="product-content">
 	                            {!! $shoe_info->description !!}
 								 <div class="features">
-								 	<p><strong>Activity:</strong> Running</p>
-								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->category) }} </p>
+								 	<p><strong>Activity:</strong> {{ ucfirst($shoe_info->activity) }}</p>
+								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->disp_category) }}</p>
 								 	<p class="shoe-experience">
 											<strong>Experience:</strong>
 											@if(isset($shoe_info->experience))

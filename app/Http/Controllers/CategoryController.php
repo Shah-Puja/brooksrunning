@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $name = $cat_info->name; 
         $cat_id = $cat_info->id; 
             if($depth=='2'){
-                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name,$cat_id);
             }elseif($depth=='3'){
                 $products = \App\Models\Category::getProducts($category,$cat_id);
             }
@@ -27,11 +27,8 @@ class CategoryController extends Controller
             if (empty($products)) {
                 $styles=$flag_bra="";              
                 $filters=[];  
-            }
-            else{
-                $styles = $products->unique('style');
-                //print_r($styles);  
-               //exit;                          
+            }else{
+                $styles = $products->unique('style');                      
                 $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
         return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender','depth') );                
@@ -219,7 +216,7 @@ class CategoryController extends Controller
 
     public function shoes_detail($shoe_type=''){
         //$shoe_name=strtolower($shoe_name);
-        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam");
+        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam","addiction-walker","dyad-walker");
         if (in_array($shoe_type,$common_template)){    
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
@@ -246,7 +243,7 @@ class CategoryController extends Controller
 
         }
 
-        $diff_template=array("liberty","maximus","addiction-walker","dyad-walker");
+        $diff_template=array("liberty","maximus");
         if (in_array($shoe_type,$diff_template)){ 
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             $shoe_specs = shoe_specs::where(['shoe_type'=> $shoe_type])->orderBy('seqno', 'asc')->get();
@@ -421,7 +418,9 @@ class CategoryController extends Controller
                 $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
-                                    })->get();
+                                    })
+                                    ->with('variants')
+                                    ->get();
             
                 $products = $styles->filter(function ($value, $key) use ($data_array) {
                     $data=[];

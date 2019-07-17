@@ -470,7 +470,7 @@
 															
 													<div class="bf-media-button__content">
 														<div class="bf-media-button__media">
-															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/21k_updated.svg" data-bf-stepped-animation="" data-active-screens="Training">
+															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/21K_updated.svg" data-bf-stepped-animation="" data-active-screens="Training">
 															<svg xmlns:x="adobe:ns:meta/"
 															   xmlns:dc="http://purl.org/dc/elements/1.1/"
 															   xmlns:cc="http://creativecommons.org/ns#"
@@ -539,7 +539,7 @@
 															</div>
 																															
 															<script type="text/template" id="Training13_1_template">
-																<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/21k_updated.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
+																<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/21K_updated.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
 															</script>
 															</div>
 															<div class="bf-media-button__text" id="training_3Label">21k</div>
@@ -558,7 +558,7 @@
 								
 												<div class="bf-media-button__content">
 													<div class="bf-media-button__media">
-														<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/42k.svg" data-bf-stepped-animation="" data-active-screens="Training">
+														<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg bf-media--loaded" data-bf-svg="" data-url="/images/shoefinder-new/42K.svg" data-bf-stepped-animation="" data-active-screens="Training">
 														<svg
 																xmlns:dc="http://purl.org/dc/elements/1.1/"
 																xmlns:cc="http://creativecommons.org/ns#"
@@ -623,7 +623,7 @@
 														</div>
 																			
 														<script type="text/template" id="Training26_template">
-															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/42k.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
+															<div class="bf-media bf-media--loader bf-media--full-size bf-animated-svg" data-bf-svg data-url="/images/shoefinder-new/42K.svg" data-bf-stepped-animation  data-active-screens="Training"></div>
 														</script>
 													</div>
 													<div class="bf-media-button__text" id="training_4Label">42k</div>

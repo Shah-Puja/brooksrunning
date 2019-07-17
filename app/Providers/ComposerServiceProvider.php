@@ -21,6 +21,9 @@ class ComposerServiceProvider extends ServiceProvider
         /*view()->composer(
             'customer.layouts.header_desktop','App\Http\ViewComposers\CartComposer'
         );*/
+        View::composer(
+            ['customer.layouts.header'], 'App\Http\ViewComposers\MetaComposer'
+        );
     
     }
 
