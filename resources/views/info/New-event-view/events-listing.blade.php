@@ -185,7 +185,13 @@
                     <div class="event-wrapper-container grid2">	
                         @foreach($other_upcoming_events as $upcoming_events)
                         
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$upcoming_events->state)}} {{str_replace(' ','_',$upcoming_events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->next_dt)))}} {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->date_str)))}}">
+                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 
+                        {{str_replace(' ','_',$upcoming_events->state)}} 
+                        {{str_replace(' ','_',$upcoming_events->country)}}  
+                        {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->next_dt)))}}
+                        @if($upcoming_events->end_dt==00)
+                       {{str_replace(' ','_',date('m-Y',strtotime('-1 year', strtotime($upcoming_events->next_dt))))}}
+                       @endif">
                             <div class="event-section">
                             @if(trim(empty($upcoming_events->series)))
                                     @php $event_type = 'single-event'; @endphp
