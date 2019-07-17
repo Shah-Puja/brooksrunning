@@ -5205,8 +5205,6 @@ textarea {
 .tabbedcontent {
   /* width: 800px; */
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
 }
 .tabbedcontent.blurb-per-race {
   margin: 20px auto;
@@ -5225,6 +5223,9 @@ textarea {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 95%;
 }
 .tabbedcontent ul.event_tabs li {

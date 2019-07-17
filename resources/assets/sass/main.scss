@@ -3439,8 +3439,6 @@ width: 100%;
 .tabbedcontent{
   /* width: 800px; */
   margin: 0 auto;
-  display: flex;
-    justify-content: center;
     &.blurb-per-race{
       margin: 20px auto;
       p{
@@ -3455,7 +3453,11 @@ width: 100%;
   ul.event_tabs{
     margin: 0px;
     padding: 0px;
-    list-style: none; width:95%;
+    list-style: none;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
   }
   ul.event_tabs li{
     background: none;
