@@ -4719,7 +4719,7 @@ textarea {
 /* End Our-history */
 /* Start New Event Layout*/
 .event__hero {
-  height: auto;
+  height: 100%;
   max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -4744,7 +4744,7 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event__hero {
-    max-height: 500px;
+    height: 600px;
   }
   .event__hero .pl-0 {
     padding-left: 0 !important;
@@ -5082,7 +5082,7 @@ textarea {
   }
 }
 .event-intro .event-logo {
-  margin: 0 auto;
+  margin: 0px auto;
   padding-bottom: 20px;
   width: 90%;
 }
@@ -5103,12 +5103,12 @@ textarea {
     width: 50%;
   }
 }
-.event-intro .event-logo img {
+.event-intro .event-logo.series-event-logo img {
   max-width: 200px;
   max-height: 200px;
 }
 @media only screen and (max-width: 767px) {
-  .event-intro .event-logo img {
+  .event-intro .event-logo.series-event-logo img {
     max-width: 100%;
     max-height: 100%;
   }
@@ -5118,7 +5118,7 @@ textarea {
   color: #0E0E0E;
   font-size: 18px;
   line-height: 26px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 767px) {
   .event-intro p {
@@ -5155,12 +5155,17 @@ textarea {
   }
 }
 .event-intro .event-findmore-btn {
-  padding-top: 15px;
   max-width: 320px;
   margin: 20px auto;
 }
 .event-intro .event-findmore-btn a {
   text-decoration: none;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-intro .event-findmore-btn .btn .primary-button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
 }
 .event-intro .eventunderline {
   height: 5px;
@@ -5271,6 +5276,16 @@ textarea {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tabbedcontent .event-series-header h3 {
     font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent .event-series-header h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent .event-series-header h2 {
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -5798,7 +5813,7 @@ textarea {
   margin: 0 auto;
 }
 .event-footer--wrapper .btn {
-  max-width: 300px;
+  max-width: 320px;
   margin: 20px auto;
 }
 .event-footer--wrapper .btn .secondary-button {
@@ -5810,6 +5825,12 @@ textarea {
   background-color: #0263f7;
   color: #ffffff;
   border: 2px solid #0263f7;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-footer--wrapper .btn .secondary-button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .event-footer--wrapper.info {
