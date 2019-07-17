@@ -3360,9 +3360,6 @@ width: 100%;
             max-height: 100%;
           }
         }
-        @media #{$tab-only}{
-          margin-left: 25px;
-        }
       }
     
   }
@@ -3456,31 +3453,18 @@ width: 100%;
   ul.event_tabs{
     margin: 0px;
     padding: 0px;
-    list-style: none;
+    list-style: none;   
+     margin-left: 5%;
     text-align: center;
-  width: 96%;
-    @media #{$tab-only}{
-      width: 100%;
-    }
-    @media #{$desktop-only}{
-      width: 100%;
-    }
   }
   ul.event_tabs li{
     background: none;
     color: #222;
-    display: inline-flex;
-    padding: 5px 50px;
+    display: inline-block;
+    padding: 5px 15px;
     cursor: pointer;
     position:relative;
-    margin: 0px auto;
-    text-align:center;
-    @media #{$tab-only}{
-      padding: 5px 20px;
-    }
-    @media #{$desktop-only}{
-      padding: 5px 20px;
-    }
+    margin  : 0 auto;
   }
 
   ul.event_tabs li.current{

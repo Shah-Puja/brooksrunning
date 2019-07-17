@@ -5117,11 +5117,6 @@ textarea {
     max-height: 100%;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event-intro .event-logo.series-event-logo {
-    margin-left: 25px;
-  }
-}
 .event-intro p {
   max-width: 100%;
   color: #0E0E0E;
@@ -5228,38 +5223,17 @@ textarea {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  margin-left: 5%;
   text-align: center;
-  width: 96%;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .tabbedcontent ul.event_tabs {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .tabbedcontent ul.event_tabs {
-    width: 100%;
-  }
 }
 .tabbedcontent ul.event_tabs li {
   background: none;
   color: #222;
-  display: inline-flex;
-  padding: 5px 50px;
+  display: inline-block;
+  padding: 5px 15px;
   cursor: pointer;
   position: relative;
-  margin: 0px auto;
-  text-align: center;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .tabbedcontent ul.event_tabs li {
-    padding: 5px 20px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .tabbedcontent ul.event_tabs li {
-    padding: 5px 20px;
-  }
+  margin: 0 auto;
 }
 .tabbedcontent ul.event_tabs li.current {
   color: #005CFB;
