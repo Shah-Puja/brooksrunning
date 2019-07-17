@@ -51,7 +51,7 @@
                 @if($event_name->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="/images/new-events/generic_event_image.png">
                 @endif
             </div>
 

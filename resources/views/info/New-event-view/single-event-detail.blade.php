@@ -52,7 +52,7 @@
                 @if($single_event->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="/images/new-events/generic_event_image.png">
                 @endif
             </div>
             @if($single_event->end_dt < date('Y-m-d') && $single_event->end_dt!=00)

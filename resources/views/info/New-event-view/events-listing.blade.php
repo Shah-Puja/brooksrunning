@@ -140,7 +140,7 @@
                                         @if(!empty($events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $events->logo }}" alt="">
                                         @else 
-                                        <img src="/images/new-events/generic_event_image.jpg" alt="mothers-dayimg" />
+                                        <img src="/images/new-events/generic_event_image.png" alt="mothers-dayimg" />
                                         @endif         
                                     </div>
                                 </a>
@@ -203,7 +203,7 @@
                                         @if(!empty($upcoming_events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
                                         @else 
-                                        <img src="/images/new-events/generic_event_image.jpg" alt="mothers-dayimg" />
+                                        <img src="/images/new-events/generic_event_image.png" alt="mothers-dayimg" />
                                         @endif  
                                     </div>
                                 </a>
