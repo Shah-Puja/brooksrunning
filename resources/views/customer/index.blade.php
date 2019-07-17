@@ -56,7 +56,7 @@
 			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our holistic GuideRails holistic support system plus soft yet responsive cushioning. </p>
+					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.<br/>&nbsp;  </p>
 					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's<img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
