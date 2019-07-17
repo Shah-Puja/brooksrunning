@@ -51,7 +51,7 @@
                 @if($event_name->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$event_name->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="/images/new-events/generic_event_image.png">
                 @endif
             </div>
 
@@ -105,9 +105,9 @@
                                         <li class="tab-link " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" >
+                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" data-url="/events-listing/series-event/{{$series_events->slug}}">
                                             <div class="event-series-header">
-                                            <h2>{{$series_events->event_name}} </h2>
+                                            <h2>{{$series_events->event_header}} </h2>
                                            
                                             
                                             @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
