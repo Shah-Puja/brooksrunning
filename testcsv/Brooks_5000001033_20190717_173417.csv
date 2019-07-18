@@ -1,0 +1,1 @@
+TransactionID,OrderReferenceID,TransactionTypeCode,RefundCorrelationID,CorporateID,PolicyNumber,GivenName,FamilyName,BirthDate,EmailURI,TransactionDateTime,TransactionLocation,EligibleTransactionTotal,CurrencyCode,TransactionTier

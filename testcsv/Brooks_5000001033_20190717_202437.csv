@@ -1,0 +1,2 @@
+TransactionID,OrderReferenceID,TransactionTypeCode,RefundCorrelationID,CorporateID,PolicyNumber,GivenName,FamilyName,BirthDate,EmailURI,TransactionDateTime,TransactionLocation,EligibleTransactionTotal,CurrencyCode,TransactionTier
+108606-rjamg4d6,TEST2018-107878,FULL-PRICE,,5000001033,,Lydia,Teh,,LB3Tester4+17@gmail.com,"23 May 2019",Brooks,219.95,AUD,1

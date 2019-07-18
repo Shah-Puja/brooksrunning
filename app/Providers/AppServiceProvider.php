@@ -8,6 +8,9 @@ use App\Payments\AfterpayProcessor;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Braintree\Gateway as PaymentGateway;
+use Storage;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Sftp\SftpAdapter;
 
 
 class AppServiceProvider extends ServiceProvider {
@@ -18,6 +21,10 @@ class AppServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
+        Storage::extend('sftp', function ($app, $config) {
+            return new Filesystem(new SftpAdapter($config));
+        });
+        
         //
         Schema::defaultStringLength(191);
 
