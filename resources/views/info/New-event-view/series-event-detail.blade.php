@@ -207,7 +207,7 @@
         var name=event_name+" "+event_header; 
         $('.event-title').text(event_name);
         $('.breadcrumbs li span').text(event_name);
-        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/event-logo-placeholder.png');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=$(this).attr('data-event_date');
         let now = (new Date()).toISOString().split('T')[0];
@@ -250,7 +250,7 @@ $(window).on('popstate', function(event) {
         data:{slug:e_slug},
         success: function (result) {
         //console.log(result.slug.logo);
-        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/event-logo-placeholder.png');
         $('ul.event_tabs li').removeClass('current');
 		$('.tab-content').css('display',"none");
 
