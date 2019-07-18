@@ -5233,6 +5233,7 @@ textarea {
   cursor: pointer;
   position: relative;
   margin: 0 auto;
+  width: 200px;
 }
 .tabbedcontent ul.event_tabs li.current {
   color: #005CFB;
@@ -5274,7 +5275,8 @@ textarea {
   }
 }
 .tabbedcontent .event-series-header h3 {
-  line-height: 10px;
+  font-size: 16px;
+  line-height: 6px;
   margin: 15px auto;
   color: #000;
 }
