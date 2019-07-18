@@ -179,7 +179,7 @@ class meet_brooksController extends Controller {
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
-
+        $returnVal = false;
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
                         <Surname>$lname</Surname>   
