@@ -39,12 +39,12 @@
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
 					<img src="/images/home/20190715/hp_sm_revel.jpg">
-			        <h3>&nbsp;<br/>&nbsp;</h3>
+			        <h3>&nbsp;<br/>Revel 3</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>The new Revel 3 features a lower profile with a street-ready upper for days that have you running errands and workouts.</p>
-					<a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/brooks-running-shoes-revel-3-womens/120302_012.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>				
+					<a href="/brooks-running-shoes-revel-3-womens/120302_012.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				
 				</div>
 			</div>
 		</div>
