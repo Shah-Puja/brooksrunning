@@ -36,15 +36,15 @@
                             <div class="prd_caption">
                                 @switch($style->gender)
                                     @case('M')
-                                        @php $gender = "Men's"; @endphp
+                                        @php $gender = "Men's "; @endphp
                                     @break
                                     @case('W')
-                                        @php $gender = "Women's"; @endphp
+                                        @php $gender = "Women's "; @endphp
                                     @break
                                     @default
                                         @php $gender = ""; @endphp
                                  @endswitch
-                                <h3> {{$gender}} {{ strip_tags($style->stylename) }}</h3>
+                                <h3>{{($gender!='')? $gender:''}}{{ strip_tags($style->stylename) }}</h3>
                                 <div class="price">
                                     @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                         <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
