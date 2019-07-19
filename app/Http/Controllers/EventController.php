@@ -161,7 +161,7 @@ class EventController extends Controller {
         
         $id=$event_name->id;
 
-        $series_event=event::where('series',$event_name->series)->orderBy('start_dt','DESC')->get();
+        $series_event=event::where('series',$event_name->series)->orderBy('start_dt','ASC')->get();
         //dd($series_event);
         
        
