@@ -284,7 +284,7 @@ $.ajax({
         data:{slug:slug},
         success: function (result) {
         //console.log(result.slug.logo);
-        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+        $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/event-logo-placeholder.png');
         $('ul.event_tabs li').removeClass('current');
 		$('.tab-content').css('display',"none");
 
