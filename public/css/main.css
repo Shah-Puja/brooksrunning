@@ -5229,11 +5229,21 @@ textarea {
   background: none;
   color: #222;
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 10px;
   cursor: pointer;
   position: relative;
   margin: 0 auto;
-  width: 200px;
+  width: 250px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tabbedcontent ul.event_tabs li {
+    width: 210px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent ul.event_tabs li {
+    width: 160px;
+  }
 }
 .tabbedcontent ul.event_tabs li.current {
   color: #005CFB;
@@ -5282,12 +5292,12 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tabbedcontent .event-series-header h3 {
-    font-size: 16px;
+    margin: 12px auto;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tabbedcontent .event-series-header h3 {
-    font-size: 16px;
+    margin: 12px auto;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
