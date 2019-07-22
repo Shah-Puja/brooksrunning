@@ -38,14 +38,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/hp_sm_energize.jpg">
-			        <h3>&nbsp;<br/>&nbsp;</h3>
+					<img src="/images/home/20190715/hp_sm_revel.jpg">
+			        <h3>&nbsp;<br/>Revel 3</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Create a run that feels easier. Responsive and springy, these shoes add a lift to every stride. Choose from neutral or support shoes for a run customised to you.</p>
-					<a href="/collections/energize-running-shoes">Shop the Energize collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<!-- <span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
-				
+					<p>The new Revel 3 features a lower profile with a street-ready upper for days that have you running errands and workouts.</p>
+					<a href="/brooks-running-shoes-revel-3-womens/120302_012.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				
 				</div>
 			</div>
 		</div>
@@ -56,9 +55,9 @@
 			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our holistic GuideRails holistic support system plus soft yet responsive cushioning. </p>
-					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's<img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.<br/>&nbsp;  </p>
+					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
