@@ -1453,6 +1453,9 @@
             padding-top: 2%;
             max-width: 180px;
           }
+          @media #{$desktop-only}{
+            padding-top: 2%;
+          }
           @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             max-width: 215px;
           }
@@ -1460,7 +1463,14 @@
             padding-top: 95%;
           }
           .homepage-sale--btn{
-            
+            color: #005cfb;
+            border: 2px solid $white;
+            background: $white;
+            &:hover{
+              background: $blue;
+              border: 2px solid $blue;
+              color: $white;
+              }
             @media #{$tab-only}{
               margin-top: 8px;
               padding: 12px 15px;
@@ -1479,6 +1489,9 @@
       }
       .secondary-button{
         margin-top:15px;
+        @media #{$desktop-only}{
+          margin-top: 7px;
+        }
       }
       .primary-button{
         margin-top:15px;
