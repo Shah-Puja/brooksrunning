@@ -3464,12 +3464,12 @@ width: 100%;
     cursor: pointer;
     position:relative;
     margin  : 0 auto;
-    width:250px;
+    width: 262px;
     @media #{$desktop-only}{
-      width:210px;
+      width:220px;
     }
     @media #{$tab-only}{
-      width:160px;
+      width:220px;
     }
   }
 
@@ -3515,7 +3515,7 @@ width: 100%;
   }
   .event-series-header{
     h3{
-      font-size: 16px;
+      font-size: 14px;
       line-height: 6px;
       margin: 15px auto;
       color:#000;
