@@ -3632,11 +3632,11 @@
         },
         {
             "name": "syginteractive/category-sort",
-            "version": "dev-trunal-20190422-crm",
+            "version": "dev-event-pages",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CategorySort",
-                "reference": "f49e6649170807278ad2d156ca6478682bc7d044",
+                "reference": "5e24375d7ed506786f5816ed7a82b8ac1eca2de8",
                 "shasum": null
             },
             "require": {
@@ -3666,11 +3666,11 @@
         },
         {
             "name": "syginteractive/mising-images",
-            "version": "dev-dev-20190701-cms",
+            "version": "dev-event-pages",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/MisingImages",
-                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62",
+                "reference": "f76fdd48e204784845eabeef42e39cbcc7a5ddb0",
                 "shasum": null
             },
             "require": {
@@ -4310,7 +4310,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
