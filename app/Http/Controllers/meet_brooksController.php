@@ -359,6 +359,13 @@ class meet_brooksController extends Controller {
                 User::where('email', request('email'))->update(['person_idx' => $PersonID]);
             }
         }
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        ['email' => request('email')], ['fname' => $fname,
+                    'lname' => $lname,
+                    'source' => 'Subscriber',
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID')
+        ]);
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user));
         return view('meet_brooks.thank-you-signup', compact('signup', request()->all()));
@@ -379,10 +386,18 @@ class meet_brooksController extends Controller {
         $shoe_wear = request('custom_Shoes_you_wear');
         $state = request('country');
 
-        $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => request('fname'), 'last_name' => request('lname'), 'tag' => request('comp_name'), 'gender' => request('gender'), 'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'), 'birth_date' => request('custom_Birth_Date'), 'birth_month' => request('custom_Birth_Month'), 'age_group' => request('custom_Age'), 'postcode' => request('postcode'), 'shoe_wear' => $shoe_wear, 'state' => $state, 'contest_code' => $contest_code, 'subscribed' => 'Yes']);
+        $Person = User::updateOrCreate(['email' => request('email')], ['first_name' => request('fname'), 'last_name' => request('lname'), 'tag' => request('comp_name'), 'gender' => request('gender'), 'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'), 'birth_date' => request('custom_Birth_Date'), 'birth_month' => request('custom_Birth_Month'), 'age_group' => request('custom_Age'), 'postcode' => request('postcode'), 'shoe_wear' => $shoe_wear, 'state' => $state, 'contest_code' => $contest_code, 'subscribed' => 'Yes']);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
+        Icontact_pushmail::where('email', request('email'))->update(['fname' => request('fname'),
+            'lname' => request('lname'), 'gender' => request('gender'),
+            'birth_day' => request('custom_Birth_Date'),
+            'birth_month' => request('custom_Birth_Month'),
+            'age_group' => request('custom_Age'),
+            'postcode' => request('postcode'), 'shoe_wear' => request('custom_Shoes_you_wear'),
+            'country' => request('country'), 'happy_runner_comp' => request('contest_code'),
+            'status' => 'queue', 'list_id' => env('ICONTACT_LIST_ID')]);
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user)); // to update the other details in aweber
         if (request('signup') == 1) {
