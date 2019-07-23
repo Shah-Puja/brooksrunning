@@ -17,7 +17,7 @@
 												<a href="/">Home</a>
                                             </li>
                                             <li>
-												<a href="/events-listing">Events</a>
+												<a href="/events">Events</a>
 											</li>
 											<li>
                                                 <span style="color: #ffffff;font-size: 12px;">{{$event_name->event_name}}</span>
@@ -66,7 +66,7 @@
                         data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-url='/events-listing/series-event/{{$series_events->slug}}' data-slug="{{$series_events->slug}}" >
+                        data-event_date="{{$series_events->end_dt}}" data-url='/events/{{$series_events->slug}}' data-slug="{{$series_events->slug}}" >
                             <div class="event-series-header">
                             <h2>{{$series_events->event_header}} </h2>
                               
@@ -105,7 +105,7 @@
                                         <li class="tab-link " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" data-url="/events-listing/series-event/{{$series_events->slug}}">
+                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" data-url="/events/{{$series_events->slug}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_header}} </h2>
                                            
@@ -125,7 +125,7 @@
                         </ul>
                         @foreach($series_event as $series_events)
                             <div id="mob-{{$series_events->id}}" class="event-content @if($city==$series_events->city && $id==$series_events->id) current @endif">
-                                <p>{{$series_events->content}}</p>
+                                <p>{!!$series_events->content!!}</p>
                             </div>
                         @endforeach
                     </div>
@@ -158,7 +158,7 @@
 	  		<div class="col-12 tab-12">
 	    		<div class="event-footer--wrapper info">
                     <div class="btn">
-                        <a href="/events-listing" class="secondary-button">See More Events </a>
+                        <a href="/events" class="secondary-button">See More Events </a>
                     </div>
 		     	</div>
 	        </div>
@@ -274,7 +274,8 @@ $(window).on('popstate', function(event) {
 
   }else{
     var str=event.originalEvent.state.Url;
-    var slug = str.split('/')[3];
+    var slug = str.split('/')[2];
+    console.log(slug);
 $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('#csrf').val()

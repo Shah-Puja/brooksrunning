@@ -16,7 +16,7 @@
 												<a href="/">Home</a>
                                             </li>
                                             <li>
-												<a href="/events-listing">Events</a>
+												<a href="/events">Events</a>
 											</li>
 											<li>
 												<span style="color: #ffffff;font-size: 12px;">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</span>
@@ -88,7 +88,7 @@
 	  		<div class="col-12 tab-12">
 	    		<div class="event-footer--wrapper info">
                     <div class="btn">
-                        <a href='/events-listing' ><button type="submit" class="secondary-button">See More Events </button></a>
+                        <a href='/events' ><button type="submit" class="secondary-button">See More Events </button></a>
                     </div>
 		     	</div>
 	        </div>

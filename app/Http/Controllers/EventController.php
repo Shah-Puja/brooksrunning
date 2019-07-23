@@ -140,21 +140,19 @@ class EventController extends Controller {
     //        return $other_upcoming_events;
     // }
 
-    public function new_single_event($single_event) {
+    public function event_type($slug) {
         
           
           
-        $single_event=event::where('slug',$single_event)->first();
+        $single_event=event::where('slug',$slug)->first();
         //dd($single_event);
-        
+        if($single_event->series==''){
        
        return view('info.New-event-view.single-event-detail',compact('single_event'));   
         
-    }
+        }else{
 
-    public function new_series_event($series_event) {
-
-        $event_name=event::where('slug',$series_event)->first();
+        $event_name=event::where('slug',$slug)->first();
        //dd($event_name);
         $city=$event_name->city;
         
@@ -166,7 +164,7 @@ class EventController extends Controller {
        
         return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city','id'));
     }
-
+    }
 
     public function get_event(Request $request)
     {

@@ -130,12 +130,8 @@
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($events->start_dt)))}}"  event_id='{{$events->id}}'>
                         
                              <div class="event-section">
-                                @if(trim(empty($events->series)))
-                                    @php $event_type = 'single-event'; @endphp
-                                @else
-                                    @php $event_type = 'series-event'; @endphp
-                                @endif
-                                <a href="/events-listing/{{$event_type}}/{{$events->slug}}" >
+                               
+                                <a href="/events/{{$events->slug}}" >
                                     <div class="img">
                                         @if(!empty($events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $events->logo }}" alt="">
@@ -144,7 +140,7 @@
                                         @endif         
                                     </div>
                                 </a>
-                                <a href="/events-listing/{{$event_type}}/{{$events->slug}}" >
+                                <a href="/events/{{$events->slug}}" >
                                     <div class="info">
                                         <h3>{{ $events->event_name }}</h3>
                                         <div class="event-info-sub">
@@ -193,12 +189,8 @@
                        {{str_replace(' ','_',date('m-Y',strtotime('-1 year', strtotime($upcoming_events->next_dt))))}}
                        @endif">
                             <div class="event-section">
-                            @if(trim(empty($upcoming_events->series)))
-                                    @php $event_type = 'single-event'; @endphp
-                                @else
-                                    @php $event_type = 'series-event'; @endphp
-                                @endif
-                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}" >
+                           
+                                <a href="/events/{{$upcoming_events->slug}}" >
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  
                                         <img id="event-img" src="/images/new-events/monthly/logo/{{ $upcoming_events->logo }}" alt="">
@@ -207,7 +199,7 @@
                                         @endif  
                                     </div>
                                 </a>
-                                <a href="/events-listing/{{$event_type}}/{{$upcoming_events->slug}}" >
+                                <a href="/events/{{$upcoming_events->slug}}" >
                                     <div class="info">
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
