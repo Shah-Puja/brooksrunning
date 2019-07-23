@@ -154,7 +154,9 @@ class meet_brooksController extends Controller {
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
 
         $response = $this->bridge->getPersonid($email);
+        echo "<pre>";print_r($response);
         if (!empty($response)) {
+            echo "eeeeeeeeeeee";die;
             $returnCode = $response->getStatusCode();
             $userid = false;
             switch ($returnCode) {
@@ -172,6 +174,7 @@ class meet_brooksController extends Controller {
                     break;
             }
         } else {
+            echo "gggggggggggggg";die;
             $userid = $this->create_user($email, $fname, $lname, $gender, $country);
         }
 
