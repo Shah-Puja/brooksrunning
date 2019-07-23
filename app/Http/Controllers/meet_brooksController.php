@@ -196,7 +196,7 @@ class meet_brooksController extends Controller {
                           </Billing>
                         </Addresses>
 	                  </Person>";
-echo $person_xml;die;
+
         $response = $this->bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
