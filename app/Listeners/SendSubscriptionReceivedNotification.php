@@ -50,10 +50,10 @@ class SendSubscriptionReceivedNotification implements ShouldQueue {
         if ($event->user->source == 'Order') {
             $user_detail = Order_address::where('email', '=', $event->user->email)->first();
             if (isset($user_detail) && $user_detail->signme == 1) {
-                $this->subscriptionService->updateoradd_Subscriber($subscriber);
+                //$this->subscriptionService->updateoradd_Subscriber($subscriber);
             }
         } else if ($event->user->source != 'Order') {
-            $this->subscriptionService->updateoradd_Subscriber($subscriber);
+            //$this->subscriptionService->updateoradd_Subscriber($subscriber);
         }
     }
 
