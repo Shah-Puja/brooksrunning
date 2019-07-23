@@ -7146,6 +7146,9 @@ textarea {
     margin-bottom: 7px;
   }
 }
+.event-filters--wrapper .input-wrapper select.select-field::-ms-expand {
+  display: none;
+}
 .event-filters--wrapper .input-wrapper .select-field {
   font-size: 18px;
   -webkit-appearance: none;

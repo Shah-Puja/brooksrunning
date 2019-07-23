@@ -3769,6 +3769,9 @@ width: 100%;
           margin-bottom: 7px;
         }
       }
+      select.select-field::-ms-expand {
+        display: none;
+    } 
      .select-field{
       // background: #fff;
       font-size: 18px;
