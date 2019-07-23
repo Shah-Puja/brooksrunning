@@ -158,11 +158,11 @@ class PaymentController extends Controller {
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
                         $PersonID = $this->get_personid($this->order->address->email);
-                        $orderDataUpdate['person_idx'] = $PersonID;
-                        $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                     }
                     if (!empty($PersonID)) {
                         $this->ap21order($PersonID);
+                        $orderDataUpdate['person_idx'] = $PersonID;
+                        $orderDataUpdate['personid_status'] = date('Y-m-d H:i:s');
                     }
                 } else {
                     $logger = array(
@@ -465,6 +465,7 @@ class PaymentController extends Controller {
                 if (empty($PersonID)) {
                     $PersonID = $this->get_personid($this->order->address->email);
                 }
+
                 if (!empty($PersonID)) {
                     $this->ap21order($PersonID);
                     $orderDataUpdate['person_idx'] = $PersonID;
@@ -543,55 +544,57 @@ class PaymentController extends Controller {
     }
 
     public function get_personid($email) {
-
-        $response = $this->bridge->getPersonid($email);
-        //print_r($response);
-        //exit;      
-        $returnCode = $response->getStatusCode();
         $userid = false;
-        switch ($returnCode) {
-            case '200':
-                $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                $userid = $response_xml->Person->Id;
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Person Id Found',
-                    'result' => $userid,
-                );
-                Order_log::createNew($logger);
-                $returnVal = $userid;
-                break;
+        $response = $this->bridge->getPersonid($email);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
 
-            case '404':
-                $userid = $this->create_user();
-                break;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Person Id Found',
+                        'result' => $userid,
+                    );
+                    Order_log::createNew($logger);
+                    $returnVal = $userid;
+                    break;
 
-            default:
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Getting Person ID',
-                    'result' => $result,
-                );
+                case '404':
+                    $userid = $this->create_user();
+                    break;
 
-                Order_log::createNew($logger);
+                default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Getting Person ID',
+                        'result' => $result,
+                    );
 
-                $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
-                $data = array(
-                    'api_name' => 'Get PersonID Error',
-                    'URL' => $URL,
-                    'Result' => $result,
-                    'Parameters' => '',
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
-                $userid = false;
-                break;
+                    Order_log::createNew($logger);
+
+                    $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
+                    $data = array(
+                        'api_name' => 'Get PersonID Error',
+                        'URL' => $URL,
+                        'Result' => $result,
+                        'Parameters' => '',
+                    );
+                    Mail::to(config('site.notify_email'))
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));
+                    $userid = false;
+                    break;
+            }
+        } else {
+            $userid = $this->create_user();
         }
         return $userid;
     }
@@ -652,57 +655,58 @@ class PaymentController extends Controller {
             'xml' => $person_xml
         );
         Order_log::createNew($logger);
-        $returnCode = $response->getStatusCode();
-        switch ($returnCode) {
-            case 201:
-                $location = $response->getHeader('Location')[0];
-                $str_arr = explode("/", $location);
-                $last_seg = $str_arr[count($str_arr) - 1];
-                $last_seg_arr = explode("?", $last_seg);
-                $person_idx = $last_seg_arr[0];
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
 
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => '201 Person ID Created',
-                    'result' => $person_idx,
-                    'xml' => $person_xml ? $person_xml : "",
-                );
-                Order_log::createNew($logger);
-                $returnVal = $person_idx;
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => '201 Person ID Created',
+                        'result' => $person_idx,
+                        'xml' => $person_xml ? $person_xml : "",
+                    );
+                    Order_log::createNew($logger);
+                    $returnVal = $person_idx;
 
 
-                break;
+                    break;
 
-            default:
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Person ID',
-                    'result' => $result,
-                );
-                Order_log::createNew($logger);
+                default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Creating Person ID',
+                        'result' => $result,
+                    );
+                    Order_log::createNew($logger);
 
-                // Send ap21 alert  
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                $data = array(
-                    'api_name' => 'Create Person Error',
-                    'URL' => $URL,
-                    'Result' => $result,
-                    'Parameters' => $person_xml,
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                    // Send ap21 alert  
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                    $data = array(
+                        'api_name' => 'Create Person Error',
+                        'URL' => $URL,
+                        'Result' => $result,
+                        'Parameters' => $person_xml,
+                    );
+                    Mail::to(config('site.notify_email'))
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));
 
-                $returnVal = false;
+                    $returnVal = false;
 
-                break;
+                    break;
+            }
         }
-
         return $returnVal;
     }
 
@@ -915,87 +919,83 @@ class PaymentController extends Controller {
         $this->order->updateOrder_xml($xml_data);
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
-        $returnCode = $response->getStatusCode();
-        switch ($returnCode) {
-            case 201:
-                $location = $response->getHeader('Location')[0];
-                $str_arr = explode("/", $location);
-                $last_seg = $str_arr[count($str_arr) - 1];
-                $last_seg_arr = explode("?", $last_seg);
-                $order_id = $last_seg_arr[0];
-                $order_url = env('AP21_URL') . "/Persons/$person_id/Orders/$order_id?countryCode=" . env('AP21_COUNTRYCODE');
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $order_id = $last_seg_arr[0];
+                    $returnVal = $order_id;
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Order',
+                        'log_type' => 'Response',
+                        'log_status' => '201 Order Created',
+                        'result' => $response->getBody(),
+                        'xml' => $xml_data
+                    );
 
-                $returnVal = $order_id;
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Order',
-                    'log_type' => 'Response',
-                    'log_status' => '201 Order Created',
-                    'result' => $response->getBody(),
-                    'xml' => $xml_data
-                );
+                    Order_log::createNew($logger);
 
-                Order_log::createNew($logger);
+                    $orderDataUpdate = array(
+                        'status' => 'Completed',
+                        'app21_order' => $returnVal,
+                        'app21_order_status' => date('Y-m-d H:i:s')
+                    );
+                    Order::where('id', $this->order->id)->update($orderDataUpdate);
+                    break;
+                case 400 :
+                    $returnVal = false;
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Order',
+                        'log_type' => 'Response',
+                        'log_status' => '400 Order exists',
+                        'result' => $response->getBody(),
+                    );
+                    Order_log::createNew($logger);
 
-                $orderDataUpdate = array(
-                    'status' => 'Completed',
-                    'app21_order' => $returnVal,
-                    'app21_order_status' => date('Y-m-d H:i:s')
-                );
-                Order::where('id', $this->order->id)->update($orderDataUpdate);
-                break;
-            case 400 :
+                    // Send ap21 alert  
+                    $data = array(
+                        'api_name' => 'Order Exists',
+                        'URL' => $URL,
+                        'Result' => $response->getBody(),
+                        'Parameters' => $xml_data,
+                    );
+                    Mail::to(config('site.notify_email'))
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));
+                    break;
+                default:
+                    $returnVal = false;
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    $logger = array(
+                        'order_id' => $this->order->id,
+                        'log_title' => 'Order',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Creating Order',
+                        'result' => $result,
+                    );
+                    Order_log::createNew($logger);
+                    // Send ap21 alert 
+                    $data = array(
+                        'api_name' => 'Create Order Error',
+                        'URL' => $URL,
+                        'Result' => $result,
+                        'Parameters' => $xml_data,
+                    );
+                    Mail::to(config('site.notify_email'))
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));
 
-                $returnVal = false;
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Order',
-                    'log_type' => 'Response',
-                    'log_status' => '400 Order exists',
-                    'result' => $response->getBody(),
-                );
-                Order_log::createNew($logger);
+                    $returnVal = false;
 
-                // Send ap21 alert  
-                $data = array(
-                    'api_name' => 'Order Exists',
-                    'URL' => $URL,
-                    'Result' => $response->getBody(),
-                    'Parameters' => $xml_data,
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
-                break;
-
-            default:
-
-                $returnVal = false;
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Order',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Order',
-                    'result' => $result,
-                );
-                Order_log::createNew($logger);
-                // Send ap21 alert 
-                $data = array(
-                    'api_name' => 'Create Order Error',
-                    'URL' => $URL,
-                    'Result' => $result,
-                    'Parameters' => $xml_data,
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
-
-                $returnVal = false;
-
-                break;
+                    break;
+            }
         }
-        //exit;
         return $returnVal;
     }
 
@@ -1008,41 +1008,38 @@ class PaymentController extends Controller {
             $amount = $this->order->gift_amount;
             $url = env('AP21_URL') . "/Voucher/GVValid/{$gift}?pin={$pin}&amount={$amount}&countryCode=" . env('AP21_COUNTRYCODE');
             $response = $this->bridge->vouchervalid($gift, $pin, $amount);
-            $returnCode = $response->getStatusCode();
-
-            //print_r($response);
-            //echo $returnCode;
-            //exit;
-
-            switch ($returnCode) {
-                case 200:
-
-                    $xml = @simplexml_load_string($response->getBody()->getContents());
-                    $dataValue['VoucherNumber'] = (int) ($xml->VoucherNumber);
-                    $dataValue['gift_pin'] = $pin;
-                    $dataValue['ExpiryDate'] = $xml->ExpiryDate;
-                    $dataValue['ValidationId'] = $xml->ValidationId;
-                    $dataValue['Amount'] = $amount;
-                    break;
-
-                case 403 :
-                    echo "Incorrect Voucher";
-                    $dataValue = false;
-                    break;
-
-                default:
-                    $result = "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
-                    $data = array(
-                        'api_name' => 'Gift certificate',
-                        'URL' => $url,
-                        'Result' => $result,
-                        'Parameters' => '',
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
-                    $dataValue = false;
-                    break;
+            if (!empty($response)) {
+                $returnCode = $response->getStatusCode();
+                //print_r($response);
+                //echo $returnCode;
+                //exit;
+                switch ($returnCode) {
+                    case 200:
+                        $xml = @simplexml_load_string($response->getBody()->getContents());
+                        $dataValue['VoucherNumber'] = (int) ($xml->VoucherNumber);
+                        $dataValue['gift_pin'] = $pin;
+                        $dataValue['ExpiryDate'] = $xml->ExpiryDate;
+                        $dataValue['ValidationId'] = $xml->ValidationId;
+                        $dataValue['Amount'] = $amount;
+                        break;
+                    case 403 :
+                        echo "Incorrect Voucher";
+                        $dataValue = false;
+                        break;
+                    default:
+                        $result = "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+                        $data = array(
+                            'api_name' => 'Gift certificate',
+                            'URL' => $url,
+                            'Result' => $result,
+                            'Parameters' => '',
+                        );
+                        Mail::to(config('site.notify_email'))
+                                ->cc(config('site.syg_notify_email'))
+                                ->send(new OrderAp21Alert($this->order, $data));
+                        $dataValue = false;
+                        break;
+                }
             }
         }
         return $dataValue;

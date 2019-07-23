@@ -34,7 +34,17 @@
                                 <img src="{{ $style->image->image1Medium() }}">
                             </div>
                             <div class="prd_caption">
-                                <h3> {{ ($style->gender!='' && $style->gender=='M')? "Men's" : "Women's" }} {{ strip_tags($style->stylename) }}</h3>
+                                @switch($style->gender)
+                                    @case('M')
+                                        @php $gender = "Men's "; @endphp
+                                    @break
+                                    @case('W')
+                                        @php $gender = "Women's "; @endphp
+                                    @break
+                                    @default
+                                        @php $gender = ""; @endphp
+                                 @endswitch
+                                <h3>{{($gender!='')? $gender:''}}{{ strip_tags($style->stylename) }}</h3>
                                 <div class="price">
                                     @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                         <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
