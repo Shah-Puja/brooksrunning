@@ -5233,16 +5233,16 @@ textarea {
   cursor: pointer;
   position: relative;
   margin: 0 auto;
-  width: 250px;
+  width: 262px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tabbedcontent ul.event_tabs li {
-    width: 210px;
+    width: 220px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tabbedcontent ul.event_tabs li {
-    width: 160px;
+    width: 220px;
   }
 }
 .tabbedcontent ul.event_tabs li.current {
@@ -5285,7 +5285,7 @@ textarea {
   }
 }
 .tabbedcontent .event-series-header h3 {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 6px;
   margin: 15px auto;
   color: #000;
@@ -5538,6 +5538,9 @@ textarea {
   .event-filters--wrapper .input-wrapper .input-field {
     margin-bottom: 7px;
   }
+}
+.event-filters--wrapper .input-wrapper select.select-field::-ms-expand {
+  display: none;
 }
 .event-filters--wrapper .input-wrapper .select-field {
   font-size: 18px;
