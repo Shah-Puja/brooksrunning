@@ -344,6 +344,14 @@ $(document).on("click",".prev",function () {
 
 // New Event Page
 $(document).ready(function () {
+    if ($(window).width() < 768) {
+        var e_id,e_logo,e_slug;
+       if ($("ul.event_mob_tabs li").hasClass("current")) {
+         
+          e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
+          console.log(e_slug);
+         
+}
     var owl1 = $("#event-carousel");
     owl1.owlCarousel({//Set AutoPlay to 3 seconds
         dots: false,
@@ -362,11 +370,124 @@ $(document).ready(function () {
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
             $("#mob-"+id).show();
+            console.log("ok");
+
+            var logo = elem.find(".owl-item .tab-link").eq(current).data("logo");
+        var banner = elem.find(".owl-item .tab-link").eq(current).data("banner");
+        var event_name=elem.find(".owl-item .tab-link").eq(current).data("event_name");
+        var event_header=elem.find(".owl-item .tab-link").eq(current).data("event_header");
+        var name=event_name+" "+event_header; 
+        $('.event-title').text(event_name);
+        $('.breadcrumbs li span').text(event_name);
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
+        $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
+        var event_end_date=elem.find(".owl-item .tab-link").eq(current).data("event_date");
+        let now = (new Date()).toISOString().split('T')[0];
+       
+        if(event_end_date <= now || event_end_date==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
+         var url = elem.find(".owl-item .tab-link").eq(current).data("url");
+         
+         ChangeUrl(event_name,url);
+            
+
         },
     });
     var active_index =owl1.find(".owl-item .item:not([data-current-tab=''])").data("current-tab");
     owl1.trigger('owl.goTo', active_index);
+}
+function ChangeUrl(page, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Page: page, Url: url };
+        
+        history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        console.log("Browser does not support HTML5.");
+    }
+}
 });
+
+
+// $(window).on('popstate', function(event) {
+    
+//     if(event.originalEvent.state== null){
+    
+  
+//       //console.log('hello');
+//     $.ajax({
+//         headers: {
+//             'X-CSRF-TOKEN': $('#csrf').val()
+//         },
+//         url:"{{route('events-slug')}}",
+//         method: "get",
+//         data:{slug:e_slug},
+//         success: function (result) {
+//         //console.log(result.slug.logo);
+//         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+//         $('ul.event_tabs li').removeClass('current');
+// 		$('.tab-content').css('display',"none");
+
+
+
+       
+//         $('ul.event_tabs li.'+result.slug.id).addClass('current');
+//         $("#"+result.slug.id).css('display',"block");
+
+//         if(result.slug.end_dt <= now || result.slug.end_dt==00){
+//             $('.stay-tuned').css('display',"block");
+//             $('.find-more').css('display',"none");
+//          }else{
+//             $('.stay-tuned').css('display',"none");
+//             $('.find-more').css('display',"block");
+//          }
+        
+//         }
+
+// });
+
+//   }else{
+//     var str=event.originalEvent.state.Url;
+//     var slug = str.split('/')[3];
+// $.ajax({
+//         headers: {
+//             'X-CSRF-TOKEN': $('#csrf').val()
+//         },
+//         url:"{{route('events-slug')}}",
+//         method: "get",
+//         data:{slug:slug},
+//         success: function (result) {
+//         //console.log(result.slug.logo);
+//         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
+//         $('ul.event_tabs li').removeClass('current');
+// 		$('.tab-content').css('display',"none");
+
+
+
+       
+//         $('ul.event_tabs li.'+result.slug.id).addClass('current');
+//         $("#"+result.slug.id).css('display',"block");
+
+
+//         if(result.slug.end_dt <= now || result.slug.end_dt==00){
+//             $('.stay-tuned').css('display',"block");
+//             $('.find-more').css('display',"none");
+//          }else{
+//             $('.stay-tuned').css('display',"none");
+//             $('.find-more').css('display',"block");
+//          }
+        
+//         }
+
+// });
+// }
+    
+// });
+
 
 // shipping page 
 $(document).ready(function () {

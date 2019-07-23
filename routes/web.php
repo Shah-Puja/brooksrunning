@@ -132,14 +132,16 @@ Route::get('/events', 'EventController@events_view');
 Route::get('/events/month/{events_pg}', 'EventController@index');
 Route::get('/events/{event}', 'EventController@events_detail'); 
 Route::get('/month', 'EventController@events_default'); 
-// Route::get('/events-listing', 'EventController@new_events_listing'); 
-// Route::post('/events-listing', 'EventController@new_events_listing'); 
-// Route::get('/events-listing/single-event/{one_event}', 'EventController@new_single_event'); 
-// Route::get('/events-listing/single-event', 'EventController@static');
-// Route::get('/events-listing/series-event/{series}/{country}/{id}', 'EventController@new_series_event'); 
-// Route::get('/events-listing/series-event', 'EventController@series_static');
-// Route::get('/events-listing/series-blurb-event', 'EventController@new_series_blurb_per_race_event'); 
-// Route::get('/events-listing/series-static-event', 'EventController@new_series_static_event'); 
+Route::get('/events-listing', 'EventController@new_events_listing'); 
+Route::post('/events-listing', 'EventController@new_events_listing'); 
+Route::get('/events-listing/single-event/{one_event}', 'EventController@new_single_event'); 
+Route::get('/events-listing/single-event', 'EventController@static');
+Route::get('/events-listing/series-event/{series}', 'EventController@new_series_event'); 
+Route::get('/events-listing/series-event', 'EventController@series_static');
+Route::get('/events-listing/series-blurb-event', 'EventController@new_series_blurb_per_race_event'); 
+Route::get('/events-listing/series-static-event', 'EventController@new_series_static_event');
+
+Route::get('/events-slug','EventController@get_event')->name('events-slug');
 
 
 /* quickhelp static pages */

@@ -220,5 +220,7 @@ $last_word = $matches[0];
 </script>
 
 @endif
+
+@yield('footer_js')
 </body>
 </html>
