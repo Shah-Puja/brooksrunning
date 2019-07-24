@@ -5293,11 +5293,13 @@ textarea {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tabbedcontent .event-series-header h3 {
     margin: 12px auto;
+    font-size: 12px !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tabbedcontent .event-series-header h3 {
     margin: 12px auto;
+    font-size: 12px !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

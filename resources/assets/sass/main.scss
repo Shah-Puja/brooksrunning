@@ -3520,10 +3520,11 @@ width: 100%;
       margin: 15px auto;
       color:#000;
       @media #{$desktop-only}{
-        margin: 12px auto;
+        margin: 12px auto; font-size: 12px !important;
       }
       @media #{$tab-only}{
         margin: 12px auto;
+        font-size: 12px !important;
       }
     }
     h2{
