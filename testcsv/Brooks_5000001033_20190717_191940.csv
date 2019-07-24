@@ -1,2 +1,0 @@
-TransactionID,OrderReferenceID,TransactionTypeCode,RefundCorrelationID,CorporateID,PolicyNumber,GivenName,FamilyName,BirthDate,EmailURI,TransactionDateTime,TransactionLocation,EligibleTransactionTotal,CurrencyCode,TransactionTier
-108598-8pyjbw35,TEST2018-107871,FULL-PRICE,,5000001033,,Frank,Wilson,,LB3Tester417@gmail.com,"15 May 2019",Brooks,219.95,AUD,1

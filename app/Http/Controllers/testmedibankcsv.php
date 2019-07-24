@@ -52,7 +52,7 @@ class testmedibankcsv extends Controller {
             );
             Order::where('id', $medibank_order->id)->update($orderDataUpdate); 
  
-            Storage::disk('sftp')->put('/public_html/testcsv/'.$filename, fopen('../testcsv/' . $filename, 'r+'));
+            Storage::disk('sftp')->put('/'.$filename, fopen('../testcsv/' . $filename, 'r+'));
         } else {
             echo "All files are processed";
         }
