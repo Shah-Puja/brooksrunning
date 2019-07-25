@@ -368,7 +368,7 @@ class meet_brooksController extends Controller {
         ]);
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user));
-        return view('meet_brooks.thank-you-signup', compact('signup', request()->all()));
+        return view('meet_brooks.thank-you-signup', compact('signup'));
     }
 
     public function newsletter_update(Recaptcha $recaptcha) {
