@@ -145,7 +145,7 @@ class PaymentController extends Controller {
                     Order::where('id', $this->order->id)->update(['order_no' => $order_no]);
                 }
 
-                $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order']);
+                $Person = User::firstOrCreate(['email' => $this->order->address->email], ['first_name' => $this->order->address->s_fname, 'last_name' => $this->order->address->s_lname, 'source' => 'Order', 'user_type' => 'Order']);
                 if (isset($Person)) {
                     $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
                 }
