@@ -101,11 +101,11 @@
                                 @php $item_count_mob=0; @endphp
                                 @foreach($series_event as $series_events)
                                     @php $active_slide = ($city==$series_events->city) ? $item_count_mob: ""; @endphp
-                                    <div class="item" data-current-tab='{{$active_slide}}' >
-                                        <li class="tab-link " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
+                                    <div class="item id-{{$series_events->id}}" data-current-tab='{{$active_slide}}' >
+                                        <li class="tab-link {{$series_events->id}} " data-tab="{{$series_events->id}}" data-logo="{{ ($series_events->logo!='')? '/images/new-events/monthly/logo/'.$series_events->logo : '' }}" 
                         data-banner="{{ ($series_events->banner!='')? '/images/new-events/banner/'.$series_events->banner : ''}}" 
                         data-event_name="{{$series_events->event_name}}" data-event_header="{{$series_events->event_header}}"
-                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" data-url="/events/{{$series_events->slug}}">
+                        data-event_date="{{$series_events->end_dt}}" data-slug="{{$series_events->slug}}" data-url="/events/{{$series_events->slug}}" data-index="{{$item_count_mob}}">
                                             <div class="event-series-header">
                                             <h2>{{$series_events->event_header}} </h2>
                                            
