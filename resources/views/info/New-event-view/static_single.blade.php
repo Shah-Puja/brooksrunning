@@ -13,9 +13,9 @@
 							<div class="breadcrumbs">
 										<ul>
 											<li>
-												<a href="/">Home</a>
-                                            </li>
-                                            <li>
+                        <a href="/">Home</a>
+                      </li>
+                      <li>
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
@@ -45,7 +45,7 @@
         <div class="col-2"></div>
         <div class="col-8">
       	    <div class="about-header">
-            <div class="event-logo">
+            <div class="event-logo single-event">
                 
                     <img src="/images/new-events/generic_event_image.jpg">
                 

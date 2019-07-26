@@ -3632,7 +3632,11 @@
         },
         {
             "name": "syginteractive/category-sort",
+<<<<<<< HEAD
             "version": "dev-staging",
+=======
+            "version": "dev-event-pages",
+>>>>>>> b10efb180426750243339ad9f2db00d7382d71d2
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CategorySort",
@@ -3666,7 +3670,11 @@
         },
         {
             "name": "syginteractive/mising-images",
+<<<<<<< HEAD
             "version": "dev-staging",
+=======
+            "version": "dev-event-pages",
+>>>>>>> b10efb180426750243339ad9f2db00d7382d71d2
             "dist": {
                 "type": "path",
                 "url": "./nova-components/MisingImages",
