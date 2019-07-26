@@ -343,9 +343,10 @@ $(document).on("click",".prev",function () {
 
 
 // New Event Page
-$(document).ready(function () {
+//$(document).ready(function () {
     if ($(window).width() < 768) {
         var e_id,e_logo,e_slug;
+        
        if ($("ul.event_mob_tabs li").hasClass("current")) {
          
           e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
@@ -370,8 +371,7 @@ $(document).ready(function () {
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
             $("#mob-"+id).show();
-            console.log("ok");
-
+            
             var logo = elem.find(".owl-item .tab-link").eq(current).data("logo");
         var banner = elem.find(".owl-item .tab-link").eq(current).data("banner");
         var event_name=elem.find(".owl-item .tab-link").eq(current).data("event_name");
@@ -391,6 +391,9 @@ $(document).ready(function () {
             $('.stay-tuned').css('display',"none");
             $('.find-more').css('display',"block");
          }
+
+         
+         
          var url = elem.find(".owl-item .tab-link").eq(current).data("url");
          
          ChangeUrl(event_name,url);
@@ -402,7 +405,9 @@ $(document).ready(function () {
     owl1.trigger('owl.goTo', active_index);
 }
 function ChangeUrl(page, url) {
-    if (typeof (history.pushState) != "undefined") {
+    if(window.history.state!=null){
+    var history_url = window.history.state.Url;
+    if (typeof (history.pushState) != "undefined" && history_url!=url) {
         var obj = { Page: page, Url: url };
         
         history.pushState(obj, obj.Page, obj.Url);
@@ -410,83 +415,28 @@ function ChangeUrl(page, url) {
         console.log("Browser does not support HTML5.");
     }
 }
+}
+//});
+
+if ($(window).width() < 768) {
+    var e_id,e_logo,e_slug;
+    if ($("ul.event_mob_tabs li").hasClass("current")) {
+      
+       e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
+       
+      
+}
+
+$(window).on('popstate', function(event) {
+    var str=event.originalEvent.state.Url;
+    var slug = str.split('/')[2];
+    var active_index = $("#event-carousel").find("[data-slug='"+slug+"']").data("index");
+    console.log(active_index);
+    owl1.trigger('owl.goTo', active_index);
+    
+    return false;
 });
-
-
-// $(window).on('popstate', function(event) {
-    
-//     if(event.originalEvent.state== null){
-    
-  
-//       //console.log('hello');
-//     $.ajax({
-//         headers: {
-//             'X-CSRF-TOKEN': $('#csrf').val()
-//         },
-//         url:"{{route('events-slug')}}",
-//         method: "get",
-//         data:{slug:e_slug},
-//         success: function (result) {
-//         //console.log(result.slug.logo);
-//         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
-//         $('ul.event_tabs li').removeClass('current');
-// 		$('.tab-content').css('display',"none");
-
-
-
-       
-//         $('ul.event_tabs li.'+result.slug.id).addClass('current');
-//         $("#"+result.slug.id).css('display',"block");
-
-//         if(result.slug.end_dt <= now || result.slug.end_dt==00){
-//             $('.stay-tuned').css('display',"block");
-//             $('.find-more').css('display',"none");
-//          }else{
-//             $('.stay-tuned').css('display',"none");
-//             $('.find-more').css('display',"block");
-//          }
-        
-//         }
-
-// });
-
-//   }else{
-//     var str=event.originalEvent.state.Url;
-//     var slug = str.split('/')[3];
-// $.ajax({
-//         headers: {
-//             'X-CSRF-TOKEN': $('#csrf').val()
-//         },
-//         url:"{{route('events-slug')}}",
-//         method: "get",
-//         data:{slug:slug},
-//         success: function (result) {
-//         //console.log(result.slug.logo);
-//         $(".event-logo img").attr('src',(result.slug.logo!='')? '/images/new-events/monthly/logo/'+result.slug.logo : '/images/new-events/generic_event_image.jpg');
-//         $('ul.event_tabs li').removeClass('current');
-// 		$('.tab-content').css('display',"none");
-
-
-
-       
-//         $('ul.event_tabs li.'+result.slug.id).addClass('current');
-//         $("#"+result.slug.id).css('display',"block");
-
-
-//         if(result.slug.end_dt <= now || result.slug.end_dt==00){
-//             $('.stay-tuned').css('display',"block");
-//             $('.find-more').css('display',"none");
-//          }else{
-//             $('.stay-tuned').css('display',"none");
-//             $('.find-more').css('display',"block");
-//          }
-        
-//         }
-
-// });
-// }
-    
-// });
+}
 
 
 // shipping page 
