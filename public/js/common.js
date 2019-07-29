@@ -344,7 +344,8 @@ $(document).on("click",".prev",function () {
 
 // New Event Page
 //$(document).ready(function () {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 768 ) {
+    
         var e_id,e_logo,e_slug;
         
        if ($("ul.event_mob_tabs li").hasClass("current")) {
@@ -353,14 +354,23 @@ $(document).on("click",".prev",function () {
           console.log(e_slug);
          
 }
+
     var owl1 = $("#event-carousel");
     owl1.owlCarousel({//Set AutoPlay to 3 seconds
         dots: false,
         items: 3,
         itemsDesktop: [1199, 3],
         itemsDesktopSmall: [979, 3],
+        responsiveClass:true,
+        responsive:{
+             768:{
+                items:4,
+                nav:false
+            },
+            
+        },
         addClassActive:true,
-        afterMove: function (elem) {
+      afterMove: function (elem) {
             var current = this.currentItem;
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
@@ -403,6 +413,8 @@ $(document).on("click",".prev",function () {
     });
     var active_index =owl1.find(".owl-item .item:not([data-current-tab=''])").data("current-tab");
     owl1.trigger('owl.goTo', active_index);
+
+        
 }
 function ChangeUrl(page, url) {
     if(window.history.state!=null){
@@ -436,6 +448,9 @@ $(window).on('popstate', function(event) {
     return false;
 });
 }
+
+
+
 
 
 // shipping page 
