@@ -116,7 +116,7 @@ use RegistersUsers;
             //if (env('AP21_STATUS') == 'ON') {
                 $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : ''); 
            // }
-           
+           echo $PersonID;die;
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => (isset($PersonID)) ? $PersonID : 0]);
         }
         return $user;
@@ -125,11 +125,11 @@ use RegistersUsers;
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
 
         $response = $this->bridge->getPersonid($email);
-        
+        echo "<pre>";print_r($response);echo "ddddddd";
         if (!empty($response)) {
-             
+            echo "in ifff";
             $returnCode = $response->getStatusCode();
-             
+            echo $returnCode;echo "<br>";
             $userid = false;
             switch ($returnCode) {
                 case '200':
@@ -145,7 +145,8 @@ use RegistersUsers;
                     $userid = false;
                     break;
             }
-        } else { 
+        } else {
+            echo "in else";
             $userid = $this->create_user($email, $fname, $lname, $gender, $state);
         }
 
@@ -176,11 +177,12 @@ use RegistersUsers;
                           </Billing>
                         </Addresses>
 	                  </Person>";
-
+echo $person_xml;
         $response = $this->bridge->processPerson($person_xml);
-        
+        echo "<pre>";print_r($response);die;
         if (!empty($response)) {
-            $returnCode = $response->getStatusCode(); 
+            $returnCode = $response->getStatusCode();
+            echo $returnCode;echo "<br>";
             switch ($returnCode) {
                 case 201:
                     $location = $response->getHeader('Location')[0];
