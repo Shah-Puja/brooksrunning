@@ -115,8 +115,8 @@ use RegistersUsers;
         if ($user->wasRecentlyCreated) {
              
                 $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : ''); 
-          echo $PersonID;die;
-            $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => (isset($PersonID)) ? $PersonID : 0]);
+           
+            $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
         }
         return $user;
     }
