@@ -158,7 +158,7 @@ echo "Userid -- ";echo $userid;
         $returnVal = false;
         if(isset($gender) && $gender=="Male"){
             $gender="M";
-        }elseif(isset($gender) && $gender=="Male"){
+        }elseif(isset($gender) && $gender=="Female"){
             $gender="F";
         }
         $person_xml = "<Person>
