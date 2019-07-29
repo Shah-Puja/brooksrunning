@@ -184,6 +184,7 @@ Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
 Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
 
+Route::get('sitemap-index.xml', 'SitemapController@index');
 
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */

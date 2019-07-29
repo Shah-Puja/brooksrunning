@@ -2711,6 +2711,7 @@ textarea {
   background-image: url(../images/path_bkgd_logo.svg);
   text-align: center;
   height: 180px;
+  line-height: 190px;
   position: relative;
   background-repeat: no-repeat;
   background-position: 41% 17px;
@@ -2718,11 +2719,7 @@ textarea {
 }
 .footer-banner__wrapper .footer-banner__info {
   position: absolute;
-  padding: 15px;
-  top: 50%;
-  left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
   max-width: 1200px;
 }
 @media only screen and (max-width: 767px) {
@@ -2976,7 +2973,7 @@ textarea {
   left: 0;
   right: 0;
   text-align: center;
-  max-width: 310px;
+  width: 310px;
   margin: auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2990,6 +2987,7 @@ textarea {
     position: relative;
     margin-top: 20px;
     bottom: 0;
+    width: 100%;
   }
 }
 
@@ -3048,6 +3046,11 @@ textarea {
     max-width: 180px;
   }
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .homepage-banner--container .homepage-salebanner--info .banner--info {
+    padding-top: 2%;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .homepage-banner--container .homepage-salebanner--info .banner--info {
     max-width: 215px;
@@ -3057,6 +3060,16 @@ textarea {
   .homepage-banner--container .homepage-salebanner--info .banner--info {
     padding-top: 95%;
   }
+}
+.homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn {
+  color: #005cfb;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+}
+.homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn:hover {
+  background: #0263f7;
+  border: 2px solid #0263f7;
+  color: #ffffff;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .homepage-banner--container .homepage-salebanner--info .banner--info .homepage-sale--btn {
@@ -3078,6 +3091,11 @@ textarea {
 }
 .homepage-banner--container .homepage-salebanner--info .secondary-button {
   margin-top: 15px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .homepage-banner--container .homepage-salebanner--info .secondary-button {
+    margin-top: 7px;
+  }
 }
 .homepage-banner--container .homepage-salebanner--info .primary-button {
   margin-top: 15px;
@@ -3213,7 +3231,7 @@ textarea {
   left: 0;
   right: 0;
   bottom: 20px;
-  max-width: 220px;
+  width: 220px;
   margin: auto;
   padding: 0 15px;
   margin: auto;

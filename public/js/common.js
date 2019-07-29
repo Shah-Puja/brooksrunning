@@ -379,7 +379,7 @@ $(document).on("click",".prev",function () {
         var name=event_name+" "+event_header; 
         $('.event-title').text(event_name);
         $('.breadcrumbs li span').text(event_name);
-        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/generic_event_image.jpg');
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/event-logo-placeholder.png');
         $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
         var event_end_date=elem.find(".owl-item .tab-link").eq(current).data("event_date");
         let now = (new Date()).toISOString().split('T')[0];
@@ -421,10 +421,9 @@ function ChangeUrl(page, url) {
 if ($(window).width() < 768) {
     var e_id,e_logo,e_slug;
     if ($("ul.event_mob_tabs li").hasClass("current")) {
-      
+
        e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
        
-      
 }
 
 $(window).on('popstate', function(event) {
