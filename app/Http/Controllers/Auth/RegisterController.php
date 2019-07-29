@@ -38,7 +38,7 @@ use RegistersUsers;
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct(BridgeInterface $bridge) {
         $this->middleware('guest');
         $this->bridge = $bridge;
     }
