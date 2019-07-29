@@ -21,6 +21,7 @@ class EntrezoBridge implements BridgeInterface {
 	
 	public function getPersonid($email)
 	{
+		echo $email;die;
 		return "Person Information for {$email} from EntrezoBridge";	
 	}
 }

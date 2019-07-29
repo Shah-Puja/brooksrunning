@@ -551,6 +551,7 @@ class PaymentController extends Controller {
 
     public function get_personid($email) {
         $userid = false;
+        echo $email;die;
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
