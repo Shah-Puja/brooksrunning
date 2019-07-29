@@ -179,6 +179,11 @@ class meet_brooksController extends Controller {
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
+        if (isset($gender) && $gender == "Male") {
+            $gender = "M";
+        } elseif (isset($gender) && $gender == "Female") {
+            $gender = "F";
+        }
         $returnVal = false;
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
