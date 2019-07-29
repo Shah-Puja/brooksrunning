@@ -124,7 +124,9 @@ use RegistersUsers;
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
 
         $response = $this->bridge->getPersonid($email);
+        print_r($response);echo "ddddddd";
         if (!empty($response)) {
+            echo "in ifff";die;
             $returnCode = $response->getStatusCode();
             $userid = false;
             switch ($returnCode) {
@@ -142,6 +144,7 @@ use RegistersUsers;
                     break;
             }
         } else {
+            echo "in else";die;
             $userid = $this->create_user($email, $fname, $lname, $gender, $country);
         }
 
