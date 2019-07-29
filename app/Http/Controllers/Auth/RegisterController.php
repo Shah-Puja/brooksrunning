@@ -81,6 +81,7 @@ use RegistersUsers;
      * @return \App\Models\User
      */
     protected function create(array $data) {
+        $PersonID = 0;
         $user = User::updateorcreate(
                         ['email' => $data['email']], [
                     'first_name' => (isset($data['first_name'])) ? $data['first_name'] : '',
