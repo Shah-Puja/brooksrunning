@@ -52,7 +52,7 @@ class Processor
 				'discountAmount' => '0.00', 
 			];
 		endif;
-			echo "<pre>";print_r($order_items);die;
+			//echo "<pre>";print_r($order_items);die;
 		$discount_amount = '0.00';
 		if($order->gift_amount > 0){
 			$discount_amount = $order->gift_amount;
