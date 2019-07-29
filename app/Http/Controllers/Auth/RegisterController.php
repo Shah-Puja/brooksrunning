@@ -122,7 +122,7 @@ use RegistersUsers;
         return $user;
     }
 
-    public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
 
         $response = $this->bridge->getPersonid($email);
         echo "<pre>";print_r($response);echo "ddddddd";
@@ -138,7 +138,7 @@ use RegistersUsers;
                     break;
 
                 case '404':
-                    $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $state);
                     break;
 
                 default:
@@ -147,13 +147,13 @@ use RegistersUsers;
             }
         } else {
             echo "in else";
-            $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+            $userid = $this->create_user($email, $fname, $lname, $gender, $state);
         }
 
         return $userid;
     }
 
-    public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public function create_user($email, $fname = '', $lname = '', $gender = '', $state = '') {
         echo "In create user";
         $returnVal = false;
         $person_xml = "<Person>
@@ -167,8 +167,8 @@ use RegistersUsers;
                         </Contacts>
                         <Addresses>
                           <Billing>
-                          <State></State>
-                          <Country>$country</Country>
+                          <State>$state</State>
+                          <Country>AU</Country>
                           </Billing>
                         </Addresses>
 	                  </Person>";
