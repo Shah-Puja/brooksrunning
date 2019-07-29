@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Validation\Rule;
+use App\SYG\Bridges\BridgeInterface;
 
 class RegisterController extends Controller {
+    protected $bridge;
     /*
       |--------------------------------------------------------------------------
       | Register Controller
@@ -38,6 +40,7 @@ use RegistersUsers;
      */
     public function __construct() {
         $this->middleware('guest');
+        $this->bridge = $bridge;
     }
 
     /**
@@ -116,6 +119,73 @@ use RegistersUsers;
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => (isset($PersonID)) ? $PersonID : 0]);
         }
         return $user;
+    }
+
+    public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
+
+        $response = $this->bridge->getPersonid($email);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    break;
+
+                case '404':
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+                    break;
+
+                default:
+                    $userid = false;
+                    break;
+            }
+        } else {
+            $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+        }
+
+        return $userid;
+    }
+
+    public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
+        $returnVal = false;
+        $person_xml = "<Person>
+                        <Firstname>$fname</Firstname>
+                        <Surname>$lname</Surname>   
+                        <Sex>$gender</Sex> 
+                        <DateOfBirth></DateOfBirth>
+                        <Contacts>
+                          <Email>$email</Email>
+                          <Phones></Phones>
+                        </Contacts>
+                        <Addresses>
+                          <Billing>
+                          <State></State>
+                          <Country>$country</Country>
+                          </Billing>
+                        </Addresses>
+	                  </Person>";
+
+        $response = $this->bridge->processPerson($person_xml);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
+                    $returnVal = $person_idx;
+                    break;
+
+                default:
+                    $returnVal = false;
+                    break;
+            }
+        }
+        return $returnVal;
     }
 
 }
