@@ -12,7 +12,9 @@ use Illuminate\Validation\Rule;
 use App\SYG\Bridges\BridgeInterface;
 
 class RegisterController extends Controller {
+
     protected $bridge;
+
     /*
       |--------------------------------------------------------------------------
       | Register Controller
@@ -24,7 +26,7 @@ class RegisterController extends Controller {
       |
      */
 
-use RegistersUsers;
+    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -114,18 +116,18 @@ use RegistersUsers;
         ]);
 
         if ($user->wasRecentlyCreated) {
-             
-                $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : ''); 
-           
+
+            $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
         }
         return $user;
     }
 
-    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') { 
-        $response = $this->bridge->getPersonid($email); 
+    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
+        $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
-             $returnCode = $response->getStatusCode(); 
+            $returnCode = $response->getStatusCode();
             $userid = false;
             switch ($returnCode) {
                 case '200':
@@ -141,7 +143,7 @@ use RegistersUsers;
                     $userid = false;
                     break;
             }
-        } else { 
+        } else {
             $userid = $this->create_user($email, $fname, $lname, $gender, $state);
         }
 
@@ -149,12 +151,12 @@ use RegistersUsers;
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $state = '') {
-        
+
         $returnVal = false;
-        if(isset($gender) && $gender=="Male"){
-            $gender="M";
-        }elseif(isset($gender) && $gender=="Female"){
-            $gender="F";
+        if (isset($gender) && $gender == "Male") {
+            $gender = "M";
+        } elseif (isset($gender) && $gender == "Female") {
+            $gender = "F";
         }
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
@@ -173,9 +175,9 @@ use RegistersUsers;
                         </Addresses>
 	                  </Person>";
 
-        $response = $this->bridge->processPerson($person_xml); 
+        $response = $this->bridge->processPerson($person_xml);
         if (!empty($response)) {
-            $returnCode = $response->getStatusCode(); 
+            $returnCode = $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
                     $location = $response->getHeader('Location')[0];
@@ -190,7 +192,7 @@ use RegistersUsers;
                     $returnVal = false;
                     break;
             }
-        } 
+        }
         return $returnVal;
     }
 
