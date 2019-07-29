@@ -168,7 +168,6 @@ public function create_order($person_id='115414'){
     }
 
     public function test_ap21_personidx($email='dfmamea@gmail.com'){ 
-        echo $email;die;
         $response = $this->bridge->getPersonid($email);
         //echo "<pre>";print_r($response);die;
         $returnCode = $this->create_user();
