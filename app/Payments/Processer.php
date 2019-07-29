@@ -47,7 +47,7 @@ class Processor {
                 'unitAmount' => $order->gift_amount,
                 'kind' => 'credit',
                 'totalAmount' => $order->gift_amount,
-                'discountAmount' => '0.00',
+                'discountAmount' => $order->gift_amount
             ];
         endif;
 
