@@ -154,6 +154,7 @@ use RegistersUsers;
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
+        echo "In create user";
         $returnVal = false;
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
@@ -171,7 +172,7 @@ use RegistersUsers;
                           </Billing>
                         </Addresses>
 	                  </Person>";
-
+echo $person_xml;
         $response = $this->bridge->processPerson($person_xml);
         echo "<pre>";print_r($response);die;
         if (!empty($response)) {
