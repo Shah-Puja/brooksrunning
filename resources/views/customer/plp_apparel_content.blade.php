@@ -1,4 +1,4 @@
-<div class="plp-wrapper-container grid">
+<div class="plp-wrapper-container grid" style="overflow: hidden;">
 @if($styles!='' && count($styles) >0 )
 	@foreach($styles as $style)
      

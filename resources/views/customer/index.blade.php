@@ -11,8 +11,8 @@
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_w_mobile.jpg">
-			        <img src="/images/home/hp_shop_w.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/20190703/hp_shop_w_mobile.jpg">
+			        <img src="/images/home/20190703/hp_shop_w.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 		       			<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
@@ -22,8 +22,8 @@
 		     <div class="mob-6 pl-0">
 		       <div class="top_prd_sec">
 		          <picture>
-			        <source media="(max-width: 595px)" srcset="/images/home/hp_shop_men_mobile.jpg">
-			        <img src="/images/home/hp_shop_m.jpg" alt="Header Images" width="100%">
+			        <source media="(max-width: 595px)" srcset="/images/home/20190703/hp_shop_m_mobile.jpg">
+			        <img src="/images/home/20190703/hp_shop_m.jpg" alt="Header Images" width="100%">
 			      </picture>
 		          <div class="button_fixed">
 				  <a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
@@ -38,40 +38,39 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/hp_sm_launch6.jpg">
-			        <h3>&nbsp; <br/>Launch 6</h3>
+					<img src="/images/home/20190715/hp_sm_revel.jpg">
+			        <h3>&nbsp;<br/>Revel 3</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>The Launch 6 is built to be fast and springy, with zero distractions.</p>
-					<a href="/brooks-running-shoes-launch-6-womens/120285_542.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-launch-6-mens/110297_071.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
-				
+					<p>The new Revel 3 features a lower profile with a street-ready upper for days that have you running errands and workouts.</p>
+					<a href="/brooks-running-shoes-revel-3-womens/120302_012.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_gts19-ghost11-camo.jpg">
-			        <h3>&nbsp;<br/>Abstract Series </h3>
+					<img src="/images/home/20190715/hp_sm_gts19-m.jpg">
+			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Run with the Adrenaline GTS 19 and Ghost 11 in these limited release colours. </p>
-					<a href="/abstract-collection-adrenaline-ghost">Shop Abstract Series <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<!-- <span class="right-link"><a href="/brooks-running-shoes-transcend-6-mens/110299_419.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span> -->
+					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.<br/>&nbsp;  </p>
+					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 		</div>
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_ricochet.jpg">
-			        <h3>&nbsp; <br/>Ricochet </h3>
+					<img src="/images/home/hp_sm_ghost12.jpg">
+			        <h3>&nbsp; <br/>Ghost 12 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Experience maximum energy return in the Ricochet, now lighter than ever before.</p>
-					<a href="/ricochet-mens-running-shoes/110293_038.html">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/ricochet-womens-running-shoes/120282_575.html">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<p>The latest Ghost 12 offer a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.<br/>&nbsp; </p>
+					<a href="/brooks-running-shoes-ghost-12-mens/110316_489.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
@@ -125,8 +124,8 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
 					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
-					<a href="/womens-running-clothes">Shop Women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/mens-running-clothes">Shop Men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
 			</div>
 			</div>
@@ -143,7 +142,7 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Shoe Finder</h3>
 					<p>Our Shoe Finder is like Tinder for your feet. Uses your biomechanics, preferences and running science to find the ideal shoe for you. </p>
-					<a href="/shoefinder">Shoe Finder <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/shoefinder">Shoe finder <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					
 				</div>
 			</div>
@@ -156,7 +155,7 @@
 				<div class="info-wrapper">
 					<h3 class="br-heading">Events</h3>
 					<p>Browse our calendar of running events around Australia and New Zealand, <br/> find an event near you.</p>
-					<a href="/events">Running Events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/events">Running events<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 				</div>
 			</div>
 			</div>

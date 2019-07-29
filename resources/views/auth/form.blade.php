@@ -158,7 +158,7 @@
                     <div class="tab-6">
                         <div class="input-wrapper">
                             <label>What Brooks Shoes do you wear?</label>
-                            <select class="select-field">
+                            <select name="shoe_wear" class="select-field">
                                 <option value="" selected="selected">Select Brooks Shoes you wear</option>
                                 <option value="Addiction">Addiction</option>
                                 <option value="Addiction Walker">Addiction Walker</option>

@@ -84,7 +84,7 @@
                                                         <h3 class="bold-font">Express Delivery</h3>
                                                         <p class="area">(Australia Only)</p>
                                                         <p class="rate">$15 flat rate</span></p>
-                                                        <p class="day">1-2 business days to Australian metro areas<sup>*</sup></p>
+                                                        <p class="day">1-3 business days to Australian metro areas<sup>*</sup></p>
                                                     </div>
                                                 </label>
                                             </div>
@@ -200,6 +200,9 @@
                                                                             }
                                                                             ?>
                                                                         </a>
+                                                                        @if(isset($cart->subcode_text) && $cart->subcode_text!="")
+                                                                                   <p style="color:red;"> {{ $cart->subcode_text }} </p>
+                                                                               @endif
                                                                         @if(isset($cart->promo_display_text) && $cart->promo_display_text!="")
                                                                                    <p> {{ $cart->promo_display_text }} </p>
                                                                                @endif

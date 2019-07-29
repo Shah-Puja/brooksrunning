@@ -1,6 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
+<style>.pdp-display-none{ display:none!important;}</style>
 <section class="shoe-main-container">
 <section class="create-account--header plp-header">
 	<div class="wrapper">
@@ -28,13 +29,17 @@
 	<div class="wrapper">
 		<div class="row">
 			<div class="shoes-wrapper-container">
-				<div class="mob-12 col-6">
-					<div class="shoes-wrapper__sub">
+				<div class="mob-12 {{ ($shop_women_url=='' && $shop_men_url !='') ? 'col-12' : 'col-6' }}">
+					<div class="shoes-wrapper__sub {{ ($shop_men_url==''  && $shop_women_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
+								 @if(isset($shop_men_url) && $shop_men_url!='')
+									<a href="/{{$shop_men_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt=""></a>
+								 @else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/mens.jpg" alt="">
+								 @endif
 								</div>
-								@if(isset($shop_men_url))
+								@if(isset($shop_men_url) && $shop_men_url!='') 
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_men_url}}">Shop Men's</a></span>
@@ -44,13 +49,18 @@
 							</div>
 					</div>
 				</div>
-				<div class="mob-12 col-6">
-					<div class="shoes-wrapper__sub">
+
+				<div class="mob-12 {{ ($shop_men_url==''  && $shop_women_url !='') ? 'col-12' : 'col-6' }}">
+					<div class="shoes-wrapper__sub {{ ($shop_women_url==''  && $shop_men_url !='') ? 'pdp-display-none' : 'display-block' }}">
 						<div class="shoe-product">
 								<div class="img img-shoes">
+									@if(isset($shop_women_url) && $shop_women_url!='')
+									<a href="/{{$shop_women_url}}"><img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt=""></a>
+									@else
 									<img src="{{ config('site.image_url.base_shoe_new').$shoe_info->shoe_type }}/womens.jpg" alt="">
+									@endif
 								</div>
-								@if(isset($shop_women_url))
+								@if(isset($shop_women_url) && $shop_women_url!='')
 								<div class="info">
 									<div class="shoes-detail-btn">
 										<span><a class="secondary-button" href="/{{$shop_women_url}}">Shop Women's</a></span>
@@ -92,30 +102,35 @@
 	<div class="wrapper">
 		<div class="row">
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
-				<div id="desk" class="col-8 tab-8 mob-12"> 
-					<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
-							<div class="module-img">
-							@php
-							 $url_segment=Request::segment(2);
+				<div id="desk" class="col-12 tab-12 mob-12"> 
+					<div class="wrapper">
+						<a href="JavaScript:Void(0);" class="utube uTube-popup--control">
+								<div class="module-img">
+								@php
+								$url_segment=Request::segment(2);
 
-							@endphp
-							@if($url_segment=='levitate')
-									<img src="{{ config('site.image_url.base_shoe_img_thumb')}}levitate2_video_img.jpg" />
-							
-							@elseif($url_segment=='addiction')
-									<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Addiction_13.PNG" />
-							
-							@else
-									<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
-							@endif
-							</div>
-						<div class="play"></div>
-					</a>
+								@endphp
+								@if($url_segment=='levitate')
+										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}levitate2_video_img.jpg" />
+								
+								@elseif($url_segment=='addiction')
+										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Addiction_13.PNG" />
+								
+								@elseif($url_segment=='glycerin')
+										<img src="{{ config('site.image_url.base_shoe_img_thumb')}}Glycerin_17.JPG" />
+								
+								@else
+										<img src="http://i3.ytimg.com/vi/{{ $shoe_info->video_link }}/maxresdefault.jpg" />
+								@endif
+								</div>
+							<div class="play"></div>
+						</a>
+					</div>
 				</div>
 			@endif
 
 			@if(isset($shoe_info->video_link) && $shoe_info->video_link!='')
-				<div class="col-4 tab-4 mob-12">
+				<div class="col-12 tab-12 mob-12">
 			@else
 				<div class="col-12 tab-12 mob-12">
 			@endif
@@ -124,10 +139,9 @@
 	                    <div id="product-content">
 	                            {!! $shoe_info->description !!}
 								 <div class="features">
-								 	<p><strong>Activity:</strong> Running</p>
-								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->category) }} </p>
-								 	<div class="shoe-experience" style="margin-top: -2% !important;">
-								 		<p>
+								 	<p><strong>Activity:</strong> {{ ucfirst($shoe_info->activity) }}</p>
+								 	<p><strong>Category:</strong> {{ ucfirst($shoe_info->disp_category) }}</p>
+								 	<p class="shoe-experience">
 											<strong>Experience:</strong>
 											@if(isset($shoe_info->experience))
 												@if($shoe_info->experience == 'Cushion Me')
@@ -140,8 +154,7 @@
 													<img src="{{ config('site.image_url.base_shoe_new_exp')}}speed.png" alt="Speed Badge" width="60" height="60" />
 												@endif
 											@endif
-								 		</p>
-									</div>
+									</p>
 								 		
 								 </div>
 	                    </div>

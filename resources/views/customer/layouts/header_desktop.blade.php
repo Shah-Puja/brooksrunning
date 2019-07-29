@@ -7,7 +7,7 @@
                 <a href="/"> 
                     <div class="logo">
                         <!-- <img src="/images/brooks-running-logo.png" alt="Brooks Running Aus"> -->
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 220 30" enable-background="new 0 0 220 30" xml:space="preserve" width="220px" class="icon icon-logo" >
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 220 30" enable-background="new 0 0 220 30" xml:space="preserve" width="220" height="30" class="icon icon-logo" >
                                 <style type="text/css">
                                     .st0{fill:#0363F7;}
                                 </style>
@@ -149,16 +149,16 @@
                                                         <a href="/brooks-running-shoes-ravenna-10-womens/120286_006.html" title="Ravenna 10">Ravenna 10</a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/brooks-running-shoes-ghost-11-womens/120277_017.html" title="Ghost 11">Ghost 11 </a> 
+                                                        <a href="/brooks-running-shoes-ghost-12-womens/120305_413.html" title="Ghost 12">Ghost 12 </a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/glycerin-16-womens-running-shoes/120278_070.html" title="Glycerin 16">Glycerin 16</a> 
+                                                        <a href="/brooks-running-shoes-glycerin-17-womens/120283_070.html" title="Glycerin 17">Glycerin 17</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-levitate-2-womens/120279_596.html" title="Levitate 2">Levitate 2</a> 
                                                     </li>
                                                     <li>
-                                                        <a href="/revel-2-womens-running-shoes/120281_028.html" title="Revel 2">Revel 2</a> 
+                                                        <a href="/brooks-running-shoes-revel-3-womens/120302_012.html" title="Revel 3">Revel 3</a> 
                                                     </li>
                                                     <li>
                                                         <a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19 </a> 
@@ -265,16 +265,16 @@
                                                         <a class="name-link" href="/brooks-running-shoes-ravenna-10-mens/110298_082.html" title="Ravenna 10">Ravenna 10</a> 
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/brooks-running-shoes-ghost-11-mens/110288_038.html" title="Ghost 11">Ghost 11</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-ghost-12-mens/110316_489.html" title="Ghost 12">Ghost 12</a> 
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/glycerin-16-mens-running-shoes/110289_071.html" title="Glycerin 16">Glycerin 16</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-glycerin-17-mens/110296_015.html" title="Glycerin 17">Glycerin 17</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/levitate-2-mens-running-shoes/110290_689.html" title="Levitate 2">Levitate 2</a> 
                                                     </li>
                                                     <li>
-                                                        <a class="name-link" href="/brooks-running-shoes-revel-2-mens/110292_061.html" title="Revel 2">Revel 2</a> 
+                                                        <a class="name-link" href="/brooks-running-shoes-revel-3-mens/110314_088.html" title="Revel 3">Revel 3</a> 
                                                     </li>
                                                     <li>
                                                         <a class="name-link" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
@@ -339,9 +339,9 @@
 														<li class="submenu-main">
 		                                                    <a href="/neutral-running-shoes">Neutral Running Shoes</a>
 		                                                </li>
-		                                                <li>
+		                                                <!-- <li>
                                                             <a href="/shoes/aduro">Aduro</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li>
                                                             <a href="/shoes/defyance">Defyance</a>
                                                         </li>
@@ -442,7 +442,7 @@
                                                         <li>
                                                             <a href="/shoes/hyperion">Hyperion</a>
                                                         </li>
-                                                        <li class="submenu-main">
+                                                        <!-- <li class="submenu-main">
 	                                                        <a href="/cross-trainer-shoes">Cross Training Shoes</a>
 	                                                    </li>
                                                         <li>
@@ -450,7 +450,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="/shoes/maximus">Maximus</a>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="submenu-main">
 	                                                        <a href="/walking-shoes">Walking Shoes</a>
 	                                                    </li>
@@ -484,7 +484,12 @@
 								    </div>
 								</div>
 							</li>
-                        <li class="main sm-navigation--menu" data="meetbrooks"><a href="javascript:;" class="main-nav">Meet Brooks</a>
+                        <li class="main sm-navigation--menu" data="meetbrooks">
+                            @if(rand(0,1)==1)
+                            <a href="javascript:;" class="main-nav" id='nav-meetbrooks'>Meet Brooks</a>
+                            @else 
+                            <a href="javascript:;" class="main-nav" id='nav-about'>About</a>							
+                            @endif
                             <div class="desktop-navigation--sub">
                                 <div class="wrapper">
                                     <div class="row">
@@ -503,7 +508,7 @@
                                                     <li class="submenu-main">
                                                         <a href="/meet_brooks/our_purpose">Run Happy</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/competition/rh_competition">Competition</a></li>
+                                                    <li><a href="/meet_brooks/competition/update">Competition</a></li>
                                                     <li><a href="/meet_brooks/enewsletter">E-Newsletter</a></li>
                                                     <li><a href="/meet_brooks/training-tips">Training Tips</a></li>
                                                     <li><a href="/meet_brooks/injury-prevention">Injury Prevention</a></li>

@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <section class="landingpage-banner">
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hidden-mob"></div>
@@ -89,27 +89,27 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Mens/men_levitate2.jpg">
+						<img src="/images/landingpage/Mens/men_ghost12-2.jpg">
 					    <div class="title">
-					       <h2 class="happy left">&nbsp;<br>Levitate 2</h2>
+					       <h2 class="happy left">&nbsp;<br>Ghost 12</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Tap into your own endless energy in the Levitate 2. Featuring DNA AMP midsole technology to keep you going farther and faster.</p>
-							<a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop Levitate 2</a>
+							<p>New look. Same smooth ride. Still an award-winning runner favorite. The Ghost 12 strikes a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-12-mens/110316_489.html">Shop Ghost 12</a>
 					</div> 
 				</div>
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Mens/men_gts19_blk.jpg">
+							<img src="/images/landingpage/Mens/men_bedlam-1.jpg">
 						    <div class="title">
-						        <h2 class="happy left">&nbsp;<br> Adrenaline GTS 19</h2>
+						        <h2 class="happy left">&nbsp;<br> Bedlam</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>The legendary Adrenaline GTS has learned new tricks. Now you can experience GuideRails support in the GTS 19.</p>
-							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop Adrenaline GTS 19</a>
+							<p>The Bedlam now in new colours. Our springiest DNA AMP midsole joins forces with our holistic GuideRails support. </p>
+							<a class="primary-button" href="/brooks-running-shoes-bedlam-mens/110283_038.html">Shop Bedlam</a>
 					</div> 
 				</div>
 			</div>

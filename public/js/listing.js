@@ -136,12 +136,12 @@ $(document).on("click",".filter-value",function(){
 	$(this).find("input").prop("checked",true);
   var this_closest_group = $(this).closest("ul").data("filter-group");
 	if($(this).closest("li").hasClass("selected")){
-		//$(this).find(".show-icon").removeClass("selected");
 		var selected= false;
 	}else{
 		$(this).closest("li").addClass("selected");
 		var selected= true;
   }
+  var filter_width_value='';
 	if(selected){
       $(".filter-heading a").show();
       var selection_filter_div = '<div class="selection-filter--container"><li class="selection-filter"><a href="#" data-filter-attribute="'+this_closest_group+'" data-filter-value="'+this_value+'"><span class="val">'+value+'</span><span class="close"><i class="icon-close"></i></span></a></li></div>';
@@ -156,6 +156,7 @@ $(document).on("click",".filter-value",function(){
 	
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
     var status = 'ON';
+    if(this_closest_group=='Width') filter_width_value=this_value;
   
   }else{
       filters[this_closest_group] = jQuery.grep(filters[this_closest_group], function(value) {
@@ -183,6 +184,7 @@ $(document).on("click",".filter-value",function(){
     localStorage.setItem("comboFilter", comboFilter);
     localStorage.setItem("plpfilter", $(".plp-filter").html());
     localStorage.setItem("listingurl",window.location.pathname);
+    localStorage.setItem("filterwidth",filter_width_value);
     check_swatches(this_value,status);
   }, 500);
   counter = 15;
@@ -218,6 +220,7 @@ $(document).on('click','.selection-filter',function(){
       localStorage.setItem("comboFilter", comboFilter);
       localStorage.setItem("plpfilter", $(".plp-filter").html());
       localStorage.setItem("listingurl",window.location.pathname);
+      if(removeAttribute=='Width') localStorage.setItem("filterwidth","");
     }, 500);
     counter = 15;
     loadMore(counter);
@@ -238,6 +241,7 @@ $(document).on('click','.reset-filter',function(){
   setTimeout(function(){
     localStorage.setItem("comboFilter","");
     localStorage.setItem("listingurl",window.location.pathname);
+    localStorage.setItem("filterwidth","");
   }, 500);
   counter = 15;
   loadMore(counter);
@@ -304,7 +308,7 @@ function getComboFilter( filters ) {
 
     var comboFilter = localStorage.getItem("comboFilter");
     var currentURL = window.location.pathname;
-    console.log(currentURL);
+    //console.log(currentURL);
     var listingurl = localStorage.getItem("listingurl");
     if(currentURL==listingurl && comboFilter!=null && comboFilter!=''){
       //console.log("storage");
@@ -317,14 +321,17 @@ function getComboFilter( filters ) {
        var filter_value = '*';
        var status ='OFF';
     }
-    console.log("filter_value"+filter_value);
+    //console.log("filter_value"+filter_value);
     $grid.isotope({ filter: filter_value , sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
     check_swatches('',status);
     loadMore(initShow); 
+    if(!localStorage.getItem("plpfilter")){
+      localStorage.removeItem("filterwidth");
+    }
     localStorage.removeItem("comboFilter");
     localStorage.removeItem("plpfilter")
     localStorage.removeItem("filters")
-
+    
   });
    //execute function onload
 

@@ -6,10 +6,12 @@ use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\Competition;
 use App\Models\Competition_user;
+use App\Models\Icontact_pushmail;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
 use App\Jobs\ProcessCompetition;
 use App\Events\SubscriptionReceived;
+use Illuminate\Validation\Rule;
 
 class meet_brooksController extends Controller {
 
@@ -38,7 +40,7 @@ class meet_brooksController extends Controller {
         if (!view()->exists('meet_brooks.competition.' . $competition->comp_form)) {
             return abort(404);
         }
-        return view('meet_brooks.competition.competition', compact('comp_name', 'competition'));
+        return view('meet_brooks.competition.competition', compact('competition'));
     }
 
     public function store(Recaptcha $recaptcha, Request $request) {
@@ -48,12 +50,13 @@ class meet_brooksController extends Controller {
             'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
-            'postcode' => 'required|integer',
+            'postcode' => 'required|numeric',
             'g-recaptcha-response' => ['required', $recaptcha],
         ]);
 
         $competition = Competition_user::firstOrCreate(
-                        ['email' => request('email'), 'comp_name' => request('comp_name')], [
+                        [
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
                     'comp_slug' => request('comp_slug'),
                     'fname' => request('fname'),
                     'lname' => request('lname'),
@@ -63,7 +66,32 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'country' => request('country'),
-                    'answer' => request('answer')
+                    'answer' => request('answer'),
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
+                        ]
+        );
+
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        [
+                    'email' => request('email'), 'comp_name' => request('comp_name')], [
+                    'source' => 'Competition',
+                    'fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'birth_day' => request('custom_Birth_Date'),
+                    'birth_month' => request('custom_Birth_Month'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'answer' => request('answer'),
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
+                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
+                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
+                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
                         ]
         );
 
@@ -126,29 +154,32 @@ class meet_brooksController extends Controller {
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
 
         $response = $this->bridge->getPersonid($email);
-        //print_r($response);
-        //exit;      
-        $returnCode = $response->getStatusCode();
-        $userid = false;
-        switch ($returnCode) {
-            case '200':
-                $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                $userid = $response_xml->Person->Id;
-                break;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    break;
 
-            case '404':
-                $userid = $this->create_user($email, $fname, $lname, $gender, $country);
-                break;
+                case '404':
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $country);
+                    break;
 
-            default:
-                $userid = false;
-                break;
+                default:
+                    $userid = false;
+                    break;
+            }
+        } else {
+            $userid = $this->create_user($email, $fname, $lname, $gender, $country);
         }
+
         return $userid;
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
-
+        $returnVal = false;
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
                         <Surname>$lname</Surname>   
@@ -167,23 +198,23 @@ class meet_brooksController extends Controller {
 	                  </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        $returnCode = $response->getStatusCode();
-        switch ($returnCode) {
-            case 201:
-                $location = $response->getHeader('Location')[0];
-                $str_arr = explode("/", $location);
-                $last_seg = $str_arr[count($str_arr) - 1];
-                $last_seg_arr = explode("?", $last_seg);
-                $person_idx = $last_seg_arr[0];
-                $returnVal = $person_idx;
-                break;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
+                    $returnVal = $person_idx;
+                    break;
 
-            default:
-                $returnVal = false;
-
-                break;
+                default:
+                    $returnVal = false;
+                    break;
+            }
         }
-
         return $returnVal;
     }
 
@@ -217,6 +248,21 @@ class meet_brooksController extends Controller {
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
                     'user_type' => 'Subscriber']);
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        ['email' => request('email')], ['fname' => request('fname'),
+                    'lname' => request('lname'),
+                    'gender' => request('gender'),
+                    'birth_day' => request('custom_Birth_Date'),
+                    'birth_month' => request('custom_Birth_Month'),
+                    'age_group' => request('custom_Age'),
+                    'postcode' => request('postcode'),
+                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                    'country' => request('country'),
+                    'happy_runner_comp' => request('contest_code'),
+                    'source' => 'Subscriber',
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID')
+        ]);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
@@ -313,9 +359,16 @@ class meet_brooksController extends Controller {
                 User::where('email', request('email'))->update(['person_idx' => $PersonID]);
             }
         }
+        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
+                        ['email' => request('email')], ['fname' => $fname,
+                    'lname' => $lname,
+                    'source' => 'Subscriber',
+                    'status' => 'queue',
+                    'list_id' => env('ICONTACT_LIST_ID')
+        ]);
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user));
-        return view('meet_brooks.thank-you-signup', compact('signup', request()->all()));
+        return view('meet_brooks.thank-you-signup', compact('signup'));
     }
 
     public function newsletter_update(Recaptcha $recaptcha) {
@@ -333,10 +386,18 @@ class meet_brooksController extends Controller {
         $shoe_wear = request('custom_Shoes_you_wear');
         $state = request('country');
 
-        $Person = User::updateOrCreate(['email' => request('email')], ['first_name' => request('fname'), 'last_name' => request('lname'), 'tag' => request('comp_name'), 'gender' => request('gender'), 'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'), 'birth_date' => request('custom_Birth_Date'), 'birth_month' => request('custom_Birth_Month'), 'age_group' => request('custom_Age'), 'postcode' => request('postcode'), 'shoe_wear' => $shoe_wear, 'state' => $state, 'contest_code' => $contest_code, 'source' => 'Subscriber', 'subscribed' => 'Yes', 'user_type' => 'Subscriber']);
+        $Person = User::updateOrCreate(['email' => request('email')], ['first_name' => request('fname'), 'last_name' => request('lname'), 'tag' => request('comp_name'), 'gender' => request('gender'), 'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'), 'birth_date' => request('custom_Birth_Date'), 'birth_month' => request('custom_Birth_Month'), 'age_group' => request('custom_Age'), 'postcode' => request('postcode'), 'shoe_wear' => $shoe_wear, 'state' => $state, 'contest_code' => $contest_code, 'subscribed' => 'Yes']);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
+        Icontact_pushmail::where('email', request('email'))->update(['fname' => request('fname'),
+            'lname' => request('lname'), 'gender' => request('gender'),
+            'birth_day' => request('custom_Birth_Date'),
+            'birth_month' => request('custom_Birth_Month'),
+            'age_group' => request('custom_Age'),
+            'postcode' => request('postcode'), 'shoe_wear' => request('custom_Shoes_you_wear'),
+            'country' => request('country'), 'happy_runner_comp' => request('contest_code'),
+            'status' => 'queue', 'list_id' => env('ICONTACT_LIST_ID')]);
         $user = User::where('email', request('email'))->first();
         event(new SubscriptionReceived($user)); // to update the other details in aweber
         if (request('signup') == 1) {

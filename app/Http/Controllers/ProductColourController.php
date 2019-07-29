@@ -55,8 +55,10 @@ class ProductColourController extends Controller
         //After sync with Ap21 call product detail
         $styles = Product::where('style',$style)
                           ->whereHas('variants', function ( $query ) {
-                               $query->where('visible', '=', 'Yes');
-                           })->get();
+                               return $query->where('visible', '=', 'Yes');
+                           })
+                           ->with('variants')
+                           ->get();
         if(!$styles){
             return abort(404);
         }    
@@ -75,8 +77,8 @@ class ProductColourController extends Controller
         $product->price = $variants->max('price');
 		$product->price_sale = $variants->max('price_sale');
         $product->stock = $variants->max('stock');
-    
-        return view ('customer.pdp',compact('product','variants','colour_options'));
+        
+        return view ('customer.pdp',compact('product','variants','colour_options','styles'));
     }
 
     public function index_bkp($name,$style,$color){
@@ -111,6 +113,7 @@ class ProductColourController extends Controller
         $URL = env('AP21_URL') . "/Products/$style_idx?countryCode=" .  env('AP21_COUNTRYCODE');
         //echo "URL ==== $URL";
         $response = $this->bridge->sync_ap21_sku($style_idx);
+        if (!empty($response)) { 
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case '200':
@@ -141,7 +144,7 @@ class ProductColourController extends Controller
                                 'stock' => $stock,
                                 'price' => $org_price,
                                 'price_sale' => $price_sale,
-                                'release_date' => '',
+                                'release_date' => null,
                                 'season' => 'Current',
                                 'visible' => 'No',
                                 'reason_no' => 'Release date blank',
@@ -209,6 +212,7 @@ class ProductColourController extends Controller
                         endif;
                 break;
         }
+    }
         //exit;
     }
 

@@ -92,13 +92,7 @@
 					<div class="bottom-signup">
 						<h3>Email sign up - The Run Down</h3>
 						<p>Stay up to date with special offers, product updates events, competitions and tips to keep you running happy!</p>
-						<h1 class="error">{{ $errors->first('email') }}</h1>
-                    <!--<form class="clearfix" method="post" name="form_subscribers" action="" onsubmit="return check_subscribers()">			
-                        @csrf
-                        <input class="input " type="text" name="email" value="{{ old('email') }}" id="email" placeholder="Enter your email address">
-                        <button type="submit" class="btn">go</button>
-                    </form>-->
-					<form class="clearfix" name="subscriber_news2" method='post' action='meet_brooks/newsletter_signup'>			
+					<form class="clearfix" name="subscriber_news2" method='post' action='/meet_brooks/newsletter_signup'>			
                         @csrf
                         <input class="input " type="text" name="email" value="{{ old('email') }}"  placeholder="Enter your email address" required>
                         <button type="submit" class="btn">go</button>
@@ -120,7 +114,7 @@
 				<div class="tab-12">
 					<ul>
 						<li><img src="/images/brooks-logo-footer.png" alt=""></li>
-						<li>&copy; 2018 Brooks Australia.</li>
+						<li>&copy; 2019 Brooks Australia.</li>
 					</ul>
 				</div>
 				<div class="col-6 tab-5">
@@ -211,7 +205,6 @@ $last_word = $matches[0];
 @endphp 
 @if($last_word!='shoefinder')
 <script>
-  
   /*Freeze top navigation*/  
     $(window).scroll(function(){
         if ($(window).scrollTop() >= 147) {

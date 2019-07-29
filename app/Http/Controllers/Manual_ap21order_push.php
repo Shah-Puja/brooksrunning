@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Order_log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderAp21Alert;
+use DB;
 
 class Manual_ap21order_push extends Controller {
 
@@ -62,7 +63,7 @@ class Manual_ap21order_push extends Controller {
                         </Addresses>
                       </Person>";
 
-        $response = $this->bridge->processPerson($person_xml);
+        $response = $this->bridge->processPersonManual($person_xml);
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
         $logger = array(
             'order_id' => $this->_order_id,
@@ -128,7 +129,7 @@ class Manual_ap21order_push extends Controller {
     }
 
     public function get_personid() {
-        $response = $this->bridge->getPersonid($this->_email);
+        $response = $this->bridge->getPersonidManual($this->_email);
         //print_r($response);
         //exit;      
         $returnCode = $response->getStatusCode();
@@ -185,9 +186,9 @@ class Manual_ap21order_push extends Controller {
     }
 
     public function init($order_id, $order) {
-        $this->_fullname = $order->address->s_fname . " " . $order->address->l_fname;
+        $this->_fullname = $order->address->s_fname . " " . $order->address->s_lname;
         $this->_fname = $order->address->s_fname;
-        $this->_lname = $order->address->l_fname;
+        $this->_lname = $order->address->s_lname;
         $this->_email = $order->address->email;
         $this->_phone = $order->address->s_phone;
         $this->_addressbill = (isset($order->address->b_add1) && $order->address->b_add1 != "") ? $order->address->b_add1 : $order->address->s_add1;
@@ -217,7 +218,7 @@ class Manual_ap21order_push extends Controller {
             $pin = $this->_order->giftcert_ap21pin;
             $amount = $this->_order->gift_amount;
             $url = env('AP21_URL') . "/Voucher/GVValid/{$gift}?pin={$pin}&amount={$amount}&countryCode=" . env('AP21_COUNTRYCODE');
-            $response = $this->bridge->vouchervalid($gift, $pin, $amount);
+            $response = $this->bridge->vouchervalidManual($gift, $pin, $amount);
             $returnCode = $response->getStatusCode();
 
             switch ($returnCode) {
@@ -333,8 +334,28 @@ class Manual_ap21order_push extends Controller {
                       <Postcode>" . htmlspecialchars($order->address->s_postcode) . "</Postcode>
                       <Country></Country>
                     </Delivery>
-                </Addresses>
-                <Contacts>
+                </Addresses>";
+        $carrier = $servicetype = '';
+        if ($order->delivery_type == "express") {
+            $carrier = 'AUS';
+            $servicetype = '03X1';
+        } else if ($order->delivery_type == "new_zealand") {
+            $carrier = 'NOC';
+            $servicetype = 'PUP';
+        } else {
+            //table name freight_service
+            $freight_service_info = DB::table('freight_service')->where('postcode', $order->address->s_postcode)->first();
+            if (!empty($freight_service_info) && $freight_service_info->postcode === $order->address->s_postcode) {
+                $carrier = 'AUS';
+                $servicetype = '03S1';
+            } else {
+                $carrier = 'CPL';
+                $servicetype = 'X31';
+            }
+        }
+        $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
+                              <ServiceType><Code>$servicetype</Code></ServiceType>";
+        $xml_data .= "<Contacts>
                     <Email>" . $order->address->email . "</Email>
                     <Phones>
                         <Home>" . $order->address->s_phone . "</Home>
@@ -473,7 +494,7 @@ class Manual_ap21order_push extends Controller {
         /* echo "<pre>";
           print_r($order->ap21_xml);
           die; */
-        $response = $this->bridge->processOrder($person_id, $xml_data);
+        $response = $this->bridge->processOrderManual($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
         $returnCode = $response->getStatusCode();
         //echo "<pre>";print_r($response);print_r($returnCode);die;

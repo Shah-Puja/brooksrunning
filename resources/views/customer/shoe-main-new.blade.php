@@ -6,7 +6,7 @@
 	$str = ucwords($str);
 	$str = str_replace(" ", "-", $str);
 @endphp
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <div class="pdp-container">
 	<div class="wrapper detail-shoe-pg">
 		<div class="row">
@@ -54,6 +54,8 @@
 					<h3 class="br-shoe-heading">Shop all Brooks Maximus Shoes</h3>
 				@elseif($str == "Liberty")
 					<h3 class="br-shoe-heading">Shop all Brooks Liberty Shoes</h3>
+				@elseif($str == "Dyad-Walker")
+					<h3 class="br-shoe-heading">Shop All Brooks Dyad Walker Shoes</h3>
 				@else
 					<h3 class="br-shoe-heading">Shop All Brooks Addiction Walker Shoes</h3>
 				@endif

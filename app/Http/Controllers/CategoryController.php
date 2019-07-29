@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $name = $cat_info->name; 
         $cat_id = $cat_info->id; 
             if($depth=='2'){
-                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name);
+                $products = \App\Models\Category::getProducts_main($gender,$prod_type,$name,$cat_id);
             }elseif($depth=='3'){
                 $products = \App\Models\Category::getProducts($category,$cat_id);
             }
@@ -27,11 +27,8 @@ class CategoryController extends Controller
             if (empty($products)) {
                 $styles=$flag_bra="";              
                 $filters=[];  
-            }
-            else{
-                $styles = $products->unique('style');
-                //print_r($styles);  
-               //exit;                          
+            }else{
+                $styles = $products->unique('style');                      
                 $filters = \App\Models\Category::provideFilters($products,$prod_type,$gender,$depth);                
             }            
         return view( 'customer.categorylower', compact('products','styles','filters','prod_type','gender','depth') );                
@@ -57,33 +54,59 @@ class CategoryController extends Controller
     public function womens_landing(){
 
         //NEW ARRIVALS
-        // $shoe_info = array('120285_092','120272_080','120284_151','120291_073');
-        $shoe_info = array('120287_531','120284_120','120279_520','120281_050');
-        $shoes_product=[];
-        foreach($shoe_info as $item){
-            $slider_shoe = explode('_', $item); 
-            $shoes_product[] =  product::where(
-                [
-                    ['color_code', '=', $slider_shoe[1]],
-                    ['style', '=', $slider_shoe[0]],
-                ]
-            )->with('variants')
-            ->first();            
-        }
+        $array = ['120282_057','120279_060','120305_040','120285_032'];
+        $data_array = [];
+        foreach($array as $item){
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        }   
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })->get();
+            
+        $shoes_product = $styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        })->unique('style');
 
         //NEW CLOTHING ARRIVALS
-        $cloths_info = array('280404_517','221221_594','221349_182','221340_018');
-        $cloths_product=[];
+        $cloths_info = ['280404_517','221221_594','221349_182','221340_018'];
+        $data_array = [];
         foreach($cloths_info as $item){
-            $slider_cloths = explode('_', $item); 
-            $cloths_product[] =  product::where(
-                [
-                    ['color_code', '=', $slider_cloths[1]],
-                    ['style', '=', $slider_cloths[0]],
-                ]
-            )->with('variants')
-            ->first();            
-        }
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        }   
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $cloths_styles = \App\Models\Product::whereIn("style",$style_array)
+                                    ->whereHas('variants', function ( $query ) {
+                                          $query->where('visible', '=', 'Yes');
+                                    })->get();
+            
+        $cloths_product = $cloths_styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        })->unique('style');
+
 
         return view('customer.womens-running-shoes-and-clothing',compact('shoes_product','cloths_product'));
     }
@@ -104,7 +127,7 @@ class CategoryController extends Controller
             ->first();            
         }*/
 
-        $array = ['110288_038','110297_488','110294_190','110283_449'];
+        $array = ['110293_057','110290_038','110283_126','110316_489'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
@@ -193,22 +216,24 @@ class CategoryController extends Controller
 
     public function shoes_detail($shoe_type=''){
         //$shoe_name=strtolower($shoe_name);
-        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam");
+        $common_template=array("glycerin","adrenaline-gts","ghost","transcend","launch","aduro","revel","ravenna","beast","ariel","hyperion","neuro","asteria","addiction","purecadence","pureflow","mazama","cascadia","cascadia-gtx","ghost-gtx","puregrit","caldera","vapor","defyance","dyad","adrenaline-asr","ricochet","levitate","bedlam","addiction-walker","dyad-walker");
         if (in_array($shoe_type,$common_template)){    
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             
-            
+            $shop_men_url='';
             if($shoe_info->shop_men != ''){
 				$shop_m = explode('_', $shoe_info->shop_men);
                 $seo_name = $this->get_seo_name($shop_m['0'],$shop_m['1'],'m');
+               
 				if($seo_name != ''){
                     $shop_men_url = $seo_name."/".$shoe_info->shop_men.".html";
 				}
             }
-
+            $shop_women_url='';
             if($shoe_info->shop_women != ''){
 				$shop_w = explode('_', $shoe_info->shop_women);
                 $seo_name = $this->get_seo_name($shop_w['0'],$shop_w['1'],'w');
+                
 				if($seo_name != ''){
                     $shop_women_url = $seo_name."/".$shoe_info->shop_women.".html";
 				}
@@ -218,7 +243,7 @@ class CategoryController extends Controller
 
         }
 
-        $diff_template=array("liberty","maximus","addiction-walker","dyad-walker");
+        $diff_template=array("liberty","maximus");
         if (in_array($shoe_type,$diff_template)){ 
             $shoe_info = shoe_mast::where(['shoe_type'=> $shoe_type])->first();
             $shoe_specs = shoe_specs::where(['shoe_type'=> $shoe_type])->orderBy('seqno', 'asc')->get();
@@ -393,7 +418,9 @@ class CategoryController extends Controller
                 $styles = \App\Models\Product::whereIn("style",$style_array)
                                     ->whereHas('variants', function ( $query ) {
                                           $query->where('visible', '=', 'Yes');
-                                    })->get();
+                                    })
+                                    ->with('variants')
+                                    ->get();
             
                 $products = $styles->filter(function ($value, $key) use ($data_array) {
                     $data=[];

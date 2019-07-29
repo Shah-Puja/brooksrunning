@@ -19,7 +19,7 @@ class BillingShippingController extends Controller {
         $this->middleware(function ($request, $next) {
             //$this->cart = Cart::where( 'id', session('cart_id') )->first();
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-            check_state_and_update_delivery_option();
+            //check_state_and_update_delivery_option();
             if(empty($this->cart)){
                 return redirect('cart');
             }
@@ -45,17 +45,17 @@ class BillingShippingController extends Controller {
         }
         if (!@$orderAddress && auth()->check()) {
             $usersLastOrder = Order::where('user_id', auth()->id())
-                    ->orderBy('updated_at', 'desc')
-                    ->first();
-            if (isset($usersLastOrder->address->s_state) && $usersLastOrder->address->s_state == 'New Zealand') {
+                                ->orderBy('updated_at', 'desc')
+                                ->first();
+            /*if(isset($usersLastOrder->address->s_state) && $usersLastOrder->address->s_state=='New Zealand'){
                 $delivery_option = "new_zealand";
                 $freight_charges = config('site.SHIPPING_NZ_PRICE');
                 $grand_total = $this->cart->total + $freight_charges;
                 Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
                 $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
                 Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
-            }
-            $orderAddress = $usersLastOrder ? $usersLastOrder->address : null;
+            }*/
+            $orderAddress = $usersLastOrder ? $usersLastOrder->address : null; 
         }
         if (!@$orderAddress) {
             $orderAddress = new Order_address;
@@ -103,8 +103,8 @@ class BillingShippingController extends Controller {
                 $user_id = (!empty($user_data) && isset($user_data->id)) ? $user_data->id : '';
             }
         }
-        Order::createNew($this->cart, $user_id, $validatedAddress);
-        check_state_and_update_delivery_option();
+        $order_id = Order::createNew($this->cart, $user_id, $validatedAddress);
+        check_state_and_update_delivery_option($order_id);
         
         return redirect("payment");
     }

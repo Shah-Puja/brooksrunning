@@ -20,6 +20,12 @@ class Category extends Model
     	return $this->hasMany('App\Models\group','group_id','id');
     }
 
+
+    public function group_ranks()
+    {
+    	return $this->hasMany('App\Models\Group_ranks','group_id','id');
+    }
+
     /**
 	 * Get the route key for the model.
 	 *
@@ -40,32 +46,25 @@ class Category extends Model
                 return $query->where('visible', '=', 'Yes');
             })
             ->with('variants')
-            ->with('csvranks')
+            ->with('groupranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
-            
-            /*$sorted_products = $products->sortByd(function ($product, $key) use ($cat_id) {
-                foreach($product->csvranks as $csvrank):
-                    if($cat_id==$csvrank->group_id):
-                      return  $csvrank->display_rank;
-                    endif;
-                endforeach;
-              });
-              */
-            $sorted_products = $products->sortByDesc(function ($product, $key) {
-                        foreach($product->variants as $variant):
-                              return $variant->release_date;
-                        endforeach;
-                      });
-               
-        
-            return $sorted_products;
-        
-        
+
+            $sorted_products = $products->sortBy(function ($product, $key) use ($cat_id) {
+                if(isset($product->groupranks) && count($product->groupranks) >0){
+                    foreach($product->groupranks->where('group_id',$cat_id) as $group_rank):
+                        return $group_rank->display_rank;
+                    endforeach;
+                }else{
+                    return '100';
+                }
+            });
+
+            return  $sorted_products;
     }
 
-    public static function getProducts_main($gender,$prod_type,$name) {              
+    public static function getProducts_main($gender,$prod_type,$name,$cat_id) {              
         $products =  \App\Models\Product::where('gender',$gender)
             ->where('prod_type',$prod_type)
             ->whereHas('variants' , function($query) use ($name)  {
@@ -77,12 +76,34 @@ class Category extends Model
                 }
             })
             ->with('variants')
+            ->with('groupranks')
             ->orderBy('style')
             ->orderBy('seqno')
             ->get();
             //->get(['id','style','stylename', 'seqno', 'color_code']);
             //->values(); 
-            
+   
+
+        /*$sorted_products = $products->sortByDesc(function ($product, $key) use ($cat_id) {
+            if(isset($product->groupranks) && count($product->groupranks) >0){
+                $filter_product = collect($product->groupranks)->filter(function ($value, $key) use ($cat_id) {
+                    $data=[];
+                             if($value->group_id==$cat_id){
+                                $data[] = $value;
+                             }
+                        return $data;
+                });
+                foreach(collect($filter_product) as $group_rank):
+                    if($cat_id==$group_rank->group_id):
+                        return $group_rank->display_rank;
+                    else:
+                        return '1000000000';
+                    endif;
+                endforeach;
+            }else{
+                return '1000000000';
+            }
+      });*/
             $sorted_products = $products->sortByDesc(function ($product, $key){
                 foreach($product->variants as $variant):
                       return $variant->release_date;
@@ -119,8 +140,11 @@ class Category extends Model
                     $sorted = $p->sortBy(function ($product, $key) {
                         return $product->seqno;
                     });
-
+                    //print_r($sorted);
                     $sizes = $sorted->pluck('size')->unique()->values();
+                    
+                    $sizes = ($prod_type!='Apparel') ? $sizes->sort() : $sizes;
+
                     $filters['Size'] = $sizes->filter(function ($value, $key){
                         return  (!strpos($value,'(') !== false) ? $value :'';
                     });
@@ -145,8 +169,8 @@ class Category extends Model
                     $width_array = $products->map(function($product) {
                         return $product->variants->where('visible','Yes')->pluck('width_name');
                     })->flatten()->unique()->values()->sort();
-
-                    $filters['Width'] = (new static)->sort_width_array($width_array);
+                    $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Wide", "2E-Extra-Wide", "4E-Extra-Wide");
+                    $filters['Width'] = (new static)->sort_array($width_array,$order_array);
                  break;
 
                  case 'Support Level':
@@ -178,10 +202,12 @@ class Category extends Model
                  break;
 
                  case 'Activity':
-                    $filters['Activity'] = 
-                    $products->map(function($product) {
+                    $activity_array =  $products->map(function($product) {
                         return $product->tags->Where('key','PF_F_ACTIVITY');
                     })->flatten()->pluck('value')->unique()->sort();
+
+                    $order_array = array("Road/Track","Offroad/Trail", "Court Sport" ,"Training");
+                    $filters['Activity'] = (new static)->sort_array($activity_array,$order_array);
                  break;
 
                  case 'Midsole Drop':
@@ -274,10 +300,9 @@ class Category extends Model
         
     }
 
-    public static function sort_width_array($width_array){
-        $order_array = array("2A-Narrow","B-Narrow", "B-Normal", "D-Normal", "D-Wide" , "2E-Extra-Wide", "2E-Wide", "4E-Extra-Wide");
+    public static function sort_array($array,$order_array){
         $sorted_array=array();
-        foreach ($width_array as $key => $value) {		
+        foreach ($array as $key => $value) {		
             $curr_order=array_search($value, $order_array);
             $sorted_array[$value]=$curr_order;		
         } 
@@ -285,6 +310,8 @@ class Category extends Model
         return array_keys($sorted_array);
         
     }
+
+
     
 
 }

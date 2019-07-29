@@ -1,7 +1,7 @@
 @php  
-  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', $product->benefit_1) : ''; 
-  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', $product->benefit_2) : ''; 
-  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', $product->benefit_3) : ''; 
+  $benefit_1 = (!empty($product->benefit_1)) ? explode('#', html_entity_decode($product->benefit_1,ENT_QUOTES)) : ''; 
+  $benefit_2 = (!empty($product->benefit_2)) ? explode('#', html_entity_decode($product->benefit_2,ENT_QUOTES)) : ''; 
+  $benefit_3 = (!empty($product->benefit_3)) ? explode('#', html_entity_decode($product->benefit_3,ENT_QUOTES)) : ''; 
 @endphp
 @if($benefit_1)
 <section class="pdp-container--benefits">
@@ -20,8 +20,8 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-            <h3 class="br-heading">{{ (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" }}</p>
+            <h3 class="br-heading">{!! (isset($benefit_1[1]) &&  $benefit_1[1]!='') ? $benefit_1[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_1[2]) &&  $benefit_1[2]!='') ? $benefit_1[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -43,8 +43,8 @@
 			<div class="col-6 visible-mob visible-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-            <h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+            <h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -62,8 +62,8 @@
 			<div class="col-6 hidden-mob hidden-tab">
 				<div class="info-wrapper clearfix">
 					<div class="info">
-            <h3 class="br-heading">{{ (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" }}</p>
+            <h3 class="br-heading">{!! (isset($benefit_2[1]) &&  $benefit_2[1]!='') ? $benefit_2[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_2[2]) &&  $benefit_2[2]!='') ? $benefit_2[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -74,8 +74,8 @@
 			<div class="col-6">
 				<div class="info-wrapper clearfix">
 					<div class="info right">
-            <h3 class="br-heading">{{ (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" }}</h3>
-						<p class="br-info">{{ (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" }}</p>
+            <h3 class="br-heading">{!! (isset($benefit_3[1]) &&  $benefit_3[1]!='') ? $benefit_3[1] : "" !!}</h3>
+						<p class="br-info">{!! (isset($benefit_3[2]) &&  $benefit_3[2]!='') ? $benefit_3[2] : "" !!}</p>
 					</div>
 			    </div>
 			</div>
@@ -448,15 +448,15 @@
 														<h4 class="mc-title">SURGERY OR INJURY</h4>
 														<p>Women who have suffered an arm, neck, or shoulder injury, or who have just had breast surgery, may find a traditional racerback style too hard to put on. Look for a style that has detachable front-adjustable straps, or an open-back style with a back closure.</p>
 								                           <span class="expertadv-blue expertadv-bold">WE SUGGEST:</span><br>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/fineform-c-d/300604_017" class="prod-link">        
+								                           <a href="javascript:void(0)" class="prod-link">        
 								                           <img src="/images/bras/300604_017_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-expertadv-dark-grey expertadv-bold">FINEFORM</span>
 								                           </a>   
-								                           <a href="https://br2018.syginteractive.com/apparel/women/fiona-bra/350064_001" class="prod-link">         
+								                           <a href="javascript:void(0)" class="prod-link">         
 								                           <img src="/images/bras/350064_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-expertadv-dark-grey expertadv-bold">FIONA</span>
 								                           </a>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/jubralee-bra/350042_674" class="prod-link">            
+								                           <a href="javascript:void(0)" class="prod-link">            
 								                           <img src="/images/bras/350042_001_f_SM.jpg" class="prod"><br>	
 								                           <span class="expertadv-expertadv-dark-grey expertadv-bold">JUBRALEE</span>
 								                           </a>
@@ -464,11 +464,11 @@
 														<h4 class="mc-title">Pregnancy or Nursing</h4>
 														 <p>Sports bras are a great solution for the extra sensitivity women may experience during pregnancy or nursing. Look for a style with front-adjustable straps that can adjust with your changing body. Plus, those front-adjustable straps can make it easier to breastfeed.</p>
 									                       <span class="expertadv-blue expertadv-bold">WE SUGGEST:</span><br>
-									                       <a href="https://br2018.syginteractive.com/apparel/women/fiona-bra/350064_001" class="prod-link">
+									                       <a href="javascript:void(0)" class="prod-link">
 									                       <img src="/images/bras/350064_001_f_SM.jpg" class="prod"><br>
 									                       <span class="expertadv-dark-grey expertadv-bold">FIONA</span>
 									                       </a>
-									                       <a href="https://br2018.syginteractive.com/apparel/women/juno-bra-/350025_001" class="prod-link">
+									                       <a href="javascript:void(0)" class="prod-link">
 									                       <img src="/images/bras/350025_001_f_SM.jpg" class="prod"><br>
 									                       <span class="expertadv-dark-grey expertadv-bold">JUNO</span>
 									                       </a>
@@ -476,11 +476,11 @@
 														<h4 class="mc-title">Narrow Shoulders</h4>
 														 <p>Even with a well-fitted sports bra, some women experience straps that continuously slip off the shoulders. Keep straps in check a racerback or crossback style.</p>
 								                           <span class="expertadv-blue expertadv-bold">WE SUGGEST:</span><br>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/uprise-crossback-/300614_001" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/300614_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">UPRISE CROSSBACK</span>
 								                           </a>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/rebound-racer-bra-/350037_005" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/350037_005_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">REBOUND RACER</span>	
 								                           </a>
@@ -488,11 +488,11 @@
 														<h4 class="mc-title">Uneven Breasts</h4>
 														<p>Most women have one breast larger than the other. Always fit your sports bra to the larger cup and look for a style with adjustable straps that allows you to customize the fit to each individual breast.</p>
 								                           <span class="expertadv-blue expertadv-bold">WE SUGGEST:</span><br>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/fiona-bra/350064_001" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/350064_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">FIONA</span>
 								                           </a>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/juno-bra-/350025_001" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/350025_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">JUNO</span>
 								                           </a>
@@ -500,11 +500,11 @@
 		                   								<h4 class="mc-title">Wearing Two Bras</h4>
 														 <p>Women who wear two bras while running are not getting the fit, support, or comfort they need. Look for a supportive style designed for larger cups. Sometimes one is better than two!</p>
 								                           <span class="expertadv-blue expertadv-bold">WE SUGGEST:</span><br>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/maia-bra-/350054_001" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/350054_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">MAIA</span>
 								                           </a>
-								                           <a href="https://br2018.syginteractive.com/apparel/women/juno-bra-/350025_001" class="prod-link">
+								                           <a href="javascript:void(0)" class="prod-link">
 								                           <img src="/images/bras/350025_001_f_SM.jpg" class="prod"><br>
 								                           <span class="expertadv-dark-grey expertadv-bold">JUNO</span>
 								                           </a>
