@@ -152,7 +152,7 @@ class meet_brooksController extends Controller {
     }
 
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
-
+        echo "In Meetbrooks: ".$email;die;
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
