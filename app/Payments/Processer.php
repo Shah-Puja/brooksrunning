@@ -28,6 +28,18 @@ class Processor
 			if($item->variant->width_name!=""):
 				$description.="<p>".(($item->variant->product->gender == 'M') ? "Mens" : "Womens")." Width: ".$item->variant->width_name."</p>";
 			endif;
+			if($order->gift_amount > 0):
+				$order_items[]= [
+					'name' => 'Gift Voucher',
+					'description' => 'Discount',
+					'quantity' => '1',
+					'unitAmount' => $order->gift_amount,
+					'kind' => Braintree\TransactionLineItem::CREDIT,
+					'totalAmount' => $order->gift_amount,
+					'discountAmount' => '0.00', 
+				];
+				endif;
+
 			$order_items[]=[
 				'name' => $item->variant->product->stylename,
 				'kind' => 'debit',
@@ -41,6 +53,7 @@ class Processor
 				'description' => $description,
 			];
 		}
+		echo "<pre>";print_r($order_items);die;
 		$discount_amount = '0.00';
 		if($order->gift_amount > 0){
 			$discount_amount = $order->gift_amount;
