@@ -179,9 +179,9 @@ class meet_brooksController extends Controller {
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
-        if (isset($gender) && $gender == "Male") {
+        if (isset($gender) && $gender == "male") {
             $gender = "M";
-        } elseif (isset($gender) && $gender == "Female") {
+        } elseif (isset($gender) && $gender == "female") {
             $gender = "F";
         }
         $returnVal = false;
@@ -196,7 +196,7 @@ class meet_brooksController extends Controller {
                         </Contacts>
                         <Addresses>
                           <Billing>
-                          <State>AU</State>
+                          <State>VIC</State>
                           <Country>$country</Country>
                           </Billing>
                         </Addresses>
