@@ -3479,7 +3479,7 @@ width: 100%;
       width:220px;
     }
     @media #{$tab-only}{
-      width:220px;
+      width:auto;
     }
   }
 

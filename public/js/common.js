@@ -421,10 +421,9 @@ function ChangeUrl(page, url) {
 if ($(window).width() < 768) {
     var e_id,e_logo,e_slug;
     if ($("ul.event_mob_tabs li").hasClass("current")) {
-      
+
        e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
        
-      
 }
 
 $(window).on('popstate', function(event) {
