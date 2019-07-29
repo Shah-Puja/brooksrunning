@@ -154,8 +154,13 @@ use RegistersUsers;
     }
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $state = '') {
-        echo "In create user";
+        
         $returnVal = false;
+        if(isset($gender) && $gender=="Male"){
+            $gender="M";
+        }elseif(isset($gender) && $gender=="Male"){
+            $gender="F";
+        }
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
                         <Surname>$lname</Surname>   
