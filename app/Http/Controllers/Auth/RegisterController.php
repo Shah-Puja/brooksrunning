@@ -198,6 +198,7 @@ echo $person_xml;
                     break;
             }
         }
+        echo $returnVal;
         return $returnVal;
     }
 
