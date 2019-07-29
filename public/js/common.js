@@ -344,7 +344,7 @@ $(document).on("click",".prev",function () {
 
 // New Event Page
 //$(document).ready(function () {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 768 ) {
         var e_id,e_logo,e_slug;
         
        if ($("ul.event_mob_tabs li").hasClass("current")) {
@@ -360,7 +360,7 @@ $(document).on("click",".prev",function () {
         itemsDesktop: [1199, 3],
         itemsDesktopSmall: [979, 3],
         addClassActive:true,
-        afterMove: function (elem) {
+         afterMove: function (elem) {
             var current = this.currentItem;
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
