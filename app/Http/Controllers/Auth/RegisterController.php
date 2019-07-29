@@ -179,7 +179,7 @@ echo "Userid -- ";echo $userid;
 	                  </Person>";
 echo $person_xml;
         $response = $this->bridge->processPerson($person_xml);
-        echo "<pre>";print_r($response);die;
+        echo "<pre>";print_r($response);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             echo $returnCode;echo "<br>";
