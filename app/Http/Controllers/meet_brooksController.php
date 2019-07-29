@@ -196,7 +196,7 @@ class meet_brooksController extends Controller {
                         </Contacts>
                         <Addresses>
                           <Billing>
-                          <State></State>
+                          <State>AU</State>
                           <Country>$country</Country>
                           </Billing>
                         </Addresses>
