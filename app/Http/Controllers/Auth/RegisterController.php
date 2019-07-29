@@ -149,7 +149,7 @@ use RegistersUsers;
             echo "in else";
             $userid = $this->create_user($email, $fname, $lname, $gender, $state);
         }
-
+echo "Userid -- ";echo $userid;
         return $userid;
     }
 
