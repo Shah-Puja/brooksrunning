@@ -116,6 +116,7 @@ use RegistersUsers;
             //if (env('AP21_STATUS') == 'ON') {
                 $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : ''); 
            // }
+           echo $PersonID;die;
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => (isset($PersonID)) ? $PersonID : 0]);
         }
         return $user;
@@ -124,10 +125,11 @@ use RegistersUsers;
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
 
         $response = $this->bridge->getPersonid($email);
-        print_r($response);echo "ddddddd";
+        echo "<pre>";print_r($response);echo "ddddddd";
         if (!empty($response)) {
-            echo "in ifff";die;
+            echo "in ifff";
             $returnCode = $response->getStatusCode();
+            echo $returnCode;echo "<br>";
             $userid = false;
             switch ($returnCode) {
                 case '200':
@@ -144,7 +146,7 @@ use RegistersUsers;
                     break;
             }
         } else {
-            echo "in else";die;
+            echo "in else";
             $userid = $this->create_user($email, $fname, $lname, $gender, $country);
         }
 
