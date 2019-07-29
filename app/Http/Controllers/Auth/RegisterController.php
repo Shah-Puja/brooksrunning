@@ -173,8 +173,10 @@ use RegistersUsers;
 	                  </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
+        echo "<pre>";print_r($response);die;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
+            echo $returnCode;echo "<br>";
             switch ($returnCode) {
                 case 201:
                     $location = $response->getHeader('Location')[0];
