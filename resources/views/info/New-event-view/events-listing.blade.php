@@ -6,7 +6,7 @@
 
 @section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <style>
     @media only screen and (max-width: 767px) and (orientation: landscape) {
         .event-mob-lanscape{

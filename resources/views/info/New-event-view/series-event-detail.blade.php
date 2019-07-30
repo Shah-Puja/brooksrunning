@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
