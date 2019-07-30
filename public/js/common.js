@@ -364,7 +364,7 @@ $(document).on("click",".prev",function () {
         responsiveClass:true,
         responsive:{
              768:{
-                items:1,
+                items:4,
                 nav:false
             },
             
