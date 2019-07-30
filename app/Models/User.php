@@ -6,6 +6,7 @@ use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\SYG\Bridges\BridgeInterface;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {   
@@ -43,8 +44,8 @@ class User extends Authenticatable
     }
 
     public static function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
-        $response = $this->bridge->getPersonid($email);
-        print_r($response);
+        //$response = $this->bridge->getPersonid($email);
+        print_r($email);
         exit;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
@@ -56,7 +57,7 @@ class User extends Authenticatable
                     break;
 
                 case '404':
-                    $userid = self::create_user($email, $fname, $lname, $gender, $country);
+                    $userid = (new static)->create_user($email, $fname, $lname, $gender, $country);
                     break;
 
                 default:
@@ -64,7 +65,7 @@ class User extends Authenticatable
                     break;
             }
         } else {
-            $userid = self::create_user($email, $fname, $lname, $gender, $country);
+            $userid = (new static)->create_user($email, $fname, $lname, $gender, $country);
         }
 
         return $userid;
