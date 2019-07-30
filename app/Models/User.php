@@ -49,7 +49,7 @@ class User extends Authenticatable
                     break;
 
                 case '404':
-                    $userid = User::create_user($email, $fname, $lname, $gender, $country);
+                    $userid = self::create_user($email, $fname, $lname, $gender, $country);
                     break;
 
                 default:
@@ -57,7 +57,7 @@ class User extends Authenticatable
                     break;
             }
         } else {
-            $userid = User::create_user($bridge,$email, $fname, $lname, $gender, $country);
+            $userid = self::create_user($bridge,$email, $fname, $lname, $gender, $country);
         }
 
         return $userid;
