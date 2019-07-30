@@ -116,13 +116,18 @@ class RegisterController extends Controller {
         ]);
 
         if ($user->wasRecentlyCreated) {
-            $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+            $PersonID = 0;
+            if (env('AP21_STATUS') == 'ON') {
+                $PersonID = User::get_personid($this->bridge,$data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+            }
+            print_r($PersonID);
+            exit;
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
         }
         return $user;
     }
 
-    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
+    /*public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
@@ -192,6 +197,6 @@ class RegisterController extends Controller {
             }
         }
         return $returnVal;
-    }
+    }*/
 
 }
