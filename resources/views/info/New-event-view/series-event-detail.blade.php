@@ -3,13 +3,6 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<style>
-@media (min-width: 481px) and (max-width: 767px) {
-  .hide-next-event{display:none !important;}  
-}
-</style>
-
-
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
         <div class="row">

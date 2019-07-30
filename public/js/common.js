@@ -343,7 +343,7 @@ $(document).on("click",".prev",function () {
 
 
 // New Event Page
-//$(document).ready(function () {
+$(document).ready(function () {
     if ($(window).width() < 768 ) {
     
         var e_id,e_logo,e_slug;
@@ -358,17 +358,11 @@ $(document).on("click",".prev",function () {
     var owl1 = $("#event-carousel");
     owl1.owlCarousel({//Set AutoPlay to 3 seconds
         dots: false,
-        items: 3,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3],
-        responsiveClass:true,
-        responsive:{
-             768:{
-                items:4,
-                nav:false
-            },
-            
-        },
+        items : 1, 
+        itemsDesktop : false,
+        itemsDesktopSmall : false,
+        itemsTablet: false,
+        itemsMobile : false,
         addClassActive:true,
       afterMove: function (elem) {
             var current = this.currentItem;
@@ -428,7 +422,7 @@ function ChangeUrl(page, url) {
     }
 }
 }
-//});
+});
 
 if ($(window).width() < 768) {
     var e_id,e_logo,e_slug;
