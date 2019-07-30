@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Validation\Rule;
-use App\SYG\Bridges\BridgeInterface;
 
 class RegisterController extends Controller {
-
-    protected $bridge;
 
     /*
       |--------------------------------------------------------------------------
@@ -40,9 +37,8 @@ class RegisterController extends Controller {
      *
      * @return void
      */
-    public function __construct(BridgeInterface $bridge) {
+    public function __construct() {
         $this->middleware('guest');
-        $this->bridge = $bridge;
     }
 
     /**
@@ -118,7 +114,7 @@ class RegisterController extends Controller {
         if ($user->wasRecentlyCreated) {
             $PersonID = 0;
             if (env('AP21_STATUS') == 'ON') {
-                $PersonID = User::get_personid($this->bridge,$data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+                $PersonID = User::get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             }
             print_r($PersonID);
             exit;

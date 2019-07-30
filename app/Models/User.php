@@ -5,10 +5,12 @@ namespace App\Models;
 use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\SYG\Bridges\BridgeInterface;
 
 class User extends Authenticatable
 {   
     use Notifiable;
+    protected $bridge;
     /**
      * The attributes that are mass assignable.
      *
@@ -32,12 +34,16 @@ class User extends Authenticatable
         'created' => SubscriptionReceived::class,
     ];
 
+    public function __construct(BridgeInterface $bridge) {
+        $this->bridge = $bridge;
+    }
+
     public function orders(){
         return $this->hasMany('App\Models\Order','user_id','id');
     }
 
-    public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
-        $response = $bridge->getPersonid($email);
+    public static function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
+        $response = $this->bridge->getPersonid($email);
         print_r($response);
         exit;
         if (!empty($response)) {
@@ -58,13 +64,13 @@ class User extends Authenticatable
                     break;
             }
         } else {
-            $userid = self::create_user($bridge,$email, $fname, $lname, $gender, $country);
+            $userid = self::create_user($email, $fname, $lname, $gender, $country);
         }
 
         return $userid;
     }
 
-    public static function create_user($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public static function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
         $returnVal = false;
         if (isset($gender) && $gender == "male") {
             $gender = "M";
@@ -88,7 +94,7 @@ class User extends Authenticatable
                         </Addresses>
 	                  </Person>";
 
-        $response = $bridge->processPerson($person_xml);
+        $response = $this->bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
