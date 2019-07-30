@@ -7,7 +7,6 @@
 @media (min-width: 481px) and (max-width: 767px) {
   .hide-next-event{display:none !important;}  
 }
-
 </style>
 
 
