@@ -445,16 +445,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "13a8d67799a4f1c0e6bb0abd788abbe9e95dee8e"
+                "reference": "33810d865dd06a674130fceb729b2f279dc79e8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/13a8d67799a4f1c0e6bb0abd788abbe9e95dee8e",
-                "reference": "13a8d67799a4f1c0e6bb0abd788abbe9e95dee8e",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/33810d865dd06a674130fceb729b2f279dc79e8c",
+                "reference": "33810d865dd06a674130fceb729b2f279dc79e8c",
                 "shasum": ""
             },
             "require": {
@@ -497,7 +497,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2019-07-30T05:22:27+00:00"
+            "time": "2019-07-31T08:13:16+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -832,28 +832,30 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
-                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e17f069ede36f7534b95adec71910ed1b49c74ea",
+                "reference": "e17f069ede36f7534b95adec71910ed1b49c74ea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.5"
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan": "^0.11.8",
+                "phpunit/phpunit": "^8.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -867,12 +869,12 @@
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Johannes Schmitt",
@@ -888,7 +890,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-06-08T11:03:04+00:00"
+            "time": "2019-07-30T19:33:28+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -2088,19 +2090,21 @@
         },
         {
             "name": "league/csv",
-            "version": "9.2.1",
+            "version": "9.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "b574a7d8b28f1528e011d8652fb7d2e83410d4c9"
+                "reference": "d16f85d1f958a765844db4bc7174017edf2dd637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/b574a7d8b28f1528e011d8652fb7d2e83410d4c9",
-                "reference": "b574a7d8b28f1528e011d8652fb7d2e83410d4c9",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/d16f85d1f958a765844db4bc7174017edf2dd637",
+                "reference": "d16f85d1f958a765844db4bc7174017edf2dd637",
                 "shasum": ""
             },
             "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": ">=7.0.10"
             },
@@ -2136,9 +2140,9 @@
             "authors": [
                 {
                     "name": "Ignace Nyamagana Butera",
+                    "role": "Developer",
                     "email": "nyamsprod@gmail.com",
-                    "homepage": "https://github.com/nyamsprod/",
-                    "role": "Developer"
+                    "homepage": "https://github.com/nyamsprod/"
                 }
             ],
             "description": "Csv data manipulation made easy in PHP",
@@ -2151,7 +2155,7 @@
                 "read",
                 "write"
             ],
-            "time": "2019-06-07T06:24:33+00:00"
+            "time": "2019-07-30T14:39:11+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3632,11 +3636,11 @@
         },
         {
             "name": "syginteractive/category-sort",
-            "version": "dev-staging",
+            "version": "dev-trunal-20190422-crm",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CategorySort",
-                "reference": "5e24375d7ed506786f5816ed7a82b8ac1eca2de8",
+                "reference": "f49e6649170807278ad2d156ca6478682bc7d044",
                 "shasum": null
             },
             "require": {
@@ -3666,11 +3670,11 @@
         },
         {
             "name": "syginteractive/mising-images",
-            "version": "dev-staging",
+            "version": "dev-dev-20190701-cms",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/MisingImages",
-                "reference": "f76fdd48e204784845eabeef42e39cbcc7a5ddb0",
+                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62",
                 "shasum": null
             },
             "require": {
@@ -4310,7 +4314,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -5010,16 +5014,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.8.29",
+            "version": "v5.8.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "cef25a65cbeeb20057f60449530d2ac8b16164d8"
+                "reference": "957e430c26c51b65c80acc87896023229dc05a21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/cef25a65cbeeb20057f60449530d2ac8b16164d8",
-                "reference": "cef25a65cbeeb20057f60449530d2ac8b16164d8",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/957e430c26c51b65c80acc87896023229dc05a21",
+                "reference": "957e430c26c51b65c80acc87896023229dc05a21",
                 "shasum": ""
             },
             "require": {
@@ -5056,7 +5060,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2019-07-19T12:57:39+00:00"
+            "time": "2019-07-30T19:16:47+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
