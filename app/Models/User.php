@@ -74,7 +74,7 @@ class User extends Authenticatable
         $data['process'] = $process;    
         $person_xml = response()->view('xml.person_xml',compact('data'));
         echo $person_xml;
-        $response = $bridge->processPerson(simplexml_load_string($person_xml));
+        $response = $bridge->processPerson(@simplexml_load_string($person_xml));
         print_r($response);
         exit;
         if (!empty($response)) {
