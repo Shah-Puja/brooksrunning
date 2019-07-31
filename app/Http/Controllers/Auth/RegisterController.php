@@ -119,7 +119,7 @@ class RegisterController extends Controller {
         //if ($user->wasRecentlyCreated) {
             $PersonID = 0;
             if (env('AP21_STATUS') == 'ON') {
-                $bridge = new $bridge;
+                $bridge = $this->bridge ?? new bridge;
                 $PersonID = User::get_personid($bridge,$data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             }
             print_r($PersonID);

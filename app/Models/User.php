@@ -37,7 +37,7 @@ class User extends Authenticatable
     }
 
     public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
-        $response = $this->bridge->getPersonid($email);
+        $response = $bridge->getPersonid($email);
         print_r($response);
         exit;
         if (!empty($response)) {
@@ -50,7 +50,7 @@ class User extends Authenticatable
                     break;
 
                 case '404':
-                    $userid = (new static)->create_user($email, $fname, $lname, $gender, $country);
+                    $userid = (new static)->create_user($bridge,$email, $fname, $lname, $gender, $country);
                     break;
 
                 default:
@@ -58,13 +58,13 @@ class User extends Authenticatable
                     break;
             }
         } else {
-            $userid = (new static)->create_user($email, $fname, $lname, $gender, $country);
+            $userid = (new static)->create_user($bridge,$email, $fname, $lname, $gender, $country);
         }
 
         return $userid;
     }
 
-    public static function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public static function create_user($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
         $returnVal = false;
         if (isset($gender) && $gender == "male") {
             $gender = "M";
@@ -88,7 +88,7 @@ class User extends Authenticatable
                         </Addresses>
 	                  </Person>";
 
-        $response = $this->bridge->processPerson($person_xml);
+        $response = $bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
