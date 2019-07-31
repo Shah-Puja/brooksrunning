@@ -72,7 +72,7 @@ class User extends Authenticatable
             $data['gender'] = "F";
         }
         $data['process'] = $process;    
-        $person_xml = View::make('xml.person_xml')->with('data', $data);
+        $person_xml = view('xml.person_xml')->with('data', $data);
         echo $person_xml;
         $response = $bridge->processPerson($person_xml);
         print_r($response);
