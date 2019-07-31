@@ -40,8 +40,8 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function getPersonid($email) {
-        //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
-        try {
+        return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
+        /*try {
             $response = $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => true]);
             if (!empty($response)) {
                 return $response;
@@ -54,7 +54,7 @@ class AP21Bridge implements BridgeInterface {
             if ($exception->getMessage() != '') {
                 return null;
             }
-        }
+        }*/
     }
 
     public function processPerson($data) {
