@@ -84,7 +84,7 @@ class RegisterController extends Controller {
      */
     protected function create(array $data) {
         $PersonID = 0;
-        $user = User::updateorcreate(
+        /*$user = User::updateorcreate(
                         ['email' => $data['email']], [
                     'first_name' => (isset($data['first_name'])) ? $data['first_name'] : '',
                     'last_name' => (isset($data['last_name'])) ? $data['last_name'] : '',
@@ -113,15 +113,15 @@ class RegisterController extends Controller {
                     'source' => "User",
                     'status' => 'queue',
                     'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-        ]);
+        ]);*/
 
-        if ($user->wasRecentlyCreated) {
+        //if ($user->wasRecentlyCreated) {
             if (env('AP21_STATUS') == 'ON') {
                 $bridge = $this->bridge ?? new bridge;
                 $PersonID = User::get_personid($bridge,$data,'register');
             }
-            $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
-        }
+            //$user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
+        //}
         return $user;
     }
 
