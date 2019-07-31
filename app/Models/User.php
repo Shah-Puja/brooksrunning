@@ -5,13 +5,10 @@ namespace App\Models;
 use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\SYG\Bridges\BridgeInterface;
-use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {   
     use Notifiable;
-    protected $bridge;
     /**
      * The attributes that are mass assignable.
      *
@@ -35,17 +32,13 @@ class User extends Authenticatable
         'created' => SubscriptionReceived::class,
     ];
 
-    public function __construct(BridgeInterface $bridge) {
-        $this->bridge = $bridge;
-    }
-
     public function orders(){
         return $this->hasMany('App\Models\Order','user_id','id');
     }
 
-    public static function get_personid($email, $fname = '', $lname = '', $gender = '', $country = '') {
-        //$response = $this->bridge->getPersonid($email);
-        print_r($email);
+    public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
+        $response = $this->bridge->getPersonid($email);
+        print_r($response);
         exit;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();

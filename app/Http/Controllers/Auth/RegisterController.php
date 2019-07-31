@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Validation\Rule;
+use App\SYG\Bridges\BridgeInterface;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller {
 
@@ -37,8 +39,11 @@ class RegisterController extends Controller {
      *
      * @return void
      */
-    public function __construct() {
+    protected $bridge;
+    
+    public function __construct(BridgeInterface $bridge) {
         $this->middleware('guest');
+        $this->bridge = $bridge;
     }
 
     /**
@@ -80,7 +85,7 @@ class RegisterController extends Controller {
      */
     protected function create(array $data) {
         $PersonID = 0;
-        $user = User::updateorcreate(
+       /* $user = User::updateorcreate(
                         ['email' => $data['email']], [
                     'first_name' => (isset($data['first_name'])) ? $data['first_name'] : '',
                     'last_name' => (isset($data['last_name'])) ? $data['last_name'] : '',
@@ -109,17 +114,18 @@ class RegisterController extends Controller {
                     'source' => "User",
                     'status' => 'queue',
                     'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-        ]);
+        ]);*/
 
-        if ($user->wasRecentlyCreated) {
+        //if ($user->wasRecentlyCreated) {
             $PersonID = 0;
             if (env('AP21_STATUS') == 'ON') {
-                $PersonID = User::get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+                $bridge = new $bridge;
+                $PersonID = User::get_personid($bridge,$data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             }
             print_r($PersonID);
             exit;
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
-        }
+        //}
         return $user;
     }
 
