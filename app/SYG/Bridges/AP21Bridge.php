@@ -58,8 +58,8 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function processPerson($data) {
-        return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
-        /*try {
+        //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+        try {
             $response = $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
             if (!empty($response)) {
                 return $response;
@@ -72,7 +72,7 @@ class AP21Bridge implements BridgeInterface {
             if ($exception->getMessage() != '') {
                 return null;
             }
-        }*/
+        }
     }
 
     public function processOrder($PersonId, $data) {
