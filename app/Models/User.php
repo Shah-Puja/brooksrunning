@@ -73,9 +73,9 @@ class User extends Authenticatable
         }
         $data['process'] = $process;    
         $person_xml = response()->view('xml.person_xml',compact('data'));
-        echo $person_xml;
-        exit;
         $response = $bridge->processPerson($person_xml);
+        print_r($response);
+        exit;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
