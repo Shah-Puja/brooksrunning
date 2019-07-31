@@ -36,7 +36,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Order','user_id','id');
     }
 
-    public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
         $response = $bridge->getPersonid($email);
         print_r($response);
         exit;
