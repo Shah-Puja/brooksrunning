@@ -72,7 +72,7 @@ class User extends Authenticatable
             $data['gender'] = "F";
         }
         $data['process'] = $process;    
-        $person_xml = response()->view('xml.person_xml',compact('data'))->header('Content-Type', 'text/xml');
+        $person_xml = response()->view('xml.person_xml',compact('data'));
         $response = $bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
