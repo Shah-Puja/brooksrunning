@@ -65,11 +65,10 @@ class User extends Authenticatable
     }
 
     public static function create_user($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
-        echo "inside create user";
         $returnVal = false;
-        if (isset($gender) && $gender == "male") {
+        if (isset($gender) && strtolower($gender) == "male") {
             $gender = "M";
-        } elseif (isset($gender) && $gender == "female") {
+        } elseif (isset($gender) && strtolower($gender) == "female") {
             $gender = "F";
         }
         $person_xml = "<Person>
@@ -90,8 +89,6 @@ class User extends Authenticatable
 	                  </Person>";
 
         $response = $bridge->processPerson($person_xml);
-        print_r($response);
-        exit;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
