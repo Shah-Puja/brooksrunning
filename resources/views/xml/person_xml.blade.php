@@ -9,7 +9,7 @@
 @endif
 <Person>
      <Firstname>{{(isset($data['first_name'])) ? $data['first_name'] : ''}}</Firstname>
-     <Surname>(isset($data['last_name'])) ? $data['last_name'] : ''</Surname>
+     <Surname>{{(isset($data['last_name'])) ? $data['last_name'] : ''}}</Surname>
      <Sex>{{(isset($data['gender'])) ? $data['gender'] : ''}}</Sex> 
      <DateOfBirth></DateOfBirth>
      <Contacts>
