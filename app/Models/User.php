@@ -38,6 +38,8 @@ class User extends Authenticatable
 
     public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
         $response = $bridge->getPersonid($email);
+        print_r($response);
+        exit;
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             $userid = false;
