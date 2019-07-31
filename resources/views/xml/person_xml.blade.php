@@ -7,6 +7,8 @@
                @php $email = (isset($data['email'])) ? $data['email'] : ''; @endphp
      @endswitch
 @endif
+<?xml version="1.0" encoding="UTF-8"?>
+
 <Person>
      <Firstname>{{(isset($data['first_name'])) ? $data['first_name'] : ''}}</Firstname>
      <Surname>{{(isset($data['last_name'])) ? $data['last_name'] : ''}}</Surname>
