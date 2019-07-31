@@ -36,8 +36,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Order','user_id','id');
     }
 
-    public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
-        $response = $bridge->getPersonid($email);
+    public static function get_personid($bridge,$data,$process) {
+        $response = $bridge->getPersonid($data['email']);
         //print_r($response);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
@@ -50,7 +50,7 @@ class User extends Authenticatable
                     break;
 
                 case '404':
-                    $userid = (new static)->create_user($bridge,$email, $fname, $lname, $gender, $country);
+                    $userid = (new static)->create_user($bridge,$data,$process);
                     break;
 
                 default:
@@ -58,36 +58,23 @@ class User extends Authenticatable
                     break;
             }
         } else {
-            $userid = (new static)->create_user($bridge,$email, $fname, $lname, $gender, $country);
+            $userid = (new static)->create_user($bridge,$data,$process);
         }
 
         return $userid;
     }
 
-    public static function create_user($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
+    public static function create_user($bridge,$data,$process) {
         $returnVal = false;
-        if (isset($gender) && strtolower($gender) == "male") {
-            $gender = "M";
-        } elseif (isset($gender) && strtolower($gender) == "female") {
-            $gender = "F";
+        if (isset($data['gender']) && strtolower($data['gender']) == "male") {
+            $data['gender'] = "M";
+        } elseif (isset($data['gender']) && strtolower($data['gender']) == "female") {
+            $data['gender'] = "F";
         }
-        $person_xml = "<Person>
-                        <Firstname>$fname</Firstname>
-                        <Surname>$lname</Surname>   
-                        <Sex>$gender</Sex> 
-                        <DateOfBirth></DateOfBirth>
-                        <Contacts>
-                          <Email>$email</Email>
-                          <Phones></Phones>
-                        </Contacts>
-                        <Addresses>
-                          <Billing>
-                          <State></State>
-                          <Country>$country</Country>
-                          </Billing>
-                        </Addresses>
-	                  </Person>";
-
+        $data['process'] = $process;    
+        $person_xml = response()->view('xml.person_xml',compact('data'))->header('Content-Type', 'text/xml');
+        echo $person_xml;
+        exit;
         $response = $bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
