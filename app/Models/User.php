@@ -38,10 +38,10 @@ class User extends Authenticatable
 
     public static function get_personid($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
         $response = $bridge->getPersonid($email);
-        print_r($response);
+        //print_r($response);
         if (!empty($response)) {
-            echo $returnCode = $response->getStatusCode();
-            exit;
+            $returnCode = $response->getStatusCode();
+            //exit;
             $userid = false;
             switch ($returnCode) {
                 case '200':
@@ -65,6 +65,8 @@ class User extends Authenticatable
     }
 
     public static function create_user($bridge,$email, $fname = '', $lname = '', $gender = '', $country = '') {
+        echo "inside create user";
+        exit;
         $returnVal = false;
         if (isset($gender) && $gender == "male") {
             $gender = "M";
