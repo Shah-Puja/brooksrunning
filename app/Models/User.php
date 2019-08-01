@@ -37,7 +37,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Order','user_id','id');
     }
 
-    public static function get_personid($bridge,$data,$process) {
+    public static function get_personid($bridge,$data,$order,$process) {
         $response = $bridge->getPersonid($data['email']);
         //print_r($response);
         if (!empty($response)) {
@@ -50,7 +50,7 @@ class User extends Authenticatable
                     $userid = $response_xml->Person->Id;
                     $logger = array(
                         'process' => $process,
-                        //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Person Id Found',
@@ -60,14 +60,14 @@ class User extends Authenticatable
                     break;
 
                 case '404':
-                    $userid = (new static)->create_user($bridge,$data,$process);
+                    $userid = (new static)->create_user($bridge,$data,$order,$process);
                     break;
 
                 default:
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
                     $logger = array(
                         'process' => $process,
-                        //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Getting Person ID',
@@ -76,7 +76,7 @@ class User extends Authenticatable
 
                     Ap21_log::createNew($logger);
 
-                    /*$URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
+                    $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
                     $data = array(
                         'api_name' => 'Get PersonID Error',
                         'URL' => $URL,
@@ -85,18 +85,18 @@ class User extends Authenticatable
                     );
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));*/
+                        ->send(new Ap21Alert($order, $data));
                     $userid = false;
                     break;
             }
         } else {
-            $userid = (new static)->create_user($bridge,$data,$process);
+            $userid = (new static)->create_user($bridge,$data,$order,$process);
         }
 
         return $userid;
     }
 
-    public static function create_user($bridge,$data,$process) {
+    public static function create_user($bridge,$data,$order,$process) {
         $returnVal = false;
         if (isset($data['gender']) && strtolower($data['gender']) == "male") {
             $data['gender'] = "M";
@@ -121,7 +121,7 @@ class User extends Authenticatable
 
                     $logger = array(
                         'process' => $process,
-                        //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => '201 Person ID Created',
@@ -135,7 +135,7 @@ class User extends Authenticatable
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                     $logger = array(
                         'process' => $process,
-                        //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Creating Person ID',
@@ -143,8 +143,8 @@ class User extends Authenticatable
                     );
                     Ap21_log::createNew($logger);
 
-                    // Send ap21 alert  
-                    /*$result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                    //Send ap21 alert  
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
                     $data = array(
                         'api_name' => 'Create Person Error',
                         'URL' => $URL,
@@ -153,7 +153,7 @@ class User extends Authenticatable
                     );
                     Mail::to(config('site.notify_email'))
                             ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));*/
+                            ->send(new Ap21Alert($order, $data));
                     $returnVal = false;
                     break;
             }
