@@ -1,5 +1,5 @@
 System Received an error code while working with AP21 API <br> Details are listed below -<br>
-@if(isset($order) && $order!='')      
+@if(isset($order->id) && $order->id!='')      
     System Order Id - {{$order->id }}
     @if($order->order_no!='')
         Order No -{{ $order->order_no }}<br>
