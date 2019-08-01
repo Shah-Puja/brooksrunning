@@ -4719,11 +4719,11 @@ textarea {
 /* End Our-history */
 /* Start New Event Layout*/
 .event__hero {
-  height: auto;
+  height: 100%;
   max-height: 300px;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -4744,7 +4744,7 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event__hero {
-    max-height: 500px;
+    height: 600px;
   }
   .event__hero .pl-0 {
     padding-left: 0 !important;
@@ -5057,7 +5057,7 @@ textarea {
 }
 .event-intro h2 {
   color: #0E0E0E;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 22px;
   line-height: 0.5;
   text-align: center;
@@ -5071,7 +5071,7 @@ textarea {
 .event-intro h4 {
   color: #0E0E0E;
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 0.5;
   text-align: center;
 }
@@ -5082,23 +5082,60 @@ textarea {
   }
 }
 .event-intro .event-logo {
-  margin: 0 auto;
+  margin: 0px auto;
   padding-bottom: 20px;
-  width: 30%;
+  width: 100%;
 }
 @media only screen and (max-width: 767px) {
   .event-intro .event-logo {
     width: 50%;
     padding-bottom: 10px;
     padding-top: 10px;
+    height: 100%;
   }
+}
+.event-intro .event-logo.single-event {
+  width: 40%;
+  height: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .event-intro .event-logo.single-event {
+    width: 50%;
+  }
+}
+.event-intro .event-logo.series-event-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 767px) {
+  .event-intro .event-logo.series-event-logo {
+    height: 180px;
+    width: 200px;
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-intro .event-logo.series-event-logo {
+    height: 200px;
+    width: 210px;
+    margin-top: 10px;
+  }
+}
+.event-intro .event-logo img {
+  width: 100%;
+  vertical-align: middle;
 }
 .event-intro p {
   max-width: 100%;
   color: #0E0E0E;
   font-size: 18px;
   line-height: 26px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 767px) {
   .event-intro p {
@@ -5135,12 +5172,17 @@ textarea {
   }
 }
 .event-intro .event-findmore-btn {
-  padding-top: 15px;
   max-width: 320px;
   margin: 20px auto;
 }
 .event-intro .event-findmore-btn a {
   text-decoration: none;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-intro .event-findmore-btn .btn .primary-button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
 }
 .event-intro .eventunderline {
   height: 5px;
@@ -5194,15 +5236,27 @@ textarea {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  text-align: center;
 }
 .tabbedcontent ul.event_tabs li {
   background: none;
   color: #222;
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 10px;
   cursor: pointer;
   position: relative;
   margin: 0 auto;
+  width: 262px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tabbedcontent ul.event_tabs li {
+    width: 220px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent ul.event_tabs li {
+    width: auto;
+  }
 }
 .tabbedcontent ul.event_tabs li.current {
   color: #005CFB;
@@ -5233,6 +5287,9 @@ textarea {
 .tabbedcontent .tab-content p {
   font-size: 18px;
   line-height: 26px;
+  width: 740px;
+  text-align: center;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 767px) {
   .tabbedcontent .tab-content p {
@@ -5241,9 +5298,37 @@ textarea {
   }
 }
 .tabbedcontent .event-series-header h3 {
-  line-height: 10px;
+  font-size: 14px;
+  line-height: 6px;
   margin: 15px auto;
   color: #000;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tabbedcontent .event-series-header h3 {
+    margin: 12px auto;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent .event-series-header h3 {
+    margin: 12px auto;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .tabbedcontent .event-series-header h3 {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tabbedcontent .event-series-header h2 {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tabbedcontent .event-series-header h2 {
+    font-size: 18px;
+  }
 }
 .tabbedcontent .tab-content.current {
   display: inherit;
@@ -5282,6 +5367,7 @@ textarea {
   line-height: 10px;
   margin: 15px auto;
   color: #000;
+  font-size: 13px;
 }
 .new-event--container .tabbedmobcontent .event-content.current {
   display: inherit;
@@ -5474,11 +5560,29 @@ textarea {
     margin-bottom: 7px;
   }
 }
+.event-filters--wrapper .input-wrapper select.select-field::-ms-expand {
+  display: none;
+}
 .event-filters--wrapper .input-wrapper .select-field {
-  background: #fff;
   font-size: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: url(../images/dropdown-arrow.png) no-repeat;
+  background-position: right 5px center;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
 }
 .event-filters--wrapper .input-wrapper .select-field option {
+  -webkit-appearance: none !important;
+  background-color: white;
+  color: black;
+  -moz-appearance: none;
+  appearance: none;
   color: #000000;
   font-size: 18px;
 }
@@ -5525,7 +5629,7 @@ textarea {
   border: 1px solid #f2f2f2;
   transition: border-width 0.6s linear;
   max-width: 330px;
-  height: 350px;
+  height: 385px;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section:hover {
   -webkit-box-shadow: 1px 1px 8px 0px #f2f2f2;
@@ -5560,27 +5664,37 @@ textarea {
   color: #000000;
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .img {
-  margin: 10px auto;
-  text-align: center;
-  height: 100px;
-  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 165px;
+  width: 165px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .img {
-    height: 110px;
-    width: 90%;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
   }
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .img img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .img {
+    height: 130px;
+    width: 130px;
+    margin-top: 10px;
+  }
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .info {
   display: block;
   position: relative;
   padding-left: 20px;
-  height: 150px;
+  height: 120px;
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info {
@@ -5598,14 +5712,14 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info h3 {
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 15px;
+    line-height: 1.1;
     height: 90px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info h3 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.1;
     max-width: 150px;
   }
@@ -5631,14 +5745,34 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 0px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date {
+    font-size: 14px;
   }
 }
 .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location {
   font-size: 18px;
 }
 @media only screen and (max-width: 767px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location {
     font-size: 14px;
   }
@@ -5662,7 +5796,7 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .event-container .br-mainheading {
-    margin: 0px 15px;
+    margin: 0px 88px;
     font-size: 22px;
   }
 }
@@ -5730,7 +5864,7 @@ textarea {
   margin: 0 auto;
 }
 .event-footer--wrapper .btn {
-  max-width: 300px;
+  max-width: 320px;
   margin: 20px auto;
 }
 .event-footer--wrapper .btn .secondary-button {
@@ -5742,6 +5876,12 @@ textarea {
   background-color: #0263f7;
   color: #ffffff;
   border: 2px solid #0263f7;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .event-footer--wrapper .btn .secondary-button {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .event-footer--wrapper.info {

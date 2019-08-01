@@ -344,14 +344,27 @@ $(document).on("click",".prev",function () {
 
 // New Event Page
 $(document).ready(function () {
+    if ($(window).width() < 768 ) {
+    
+        var e_id,e_logo,e_slug;
+        
+       if ($("ul.event_mob_tabs li").hasClass("current")) {
+         
+          e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
+          console.log(e_slug);
+         
+}
+
     var owl1 = $("#event-carousel");
     owl1.owlCarousel({//Set AutoPlay to 3 seconds
         dots: false,
-        items: 3,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3],
+        items : 1, 
+        itemsDesktop : false,
+        itemsDesktopSmall : false,
+        itemsTablet: false,
+        itemsMobile : false,
         addClassActive:true,
-        afterMove: function (elem) {
+      afterMove: function (elem) {
             var current = this.currentItem;
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
@@ -362,11 +375,77 @@ $(document).ready(function () {
             var id = elem.find(".owl-item .tab-link").eq(current).data("tab");
             $(".event-content").hide();
             $("#mob-"+id).show();
+            
+            var logo = elem.find(".owl-item .tab-link").eq(current).data("logo");
+        var banner = elem.find(".owl-item .tab-link").eq(current).data("banner");
+        var event_name=elem.find(".owl-item .tab-link").eq(current).data("event_name");
+        var event_header=elem.find(".owl-item .tab-link").eq(current).data("event_header");
+        var name=event_name+" "+event_header; 
+        $('.event-title').text(event_name);
+        $('.breadcrumbs li span').text(event_name);
+        $(".event-logo img").attr('src',(logo!='')? logo : '/images/new-events/event-logo-placeholder.png');
+        $(".category__hero__image img").attr('src',(banner!='')? banner : '/images/new-events/banner/brooks-events-header-image.jpg');
+        var event_end_date=elem.find(".owl-item .tab-link").eq(current).data("event_date");
+        let now = (new Date()).toISOString().split('T')[0];
+       
+        if(event_end_date <= now || event_end_date==00){
+            $('.stay-tuned').css('display',"block");
+            $('.find-more').css('display',"none");
+         }else{
+            $('.stay-tuned').css('display',"none");
+            $('.find-more').css('display',"block");
+         }
+
+         
+         
+         var url = elem.find(".owl-item .tab-link").eq(current).data("url");
+         
+         ChangeUrl(event_name,url);
+            
+
         },
     });
     var active_index =owl1.find(".owl-item .item:not([data-current-tab=''])").data("current-tab");
     owl1.trigger('owl.goTo', active_index);
+
+        
+}
+function ChangeUrl(page, url) {
+    if(window.history.state!=null){
+    var history_url = window.history.state.Url;
+    if (typeof (history.pushState) != "undefined" && history_url!=url) {
+        var obj = { Page: page, Url: url };
+        
+        history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        console.log("Browser does not support HTML5.");
+    }
+}
+}
 });
+
+if ($(window).width() < 768) {
+    var e_id,e_logo,e_slug;
+    if ($("ul.event_mob_tabs li").hasClass("current")) {
+      
+       e_slug=elem.find(".owl-item .tab-link").eq(current).data("slug");
+       
+}
+
+$(window).on('popstate', function(event) {
+    var str=event.originalEvent.state.Url;
+    var slug = str.split('/')[2];
+    var active_index = $("#event-carousel").find("[data-slug='"+slug+"']").data("index");
+    console.log(active_index);
+    owl1.trigger('owl.goTo', active_index);
+    
+    return false;
+});
+}
+
+
+
+
 
 // shipping page 
 $(document).ready(function () {
