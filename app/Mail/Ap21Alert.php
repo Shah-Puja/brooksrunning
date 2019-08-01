@@ -31,6 +31,6 @@ class Ap21Alert extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.apialert_new',['order'=> $this->order,'data'=>$this->data]);
+        return $this->view('emails.apialert_new',['order'=> $this->order ?? '','data'=>$this->data]);
     }
 }
