@@ -120,6 +120,7 @@ class User extends Authenticatable
                     $returnVal = $person_idx;
 
                     $logger = array(
+                        'process' => $process,
                         //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
@@ -133,6 +134,7 @@ class User extends Authenticatable
                 default:
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                     $logger = array(
+                        'process' => $process,
                         //'order_id' => (isset($this->order->id)) ? $this->order->id: '',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
