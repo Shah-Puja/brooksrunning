@@ -50,7 +50,7 @@ class User extends Authenticatable
                     $userid = $response_xml->Person->Id;
                     $logger = array(
                         'process' => $process,
-                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id : '0',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Person Id Found',
@@ -67,7 +67,7 @@ class User extends Authenticatable
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
                     $logger = array(
                         'process' => $process,
-                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id : '0',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Getting Person ID',
@@ -121,7 +121,7 @@ class User extends Authenticatable
 
                     $logger = array(
                         'process' => $process,
-                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id : '0',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => '201 Person ID Created',
@@ -135,7 +135,7 @@ class User extends Authenticatable
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                     $logger = array(
                         'process' => $process,
-                        'order_id' => (isset($order->order->id)) ? $order->order->id: '',
+                        'order_id' => (isset($order->order->id)) ? $order->order->id : '0',
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Creating Person ID',
