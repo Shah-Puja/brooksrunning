@@ -42,9 +42,9 @@ class EventController extends Controller {
     } 
 
     public function new_events_listing(Request $request) {
-        
+       // DB::statement("SET sql_mode = '' ");
         $month = $year = $when = $where = '';
-       
+     
         if ($request->isMethod('post')) {
             //echo "<pre>";print_r(request()->all());die;
             if ($request->when != '') {
@@ -63,10 +63,10 @@ class EventController extends Controller {
                                         $q->where('state', 'like', '%' . $where . '%')
                                         ->orWhere('country', 'like', '%' . $where . '%');
                                     })
-                                    ->whereRaw("event_dt=00")->get();
+                                    ->whereRaw("start_dt=00")->get();
                                     //dd($other_upcoming_events);  
-                                    $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
-              
+                                   // $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);       
+                                   
                 }
             }
            //dd($year);
@@ -77,25 +77,31 @@ class EventController extends Controller {
                                 $q->where('state', 'like', '%' . $where . '%')
                                 ->orWhere('country', 'like', '%' . $where . '%');
                             })->when($month, function ($query) use ($month) {
-                                return $query->whereRaw("MONTH(event_dt)=$month");
+                                return $query->whereRaw("MONTH(start_dt)=$month");
                             })
                             ->when($month, function ($query) use ($year) {
-                                return $query->whereRaw("YEAR(event_dt)=$year ");
-                            })->whereRaw("event_dt > CURDATE()")->get();
+                                return $query->whereRaw("YEAR(start_dt)=$year ");
+                            })->whereRaw("start_dt > CURDATE()")->get();
             
                
                  if($request->when=='' && $request->where=='' ){
-                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
+                    $other_upcoming_events = event::where('status', 'YES')->whereRaw("end_dt=00")->get();
                     $other_upcoming_events=$this->upcoming_helper($other_upcoming_events);
                  }           
                                
                            
         } else {
-            $all_events = event::where('status', 'YES')->whereRaw("event_dt > CURDATE()")->orderBy('event_dt','ASC')->get();
+            //$all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhereRaw("start_dt <= CURDATE()")->whereRaw("end_dt >= CURDATE()")->orwhere('end_dt',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
            
-            $other_upcoming_event = event::where('status', 'YES')->whereRaw("event_dt=00")->get();
-           
-            $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
+            $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")
+                               ->whereRaw("end_dt >= CURDATE()")
+                               ->orwhere('end_dt','>=',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
+
+            $other_upcoming_event = event::where('status', 'YES')->whereRaw("next_dt >CURDATE()")->whereRaw("end_dt < CURDATE()")->orderBy('start_dt','ASC')->get();
+         
+           // $other_upcoming_events=$this->upcoming_helper($other_upcoming_event); 
+           $other_upcoming_events=$other_upcoming_event;
+           //dd($other_upcoming_event);
            
             
         }
@@ -108,54 +114,66 @@ class EventController extends Controller {
     }
 
 
-    public function upcoming_helper($other_upcoming_event)
-    {
-        $arr=array();
-            foreach($other_upcoming_event as $events){
-                if($events->month >= date('m')&& $events->year==date('Y')) {
-                    $arr[]=$events;
-                }
+    // public function upcoming_helper($other_upcoming_event)
+    // {
+    //     $arr=array();
+    //         foreach($other_upcoming_event as $events){
+    //             if($events->month >= date('m')&& $events->year==date('Y')) {
+    //                 $arr[]=$events;
+    //             }
 
-            }
-            $arr1=[];
-            foreach($other_upcoming_event as $eve){
-                if($eve->month <= date('m') && $eve->year>date('Y')) {
+    //         }
+    //         $arr1=[];
+    //         foreach($other_upcoming_event as $eve){
+    //             if($eve->month <= date('m') && $eve->year>date('Y')) {
                     
-                    $arr1[]=$eve;
-                }
+    //                 $arr1[]=$eve;
+    //             }
 
-            }
-            $other_upcoming_event=array_merge($arr,$arr1);
+    //         }
+    //         $other_upcoming_event=array_merge($arr,$arr1);
+    //         //dd($other_upcoming_event);
+    //          $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
+    //             return $product['year'].$product['month'];
+    //         });
             
-             $other_upcoming_events = collect($other_upcoming_event)->sortBy(function ($product, $key) {
-                return $product['year'].$product['month'];
-            });
-            
-           return $other_upcoming_events;
-    }
+    //        return $other_upcoming_events;
+    // }
 
-    public function new_single_event($single_event) {
+    public function event_type($slug) {
         
           
           
-        $single_event=event::where('slug',$single_event)->first();
+        $single_event=event::where('slug',$slug)->first();
         //dd($single_event);
-        
+        if($single_event->series==''){
        
        return view('info.New-event-view.single-event-detail',compact('single_event'));   
         
-    }
+        }else{
 
-    public function new_series_event($series_event,$city,$id) {
-
-        $event_name=event::where('slug',$series_event)->first();
-       
-
-        $series_event=event::where('series',$event_name->series)->orderBy('year','ASC')->get();
+        $event_name=event::where('slug',$slug)->first();
+       //dd($event_name);
+        $city=$event_name->city;
         
+        $id=$event_name->id;
+
+        $series_event=event::where('series',$event_name->series)->orderBy('start_dt','ASC')->get();
+        //dd($series_event);
         
        
         return view('info.New-event-view.series-event-detail',compact('series_event','event_name','city','id'));
+    }
+    }
+
+    public function get_event(Request $request)
+    {
+       $slug=$request->slug;
+       
+
+       $event_data=event::where('slug',$slug)->first();
+
+       return response()->json(['slug' => $event_data]);
     }
 
     public function new_series_static_event() {

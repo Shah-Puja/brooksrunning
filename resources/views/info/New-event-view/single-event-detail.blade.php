@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
@@ -16,10 +16,10 @@
 												<a href="/">Home</a>
                                             </li>
                                             <li>
-												<a href="/events-listing">Events</a>
+												<a href="/events">Events</a>
 											</li>
 											<li>
-												<a href="JavaScript:Void(0);" class="active">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</a>
+												<span style="color: #ffffff;font-size: 12px;">{{ucwords(str_replace("-"," ",$single_event->event_name))}}</span>
 											</li>
 										</ul>
 									</div>
@@ -48,26 +48,33 @@
         <div class="col-2"></div>
         <div class="col-8">
       	    <div class="about-header">
-            <div class="event-logo">
+            <div class="event-logo single-event">
                 @if($single_event->logo!='')
                     <img src="/images/new-events/monthly/logo/{{$single_event->logo}}">
                 @else
-                    <img src="/images/new-events/generic_event_image.jpg">
+                    <img src="/images/new-events/event-logo-placeholder.png">
                 @endif
             </div>
+            @if($single_event->end_dt < date('Y-m-d') && $single_event->end_dt!=00)
+            <h2>{{date('F Y',strtotime($single_event->next_dt))}} </h1>
+            @else
             <h2>{{$single_event->date_str}} </h1>
+            @endif
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>
+            @if($single_event->end_dt < date('Y-m-d') || $single_event->end_dt==00)
             <div class="stay-tuned">
                 <p class="info">Stay tuned for more details on this event.</p>
-		        <p class="event-signup"><a href="#" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
-            </div>  
-            <div class="event-findmore-btn" style="display:none;">
+		        <p class="event-signup"><a href="/meet_brooks/enewsletter" target="_blank" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 
+            </div>
+            @else  
+            <div class="event-findmore-btn" >
                     <div class="btn">
-                        <button type="submit" class="primary-button">Find Out More </button>
+                    <a href="{{$single_event->link}}" target="_blank" class="primary-button">Find Out More </a>
                     </div>
             </div>  
+            @endif
         </div>
         </div>
         <div class="col-2"></div>
@@ -81,7 +88,7 @@
 	  		<div class="col-12 tab-12">
 	    		<div class="event-footer--wrapper info">
                     <div class="btn">
-                        <a href='/events-listing' ><button type="submit" class="secondary-button">See More Events </button></a>
+                        <a href='/events' ><button type="submit" class="secondary-button">See More Events </button></a>
                     </div>
 		     	</div>
 	        </div>
