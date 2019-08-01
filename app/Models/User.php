@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Ap21_log;
 
 class User extends Authenticatable
 {   
@@ -47,6 +48,15 @@ class User extends Authenticatable
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
                     $userid = $response_xml->Person->Id;
+                    $logger = array(
+                        'process' => $process,
+                        'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Person Id Found',
+                        'result' => $userid,
+                    );
+                    Ap21_log::createNew($logger);
                     break;
 
                 case '404':
@@ -54,6 +64,28 @@ class User extends Authenticatable
                     break;
 
                 default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                    $logger = array(
+                        'process' => $process,
+                        'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Getting Person ID',
+                        'result' => $result,
+                    );
+
+                    Ap21_log::createNew($logger);
+
+                    /*$URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
+                    $data = array(
+                        'api_name' => 'Get PersonID Error',
+                        'URL' => $URL,
+                        'Result' => $result,
+                        'Parameters' => '',
+                    );
+                    Mail::to(config('site.notify_email'))
+                        ->cc(config('site.syg_notify_email'))
+                        ->send(new OrderAp21Alert($this->order, $data));*/
                     $userid = false;
                     break;
             }
@@ -86,9 +118,40 @@ class User extends Authenticatable
                     $last_seg_arr = explode("?", $last_seg);
                     $person_idx = $last_seg_arr[0];
                     $returnVal = $person_idx;
+
+                    $logger = array(
+                        'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => '201 Person ID Created',
+                        'result' => $person_idx,
+                        'xml' => $person_xml ? $person_xml : "",
+                    );
+                    Ap21_log::createNew($logger);
                     break;
 
                 default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    $logger = array(
+                        'order_id' => (isset($this->order->id)) ? $this->order->id: '',
+                        'log_title' => 'Person',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Creating Person ID',
+                        'result' => $result,
+                    );
+                    Ap21_log::createNew($logger);
+
+                    // Send ap21 alert  
+                    /*$result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                    $data = array(
+                        'api_name' => 'Create Person Error',
+                        'URL' => $URL,
+                        'Result' => $result,
+                        'Parameters' => $person_xml,
+                    );
+                    Mail::to(config('site.notify_email'))
+                            ->cc(config('site.syg_notify_email'))
+                            ->send(new OrderAp21Alert($this->order, $data));*/
                     $returnVal = false;
                     break;
             }
