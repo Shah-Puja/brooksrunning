@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use App\Models\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -18,7 +19,7 @@ class Ap21Alert extends Mailable
      *
      * @return void
      */
-    public function __construct(App\Models\Order $order,$data)
+    public function __construct(Order $order,$data)
     {
         $this->order = $order;
         $this->data = $data;
