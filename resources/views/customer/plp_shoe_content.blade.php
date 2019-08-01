@@ -14,23 +14,23 @@
 		    $price_sale = $style->variants->max('price_sale');
 			$price = $style->variants->max('price');
 		    $max_price = collect($colors_option[$style->style])->transform(function ($product) {
-								return $product->variants->pluck('price');
+								return $product->variants->where('visible','Yes')->pluck('price');
 							})->flatten()->max();
 
 			$max_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
-								return $product->variants->pluck('price_sale');
+								return $product->variants->where('visible','Yes')->pluck('price_sale');
 							})->flatten()->max();
 
 			$min_price = collect($colors_option[$style->style])->transform(function ($product) {
-					            return $product->variants->pluck('price');
+					            return $product->variants->where('visible','Yes')->pluck('price');
 							})->flatten()->min();
 							
 			$min_price_sale = collect($colors_option[$style->style])->transform(function ($product) {
-					            return $product->variants->pluck('price_sale');
+					            return $product->variants->where('visible','Yes')->pluck('price_sale');
 							})->flatten()->min();
 
 			$filters_array[$style->style]['size'] =  collect($colors_option[$style->style])->transform(function ($product) {
-					            return $product->variants->pluck('size');
+					            return $product->variants->where('visible','Yes')->pluck('size');
 							})->flatten()->unique()->values();
 
 			$filters_array[$style->style]['experience'] = $style->experience;
@@ -98,7 +98,7 @@
 							@php 
 
 							$filters_array_color[$style->style][$color_product->color_code]['size'] =  collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
-					            return $product->variants->pluck('size');
+					            return $product->variants->where('visible','Yes')->pluck('size');
 							})->flatten()->unique()->values();
 
 							$filters_array_color[$style->style][$color_product->color_code]['width']=collect($colors_option[$style->style])->where('color_code',$color_product->color_code)->transform(function ($product) {
