@@ -85,6 +85,7 @@ class User extends Authenticatable
                         'Result' => $result,
                         'Parameters' => '',
                     );
+                    $order = $order ?? new order;
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
                         ->send(new Ap21Alert($order, $data_array));
@@ -138,6 +139,7 @@ class User extends Authenticatable
                         'Result' => '',
                         'Parameters' => '',
                     );
+                    $order = $order ?? new order;
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
                         ->send(new Ap21Alert($order, $data_array));
@@ -163,6 +165,7 @@ class User extends Authenticatable
                         'Result' => $result,
                         'Parameters' => $person_xml,
                     );
+                    $order = $order ?? new order;
                     Mail::to(config('site.notify_email'))
                             ->cc(config('site.syg_notify_email'))
                             ->send(new Ap21Alert($order, $data_array));
