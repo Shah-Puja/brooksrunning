@@ -132,16 +132,6 @@ class User extends Authenticatable
                         'xml' => $person_xml ? $person_xml : "",
                     );
                     Ap21_log::createNew($logger);
-
-                    $data_array = array(
-                        'api_name' => 'testing email',
-                        'URL' => '',
-                        'Result' => '',
-                        'Parameters' => '',
-                    );
-                    Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new Ap21Alert($order, $data_array));
                     break;
 
                 default:
