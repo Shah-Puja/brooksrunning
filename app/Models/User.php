@@ -6,6 +6,7 @@ use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Ap21_log;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {   
