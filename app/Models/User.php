@@ -77,7 +77,7 @@ class User extends Authenticatable
                     Ap21_log::createNew($logger);
 
                     $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
-                    $data = array(
+                    $data_array = array(
                         'api_name' => 'Get PersonID Error',
                         'URL' => $URL,
                         'Result' => $result,
@@ -85,7 +85,7 @@ class User extends Authenticatable
                     );
                     Mail::to(config('site.notify_email'))
                         ->cc(config('site.syg_notify_email'))
-                        ->send(new Ap21Alert($order, $data));
+                        ->send(new Ap21Alert($order, $data_array));
                     $userid = false;
                     break;
             }
@@ -145,7 +145,7 @@ class User extends Authenticatable
 
                     //Send ap21 alert  
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                    $data = array(
+                    $data_array = array(
                         'api_name' => 'Create Person Error',
                         'URL' => $URL,
                         'Result' => $result,
@@ -153,7 +153,7 @@ class User extends Authenticatable
                     );
                     Mail::to(config('site.notify_email'))
                             ->cc(config('site.syg_notify_email'))
-                            ->send(new Ap21Alert($order, $data));
+                            ->send(new Ap21Alert($order, $data_array));
                     $returnVal = false;
                     break;
             }
