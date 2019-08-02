@@ -36,15 +36,15 @@ class Kernel extends ConsoleKernel
                     ->everyFifteenMinutes();                  
                 break;        
                 /*$schedule->command('icontact-push')
-                    ->everyFiveMinutes(); */                                               
-                break;
-            case 'dev' : 
+                    ->everyFiveMinutes();                                               
+                break;*/ 
+            /*case 'dev' : 
                 $schedule->command('icontact-queue-push')
                     ->everyFifteenMinutes();   
                case 'staging' : 
                 $schedule->command('icontact-queue-push')
                     ->everyFifteenMinutes();                  
-                break; 
+                break; */
            
         endswitch;
     }
