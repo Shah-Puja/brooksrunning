@@ -355,11 +355,11 @@ function getComboFilter( filters ) {
     var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
       return item.element;
     });
-    $(hiddenElems).addClass('hidden');
+    $(hiddenElems).filter(".element-item:not(.swatches-hidden)").addClass('hidden');
 
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
-    var hidden_count = $(".element-item:hidden").length;
+    var hidden_count = $(".element-item:hidden:not(.swatches-hidden)").length;
     if(iso.filteredItems.length > toShow){
       $grid.after('<div class="plp-load-more"><a href="javascript:void(0)" class="load-more">Load More ('+hidden_count+' Remaining)</a></div>');
       //when no more to load, hide show more button
