@@ -185,10 +185,9 @@ $(document).on("click",".filter-value",function(){
     localStorage.setItem("plpfilter", $(".plp-filter").html());
     localStorage.setItem("listingurl",window.location.pathname);
     localStorage.setItem("filterwidth",filter_width_value);
-    check_swatches(this_value,'');
+    check_swatches(this_value,'',comboFilter);
     counter = 15;
    loadMore(counter);
-   console.log(comboFilter);
   }, 500);
   
   return false;
@@ -223,7 +222,7 @@ $(document).on('click','.selection-filter',function(){
       localStorage.setItem("plpfilter", $(".plp-filter").html());
       localStorage.setItem("listingurl",window.location.pathname);
       if(removeAttribute=='Width') localStorage.setItem("filterwidth","");
-      check_swatches(removeItem,'');
+      check_swatches(removeItem,'',comboFilter);
       counter = 15;
       loadMore(counter);
     }, 500);
@@ -246,7 +245,7 @@ $(document).on('click','.reset-filter',function(){
     localStorage.setItem("comboFilter","");
     localStorage.setItem("listingurl",window.location.pathname);
     localStorage.setItem("filterwidth","");
-    check_swatches('','');
+    check_swatches('','',reset_filter);
     counter = 15;
     loadMore(counter);
   }, 500);
@@ -329,7 +328,7 @@ function getComboFilter( filters ) {
     }
     //console.log("filter_value"+filter_value);
     $grid.isotope({ filter: filter_value , sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
-    check_swatches('',status);
+    check_swatches('',status,filter_value);
     loadMore(initShow); 
     if(!localStorage.getItem("plpfilter")){
       localStorage.removeItem("filterwidth");
@@ -398,7 +397,7 @@ function getComboFilter( filters ) {
      return false;
   });
 
-  function check_swatches(value,status){
+  function check_swatches(value,status,comboFilter){
     //if(status!='OFF'){
      $(".owl-item .item").css("display","block");
     
@@ -426,33 +425,36 @@ function getComboFilter( filters ) {
         //console.log($(".more-color--container").is(":visible"));
         //console.log("inside more color");
         $(".owl-item").each(function(){
-            //console.log(jQuery.inArray(value, yourArray) !== -1);
-            //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
-            /*if(yourArray.length > 0){
-              for ( var i = 0; i < yourArray.length; i++ ){
-                console.log(yourArray[i] +"yourarrsy");
-                if ($(this).find(".item").hasClass(yourArray[i])){
-                    $(this).show();
-                    break;  
-                  }else{
-                    $(this).hide();
-                }
-              }
-               
-            }else{
-                $(this).show();
-            }*/
             var style = $(this).find(".item").data('style');
             let if_condition = "";
+            let if_condition_test = "";
             //console.log(yourArray.length+ "inarray");
-            if(yourArray.length > 0){
+            if(comboFilter!='' && comboFilter!='*'){
               //console.log("inarray");
-              for ( var i = 0; i < yourArray.length; i++ ){
+              console.log(comboFilter+"sadsadsdsd");
+              var new_comboFilter= comboFilter.trim().split(',');
+             
+              for ( var i = 0; i < new_comboFilter.length; i++ ){
+                var split_combofilter =  new_comboFilter[i];
+                split_combofilter = split_combofilter.split('.');
+                if_condition_test += "(";
+                for ( var j = 0; j < split_combofilter.length; j++ ){
+                  if(split_combofilter[j]!='' && split_combofilter[j]!=' '){
+                      if_condition_test += " $(this).find('.item').hasClass('"+split_combofilter[j]+"')  && ";
+                    }
+                  }
+                if_condition_test =if_condition_test.substring(0, if_condition_test.length - 3);
+                if_condition_test += ") || ";
+                //if_condition += " $(this).find('.item').hasClass('"+yourArray[i]+"')  || ";
+              }
+              if_condition_test =if_condition_test.substring(0, if_condition_test.length - 3);
+              console.log(if_condition_test);
+              /*for ( var i = 0; i < yourArray.length; i++ ){
                 if_condition += " $(this).find('.item').hasClass('"+yourArray[i]+"')  && ";
               }
               if_condition =if_condition.substring(0, if_condition.length - 3);
-              //console.log(if_condition);
-                if(eval(if_condition)){
+              console.log(if_condition);*/
+                if(eval(if_condition_test)){
                   //$(this).show();
                   $(this).css("display","block");
                   current_style = style;
