@@ -180,6 +180,11 @@ class meet_brooksController extends Controller {
 
     public function create_user($email, $fname = '', $lname = '', $gender = '', $country = '') {
         $returnVal = false;
+        if (isset($gender) && $gender == "male") {
+            $gender = "M";
+        } elseif (isset($gender) && $gender == "female") {
+            $gender = "F";
+        }
         $person_xml = "<Person>
                         <Firstname>$fname</Firstname>
                         <Surname>$lname</Surname>   
@@ -390,7 +395,6 @@ class meet_brooksController extends Controller {
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
-
         Icontact_pushmail::where('email', request('email'))->update(['fname' => request('fname'),
             'lname' => request('lname'), 'gender' => request('gender'),
             'birth_day' => request('custom_Birth_Date'),

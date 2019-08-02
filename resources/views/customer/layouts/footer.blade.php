@@ -148,10 +148,10 @@
 		}
 	</style>
 <script src="/js/owl.carousel.min.js"></script>
-@if($view_name!='customer-pdp') <script src="/js/listing.js"></script> @endif
+@if($view_name!='customer-pdp') <script src="/js/listing.js?v={{ Cache::get('css_version_number') }}"></script> @endif
 @if($view_name=='customer-pdp')
 <!-- details page js -->
-<script src="/js/pdp-js.js"></script>
+<script src="/js/pdp-js.js?v={{ Cache::get('css_version_number') }}"></script>
 <script>
 	$(document).ready(function () {
 
@@ -170,7 +170,7 @@
 <!-- Register page js please write here-->
 @endif
 <!-- common js -->
-<script src="/js/common.js"></script>
+<script src="/js/common.js?v={{ Cache::get('css_version_number') }}"></script>
 <!-- Subscribers js -->
 <script>
 	function check_subscribers() {
@@ -220,5 +220,7 @@ $last_word = $matches[0];
 </script>
 
 @endif
+
+@yield('footer_js')
 </body>
 </html>

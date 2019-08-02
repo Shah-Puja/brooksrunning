@@ -1,7 +1,7 @@
 @extends('customer.layouts.master')
 @section('content')
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 
 <div class="create-account--header event__hero">
 	<div class="wrapper pr-0 pl-0">	
@@ -13,9 +13,9 @@
 							<div class="breadcrumbs">
 										<ul>
 											<li>
-												<a href="/">Home</a>
-                                            </li>
-                                            <li>
+                        <a href="/">Home</a>
+                      </li>
+                      <li>
 												<a href="/events-listing">Events</a>
 											</li>
 											<li>
@@ -45,7 +45,7 @@
         <div class="col-2"></div>
         <div class="col-8">
       	    <div class="about-header">
-            <div class="event-logo">
+            <div class="event-logo single-event">
                 
                     <img src="/images/new-events/generic_event_image.jpg">
                 
