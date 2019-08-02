@@ -351,8 +351,12 @@ function getComboFilter( filters ) {
     }else{
       var sortAscending =  true ;
     }
+    var count_element = iso.filteredItems.map(function(item2) {
+      return item2.element;
+    });
+    var filteredItems_length = $(count_element).filter(".element-item:not(.swatches-hidden)").length;
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
-    var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
+    var hiddenElems = iso.filteredItems.slice(toShow, filteredItems_length).map(function(item) {
       return item.element;
     });
     $(hiddenElems).filter(".element-item:not(.swatches-hidden)").addClass('hidden');
@@ -360,7 +364,8 @@ function getComboFilter( filters ) {
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
     var hidden_count = $(".element-item:hidden:not(.swatches-hidden)").length;
-    if(iso.filteredItems.length > toShow){
+   
+    if(filteredItems_length > toShow){
       $grid.after('<div class="plp-load-more"><a href="javascript:void(0)" class="load-more">Load More ('+hidden_count+' Remaining)</a></div>');
       //when no more to load, hide show more button
       if (hidden_count == 0) {
@@ -369,9 +374,7 @@ function getComboFilter( filters ) {
         $(".plp-load-more").show();
       }
     }
-    var count_element = iso.filteredItems.map(function(item2) {
-      return item2.element;
-    });
+   
     //console.log($(count_element));
     var text =$(count_element).filter(".element-item:not(.swatches-hidden)").length;
     $(".all-product--count").find("p span").text(text);
