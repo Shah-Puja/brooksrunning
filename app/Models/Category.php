@@ -134,7 +134,7 @@ class Category extends Model
                         return $product->variants->pluck('size');
                     })->flatten()->unique()->values()->sort();*/
                     $p = $products->map(function($product) {
-                          return $product->variants;
+                          return $product->variants->where('visible','Yes');
                     })->flatten();
                    
                     $sorted = $p->sortBy(function ($product, $key) {
