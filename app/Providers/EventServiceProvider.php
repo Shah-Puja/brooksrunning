@@ -19,9 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ], 
-        'App\Events\SubscriptionReceived' => [
+        /*'App\Events\SubscriptionReceived' => [
             'App\Listeners\SendSubscriptionReceivedNotification',
-        ],
+        ],*/
     ];
 
     /**

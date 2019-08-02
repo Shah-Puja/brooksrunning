@@ -3640,8 +3640,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CategorySort",
-                "reference": "f49e6649170807278ad2d156ca6478682bc7d044",
-                "shasum": null
+                "reference": "f49e6649170807278ad2d156ca6478682bc7d044"
             },
             "require": {
                 "php": ">=7.1.0"
@@ -3674,8 +3673,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/MisingImages",
-                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62",
-                "shasum": null
+                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62"
             },
             "require": {
                 "php": ">=7.1.0"
@@ -4314,7 +4312,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
