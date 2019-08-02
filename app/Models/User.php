@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Events\SubscriptionReceived;
+//use App\Events\SubscriptionReceived;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -29,9 +29,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    protected $dispatchesEvents = [
+    /*protected $dispatchesEvents = [
         'created' => SubscriptionReceived::class,
-    ];
+    ];*/
 
     public function orders(){
         return $this->hasMany('App\Models\Order','user_id','id');
