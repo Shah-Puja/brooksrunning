@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use DB;
+
 
 class Handler extends ExceptionHandler
 {
@@ -55,6 +57,8 @@ class Handler extends ExceptionHandler
                 return response()->view('errors.' . '500', [], 500);
             }*/
         }
-        return parent::render($request, $exception);
+        $images = DB::connection('mysql')->table("errorpages")->where('status',1)->first();
+        return response()->view('errors.' . '404',compact('images'), 404);
+        // return parent::render($request, $exception);
     }
 }

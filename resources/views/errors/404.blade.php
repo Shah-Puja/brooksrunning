@@ -35,7 +35,7 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		</div>
 	</div>
 </section>
-<section class="create-account errorpage-404-section bg">
+<section class="create-account errorpage-404-section bg" style="background-image: url('../images/error-404/{{$images->image}}')">
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-2 tab-2"></div>
