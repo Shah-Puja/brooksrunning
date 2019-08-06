@@ -9,6 +9,9 @@ use App\SYG\Bridges\BridgeInterface;
 use App\Mail\ProductAp21Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+
 use Carbon\Carbon;
 
 class ProductColourController extends Controller
@@ -18,6 +21,11 @@ class ProductColourController extends Controller
         $this->bridge = $bridge;
     }
     public function index($name,$style,$color,Request $request){
+        // Cache benefit filenames to check file exist
+        Cache::remember('benefits_image_list', 120, function() {        
+            //Cache will get reset after every 2 hrs. If file is added then after 2 hrs it will get reflected on site (if cache is not cleared)
+            return Storage::disk('sftp')->files('public_html/media/benefits/');            
+        });
    
         if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
           //if (env('AP21_STATUS') == 'ON' && !$request->ajax()) {
