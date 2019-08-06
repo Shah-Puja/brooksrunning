@@ -4,18 +4,13 @@ use App\Models\Cart;
 use App\Models\Order_address;
 use App\Models\Order;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
 
 
 if (!function_exists('benefit_img_check')) {
 
     function benefit_img_check($img) {        
         
-        Cache::remember('benefits_image_list', 60, function() {        
-            //Cache will get reset after every 60 minutes
-            return Storage::disk('sftp')->files('public_html/media/benefits/');            
-        });
-
         $benefits_folder="public_html/media/benefits/";
         if ($img != '') {
             $png_filename = $benefits_folder.$img.".png";
