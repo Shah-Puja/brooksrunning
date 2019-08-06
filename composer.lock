@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16b2da898f2152b88042c48a518ff124",
+    "content-hash": "53d5c5bc42d18d544968da5e4edd2f2c",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -3640,7 +3640,8 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CategorySort",
-                "reference": "f49e6649170807278ad2d156ca6478682bc7d044"
+                "reference": "f49e6649170807278ad2d156ca6478682bc7d044",
+                "shasum": null
             },
             "require": {
                 "php": ">=7.1.0"
@@ -3673,7 +3674,8 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/MisingImages",
-                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62"
+                "reference": "9a34c888234095215149cfb13f6da2d2b033bc62",
+                "shasum": null
             },
             "require": {
                 "php": ">=7.1.0"

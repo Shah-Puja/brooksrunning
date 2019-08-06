@@ -20,7 +20,7 @@ class Errorpage extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Errorpage';
+    public static $model = 'App\Models\Errorpage';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -67,6 +67,7 @@ class Errorpage extends Resource
             
             Boolean::make('Status','status')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
                $id=$model->id;
+               
               
                 if($id=='' && $request->status==1 )
               {
@@ -76,7 +77,7 @@ class Errorpage extends Resource
               }elseif($id=='' && $request->status==0){
                 $model->status=$request->status;
                 $model->save();
-              }elseif($id!=''&& $model->status==0)
+              }elseif($id!=''&& $request->status==0 )
               {
                 $model->status=$request->status;
                 $model->save();

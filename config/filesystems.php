@@ -67,6 +67,12 @@ return [
             'url' => env('APP_URL')."/images/new-events/banner",
         ],
 
+        '404_page'=> [
+            'driver' => 'local',
+            'root'   => public_path('/images/error-404'),
+            'url'    => env('APP_URL')."/images/error-404",
+        ],
+
         'uploads_competition' => [
             'driver' => 'local',
             'root'   => public_path('images/competition-single'),
