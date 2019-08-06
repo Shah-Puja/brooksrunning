@@ -107,11 +107,28 @@ $(document).ready(function () {
     }
 
     // header submenu top height fixed
-    var headHeight = $(".header-desktop").height() - 5;
-    $(".desktop-navigation--sub").css("top", headHeight);
-    $(window).on("scroll", function () {
+    
+    var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
+     $(".desktop-navigation--sub").css("top", saleheadHeight);
+     $(window).on("scroll", function () {
+        if($(window).scrollTop() > 0){
+            var headHeight = $(".header-desktop").height() - 5;
+            $(".desktop-navigation--sub").css("top", headHeight);
+        }
+        else{
+            var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
+            $(".desktop-navigation--sub").css("top", saleheadHeight);
+        }
         $("#desktop-navigation .main .main-nav").next().removeClass("active");
     });
+
+    
+    // var headHeight = $(".header-desktop").height() - 5;
+    // $(".desktop-navigation--sub").css("top", headHeight);
+    // $(window).on("scroll", function () {
+    //     $("#desktop-navigation .main .main-nav").next().removeClass("active");
+    // });
+
 
     // Search Box show for desktop
     $(".header-desktop .search-header--popup").click(function () {
