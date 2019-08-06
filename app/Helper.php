@@ -3,10 +3,39 @@
 use App\Models\Cart;
 use App\Models\Order_address;
 use App\Models\Order;
+use Illuminate\Support\Facades\Cache;
+//use Illuminate\Support\Facades\Storage;
+
 
 if (!function_exists('benefit_img_check')) {
 
-    function benefit_img_check($img) {
+    function benefit_img_check($img) {        
+        
+        $benefits_folder="public_html/media/benefits/";
+        if ($img != '') {
+            $png_filename = $benefits_folder.$img.".png";
+            $jpg_filename = $benefits_folder.$img.".jpg";            
+
+            if (Cache::has('benefits_image_list')){
+                $files=Cache::get('benefits_image_list');                                
+                if (in_array($png_filename,$files)){
+                    return config('site.image_url.base_banefit') . $img.".png";                    
+                }elseif(in_array($jpg_filename,$files)){                    
+                    return config('site.image_url.base_banefit') . $img.".jpg";
+                }else{
+                    return "";
+                }
+            }else{
+                return "";
+            }
+        }
+    }
+
+}
+
+if (!function_exists('benefit_img_check_old')) {
+
+    function benefit_img_check_old($img) {
         if ($img != '') {
             $img = config('site.image_url.base_banefit') . $img;
 
