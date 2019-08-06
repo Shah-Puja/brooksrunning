@@ -285,14 +285,7 @@
         $('.other_upcoming_events').find('.br-mainheading').show();
         return false;
     });
-
-  
-
-   $(window).bind("pageshow", function() {
-        $('#where').val('');
-        $('#when').val('');
-});
-</script>
+  </script>
 
 
 
