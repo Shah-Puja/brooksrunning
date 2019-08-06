@@ -285,6 +285,8 @@
         $('.other_upcoming_events').find('.br-mainheading').show();
         return false;
     });
+
+   
   </script>
 
 
