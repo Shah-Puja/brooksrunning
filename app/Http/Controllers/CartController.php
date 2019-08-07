@@ -147,7 +147,7 @@ class CartController extends Controller {
             $cart_xml .= "
                             </CartDetails>
 						</Cart>";
-
+            echo "<pre>".$cart_xml."</pre>";
             /* $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
               $xml = simplexml_load_string($bridge); */
             $xml = array();
@@ -156,6 +156,7 @@ class CartController extends Controller {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
             }
+            echo "<hr> Cart Response - <pre>".$cart_xml."</pre>";
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
