@@ -41,4 +41,6 @@ class HomePageController extends Controller
         return view ('customer.index',compact('product','banner'));
     }
 
+    
+
 }

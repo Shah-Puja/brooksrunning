@@ -24,6 +24,10 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer(
             ['customer.layouts.header'], 'App\Http\ViewComposers\MetaComposer'
         );
+
+        View::composer(
+            ['customer.layouts.header'], 'App\Http\ViewComposers\BannerComposer'
+        );
     
     }
 

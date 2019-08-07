@@ -46,7 +46,6 @@
         <!-- common file -->
         <link rel="stylesheet" href="/css/common.css?v={{ Cache::get('css_version_number') }}">
         <script src="/js/jquery-2.2.4.min.js"></script>
-       
         @yield('head')
         @include('digitalmarketingsnippets.gtm')
     </head>

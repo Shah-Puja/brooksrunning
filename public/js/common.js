@@ -107,28 +107,11 @@ $(document).ready(function () {
     }
 
     // header submenu top height fixed
-    
-    var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
-     $(".desktop-navigation--sub").css("top", saleheadHeight);
-     $(window).on("scroll", function () {
-        if($(window).scrollTop() > 0){
-            var headHeight = $(".header-desktop").height() - 5;
-            $(".desktop-navigation--sub").css("top", headHeight);
-        }
-        else{
-            var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
-            $(".desktop-navigation--sub").css("top", saleheadHeight);
-        }
+    var headHeight = $(".header-desktop").height() - 5;
+    $(".desktop-navigation--sub").css("top", headHeight);
+    $(window).on("scroll", function () {
         $("#desktop-navigation .main .main-nav").next().removeClass("active");
     });
-
-    
-    // var headHeight = $(".header-desktop").height() - 5;
-    // $(".desktop-navigation--sub").css("top", headHeight);
-    // $(window).on("scroll", function () {
-    //     $("#desktop-navigation .main .main-nav").next().removeClass("active");
-    // });
-
 
     // Search Box show for desktop
     $(".header-desktop .search-header--popup").click(function () {
@@ -155,6 +138,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $("#mob-nav--control").click(function () {
+        $(".br-afterpaysale-header").toggleClass("display-none");
         $(this).find(".close").toggleClass("icon-close");
         $(".header-mobile").toggleClass("fixed");
         $("#mobile-navbar--container").toggleClass("active");
@@ -163,7 +147,13 @@ $(document).ready(function () {
         $("#mobile-navbar--container").find("li ul").css("display", "none");
     });
     $("#mobile-navbar").aceResponsiveMenu({});
+
+    $('.mobile-close').click(function(){
+        $(".br-afterpaysale-header").css("display", "block");
+
+    });
 });
+
 (function ($) {
     $.fn.aceResponsiveMenu = function (options) {
 
