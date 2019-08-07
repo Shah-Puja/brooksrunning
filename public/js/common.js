@@ -107,7 +107,13 @@ $(document).ready(function () {
     }
 
     // header submenu top height fixed
-    
+    var url='http://brooksrunning.test/cart'; 
+    var current_url=window.location.href;
+   if(url==current_url){
+       $('.br-afterpaysale-header').css('display','none');
+
+   }
+   
     var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
      $(".desktop-navigation--sub").css("top", saleheadHeight);
      $(window).on("scroll", function () {
@@ -123,11 +129,12 @@ $(document).ready(function () {
     });
 
     
-    // var headHeight = $(".header-desktop").height() - 5;
-    // $(".desktop-navigation--sub").css("top", headHeight);
-    // $(window).on("scroll", function () {
-    //     $("#desktop-navigation .main .main-nav").next().removeClass("active");
-    // });
+    var headHeight = $(".header-desktop").height() - 5;
+    $(".desktop-navigation--sub").css("top", headHeight);
+    $(window).on("scroll", function () {
+        $("#desktop-navigation .main .main-nav").next().removeClass("active");
+    });
+
 
 
     // Search Box show for desktop
