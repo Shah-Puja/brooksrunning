@@ -105,65 +105,13 @@ $(document).ready(function () {
             $("#desktop-navigation .main .main-nav").next().removeClass("active");
         });
     }
-    var current_url=window.location.href;
+
     // header submenu top height fixed
-    var half_url = current_url.split('/')[2];
-    console.log(half_url);
-    switch (current_url) {
-        case 'http://'+half_url+'/running-shoes-and-apparel-sale': 
-            $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/womens-running-shoes-sale':
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/womens-running-clothes-sale':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/mens-running-shoes-sale':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/mens-running-clothes-sale':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/cart':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/shipping':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-        case 'http://'+half_url+'/successs':  
-        $('.br-afterpaysale-header').css('display','none');
-        break;
-    }
-
-
-   var banner_status=$('#banner_status').attr('banner_status');
-   console.log(banner_status);
-
-   if(banner_status=='Y'){
-    var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
-     $(".desktop-navigation--sub").css("top", saleheadHeight);
-     $(window).on("scroll", function () {
-        if($(window).scrollTop() > 0){
-            var headHeight = $(".header-desktop").height() - 5;
-            $(".desktop-navigation--sub").css("top", headHeight);
-        }
-        else{
-            var saleheadHeight = $(".br-afterpaysale-header").height() + $(".header-desktop").height() + 15;
-            $(".desktop-navigation--sub").css("top", saleheadHeight);
-        }
-        $("#desktop-navigation .main .main-nav").next().removeClass("active");
-    });
-
-}else{
     var headHeight = $(".header-desktop").height() - 5;
     $(".desktop-navigation--sub").css("top", headHeight);
     $(window).on("scroll", function () {
         $("#desktop-navigation .main .main-nav").next().removeClass("active");
     });
-}
-
-
 
     // Search Box show for desktop
     $(".header-desktop .search-header--popup").click(function () {
@@ -190,6 +138,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $("#mob-nav--control").click(function () {
+        $(".br-afterpaysale-header").toggleClass("display-none");
         $(this).find(".close").toggleClass("icon-close");
         $(".header-mobile").toggleClass("fixed");
         $("#mobile-navbar--container").toggleClass("active");
@@ -198,7 +147,13 @@ $(document).ready(function () {
         $("#mobile-navbar--container").find("li ul").css("display", "none");
     });
     $("#mobile-navbar").aceResponsiveMenu({});
+
+    $('.mobile-close').click(function(){
+        $(".br-afterpaysale-header").css("display", "block");
+
+    });
 });
+
 (function ($) {
     $.fn.aceResponsiveMenu = function (options) {
 
