@@ -17,7 +17,8 @@ if (!function_exists('benefit_img_check')) {
             $jpg_filename = $benefits_folder.$img.".jpg";            
 
             if (Cache::has('benefits_image_list')){
-                $files=Cache::get('benefits_image_list');                                
+                $files=Cache::get('benefits_image_list'); 
+                //print_r($files);                               
                 if (in_array($png_filename,$files)){
                     return config('site.image_url.base_banefit') . $img.".png";                    
                 }elseif(in_array($jpg_filename,$files)){                    

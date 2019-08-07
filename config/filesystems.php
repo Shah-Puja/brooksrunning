@@ -70,17 +70,17 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
-        'sftp' => [
+        'sftp_benefit' => [
             'driver' => 'sftp',
             'host' => env('IMAGE_SERVER'),
             'username' => env('IMAGE_SERVER_USER'),
             'password' => env('IMAGE_SERVER_PSWD'),        
         ],
-        /*'sftp' => [
+        'sftp' => [
             'driver' => 'sftp',
             'host' => env('MEDIBANK_SFTP_HOST'),
             'username' => env('MEDIBANK_SFTP_USER'),
             'password' => env('MEDIBANK_SFTP__PSWD')
-        ]*/
+        ]
     ],
 ];

@@ -24,7 +24,7 @@ class ProductColourController extends Controller
         // Cache benefit filenames to check file exist
         Cache::remember('benefits_image_list', 120, function() {        
             //Cache will get reset after every 2 hrs. If file is added then after 2 hrs it will get reflected on site (if cache is not cleared)
-            return Storage::disk('sftp')->files('public_html/media/benefits/');            
+            return Storage::disk('sftp_benefit')->files('public_html/media/benefits/');            
         });
    
         if (env('APP_ENV') =='production' && env('AP21_STATUS') == 'ON' && !$request->ajax()) {
