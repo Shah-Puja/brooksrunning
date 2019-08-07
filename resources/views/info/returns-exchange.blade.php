@@ -20,7 +20,7 @@
 				<!-- <p class="br-info"><span class="bold">Sub heading</span> <br/>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p> -->
 
 				<ol class="br-info">
-					<li>Email us at shop@brooksrunning.com.au or call on +61 3 9338 5099 or 1300 73 50 99 with the following information:
+					<li>Email us at  <a href="mailto:orders@brooksrunning.com.au" target="_top">orders@brooksrunning.com.au</a> or call on +61 3 9338 5099 or 1300 73 50 99 with the following information:
 						<ul class="br-info">
 						<li>Order Number</li>
 						<li>Reason for Return</li>
