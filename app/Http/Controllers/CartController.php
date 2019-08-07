@@ -147,8 +147,8 @@ class CartController extends Controller {
             }
             $cart_xml .= "
                             </CartDetails>
-						</Cart>";
-            echo "<hr> Cart Request <br> $cart_xml";
+                        </Cart>";
+                                    
             /* $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
               $xml = simplexml_load_string($bridge); */
             $xml = array();
@@ -157,7 +157,7 @@ class CartController extends Controller {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
             }
-            echo "<hr> Cart Response <br> $cart_xml_response ";
+            
             $logger = array(
                 'process' =>'Cart-API',                
                 'request' => $cart_xml,
