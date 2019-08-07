@@ -128,6 +128,7 @@ class CartController extends Controller {
     }
 
     public function cart_api($cart) {
+        
         $data = array();
         $freight_charges = 0;
 
@@ -161,7 +162,8 @@ class CartController extends Controller {
             $logger = array(
                 'process' =>'Cart-API',                
                 'request' => $cart_xml,
-                'response' => $cart_xml_response                
+                'response' => $cart_xml_response,  
+                'object_id'=>session('cart_id')             
             );
             Ap21_log::createNew($logger);
 
