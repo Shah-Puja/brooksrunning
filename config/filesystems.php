@@ -70,18 +70,11 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
-        'sftp' => [
+        'sftp_benefit' => [
             'driver' => 'sftp',
             'host' => env('IMAGE_SERVER'),
             'username' => env('IMAGE_SERVER_USER'),
-            'password' => env('IMAGE_SERVER_PSWD'),
-        // Settings for SSH key based authentication...
-        // 'privateKey' => '/path/to/privateKey',
-        // 'password' => 'encryption-password',
-        // Optional SFTP Settings...
-        // 'port' => 22,
-        // 'root' => '',
-        // 'timeout' => 30,
+            'password' => env('IMAGE_SERVER_PSWD'),        
         ],
         'sftp' => [
             'driver' => 'sftp',
