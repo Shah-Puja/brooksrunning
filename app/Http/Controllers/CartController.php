@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use App\Models\Promo_mast;
+use App\Models\Ap21_log;
 
 class CartController extends Controller {
 
@@ -157,6 +158,14 @@ class CartController extends Controller {
                 $xml = simplexml_load_string($bridge);
             }
             echo "<hr> Cart Response <br> $cart_xml_response ";
+            $logger = array(
+                'process' =>'Cart-API',                
+                'request' => $cart_xml,
+                'response' => $cart_xml_response                
+            );
+            Ap21_log::createNew($logger);
+
+
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
