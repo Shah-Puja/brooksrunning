@@ -156,7 +156,7 @@ class CartController extends Controller {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
             }
-            echo "<hr> Cart Response <br> $xml ";
+            echo "<hr> Cart Response <br> $cart_xml_response ";
             $cartdetail_arr = array();
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ($xml->CartDetails->CartDetail as $curr_detail) {
