@@ -4,6 +4,12 @@
 
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
+<style>
+	.swatches-hidden{
+		display:none;
+	}
+</style>
+
 <section class="create-account--header plp-header">
 	<div class="wrapper">
 		<div class="row">

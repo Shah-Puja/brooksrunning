@@ -30,7 +30,7 @@ class EnquiryUserAfterhoursNotification extends Mailable implements ShouldQueue 
      * @return $this
      */
     public function build() {
-        return $this->view('emails.enquiryuserafterhoursnotification')->subject('Brooks Running Auto reply - Enquiry Email');
+        return $this->from(env('ENQUIRY_NOTIFY_EMAIL'),env('MAIL_FROM_NAME', 'STAGING - Brooks Running'))->view('emails.enquiryuserafterhoursnotification')->subject('Brooks Running Auto reply - Enquiry Email');
     }
 
 }

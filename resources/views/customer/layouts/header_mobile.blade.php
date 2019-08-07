@@ -11,7 +11,7 @@
 					<div class="mob-logo">
 					   <a href="/">
 					   <!-- <img src="/images/brooks-running-logo.png" alt="Brooks Running Aus"> -->
-							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 220 30" enable-background="new 0 0 220 30" xml:space="preserve" width="220px" class="icon icon-logo" >
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 220 30" enable-background="new 0 0 220 30" xml:space="preserve"  width="220" height="30" class="icon icon-logo" >
 									<style type="text/css">
 										.st0{fill:#0363F7;}
 									</style>

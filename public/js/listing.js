@@ -185,10 +185,11 @@ $(document).on("click",".filter-value",function(){
     localStorage.setItem("plpfilter", $(".plp-filter").html());
     localStorage.setItem("listingurl",window.location.pathname);
     localStorage.setItem("filterwidth",filter_width_value);
-    check_swatches(this_value,status);
+    check_swatches(this_value,'',comboFilter);
+    counter = 15;
+   loadMore(counter);
   }, 500);
-  counter = 15;
-  loadMore(counter);
+  
   return false;
 });
 
@@ -214,16 +215,18 @@ $(document).on('click','.selection-filter',function(){
     var comboFilter = getComboFilter( filters );
 		//console.log(comboFilter);
     $grid.isotope({ filter: comboFilter ,layoutMode: 'fitRows'});
-    check_swatches(removeItem,'OFF');
+    
     setTimeout(function(){
       localStorage.setItem("filters", JSON.stringify(filters));
       localStorage.setItem("comboFilter", comboFilter);
       localStorage.setItem("plpfilter", $(".plp-filter").html());
       localStorage.setItem("listingurl",window.location.pathname);
       if(removeAttribute=='Width') localStorage.setItem("filterwidth","");
+      check_swatches(removeItem,'',comboFilter);
+      counter = 15;
+      loadMore(counter);
     }, 500);
-    counter = 15;
-    loadMore(counter);
+   
   return false;
 });
 
@@ -237,14 +240,16 @@ $(document).on('click','.reset-filter',function(){
   $(".filter-heading a").hide();
 	reset_filter = '*';
   $grid.isotope({ filter: reset_filter });
-  check_swatches('','OFF');
+  
   setTimeout(function(){
     localStorage.setItem("comboFilter","");
     localStorage.setItem("listingurl",window.location.pathname);
     localStorage.setItem("filterwidth","");
+    check_swatches('','',reset_filter);
+    counter = 15;
+    loadMore(counter);
   }, 500);
-  counter = 15;
-  loadMore(counter);
+  
   filters = [];
   return false;
 });
@@ -319,11 +324,11 @@ function getComboFilter( filters ) {
     }else{
       //console.log("not storage");
        var filter_value = '*';
-       var status ='OFF';
+       var status ='';
     }
     //console.log("filter_value"+filter_value);
     $grid.isotope({ filter: filter_value , sortBy: select_value , sortAscending: sortAscending  ,layoutMode: 'fitRows'});
-    check_swatches('',status);
+    check_swatches('',status,filter_value);
     loadMore(initShow); 
     if(!localStorage.getItem("plpfilter")){
       localStorage.removeItem("filterwidth");
@@ -345,16 +350,21 @@ function getComboFilter( filters ) {
     }else{
       var sortAscending =  true ;
     }
+    var count_element = iso.filteredItems.map(function(item2) {
+      return item2.element;
+    });
+    var filteredItems_length = $(count_element).filter(".element-item:not(.swatches-hidden)").length;
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
-    var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
+    var hiddenElems = iso.filteredItems.slice(toShow, filteredItems_length).map(function(item) {
       return item.element;
     });
-    $(hiddenElems).addClass('hidden');
+    $(hiddenElems).filter(".element-item:not(.swatches-hidden)").addClass('hidden');
 
     $grid.isotope({ sortBy: select_value , sortAscending: sortAscending ,layoutMode: 'fitRows'});
     $(".plp-load-more").remove();
-    var hidden_count = $(".element-item:hidden").length;
-    if(iso.filteredItems.length > toShow){
+    var hidden_count = $(".element-item:hidden:not(.swatches-hidden)").length;
+   
+    if(filteredItems_length > toShow){
       $grid.after('<div class="plp-load-more"><a href="javascript:void(0)" class="load-more">Load More ('+hidden_count+' Remaining)</a></div>');
       //when no more to load, hide show more button
       if (hidden_count == 0) {
@@ -363,7 +373,9 @@ function getComboFilter( filters ) {
         $(".plp-load-more").show();
       }
     }
-    var text =iso.filteredItems.length;
+   
+    //console.log($(count_element));
+    var text =$(count_element).filter(".element-item:not(.swatches-hidden)").length;
     $(".all-product--count").find("p span").text(text);
     return false;
   }
@@ -385,8 +397,10 @@ function getComboFilter( filters ) {
      return false;
   });
 
-  function check_swatches(value,status){
-     $(".owl-item .item").show();
+  function check_swatches(value,status,comboFilter){
+    //if(status!='OFF'){
+     $(".owl-item .item").css("display","block");
+    
       value = value.replace(".", "").trim();
       //console.log(value + status);
       var yourArray = [];
@@ -395,44 +409,92 @@ function getComboFilter( filters ) {
           selection_value = selection_value.replace(".", "").trim();
           yourArray.push(selection_value);
       });
+      //console.log(yourArray.length);
+      if(yourArray.length == 0){
+         $(".element-item").removeClass("swatches-hidden");
+      }else{
+        $(".element-item").addClass("swatches-hidden");
+      }
       //console.log(yourArray);
       var data1 = '';
-      if($(".more-color--container").is(":visible")){
+      var current_style = '';
+      var swatch_class ='';
+      var count = 0;
+      //console.log($(".more-color--container").is(":visible"));
+      //if($(".more-color--container").is(":visible")){
+        //console.log($(".more-color--container").is(":visible"));
+        //console.log("inside more color");
         $(".owl-item").each(function(){
-            //console.log(jQuery.inArray(value, yourArray) !== -1);
-            //if(!($(this).find(".item").hasClass(value)) && status=='ON'){
-            /*if(yourArray.length > 0){
-              for ( var i = 0; i < yourArray.length; i++ ){
-                console.log(yourArray[i] +"yourarrsy");
-                if ($(this).find(".item").hasClass(yourArray[i])){
-                    $(this).show();
-                    break;  
-                  }else{
-                    $(this).hide();
-                }
-              }
-               
-            }else{
-                $(this).show();
-            }*/
+            var style = $(this).find(".item").data('style');
             let if_condition = "";
-            if(yourArray.length > 0){
-              for ( var i = 0; i < yourArray.length; i++ ){
+            let if_condition_test = "";
+            //console.log(yourArray.length+ "inarray");
+            if(comboFilter!='' && comboFilter!='*'){
+              //console.log("inarray");
+              console.log(comboFilter+"sadsadsdsd");
+              var new_comboFilter= comboFilter.trim().split(',');
+             
+              for ( var i = 0; i < new_comboFilter.length; i++ ){
+                var split_combofilter =  new_comboFilter[i];
+                split_combofilter = split_combofilter.split('.');
+                if_condition_test += "(";
+                for ( var j = 0; j < split_combofilter.length; j++ ){
+                  if(split_combofilter[j]!='' && split_combofilter[j]!=' '){
+                      if_condition_test += " $(this).find('.item').hasClass('"+split_combofilter[j]+"')  && ";
+                    }
+                  }
+                if_condition_test =if_condition_test.substring(0, if_condition_test.length - 3);
+                if_condition_test += ") || ";
+                //if_condition += " $(this).find('.item').hasClass('"+yourArray[i]+"')  || ";
+              }
+              if_condition_test =if_condition_test.substring(0, if_condition_test.length - 3);
+              console.log(if_condition_test);
+              /*for ( var i = 0; i < yourArray.length; i++ ){
                 if_condition += " $(this).find('.item').hasClass('"+yourArray[i]+"')  && ";
               }
               if_condition =if_condition.substring(0, if_condition.length - 3);
-              console.log(if_condition);
-                if(eval(if_condition)){
-                  $(this).show();
+              console.log(if_condition);*/
+                if(eval(if_condition_test)){
+                  //$(this).show();
+                  $(this).css("display","block");
+                  current_style = style;
+                  swatch_class = 'visible';
                 }else{
-                  $(this).hide();
-              }
+                  //$(this).hide();
+                  $(this).css("display","none");
+                  current_style ='';
+                  swatch_class ='';
+                  count = 0;
+                }
+                if(style==current_style && swatch_class=='visible'){
+                    $(this).closest(".element-item").removeClass("swatches-hidden");
+                    if(count==0){
+                      var big_img =  $(this).find(".item img").data("big");
+                      var href = $(this).find(".item img").data("url");
+                      console.log(big_img);
+                      $(this).closest(".element-item").find(".img img").attr('src',big_img);
+                      $(this).closest(".element-item").find('.plp-main--img--wrapper').css({backgroundImage: "url("+big_img+")"});
+                      $(this).closest(".element-item").find(".main_link").attr('href',href);
+                    }
+                    count++;
+                }
             }else{
-              $(this).show();
+              //$(this).show();
+              $(this).css("display","block");
+              current_style = style;
+              swatch_class = 'visible';
+              var big_img =  $(this).closest(".element-item").find(".owl-item:visible:eq(0) .item img").data("big");
+              var href = $(this).closest(".element-item").find(".owl-item:visible:eq(0) .item img").data("url");
+              console.log(big_img);
+              $(this).closest(".element-item").find(".img img").attr('src',big_img);
+              $(this).closest(".element-item").find('.plp-main--img--wrapper').css({backgroundImage: "url("+big_img+")"});
+              $(this).closest(".element-item").find(".main_link").attr('href',href);
           }
 
-            var style = $(this).find(".item").data('style');
-            if(style!=data1){
+          
+
+            //var style = $(this).find(".item").data('style');
+            /*if(style!=data1){
               if($(this).is(':visible')){
                 var big_img = $(this).find(".item img").data("big");
                 var href = $(this).find(".item img").data("url");
@@ -446,10 +508,10 @@ function getComboFilter( filters ) {
                
             }else{
               //console.log(style+"mached");
-            }
+            }*/
         });
         
-      }
+     //}
 
       if($(".color-wrapper--more--container").is(":visible")){
         $(".swatches-icon").each(function(){
@@ -487,4 +549,7 @@ function getComboFilter( filters ) {
             }
         });
       }
+
+    //}
+
   }
