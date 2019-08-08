@@ -56,7 +56,7 @@
                 </div>
                 <div class="cart-success--info">
                     <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>
-                    <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
+                    <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">orders@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
                 </div>
                 <div class="shopping-heading">
                     <div class="row">
