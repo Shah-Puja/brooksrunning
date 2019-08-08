@@ -14,7 +14,7 @@ class ManualOrderMail extends Controller
 {
     public function index($from,$to){
         echo "Hi $from $to";
-        $orders=Order::whereBetween("order_no",$from,$to)->with('orderItems.variant.product', 'address')->get();
+        $orders=Order::whereBetween("order_no",[$from,$to])->with('orderItems.variant.product', 'address')->get();
         foreach($orders as $order){
             event(new OrderReceived($order));
         }   
