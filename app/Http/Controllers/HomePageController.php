@@ -15,6 +15,8 @@ class HomePageController extends Controller
 
         if(url()->current()==env('MEDIBANK_GATEWAY_URL')):
             Session::put('medibank_gateway', 'Yes');
+        else:
+            Session::put('medibank_gateway', 'No');
         endif;
 
         //Featured product(homepage slider)
