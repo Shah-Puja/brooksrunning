@@ -62,6 +62,7 @@
                 <div class="top clearfix">
                     <div class="offer-info">Free shipping on all orders over &dollar;50. Australia Wide</div>
                     <ul class="header-utality">
+                        @if(Session::get('medibank_gateway')!='Yes')
                         <li>
                             <a href="javascript:void(0)">My Account <span class="icon-down-arrow"></span></a>
                             <ul class="header-utality__submenu">
@@ -86,6 +87,7 @@
                                 
                             </ul>
                         </li>
+                        @endif
                         <li><a href="/info/contact-us">Help</a> 
                         </li>
                         <li><a href="/store-locator">Store Locator</a></li>
@@ -583,4 +585,5 @@
      
 </header>
 <!-- /Header for desktop -->
+
 

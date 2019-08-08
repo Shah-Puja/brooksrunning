@@ -52,11 +52,20 @@
         <div class="col-12">
             <div class="cart-left--container">
                 <div class="heading">
+                    <!-- <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3> -->
+                @if($order->order_type == 'medibank-user')    
+                    <h1 class="br-heading" style="line-height:26px; font-size:22px;">Congratulations on your purchase, if you’re eligible for Live Better Points they will be displayed in Live Better within 30 days.</h1>
+                @else
                     <h3 class="br-heading">Your Order has been Received. Thanks for shopping!</h3>
+                @endif
                 </div>
                 <div class="cart-success--info">
-                    <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>
-                    <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">orders@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
+                @if($order->order_type == 'medibank-user')
+                <p class="order"><span>Order No:</span> 7BRN-{{$order->order_no}}</p>
+                @else
+                <p class="order"><span>Order No:</span> BRN-{{$order->order_no}}</p>
+                @endif 
+                    <p>You will receive an email shortly confirmating the details of your order and order number.<br/>Your order will now be processed. Once dispatched you will receive an email with details to track your parcel.<br/>If you have any enquiries regarding your order please contact us at <span class="blue">shop@brooksrunning.com.au</span> or by phone on 1300 735 099.<br/>We are available to help Mon-Fri between 9am to 5pm AEST.</p>
                 </div>
                 <div class="shopping-heading">
                     <div class="row">

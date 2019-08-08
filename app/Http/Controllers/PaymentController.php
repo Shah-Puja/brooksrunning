@@ -22,6 +22,7 @@ use App\Payments\AfterpayProcessor;
 use App\Payments\AfterpayApiClient;
 use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 use DB;
 
 class PaymentController extends Controller {
@@ -70,6 +71,14 @@ class PaymentController extends Controller {
 
     public function create() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,stylename,color_name')->first();
+        /*if (Session::get('medibank_gateway') == 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank']);
+        }*/
+        if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-user']);
+        }else if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') != 'Yes') {
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-guest']);
+        }
         if (isset($this->order->gift_amount) && $this->order->gift_amount > 0 && $this->order->grand_total == 0.00) {
             $logger = array(
                 'order_id' => $this->order->id,
@@ -82,8 +91,6 @@ class PaymentController extends Controller {
             Order::where('id', $this->order->id)->update(['status' => 'Order Completed', 'payment_status' => Carbon::now()]);
 
             $result = $this->process_order($this->order->id, 'gift_cert', $orderReport, 0, $timestamp);
-
-
             $order = $this->order->load('orderItems.variant.product', 'address');
             event(new OrderReceived($order));
             return redirect('/order/success');
@@ -720,7 +727,12 @@ class PaymentController extends Controller {
         $returnOrderNum = $this->order->id;
         $add_description = '';
         $order_instruction = '';
-        $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
+        if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
+            $ordernum = "7BRN-" . $order->order_no;
+        } else {
+            $ordernum = "BRN-" . $order->order_no; //change Order No with new series when site goes live
+        }
+
 
         if (!empty($this->order->coupon_code)) {
             $order_instruction .= ' Coupon Code :- ' . $this->order->coupon_code;
@@ -806,6 +818,17 @@ class PaymentController extends Controller {
         $i = 0;
 
         $subtotal = 0;
+
+        if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
+            $xml_data .= "
+                        <OrderDetail>
+                          <SkuId>232661</SkuId>
+                          <Quantity>1</Quantity>
+                          <Price>0</Price>";
+            $xml_data .= " <Value>0</Value>
+                          </OrderDetail>";
+        }
+
         foreach ($this->order->orderItems as $item) {
 
             $sku = $item->variant->id;

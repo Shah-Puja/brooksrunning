@@ -154,4 +154,16 @@ class BillingShippingController extends Controller
         }*/
     }
 
+    public function verify_medibank_login(Request $request){
+
+        // Verification process is pending here
+        
+        //echo "<pre>";print_r($request->all());die;
+        if($request->medibank_email != "" && $request->medibank_id!=""){
+            echo "success";
+        }else{
+            echo "failed";
+        }
+    }
+
 }

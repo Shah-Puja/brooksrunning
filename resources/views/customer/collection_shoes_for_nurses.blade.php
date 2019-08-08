@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 
 <div class="create-account--header plp-header category__hero">
+ 
         <div class="row">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
                 <div class="m-block--hero--collection__content">

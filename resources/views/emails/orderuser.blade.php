@@ -151,7 +151,11 @@
                                             <tr>
                                                 <td align="center">
                                                     <hr style="background-color: #e1e1e1; height: 2px; border: 0;"/>
+                                                    @if($order->order_type == 'medibank-user')
+                                                    <h2><span style="color:#005cfb;">Order Number</span> 7BRN-{{ $order->order_no }}</h2> 
+                                                    @else
                                                     <h2><span style="color:#005cfb;">Order Number</span> BRN-{{ $order->order_no }}</h2> 
+                                                    @endif
                                                     <h3 style="line-height: 0.2px; font-weight: normal;">
                                                     @if($order->transaction_dt!='')
                                                         Order Date : {{ date('d F Y', strtotime($order->transaction_dt)) }}
