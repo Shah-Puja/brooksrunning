@@ -1112,6 +1112,44 @@
           }
       }
   }
+  /* Sale Sticky Header*/
+  .br-afterpaysale-header {
+    padding: 15px 20px;
+    background: #443b85;
+    margin: 0px auto;
+    text-align:center;
+    .br-afteryay-sale{
+      color: $white;
+      margin: 0px auto;
+      text-align:center;
+      font-size: 25px;
+      @extend %bold-font;
+      line-height: 1.5;
+      .br-afteryay-sale{
+        color:#f59f27 !important;
+        @extend %extrabold-font;
+      }
+      
+      @media #{$mobile-only}{
+        font-size: 16px;
+        line-height: 1.3;
+      }
+    }
+      .br-afteryay-sale-offer-valid{
+        font-size: 15px;
+        @extend %info-font;
+        line-height: 1.2;
+         color: $white;
+         margin: 0px auto;
+         text-align:center;
+         @media #{$mobile-only}{
+          font-size: 12px;
+          line-height: 1.2;
+        }
+      }
+  }
+  /* /Sale Sticky Header*/
+
 /* /header  */
 
 /* Footer  */
@@ -1450,17 +1488,17 @@
           max-width: 250px;
           margin: 0 auto;
           @media #{$tab-only}{
-            padding-top: 2%;
+            padding-top: 2%; padding-left: 3%;
             max-width: 180px;
           }
           @media #{$desktop-only}{
-            padding-top: 2%;
+            padding-top: 2%;  padding-left: 3%;
           }
           @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             max-width: 215px;
           }
           @media #{$mobile-only}{
-            padding-top: 95%;
+            padding-top: 105%;
           }
           .homepage-sale--btn{
             color: #005cfb;
@@ -1476,8 +1514,12 @@
               padding: 12px 15px;
               font-size: 13px;
             }
+            @media #{$mobile-only}{
+              padding: 15px 12px;
+              font-size: 13px;
+            }
             @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-              margin-top: 8px;
+              margin-top: 15px;
               padding: 12px 5px;
               font-size: 17px;
             }
@@ -1516,6 +1558,7 @@
             padding-top: 2% !important;
             max-width: 180px !important;
             padding-top: 3% !important;
+            padding-left: 5% !important;
         }
         .homepage-sale--btn{
           margin-top: 8px;
@@ -5762,8 +5805,8 @@ a {
 }
 .errorpage-404-section{
   &.bg {
-		/* The image used */
-		background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
+    background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
+    background-repeat: no-repeat;
 		-webkit-background-size: 100%;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -5771,8 +5814,8 @@ a {
 		height:80vh;
     background-position: center center;
     @media #{$tab-only}{
-          height: 40vh;
-          background-position: 35% 35%;
+      height: 40vh;
+      background-position: 35% 35%;
     }
     @media #{$desktop-only}{
       height: 55vh;
@@ -5783,46 +5826,47 @@ a {
       background-position: 90% 30%;
     }
 		
-  .errorpage-middle--wrapper{
-    margin: 0 auto;
-  
-    .button_fixed_second{
-      padding-top: 20px;
-      text-align: center; 
-      .primary-button{
-        margin: auto; 
-        max-width: 270px;
-        &:hover {
-          background-color: #002855;
-          color: #ffffff;
+    .errorpage-middle--wrapper{
+      margin: 0 auto;
+    
+      .button_fixed_second{
+        padding-top: 20px;
+        text-align: center; 
+        .primary-button{
+          margin: auto; 
+          max-width: 270px;
+          &:hover {
+            background-color: #002855;
+            color: #ffffff;
+          }
+            @media #{$mobile-only}{ 
+            max-width: 200px;    padding:15px 20px;
+            font-size: 14px;
+            }
+            @media #{$desktop-only}{ 
+              max-width: 225px; font-size: 16px; 
+            }
+            @media #{$tab-only}{ 
+              max-width: 225px; font-size: 16px; 
+            }
+            @media #{$mobile-only}{
+              max-width: 150px; font-size: 16px; 
+            }
         }
-          @media #{$mobile-only}{ 
-          max-width: 200px;    padding:15px 20px;
-          font-size: 14px;
-          }
-          @media #{$desktop-only}{ 
-            max-width: 225px; font-size: 16px; 
-          }
-          @media #{$tab-only}{ 
-            max-width: 225px; font-size: 16px; 
-          }
-          @media #{$mobile-only}{
-            max-width: 150px; font-size: 16px; 
-          }
-       }
-       @media #{$mobile-only}{
-        display: inline-block;
-        padding: 1px;
+        @media #{$mobile-only}{
+          display: inline-block;
+          padding: 1px;
           width: 150px;
-       }
-    }
-    &.errorpage-middle--wrapper-onmob{
-      @media #{$mobile-only}{ padding-top: 75px;
-      
-      text-align:center;
+        }
+      }
+      &.errorpage-middle--wrapper-onmob{
+        @media #{$mobile-only}{ 
+          padding-top: 75px;
+
+          text-align:center;
+        }
       }
     }
-  }
  
   }
 }

@@ -138,6 +138,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $("#mob-nav--control").click(function () {
+        $(".br-afterpaysale-header").toggleClass("display-none");
         $(this).find(".close").toggleClass("icon-close");
         $(".header-mobile").toggleClass("fixed");
         $("#mobile-navbar--container").toggleClass("active");
@@ -146,7 +147,13 @@ $(document).ready(function () {
         $("#mobile-navbar--container").find("li ul").css("display", "none");
     });
     $("#mobile-navbar").aceResponsiveMenu({});
+
+    $('.mobile-close').click(function(){
+        $(".br-afterpaysale-header").css("display", "block");
+
+    });
 });
+
 (function ($) {
     $.fn.aceResponsiveMenu = function (options) {
 
