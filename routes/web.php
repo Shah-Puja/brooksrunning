@@ -215,6 +215,7 @@ Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icon
 Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
 Route::get('/test/media-list', 'testImageList@index');
+Route::get('/test/ManualOrderMail/{from}/{to}', 'ManualOrderMail@index');
 
 Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_medibank_login');
 
