@@ -28,10 +28,8 @@ class OrderProcessor implements ShouldQueue
      * @return void
      */
     public function handle(OrderReceived $event)
-    {
-        //echo "<pre>";print_r($event);die;
-        //Mail::to($event->order->address->email)
-        Mail::to(config('site.notify_email'))
+    {    
+        Mail::to($event->order->address->email)        
                 ->bcc( config('site.syg_notify_email') )
                 ->send( new OrderUser($event->order) );
         Mail::to( config('site.notify_email') )
