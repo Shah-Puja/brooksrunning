@@ -36,14 +36,15 @@ class BannerComposer
                         '/success');
 
         if (in_array($path, $segments)) {
-            $this->banner->active='N';
+            $this->banner='';
         }
+
     }
 
     public function compose(View $view)
     {
-        $afterpay_banner =  $this->banner ?? new Promo_banners;
-        $view->with( compact('afterpay_banner') );
+        $header_banner =  $this->banner ?? new Promo_banners;
+        $view->with( compact('header_banner') );
     }
 
 }
