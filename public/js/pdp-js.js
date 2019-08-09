@@ -1371,7 +1371,8 @@ function detail_validation() {
 }
 /// OSFA pre-selected size
 $(document).ready(function(){
-    if($(".size-show li").length==1 && $(".size-show li:first").data('value') =='OSFA'){
+    var size_felement = $(".size-show li:first").data('value');
+    if($(".size-show li").length==1 && (size_felement =='OSFA' || size_felement =='EACH')){
         $(".size-show li:first").trigger("click");
     }
 });
