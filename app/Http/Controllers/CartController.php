@@ -152,6 +152,7 @@ class CartController extends Controller {
                                     
             /* $bridge = $this->bridgeObject->processCart($cart_xml)->getContents();
               $xml = simplexml_load_string($bridge); */
+              echo $cart_xml;
             $xml = array();
             $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
             if (!empty($cart_xml_response)) {

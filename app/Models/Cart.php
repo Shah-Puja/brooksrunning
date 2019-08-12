@@ -95,6 +95,7 @@ class Cart extends Model {
     public function cart_api($bridgeObject) {   /// new function
         if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
             $cart_xml = view('xml.cart_call')->with('cart',$this);
+            echo $cart_xml;
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
             echo 'cart_xml_response'."<br>";
