@@ -2,12 +2,12 @@
 	<PersonId>115414</PersonId>
 	<Contacts>
 	</Contacts>
-	<CartDetails>
+	<CartDetails>\n\t
         @foreach ($cart->cartItems as $item)
             <CartDetail>		
 				<SkuId>{{$item->variant_id}}</SkuId>
 				<Quantity>{{$item->qty}}</Quantity>
-			</CartDetail>
+			</CartDetail>\n\t
         @endforeach
     </CartDetails>
 </Cart>
