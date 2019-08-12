@@ -102,7 +102,7 @@ class Cart extends Model {
                 $xml = simplexml_load_string($bridge);
             }
             if (!empty($xml) && !isset($xml->ErrorCode)) {
-                $cartdetail_arr = $xml->CartDetails->CartDetail;
+                $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
                 print_r($cartdetail_arr);
                 exit;
                 $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
