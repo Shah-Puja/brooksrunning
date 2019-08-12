@@ -38,7 +38,7 @@ class MedibankController extends Controller
                 $response = json_decode($response,true);
                 if(isset($response['access_token'])){
                     
-                   $access_token = $response['access_token'];
+                    $access_token = $response['access_token'];
 
                     $curl = curl_init();
                     $PolicyNumber = Input::get('medibank_id');
@@ -73,7 +73,7 @@ class MedibankController extends Controller
                     if (!$err) {
                         if(!empty($response1)){
                             $response1 = json_decode($response1,true);
-                            if(isset($response1['errorCode'])){
+                            if(isset($response1['errorCode']) || isset($response1['message'])){
                                 Session::flash('medibank_user_failed','Yes');
                             }else{
                                 $verified = $response1['Verified'];
