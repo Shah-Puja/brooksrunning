@@ -101,10 +101,6 @@ class Cart extends Model {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
             }
-            $cartdetail_arr = $xml;
-            echo "cartdetail_arr"."<br>";
-            print_r($cartdetail_arr);
-            exit;
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 $cartdetail_arr = $xml->CartDetails->CartDetail;
                 print_r($cartdetail_arr);
