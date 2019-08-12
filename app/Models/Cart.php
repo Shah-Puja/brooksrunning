@@ -97,6 +97,9 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_call')->with('cart',$this);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+            echo 'cart_xml_response'."<br>";
+            print_r($cart_xml_response);
+            echo 'simplexml_load_string'."<br>";
             print_r(simplexml_load_string($cart_xml_response->getContents()));
             //exit;
             if (!empty($cart_xml_response)) {
