@@ -103,6 +103,7 @@ class Cart extends Model {
                 'response' => $cart_xml_response,  
                 'object_id'=>session('cart_id')             
             );
+            print_r($logger);
             Ap21_log::createNew($logger);
             if (!empty($cart_xml_response)) {
                 $xml = simplexml_load_string($cart_xml_response->getContents());
