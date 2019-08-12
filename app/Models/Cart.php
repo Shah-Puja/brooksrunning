@@ -94,6 +94,7 @@ class Cart extends Model {
 
     public function cart_api($bridgeObject) {   /// new function
         if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
+            $this->cart_promo();
             $cart_xml = view('xml.cart_call')->with('cart',$this);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
@@ -123,10 +124,8 @@ class Cart extends Model {
                     case 'standard':
                         if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
                             $freight_charges = config('site.SHIPPING_SET_PRICE');
-                        } else if (empty($cart_total) || $cart_total <= 0) {
+                        } else{
                             $freight_charges = '0.00';
-                        } else {
-                            $freight_charges = '0';
                         }
                     break;
                     default:
@@ -140,6 +139,17 @@ class Cart extends Model {
             
         }
             
+    }
+
+    public function cart_promo(){
+        if ($this->promo_code != "") {
+            $promo_code = promo_mast::where('promo_string', $cart->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
+            if (!empty($promo_code)) {
+                $promo_code->push('qty',1);
+                array_push($this, $promo_code);
+            }
+        }
+
     }
 
 
