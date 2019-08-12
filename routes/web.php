@@ -20,14 +20,22 @@ Route::get('/', 'HomePageController@index');
 
 Route::post('/reset_pass', 'InfoController@check_email');
 
-Route::get('/cart', 'CartController@show');
-Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
-Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
-Route::post('/cart/edit_cart','CartController@edit_cart_popup');
-Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
-Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
-Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
-Route::post('/cart/removecoupon', 'CartController@removecoupon');
+//if(env('NEW_UPDATED_FILES')=='Yes'){
+
+	Route::get('/newcart', 'test\CartController@show');
+
+//}else{
+
+	Route::get('/cart', 'CartController@show');
+	Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
+	Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
+	Route::post('/cart/edit_cart','CartController@edit_cart_popup');
+	Route::post('/cart/check_valid_gift_voucher', 'CartController@check_valid_gift_voucher');
+	Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
+	Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
+	Route::post('/cart/removecoupon', 'CartController@removecoupon');
+
+//}
 
 
 Route::middleware(['allowOnlyAjax'])->group(function () {

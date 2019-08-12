@@ -91,4 +91,28 @@ class Cart extends Model {
         Cache::forget('cart' . $this->id);
     }
 
+    public function cart_api() {   /// new function
+        if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
+            $cart_xml = view('xml.cart_call', ['cart'=>$this])->render();
+            $xml = array();
+            $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
+            if (!empty($cart_xml_response)) {
+                $bridge = $cart_xml_response->getContents();
+                $xml = simplexml_load_string($bridge);
+            }
+            
+            $logger = array(
+                'process' =>'Cart-API',                
+                'request' => $cart_xml,
+                'response' => $cart_xml_response,  
+                'object_id'=>session('cart_id')             
+            );
+            Ap21_log::createNew($logger);
+            
+            echo $cart_xml;
+        }
+            
+    }
+
+
 }
