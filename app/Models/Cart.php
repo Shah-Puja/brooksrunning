@@ -5,6 +5,7 @@ namespace App\Models;
 use Facades\App\Models\Freight;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Ap21_log;
 
 class Cart extends Model {
 
@@ -91,18 +92,11 @@ class Cart extends Model {
         Cache::forget('cart' . $this->id);
     }
 
-    public function cart_api() {   /// new function
+    public function cart_api($bridgeObject) {   /// new function
         if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
-            echo $cart_xml = view('xml.cart_call', ['cart'=>$this]);
+            $cart_xml = view('xml.cart_call')->with('cart',$this);
             $xml = array();
-           echo  $this->cartItems->count();
-            //exit;
-            $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
-            if (!empty($cart_xml_response)) {
-                $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);
-            }
-            
+            $cart_xml_response = $bridgeObject->processCart($cart_xml);
             $logger = array(
                 'process' =>'Cart-API',                
                 'request' => $cart_xml,
@@ -110,8 +104,44 @@ class Cart extends Model {
                 'object_id'=>session('cart_id')             
             );
             Ap21_log::createNew($logger);
+            if (!empty($cart_xml_response)) {
+                $xml = simplexml_load_string($cart_xml_response->getContents());
+            }
+            if (!empty($xml) && !isset($xml->ErrorCode)) {
+                $cartdetail_arr = $xml->CartDetails->CartDetail;
+                print_r($cartdetail_arr);
+                exit;
+                $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
+                $total_due = (array) $xml->TotalDue;
+                $cart_total = $total_due[0];
+                /*$delivery_option = $cart['delivery_type'];
+                if ($delivery_option == 'new_zealand') {
+                    $freight_charges = config('site.SHIPPING_NZ_PRICE');
+                } elseif ($delivery_option == 'standard') {
+                    if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
+                        $freight_charges = config('site.SHIPPING_SET_PRICE');
+                    } else if (empty($cart_total) || $cart_total <= 0) {
+                        $freight_charges = '0.00';
+                    } else {
+                        $freight_charges = '0';
+                    }
+                } else {
+                    //echo $delivery_option;die;
+                    //echo "<pre>";print_r($cart['freight_cost']);die;
+                    if (!empty($cart)) {
+                        $freight_charges = $cart['freight_cost'];
+                    }
+                }
+                $total_disc = (array) $xml->TotalDiscount;
+                $total_discount = $total_disc[0]; //Cart total
+
+                $data['cart_detail'] = $cartdetail_arr;
+                $data['cart_total'] = $cart_total - $xml_freight_charges;
+                $data['original_cart_total'] = $cart_total;
+                $data['total_discount'] = $total_discount;
+                $data['freight_charges'] = $freight_charges;*/
+            }
             
-            echo $cart_xml;
         }
             
     }
