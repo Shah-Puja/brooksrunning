@@ -97,43 +97,45 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_call')->with('cart',$this);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+
+            $logger = array(
+                'process' =>'Cart-API',                
+                'request' => $cart_xml,
+                'response' => $cart_xml_response,  
+                'object_id'=>session('cart_id')             
+            );
+            Ap21_log::createNew($logger);
+
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
             }
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
-                print_r($cartdetail_arr);
-                exit;
                 $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
                 $total_due = (array) $xml->TotalDue;
                 $cart_total = $total_due[0];
-                /*$delivery_option = $cart['delivery_type'];
-                if ($delivery_option == 'new_zealand') {
-                    $freight_charges = config('site.SHIPPING_NZ_PRICE');
-                } elseif ($delivery_option == 'standard') {
-                    if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
-                        $freight_charges = config('site.SHIPPING_SET_PRICE');
-                    } else if (empty($cart_total) || $cart_total <= 0) {
-                        $freight_charges = '0.00';
-                    } else {
-                        $freight_charges = '0';
-                    }
-                } else {
-                    //echo $delivery_option;die;
-                    //echo "<pre>";print_r($cart['freight_cost']);die;
-                    if (!empty($cart)) {
-                        $freight_charges = $cart['freight_cost'];
-                    }
+                $delivery_option = $this->delivery_type;
+                switch($this->delivery_type){
+                    case 'new_zealand':
+                        $freight_charges = config('site.SHIPPING_NZ_PRICE');
+                    break;
+                    case 'standard':
+                        if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
+                            $freight_charges = config('site.SHIPPING_SET_PRICE');
+                        } else if (empty($cart_total) || $cart_total <= 0) {
+                            $freight_charges = '0.00';
+                        } else {
+                            $freight_charges = '0';
+                        }
+                    break;
+                    default:
+                        $freight_charges = $this->freight_cost;
                 }
                 $total_disc = (array) $xml->TotalDiscount;
                 $total_discount = $total_disc[0]; //Cart total
-
-                $data['cart_detail'] = $cartdetail_arr;
-                $data['cart_total'] = $cart_total - $xml_freight_charges;
-                $data['original_cart_total'] = $cart_total;
-                $data['total_discount'] = $total_discount;
-                $data['freight_charges'] = $freight_charges;*/
+                return ['cart_detail' =>  $cartdetail_arr , 'cart_total' =>  $cart_total - $xml_freight_charges,
+                        'original_cart_total' => $cart_total,'total_discount' => $total_discount, 'freight_charges' => $freight_charges];
             }
             
         }
