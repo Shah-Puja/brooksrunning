@@ -107,7 +107,7 @@ class Cart extends Model {
             if (!empty($cart_xml_response)) {
                 $xml = simplexml_load_string($cart_xml_response->getContents());
             }
-            $cartdetail_arr = $xml->CartDetails->CartDetail;
+            $cartdetail_arr = $xml;
             print_r($cartdetail_arr);
             exit;
             if (!empty($xml) && !isset($xml->ErrorCode)) {
