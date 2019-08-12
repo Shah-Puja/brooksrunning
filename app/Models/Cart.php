@@ -93,8 +93,10 @@ class Cart extends Model {
 
     public function cart_api() {   /// new function
         if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
-            $cart_xml = view('xml.cart_call', ['cart'=>$this])->render();
+            echo $cart_xml = view('xml.cart_call', ['cart'=>$this]);
             $xml = array();
+           echo  $this->cartItems->count();
+            //exit;
             $cart_xml_response = $this->bridgeObject->processCart($cart_xml);
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
