@@ -93,6 +93,16 @@ class CollectionController extends Controller
         return view( 'customer.collection_mothers_day_listing',compact('women_running_shoes','women_running_clothing','sports_bras','accessories','colour_options','products'));
     }
 
+    public function fathers_day(){
+        $women_running_shoes = \App\Models\Product::getProducts_array(['120277_406','120279_509','120284_028','120287_531','120292_030','120285_092']);
+        $women_running_clothing = \App\Models\Product::getProducts_array(['221364_563', '221255_182','221135_182','221221_594','221349_561','221350_182']);
+        $sports_bras = \App\Models\Product::getProducts_array(['350064_568','350037_052','350071_001']);
+        $accessories = \App\Models\Product::getProducts_array(['280404_517','280356_520','280409_081']);
+        $products = '';
+        $colour_options ='';
+        return view( 'customer.collection_fathers_day_listing',compact('women_running_shoes','women_running_clothing','sports_bras','accessories','colour_options','products'));
+    }
+
     public function energize_collection(){
         $support_shoes = \App\Models\Product::getProducts_array(['120272_321','110283_449','120286_615','110298_429']);
         $neutral_shoes = \App\Models\Product::getProducts_array(['110290_057', '120279_520','110293_428','120282_080','110297_488','120285_542','110295_493','120288_080']);
