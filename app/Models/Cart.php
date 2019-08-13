@@ -149,7 +149,7 @@ class Cart extends Model {
                 $promo_code->qty=1;
                 $this->cartItems->push($promo_code);
                 echo "<pre>";
-                print_r($this->cartItems->toArray());
+                print_r($this);
                 exit;
             }
         }
