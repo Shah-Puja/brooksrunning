@@ -106,9 +106,14 @@ class Cart extends Model {
                 'object_id'=>session('cart_id')             
             );
             Ap21_log::createNew($logger);
+
+            print_r($cart_xml_response->getContents());
+            exit;
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
+
+            
             }
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
