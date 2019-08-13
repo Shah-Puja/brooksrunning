@@ -137,7 +137,7 @@ class Cart extends Model {
                 $total_discount = $total_disc[0]; //Cart total
                 ///update cart mast 
                 $this->update(['total' => $cart_total - $xml_freight_charges, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
-                print_r($cartdetail_arr);
+                print_r(collect($cartdetail_arr));
                 exit;
                 
                 //$cartdetail_arr->cart_items_update();
@@ -150,7 +150,7 @@ class Cart extends Model {
     public function cart_without_ap21(){
         if($this->cartItems->count() > 0){
             $this->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
-            $this->cartItems->cart_items_update();
+            $this->cart_items_update();
         }
 
     }
@@ -166,12 +166,10 @@ class Cart extends Model {
         return $promo_array;
     }
 
-    public function cart_items_update(){
-        print_r($this);
-        exit;
-        /*foreach ($this as $item) {
+    public function cart_items_update($items){
+        foreach ($items as $item) {
             $this->$item->update(['discount_price' => $item->price_sale, 'discount_detail' => (isset($this->$item->discount)) ? $this->$item->discount : 0, 'price_sale' => $item->price_sale]);
-        }*/
+        }
     }
 
 
