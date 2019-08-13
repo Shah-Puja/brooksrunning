@@ -97,6 +97,7 @@ class Cart extends Model {
         if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
             $this->cart_promo();
             $cart_xml = view('xml.cart_call')->with('cart',$this);
+            print_r($cart_xml);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
 
@@ -148,9 +149,6 @@ class Cart extends Model {
             if (!empty($promo_code)) {
                 $promo_code->qty=1;
                 $this->cartItems->push($promo_code);
-                echo "<pre>";
-                print_r($this);
-                exit;
             }
         }
 
