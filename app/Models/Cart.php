@@ -100,6 +100,7 @@ class Cart extends Model {
             echo $cart_xml;
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+            print_r($cart_xml_response);
             $logger = array(
                 'process' =>'Cart-API',                
                 'request' => $cart_xml,
