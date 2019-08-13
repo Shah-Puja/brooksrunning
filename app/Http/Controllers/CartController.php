@@ -57,9 +57,7 @@ class CartController extends Controller {
                         Cart::where('id', session('cart_id'))->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0]);
                     }
                 }
-                echo "<pre>";
-                print_r($cart_arr);
-                echo "</pre>";
+
                 $data = $this->cart_api($cart_arr);
                 $this->check_gift_voucher();
             }
