@@ -97,8 +97,6 @@ class Cart extends Model {
         if($this->cartItems->count() > 0){
             $xml_promo_st = $this->get_promo_xml();
             $cart_xml = view('xml.cart_call')->with(['cart'=>$this,'xml_promo_st'=>$xml_promo_st]);
-            echo $cart_xml;
-            exit;
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
 
@@ -138,7 +136,7 @@ class Cart extends Model {
                 $total_discount = $total_disc[0]; //Cart total
                 ///update cart mast 
                 $this->update(['total' => $cart_total - $xml_freight_charges, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
-                //$cartdetail_arr->cart_items_update();
+                $cartdetail_arr->cart_items_update();
             }else{
                 $this->cart_without_ap21();
             }
@@ -165,9 +163,11 @@ class Cart extends Model {
     }
 
     public function cart_items_update(){
-        foreach ($this as $item) {
+        print_r($this);
+        exit;
+        /*foreach ($this as $item) {
             $this->$item->update(['discount_price' => $item->price_sale, 'discount_detail' => (isset($this->$item->discount)) ? $this->$item->discount : 0, 'price_sale' => $item->price_sale]);
-        }
+        }*/
     }
 
 
