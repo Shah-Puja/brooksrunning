@@ -38,7 +38,7 @@
 </div>
 
 <!-- Carousel -->
-@if(!empty($accessories))
+@if(!empty($men_accessories))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="mp-lp--container">
     <div class="collection-intro">
@@ -47,9 +47,9 @@
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
-        @if($accessories!='')
-            @foreach($accessories['products'] as $curr_ele)
-                @foreach($accessories['colour_options'] as $product)
+        @if($men_accessories!='')
+            @foreach($men_accessories['products'] as $curr_ele)
+                @foreach($men_accessories['colour_options'] as $product)
                     @if($product->style == $curr_ele->style)
                             @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
@@ -71,7 +71,18 @@
                         </div>
                         <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
                             <div class="info">
-                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
+                            
+                            @switch($curr_ele->gender)
+                                    @case('M')
+                                        @php $gender = "Men's "; @endphp
+                                    @break
+                                    @case('W')
+                                        @php $gender = "Women's "; @endphp
+                                    @break
+                                    @default
+                                        @php $gender = ""; @endphp
+                                 @endswitch
+                                <h3>{{($gender!='')? $gender:''}} {{ $curr_ele->stylename }}</h3>
                                 <div class="price">
                                     @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                         <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
@@ -117,7 +128,7 @@
 <!-- End Carousel -->
 
 <!-- Accessories section -->
-@if(!empty($accessories))
+@if(!empty($men_accessories))
 <section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
@@ -129,9 +140,9 @@
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
-                    @if($accessories!='')
-                    @foreach($accessories['products'] as $curr_ele)
-                        @foreach($accessories['colour_options'] as $product)
+                    @if($men_accessories!='')
+                    @foreach($men_accessories['products'] as $curr_ele)
+                        @foreach($men_accessories['colour_options'] as $product)
                             @if($product->style == $curr_ele->style)
                                     @php $colors_option[$curr_ele->style][] = $product; @endphp
                             @endif
@@ -207,7 +218,17 @@
                                 <!-- End mobile swatches -->
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
-										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
+                                    @switch($curr_ele->gender)
+                                        @case('M')
+                                            @php $gender = "Men's "; @endphp
+                                        @break
+                                        @case('W')
+                                            @php $gender = "Women's "; @endphp
+                                        @break
+                                        @default
+                                            @php $gender = ""; @endphp
+                                    @endswitch
+                                    <h3>{{($gender!='')? $gender:''}} {{ $curr_ele->stylename }} </h3>
 										<div class="price">
                                             @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                                 <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
@@ -244,7 +265,7 @@
 <!-- End accessories section -->
 
 <!-- Carousel -->
-@if(!empty($women_running_clothing))
+@if(!empty($men_running_clothing))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="mp-lp--container">
     <div class="collection-intro">
@@ -253,9 +274,9 @@
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
-        @if($women_running_clothing!='')
-            @foreach($women_running_clothing['products'] as $curr_ele)
-                @foreach($women_running_clothing['colour_options'] as $product)
+        @if($men_running_clothing!='')
+            @foreach($men_running_clothing['products'] as $curr_ele)
+                @foreach($men_running_clothing['colour_options'] as $product)
                     @if($product->style == $curr_ele->style)
                             @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
@@ -324,7 +345,7 @@
 
 
 <!-- Men running clothing section -->
-@if(!empty($women_running_clothing))
+@if(!empty($men_running_clothing))
 <section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
@@ -336,9 +357,9 @@
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
-                    @if($women_running_clothing!='')
-                    @foreach($women_running_clothing['products'] as $curr_ele)
-                        @foreach($women_running_clothing['colour_options'] as $product)
+                    @if($men_running_clothing!='')
+                    @foreach($men_running_clothing['products'] as $curr_ele)
+                        @foreach($men_running_clothing['colour_options'] as $product)
                             @if($product->style == $curr_ele->style)
                                     @php $colors_option[$curr_ele->style][] = $product; @endphp
                             @endif
@@ -453,7 +474,7 @@
 
 
 <!-- Carousel -->
-@if(!empty($women_running_shoes))
+@if(!empty($men_running_shoes))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="mp-lp--container">
     <div class="collection-intro">
@@ -462,9 +483,9 @@
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
-        @if($women_running_shoes!='')
-            @foreach($women_running_shoes['products'] as $curr_ele)
-                @foreach($women_running_shoes['colour_options'] as $product)
+        @if($men_running_shoes!='')
+            @foreach($men_running_shoes['products'] as $curr_ele)
+                @foreach($men_running_shoes['colour_options'] as $product)
                     @if($product->style == $curr_ele->style)
                             @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
@@ -537,7 +558,7 @@
 <!-- End Carousel -->
 
 <!-- Men running shoes section -->
-@if(!empty($women_running_shoes))
+@if(!empty($men_running_shoes))
 <section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
 	<div class="wrapper">
 		<div class="row">
@@ -549,9 +570,9 @@
             </div>
             <div class="col-9 tab-8">
 				<div class="plp-wrapper-container">
-                    @if($women_running_shoes!='')
-                    @foreach($women_running_shoes['products'] as $curr_ele)
-                        @foreach($women_running_shoes['colour_options'] as $product)
+                    @if($men_running_shoes!='')
+                    @foreach($men_running_shoes['products'] as $curr_ele)
+                        @foreach($men_running_shoes['colour_options'] as $product)
                             @if($product->style == $curr_ele->style)
                                     @php $colors_option[$curr_ele->style][] = $product; @endphp
                             @endif
@@ -653,211 +674,7 @@
 @endif
 <!-- End men running shoes section -->
 
-<!-- Carousel -->
-@if(!empty($sports_bras))
-<div class="wrapper visible-mob hidden-tab hidden-col">
-    <div class="mp-lp--container">
-    <div class="collection-intro">
-        <h2>Sports Bras</h2>
-        <div><a href="/womens-sports-bras" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
-    </div>
-        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
-        <div class="owl-carousel md-lp-carousal owl-centered">
-        @if($sports_bras!='')
-            @foreach($sports_bras['products'] as $curr_ele)
-                @foreach($sports_bras['colour_options'] as $product)
-                    @if($product->style == $curr_ele->style)
-                            @php $colors_option[$curr_ele->style][] = $product; @endphp
-                    @endif
-                    @endforeach
-                @php
-                    $price_sale = $curr_ele->variants->max('price_sale');
-                    $price = $curr_ele->variants->max('price');
-                    $max_price =$curr_ele->variants->pluck('price')->max();
-                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
-                    $min_price = $curr_ele->variants->pluck('price')->min();
-                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
-                @endphp
-                <div class="item">
-                    <div class="product_arrive plp-product">
-                        <div class="prd_img">
-                            <a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
-                            <img src="{{ $curr_ele->image->image1Mediumx() }}">
-                            </a>
-                        </div>
-                        <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
-                            <div class="info">
-                                <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }}</h3>
-                                <div class="price">
-                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
-                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
-                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
-                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
-                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
-                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
-                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
-                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
-                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
-                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
-                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
-                                    @else
-                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
-                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                    @endif
-                                </div>
-                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
-                            </div>
-                            <!--<div class="info-sub">
-                                <div class="row">
-                                    <div class="mob-6">
-                        
-                                    </div>
-                                    <div class="mob-6">
-                                        <p class="right">1 Width Available</p>
-                                    </div>
-                                </div>
-                            </div>-->
-                        </a>
-                    </div>
-                </div>
-            <!--  -->
-            @endforeach
-        @endif
-        </div>
-        <!-- <span class="icon-style icon-next-arrow next"></span> -->
-    </div>
-</div>
-@endif
-<!-- End Carousel -->
 
-<!-- Sports bras section -->
-@if(!empty($sports_bras))
-<section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
-	<div class="wrapper">
-		<div class="row">
-            <div class="col-3 tab-4">
-                <div class="collection-header-intro">
-                    <h2>Sports Bras</h2>
-                    <div><a href="/womens-sports-bras" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
-                </div>
-            </div>
-            <div class="col-9 tab-8">
-				<div class="plp-wrapper-container">
-                    @if($sports_bras!='')
-                    @foreach($sports_bras['products'] as $curr_ele)
-                        @foreach($sports_bras['colour_options'] as $product)
-                            @if($product->style == $curr_ele->style)
-                                    @php $colors_option[$curr_ele->style][] = $product; @endphp
-                            @endif
-                         @endforeach
-                        @php
-                            $price_sale = $curr_ele->variants->max('price_sale');
-			                $price = $curr_ele->variants->max('price');
-                            $max_price =$curr_ele->variants->pluck('price')->max();
-                            $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
-                            $min_price = $curr_ele->variants->pluck('price')->min();
-                            $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
-                            
-                        @endphp
-
-						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
-							<div class="plp-product">
-                                <div class="offer-info">
-                                    <!--<span>NEW</span>-->
-                                    @if($price_sale < $price)
-                                        <span class="sale">SALE</span>
-                                    @endif
-                                </div>
-                                <a href="/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html" class="main_link">
-                                    <div class="plp-main--img--wrapper" style="background-image: url('{{ $curr_ele->image->image1Mediumx() }}')"></div>
-                                </a>
-								<div class="more-color--container more-clothing hidden-mob">
-									<span class="icon-style icon-back-arrow prev"></span>
-									<div class="owl-carousel owl-theme">
-                                    @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
-                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
-                                            @if(!empty($color_product))
-                                                <div class="item " data-style="{{$curr_ele->style}}">
-                                                    <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{$color_product->seo_name}}/{{$curr_ele->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg" alt="">
-                                                </div>
-                                            @endif
-                                        @endforeach
-				                    @endif
-									</div>
-									<span class="icon-style icon-next-arrow next"></span>
-								</div>
-                                	<!-- Start mobile swatches -->
-                                <div class="color-wrapper--more--container visible-mob hidden-tab hidden-col">
-                                        <div class="color-wrapper--more">
-                                            @php 
-                                                $i = 1; 
-                                                $remaining_count = 0;
-                                            @endphp
-                                            @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
-                                                @php 
-                                                $add_class = '';
-                                                $add_css = '';
-                                                if(($i > 3 )){
-                                                        $add_class = 'remaining';
-                                                        $add_css = 'style=display:none;';
-                                                        $remaining_count++;
-                                                }
-                                                @endphp
-                                                
-                                                <div class="swatches-icon {{ $add_class }}" data-style="{{$curr_ele->style}}"  {{ $add_css }}>
-                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{$color_product->seo_name}}/{{$curr_ele->style}}_{{$color_product->color_code}}.html" data-big="{{ $color_product->image->image1Mediumx() }}" class="plp-thumb--bg"  alt="">
-                                                </div>
-                                            @php $i++  @endphp
-                                            @endforeach
-                                        </div>
-                                        @if($remaining_count>0)
-                                        <div class="color-wrapper--more--add"> 
-                                            <!-- /* For showing swatches count */ -->
-                                            <div  class="remaining_swatches">+{{  $remaining_count }}</div>
-                                                <!--  /* swatches count end */ -->
-                                        </div>
-                                        @endif
-                                </div>
-                                <!-- End mobile swatches -->
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
-									<div class="info">
-										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
-										<div class="price">
-                                            @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
-                                                <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
-                                            @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
-                                                <del><span class="black">&dollar;{{ $max_price }}</span></del>
-                                                <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
-                                            @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
-                                                <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                            @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
-                                            <del><span class="black">&dollar;{{ $max_price }}</span></del>
-                                            <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                            @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
-                                            <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
-                                            <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
-                                            @else
-                                            <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
-                                            <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
-                                            @endif
-										</div>
-										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<!--- div -->
-                        @endforeach
-                    @endif
-				</div>
-            </div>
-		</div>
-	</div>
-</section>
-@endif
-<!-- End sports bras section -->
 
 <script>
 $(document).ready(function () {

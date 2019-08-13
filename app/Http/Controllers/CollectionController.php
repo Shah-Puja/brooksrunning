@@ -94,13 +94,12 @@ class CollectionController extends Controller
     }
 
     public function fathers_day(){
-        $women_running_shoes = \App\Models\Product::getProducts_array(['120277_406','120279_509','120284_028','120287_531','120292_030','120285_092']);
-        $women_running_clothing = \App\Models\Product::getProducts_array(['221364_563', '221255_182','221135_182','221221_594','221349_561','221350_182']);
-        $sports_bras = \App\Models\Product::getProducts_array(['350064_568','350037_052','350071_001']);
-        $accessories = \App\Models\Product::getProducts_array(['280404_517','280356_520','280409_081']);
+        $men_running_shoes = \App\Models\Product::getProducts_array(['110316_466','110283_126','110294_069','110299_092','110296_071','110298_479']);
+        $men_running_clothing = \App\Models\Product::getProducts_array(['211090_424', '211133_330','211232_078']);
+        $men_accessories = \App\Models\Product::getProducts_array(['7342_100','7343_001','742087_100','BROXYGEN_211','280355_466','280412_001']);
         $products = '';
         $colour_options ='';
-        return view( 'customer.collection_fathers_day_listing',compact('women_running_shoes','women_running_clothing','sports_bras','accessories','colour_options','products'));
+        return view( 'customer.collection_fathers_day_listing',compact('men_running_shoes','men_running_clothing','men_accessories','colour_options','products'));
     }
 
     public function energize_collection(){
