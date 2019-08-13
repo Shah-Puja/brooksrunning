@@ -9,6 +9,5 @@
 				<Quantity>{{$item->qty}}</Quantity>
 			</CartDetail>
         @endforeach
-		{!!$xml_promo_st!!}
     </CartDetails>
 </Cart>
