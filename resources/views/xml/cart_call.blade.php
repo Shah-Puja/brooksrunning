@@ -9,7 +9,7 @@
 				<Quantity>{{$item->qty}}</Quantity>
 			</CartDetail>
         @endforeach
-		@if($xml_promo_st!='')
+		@if(isset($xml_promo_st) && $xml_promo_st!='')
 			<CartDetail>		
 				<SkuId>{{$xml_promo_st->skuid}}</SkuId>
 				<Quantity>{{$xml_promo_st->qty}}</Quantity>
