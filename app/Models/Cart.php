@@ -110,9 +110,9 @@ class Cart extends Model {
                 'object_id'=>session('cart_id')             
             );
             Ap21_log::createNew($logger);
-            
+
             if (!empty($xml) && !isset($xml->ErrorCode)) {
-                $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
+                $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail')->all();
                 $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
                 $total_due = (array) $xml->TotalDue;
                 $cart_total = $total_due[0];
