@@ -160,7 +160,7 @@ class Cart extends Model {
     }
 
     public function get_promo_xml(){
-        $xml_promo_string ='';
+        $xml_promo_string =null;
         if ($this->promo_code != "") {
             $promo_code = promo_mast::where('promo_string', $this->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
             if (!empty($promo_code)) {
