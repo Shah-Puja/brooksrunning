@@ -94,49 +94,62 @@ class Cart extends Model {
     }
 
     public function cart_api($bridgeObject) {   /// new function
-        if(env('AP21_STATUS') == "ON" && $this->cartItems->count() > 0){
-            $this->cart_promo();
-            $cart_xml = view('xml.cart_call')->with('cart',$this);
-            $xml = array();
-            $cart_xml_response = $bridgeObject->processCart($cart_xml);
+        if($this->cartItems->count() > 0){
+            if(env('AP21_STATUS') == "ON"){
+                $this->cart_promo();
+                echo "<pre>";
+                print_r($this);
+                echo "<pre>";
+                exit;
+                $cart_xml = view('xml.cart_call')->with('cart',$this);
+                $xml = array();
+                $cart_xml_response = $bridgeObject->processCart($cart_xml);
 
-            $logger = array(
-                'process' =>'Cart-API',                
-                'request' => $cart_xml,
-                'response' => $cart_xml_response,  
-                'object_id'=>session('cart_id')             
-            );
-            Ap21_log::createNew($logger);
+                $logger = array(
+                    'process' =>'Cart-API',                
+                    'request' => $cart_xml,
+                    'response' => $cart_xml_response,  
+                    'object_id'=>session('cart_id')             
+                );
+                Ap21_log::createNew($logger);
 
-            if (!empty($cart_xml_response)) {
-                $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);
-            }
-            if (!empty($xml) && !isset($xml->ErrorCode)) {
-                $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
-                $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
-                $total_due = (array) $xml->TotalDue;
-                $cart_total = $total_due[0];
-                $delivery_option = $this->delivery_type;
-                switch($this->delivery_type){
-                    case 'new_zealand':
-                        $freight_charges = config('site.SHIPPING_NZ_PRICE');
-                    break;
-                    case 'standard':
-                        if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
-                            $freight_charges = config('site.SHIPPING_SET_PRICE');
-                        } else{
-                            $freight_charges = '0.00';
-                        }
-                    break;
-                    default:
-                        $freight_charges = $this->freight_cost;
+                if (!empty($cart_xml_response)) {
+                    $bridge = $cart_xml_response->getContents();
+                    $xml = simplexml_load_string($bridge);
                 }
-                $total_disc = (array) $xml->TotalDiscount;
-                $total_discount = $total_disc[0]; //Cart total
-                return ['cart_detail' =>  $cartdetail_arr , 'cart_total' =>  $cart_total - $xml_freight_charges,
-                        'original_cart_total' => $cart_total,'total_discount' => $total_discount, 'freight_charges' => $freight_charges];
+                if (!empty($xml) && !isset($xml->ErrorCode)) {
+                    $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
+                    $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
+                    $total_due = (array) $xml->TotalDue;
+                    $cart_total = $total_due[0];
+                    $delivery_option = $this->delivery_type;
+                    switch($this->delivery_type){
+                        case 'new_zealand':
+                            $freight_charges = config('site.SHIPPING_NZ_PRICE');
+                        break;
+                        case 'standard':
+                            if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
+                                $freight_charges = config('site.SHIPPING_SET_PRICE');
+                            } else{
+                                $freight_charges = '0.00';
+                            }
+                        break;
+                        default:
+                            $freight_charges = $this->freight_cost;
+                    }
+                    $total_disc = (array) $xml->TotalDiscount;
+                    $total_discount = $total_disc[0]; //Cart total
+                    ///update cart mast 
+                    $this->update(['total' => $cart_total - $xml_freight_charges, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                    $cartdetail_arr->cart_items_update();
+                }
+                
             }
+            $this->cartItems->cart_items_update();
+            $cart_total = $total;
+            $total_discount = 0;
+            $freight_charges = $cart_arr['freight_cost'];
+            Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
             
         }
             
@@ -147,10 +160,16 @@ class Cart extends Model {
             $promo_code = promo_mast::where('promo_string', $this->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
             if (!empty($promo_code)) {
                 $promo_code->qty=1;
-                $this->cartItems->push($promo_code);
+                $this->cartItems->promo_code->push($promo_code);
             }
         }
 
+    }
+
+    public function cart_items_update(){
+        foreach ($this as $item) {
+            $this->$item->update(['discount_price' => $item->price_sale, 'discount_detail' => (isset($this->$item->discount)) ? $this->$item->discount : 0, 'price_sale' => $item->price_sale]);
+        }
     }
 
 
