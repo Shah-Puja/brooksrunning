@@ -6,6 +6,7 @@ use Facades\App\Models\Freight;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Ap21_log;
+use App\Models\Promo_mast;
 
 class Cart extends Model {
 
