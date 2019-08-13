@@ -160,14 +160,14 @@ class Cart extends Model {
     }
 
     public function get_promo_xml(){
-        $xml_promo_string =null;
+        $promo_array = array();
         if ($this->promo_code != "") {
             $promo_code = promo_mast::where('promo_string', $this->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
             if (!empty($promo_code)) {
-                $xml_promo_string = "<CartDetail><SkuId>".$promo_code->skuidx."</SkuId><Quantity>1</Quantity></CartDetail>"; 
+                $promo_array = ['skuid'=>$promo_code->skuidx,'qty'=>1];
             }
         }
-        return $xml_promo_string;
+        return $promo_array;
     }
 
     public function cart_items_update(){
