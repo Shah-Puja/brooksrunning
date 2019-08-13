@@ -97,11 +97,13 @@ class Cart extends Model {
         if($this->cartItems->count() > 0){
             $xml_promo_st = $this->get_promo_xml();
             $cart_xml = view('xml.cart_call')->with(['cart'=>$this,'xml_promo_st'=>$xml_promo_st]);
+            print_r($cart_xml);
+            exit;
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
-            print_r($cart_xml);
-            print_r($cart_xml_response);
-            exit;
+           
+            //print_r($cart_xml_response);
+            
 
             $logger = array(
                 'process' =>'Cart-API',                
