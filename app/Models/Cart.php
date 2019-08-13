@@ -135,9 +135,10 @@ class Cart extends Model {
                 }
                 $total_disc = (array) $xml->TotalDiscount;
                 $total_discount = $total_disc[0]; //Cart total
+                $cart_total = $cart_total - $xml_freight_charges;
                 ///update cart mast 
-                $this->update(['total' => $cart_total - $xml_freight_charges, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
-                $cartdetail_arr['cart_total'] = $cart_total - $xml_freight_charges;
+                $this->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                $cartdetail_arr['cart_total'] = $cart_total;
                 $this->cart_items_ap21_update($cartdetail_arr);
             }else{
                 $this->cart_without_ap21();
