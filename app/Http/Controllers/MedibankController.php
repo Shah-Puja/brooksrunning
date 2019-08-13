@@ -73,18 +73,19 @@ class MedibankController extends Controller
                     if (!$err) {
                         if(!empty($response1)){
                             $response1 = json_decode($response1,true);
-                            if(isset($response1['errorCode']) || isset($response1['message'])){
+                            /*if(isset($response1['errorCode'])){
                                 Session::flash('medibank_user_failed','Yes');
-                            }else{
-                                $verified = $response1['Verified'];
-                                if($verified){
+                            }else{*/
+                                //print_r($response1);
+                                //exit;
+                                if(isset($response1['Verified']) && $response1['Verified']==1){
                                     Session::put('medibank_user','Yes');
                                     Session::put('medibank_user_email',$email);
                                     Session::put('medibank_user_memberid',$PolicyNumber);
                                 }else{
                                     Session::flash('medibank_user_failed','Yes');
                                 }
-                            }
+                            //}
                         }else{
                             Session::flash('medibank_user_failed','Yes');
                         }
