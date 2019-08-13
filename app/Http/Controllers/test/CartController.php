@@ -20,7 +20,11 @@ class CartController extends Controller
     }
 
     public function show() {
-        $this->cart->cart_api($this->bridgeObject);
+        if(env('AP21_STATUS') == "ON"){
+            $this->cart->cart_api($this->bridgeObject);
+        }else{
+            $this->cart->cart_without_ap21();
+        }
         return view('cart.cart', ['cart'=> $this->cart]);
     }
 }
