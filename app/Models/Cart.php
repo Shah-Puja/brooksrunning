@@ -99,7 +99,7 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_call')->with(['cart'=>$this,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
-
+            print_r($cart_xml);
             print_r($cart_xml_response);
             exit;
 
