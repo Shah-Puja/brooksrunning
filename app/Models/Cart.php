@@ -101,7 +101,7 @@ class Cart extends Model {
                 print_r($this);
                 echo "<pre>";
                 $cart_xml = view('xml.cart_call')->with('cart',$this);
-                echo $cart_xml 
+                echo $cart_xml;
                 exit;
                
                 $xml = array();
