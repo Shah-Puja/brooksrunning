@@ -3,7 +3,7 @@
 	<Contacts>
 	</Contacts>
 	<CartDetails>
-        @foreach ($cart->cartItems as $item)
+        @foreach ($caritems as $item)
             <CartDetail>		
 				<SkuId>{{$item->variant_id}}</SkuId>
 				<Quantity>{{$item->qty}}</Quantity>
