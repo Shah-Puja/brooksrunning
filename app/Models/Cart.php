@@ -100,6 +100,7 @@ class Cart extends Model {
             echo $cart_xml;
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+            echo "cart_xml_response";
             print_r($cart_xml_response);
             $logger = array(
                 'process' =>'Cart-API',                
@@ -108,14 +109,12 @@ class Cart extends Model {
                 'object_id'=>session('cart_id')             
             );
             Ap21_log::createNew($logger);
-
+            echo "cart_xml_response getContents";
             print_r($cart_xml_response->getContents());
             exit;
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);
-
-            
             }
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 $cartdetail_arr = collect($xml->CartDetails)->pluck('CartDetail');
