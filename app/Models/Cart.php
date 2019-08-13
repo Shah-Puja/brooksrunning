@@ -146,7 +146,7 @@ class Cart extends Model {
         if ($this->promo_code != "") {
             $promo_code = promo_mast::where('promo_string', $this->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
             if (!empty($promo_code)) {
-                $promo_code->push('qty',1);
+                $promo_code->qty=1;
                 $this->cartItems->push($promo_code);
                 echo "<pre>";
                 print_r($this->cartItems->toArray());
