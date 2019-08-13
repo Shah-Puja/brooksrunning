@@ -96,9 +96,8 @@ class Cart extends Model {
     public function cart_api($bridgeObject) {   /// new function
         if($this->cartItems->count() > 0){
             $xml_promo_st = $this->get_promo_xml();
-            //print_r($xml_promo_st);
-            //exit;
-            $cart_xml = view('xml.cart_call',['cart'=>$this,'xml_promo_st'=>$xml_promo_st]);
+            $cart = $this;
+            $cart_xml = view('xml.cart_call',compact('cart','xml_promo_st'));
             print_r($cart_xml);
             exit;
             $xml = array();
