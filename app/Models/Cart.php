@@ -98,7 +98,7 @@ class Cart extends Model {
             if(env('AP21_STATUS') == "ON"){
                 $this->cart_promo();
                 echo "<pre>";
-                print_r($this);
+                print_r($this->cartItems);
                 echo "<pre>";
                 $cart_xml = view('xml.cart_call')->with('cart',$this);
                 echo $cart_xml;
