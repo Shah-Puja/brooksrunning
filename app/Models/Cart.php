@@ -97,7 +97,7 @@ class Cart extends Model {
         if($this->cartItems->count() > 0){
             $xml_promo_st = $this->get_promo_xml();
             //$cart = $this;
-            $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems]);
+            $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             echo $cart_xml;
             exit;
             $xml = array();
