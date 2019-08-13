@@ -100,8 +100,10 @@ class Cart extends Model {
                 echo "<pre>";
                 print_r($this);
                 echo "<pre>";
-                exit;
                 $cart_xml = view('xml.cart_call')->with('cart',$this);
+                echo $cart_xml 
+                exit;
+               
                 $xml = array();
                 $cart_xml_response = $bridgeObject->processCart($cart_xml);
 
