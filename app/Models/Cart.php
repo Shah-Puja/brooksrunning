@@ -137,7 +137,7 @@ class Cart extends Model {
                 $total_discount = $total_disc[0]; //Cart total
                 ///update cart mast 
                 $this->update(['total' => $cart_total - $xml_freight_charges, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
-                collect($cartdetail_arr)->cart_items_update();
+                $this->cart_items_update($cartdetail_arr);
             }else{
                 $this->cart_without_ap21();
             }
@@ -163,11 +163,11 @@ class Cart extends Model {
         return $promo_array;
     }
 
-    public function cart_items_update(){
-        print_r($this);
+    public function cart_items_update($cartdetail_arr){
+        print_r($cartdetail_arr);
         exit;
-        foreach ($items as $item) {
-            $this->$item->update(['discount_price' => $item->price_sale, 'discount_detail' => (isset($this->$item->discount)) ? $this->$item->discount : 0, 'price_sale' => $item->price_sale]);
+        foreach ($cartdetail_arr as $item) {
+            Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item->price_sale, 'discount_detail' => (isset($this->$item->discount)) ? $this->$item->discount : 0, 'price_sale' => $item->price_sale]);
         }
     }
 
