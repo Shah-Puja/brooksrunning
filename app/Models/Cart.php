@@ -139,6 +139,8 @@ class Cart extends Model {
                 }else{
                     $this->cart_without_ap21();
                 }
+            }else{
+                $this->cart_without_ap21();
             }
         }
         else{
@@ -147,28 +149,30 @@ class Cart extends Model {
     }
 
     public function cart_without_ap21(){
-        //Update cart_item with price from p_variant
-        /*foreach(cart item)
-                fetch price,price_sale from variant 
-                discount_detail=0
-                discount_price=price_sale(p_variant)*qty(cart_item)
-                $total+=discount_price
-        */
-        //Update cart table for total,grand_total, promo_fields + GV_fields
-
         if($this->cartItems->count() > 0){
             $total=0;
             foreach ($this->cartItems  as $item) {
-                
-                $total += $item->discount_price;  //price_sale * $item->qty - $item->discount_detail;
-                ///carts items update
-                $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->price_sale]);
+                $discount_price =  $item->variant->price_sale * $item->qty;
+                $total+=$discount_price;
+                $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->variant->price_sale]);
             }
             $cart_total = $total;
             $total_discount = 0;
-            $freight_charges = $this->freight_cost;
             ///carts update
-            $this->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0,'total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+            $this->update([
+                    'promo_code' => '',
+                    'promo_string' => '',
+                    'sku' => 0,
+                    'gift_id' =>'',
+                    'pin' => '',
+                    'gift_available_amount' => '',
+                    'gift_discount' => '' ,
+                    'gift_cart_total' => '',
+                    'total' => $cart_total,
+                    'freight_cost' =>$this->freight_cost,
+                    'discount' => $total_discount,
+                    'grand_total' => $this->freight_cost + $cart_total
+                ]);
         }
 
     }
@@ -183,23 +187,5 @@ class Cart extends Model {
         }
         return $promo_array;
     }
-
-    public function cart_items_ap21_update($cartdetail_arr){
-        $cart_total = $cartdetail_arr['cart_total'];
-        foreach ($cartdetail_arr as $item) {
-            if ($item['ProductCode'] == 'EXPRESS') {
-                $cart_total = $cart_total - $item['Value'];
-                $freight_charges = $item['Value'];
-                Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
-            }
-
-            if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
-                $cart_api_price_sale = $item['Price'];
-                $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
-                Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
-            }
-        }
-    }
-
 
 }
