@@ -22,11 +22,12 @@ Route::post('/reset_pass', 'InfoController@check_email');
 
 //if(env('NEW_UPDATED_FILES')=='Yes'){
 
-	Route::get('/newcart', 'test\CartController@show');
+	//Route::get('/newcart', 'test\CartController@show');
 
 //}else{
 
-	Route::get('/cart', 'CartController@show');
+	Route::get('/cart', 'test\CartController@show');
+	//Route::get('/cart', 'CartController@show');
 	Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
 	Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
 	Route::post('/cart/edit_cart','CartController@edit_cart_popup');

@@ -136,8 +136,12 @@ class Cart extends Model {
                 $total_disc = (array) $xml->TotalDiscount;
                 $total_discount = $total_disc[0]; //Cart total
                 $cart_total = $cart_total - $xml_freight_charges;
-                ///update cart mast 
-                $this->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                if($xml_promo_st==''){ // update carts if promo data is empty 
+                    $this->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0,'total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                }else{
+                    $this->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                }
+                
                 $cartdetail_arr['cart_total'] = $cart_total;
                 $this->cart_items_ap21_update($cartdetail_arr);
             }else{
@@ -148,13 +152,16 @@ class Cart extends Model {
 
     public function cart_without_ap21(){
         if($this->cartItems->count() > 0){
-            foreach ($this->cartItems as $item) {
-                $total += $item->price_sale * $item->qty;
-                $this->cartItems->$item->update(['discount_price' => $price_sale, 'discount_detail' => 0, 'price_sale' => $price_sale]);
+            $total=0;
+            foreach ($this->cartItems  as $item) {
+                $total += $item->price_sale * $item->qty - $item->discount_detail;
+                ///carts item update
+                $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->price_sale]);
             }
             $cart_total = $total;
             $total_discount = 0;
-            $freight_charges = $cart_arr['freight_cost'];
+            $freight_charges = $this->freight_cost;
+            ///carts update
             $this->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0,'total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
         }
 
@@ -177,13 +184,13 @@ class Cart extends Model {
             if ($item['ProductCode'] == 'EXPRESS') {
                 $cart_total = $cart_total - $item['Value'];
                 $freight_charges = $item['Value'];
-                Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
+                $item->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
             }
 
             if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
                 $cart_api_price_sale = $item['Price'];
                 $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
-                Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+                $this->cart->Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
             }
         }
     }
