@@ -99,62 +99,68 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+            Ap21_log::createNew(['process' =>'Cart-API','request' => $cart_xml,'response' => $cart_xml_response,'object_id'=>session('cart_id')]);
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);
-            }
-            $logger = array(
-                'process' =>'Cart-API',                
-                'request' => $cart_xml,
-                'response' => $cart_xml_response,  
-                'object_id'=>session('cart_id')             
-            );
-            Ap21_log::createNew($logger);
-            if (!empty($xml) && !isset($xml->ErrorCode)) {
-                foreach ($xml->CartDetails->CartDetail as $curr_detail) {
-                    $temp = (array) $curr_detail;
-                    $cartdetail_arr[] = $temp;
-                }
-                $xml_freight_charges = $xml->SelectedFreightOption->Value; //Freight chareges
-                $total_due = (array) $xml->TotalDue;
-                $cart_total = $total_due[0];
-                $delivery_option = $this->delivery_type;
-                switch($this->delivery_type){
-                    case 'new_zealand':
-                        $freight_charges = config('site.SHIPPING_NZ_PRICE');
-                    break;
-                    case 'standard':
-                        if ($cart_total - $xml_freight_charges <= config('site.SHIPPING_SET_LIMIT')) {
-                            $freight_charges = config('site.SHIPPING_SET_PRICE');
-                        } else{
-                            $freight_charges = '0.00';
-                        }
-                    break;
-                    default:
-                        $freight_charges = $this->freight_cost;
-                }
-                $total_disc = (array) $xml->TotalDiscount;
-                $total_discount = $total_disc[0]; //Cart total
-                $cart_total = $cart_total - $xml_freight_charges;
-                if($xml_promo_st==''){ // update carts if promo data is empty 
-                    $this->update(['promo_code' => '', 'promo_string' => '', 'sku' => 0,'total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                $xml = simplexml_load_string($bridge);                    
+                if (!empty($xml) && !isset($xml->ErrorCode)) {
+                    foreach ($xml->CartDetails->CartDetail as $item) {
+                        Cart_item::where('variant_id', $item['SkuId'])
+                                    ->where('cart_id', session('cart_id'))
+                                    ->update([
+                                        'discount_price' => $item['Value'], 
+                                        'discount_detail' => $item['Discount'], 
+                                        'price_sale' => $item['Price']
+                                    ]);
+                    }                                                            
+                    $total_due = (array) $xml->TotalDue;
+                    $cart_xml_total = $total_due[0];                    
+                    $freight_cost = $this->freight_cost;
+                    $total_disc = (array) $xml->TotalDiscount;
+                    $total_discount = $total_disc[0]; //Cart total
+                    $cart_total = $cart_xml_total - $freight_cost;
+                    if($xml_promo_st==''){ // update carts if promo data is empty 
+                        $this->update([
+                            'promo_code' => '', 
+                            'promo_string' => '', 
+                            'sku' => 0,
+                            'total' => $cart_total, 
+                            'freight_cost' => $freight_cost, 
+                            'discount' => $total_discount, 
+                            'grand_total' => $freight_cost + $cart_total]);
+                    }else{
+                        $this->update([
+                            'total' => $cart_total, 
+                            'freight_cost' => $freight_charges, 
+                            'discount' => $total_discount, 
+                            'grand_total' => $freight_cost + $cart_total
+                            ]);
+                    }                    
                 }else{
-                    $this->update(['total' => $cart_total, 'freight_cost' => $freight_charges, 'discount' => $total_discount, 'grand_total' => $freight_charges + $cart_total]);
+                    $this->cart_without_ap21();
                 }
-                
-                $cartdetail_arr['cart_total'] = $cart_total;
-                $this->cart_items_ap21_update($cartdetail_arr);
-            }else{
-                $this->cart_without_ap21();
             }
+        }
+        else{
+            $this->cart_without_ap21();
         }
     }
 
     public function cart_without_ap21(){
+        //Update cart_item with price from p_variant
+        /*foreach(cart item)
+                fetch price,price_sale from variant 
+                discount_detail=0
+                discount_price=price_sale(p_variant)*qty(cart_item)
+                $total+=discount_price
+        */
+        //Update cart table for total,grand_total, promo_fields + GV_fields
+
         if($this->cartItems->count() > 0){
             $total=0;
             foreach ($this->cartItems  as $item) {
-                $total += $item->price_sale * $item->qty - $item->discount_detail;
+                
+                $total += $item->discount_price;  //price_sale * $item->qty - $item->discount_detail;
                 ///carts items update
                 $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->price_sale]);
             }
