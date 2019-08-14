@@ -701,7 +701,7 @@ $(document).on('click', '.cp-details__wrapper .mob-btn button,.product-wrapper b
         data: data,
         success: function (result) {
             console.log(result);
-            if(action=="update"){
+            if(action=="update" || action=="remove"){
                 location.reload();
             }
             var cart_items = result.cartitemshtml;
