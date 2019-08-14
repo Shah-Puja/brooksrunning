@@ -142,7 +142,12 @@ class Cart extends Model {
             }else{
                 $this->cart_without_ap21();
             }
-            Ap21_log::createNew(['process' =>'Cart-API','request' => $cart_xml,'response' => $cart_xml_response,'object_id'=>session('cart_id')]);
+            Ap21_log::createNew([
+                        'process' =>'Cart-API',
+                        'request' => $cart_xml,
+                        'response' => $cart_xml_response,
+                        'object_id'=>session('cart_id')
+                    ]);
         }
         else{
             $this->cart_without_ap21();
@@ -155,7 +160,11 @@ class Cart extends Model {
             foreach ($this->cartItems  as $item) {
                 $discount_price =  $item->variant->price_sale * $item->qty;
                 $total+=$discount_price;
-                $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->variant->price_sale]);
+                $item->update([
+                        'discount_price' => $total,
+                        'discount_detail' => 0,
+                        'price_sale' => $item->variant->price_sale
+                      ]);
             }
             $cart_total = $total;
             $total_discount = 0;
