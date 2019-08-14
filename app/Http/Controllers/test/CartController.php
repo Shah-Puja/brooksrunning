@@ -25,7 +25,7 @@ class CartController extends Controller
         }else{
             $this->cart->cart_without_ap21();
         }
-        $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first() ?? new Cart;
-        return view('cart.cart', ['cart'=> $this->cart]);
+        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first() ?? new Cart;
+        return view('cart.cart', ['cart'=> $cart]);
     }
 }
