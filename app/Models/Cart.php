@@ -101,7 +101,8 @@ class Cart extends Model {
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);                    
+                $xml = simplexml_load_string($bridge);   
+                print_r($xml);                 
                 if (!empty($xml) && !isset($xml->ErrorCode)) {
                     foreach ($xml->CartDetails->CartDetail as $item) {
                         Cart_item::where('variant_id', $item['SkuId'])
