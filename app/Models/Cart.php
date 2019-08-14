@@ -131,7 +131,7 @@ class Cart extends Model {
                     }else{
                         $this->update([
                             'total' => $cart_total, 
-                            'freight_cost' => $freight_charges, 
+                            'freight_cost' => $freight_cost, 
                             'discount' => $total_discount, 
                             'grand_total' => $freight_cost + $cart_total
                             ]);
