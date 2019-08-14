@@ -73,8 +73,7 @@ class Cart extends Model {
         //echo "<pre>";print_R();die;
         $cartTotal = $this->cartItems
                 ->reduce(function($total, $cart_item) {
-            //$price = (isset($cart_item->price_sale) && $cart_item->price_sale > 0) ? $cart_item->price_sale : $cart_item->price;
-            $price = $cart_item->discount_price;
+            $price = (isset($cart_item->price_sale) && $cart_item->price_sale > 0) ? $cart_item->price_sale : $cart_item->price;
             return $total + ($price * $cart_item->qty);
         });
         //$freightCost = Freight::calculate($this);
@@ -156,7 +155,7 @@ class Cart extends Model {
             $total=0;
             foreach ($this->cartItems  as $item) {
                 $total += $item->price_sale * $item->qty - $item->discount_detail;
-                ///carts item update
+                ///carts items update
                 $item->update(['discount_price' => $total, 'discount_detail' => 0, 'price_sale' => $item->price_sale]);
             }
             $cart_total = $total;
@@ -185,13 +184,13 @@ class Cart extends Model {
             if ($item['ProductCode'] == 'EXPRESS') {
                 $cart_total = $cart_total - $item['Value'];
                 $freight_charges = $item['Value'];
-                $item->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
+                Cart::where('id', session('cart_id'))->update(['total' => $cart_total, 'freight_cost' => $freight_charges]);
             }
 
             if (!empty($item['Price']) && $item['Price'] != 0 && $item['ProductCode'] != 'EXPRESS') {
                 $cart_api_price_sale = $item['Price'];
                 $discount_detail = isset($item['Discount']) ? $item['Discount'] : "";
-                $this->cart->Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
+                Cart_item::where('variant_id', $item['SkuId'])->where('cart_id', session('cart_id'))->update(['discount_price' => $item['Value'], 'discount_detail' => $discount_detail, 'price_sale' => $cart_api_price_sale]);
             }
         }
     }
