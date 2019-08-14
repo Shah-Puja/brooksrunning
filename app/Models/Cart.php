@@ -105,12 +105,12 @@ class Cart extends Model {
                 print_r($xml);                 
                 if (!empty($xml) && !isset($xml->ErrorCode)) {
                     foreach ($xml->CartDetails->CartDetail as $item) {
-                        Cart_item::where('variant_id', $item['SkuId'])
+                        Cart_item::where('variant_id', $item->SkuId)
                                     ->where('cart_id', session('cart_id'))
                                     ->update([
-                                        'discount_price' => $item['Value'], 
-                                        'discount_detail' => $item['Discount'], 
-                                        'price_sale' => $item['Price']
+                                        'discount_price' => $item->Value, 
+                                        'discount_detail' => $item->Discount, 
+                                        'price_sale' => $item->Price
                                     ]);
                     }                                                            
                     $total_due = (array) $xml->TotalDue;
