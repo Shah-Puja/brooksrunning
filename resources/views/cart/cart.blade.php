@@ -128,9 +128,9 @@
                                         <h3 class="br-heading heading-main">Do you have a Gift Voucher or Promotion Code?</h3>
                                     </div>
                                 </div>
-                                @if(isset($cart->promo_string) && $cart->promo_string != "")
-                                <div class="coupon-msg">Gift Vouchers can not be redeemed in conjunction with any promotional offers</div>
-                                @endif   
+                               
+                                <div class="coupon-msg" style="font-size: 13px;margin-bottom: 15px;">Gift Vouchers can not be redeemed in conjunction with any promotional offers</div>
+                                
                                 @if(isset($cart->gift_id) && $cart->gift_id!="") 
                                     <div class="coupon-msg" style="float: right;margin-right: 31px;"> Promotional offers can not be used with gift vouchers </div>
                                 @endif 
