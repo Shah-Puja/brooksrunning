@@ -131,12 +131,12 @@ class Cart extends Model {
                     }else{
                         echo "1<br>";
                         echo $total_discount;
-                        /*$this->update([
+                        $this->update([
                             'total' => $cart_total, 
                             'freight_cost' => $freight_cost, 
                             'discount' => $total_discount, 
                             'grand_total' => $freight_cost + $cart_total
-                            ]);*/
+                            ]);
                     }                    
                 }else{
                     echo "2";
