@@ -206,7 +206,7 @@ class Cart extends Model {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
                     case 200:
-                        $response_body = $response->getBody()->getContents();
+                        $response_body = $response->getContents();
                         $xml = simplexml_load_string($response_body);
                         $gift_number = (int) ($xml->VoucherNumber);
                         $gift_pin = $giftcert_pin;
