@@ -213,7 +213,7 @@ class Cart extends Model {
                         $ExpiryDate = (int) ($xml->ExpiryDate);
                         $AvailableAmount = (int) ($xml->AvailableAmount);
                         if ($AvailableAmount > ($cartTotal + $freight_cost)) {
-                            $gift_discount = ($cartTotal + $freight_cost);
+                            $gift_discount = ($cartTotal + $freight_cost); 
                             $gift_cart_total = 0;
                         } else {
                             $gift_discount = $AvailableAmount;
