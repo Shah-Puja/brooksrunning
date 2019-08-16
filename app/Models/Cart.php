@@ -101,8 +101,7 @@ class Cart extends Model {
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);   
-                //print_r($xml);                 
+                $xml = simplexml_load_string($bridge);                  
                 if (!empty($xml) && !isset($xml->ErrorCode)) {
                     foreach ($xml->CartDetails->CartDetail as $item) {
                         Cart_item::where('variant_id', $item->SkuId)
@@ -114,14 +113,10 @@ class Cart extends Model {
                                     ]);
                     }                                                            
                     $cart_xml_total = $xml->TotalDue;
-                    echo "cart_xml_total".$cart_xml_total;
                     $freight_cost = $this->freight_cost;
-                    echo "freight_cost".$freight_cost;
                     $total_discount = $xml->TotalDiscount;
                     $cart_total = $cart_xml_total - $freight_cost;
                     if(empty($xml_promo_st)){ // update carts if promo data is empty 
-                        echo "promo is empty";
-                        echo $total_discount;
                         $this->update([
                             'promo_code' => '', 
                             'promo_string' => '', 
@@ -131,8 +126,6 @@ class Cart extends Model {
                             'discount' => $total_discount, 
                             'grand_total' => $freight_cost + $cart_total]);
                     }else{
-                        echo "1<br>";
-                        echo $total_discount;
                         $this->update([
                             'total' => $cart_total, 
                             'freight_cost' => $freight_cost, 
@@ -141,11 +134,9 @@ class Cart extends Model {
                             ]);
                     }                    
                 }else{
-                    echo "2";
                     $this->cart_without_ap21();
                 }
             }else{
-                echo "3";
                 $this->cart_without_ap21();
             }
             Ap21_log::createNew([
@@ -156,7 +147,6 @@ class Cart extends Model {
                     ]);
         }
         else{
-            echo "4";
             $this->cart_without_ap21();
         }
     }
