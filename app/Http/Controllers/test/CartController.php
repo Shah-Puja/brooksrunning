@@ -22,6 +22,7 @@ class CartController extends Controller
     public function show() {
         if(env('AP21_STATUS') == "ON"){
             $this->cart->cart_api($this->bridgeObject);
+            $this->cart->gift_voucher($this->bridgeObject);
         }else{
             $this->cart->cart_without_ap21();
         }

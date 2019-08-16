@@ -196,4 +196,39 @@ class Cart extends Model {
         return $promo_array;
     }
 
+    public function gift_voucher($bridgeObject){
+        if($this->cartItems->count() > 0 && $this->pin!='' && $this->gift_id!=''){
+            $cartTotal = $this->total;
+            $freight_cost = $this->freight_cost;
+            $giftcert_pin = $this->pin;
+            $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
+            if (!empty($response)) {
+                $returnCode = $response->getStatusCode();
+                switch ($returnCode) {
+                    case 200:
+                        $response_body = $response->getBody()->getContents();
+                        $xml = simplexml_load_string($response_body);
+                        $gift_number = (int) ($xml->VoucherNumber);
+                        $gift_pin = $giftcert_pin;
+                        $ExpiryDate = (int) ($xml->ExpiryDate);
+                        $AvailableAmount = (int) ($xml->AvailableAmount);
+                        if ($AvailableAmount > ($cartTotal + $freight_cost)) {
+                            $gift_discount = ($cartTotal + $freight_cost);
+                            $gift_cart_total = 0;
+                        } else {
+                            $gift_discount = $AvailableAmount;
+                            $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
+                        }
+                        $this->update([
+                                    'gift_id' => $gift_number,
+                                    'pin' => $gift_pin,
+                                    'gift_available_amount' => $AvailableAmount,
+                                    'gift_discount' => $gift_discount,
+                                    'gift_cart_total' => $gift_cart_total
+                                ]);
+                }
+            }
+        }
+    }
+
 }
