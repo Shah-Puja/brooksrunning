@@ -126,7 +126,7 @@ class Cart extends Model {
                             'sku' => 0,
                             'total' => $cart_total, 
                             'freight_cost' => $freight_cost, 
-                            'discount' => 0, 
+                            'discount' => $total_discount, 
                             'grand_total' => $freight_cost + $cart_total]);
                     }else{
                         $this->update([
@@ -203,6 +203,7 @@ class Cart extends Model {
             $freight_cost = $this->freight_cost;
             $giftcert_pin = $this->pin;
             $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
+            $response_body =$response_body;
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
@@ -238,7 +239,7 @@ class Cart extends Model {
             Ap21_log::createNew([
                 'process' =>'Gift voucher',
                 'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
-                'response' => $response->getBody()->getContents(),
+                'response' => $response_body,
                 'object_id'=>session('cart_id')
             ]);
         }else{
