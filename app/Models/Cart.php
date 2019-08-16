@@ -119,7 +119,7 @@ class Cart extends Model {
                     $total_discount = $xml->TotalDiscount;
                     echo "total_discount".$total_discount;
                     $cart_total = ($cart_xml_total - $freight_cost);
-                    echo "cart_total ($cart_xml_total - $freight_cost)".number_format($cart_total,2);
+                    echo "cart_total ($cart_xml_total - $freight_cost)".$cart_xml_total - $freight_cost;
                     if(empty($xml_promo_st)){ // update carts if promo data is empty 
                         $this->update([
                             'promo_code' => '', 
