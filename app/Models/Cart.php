@@ -113,14 +113,9 @@ class Cart extends Model {
                                         'price_sale' => $item->Price
                                     ]);
                     }                                                            
-                    /*$total_due = (array) $xml->TotalDue;
-                    $cart_xml_total = $total_due[0];                    
+                    $cart_xml_total = $xml->TotalDue;
                     $freight_cost = $this->freight_cost;
-                    $total_disc = (array) $xml->TotalDiscount;
-                    $total_discount = $total_disc[0]; //Cart total*/
-                    echo $cart_xml_total = $xml->TotalDue;
-                    $freight_cost = $this->freight_cost;
-                    echo $total_discount = $xml->TotalDiscount;
+                    $total_discount = $xml->TotalDiscount;
                     $cart_total = $cart_xml_total - $freight_cost;
                     if($xml_promo_st==''){ // update carts if promo data is empty 
                         $this->update([
