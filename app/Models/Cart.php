@@ -129,6 +129,7 @@ class Cart extends Model {
                             'discount' => $total_discount, 
                             'grand_total' => $freight_cost + $cart_total]);
                     }else{
+                        echo "1<br>";
                         echo $total_discount;
                         $this->update([
                             'total' => $cart_total, 
@@ -138,9 +139,11 @@ class Cart extends Model {
                             ]);
                     }                    
                 }else{
+                    echo "2";
                     $this->cart_without_ap21();
                 }
             }else{
+                echo "3";
                 $this->cart_without_ap21();
             }
             Ap21_log::createNew([
@@ -151,6 +154,7 @@ class Cart extends Model {
                     ]);
         }
         else{
+            echo "4";
             $this->cart_without_ap21();
         }
     }
