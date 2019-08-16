@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-<div class="create-account--header plp-header category__hero">
+<div class="create-account--header plp-header category__hero" style="margin-bottom:0px;">
  
         <div class="row">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
@@ -36,6 +36,23 @@
             </div>
         </div>
 </div>
+
+<div class="create-account--header plp-header promo-banners">
+    <div class="wrapper promo-banner-info">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="about-header">
+                    <p class="free-pair">Receive a <span>FREE pair of socks</span> with any shoe purchase*.</p>
+                    <p class="promo-code">Use promo code <span>SOCKS4DAD</span> at checkout*.</p>
+                    <p class="offer">'Offer valid on any full price shoe purchase until 31 August 2019.</p>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Carousel -->
 @if(!empty($men_accessories))
@@ -472,6 +489,20 @@
 @endif
 <!-- End men running clothing section -->
 
+<div class="plp-header collection-promobanner-info">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-3 tab-0"></div>
+            <div class="col-9 tab-12">
+                <div class="about-header sub-promo-banner">
+                    <p class="free-pair">Receive a <span>FREE pair of socks</span> with any shoe purchase*.</p>
+                    <p class="promo-code">Use promo code <span>SOCKS4DAD</span> at checkout*.</p>
+                    <p class="offer">'Offer valid on any full price shoe purchase until 31 August 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Carousel -->
 @if(!empty($men_running_shoes))

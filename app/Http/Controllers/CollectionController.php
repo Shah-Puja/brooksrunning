@@ -94,9 +94,9 @@ class CollectionController extends Controller
     }
 
     public function fathers_day(){
-        $men_running_shoes = \App\Models\Product::getProducts_array(['110316_466','110283_126','110294_069','110299_092','110296_071','110298_479']);
+        $men_running_shoes = \App\Models\Product::getProducts_array(['110316_466','110283_126','110294_069','110299_092','110296_071','110298_479','110314_088','110309_053','110297_419']);
         $men_running_clothing = \App\Models\Product::getProducts_array(['211090_424', '211133_330','211232_078']);
-        $men_accessories = \App\Models\Product::getProducts_array(['7342_100','7343_001','742087_100','BROXYGEN_211','280355_466','280412_001']);
+        $men_accessories = \App\Models\Product::getProducts_array(['280337_329','280409_081','742087_100','BROXYGEN_211','280355_466','280412_001']);
         $products = '';
         $colour_options ='';
         return view( 'customer.collection_fathers_day_listing',compact('men_running_shoes','men_running_clothing','men_accessories','colour_options','products'));

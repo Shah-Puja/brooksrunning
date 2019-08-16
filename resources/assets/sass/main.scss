@@ -2864,6 +2864,96 @@ width: 100%;
   }
    
 }
+.promo-banners{
+  background-color: $white;
+  margin :0px auto;
+  padding: 5px 0;
+  background-color: #D12D24;
+  .promo-banner-info{
+    padding: 15px 0;
+    .free-pair{
+      color: $white;
+      margin: 0 0 9px;
+      @extend %info-font;
+      font-size:25px;
+      line-height:1.1;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:24px;
+        line-height:1.1;
+      }
+      @media #{$tab-only}{
+        font-size:22px;
+      }
+      @media #{$desktop-only}{
+        font-size:22px;
+      }
+      span{   
+      @extend %extrabold-font;
+      text-align: center;
+      }
+    }
+    .promo-code{
+      color: $white;
+      margin: 0 0 9px;
+      @extend %info-font;
+      font-size:25px;
+      line-height:0.6;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:16px;
+        line-height:1.2;
+      }
+      @media #{$tab-only}{
+        font-size:20px;
+      }
+      @media #{$desktop-only}{
+        font-size:20px;
+      }
+      span{   
+        @extend %extrabold-font;
+        text-align: center;
+      }
+    }
+    .offer{
+      max-width: 100%;
+      color: $white;
+      font-size: 15px;
+      line-height: 20px;
+      @extend %info-font;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:12px; 
+        line-height:1.6;
+      }
+      @media #{$tab-only}{
+        font-size:13px;
+        line-height:0.6;
+      }
+      @media #{$desktop-only}{
+        font-size:13px;
+        line-height:0.8;
+      }
+    }
+    div{
+      max-width: 100%;
+      color:#0E0E0E;
+      font-size: 18px;
+      line-height: 26px;
+      @extend %info-font;
+      
+      .shop-all{
+        text-align:left !important;
+        color: #0263f7;
+      }
+      
+      @media #{$mobile-only}{
+        max-width: unset;
+      }
+    }
+  }
+   
+}
 .collection-header-intro{
   background-color: #fff;
   margin :20px auto;
@@ -2899,7 +2989,105 @@ width: 100%;
       color: #0263f7;
     }
   }
-   
+}
+.collection-promobanner-info{
+  background-color: #fff;
+  margin :0px auto;
+  padding: 5px 0;
+  .sub-promo-banner{
+     background-color: #D12D24;
+     max-width: 96%;
+     margin: auto;
+     float: none;
+     padding: 15px 0px;
+    .free-pair{
+      color: $white;
+      margin: 0 0 9px;
+      @extend %info-font;
+      font-size:25px;
+      line-height:1.1;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:24px;
+        line-height:1.1;
+      }
+      @media #{$tab-only}{
+        font-size:22px;
+      }
+      @media #{$desktop-only}{
+        font-size:22px;
+      }
+      span{   
+      @extend %extrabold-font;
+      text-align: center;
+      }
+    }
+    .promo-code{
+      color: $white;
+      margin: 0 0 9px;
+      @extend %info-font;
+      font-size:25px;
+      line-height:0.6;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:16px;
+        line-height:1.2;
+      }
+      @media #{$tab-only}{
+        font-size:20px;
+      }
+      @media #{$desktop-only}{
+        font-size:20px;
+      }
+      span{   
+        @extend %extrabold-font;
+        text-align: center;
+      }
+    }
+    .offer{
+      max-width: 100%;
+      color: $white;
+      font-size: 15px;
+      line-height: 20px;
+      @extend %info-font;
+      text-align: center;
+      @media #{$mobile-only}{
+        font-size:12px; 
+        line-height:1.6;
+      }
+      @media #{$tab-only}{
+        font-size:13px;
+        line-height:0.6;
+      }
+      @media #{$desktop-only}{
+        font-size:13px;
+        line-height:0.8;
+      }
+    }
+    div{
+      max-width: 100%;
+      color: $white;
+      margin: auto;
+      font-size: 18px;
+      padding: 15px 0px;
+      line-height: 26px;
+      background-color: #D12D24;
+      @extend %info-font;
+      
+      @media #{$mobile-only}{
+        max-width: unset;
+      }
+      @media #{$desktop-only}{
+        max-width: 92%;
+      }
+    }
+    @media #{$tab-only}{
+      max-width: 98%;
+      margin: auto;
+      float:none;
+      padding: 15px 0px;
+    }
+   }
 }
 .collection-listing-conatiner{
   padding-top: 25px;
