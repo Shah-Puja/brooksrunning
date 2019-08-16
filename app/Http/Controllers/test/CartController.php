@@ -14,7 +14,6 @@ class CartController extends Controller
     public function __construct(Bridge $b) {
         $this->bridgeObject = $b;
             $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb')->first() ?? new Cart;
-        });
     }
 
     public function show() {
