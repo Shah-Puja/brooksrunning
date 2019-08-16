@@ -226,8 +226,22 @@ class Cart extends Model {
                                     'gift_discount' => $gift_discount,
                                     'gift_cart_total' => $gift_cart_total
                                 ]);
+                        break;
+                   default:
+                        $this->cart_without_ap21();
                 }
+            }else{
+                $this->cart_without_ap21();
             }
+
+            Ap21_log::createNew([
+                'process' =>'Gift voucher',
+                'request' => 'Pin:'.$this->pin.', gift_id:'.$this->gift_id,
+                'response' => $response,
+                'object_id'=>session('cart_id')
+            ]);
+        }else{
+            $this->cart_without_ap21();
         }
     }
 
