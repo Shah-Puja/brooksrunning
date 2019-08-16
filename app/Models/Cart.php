@@ -237,13 +237,11 @@ class Cart extends Model {
             }
 
             Ap21_log::createNew([
-                'process' =>'Gift voucher',
+                'process' => 'Gift voucher',
                 'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
                 'response' => $response_body,
                 'object_id'=>session('cart_id')
             ]);
-        }else{
-            $this->cart_without_ap21();
         }
     }
 
