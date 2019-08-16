@@ -71,7 +71,8 @@ class Cart extends Model {
         //echo "<pre>";print_R();die;
         $cartTotal = $this->cartItems
                 ->reduce(function($total, $cart_item) {
-            $price = (isset($cart_item->price_sale) && $cart_item->price_sale > 0) ? $cart_item->price_sale : $cart_item->price;
+            //$price = (isset($cart_item->price_sale) && $cart_item->price_sale > 0) ? $cart_item->price_sale : $cart_item->price;
+            $price = $cart_item->discount_price;
             return $total + ($price * $cart_item->qty);
         });
         //$freightCost = Freight::calculate($this);
