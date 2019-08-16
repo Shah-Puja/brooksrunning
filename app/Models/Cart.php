@@ -202,8 +202,6 @@ class Cart extends Model {
             $freight_cost = $this->freight_cost;
             $giftcert_pin = $this->pin;
             $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
-            echo "response";
-            print_r($response->getBody()->getContents());
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
