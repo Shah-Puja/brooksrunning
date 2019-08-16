@@ -203,10 +203,11 @@ class Cart extends Model {
             $giftcert_pin = $this->pin;
             $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
             if (!empty($response)) {
-                $returnCode = $response->getStatusCode();
+                echo $returnCode = $response->getStatusCode();
+                exit;
                 switch ($returnCode) {
                     case 200:
-                        $response_body = $response->getContents();
+                        $response_body = $response->getBody()->getContents();
                         $xml = simplexml_load_string($response_body);
                         $gift_number = (int) ($xml->VoucherNumber);
                         $gift_pin = $giftcert_pin;
