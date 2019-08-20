@@ -206,12 +206,12 @@ class Cart extends Model {
             $freight_cost = $this->freight_cost;
             $giftcert_pin = $this->pin;
             $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
-            Ap21_log::createNew([
+            /*Ap21_log::createNew([
                 'process' => 'Gift voucher',
                 'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
                 'response' => $response,
                 'object_id'=>session('cart_id')
-            ]);
+            ]);*/
             //$response_body = $response;
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
