@@ -113,6 +113,7 @@ class Cart extends Model {
                                     ]);
                     }                                                            
                     $cart_xml_total = floatval($xml->TotalDue);
+                    echo "cart_xml_total =" .$cart_xml_total;
                     $freight_cost = ($this->freight_cost!='') ? $this->freight_cost : 0;
                     $total_discount = floatval($xml->TotalDiscount);
                     $cart_total = $cart_xml_total - $freight_cost;
