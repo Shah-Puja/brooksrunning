@@ -31,7 +31,7 @@ class PromoCode extends Resource
      * @var array
      */
     public static $search = [
-        'promo_type'
+        'promo_type','promo_string','promo_code','skuidx','start_dt','end_dt'
     ];
 
 
