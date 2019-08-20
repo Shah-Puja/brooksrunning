@@ -19,17 +19,12 @@
         display:none !important;
     }
 }
-@media (min-width: 975px){
-.category__hero .m-block--hero--collection__content {
-    margin: 15px 160px 0px 0px;
-}
-}
     </style>
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
-            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-12">
-                <div class="m-block--hero--collection__content">
+            <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
+                <div class="m-block--hero--collection__content collection_content_section">
                     <div class="m-block--hero__content__copy">
                     <div class="about-header">
                         <div class="breadcrumbs">
@@ -48,9 +43,9 @@
                         <p class="type">Go colour crazy in the latest Ghost 12 Saturation Pack.</p>
                     </div>
                 </div>
-                <div class="collection-hero-overlay hidden-mob"></div>
+                <div class="collection-hero-overlay hidden-mob visible-tab visible-col"></div>
             </div>
-            <div class="category__hero__image mob-12 col-6 tab-12 pr-0 pl-0">
+            <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 <img src="/images/Limited-Edition/nocategoryimage.jpg">
             </div>
         </div>

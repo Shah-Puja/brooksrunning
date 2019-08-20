@@ -4459,6 +4459,19 @@ textarea {
   margin: 0 auto 10px;
   padding: 0;
 }
+.category__hero .m-block--hero--collection__content.collection_content_section {
+  margin: 15px 160px 0px 0px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .category__hero .m-block--hero--collection__content.collection_content_section {
+    padding: 5px 20px 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .category__hero .m-block--hero--collection__content.collection_content_section {
+    margin: 15px 0px 0px 35px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .category__hero .category__hero__image:before {
     z-index: 1000;
@@ -4507,6 +4520,9 @@ textarea {
   }
   .category__hero .m-block--hero--collection__content .breadcrumbs {
     padding: 0;
+  }
+  .category__hero .m-block--hero--collection__content.collection_content_section {
+    margin: 15px 160px 0px 0px;
   }
   .category__hero .category__hero__image {
     z-index: 1;

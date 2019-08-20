@@ -2697,6 +2697,15 @@ ul {
       padding: 0;
   }
 
+  &.collection_content_section{
+    margin: 15px 160px 0px 0px;
+    @media #{$desktop-only}{
+      padding: 5px 20px 20px;
+    }
+    @media #{$tab-only}{
+      margin: 15px 0px 0px 35px;
+    }
+  }
 }
 .category__hero__image{
   &:before {
@@ -2752,6 +2761,11 @@ ul {
     }
   .breadcrumbs {
     padding: 0;
+  }
+  &.collection_content_section
+  {
+      margin: 15px 160px 0px 0px;
+  
   }
 }
 .category__hero__image {
