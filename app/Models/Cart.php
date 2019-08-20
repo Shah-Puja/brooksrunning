@@ -113,13 +113,9 @@ class Cart extends Model {
                                     ]);
                     }                                                            
                     $cart_xml_total = floatval($xml->TotalDue);
-                    echo "cart_xml_total".$cart_xml_total;
                     $freight_cost = ($this->freight_cost!='') ? $this->freight_cost : 0;
-                    echo "freight_cost".$freight_cost;
-                    $total_discount = $xml->TotalDiscount;
-                    echo "total_discount".$total_discount;
+                    $total_discount = floatval($xml->TotalDiscount);
                     $cart_total = $cart_xml_total - $freight_cost;
-                    echo "cart_total ($cart_xml_total - $freight_cost)".$cart_total;
                     if(empty($xml_promo_st)){ // update carts if promo data is empty 
                         $this->update([
                             'promo_code' => '', 
