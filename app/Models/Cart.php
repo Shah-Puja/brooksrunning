@@ -113,14 +113,10 @@ class Cart extends Model {
                                     ]);
                     }                                                            
                     $cart_xml_total = floatval($xml->TotalDue);
-                    echo "cart_xml_total =" .$cart_xml_total;
                     $freight_cost = ($this->freight_cost!='') ? $this->freight_cost : 0;
                     $xml_freight_charges = floatval($xml->SelectedFreightOption->Value); //Freight chareges
-                    echo "xml_freight_charges =" .$xml_freight_charges;
                     $total_discount = floatval($xml->TotalDiscount);
-                    //$cart_total = $cart_xml_total - $freight_cost;
                     $cart_total = $cart_xml_total - $xml_freight_charges;
-                    $freight_cost = ($this->freight_cost!='') ? $this->freight_cost : 0;
 
                     if(empty($xml_promo_st)){ // update carts if promo data is empty 
                         $this->update([
