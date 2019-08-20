@@ -56,8 +56,8 @@
     <div class="col-2"></div>
       <div class="col-8">
       	<div class="about-header">
-            <h1 class="br-mainheading">Take a closer look.</h1>
-            <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p>
+            <h1 class="br-mainheading">Ghost 12 Saturation Pack</h1>
+            <!-- <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p> -->
         </div>
       </div>
       <div class="col-2"></div>
