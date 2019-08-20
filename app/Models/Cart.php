@@ -99,6 +99,12 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
+            /*Ap21_log::createNew([
+                'process' =>'Cart-API',
+                'request' => $cart_xml,
+                'response' => $cart_xml_response,
+                'object_id'=>session('cart_id')
+            ]);*/
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
                 $xml = simplexml_load_string($bridge);                  
@@ -140,13 +146,7 @@ class Cart extends Model {
                 }
             }else{
                 $this->cart_without_ap21();
-            }
-            Ap21_log::createNew([
-                        'process' =>'Cart-API',
-                        'request' => $cart_xml,
-                        'response' => $cart_xml_response,
-                        'object_id'=>session('cart_id')
-                    ]);
+            }            
         }
         else{
             $this->cart_without_ap21();
@@ -166,7 +166,7 @@ class Cart extends Model {
                       ]);
             }
             $cart_total = $total;
-            ///carts update
+            //Remove GV and Promo related info + recalculate grand_total
             $this->update([
                     'promo_code' => '',
                     'promo_string' => '',
@@ -202,7 +202,13 @@ class Cart extends Model {
             $freight_cost = $this->freight_cost;
             $giftcert_pin = $this->pin;
             $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
-            $response_body = $response;
+            /*Ap21_log::createNew([
+                'process' => 'Gift voucher',
+                'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
+                'response' => $response,
+                'object_id'=>session('cart_id')
+            ]);*/
+            //$response_body = $response;
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
@@ -235,12 +241,7 @@ class Cart extends Model {
                 $this->cart_without_ap21();
             }
 
-            Ap21_log::createNew([
-                'process' => 'Gift voucher',
-                'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
-                'response' => $response_body,
-                'object_id'=>session('cart_id')
-            ]);
+            
         }
     }
 
