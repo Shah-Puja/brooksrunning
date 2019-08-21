@@ -390,7 +390,6 @@
             }
             var postData = $(this).serializeArray();
             var formURL = $(this).attr("action");
-            setTimeout(() => {
             $.ajax(
                     {
                         url: formURL,
@@ -426,7 +425,7 @@
                             console.log(jqXHR);
                         }
                     });
-            }, 100);
+           
             e.preventDefault(); //STOP default action
         });
 
