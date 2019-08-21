@@ -274,6 +274,12 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         $('#ajaxgift input,#ajaxcoupon input').focus(function(){
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
             $('#ajaxgift input,#ajaxcoupon input').val("");
@@ -303,9 +309,6 @@
 
             var url = "cart/check_valid_gift_voucher";
                 $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
                     url: url,
                     method: "POST",
                     data: {voucher_number: voucher_number, voucher_pin: voucher_pin},
@@ -345,9 +348,6 @@
             var gift_voucher_number = $('#gift_voucher_number').val();
             var url = "cart/remove_gift_voucher";
             $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
                 url: url,
                 method: "POST",
                 data: {gift_voucher_number: gift_voucher_number},
