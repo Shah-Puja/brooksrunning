@@ -299,16 +299,24 @@
         gift_required = ['voucher_number','voucher_pin'];
         $('#gift_voucher_validate').click(function () {
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
+            $(".show_voucher_error").hide().text('');
+            
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
+            var show_error="";
             for (k = 0; k < gift_required.length; k++) {
                 var input = $('#ajaxgift input[name="' + gift_required[k] + '"]');
                 if (input.val() == "") {
+                    var field_name = gift_required[k];
+                    field_name = field_name.replace("_", " ");
+                    show_error+=  field_name+' and ';
                     input.addClass("needsfilled");
                 } else {
                     input.removeClass("needsfilled");
                 }
             }
             if ($("#ajaxgift input").hasClass("needsfilled")) {
+                show_error = show_error.substring(0, show_error.length - 5);
+                $(".show_voucher_error").text("Please enter "+show_error).show();
                 return false;
             }
             var voucher_number = $("#voucher_number").val();
@@ -386,10 +394,12 @@
 
         $("#ajaxcoupon").submit(function (e){
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
+            $(".confirm-coupon").text('').hide();
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             var input = $("#promo_code");
             if (input.val() == "") {
                 input.addClass("needsfilled");
+                $(".confirm-coupon").text('Please enter discount code').show();
                 return false;
             } else {
                 input.removeClass("needsfilled");
