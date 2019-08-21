@@ -273,14 +273,33 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $('#ajaxgift input,#ajaxcoupon input').focus(function(){
+            $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
+            $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
+            return false;
+        });
+
+        gift_required = ['voucher_number','voucher_pin'];
         $('#gift_voucher_validate').click(function () {
-            var voucher_number = $('#voucher_number').val();
-            var voucher_pin = $('#voucher_pin').val();
-            if (voucher_number == "" || voucher_pin == "") {
-                $('.show_voucher_error').html('Please enter the gift certificate pin');
+            $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
+            $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
+            for (k = 0; k < gift_required.length; k++) {
+                let input = $('#ajaxgift input[name="' + gift_required[k] + '"]');
+                if (input.val() == "") {
+                    input.addClass("needsfilled");
+                } else {
+                    input.removeClass("needsfilled");
+                }
+            }
+
+            if ($("#ajaxgift input").hasClass("needsfilled")) {
                 return false;
-            } else {
-                var url = "cart/check_valid_gift_voucher";
+            }
+
+            setTimeout(() => {
+
+            var url = "cart/check_valid_gift_voucher";
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -309,7 +328,9 @@
                     }
                 });
                 return false;
-            }
+
+            }, 100);
+            
         });
 
         $('.remove_coupon').click(function (e) {
@@ -355,11 +376,19 @@
             });
         });
 
-        $("#ajaxcoupon").submit(function (e)
-        {
+        $("#ajaxcoupon").submit(function (e){
+            $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
+            $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
+            var input = $("#promo_code");
+            if (input.val() == "") {
+                input.addClass("needsfilled");
+                return false;
+            } else {
+                input.removeClass("needsfilled");
+            }
             var postData = $(this).serializeArray();
             var formURL = $(this).attr("action");
-
+            setTimeout(() => {
             $.ajax(
                     {
                         url: formURL,
@@ -395,6 +424,7 @@
                             console.log(jqXHR);
                         }
                     });
+            }, 100);
             e.preventDefault(); //STOP default action
         });
 
