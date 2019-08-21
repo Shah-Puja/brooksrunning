@@ -5943,9 +5943,26 @@ textarea {
   margin-bottom: 12px;
 }
 .shopping-delevery--option .delivery-option .radio-inline .text .gift-input.needsfilled::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: #ff0000;
 }
-.shopping-delevery--option .delivery-option .radio-inline .text .pdp-button {
+.shopping-delevery--option .delivery-option .radio-inline .text .gift-input.needsfilled::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ff0000;
+}
+.shopping-delevery--option .delivery-option .radio-inline .text .gift-input.needsfilled:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #ff0000;
+}
+.shopping-delevery--option .delivery-option .radio-inline .text .gift-input.needsfilled:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ff0000;
+}
+.shopping-delevery--option .delivery-option .radio-inline .text .cart-apply-btn {
+  margin: 12px auto;
+  width: 200px;
+}
+.shopping-delevery--option .delivery-option .radio-inline .text .cart-apply-btn .pdp-button {
   width: 100%;
   max-width: 250px;
 }

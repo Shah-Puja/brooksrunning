@@ -4242,13 +4242,28 @@
               border: 0;
               outline: 0;
               margin-bottom: 12px;
-              &.needsfilled::-webkit-input-placeholder {
+              
+              &.needsfilled::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color:#ff0000;
+              }
+              &.needsfilled::-moz-placeholder { /* Firefox 19+ */
+                color:#ff0000;
+              }
+              &.needsfilled:-ms-input-placeholder { /* IE 10+ */
+                color:#ff0000;
+              }
+              &.needsfilled:-moz-placeholder { /* Firefox 18- */
                 color:#ff0000;
               }
           }
-          .pdp-button{
-            width: 100%;
-            max-width: 250px;
+          .cart-apply-btn{
+            margin: 12px auto;
+            // height: 15%;
+            width: 200px;
+            .pdp-button{
+              width: 100%;
+              max-width: 250px;
+            }
           }
         }
        }

@@ -166,8 +166,10 @@
                                                             <div class="show_gift_vouchers" style="{{ $display_link }}">
                                                                 <input type="text" id="voucher_number" name="voucher_number" class="gift-input" placeholder="Voucher Number">
                                                                 <input type="text" id="voucher_pin" name="voucher_pin" class="gift-input" placeholder="Voucher Pin">
-                                                                <p class="show_voucher_error" style="color:red;"></p>
-                                                                <button id="gift_voucher_validate" class="pdp-button">Apply</button>
+                                                                <div class="cart-apply-btn">
+                                                                    <p class="show_voucher_error" style="color:red;"></p>
+                                                                </div> 
+                                                                <button id="gift_voucher_validate" class="pdp-button">Apply</button> 
                                                             </div>
                                                              </form>
                                                         </div>
@@ -215,8 +217,11 @@
                                                         <form action="cart/couponvalidate" method="post" name="dwfrm_cart" id="ajaxcoupon">
                                                             @csrf
                                                             <input type="text" id="promo_code" name="promo_code" class="gift-input" placeholder="Discount Code">
-                                                            <p class="confirm-coupon" style="color:red;"></p>
-                                                            <button id="promo_code_validate" class="pdp-button">Apply</button>
+                                                            <div class="cart-apply-btn">
+                                                                <p class="confirm-coupon" style="color:red;"></p>
+                                                            </div>
+                                                                <button id="promo_code_validate" class="pdp-button">Apply</button>
+                                                            
                                                             </form>   
                                                             @endif  
                                                         </div>
