@@ -310,6 +310,7 @@
                     data: {voucher_number: voucher_number, voucher_pin: voucher_pin},
                     success: function (result) {
                         if (result == "success") {
+                            window.location.href = "/cart";
                             $('.show_voucher_error').html();
                             $('.show_gift_vouchers').hide();
                             $("#voucher_number_link").text(voucher_number);
