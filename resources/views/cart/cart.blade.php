@@ -280,9 +280,18 @@
             }
         });
 
-        $('#ajaxgift input,#ajaxcoupon input').focus(function(){
-            $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
-            $(".show_voucher_error,.confirm-coupon").hide();
+        $('#ajaxgift input').focus(function(){
+            $('#ajaxcoupon input').removeClass("needsfilled");
+            $(".confirm-coupon").hide();
+            $('#ajaxcoupon input[type=text]').val('');
+            $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
+            return false;
+        });
+
+        $('#ajaxcoupon input').focus(function(){
+            $('#ajaxgift input').removeClass("needsfilled");
+            $(".show_voucher_error").hide();
+            $('#ajaxgift input[type=text]').val('');
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             return false;
         });
