@@ -4242,6 +4242,9 @@
               border: 0;
               outline: 0;
               margin-bottom: 12px;
+              &.needsfilled::-webkit-input-placeholder {
+                color:#ff0000;
+              }
           }
           .pdp-button{
             width: 100%;

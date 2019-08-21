@@ -646,6 +646,41 @@
 .input-wrapper .pdp-select-field option {
   outline: 0;
 }
+.input-wrapper.disabled {
+  pointer-events: none;
+  cursor: no-drop;
+}
+.input-wrapper.disabled .radio-inline input:checked ~ label .mark {
+  border: 1px solid #d3d0cd;
+}
+.input-wrapper.disabled .radio-inline input:checked ~ label .mark span {
+  background-color: #f1f1f1;
+}
+.input-wrapper.disabled .radio-inline label {
+  cursor: no-drop;
+  color: #dedcda;
+}
+.input-wrapper.disabled .radio-inline label .cart-mark {
+  cursor: no-drop;
+  color: #dedcda;
+}
+.input-wrapper.disabled .radio-inline label .cart-mark h3 {
+  color: #dedcda;
+}
+.input-wrapper.disabled .radio-inline .text .gift-input {
+  color: #dedcda;
+  cursor: no-drop;
+  pointer-events: none;
+}
+.input-wrapper.disabled .radio-inline .text .gift-input::-webkit-input-placeholder {
+  color: #dedcda;
+}
+.input-wrapper.disabled .radio-inline .text .show_gift_vouchers .pdp-button {
+  background-color: #d8dade;
+  color: #d2ccc7;
+  cursor: no-drop;
+  pointer-events: none;
+}
 
 .custom-select {
   position: relative;
@@ -5900,6 +5935,9 @@ textarea {
   border: 0;
   outline: 0;
   margin-bottom: 12px;
+}
+.shopping-delevery--option .delivery-option .radio-inline .text .gift-input.needsfilled::-webkit-input-placeholder {
+  color: #ff0000;
 }
 .shopping-delevery--option .delivery-option .radio-inline .text .pdp-button {
   width: 100%;

@@ -677,6 +677,50 @@
         outline: 0;
       }
     }
+    &.disabled{
+      pointer-events: none;
+      cursor: no-drop;
+      .radio-inline{
+         input:checked ~ label {
+          .mark{
+            border: 1px solid #d3d0cd;
+            span{
+              background-color: #f1f1f1;
+            }
+          }
+         }
+        label{
+          cursor: no-drop;
+          color: #dedcda;
+          .cart-mark{
+            cursor: no-drop;
+            color: #dedcda;
+            h3{
+              color: #dedcda;
+             }
+          }
+        }
+        .text{
+          .gift-input{
+            color: #dedcda;
+            cursor: no-drop;
+            pointer-events: none;
+            
+          }
+          .gift-input::-webkit-input-placeholder {
+            color: #dedcda;
+          }
+          .show_gift_vouchers{
+            .pdp-button{
+              background-color: #d8dade;
+              color: #d2ccc7;
+              cursor: no-drop;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
   }
   
   .custom-select{
