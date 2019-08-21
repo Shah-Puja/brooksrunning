@@ -154,7 +154,7 @@ class Cart extends Model {
     }
 
     public function cart_without_ap21(){
-        if($this->cartItems->count() > 0){
+        if($this->cartItems->count() > 0 && !$request->ajax()){
             $total=0;
             foreach ($this->cartItems  as $item) {
                 $discount_price =  $item->variant->price_sale * $item->qty;
@@ -196,12 +196,13 @@ class Cart extends Model {
         return $promo_array;
     }
 
-    public function gift_voucher($bridgeObject){
-        if($this->cartItems->count() > 0 && $this->pin!='' && $this->gift_id!=''){
+    public function gift_voucher($bridgeObject,$giftcert_pin,$gift_id){
+        $status = "";
+        if($this->cartItems->count() > 0 && $giftcert_pin!='' && $gift_id!=''){
             $cartTotal = $this->total;
             $freight_cost = $this->freight_cost;
-            $giftcert_pin = $this->pin;
-            $response = $bridgeObject->vouchervalid($this->gift_id, $giftcert_pin, $cartTotal + $freight_cost);
+            //$giftcert_pin = $this->pin;
+            $response = $bridgeObject->vouchervalid($gift_id, $giftcert_pin, $cartTotal + $freight_cost);
             /*Ap21_log::createNew([
                 'process' => 'Gift voucher',
                 'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
@@ -233,16 +234,21 @@ class Cart extends Model {
                                     'gift_discount' => $gift_discount,
                                     'gift_cart_total' => $gift_cart_total
                                 ]);
+                        $status = "success";
                         break;
                    default:
                         $this->cart_without_ap21();
+                        $status = "Incorrect Voucher";
                 }
             }else{
                 $this->cart_without_ap21();
-            }
-
-            
+                $status = "Incorrect Voucher";
+            } 
+        }else{
+            $status = "Incorrect Voucher";
         }
+
+        return $status;
     }
 
 }
