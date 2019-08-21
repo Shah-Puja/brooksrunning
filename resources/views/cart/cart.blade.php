@@ -292,24 +292,21 @@
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             for (k = 0; k < gift_required.length; k++) {
-                let input = $('#ajaxgift input[name="' + gift_required[k] + '"]');
+                var input = $('#ajaxgift input[name="' + gift_required[k] + '"]');
                 if (input.val() == "") {
                     input.addClass("needsfilled");
                 } else {
                     input.removeClass("needsfilled");
                 }
             }
-
             if ($("#ajaxgift input").hasClass("needsfilled")) {
                 return false;
             }
-
-            setTimeout(() => {
-
-            var url = "cart/check_valid_gift_voucher";
+            var voucher_number = $("#voucher_number").val();
+            var voucher_pin = $("#voucher_pin").val();
                 $.ajax({
-                    url: url,
-                    method: "POST",
+                    url: "cart/check_valid_gift_voucher",
+                    type: "POST",
                     data: {voucher_number: voucher_number, voucher_pin: voucher_pin},
                     success: function (result) {
                         if (result == "success") {
@@ -320,6 +317,7 @@
                             $(".order_summary").load("cart/get_cart_order_total");
                         } else {
                             $('.show_voucher_error').html(result);
+                            $('.show_voucher_error').show();
                         }
                     },
                     error: function () {
@@ -332,8 +330,6 @@
                     }
                 });
                 return false;
-
-            }, 100);
             
         });
 

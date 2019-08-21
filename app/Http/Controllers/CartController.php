@@ -363,6 +363,8 @@ class CartController extends Controller {
                         echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
                         break;
                 }
+            }else{
+                echo "Incorrect Voucher";
             }
         }
     }
