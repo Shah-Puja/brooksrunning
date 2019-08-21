@@ -299,7 +299,7 @@
         gift_required = ['voucher_number','voucher_pin'];
         $('#gift_voucher_validate').click(function () {
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
-            $(".show_voucher_error").hide().text('');
+            $(".show_voucher_error,.confirm-coupon").hide().text('');
             
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             var show_error="";
@@ -394,7 +394,7 @@
 
         $("#ajaxcoupon").submit(function (e){
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
-            $(".confirm-coupon").text('').hide();
+            $(".show_voucher_error,.confirm-coupon").text('').hide();
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             var input = $("#promo_code");
             if (input.val() == "") {
