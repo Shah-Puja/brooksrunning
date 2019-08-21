@@ -136,7 +136,7 @@
                                 @endif 
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="input-wrapper  {{ (isset($cart->promo_string) && $cart->promo_string != '') ? 'disable' :''}} ">
+                                        <div class="input-wrapper  {{ (isset($cart->promo_string) && $cart->promo_string != '')?'disabled':''}} ">
                                             
                                                 <div class="radio-inline">
                                                     <input type="radio" id="gift_voucher" name="promotion" checked="checked">
