@@ -4459,9 +4459,6 @@ textarea {
   margin: 0 auto 10px;
   padding: 0;
 }
-.category__hero .m-block--hero--collection__content.collection_content_section {
-  margin: 15px 160px 0px 0px;
-}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .category__hero .m-block--hero--collection__content.collection_content_section {
     padding: 5px 20px 20px;
@@ -4522,7 +4519,7 @@ textarea {
     padding: 0;
   }
   .category__hero .m-block--hero--collection__content.collection_content_section {
-    margin: 15px 160px 0px 0px;
+    margin: 15px 160px 0px 45px;
   }
   .category__hero .category__hero__image {
     z-index: 1;

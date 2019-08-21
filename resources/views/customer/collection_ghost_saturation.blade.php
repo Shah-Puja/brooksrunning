@@ -46,7 +46,7 @@
                 <div class="collection-hero-overlay hidden-mob visible-tab visible-col"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/Limited-Edition/nocategoryimage.jpg">
+                <img src="/images/Limited-Edition/ghost12-saturation-categoryimage.jpg">
             </div>
         </div>
 </div>

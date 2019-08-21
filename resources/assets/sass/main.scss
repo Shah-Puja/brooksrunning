@@ -2698,7 +2698,7 @@ ul {
   }
 
   &.collection_content_section{
-    margin: 15px 160px 0px 0px;
+    // margin: 15px 160px 0px 0px; 
     @media #{$desktop-only}{
       padding: 5px 20px 20px;
     }
@@ -2764,7 +2764,7 @@ ul {
   }
   &.collection_content_section
   {
-      margin: 15px 160px 0px 0px;
+      margin: 15px 160px 0px 45px;
   
   }
 }
