@@ -660,6 +660,12 @@
 .input-wrapper.disabled .radio-inline label .cart-mark h3 {
   color: #dedcda;
 }
+.input-wrapper.disabled .radio-inline label .cart-mark .pdp-button {
+  background-color: #d8dade;
+  color: #d2ccc7;
+  cursor: no-drop;
+  pointer-events: none;
+}
 .input-wrapper.disabled .radio-inline .text .gift-input {
   color: #dedcda;
   cursor: no-drop;
@@ -2299,6 +2305,12 @@ textarea {
 }
 .input-wrapper.disabled .radio-inline label .cart-mark h3 {
   color: #dedcda;
+}
+.input-wrapper.disabled .radio-inline label .cart-mark .pdp-button {
+  background-color: #d8dade;
+  color: #d2ccc7;
+  cursor: no-drop;
+  pointer-events: none;
 }
 .input-wrapper.disabled .radio-inline .text .gift-input {
   color: #dedcda;
