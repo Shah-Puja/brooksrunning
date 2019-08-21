@@ -177,7 +177,7 @@
                                     </div>
 
                                     <div class="col-6">
-                                            <div class="input-wrapper">
+                                            <div class="input-wrapper {{(isset($cart->gift_id) && $cart->gift_id!='0.00' && $cart->gift_id > '0.00')? 'disabled':''}}">
                                                 <div class="radio-inline">
                                                     <input type="radio" id="promotion" name="promotion" checked="checked">
                                                     <label for="promotion">
