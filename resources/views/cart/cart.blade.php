@@ -349,6 +349,7 @@
                 data: {gift_voucher_number: gift_voucher_number},
                 success: function (result) {
                     if (result == "success") {
+                        window.location.href = "/cart"
                         //remove validation promo msg 
                         $('.coupon-msg').css('display','none');
                         var form = document.getElementById("ajaxcoupon");
