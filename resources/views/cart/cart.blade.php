@@ -305,7 +305,7 @@
         $('#gift_voucher_validate').click(function () {
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
             $(".show_voucher_error,.confirm-coupon").hide().text('');
-            
+            $('#ajaxcoupon input[type=text]').val('');
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             var show_error="";
             for (k = 0; k < gift_required.length; k++) {
@@ -400,6 +400,7 @@
         $("#ajaxcoupon").submit(function (e){
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
             $(".show_voucher_error,.confirm-coupon").text('').hide();
+            $('#ajaxgift input[type=text]').val('');
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             var input = $("#promo_code");
             if (input.val() == "") {
