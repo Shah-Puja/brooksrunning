@@ -695,9 +695,15 @@
           .cart-mark{
             cursor: no-drop;
             color: #dedcda;
-            h3{
+              h3{
               color: #dedcda;
-             }
+              }
+             .pdp-button{
+              background-color: #d8dade;
+              color: #d2ccc7;
+              cursor: no-drop;
+              pointer-events: none;
+            }
           }
         }
         .text{
