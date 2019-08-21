@@ -282,7 +282,6 @@
 
         $('#ajaxgift input,#ajaxcoupon input').focus(function(){
             $('#ajaxgift input,#ajaxcoupon input').removeClass("needsfilled");
-            $('#ajaxgift input,#ajaxcoupon input').val("");
             $(".show_voucher_error,.confirm-coupon").hide();
             $(this).closest(".input-wrapper").find('input[name=promotion]').trigger('click');
             return false;
