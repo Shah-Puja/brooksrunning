@@ -95,7 +95,7 @@ class Cart extends Model {
 
     public function cart_api($bridgeObject) {   /// new function
         if($this->cartItems->count() > 0){
-            $xml_promo_st = $this->get_promo_xml();
+            $xml_promo_st = $this->get_promo_data($this->promo_code);
             $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
@@ -185,12 +185,15 @@ class Cart extends Model {
 
     }
 
-    public function get_promo_xml(){
+    public function get_promo_data($promo_code){
         $promo_array = array();
-        if ($this->promo_code != "") {
-            $promo_code = promo_mast::where('promo_string', $this->promo_code)->whereRaw('CURDATE() between `start_dt` and `end_dt`')->first();
-            if (!empty($promo_code)) {
-                $promo_array = ['skuid'=>$promo_code->skuidx,'qty'=>1];
+        if ($promo_code != "") {
+            $check_promo_code = promo_mast::where('promo_string', $promo_code)
+                                    ->where('start_dt','<=',now())
+                                    ->where('end_dt','>',now())
+                                    ->first();
+            if (!empty($check_promo_code)) {
+                $promo_array = ['skuid'=>$check_promo_code->skuidx,'qty'=>1];
             }
         }
         return $promo_array;
