@@ -10,7 +10,7 @@ use App\Models\Promo_mast;
 
 class Cart extends Model {
 
-    protected $fillable = ['user_id', 'total', 'discount','promo_code','promo_string', 'sku', 'delivery_type', 'freight_cost', 'grand_total'];
+    protected $fillable = ['user_id', 'total', 'discount','promo_code','promo_string', 'sku','gift_id','pin','gift_available_amount','gift_discount','gift_cart_total', 'delivery_type', 'freight_cost', 'grand_total'];
 
     public function cartItems() {
         return $this->hasMany('App\Models\Cart_item');
