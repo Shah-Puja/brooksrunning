@@ -186,7 +186,7 @@ class Cart extends Model {
     }
 
     public function get_promo_data($promo_string){
-        $promo_array = '';
+        $promo_array = [];
         if ($promo_string != "") {
             $check_promo_code = promo_mast::where('promo_string', $promo_string)
                                     ->where('start_dt','<=',now())

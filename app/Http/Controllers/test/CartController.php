@@ -41,7 +41,7 @@ class CartController extends Controller
 
     public function couponvalidate(Request $request) {
         $check_promo_code = $this->cart->get_promo_data($request->promo_code);
-        $promotion = array();
+        $promotion = [];
         if (isset($check_promo_code) && $check_promo_code != "") {
             $this->cart->update([
                             'promo_code' => $check_promo_code->promo_code,
