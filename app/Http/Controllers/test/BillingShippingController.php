@@ -20,27 +20,14 @@ class BillingShippingController extends Controller
 
     public function create()
     {
-        if (@$this->cart->order->address) {
-            $orderAddress = $this->cart->order->address;
-        }
-        if (! @$orderAddress && auth()->check() ) {
-            $usersLastOrder = Order::where('user_id', auth()->id())
-                                ->orderBy('updated_at', 'desc')
-                                ->first();
-            /*if(isset($usersLastOrder->address->s_state) && $usersLastOrder->address->s_state=='New Zealand'){
-                $delivery_option = "new_zealand";
-                $freight_charges = config('site.SHIPPING_NZ_PRICE');
-                $grand_total = $this->cart->total + $freight_charges;
-                Cart::where('id', session('cart_id'))->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
-                $this->cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,style,stylename,color_name')->first();
-                Order::where('user_id', auth()->id())->update(['delivery_type' => $delivery_option, 'freight_cost' => $freight_charges, 'grand_total' => $grand_total]);
-            }*/
+        if (@$this->cart->order->address) $orderAddress = $this->cart->order->address;
+
+        if (!@$orderAddress && auth()->check() ) {
+            $usersLastOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->first();
             $orderAddress = $usersLastOrder ? $usersLastOrder->address : null; 
         }
-        if (! @$orderAddress) {
-            $orderAddress = new Order_address;
-        }
-
+        
+        if (!@$orderAddress)  $orderAddress = new Order_address;
         return view( 'customer.shipping', compact('orderAddress','cart') );
     }
 }
