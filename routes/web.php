@@ -33,7 +33,7 @@ Route::post('/reset_pass', 'InfoController@check_email');
 	Route::post('/cart/edit_cart','CartController@edit_cart_popup');
 	Route::post('/cart/check_valid_gift_voucher', 'test\CartController@check_valid_gift_voucher');
 	Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
-	Route::post('/cart/couponvalidate', 'CartController@couponvalidate');
+	Route::post('/cart/couponvalidate', 'test\CartController@couponvalidate');
 	Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
 //}
