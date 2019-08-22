@@ -2596,6 +2596,24 @@ ul {
       width:100%;
     }
 }
+.large-header-text {
+  font-size: 45px;
+  line-height: 1.0;
+  width:100%;
+  letter-spacing: 0px;
+  @media #{$mobile-only}{
+    font-size: 30px;
+    width:100%;
+  }
+  @media #{$tab-only}{
+    font-size: 30px;
+    width:100%;
+  }
+  @media #{$desktop-only}{
+    font-size: 30px;
+    width:100%;
+  }
+}
 .title {
   font-size: 50px;
   line-height: 1.0;

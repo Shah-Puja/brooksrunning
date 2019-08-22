@@ -7,19 +7,36 @@
                    and (max-device-width: 640px) 
                    and (orientation: landscape) {
 
-.visible-mob-landscape{
-        display:block !important;
-    }
+    
+    /* .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+        width: 215px !important;
+    } */
 } 
-@media only screen and (max-width: 767px) {
-    .visible-mob-landscape{
-        display:block !important;
-    }
-    .more-color--container-landscape{
-        display:none !important;
+@media screen and (orientation: landscape){
+    .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+        width: 215px !important;
     }
 }
-    </style>
+
+
+/* CSS only for this page */
+.plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel{
+    max-width: 325px !important;     width: 100% !important; 
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel {
+          width: 90% !important;
+    }
+    .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+        width: 54px !important;
+    }
+}
+
+   </style>
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -33,12 +50,12 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">ghost-saturation</a>
+                                            <a href="JavaScript:Void(0);" class="active">Ghost Saturation</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large">Make a Splash</h1>
+                        <h1 class="large-header-text">Make a Splash</h1>
                        
                         <p class="type">Go colour crazy in the latest Ghost 12 Saturation Pack.</p>
                     </div>
@@ -91,27 +108,30 @@
 
 						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob visible-mob-landscape main_link">
+								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob  main_link">
 									<div class="collection-img img-collection-shoes">
 										<img id="plp-img" class="collection-plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
 									</div>
 								</a>
-								<div class="more-color--container more-color--container-landscape hidden-col hidden-tab">
-									<!-- <span class="icon-style icon-back-arrow prev"></span> -->
-									<div class="owl-carousel owl-theme">
+								<div class="more-color--container">
+									<span class="icon-style icon-back-arrow prev"></span>
+									<div class="owl-carousel owl-theme" >
                                     @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
-                                        @foreach(collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy('seqno') as $color_product)
+                                        @php 
+                                            $sorted = collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy(function ($item, $key) use ($curr_ele) {
+                                                return ($curr_ele->color_code == $item->color_code) ? 0  : 1 ;
+                                        });
+                                        @endphp
+                                        @foreach( $sorted as $color_product)
                                             @if(!empty($color_product))
                                         <div class="item">
-                                            <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
+                                            <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html" class="hidden-mob-landscape">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <source media="(min-width: 480px)and (max-width: 640px) and (orientation: landscape)" srcset="{{ $color_product->image->image1Medium() }}">
-                                                <img src="" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
-                                                <!-- src="{{ $color_product->image->image1Thumbnail() }}" -->
+                                                <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
                                             </picture>
                                             </a>
-                                            <div class="plp-mob--info hidden-mob hidden-col hidden-tab">
+                                            <div class="plp-mob--info visible-mob">
                                                 <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
@@ -125,7 +145,7 @@
                                         @endforeach
 				                    @endif
 									</div>
-									<!-- <span class="icon-style icon-next-arrow next"></span> -->
+									<span class="icon-style icon-next-arrow next"></span>
 								</div>
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
 									<div class="info">
@@ -151,16 +171,6 @@
 										</div>
 										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
 									</div>
-									<!-- <div class="info-sub">
-										<div class="row">
-											<div class="mob-6">
-								
-											</div>
-											<div class="mob-6">
-												<p class="right">{{ $width_count }} {{ ($width_count > 1 ) ? 'Widths' : 'Width' }} Available</p>
-											</div>
-										</div>
-									</div> -->
 								</a>
 							</div>
 						</div>

@@ -176,11 +176,9 @@ class CollectionController extends Controller
                         }
                 }
             return $data;
-        })->unique('style');
-        
-        $colour_options = $styles->unique(function ($item){
-            return $item['style'].$item['color_code'];
         });
+        
+        $colour_options = $styles;
 
         return view( 'customer.collection_ghost_saturation',compact('colour_options','products'));
        }
