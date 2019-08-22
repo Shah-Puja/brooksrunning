@@ -238,7 +238,7 @@ class Cart extends Model {
             Ap21_log::createNew([
                 'process' => 'Gift voucher',
                 'request' => 'Gift id:'.$gift_id.', Pin:'.$gift_pin . ', Amount:'. ($cartTotal + $freight_cost),
-                'response' => $response,
+                'response' => $response->toArray(),
                 'object_id'=>session('cart_id')
             ]);
         }else{
