@@ -57,7 +57,7 @@ class testmedibankcsv extends Controller {
             }
             fclose($out);
         }
-        //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
+        Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
     }
 
 }
