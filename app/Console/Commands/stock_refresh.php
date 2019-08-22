@@ -39,7 +39,9 @@ class stock_refresh extends Command
     public function handle()
     {
         echo "Hi";
-        $xml_response = $this->bridgeObject->allProducts();
-        print_r($xml_response);
+        $xml_response_obj = $this->bridgeObject->allProducts();        
+        $xml_response = $xml_response_obj->getContents();
+        $xml = simplexml_load_string($xml_response);
+        print_r($xml);
     }
 }
