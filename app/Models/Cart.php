@@ -99,15 +99,9 @@ class Cart extends Model {
             $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
-            /*Ap21_log::createNew([
-                'process' =>'Cart-API',
-                'request' => $cart_xml,
-                'response' => $cart_xml_response,
-                'object_id'=>session('cart_id')
-            ]);*/
             if (!empty($cart_xml_response)) {
                 $bridge = $cart_xml_response->getContents();
-                $xml = simplexml_load_string($bridge);                  
+                $xml = simplexml_load_string($bridge);                 
                 if (!empty($xml) && !isset($xml->ErrorCode)) {
                     foreach ($xml->CartDetails->CartDetail as $item) {
                         Cart_item::where('variant_id', $item->SkuId)
@@ -146,7 +140,13 @@ class Cart extends Model {
                 }
             }else{
                 $this->cart_without_ap21();
-            }            
+            }  
+            Ap21_log::createNew([
+                'process' =>'Cart-API',
+                'request' => $cart_xml,
+                'response' => $cart_xml_response,
+                'object_id'=>session('cart_id')
+            ]);           
         }
         else{
             $this->cart_without_ap21();
@@ -154,7 +154,7 @@ class Cart extends Model {
     }
 
     public function cart_without_ap21(){
-        if($this->cartItems->count() > 0 && !$request->ajax()){
+        if($this->cartItems->count() > 0 && !request()->ajax()){
             $total=0;
             foreach ($this->cartItems  as $item) {
                 $discount_price =  $item->variant->price_sale * $item->qty;
@@ -196,20 +196,12 @@ class Cart extends Model {
         return $promo_array;
     }
 
-    public function gift_voucher($bridgeObject,$giftcert_pin,$gift_id){
+    public function gift_voucher($bridgeObject,$gift_pin,$gift_id){
         $status = "";
-        if($this->cartItems->count() > 0 && $giftcert_pin!='' && $gift_id!=''){
+        if($this->cartItems->count() > 0 && $gift_pin!='' && $gift_id!=''){
             $cartTotal = $this->total;
             $freight_cost = $this->freight_cost;
-            //$giftcert_pin = $this->pin;
-            $response = $bridgeObject->vouchervalid($gift_id, $giftcert_pin, $cartTotal + $freight_cost);
-            /*Ap21_log::createNew([
-                'process' => 'Gift voucher',
-                'request' => 'Gift id:'.$this->gift_id.', Pin:'.$this->pin,
-                'response' => $response,
-                'object_id'=>session('cart_id')
-            ]);*/
-            //$response_body = $response;
+            $response = $bridgeObject->vouchervalid($gift_id, $gift_pin, $cartTotal + $freight_cost);
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
@@ -217,7 +209,6 @@ class Cart extends Model {
                         $response_body = $response->getBody()->getContents();
                         $xml = simplexml_load_string($response_body);
                         $gift_number = (int) ($xml->VoucherNumber);
-                        $gift_pin = $giftcert_pin;
                         $ExpiryDate = (int) ($xml->ExpiryDate);
                         $AvailableAmount = (int) ($xml->AvailableAmount);
                         if ($AvailableAmount > ($cartTotal + $freight_cost)) {
@@ -244,6 +235,12 @@ class Cart extends Model {
                 $this->cart_without_ap21();
                 $status = "Incorrect Voucher";
             } 
+            Ap21_log::createNew([
+                'process' => 'Gift voucher',
+                'request' => 'Gift id:'.$gift_id.', Pin:'.$gift_pin . 'Amount:'. $cartTotal + $freight_cost,
+                'response' => $response,
+                'object_id'=>session('cart_id')
+            ]);
         }else{
             $status = "Incorrect Voucher";
         }
