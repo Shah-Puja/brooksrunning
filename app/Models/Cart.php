@@ -193,7 +193,7 @@ class Cart extends Model {
                                     ->where('end_dt','>',now())
                                     ->first();
             if (!empty($check_promo_code)) {
-                $promo_array = ['skuid'=>$check_promo_code->skuidx,'qty'=>1];
+                $promo_array = ['skuid'=>$check_promo_code->skuidx,'qty'=>1,''];
             }
         }
         return $promo_array;

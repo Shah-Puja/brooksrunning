@@ -38,4 +38,25 @@ class CartController extends Controller
         }
         return $status;
     }
+
+    public function couponvalidate(Request $request) {
+        $check_promo_code = $this->cart->get_promo_data($request->promo_code);
+        $promotion = array();
+        if (isset($check_promo_code) && $check_promo_code != "") {
+            $this->cart->update([
+                            'promo_code' => $request->promo_code,
+                            'promo_string' => $request->promo_code,
+                            'sku' => $check_promo_code->skuidx
+                        ]);
+            $promotion->result = 'success';
+            $promotion->msg = 'Valid Code';
+            $promotion->url = 'cart';
+            $promotion->redirect = 1;
+        } else {
+            $promotion->result = 'fail';
+            $promotion->msg = 'Discount Code is not valid';
+            $promotion->redirect = 0;
+        }
+        echo json_encode($promotion);
+    }
 }
