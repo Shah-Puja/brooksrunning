@@ -185,15 +185,15 @@ class Cart extends Model {
 
     }
 
-    public function get_promo_data($promo_code){
+    public function get_promo_data($promo_string){
         $promo_array = array();
         if ($promo_code != "") {
-            $check_promo_code = promo_mast::where('promo_string', $promo_code)
+            $check_promo_code = promo_mast::where('promo_string', $promo_string)
                                     ->where('start_dt','<=',now())
                                     ->where('end_dt','>',now())
                                     ->first();
             if (!empty($check_promo_code)) {
-                $promo_array = ['skuid'=>$check_promo_code->skuidx,'qty'=>1,''];
+                $promo_array = ['skuid'=>$check_promo_code->skuidx,'qty'=>1,'promo_code'=>$check_promo_code->promo_code];
             }
         }
         return $promo_array;

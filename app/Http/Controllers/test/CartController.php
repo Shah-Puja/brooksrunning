@@ -44,7 +44,7 @@ class CartController extends Controller
         $promotion = array();
         if (isset($check_promo_code) && $check_promo_code != "") {
             $this->cart->update([
-                            'promo_code' => $request->promo_code,
+                            'promo_code' => $check_promo_code->promo_code,
                             'promo_string' => $request->promo_code,
                             'sku' => $check_promo_code->skuidx
                         ]);
