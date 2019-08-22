@@ -95,7 +95,7 @@ class Cart extends Model {
 
     public function cart_api($bridgeObject) {   /// new function
         if($this->cartItems->count() > 0){
-            $xml_promo_st = $this->get_promo_data($this->promo_code);
+            $xml_promo_st = $this->get_promo_data($this->promo_string);
             $cart_xml = view('xml.cart_xml',['caritems'=>$this->cartItems,'xml_promo_st'=>$xml_promo_st]);
             $xml = array();
             $cart_xml_response = $bridgeObject->processCart($cart_xml);
@@ -194,9 +194,9 @@ class Cart extends Model {
                                     ->first();
             if (!empty($check_promo_code)) {
                 $promo_array = [
-                                'skuid'=>$check_promo_code->skuidx,
-                                'promo_code'=>$check_promo_code->promo_code,
-                                'promo_string'=>$check_promo_code->promo_string,
+                                'skuid'=> $check_promo_code->skuidx,
+                                'promo_code'=> $check_promo_code->promo_code,
+                                'promo_string'=> $check_promo_code->promo_string,
                                 'qty'=>1
                             ];
             }
