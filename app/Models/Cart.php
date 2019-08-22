@@ -186,20 +186,22 @@ class Cart extends Model {
     }
 
     public function get_promo_data($promo_string){
-        $promo_array = [];
+        $promo_array = array();
         if ($promo_string != "") {
             $check_promo_code = promo_mast::where('promo_string', $promo_string)
                                     ->where('start_dt','<=',now())
                                     ->where('end_dt','>',now())
                                     ->first();
             if (!empty($check_promo_code)) {
-                $promo_array->skuidx =  $check_promo_code->skuidx;
-                $promo_array->promo_code =  $check_promo_code->promo_code;
-                $promo_array->promo_string =  $check_promo_code->promo_string;
-                $promo_array->qty = 1;
+                $promo_array = [
+                                'skuidx'=> $check_promo_code->skuidx,
+                                'promo_code'=> $check_promo_code->promo_code,
+                                'promo_string'=> $check_promo_code->promo_string,
+                                'qty'=>1
+                            ];
             }
         }
-        return $promo_array;
+        return (object) $promo_array;
     }
 
     public function gift_voucher($bridgeObject,$gift_pin,$gift_id){
