@@ -12,7 +12,7 @@ class stock_refresh extends Command
      *
      * @var string
      */
-    protected $signature = 'stock-refresh';
+    protected $signature = 'stock_refresh';
 
     /**
      * The console command description.
@@ -42,6 +42,16 @@ class stock_refresh extends Command
         $xml_response_obj = $this->bridgeObject->allProducts();        
         $xml_response = $xml_response_obj->getContents();
         $xml = simplexml_load_string($xml_response);
-        print_r($xml);
+        if (!empty($xml) && !isset($xml->ErrorCode)) {
+            foreach ($products->Product as $curr_product){
+                foreach ($curr_product->Clrs->Clr as $curr_color){
+                    foreach ($curr_color->SKUs->SKU as $curr_sku){
+                        $stock =$curr_sku->FreeStock;
+                        $sku_idx = $curr_sku->Id;
+                        echo "$sku_idx - $stock \n <br>";
+                    }
+                }
+            }
+        }
     }
 }
