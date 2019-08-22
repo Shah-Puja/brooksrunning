@@ -48,14 +48,14 @@ class CartController extends Controller
                             'promo_string' => $check_promo_code['promo_string'],
                             'sku' => $check_promo_code['skuidx']
                         ]);
-            $promotion->result = 'success';
-            $promotion->msg = 'Valid Code';
-            $promotion->url = 'cart';
-            $promotion->redirect = 1;
+            $promotion['result'] = 'success';
+            $promotion['msg'] = 'Valid Code';
+            $promotion['url'] = 'cart';
+            $promotion['redirect'] = 1;
         } else {
-            $promotion->result = 'fail';
-            $promotion->msg = 'Discount Code is not valid';
-            $promotion->redirect = 0;
+            $promotion['result'] = 'fail';
+            $promotion['msg'] = 'Discount Code is not valid';
+            $promotion['redirect'] = 0;
         }
         echo json_encode($promotion);
     }
