@@ -33,7 +33,8 @@ class Kernel extends ConsoleKernel
                 $schedule->command('algolia:sync')
                     ->cron('05 3 * * *'); 
                 $schedule->command('icontact-queue-push')
-                    ->everyFifteenMinutes();                  
+                    ->everyFifteenMinutes();
+                //$schedule->command('medibank-batch-files')->tuesdays();                  
                 break;        
                 /*$schedule->command('icontact-push')
                     ->everyFiveMinutes();                                               

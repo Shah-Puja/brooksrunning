@@ -1,23 +1,49 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Console\Commands;
 
+use Illuminate\Console\Command;
 use App\Models\Order;
 use DB;
 use Illuminate\Support\Facades\Storage;
 
-class testmedibankcsv extends Controller {
+class MedibankBatchFiles extends Command {
 
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'medibank-batch-files';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Export Medibank Batch Files';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
     public function __construct() {
-        
+        parent::__construct();
     }
 
-    public function export_medibank_order_csv() {
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle() {
         $columns = array('UUID', 'OrderReferenceID', 'TransactionTypeCode', 'RefundCorrelationID', 'CorporateID', 'PolicyNumber', 'BirthDate', 'EmailURI', 'TransactionDateTime', 'TransactionLocation', 'EligibleTransactionTotal', 'CurrencyCode', 'TransactionTier');
         //$filename = 'Brooks_5000001033_' . date('Ymd_His') . '.csv';
         //LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_YYYYMMDDHHMMSS.csv
         $filename = 'LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_' . date('YmdHis') . '.csv';
-        $out = fopen('../testcsv/' . $filename, 'w');
+        //$out = fopen('../testcsv/' . $filename, 'w');
+        $out = fopen(public_path('medibankcsv/'). $filename, 'w');
         fputcsv($out, $columns);
         $medibank_orders = DB::table('orders')->where('orders.transaction_status', 'Succeeded')->where('orders.order_type', 'like', '%medibank%')->whereNull('orders.medibank_csv')->orderby('id', 'asc')->get();
         if (!empty($medibank_orders)) {
@@ -58,6 +84,7 @@ class testmedibankcsv extends Controller {
             fclose($out);
         }
         //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
+        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(public_path('medibankcsv/'). $filename, 'r+'));
     }
 
 }
