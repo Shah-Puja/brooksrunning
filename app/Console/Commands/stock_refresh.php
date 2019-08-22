@@ -40,8 +40,11 @@ class stock_refresh extends Command
     public function handle()
     {
         echo "\n1 Start : ".date('Y-m-d H:i:s');
-        $xml_response_obj = $this->bridgeObject->allProducts();
-		echo "\n2 Call Over : ".date('Y-m-d H:i:s');
+        //$xml_response_obj = $this->bridgeObject->allProducts();
+        $xml_response_obj = $this->bridgeObject->getProduct('206089');
+        echo $xml_response_obj;
+        exit;
+		/*echo "\n2 Call Over : ".date('Y-m-d H:i:s');
         if ($xml_response_obj){
             $xml_response = $xml_response_obj->getContents();
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				
@@ -52,20 +55,22 @@ class stock_refresh extends Command
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
-                            /*$stock =$curr_sku->FreeStock;
+                            $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
-                            echo "\n $sku_idx - $stock";*/
+                            echo "\n $sku_idx - $stock";
                             Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);
                             exit;
                         }
                     }
                 }
-            }
+            }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
         else{
             echo "Error";
+        
         }
+        */
         
 
     }
