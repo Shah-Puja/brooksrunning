@@ -202,6 +202,7 @@ class Cart extends Model {
             $cartTotal = $this->total;
             $freight_cost = $this->freight_cost;
             $response = $bridgeObject->vouchervalid($gift_id, $gift_pin, $cartTotal + $freight_cost);
+            $response_body = $response;
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
@@ -238,7 +239,7 @@ class Cart extends Model {
             Ap21_log::createNew([
                 'process' => 'Gift voucher',
                 'request' => 'Gift id:'.$gift_id.', Pin:'.$gift_pin . ', Amount:'. ($cartTotal + $freight_cost),
-                'response' => $response->getBody()->getContents(),
+                'response' => $response_body,
                 'object_id'=>session('cart_id')
             ]);
         }else{
