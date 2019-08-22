@@ -75,7 +75,7 @@ class PaymentController extends Controller {
             Order::where('id', $this->order->id)->update(['order_type' => 'medibank']);
         }*/
         if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') == 'Yes') {
-            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-user']);
+            Order::where('id', $this->order->id)->update(['order_type' => 'medibank-user', 'policy_no' => (Session::get('medibank_user_memberid')) ? Session::get('medibank_user_memberid') : null]);
         }else if (Session::get('medibank_gateway') == 'Yes' && Session::get('medibank_user') != 'Yes') {
             Order::where('id', $this->order->id)->update(['order_type' => 'medibank-guest']);
         }
