@@ -36,6 +36,32 @@ and (orientation : landscape) {
     }
 }
 
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+        width: 54px !important;
+    }
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+    .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
+        width: 54px !important;
+    }
+  
+}
+
    </style>
 <div class="create-account--header plp-header category__hero">
  
