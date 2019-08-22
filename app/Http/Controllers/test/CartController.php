@@ -36,7 +36,7 @@ class CartController extends Controller
         }else{
             $status = "Incorrect Voucher";
         }
-        return $status;
+        echo $status;
     }
 
     public function couponvalidate(Request $request) {
