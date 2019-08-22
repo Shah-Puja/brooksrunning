@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\SYG\Bridges\BridgeInterface as Bridge;
+use App\Models\Ap21_stock;
 
 class stock_refresh extends Command
 {
@@ -50,9 +51,11 @@ class stock_refresh extends Command
             foreach ( $xml->Product as $curr_product){
                 foreach ($curr_product->Clrs->Clr as $curr_color){
                     foreach ($curr_color->SKUs->SKU as $curr_sku){
-                        $stock =$curr_sku->FreeStock;
-                        $sku_idx = $curr_sku->Id;
-                        echo "\n $sku_idx - $stock";
+                        /*$stock =$curr_sku->FreeStock;
+                        $skuidx = $curr_sku->Id;
+                        echo "\n $sku_idx - $stock";*/
+                        Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);
+                        exit;
                     }
                 }
             }

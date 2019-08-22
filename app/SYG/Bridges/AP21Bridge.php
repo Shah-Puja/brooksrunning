@@ -32,6 +32,21 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function allProducts() {
+        try {
+            $response = $this->apiClient->get('Products?countryCode=AUFIT', ['http_errors' => true]);
+            if (!empty($response)) {
+                return $response;
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                return null;
+            }
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() != '') {
+                return null;
+            }
+        }
+
         return $this->apiClient->get('Products?countryCode=AUFIT')->getBody();
     }
 
