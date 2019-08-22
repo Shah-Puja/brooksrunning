@@ -11,8 +11,8 @@
         @endforeach
 		@if(isset($xml_promo_st) && !empty($xml_promo_st))
 			<CartDetail>		
-				<SkuId>{{$xml_promo_st['skuid']}}</SkuId>
-				<Quantity>{{$xml_promo_st['qty']}}</Quantity>
+				<SkuId>{{$xml_promo_st->skuid}}</SkuId>
+				<Quantity>{{$xml_promo_st->qty}}</Quantity>
 			</CartDetail>
 		@endif
     </CartDetails>

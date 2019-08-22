@@ -201,7 +201,7 @@ class Cart extends Model {
                             ];
             }
         }
-        return $promo_array;
+        return (object) $promo_array;
     }
 
     public function gift_voucher($bridgeObject,$gift_pin,$gift_id){
