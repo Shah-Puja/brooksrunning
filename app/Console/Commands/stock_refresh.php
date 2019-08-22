@@ -38,13 +38,13 @@ class stock_refresh extends Command
      */
     public function handle()
     {
-        echo "\n1 Start :  ".date('Y-m-d H:i:s');
+        echo "\n1 Start : ".date('Y-m-d H:i:s');
         $xml_response_obj = $this->bridgeObject->allProducts();
-		echo "\n2 Call Over\n ".date('Y-m-d H:i:s');
+		echo "\n2 Call Over : ".date('Y-m-d H:i:s');
         $xml_response = $xml_response_obj->getContents();
-		echo "\n 3 Got Content\n ".date('Y-m-d H:i:s');				
+		echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				
 		$xml = simplexml_load_string($xml_response);
-		echo "\n 4 Created array\n ".date('Y-m-d H:i:s');		
+		echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
         if (!empty($xml) && !isset($xml->ErrorCode)) {
 			//echo $xml->Product
             foreach ( $xml->Product as $curr_product){
@@ -52,11 +52,12 @@ class stock_refresh extends Command
                     foreach ($curr_color->SKUs->SKU as $curr_sku){
                         $stock =$curr_sku->FreeStock;
                         $sku_idx = $curr_sku->Id;
-                        echo "$sku_idx - $stock \n";
+                        echo "\n $sku_idx - $stock";
                     }
                 }
             }
         }
+        echo "\n 5 Complete ".date('Y-m-d H:i:s');
 
     }
 }
