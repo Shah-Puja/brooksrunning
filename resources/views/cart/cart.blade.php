@@ -432,7 +432,7 @@
                             }
                             if (textStatus == 'success') {
                                 if (data.result == 'success') {
-                                    window.location.assign(data.url);
+                                    //window.location.assign(data.url);
                                 }
                                 if (data.result == 'fail') {
                                     $('.confirm-coupon').html(data.msg).show();
