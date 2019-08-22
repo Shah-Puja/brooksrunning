@@ -44,9 +44,9 @@ class CartController extends Controller
         $promotion = [];
         if (isset($check_promo_code) && $check_promo_code != "") {
             $this->cart->update([
-                            'promo_code' => $check_promo_code->promo_code,
-                            'promo_string' => $check_promo_code->promo_string,
-                            'sku' => $check_promo_code->skuidx
+                            'promo_code' => $check_promo_code['promo_code'],
+                            'promo_string' => $check_promo_code['promo_string'],
+                            'sku' => $check_promo_code['skuidx']
                         ]);
             $promotion->result = 'success';
             $promotion->msg = 'Valid Code';
