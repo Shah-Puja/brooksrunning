@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\SYG\Bridges\BridgeInterface as Bridge;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Ap21_stock;
 
 class stock_refresh extends Command
@@ -40,13 +41,14 @@ class stock_refresh extends Command
     public function handle()
     {
         echo "\n1 Start : ".date('Y-m-d H:i:s');
-        $xml_response_obj = $this->bridgeObject->allProducts();
-        //$xml_response_obj = $this->bridgeObject->getProduct('28742');
-        //print_r($xml_response_obj);
+        //$xml_response_obj = $this->bridgeObject->allProducts();
+        $xml_response_obj = $this->bridgeObject->getProduct('28742');
+        Storage::disk('public')->put('ap21product/data.xml', $xml_response_obj);        
+                
         echo "\n2 Call Over : ".date('Y-m-d H:i:s');
-    
+        exit;
         if (!empty($xml_response_obj)) {
-            $bridge = $xml_response_obj->getContents();
+            $bridge = $xml_response_obj->getContents();            
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
             $xml = simplexml_load_string($bridge);
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
