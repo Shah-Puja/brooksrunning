@@ -57,6 +57,8 @@ class stock_refresh extends Command
             $xml = simplexml_load_string($xml_response_obj);
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {
+                echo "Success";
+                exit;
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
