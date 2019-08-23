@@ -150,22 +150,25 @@ class CollectionController extends Controller
      }
 
      public function ghost_saturation(){
-        $array = ['110316_785','110316_454','110316_350','120305_394','120305_620','120305_465'];
+        $array = ['120305_465','120305_620','120305_394','110316_350','110316_454','110316_785'];
         $data_array = [];
         foreach($array as $item){
             $item = explode('_',$item);
             $style = $item[0];
             $color_code = $item[1];
             $data_array[] = array('style'=> $style,'color_code'=> $color_code);
-        }   
+        } 
+        $orderby_style_string = implode("','",collect($data_array)->pluck('style')->toArray());
+        $orderby_color_string = implode("','",collect($data_array)->pluck('color_code')->toArray());  
         
         $style_array = collect($data_array)->pluck('style');
                   
         $styles = \App\Models\Product::whereIn("style",$style_array)
-                                    ->whereHas('variants', function ( $query ) {
-                                          $query->where('visible', '=', 'Yes');
+                                        ->whereHas('variants', function ( $query ) {
+                                            $query->where('visible', '=', 'Yes');
                                     })
                                     ->with('variants')
+                                    ->orderByRaw("FIELD(style ,'$orderby_style_string') ASC,FIELD(color_code ,'$orderby_color_string') ASC")
                                     ->get();
             
         $products = $styles->filter(function ($value, $key) use ($data_array) {
@@ -178,7 +181,9 @@ class CollectionController extends Controller
             return $data;
         });
         
-        $colour_options = $styles;
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
 
         return view( 'customer.collection_ghost_saturation',compact('colour_options','products'));
        }

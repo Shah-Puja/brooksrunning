@@ -89,7 +89,7 @@ and (orientation : landscape) {
     <div class="row">
     <div class="col-2"></div>
       <div class="col-8">
-      	<div class="about-header">
+        <div class="about-header">
             <h1 class="br-mainheading">Ghost 12 Splash Collection</h1>
             <!-- <p>These limited-release shoes layer colour in ways that defy expectations. Now you can run with the Adrenaline GTS 19’s holistic GuideRails support and the Ghost 11’s smooth ride in bold style, with subtle details you don’t see until you look again. But that shouldn’t be too surprising. After all, what else rewards persistence like running?</p> -->
         </div>
@@ -99,9 +99,9 @@ and (orientation : landscape) {
   </div>
 </div>
 <section class="plp-container">
-	<div class="wrapper">
-		<div class="row">
-					<div class="plp-wrapper-container">
+  <div class="wrapper">
+    <div class="row">
+          <div class="plp-wrapper-container">
                     
                     @if($products!=''  && count($products) >0 )
                     @foreach($products as $curr_ele)
@@ -123,16 +123,16 @@ and (orientation : landscape) {
                             }
                         @endphp
 
-						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
-							<div class="plp-product">
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob  main_link">
-									<div class="collection-img img-collection-shoes">
-										<img id="plp-img" class="collection-plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
-									</div>
-								</a>
-								<div class="more-color--container hidden-col hidden-tab">
-									<!-- <span class="icon-style icon-back-arrow prev"></span> -->
-									<div class="owl-carousel owl-theme" >
+            <div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
+              <div class="plp-product">
+                <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob  main_link">
+                  <div class="collection-img img-collection-shoes">
+                    <img id="plp-img" class="collection-plp-img" src="{{ $curr_ele->image->image1Medium() }}" alt="">
+                  </div>
+                </a>
+                <div class="more-color--container">
+                  <!-- <span class="icon-style icon-back-arrow prev"></span> -->
+                  <div class="owl-carousel owl-theme" >
                                     @if(!empty($colors_option[$curr_ele->style]) &&  count($colors_option[$curr_ele->style]) > 0 )
                                         @php 
                                             $sorted = collect($colors_option[$curr_ele->style])->unique('color_code')->sortBy(function ($item, $key) use ($curr_ele) {
@@ -142,13 +142,13 @@ and (orientation : landscape) {
                                         @foreach( $sorted as $color_product)
                                             @if(!empty($color_product))
                                         <div class="item">
-                                            <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html" class="hidden-mob-landscape">
+                                            <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html" class="hidden-mob-landscape ">
                                             <picture>
                                                 <source media="(max-width: 667px)" srcset="{{ $color_product->image->image1Medium() }}">
                                                 <img src="{{ $color_product->image->image1Thumbnail() }}" data-style="{{$curr_ele->style}}" data-url="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html"  data-big="{{ $color_product->image->image1Medium() }}" class="plp-thumb" alt="">
                                             </picture>
                                             </a>
-                                            <div class="plp-mob--info hidden-mob hidden-col hidden-tab">
+                                            <div class="plp-mob--info visible-mob">
                                                 <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$color_product->color_code }}.html">
                                                 @php  $width_count = count( $width_array[$curr_ele->style]['width']); @endphp
                                                     <ul>
@@ -160,14 +160,14 @@ and (orientation : landscape) {
                                         </div>
                                         @endif
                                         @endforeach
-				                    @endif
-									</div>
-									<!-- <span class="icon-style icon-next-arrow next"></span> -->
-								</div>
-								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
-									<div class="info">
-										<h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
-										<div class="price">
+                            @endif
+                  </div>
+                  <!-- <span class="icon-style icon-next-arrow next"></span> -->
+                </div>
+                <a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="main_link">
+                  <div class="info">
+                    <h3>{{ ($curr_ele->gender=='M') ? "Men's" : "Women's"  }} {{ $curr_ele->stylename }} </h3>
+                    <div class="price">
                                             @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
                                                 <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
                                             @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
@@ -185,21 +185,21 @@ and (orientation : landscape) {
                                             <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
                                             <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
                                             @endif
-										</div>
-										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
-									</div>
-								</a>
-							</div>
-						</div>
-						<!--- div -->
+                    </div>
+                    <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!--- div -->
                         @endforeach
 @else
 <p class="error-msg-listing">Sorry, No Result Found! <br />Try Again.</p>
 
 @endif
-					</div>
-			    </div>
-	</div>
+          </div>
+          </div>
+  </div>
 </section>
 
 <!-- /Updated Section -->
