@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Ap21_stock;
+use Illuminate\Support\Facades\DB; 
 
 class stock_refresh extends Command
 {
@@ -47,7 +48,10 @@ class stock_refresh extends Command
         //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
         */
-        
+        DB::statement();
+        $result=DB::update("update ap21_stock a, p_variants b set b.stock=a.stock where a.skuidx=b.id");
+        print_r($result);
+        exit;
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                     
         //echo "aa : \n ".$xml_response_obj;
