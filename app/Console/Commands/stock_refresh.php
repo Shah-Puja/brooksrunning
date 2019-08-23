@@ -47,11 +47,11 @@ class stock_refresh extends Command
         $prod_xml = $this->bridgeObject->allProducts();
         //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
-        echo "\n1 store XML to File : ".date('Y-m-d H:i:s');        
+        echo "\n 1 store XML to File : ".date('Y-m-d H:i:s');        
         */
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                             
-        echo "\n2 Read File : ".date('Y-m-d H:i:s');        
+        echo "\n 2 Read File : ".date('Y-m-d H:i:s');        
 
         if (!empty($xml_response_obj)) {            
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
