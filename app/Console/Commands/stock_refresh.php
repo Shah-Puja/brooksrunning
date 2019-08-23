@@ -41,15 +41,15 @@ class stock_refresh extends Command
     public function handle()
     {
         echo "\n1 Start : ".date('Y-m-d H:i:s');
-        //$prod_xml = $this->bridgeObject->allProducts();
-        $prod_xml = $this->bridgeObject->getProduct('28742');
+        $prod_xml = $this->bridgeObject->allProducts();
+        //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml);        
         
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                     
         //echo "aa : \n ".$xml_response_obj;
         echo "\n2 Call Over : ".date('Y-m-d H:i:s');
-        //exit;
+        exit;
 
         if (!empty($xml_response_obj)) {
             //$bridge = $xml_response_obj->getContents();            
