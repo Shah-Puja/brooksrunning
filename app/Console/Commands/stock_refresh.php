@@ -63,9 +63,9 @@ class stock_refresh extends Command
                 echo "Success";
                 Ap21_stock::truncate();
                 //exit;
-                //foreach ( $xml->Product as $curr_product){
-                    //foreach ($curr_product->Clrs->Clr as $curr_color){
-                    foreach ($xml->Clrs->Clr as $curr_color){
+                foreach ( $xml->Product as $curr_product){
+                    foreach ($curr_product->Clrs->Clr as $curr_color){
+                    //foreach ($xml->Clrs->Clr as $curr_color){
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
                             $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
