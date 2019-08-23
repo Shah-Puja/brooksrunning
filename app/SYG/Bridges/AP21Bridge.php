@@ -58,10 +58,12 @@ class AP21Bridge implements BridgeInterface {
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
+                echo "aaa : ".$e->getMessage();
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
+                echo "bbb : ".$exception->getMessage();
                 return null;
             }
         }

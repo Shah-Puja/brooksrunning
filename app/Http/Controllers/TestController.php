@@ -29,6 +29,9 @@ class TestController extends Controller
             echo "<hr>";
             exit;
         }
+        else{
+            echo "xml_response_obj is empty";
+        }
 		/*echo "\n2 Call Over : ".date('Y-m-d H:i:s');
         if ($xml_response_obj){
             $xml_response = $xml_response_obj->getContents();
