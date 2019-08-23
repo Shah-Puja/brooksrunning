@@ -48,11 +48,6 @@ class stock_refresh extends Command
         //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
         */
-        DB::statement();
-        //DB::update('update users set votes = 100 where name = ?', ['John']);
-        $result=DB::update("update ap21_stock a, p_variants b set b.stock=a.stock where a.skuidx=?",[b.id]);
-        print_r($result);
-        exit;
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                     
         //echo "aa : \n ".$xml_response_obj;
@@ -79,6 +74,9 @@ class stock_refresh extends Command
                 }
                 //print_r($records);
                 Ap21_stock::insert($records); 
+                DB::table('p_variants as a')
+                        ->join('ap21_stock as b', 'a.id', '=', 'b.skuidx')
+                        ->update([ 'a.stock' => DB::raw("`b`.`stock`") ]);
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
