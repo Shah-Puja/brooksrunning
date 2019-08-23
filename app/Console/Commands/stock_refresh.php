@@ -72,7 +72,8 @@ class stock_refresh extends Command
                         }
                     }
                 }
-                Ap21_stock::create($records);                                            
+                Ap21_stock::create($records);   
+                                                         
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
