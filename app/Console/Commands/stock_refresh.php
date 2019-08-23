@@ -59,22 +59,20 @@ class stock_refresh extends Command
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
             $xml = simplexml_load_string($xml_response_obj);
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
-            if (!empty($xml) && !isset($xml->ErrorCode)) {
-                echo "Success";
-                Ap21_stock::truncate();
-                //exit;
+            if (!empty($xml) && !isset($xml->ErrorCode)) {                
+                Ap21_stock::truncate();                
+                $records=array();
                 foreach ( $xml->Product as $curr_product){
-                    foreach ($curr_product->Clrs->Clr as $curr_color){
-                    //foreach ($xml->Clrs->Clr as $curr_color){
+                    foreach ($curr_product->Clrs->Clr as $curr_color){                    
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
                             $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
-                            echo "\n $skuidx - $stock";
-                            Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);
-                            //exit;
+                            $records[]=['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock];
+                            Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);                            
                         }
                     }
                 }
+                //Ap21_stock::create($records);                                            
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
