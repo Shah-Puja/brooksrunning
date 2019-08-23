@@ -58,9 +58,10 @@ class stock_refresh extends Command
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 echo "Success";
-                exit;
-                foreach ( $xml->Product as $curr_product){
-                    foreach ($curr_product->Clrs->Clr as $curr_color){
+                //exit;
+                //foreach ( $xml->Product as $curr_product){
+                    //foreach ($curr_product->Clrs->Clr as $curr_color){
+                    foreach ($xml->Clrs->Clr as $curr_color){
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
                             $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
@@ -69,7 +70,7 @@ class stock_refresh extends Command
                             exit;
                         }
                     }
-                }
+                //}
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
