@@ -18,8 +18,12 @@ class TestController extends Controller
         echo "\n1 Start : ".date('Y-m-d H:i:s');
         //$xml_response_obj = $this->bridgeObject->allProducts();
         $xml_response_obj = $this->bridgeObject->getProduct('206089');
-        echo $xml_response_obj;
-        exit;
+        if (!empty($xml_response_obj)) {
+            $bridge = $xml_response_obj->getContents();
+            $xml = simplexml_load_string($bridge);
+            print_r($xml); 
+            exit;
+        }
 		/*echo "\n2 Call Over : ".date('Y-m-d H:i:s');
         if ($xml_response_obj){
             $xml_response = $xml_response_obj->getContents();
