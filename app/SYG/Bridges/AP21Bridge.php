@@ -35,7 +35,7 @@ class AP21Bridge implements BridgeInterface {
         try {
             $response = $this->apiClient->get('Products?countryCode=AUFIT', ['http_errors' => true]);
             if (!empty($response)) {
-                return $response;
+                return $response->getBody();
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
@@ -54,7 +54,7 @@ class AP21Bridge implements BridgeInterface {
         try {
             $response = $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT', ['http_errors' => true]);
             if (!empty($response)) {
-                return $response;
+                return $response->getBody();
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
