@@ -47,7 +47,7 @@ class stock_refresh extends Command
         
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                     
-        echo "aa : \n ".$xml_response_obj;
+        //echo "aa : \n ".$xml_response_obj;
         echo "\n2 Call Over : ".date('Y-m-d H:i:s');
         //exit;
 
