@@ -13,7 +13,7 @@ class testmedibankcsv extends Controller {
     }
 
     public function export_medibank_order_csv() {
-        $columns = array('UUID', 'OrderReferenceID', 'TransactionTypeCode', 'RefundCorrelationID', 'CorporateID', 'PolicyNumber', 'BirthDate', 'EmailURI', 'TransactionDateTime', 'TransactionLocation', 'EligibleTransactionTotal', 'CurrencyCode', 'TransactionTier');
+        $columns = array('TransactionID', 'OrderReferenceID', 'TransactionTypeCode', 'RefundCorrelationID', 'CorporateID', 'PolicyNumber', 'GivenName', 'FamilyName', 'BirthDate', 'EmailURI', 'TransactionDateTime', 'TransactionLocation', 'EligibleTransactionTotal', 'CurrencyCode', 'TransactionTier');
         //$filename = 'Brooks_5000001033_' . date('Ymd_His') . '.csv';
         //LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_YYYYMMDDHHMMSS.csv
         $filename = 'LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_' . date('YmdHis') . '.csv';
@@ -45,7 +45,7 @@ class testmedibankcsv extends Controller {
                     $transaction_dt = strtotime($record->transaction_dt);
                     date_default_timezone_set("UTC");
                     $transaction_dt = str_replace('+00:00', '.000Z', gmdate('c', $transaction_dt)); //format given eg.: 2018-03-15T18:15:10.235Z
-                    fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'AUD', $transaction_tier));
+                    fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', '', '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'aud', $transaction_tier));
                 }
 
                 //update medibank_csv field in order table

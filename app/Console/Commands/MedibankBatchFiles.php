@@ -38,12 +38,11 @@ class MedibankBatchFiles extends Command {
      * @return mixed
      */
     public function handle() {
-        $columns = array('UUID', 'OrderReferenceID', 'TransactionTypeCode', 'RefundCorrelationID', 'CorporateID', 'PolicyNumber', 'BirthDate', 'EmailURI', 'TransactionDateTime', 'TransactionLocation', 'EligibleTransactionTotal', 'CurrencyCode', 'TransactionTier');
+        $columns = array('TransactionID', 'OrderReferenceID', 'TransactionTypeCode', 'RefundCorrelationID', 'CorporateID', 'PolicyNumber', 'GivenName', 'FamilyName', 'BirthDate', 'EmailURI', 'TransactionDateTime', 'TransactionLocation', 'EligibleTransactionTotal', 'CurrencyCode', 'TransactionTier');
         //$filename = 'Brooks_5000001033_' . date('Ymd_His') . '.csv';
         //LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_YYYYMMDDHHMMSS.csv
         $filename = 'LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_' . date('YmdHis') . '.csv';
-        //$out = fopen('../testcsv/' . $filename, 'w');
-        $out = fopen(public_path('medibankcsv/'). $filename, 'w');
+        $out = fopen('../testcsv/' . $filename, 'w');
         fputcsv($out, $columns);
         $medibank_orders = DB::table('orders')->where('orders.transaction_status', 'Succeeded')->where('orders.order_type', 'like', '%medibank%')->whereNull('orders.medibank_csv')->orderby('id', 'asc')->get();
         if (!empty($medibank_orders)) {
@@ -71,7 +70,7 @@ class MedibankBatchFiles extends Command {
                     $transaction_dt = strtotime($record->transaction_dt);
                     date_default_timezone_set("UTC");
                     $transaction_dt = str_replace('+00:00', '.000Z', gmdate('c', $transaction_dt)); //format given eg.: 2018-03-15T18:15:10.235Z
-                    fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'AUD', $transaction_tier));
+                    fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', '', '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'aud', $transaction_tier));
                 }
 
                 //update medibank_csv field in order table
@@ -84,7 +83,7 @@ class MedibankBatchFiles extends Command {
             fclose($out);
         }
         //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
-        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(public_path('medibankcsv/'). $filename, 'r+'));
+        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(public_path('medibankcsv/') . $filename, 'r+'));
     }
 
 }
