@@ -58,6 +58,7 @@ class stock_refresh extends Command
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 echo "Success";
+                Ap21_stock::truncate();
                 //exit;
                 //foreach ( $xml->Product as $curr_product){
                     //foreach ($curr_product->Clrs->Clr as $curr_color){
