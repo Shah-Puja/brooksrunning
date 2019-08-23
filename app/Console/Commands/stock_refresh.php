@@ -52,9 +52,9 @@ class stock_refresh extends Command
         //exit;
 
         if (!empty($xml_response_obj)) {
-            $bridge = $xml_response_obj->getContents();            
+            //$bridge = $xml_response_obj->getContents();            
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
-            $xml = simplexml_load_string($bridge);
+            $xml = simplexml_load_string($xml_response_obj);
             echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {
                 foreach ( $xml->Product as $curr_product){
