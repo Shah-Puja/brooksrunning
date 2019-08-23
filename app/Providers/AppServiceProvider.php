@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider {
             $apiClient = new \GuzzleHttp\Client([ 
                 'base_uri' => env('AP21_URL'),  
                 'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'],
-                'connect_timeout' => 10,
+                //'connect_timeout' => 10,
             ]);
             return new \App\SYG\Bridges\AP21Bridge($apiClient);
             // return new \App\SYG\Bridges\EntrezoBridge;
