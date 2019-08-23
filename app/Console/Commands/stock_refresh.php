@@ -74,7 +74,7 @@ class stock_refresh extends Command
                             //exit;
                         }
                     }
-                //}
+                }
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
