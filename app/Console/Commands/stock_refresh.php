@@ -49,7 +49,8 @@ class stock_refresh extends Command
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
         */
         DB::statement();
-        $result=DB::update("update ap21_stock a, p_variants b set b.stock=a.stock where a.skuidx=b.id");
+        //DB::update('update users set votes = 100 where name = ?', ['John']);
+        $result=DB::update("update ap21_stock a, p_variants b set b.stock=a.stock where a.skuidx=?",[b.id]);
         print_r($result);
         exit;
 
