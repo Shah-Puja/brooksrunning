@@ -65,9 +65,9 @@ class stock_refresh extends Command
                         foreach ($curr_color->SKUs->SKU as $curr_sku){
                             $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
-                            echo "\n $sku_idx - $stock";
+                            echo "\n $skuidx - $stock";
                             Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);
-                            exit;
+                            //exit;
                         }
                     }
                 //}
