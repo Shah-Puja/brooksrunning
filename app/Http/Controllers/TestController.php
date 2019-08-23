@@ -16,8 +16,8 @@ class TestController extends Controller
     public function stockrefresh(){
         echo "Hi";
         echo "\n1 Start : ".date('Y-m-d H:i:s');
-        //$xml_response_obj = $this->bridgeObject->allProducts();
-        $xml_response_obj = $this->bridgeObject->getProduct('206089');
+        $xml_response_obj = $this->bridgeObject->allProducts();
+        //$xml_response_obj = $this->bridgeObject->getProduct('206089');
         echo $xml_response_obj;
         exit;
 		/*echo "\n2 Call Over : ".date('Y-m-d H:i:s');
