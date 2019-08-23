@@ -943,6 +943,7 @@ class PaymentController extends Controller {
         $response = $this->bridge->processOrder($person_id, $xml_data);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
         if (!empty($response)) {
+            echo "<pre>";print_r($response);die;
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
                 case 201:
