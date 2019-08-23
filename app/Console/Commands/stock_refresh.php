@@ -49,8 +49,8 @@ class stock_refresh extends Command
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                     
         echo "aa : \n ".$xml_response_obj;
         echo "\n2 Call Over : ".date('Y-m-d H:i:s');
-        exit;
-        
+        //exit;
+
         if (!empty($xml_response_obj)) {
             $bridge = $xml_response_obj->getContents();            
             echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
