@@ -68,11 +68,11 @@ class stock_refresh extends Command
                             $stock =$curr_sku->FreeStock;
                             $skuidx = $curr_sku->Id;
                             $records[]=['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock];
-                            Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);                            
+                            //Ap21_stock::create(['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock]);                            
                         }
                     }
                 }
-                //Ap21_stock::create($records);                                            
+                Ap21_stock::create($records);                                            
             }            
             echo "\n 5 Complete ".date('Y-m-d H:i:s');
         }
