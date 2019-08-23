@@ -189,6 +189,7 @@ Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/fathers-day', 'CollectionController@fathers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
 Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
+Route::get('/collections/ghost-saturation', 'CollectionController@ghost_saturation');
 
 Route::get('sitemap-index.xml', 'SitemapController@index');
 
