@@ -5952,10 +5952,9 @@ textarea {
   }
 }
 .category__hero .large-header-text {
-  font-size: 45px;
+  font-size: 50px;
   line-height: 1;
-  width: 100%;
-  letter-spacing: 0px;
+  width: 70%;
 }
 @media only screen and (max-width: 767px) {
   .category__hero .large-header-text {
@@ -6003,6 +6002,9 @@ textarea {
     line-height: 20px !important;
   }
 }
+.category__hero .m-block--hero--collection__content {
+  width: 590px;
+}
 .category__hero .m-block--hero--collection__content p {
   color: #fff;
   margin: 2rem 0;
@@ -6029,7 +6031,7 @@ textarea {
     font-size: 16px;
     font-weight: normal;
     line-height: 24px;
-    width: 70%;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -6084,6 +6086,7 @@ textarea {
   .category__hero .m-block--hero--collection__content {
     margin: 0 20px;
     padding: 0 0 31px;
+    width: 490px;
   }
 }
 .category__hero .m-block--hero--collection__content .breadcrumbs {
@@ -6091,13 +6094,8 @@ textarea {
   padding: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .category__hero .m-block--hero--collection__content.collection_content_section {
-    padding: 5px 20px 20px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .category__hero .m-block--hero--collection__content.collection_content_section {
-    margin: 15px 0px 0px 35px;
+  .category__hero .m-block--hero--collection__content {
+    width: 475px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -6148,9 +6146,6 @@ textarea {
   }
   .category__hero .m-block--hero--collection__content .breadcrumbs {
     padding: 0;
-  }
-  .category__hero .m-block--hero--collection__content.collection_content_section {
-    margin: 15px 160px 0px 45px;
   }
   .category__hero .category__hero__image {
     z-index: 1;

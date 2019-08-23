@@ -54,11 +54,12 @@ and (orientation : landscape) {
 }
 
    </style>
-<div class="create-account--header plp-header category__hero">
+
+<div class="create-account--header plp-header category__hero" style="margin-bottom:0px;">
  
         <div class="row">
             <div class="m-block--hero m-block--hero--basic--collection mob-12 col-6 tab-6">
-                <div class="m-block--hero--collection__content collection_content_section">
+                <div class="m-block--hero--collection__content">
                     <div class="m-block--hero__content__copy">
                     <div class="about-header">
                         <div class="breadcrumbs">
@@ -68,22 +69,23 @@ and (orientation : landscape) {
                                         </li>
                                         <li>
                                             <a href="JavaScript:Void(0);" class="active">Ghost Saturation</a>
-                                        </li>
+                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        <h1 class="large-header-text">Make a Splash</h1>
-                       
-                        <p class="type">Forget about paint by numbers. The Ghost 12 Splash Collection is all about colouring outside the lines.</p>
+                            <h1 class="large-header-text">Make a Splash</h1>
+                        <p class="type">Forget about paint by numbers. The Ghost 12 Splash Collection is all about colouring outside the lines.
+                        </p>
                     </div>
                 </div>
-                <div class="collection-hero-overlay hidden-mob visible-tab visible-col"></div>
+                <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
                 <img src="/images/Limited-Edition/ghost12-saturation-categoryimage.jpg">
             </div>
         </div>
 </div>
+
 <div class="create-account--header plp-header collection-intro">
   <div class="wrapper">
     <div class="row">
