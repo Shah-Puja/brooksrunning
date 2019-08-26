@@ -43,13 +43,13 @@ class stock_refresh_1 extends Command
     public function handle()
     {
         
-        /*
+        
         echo "\n0 Start : ".date('Y-m-d H:i:s');
         $prod_xml = $this->bridgeObject->allProducts();
         //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
         echo "\n 1 store XML to File : ".date('Y-m-d H:i:s');        
-        */
+        
         
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                             
