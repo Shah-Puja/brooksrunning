@@ -62,8 +62,8 @@ class AfterpayProcessor {
             "email" => $order->address->email
           ], 
           "merchant" => [
-            "redirectConfirmUrl" => config('app.url') . "/afterpay_success",
-            "redirectCancelUrl" => config('app.url') . "/afterpay_cancel"
+            "redirectConfirmUrl" => url()->current() . "/afterpay_success",
+            "redirectCancelUrl" => url()->current() . "/afterpay_cancel"
           ],
           "merchantReference" => $order->id,
           "items" => $order_items,
