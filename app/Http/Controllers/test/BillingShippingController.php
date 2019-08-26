@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\test;
 
+use App\Models\Cart;
+use App\Models\Order;
+use App\Models\Order_address;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Cart;
+use Illuminate\Support\Facades\Storage;
 
 class BillingShippingController extends Controller
 {
@@ -23,11 +27,49 @@ class BillingShippingController extends Controller
         if (@$this->cart->order->address) $orderAddress = $this->cart->order->address;
 
         if (!@$orderAddress && auth()->check() ) {
-            $usersLastOrder = Order::where('user_id', auth()->id())->orderBy('updated_at', 'desc')->first();
+            $usersLastOrder = Order::where('user_id', auth()->id())
+                                    ->orderBy('updated_at', 'desc')
+                                    ->first();
             $orderAddress = $usersLastOrder ? $usersLastOrder->address : null; 
         }
-        
+
         if (!@$orderAddress)  $orderAddress = new Order_address;
-        return view( 'customer.shipping', compact('orderAddress','cart') );
+
+        return view( 'customer.shipping', ['orderAddress'=>$orderAddress,'cart'=> $this->cart]);
+    }
+
+    public function store()
+    {        
+        $validatedAddress = request()->validate([
+    		'email' => 'required|email',
+    		's_fname' => 'required',    		
+    		's_lname' => 'required',
+     		's_add1' => 'required',
+            's_add2' => '',
+            's_city' => 'required',
+            's_state' => 'required',
+            's_postcode' => 'required|numeric',
+            's_phone' => 'required|regex:/^(?=.*[0-9])[- +()0-9]+$/',
+            'b_fname' => 'required_if:flag_same_shipping,No',
+            'b_lname' => 'required_if:flag_same_shipping,No',
+            'b_add1' => 'required_if:flag_same_shipping,No',
+            'b_add2' => '',
+            'b_city' => 'required_if:flag_same_shipping,No',
+            'b_state' => 'required_if:flag_same_shipping,No',
+            'b_postcode' => 'required_if:flag_same_shipping,No|nullable|numeric',
+            'b_phone' => 'required_if:flag_same_shipping,No|nullable|regex:/^(?=.*[0-9])[- +()0-9]+$/',
+            'terms' => 'accepted',
+            'order_info' => '',
+            'nosignaturedelivery' => '',
+            'signme' => '',
+            'flag_same_shipping' => '',
+        ]);
+
+        Storage::disk('public')->put('file.txt', $validatedAddress);
+
+        $order_id = Order::createNew($this->cart, $validatedAddress);
+        //check_state_and_update_delivery_option($order_id);
+
+        return redirect("payment"); 
     }
 }

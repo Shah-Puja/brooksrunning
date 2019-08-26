@@ -28,7 +28,6 @@ class Order_address extends Model
             $address['b_postcode'] = $address['s_postcode'];
             $address['b_phone'] = $address['s_phone'];
         }
-    
         return $address;
     }
 

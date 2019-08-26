@@ -25,44 +25,38 @@ class Order extends Model
         return $this->hasOne('App\Models\Order_address');
     }
     
-    public static function createNew($cart, $user_id , $validatedAddress)
+    public static function createNew($cart, $validatedAddress)
     {  
 
+        $user_id = $cart->user_id;
+        if(auth()->user() && $cart->user_id=='') $user_id = auth()->id();
+    
         $order = self::updateOrCreate(
             [
                 'user_id' => $user_id,
-                'cart_id' => $cart['id'], 
+                'cart_id' => $cart->id, 
             ],
             [
-                'cart_id' => $cart['id'], 
-                'total' => $cart['total'],
-                'freight_cost' => $cart['freight_cost'],
-                'grand_total' => ($cart['gift_discount']!="") ? ($cart['grand_total'] - $cart['gift_discount']) : $cart['grand_total'],
-                'delivery_type' => $cart['delivery_type'],
+                //'cart_id' => $cart->id, 
+                'total' => $cart->total,
+                'freight_cost' => $cart->freight_cost,
+                'grand_total' => ($cart->gift_discount!="") ? ($cart->grand_total - $cart->gift_discount) : $cart->grand_total,
+                'delivery_type' => $cart->delivery_type,
+                'coupon_code' => ($cart->promo_code!='') ? $cart->promo_code : "",
+                'discount' => ($cart->discount!='') ? $cart->discount : "0.00",
+                'giftcert_ap21code' => ($cart->gift_id!="") ? $cart->gift_id : "",
+                'giftcert_ap21pin' => ( $cart->pin!="") ? $cart->pin : "",
+                'gift_amount' => ($cart->gift_discount!="") ? $cart->gift_discount : "0",
             ]
         );
-        $order_id = $order['id'];
-       
-        Order_address::updateOrCreate(
-            [ 'order_id' => $order_id ],
-            Order_address::prepareAddressForSaving($validatedAddress)
-        );
         
+        Order_address::updateOrCreate(
+                [ 'order_id' => $order->id ],
+                Order_address::prepareAddressForSaving($validatedAddress)
+            );
 
         $order->orderItems()->delete();
-        $promo_code = isset($cart->promo_code) ? $cart->promo_code : "";
-
-        self::where('id',$order_id)->update([
-                'coupon_code' => ($promo_code) ? $promo_code : "",
-                'discount' => isset($cart->discount) ? $cart->discount : "0.00",
-                'giftcert_ap21code' => (isset($cart->gift_id) && $cart->gift_id!="") ? $cart->gift_id : "",
-                'giftcert_ap21pin' => (isset($cart->pin) && $cart->pin!="") ? $cart->pin : "",
-                'gift_amount' => (isset($cart->gift_discount) && $cart->gift_discount!="") ? $cart->gift_discount : "0",
-        ]);
-          
        
-        
-        
         $cart->cartItems->each(function($item) use ($order) {
             $item_total = 0;
             if($item->discount_price!= 0.00){
@@ -79,14 +73,11 @@ class Order extends Model
                      'price' =>  $item->price,
                      'price_sale' =>  $item->price_sale,
                      'discount' => ($item->discount_detail!=0.00) ? $item->discount_detail : "0.00", 
-                     'total' => $item_total
+                     'total' => $item_total,
              ]);
         });
-
-        $order->orderItems()->update([
-            'promo_code' => ($promo_code) ? $promo_code : ""
-        ]);
-        return $order_id;
+        
+        return  $order->id;
     }
 
     public function getItemsCount() {

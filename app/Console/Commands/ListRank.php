@@ -38,11 +38,15 @@ class ListRank extends Command
      */
     public function handle()
     {
-        DB::insert('Insert ignore into group_ranks(group_id,style,stylename,display_rank) 
+        /*DB::insert('Insert ignore into group_ranks(group_id,style,stylename,display_rank) 
         select distinct group_id,b.style,b.stylename,0 from groups a,p_products b
         where a.product_id=b.id order by group_id');
 
-        DB::update('update group_ranks set display_rank=id where display_rank=0');
+        DB::update('update group_ranks set display_rank=id where display_rank=0');*/
+
+        DB::table('p_variants')->join('ap21_stock', 'p_variants.id', '=', 'ap21_stock.skuidx')->update(['p_variants.stock'=>DB::raw('`ap21_stock`.stock')]);
+
+        //DB::statement('update ap21_stock a, p_variants b set b.stock=a.stock where a.skuidx=b.id and b.visible="Yes"');
 
     }
 }

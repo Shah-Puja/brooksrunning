@@ -13,5 +13,10 @@ class Variant extends Model
     {
     	return $this->belongsTo('App\Models\Product');
     }
+
+    public function ap21stock()
+    {
+        return $this->hasOne('App\Models\Ap21_stock', 'skuidx', 'id');
+    }
     
 }

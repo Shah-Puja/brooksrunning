@@ -36,6 +36,12 @@ Route::post('/reset_pass', 'InfoController@check_email');
 	Route::post('/cart/couponvalidate', 'test\CartController@couponvalidate');
 	Route::post('/cart/removecoupon', 'CartController@removecoupon');
 
+	
+	Route::get('/shipping','test\BillingShippingController@create');
+	Route::post('/shipping','test\BillingShippingController@store');
+	Route::post('/shipping-check-email','BillingShippingController@check_email');
+	Route::post('/shipping-verify-password','BillingShippingController@verify_password');
+
 //}
 
 
@@ -88,10 +94,6 @@ Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 Route::get('/roadtester', 'meet_brooksController@roadtester');
 
-Route::get('/shipping','BillingShippingController@create');
-Route::post('/shipping','BillingShippingController@store');
-Route::post('/shipping-check-email','BillingShippingController@check_email');
-Route::post('/shipping-verify-password','BillingShippingController@verify_password');
 
 Route::get('/payment', 'PaymentController@create');
 Route::post('/payment', 'PaymentController@store');
