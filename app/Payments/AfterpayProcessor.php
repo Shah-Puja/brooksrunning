@@ -4,6 +4,7 @@ namespace App\Payments;
 use App\Payments\AfterpayApiClient;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Session;
 
 class AfterpayProcessor {
 
@@ -62,8 +63,8 @@ class AfterpayProcessor {
             "email" => $order->address->email
           ], 
           "merchant" => [
-            "redirectConfirmUrl" => url()->current() . "/afterpay_success",
-            "redirectCancelUrl" => url()->current() . "/afterpay_cancel"
+            "redirectConfirmUrl" =>(Session::get('medibank_gateway')=="Yes") ? env("MEDIBANK_GATEWAY_URL"). "/afterpay_success": config('app.url')."/afterpay_success",
+            "redirectCancelUrl" => config('app.url') . "/afterpay_cancel"
           ],
           "merchantReference" => $order->id,
           "items" => $order_items,
