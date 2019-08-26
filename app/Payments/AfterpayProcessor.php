@@ -64,7 +64,7 @@ class AfterpayProcessor {
           ], 
           "merchant" => [
             "redirectConfirmUrl" =>(Session::get('medibank_gateway')=="Yes") ? env("MEDIBANK_GATEWAY_URL"). "/afterpay_success": config('app.url')."/afterpay_success",
-            "redirectCancelUrl" => config('app.url') . "/afterpay_cancel"
+            "redirectCancelUrl" => (Session::get('medibank_gateway')=="Yes") ? env("MEDIBANK_GATEWAY_URL"). "/afterpay_cancel": config('app.url')."/afterpay_cancel"            
           ],
           "merchantReference" => $order->id,
           "items" => $order_items,
