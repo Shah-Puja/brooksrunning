@@ -65,21 +65,25 @@ class stock_refresh_1 extends Command
                 $cnt=1;
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){                    
-                        foreach ($curr_color->SKUs->SKU as $curr_sku){
-                            $records[]=['skuidx'=>$curr_sku->Id,'stock'=>$curr_sku->FreeStock];
-                        }                                                  
+                        foreach ($curr_color->SKUs->SKU as $curr_sku){                             
+                            //print_r($curr_sku);
+                            $id=(string) $curr_sku->Id;
+                            $FreeStock=(string) $curr_sku->FreeStock;                            
+                            $records[]=array('skuidx'=>$id,'stock'=>$FreeStock);                                                        
+                        }                                                                                  
                     }
                 }
-                print_r($records);
-                exit;
                 Ap21_stock::insert($records); 
                 echo "\n 5 ap21_stock created ".date('Y-m-d H:i:s');
                 
-                $result=DB::table('p_variants as a')                        
-                        ->join('ap21_stock as b', 'a.id', '=', 'b.skuidx')                        
-                        //->where('a.season','Yes') 
-                        ->update([ 'a.stock' => DB::raw("`b`.`stock`") ]);                        
+                $result=DB::table('p_variants')                        
+                        ->join('ap21_stock', 'p_variants.id', '=', 'ap21_stock.skuidx')                        
+                        ->where('p_variants.season','Current') 
+                        //->where('p_variants.stock','!=',DB::raw("`ap21_stock`.`stock`"))                         
+                        ->update([ 'p_variants.stock' => DB::raw("`ap21_stock`.`stock`") ]);                        
+                echo "\n Result = ";
                 print_r($result);
+
                 echo "\n 6 p_variants updated ".date('Y-m-d H:i:s');
                 
                 
