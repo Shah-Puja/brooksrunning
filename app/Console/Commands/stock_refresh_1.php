@@ -64,7 +64,7 @@ class stock_refresh_1 extends Command
             echo "\n 4 Created XML object : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {                
                 $records=array();
-                $cnt=1;
+                $cnt=1;$msg="";
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){                    
                         foreach ($curr_color->SKUs->SKU as $curr_sku){                                                         
@@ -74,7 +74,7 @@ class stock_refresh_1 extends Command
                                 $variant_stock=$stock_collection[$id];                                
                                 if($variant_stock != $freestock){                                         
                                     $visible=($freestock>0)? "Yes" : "No";
-                                    //echo "\n $id - $freestock - $variant_stock - $visible"; 
+                                    $msg.="\n $id - $freestock - $variant_stock - $visible"; 
                                     $cnt++;
                                     Variant::where('id',$id)->update(['stock'=>$freestock,'visible'=>$visible]);
                                 }
@@ -82,7 +82,8 @@ class stock_refresh_1 extends Command
                         }                                                                                  
                     }
                 }
-                echo "\n5 Complete : $cnt Records got updated : ".date('Y-m-d H:i:s');
+                echo "\n $cnt Records got updated \n$msg ";
+                echo "\n5 Completed at ".date('Y-m-d H:i:s');
                 exit;
                 Ap21_stock::insert($records); 
                 echo "\n 5 ap21_stock created ".date('Y-m-d H:i:s');
