@@ -32,11 +32,42 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function allProducts() {
-        return $this->apiClient->get('Products?countryCode=AUFIT')->getBody();
+        try {
+            $response = $this->apiClient->get('Products?countryCode=AUFIT', ['http_errors' => true]);
+            if (!empty($response)) {
+                return $response->getBody();
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                return null;
+            }
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() != '') {
+                return null;
+            }
+        }
+
+        //return $this->apiClient->get('Products?countryCode=AUFIT')->getBody();
     }
 
     public function getProduct($productCode) {
-        return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
+        try {
+            $response = $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT', ['http_errors' => true]);
+            if (!empty($response)) {
+                return $response->getBody();
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                echo "aaa : ".$e->getMessage();
+                return null;
+            }
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() != '') {
+                echo "bbb : ".$exception->getMessage();
+                return null;
+            }
+        }
+        //return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
     }
 
     public function getPersonid($email) {
