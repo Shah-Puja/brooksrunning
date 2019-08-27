@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\SYG\Bridges\BridgeInterface as Bridge;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Ap21_stock;
 use App\Models\Variant;
 use Illuminate\Support\Facades\DB; 
 
@@ -84,7 +83,7 @@ class stock_refresh_1 extends Command
                 }
                 echo "\n $cnt Records got updated \n$msg ";
                 echo "\n5 Completed at ".date('Y-m-d H:i:s');
-                DB::table('Ap21_stock_log')->insert(
+                DB::table('ap21_stock_log')->insert(
                     ['list' => $msg, 'update_cnt' => $cnt]
                 );                                                
             }                        
