@@ -8,6 +8,7 @@ class Variant extends Model
 {
     
     protected $table = 'p_variants';
+    protected $fillable = ['stock', 'visible'];
     
     public function product()
     {

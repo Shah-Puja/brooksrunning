@@ -42,19 +42,19 @@ class stock_refresh_1 extends Command
      */
     public function handle()
     {
-        echo "\n0 Start : ".date('Y-m-d H:i:s');        
+        echo "\n0 Start : ".date('Y-m-d H:i:s');     
+        
+        $prod_xml = $this->bridgeObject->allProducts();
+        //$prod_xml = $this->bridgeObject->getProduct('28742');
+        Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
+        echo "\n1 store XML to File : ".date('Y-m-d H:i:s');  
+        
         $variant_collection=Variant::where('season','Current')
                         ->select('id','season','stock')->get();
         $stock_collection = $variant_collection->mapWithKeys(function ($item) {
                             return [$item['id'] => $item['stock']];
                         });                     
-        echo "\n1 local stock collection created ".date('Y-m-d H:i:s');                           
-
-        $prod_xml = $this->bridgeObject->allProducts();
-        //$prod_xml = $this->bridgeObject->getProduct('28742');
-        Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
-        echo "\n2 store XML to File : ".date('Y-m-d H:i:s');        
-        
+        echo "\n2 Generated variant_collection at ".date('Y-m-d H:i:s');                                               
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                             
         echo "\n3 Read File : ".date('Y-m-d H:i:s');        
@@ -64,7 +64,7 @@ class stock_refresh_1 extends Command
             echo "\n 4 Created XML object : ".date('Y-m-d H:i:s');		
             if (!empty($xml) && !isset($xml->ErrorCode)) {                
                 $records=array();
-                $cnt=1;$msg="";
+                $cnt=0;$msg="";
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){                    
                         foreach ($curr_color->SKUs->SKU as $curr_sku){                                                         
@@ -74,9 +74,9 @@ class stock_refresh_1 extends Command
                                 $variant_stock=$stock_collection[$id];                                
                                 if($variant_stock != $freestock){                                         
                                     $visible=($freestock>0)? "Yes" : "No";
-                                    $msg.="\n $id - $freestock - $variant_stock - $visible"; 
-                                    $cnt++;
+                                    $msg.="# $id |variant_stock = $variant_stock | Free_stock = $freestock | $visible";
                                     Variant::where('id',$id)->update(['stock'=>$freestock,'visible'=>$visible]);
+                                    $cnt++;
                                 }
                             }                                                    
                         }                                                                                  
@@ -84,26 +84,10 @@ class stock_refresh_1 extends Command
                 }
                 echo "\n $cnt Records got updated \n$msg ";
                 echo "\n5 Completed at ".date('Y-m-d H:i:s');
-                exit;
-                Ap21_stock::insert($records); 
-                echo "\n 5 ap21_stock created ".date('Y-m-d H:i:s');
-                
-                $result=DB::table('p_variants')                        
-                        ->join('ap21_stock', 'p_variants.id', '=', 'ap21_stock.skuidx')                        
-                        ->where('p_variants.season','Current') 
-                        //->where('p_variants.stock','!=',DB::raw("`ap21_stock`.`stock`"))                         
-                        ->update([ 'p_variants.stock' => DB::raw("`ap21_stock`.`stock`") ]);                        
-                echo "\n Result = ";
-                print_r($result);
-
-                echo "\n 6 p_variants updated ".date('Y-m-d H:i:s');
-                
-                
-            }            
-            echo "\n 7 Over. ".date('Y-m-d H:i:s');
+                DB::table('Ap21_stock_log')->insert(
+                    ['list' => $msg, 'update_cnt' => $cnt]
+                );                                                
+            }                        
         }
-        else{
-            echo "\n xml_response_obj is empty";
-        }        
     }
 }
