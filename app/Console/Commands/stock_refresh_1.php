@@ -42,52 +42,46 @@ class stock_refresh_1 extends Command
      */
     public function handle()
     {
-        
+        echo "\n0 Start : ".date('Y-m-d H:i:s');        
         $variant_collection=Variant::where('season','Current')
                         ->select('id','season','stock')->get();
-        //print_r($variant_collection);
-        //echo "\n ---- \n stock=";
-        //echo count(collect($variant_collection)->where("id","333051")); //->pluck('stock')[0]);
-        //exit;
-        /*
-        echo "\n0 Start : ".date('Y-m-d H:i:s');
+        $stock_collection = $variant_collection->mapWithKeys(function ($item) {
+                            return [$item['id'] => $item['stock']];
+                        });                     
+        echo "\n1 local stock collection created ".date('Y-m-d H:i:s');                           
+
         $prod_xml = $this->bridgeObject->allProducts();
         //$prod_xml = $this->bridgeObject->getProduct('28742');
         Storage::disk('public')->put('ap21product/data.xml', $prod_xml); 
-        echo "\n 1 store XML to File : ".date('Y-m-d H:i:s');        
-        */
+        echo "\n2 store XML to File : ".date('Y-m-d H:i:s');        
+        
 
         $xml_response_obj =  Storage::disk('public')->get('ap21product/data.xml');                             
-        echo "\n 2 Read File : ".date('Y-m-d H:i:s');        
+        echo "\n3 Read File : ".date('Y-m-d H:i:s');        
 
-        if (!empty($xml_response_obj)) {            
-            echo "\n 3 Got Content : ".date('Y-m-d H:i:s');				            
+        if (!empty($xml_response_obj)) {                        
             $xml = simplexml_load_string($xml_response_obj);
-            echo "\n 4 Created array : ".date('Y-m-d H:i:s');		
-            if (!empty($xml) && !isset($xml->ErrorCode)) {
-                Ap21_stock::truncate();                
+            echo "\n 4 Created XML object : ".date('Y-m-d H:i:s');		
+            if (!empty($xml) && !isset($xml->ErrorCode)) {                
                 $records=array();
                 $cnt=1;
                 foreach ( $xml->Product as $curr_product){
                     foreach ($curr_product->Clrs->Clr as $curr_color){                    
                         foreach ($curr_color->SKUs->SKU as $curr_sku){                                                         
                             $id=(string) $curr_sku->Id;
-                            $freestock=(string) $curr_sku->FreeStock;                            
-                            $variant=collect($variant_collection)->where("id",$id);
-                            if(isset($variant) and count($variant)>0){
-                                $variant_stock=$variant->pluck('stock')[0];
-                                print_r($variant);                                
-                                if($variant_stock != $freestock){
-                                    echo "\n $variant_stock - $freestock";
-                                    $records[]=array('skuidx'=>$id,'stock'=>$freestock); 
-                                       
-                                    //exit;
+                            $freestock=(string) $curr_sku->FreeStock;                                                                                    
+                            if(isset($stock_collection[$id])){
+                                $variant_stock=$stock_collection[$id];                                
+                                if($variant_stock != $freestock){                                         
+                                    $visible=($freestock>0)? "Yes" : "No";
+                                    echo "\n $id - $freestock - $variant_stock - $visible"; 
+                                    Variant::where('id',$id)->update(['stock'=>$freestock,'visible'=>$visible]);
                                 }
                             }                                                    
                         }                                                                                  
                     }
                 }
-                print_r(count($records));
+                //print_r(count($records));
                 exit;
                 Ap21_stock::insert($records); 
                 echo "\n 5 ap21_stock created ".date('Y-m-d H:i:s');
