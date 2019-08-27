@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use DB;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Order_item;
+use App\Http\Controllers\MedibankController;
 
 class testmedibankcsv extends Controller {
 
@@ -28,7 +30,7 @@ class testmedibankcsv extends Controller {
                                 ->where('orders.order_type', 'like', '%medibank%')->whereNull('orders.medibank_csv')
                                 ->where('orders.transaction_status', 'Succeeded')
                                 ->where('orders.id', $medibank_order->id)
-                                ->select('orders.*', 'order_addresses.email', 'order_addresses.s_fname', 'order_addresses.s_lname', 'order_items.price_sale', 'order_items.price')->get();
+                                ->select('orders.*', 'order_items.id as order_item_id', 'order_addresses.email', 'order_addresses.s_fname', 'order_addresses.s_lname', 'order_items.price_sale', 'order_items.price')->get();
 
                 foreach ($order_record as $record) {
                     if ($record->price_sale > 0 && $record->price_sale < $record->price) {
@@ -45,7 +47,13 @@ class testmedibankcsv extends Controller {
                     $transaction_dt = strtotime($record->transaction_dt);
                     date_default_timezone_set("UTC");
                     $transaction_dt = str_replace('+00:00', '.000Z', gmdate('c', $transaction_dt)); //format given eg.: 2018-03-15T18:15:10.235Z
-                    fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', '', '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'aud', $transaction_tier));
+                    $uuid = (new MedibankController)->generateUUID();
+                    fputcsv($out, array($uuid, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', '', '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'aud', $transaction_tier));
+                    $orderitemDataUpdate = array(
+                        'medibank_uuid' => $uuid
+                    );
+                    Order_item::where('id', $record->order_item_id)->update($orderitemDataUpdate);
+                    //fputcsv($out, array($record->id . "-" . $record->transaction_id, $record->order_no, $transactiontypecode, '', env('MEDIBANK_CORPORATEID'), $policy_number, '', '', '', $record->email, $transaction_dt, 'Brooks', $transaction_amount, 'aud', $transaction_tier));
                 }
 
                 //update medibank_csv field in order table
@@ -57,7 +65,7 @@ class testmedibankcsv extends Controller {
             }
             fclose($out);
         }
-        Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
+        //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
     }
 
 }
