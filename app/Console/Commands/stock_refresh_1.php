@@ -74,14 +74,15 @@ class stock_refresh_1 extends Command
                                 $variant_stock=$stock_collection[$id];                                
                                 if($variant_stock != $freestock){                                         
                                     $visible=($freestock>0)? "Yes" : "No";
-                                    echo "\n $id - $freestock - $variant_stock - $visible"; 
+                                    //echo "\n $id - $freestock - $variant_stock - $visible"; 
+                                    $cnt++;
                                     Variant::where('id',$id)->update(['stock'=>$freestock,'visible'=>$visible]);
                                 }
                             }                                                    
                         }                                                                                  
                     }
                 }
-                //print_r(count($records));
+                echo "\n5 Complete : $cnt Records got updated : ".date('Y-m-d H:i:s');
                 exit;
                 Ap21_stock::insert($records); 
                 echo "\n 5 ap21_stock created ".date('Y-m-d H:i:s');
