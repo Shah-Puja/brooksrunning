@@ -152,12 +152,15 @@ class Cart extends Model {
             }else{
                 $this->cart_without_ap21();
             }  
-            Ap21_log::createNew([
-                'process' =>'Cart-API',
-                'request' => $cart_xml,
-                'response' => $cart_xml_response,
-                'object_id'=>session('cart_id')
-            ]);           
+
+            /// new AP21 log insert
+ 
+            $ap21_log = new Ap21_log;
+            $ap21_log->process = 'Cart-API';
+            $ap21_log->request = $cart_xml;
+            $ap21_log->response = $cart_xml_response;
+            $ap21_log->object_id = session('cart_id');
+            $ap21_log->save(); 
         }
         else{
             $this->cart_without_ap21();
@@ -257,12 +260,16 @@ class Cart extends Model {
                 $this->cart_without_ap21();
                 $status = "Incorrect Voucher";
             } 
-            Ap21_log::createNew([
-                'process' => 'Gift voucher',
-                'request' => 'Gift id:'.$gift_id.', Pin:'.$gift_pin . ', Amount:'. ($cartTotal + $freight_cost),
-                'response' => $response_body,
-                'object_id'=>session('cart_id')
-            ]);
+
+             /// new AP21 log insert
+ 
+             $ap21_log = new Ap21_log;
+             $ap21_log->process = 'Gift voucher';
+             $ap21_log->request = 'Gift id:'.$gift_id.', Pin:'.$gift_pin . ', Amount:'. ($cartTotal + $freight_cost);
+             $ap21_log->response = $response_body;
+             $ap21_log->object_id = session('cart_id');
+             $ap21_log->save(); 
+            
         }else{
             $status = "Incorrect Voucher";
         }
