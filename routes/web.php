@@ -171,6 +171,7 @@ Route::get('/track-your-order', 'quickhelpController@track_your_order');
 Route::get('/testap21/create_user', 'testap21@create_user'); 
 Route::get('/testap21/create_order', 'testap21@create_order'); 
 Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
+Route::get('/test/stockrefresh', 'TestController@stockrefresh'); 
 
 Route::get('/neutral-running-shoes', 'CategoryController@shoes_category');
 Route::get('/support-running-shoes', 'CategoryController@shoes_category');
@@ -199,6 +200,7 @@ Route::get('/collections/mothers-day', 'CollectionController@mothers_day');
 Route::get('/collections/fathers-day', 'CollectionController@fathers_day');
 Route::get('/collections/energize-running-shoes', 'CollectionController@energize_collection');
 Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
+Route::get('/collections/ghost-saturation', 'CollectionController@ghost_saturation');
 
 Route::get('sitemap-index.xml', 'SitemapController@index');
 
