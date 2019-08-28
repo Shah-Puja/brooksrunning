@@ -29,7 +29,7 @@
                         <img src="images/accounts/icon-order-history.png" alt="">
                     </div>
                     <h3 class="br-heading">Order History</h3>
-                    <div class="br-info">Manage your name, email and password</div>
+                    <div class="br-info">Browse all saved orders</div>
                     <a href="account-order-history" class="primary-button">View Order History</a>
                 </div>
             </div>
