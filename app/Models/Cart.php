@@ -68,7 +68,7 @@ class Cart extends Model {
     }
 
     public function updateCartInformation() {
-        $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
+
         $this->load('cartItems.variant.product:id,stylename');
         //echo "<pre>";print_R();die;
         $cartTotal = $this->cartItems
@@ -84,20 +84,19 @@ class Cart extends Model {
             }
             return $total + ($price * $cart_item->qty);
         });
-        //$freightCost = Freight::calculate($this);
-        if (isset($cart->delivery_type) && $cart->delivery_type != "") {
-            $freightCost = $cart->freight_cost;
+      
+        if (isset($this->delivery_type) && $this->delivery_type != "") {
+            $freightCost = $this->freight_cost;
         } else {
             $freightCost = Freight::calculate($cartTotal);
         }
 
-        $this->update([
-            //'items_count' => $this->cartItems->sum('qty'), 
-            'total' => $cartTotal,
-            'delivery_type' => ($cart->delivery_type) ? $cart->delivery_type : 'standard',
-            'freight_cost' => $cart->freight_cost,
-            'grand_total' => $cartTotal + $freightCost,
-        ]);
+        $this->total = $cartTotal;
+        $this->delivery_type = ($this->delivery_type) ? $this->delivery_type : 'standard';
+        $this->freight_cost = $this->freight_cost;
+        $this->grand_total = $cartTotal + $freightCost;
+        $this->save();
+
         Cache::forget('cart' . $this->id);
     }
 
@@ -112,9 +111,10 @@ class Cart extends Model {
                 $xml = simplexml_load_string($bridge);                 
                 if (!empty($xml) && !isset($xml->ErrorCode)) {
                     foreach ($xml->CartDetails->CartDetail as $item) {
-                        Cart_item::where('variant_id', $item->SkuId)
-                                    ->where('cart_id', session('cart_id'))
-                                    ->update([
+                        $this->cartItems()
+                                ->where('variant_id', $item->SkuId)
+                                ->where('cart_id', session('cart_id'))
+                                ->update([
                                         'discount_price' => $item->Value, 
                                         'discount_detail' => $item->Discount, 
                                         'price_sale' => $item->Price
@@ -127,21 +127,24 @@ class Cart extends Model {
                     $cart_total = $cart_xml_total - $xml_freight_charges;
 
                     if(empty($xml_promo_st)){ // update carts if promo data is empty 
-                        $this->update([
-                            'promo_code' => '', 
-                            'promo_string' => '', 
-                            'sku' => 0,
-                            'total' => $cart_total, 
-                            'freight_cost' => $freight_cost, 
-                            'discount' => $total_discount, 
-                            'grand_total' => $freight_cost + $cart_total]);
+
+                        $this->promo_code='';
+                        $this->promo_string='';
+                        $this->sku= 0;
+                        $this->total= $cart_total;
+                        $this->freight_cost= $freight_cost;
+                        $this->discount= $total_discount;
+                        $this->grand_total= $freight_cost + $cart_total;
+                        $this->save();
+
                     }else{
-                        $this->update([
-                            'total' => $cart_total, 
-                            'freight_cost' => $freight_cost, 
-                            'discount' => $total_discount, 
-                            'grand_total' => $freight_cost + $cart_total
-                            ]);
+
+                        $this->total= $cart_total;
+                        $this->freight_cost= $freight_cost;
+                        $this->discount= $total_discount;
+                        $this->grand_total= $freight_cost + $cart_total;
+                        $this->save();
+                        
                     }                    
                 }else{
                     $this->cart_without_ap21();
@@ -167,28 +170,29 @@ class Cart extends Model {
             foreach ($this->cartItems  as $item) {
                 $discount_price =  $item->variant->price_sale * $item->qty;
                 $total+=$discount_price;
-                $item->update([
-                        'discount_price' => $total,
-                        'discount_detail' => 0,
-                        'price_sale' => $item->variant->price_sale
-                      ]);
+                // update price and total
+                $item->discount_price = $total;
+                $item->discount_detail = 0;
+                $item->price_sale = $item->variant->price_sale;
+                $item->save();
             }
             $cart_total = $total;
+
             //Remove GV and Promo related info + recalculate grand_total
-            $this->update([
-                    'promo_code' => '',
-                    'promo_string' => '',
-                    'sku' => 0,
-                    'gift_id' =>'',
-                    'pin' => '',
-                    'gift_available_amount' => '0',
-                    'gift_discount' => '0' ,
-                    'gift_cart_total' => '0',
-                    'total' => $cart_total,
-                    'freight_cost' =>$this->freight_cost,
-                    'discount' => 0,
-                    'grand_total' => $this->freight_cost + $cart_total
-                ]);
+
+            $this->promo_code = "";
+            $this->promo_string = "";
+            $this->sku = 0;
+            $this->gift_id = "";
+            $this->pin = "";
+            $this->gift_available_amount = 0;
+            $this->gift_discount = 0;
+            $this->gift_cart_total = 0;
+            $this->total = $cart_total;
+            $this->freight_cost = $this->freight_cost;
+            $this->discount = 0;
+            $this->grand_total =  $this->freight_cost + $cart_total;
+            $this->save();
         }
 
     }
@@ -235,13 +239,14 @@ class Cart extends Model {
                             $gift_discount = $AvailableAmount;
                             $gift_cart_total = ($cartTotal + $freight_cost) - $AvailableAmount;
                         }
-                        $this->update([
-                                    'gift_id' => $gift_number,
-                                    'pin' => $gift_pin,
-                                    'gift_available_amount' => $AvailableAmount,
-                                    'gift_discount' => $gift_discount,
-                                    'gift_cart_total' => $gift_cart_total
-                                ]);
+                       
+                        $this->gift_id = $gift_number;
+                        $this->pin = $gift_pin;
+                        $this->gift_available_amount = $AvailableAmount;
+                        $this->gift_discount = $gift_discount;
+                        $this->gift_cart_total = $gift_cart_total;
+                        $this->save();
+
                         $status = "success";
                         break;
                    default:

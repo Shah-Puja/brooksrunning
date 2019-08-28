@@ -8,7 +8,7 @@ use App\Models\Order_address;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class BillingShippingController extends Controller
 {
@@ -65,11 +65,42 @@ class BillingShippingController extends Controller
             'flag_same_shipping' => '',
         ]);
 
-        Storage::disk('public')->put('file.txt', $validatedAddress);
-
         $order_id = Order::createNew($this->cart, $validatedAddress);
         //check_state_and_update_delivery_option($order_id);
 
         return redirect("payment"); 
+    }
+
+    public function check_email()
+    {
+        $user = User::where("email",request()->email)
+                      ->where("user_type","User")
+                      ->first();
+        if($user){
+            echo "true";
+        }else{
+            echo "false";
+        }   
+    }
+
+    public function verify_password(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return "true";
+        }else{
+            return "false";
+        }
+    }
+
+    public function verify_medibank_login(Request $request)
+    {
+        // Verification process is pending here
+        if($request->medibank_email != "" && $request->medibank_id!=""){
+            echo "success";
+        }else{
+            echo "failed";
+        }
     }
 }

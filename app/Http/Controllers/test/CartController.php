@@ -43,11 +43,12 @@ class CartController extends Controller
         $check_promo_code = $this->cart->get_promo_data($request->promo_code);
         $promotion = [];
         if (isset($check_promo_code) && $check_promo_code != "") {
-            $this->cart->update([
-                            'promo_code' => $check_promo_code['promo_code'],
-                            'promo_string' => $check_promo_code['promo_string'],
-                            'sku' => $check_promo_code['skuidx']
-                        ]);
+
+            $this->cart->promo_code =  $check_promo_code['promo_code'];
+            $this->cart->promo_string =  $check_promo_code['promo_string'];
+            $this->cart->sku =  $check_promo_code['skuidx'];
+            $this->cart->save();
+            
             $promotion['result'] = 'success';
             $promotion['msg'] = 'Valid Code';
             $promotion['url'] = 'cart';
