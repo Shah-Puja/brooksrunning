@@ -16,7 +16,7 @@ class MedibankBatchFiles extends Command {
      *
      * @var string
      */
-    protected $signature = 'medibank-batch-files';
+    protected $signature = 'medibank-export';
 
     /**
      * The console command description.
@@ -45,7 +45,8 @@ class MedibankBatchFiles extends Command {
         //LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_YYYYMMDDHHMMSS.csv
         $filename = 'LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_' . date('YmdHis') . '.csv';
         //$out = fopen('../testcsv/' . $filename, 'w');
-        $out = fopen(public_path('medibankcsv/') . $filename, 'w');
+        //$out = fopen(public_path('medibankcsv/') . $filename, 'w');
+        $out = fopen(storage_path('app/public/medibank_export/') . $filename, 'w');
         fputcsv($out, $columns);
         $medibank_orders = DB::table('orders')->where('orders.transaction_status', 'Succeeded')->where('orders.order_type', 'like', '%medibank%')->whereNull('orders.medibank_csv')->orderby('id', 'asc')->get();
         if (!empty($medibank_orders)) {
@@ -62,12 +63,13 @@ class MedibankBatchFiles extends Command {
                     if ($record->price_sale > 0 && $record->price_sale < $record->price) {
                         //$transactiontypecode = 'SALE';
                         $transaction_tier = '2';
-                        $transaction_amount = $record->price_sale;
+                        //$transaction_amount = $record->price_sale;
                     } else {
                         //$transactiontypecode = 'FULL-PRICE';
                         $transaction_tier = '1';
-                        $transaction_amount = $record->price;
+                        //$transaction_amount = $record->price;
                     }
+                    $transaction_amount = $record->price_sale;
                     $transactiontypecode = 'SALE';
                     $policy_number = ($record->policy_no) ? $record->policy_no : '';
                     $transaction_dt = strtotime($record->transaction_dt);
@@ -92,7 +94,7 @@ class MedibankBatchFiles extends Command {
             fclose($out);
         }
         //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
-        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(public_path('medibankcsv/') . $filename, 'r+'));
+        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(storage_path('app/public/medibank_export/') . $filename, 'r+'));
     }
 
 }
