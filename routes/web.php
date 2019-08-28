@@ -20,29 +20,24 @@ Route::get('/', 'HomePageController@index');
 
 Route::post('/reset_pass', 'InfoController@check_email');
 
-//if(env('NEW_UPDATED_FILES')=='Yes'){
+Route::get('/cart', 'test\CartController@show');
+Route::post('/cart/couponvalidate', 'test\CartController@couponvalidate');
+Route::post('/cart/check_valid_gift_voucher', 'test\CartController@check_valid_gift_voucher');
 
-	//Route::get('/newcart', 'test\CartController@show');
+//Route::get('/cart', 'CartController@show');
+Route::post('/cart/update_delivery_option', 'test\CartController@update_delivery_option');
+Route::get('/cart/get_cart_order_total', 'test\CartController@get_cart_order_total');
+Route::post('/cart/edit_cart','test\CartController@edit_cart_popup');
+Route::post('/cart/remove_gift_voucher', 'test\CartController@remove_gift_voucher');
+Route::post('/cart/removecoupon', 'test\CartController@removecoupon');
 
-//}else{
 
-	Route::get('/cart', 'test\CartController@show');
-	//Route::get('/cart', 'CartController@show');
-	Route::post('/cart/update_delivery_option', 'CartController@update_delivery_option');
-	Route::get('/cart/get_cart_order_total', 'CartController@get_cart_order_total');
-	Route::post('/cart/edit_cart','CartController@edit_cart_popup');
-	Route::post('/cart/check_valid_gift_voucher', 'test\CartController@check_valid_gift_voucher');
-	Route::post('/cart/remove_gift_voucher', 'CartController@remove_gift_voucher');
-	Route::post('/cart/couponvalidate', 'test\CartController@couponvalidate');
-	Route::post('/cart/removecoupon', 'CartController@removecoupon');
+Route::get('/shipping','test\BillingShippingController@create');
+Route::post('/shipping','test\BillingShippingController@store');
+Route::post('/shipping-check-email','test\BillingShippingController@check_email');
+Route::post('/shipping-verify-password','test\BillingShippingController@verify_password');
 
-	
-	Route::get('/shipping','test\BillingShippingController@create');
-	Route::post('/shipping','test\BillingShippingController@store');
-	Route::post('/shipping-check-email','BillingShippingController@check_email');
-	Route::post('/shipping-verify-password','BillingShippingController@verify_password');
 
-//}
 
 
 Route::middleware(['allowOnlyAjax'])->group(function () {
