@@ -35,7 +35,8 @@ class Kernel extends ConsoleKernel
                 $schedule->command('icontact-queue-push')
                     ->everyFifteenMinutes();
                 $schedule->command('stock-refresh')
-                    ->hourlyAt(10);
+                    ->hourlyAt(10)
+                    ->unlessBetween('23:00', '4:00');
                 //$schedule->command('medibank-batch-files')->tuesdays();                  
                 break;        
                 /*$schedule->command('icontact-push')
