@@ -113,14 +113,6 @@ class CartController extends Controller
         return view('cart.order_summary', compact('cart'));
     }
 
-    public function edit_cart_popup(Request $request) {
-        $cart_items = $this->cart->cartItems()->where('variant_id', $request->variant_id)->load('variant.product.image');
-        //$cart_items = Cart_item::where('cart_id', session('cart_id'))->where('variant_id', $request->variant_id)->with('variant.product.image')->get();
-        return response()->json([
-                    'cartitemshtml' => view('cart.edit_cart_popup', compact('cart_items'))->render()
-        ]);
-    }
-
     public function remove_gift_voucher(Request $request) {
         
         $this->cart->gift_id = '';
