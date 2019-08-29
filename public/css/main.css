@@ -1651,8 +1651,7 @@ textarea {
   min-height: 10px;
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder {
-  display: none !important;
-  background-color: #00d3d6;
+  background-color: #d8e6ff;
   text-align: center;
   padding: 25px 15px;
   margin: 0px auto 2px;
@@ -1679,32 +1678,22 @@ textarea {
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder .primary-button {
   width: 100%;
-  background-color: #ffffff;
-  color: #0263f7;
-  border: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
 }
-.br-shoefinder-subBanner .horizontal-shoe-finder .primary-button:hover {
-  background-color: #0263f7;
-  color: #ffffff;
-  border: 1px solid #0263f7;
-}
 .br-shoefinder-subBanner .horizontal-shoe-finder img {
-  margin-top: 20px;
   width: auto;
   max-width: 100%;
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-btn {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   margin: 0 auto;
   display: block;
-  padding-top: 20px;
 }
 @media only screen and (max-width: 767px) {
   .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-btn {
     padding-top: 20px;
-    max-width: 180px;
+    max-width: 220px;
     margin: 0 auto;
     display: block;
     float: none;
@@ -1717,12 +1706,12 @@ textarea {
 }
 .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-logo {
   width: 100%;
-  max-width: 100px;
-  float: left;
+  max-width: 300px;
+  margin: 20px auto;
 }
 @media only screen and (max-width: 767px) {
   .br-shoefinder-subBanner .horizontal-shoe-finder .horizontal-shoefinder-logo {
-    max-width: 500px;
+    max-width: 250px;
     margin: 0 auto;
     display: block;
     float: none;

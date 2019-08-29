@@ -565,7 +565,8 @@
             }
           }
           .menu-shoe--finder{
-            background-color: $lightblue;
+            // background-color: $lightblue;
+            background-color: #d8e6ff;
             padding: 20px 10px;
             h3{
               font-size: 26px;
@@ -577,9 +578,15 @@
               .shoe-button{
                 width: 230px;
               }
+              .primary-button{
+                width: 230px;
+              }
             }
             .shoe-finder--logo{
               text-align:right;
+              margin: 25px auto;
+              width:100%;
+              max-width: 70%;
             }
           }
           .header-menu--btn{
@@ -1662,10 +1669,24 @@
         margin: auto;
         padding: 0 15px;
         margin: auto;
+        @media #{$mobile-only}{
+          bottom: 22px;
+        }
+        .primary-button {
+          @media #{$mobile-only}{
+            padding: 20px 15px;
+            font-size: 16px;
+          }
+        }
       }
       &.shoe-finder{
         // background-color: $lightblue;
         background: url(../images/home/hp_sm_shoefinder.jpg) no-repeat;
+        -webkit-background-size: 100%;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center center;
         padding: 18px 10px;
         text-align: center;
         min-height: 240px;
@@ -1702,18 +1723,18 @@
         }
         .btn{
         @media #{$tab-only}{
-          bottom: 5px;
+          bottom: 6px;
           max-width: 145px;
           padding: 0px 18px;
-          .secondary-button {
-            padding: 10px 12px;
-            font-size: 13px;
+          .primary-button {
+            padding: 14px 12px;
+            font-size: 12px;
           }
          }
          @media #{$desktop-only}{
-          bottom: 12px;
-          .secondary-button {
-            padding: 10px 12px;
+          bottom: 20px;
+          .primary-button {
+            padding: 15px 16px;
             font-size: 16px;
           }
          }
@@ -2445,7 +2466,8 @@
     }
   }
   .plp-store-finder{
-    background-color: $lightblue;
+    // background-color: $lightblue;
+    background-color: #d8e6ff;
     text-align: center;
     padding: 25px 15px;
     margin: 30px auto 15px;
@@ -2461,20 +2483,26 @@
     }
     .primary-button{
         width: 100%;
-        background-color: $white;
-        color: #0263f7;
-        border: 1px solid $white;
+        // background-color: $white;
+        // color: #0263f7;
+        // border: 1px solid $white;
         transition: all 0.5s ease-in-out;
         &:hover{
-          background-color: $blue;
-          color: $white;
-          border: 1px solid $blue;
+          // background-color: $blue;
+          // color: $white;
+          // border: 1px solid $blue;
         }
     }
     img{
       margin-top: 20px;
-      width: auto;
-      max-width: 100%;
+      width: 100%;
+      max-width: 65%;
+      @media #{$tab-only}{
+        max-width: 75%;
+      }
+      @media #{$desktop-only}{
+        max-width: 75%;
+      }
     }
   }
   .plp-header{

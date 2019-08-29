@@ -474,13 +474,14 @@
 								    		<div class="row">
 								    			<div class="tab-7">
 								    				<div class="find-out">
-								    					<h3 class="bold-font">Find out which shoe is right for you.</h3>
-								    					<a href="/shoefinder" class="shoe-button">Shoe Finder</a>
+								    					<h3 class="bold-font">Which shoe is right for you?</h3>
+								    					<!-- <a href="/shoefinder" class="shoe-button">Shoe Finder</a> -->
+								    					<a href="/shoefinder" class="primary-button">Try the shoe finder</a>
 								    				</div>
 								    			</div>
 								    			<div class="tab-5">
 								    				<div class="shoe-finder--logo">
-								    					<img src="/images/brooks-shoes--logo.png" alt="">
+								    					<img src="/images/home/hp_menu_shoefinder_logo.png" alt="">
 								    				</div>
 								    			</div>
 								    		</div>

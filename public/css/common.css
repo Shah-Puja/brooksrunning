@@ -2177,7 +2177,7 @@ textarea {
   }
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder {
-  background-color: #00d3d6;
+  background-color: #d8e6ff;
   padding: 20px 10px;
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder h3 {
@@ -2189,8 +2189,14 @@ textarea {
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .find-out .shoe-button {
   width: 230px;
 }
+.desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .find-out .primary-button {
+  width: 230px;
+}
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .shoe-finder--logo {
   text-align: right;
+  margin: 25px auto;
+  width: 100%;
+  max-width: 70%;
 }
 .desktop-navigation .main .desktop-navigation--sub .header-menu--btn p {
   font-size: 22px;
@@ -3283,8 +3289,24 @@ textarea {
   padding: 0 15px;
   margin: auto;
 }
+@media only screen and (max-width: 767px) {
+  .hpgray-wrapper .homepage-cate--link .btn {
+    bottom: 22px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hpgray-wrapper .homepage-cate--link .btn .primary-button {
+    padding: 20px 15px;
+    font-size: 16px;
+  }
+}
 .hpgray-wrapper .homepage-cate--link.shoe-finder {
   background: url(../images/home/hp_sm_shoefinder.jpg) no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
   padding: 18px 10px;
   text-align: center;
   min-height: 240px;
@@ -3334,21 +3356,21 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
-    bottom: 5px;
+    bottom: 6px;
     max-width: 145px;
     padding: 0px 18px;
   }
-  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
-    padding: 10px 12px;
-    font-size: 13px;
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .primary-button {
+    padding: 14px 12px;
+    font-size: 12px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
-    bottom: 12px;
+    bottom: 20px;
   }
-  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
-    padding: 10px 12px;
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .primary-button {
+    padding: 15px 16px;
     font-size: 16px;
   }
 }
@@ -4076,7 +4098,7 @@ textarea {
 }
 
 .plp-store-finder {
-  background-color: #00d3d6;
+  background-color: #d8e6ff;
   text-align: center;
   padding: 25px 15px;
   margin: 30px auto 15px;
@@ -4093,20 +4115,22 @@ textarea {
 }
 .plp-store-finder .primary-button {
   width: 100%;
-  background-color: #ffffff;
-  color: #0263f7;
-  border: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
-}
-.plp-store-finder .primary-button:hover {
-  background-color: #0263f7;
-  color: #ffffff;
-  border: 1px solid #0263f7;
 }
 .plp-store-finder img {
   margin-top: 20px;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  max-width: 65%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .plp-store-finder img {
+    max-width: 75%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .plp-store-finder img {
+    max-width: 75%;
+  }
 }
 
 .plp-header {
