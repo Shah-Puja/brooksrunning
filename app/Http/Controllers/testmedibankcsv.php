@@ -19,7 +19,8 @@ class testmedibankcsv extends Controller {
         //$filename = 'Brooks_5000001033_' . date('Ymd_His') . '.csv';
         //LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_YYYYMMDDHHMMSS.csv
         $filename = 'LOYALTY_UNLINKEDEARNTRANSACTIONS_5000002476_' . date('YmdHis') . '.csv';
-        $out = fopen('../testcsv/' . $filename, 'w');
+        //$out = fopen('../testcsv/' . $filename, 'w');
+        $out = fopen(storage_path('app/public/medibank_export/') . $filename, 'w');
         fputcsv($out, $columns);
         $medibank_orders = DB::table('orders')->where('orders.transaction_status', 'Succeeded')->where('orders.order_type', 'like', '%medibank%')->whereNull('orders.medibank_csv')->orderby('id', 'asc')->get();
         if (!empty($medibank_orders)) {
@@ -36,12 +37,13 @@ class testmedibankcsv extends Controller {
                     if ($record->price_sale > 0 && $record->price_sale < $record->price) {
                         //$transactiontypecode = 'SALE';
                         $transaction_tier = '2';
-                        $transaction_amount = $record->price_sale;
+                        //$transaction_amount = $record->price_sale;
                     } else {
                         //$transactiontypecode = 'FULL-PRICE';
                         $transaction_tier = '1';
-                        $transaction_amount = $record->price;
+                        //$transaction_amount = $record->price;
                     }
+                    $transaction_amount = $record->price_sale;
                     $transactiontypecode = 'SALE';
                     $policy_number = ($record->policy_no) ? $record->policy_no : '';
                     $transaction_dt = strtotime($record->transaction_dt);
@@ -65,7 +67,8 @@ class testmedibankcsv extends Controller {
             }
             fclose($out);
         }
-        Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
+        //Storage::disk('sftp')->put('/Earn/' . $filename, fopen('../testcsv/' . $filename, 'r+'));
+        Storage::disk('sftp')->put('/Earn/' . $filename, fopen(storage_path('app/public/medibank_export/') . $filename, 'r+'));
     }
 
 }
