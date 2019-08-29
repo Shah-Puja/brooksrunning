@@ -481,7 +481,7 @@
 								    			</div>
 								    			<div class="tab-5">
 								    				<div class="shoe-finder--logo">
-								    					<img src="/images/home/hp_menu_shoefinder_logo.png" alt="">
+								    					<img src="/images/home/hp_menu_shoefinder_logo.png" alt=""> 
 								    				</div>
 								    			</div>
 								    		</div>
