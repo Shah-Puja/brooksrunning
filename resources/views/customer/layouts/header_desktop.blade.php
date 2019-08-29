@@ -479,7 +479,7 @@
 								    					<a href="/shoefinder" class="primary-button">Try the shoe finder</a>
 								    				</div>
 								    			</div>
-								    			<div class="tab-5"> 
+								    			<div class="tab-5">
 								    				<div class="shoe-finder--logo">
 								    					<img src="/images/home/hp_menu_shoefinder_logo.png" alt="">
 								    				</div>
