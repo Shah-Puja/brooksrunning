@@ -26,7 +26,15 @@ class CartController extends Controller
         }else{
             $this->cart->cart_without_ap21();
         }
+    
         $cart = $this->cart->load('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb') ?? new Cart;
+        if (isset($cart->promo_code) && $cart->promo_code != "") {
+            $promo_code = promo_mast::where('promo_string', $cart->promo_code)->first();
+            $cart['promo_display_text'] = $promo_code->promo_display_text;
+        }
+        if ($cart->discount == 0 && $cart->promo_code == "HEROES") {
+            $cart['subcode_text'] = "This promotion code does not apply to your product selection.";
+        }
         return view('cart.cart', ['cart'=> $cart]);
     }
 
