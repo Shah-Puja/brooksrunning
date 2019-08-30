@@ -177,8 +177,8 @@
 						</div>
 						<div class="col-4 tab-4 mob-12 " >
 							<div class="horizontal-shoefinder-logo">
-											<img src="/images/brooks-shoes--logo.png" alt="">
-										</div>
+								<img src="/images/brooks-shoes--logo.png" alt="">
+							</div>
 						</div>
 				</div>
 		</div>
