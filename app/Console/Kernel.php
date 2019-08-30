@@ -36,7 +36,7 @@ class Kernel extends ConsoleKernel
                     ->everyFifteenMinutes();
                 $schedule->command('stock_refresh')
                     ->hourly()
-                    ->unlessBetween('23:00', '4:00');
+                    ->between('5:00', '22:00');
                 //$schedule->command('medibank-export')->cron('20 17 29 8 *');
                 $schedule->command('medibank-export')->tuesdays();                  
                 break;        
