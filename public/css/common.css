@@ -2185,6 +2185,7 @@ textarea {
   line-height: 1.5;
   margin: 0;
   margin-bottom: 7px;
+  color: #162c53;
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .find-out .shoe-button {
   width: 230px;
@@ -3326,6 +3327,7 @@ textarea {
 .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
   margin: 0;
   font-size: 20px;
+  color: #162c53;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
@@ -4106,6 +4108,7 @@ textarea {
 .plp-store-finder .br-heading {
   font-size: 25px;
   margin: 0;
+  color: #162c53;
 }
 .plp-store-finder .br-info {
   font-size: 23px;
