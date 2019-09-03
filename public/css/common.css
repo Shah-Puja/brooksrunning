@@ -4127,6 +4127,18 @@ textarea {
     max-width: 75%;
   }
 }
+@media only screen and (max-width: 767px) {
+  .plp-store-finder img {
+    max-width: 55%;
+  }
+}
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .plp-store-finder img {
+    max-width: 35%;
+    display: block;
+    margin: 10px auto;
+  }
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .plp-store-finder img {
     max-width: 75%;
@@ -4680,12 +4692,12 @@ textarea {
     font-size: 14px;
   }
   .mobile-plp--filter .plp-store-finder a {
-    background: #ffffff;
-    color: #0263f7;
-  }
-  .mobile-plp--filter .plp-store-finder a:hover {
     color: #ffffff;
     background-color: #002855;
+  }
+  .mobile-plp--filter .plp-store-finder a:hover {
+    background: #ffffff;
+    color: #0263f7;
   }
 }
 

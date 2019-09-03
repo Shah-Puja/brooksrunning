@@ -2500,6 +2500,14 @@
       @media #{$tab-only}{
         max-width: 75%;
       }
+      @media #{$mobile-only}{
+        max-width: 55%;
+      }
+      @media only screen and (max-width: 767px) and (orientation: landscape) {
+        max-width: 35%;
+        display: block;
+        margin: 10px auto;
+      }
       @media #{$desktop-only}{
         max-width: 75%;
       }
@@ -2993,11 +3001,11 @@
           font-size: 14px;
         }
         a{
-          background: $white;
-          color: $blue;
+          color: $white;
+          background-color: $darkblue;
           &:hover{
-            color: $white;
-            background-color: $darkblue;
+            background: $white;
+            color: $blue;
           }
         }
       }
