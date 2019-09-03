@@ -127,7 +127,7 @@
 		</div>
 	</div>
 </section>
-<section class="br-shoefinder-banner br-shoefinder-subBanner" >
+<section class="br-shoefinder-banner br-shoefinder-subBanner" style="display:none" >
 	<div class="br-shoefinder-banner--wrapper">
 			<div class="horizontal-shoe-finder">
 					<!-- <p class="br-heading hidden-mob">Need help choosing a shoe? <span class="br-info">Try the shoe finder</span></p> -->
