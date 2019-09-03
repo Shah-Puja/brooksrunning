@@ -2581,8 +2581,7 @@ ul {
   .large {
     font-size: 45px;
     line-height: 1.0;
-    width:100%;
-    letter-spacing: 2px;
+    width:100%; 
     @media #{$mobile-only}{
       font-size: 30px;
       width:100%;
