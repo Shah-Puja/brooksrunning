@@ -18,23 +18,64 @@
 </section>
 <section class="create-account wrapper">
 	<div class="row">
-		<div class="col-9">
-			<div class="create-account--left">
-			    @if($competition->status == 'Open')
-				<div class="response_content">
-					<div class="row">
-						<div class="col-10">
-							<p>{!! $competition->comp_text !!}</p>
+	@if(collect(request()->segments())->last() == 'runhappyroute')
+		<div class="col-7 tab-7 mob-12">
+			<div class="create-account--left competition-left-content" >
+				@if($competition->status == 'Open')
+						<div class="response_content">
+						@if(!empty($competition->comp_form))
+							@include('meet_brooks.competition.'.$competition->comp_form)
+						@endif
+					
+						</div>
+				
+				@else
+				<div class="row">
+					<div class="col-10">
+						{!! $competition->close_text !!}
+					</div>
+				</div>
+				@endif
+				<div class="row">
+					<div class="tab-12">
+						<div class="comp_bottom" style="border:none;">
+							{!! $competition->footer_text !!}
+							@if($competition->status == 'Open')
+								@if(!empty($competition->terms_conditions))
+								<!-- <p class="privacy">Click here to view the <a class="privacy-terms--popup" href="javascript:void(0)">Terms &amp; Conditions of Entry</a></p>                             -->
+								<p class="comp-link-text"><a class="privacy-terms--popup" href="javascript:void(0)">Click here to view the Terms &amp; Conditions of Entry</a></p>
+
+								@endif
+							@endif
 						</div>
 					</div>
-					<hr>
-					<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
-					
-					@if(!empty($competition->comp_form))
-						@include('meet_brooks.competition.'.$competition->comp_form)
-					@endif
-				
 				</div>
+			</div>
+		</div>
+		<div class="col-5 tab-5 mob-12">
+		<div class="run_happy_route_competition_img">
+				<img src="/images/competition-single/runhappyroute_comp_page_img.jpg" alt="">
+			</div>
+		</div>
+	@else
+		<div class="col-9">
+			<div class="create-account--left">
+				@if($competition->status == 'Open')
+						<div class="response_content">
+						<div class="row">
+							<div class="col-10">
+								<p>{!! $competition->comp_text !!}</p>
+							</div>
+						</div>
+						<hr>
+						<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+						
+						@if(!empty($competition->comp_form))
+							@include('meet_brooks.competition.'.$competition->comp_form)
+						@endif
+					
+						</div>
+				
 				@else
 				<div class="row">
 					<div class="col-10">
@@ -56,6 +97,7 @@
 				</div>
 			</div>
 		</div>
+	@endif
 	</div>
 
 	<!-- Learn more -->
