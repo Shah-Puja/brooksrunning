@@ -1,5 +1,5 @@
 <section class="run_happy_route_competition">
-	<h1 class="br-heading"><span>Run Happy Route</span> Instagram Competition</h1>
+	<h1 class="br-heading"><span>Run Happy Route</span><br class="hidden-col hidden-tab visible-mob"/> Competition</h1>
 <h2>Check out our Instagram for your chance to WIN 1 of 3 pairs of Brooks running shoes.</h2>
 <p class="participate-steps">To enter via Instagram participants must complete the following:</p>
 <ul class="participate-steps-list">

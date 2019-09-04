@@ -38,7 +38,7 @@
 				@endif
 				<div class="row">
 					<div class="tab-12">
-						<div class="comp_bottom" style="border:none;">
+						<div class="comp_bottom" style="border:none; padding-bottom: 0px;">
 							{!! $competition->footer_text !!}
 							@if($competition->status == 'Open')
 								@if(!empty($competition->terms_conditions))
