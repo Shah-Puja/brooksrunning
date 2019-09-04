@@ -3284,7 +3284,7 @@ textarea {
   margin: auto;
 }
 .hpgray-wrapper .homepage-cate--link.shoe-finder {
-  background: url(../images/home/hp_sm_shoefinder.jpg) no-repeat;
+  background-color: #00d3d6;
   padding: 18px 10px;
   text-align: center;
   min-height: 240px;
