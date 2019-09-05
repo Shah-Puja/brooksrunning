@@ -2,7 +2,7 @@
   <p><strong><u>Run Happy Route Instagram Competition Terms &amp; Conditions</u></strong></p>
 <ol>
     <li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
-    <li>Entry is open to Australian and New Zealand residents, except employees of Texas Peak Pty Ltd, Bocara Limited and their immediate families.</li>
+    <li>Entry is open to Australian and New Zealand residents, except employees of Texas Peak Pty Ltd, Bocara Limited and their immediate families.</li> 
     <li>The entire promotional period for the NSW trade promotion lottery permit commences on Wednesday 21st November 2018 and concludes Wednesday 20th November 2019. </li>
     <li>The entire Promotional period for this competition commences on Monday 9<sup>th</sup> September and concludes Sunday 22<sup>nd</sup> September 2019. The winners will be selected the Monday 23<sup>rd</sup> September 2019 at 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic,<i> Australia</i>. The winners will be notified by a direct message to their Instagram account and on the Brooks Running Australia Instagram story. </li>
     <li>To enter via Instagram participants must complete the following in the promotional period:
