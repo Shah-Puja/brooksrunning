@@ -119,7 +119,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.errorpage-404-container .errorpage-header--wrapper .shoefinder-link, .response_content_learn_more .heading_learn_more_big, .response_content_learn_more .heading_learn_more, .response_content .heading, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .br-afterpaysale-header .br-afteryay-sale .br-afteryay-sale, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
+.errorpage-404-container .errorpage-header--wrapper .shoefinder-link, .response_content_learn_more .heading_learn_more_big, .response_content_learn_more .heading_learn_more, .response_content .run_happy_route_competition .comp-link-text, .response_content .run_happy_route_competition .participate-steps-list, .response_content .run_happy_route_competition .participate-steps, .response_content .run_happy_route_competition h2, .response_content .run_happy_route_competition .br-heading, .response_content .heading, .comp_bottom .comp-link-text, .comp_bottom .notice, .closed, .sitemap--container .child-list, .run-signature--work .work-wrapper h3, .sale-container--wrapper .info-wrapper h4, .sale-container--wrapper .img-wrapper .img-info h3, .payment-container .payment-afterpay .header h3, .payment-container .secured-info, .landing-banner2 .landing-shoe-finder .br-heading-mob .finder-heading-mob, .pr-landing-page .prod-detail-container .prod-desc-block, .landingpage-banner .landingpage-banner--info .transparent-button, .cart-left--container .shopping-heading p, .bras-size--table .mc-title, .size-chart-wrapper .mc-title, .size-chart-wrapper .expertadv-bold, .create-account--right h3, .footer-banner__wrapper .footer-banner__info, .br-afterpaysale-header .br-afteryay-sale .br-afteryay-sale, .secondary-button2, .secondary-button, .br-heading, .br-mainheading {
   font-family: "ProximaNova-Bold", "Helvetica", "Arial", sans-serif;
 }
 
@@ -2177,7 +2177,7 @@ textarea {
   }
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder {
-  background-color: #00d3d6;
+  background-color: #d8e6ff;
   padding: 20px 10px;
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder h3 {
@@ -2185,12 +2185,19 @@ textarea {
   line-height: 1.5;
   margin: 0;
   margin-bottom: 7px;
+  color: #162c53;
 }
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .find-out .shoe-button {
   width: 230px;
 }
+.desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .find-out .primary-button {
+  width: 230px;
+}
 .desktop-navigation .main .desktop-navigation--sub .menu-shoe--finder .shoe-finder--logo {
   text-align: right;
+  margin: 25px auto;
+  width: 100%;
+  max-width: 70%;
 }
 .desktop-navigation .main .desktop-navigation--sub .header-menu--btn p {
   font-size: 22px;
@@ -3283,8 +3290,24 @@ textarea {
   padding: 0 15px;
   margin: auto;
 }
+@media only screen and (max-width: 767px) {
+  .hpgray-wrapper .homepage-cate--link .btn {
+    bottom: 22px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hpgray-wrapper .homepage-cate--link .btn .primary-button {
+    padding: 20px 15px;
+    font-size: 16px;
+  }
+}
 .hpgray-wrapper .homepage-cate--link.shoe-finder {
   background: url(../images/home/hp_sm_shoefinder.jpg) no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
   padding: 18px 10px;
   text-align: center;
   min-height: 240px;
@@ -3304,6 +3327,7 @@ textarea {
 .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
   margin: 0;
   font-size: 20px;
+  color: #162c53;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder h3 {
@@ -3334,21 +3358,21 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
-    bottom: 5px;
+    bottom: 6px;
     max-width: 145px;
     padding: 0px 18px;
   }
-  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
-    padding: 10px 12px;
-    font-size: 13px;
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .primary-button {
+    padding: 14px 12px;
+    font-size: 12px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .hpgray-wrapper .homepage-cate--link.shoe-finder .btn {
-    bottom: 12px;
+    bottom: 20px;
   }
-  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .secondary-button {
-    padding: 10px 12px;
+  .hpgray-wrapper .homepage-cate--link.shoe-finder .btn .primary-button {
+    padding: 15px 16px;
     font-size: 16px;
   }
 }
@@ -4076,7 +4100,7 @@ textarea {
 }
 
 .plp-store-finder {
-  background-color: #00d3d6;
+  background-color: #d8e6ff;
   text-align: center;
   padding: 25px 15px;
   margin: 30px auto 15px;
@@ -4084,29 +4108,46 @@ textarea {
 .plp-store-finder .br-heading {
   font-size: 25px;
   margin: 0;
+  color: #162c53;
 }
 .plp-store-finder .br-info {
   font-size: 23px;
   line-height: 1.3;
   margin-top: 5px;
   margin-bottom: 25px;
+  color: #162c53;
+  font-weight: 600;
 }
 .plp-store-finder .primary-button {
   width: 100%;
-  background-color: #ffffff;
-  color: #0263f7;
-  border: 1px solid #ffffff;
   transition: all 0.5s ease-in-out;
-}
-.plp-store-finder .primary-button:hover {
-  background-color: #0263f7;
-  color: #ffffff;
-  border: 1px solid #0263f7;
 }
 .plp-store-finder img {
   margin-top: 20px;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  max-width: 65%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .plp-store-finder img {
+    max-width: 75%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .plp-store-finder img {
+    max-width: 55%;
+  }
+}
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .plp-store-finder img {
+    max-width: 35%;
+    display: block;
+    margin: 10px auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .plp-store-finder img {
+    max-width: 75%;
+  }
 }
 
 .plp-header {
@@ -4649,19 +4690,19 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .mobile-plp--filter .plp-store-finder {
-    background-color: #00d3d6;
+    background-color: #d8e6ff;
     text-align: center;
   }
   .mobile-plp--filter .plp-store-finder p {
-    font-size: 14px;
+    font-size: 24px;
   }
   .mobile-plp--filter .plp-store-finder a {
-    background: #ffffff;
-    color: #0263f7;
+    color: #ffffff;
+    background-color: #0263f7;
   }
   .mobile-plp--filter .plp-store-finder a:hover {
-    color: #ffffff;
     background-color: #002855;
+    color: #0263f7;
   }
 }
 
@@ -7076,6 +7117,48 @@ textarea {
   margin: 1em 0;
   font-size: 1em;
 }
+.comp_bottom .runhappyroute-bottom-text {
+  line-height: 1.5;
+  margin: 5px auto;
+  padding: 0px;
+  font-size: 1em;
+}
+@media only screen and (max-width: 767px) {
+  .comp_bottom .runhappyroute-bottom-text {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .comp_bottom .runhappyroute-bottom-text {
+    font-size: 12px;
+    line-height: 1.1;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .comp_bottom .runhappyroute-bottom-text {
+    font-size: 0.8em;
+    line-height: 1.2;
+  }
+}
+.comp_bottom .comp-link-text {
+  font-size: 12px;
+  line-height: 1.1;
+  margin: 0px;
+  padding: 0px;
+  color: #025fea;
+}
+.comp_bottom .comp-link-text a {
+  color: #025fea;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 767px) {
+  .comp_bottom .comp-link-text {
+    text-align: center;
+    line-height: 1.2;
+  }
+}
 
 .response_content .heading {
   color: #0263f7;
@@ -7106,6 +7189,177 @@ textarea {
   transition: 3s all;
   line-height: 1.7;
   position: relative;
+}
+.response_content .run_happy_route_competition {
+  margin-top: 40px;
+}
+.response_content .run_happy_route_competition .br-heading {
+  font-size: 25px;
+  line-height: 1.8;
+  color: #025fea;
+  margin: 0px;
+}
+.response_content .run_happy_route_competition .br-heading span {
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition .br-heading {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition .br-heading {
+    font-size: 23px;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition .br-heading {
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+.response_content .run_happy_route_competition h2 {
+  font-size: 22px;
+  line-height: 1.1;
+  color: #025fea;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition h2 {
+    font-size: 14px;
+    padding-bottom: 2px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition h2 {
+    font-size: 20px;
+    padding-bottom: 2px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition h2 {
+    padding-top: 10px;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: center;
+  }
+}
+.response_content .run_happy_route_competition .participate-steps {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0px;
+  padding: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition .participate-steps {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition .participate-steps {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition .participate-steps {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+.response_content .run_happy_route_competition .participate-steps-list {
+  font-size: 18px;
+  list-style: none;
+  line-height: 1.6;
+  margin: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition .participate-steps-list {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition .participate-steps-list {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition .participate-steps-list {
+    font-size: 17px;
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+.response_content .run_happy_route_competition .comp-alert-text {
+  line-height: 1.3;
+  font-size: 0.9em;
+  font-style: italic;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition .comp-alert-text {
+    font-size: 13px;
+    line-height: 1.1;
+    margin: 5px auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition .comp-alert-text {
+    font-size: 0.9em;
+    line-height: 1.1;
+    margin: 5px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition .comp-alert-text {
+    font-size: 12px;
+    line-height: 1.1;
+    margin: 5px auto;
+    text-align: center;
+  }
+}
+.response_content .run_happy_route_competition .comp-link-text {
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 10px auto;
+  padding: 0px;
+  color: #025fea;
+}
+.response_content .run_happy_route_competition .comp-link-text a {
+  color: #025fea;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition .comp-link-text {
+    font-size: 14px;
+    line-height: 1.1;
+    margin: 5px auto;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .response_content .run_happy_route_competition .comp-link-text {
+    font-size: 18px;
+    line-height: 1.1;
+    margin: 5px auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .response_content .run_happy_route_competition .comp-link-text {
+    font-size: 14px;
+    line-height: 0.9;
+    margin: 5px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .response_content .run_happy_route_competition {
+    padding: 5px;
+  }
 }
 
 .response_content_learn_more .heading_learn_more {
@@ -7150,6 +7404,37 @@ textarea {
 }
 .comp-submit .inline-loader {
   display: inline-block;
+}
+
+.competition-left-content {
+  margin: 40px auto;
+}
+@media only screen and (max-width: 767px) {
+  .competition-left-content {
+    margin: 0px auto;
+    padding: 5px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .competition-left-content {
+    margin: -5px auto;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .competition-left-content {
+    margin: 40px auto;
+  }
+}
+
+.run_happy_route_competition_img img {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px 0;
+}
+@media only screen and (max-width: 767px) {
+  .run_happy_route_competition_img img {
+    margin: 15px 0;
+  }
 }
 
 /*  Shipping Page Start */

@@ -89,14 +89,14 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_ghost11_406.jpg">
+						<img src="/images/landingpage/Womens/women_ghost12_2.jpg">
 					    <div class="title">
-					       <h2 class="happy left">&nbsp;<br>Ghost 11</h2>
+					       <h2 class="happy left">&nbsp;<br>Ghost 12</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Experience super-soft cusioning and plush heel-to-toe transition in the Ghost 11. Awarded the 2018 Runner's World Editor's Choice.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ghost-11-womens/120277_406.html">Shop Ghost 11</a>
+							<p>The Ghost 12 offers a smooth ride balanced with soft cushioning to provide a secure fit and plenty of comfort no matter how far you run.</p>
+							<a class="primary-button" href="/brooks-running-shoes-ghost-12-womens/120305_413.html"> Shop Ghost 12</a>
 					</div> 
 				</div>
 				<div class="tab-6">
@@ -114,7 +114,7 @@
 				</div>
 			</div>
 </section>
-<section class="br-shoefinder-banner br-shoefinder-subBanner">
+<section class="br-shoefinder-banner br-shoefinder-subBanner" style="display:none;">
 	<div class="br-shoefinder-banner--wrapper">
 			<div class="horizontal-shoe-finder">
 					<p class="br-heading hidden-mob">Need help choosing a shoe? <span class="br-info">Try the shoe finder</span></p>

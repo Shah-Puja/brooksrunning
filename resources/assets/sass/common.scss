@@ -565,21 +565,29 @@
             }
           }
           .menu-shoe--finder{
-            background-color: $lightblue;
+            // background-color: $lightblue;
+            background-color: #d8e6ff;
             padding: 20px 10px;
             h3{
               font-size: 26px;
               line-height: 1.5;
               margin: 0;
               margin-bottom: 7px;
+              color: #162c53;
             }
             .find-out{
               .shoe-button{
                 width: 230px;
               }
+              .primary-button{
+                width: 230px;
+              }
             }
             .shoe-finder--logo{
               text-align:right;
+              margin: 25px auto;
+              width:100%;
+              max-width: 70%;
             }
           }
           .header-menu--btn{
@@ -1662,10 +1670,24 @@
         margin: auto;
         padding: 0 15px;
         margin: auto;
+        @media #{$mobile-only}{
+          bottom: 22px;
+        }
+        .primary-button {
+          @media #{$mobile-only}{
+            padding: 20px 15px;
+            font-size: 16px;
+          }
+        }
       }
       &.shoe-finder{
         // background-color: $lightblue;
         background: url(../images/home/hp_sm_shoefinder.jpg) no-repeat;
+        -webkit-background-size: 100%;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center center;
         padding: 18px 10px;
         text-align: center;
         min-height: 240px;
@@ -1680,6 +1702,7 @@
         h3{
           margin: 0;
           font-size: 20px;
+          color: #162c53;
            @media #{$tab-only}{
             font-size: 15px !important;
           }
@@ -1702,18 +1725,18 @@
         }
         .btn{
         @media #{$tab-only}{
-          bottom: 5px;
+          bottom: 6px;
           max-width: 145px;
           padding: 0px 18px;
-          .secondary-button {
-            padding: 10px 12px;
-            font-size: 13px;
+          .primary-button {
+            padding: 14px 12px;
+            font-size: 12px;
           }
          }
          @media #{$desktop-only}{
-          bottom: 12px;
-          .secondary-button {
-            padding: 10px 12px;
+          bottom: 20px;
+          .primary-button {
+            padding: 15px 16px;
             font-size: 16px;
           }
          }
@@ -2445,36 +2468,54 @@
     }
   }
   .plp-store-finder{
-    background-color: $lightblue;
+    // background-color: $lightblue;
+    background-color: #d8e6ff;
     text-align: center;
     padding: 25px 15px;
     margin: 30px auto 15px;
     .br-heading{
       font-size: 25px;
       margin: 0;
+      color: #162c53;
     }
     .br-info{
         font-size: 23px;
         line-height: 1.3;
         margin-top: 5px;
         margin-bottom: 25px;
+        color: #162c53;
+        font-weight: 600;
     }
     .primary-button{
         width: 100%;
-        background-color: $white;
-        color: #0263f7;
-        border: 1px solid $white;
+        // background-color: $white;
+        // color: #0263f7;
+        // border: 1px solid $white;
         transition: all 0.5s ease-in-out;
         &:hover{
-          background-color: $blue;
-          color: $white;
-          border: 1px solid $blue;
+          // background-color: $blue;
+          // color: $white;
+          // border: 1px solid $blue;
         }
     }
     img{
       margin-top: 20px;
-      width: auto;
-      max-width: 100%;
+      width: 100%;
+      max-width: 65%;
+      @media #{$tab-only}{
+        max-width: 75%;
+      }
+      @media #{$mobile-only}{
+        max-width: 55%;
+      }
+      @media only screen and (max-width: 767px) and (orientation: landscape) {
+        max-width: 35%;
+        display: block;
+        margin: 10px auto;
+      }
+      @media #{$desktop-only}{
+        max-width: 75%;
+      }
     }
   }
   .plp-header{
@@ -2959,17 +3000,17 @@
           }
       }
       .plp-store-finder{
-        background-color: $lightblue;
+        background-color: #d8e6ff;
         text-align: center;
         p{
-          font-size: 14px;
+          font-size: 24px;
         }
         a{
-          background: $white;
-          color: $blue;
+          color: $white;
+          background-color: #0263f7;
           &:hover{
-            color: $white;
-            background-color: $darkblue;
+            background-color: $darkblue; 
+            color: $blue;
           }
         }
       }
@@ -5517,6 +5558,42 @@ a {
   
   border-bottom: solid 1px $border;
   padding-bottom: 30px;
+
+  .runhappyroute-bottom-text{
+      line-height: 1.5;
+      margin: 5px auto;
+      padding:0px;
+      font-size: 1em;
+      @media #{$mobile-only}{
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.2;
+      }
+      @media #{$tab-only}{
+        font-size: 12px;
+        line-height: 1.1;
+      }
+      @media #{$desktop-only}{
+        font-size: 0.8em;
+        line-height: 1.2;
+      }
+  }
+  .comp-link-text{
+    font-size: 12px;
+    line-height: 1.1;
+    @extend %extrabold-font;
+    margin: 0px;
+    padding:0px;
+    color: #025fea;
+    a{
+      color: #025fea;
+      text-decoration: underline;
+    }
+    @media #{$mobile-only}{
+      text-align: center; 
+      line-height:1.2;
+    }
+  }
 }
 .response_content{
  
@@ -5554,6 +5631,146 @@ a {
           line-height: 1.7;
           position: relative;}
         }
+      }
+    }
+
+    .run_happy_route_competition{
+      margin-top: 40px;
+      .br-heading{
+        font-size:25px;
+        @extend %extrabold-font;
+        line-height: 1.8;
+        color: #025fea;
+        margin: 0px;
+        span{
+          text-transform: uppercase;
+        }
+        @media #{$tab-only}{
+          font-size:16px;
+          line-height: 1.4;
+        }
+        @media #{$desktop-only}{
+          font-size:23px;
+          line-height: 1.4;
+        }
+        @media #{$mobile-only}{
+          font-size:22px;
+          line-height: 1.2;
+          text-align:center;
+        }
+      }
+      h2{
+        font-size: 22px;
+        line-height: 1.1;
+        @extend %extrabold-font;
+        color: #025fea;
+        margin: 0px;
+        padding-bottom: 10px;
+        @media #{$tab-only}{
+          font-size:14px;
+          padding-bottom: 2px;
+        }
+        @media #{$desktop-only}{
+          font-size:20px;
+          padding-bottom: 2px;
+        }
+        @media #{$mobile-only}{
+          padding-top: 10px;
+          font-size:20px;
+          line-height: 1.1;
+          text-align:center;
+        }
+      }
+      .participate-steps{
+        font-size: 18px;
+        line-height: 1.6;
+        @extend %extrabold-font;
+        margin: 0px;
+        padding:0px;
+        @media #{$tab-only}{
+          font-size:14px;
+        }
+        @media #{$desktop-only}{
+          font-size:16px;
+        }
+        @media #{$mobile-only}{
+          font-size: 18px; 
+        line-height: 1.3;
+        text-align: center;
+        }
+      }
+      .participate-steps-list{
+        font-size: 18px;
+        list-style: none;
+        line-height: 1.6;
+        @extend %extrabold-font;
+        margin: 0px;
+        @media #{$tab-only}{
+          font-size:13px;
+          line-height: 1.3;
+        }
+        @media #{$desktop-only}{
+          font-size:16px;
+          line-height: 1.4;
+        }
+        @media #{$mobile-only}{
+          font-size:17px;
+          line-height: 1.3;
+          text-align:center;
+        }
+        
+      }
+      .comp-alert-text{
+        line-height: 1.3;
+        font-size: 0.9em;
+        font-style: italic;
+        @media #{$tab-only}{
+          font-size:13px;
+          line-height: 1.1; 
+          margin: 5px auto;
+        }
+        @media #{$desktop-only}{
+          font-size: 0.9em;
+          line-height: 1.1; 
+          margin: 5px auto;
+        }
+        @media #{$mobile-only}{
+          font-size:12px;
+          line-height: 1.1;
+          margin: 5px auto;
+          text-align:center;
+        }
+      }
+      .comp-link-text{
+        font-size: 22px;
+        line-height: 1.1;
+        @extend %extrabold-font;
+        margin: 10px auto;
+        padding:0px;
+        color: #025fea;
+        a{
+          color: #025fea;
+          text-decoration: underline;
+        }
+        @media #{$mobile-only}{
+          font-size: 14px;
+          line-height: 1.1;
+          margin: 5px auto;
+          text-align:center;
+        }
+        @media #{$desktop-only}{
+          font-size: 18px;
+          line-height: 1.1;
+          margin: 5px auto;
+        }
+        @media #{$tab-only}{
+          font-size: 14px;
+          line-height: 0.9;
+          margin: 5px auto;
+        }
+      }
+      @media #{$mobile-only}{
+        padding:5px;
       }
     }
 
@@ -5605,6 +5822,29 @@ a {
   .inline-loader
   {
       display: inline-block;
+  }
+}
+.competition-left-content{
+  margin: 40px auto;
+  @media #{$mobile-only}{
+    margin: 0px auto;
+    padding: 5px;
+  }
+   @media #{$tab-only}{
+    margin: -5px auto;
+  }
+  @media #{$desktop-only}{
+    margin: 40px auto;
+  } 
+}
+.run_happy_route_competition_img{
+  img{
+    width: 100%;
+    max-width: 600px;
+    margin: 30px 0;
+    @media #{$mobile-only}{
+      margin: 15px 0;
+    }
   }
 }
 

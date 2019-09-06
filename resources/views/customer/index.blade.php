@@ -134,9 +134,9 @@
 				<div class="homepage-cate--link shoe-finder">
 					<h3 class="br-heading">Need help choosing a shoe?</h3>
 					<p class="br-info">Try the shoe finder</p>
-					<img src="/images/brooks-shoes--logo.png" alt="">
+					<!-- <img src="/images/brooks-shoes--logo.png" alt=""> -->
 				    <div class="btn">
-				        <a href="/shoefinder" class="secondary-button">Shoe Finder</a>
+				        <a href="/shoefinder" class="primary-button">Shoe Finder</a>
 				    </div>
 				</div>
 				<div class="info-wrapper">

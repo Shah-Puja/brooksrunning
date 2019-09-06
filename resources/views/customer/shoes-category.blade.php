@@ -127,22 +127,26 @@
 		</div>
 	</div>
 </section>
-<section class="br-shoefinder-banner br-shoefinder-subBanner">
+<section class="br-shoefinder-banner br-shoefinder-subBanner" style="display:none" >
 	<div class="br-shoefinder-banner--wrapper">
 			<div class="horizontal-shoe-finder">
-					<p class="br-heading hidden-mob">Need help choosing a shoe? <span class="br-info">Try the shoe finder</span></p>
-					<p class="br-heading-mob visible-mob"><span class="finder-heading-mob">Need help choosing a shoe?</span> <br/> <span class="br-info-mob">Try the shoe finder</span></p>
+					<!-- <p class="br-heading hidden-mob">Need help choosing a shoe? <span class="br-info">Try the shoe finder</span></p> -->
+					<p class="br-heading hidden-mob">Need help choosing a shoe?</p>
+					<!-- <p class="br-heading-mob visible-mob"><span class="finder-heading-mob">Need help choosing a shoe?</span> <br/> <span class="br-info-mob">Try the shoe finder</span></p> -->
+					<p class="br-heading-mob visible-mob"><span class="finder-heading-mob">Need help choosing a shoe?</span> </p>
 					<div class="row">
 						<div class="col-4 tab-4 mob-12 " >&nbsp;</div>
 						<div class="col-4 tab-4 mob-12 " >
-									<div class="horizontal-shoefinder-btn">
-										<a class="primary-button" href="/shoefinder">Shoe Finder</a>
-									</div>
+							<div class="horizontal-shoefinder-logo">
+								<img src="/images/shoes/shoe-lp-shoefinder-magnifylogo.png" alt="">
+								<img src="/images/shoes/shoe-lp-shoefinder-logo-hzl.png" alt="">
+							</div>
+							<div class="horizontal-shoefinder-btn">
+								<a class="primary-button" href="/shoefinder">Try the shoe finder</a>
+							</div>
 						</div>
 						<div class="col-4 tab-4 mob-12 " >
-							<div class="horizontal-shoefinder-logo">
-											<img src="/images/brooks-shoes--logo.png" alt="">
-										</div>
+							
 						</div>
 				</div>
 		</div>

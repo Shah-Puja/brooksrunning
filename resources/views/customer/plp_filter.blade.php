@@ -113,11 +113,11 @@
 		</div>
 	</div>
 	@if(strtolower($prod_type)=='footwear')
-		<div class="plp-store-finder">
+		<div class="plp-store-finder"> 
 			<h3 class="br-heading">Need help<br/>choosing a shoe?</h3>
 			<p class="br-info">Try the shoe finder</p>
 			<a class="primary-button" href="/shoefinder">Shoe Finder</a>
-			<img src="images/brooks-shoes--logo.png" alt="">
+			<img src="images/shoes/plp_shoefinder_logo_updated.png" alt="">
 		</div>
 	@endif
 </div>

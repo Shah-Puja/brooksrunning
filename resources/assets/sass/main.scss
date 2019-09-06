@@ -43,14 +43,15 @@
     .br-shoefinder-subBanner{
     min-height: 10px;
     .horizontal-shoe-finder{
-        display:none !important;
-        background-color: $lightblue;
+        // background-color: $lightblue;
+        background-color: #d8e6ff;
         text-align: center;
         padding: 25px 15px;
         margin: 0px auto 2px;
         .br-heading{
           font-size: 25px;
           margin: 0;
+          color: #162c53;
         }
         .br-heading-mob{
           font-size: 22px;
@@ -73,30 +74,21 @@
         }
         .primary-button{
             width: 100%;
-            background-color: $white;
-            color: #0263f7;
-            border: 1px solid $white;
             transition: all 0.5s ease-in-out;
-            &:hover{
-              background-color: $blue;
-              color: $white;
-              border: 1px solid $blue;
-            }
+           
         }
         img{
-          margin-top: 20px;
           width: auto;
           max-width: 100%;
         }
         .horizontal-shoefinder-btn{
               width: 100%;
-              max-width: 300px;
+              max-width: 250px;
               margin:0 auto;
               display:block;
-              padding-top:20px;
               @media #{$mobile-only}{ 
               padding-top:20px;
-              max-width: 180px;
+              max-width: 220px;
               margin:0 auto;
               display:block;
               float:none;
@@ -107,10 +99,11 @@
         }
         .horizontal-shoefinder-logo{
               width: 100%;
-              max-width: 100px;
-              float: left;
+              max-width: 300px;
+              // float: left;
+              margin: 20px auto;
                @media #{$mobile-only}{ 
-              max-width: 500px;
+              max-width: 250px;
               margin:0 auto;
               display:block;
               float:none;
