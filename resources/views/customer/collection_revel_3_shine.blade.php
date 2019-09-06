@@ -3,13 +3,18 @@
 
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <style>
-
 @media screen and (orientation: landscape){
     .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
         width: 215px !important;
     }
 }
+/* CSS  only for revel 3 */
 
+
+    .plp-wrapper-container .plp-wrapper__sub{
+        margin: 15px 0 16px;
+    }
+/* End revel 3 css */
 /* CSS only for this page */
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel{
     max-width: 325px !important;     width: 100% !important; 
@@ -66,7 +71,7 @@ and (orientation : landscape) {
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">Add Shine to Your Grind</a>
+                                            <a href="JavaScript:Void(0);" class="active">Revel 3 Shine Collection</a>
                                          </li>
                                     </ul>
                                 </div>
@@ -123,7 +128,7 @@ and (orientation : landscape) {
                             }
                         @endphp
 
-						<div class="mob-6 col-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
+						<div class="mob-6 col-4 tab-4 plp-wrapper__sub" data-main-id="{{ $curr_ele->style }}">
 							<div class="plp-product">
 								<a href="/{{ $curr_ele->seo_name.'/'.$curr_ele->style.'_'.$curr_ele->color_code }}.html" class="hidden-mob  main_link">
 									<div class="collection-img img-collection-shoes">
@@ -200,6 +205,45 @@ and (orientation : landscape) {
 					</div>
 			    </div>
 	</div>
+</section>
+
+<section class="wrapper pr-collection-page pr-0 pl-0">
+	<div class="prod-desc--wrapper">
+		<div class="wrapper">
+			<div class="row">
+				<div class="tab-6 padding_0">
+					<div class="collection-cate--link">
+							<picture>
+                                <source media="(max-width: 667px)" srcset="/images/Limited-Edition/shine_img_1.jpg">
+                                <img src="/images/Limited-Edition/shine_img_1_2x.jpg"  alt="">
+                            </picture>
+					 </div>
+				</div>
+				<div class="tab-6 padding_0">
+					<div class="collection-cate--link">
+							 <picture>
+                                <source media="(max-width: 667px)" srcset="/images/Limited-Edition/shine_img_2.jpg">
+                                <img src="/images/Limited-Edition/shine_img_2_2x.jpg"  alt="">
+                            </picture>
+						   
+					 </div>
+				</div>
+			</div>
+</section>
+
+<section class="wrapper pr-collection-page collectionpg-bottom--banner pr-0 pl-0">
+	<div class="prod-desc--wrapper">
+		<div class="wrapper">
+			<div class="row">
+				<div class="tab-12 col-12 padding_0">
+                    <picture>
+                        <source media="(max-width: 595px)" srcset="/images/Limited-Edition/shine_img_3.jpg">
+                        <img src="/images/Limited-Edition/shine_img_3_2x.jpg" alt="shoes">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- /Updated Section -->
