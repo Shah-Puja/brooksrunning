@@ -31,7 +31,7 @@ class Metatag extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','url','title'
     ];
 
     /**
