@@ -12,4 +12,5 @@ class Event extends Model
         'end_dt' => 'date',
         'next_dt' => 'date'
     ];
+    const CREATED_AT = null;
 }
