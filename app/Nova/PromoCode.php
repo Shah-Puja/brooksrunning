@@ -47,7 +47,7 @@ class PromoCode extends Resource
      */
     public function fields(Request $request)
     {   
-        $start=Carbon::today()->subMonth()->startOfMonth();
+        
        
         return [
             ID::make('Promo id','promo_mast_id')->sortable(),
