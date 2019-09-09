@@ -260,7 +260,7 @@
         $('.other_upcoming_events').find('.br-mainheading').show();
         var where_val = ($("#where").val()!='') ? "."+$("#where").val(): '';
         var when_val =($("#when").val()!='') ? "."+$("#when").val(): '';
-        var filter_val = [where_val,when_val] ;
+        var filter_val = [where_val,when_val];
         var filtered = filter_val.filter(function (el) { return el!='';});
         console.log(filtered.join("").trim());
         $grid2.isotope({ filter: filtered.join("").trim() ,layoutMode: 'fitRows'});

@@ -8,6 +8,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\DateTime;
+use Carbon\Carbon;
 
 class PromoCode extends Resource
 {
@@ -45,7 +46,9 @@ class PromoCode extends Resource
      * @return array
      */
     public function fields(Request $request)
-    {
+    {   
+        $start=Carbon::today()->subMonth()->startOfMonth();
+       
         return [
             ID::make('Promo id','promo_mast_id')->sortable(),
             Text::make('Promo string ','promo_string')->sortable()->rules('required'),
@@ -60,7 +63,9 @@ class PromoCode extends Resource
             Text::make('Promo title','promo_title')->sortable()->hideFromIndex(),
             Text::make('Promo desc','promo_desc')->sortable()->hideFromIndex(),
             Text::make('Promo Text','promo_display_text')->sortable()->hideFromIndex(),
-            DateTime::make('Start date','start_dt')->sortable()->rules('required'),
+            
+            DateTime::make('Start date','start_dt')->rules('required'),
+
             DateTime::make('End date','end_dt')->sortable()->rules('required'),
             Text::make('Discount','discount')->sortable(),
             
