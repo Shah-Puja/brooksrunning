@@ -718,8 +718,8 @@ class PaymentController extends Controller {
     }
 
     public function ap21order($person_id) {
-        echo "<pre>";
-        print_r($this->order);
+        //echo "<pre>";
+        //print_r($this->order);
         //exit;
         $order = Order::where('id', $this->order->id)->first();
         $returnVal = false;
@@ -786,10 +786,6 @@ class PaymentController extends Controller {
                       <Country></Country>
                     </Delivery>
                 </Addresses>";
-
-
-        echo $xml_data;
-        exit;
         $carrier = $servicetype = '';
         if ($order->delivery_type == "express") {
             $carrier = 'AUS';
