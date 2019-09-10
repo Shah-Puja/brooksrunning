@@ -651,7 +651,7 @@ class PaymentController extends Controller {
                         </Addresses>
                       </Person>";
 
-        $response = $this->bridge->processPerson($person_xml);
+        $response = $this->bridge->processPerson($person_xml,$this->order);
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
         $logger = array(
             'order_id' => $this->order->id,
@@ -940,7 +940,7 @@ class PaymentController extends Controller {
         //echo $xml_data;
 
         $this->order->updateOrder_xml($xml_data);
-        $response = $this->bridge->processOrder($person_id, $xml_data);
+        $response = $this->bridge->processOrder($person_id, $xml_data, $this->order);
         $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();

@@ -4,6 +4,7 @@ namespace App\SYG\Bridges;
 
 use GuzzleHttp\Exception\RequestException;
 use Exception;
+use App\Models\Order;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -88,7 +89,7 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
-    public function processPerson($data) {
+    public function processPerson($data, $order_data) {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
         try {
             $response = $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
@@ -97,16 +98,51 @@ class AP21Bridge implements BridgeInterface {
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
+
+                $logger = array(
+                    'order_id' => $order_data->id,
+                    'log_title' => 'Person',
+                    'log_type' => 'Response',
+                    'log_status' => 'Error While Creating Person ID - RequestException',
+                    'result' => $e->getMessage(),
+                );
+    
+                $mail_data = array(
+                    'api_name' => 'Create Person Error - RequestException',
+                    'URL' => env('AP21_URL') . 'Persons/?countryCode=AUFIT',
+                    'Result' => $e->getMessage(),
+                    'Parameters' => $data,
+                );
+
+                Order::orderap21_alert($order_data, $mail_data, $logger);
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
+
+                $logger = array(
+                    'order_id' => $order_data->id,
+                    'log_title' => 'Person',
+                    'log_type' => 'Response',
+                    'log_status' => 'Error While Creating Person ID - Exception',
+                    'result' => $e->getMessage(),
+                );
+    
+                $mail_data = array(
+                    'api_name' => 'Create Person Error - Exception',
+                    'URL' => env('AP21_URL') . 'Persons/?countryCode=AUFIT',
+                    'Result' => $e->getMessage(),
+                    'Parameters' => $data,
+                );
+
+                Order::orderap21_alert($order_data, $mail_data, $logger);
                 return null;
             }
         }
     }
 
-    public function processOrder($PersonId, $data) {
+    public function processOrder($PersonId, $data, $order_data) {
+
         try {
             $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
             if (!empty($response)) {
@@ -114,10 +150,42 @@ class AP21Bridge implements BridgeInterface {
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
+                    $logger = array(
+                        'order_id' => $order_data->id,
+                        'log_title' => 'Order',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Creating Order - RequestException',
+                        'result' => $e->getMessage(),
+                    );
+        
+                    $mail_data = array(
+                        'api_name' => 'Create Order Error - RequestException',
+                        'URL' => env('AP21_URL') . 'Persons/' . $PersonId . '/Orders/?countryCode=AUFIT',
+                        'Result' => $e->getMessage(),
+                        'Parameters' => $data,
+                    );
+
+                    Order::orderap21_alert($order_data, $mail_data, $logger);
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
+                    $logger = array(
+                        'order_id' => $order_data->id,
+                        'log_title' => 'Order',
+                        'log_type' => 'Response',
+                        'log_status' => 'Error While Creating Order - Exception',
+                        'result' => $e->getMessage(),
+                    );
+
+                    $mail_data = array(
+                        'api_name' => 'Create Order Error - Exception',
+                        'URL' => env('AP21_URL') . 'Persons/' . $PersonId . '/Orders/?countryCode=AUFIT',
+                        'Result' => $e->getMessage(),
+                        'Parameters' => $data,
+                    );
+
+                    Order::orderap21_alert($order_data, $mail_data, $logger);
                 return null;
             }
         }
