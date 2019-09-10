@@ -95,7 +95,7 @@
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Introducing the Shine Collection: brilliant new colours for the Revel 3. Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+							<p>Introducing the Revel 3 shine collection: Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
 							<a class="primary-button" href="/collections/revel-3-shine-collection"> Shop Revel 3 Shine</a>
 					</div> 
 				</div>

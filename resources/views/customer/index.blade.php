@@ -42,7 +42,7 @@
 			        <h3>&nbsp;<br/>Revel 3 Shine</h3>
 				</div>
 				<div class="info-wrapper">
-					<p> Introducing the shine collection: brilliant new colours for the Revel 3. Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
 					<a href="/collections/revel-3-shine-collection">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
@@ -55,7 +55,8 @@
 			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.<br/>&nbsp;  </p>
+					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.</p>
+					<!-- <br/>&nbsp;  </p> -->
 					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
@@ -68,7 +69,8 @@
 			        <h3>&nbsp; <br/> Make a splash! </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.<br/>&nbsp; </p>
+					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.</p>
+					<!-- <br/>&nbsp;  </p> -->
 					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
