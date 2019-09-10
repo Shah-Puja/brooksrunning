@@ -4641,6 +4641,7 @@ textarea {
   color: #0E0E0E;
   font-size: 18px;
   line-height: 26px;
+  margin: 0px auto;
 }
 .collection-intro div .shop-all {
   text-align: left !important;
