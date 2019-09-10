@@ -91,60 +91,29 @@ class AP21Bridge implements BridgeInterface {
 
     public function processPerson($data, $order_data) {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+        $url='Persons/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
             if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
-            if ($e->getMessage() != '') {
-
-                $logger = array(
-                    'order_id' => $order_data->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Person ID - RequestException',
-                    'result' => $e->getMessage(),
-                );
-    
-                $mail_data = array(
-                    'api_name' => 'Create Person Error - RequestException',
-                    'URL' => env('AP21_URL') . 'Persons/?countryCode=AUFIT',
-                    'Result' => $e->getMessage(),
-                    'Parameters' => $data,
-                );
-
-                Order::orderap21_alert($order_data, $mail_data, $logger);
+            if ($e->getMessage() != '') {                
+                Order::ap21_error('Person API',$url,$data, $order_data,$e->getMessage());
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
-
-                $logger = array(
-                    'order_id' => $order_data->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Person ID - Exception',
-                    'result' => $exception->getMessage(),
-                );
-    
-                $mail_data = array(
-                    'api_name' => 'Create Person Error - Exception',
-                    'URL' => env('AP21_URL') . 'Persons/?countryCode=AUFIT',
-                    'Result' => $exception->getMessage(),
-                    'Parameters' => $data,
-                );
-
-                Order::orderap21_alert($order_data, $mail_data, $logger);
+                Order::ap21_error('Person API',$url,$data, $order_data,$exception->getMessage());
                 return null;
             }
         }
     }
 
     public function processOrder($PersonId, $data, $order_data) {
-
+        $url='Persons/' . $PersonId . '/Orders/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
             if (!empty($response)) {
                 return $response;
             }

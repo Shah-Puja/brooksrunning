@@ -128,4 +128,22 @@ class Order extends Model
                     ->cc(config('site.syg_notify_email'))
                     ->send(new OrderAp21Alert($order_data, $data));
     }
+    public function ap21_error($api,$url,$payload,$object_id,$error)
+    {
+        # code...
+        /*
+        $logger = array(
+            'process' =>'$api',                
+            'request' => $payload,
+            'response' => $error,  
+            'object_id'=>$object_id;            
+        );    
+        Ap21_log::createNew($logger);
+        */
+        # send mail
+        # API - {{ $api }}<br>
+        # URL - {{ $url }}<br>
+        # Error - {{ $error }}<br>
+        # Parameters - {{ $payload }}<br>
+    }
 }
