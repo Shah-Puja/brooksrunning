@@ -38,7 +38,7 @@ class Kernel extends ConsoleKernel
                     ->hourly()
                     ->between('5:00', '22:00');
                 //$schedule->command('medibank-export')->cron('20 17 29 8 *');
-                $schedule->command('medibank-export')->tuesdays();                  
+                $schedule->command('medibank-export')->tuesdays()->at('8:00');                   
                 break;        
                 /*$schedule->command('icontact-push')
                     ->everyFiveMinutes();                                               
