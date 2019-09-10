@@ -89,14 +89,14 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Womens/women_ghost12_2.jpg">
+						<img src="/images/landingpage/Womens/women_revel3_shine.jpg">
 					    <div class="title">
-					       <h2 class="happy left">&nbsp;<br>Ghost 12</h2>
+					       <h2 class="happy left">&nbsp;<br>Revel 3 shine collection</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>The Ghost 12 offers a smooth ride balanced with soft cushioning to provide a secure fit and plenty of comfort no matter how far you run.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ghost-12-womens/120305_413.html"> Shop Ghost 12</a>
+							<p>Introducing the Shine Collection: brilliant new colours for the Revel 3. Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+							<a class="primary-button" href="/collections/revel-3-shine-collection"> Shop Revel 3 Shine</a>
 					</div> 
 				</div>
 				<div class="tab-6">
