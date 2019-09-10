@@ -125,13 +125,13 @@ class AP21Bridge implements BridgeInterface {
                     'log_title' => 'Person',
                     'log_type' => 'Response',
                     'log_status' => 'Error While Creating Person ID - Exception',
-                    'result' => $e->getMessage(),
+                    'result' => $exception->getMessage(),
                 );
     
                 $mail_data = array(
                     'api_name' => 'Create Person Error - Exception',
                     'URL' => env('AP21_URL') . 'Persons/?countryCode=AUFIT',
-                    'Result' => $e->getMessage(),
+                    'Result' => $exception->getMessage(),
                     'Parameters' => $data,
                 );
 
@@ -175,13 +175,13 @@ class AP21Bridge implements BridgeInterface {
                         'log_title' => 'Order',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Creating Order - Exception',
-                        'result' => $e->getMessage(),
+                        'result' => $exception->getMessage(),
                     );
 
                     $mail_data = array(
                         'api_name' => 'Create Order Error - Exception',
                         'URL' => env('AP21_URL') . 'Persons/' . $PersonId . '/Orders/?countryCode=AUFIT',
-                        'Result' => $e->getMessage(),
+                        'Result' => $exception->getMessage(),
                         'Parameters' => $data,
                     );
 
