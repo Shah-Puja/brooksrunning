@@ -38,13 +38,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/20190715/hp_sm_revel.jpg">
-			        <h3>&nbsp;<br/>Revel 3</h3>
+					<img src="/images/home/20190910/hp_sm_revel_shine.jpg">
+			        <h3>&nbsp;<br/>Revel 3 Shine</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>The new Revel 3 features a lower profile with a street-ready upper for days that have you running errands and workouts.</p>
-					<a href="/brooks-running-shoes-revel-3-womens/120302_012.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				
+					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+					<a href="/collections/revel-3-shine-collection">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
 			</div>
 		</div>
@@ -55,7 +55,8 @@
 			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.<br/>&nbsp;  </p>
+					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.</p>
+					<!-- <br/>&nbsp;  </p> -->
 					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
@@ -64,13 +65,14 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/hp_sm_ghost12.jpg">
-			        <h3>&nbsp; <br/>Ghost 12 </h3>
+					<img src="/images/home/20190910/hp_sm_ghost12_splash.jpg">
+			        <h3>&nbsp; <br/> Make a splash! </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>The latest Ghost 12 offer a just-right balance of DNA LOFT softness and BioMoGo DNA responsiveness.<br/>&nbsp; </p>
-					<a href="/brooks-running-shoes-ghost-12-mens/110316_489.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
-					<span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
+					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.</p>
+					<!-- <br/>&nbsp;  </p> -->
+					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
 			</div>
 		</div>
