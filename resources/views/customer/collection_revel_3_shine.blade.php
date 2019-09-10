@@ -3,19 +3,19 @@
 
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <style>
+/* CSS  only for revel 3 */
+    .plp-wrapper-container .plp-wrapper__sub{
+        margin: 15px 0 16px;
+    }
+/* End revel 3 css */
+
+/* CSS only for this page */
 @media screen and (orientation: landscape){
     .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
         width: 215px !important;
     }
 }
-/* CSS  only for revel 3 */
 
-
-    .plp-wrapper-container .plp-wrapper__sub{
-        margin: 15px 0 16px;
-    }
-/* End revel 3 css */
-/* CSS only for this page */
 .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel{
     max-width: 325px !important;     width: 100% !important; 
 }
@@ -30,30 +30,20 @@ and (orientation : landscape) {
     }
 }
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+/* ##Device = Desktops  ##Screen = 1281px to higher resolution desktops */
 
 @media (min-width: 1281px) {
-  
     .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
         width: 54px !important;
     }
-  
 }
 
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  
     .plp-wrapper-container .plp-wrapper__sub .plp-product .more-color--container .owl-carousel .owl-item {
         width: 54px !important;
     }
-  
 }
 
    </style>
