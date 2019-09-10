@@ -5921,7 +5921,6 @@ textarea {
   font-size: 45px;
   line-height: 1;
   width: 100%;
-  letter-spacing: 2px;
 }
 @media only screen and (max-width: 767px) {
   .category__hero .large {
@@ -5998,7 +5997,7 @@ textarea {
 .category__hero .m-block--hero--collection__content p {
   color: #fff;
   margin: 2rem 0;
-  font-size: 17px;
+  font-size: 16.5px;
   line-height: 22px;
   padding: 0 15px;
   width: 70%;
@@ -6220,6 +6219,16 @@ textarea {
   margin: 0 0 9px;
   text-align: center;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .collection-intro h1 {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .collection-intro h1 {
+    font-size: 30px;
+  }
+}
 .collection-intro h2 {
   color: #0E0E0E;
   margin: 0 0 9px;
@@ -6229,15 +6238,17 @@ textarea {
 .collection-intro p {
   max-width: 100%;
   color: #0E0E0E;
-  font-size: 22px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 26px;
   text-align: center;
+  margin: 0px auto;
 }
 .collection-intro div {
   max-width: 100%;
   color: #0E0E0E;
   font-size: 18px;
   line-height: 26px;
+  margin: 0px auto;
 }
 .collection-intro div .shop-all {
   text-align: left !important;
@@ -6506,8 +6517,50 @@ textarea {
   margin: 0 auto;
 }
 
-/* End Collection-Listing
-*/
+.pr-collection-page .prod-desc--wrapper {
+  padding: 5px 0;
+}
+.pr-collection-page .prod-desc--wrapper .collection-cate--link {
+  position: relative;
+  margin: 20px 0;
+  text-align: center;
+}
+.pr-collection-page .prod-desc--wrapper .collection-cate--link img {
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .pr-collection-page .prod-desc--wrapper .collection-cate--link img {
+    width: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pr-collection-page .prod-desc--wrapper .padding_0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pr-collection-page .prod-desc--wrapper {
+    padding: 0px 0;
+  }
+}
+.pr-collection-page.pl-0 {
+  padding-left: 0 !important;
+}
+.pr-collection-page.pr-0 {
+  padding-right: 0 !important;
+}
+.pr-collection-page.collectionpg-bottom--banner {
+  padding-bottom: 25px;
+}
+@media only screen and (max-width: 767px) {
+  .pr-collection-page.collectionpg-bottom--banner {
+    padding-bottom: 0px;
+  }
+}
+
+/* End Collection-Listing*/
 /* Start Our-purpose */
 .brooksourpurpose #top {
   background-color: #3caf8c;
