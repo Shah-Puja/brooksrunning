@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderAp21Alert extends Mailable
+class Ap21Alert extends Mailable
 {
     use Queueable, SerializesModels;
 

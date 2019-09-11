@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use App\Mail\OrderAp21Alert;
+use App\Mail\Ap21Alert;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Order_log;
 
@@ -121,7 +122,7 @@ class Order extends Model
         return $this->belongsTo('App\Models\User', 'id');
     }
 
-    public function orderap21_alert($order_data, $mail_data){
+    public static function orderap21_alert($order_data, $mail_data){
 
         Order_log::createNew($order_log);
         Mail::to(config('site.notify_email'))
@@ -129,7 +130,7 @@ class Order extends Model
                     ->send(new OrderAp21Alert($order_data, $data));
     }
     
-    public function ap21_error($api,$url,$payload,$object_id,$error){
+    public static function ap21_error($api,$url,$payload,$object_id,$error){
         Ap21_log::createNew([
                     'process' =>$api,                
                     'request' => $payload,

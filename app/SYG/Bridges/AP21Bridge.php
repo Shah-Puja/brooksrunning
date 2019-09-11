@@ -80,7 +80,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
     }
 
-    public function getPersonid($email,$object_id) {
+    public function getPersonid($email,$object_id='0') {
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
         $url='Persons/?countryCode=AUFIT&email=' . $email;
         try {
@@ -101,7 +101,7 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
-    public function processPerson($data, $object_id) {
+    public function processPerson($data, $object_id='0') {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
         $url='Persons/?countryCode=AUFIT';
         try {
