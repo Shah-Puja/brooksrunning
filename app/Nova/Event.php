@@ -21,7 +21,7 @@ class Event extends Resource
      * @var string
      */
 
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;
     public static $model = 'App\Models\Event';
 
 
@@ -38,7 +38,7 @@ class Event extends Resource
      * @var array
      */
     public static $search = [
-        'event_name','event_dt'
+        'event_name','start_dt'
     ];
 
    
@@ -62,10 +62,9 @@ class Event extends Resource
             })->hideFromIndex(),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
             Text::make('Event Date String ','date_str')->sortable(),
-            Text::make('Event Date ','event_dt')->hideFromIndex(),
-            Text::make('Month','month')->hideFromIndex(),
-            Text::make('Year','year')->sortable(),
-            Text::make('Next Event Date','next_event_dt')->hideFromIndex(),
+            Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
             Text::make('City','city')->hideFromIndex(),
             Text::make('State','state')->hideFromIndex(),
             Text::make('Country','country')->hideFromIndex(),
