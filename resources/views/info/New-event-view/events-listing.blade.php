@@ -189,7 +189,7 @@
                             {{str_replace(' ','_',date('m-Y',strtotime('-1 year', strtotime($upcoming_events->next_dt->toDateTimeString()))))}}
                         @endif">
                             <div class="event-section">
-                            {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->next_dt->toDateTimeString())))}}
+                            
                                 <a href="/events/{{$upcoming_events->slug}}" >
                                     <div class="img">
                                         @if(!empty($upcoming_events->logo))  

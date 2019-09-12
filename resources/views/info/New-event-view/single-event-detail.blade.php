@@ -55,7 +55,7 @@
                     <img src="/images/new-events/event-logo-placeholder.png">
                 @endif
             </div>
-            @if($single_event->end_dt < date('Y-m-d') && $single_event->end_dt!=00)
+            @if($single_event->end_dt->toDateTimeString() < date('Y-m-d') && $single_event->end_dt->toDateTimeString()!=00)
             <h2>{{date('F Y',strtotime($single_event->next_dt))}} </h1>
             @else
             <h2>{{$single_event->date_str}} </h1>
@@ -63,7 +63,7 @@
             <h4>{{$single_event->city}}</h4>
             <hr  class="event-single-underline"/>
             <p>{!!$single_event->content!!}</p>
-            @if($single_event->end_dt < date('Y-m-d') || $single_event->end_dt==00)
+            @if($single_event->end_dt->toDateTimeString() < date('Y-m-d') || $single_event->end_dt->toDateTimeString()==00)
             <div class="stay-tuned">
                 <p class="info">Stay tuned for more details on this event.</p>
 		        <p class="event-signup"><a href="/meet_brooks/enewsletter" target="_blank" style="color:#005CFB;">Sign up</a> to our newsletter for event updates.</p> 

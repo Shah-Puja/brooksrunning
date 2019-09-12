@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Date;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Support\Facades\Storage;
@@ -53,6 +53,7 @@ class Event extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
+            Text::make('Event Header','event_header')->hideFromIndex()->rules('required', 'max:255'),
             Text::make('Slug','slug')->hideFromIndex()->rules('required', 'max:255'),
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
@@ -65,9 +66,9 @@ class Event extends Resource
             // Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
-            DateTime::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
-            DateTime::make(__('End date'), 'end_dt')->hideFromIndex()->rules('required', 'max:255'),
-            DateTime::make(__('Next Event date'), 'next_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make(__('End date'), 'end_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make(__('Next Event date'), 'next_dt')->hideFromIndex()->rules('required', 'max:255'),
 
             Text::make('City','city')->hideFromIndex(),
             Text::make('State','state')->hideFromIndex(),
