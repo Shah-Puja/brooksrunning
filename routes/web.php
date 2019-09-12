@@ -147,6 +147,8 @@ Route::get('/events-listing/series-static-event', 'EventController@new_series_st
 
 Route::get('/events-slug','EventController@get_event')->name('events-slug');
 
+//* test image route *//
+Route::get('/serverimages','TestController@get_images');
 
 /* quickhelp static pages */
 // Route::get('/returns-centre', 'quickhelpController@returns_centre');
