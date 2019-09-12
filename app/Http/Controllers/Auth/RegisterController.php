@@ -99,22 +99,6 @@ class RegisterController extends Controller {
                     'user_type' => "User",
         ]);
 
-        $icontact_pushmailuser = DB::table('icontact_pushmail')->insert(
-                ['email' => $data['email'],
-                    'fname' => (isset($data['first_name'])) ? $data['first_name'] : '',
-                    'lname' => (isset($data['last_name'])) ? $data['last_name'] : '',
-                    'gender' => (isset($data['gender'])) ? $data['gender'] : null,
-                    'birth_day' => (isset($data['birthday_date'])) ? $data['birthday_date'] : null,
-                    'birth_month' => (isset($data['birthday_month'])) ? $data['birthday_month'] : null,
-                    'age_group' => (isset($data['age_group'])) ? $data['age_group'] : '',
-                    'state' => (isset($data['state'])) ? $data['state'] : '',
-                    'postcode' => (isset($data['postcode'])) ? $data['postcode'] : null,
-                    'shoe_wear' => (isset($data['shoe_wear'])) ? $data['shoe_wear'] : null,
-                    'source' => "User",
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-        ]);
-
         if ($user->wasRecentlyCreated) {
             $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);

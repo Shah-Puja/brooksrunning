@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers;
-use AWeberAPI;
 use App\Payments\Processor;
 use App\Payments\AfterpayApiClient;
 use App\Payments\AfterpayProcessor;
@@ -72,37 +71,6 @@ class AppServiceProvider extends ServiceProvider {
             return new \App\SYG\Bridges\AP21Bridge($apiClient);
             // return new \App\SYG\Bridges\EntrezoBridge;
         });
-
-        $this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
-            $aweber = new AWeberAPI( config('services.aweber.consumerkey'), config('services.aweber.consumersecret') );
-            return new \App\SYG\Subscribers\AweberSubscriber($aweber);
-        });
-
-        $this->app->bind('App\SYG\Subscribers\iContactSubscriberInterface', function ($app) {
-            $client = \App\SYG\Subscribers\iContactProApi::getInstance();
-            $client->setConfig(array(
-                'appId' => config('services.icontact.appid'),
-                'apiPassword' => config('services.icontact.apipassword'),
-                'apiUsername' => config('services.icontact.apiusername'),
-                'companyId' => config('services.icontact.companyid'),
-                'profileId' => config('services.icontact.profileid')
-            ));
-            return new \App\SYG\Subscribers\iContactSubscriber($client);
-        });
-        
-        /*$this->app->bind('App\SYG\Subscribers\SubscriberInterface', function ($app) {
-            $client = \App\SYG\Subscribers\iContactProApi::getInstance();
-            $client->setConfig(array(
-                'appId' => config('services.icontact.appid'),
-                'apiPassword' => config('services.icontact.apipassword'),
-                'apiUsername' => config('services.icontact.apiusername'),
-                'companyId' => config('services.icontact.companyid'),
-                'profileId' => config('services.icontact.profileid')
-            ));
-            return new \App\SYG\Subscribers\iContactSubscriber($client);
-        });*/
-
-
     }
 
 }

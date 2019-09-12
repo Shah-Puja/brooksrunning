@@ -53,19 +53,4 @@ return [
         'tagmanager_account_id' => env('GTM_ACCOUNT', 'GTM-XXXX123'),
         'maps_api_key' => env('GOOGLE_MAP_API'),
     ],
-    'aweber' => [
-        'consumerkey' => env('AWEBER_CONSUMERKEY'),
-        'consumersecret' => env('AWEBER_CONSUMERSECRET'),
-        'accesskey' => env('AWEBER_ACCESSKEY'),
-        'accesssecret' => env('AWEBER_ACCESSSECRET'),
-        'listid' => env('AWEBER_LISTID'),
-    ], 
-    'icontact' => [
-        'appid' => env('ICONTACT_APPID'),
-        'apipassword' => env('ICONTACT_APIPASSWORD'),
-        'apiusername' => env('ICONTACT_APIUSERNAME'),
-        'companyid' =>  env('ICONTACT_COMPANYID'),
-        'profileid' => env('ICONTACT_PROFILEID'),
-    ],
-
 ];

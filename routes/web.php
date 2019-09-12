@@ -213,12 +213,6 @@ Route::post('/cart/removecoupon', 'CartController@removecoupon');
 Route::get('/manual_ap21order_push/{order_id}', 'Manual_ap21order_push@manual_ap21order_push');
 //Route::get('/move/table', 'MovetableController@index'); 
 
-Route::get('/d/testicontact/add', 'testicontact@add');
-Route::get('/d/testicontact/pull_from_icontact/{run_cnt}', 'testicontact@pull_from_icontact');
-Route::get('/d/testicontact/unsubscribe_list', 'testicontact@unsubscribe_list');
-Route::get('/d/testicontact/push_to_icontact', 'testicontact@push_to_icontact');
-Route::get('/d/testicontact/fetch_icontact_ids_in_web', 'testicontact@fetch_icontact_ids_in_web');
-Route::get('/d/testicontact/push_queued_records_to_icontact', 'testicontact@push_queued_records_to_icontact');
 Route::get('/testap21/test_ap21_personidx', 'testap21@test_ap21_personidx');
 Route::get('/test/media-list', 'testImageList@index');
 Route::get('/test/ManualOrderMail/{from}/{to}', 'ManualOrderMail@index');

@@ -6,11 +6,8 @@ use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
 use App\Models\Competition;
 use App\Models\Competition_user;
-use App\Models\Icontact_pushmail;
 use App\SYG\Bridges\BridgeInterface;
 use App\Models\User;
-//use App\Jobs\ProcessCompetition;
-use App\Events\SubscriptionReceived;
 use Illuminate\Validation\Rule;
 
 class meet_brooksController extends Controller {
@@ -73,28 +70,6 @@ class meet_brooksController extends Controller {
                         ]
         );
 
-        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
-                        [
-                    'email' => request('email'), 'comp_name' => request('comp_name')], [
-                    'source' => 'Competition',
-                    'fname' => request('fname'),
-                    'lname' => request('lname'),
-                    'gender' => request('gender'),
-                    'birth_day' => request('custom_Birth_Date'),
-                    'birth_month' => request('custom_Birth_Month'),
-                    'age_group' => request('custom_Age'),
-                    'postcode' => request('postcode'),
-                    'shoe_wear' => request('custom_Shoes_you_wear'),
-                    'country' => request('country'),
-                    'answer' => request('answer'),
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-                    'training_for' => (isset($request['training_for'])) ? request('training_for') : null,
-                    'likes_to_run' => (isset($request['likes_to_run'])) ? implode(',', $request['likes_to_run']) : null,
-                    'experience_preference' => (isset($request['experience_preference'])) ? implode(',', $request['experience_preference']) : null,
-                        ]
-        );
-
         //ap21 order process 
         $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => request('fname'),
                     'last_name' => request('lname'),
@@ -120,27 +95,7 @@ class meet_brooksController extends Controller {
             }
         }
 
-        if ($competition->wasRecentlyCreated) {
-            // Update Or Create competition user in Aweber               
-            /* $subscriber = array(
-              'email' => request('email'),
-              'name' => request('fname') . " " . request('lname'),
-              'ad_tracking' => 'Competition',
-              'misc_notes' => request('comp_name'),
-              'custom_fields' => array(
-              'Post Code' => request('postcode'),
-              'Gender' => request('gender'),
-              'Birth Day' => request('custom_Birth_Date'),
-              'Birth Month' => request('custom_Birth_Month'),
-              'Age' => request('custom_Age'),
-              'Country' => request('country'),
-              'Shoes you wear' => request('custom_Shoes_you_wear'),
-              'Contest Code' => request('comp_name'),
-              'Competition Answer' => request('answer'),
-              ),
-              );
-              ProcessCompetition::dispatch($subscriber); */
-            Competition_user::where('email', request('email'))->where('comp_name', request('comp_name'))->update(['comp_aweber_exist' => 'Yes']);
+        if ($competition->wasRecentlyCreated) {            
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Thanks for entering. Good Luck! </p>']);
         } else {
             return response()->json(['success' => '<p class="heading">Thank for your interest! </p> <p class="thankyou_heading">You have already entered the competition.</p>']);
@@ -253,21 +208,6 @@ class meet_brooksController extends Controller {
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
                     'user_type' => 'Subscriber']);
-        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
-                        ['email' => request('email')], ['fname' => request('fname'),
-                    'lname' => request('lname'),
-                    'gender' => request('gender'),
-                    'birth_day' => request('custom_Birth_Date'),
-                    'birth_month' => request('custom_Birth_Month'),
-                    'age_group' => request('custom_Age'),
-                    'postcode' => request('postcode'),
-                    'shoe_wear' => request('custom_Shoes_you_wear'),
-                    'country' => request('country'),
-                    'happy_runner_comp' => request('contest_code'),
-                    'source' => 'Subscriber',
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID')
-        ]);
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
@@ -285,8 +225,6 @@ class meet_brooksController extends Controller {
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
         } else {
             User::where('email', request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
-            /* $user = User::where('email', request('email'))->first();
-              event(new SubscriptionReceived($user)); */
             if (request('contest_code') != '') {
                 return response()->json(['success' => '<p class="heading">Thanks for your interest! </p> <p class="thankyou_heading">Thank you for signing up.</p>']);
             } else {
@@ -294,33 +232,6 @@ class meet_brooksController extends Controller {
             }
         }
     }
-
-    /* public function update_previous_competitions() {
-      ini_set('max_execution_time', 300);
-      $competition_user = Competition_user::where('comp_aweber_exist', 'No')->limit(15)->get();
-      foreach ($competition_user as $curr_user) {
-      echo"<br>" . $curr_user->id . "-" . $curr_user->email . " - " . $curr_user->comp_name;
-      //print_r($curr_user);
-      $subscriber = array(
-      'email' => $curr_user->email,
-      'name' => $curr_user->fname . " " . $curr_user->lname,
-      'ad_tracking' => 'Competition',
-      'misc_notes' => $curr_user->comp_name,
-      'custom_fields' => array(
-      'Post Code' => $curr_user->postcode,
-      'Gender' => $curr_user->gender,
-      'Age' => $curr_user->age_group,
-      'Country' => $curr_user->country,
-      'Shoes you wear' => $curr_user->shoes_wear,
-      'Contest Code' => $curr_user->comp_name,
-      ),
-      );
-      //$this->client->updateoradd_Subscriber($subscriber);
-      ProcessCompetition::dispatch($subscriber);
-      Competition_user::where('id', $curr_user->id)->update(['comp_aweber_exist' => 'Yes']);
-      //exit;
-      }
-      } */
 
     public function rh_comp_thank_you() {
         return view('meet_brooks.competition.thank_you');
@@ -364,15 +275,6 @@ class meet_brooksController extends Controller {
                 User::where('email', request('email'))->update(['person_idx' => $PersonID]);
             }
         }
-        $icontact_pushmail = Icontact_pushmail::firstOrCreate(
-                        ['email' => request('email')], ['fname' => $fname,
-                    'lname' => $lname,
-                    'source' => 'Subscriber',
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID')
-        ]);
-        //$user = User::where('email', request('email'))->first();
-        //event(new SubscriptionReceived($user));
         return view('meet_brooks.thank-you-signup', compact('signup'));
     }
 
@@ -395,16 +297,6 @@ class meet_brooksController extends Controller {
         if (isset($Person)) {
             $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
         }
-        Icontact_pushmail::where('email', request('email'))->update(['fname' => request('fname'),
-            'lname' => request('lname'), 'gender' => request('gender'),
-            'birth_day' => request('custom_Birth_Date'),
-            'birth_month' => request('custom_Birth_Month'),
-            'age_group' => request('custom_Age'),
-            'postcode' => request('postcode'), 'shoe_wear' => request('custom_Shoes_you_wear'),
-            'country' => request('country'), 'happy_runner_comp' => request('contest_code'),
-            'status' => 'queue', 'list_id' => env('ICONTACT_LIST_ID')]);
-        //$user = User::where('email', request('email'))->first(); 
-        //event(new SubscriptionReceived($user)); // to update the other details in aweber
         if (request('signup') == 1) {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);

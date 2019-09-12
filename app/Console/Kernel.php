@@ -32,23 +32,13 @@ class Kernel extends ConsoleKernel
                     ->cron('00 3 * * *');       
                 $schedule->command('algolia:sync')
                     ->cron('05 3 * * *'); 
-                $schedule->command('icontact-queue-push')
-                    ->everyFifteenMinutes();
                 $schedule->command('stock_refresh')
                     ->hourly()
                     ->between('5:00', '22:00');
-                //$schedule->command('medibank-export')->cron('20 17 29 8 *');
                 $schedule->command('medibank-export')->tuesdays()->at('8:00');                   
                 break;        
-                /*$schedule->command('icontact-push')
-                    ->everyFiveMinutes();                                               
-                break;*/ 
             /*case 'dev' : 
-                $schedule->command('icontact-queue-push')
-                    ->everyFifteenMinutes();   
-               case 'staging' : 
-                $schedule->command('icontact-queue-push')
-                    ->everyFifteenMinutes();                  
+              case 'staging' : 
                 break; */
            
         endswitch;

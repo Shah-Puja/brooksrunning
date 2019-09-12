@@ -11,7 +11,6 @@ use App\Models\Order_log;
 use App\Models\Order_number;
 use App\Models\Order_address;
 use App\Models\User;
-use App\Models\Icontact_pushmail;
 use App\Payments\Processor;
 use App\Events\OrderReceived;
 use App\Mail\OrderUser;
@@ -158,9 +157,6 @@ class PaymentController extends Controller {
                 }
 
                 $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
-                if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
-                    $this->add_orders_in_icontact_pushmail($user_addr_detail);
-                }
 
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
@@ -463,10 +459,7 @@ class PaymentController extends Controller {
                 $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
             }
 
-            $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();
-            if (isset($user_addr_detail) && $user_addr_detail->signme == 1) {
-                $this->add_orders_in_icontact_pushmail($user_addr_detail);
-            }
+            $user_addr_detail = Order_address::where('email', '=', $this->order->address->email)->first();            
 
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
@@ -1066,21 +1059,6 @@ class PaymentController extends Controller {
             }
         }
         return $dataValue;
-    }
-
-    public function add_orders_in_icontact_pushmail($detail) {
-        $icontact_pushmail = Icontact_pushmail::firstOrCreate([
-                    'email' => $detail->email], [
-                    'source' => 'Order',
-                    'fname' => $detail->s_fname,
-                    'lname' => $detail->s_lname,
-                    'postcode' => $detail->s_postcode,
-                    'phone' => $detail->s_phone,
-                    'city' => $detail->s_city,
-                    'state' => $detail->s_state,
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
-        ]);
     }
 
 }
