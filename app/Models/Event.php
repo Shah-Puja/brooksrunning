@@ -8,9 +8,9 @@ class Event extends Model
 {
     protected $table = 'events';
     protected $casts = [
-        'start_dt' => 'date',
-        'end_dt' => 'date',
-        'next_dt' => 'date'
+         'start_dt' => 'datetime',
+         'end_dt' => 'datetime',
+         'next_dt' => 'datetime'
     ];
     const CREATED_AT = null;
 }
