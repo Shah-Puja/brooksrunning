@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Support\Facades\Storage;
@@ -62,9 +62,13 @@ class Event extends Resource
             })->hideFromIndex(),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
             Text::make('Event Date String ','date_str')->sortable(),
-            Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
-            Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
-            Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
+            // Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
+            // Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
+            // Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
+            DateTime::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
+            DateTime::make(__('End date'), 'end_dt')->hideFromIndex()->rules('required', 'max:255'),
+            DateTime::make(__('Next Event date'), 'next_dt')->hideFromIndex()->rules('required', 'max:255'),
+
             Text::make('City','city')->hideFromIndex(),
             Text::make('State','state')->hideFromIndex(),
             Text::make('Country','country')->hideFromIndex(),
