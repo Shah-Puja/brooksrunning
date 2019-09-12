@@ -2574,8 +2574,7 @@ ul {
   .large {
     font-size: 45px;
     line-height: 1.0;
-    width:100%;
-    letter-spacing: 2px;
+    width:100%; 
     @media #{$mobile-only}{
       font-size: 30px;
       width:100%;
@@ -2634,7 +2633,7 @@ ul {
   p {
     color: #fff;
     margin: 2rem 0;
-    font-size:17px;
+    font-size:16.5px;
     line-height:22px; 
     @extend %info-font;
     padding: 0 15px;
@@ -2849,8 +2848,15 @@ width: 100%;
   h1{
     color:#0E0E0E;
     margin: 0 0 9px;
-    @extend %extrabold-font;
+    @extend %extrabold-font; 
     text-align: center;
+  
+    @media #{$tab-only}{
+      font-size:28px;
+    }
+    @media #{$desktop-only}{
+      font-size:30px;
+    }
   }
   h2{
     color:#0E0E0E;
@@ -2862,16 +2868,18 @@ width: 100%;
   p{
     max-width: 100%;
     color:#0E0E0E;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 26px;
     @extend %info-font;
     text-align: center;
+    margin: 0px auto;
   }
   div{
     max-width: 100%;
     color:#0E0E0E;
     font-size: 18px;
     line-height: 26px;
+    margin:0px auto;
     @extend %info-font;
     
     .shop-all{
@@ -3114,8 +3122,48 @@ width: 100%;
   text-align: center;
   margin: 0 auto;
 }
-/* End Collection-Listing
-*/
+
+.pr-collection-page{
+  .prod-desc--wrapper{
+    padding: 5px 0;
+    .collection-cate--link{
+      position: relative;
+      margin: 20px 0;
+      text-align: center;
+      img{
+        width:100%;
+        @media #{$mobile-only}{
+          width: auto;
+          max-width: 100%;
+        }
+      }
+      
+    }
+    .padding_0{
+      @media #{$mobile-only}{
+        padding-left:0 !important;
+        padding-right: 0 !important;
+      }
+    }
+    @media #{$mobile-only}{
+      padding: 0px 0;
+    }
+  }
+    &.pl-0{
+    padding-left:0 !important;
+    }
+    &.pr-0{
+        padding-right: 0 !important;
+    }
+  &.collectionpg-bottom--banner{
+    padding-bottom:25px;
+    @media #{$mobile-only}{
+      padding-bottom:0px;
+    }
+  }
+}
+
+/* End Collection-Listing*/
 
 /* Start Our-purpose */
 .brooksourpurpose{
