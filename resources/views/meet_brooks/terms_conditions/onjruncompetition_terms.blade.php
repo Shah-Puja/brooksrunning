@@ -2,7 +2,7 @@
   <p><strong><u>Olivia Newton-John Wellness Walk & Research Run Competition Terms &amp; Conditions</u></strong></p>
 <ol>
     <li>Information on &quot;How to Enter&quot; and prizes form part of these Conditions of Entry.</li>
-    <li>Entry is open to Victorian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
+    <li>Entry is open to Australian residents, except employees of Texas Peak Pty Ltd or Bocara Limited and their immediate families.</li>
     <li>The entire Promotional period commences on Monday 16th September and closes on Sunday 6th October 2019. The winner will be selected on 7th Ocobter 2019 at 12:00pm AEST on the premises of Texas Peak, 30 Tullamarine Park Rd, Tullamarine, Vic, <i>Australia</i>. The winner will be notified by email.</li>
     <li>To enter participants must complete a competition entry form at <a href="https://www.brooksrunning.com.au/meet_brooks/competition/ONJruncompetition">https://www.brooksrunning.com.au/meet_brooks/competition/ONJruncompetition</a>  during the dates specified above. It is the participant&apos;s responsibility to ensure all details are full and correct before submitting their entry form.</li> 
     <li>Entries not completed in accordance with the Conditions of Entry or received after close of entry will not be considered. Incomplete or incorrect entries will be disregarded. The Promoter reserves the right to verify the validity of entries and reserves the right to disqualify any entrant for tampering with the entry process. The judge&apos;s decision in relation to any aspect of the Promotion is final and binding on every person who enters. </li>
