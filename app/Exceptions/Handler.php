@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Exceptions;
-
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
+use DB;
 class Handler extends ExceptionHandler
 {
     /**
@@ -15,7 +13,6 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         //
     ];
-
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
@@ -25,7 +22,6 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
     /**
      * Report or log an exception.
      *
@@ -36,7 +32,6 @@ class Handler extends ExceptionHandler
     {
         parent::report($exception);
     }
-
     /**
      * Render an exception into an HTTP response.
      *
@@ -50,11 +45,12 @@ class Handler extends ExceptionHandler
             if ($exception->getStatusCode() == 404) {
                 return response()->view('errors.' . '404', [], 404);
             }
-
             /*if ($exception->getStatusCode() == 500) {
                 return response()->view('errors.' . '500', [], 500);
             }*/
         }
-        return parent::render($request, $exception);
+        $images = DB::connection('mysql')->table("errorpages")->where('status',1)->first();
+        return response()->view('errors.' . '404',compact('images'), 404);
+        // return parent::render($request, $exception);
     }
 }
