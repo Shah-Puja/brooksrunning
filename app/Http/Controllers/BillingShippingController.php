@@ -94,9 +94,15 @@ class BillingShippingController extends Controller
         //  exit;
         
         $user_id = $this->cart->user_id;
+        $user_data = User::where("email","=",$validatedAddress['email'])->first();
+        $user_data->newsletter = isset($validatedAddress['signme']) ? 1 : 0; /// update newsletter field in user table
+        $user_data->save();
+
         if(auth()->user()){
             if($this->cart['user_id']==''){
-                $user_data = User::where("email","=",$validatedAddress['email'])->first();
+                // $user_data = User::where("email","=",$validatedAddress['email'])->first();
+                // $user_data->newsletter = isset($validatedAddress['signme']) ? 1 : 0; /// update newsletter field in user table
+                // $user_data->save(); 
                 //$user_id = $user_data->id;
                 $user_id = (!empty($user_data) && isset($user_data->id)) ? $user_data->id : '';
             }

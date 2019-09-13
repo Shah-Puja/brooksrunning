@@ -253,6 +253,7 @@ class meet_brooksController extends Controller {
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
                     'user_type' => 'Subscriber']);
+                    
         $icontact_pushmail = Icontact_pushmail::firstOrCreate(
                         ['email' => request('email')], ['fname' => request('fname'),
                     'lname' => request('lname'),

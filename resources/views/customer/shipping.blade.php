@@ -349,7 +349,7 @@
                                     <div class="col-12">
                                         <div class="input-wrapper">
                                             <div class="checklist-inline">
-                                                <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif>
+                                                <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
                                                        <label for="signme">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
