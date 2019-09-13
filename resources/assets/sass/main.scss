@@ -3191,6 +3191,9 @@ width: 100%;
     }
     &.melts-comp-bottom-banner{
         padding-top: 10px;
+        @media #{$mobile-only}{
+          padding-top: 15px;
+        }
     }
   }
 }

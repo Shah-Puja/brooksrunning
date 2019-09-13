@@ -6595,6 +6595,11 @@ textarea {
 .pr-collection-page.collectionpg-bottom--banner.melts-comp-bottom-banner {
   padding-top: 10px;
 }
+@media only screen and (max-width: 767px) {
+  .pr-collection-page.collectionpg-bottom--banner.melts-comp-bottom-banner {
+    padding-top: 15px;
+  }
+}
 
 /* End Collection-Listing*/
 /* Start Our-purpose */

@@ -87,7 +87,7 @@
       <div class="col-8">
       	<div class="about-header">
             <!-- <h1 class="br-mainheading">Your time to shine with the new Revel 3</h1> -->
-            <p>Celebrate new personal records this summer with the only thing better than a trophy: ice cream. The Melts Collection, featuring the Ghost 12 and Ricochet is inspired by our favourite reward for a run well done, served cold.</p>
+            <p>Celebrate new personal records this summer with the only thing better than a trophy: ice cream. <br class="hidden-col hidden-tab visible-mob "/><br class="hidden-col hidden-tab visible-mob "/> The Melts Collection, featuring the Ghost 12 and Ricochet is inspired by our favourite reward for a run well done, served cold.</p>
         </div>
       </div>
       <div class="col-2"></div>
