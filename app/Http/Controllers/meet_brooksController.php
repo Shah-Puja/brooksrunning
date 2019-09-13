@@ -398,37 +398,45 @@ class meet_brooksController extends Controller {
             $PersonID = $this->get_personid(request('email'));
         }
         
-        $Person = User::where('email',request('email'));
-        $Person->first_name = request('fname');
-        $Person->last_name = request('lname');
-        $Person->tag =  request('comp_name');
-        $Person->gender = request('gender');
-        $Person->dob = request('custom_Birth_Month') . '-' . request('custom_Birth_Date');
-        $Person->birth_date =  request('custom_Birth_Date');
-        $Person->birth_month = request('custom_Birth_Month');
-        $Person->age_group = request('custom_Age');
-        $Person->postcode = request('postcode');
-        $Person->shoe_wear = request('custom_Shoes_you_wear');
-        $Person->state = request('country');
-        $Person->contest_code = request('contest_code');
-        $Person->person_idx = $PersonID;
-        $Person->newsletter = '1';
-        $Person->save();
+        $Person = User::where('email',request('email'))
+                        ->update(
+                            [
+                                'first_name' => request('fname'),
+                                'last_name' => request('lname'),
+                                'tag' =>  request('comp_name'),
+                                'gender' => request('gender'),
+                                'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
+                                'birth_date' =>  request('custom_Birth_Date'),
+                                'birth_month' => request('custom_Birth_Month'),
+                                'age_group' => request('custom_Age'),
+                                'postcode' => request('postcode'),
+                                'shoe_wear' => request('custom_Shoes_you_wear'),
+                                'state' => request('country'),
+                                'contest_code' => request('contest_code'),
+                                'person_idx' => $PersonID,
+                                'newsletter' => '1'
+                            ]
+                        );
 
-        $Icontact_pushmail = Icontact_pushmail::where('email', request('email'));
-        $Icontact_pushmail->first_name = request('fname');
-        $Icontact_pushmail->last_name = request('lname');
-        $Icontact_pushmail->gender = request('gender');
-        $Icontact_pushmail->birth_date =  request('custom_Birth_Date');
-        $Icontact_pushmail->birth_month = request('custom_Birth_Month');
-        $Icontact_pushmail->age_group = request('custom_Age');
-        $Icontact_pushmail->postcode = request('postcode');
-        $Icontact_pushmail->shoe_wear = request('custom_Shoes_you_wear');
-        $Icontact_pushmail->country = request('country');
-        $Icontact_pushmail->happy_runner_comp = request('contest_code');
-        $Icontact_pushmail->status = 'queue';
-        $Icontact_pushmail->list_id =  env('ICONTACT_LIST_ID');
-        $Icontact_pushmail->save();
+
+        $Icontact_pushmail = Icontact_pushmail::where('email', request('email'))
+                            ->update(
+                                [
+                                    'fname' => request('fname'),
+                                    'lname' => request('lname'),
+                                    'gender' => request('gender'),
+                                    'birth_day' =>  request('custom_Birth_Date'),
+                                    'birth_month' => request('custom_Birth_Month'),
+                                    'age_group' => request('custom_Age'),
+                                    'postcode' => request('postcode'),
+                                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                                    'country' => request('country'),
+                                    'happy_runner_comp' => request('contest_code'),
+                                    'status' => 'queue',
+                                    'list_id' => env('ICONTACT_LIST_ID')
+                                ]
+                            );
+
        
         if (request('signup') == 1) {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
