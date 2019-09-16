@@ -191,6 +191,7 @@ Route::get('/collections/energize-running-shoes', 'CollectionController@energize
 Route::get('/healthcare-shoes-for-nurses', 'CollectionController@shoes_for_nurses');
 Route::get('/collections/ghost-saturation', 'CollectionController@ghost_saturation');
 Route::get('/collections/revel-3-shine-collection', 'CollectionController@revel3_shine_collection');
+Route::get('/collections/melts-collection', 'CollectionController@melts_collection');
 
 
 Route::get('sitemap-index.xml', 'SitemapController@index');

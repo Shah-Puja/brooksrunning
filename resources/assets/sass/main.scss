@@ -3160,6 +3160,41 @@ width: 100%;
     @media #{$mobile-only}{
       padding-bottom:0px;
     }
+    .melts_comp_img_over{
+      position: relative; left: 0; top: 0;
+      .melts_comp_img_banner
+      {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .melts_comp_img_logo
+      {
+        position: absolute;
+        
+        top: 12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 150px;
+        @media #{$tab-only}{
+          max-width: 90px; 
+        }
+        @media #{$mobile-only}{
+          max-width: 65px;
+          top: 5%;
+        }
+        @media #{$desktop-only}{
+          max-width: 120px; 
+        }
+      }
+      
+    }
+    &.melts-comp-bottom-banner{
+        padding-top: 10px;
+        @media #{$mobile-only}{
+          padding-top: 15px;
+        }
+    }
   }
 }
 
