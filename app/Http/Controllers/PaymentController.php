@@ -571,9 +571,7 @@ class PaymentController extends Controller {
                     $returnVal = $userid;
                     break;
 
-                case '404':
-                    echo "payment - A";
-                    exit;
+                case '404':                    
                     $userid = $this->create_user();
                     break;
 
