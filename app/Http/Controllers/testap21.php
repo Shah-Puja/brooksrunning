@@ -11,6 +11,7 @@ class testap21 extends Controller
 	{
         $this->bridge = $bridge;
     }
+
 public function voucher_valid(){
     //$gift_id="200001005111"; $pin="3164111";$total=1000;
     $gift_id="1200001012"; $pin="2026";$total=100;
@@ -169,6 +170,7 @@ public function create_order($person_id='115414'){
 
     public function test_ap21_personidx($email='dfmamea@gmail.com'){ 
         $response = $this->bridge->getPersonid($email);
+        exit;
         //echo "<pre>";print_r($response);die;
         $returnCode = $this->create_user();
         echo "<pre>";print_r($returnCode);die;
