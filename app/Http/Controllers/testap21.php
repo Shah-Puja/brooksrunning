@@ -170,6 +170,7 @@ public function create_order($person_id='115414'){
 
     public function test_ap21_personidx($email='dfmamea@gmail.com'){ 
         $response = $this->bridge->getPersonid($email);
+        print_r($response);
         $returnCode = $response->getStatusCode();
         echo "<br>returnCode = $returnCode<br>";
         die();
