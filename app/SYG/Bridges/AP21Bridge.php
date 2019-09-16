@@ -89,8 +89,8 @@ class AP21Bridge implements BridgeInterface {
                 return $response;
             }
         } catch (RequestException $e) {
-            echo "Catch 1";
-            print_r($e);
+            echo "Catch 1";            
+            echo "<br>Status code = ".$e->getStatusCode();
             exit;
 
             if ($e->getMessage() != '') {
