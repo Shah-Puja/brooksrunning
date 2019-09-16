@@ -735,11 +735,11 @@ class PaymentController extends Controller {
 
 
         if (!empty($this->order->coupon_code)) {
-            $order_instruction .= ' Coupon Code :- ' . $this->order->coupon_code;
+            $order_instruction .= ' Coupon:' . $this->order->coupon_code;
         }
 
         if (!empty($this->order->giftcert_ap21code)) {
-            $order_instruction .= ' Gift Code :- ' . $this->order->giftcert_ap21code;
+            $order_instruction .= ' Gift:' . $this->order->giftcert_ap21code;
         }
 
         if (!empty($this->order->address->order_info)) {
@@ -764,7 +764,7 @@ class PaymentController extends Controller {
                 <Order>
                 <PersonId>$person_id</PersonId>
                 <OrderNumber>" . $ordernum . "</OrderNumber>";
-        $xml_data .= "<DeliveryInstructions>" . $add_description . "</DeliveryInstructions>";
+        $xml_data .= "<DeliveryInstructions>" . $add_description . $order_instruction . "</DeliveryInstructions>";
         $xml_data .= "<OrderInstructions>" . $order_instruction . "</OrderInstructions>";
         $xml_data .= "<Addresses>
                     <Billing>
