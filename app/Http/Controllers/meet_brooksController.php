@@ -252,6 +252,7 @@ class meet_brooksController extends Controller {
                     'contest_code' => $contest_code,
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
+                    'newsletter' => '1',
                     'user_type' => 'Subscriber']);
                     
         $icontact_pushmail = Icontact_pushmail::firstOrCreate(
@@ -285,7 +286,7 @@ class meet_brooksController extends Controller {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
         } else {
-            User::where('email', request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
+            User::where('email', request('email'))->update([ 'newsletter' => '1', 'subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
             /* $user = User::where('email', request('email'))->first();
               event(new SubscriptionReceived($user)); */
             if (request('contest_code') != '') {
