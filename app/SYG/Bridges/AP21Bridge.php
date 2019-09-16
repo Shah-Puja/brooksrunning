@@ -2,6 +2,7 @@
 
 namespace App\SYG\Bridges;
 
+use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use Exception;
 use App\Models\Order;
@@ -89,6 +90,11 @@ class AP21Bridge implements BridgeInterface {
                 return $response;
             }
         } catch (RequestException $e) {
+            echo Psr7\str($e->getRequest());
+            if ($e->hasResponse()) {
+                echo Psr7\str($e->getResponse());            
+            }
+            exit;
             if ($e->getMessage() != '') {
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$e->getMessage());
                 return null;
