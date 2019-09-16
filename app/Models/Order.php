@@ -131,7 +131,7 @@ class Order extends Model
     }
     
     public static function ap21_error($api,$url,$payload,$object_id,$error){
-        Ap21_log::createNew([
+        /*Ap21_log::createNew([
                     'process' =>$api,                
                     'request' => $payload,
                     'response' => $error,  
@@ -148,6 +148,6 @@ class Order extends Model
         
         Mail::to(config('site.notify_email'))
               ->cc(config('site.syg_notify_email'))
-              ->send(new Ap21Alert($data));
+              ->send(new Ap21Alert($data));*/
     }
 }
