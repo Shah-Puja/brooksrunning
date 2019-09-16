@@ -572,6 +572,8 @@ class PaymentController extends Controller {
                     break;
 
                 case '404':
+                    echo "payment - A";
+                    exit;
                     $userid = $this->create_user();
                     break;
 
@@ -601,6 +603,8 @@ class PaymentController extends Controller {
                     break;
             }
         } else {
+            echo "payment - B";
+            exit;
             $userid = $this->create_user();
         }
         return $userid;
