@@ -84,6 +84,7 @@ class AP21Bridge implements BridgeInterface {
     public function getPersonid($email,$object_id='0') {
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
         $url='Persons/?countryCode=AUFIT&email=' . $email;
+        echo "<br>$url<br>";
         try {
             $response = $this->apiClient->get($url, ['http_errors' => false]);
             if (!empty($response)) {
