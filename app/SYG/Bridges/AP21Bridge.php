@@ -90,9 +90,9 @@ class AP21Bridge implements BridgeInterface {
                 return $response;
             }
         } catch (RequestException $e) {
-            echo Psr7\str($e->getRequest());
+            echo "aaaa-".Psr7\str($e->getRequest());
             if ($e->hasResponse()) {
-                echo Psr7\str($e->getResponse());            
+                echo "<br> bbbbb ".Psr7\str($e->getResponse());            
             }
             exit;
             if ($e->getMessage() != '') {
