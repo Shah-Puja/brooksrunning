@@ -602,11 +602,11 @@ class PaymentController extends Controller {
                     $userid = false;
                     break;
             }
-        } else {
+        } /*else {
             echo "payment - B";
             exit;
             $userid = $this->create_user();
-        }
+        }*/
         return $userid;
     }
 
