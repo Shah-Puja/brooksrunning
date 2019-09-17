@@ -689,7 +689,7 @@ class PaymentController extends Controller {
                     break;
 
                 default:
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    
                     $logger = array(
                         'order_id' => $this->order->id,
                         'log_title' => 'Person',
@@ -699,10 +699,11 @@ class PaymentController extends Controller {
                     );
                     Order_log::createNew($logger);
 
+                    $error_response = $response->getBody();
                     Ap21_error::store([
                         'api' => 'POST Person-API/Payment',
-                        'url' => $url,
-                        'error_response' => $e->getMessage(),
+                        'url' => $URL,
+                        'error_response' => $error_response,
                         'error_type' => 'Connectivity',
                     ]);
 
