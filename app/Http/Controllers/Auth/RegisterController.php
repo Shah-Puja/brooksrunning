@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Validation\Rule;
 use App\SYG\Bridges\BridgeInterface;
+use App\Models\Ap21_error;
 
 class RegisterController extends Controller {
 
@@ -138,6 +139,14 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API',
+                        'url' => '',
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
                     $userid = false;
                     break;
             }

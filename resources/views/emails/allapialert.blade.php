@@ -1,9 +1,9 @@
 System Received an error code while working with AP21 API <br> Details are listed below -<br>
 
-API - {{ $data['API'] }}<br>
-URL - {{ $data['URL'] }}<br>
-Error - {{ $data['error'] }}<br>
-Parameters - {{ $data['parameters'] }}<br>		
-Id -  {{ $data['object_id'] }} <br>			
+API - {{ $data['api'] }}<br>
+URL - {{ $data['url'] }}<br>
+HTTP Error - {{ $data['http_error'] }}<br>
+Error Response - {{ $data['error_response'] }}<br>		
+Error Type-  {{ $data['error_type'] }} <br>			
 <br> - Brooks
 					
