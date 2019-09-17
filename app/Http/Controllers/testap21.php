@@ -296,16 +296,16 @@ public function create_order($person_id='115414'){
                 Order_log::createNew($logger);
 
                 // Send ap21 alert  
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                $data = array(
-                    'api_name' => 'Create Person Error',
-                    'URL' => $URL,
-                    'Result' => $result,
-                    'Parameters' => $person_xml,
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+
+                $error_response = $response->getBody()->getContents();
+                Ap21_error::store([
+                    'api' => 'POST Person-API/Payment',
+                    'url' => $URL,
+                    'http_error' => $returnCode,
+                    'error_response' => $error_response,
+                    'error_type' => 'API Error',
+                ]);
+    
 
                 $returnVal = false;
 

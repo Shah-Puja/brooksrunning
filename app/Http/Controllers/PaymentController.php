@@ -705,7 +705,7 @@ class PaymentController extends Controller {
                         'url' => $URL,
                         'http_error' => $returnCode,
                         'error_response' => $error_response,
-                        'error_type' => 'Connectivity',
+                        'error_type' => 'API Error',
                     ]);
 
                     $returnVal = false;
