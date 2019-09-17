@@ -300,8 +300,7 @@ public function create_order($person_id='115414'){
                 // Send ap21 alert  
 
                 $error_response = $response->getBody();
-                echo $error_response;
-                exit;
+              
                 Ap21_error::store([
                     'api' => 'POST Person-API/Payment',
                     'url' => $URL,
