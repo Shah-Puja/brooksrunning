@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 class Ap21_error extends Model
 {
     protected $table = 'ap21_error';
-    protected $fillable = ['error_type','url','api','body','error_response','http_error','api_error_code','api_error_text'];
+    protected $fillable = ['error_type','url','api','body','error_response','http_error'];
 
     public static function createNew($logger){
         self::create($logger); 
