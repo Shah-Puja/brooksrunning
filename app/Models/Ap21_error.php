@@ -16,7 +16,6 @@ class Ap21_error extends Model
     }
 
     public static function store($error_object){
-        print_r($error_object);
         self::createNew($error_object);
 
          Mail::to(config('site.notify_email'))
