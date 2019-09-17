@@ -286,7 +286,7 @@ public function create_order($person_id='115414'){
 
             default:
                
-                $error_response = $response->getBody();
+                $error_response = $response->getBody()->getContents();
                 echo "http_error = $returnCode";
                 //exit;
 
