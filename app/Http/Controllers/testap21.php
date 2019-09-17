@@ -288,17 +288,17 @@ public function create_order($person_id='115414'){
                
                 $error_response = $response->getBody();
                 echo "http_error = $returnCode";
-                exit;
-                
+                //exit;
+
                 
                 Ap21_error::store([
-                    'api' => 'POST Person-API/Payment',
+                    'api' => 'POST Person-API Payment',
                     'url' => $URL,
                     'http_error' => $returnCode,
                     'error_response' => $error_response,
                     'error_type' => 'API Error',
                 ]);
-    
+                exit;
 
                 $returnVal = false;
 
