@@ -170,12 +170,36 @@ public function create_order($person_id='115414'){
 
     public function test_ap21_personidx($email='dfmamea@gmail.com'){ 
         $response = $this->bridge->getPersonid($email);
-        print_r($response);
-        $returnCode = $response->getStatusCode();
-        echo "<br>returnCode = $returnCode<br>";
-        die();
-        $returnCode = $this->create_user();
-        echo "<pre>";print_r($returnCode);die;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    
+                    $returnVal = $userid;
+                    break;
+
+                case '404':                    
+                    //$userid = $this->create_user();
+                    break;
+
+                default:
+                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                   
+                    Ap21_error::store([
+                        'api' => 'GET Person-API',
+                        'url' => '',
+                        'http_error' => $returnCode,
+                        'error_response' => $response->getBody()->getContents(),
+                        'error_type' => 'API Error',
+                    ]);
+
+                    $userid = false;
+                    break;
+            }
+        }
        //echo "<br>";
         //echo "test ap21";die;
     }
