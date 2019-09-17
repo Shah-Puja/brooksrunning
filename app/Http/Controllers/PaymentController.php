@@ -24,6 +24,7 @@ use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Session;
 use DB;
+use App\Models\Ap21_error;
 
 class PaymentController extends Controller {
 
@@ -587,11 +588,12 @@ class PaymentController extends Controller {
 
                     Order_log::createNew($logger);
 
+                    $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'GET Person-API',
                         'url' => '',
                         'http_error' => $returnCode,
-                        'error_response' => $response->getBody()->getContents(),
+                        'error_response' =>  $error_response,
                         'error_type' => 'API Error',
                     ]);
 
