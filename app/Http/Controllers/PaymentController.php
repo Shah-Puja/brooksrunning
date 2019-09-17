@@ -703,7 +703,7 @@ class PaymentController extends Controller {
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Creating Person ID',
-                        'result' => $result,
+                        'result' => $error_response,
                     );
                     Order_log::createNew($logger);
                     $returnVal = false;
