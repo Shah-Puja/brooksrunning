@@ -587,16 +587,14 @@ class PaymentController extends Controller {
 
                     Order_log::createNew($logger);
 
-                    $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
-                    $data = array(
-                        'api_name' => 'Get PersonID Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => '',
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
+                    Ap21_error::store([
+                        'api' => 'GET Person-API',
+                        'url' => '',
+                        'http_error' => $returnCode,
+                        'error_response' => $response->getBody()->getContents(),
+                        'error_type' => 'API Error',
+                    ]);
+
                     $userid = false;
                     break;
             }

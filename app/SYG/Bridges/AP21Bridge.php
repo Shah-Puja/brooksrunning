@@ -6,6 +6,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use Exception;
 use App\Models\Order;
+use App\Models\Ap21_error;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -91,14 +92,16 @@ class AP21Bridge implements BridgeInterface {
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
-                Order::ap21_error('Person API - Connectivity',$url,$email, $object_id ,$e->getMessage());
+                Ap21_error::store([
+                    'api' => 'GET Person-API',
+                    'url' => $url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                ]);
                 return null;
             }
         } catch (\Exception $exception) {
-            if ($exception->getMessage() != '') {
-                Order::ap21_error('Get Person API',$url,$email, $object_id ,$exception->getMessage());
                 return null;
-            }
         }
     }
 
