@@ -82,13 +82,15 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function getPersonid($email,$object_id='0') {
-        //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
-        $url='Persons/?countryCode=AUFIT&email=' . $email;        
+        return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
+       /* $url='Persons/?countryCode=AUFIT&email=' . $email;        
         try {
             $response = $this->apiClient->get($url, ['http_errors' => false]);
-            //if (!empty($response)) {                
+            if (!empty($response)) {                
                 return $response;
-            //}
+            }else{
+                return null;
+            }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$e->getMessage());
@@ -99,7 +101,7 @@ class AP21Bridge implements BridgeInterface {
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$exception->getMessage());
                 return null;
             }
-        }
+        }*/
     }
 
     public function processPerson($data, $object_id='0') {
