@@ -109,7 +109,7 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
         $url='Persons/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
