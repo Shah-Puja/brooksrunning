@@ -187,7 +187,7 @@ public function create_order($person_id='115414'){
                     break;
 
                 default:
-                   $error_response = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
+                   $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'GET Person-API',
                         'url' => '',
