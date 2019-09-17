@@ -86,9 +86,9 @@ class AP21Bridge implements BridgeInterface {
         $url='Persons/?countryCode=AUFIT&email=' . $email;        
         try {
             $response = $this->apiClient->get($url, ['http_errors' => false]);
-            if (!empty($response)) {                
+            //if (!empty($response)) {                
                 return $response;
-            }
+            //}
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$e->getMessage());
