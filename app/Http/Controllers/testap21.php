@@ -187,13 +187,12 @@ public function create_order($person_id='115414'){
                     break;
 
                 default:
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                   echo $result;
+                   $error_response = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'GET Person-API',
                         'url' => '',
                         'http_error' => $returnCode,
-                        'error_response' =>  @simplexml_load_string($response->getBody()->getContents()),
+                        'error_response' =>  $error_response,
                         'error_type' => 'API Error',
                     ]);
 
