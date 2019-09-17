@@ -285,28 +285,14 @@ public function create_order($person_id='115414'){
                 break;
 
             default:
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                
-                //exit;
-                // $logger = array(
-                //     'order_id' => $this->order->id,
-                //     'log_title' => 'Person',
-                //     'log_type' => 'Response',
-                //     'log_status' => 'Error While Creating Person ID',
-                //     'result' => $result,
-                // );
-                // Order_log::createNew($logger);
-
-                // Send ap21 alert  
-
+               
                 $error_response = $response->getBody();
-                echo $response->getBody()->getContents();
-                //exit;
+               
                 Ap21_error::store([
                     'api' => 'POST Person-API/Payment',
                     'url' => $URL,
                     'http_error' => $returnCode,
-                    'error_response' => '',
+                    'error_response' => $error_response,
                     'error_type' => 'API Error',
                 ]);
     
