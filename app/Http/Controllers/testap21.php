@@ -193,7 +193,7 @@ public function create_order($person_id='115414'){
                         'api' => 'GET Person-API',
                         'url' => '',
                         'http_error' => $returnCode,
-                        'error_response' => $response->getBody()->getContents(),
+                        'error_response' =>  @simplexml_load_string($response->getBody()->getContents()),
                         'error_type' => 'API Error',
                     ]);
 
