@@ -91,11 +91,15 @@ class AP21Bridge implements BridgeInterface {
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
+                echo "step 1";
+                die;
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$e->getMessage());
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
+                echo "step 2";
+                die;
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$exception->getMessage());
                 return null;
             }
