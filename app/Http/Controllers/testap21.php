@@ -292,7 +292,7 @@ public function create_order($person_id='115414'){
 
                 
                 Ap21_error::store([
-                    'api' => 'POST Person-API Payment',
+                    'api' => 'POST Person-API/Payment',
                     'url' => $URL,
                     'http_error' => $returnCode,
                     'error_response' => $error_response,
