@@ -286,6 +286,8 @@ public function create_order($person_id='115414'){
 
             default:
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                echo $result;
+                exit;
                 // $logger = array(
                 //     'order_id' => $this->order->id,
                 //     'log_title' => 'Person',
