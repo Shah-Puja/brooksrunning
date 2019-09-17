@@ -250,17 +250,17 @@ public function create_order($person_id='115414'){
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        echo "<pre>";print_r($response);die;
+        
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
-        $logger = array(
-            'order_id' => $this->order->id,
-            'log_title' => 'Person',
-            'log_type' => 'Response',
-            'log_status' => 'Generate Person XML',
-            'result' => 'Created Person xml and submitted to app21 url:- ' . $URL,
-            'xml' => $person_xml
-        );
-        Order_log::createNew($logger);
+        // $logger = array(
+        //     'order_id' => $this->order->id,
+        //     'log_title' => 'Person',
+        //     'log_type' => 'Response',
+        //     'log_status' => 'Generate Person XML',
+        //     'result' => 'Created Person xml and submitted to app21 url:- ' . $URL,
+        //     'xml' => $person_xml
+        // );
+        // Order_log::createNew($logger);
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case 201:
@@ -270,15 +270,15 @@ public function create_order($person_id='115414'){
                 $last_seg_arr = explode("?", $last_seg);
                 $person_idx = $last_seg_arr[0];
 
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => '201 Person ID Created',
-                    'result' => $person_idx,
-                    'xml'=> $person_xml ? $person_xml : "",
-                );
-                Order_log::createNew($logger);
+                // $logger = array(
+                //     'order_id' => $this->order->id,
+                //     'log_title' => 'Person',
+                //     'log_type' => 'Response',
+                //     'log_status' => '201 Person ID Created',
+                //     'result' => $person_idx,
+                //     'xml'=> $person_xml ? $person_xml : "",
+                // );
+                // Order_log::createNew($logger);
                 $returnVal = $person_idx;
 
 
@@ -286,14 +286,14 @@ public function create_order($person_id='115414'){
 
             default:
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Person ID',
-                    'result' => $result,
-                );
-                Order_log::createNew($logger);
+                // $logger = array(
+                //     'order_id' => $this->order->id,
+                //     'log_title' => 'Person',
+                //     'log_type' => 'Response',
+                //     'log_status' => 'Error While Creating Person ID',
+                //     'result' => $result,
+                // );
+                // Order_log::createNew($logger);
 
                 // Send ap21 alert  
 
