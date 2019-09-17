@@ -114,6 +114,8 @@ class AP21Bridge implements BridgeInterface {
         } 
         catch (ClientErrorResponseException $exception) {
             $responseBody = $exception->getResponse()->getBody(true);
+            print_r($responseBody);
+            die;
         }
     }
 
