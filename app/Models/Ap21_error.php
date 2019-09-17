@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Mail\Ap21Alert;
+use Illuminate\Support\Facades\Mail;
 
 class Ap21_error extends Model
 {
