@@ -699,17 +699,12 @@ class PaymentController extends Controller {
                     );
                     Order_log::createNew($logger);
 
-                    // Send ap21 alert  
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                    $data = array(
-                        'api_name' => 'Create Person Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => $person_xml,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
+                    Ap21_error::store([
+                        'api' => 'POST Person-API/Payment',
+                        'url' => $url,
+                        'error_response' => $e->getMessage(),
+                        'error_type' => 'Connectivity',
+                    ]);
 
                     $returnVal = false;
 

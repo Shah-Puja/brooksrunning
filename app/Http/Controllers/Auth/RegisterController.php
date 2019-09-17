@@ -196,6 +196,12 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    Ap21_error::store([
+                        'api' => 'POST Person-API/Register',
+                        'url' => $url,
+                        'error_response' => $e->getMessage(),
+                        'error_type' => 'Connectivity',
+                    ]);
                     $returnVal = false;
                     break;
             }
