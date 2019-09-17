@@ -6,6 +6,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use Exception;
 use App\Models\Order;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -84,7 +85,7 @@ class AP21Bridge implements BridgeInterface {
     public function getPersonid($email,$object_id='0') {
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
         $url='Persons/?countryCode=AUFIT&email=' . $email;        
-        try {
+        /*try {
             $response = $this->apiClient->get($url, ['http_errors' => false]);
             if (!empty($response)) {                
                 return $response;
@@ -103,6 +104,16 @@ class AP21Bridge implements BridgeInterface {
                 Order::ap21_error('Get Person API',$url,$email, $object_id ,$exception->getMessage());
                 return null;
             }
+        }*/
+
+        try {
+            $response = $this->apiClient->get($url, ['http_errors' => false]);
+            if (!empty($response)) {                
+                return $response;
+            }
+        } 
+        catch (ClientErrorResponseException $exception) {
+            $responseBody = $exception->getResponse()->getBody(true);
         }
     }
 
