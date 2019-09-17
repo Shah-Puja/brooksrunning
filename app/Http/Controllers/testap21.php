@@ -286,8 +286,8 @@ public function create_order($person_id='115414'){
 
             default:
                 $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                echo $result;
-                exit;
+                
+                //exit;
                 // $logger = array(
                 //     'order_id' => $this->order->id,
                 //     'log_title' => 'Person',
@@ -300,11 +300,13 @@ public function create_order($person_id='115414'){
                 // Send ap21 alert  
 
                 $error_response = $response->getBody();
+                echo $error_response;
+                exit;
                 Ap21_error::store([
                     'api' => 'POST Person-API/Payment',
                     'url' => $URL,
                     'http_error' => $returnCode,
-                    'error_response' => (string) $error_response,
+                    'error_response' => '',
                     'error_type' => 'API Error',
                 ]);
     
