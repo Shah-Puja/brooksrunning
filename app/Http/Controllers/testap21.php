@@ -191,6 +191,7 @@ public function create_order($person_id='115414'){
                     Ap21_error::store([
                         'api' => 'GET Person-API',
                         'url' => '',
+                        'http_error' => $returnCode,
                         'error_response' =>  $error_response,
                         'error_type' => 'API Error',
                     ]);
