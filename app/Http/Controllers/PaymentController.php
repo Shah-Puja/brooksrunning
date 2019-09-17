@@ -623,9 +623,9 @@ class PaymentController extends Controller {
         } else {
             list($firstname, $lastname) = explode(' ', $fullname);
         }
-        //$firstname
+        
         $person_xml = "<Person>
-                        <Firstname></Firstname>
+                        <Firstname>$firstname</Firstname>
                         <Surname>$lastname</Surname>
                         <Contacts>
                           <Email>" . $this->order->address->email . "</Email>
