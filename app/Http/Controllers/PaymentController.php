@@ -590,7 +590,7 @@ class PaymentController extends Controller {
 
                     $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
-                        'api' => 'GET Person-API',
+                        'api' => 'GET Person-API/Payment',
                         'url' => '',
                         'http_error' => $returnCode,
                         'error_response' =>  $error_response,
