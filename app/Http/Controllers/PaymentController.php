@@ -689,6 +689,14 @@ class PaymentController extends Controller {
                     break;
 
                 default:
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'POST Person-API/Payment',
+                        'url' => $URL,
+                        'http_error' => $returnCode,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                    ]);
                     
                     $logger = array(
                         'order_id' => $this->order->id,
@@ -698,18 +706,7 @@ class PaymentController extends Controller {
                         'result' => $result,
                     );
                     Order_log::createNew($logger);
-
-                    $error_response = $response->getBody();
-                    Ap21_error::store([
-                        'api' => 'POST Person-API/Payment',
-                        'url' => $URL,
-                        'http_error' => $returnCode,
-                        'error_response' => $error_response,
-                        'error_type' => 'API Error',
-                    ]);
-
                     $returnVal = false;
-
                     break;
             }
         }
