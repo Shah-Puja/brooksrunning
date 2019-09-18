@@ -128,6 +128,7 @@ class AP21Bridge implements BridgeInterface {
                     'url' => $url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
+                    'body' => $data,
                 ]);
                 return null;
             }
@@ -152,6 +153,7 @@ class AP21Bridge implements BridgeInterface {
                     'url' => $url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
+                    'body' => $data,
                 ]);
                 return null;
             }

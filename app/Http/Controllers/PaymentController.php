@@ -697,6 +697,7 @@ class PaymentController extends Controller {
                         'http_error' => $returnCode,
                         'error_response' => $error_response,
                         'error_type' => 'API Error',
+                        'body' =>  $person_xml
                     ]);
                     
                     $logger = array(
@@ -987,6 +988,7 @@ class PaymentController extends Controller {
                         'http_error' => $returnCode,
                         'error_response' => $error_response,
                         'error_type' => 'API Error',
+                        'body' =>  $xml_data
                     ]);
                     $returnVal = false;
 

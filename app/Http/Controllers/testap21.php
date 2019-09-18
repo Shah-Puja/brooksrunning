@@ -124,6 +124,7 @@ public function create_order($person_id='115414'){
                     'http_error' => $returnCode,
                     'error_response' => $error_response,
                     'error_type' => 'API Error',
+                    'body' =>  $xml_data
                 ]);
                     break;
             }  
@@ -305,6 +306,7 @@ public function create_order($person_id='115414'){
                     'http_error' => $returnCode,
                     'error_response' => $error_response,
                     'error_type' => 'API Error',
+                    'body' =>  $person_xml
                 ]);
                 exit;
 

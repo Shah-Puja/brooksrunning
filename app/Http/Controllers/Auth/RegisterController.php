@@ -204,6 +204,7 @@ class RegisterController extends Controller {
                         'url' => $url,
                         'error_response' => $error_response,
                         'error_type' => 'API Error',
+                        'body' =>  $person_xml
                     ]);
                     $returnVal = false;
                     break;
