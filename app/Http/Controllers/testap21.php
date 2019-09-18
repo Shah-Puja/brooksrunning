@@ -100,7 +100,7 @@ public function create_order($person_id='115414'){
         </Order>         
         ";
     
-        $response = $this->bridge->processOrder($person_id,$xml_data);
+        $response = $this->bridge->processOrder($person_id,$xml_data ,'');
         print_r($response);
     
         $returnCode =  $response->getStatusCode();
