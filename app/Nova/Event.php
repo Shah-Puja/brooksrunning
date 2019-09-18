@@ -51,7 +51,7 @@ class Event extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hideFromIndex()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
             Text::make('Event Header','event_header')->hideFromIndex()->rules('required', 'max:255'),
             Text::make('Slug','slug')->hideFromIndex()->rules('required', 'max:255'),
