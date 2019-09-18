@@ -113,11 +113,18 @@ public function create_order($person_id='115414'){
                 $order_idx = $last_seg_arr[0];
                 echo "Success : Order ID is ".$order_idx;
                 break;
-            case 400 :
-                echo "Order Exist";
-                break;
+           
             default:
-                echo "HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
+            $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
+            // Send ap21 alert 
+            $error_response = $response->getBody();
+            Ap21_error::store([
+                'api' => 'Order-API',
+                'url' => $URL,
+                'http_error' => $returnCode,
+                'error_response' => $error_response,
+                'error_type' => 'API Error',
+            ]);
                 break;
         }       
     }

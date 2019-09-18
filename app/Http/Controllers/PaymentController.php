@@ -588,10 +588,11 @@ class PaymentController extends Controller {
 
                     Order_log::createNew($logger);
 
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . $email; 
                     $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'GET Person-API/Payment',
-                        'url' => '',
+                        'url' => $url,
                         'http_error' => $returnCode,
                         'error_response' =>  $error_response,
                         'error_type' => 'API Error',
@@ -966,30 +967,8 @@ class PaymentController extends Controller {
                     );
                     Order::where('id', $this->order->id)->update($orderDataUpdate);
                     break;
-                case 400 :
-                    $returnVal = false;
-                    $logger = array(
-                        'order_id' => $this->order->id,
-                        'log_title' => 'Order',
-                        'log_type' => 'Response',
-                        'log_status' => '400 Order exists',
-                        'result' => $response->getBody(),
-                    );
-                    Order_log::createNew($logger);
-
-                    // Send ap21 alert  
-                    $data = array(
-                        'api_name' => 'Order Exists',
-                        'URL' => $URL,
-                        'Result' => $response->getBody(),
-                        'Parameters' => $xml_data,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
-                    break;
                 default:
-                    $returnVal = false;
+
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                     $logger = array(
                         'order_id' => $this->order->id,
@@ -999,17 +978,16 @@ class PaymentController extends Controller {
                         'result' => $result,
                     );
                     Order_log::createNew($logger);
+                    
                     // Send ap21 alert 
-                    $data = array(
-                        'api_name' => 'Create Order Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => $xml_data,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
-
+                    $error_response = $response->getBody();
+                    Ap21_error::store([
+                        'api' => 'Order-API - OrderId='.$this->order->id,
+                        'url' => $URL,
+                        'http_error' => $returnCode,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                    ]);
                     $returnVal = false;
 
                     break;

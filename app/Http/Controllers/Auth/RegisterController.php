@@ -139,10 +139,11 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . $email; 
                     $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'GET Person-API/Register',
-                        'url' => '',
+                        'url' => $url,
                         'http_error' => $returnCode,
                         'error_response' =>  $error_response,
                         'error_type' => 'API Error',
@@ -196,11 +197,13 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    $url = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
+                    $error_response = $response->getBody()->getContents();
                     Ap21_error::store([
                         'api' => 'POST Person-API/Register',
-                        'url' => '',
-                        'error_response' => $e->getMessage(),
-                        'error_type' => 'Connectivity',
+                        'url' => $url,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
                     ]);
                     $returnVal = false;
                     break;

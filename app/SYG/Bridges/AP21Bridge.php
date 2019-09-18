@@ -130,21 +130,25 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
-    public function processOrder($PersonId, $data, $object_id) {
+    public function processOrder($PersonId, $data, $order_id) {
         $url='Persons/' . $PersonId . '/Orders/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
-                Order::ap21_error('Order API',$url,$data, $object_id ,$e->getMessage());
+                Ap21_error::store([
+                    'api' => 'Order-API - OrderId='.$order_id,
+                    'url' => $url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                ]);
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
-                Order::ap21_error('Order API',$url,$data, $object_id,$exception->getMessage());
                 return null;
             }
         }
