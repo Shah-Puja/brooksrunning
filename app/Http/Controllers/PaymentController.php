@@ -165,7 +165,7 @@ class PaymentController extends Controller {
 
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
-                        $PersonID = $this->get_personid($this->order->address->email);
+                        $PersonID = $this->get_personid($this->order->address->email,$this->order->id);
                     }
                     if (!empty($PersonID)) {
                         $this->ap21order($PersonID);
@@ -471,7 +471,7 @@ class PaymentController extends Controller {
 
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
-                    $PersonID = $this->get_personid($this->order->address->email);
+                    $PersonID = $this->get_personid($this->order->address->email,$this->order->id);
                 }
 
                 if (!empty($PersonID)) {
@@ -978,7 +978,7 @@ class PaymentController extends Controller {
                         'result' => $result,
                     );
                     Order_log::createNew($logger);
-                    
+
                     // Send ap21 alert 
                     $error_response = $response->getBody();
                     Ap21_error::store([

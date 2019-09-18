@@ -82,7 +82,11 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
     }
 
-    public function getPersonid($email,$object_id='0') {
+    public function getPersonid($email,$order_id='0') {
+        $api_string = '';
+        if($order_id!=0) {
+            $api_string = "/Payment - OrderId=".$order_id;
+        }
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
         $url='Persons/?countryCode=AUFIT&email=' . $email;        
         try {
@@ -93,7 +97,7 @@ class AP21Bridge implements BridgeInterface {
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
                 Ap21_error::store([
-                    'api' => 'GET Person-API',
+                    'api' => 'GET Person-API'.$api_string,
                     'url' => $url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
@@ -105,8 +109,12 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
-    public function processPerson($data, $object_id='0') {
+    public function processPerson($data,$order_id='0') {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+        $api_string = '';
+        if($order_id!=0) {
+            $api_string = "/Payment - OrderId=".$order_id;
+        }
         $url='Persons/?countryCode=AUFIT';
         try {
             $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => false]);
@@ -116,7 +124,7 @@ class AP21Bridge implements BridgeInterface {
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {                
                 Ap21_error::store([
-                    'api' => 'POST Person-API',
+                    'api' => 'POST Person-API'.$api_string,
                     'url' => $url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
