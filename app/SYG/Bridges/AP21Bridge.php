@@ -98,7 +98,7 @@ class AP21Bridge implements BridgeInterface {
             if ($e->getMessage() != '') {
                 Ap21_error::store([
                     'api' => 'GET Person-API'.$api_string,
-                    'url' => $url,
+                    'url' => env('AP21_URL') .$url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
                 ]);
@@ -125,7 +125,7 @@ class AP21Bridge implements BridgeInterface {
             if ($e->getMessage() != '') {                
                 Ap21_error::store([
                     'api' => 'POST Person-API'.$api_string,
-                    'url' => $url,
+                    'url' => env('AP21_URL') .$url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
                     'body' => $data,
@@ -150,7 +150,7 @@ class AP21Bridge implements BridgeInterface {
             if ($e->getMessage() != '') {
                 Ap21_error::store([
                     'api' => 'Order-API - OrderId='.$order_id,
-                    'url' => $url,
+                    'url' => env('AP21_URL') .$url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
                     'body' => $data,
