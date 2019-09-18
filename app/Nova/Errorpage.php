@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Actions\Actionable;
 //use Laravel\Nova\Fields\Toggle;
 use Laravel\Nova\Fields\Boolean;
+
 class Errorpage extends Resource
 {
     /**
