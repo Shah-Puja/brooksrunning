@@ -62,7 +62,7 @@ class Event extends Resource
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex(),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
-            Text::make('Event Date String ','date_str')->sortable(),
+            Text::make('Event Date  ','date_str')->sortable(),
             // Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),

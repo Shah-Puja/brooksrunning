@@ -40,7 +40,7 @@ class Errorpage extends Resource
      */
     public static function label()
     {
-        return 'Error page';
+        return '404 page';
     }
     
     public function fields(Request $request)
