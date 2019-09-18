@@ -57,12 +57,12 @@ class Event extends Resource
             Text::make('Slug','slug')->hideFromIndex()->rules('required', 'max:255'),
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
-            })->hideFromIndex(),
+            })->hideFromIndex()->rules('mimes:jpeg,png'),
             Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
-            })->hideFromIndex(),
+            })->hideFromIndex()->rules('mimes:jpeg,png'),
             Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
-            Text::make('Event Date  ','date_str')->sortable(),
+            Text::make('Event Date','date_str')->sortable()->rules('required', 'max:255'),
             // Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
             // Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
