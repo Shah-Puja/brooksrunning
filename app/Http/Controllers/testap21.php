@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SYG\Bridges\BridgeInterface;
+use App\Models\Ap21_error;
 
 class testap21 extends Controller
 {
@@ -11,6 +12,7 @@ class testap21 extends Controller
 	{
         $this->bridge = $bridge;
     }
+
 public function voucher_valid(){
     //$gift_id="200001005111"; $pin="3164111";$total=1000;
     $gift_id="1200001012"; $pin="2026";$total=100;
@@ -98,26 +100,35 @@ public function create_order($person_id='115414'){
         </Order>         
         ";
     
-        $response = $this->bridge->processOrder($person_id,$xml_data);
+        $response = $this->bridge->processOrder($person_id,$xml_data ,'');
         print_r($response);
-    
-        $returnCode =  $response->getStatusCode();
-        switch ($returnCode) {
-            case 201:
-                $location=$response->getHeader('Location')[0];
-                $str_arr = explode("/", $location);
-                $last_seg = $str_arr[count($str_arr) - 1];
-                $last_seg_arr = explode("?", $last_seg);
-                $order_idx = $last_seg_arr[0];
-                echo "Success : Order ID is ".$order_idx;
-                break;
-            case 400 :
-                echo "Order Exist";
-                break;
-            default:
-                echo "HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
-                break;
-        }       
+        if (!empty($response)) {
+            $returnCode =  $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location=$response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $order_idx = $last_seg_arr[0];
+                    echo "Success : Order ID is ".$order_idx;
+                    break;
+            
+                default:
+                $URL = env('AP21_URL') . "/Persons/$person_id/Orders/?countryCode=" . env('AP21_COUNTRYCODE');
+                // Send ap21 alert 
+                $error_response = $response->getBody();
+                Ap21_error::store([
+                    'api' => 'Order-API',
+                    'url' => $URL,
+                    'http_error' => $returnCode,
+                    'error_response' => $error_response,
+                    'error_type' => 'API Error',
+                    'body' =>  $xml_data
+                ]);
+                    break;
+            }  
+        }     
     }
     public function xcreate_user(){
         $person_xml="<Person>
@@ -169,9 +180,35 @@ public function create_order($person_id='115414'){
 
     public function test_ap21_personidx($email='dfmamea@gmail.com'){ 
         $response = $this->bridge->getPersonid($email);
-        //echo "<pre>";print_r($response);die;
-        $returnCode = $this->create_user();
-        echo "<pre>";print_r($returnCode);die;
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    
+                    $returnVal = $userid;
+                    break;
+
+                case '404':                    
+                    //$userid = $this->create_user();
+                    break;
+
+                default:
+                   $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API',
+                        'url' => '',
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
+
+                    $userid = false;
+                    break;
+            }
+        }
        //echo "<br>";
         //echo "test ap21";die;
     }
@@ -222,17 +259,17 @@ public function create_order($person_id='115414'){
                       </Person>";
 
         $response = $this->bridge->processPerson($person_xml);
-        echo "<pre>";print_r($response);die;
+        
         $URL = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
-        $logger = array(
-            'order_id' => $this->order->id,
-            'log_title' => 'Person',
-            'log_type' => 'Response',
-            'log_status' => 'Generate Person XML',
-            'result' => 'Created Person xml and submitted to app21 url:- ' . $URL,
-            'xml' => $person_xml
-        );
-        Order_log::createNew($logger);
+        // $logger = array(
+        //     'order_id' => $this->order->id,
+        //     'log_title' => 'Person',
+        //     'log_type' => 'Response',
+        //     'log_status' => 'Generate Person XML',
+        //     'result' => 'Created Person xml and submitted to app21 url:- ' . $URL,
+        //     'xml' => $person_xml
+        // );
+        // Order_log::createNew($logger);
         $returnCode = $response->getStatusCode();
         switch ($returnCode) {
             case 201:
@@ -242,42 +279,36 @@ public function create_order($person_id='115414'){
                 $last_seg_arr = explode("?", $last_seg);
                 $person_idx = $last_seg_arr[0];
 
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => '201 Person ID Created',
-                    'result' => $person_idx,
-                    'xml'=> $person_xml ? $person_xml : "",
-                );
-                Order_log::createNew($logger);
+                // $logger = array(
+                //     'order_id' => $this->order->id,
+                //     'log_title' => 'Person',
+                //     'log_type' => 'Response',
+                //     'log_status' => '201 Person ID Created',
+                //     'result' => $person_idx,
+                //     'xml'=> $person_xml ? $person_xml : "",
+                // );
+                // Order_log::createNew($logger);
                 $returnVal = $person_idx;
 
 
                 break;
 
             default:
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
-                $logger = array(
-                    'order_id' => $this->order->id,
-                    'log_title' => 'Person',
-                    'log_type' => 'Response',
-                    'log_status' => 'Error While Creating Person ID',
-                    'result' => $result,
-                );
-                Order_log::createNew($logger);
+               
+                $error_response = $response->getBody()->getContents();
+                echo "http_error = $returnCode";
+                //exit;
 
-                // Send ap21 alert  
-                $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                $data = array(
-                    'api_name' => 'Create Person Error',
-                    'URL' => $URL,
-                    'Result' => $result,
-                    'Parameters' => $person_xml,
-                );
-                Mail::to(config('site.notify_email'))
-                        ->cc(config('site.syg_notify_email'))
-                        ->send(new OrderAp21Alert($this->order, $data));
+                
+                Ap21_error::store([
+                    'api' => 'POST Person-API/Payment',
+                    'url' => $URL,
+                    'http_error' => $returnCode,
+                    'error_response' => $error_response,
+                    'error_type' => 'API Error',
+                    'body' =>  $person_xml
+                ]);
+                exit;
 
                 $returnVal = false;
 

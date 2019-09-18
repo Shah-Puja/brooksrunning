@@ -5,6 +5,10 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
+use App\Mail\OrderAp21Alert;
+use App\Mail\Ap21Alert;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Order_log;
 
 class Order extends Model
 {   
@@ -117,4 +121,13 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\User', 'id');
     }
+
+    public static function orderap21_alert($order_data, $mail_data){
+
+        Order_log::createNew($order_log);
+        Mail::to(config('site.notify_email'))
+                    ->cc(config('site.syg_notify_email'))
+                    ->send(new OrderAp21Alert($order_data, $data));
+    }
+    
 }

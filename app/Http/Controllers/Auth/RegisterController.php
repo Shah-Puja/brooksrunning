@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Validation\Rule;
 use App\SYG\Bridges\BridgeInterface;
+use App\Models\Ap21_error;
 
 class RegisterController extends Controller {
 
@@ -138,6 +139,15 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . $email; 
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API/Register',
+                        'url' => $url,
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
                     $userid = false;
                     break;
             }
@@ -187,6 +197,15 @@ class RegisterController extends Controller {
                     break;
 
                 default:
+                    $url = env('AP21_URL') . "Persons/?countryCode=" . env('AP21_COUNTRYCODE');
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'POST Person-API/Register',
+                        'url' => $url,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                        'body' =>  $person_xml
+                    ]);
                     $returnVal = false;
                     break;
             }
