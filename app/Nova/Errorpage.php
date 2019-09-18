@@ -52,7 +52,7 @@ class Errorpage extends Resource
                
             Image::make('Image','image')->disk('404_page')->storeAs(function(Request $request) {
                 return $request->image->getClientOriginalName();
-            })->creationRules('required','mimes:jpeg,png'),
+            })->creationRules('required','mimes:jpeg,png')->updateRules('mimes:jpeg,png'),
             
             Boolean::make('Status','status')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
                $id=$model->id;
