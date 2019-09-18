@@ -2,9 +2,11 @@
 
 namespace App\SYG\Bridges;
 
+use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use Exception;
 use App\Models\Order;
+use App\Models\Ap21_error;
 
 class AP21Bridge implements BridgeInterface {
 
@@ -80,63 +82,83 @@ class AP21Bridge implements BridgeInterface {
         //return $this->apiClient->get('Products/' . $productCode . '?countryCode=AUFIT')->getBody();
     }
 
-    public function getPersonid($email,$object_id='0') {
+    public function getPersonid($email,$order_id='0') {
+        $api_string = '';
+        if($order_id!=0) {
+            $api_string = "/Payment - OrderId=".$order_id;
+        }
         //return $this->apiClient->get('Persons/?countryCode=AUFIT&email=' . $email, ['http_errors' => false]);
-        $url='Persons/?countryCode=AUFIT&email=' . $email;
+        $url='Persons/?countryCode=AUFIT&email=' . $email;        
         try {
-            $response = $this->apiClient->get($url, ['http_errors' => true]);
-            if (!empty($response)) {
+            $response = $this->apiClient->get($url, ['http_errors' => false]);
+            if (!empty($response)) {                
                 return $response;
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
-                Order::ap21_error('Get Person API',$url,$email, $object_id ,$e->getMessage());
+                Ap21_error::store([
+                    'api' => 'GET Person-API'.$api_string,
+                    'url' => env('AP21_URL') .$url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                ]);
                 return null;
             }
         } catch (\Exception $exception) {
-            if ($exception->getMessage() != '') {
-                Order::ap21_error('Get Person API',$url,$email, $object_id ,$exception->getMessage());
                 return null;
-            }
         }
     }
 
-    public function processPerson($data, $object_id='0') {
+    public function processPerson($data,$order_id='0') {
         //return $this->apiClient->post('Persons/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
+        $api_string = '';
+        if($order_id!=0) {
+            $api_string = "/Payment - OrderId=".$order_id;
+        }
         $url='Persons/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {                
-                Order::ap21_error('Post Person API', $url, $data, $object_id, $e->getMessage());
+                Ap21_error::store([
+                    'api' => 'POST Person-API'.$api_string,
+                    'url' => env('AP21_URL') .$url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                    'body' => $data,
+                ]);
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
-                Order::ap21_error('Post Person API', $url, $data, $object_id, $exception->getMessage());
                 return null;
             }
         }
     }
 
-    public function processOrder($PersonId, $data, $object_id) {
+    public function processOrder($PersonId, $data, $order_id) {
         $url='Persons/' . $PersonId . '/Orders/?countryCode=AUFIT';
         try {
-            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => true]);
+            $response = $this->apiClient->post($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {
-                Order::ap21_error('Order API',$url,$data, $object_id ,$e->getMessage());
+                Ap21_error::store([
+                    'api' => 'Order-API - OrderId='.$order_id,
+                    'url' => env('AP21_URL') .$url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                    'body' => $data,
+                ]);
                 return null;
             }
         } catch (\Exception $exception) {
             if ($exception->getMessage() != '') {
-                Order::ap21_error('Order API',$url,$data, $object_id,$exception->getMessage());
                 return null;
             }
         }

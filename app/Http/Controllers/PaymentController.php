@@ -24,6 +24,7 @@ use App\SYG\Bridges\BridgeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Session;
 use DB;
+use App\Models\Ap21_error;
 
 class PaymentController extends Controller {
 
@@ -164,7 +165,7 @@ class PaymentController extends Controller {
 
                 if (env('AP21_STATUS') == 'ON') {
                     if (empty($PersonID)) {
-                        $PersonID = $this->get_personid($this->order->address->email);
+                        $PersonID = $this->get_personid($this->order->address->email,$this->order->id);
                     }
                     if (!empty($PersonID)) {
                         $this->ap21order($PersonID);
@@ -470,7 +471,7 @@ class PaymentController extends Controller {
 
             if (env('AP21_STATUS') == 'ON') {
                 if (empty($PersonID)) {
-                    $PersonID = $this->get_personid($this->order->address->email);
+                    $PersonID = $this->get_personid($this->order->address->email,$this->order->id);
                 }
 
                 if (!empty($PersonID)) {
@@ -571,7 +572,7 @@ class PaymentController extends Controller {
                     $returnVal = $userid;
                     break;
 
-                case '404':
+                case '404':                    
                     $userid = $this->create_user();
                     break;
 
@@ -587,22 +588,24 @@ class PaymentController extends Controller {
 
                     Order_log::createNew($logger);
 
-                    $URL = env('AP21_URL') . "/Persons/?countryCode=" . env('AP21_COUNTRYCODE') . "&email=" . $email;
-                    $data = array(
-                        'api_name' => 'Get PersonID Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => '',
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . $email; 
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API/Payment',
+                        'url' => $url,
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
+
                     $userid = false;
                     break;
             }
-        } else {
+        } /*else {
+            echo "payment - B";
+            exit;
             $userid = $this->create_user();
-        }
+        }*/
         return $userid;
     }
 
@@ -621,7 +624,7 @@ class PaymentController extends Controller {
         } else {
             list($firstname, $lastname) = explode(' ', $fullname);
         }
-
+        
         $person_xml = "<Person>
                         <Firstname>$firstname</Firstname>
                         <Surname>$lastname</Surname>
@@ -687,30 +690,25 @@ class PaymentController extends Controller {
                     break;
 
                 default:
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'POST Person-API/Payment - OrderId='.$this->order->id,
+                        'url' => $URL,
+                        'http_error' => $returnCode,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                        'body' =>  $person_xml
+                    ]);
+                    
                     $logger = array(
                         'order_id' => $this->order->id,
                         'log_title' => 'Person',
                         'log_type' => 'Response',
                         'log_status' => 'Error While Creating Person ID',
-                        'result' => $result,
+                        'result' => $error_response,
                     );
                     Order_log::createNew($logger);
-
-                    // Send ap21 alert  
-                    $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody()->getContents();
-                    $data = array(
-                        'api_name' => 'Create Person Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => $person_xml,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
-
                     $returnVal = false;
-
                     break;
             }
         }
@@ -970,30 +968,8 @@ class PaymentController extends Controller {
                     );
                     Order::where('id', $this->order->id)->update($orderDataUpdate);
                     break;
-                case 400 :
-                    $returnVal = false;
-                    $logger = array(
-                        'order_id' => $this->order->id,
-                        'log_title' => 'Order',
-                        'log_type' => 'Response',
-                        'log_status' => '400 Order exists',
-                        'result' => $response->getBody(),
-                    );
-                    Order_log::createNew($logger);
-
-                    // Send ap21 alert  
-                    $data = array(
-                        'api_name' => 'Order Exists',
-                        'URL' => $URL,
-                        'Result' => $response->getBody(),
-                        'Parameters' => $xml_data,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
-                    break;
                 default:
-                    $returnVal = false;
+
                     $result = 'HTTP ERROR -> ' . $returnCode . "<br>" . $response->getBody();
                     $logger = array(
                         'order_id' => $this->order->id,
@@ -1003,17 +979,17 @@ class PaymentController extends Controller {
                         'result' => $result,
                     );
                     Order_log::createNew($logger);
-                    // Send ap21 alert 
-                    $data = array(
-                        'api_name' => 'Create Order Error',
-                        'URL' => $URL,
-                        'Result' => $result,
-                        'Parameters' => $xml_data,
-                    );
-                    Mail::to(config('site.notify_email'))
-                            ->cc(config('site.syg_notify_email'))
-                            ->send(new OrderAp21Alert($this->order, $data));
 
+                    // Send ap21 alert 
+                    $error_response = $response->getBody();
+                    Ap21_error::store([
+                        'api' => 'Order-API - OrderId='.$this->order->id,
+                        'url' => $URL,
+                        'http_error' => $returnCode,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                        'body' =>  $xml_data
+                    ]);
                     $returnVal = false;
 
                     break;
