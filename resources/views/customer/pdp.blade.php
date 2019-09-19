@@ -73,9 +73,6 @@
                                     </li>
                                     @endif
                                 @endfor
-                                <li data-thumb="/images/details/shoes/utube-icon.jpg" id="utube-popup--control"  data-src="javascript:void(0);">
-                                <!--  -->
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -517,45 +514,6 @@
     </div>
 </div>
 
-<!-- popup -->
-    <!-- PDP Youtube popup  -->
-    <div id="utube-popup--wrapper" class="popup-container size-chart--popup">
-            <div class="popup-container--wrapper">
-                <div class="popup-container--info">
-                    <div class="close-me" id="utube-popup--close"><span class="icon-close-icon"></span></div>
-                    <div class="videowrapper "><iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                </div>
-            </div>
-        </div>
-    <!-- /PDP Youtube popup -->
-    <!-- popup end -->
-
-<!-- Start utube vdo -->
-
-
-<style>
-    .videowrapper {
-        float: none;
-        clear: both;
-        width: 100%;
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 25px;
-        height: 0;
-    }
-    .videowrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-
-<!-- End utube vdo -->
-
-
 @if (strtolower($product->flag_bra) =='yes')
     @include('customer.pdp_bra_benefits')
 @elseif(strtolower($product->prod_type) =='footwear')
@@ -895,18 +853,6 @@ $(document).on('click', '.pdp-width-show li', function () {
 });
 
 </script>
-<script>
-$(document).ready(function(){
-    $('ul li:last-child').addClass('utube-popup--control');
-});
-    $(document).ready(function(){
-        $(".utube-popup--control").click(function(){
-            $("#utube-popup--wrapper").addClass("show");
-        });
-        $("#utube-popup--close").click(function(){
-            $("#utube-popup--wrapper").removeClass("show");
-        });
-    });
-</script>
+
 
 @endsection

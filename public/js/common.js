@@ -303,9 +303,6 @@ $(document).on("click", ".close-popup", function () {
     $(".password-popup").css("display", "none");
 });
 
-
-
-
 // carousel for landing page
 $(document).ready(function () {
     var owl = $(".new-arrival--container .owl-carousel");
