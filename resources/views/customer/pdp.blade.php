@@ -73,7 +73,6 @@
                                     </li>
                                     @endif
                                 @endfor
-                                
                             </ul>
                         </div>
                     </div>
@@ -515,9 +514,6 @@
     </div>
 </div>
 
-
-
-
 @if (strtolower($product->flag_bra) =='yes')
     @include('customer.pdp_bra_benefits')
 @elseif(strtolower($product->prod_type) =='footwear')
@@ -857,6 +853,5 @@ $(document).on('click', '.pdp-width-show li', function () {
 });
 
 </script>
-
 
 @endsection
