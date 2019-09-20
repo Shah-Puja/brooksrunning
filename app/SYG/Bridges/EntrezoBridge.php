@@ -19,7 +19,7 @@ class EntrezoBridge implements BridgeInterface {
 		return "Product Information for {$productCode} from EntrezoBridge";	
 	}
 	
-	public function getPersonid($email)
+	public function getPersonid($email,$order_id='0')
 	{
 		return "Person Information for {$email} from EntrezoBridge";	
 	}
