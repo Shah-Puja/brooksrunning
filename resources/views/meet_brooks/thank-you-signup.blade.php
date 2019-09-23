@@ -18,6 +18,12 @@
     <div class="row">
         <div class="col-9">
             <div class="create-account--left">
+                @if($signup == '0')
+                <div class="response_content">
+                    <p class="heading">Thanks for your interest! </p> 
+                    <p class="thankyou_heading">You are already on our subscriber list.</p>
+                </div>
+                @else
                 <div class="response_content">
                     <h3 class="br-heading">Update your details</h3>
                     <p>You have now successfully signed up to receive communication from Brooks Running. To help us keep our emails as relevant to you as possible, please tell us a little more about you:</p>
@@ -227,6 +233,7 @@
                         </div>
                     </form>
                 </div>
+                @endif
                 <div class="row">
                     <div class="tab-12">
                         <p class="privacy">Brooks Sports will not use your email address or information for any purpose other than distributing our email newsletter. You must be an Australian or New Zealand resident to be eligible for any prize drawing. View our <a href="/info/privacy">Privacy Policy</a></p>
