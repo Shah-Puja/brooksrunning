@@ -74,6 +74,9 @@
 		</div>
 	</div>
 </section>
+@if($shoe_info->shoe_type=='addiction-walker')
+	@include('customer.shoe-main-for-addiction-walker')
+@endif
 <section class="shoes-benefits">
 	<div class="wrapper">
 		<div class="row">

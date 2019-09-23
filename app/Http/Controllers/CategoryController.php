@@ -238,9 +238,7 @@ class CategoryController extends Controller
                     $shop_women_url = $seo_name."/".$shoe_info->shop_women.".html";
 				}
             }
-            
             return view('customer.shoe-main', compact('shoe_info','shop_women_url','shop_men_url') );
-
         }
 
         $diff_template=array("liberty","maximus");
