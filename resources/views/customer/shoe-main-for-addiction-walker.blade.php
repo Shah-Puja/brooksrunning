@@ -38,7 +38,7 @@
             </div>    
             <div class="shoes-wrapper-container">
             <div class="mob-12 col-12 tab-12">
-            <h1 class="br-heading" style="text-align: center; margin: 0px auto;">Addiction Walker V-Strap</h1>
+            <h1 class="br-heading" style="text-align: center; margin: 0px auto;">Addiction Walker Suede</h1>
             </div>
 				<div class="mob-12 {{ ($shop_women_url=='' && $shop_men_url !='') ? 'col-12' : 'col-6' }}">
 					<div class="shoes-wrapper__sub {{ ($shop_men_url==''  && $shop_women_url !='') ? 'pdp-display-none' : 'display-block' }}">
