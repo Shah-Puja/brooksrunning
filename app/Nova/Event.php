@@ -23,7 +23,7 @@ class Event extends Resource
 
     public static $displayInNavigation = true;
     public static $model = 'App\Models\Event';
-
+         
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,7 +50,22 @@ class Event extends Resource
      */
     public function fields(Request $request)
     {
+        $model1='App\Models\Event';
+        $state_arr=[];
+        $country_arr=[];
+        $state=$model1::select('state')->where('state','!=','')->distinct()->get();
+        foreach($state as $states){
+          $state_arr[]=$states->state;
+        }
+        $country=$model1::select('country')->where('country','!=','')->distinct()->get();
+        foreach( $country as  $countries){
+            $country_arr[]=$countries->country;
+        }
+
+
+        
         return [
+            
             ID::make()->hideFromIndex()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
 
@@ -89,8 +104,12 @@ class Event extends Resource
             })->hideFromIndex(),
 
             Text::make('City','city')->hideFromIndex(),
-            Text::make('State','state')->hideFromIndex(),
-            Text::make('Country','country')->hideFromIndex(),
+            
+            Select::make('State','state')->options($state_arr)->hideFromIndex(),
+
+
+             Select::make('Country','country')->options($country_arr)->hideFromIndex(),
+
             Textarea::make('Content','content')->hideFromIndex(),
             Text::make('Link','link')->hideFromIndex(),
             Select::make('Enable','status')->options([

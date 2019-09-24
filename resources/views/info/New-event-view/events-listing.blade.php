@@ -153,11 +153,9 @@
                                                 {{$events->date_str}}
                                             </div> 
                                             @endif 
-                                            @if($events->state=='')
-                                            <div class="location">{{ $events->country }}</div>
-                                            @else
-                                            <div class="location">{{ $events->state}},{{ $events->country }}</div>
-                                            @endif
+                                           
+                                            <div class="location">{{$events->city}}</div>
+                                           
                                         </div>
                                     </div>
                                 </a>
@@ -215,11 +213,8 @@
                                           <div class="date">{{$upcoming_events->date_str}}</div>
                                           @endif
                                            @endif
-                                           @if($upcoming_events->state=='')
-                                            <div class="location">{{ $upcoming_events->country }}</div>
-                                            @else
-                                            <div class="location">{{ $upcoming_events->state}},{{ $upcoming_events->country }}</div>
-                                            @endif
+                                           <div class="location">{{$upcoming_events->city}}</div>
+                                            
                                             </div>
                                     </div>
                                 </a>
