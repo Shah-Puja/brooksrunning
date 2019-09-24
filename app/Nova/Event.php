@@ -50,17 +50,19 @@ class Event extends Resource
      */
     public function fields(Request $request)
     {
-        $model1='App\Models\Event';
-        $state_arr=[];
-        $country_arr=[];
-        $state=$model1::select('state')->where('state','!=','')->distinct()->get();
-        foreach($state as $states){
-          $state_arr[]=$states->state;
-        }
-        $country=$model1::select('country')->where('country','!=','')->distinct()->get();
-        foreach( $country as  $countries){
-            $country_arr[]=$countries->country;
-        }
+        // $model1='App\Models\Event';
+        // $state_arr=[];
+        // $country_arr=[];
+        
+        // $state=$model1::select('state')->where('state','!=','')->distinct()->get();
+        // foreach($state as $key => $states){
+        //   $state_arr[]=$states->state;
+        // }
+        
+        // $country=$model1::select('country')->where('country','!=','')->distinct()->get();
+        // foreach( $country as $key1 =>  $countries){
+        //     $country_arr[]=$countries->country;
+        // }
 
 
         
@@ -105,10 +107,18 @@ class Event extends Resource
 
             Text::make('City','city')->hideFromIndex(),
             
-            Select::make('State','state')->options($state_arr)->hideFromIndex(),
+            Select::make('State','state')
+            ->options([
+                'Victoria'=>"Victoria",
+                'South Australia'=>'South Australia',
+                'Queensland'=>'Queensland',
+                'Western Australia'=>'Western Australia',
+                'Tasmania'=>'Tasmania',
+                'ACT'=>'ACT',
+                'WA'=>'WA'])->hideFromIndex(),
 
 
-             Select::make('Country','country')->options($country_arr)->hideFromIndex(),
+             Select::make('Country','country')->options(['Australia'=>'Australia','New Zealand'=>'New Zealand'])->hideFromIndex(),
 
             Textarea::make('Content','content')->hideFromIndex(),
             Text::make('Link','link')->hideFromIndex(),
