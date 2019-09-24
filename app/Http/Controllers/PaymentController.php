@@ -183,10 +183,10 @@ class PaymentController extends Controller {
                     Order_log::createNew($logger);
                 }
 
-                if (!empty($PersonID)) {
+                //if (!empty($PersonID)) {
                     Order::where('id', $this->order->id)->update($orderDataUpdate);
-                    User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID]);
-                }
+                    User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID,'newsletter' => $this->order->address->signme]);
+                //}
 
                 $order = $this->order->load('orderItems.variant.product', 'address');
                 event(new OrderReceived($order));
@@ -490,9 +490,9 @@ class PaymentController extends Controller {
                 Order_log::createNew($logger);
             }
 
-            if (!empty($PersonID)) {
-                User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID]);
-            }
+            //if (!empty($PersonID)) {
+                User::where('email', $this->order->address->email)->update(['person_idx' => $PersonID, 'newsletter' => $this->order->address->signme]);
+            //}
             Order::where('id', $this->order->id)->update($orderDataUpdate);
             return true;
         }
