@@ -65,8 +65,8 @@ class Event extends Resource
             Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex()->rules('mimes:jpeg,png'),
-
             
+            //Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
             Text::make('Event Date','date_str')->sortable()->rules('required', 'max:255'),
            
             Date::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
@@ -89,15 +89,10 @@ class Event extends Resource
             })->hideFromIndex(),
 
             Text::make('City','city')->hideFromIndex(),
-
             Text::make('State','state')->hideFromIndex(),
-
             Text::make('Country','country')->hideFromIndex(),
-
             Textarea::make('Content','content')->hideFromIndex(),
-
             Text::make('Link','link')->hideFromIndex(),
-            
             Select::make('Enable','status')->options([
                 'YES' => 'YES',
                 'NO' => 'NO',
