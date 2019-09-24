@@ -43,14 +43,13 @@ class Handler extends ExceptionHandler
     {    
         if ($this->isHttpException($exception)) {
             if ($exception->getStatusCode() == 404) {
-                return response()->view('errors.' . '404', [], 404);
+                $images = DB::table("errorpages")->where('status',1)->first();
+                return response()->view('errors.' . '404', compact('images'), 404);
             }
             /*if ($exception->getStatusCode() == 500) {
                 return response()->view('errors.' . '500', [], 500);
             }*/
         }
-        $images = DB::connection('mysql')->table("errorpages")->where('status',1)->first();
-        return response()->view('errors.' . '404',compact('images'), 404);
-        // return parent::render($request, $exception);
+        return parent::render($request, $exception);
     }
 }
