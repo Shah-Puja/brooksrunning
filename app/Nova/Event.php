@@ -53,38 +53,56 @@ class Event extends Resource
         return [
             ID::make()->hideFromIndex()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
+
             Text::make('Event Header','event_header')->hideFromIndex()->rules('required', 'max:255'),
+
             Text::make('Slug','slug')->hideFromIndex()->rules('required', 'max:255'),
+
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
             })->hideFromIndex()->rules('mimes:jpeg,png'),
+
             Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
             })->hideFromIndex()->rules('mimes:jpeg,png'),
-            Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
+
+            
             Text::make('Event Date','date_str')->sortable()->rules('required', 'max:255'),
-            // Date::make('Start date ','start_dt')->hideFromIndex()->rules('required', 'max:255'),
-            // Date::make('End date','end_dt')->hideFromIndex()->rules('required', 'max:255'),
-            // Date::make('Next Event Date','next_dt')->hideFromIndex()->rules('required', 'max:255'),
+           
             Date::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
-            Date::make(__('End date'), 'end_dt')->hideFromIndex()->rules('required', 'max:255'),
-            Date::make(__('Next Event date'), 'next_dt')->hideFromIndex()->rules('required', 'max:255'),
+            Date::make(__('End date'), 'end_dt')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
+                if($request->end_dt==''){
+                    $model->end_dt=$request->start_dt;
+                }else{
+                    $model->end_dt=$request->end_dt;
+                }
+            }
+                
+                )->hideFromIndex(),
+            Date::make(__('Next Event date'), 'next_dt')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
+                if($request->next_dt==''){
+                      $next=date('Y-m-d', strtotime("+12 months $request->start_dt"));
+                    $model->next_dt = date('Y-m-01', strtotime($next));
+                }else{
+                    $model->next_dt = $request->next_dt;
+                }
+            })->hideFromIndex(),
 
             Text::make('City','city')->hideFromIndex(),
+
             Text::make('State','state')->hideFromIndex(),
+
             Text::make('Country','country')->hideFromIndex(),
+
             Textarea::make('Content','content')->hideFromIndex(),
-            Text::make('H1 Tag','h1_tag')->hideFromIndex(),
-            Text::make('Title Tag','title_tag')->hideFromIndex(),
+
             Text::make('Link','link')->hideFromIndex(),
-            Select::make('Status','status')->options([
+            
+            Select::make('Enable','status')->options([
                 'YES' => 'YES',
                 'NO' => 'NO',
             ])->sortable(),
-            Select::make('Flag Show','flag_show')->options([
-                'YES' => 'YES',
-                'NO' => 'NO',
-            ])->hideFromIndex(),
+            
             Text::make('Series','series')->hideFromIndex(),
         ];
     }

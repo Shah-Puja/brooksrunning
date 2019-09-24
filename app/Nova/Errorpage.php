@@ -54,7 +54,7 @@ class Errorpage extends Resource
                 return $request->image->getClientOriginalName();
             })->creationRules('required','mimes:jpeg,png')->updateRules('mimes:jpeg,png'),
             
-            Boolean::make('Status','status')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
+            Boolean::make('Enable','status')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
                $id=$model->id;
                
               
