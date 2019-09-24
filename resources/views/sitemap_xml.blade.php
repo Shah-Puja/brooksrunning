@@ -10,3945 +10,4138 @@
 <!-- created with PRO Sitemap Service https://pro-sitemaps.com -->
 
   <url>
-       <loc>https://www.brooksrunning.com.au/</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/login</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/login</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/register</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/register</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/contact-us</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/info/contact-us</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/store-locator</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/store-locator</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cart</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cart</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-shoes-and-clothing</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-shoes-and-clothing</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-neutral-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-neutral-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-support-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-support-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-lightweight-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-lightweight-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-competition-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-competition-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-trail-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-trail-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-walking-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-walking-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-shoes-sale</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-shoes-sale</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/footwear/women/best_selling</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/footwear/women/best_selling</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_006.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_006.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_413.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_413.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_596.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_596.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_012.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_012.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_027.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_027.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-transcend-6-womens/120287_531.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-transcend-6-womens/120287_531.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-clothes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-clothes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-sports-bras</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-sports-bras</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-shorts</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-shorts</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-tops</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-tops</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-jackets-vests</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-jackets-vests</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-pants-tights</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-pants-tights</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-reflective-running-gear</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-reflective-running-gear</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-socks</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-socks</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-accessories</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-accessories</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-running-clothes-sale</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-running-clothes-sale</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoefinder</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoefinder</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-shoes-and-clothing</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-shoes-and-clothing</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-neutral-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-neutral-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-support-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-support-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-lightweight-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-lightweight-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-competition-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-competition-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-trail-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-trail-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-walking-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-walking-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-shoes-sale</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-shoes-sale</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/footwear/men/best_selling</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/footwear/men/best_selling</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_082.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_082.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_489.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_489.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_015.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_015.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_689.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_689.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-revel-3-mens/110314_088.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-mens/110314_088.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_419.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_419.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-transcend-6-mens/110299_419.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-transcend-6-mens/110299_419.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-clothes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-clothes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-shorts</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-shorts</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-tops</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-tops</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-jackets-vests</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-jackets-vests</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-pants-tights</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-pants-tights</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-reflective-running-gear</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-reflective-running-gear</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-socks</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-socks</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-accessories</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-accessories</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-running-clothes-sale</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-running-clothes-sale</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neutral-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neutral-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/defyance</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/defyance</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/dyad</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/dyad</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/ghost</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/ghost</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/ghost-gtx</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/ghost-gtx</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/glycerin</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/glycerin</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/launch</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/launch</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/levitate</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/levitate</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/neuro</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/neuro</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/pureflow</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/pureflow</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/revel</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/revel</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/ricochet</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/ricochet</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/support-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/support-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/addiction</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/addiction</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/adrenaline-gts</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/adrenaline-gts</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/ariel</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/ariel</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/beast</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/beast</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/bedlam</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/bedlam</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/purecadence</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/purecadence</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/ravenna</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/ravenna</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/transcend</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/transcend</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/vapor</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/vapor</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/trail-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/trail-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/caldera</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/caldera</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/cascadia</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/cascadia</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/cascadia-gtx</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/cascadia-gtx</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/mazama</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/mazama</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/puregrit</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/puregrit</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/competition-running-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/competition-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/asteria</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/asteria</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/hyperion</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/hyperion</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/walking-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/walking-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/addiction-walker</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/addiction-walker</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/dyad-walker</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/dyad-walker</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/about-us</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/info/about-us</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/our_history</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/our_history</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/our_purpose</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/our_purpose</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/technology</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/technology</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/run-signature</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/run-signature</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/competition/update</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/competition/update</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/enewsletter</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/enewsletter</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/training-tips</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/training-tips</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/injury-prevention</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/injury-prevention</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/running-shoes-and-apparel-sale</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/running-shoes-and-apparel-sale</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/shoes/pureCadence</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/shoes/pureCadence</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/revel-3-shine-collection</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/ghost-saturation</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_032.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_058.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_424.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_429.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/shipping-information</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/bedlam-womens-running-shoes/120272_049.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/returns-exchange</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/terms-conditions</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_177.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/terms-of-use</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_466.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/privacy</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-cascadia-14-gtx-womens/120298_053.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/info/sitemap</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-cascadia-14-gtx-mens/110309_053.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/images/PDF/Supply_Chain_Transparency_Statement_2018.pdf</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/info/shipping-information</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/password/reset</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/info/returns-exchange</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/info/terms-conditions</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/info/terms-of-use</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/info/privacy</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/info/sitemap</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/images/PDF/Supply_Chain_Transparency_Statement_2018.pdf</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/password/reset</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_060.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_032.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_040.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_615.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/canopy-jacket-womens/221221_594.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/array-short-sleeve-womens/221340_018.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/greenlight-capri-womens/221349_182.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/chaser-hat-unisex/280404_517.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-addiction-14-womens/120306_050.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-2-womens/120307_072.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-2-womens/120307_142.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-suede-womens/120308_007.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-suede-womens/120308_094.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-v-strap-2-womens/120309_072.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-v-strap-2-womens/120309_142.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_120.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_484.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_417.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_151.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_096.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_061.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_050.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_620.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_060.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_394.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_040.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_465.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/canopy-jacket-womens/221221_594.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-womens/120305_186.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/array-short-sleeve-womens/221340_018.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-puregrit-8-womens/120301_087.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-capri-womens/221349_182.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-caldera-3-womens/120288_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-hat-unisex/280404_517.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-caldera-3-womens/120288_092.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_694.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_111.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_327.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_121.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_575.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_032.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_121.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_678.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_021.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ricochet-womens-running-shoes/120282_482.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_043.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-womens-running-shoes/120279_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-le-womens-running-shoes/120291_143.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-womens-running-shoes/120279_520.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-le-womens-running-shoes/120291_073.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-womens-running-shoes/120279_178.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-womens-running-shoes/120279_520.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_509.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-womens-running-shoes/120279_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-womens-running-shoes/120279_178.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-christmas-ugly-sweater-womens/120279_322.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_509.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-womens-running-shoes/120279_678.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/puregrit-7-womens-trail-running-shoes/120280_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-christmas-ugly-sweater-womens/120279_322.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-revel-2-womens/120281_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-womens-running-shoes/120279_678.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-2-womens-running-shoes/120281_050.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-2-womens-running-shoes/120281_050.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-2-womens-running-shoes/120281_028.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-2-womens/120281_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_327.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-2-womens-running-shoes/120281_028.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-womens/120283_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/puregrit-7-womens-trail-running-shoes/120280_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_120.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_575.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_484.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-womens/120282_678.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_450.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ricochet-womens-running-shoes/120282_482.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_417.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_494.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_151.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_096.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_527.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_061.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_448.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-womens/120284_050.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_115.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_017.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_115.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-womens-running-shoes/120277_005.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_448.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_006.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_034.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-womens-running-shoes/120277_470.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-womens-running-shoes/120278_015.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_495.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_527.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_064.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_494.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-womens-running-shoes/120277_493.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-womens/120278_081.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_470.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_111.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_406.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-womens-walking-shoes/120032_121.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_005.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ricochet-le-womens-running-shoes/120292_030.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_493.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ricochet-le-womens-running-shoes/120292_177.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-womens-running-shoes/120277_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-gtx-womens/120299_010.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_495.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-transcend-6-womens/120287_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_461.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-cascadia-14-womens/120304_009.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_028.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-walker-womens-walking-shoes/620047_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_017.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-walker-womens-walking-shoes/620047_111.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_006.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_110.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-revel-3-womens/120302_121.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_077.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-caldera-3-womens/120288_092.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_553.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-caldera-3-womens/120288_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_955.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-le-womens-running-shoes/120291_143.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_092.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-le-womens-running-shoes/120291_073.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_542.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ricochet-le-womens-running-shoes/120292_030.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-4-womens-running-shoes/120234_477.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-14-gtx-womens/120298_053.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-2-womens-running-shoes/120235_489.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-gtx-womens/120299_010.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-2-womens-running-shoes/120235_099.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-puregrit-8-womens/120301_087.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-womens-running-shoes/120240_351.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-transcend-6-womens/120287_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-womens-running-shoes/120240_423.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-14-womens/120304_009.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-womens-running-shoes/120240_585.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-walker-womens-walking-shoes/620047_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-womens-running-shoes/120247_484.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-walker-womens-walking-shoes/620047_111.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-womens-running-shoes/120247_608.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ravenna-10-womens/120286_615.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-17-womens-running-shoes/120231_055.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_955.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/puregrit-6-womens-trail-running-shoes/120248_418.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_092.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-womens-running-shoes/120249_637.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_542.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-womens-running-shoes/120249_598.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-womens/120285_553.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-womens-running-shoes/120249_002.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-10-womens-running-shoes/120246_067.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-womens-running-shoes/120253_456.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-womens-running-shoes/120234_014.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-womens-running-shoes/120253_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-womens-running-shoes/120234_477.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-womens-running-shoes/120253_013.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-2-womens-running-shoes/120235_489.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-9-womens-running-shoes/120205_003.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-2-womens-running-shoes/120235_099.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-9-womens-running-shoes/120205_016.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-womens-running-shoes/120240_423.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-v-strap-womens-walking-shoes/120033_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-womens-running-shoes/120240_585.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-8-womens-running-shoes/120163_051.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-womens-running-shoes/120240_351.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hyperion-womens-running-shoes/120226_529.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-womens-running-shoes/120247_484.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hyperion-womens-running-shoes/120226_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-17-womens-running-shoes/120231_055.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/liberty-9-womens-leather-cross-training-shoes/120211_107.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/puregrit-6-womens-trail-running-shoes/120248_418.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/liberty-9-womens-leather-cross-training-shoes/120211_571.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-womens-running-shoes/120249_637.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/asteria-womens-running-shoes/120221_650.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-womens-running-shoes/120249_598.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/asteria-womens-running-shoes/120221_871.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-womens-running-shoes/120249_002.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-womens-running-shoes/120223_046.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-womens-running-shoes/120253_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-womens-running-shoes/120223_442.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-womens-running-shoes/120253_013.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-womens-running-shoes/120223_008.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-womens-running-shoes/120253_456.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-3-womens-running-shoes/120260_329.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-12-womens-trail-running-shoes/120233_496.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ariel-18-womens-running-shoes/120271_019.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-3-womens-running-shoes/120260_329.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ariel-18-womens-running-shoes/120271_091.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-9-womens-running-shoes/120205_003.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-9-womens-running-shoes/120205_016.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_585.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-v-strap-womens-walking-shoes/120033_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_656.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-8-womens-running-shoes/120163_051.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_321.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hyperion-womens-running-shoes/120226_529.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/bedlam-womens-running-shoes/120272_137.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hyperion-womens-running-shoes/120226_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-13-gtx-womens-trail-running-shoes/120273_048.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/liberty-9-womens-leather-cross-training-shoes/120211_571.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-womens-running-shoes/120275_025.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/liberty-9-womens-leather-cross-training-shoes/120211_107.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-womens-running-shoes/120275_447.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/asteria-womens-running-shoes/120221_650.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-womens-running-shoes/120275_064.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/asteria-womens-running-shoes/120221_871.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-womens-running-shoes/120275_527.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-womens-running-shoes/120223_046.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-gtx-womens-running-shoes/120276_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-womens-running-shoes/120223_442.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_027.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-womens-running-shoes/120223_008.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_452.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/purecadence-7-womens-running-shoes/120261_023.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/purecadence-7-womens-running-shoes/120261_023.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-13-womens/120274_026.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mazama-2-womens-trail-runinng-shoes/120267_641.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ariel-18-womens-running-shoes/120271_091.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/pureflow-7-womens-running-shoes/120262_048.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/bedlam-womens-running-shoes/120272_049.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-defyance-10-womens/120264_483.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_585.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-10-womens-running-shoes/120264_091.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_656.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-2-womens-trail-running-shoes/120265_440.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_321.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-2-womens-trail-running-shoes/120265_623.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-womens/120272_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-5-womens-running-shoes/120266_003.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/bedlam-womens-running-shoes/120272_137.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_495.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-13-gtx-womens-trail-running-shoes/120273_048.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_516.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-womens-running-shoes/120275_064.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_457.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-womens-running-shoes/120275_447.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_026.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-womens-running-shoes/120275_025.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-womens-running-shoes/120275_527.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_178.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-gtx-womens-running-shoes/120276_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_520.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_452.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_322.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-9-womens-running-shoes/120269_027.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_678.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/pureflow-7-womens-running-shoes/120262_048.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/lsd-lite-iv-womens-running-jacket/220779_476.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_516.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fiona-sports-bra/350064_568.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_457.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/maia-sports-bra/350054_925.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_079.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/jubralee-sports-bra/350042_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_495.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/anyday-sports-bra/350066_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_026.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/anyday-sports-bra/350067_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_619.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/juno-sports-bra/350025_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-womens-running-shoes/120268_146.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/rebound-racer-sports-bra/350037_515.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/transcend-5-womens-running-shoes/120263_474.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fastforward-crossback-sports-bra/300633_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-defyance-10-womens/120264_483.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hot-shot-sports-bra/300632_537.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-10-womens-running-shoes/120264_091.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/uprise-crossback-sports-bra/300616_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-2-womens-trail-running-shoes/120265_623.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/juno-sports-bra/350071_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-2-womens-trail-running-shoes/120265_440.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-sports-bra/350072_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-5-womens-running-shoes/120266_039.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/oxygen-running-water-bottle/BROXYGEN_211.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-5-womens-running-shoes/120266_003.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-womens-running-tee/PRTM0317_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mazama-2-womens-trail-runinng-shoes/120267_641.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-womens-running-singlet/PRTM0316_167.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_406.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-ultimate-quarter-running-socks/742087_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_005.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fanatic-running-calf-sleeve/741545_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_493.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-in-three-pack-running-socks/741544_316.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_470.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/running-heroes-socks/7414966_054.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-womens/120277_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-in-running-socks-black/7343_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-in-running-socks-white/7342_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_178.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/uprise-crossback-sports-bra/300614_605.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_520.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/pick-up-womens-running-tank/220981_579.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_322.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-7-short-womens/221256_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-womens/120279_678.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-womens-running-top/221259_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/lsd-lite-iv-womens-running-jacket/220779_476.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-long-sleeve-womens-running-top/221258_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/jubralee-sports-bra/350042_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-5-short-womens/221255_576.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/maia-sports-bra/350054_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-3-short-womens/221254_576.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/rebound-racer-sports-bra/350037_052.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-thermal-womens-running-vest/221231_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fiona-sports-bra/350064_649.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-short-sleeve-womens-running-top/221266_476.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/uprise-crossback-sports-bra/300614_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-1-2-zip-womens/221282_507.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fastforward-crossback-sports-bra/300633_432.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/steath-womens-running-tank/221267_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hot-shot-sports-bra/300632_537.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-womens-running-tank/221260_422.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/uplift-crossback-sports-bra/300616_592.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-thermal-womens-running-jacket/221230_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/juno-sports-bra/350025_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-hoodie-womens/221284_016.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fineform-c-d-sports-bra/300604_619.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/lsd-womens-running-jacket/221135_083.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fineform-a-b-sports-bra/300603_619.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fremont-womens-running-jacket/221186_009.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vixen-c-d-sports-bra/300291_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-womens-running-tank/221180_130.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/juno-sports-bra/350071_419.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-womens-running-capri/221129_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fineform-sports-bra/350072_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-racerback-womens-running-top/221189_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/oxygen-running-water-bottle/BROXYGEN_192.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/steady-short-sleeve-womens-running-top/221064_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-womens-running-tee/PRTM0317_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-3-womens-running-short/221038_438.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-womens-running-singlet/PRTM0316_167.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/racey-3-5-womens-running-short/220995_639.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-ultimate-quarter-running-socks/742087_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-womens-running-top/220992_056.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fanatic-running-calf-sleeve/741545_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-womens-running-tights/220983_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-in-three-pack-running-socks/741544_316.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-womens-running-tights/221228_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/running-heroes-socks/7414966_054.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-womens-running-capri/221227_066.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-in-running-socks-black/7343_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fly-by-womens-running-hoodie/221224_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-in-running-socks-white/7342_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-hoodie-womens-running-top/221222_045.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/anyday-sports-bra/350067_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-short-sleeve-womens-running-top/221191_383.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/anyday-sports-bra/350066_044.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-3-short-womens/221203_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vero-c-d-sports-bra/300511_327.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-5-short-womens/221202_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/pick-up-womens-running-tank/220981_579.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-half-zip-womens-running-top/221283_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-3-short-womens/221254_576.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-womens-running-tee/221287_009.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-7-short-womens/221256_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-thru-running-hat/280381_329.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-5-short-womens/221255_576.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-visor-unisex/280405_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-womens-running-top/221258_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-hat-unisex/280408_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-thermal-womens-running-vest/221231_520.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-running-beanie/280372_569.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-thermal-womens-running-jacket/221230_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-happy-sherpa-running-visor/280356_466.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-womens-running-tights/221228_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-happy-sherpa-running-hat/280355_048.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-womens-running-top/221259_422.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-thru-running-hat/280337_329.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-womens-running-capri/221227_472.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/comeback-running-hat/280334_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-womens-running-tank/221260_046.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/infiniti-running-headband/280155_305.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/stealth-short-sleeve-womens-running-top/221266_476.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-a-b-sports-bra/300603_047.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/steath-womens-running-tank/221267_432.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-c-d-sports-bra/300604_619.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-womens-running-capri/221129_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vero-c-d-sports-bra/300511_327.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-womens-running-tank/221180_130.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-visor-unisex/280409_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/lsd-womens-running-jacket/221135_971.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vixen-c-d-sports-bra/300291_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/steady-short-sleeve-womens-running-top/221064_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vixen-a-b-sports-bra/300290_918.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-racerback-womens-running-top/221189_134.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-happy-chaser-visor-unisex/280413_451.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-3-womens-running-short/221038_438.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-happy-chaser-hat-unisex/280412_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/racey-3-5-womens-running-short/220995_639.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-running-hat/280329_569.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-womens-running-top/220992_056.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-tank-womens/221369_563.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-womens-running-tights/220983_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hot-shot-short-sleeve-womens/221337_540.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fremont-womens-running-jacket/221186_009.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/array-short-sleeve-womens/221340_467.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/canopy-womens-running-jacket/221221_421.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/pick-up-tank-womens/221339_503.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-7-inch-womens-running-short-tight/221226_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hot-shot-tank-womens/221338_540.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fly-by-womens-running-hoodie/221224_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/array-tank-womens/221341_562.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-hoodie-womens-running-top/221222_045.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-womens-running-tank/221309_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-3-short-womens/221203_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fly-by-half-zip-womens-running-top/221300_451.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-5-short-womens/221202_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/notch-thermal-womens-running-long-sleeve/221299_459.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-short-sleeve-womens-running-top/221191_641.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/notch-thermal-womens-running-hoodie/221298_451.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vixen-a-b-sports-bra/300290_918.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/array-short-sleeve-womens-running-tee/221288_524.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-running-hat/280329_569.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-long-sleeve-womens/221343_445.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-sherpa-running-visor/280356_466.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-capri-womens/221349_423.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-sherpa-running-hat/280355_048.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-tee-womens/221364_563.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-thru-running-hat/280337_329.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/rep-3-2-in-1-short-womens/221352_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/comeback-running-hat/280334_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-tight-womens/221350_182.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/infiniti-running-headband/280155_305.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-womens/221344_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-thru-running-hat/280381_117.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-tight-womens/221347_456.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-tank-womens/221369_563.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-tank-womens/221345_551.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-tee-womens/221364_563.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/uplift-crossback-sports-bra/300616_592.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-running-beanie/280372_569.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-sports-bra/350072_477.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-tight-womens/221350_182.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/juno-sports-bra/350025_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-hat-unisex/280408_081.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/maia-sports-bra/350054_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-chaser-visor-unisex/280413_451.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fiona-sports-bra/350064_432.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-chaser-hat-unisex/280412_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-a-b-sports-bra/300603_619.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-visor-unisex/280409_081.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fineform-c-d-sports-bra/300604_442.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-visor-unisex/280405_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/juno-sports-bra/350071_171.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/discovery-trucker-hat/280394_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-3-short-womens/221254_182.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/rep-3-2-in-1-short-womens/221352_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-5-short-womens/221255_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-capri-womens/221349_561.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-3-womens-running-short/221038_410.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-1-2-zip-womens/221282_063.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-short-sleeve-womens-running-top/221191_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/notch-thermal-womens-running-hoodie/221298_451.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/pick-up-tank-womens/221339_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hot-shot-short-sleeve-womens/221337_540.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-womens-running-tee/221287_613.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-womens-running-tank/221309_020.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/array-tank-womens/221341_018.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fly-by-half-zip-womens-running-top/221300_451.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-womens/221344_551.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/notch-thermal-womens-running-long-sleeve/221299_459.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-womens-running-top/221259_422.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/array-short-sleeve-womens-running-tee/221288_524.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-tank-womens/221345_414.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hot-shot-tank-womens/221338_540.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-womens-running-tank/221260_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-womens-running-tee/221287_613.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-womens-running-singlet/PRTM0316_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-hoodie-womens/221284_016.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-short-sleeve-womens-running-top/221266_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-half-zip-womens-running-top/221283_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-womens-running-tee/PRTM0317_167.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/pick-up-tank-womens/221339_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/steath-womens-running-tank/221267_432.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-tank-womens/221345_414.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-racerback-womens-running-top/221189_641.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-7-short-tight-womens/221348_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-thermal-womens-running-vest/221231_520.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-tight-womens/221347_456.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/canopy-womens-running-jacket/221221_545.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-womens/221344_551.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/fly-by-womens-running-hoodie/221224_520.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-womens/221343_445.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-tight-womens/221347_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/array-tank-womens/221341_562.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-womens-running-capri/221227_040.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/array-short-sleeve-womens/221340_467.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/oxygen-running-water-bottle/BROXYGEN_199.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fineform-sports-bra/350072_477.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-happy-sherpa-running-visor/280356_520.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fastforward-crossback-sports-bra/300633_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-hat-unisex/280404_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/rebound-racer-sports-bra/350037_515.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/chaser-visor-unisex/280405_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fiona-sports-bra/350064_432.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-hat-unisex/280408_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fineform-a-b-sports-bra/300603_047.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/run-thru-running-hat/280381_487.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/uprise-crossback-sports-bra/300614_605.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-short-sleeve-womens-running-top/221191_641.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/juno-sports-bra/350071_171.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/lsd-womens-running-jacket/221135_971.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-3-short-womens/221254_182.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/bedlam-mens-running-shoes/110283_126.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-5-short-womens/221255_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-3-womens-running-short/221038_410.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-short-sleeve-womens-running-top/221191_383.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_026.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/pick-up-tank-womens/221339_503.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-womens-running-tee/221287_009.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-1-2-zip-mens/211091_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/array-tank-womens/221341_018.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/lsd-jacket-mens/211100_498.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-womens-running-top/221259_009.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-short-sleeve-mens/211133_046.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-tank-womens/221345_551.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-addiction-14-mens/110317_039.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-womens-running-tank/221260_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-addiction-14-mens/110317_028.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-womens-running-singlet/PRTM0316_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-v-strap-2-mens/110320_072.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-womens-running-tee/PRTM0317_167.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-suede-mens/110319_083.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/steath-womens-running-tank/221267_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-2-mens/110318_142.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-1-2-zip-womens/221282_507.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-walking-shoes-addiction-walker-2-mens/110318_072.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-racerback-womens-running-top/221189_641.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_439.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/canopy-womens-running-jacket/221221_545.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_126.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fly-by-womens-running-hoodie/221224_520.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_190.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/lsd-womens-running-jacket/221135_083.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_096.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-tight-womens/221347_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_017.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-womens-running-capri/221227_040.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_058.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-sherpa-running-hat/280355_466.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/oxygen-running-water-bottle/BROXYGEN_199.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-happy-sherpa-running-visor/280356_520.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_350.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-visor-unisex/280405_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_785.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-hat-unisex/280408_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_454.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-thru-running-hat/280381_487.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_175.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-visor-unisex/280409_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_040.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-womens-running-tank/221180_685.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-mens/110314_423.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-racerback-womens-running-top/221189_410.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-mens/110314_077.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/bedlam-mens-running-shoes/110283_126.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-3-mens/110314_121.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-transcend-6-mens/110299_092.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-le-mens-running-shoes/110302_040.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-1-2-zip-mens/211091_020.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/bedlam-mens-running-shoes/110283_005.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/lsd-jacket-mens/211100_498.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-short-sleeve-mens/211133_046.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_449.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-puregrit-8-mens/110313_076.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_111.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-puregrit-8-mens/110313_457.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_221.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-cascadia-14-mens/110310_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_026.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-12-gtx-mens/110311_064.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_027.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_479.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_066.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_332.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_429.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_060.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_027.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-christmas-ugly-sweater-running-shoes/110290_322.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_332.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_015.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_060.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_429.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-christmas-ugly-sweater-running-shoes/110290_322.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_059.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-levitate-2-mens/110290_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_050.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_059.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_426.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_050.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_437.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-glycerin-16-mens/110289_429.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/puregrit-7-mens-trail-running-shoes/110291_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-2-mens-running-shoes/110292_135.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-2-mens-running-shoes/110292_050.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_426.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-revel-2-mens/110292_061.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-16-mens-running-shoes/110289_015.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_111.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_428.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ricochet-mens-running-shoes/110293_049.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-mens-walking-shoes/110039_221.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-mens-running-shoes/110269_004.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_439.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-mens-running-shoes/110269_406.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_058.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-mens-running-shoes/110286_064.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_126.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-mens-running-shoes/110286_068.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_190.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-10-mens-running-shoes/110286_082.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_096.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/puregrit-7-mens-trail-running-shoes/110291_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-adrenaline-gts-19-mens/110294_017.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-revel-2-mens/110292_061.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-mens-running-shoes/110288_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-2-mens-running-shoes/110292_050.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_428.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-2-mens-running-shoes/110292_135.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_096.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ricochet-mens-running-shoes/110293_049.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_003.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ricochet-mens/110293_428.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_189.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_053.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-mens-running-shoes/110288_093.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_096.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-11-mens-running-shoes/110288_006.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_053.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_003.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-mens-running-shoes/110286_082.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_189.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-mens-running-shoes/110286_068.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-mens-running-shoes/110288_093.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-10-mens-running-shoes/110286_064.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_428.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-gtx-11-mens-waterproof-running-shoes/110287_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-mens-running-shoes/110288_006.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-gtx-mens/110311_064.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-11-mens-running-shoes/110288_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ravenna-10-mens/110298_429.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-gtx-11-mens-waterproof-running-shoes/110287_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-transcend-6-mens/110299_092.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-13-mens-trail-running-shoes/110285_026.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-le-mens-running-shoes/110302_040.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-cascadia-13-mens/110285_004.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ricochet-le-mens-running-shoes/110303_008.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ricochet-le-mens-running-shoes/110303_008.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-14-gtx-mens/110309_053.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-14-mens/110310_020.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_424.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-puregrit-8-mens/110313_076.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_488.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_040.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-12-mens/110316_175.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_016.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_016.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-caldera-3-mens/110295_493.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-caldera-3-mens/110295_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_488.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_078.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-launch-6-mens/110297_081.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_067.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-caldera-3-mens/110295_081.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_444.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-caldera-3-mens/110295_493.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-12-trail-mens-running-shoes/110243_036.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-4-mens-running-shoes/110244_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-glycerin-17-mens/110296_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-4-mens-running-shoes/110244_002.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-13-mens-trail-running-shoes/110285_026.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-4-mens-running-shoes/110244_486.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-cascadia-13-mens/110285_004.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-4-mens-running-shoes/110244_016.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_444.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-2-mens-running-shoes/110245_039.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_078.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-2-mens-running-shoes/110245_092.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-8-mens-running-shoes/110248_067.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-mens-trail-running-shoes/110242_445.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-12-trail-mens-running-shoes/110243_036.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-mens-trail-running-shoes/110242_075.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-mens-running-shoes/110244_016.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-mens-running-shoes/110250_409.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-mens-running-shoes/110244_486.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-mens-running-shoes/110250_013.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-mens-running-shoes/110244_002.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/vapor-4-mens-running-shoes/110250_090.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-4-mens-running-shoes/110244_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-10-mens-running-shoes/110257_013.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-2-mens-running-shoes/110245_092.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-10-mens-running-shoes/110257_056.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-2-mens-running-shoes/110245_039.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-10-mens-running-shoes/110257_167.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-mens-trail-running-shoes/110242_445.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-10-mens-running-shoes/110257_024.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-mens-trail-running-shoes/110242_075.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_012.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-mens-running-shoes/110250_013.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_487.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-mens-running-shoes/110250_090.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_473.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/vapor-4-mens-running-shoes/110250_409.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_084.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-10-mens-running-shoes/110257_056.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_048.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-10-mens-running-shoes/110257_167.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_046.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-10-mens-running-shoes/110257_024.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_035.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-10-mens-running-shoes/110257_013.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_033.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_012.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_017.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_487.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_068.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_473.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/beast-16-mens-running-shoes/110227_413.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_084.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/beast-16-mens-running-shoes/110227_095.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_048.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-walker-v-strap-mens-walking-shoes/110040_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_046.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-8-mens-running-shoes/110170_040.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-15-mens-running-shoe/110258_035.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-9-mens-running-shoes/110214_090.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_068.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-9-mens-running-shoes/110214_462.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_033.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-3-mens-running-shoes/110215_432.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-17-mens-running-shoes/110241_017.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/asteria-mens-running-shoes/110229_615.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/beast-16-mens-running-shoes/110227_095.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-mens-running-shoes/110231_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/beast-16-mens-running-shoes/110227_413.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-mens-running-shoes/110231_035.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-walker-v-strap-mens-walking-shoes/110040_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-9-mens-running-shoes/110231_095.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-8-mens-running-shoes/110170_040.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/hyperion-mens-running-shoes/110234_058.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-9-mens-running-shoes/110214_090.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mazama-mens-trail-running-shoes/110235_455.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-9-mens-running-shoes/110214_462.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-14-mens-running-shoe/110236_075.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-3-mens-running-shoes/110215_432.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/glycerin-14-mens-running-shoe/110236_478.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/asteria-mens-running-shoes/110229_615.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/puregrit-5-mens-trail-running-shoes/110239_464.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-mens-running-shoes/110231_035.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-13-gtx-mens-trail-running-shoes/110284_037.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-mens-running-shoes/110231_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-9-mens-running-shoes/110280_471.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-9-mens-running-shoes/110231_095.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ravenna-9-mens-running-shoes/110280_025.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/hyperion-mens-running-shoes/110234_058.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/transcend-5-mens-running-shoes/110276_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mazama-mens-trail-running-shoes/110235_455.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/transcend-5-mens-running-shoes/110276_080.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-14-mens-running-shoe/110236_075.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/defyance-10-mens-running-shoes/110277_025.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/glycerin-14-mens-running-shoe/110236_478.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-running-shoes-defyance-10-mens/110277_472.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/puregrit-5-mens-trail-running-shoes/110239_464.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-5-mens-running-shoes/110278_420.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/beast-18-mens-running-shoes/110282_425.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/launch-5-mens-running-shoes/110278_039.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/beast-18-mens-running-shoes/110282_004.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mazama-2-mens-trail-running-shoes/110279_419.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/beast-18-mens-running-shoes/110282_015.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/beast-18-mens-running-shoes/110282_425.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/transcend-5-mens-running-shoes/110276_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/beast-18-mens-running-shoes/110282_004.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/transcend-5-mens-running-shoes/110276_080.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/beast-18-mens-running-shoes/110282_015.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-defyance-10-mens/110277_472.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/purecadence-7-mens-running-shoes/110274_483.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/defyance-10-mens-running-shoes/110277_025.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/pureflow-7-mens-running-shoes/110275_048.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-5-mens-running-shoes/110278_039.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/neuro-3-mens-running-shoes/110273_099.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/launch-5-mens-running-shoes/110278_420.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-mens-running-shoes/110260_155.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mazama-2-mens-trail-running-shoes/110279_419.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-mens-running-shoes/110260_669.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-9-mens-running-shoes/110280_471.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/revel-mens-running-shoes/110260_002.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ravenna-9-mens-running-shoes/110280_025.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-mens-running-shoes/110261_091.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/pureflow-7-mens-running-shoes/110275_048.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-mens-running-shoes/110261_071.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/addiction-13-mens-running-shoes/110261_480.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-mens/110283_449.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-2-mens-trail-running-shoes/110272_429.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/bedlam-mens-running-shoes/110283_005.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/caldera-2-mens-trail-running-shoes/110272_427.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-13-gtx-mens-trail-running-shoes/110284_037.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_438.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/purecadence-7-mens-running-shoes/110274_483.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_091.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-mens-running-shoes/110269_406.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_068.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-mens-running-shoes/110269_004.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_015.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-mens-running-shoes/110260_155.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_435.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-mens-running-shoes/110260_669.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dyad-walker-mens-walking-shoes/610060_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/revel-mens-running-shoes/110260_002.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_027.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-mens-running-shoes/110261_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-mens-running-shoes/110261_480.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_069.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-13-mens-running-shoes/110261_091.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_332.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/neuro-3-mens-running-shoes/110273_099.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_322.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_438.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_026.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_091.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/levitate-2-mens-running-shoes/110290_057.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_068.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/essential-iv-mens-running-jacket/210665_305.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_015.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-sleeveless-mens/211221_422.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/adrenaline-gts-18-mens-running-shoes/110271_435.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-tee-mens/211232_076.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-2-mens-trail-running-shoes/110272_427.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-short-sleeve-mens/211219_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/caldera-2-mens-trail-running-shoes/110272_429.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-tank-mens/211214_410.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-walker-mens-walking-shoes/610060_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-mens/211213_459.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_093.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-long-sleeve-mens/211212_087.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_071.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-mens-running-hoodie/211182_070.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-ghost-11-mens/110288_006.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/turbine-full-zip-mens-running-top/211170_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_027.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/threshold-mens-running-tight/211169_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/notch-thermal-long-sleeve-mens-running-top/211163_098.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_069.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/comfort-running-socks/741544_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_332.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-mens-running-tee/PRTM0315_100.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_322.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-mens-running-singlet/PRTM0314_167.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_026.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-visor-unisex/280409_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/levitate-2-mens-running-shoes/110290_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-hat-unisex/280408_476.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/essential-iv-mens-running-jacket/210665_305.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sideline-mens-running-jacket/211167_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/stealth-short-sleeve-mens/211219_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/notch-thermal-mens-hoodie/211162_098.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/run-thru-running-hat/280381_012.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/canopy-jacket-mens/211090_074.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-tee-mens/211232_076.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/drift-1-2-zip-mens-running-top/211095_860.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/stealth-sleeveless-mens/211221_422.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-hoodie-mens-running-top/211093_097.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-tank-mens/211214_410.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-hoodie-mens-running-top/211092_447.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-mens/211213_459.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-1-2-zip-mens/211091_421.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-mens/211212_087.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-7-short-mens/211072_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-mens-running-hoodie/211182_070.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/lsd-mens-running-jacket/211100_413.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/turbine-full-zip-mens-running-top/211170_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-5-short-mens/211071_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/threshold-mens-running-tight/211169_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-mens-running-tank/211053_084.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sideline-mens-running-jacket/211167_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-short-sleeve-mens-running-top/211052_427.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-mens-running-tshirt/211165_009.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-long-sleeve-mens-running-top/211051_084.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/notch-thermal-mens-hoodie/211162_098.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-mens-running-tights/211001_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-mens-running-tee/PRTM0315_100.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-9-in-short-tight-mens/210833_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-mens-running-singlet/PRTM0314_167.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-5-mens-running-short/210824_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/chaser-hat-unisex/280404_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/infiniti-iii-mens-running-tights/210672_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-hat-unisex/280408_476.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/greenlight-tight-mens/211098_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/notch-thermal-long-sleeve-mens-running-top/211163_098.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-tank-mens/211134_487.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-7-short-mens/211072_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-mens-running-hoodie/211161_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-hoodie-mens-running-top/211093_097.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-singlet-mens-running-top/211140_850.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-hoodie-mens-running-top/211092_447.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-7-2-in-1-short-mens/211138_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-1-2-zip-mens/211091_421.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-5-mens-running-short/211137_451.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/canopy-mens-running-jacket/211090_075.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/go-to-2-split-short-mens/211135_047.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-5-short-mens/211071_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-mens-short-sleeve-running-top/211133_020.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-tight-mens/211098_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-mens-long-sleeve-running-top/211132_038.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-mens-running-tank/211053_084.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/spartan-mens-running-pant/211103_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-mens-running-top/211052_427.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/cascadia-thermal-mens-running-vest/211102_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-mens-running-top/211051_084.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-7-2-in-1-short-mens/211138_081.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-mens-running-tights/211001_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/sherpa-5-short-mens/211137_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/steady-short-sleeve-mens-running-top/210912_487.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/stealth-singlet-mens-running-top/211140_481.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/greenlight-9-in-short-tight-mens/210833_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-1-2-mens-running-top/211091_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-5-mens-running-short/210824_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-mens-long-sleeve-running-top/211132_451.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/infiniti-iii-mens-running-tights/210672_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/distance-graphic-tee-mens/211232_078.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/drift-1-2-zip-mens-running-top/211095_860.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/ghost-tank-mens/211134_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/lsd-mens-running-jacket/211100_413.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/canopy-mens-running-jacket/211090_408.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-mens-running-hoodie/211161_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/notch-thermal-mens-hoodie/211162_086.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-tank-mens/211134_046.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/dash-hoodie-mens-running-top/211092_075.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/stealth-singlet-mens-running-top/211140_850.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/essential-iv-mens-running-jacket/210665_831.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/stealth-short-sleeve-mens-running-top/211139_850.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/brooks-team-mens-running-singlet/PRTM0314_001.html</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-7-2-in-1-short-mens/211138_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/images/SS/RunSignatureWhitePaper.pdf</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-5-mens-running-short/211137_451.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Forster-Running-Festival</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/go-to-2-split-short-mens/211135_047.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/MS-Walk-and-Fun-Run-Launceston</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-mens-short-sleeve-running-top/211133_020.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Olivia-Newton-John-Wellness-Walk-&amp;-Research-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-mens-long-sleeve-running-top/211132_038.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/CJD-Fun-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/fremont-7-inch-linerless-mens-running-short/211130_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Augusta-Adventure-Festival</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/spartan-mens-running-pant/211103_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Point-to-Pinnacle</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/cascadia-thermal-mens-running-vest/211102_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Run-For-A-Cause</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/sherpa-5-short-mens/211137_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/After-Glow-Trail-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-mens/211212_459.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Rotorua-Half-Marathon</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-short-sleeve-mens/211213_024.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/End-of-Year-Party-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-mens-running-singlet/PRTM0314_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/North-Shore-Run-Series-Run-Devonport</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-tank-mens/211214_087.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Sunset-Series-Race-1</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-team-mens-running-tee/PRTM0315_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Sunset-Series-Race-2</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-1-2-mens-running-top/211091_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Hobart-Run-The-Bridge</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-graphic-tee-mens/211232_078.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/North-Shore-Run-Series-Run-The-Point</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ghost-tank-mens/211134_487.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Sunset-Series-Race-3</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/distance-long-sleeve-mens-running-top/211051_445.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Star-Media-City2Surf</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/canopy-mens-running-jacket/211090_408.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/North-Shore-Run-Series-Run-Albany</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/notch-thermal-mens-hoodie/211162_086.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/International-Womens-Day-Fun-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dash-hoodie-mens-running-top/211092_075.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Port-Macquarie-Running-Festival</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/essential-iv-mens-running-jacket/210665_831.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/NAB-RunWest</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/ricochet-mens-running-shoes/110293_057.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/X-Adventure</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/brooks-running-shoes-bedlam-womens-running-shoes/120272_049.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/MS-Walk-and-Fun-Run-Canberra</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-mens-walking-shoes/110039_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/MS-Walk-and-Fun-Run-Sydney</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/addiction-womens-walking-shoes/120032_001.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Lindfield-Rotary-Fun-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/dyad-womens-walking-shoes/620047_111.html</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Gold-Coast-Running-Festival</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/images/SS/RunSignatureWhitePaper.pdf</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Twilight-Running-Festival</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/january</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Puffing-Billy-Great-Train-Race</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/february</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/RACT-City-to-Casino</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/march</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/HBF-Run-For-A-Reason</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/april</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Balmoral-Burn</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/may</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Stadium-Stomp-Sydney</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/june</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/MS-Walk-and-Fun-Run-Melbourne</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/july</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Mt-Runners-&amp;-Walkers-Half-Marathon</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/august</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Run-Forrest</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/september</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Stadium-Stomp-Adelaide</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/october</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Surf-Coast-Trail-Marathon</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/november</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Stadium-Stomp-Melbourne</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/december</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Sutherland-to-Surf</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/images/PDF/Privacy_Policy_Brooks.pdf</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Stadium-Stomp-Brisbane</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/womens-cross-training-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Ipswich-Park2Park</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/mens-cross-training-shoes</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Bridge-to-Brisbane</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/meet_brooks/what-makes-us-tick</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Pub2Pub-Charity-Fun-Run</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/December</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Sandy-Point-Half-Marathon</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/February</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/events/Coffs-Harbour-Half-Marathon</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/January</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/images/PDF/Privacy_Policy_Brooks.pdf</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/March</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/womens-cross-training-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/April</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/mens-cross-training-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/May</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/meet_brooks/what-makes-us-tick</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/June</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/limited-edition-levitate-ricochet-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/July</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/mothers-day</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/August</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/fathers-day</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/September</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/melts-collection</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/October</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/collections/energize-running-shoes</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://www.brooksrunning.com.au/events/month/November</loc>
-       <lastmod>2019-07-23T07:21:08+00:00</lastmod>
+       <loc>https://brooksrunning.com.au/healthcare-shoes-for-nurses</loc>
+       <lastmod>2019-09-17T23:45:43+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.6400</priority>
   </url>
+
 </urlset>

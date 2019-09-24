@@ -252,7 +252,9 @@ class meet_brooksController extends Controller {
                     'contest_code' => $contest_code,
                     'source' => 'Subscriber',
                     'subscribed' => 'Yes',
+                    'newsletter' => '1',
                     'user_type' => 'Subscriber']);
+                    
         $icontact_pushmail = Icontact_pushmail::firstOrCreate(
                         ['email' => request('email')], ['fname' => request('fname'),
                     'lname' => request('lname'),
@@ -284,7 +286,7 @@ class meet_brooksController extends Controller {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
         } else {
-            User::where('email', request('email'))->update(['subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
+            User::where('email', request('email'))->update([ 'newsletter' => '1', 'subscribed' => 'Yes', 'contest_code' => request('contest_code')]);
             /* $user = User::where('email', request('email'))->first();
               event(new SubscriptionReceived($user)); */
             if (request('contest_code') != '') {
@@ -344,35 +346,41 @@ class meet_brooksController extends Controller {
             $fname = request('name');
         }
 
-        $Person = User::firstOrCreate(['email' => request('email')], ['first_name' => $fname, 'last_name' => $lname, 'source' => 'Subscriber',
-                    'subscribed' => 'Yes',
-                    'user_type' => 'Subscriber']);
-        if (isset($Person)) {
-            $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
-        }
+        $Person = User::firstOrCreate(
+                    [
+                        'email' => request('email')
+                    ], 
+                    [
+                        'first_name' => $fname,
+                        'last_name' => $lname,
+                        'source' => 'Subscriber',
+                        'subscribed' => 'Yes',
+                        'newsletter' => '1',
+                        'user_type' => 'Subscriber'
+                    ]
+                );
+       
         if ($Person->wasRecentlyCreated) {
             $signup = 1;
         } else {
+            $Person->newsletter=1;
+            $Person->save();
             $signup = 0;
         }
-        if (env('AP21_STATUS') == 'ON') {
-            if (empty($PersonID)) {
-                //$PersonID = $this->get_personid(request('email'), request('fname'), request('lname'), request('gender'), request('country'));
-                $PersonID = $this->get_personid(request('email'));
-            }
-            if (!empty($PersonID)) {
-                User::where('email', request('email'))->update(['person_idx' => $PersonID]);
-            }
-        }
+        
         $icontact_pushmail = Icontact_pushmail::firstOrCreate(
-                        ['email' => request('email')], ['fname' => $fname,
-                    'lname' => $lname,
-                    'source' => 'Subscriber',
-                    'status' => 'queue',
-                    'list_id' => env('ICONTACT_LIST_ID')
-        ]);
-        //$user = User::where('email', request('email'))->first();
-        //event(new SubscriptionReceived($user));
+                        [
+                            'email' => request('email')
+                        ], 
+                        [
+                            'fname' => $fname,
+                            'lname' => $lname,
+                            'source' => 'Subscriber',
+                            'status' => 'queue',
+                            'list_id' => env('ICONTACT_LIST_ID')
+                        ]
+                    );
+
         return view('meet_brooks.thank-you-signup', compact('signup'));
     }
 
@@ -387,24 +395,51 @@ class meet_brooksController extends Controller {
             'g-recaptcha-response' => ['required', $recaptcha],
         ]);
 
-        $contest_code = request('contest_code');
-        $shoe_wear = request('custom_Shoes_you_wear');
-        $state = request('country');
-
-        $Person = User::updateOrCreate(['email' => request('email')], ['first_name' => request('fname'), 'last_name' => request('lname'), 'tag' => request('comp_name'), 'gender' => request('gender'), 'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'), 'birth_date' => request('custom_Birth_Date'), 'birth_month' => request('custom_Birth_Month'), 'age_group' => request('custom_Age'), 'postcode' => request('postcode'), 'shoe_wear' => $shoe_wear, 'state' => $state, 'contest_code' => $contest_code, 'subscribed' => 'Yes']);
-        if (isset($Person)) {
-            $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
+        $PersonID = '';
+        if (env('AP21_STATUS') == 'ON') {
+            $PersonID = $this->get_personid(request('email'));
         }
-        Icontact_pushmail::where('email', request('email'))->update(['fname' => request('fname'),
-            'lname' => request('lname'), 'gender' => request('gender'),
-            'birth_day' => request('custom_Birth_Date'),
-            'birth_month' => request('custom_Birth_Month'),
-            'age_group' => request('custom_Age'),
-            'postcode' => request('postcode'), 'shoe_wear' => request('custom_Shoes_you_wear'),
-            'country' => request('country'), 'happy_runner_comp' => request('contest_code'),
-            'status' => 'queue', 'list_id' => env('ICONTACT_LIST_ID')]);
-        //$user = User::where('email', request('email'))->first(); 
-        //event(new SubscriptionReceived($user)); // to update the other details in aweber
+        
+        $Person = User::where('email',request('email'))
+                        ->update(
+                            [
+                                'first_name' => request('fname'),
+                                'last_name' => request('lname'),
+                                'tag' =>  request('comp_name'),
+                                'gender' => request('gender'),
+                                'dob' => request('custom_Birth_Month') . '-' . request('custom_Birth_Date'),
+                                'birth_date' =>  request('custom_Birth_Date'),
+                                'birth_month' => request('custom_Birth_Month'),
+                                'age_group' => request('custom_Age'),
+                                'postcode' => request('postcode'),
+                                'shoe_wear' => request('custom_Shoes_you_wear'),
+                                'state' => request('country'),
+                                'contest_code' => request('contest_code'),
+                                'person_idx' => $PersonID,
+                                'newsletter' => '1'
+                            ]
+                        );
+
+
+        $Icontact_pushmail = Icontact_pushmail::where('email', request('email'))
+                            ->update(
+                                [
+                                    'fname' => request('fname'),
+                                    'lname' => request('lname'),
+                                    'gender' => request('gender'),
+                                    'birth_day' =>  request('custom_Birth_Date'),
+                                    'birth_month' => request('custom_Birth_Month'),
+                                    'age_group' => request('custom_Age'),
+                                    'postcode' => request('postcode'),
+                                    'shoe_wear' => request('custom_Shoes_you_wear'),
+                                    'country' => request('country'),
+                                    'happy_runner_comp' => request('contest_code'),
+                                    'status' => 'queue',
+                                    'list_id' => env('ICONTACT_LIST_ID')
+                                ]
+                            );
+
+       
         if (request('signup') == 1) {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
