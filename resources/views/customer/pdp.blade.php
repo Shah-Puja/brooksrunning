@@ -73,7 +73,30 @@
                                     </li>
                                     @endif
                                 @endfor
+                                <li class="uTube-popup--control" data-thumb="/images/details/shoes/utube-icon.jpg" >
+					                <!-- <div class="videowrapper "><iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					                </div> -->
+                                    <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
+                                        <div class="popup-container--wrapper">
+                                            <div class="popup-container--info">
+                                                <div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
+                                                <div class="uTube-info">
+                                                    <iframe class="shoe--vdo-show-iframe" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allowfullscreen ></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+					            </li>
+                                <!-- <li class="shoe-main-container">
+                                    <a href="JavaScript:Void(0);" class="utube uTube-popup--control">
+                                    <div class="module-img">
+                                        <img src="http://i3.ytimg.com/vi/10rOgl_KJRI/maxresdefault.jpg">
+                                    </div>
+                                    <div class="play"></div>
+                                    </a>
+                                </li> -->
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -207,6 +230,7 @@
                             </div>
                         </div>
                         <!--/afterpay popup -->
+
                         <div class="category"> {{ strip_tags($product->h2) }} </div>
                         @if( !empty($colour_options) && count($colour_options) > 0 )
                         <!-- Colour swatches -->
@@ -853,5 +877,40 @@ $(document).on('click', '.pdp-width-show li', function () {
 });
 
 </script>
+
+<!-- Start utube vdo -->
+
+
+<style>
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+	/* ul.lSGallery li:last-child img {
+   max-height: 41px; max-width: 62px;
+} */
+</style>
+
+<script>
+$( ".pdp-zoom--container ul li" ).last().addClass( "uTube-popup--control" );
+</script>
+
+
+
+<!-- End utube vdo -->
+
+
 
 @endsection
