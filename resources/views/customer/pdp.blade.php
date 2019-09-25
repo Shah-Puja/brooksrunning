@@ -74,8 +74,10 @@
                                     @endif
                                 @endfor
                                 <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
-					                <div class="videowrapper "><iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					                </div>
+					                <div class="videowrapper">
+                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        </iframe>
+                                    </div>
 					            </li>
                             </ul>
 
@@ -869,9 +871,11 @@ $(document).on('click', '.pdp-width-show li', function () {
     clear: both;
     width: 100%;
     position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
+    /* padding-bottom: 56.25%;
+    padding-top: 25%;
+    height: 0; */
+    height: 350px;
+    margin: 50px auto;
 }
 .videowrapper iframe {
     position: absolute;
@@ -880,13 +884,31 @@ $(document).on('click', '.pdp-width-show li', function () {
     width: 100%;
     height: 100%;
 }
-	/* ul.lSGallery li:last-child img {
-   max-height: 41px; max-width: 62px;
-} */
+	ul.lSGallery li:last-child a .play{
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border: none;
+        top: 50%;
+        left: 50%;
+        margin-top: -14px;
+        margin-left: -14px;
+        background: url(../images/youtubeplay.png) no-repeat;
+}
+
+.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
+    border: 1px solid #0ee0e0e0;
+    position: relative;
+        display: inline-block;
+}
 </style>
 
 <script>
-$( ".pdp-zoom--container ul li" ).last().addClass( "uTube-popup--control" );
+    $(document).ready(function(){
+        // var newcontent = '<div class="play"></div>';
+        // $('#LastChild').html(newcontent);
+        $('.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child').attr('id', 'foo123');
+    });
 </script>
 
 
