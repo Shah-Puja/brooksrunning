@@ -89,14 +89,15 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 <div class="opacity-cover"></div>
-						<img src="/images/landingpage/Mens/men_levitate2.jpg">
+						<img src="/images/landingpage/Mens/men_revel3-breakthrough.jpg">
 					    <div class="title">
-					       <h2 class="happy left">&nbsp;<br>Levitate 2</h2>
+					       <h2 class="happy left">&nbsp;<br>Revel 3 Breakthrough</h2>
 					    </div>
 					 </div>
 					 <div class="lp-info-block">
-							<p>Tap into your own endless energy in the Levitate 2. Featuring DNA AMP midsole technology to keep you going farther and faster.</p>
-							<a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop Levitate 2</a>
+							<p>Introducing the Revel 3 Breakthrough Collection. Styled to perform, the Revel 3 has soft, adaptable BioMoGo DNA to cushion your toughest training days.</p>
+							<!-- <a class="primary-button" href="/brooks-running-shoes-levitate-2-mens/110290_026.html">Shop Levitate 2</a> -->
+							<a class="primary-button" href="/collections/revel-3-breakthrough-collection">Check it out</a>
 					</div> 
 				</div>
 				<div class="tab-6">
