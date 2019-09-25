@@ -270,18 +270,7 @@ class meet_brooksController extends Controller {
                     'status' => 'queue',
                     'list_id' => env('ICONTACT_LIST_ID')
         ]);
-        if (isset($Person)) {
-            $PersonID = ($Person->person_idx != '') ? $Person->person_idx : '';
-        }
-        if (env('AP21_STATUS') == 'ON') {
-            if (empty($PersonID)) {
-                $PersonID = $this->get_personid(request('email'), request('fname'), request('lname'), request('gender'), request('country'));
-            }
-            if (!empty($PersonID)) {
-                User::where('email', request('email'))->update(['person_idx' => $PersonID]);
-            }
-        }
-
+       
         if ($Person->wasRecentlyCreated) {
             return response()->json(['success' => '<p class="heading">Thank you! </p> <p class="thankyou_heading">Welcome to the Brooks Running family. <br/>
             We look forward to sharing the latest news about our products, events and specials with you.<br> Stay tuned and Run Happy!</p>']);
@@ -296,33 +285,6 @@ class meet_brooksController extends Controller {
             }
         }
     }
-
-    /* public function update_previous_competitions() {
-      ini_set('max_execution_time', 300);
-      $competition_user = Competition_user::where('comp_aweber_exist', 'No')->limit(15)->get();
-      foreach ($competition_user as $curr_user) {
-      echo"<br>" . $curr_user->id . "-" . $curr_user->email . " - " . $curr_user->comp_name;
-      //print_r($curr_user);
-      $subscriber = array(
-      'email' => $curr_user->email,
-      'name' => $curr_user->fname . " " . $curr_user->lname,
-      'ad_tracking' => 'Competition',
-      'misc_notes' => $curr_user->comp_name,
-      'custom_fields' => array(
-      'Post Code' => $curr_user->postcode,
-      'Gender' => $curr_user->gender,
-      'Age' => $curr_user->age_group,
-      'Country' => $curr_user->country,
-      'Shoes you wear' => $curr_user->shoes_wear,
-      'Contest Code' => $curr_user->comp_name,
-      ),
-      );
-      //$this->client->updateoradd_Subscriber($subscriber);
-      ProcessCompetition::dispatch($subscriber);
-      Competition_user::where('id', $curr_user->id)->update(['comp_aweber_exist' => 'Yes']);
-      //exit;
-      }
-      } */
 
     public function rh_comp_thank_you() {
         return view('meet_brooks.competition.thank_you');
@@ -395,11 +357,6 @@ class meet_brooksController extends Controller {
             'g-recaptcha-response' => ['required', $recaptcha],
         ]);
 
-        $PersonID = '';
-        if (env('AP21_STATUS') == 'ON') {
-            $PersonID = $this->get_personid(request('email'));
-        }
-        
         $Person = User::where('email',request('email'))
                         ->update(
                             [
@@ -415,7 +372,6 @@ class meet_brooksController extends Controller {
                                 'shoe_wear' => request('custom_Shoes_you_wear'),
                                 'state' => request('country'),
                                 'contest_code' => request('contest_code'),
-                                'person_idx' => $PersonID,
                                 'newsletter' => '1'
                             ]
                         );
