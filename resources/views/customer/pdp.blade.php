@@ -73,28 +73,10 @@
                                     </li>
                                     @endif
                                 @endfor
-                                <li class="uTube-popup--control" data-thumb="/images/details/shoes/utube-icon.jpg" >
-					                <!-- <div class="videowrapper "><iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					                </div> -->
-                                    <div id="uTube-popup--wrapper" class="popup-container uTube--popup">
-                                        <div class="popup-container--wrapper">
-                                            <div class="popup-container--info">
-                                                <div class="close-me"><span class="icon-close-icon uTube-popup--close"></span></div>
-                                                <div class="uTube-info">
-                                                    <iframe class="shoe--vdo-show-iframe" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allowfullscreen ></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
+					                <div class="videowrapper "><iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					                </div>
 					            </li>
-                                <!-- <li class="shoe-main-container">
-                                    <a href="JavaScript:Void(0);" class="utube uTube-popup--control">
-                                    <div class="module-img">
-                                        <img src="http://i3.ytimg.com/vi/10rOgl_KJRI/maxresdefault.jpg">
-                                    </div>
-                                    <div class="play"></div>
-                                    </a>
-                                </li> -->
                             </ul>
 
                         </div>
