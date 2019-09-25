@@ -352,13 +352,28 @@
                                                 <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
                                                        <label for="signme">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                    <div class="text">Authority to leave parcel at premises if no one is available to accept it. <br/>
+                                                        <span class="instruction"> *Please note that by selecting this option, you take full responsibility for the parcel once it leaves our distribution centre, and no claim can be made if the parcel is lost or stolen.</span>
+                                                    </div>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-12">
+                                        <div class="input-wrapper">
+                                            <div class="checklist-inline">
+                                                <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
+                                                       <label for="signme">
+                                                    <div class="mark"><span></span></div>
+                                                    <div class="text">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
                                     <div class="col-12">
                                         <div class="input-wrapper">
                                             @php
@@ -371,7 +386,7 @@
                                             <textarea name="order_info" class="input-textarea">{{ $order_info }}</textarea>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="billing-form">
                                 <h1 class="br-heading">Billing Address</h1>
