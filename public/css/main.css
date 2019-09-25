@@ -2664,12 +2664,22 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 60%;
 }
 @media only screen and (max-width: 767px) {
   .shoe-main-container .shoes-info .para {
     margin: 0 auto;
     width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .shoe-main-container .shoes-info .para {
+    width: 71%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .shoe-main-container .shoes-info .para {
+    width: 71%;
   }
 }
 .shoe-main-container .shoes-info .para h1 {

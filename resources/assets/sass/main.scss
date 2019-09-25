@@ -1012,10 +1012,16 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 70%;
+            width: 60%;
                 @media #{$mobile-only} {
                     margin: 0 auto;
                     width: 100%;
+                }
+                @media #{$tab-only} {
+                  width: 71%;
+                } 
+                @media #{$desktop-only} {
+                  width: 71%;
                 }
                   h1{
                     color: $black;
