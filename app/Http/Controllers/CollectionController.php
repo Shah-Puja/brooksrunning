@@ -298,4 +298,54 @@ class CollectionController extends Controller
 
         return view( 'customer.collection_melts_collection',compact('colour_options','products'));
        }
+
+       public function revel3_breakthrough_collection(){
+        $array = ['110314_423','110314_077','110314_121'];
+        $data_array = [];
+        foreach($array as $item){
+            $item = explode('_',$item);
+            $style = $item[0];
+            $color_code = $item[1];
+            $data_array[] = array('style'=> $style,'color_code'=> $color_code);
+        } 
+        $orderby_style_string = implode("','",collect($data_array)->pluck('style')->toArray());
+        $orderby_color_string = implode("','",collect($data_array)->pluck('color_code')->toArray());  
+        
+        $style_array = collect($data_array)->pluck('style');
+                  
+        $styles = \App\Models\Product::whereIn("style",$style_array)
+                                        ->whereHas('variants', function ( $query ) {
+                                            $query->where('visible', '=', 'Yes');
+                                    })
+                                    ->with('variants')
+                                    //->orderByRaw("FIELD(style ,'$orderby_style_string') ASC,FIELD(color_code ,'$orderby_color_string') ASC")
+                                    ->get();
+            
+        $products_array = $styles->filter(function ($value, $key) use ($data_array) {
+                $data=[];
+                foreach($data_array as $value_array){
+                        if($value_array['style']==$value->style && $value_array['color_code']==$value->color_code){
+                            $data[] = $value;
+                        }
+                }
+            return $data;
+        });
+
+        $products = $products_array->sortBy(function ($item, $key) use ($array) {
+            foreach($array as $key=>$array_item){
+                $array_item = explode('_',$array_item);
+                $style = $array_item[0];
+                $color_code = $array_item[1];
+                if($item->style == $style && $item->color_code== $color_code){
+                    return $key;
+                }
+            } 
+        });
+        
+        $colour_options = $styles->unique(function ($item){
+            return $item['style'].$item['color_code'];
+        });
+
+        return view( 'customer.collection_revel_3_breakthrough',compact('colour_options','products'));
+       }
 }
