@@ -68,7 +68,7 @@
             address+=" Australia";
         }  
         console.log(address);
-        geocoder.geocode({'address': address}, function (results, status) {
+        geocoder.geocode({'address': address , 'region': 'AU'}, function (results, status) {
             if (status == 'OK') {
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
