@@ -93,14 +93,14 @@
 				<div class="col-3 tab-6">
 					<div class="homepage-signup--wrapper">
 						<div class="input-wrapper">
-						<input type="text" name="name" placeholder="Name" class="input-field">
+						<input type="text" name="name" placeholder="Name" class="input-field" required>
 						</div>
 					</div>
 				</div>
 				<div class="col-3 tab-6">
 					<div class="homepage-signup--wrapper">
 						<div class="input-wrapper">
-							<input type="text" name="email" placeholder="Email" class="input-field">
+							<input type="email" name="email" placeholder="Email" class="input-field" required>
 						</div>
 					</div>
 				</div>
