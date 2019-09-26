@@ -4,7 +4,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="br-mainheading">Register for the Brooks Professional Purchase Program</h1>
+                    <h1 class="br-mainheading">Create an Account</h1>
                 </div>
             </div>
         </div>
@@ -12,7 +12,7 @@
     <section class="create-account wrapper">
         <div class="row">
             <div class="col-9">
-                @include('auth.form')                
+                @include('auth.loyalty-form')                
             </div>
             <div class="col-3">
                 <div class="create-account--right">
@@ -20,25 +20,22 @@
                         <div class="icon-img">
                             <img src="/images/accounts/icon-profile.png" alt="">
                         </div>					
-                        <h3>Why Create An Account?</h3>
+                        <h3>What is the Brooks Professional Purchase Program? </h3>
                     </div>
                     <div class="row">
                         <div class="tab-4 col-12">
                             <div class="info">
-                                <h4>Faster Checkout</h4>
-                                <p>Save your billing and shipping information to make it easier to buy your favourite gear.</p>
+                                <p>The Brooks <sup>&reg;</sup> Professional Purchase Program enables Sports Medicine practitioners<sup>*</sup> to purchase Brooks products for their personal use at exclusive member pricing. </p>
                             </div>
                         </div>
                         <div class="tab-4 col-12">
                             <div class="info">
-                                <h4>Order History</h4>
-                                <p>Look up important information about your current and past orders.</p>
+                                <p>We believe practitioners are an integral part of the footwear industry and have created this program in recognition of this role and to enable you to experience our products. </p>
                             </div>
                         </div>
                         <div class="tab-4 col-12">
                             <div class="info">
-                                <h4>News and Exclusive Offers</h4>
-                                <p>Sign up to receive email updates on special promotions, new product announcements, gift ideas, and more.</p>
+                                <p>* <i>This program is open to currently practicing, registered Podiatrists and Sports Muscoskeletol Physiotherapists. Sports Chiropractors and Sports Osteopaths.</i> </p>
                             </div>
                         </div>
                     </div>

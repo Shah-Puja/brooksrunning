@@ -2135,6 +2135,14 @@
           margin: 60px 0;
         }
       }
+      &.loyalty-shoefinder-section{
+        background-color: $lightblue;
+      
+        @media #{$tab-only}{
+        }
+        @media #{$mobile-only}{
+        }
+      }
     }
   }
   .account-order--history{

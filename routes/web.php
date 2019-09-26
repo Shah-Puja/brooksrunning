@@ -229,3 +229,9 @@ Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_
 
 Route::get('/testmedibankcsv/export_medibank_order_csv', 'testmedibankcsv@export_medibank_order_csv');
 Route::get('/error-page', 'QuickhelpController@error_404');
+
+
+
+
+/* loyalty accounts static pages */
+Route::get('/account-homepage', 'MyaccountController@account_homepage');
