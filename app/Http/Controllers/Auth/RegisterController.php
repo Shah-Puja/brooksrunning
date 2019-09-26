@@ -74,6 +74,9 @@ class RegisterController extends Controller {
                     'newsletter_subscription' => '',
                     'source' => '',
                     'user_type' => '',
+                    'practice_name' => 'sometimes|required',
+                    'health_practitioner' => 'sometimes|required',
+                    'loyalty_type' => '',
         ]);
     }
 
@@ -98,6 +101,9 @@ class RegisterController extends Controller {
                     'postcode' => (isset($data['postcode'])) ? $data['postcode'] : null,
                     'newsletter' => @$data['newsletter_subscription'] ? 1 : 0,
                     'user_type' => "User",
+                    'practice_name' => (isset($data['practice_name'])) ? $data['practice_name'] : '', // field for loyalty register user
+                    'health_practitioner' => (isset($data['health_practitioner'])) ? $data['health_practitioner'] : '', // field for loyalty register user
+                    'loyalty_type' => (isset($data['loyalty_type'])) ? $data['loyalty_type'] : '', // field for loyalty register user
         ]);
 
         $icontact_pushmailuser = DB::table('icontact_pushmail')->insert(
@@ -117,7 +123,10 @@ class RegisterController extends Controller {
         ]);
 
         if ($user->wasRecentlyCreated) {
-            $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+            $PersonID = "";
+            if (env('AP21_STATUS') == 'ON') {
+                $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+            }
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
         }
         return $user;
@@ -211,6 +220,10 @@ class RegisterController extends Controller {
             }
         }
         return $returnVal;
+    }
+
+    public function loyalty_register(){
+        return view ('auth.loyalty-register');
     }
 
 }
