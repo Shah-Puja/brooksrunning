@@ -74,16 +74,45 @@
                 </div>
                 <div class="row">
                     <div class="tab-6">
-                        <div class="input-wrapper">
-                            <label for="password">{{ __('Password') }}<sup>*</sup> : @if ($errors->has('password')) <span class="error error invalid-feedback"> <strong>{{ $errors->first('password') }}</strong> </span> @endif</label>
-                            <input id="password" type="password" class="input-field form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" data-label-name="password" >
+                    <div class="input-wrapper">
+                                <div class="row">
+                                    <div class="mob-7"><label>Choose your Account Password</label></div>
+                                    <div class="mob-5">
+                                    <label><div class="show-pass">
+                                            <input type="checkbox" id="show_password" name="show_password">Show Password
+                                    </label></div>
+                                    </div>
+                                </div>
+                            </label>
+                            <input id="password" type="password" class="input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif								
                         </div>
                     </div>
                     <div class="tab-6">
-                        <div class="input-wrapper">
-                            <label>Confirm Password<sup>*</sup> :</label>
-                            <input id="password-confirm" type="password" class="input-field form-control" name="password_confirmation"  data-label-name="confirm password" >                        </div>
-                    </div>
+                    <div class="input-wrapper">
+								
+                                <div class="row">
+                                    <div class="mob-7"><label>Confirm Password</label></div>
+                                    <div class="mob-5">
+                                    <label><div class="show-pass">
+                                            <input type="checkbox" id="show_password" name="show_password">Show Password
+                                    </label></div>
+                                    </div>
+                                </div>
+                            </label>
+                            <input id="password" type="password" class="input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif								
+                        </div>
                 </div>
                 <input type="hidden" name="loyalty_type" value="ppp"/>
                 <!--<div class="row">
