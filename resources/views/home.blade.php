@@ -19,7 +19,7 @@
                         <img src="images/accounts/icon-account-details.png" alt="">
                     </div>
                     <h3 class="br-heading">Personal Details</h3>
-                    <div class="br-info">view and update your account details.</div>
+                    <div class="br-info">Manage your name, email and password</div>
                     <a href="account-personal" class="primary-button">View Details</a>
                 </div>
             </div>
@@ -29,20 +29,20 @@
                         <img src="images/accounts/icon-order-history.png" alt="">
                     </div>
                     <h3 class="br-heading">Order History</h3>
-                    <div class="br-info">view your current or past orders.</div>
+                    <div class="br-info">Browse all saved orders</div>
                     <a href="account-order-history" class="primary-button">View Order History</a>
                 </div>
             </div>
-            <!-- <div class="tab-4">
+            <div class="tab-4">
                 <div class="create-account--banner">
                     <img src="images/accounts/account-banner.png" alt="">
                 </div>
-            </div> -->
+            </div>
             @if($shoefinder_user_details && $shoefinder_user_details->status=='Y')
             <div class="tab-4">
-                <div class="create-account--homepage loyalty-shoefinder-section">
+                <div class="create-account--homepage shoefinder">
                     <div class="icon-img">
-                         <img src="/images/home/hp_menu_shoefinder_logo.png" alt="">
+                         <img src="/images/br-shoefinder-logo.png" alt="">
                     </div>
                     <h3 class="br-heading">Shoe Finder</h3>
                     <div class="br-info">View your shoe finder results, or retake <br>the shoe finder.</div>
