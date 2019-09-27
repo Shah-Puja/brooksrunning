@@ -131,10 +131,19 @@ class CartController extends Controller {
         
         $data = array();
         $freight_charges = 0;
-
         if (!empty($cart)) {
+            if (auth()->id() != 0) { //check user is logged in or not for Loyalty program
+                if (auth()->user()->person_idx != '' && auth()->user()->loyalty_type== 'PPP') {
+                    $personidx = auth()->user()->person_idx;
+                } else {
+                   //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
+                    $personidx = '115414';
+                }
+            } else {
+                $personidx = '115414';
+            }
             $cart_xml = "<Cart>
-						<PersonId>115414</PersonId>
+						<PersonId>".$personidx."</PersonId>
 						<Contacts>
 						</Contacts>
 							<CartDetails>\n\t";

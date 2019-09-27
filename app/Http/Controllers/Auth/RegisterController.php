@@ -125,14 +125,14 @@ class RegisterController extends Controller {
         if ($user->wasRecentlyCreated) {
             $PersonID = "";
             if (env('AP21_STATUS') == 'ON') {
-                $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
+                $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
             }
             $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
         }
         return $user;
     }
 
-    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '') {
+    public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '' , $loyalty = '') {
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
@@ -144,7 +144,7 @@ class RegisterController extends Controller {
                     break;
 
                 case '404':
-                    $userid = $this->create_user($email, $fname, $lname, $gender, $state);
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $state , $loyalty);
                     break;
 
                 default:
@@ -161,13 +161,13 @@ class RegisterController extends Controller {
                     break;
             }
         } else {
-            $userid = $this->create_user($email, $fname, $lname, $gender, $state);
+            $userid = $this->create_user($email, $fname, $lname, $gender, $state , $loyalty);
         }
 
         return $userid;
     }
 
-    public function create_user($email, $fname = '', $lname = '', $gender = '', $state = '') {
+    public function create_user($email, $fname = '', $lname = '', $gender = '', $state = '', $loyalty = '') {
 
         $returnVal = false;
         if (isset($gender) && $gender == "Male") {
@@ -175,23 +175,15 @@ class RegisterController extends Controller {
         } elseif (isset($gender) && $gender == "Female") {
             $gender = "F";
         }
-        $person_xml = "<Person>
-                        <Firstname>$fname</Firstname>
-                        <Surname>$lname</Surname>   
-                        <Sex>$gender</Sex> 
-                        <DateOfBirth></DateOfBirth>
-                        <Contacts>
-                          <Email>$email</Email>
-                          <Phones></Phones>
-                        </Contacts>
-                        <Addresses>
-                          <Billing>
-                          <State>$state</State>
-                          <Country>AU</Country>
-                          </Billing>
-                        </Addresses>
-	                  </Person>";
-
+        $xml_passing_array = [
+            'fname' => $fname,
+            'lname' => $lname,
+            'gender' => $gender,
+            'email' => $email,
+            'state' => $state,
+            'loyalty' => $loyalty
+        ];
+        $person_xml = view('xml.cart_xml',['data'=>$xml_passing_array]);
         $response = $this->bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();

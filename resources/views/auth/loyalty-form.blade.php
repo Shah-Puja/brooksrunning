@@ -114,7 +114,7 @@
                             @endif								
                         </div>
                 </div>
-                <input type="hidden" name="loyalty_type" value="ppp"/>
+                <input type="hidden" name="loyalty_type" value="PPP"/>
                 <!--<div class="row">
                     <div class="tab-12">
                         <div class="input-wrapper">
