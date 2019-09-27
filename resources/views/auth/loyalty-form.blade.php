@@ -79,12 +79,12 @@
                                     <div class="mob-7"><label>Choose your Account Password</label></div>
                                     <div class="mob-5">
                                     <label><div class="show-pass">
-                                            <input type="checkbox" id="show_password" name="show_password">Show Password
+                                            <input type="checkbox" class="show_password1" name="show_password">Show Password
                                     </label></div>
                                     </div>
                                 </div>
                             </label>
-                            <input id="password" type="password" class="input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                            <input id="password" type="password" class="pass-show1 input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -100,14 +100,14 @@
                                     <div class="mob-7"><label>Confirm Password</label></div>
                                     <div class="mob-5">
                                     <label><div class="show-pass">
-                                            <input type="checkbox" id="show_password" name="show_password">Show Password
+                                            <input type="checkbox" class="show_password2" name="show_password">Show Password
                                     </label></div>
                                     </div>
                                 </div>
                             </label>
-                            <input id="password" type="password" class="input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" required>
 
-                            @if ($errors->has('password'))
+                            @if ($errors->has('password')) 
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
@@ -138,6 +138,7 @@
                 </div>                
             
             </div>
+        </div>
     </form>
 
     <script>
@@ -216,4 +217,22 @@
                    event.preventDefault();
                 }
            });
+
+           $('.show_password1').on('click', function() {
+                var input = $(".pass-show1");
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+
+            $('.show_password2').on('click', function() {
+                var input = $(".pass-show2");
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
            </script>

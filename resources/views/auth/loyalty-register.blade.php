@@ -15,7 +15,7 @@
                 @include('auth.loyalty-form')                
             </div>
             <div class="col-3">
-                <div class="create-account--right">
+                <div class="create-account--right temp_class">
                     <div class="header">
                         <div class="icon-img">
                             <img src="/images/accounts/icon-profile.png" alt="">
