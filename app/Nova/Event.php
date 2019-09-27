@@ -77,7 +77,9 @@ class Event extends Resource
 
             Image::make('Logo','logo')->disk('uploads_event_logo')->storeAs(function (Request $request) {
                 return $request->logo->getClientOriginalName();
-            })->hideFromIndex()->rules('mimes:jpeg,png'),
+            })->hideFromIndex()->help(
+                'Recommended Dimensions : 450x450'
+            )->rules('mimes:jpeg,png'),
 
             Image::make('Banner','banner')->disk('uploads_event_banner')->storeAs(function (Request $request) {
                 return $request->banner->getClientOriginalName();
@@ -85,6 +87,8 @@ class Event extends Resource
             
             //Text::make('Banner Background Colour','banner_bg_color')->hideFromIndex(),
             Text::make('Event Date','date_str')->sortable()->rules('required', 'max:255'),
+
+            
            
             Date::make(__('Start date'), 'start_dt')->hideFromIndex()->rules('required', 'max:255'),
             Date::make(__('End date'), 'end_dt')->fillUsing(function($request, $model, $attribute, $requestAttribute) {
@@ -115,7 +119,8 @@ class Event extends Resource
                 'Western Australia'=>'Western Australia',
                 'Tasmania'=>'Tasmania',
                 'ACT'=>'ACT',
-                'WA'=>'WA'])->hideFromIndex(),
+                'New South Wales'=>'New South Wales',
+                'NT'=>'NT'])->hideFromIndex(),
 
 
              Select::make('Country','country')->options(['Australia'=>'Australia','New Zealand'=>'New Zealand'])->hideFromIndex(),
@@ -137,6 +142,9 @@ class Event extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+    
+
+
     public function cards(Request $request)
     {
         return [
