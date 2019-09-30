@@ -101,6 +101,7 @@ class RegisterController extends Controller {
                     'postcode' => (isset($data['postcode'])) ? $data['postcode'] : null,
                     'newsletter' => @$data['newsletter_subscription'] ? 1 : 0,
                     'user_type' => "User",
+                    'source' => (isset($data['source'])) ? $data['source'] : 'User',
                     'practice_name' => (isset($data['practice_name'])) ? $data['practice_name'] : '', // field for loyalty register user
                     'health_practitioner' => (isset($data['health_practitioner'])) ? $data['health_practitioner'] : '', // field for loyalty register user
                     'loyalty_type' => (isset($data['loyalty_type'])) ? $data['loyalty_type'] : '', // field for loyalty register user
@@ -122,16 +123,45 @@ class RegisterController extends Controller {
                     'list_id' => env('ICONTACT_LIST_ID'), //common list of users - BR Users in iContact
         ]);
 
-        if ($user->wasRecentlyCreated) {
-            $PersonID = "";
-            if (env('AP21_STATUS') == 'ON') {
-                $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
-            }
-            $user->update(['source' => (isset($data['source'])) ? $data['source'] : 'User', 'person_idx' => $PersonID]);
+        // if ($user->wasRecentlyCreated) {
+        //     if (env('AP21_STATUS') == 'ON') {
+        //         $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
+        //         $user->update(['person_idx' => $PersonID]);
+        //     }            
+        // }
+
+        if (env('AP21_STATUS') == 'ON') {
+            if($loyalty=='PPP'){
+                if($user->person_idx){
+                    $this->update_ap21_person($user->person_idx);
+                }                
+                else{
+                    $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
+                    $user->update(['person_idx' => $PersonID]);                        
+                }
+            }    
+            else{
+                if ($user->wasRecentlyCreated) {
+                    $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
+                    $user->update(['person_idx' => $PersonID]);
+                }
+            }        
         }
         return $user;
     }
-
+    public function update_ap21_person($person_idx){
+        $response = $this->bridge->getPersonid($email);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    print_r($response_xml);
+                    break;  
+            }
+        }       
+    }
     public function get_personid($email, $fname = '', $lname = '', $gender = '', $state = '' , $loyalty = '') {
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
