@@ -3648,6 +3648,11 @@ textarea {
   line-height: 0;
   margin-right: 5px;
 }
+.create-account--left .input-wrapper .show-pass span {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 7px;
+}
 .create-account--left .cart-btn {
   width: 100%;
   max-width: 320px;

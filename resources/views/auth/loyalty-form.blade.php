@@ -79,7 +79,7 @@
                                     <div class="mob-7"><label>Choose your Account Password</label></div>
                                     <div class="mob-5">
                                         <div class="show-pass">
-                                                <input type="checkbox" class="show_password1" name="show_password" >Show Password
+                                            <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                     <div class="mob-7"><label>Confirm Password</label></div>
                                     <div class="mob-5">
                                     <div class="show-pass">
-                                            <input type="checkbox" class="show_password2" name="show_password">Show Password
+                                        <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
                                     </div>
                                     </div>
                                 </div>
