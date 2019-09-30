@@ -13,7 +13,7 @@
             <Country>AU</Country>
         </Billing>
     </Addresses>
-    @if(isset($data['loyalty']) && $data['loyalty']!='')
+    @if(isset($data['loyalty']) && $data['loyalty']== 'PPP')
     <Loyalties>
         <Loyalty>
             <LoyaltyTypeId>{{env('LOYALTY_ID')}}</LoyaltyTypeId>
