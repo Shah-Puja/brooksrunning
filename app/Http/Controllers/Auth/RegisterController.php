@@ -128,7 +128,7 @@ class RegisterController extends Controller {
         // }
 
         if (env('AP21_STATUS') == 'ON') {
-            if($loyalty=='PPP'){
+            if(isset($data['loyalty_type']) && $data['loyalty_type']=='PPP'){
                 if($user->person_idx){
                     $this->update_ap21_person($user->person_idx);
                 }                
