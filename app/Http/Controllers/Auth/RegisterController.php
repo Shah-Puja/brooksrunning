@@ -130,7 +130,7 @@ class RegisterController extends Controller {
         if (env('AP21_STATUS') == 'ON') {
             if(isset($data['loyalty_type']) && $data['loyalty_type']=='PPP'){
                 if($user->person_idx){
-                    $this->update_ap21_person($user->person_idx);
+                    $this->update_ap21_person($email);
                 }                
                 else{
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
@@ -157,7 +157,7 @@ class RegisterController extends Controller {
         return $rule;
     }
 
-    public function update_ap21_person($person_idx){
+    public function update_ap21_person($email){
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
