@@ -884,7 +884,8 @@ $(document).on('click', '.pdp-width-show li', function () {
     width: 100%;
     height: 100%;
 }
-	ul.lSGallery li:last-child a .play{
+    /* ul.lSGallery li:last-child a .play{ */
+ul.lSGallery li:last-child a .play{
         position: absolute;
         width: 28px;
         height: 28px;
@@ -893,13 +894,13 @@ $(document).on('click', '.pdp-width-show li', function () {
         left: 50%;
         margin-top: -14px;
         margin-left: -14px;
-        background: url(../images/youtubeplay.png) no-repeat;
+        background: url(../images/ytubeplayicon.png) no-repeat;
 }
 
 .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
     border: 1px solid #0ee0e0e0;
     position: relative;
-        display: inline-block;
+    display: inline-block;
 }
 </style>
 
@@ -907,7 +908,7 @@ $(document).on('click', '.pdp-width-show li', function () {
     $(document).ready(function(){
         // var newcontent = '<div class="play"></div>';
         // $('#LastChild').html(newcontent);
-        $('.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child').attr('id', 'foo123');
+        $('.lSGallery li:last-child').attr('id', 'LastChild');
     });
 </script>
 
