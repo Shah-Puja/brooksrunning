@@ -165,7 +165,7 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    if(in_array("29441", array_column($response_xml, 'LoyaltyTypeId'))) {
+                    if(in_array("29441", array_column($response_xml->Person->Loyalties->Loyalty, 'LoyaltyTypeId'))) {
                         echo "exist";
                     }else{
                         echo "not exist";
