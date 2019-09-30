@@ -183,7 +183,7 @@ class RegisterController extends Controller {
             'state' => $state,
             'loyalty' => $loyalty
         ];
-        $person_xml = view('xml.cart_xml',['data'=>$xml_passing_array]);
+        $person_xml = view('xml.person_xml',['data'=>$xml_passing_array]);
         $response = $this->bridge->processPerson($person_xml);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
