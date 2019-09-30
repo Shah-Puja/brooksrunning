@@ -165,7 +165,7 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    print_r($response_xml->Loyalties);
+                    print_r($response_xml);
                     exit;
                     break;  
             }
