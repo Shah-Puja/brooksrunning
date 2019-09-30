@@ -151,9 +151,9 @@ class RegisterController extends Controller {
                     $userid = false;
                     break;
             }
-        } else {
+        } /*else {
             $userid = $this->create_user($email, $fname, $lname, $gender, $state);
-        }
+        }*/
 
         return $userid;
     }
