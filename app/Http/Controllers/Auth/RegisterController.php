@@ -58,11 +58,8 @@ class RegisterController extends Controller {
                     'last_name' => 'sometimes|required|string|max:255',
                     //'email' => 'required|string|email|max:255|unique:users',
                     'email' => [
-                        'required',
-                        Rule::unique('users')->where(function ($query) {
-                                    $query->where('user_type', 'User');
-                                }),
-                    ],
+                            'required', $this->check_rule($data),
+                        ],
                     'password' => 'required|string|min:6|confirmed',
                     'password_confirmation' => 'required|string|min:6',
                     'gender' => 'sometimes|required|in:Male,Female',
@@ -149,6 +146,17 @@ class RegisterController extends Controller {
         }
         return $user;
     }
+
+    public function check_rule($data){
+        $rule ='';
+        if(!isset($data['loyalty_type'])){
+            $rule = Rule::unique('users')->where(function ($query) {
+                $query->where('user_type', 'User');
+            });
+        }
+        return $rule;
+    }
+
     public function update_ap21_person($person_idx){
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
