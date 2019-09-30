@@ -78,13 +78,13 @@
                                 <div class="row">
                                     <div class="mob-7"><label>Choose your Account Password</label></div>
                                     <div class="mob-5">
-                                    <label><div class="show-pass">
-                                            <input type="checkbox" class="show_password1" name="show_password">Show Password
-                                    </label></div>
+                                        <div class="show-pass">
+                                                <input type="checkbox" class="show_password1" name="show_password" >Show Password
+                                        </div>
                                     </div>
                                 </div>
                             </label>
-                            <input id="password" type="password" class="pass-show1 input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                            <input id="password" type="password" class="pass-show1 input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" data-label-name="password" name="password">
 
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -99,13 +99,13 @@
                                 <div class="row">
                                     <div class="mob-7"><label>Confirm Password</label></div>
                                     <div class="mob-5">
-                                    <label><div class="show-pass">
+                                    <div class="show-pass">
                                             <input type="checkbox" class="show_password2" name="show_password">Show Password
-                                    </label></div>
+                                    </div>
                                     </div>
                                 </div>
                             </label>
-                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" required>
+                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" data-label-name="confirmation password" name="password_confirmation">
 
                             @if ($errors->has('password')) 
                                 <span class="invalid-feedback" role="alert">
@@ -145,7 +145,7 @@
             function registervalidation(){
                $("#loyalty_register_form input,#loyalty_register_form select").removeClass("error-border");
                $("#loyalty_register_form input,#loyalty_register_form select").parent().find('label .error').remove();
-                required = ["last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation"];
+                required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation"];
                 for (k=0;k<required.length;k++) {
                        let input = $('#loyalty_register_form input[name="'+required[k]+'"],#loyalty_register_form select[name="'+required[k]+'"]');
                        if (input.val() == "") {
