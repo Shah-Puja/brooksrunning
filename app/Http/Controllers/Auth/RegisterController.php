@@ -173,7 +173,7 @@ class RegisterController extends Controller {
 
                     print_r(collect($response_xml->Person->Loyalties->Loyalty));
                     $filtered = collect($response_xml)->filter(function ($value, $key) {
-                            if(@$value->Person->Loyalties->Loyalty):
+                            if(isset($value->Person->Loyalties->Loyalty)):
                                 echo "in if";
                                 collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     print_r($item);
