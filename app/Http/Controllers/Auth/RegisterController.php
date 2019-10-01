@@ -176,7 +176,7 @@ class RegisterController extends Controller {
                             if(@$value->Person->Loyalties->Loyalty):
                                 collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     echo $item;
-                                    return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID')) ? 1 : 0;
+                                    return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID'));
                                 });
                             else:
                                 return 0;
