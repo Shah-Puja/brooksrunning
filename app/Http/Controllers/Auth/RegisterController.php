@@ -165,19 +165,21 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    $filtered =0;
+                    $filtered ='';
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
                                 $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
-                                                if(isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID')){
-                                                    echo "exist";
-                                                }else{
-                                                    echo "not exist";
-                                                }
-                                                return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
-                                            });
+                                        return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
+                                });
                              endif;
-                    echo "filtered".$filtered;
+
+                    if($filtered==''){
+                        $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
+                    }
+
+                    print_r( $response_xml);
+
                     exit;
+                  
                     break;  
             }
         }       
