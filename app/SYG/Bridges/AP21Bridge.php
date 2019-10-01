@@ -150,7 +150,7 @@ class AP21Bridge implements BridgeInterface {
         } catch (RequestException $e) {
             if ($e->getMessage() != '') {                
                 Ap21_error::store([
-                    'api' => 'POST Person-API/Register',
+                    'api' => 'Put Person-API/Register',
                     'url' => env('AP21_URL') .$url,
                     'error_response' => $e->getMessage(),
                     'error_type' => 'Connectivity',
