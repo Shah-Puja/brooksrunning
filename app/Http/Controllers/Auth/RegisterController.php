@@ -130,25 +130,21 @@ class RegisterController extends Controller {
         if (env('AP21_STATUS') == 'ON') {
             if(isset($data['loyalty_type']) && $data['loyalty_type']=='PPP'){
                 if($user->person_idx!=''){
-                    $this->update_ap21_person($data['email']);
-                    echo "1";
+                    $this->update_ap21_person($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
                 }                
                 else{
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
-                    $user->update(['person_idx' => $PersonID]);      
-                    echo "2";                  
+                    $user->update(['person_idx' => $PersonID]);               
                 }
             }    
             else{
                 if ($user->wasRecentlyCreated) {
-                    echo "3";   
+                    
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
                     $user->update(['person_idx' => $PersonID]);
                 }
-                echo "4";   
             }        
         }
-        exit;
         return $user;
     }
 
@@ -162,7 +158,7 @@ class RegisterController extends Controller {
         return $rule;
     }
 
-    public function update_ap21_person($email){
+    public function update_ap21_person($email, $fname = '', $lname = '', $gender = '', $state = '' , $loyalty = ''){
         $response = $this->bridge->getPersonid($email);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
@@ -184,6 +180,22 @@ class RegisterController extends Controller {
                         $new_xml = $response_xml->asXML();
                         $this->update_user($new_xml,$userid);
                     }
+                    break;
+                case '404':
+                    $userid = $this->create_user($email, $fname, $lname, $gender, $state , $loyalty);
+                    break;
+
+                default:
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . $email; 
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API/Register',
+                        'url' => $url,
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
+                    $userid = false;
                     break;  
             }
         }       
