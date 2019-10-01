@@ -139,7 +139,6 @@ class RegisterController extends Controller {
             }    
             else{
                 if ($user->wasRecentlyCreated) {
-
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
                     $user->update(['person_idx' => $PersonID]);
                 }
@@ -175,10 +174,8 @@ class RegisterController extends Controller {
                              endif;
 
                     if($filtered==''){
-                        echo "filtered";
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
-                        $xml = new \SimpleXMLElement($response_xml, 0, true);
-                        $new_xml = $xml->asXML();
+                        $new_xml = $response_xml->asXML();
                         $this->update_user($new_xml,$userid);
                     }
                     break;
