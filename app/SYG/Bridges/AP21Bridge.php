@@ -145,6 +145,8 @@ class AP21Bridge implements BridgeInterface {
         try {
             $response = $this->apiClient->put($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
+                print_r($response);
+                exit;
                 return $response;
             }
         } catch (RequestException $e) {
