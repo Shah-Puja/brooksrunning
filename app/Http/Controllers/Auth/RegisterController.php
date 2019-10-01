@@ -174,12 +174,12 @@ class RegisterController extends Controller {
 
                     if($filtered==''){
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
+                        $new_xml = $response_xml->asXML();
+                        echo  $new_xml;
                     }
 
                     print_r( $response_xml);
-                    $new_xml = $response_xml->asXML();
-                    echo  $new_xml;
-
+                    
                     exit;
                   
                     break;  
