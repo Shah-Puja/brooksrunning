@@ -174,6 +174,7 @@ class RegisterController extends Controller {
                                                 }else{
                                                     echo "not exist";
                                                 }
+                                                return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
                                             });
                              endif;
                     echo "filtered".$filtered;
