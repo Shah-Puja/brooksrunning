@@ -75,7 +75,7 @@
                                              @else
                                              <h3>{{$series_events->date_str}}</h3>
                                              @endif
-                            <h3> {{$series_events->city}}</h3>
+                            <h3> {{$series_events->city}},{{$series_events->state}}</h3>
                             </div>
                         </li>
                         @endforeach

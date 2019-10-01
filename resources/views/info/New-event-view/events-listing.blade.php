@@ -63,16 +63,12 @@
                                         <div class="input-wrapper">
                                             <select class="select-field" name="where" id="where" style="margin-bottom: 0px;">
                                                 <option value="">Where</option>
-                                                <option  style="font-weight:bold;color:#000;" <?php echo ($where == "Australia") ? "selected=selected" : ""; ?> value="Australia">Australia</option>
-                                                <option <?php echo ($where == "ACT") ? "selected=selected" : ""; ?> value="ACT">ACT</option>
-                                                <option  <?php echo ($where == "NSW") ? "selected=selected" : ""; ?> value="New_South_Wales">NSW</option>
-                                                <option <?php echo ($where == "NT") ? "selected=selected" : ""; ?> value="NT">NT</option>
-                                                <option <?php echo ($where == "QLD") ? "selected=selected" : ""; ?> value="Queensland">QLD</option>
-                                                <option <?php echo ($where == "SA") ? "selected=selected" : ""; ?> value="South_Australia">SA</option>
-                                                <option <?php echo ($where == "TAS") ? "selected=selected" : ""; ?> value="Tasmania">TAS</option>
-                                                <option <?php echo ($where == "VIC") ? "selected=selected" : ""; ?> value="Victoria">VIC</option>
-                                                <option <?php echo ($where == "WA") ? "selected=selected" : ""; ?> value="Western_Australia">WA</option>
-                                                <option  style="font-weight:bold;color:#000;" <?php echo ($where == "New Zealand") ? "selected=selected" : ""; ?> value="New_Zealand">New Zealand</option>
+                                                <!-- <option  style="font-weight:bold;color:#000;" <?php echo ($where == "Australia") ? "selected=selected" : ""; ?> value="Australia">Australia</option> -->
+
+                                                @foreach($states as $state )
+                                                @php $space_state=$state->state; @endphp
+                                                <option  <?php echo ($where == $space_state) ? "selected=selected" : ""; ?> value="<?php echo str_replace(' ','_',$space_state)?>">{{$state->state}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -154,7 +150,7 @@
                                             </div> 
                                             @endif 
                                            
-                                            <div class="location">{{$events->city}}</div>
+                                            <div class="location">{{$events->city}},{{$events->state}}</div>
                                            
                                         </div>
                                     </div>
@@ -213,7 +209,7 @@
                                           <div class="date">{{$upcoming_events->date_str}}</div>
                                           @endif
                                            @endif
-                                           <div class="location">{{$upcoming_events->city}}</div>
+                                           <div class="location">{{$upcoming_events->city}},{{$upcoming_events->state}}</div>
                                             
                                             </div>
                                     </div>

@@ -91,7 +91,7 @@ class EventController extends Controller {
                                
                            
         } else {
-            
+            $states= event::select('state')->where('state','!=','')->distinct()->get();
            
             $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")
                                ->whereRaw("end_dt >= CURDATE()")
@@ -109,7 +109,7 @@ class EventController extends Controller {
         }
     
         
-        return view('info.New-event-view.events-listing', compact('all_events', 'other_upcoming_events', 'when', 'where'));
+        return view('info.New-event-view.events-listing', compact('all_events', 'other_upcoming_events', 'when', 'where','states'));
     }
 
           public function event_type($slug) {

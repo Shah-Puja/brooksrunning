@@ -50,21 +50,21 @@ class Event extends Resource
      */
     public function fields(Request $request)
     {
-        // $model1='App\Models\Event';
-        // $state_arr=[];
-        // $country_arr=[];
+        $model1='App\Models\Event';
+         $state_arr=[];
+         $country_arr=[];
         
-        // $state=$model1::select('state')->where('state','!=','')->distinct()->get();
-        // foreach($state as $key => $states){
-        //   $state_arr[]=$states->state;
-        // }
-        
-        // $country=$model1::select('country')->where('country','!=','')->distinct()->get();
-        // foreach( $country as $key1 =>  $countries){
-        //     $country_arr[]=$countries->country;
-        // }
+        $state=$model1::select('state')->where('state','!=','')->distinct()->get();
+        foreach($state as $key => $states){
+          $state_arr[]=$states->state;
+        }
+        $a=array_combine(array_values($state_arr), array_values($state_arr));
+        $country=$model1::select('country')->where('country','!=','')->distinct()->get();
+        foreach( $country as $key1 =>  $countries){
+            $country_arr[]=$countries->country;
+        }
 
-
+        $b=array_combine(array_values($country_arr), array_values($country_arr));
         
         return [
             
@@ -111,20 +111,21 @@ class Event extends Resource
 
             Text::make('City','city')->hideFromIndex(),
             
-            Select::make('State','state')
-            ->options([
-                'Victoria'=>"Victoria",
-                'South Australia'=>'South Australia',
-                'Queensland'=>'Queensland',
-                'Western Australia'=>'Western Australia',
-                'Tasmania'=>'Tasmania',
-                'ACT'=>'ACT',
-                'New South Wales'=>'New South Wales',
-                'NT'=>'NT'])->hideFromIndex(),
+            // Select::make('State','state')
+            // ->options([
+            //     'ACT'=>'ACT',
+            //     'New South Wales'=>'New South Wales',
+            //     'NT'=>'NT',
+            //     'Queensland'=>'Queensland',
+            //     'South Australia'=>'South Australia',
+            //     'Tasmania'=>'Tasmania',
+            //     'Victoria'=>"Victoria",
+            //     'Western Australia'=>'Western Australia',
+            //     'New Zealand'=>'New Zealand'])->hideFromIndex(),
 
-
-             Select::make('Country','country')->options(['Australia'=>'Australia','New Zealand'=>'New Zealand'])->hideFromIndex(),
-
+            Select::make('State','state')->options($a)->hideFromIndex(),
+             //Select::make('Country','country')->options(['Australia'=>'Australia','New Zealand'=>'New Zealand'])->hideFromIndex(),
+            Select::make('Country','country')->options($b)->hideFromIndex(),
             Textarea::make('Content','content')->hideFromIndex(),
             Text::make('Link','link')->hideFromIndex(),
             Select::make('Enable','status')->options([
