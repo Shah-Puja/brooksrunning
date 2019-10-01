@@ -129,7 +129,7 @@ class RegisterController extends Controller {
 
         if (env('AP21_STATUS') == 'ON') {
             if(isset($data['loyalty_type']) && $data['loyalty_type']=='PPP'){
-                if($user->person_idx){
+                if($user->person_idx!=''){
                     $this->update_ap21_person($data['email']);
                 }                
                 else{
@@ -174,6 +174,7 @@ class RegisterController extends Controller {
                              endif;
 
                     if($filtered==''){
+                        echo "filtered";
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
                         $new_xml = $response_xml->asXML();
                         $this->update_user($new_xml,$userid);
