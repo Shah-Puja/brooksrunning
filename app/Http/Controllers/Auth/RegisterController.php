@@ -176,6 +176,7 @@ class RegisterController extends Controller {
                                 echo "in if";
                               $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     print_r($item);
+                                    print_r($key);
                                     return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID'));
                                 });
                             else:
