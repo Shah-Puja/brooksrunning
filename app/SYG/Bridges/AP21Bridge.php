@@ -139,7 +139,7 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
-    public function updatePerson($date,$userid) {
+    public function updatePerson($data,$userid) {
 
         echo "updatePerson";
 
