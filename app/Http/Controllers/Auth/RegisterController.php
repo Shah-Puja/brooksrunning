@@ -171,8 +171,9 @@ class RegisterController extends Controller {
                     //     echo "not exist";
                     // }
 
-                    print_r(collect($response_xml->Person->Loyalties->Loyalty));
+                    //print_r(collect($response_xml->Person->Loyalties->Loyalty));
                     $filtered = collect($response_xml)->filter(function ($value, $key) {
+                        print_r($value->Person->Loyalties->Loyalty);
                             if(isset($value->Person->Loyalties->Loyalty)):
                                 echo "in if";
                                 collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
