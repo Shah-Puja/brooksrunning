@@ -182,7 +182,7 @@ class RegisterController extends Controller {
                                 return 0;
                             endif;
                     });
-                    print_r($filtered);
+                    echo $filtered;
                     exit;
                     break;  
             }
