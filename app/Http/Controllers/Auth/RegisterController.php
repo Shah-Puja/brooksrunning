@@ -167,7 +167,7 @@ class RegisterController extends Controller {
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
                     $filtered =0;
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
-                                $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->search(function ($item, $key) {
+                                $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
                                                 return (isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID')) ? 1 : 0;
                                             });
                              endif;
