@@ -140,8 +140,13 @@ class AP21Bridge implements BridgeInterface {
     }
 
     public function updatePerson($date,$userid) {
-       
+
+        echo "updatePerson";
+
+        
         $url='Persons/'.$userid.'/?countryCode=AUFIT';
+        echo $url;
+       
         try {
             $response = $this->apiClient->put($url, ['body' => $data, 'http_errors' => false]);
             if (!empty($response)) {
