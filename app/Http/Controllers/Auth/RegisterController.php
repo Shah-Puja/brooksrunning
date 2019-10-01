@@ -177,7 +177,7 @@ class RegisterController extends Controller {
                     }
 
                     print_r( $response_xml);
-                    $new_xml = new \SimpleXMLElement($response_xml);
+                    $new_xml = $response_xml->asXML();
                     echo  $new_xml;
 
                     exit;
