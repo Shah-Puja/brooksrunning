@@ -165,6 +165,7 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
                     $filtered ='';
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
                                 $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
@@ -175,13 +176,8 @@ class RegisterController extends Controller {
                     if($filtered==''){
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
                         $new_xml = $response_xml->asXML();
-                        echo  $new_xml;
+                        $this->update_user($new_xml,$userid);
                     }
-
-                    print_r( $response_xml);
-                    
-                    exit;
-                  
                     break;  
             }
         }       
@@ -270,6 +266,38 @@ class RegisterController extends Controller {
 
     public function loyalty_register(){
         return view ('auth.loyalty-register');
+    }
+
+    public function update_user($person_xml, $userid) {
+
+        $response = $this->bridge->updatePerson($person_xml,$userid);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 201:
+                    $location = $response->getHeader('Location')[0];
+                    $str_arr = explode("/", $location);
+                    $last_seg = $str_arr[count($str_arr) - 1];
+                    $last_seg_arr = explode("?", $last_seg);
+                    $person_idx = $last_seg_arr[0];
+                    $returnVal = $person_idx;
+                    break;
+
+                default:
+                    $url = env('AP21_URL') . "Persons/".$userid."/?countryCode=" . env('AP21_COUNTRYCODE');
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'PUT Person-API/Register',
+                        'url' => $url,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                        'body' =>  $person_xml
+                    ]);
+                    $returnVal = false;
+                    break;
+            }
+        }
+        return $returnVal;
     }
 
 }
