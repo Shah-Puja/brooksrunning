@@ -171,6 +171,8 @@ class RegisterController extends Controller {
                     //     echo "not exist";
                     // }
                     $filtered = collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($value, $key) {
+                        echo $key."<br>";
+                        echo $value."<br>";
                         return ($key=='LoyaltyTypeId' && $value==env('LOYALTY_ID')) ? 1 : 0;
                     });
                     print_r($filtered);
