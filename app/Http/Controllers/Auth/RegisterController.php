@@ -165,12 +165,15 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    if(in_array("29441", $response_xml->Person->Loyalties->Loyalty)) {
-                        echo "exist";
-                    }else{
-                        echo "not exist";
-                    }
-                    print_r($response_xml->Person->Loyalties);
+                    // if(in_array("29441", $response_xml->Person->Loyalties->Loyalty)) {
+                    //     echo "exist";
+                    // }else{
+                    //     echo "not exist";
+                    // }
+                    $filtered = collect($response_xml)->filter(function ($value, $key) {
+                        return $value > 2;
+                    });
+                    print_r($response_xml);
                     exit;
                     break;  
             }
