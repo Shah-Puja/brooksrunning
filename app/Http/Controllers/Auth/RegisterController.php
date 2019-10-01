@@ -174,7 +174,7 @@ class RegisterController extends Controller {
                     //print_r(collect($response_xml->Person->Loyalties->Loyalty));
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
                                 echo "in if";
-                              $filtered =  collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
+                              $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     print_r($item);
                                     return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID'));
                                 });
