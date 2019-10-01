@@ -131,19 +131,24 @@ class RegisterController extends Controller {
             if(isset($data['loyalty_type']) && $data['loyalty_type']=='PPP'){
                 if($user->person_idx!=''){
                     $this->update_ap21_person($data['email']);
+                    echo "1";
                 }                
                 else{
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
-                    $user->update(['person_idx' => $PersonID]);                        
+                    $user->update(['person_idx' => $PersonID]);      
+                    echo "2";                  
                 }
             }    
             else{
                 if ($user->wasRecentlyCreated) {
+                    echo "3";   
                     $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '',(isset($data['loyalty_type'])) ? $data['loyalty_type'] : '');
                     $user->update(['person_idx' => $PersonID]);
                 }
+                echo "4";   
             }        
         }
+        exit;
         return $user;
     }
 
