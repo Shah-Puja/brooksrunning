@@ -269,7 +269,7 @@ class RegisterController extends Controller {
     }
 
     public function update_user($person_xml, $userid) {
-
+        $returnVal = false;
         $response = $this->bridge->updatePerson($person_xml,$userid);
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
