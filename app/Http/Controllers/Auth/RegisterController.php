@@ -183,7 +183,7 @@ class RegisterController extends Controller {
                                 echo "out if";
                                 $filtered =  0;
                             endif;
-                    echo $filtered;
+                    echo "filtered".$filtered;
                     exit;
                     break;  
             }
