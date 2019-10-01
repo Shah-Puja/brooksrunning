@@ -174,7 +174,7 @@ class RegisterController extends Controller {
                     print_r(collect($response_xml->Person->Loyalties->Loyalty));
                     $filtered = collect($response_xml)->filter(function ($value, $key) {
                             if(@$value->Person->Loyalties->Loyalty):
-                                $value->Person->Loyalties->Loyalty->search(function ($item, $key) {
+                                collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     echo $item;
                                     return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID')) ? 1 : 0;
                                 });
