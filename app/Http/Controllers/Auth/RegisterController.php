@@ -165,6 +165,7 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    print_r($response_xml);
                     $filtered =0;
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
                                 $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
