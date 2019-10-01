@@ -165,24 +165,12 @@ class RegisterController extends Controller {
             switch ($returnCode) {
                 case '200':
                     $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                    // if(in_array("29441", $response_xml->Person->Loyalties->Loyalty)) {
-                    //     echo "exist";
-                    // }else{
-                    //     echo "not exist";
-                    // }
-
-                    //print_r(collect($response_xml->Person->Loyalties->Loyalty));
+                    $filtered =0;
                             if(isset($response_xml->Person->Loyalties->Loyalty)):
-                                echo "in if";
-                              $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->search(function ($item, $key) {
-                                            echo $item->LoyaltyTypeId ."==".env('LOYALTY_ID')."<br>";
-                                
-                                echo ($item->LoyaltyTypeId==env('LOYALTY_ID')) ? 1 : 0;
+                                $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->search(function ($item, $key) {
+                                                return (isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID')) ? 1 : 0;
                                             });
-                            else:
-                                echo "out if";
-                                $filtered =  0;
-                            endif;
+                             endif;
                     echo "filtered".$filtered;
                     exit;
                     break;  
