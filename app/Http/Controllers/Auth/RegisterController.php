@@ -172,19 +172,16 @@ class RegisterController extends Controller {
                     // }
 
                     //print_r(collect($response_xml->Person->Loyalties->Loyalty));
-                    $filtered = collect($response_xml)->filter(function ($value, $key) {
-                        print_r($value->Person->Loyalties->Loyalty);
-                            if(isset($value->Person->Loyalties->Loyalty)):
+                            if(isset($response_xml->Person->Loyalties->Loyalty)):
                                 echo "in if";
-                                collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
+                              $filtered =  collect($value->Person->Loyalties->Loyalty)->search(function ($item, $key) {
                                     print_r($item);
                                     return ($key=='LoyaltyTypeId' && $item==env('LOYALTY_ID'));
                                 });
                             else:
                                 echo "out if";
-                                return 0;
+                                $filtered =  0;
                             endif;
-                    });
                     echo $filtered;
                     exit;
                     break;  
