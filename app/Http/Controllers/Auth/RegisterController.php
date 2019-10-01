@@ -170,10 +170,10 @@ class RegisterController extends Controller {
                     // }else{
                     //     echo "not exist";
                     // }
-                    $filtered = collect($response_xml)->filter(function ($value, $key) {
-                        return $value > 2;
+                    $filtered = collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($value, $key) {
+                        return ($key=='LoyaltyTypeId' && $value==env('LOYALTY_ID')) ? 1 : 0;
                     });
-                    print_r($response_xml);
+                    print_r($filtered);
                     exit;
                     break;  
             }
