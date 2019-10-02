@@ -117,6 +117,7 @@ class RegisterController extends Controller {
         ]);
 
         if ($user->wasRecentlyCreated) {
+            $PersonID ='';
             if(isset($data['source']) && $data['source']!='Shoe Finder'){ 
                 $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             } 
