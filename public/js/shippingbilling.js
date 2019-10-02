@@ -5,8 +5,7 @@ $(document).ready(function () {
     if (selected_delivery_type == "New Zealand Standard Delivery") {
         $('select[name="s_state]').val("New Zealand");
     }
-    setTimeout(function(){ console.log($('select[name="s_state]').val()); }, 500);
-    
+   
     $('select[name=s_state]').on('change', function () {
 
         if (selected_delivery_type == "Express Delivery") {
@@ -28,9 +27,9 @@ $(document).ready(function () {
         }
 
         if($(this).val() == 'New Zealand'){
-            $(".atl").find(".mark").addClass("disable");
+            $(".atl-row").addClass("display-none");
         }else{
-            $(".atl").find(".mark").removeClass("disable");
+            $(".atl-row").removeClass("display-none");
         }
 
         var overlay = $('<div id="overlay"> </div>');

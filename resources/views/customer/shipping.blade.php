@@ -345,7 +345,7 @@
                                         </div>
                                     </div>
                                 </div> 
-                                <div class="row">
+                                <div class="row atl-row {{ (isset($s_state) &&  $s_state =='New Zealand' ) ? 'display-none': '' }} ">
                                     <div class="col-12">
                                         <div class="input-wrapper atl">
                                             <div class="checklist-inline">
