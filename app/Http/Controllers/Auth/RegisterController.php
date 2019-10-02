@@ -177,7 +177,7 @@ class RegisterController extends Controller {
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
                         $new_xml = $response_xml->asXML();
                         print_r($new_xml);
-                        print_r($new_xml->Person);
+                        print_r($response_xml->Person->asXML());
                         exit;
                         $this->update_user($new_xml,$userid);
                     }
