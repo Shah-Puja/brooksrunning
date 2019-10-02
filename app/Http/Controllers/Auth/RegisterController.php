@@ -118,10 +118,10 @@ class RegisterController extends Controller {
 
         if ($user->wasRecentlyCreated) {
             $PersonID ='';
-            $check_shofinder_exist = (isset($data['source']) && $data['source']!='Shoe Finder') ? 1 : 0;
+            $check_shofinder_exist = (isset($data['source']) && $data['source']=='Shoe Finder') ? 1 : 0;
 
             echo $check_shofinder_exist;
-            if(isset($data['source']) && $data['source']!='Shoe Finder'){ 
+            if($check_shofinder_exist==0){ 
                 echo "if condition";
                 $PersonID = $this->get_personid($data['email'], (isset($data['first_name'])) ? $data['first_name'] : '', (isset($data['last_name'])) ? $data['last_name'] : '', (isset($data['gender'])) ? $data['gender'] : null, (isset($data['state'])) ? $data['state'] : '');
             } else{
