@@ -176,6 +176,9 @@ class RegisterController extends Controller {
                     if($filtered==''){
                         $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
                         $new_xml = $response_xml->asXML();
+                        print_r($new_xml);
+                        print_r($new_xml->Person);
+                        exit;
                         $this->update_user($new_xml,$userid);
                     }
                     break;
