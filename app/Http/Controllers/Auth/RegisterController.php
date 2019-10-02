@@ -290,13 +290,8 @@ class RegisterController extends Controller {
         if (!empty($response)) {
             $returnCode = $response->getStatusCode();
             switch ($returnCode) {
-                case 201:
-                    $location = $response->getHeader('Location')[0];
-                    $str_arr = explode("/", $location);
-                    $last_seg = $str_arr[count($str_arr) - 1];
-                    $last_seg_arr = explode("?", $last_seg);
-                    $person_idx = $last_seg_arr[0];
-                    $returnVal = $person_idx;
+                case 200:
+                    $returnVal = true;
                     break;
 
                 default:
