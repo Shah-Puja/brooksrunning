@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link href="/images/favicon.ico" rel="shortcut icon">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="p:domain_verify" content="b5098e21575b164416f5489761f2dedf"/>
         @if(isset($meta->url) && $meta->url!='')
             <title>{{$meta->title}}</title>
             <meta name="description" content="{{$meta->description}}">
