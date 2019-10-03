@@ -123,8 +123,7 @@
                     <div class="event-wrapper-container grid2">
                         @if (count($all_events) > 0)
                         @foreach($all_events as $events)
-                        @php $all_event_dt=$events->start_dt->toDateTimeString();@endphp
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($all_event_dt)))}}"  event_id='{{$events->id}}'>
+                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($events->start_dt->toDateTimeString())))}}"  event_id='{{$events->id}}'>
                         
                              <div class="event-section">
                                
@@ -179,15 +178,13 @@
                     <h1 class="br-mainheading">Other Upcoming Events</h1>
                     <div class="event-wrapper-container grid2">	
                         @foreach($other_upcoming_events as $upcoming_events)
-                        @php $other_upcoming_events_dt=$upcoming_events->next_dt->toDateTimeString();
-                        $other_upcoming_events_end_dt=$upcoming_events->end_dt->toDateTimeString();
-                        @endphp
+                        
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 
                         {{str_replace(' ','_',$upcoming_events->state)}} 
                         {{str_replace(' ','_',$upcoming_events->country)}}  
-                        {{str_replace(' ','_',date('m-Y',strtotime($other_upcoming_events_dt)))}}
-                        @if($other_upcoming_events_end_dt==00)
-                            {{str_replace(' ','_',date('m-Y',strtotime('-1 year', strtotime($other_upcoming_events_dt))))}}
+                        {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->next_dt->toDateTimeString())))}}
+                        @if($upcoming_events->end_dt->toDateTimeString()==00)
+                            {{str_replace(' ','_',date('m-Y',strtotime('-1 year', strtotime($upcoming_events->next_dt->toDateTimeString()))))}}
                         @endif">
                             <div class="event-section">
                             
@@ -205,9 +202,9 @@
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
                                         @if(!empty($upcoming_events->date_str))
-                                             @if($other_upcoming_events_end_dt < date('Y-m-d') && $other_upcoming_events_end_dt!=00)
+                                             @if($upcoming_events->end_dt->toDateTimeString() < date('Y-m-d') && $upcoming_events->end_dt->toDateTimeString()!=00)
                                              
-                                             <div class="date">{{date('F Y',strtotime($other_upcoming_events_dt))}}</div>
+                                             <div class="date">{{date('F Y',strtotime($upcoming_events->next_dt->toDateTimeString()))}}</div>
                                              @else
                                           <div class="date">{{$upcoming_events->date_str}}</div>
                                           @endif
