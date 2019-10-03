@@ -67,7 +67,7 @@ class Event extends Resource
         $b=array_combine(array_values($country_arr), array_values($country_arr));
         
         return [
-            
+
             ID::make()->hideFromIndex()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
 
