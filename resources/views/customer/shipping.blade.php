@@ -344,7 +344,7 @@
                                             <input type="number" pattern="\d*" name="s_phone" value="{{ $s_phone }}" class="input-field" data-label-name="phone">
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="input-wrapper">

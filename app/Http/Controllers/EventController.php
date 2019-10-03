@@ -115,9 +115,11 @@ class EventController extends Controller {
           public function event_type($slug) {
         
           
-          
+        
         $single_event=event::where('slug',$slug)->first();
-        //dd($single_event);
+        if($single_event==''){
+            return abort(404);
+        }   
         if($single_event->series==''){
        
        return view('info.New-event-view.single-event-detail',compact('single_event'));   

@@ -38,12 +38,12 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper"> 
-					<img src="/images/home/20190910/hp_sm_revel_shine.jpg">
-			        <h3>&nbsp;<br/>Revel 3 Shine</h3>
+					<img src="/images/home/20190925/hp_sm_revel_breakthrough.jpg">
+			        <h3>&nbsp;<br/>Revel 3 Breakthrough</h3>
 				</div>
 				<div class="info-wrapper">
 					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
-					<a href="/collections/revel-3-shine-collection">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
+					<a href="/collections/revel-3-breakthrough-collection">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
 			</div>
@@ -93,14 +93,14 @@
 				<div class="col-3 tab-6">
 					<div class="homepage-signup--wrapper">
 						<div class="input-wrapper">
-						<input type="text" name="name" placeholder="Name" class="input-field">
+						<input type="text" name="name" placeholder="Name" class="input-field" required>
 						</div>
 					</div>
 				</div>
 				<div class="col-3 tab-6">
 					<div class="homepage-signup--wrapper">
 						<div class="input-wrapper">
-							<input type="text" name="email" placeholder="Email" class="input-field">
+							<input type="email" name="email" placeholder="Email" class="input-field" required>
 						</div>
 					</div>
 				</div>
