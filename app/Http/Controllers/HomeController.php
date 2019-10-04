@@ -43,7 +43,7 @@ class HomeController extends Controller
             $page = 'home';
         }
         
-        return view('home',compact('shoefinder_user_details'));
+        return view($page,compact('shoefinder_user_details'));
     }
 
 }
