@@ -153,7 +153,12 @@ class RegisterController extends Controller {
 
     public function check_rule($data){
         $rule ='';
-        if(!isset($data['loyalty_type'])){
+        if(isset($data['loyalty_type'])){
+            $rule = Rule::unique('users')->where(function ($query) {
+                $query->where('user_type', 'User')
+                      ->where('loyalty_type', 'PPP');
+            });
+        }else{
             $rule = Rule::unique('users')->where(function ($query) {
                 $query->where('user_type', 'User');
             });
