@@ -54,9 +54,20 @@ class Event extends Resource
          $state_arr=[];
          $country_arr=[];
         
-        $state=$model1::select('state')->where('state','!=','')->distinct()->get();
-        foreach($state as $key => $states){
-          $state_arr[]=$states->state;
+        // $state=$model1::select('state')->where('state','!=','')->distinct()->get();
+        // foreach($state as $key => $states){
+        //   $state_arr[]=$states->state;
+        // }
+        $states= $model1::select('state_abr')->where('state_abr','!=','')->distinct()->orderBy('state_abr', 'ASC')->get();
+            if(!in_array('NT',(array)$states)){
+                
+                $array_nt=array( "state_abr" => "NT");
+              
+                $states->push( (object)$array_nt);
+                $states=$states->sortBy('state_abr');
+            }
+            foreach($states as $key => $states){
+          $state_arr[]=$states->state_abr;
         }
         $a=array_combine(array_values($state_arr), array_values($state_arr));
         $country=$model1::select('country')->where('country','!=','')->distinct()->get();
@@ -123,7 +134,7 @@ class Event extends Resource
             //     'Western Australia'=>'Western Australia',
             //     'New Zealand'=>'New Zealand'])->hideFromIndex(),
 
-            Select::make('State','state')->options($a)->hideFromIndex(),
+            Select::make('State','state_abr')->options($a)->hideFromIndex(),
              //Select::make('Country','country')->options(['Australia'=>'Australia','New Zealand'=>'New Zealand'])->hideFromIndex(),
             Select::make('Country','country')->options($b)->hideFromIndex(),
             Textarea::make('Content','content')->hideFromIndex(),

@@ -66,8 +66,8 @@
                                                 <!-- <option  style="font-weight:bold;color:#000;" <?php echo ($where == "Australia") ? "selected=selected" : ""; ?> value="Australia">Australia</option> -->
 
                                                 @foreach($states as $state )
-                                                @php $space_state=$state->state; @endphp
-                                                <option  <?php echo ($where == $space_state) ? "selected=selected" : ""; ?> value="<?php echo str_replace(' ','_',$space_state)?>">{{$state->state}}</option>
+                                                @php $space_state=$state->state_abr; @endphp
+                                                <option  <?php echo ($where == $space_state) ? "selected=selected" : ""; ?> value="<?php echo str_replace(' ','_',$space_state)?>">{{$state->state_abr}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -123,7 +123,7 @@
                     <div class="event-wrapper-container grid2">
                         @if (count($all_events) > 0)
                         @foreach($all_events as $events)
-                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($events->start_dt->toDateTimeString())))}}"  event_id='{{$events->id}}'>
+                        <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 {{str_replace(' ','_',$events->state_abr)}} {{str_replace(' ','_',$events->country)}} {{str_replace(' ','_',date('m-Y',strtotime($events->start_dt->toDateTimeString())))}}"  event_id='{{$events->id}}'>
                         
                              <div class="event-section">
                                
@@ -150,7 +150,7 @@
                                             </div> 
                                             @endif 
                                            
-                                            <div class="location">{{$events->city}},{{$events->state}}</div>
+                                            <div class="location">{{$events->city}},{{$events->state_abr}}</div>
                                            
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                         @foreach($other_upcoming_events as $upcoming_events)
                         
                         <div class="mob-6 col-4 tab-4 event-wrapper__sub event-mob-lanscape element-item2 
-                        {{str_replace(' ','_',$upcoming_events->state)}} 
+                        {{str_replace(' ','_',$upcoming_events->state_abr)}} 
                         {{str_replace(' ','_',$upcoming_events->country)}}  
                         {{str_replace(' ','_',date('m-Y',strtotime($upcoming_events->next_dt->toDateTimeString())))}}
                         @if($upcoming_events->end_dt->toDateTimeString()==00)
@@ -202,14 +202,14 @@
                                         <h3>{{ $upcoming_events->event_name }}</h3>
                                         <div class="event-info-sub">
                                         @if(!empty($upcoming_events->date_str))
-                                             @if($upcoming_events->end_dt->toDateTimeString() < date('Y-m-d') && $upcoming_events->end_dt->toDateTimeString()!=00)
+                                             @if($upcoming_events->end_dt->toDateTimeString() < date('Y-m-d') && $upcoming_events->end_dt->toDateTimeString()!='-0001-11-30 00:00:00')
                                              
-                                             <div class="date">{{date('F Y',strtotime($upcoming_events->next_dt->toDateTimeString()))}}</div>
+                                             <div class="date {{$upcoming_events->end_dt->toDateTimeString()}}">{{date('F Y',strtotime($upcoming_events->next_dt->toDateTimeString()))}}</div>
                                              @else
                                           <div class="date">{{$upcoming_events->date_str}}</div>
                                           @endif
                                            @endif
-                                           <div class="location">{{$upcoming_events->city}},{{$upcoming_events->state}}</div>
+                                           <div class="location">{{$upcoming_events->city}},{{$upcoming_events->state_abr}}</div>
                                             
                                             </div>
                                     </div>

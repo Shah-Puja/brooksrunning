@@ -91,8 +91,15 @@ class EventController extends Controller {
                                
                            
         } else {
-            $states= event::select('state')->where('state','!=','')->distinct()->get();
-           
+            $states= event::select('state_abr')->where('state_abr','!=','')->distinct()->orderBy('state_abr', 'ASC')->get();
+            if(!in_array('NT',(array)$states)){
+                
+                $array_nt=array( "state_abr" => "NT");
+              
+                $states->push( (object)$array_nt);
+                $states=$states->sortBy('state_abr');
+            }
+            //dd($states);
             $all_events = event::where('status', 'YES')->whereRaw("start_dt >= CURDATE()")
                                ->whereRaw("end_dt >= CURDATE()")
                                ->orwhere('end_dt','>=',date('Y-m-d'))->orderBy('start_dt','ASC')->get();
