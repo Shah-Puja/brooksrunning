@@ -105,7 +105,9 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'source' => 'Competition',
-                    'user_type' => 'Competition']);
+                    'user_type' => 'Competition',
+                    'newsletter' => '0'
+                    ]);
 
 
         if (isset($Person)) {
