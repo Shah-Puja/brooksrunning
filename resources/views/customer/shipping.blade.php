@@ -291,7 +291,7 @@
                                             }
                                             @endphp
                                             <select class="select-field" name="s_state" data-label-name="state">
-                                                <option value="" selected="selected">Select State</option>
+                                                <option value="">Select State</option>
                                                 <option value="ACT" {{ (isset($s_state) &&  $s_state =='ACT' )?"selected='selected":"" }} >ACT</option>
                                                 <option value="NSW" {{ (isset($s_state) &&  $s_state =='NSW' )?"selected='selected":"" }}>NSW</option>
                                                 <option value="NT"  {{ (isset($s_state) &&  $s_state =='NT' )?"selected='selected":"" }}>NT</option>
@@ -345,12 +345,12 @@
                                         </div>
                                     </div>
                                 </div> 
-                                <div class="row">
+                                <div class="row atl-row {{ (isset($s_state) &&  $s_state =='New Zealand' ) ? 'display-none': '' }} ">
                                     <div class="col-12">
-                                        <div class="input-wrapper">
+                                        <div class="input-wrapper atl">
                                             <div class="checklist-inline">
-                                                <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
-                                                       <label for="signme">
+                                                <input type="checkbox" id="atl" name="atl" value='1' >
+                                                       <label for="atl">
                                                     <div class="mark"><span></span></div>
                                                     <div class="text">Authority to leave parcel at premises if no one is available to accept it. <br/>
                                                         <span class="instruction"> *Please note that by selecting this option, you take full responsibility for the parcel once it leaves our distribution centre, and no claim can be made if the parcel is lost or stolen.</span>

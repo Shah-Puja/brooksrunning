@@ -5,7 +5,9 @@ $(document).ready(function () {
     if (selected_delivery_type == "New Zealand Standard Delivery") {
         $('select[name="s_state]').val("New Zealand");
     }
+   
     $('select[name=s_state]').on('change', function () {
+
         if (selected_delivery_type == "Express Delivery") {
             var selected_delivery_type_text = "express";
         } else if (selected_delivery_type == "Standard Delivery") {
@@ -23,6 +25,13 @@ $(document).ready(function () {
         } else {
             var delivery_option_value = selected_delivery_type_text;
         }
+
+        if($(this).val() == 'New Zealand'){
+            $(".atl-row").addClass("display-none");
+        }else{
+            $(".atl-row").removeClass("display-none");
+        }
+
         var overlay = $('<div id="overlay"> </div>');
         overlay.appendTo(document.body);
         var url = "cart/update_delivery_option";
@@ -73,6 +82,7 @@ $(document).ready(function () {
             $('input[name=s_postcode]').val('4000');
             $('input[name=s_phone]').val('1111111111');
             $('input[name=email]').val('sygtest@gmail.com');
+            $('select[name=s_state]').trigger("change");;
         }
     });
     $('input[name=b_fname]').on("keypress keyup blur", function () {
@@ -85,6 +95,7 @@ $(document).ready(function () {
             $('select[name=b_state]').val('ACT');
             $('input[name=b_postcode]').val('4000');
             $('input[name=b_phone]').val('1111111111');
+            $('select[name=s_state]').trigger("change");;
         }
     });
 

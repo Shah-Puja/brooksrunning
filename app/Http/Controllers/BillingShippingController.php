@@ -84,6 +84,7 @@ class BillingShippingController extends Controller
             'terms' => 'accepted',
             'order_info' => '',
             'nosignaturedelivery' => '',
+            'atl' => '',
             'signme' => '',
             'flag_same_shipping' => '',
         ]);
