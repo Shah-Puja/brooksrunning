@@ -159,9 +159,11 @@
 			gallery: true,
 			item: 1,
 			slideMargin: 0,
-			thumbItem: 9
+			thumbItem: 9,
+			onSliderLoad: function (el) {
+       			$('.lSGallery li').last().append('<div class="play"></div>');
+			},
 		});
-
 	});
 						
 </script>

@@ -73,12 +73,14 @@
                                     </li>
                                     @endif
                                 @endfor
-                                <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
+                                @if($product->video!='')
+                                <li data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/1.jpg" data-src="" data-zoomsrc="">
 					                <div class="videowrapper">
-                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/ujkmhrFyp5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                         </iframe>
                                     </div>
 					            </li>
+                                @endif
                             </ul>
 
                         </div>
@@ -885,7 +887,7 @@ $(document).on('click', '.pdp-width-show li', function () {
     height: 100%;
 }
     /* ul.lSGallery li:last-child a .play{ */
-ul.lSGallery li:last-child a .play{
+ .play{
         position: absolute;
         width: 28px;
         height: 28px;
