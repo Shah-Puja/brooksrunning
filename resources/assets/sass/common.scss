@@ -5864,9 +5864,7 @@ a {
         line-height: 1.1 !important;
         margin-left: 3%;
         @extend  %info-italic-font;
-        @media #{$mobile-only}{
-          margin-left: 8%;
-        }
+        
       }
     }
     .mark{
