@@ -5855,6 +5855,47 @@ a {
   .run-happy{
     margin-top: -24px;
   }
+  label{
+    .text{
+      .instruction{
+        color: #f22629;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.1 !important;
+        margin-left: 3%;
+        @extend  %info-italic-font;
+      }
+    }
+    .mark{
+      &.disable{
+      border: 1px solid #f1f1f1;
+      background-color: #f1f1f1; 
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.6;
+        span{
+          background-color: #f1f1f1;
+          border-left: 2px solid #f1f1f1;
+          border-bottom: 2px solid #f1f1f1; 
+        }
+      }
+    }
+  }
+  input:checked ~ label{
+    .mark{
+      &.disable{
+        background-color: #f1f1f1;
+        cursor:no-drop; pointer-events: none;
+        color: #dedcda;
+        border: 1px solid #f1f1f1;
+        span{
+          background-color: #f1f1f1;
+          border-left: 2px solid #f1f1f1;
+          border-bottom: 2px solid #f1f1f1; 
+        }
+      }
+    }
+  } 
 }
 
 }
