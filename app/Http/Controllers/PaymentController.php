@@ -758,11 +758,13 @@ class PaymentController extends Controller {
             list($firstname, $lastname) = explode(' ', $fullname);
         }
 
+        $atl = ($this->order->address->atl==1) ? 'ATL' : '';
+
         $xml_data = "
                 <Order>
                 <PersonId>$person_id</PersonId>
                 <OrderNumber>" . $ordernum . "</OrderNumber>";
-        $xml_data .= "<DeliveryInstructions>" . $add_description . $order_instruction . "</DeliveryInstructions>";
+        $xml_data .= "<DeliveryInstructions>" . $add_description . $order_instruction . $atl . "</DeliveryInstructions>";
         $xml_data .= "<OrderInstructions>" . $order_instruction . "</OrderInstructions>";
         $xml_data .= "<Addresses>
                     <Billing>
@@ -787,7 +789,8 @@ class PaymentController extends Controller {
         $carrier = $servicetype = '';
         if ($order->delivery_type == "express") {
             $carrier = 'AUS';
-            $servicetype = '03X1';
+            //$servicetype = '03X1';
+            $servicetype = ($this->order->address->atl==1) ? '08X1' : '03X1';
         } else if ($order->delivery_type == "new_zealand") {
             $carrier = 'NOC';
             $servicetype = 'PUP';
@@ -796,14 +799,18 @@ class PaymentController extends Controller {
             $freight_service_info = DB::table('freight_service')->where('postcode', $this->order->address->s_postcode)->first();
             if (!empty($freight_service_info) && $freight_service_info->postcode === $this->order->address->s_postcode) {
                 $carrier = 'AUS';
-                $servicetype = '03S1';
+                //$servicetype = '03S1';
+                $servicetype = ($this->order->address->atl==1) ? '08S1' : '03S1';
             } else {
-                $carrier = 'CPL';
-                $servicetype = 'X31';
+                //$carrier = 'CPL';
+                $carrier = ($this->order->address->atl==1) ? 'AUS' : 'CPL';
+                //$servicetype = 'X31';
+                $servicetype = ($this->order->address->atl==1) ? '08S1' : 'X31';
             }
         }
         $xml_data .= "<Carrier><Code>$carrier</Code></Carrier>
                               <ServiceType><Code>$servicetype</Code></ServiceType>";
+
         $xml_data .= "<Contacts>
                     <Email>" . $this->order->address->email . "</Email>
                     <Phones>
