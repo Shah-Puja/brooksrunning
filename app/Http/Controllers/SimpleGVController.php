@@ -20,7 +20,7 @@ class SimpleGVController extends Controller
             print_r($gif_array);
             if($gif_array!=''){
                 SimpleGv::where(function ($query) use ($gif_array) {
-                    $query->where('gv', $gif_array->giv)
+                    $query->where('gv', $gif_array->gv)
                           ->where('pin', $gif_array->pin);
                 })->update(['used'=>'Yes']);
             }
