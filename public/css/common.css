@@ -7446,7 +7446,6 @@ textarea {
   display: inline-block;
   font-size: 14px;
   line-height: 1.1 !important;
-  margin-left: 3%;
 }
 .input-wrapper .checklist-inline label .mark.disable {
   border: 1px solid #f1f1f1;
