@@ -352,7 +352,7 @@
                                                 <input type="checkbox" id="atl" name="atl" value='1' >
                                                        <label for="atl">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">Authority to leave parcel at premises if no one is available to accept it. <br/>
+                                                    <div class="text" style="display:inline-flex !important;">Authority to leave parcel at premises if no one is available to accept it. <br/>
                                                         <span class="instruction"> *Please note that by selecting this option, you take full responsibility for the parcel once it leaves our distribution centre, and no claim can be made if the parcel is lost or stolen.</span>
                                                     </div>
                                                 </label>

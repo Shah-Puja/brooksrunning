@@ -7448,6 +7448,11 @@ textarea {
   line-height: 1.1 !important;
   margin-left: 3%;
 }
+@media only screen and (max-width: 767px) {
+  .input-wrapper .checklist-inline label .text .instruction {
+    margin-left: 8%;
+  }
+}
 .input-wrapper .checklist-inline label .mark.disable {
   border: 1px solid #f1f1f1;
   background-color: #f1f1f1;
