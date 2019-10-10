@@ -77,8 +77,12 @@ class Event extends Resource
 
         $b=array_combine(array_values($country_arr), array_values($country_arr));
         
+        $value = $a['New Zealand'];
+        unset($a['New Zealand']);
+        $a['New Zealand'] = $value;
+        
         return [
-
+         
             ID::make()->hideFromIndex()->sortable(),
             Text::make('Event Name','event_name')->sortable()->rules('required', 'max:255'),
 
