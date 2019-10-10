@@ -16,9 +16,10 @@ class SimpleGVController extends Controller
        $simplegv = SimpleGv::where('used','No')->get();
        if($simplegv!=''){
             foreach($simplegv as $value){
-                $response=$this->bridge->vouchervalid($value->gv,$value->pin,'100'); 
-                print_r($response);
-                exit;   
+                echo $value->gv."<br>";
+                echo $value->pin;
+                exit;
+                $response=$this->bridge->vouchervalid($value->gv,$value->pin,'100');    
                 if($response!=''){
                     $returnCode = $response->getStatusCode();    
                     switch ($returnCode) {
