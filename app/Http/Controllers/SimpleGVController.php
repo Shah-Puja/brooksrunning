@@ -19,9 +19,7 @@ class SimpleGVController extends Controller
                             ->update(['used'=>'Yes']);
                 }
             }
-
-            echo "hiii";
-
+            echo "Process Completed";
         }
    } 
 }
