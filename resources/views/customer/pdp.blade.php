@@ -74,7 +74,7 @@
                                     @endif
                                 @endfor
                                 @if($product->video!='')
-                                <li data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/1.jpg" data-src="" data-zoomsrc="">
+                                <li data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
 					                <div class="videowrapper">
                                         <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                         </iframe>
@@ -903,6 +903,8 @@ $(document).on('click', '.pdp-width-show li', function () {
     border: 1px solid #0ee0e0e0;
     position: relative;
     display: inline-block;
+    width: 60px;
+    height: 40px;
 }
 </style>
 
