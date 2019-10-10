@@ -14,13 +14,14 @@ class SimpleGVController extends Controller
         if($orders!=''){
             foreach($orders as $order){
                 if($order->giftcert_ap21code!='' && $order->giftcert_ap21pin!=''){
-                    SimpleGv::where('gv' ,$order->giftcert_ap21code)
-                            ->where('pin' ,$order->giftcert_ap21pin)
+                    SimpleGv::where('gv',$order->giftcert_ap21code)
+                            ->where('pin',$order->giftcert_ap21pin)
                             ->update(['used'=>'Yes']);
                 }
             }
 
-            print_r($orders);
+            echo "hiii";
+
         }
    } 
 }
