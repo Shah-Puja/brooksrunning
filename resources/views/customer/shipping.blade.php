@@ -352,8 +352,8 @@
                                                 <input type="checkbox" id="atl" name="atl" value='1' >
                                                        <label for="atl">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text">Authority to leave parcel at premises if no one is available to accept it. <br/>
-                                                        <span class="instruction"> *Please note that by selecting this option, you take full responsibility for the parcel once it leaves our distribution centre, and no claim can be made if the parcel is lost or stolen.</span>
+                                                    <div class="text" style="display:inline-grid !important;">Authority to leave parcel at premises if no one is available to accept it. <br/>
+                                                        <span class="instruction"><i> *Please note that by selecting this option, you take full responsibility for the parcel once it leaves our distribution centre, and no claim can be made if the parcel is lost or stolen.</i></span>
                                                     </div>
                                                 </label>
                                             </div>
@@ -367,7 +367,7 @@
                                                 <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
                                                        <label for="signme">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text" style="display:inline-flex !important;">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                    <div class="text" style="display:inline-grid !important;">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
                                                 </label>
                                             </div>
                                         </div>
