@@ -198,6 +198,8 @@ Route::get('/collections/revel-3-breakthrough-collection', 'CollectionController
 Route::get('sitemap-index.xml', 'SitemapController@index');
 Route::redirect('/sitemap.xml', '/sitemap-index.xml');
 
+Route::get('check_gv', 'SimpleGVController@gv_check');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
