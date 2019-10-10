@@ -47,7 +47,7 @@ class meet_brooksController extends Controller {
         request()->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'gender' => 'required',
+            'gender' => 'sometimes|required|in:male,female',
             'email' => 'required|email',
             'country' => 'required',
             'postcode' => 'required|numeric',
@@ -105,7 +105,9 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'source' => 'Competition',
-                    'user_type' => 'Competition']);
+                    'user_type' => 'Competition',
+                    'newsletter' => '0'
+                    ]);
 
 
         if (isset($Person)) {

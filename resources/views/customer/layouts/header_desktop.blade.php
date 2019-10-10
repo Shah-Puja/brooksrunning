@@ -513,7 +513,7 @@
                                                     <li class="submenu-main">
                                                         <a href="/meet_brooks/our_purpose">Run Happy</a>
                                                     </li>
-                                                    <li><a href="/meet_brooks/competition/update">Competition</a></li>
+                                                    <li><a href="/meet_brooks/competition/rh_competition">Competition</a></li>
                                                     <li><a href="/meet_brooks/enewsletter">E-Newsletter</a></li>
                                                     <li><a href="/meet_brooks/training-tips">Training Tips</a></li>
                                                     <li><a href="/meet_brooks/injury-prevention">Injury Prevention</a></li>
