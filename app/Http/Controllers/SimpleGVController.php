@@ -19,6 +19,8 @@ class SimpleGVController extends Controller
                             ->update(['used'=>'Yes']);
                 }
             }
+
+            print_r($orders);
         }
    } 
 }
