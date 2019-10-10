@@ -21,7 +21,7 @@ class SimpleGVController extends Controller
                     $returnCode = $response->getStatusCode();    
                     switch ($returnCode) {
                             case 200:        
-                                $value->used="NO";
+                                $value->used="No";
                                 $value->save();
                                 break;
                             default:
