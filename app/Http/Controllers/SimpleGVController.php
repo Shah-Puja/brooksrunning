@@ -19,9 +19,9 @@ class SimpleGVController extends Controller
             }
             print_r($gif_array);
             if($gif_array!=''){
-                SimpleGv::whereHas($key,function($q) use($option){
-                    $q->whereIn('gv', $option)
-                      ->whereIn('pin', $option);
+                SimpleGv::where(function ($query) use ($gif_array) {
+                    $query->where('gv', $gif_array->giv)
+                          ->where('pin', $gif_array->pin);
                 })->update(['used'=>'Yes']);
             }
         }
