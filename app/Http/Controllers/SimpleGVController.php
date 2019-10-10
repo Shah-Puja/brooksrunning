@@ -14,11 +14,11 @@ class SimpleGVController extends Controller
     }
     public function gv_check(){
        $simplegv = SimpleGv::where('used','No')->get();
-       print_r($simplegv);
-       exit;
        if($simplegv!=''){
             foreach($simplegv as $value){
-                $response=$this->bridge->vouchervalid($value->gv,$value->pin,'100');    
+                $response=$this->bridge->vouchervalid($value->gv,$value->pin,'100'); 
+                print_r($response);
+                exit;   
                 if($response!=''){
                     $returnCode = $response->getStatusCode();    
                     switch ($returnCode) {
