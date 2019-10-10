@@ -9,7 +9,7 @@ use App\Models\Order;
 class SimpleGVController extends Controller
 {
    public function gv_check(){
-        $orders = Order::where('status','Completed')->get();
+        $orders = Order::whereIn('status',['Completed','Order Number'])->get();
         $gif_array = [];
         if($orders!=''){
             foreach($orders as $order){
@@ -17,8 +17,7 @@ class SimpleGVController extends Controller
                     $gif_array[] = [ 'gv' => $order->giftcert_ap21code,'pin' => $order->giftcert_ap21pin ];
                 }
             }
-            echo "<pre>";
-            print_r($gif_array);
+            
         }
    } 
 }
