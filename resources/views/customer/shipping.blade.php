@@ -367,7 +367,7 @@
                                                 <input type="checkbox" id="signme" name="signme" value='1'  @if ( old('signme') == 1) checked @endif   @if(isset(auth()->user()->newsletter) && auth()->user()->newsletter=='1') checked @endif>
                                                        <label for="signme">
                                                     <div class="mark"><span></span></div>
-                                                    <div class="text" style="font-size:14.2px;">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
+                                                    <div class="text" style="display:inline-flex !important;">Check this box if you wish to receive communication from Brooks on new products, exclusive offers and info to help you Run Happy.</div>
                                                 </label>
                                             </div>
                                         </div>
