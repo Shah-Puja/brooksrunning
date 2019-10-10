@@ -17,6 +17,7 @@ class SimpleGVController extends Controller
                     $gif_array[] = [ 'gv' => $order->giftcert_ap21code,'pin' => $order->giftcert_ap21pin ];
                 }
             }
+            print_r($gif_array);
             if($gif_array!=''){
                 SimpleGv::whereHas($key,function($q) use($option){
                     $q->whereIn('gv', $option)
