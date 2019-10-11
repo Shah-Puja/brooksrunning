@@ -15,6 +15,7 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
+Route::get('/loyalty_register', 'Auth\RegisterController@loyalty_register');
 
 
 
@@ -229,3 +230,9 @@ Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_
 
 Route::get('/testmedibankcsv/export_medibank_order_csv', 'testmedibankcsv@export_medibank_order_csv');
 Route::get('/error-page', 'QuickhelpController@error_404');
+
+
+
+
+/* loyalty accounts static pages */
+Route::get('/account-homepage', 'MyaccountController@account_homepage');

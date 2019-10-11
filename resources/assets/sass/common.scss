@@ -2000,6 +2000,11 @@
                 line-height: 0;
                 margin-right: 5px;
             }
+            span{
+              display: block;
+              margin-bottom: 6px;
+              margin-top: 7px;
+            }
           }
        }
        .cart-btn{
@@ -2027,6 +2032,21 @@
        label{
           a{
             color: $black;
+          }
+       }
+       .loyalty-btn{
+          display: inline-block;
+          width: 68%;
+          margin-right: 5px;
+          margin-top: 15px;
+          @media #{$mobile-only}{
+            width: 100%;
+          }
+          @media #{$tab-only}{
+            width: 90%;
+          }
+          @media #{$desktop-only}{
+            width: 90%;
           }
        }
     }
@@ -2133,6 +2153,193 @@
         }
         @media #{$mobile-only}{
           margin: 60px 0;
+        }
+      }
+      &.loyalty-shoefinder-section{
+        background-color: #d8e6ff;
+        padding: 1px 1px 40px 1px;
+        @media #{$mobile-only}{ 
+          padding: 15px 15px;
+        }
+        @media #{$tab-only}{   
+          padding: 1px 1px 10px 1px;
+        }
+        @media #{$desktop-only}{   
+          padding: 1px 1px 10px 1px;
+        }
+            .horizontal-shoe-finder{
+              text-align: center;
+              padding: 15px 15px;
+              margin: 0px auto 2px;
+              
+              @media #{$tab-only}{ 
+                padding: 1px 14px;
+              }
+              @media #{$desktop-only}{ 
+                padding: 10px 10px;
+              }
+              .br-heading{
+                font-size: 23px;
+                margin: 0px auto;
+                 @media #{$tab-only}{ 
+                  font-size: 13px;
+                 }
+                 @media #{$desktop-only}{ 
+                  font-size: 16px;
+                 }
+                 
+              }
+              .br-heading-mob{
+                font-size: 20px;
+                margin: 0;
+                 .finder-heading-mob{ 
+                  @extend %extrabold-font;
+                }
+              }
+              .br-info{
+                  line-height: 1.3;
+                  margin: 5px auto;
+                  @media #{$tab-only}{ 
+                    font-size: 12px;
+                  }
+                  @media #{$desktop-only}{ 
+                    font-size: 14px;
+                  }
+                  @media #{$mobile-only}{ 
+                    font-size: 13px;
+                    margin: 10px auto;
+                    width: 100%;
+                    max-width: 350px;
+                  }
+              }
+              .br-info-mob{
+                  font-size: 20px;
+                  line-height: 1.1;
+                  margin-top: 5px;
+                  margin-bottom: 20px;
+              }
+            
+              .horizontal-shoefinder-logo{
+                    width: 100%;
+                    max-width: 250px;
+                    // float: left;
+                    margin: 0px auto;
+                    @media #{$desktop-only}{   
+                      max-width: 200px;
+                    }
+                     @media #{$mobile-only}{ 
+                    max-width: 200px;
+                    margin:0 auto;
+                    display:block;
+                    float:none;
+                  }
+                  .magnify-logo{
+                    width: 100%;
+                    max-width: 140px;
+                    margin: 5px auto;
+                    @media #{$tab-only}{ 
+                      max-width: 90px;
+                      margin: 4px auto;
+                    }
+                    @media #{$desktop-only}{ 
+                      max-width: 110px;
+                      margin: 4px auto;
+                    } 
+                  }
+                  .foot-logo{
+                    width: 100%;
+                    max-width: 250px;
+                    margin: 5px auto;
+                    @media #{$tab-only}{ 
+                      max-width: 130px;
+                    }
+                    @media #{$desktop-only}{ 
+                      max-width: 220px;
+                    }
+                  }
+              }
+          }
+      }
+      &.loyalty-details{
+        margin: 40px 0px;
+      }
+    }
+    &--loyaltybanner{
+      img{
+        width: 100%;
+       
+        margin: -10px auto;
+        @media #{$mobile-only}{
+          margin: 0px 0;
+        }
+      }
+    }
+    .footerloyalty-terms{
+      margin: -10px auto;
+      background-color: $blue;
+      padding: 15px 20px;
+      color: $white;
+    
+     
+      a{
+        color: $white;
+        text-decoration: underline;
+      }
+      h1{
+        margin:0;
+        @media #{$mobile-only}{
+          text-align: left;
+        }
+      }
+      .sub-info{
+        @media #{$mobile-only}{
+          text-align: center;
+        }
+      }
+      .br-heading{
+        font-size: 17.5px;
+        &.terms{
+          line-height: 16px;
+        }
+      }
+      .info{
+        line-height: 0.99;
+        font-size: 17px;
+      }
+    }
+    .footerloyalty-info{
+      margin: 43px auto; 
+      background-color: #D3D2D2;
+      padding: 15px 15px;
+      color: $black;
+      a{
+        color: $blue;
+        text-decoration: underline;
+      }
+      h1{
+        margin:0;
+        font-size: 18px;
+        text-align:center;
+        
+        @extend %extrabold-font;
+      }
+      .sub-info{
+        @media #{$mobile-only}{
+          text-align: center;
+        }
+      }
+      .br-heading{
+        font-size: 17.5px;
+        &.terms{
+          line-height: 16px;
+        }
+      }
+      .info{
+        line-height: 0.11;
+        font-size: 17px;
+        text-align:center;
+        @media #{$mobile-only}{
+          line-height: 1.1;
         }
       }
     }

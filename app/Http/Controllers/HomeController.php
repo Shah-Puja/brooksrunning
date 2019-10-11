@@ -36,8 +36,14 @@ class HomeController extends Controller
         }
         $shoefinder_user_details = Shoefinder_user::where('user_id', auth()->id())->first();
         /******/
+
+        if(auth()->user()->loyalty_type== 'PPP'){
+            $page = 'loyalty-home';
+        }else{
+            $page = 'home';
+        }
         
-        return view('home',compact('shoefinder_user_details'));
+        return view($page,compact('shoefinder_user_details'));
     }
 
 }
