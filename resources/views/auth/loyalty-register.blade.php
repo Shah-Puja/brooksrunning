@@ -1,6 +1,6 @@
 @extends('customer.layouts.master')
 @section('content')
-<div class="create-account--header">
+<div class="create-account--header loyalty-header">
         <div class="wrapper">
             <div class="row">
                 <div class="col-12">

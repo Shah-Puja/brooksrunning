@@ -1,19 +1,21 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <form id="loyalty_register_form" method="POST" action="{{ route('register') }}" onsubmit="return registervalidation()">
         @csrf
-            <div class="create-account--left">                    
+            <div class="create-account--left loyalty-header-title">                    
                 <h3 class="br-heading">Create your Professional Purchase Account </h3>
                 <hr>
                 <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                            <label for="first_name">First Name<sup>*</sup> : @if ($errors->has('first_name'))<span class="error invalid-feedback">{{ $errors->first('first_name') }}</span>@endif</label>                            
+                            <label for="first_name">First Name<sup>*</sup>  @if ($errors->has('first_name'))<span class="error invalid-feedback">{{ $errors->first('first_name') }}</span>@endif</label>                            
                             <input id="first_name" type="text" class="input-field form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ !empty(auth()->user()->first_name) ? auth()->user()->first_name : old('first_name') }}" data-label-name="first name" autofocus>                                 
                         </div>
                     </div>
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="last_name">Last Name<sup>*</sup> : @if ($errors->has('last_name'))<span class="error invalid-feedback">{{ $errors->first('last_name') }}</span>@endif</label>                            
+                                <label for="last_name">Last Name<sup>*</sup>  @if ($errors->has('last_name'))<span class="error invalid-feedback">{{ $errors->first('last_name') }}</span>@endif</label>                            
                                 <input id="last_name" type="text" class="input-field form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ !empty(auth()->user()->last_name) ? auth()->user()->last_name : old('last_name') }}" data-label-name="last name" autofocus>                                     
                         </div>
                     </div>
@@ -21,13 +23,13 @@
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">E-Mail Address<sup>*</sup> : @if ($errors->has('email')) <span class="error invalid-feedback">{{ $errors->first('email') }} </span> @endif</label>
+                                <label for="email">Email Address<sup>*</sup>  @if ($errors->has('email')) <span class="error invalid-feedback">{{ $errors->first('email') }} </span> @endif</label>
                                 <input type="text" class="input-field form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ !empty(auth()->user()->email) ? auth()->user()->email : old('email') }}" data-label-name="email" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
                         </div>
                     </div>
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Current Practice Name<sup>*</sup> : @if ($errors->has('practice_name')) <span class="error invalid-feedback">{{ $errors->first('practice_name') }} </span> @endif</label>
+                                <label for="email">Current Practice Name<sup>*</sup>  @if ($errors->has('practice_name')) <span class="error invalid-feedback">{{ $errors->first('practice_name') }} </span> @endif</label>
                                 <input type="text" class="input-field form-control{{ $errors->has('practice_name') ? ' is-invalid' : '' }}" name="practice_name" value="{{ !empty(auth()->user()->practice_name) ? auth()->user()->practice_name : old('email') }}" data-label-name="practice name" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
                         </div>
                     </div>
@@ -35,21 +37,62 @@
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Practice Postcode<sup>*</sup> : @if ($errors->has('postcode')) <span class="error invalid-feedback">{{ $errors->first('postcode') }} </span> @endif</label>
+                                <label for="email">Practice Postcode<sup>*</sup>  @if ($errors->has('postcode')) <span class="error invalid-feedback">{{ $errors->first('postcode') }} </span> @endif</label>
                                 <input type="text" class="input-field allownumericwithdecimal form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ !empty(auth()->user()->postcode) ? auth()->user()->postcode : old('postcode') }}" data-label-name="practice postcode" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
                         </div>
                     </div>
                     <div class="tab-6">
+                        <div class="loyalty-practitioner--wrapper">
+                        <!-- <div class="input-wrapper">
+                        <label for="name">Practitioner Type</label>
+                                <select class="select-field" name="custom_Age" id="custom_Age" style="margin-bottom: 0px;">
+                                    <option class="option-value" value="Podiatrist">Podiatrist</option>
+                                    <option class="option-value" value="Physiotherapist">Physiotherapist</option>
+                                    <option class="option-value" value="Chiropractor">Chiropractor</option>
+                                    <option class="option-value" value="Osteopath">Osteopath</option>
+                                    <option class="option-value" value="Other">Other</option>
+                                </select>
+                        </div> -->
+                           
                         <div class="input-wrapper">
-                                <label for="email">Health Practitioner<sup>*</sup> : @if ($errors->has('health_practitioner')) <span class="error invalid-feedback">{{ $errors->first('health_practitioner') }} </span> @endif</label>
-                                <input type="text" class="input-field form-control{{ $errors->has('health_practitioner') ? ' is-invalid' : '' }}" name="health_practitioner" value="{{ !empty(auth()->user()->health_practitioner) ? auth()->user()->health_practitioner : old('email') }}" data-label-name="health practitioner" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
+                            <label for="name">Practitioner Type</label>
+                                <ul class="loyalty-practitioner">
+                                    <li>
+                                        <a href="javascript:void(0)" class="practitioner">&nbsp; <span class="icon-down-arrow"></span></a>
+                                        <ul class="loyalty-practitioner__submenu">
+                                            
+                                                <li class="option-value">
+                                                    Podiatrist
+                                                </li>
+                                                <li class="option-value">
+                                                   Physiotherapist
+                                                </li>
+                                                <li class="option-value">
+                                                Chiropractor
+                                                </li>
+                                                <li class="option-value">
+                                                Osteopath
+                                                </li>
+                                                <li class="option-value">
+                                                Other
+                                                </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                         </div>
-                    </div>
+                        </div>
+		            </div>
                 </div>    
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                            <label class="gender_label">Gender<sup>*</sup> : @if ($errors->has('gender')) <span class="error invalid-feedback">{{ $errors->first('gender') }} </span> @endif</label>
+                                <label for="email">Health Practitioner<sup>*</sup>  @if ($errors->has('health_practitioner')) <span class="error invalid-feedback">{{ $errors->first('health_practitioner') }} </span> @endif</label>
+                                <input type="text" class="input-field form-control{{ $errors->has('health_practitioner') ? ' is-invalid' : '' }}" name="health_practitioner" value="{{ !empty(auth()->user()->health_practitioner) ? auth()->user()->health_practitioner : old('email') }}" data-label-name="health practitioner" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
+                        </div>
+                    </div>
+                    <div class="tab-6">
+                        <div class="input-wrapper padding_bottom">
+                            <label class="gender_label">Gender<sup>*</sup>  @if ($errors->has('gender')) <span class="error invalid-feedback">{{ $errors->first('gender') }} </span> @endif</label>
                             <div class="radio-inline">
                                 @php $gender = !empty(auth()->user()->gender) ? auth()->user()->gender : old('gender'); @endphp
                                 <input type="radio" class="input-radio" name="gender" value="Male" id="male" {{ $gender == 'Male' ? "checked" : "" }}>
@@ -67,16 +110,12 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="tab-6">
-                        &nbsp;
-                    </div>
                 </div>
                 <div class="row">
                     <div class="tab-6">
                     <div class="input-wrapper">
                                 <div class="row">
-                                    <div class="mob-7"><label>Choose your Account Password</label></div>
+                                    <div class="mob-7"><label class="loyalty-password">Choose your Account Password</label></div>
                                     <div class="mob-5">
                                         <div class="show-pass">
                                             <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
@@ -97,7 +136,7 @@
                     <div class="input-wrapper">
 								
                                 <div class="row">
-                                    <div class="mob-7"><label>Confirm Password</label></div>
+                                    <div class="mob-7"><label class="loyalty-password">Confirm Password</label></div>
                                     <div class="mob-5">
                                     <div class="show-pass">
                                         <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
@@ -130,10 +169,10 @@
                 </div>-->
                 <div class="row">
                     <div class="tab-12">
-                        <div class="cart-btn">                                           
-                                <button type="submit" class="btn primary-button">Apply Now</button>                                    
+                        <div class="loyalty-form-btn">                                           
+                                <button type="submit" class="btn primary-button">Create Account</button>                                    
                         </div>
-                        <p class="privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
+                        <p class="loyalty-privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
                     </div>
                 </div>                
             
@@ -235,4 +274,15 @@
                     input.attr("type", "password");
                 }
             });
-           </script>
+           
+
+
+        $(document).on('click', '.loyalty-practitioner li .option-value', function () {
+            $('.selectedLi').removeClass('selectedLi');
+            $(this).addClass('selectedLi');
+            var selText = $(this).text();
+            $(this).parents('.loyalty-practitioner--wrapper').find('.loyalty-practitioner li a').html(selText +
+                    ' <span class="icon-down-arrow"></span>');
+        //    $('.loyalty-practitioner__submenu').toggle();
+        });
+        </script>
