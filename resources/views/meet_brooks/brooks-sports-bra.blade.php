@@ -6,7 +6,7 @@
 	<div class="opacity-cover hidden-mob"></div>
 	      <picture>
 	        <source media="(max-width: 595px)" srcset="/images/meet-brooks/technology/brooks_sports_bra/LP_Bra-Tech_FWP_S.jpg">
-	        <img src="/images/meet-brooks/technology/brooks_sports_bra/LP_Bra-Tech_FWP_L.jpg" alt="Header Images">
+	        <img src="/images/meet-brooks/technology/brooks_sports_bra/LP_Bratech_FWP_L.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
