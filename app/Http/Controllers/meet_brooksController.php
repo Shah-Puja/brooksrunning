@@ -296,6 +296,10 @@ class meet_brooksController extends Controller {
         return view('meet_brooks.our_purpose');
     }
 
+    public function test_page() {
+        return view('meet_brooks.test_page');
+    }
+
     public function our_history() {
         return view('meet_brooks.our_history');
     }
