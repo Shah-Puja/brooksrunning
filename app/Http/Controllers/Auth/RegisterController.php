@@ -99,8 +99,9 @@ class RegisterController extends Controller {
                     'newsletter' => @$data['newsletter_subscription'] ? 1 : 0,
                     'user_type' => "User",
                     'source' => (isset($data['source'])) ? $data['source'] : 'User',
-                    'practice_name' => (isset($data['practice_name'])) ? $data['practice_name'] : '', // field for loyalty register user
-                    'health_practitioner' => (isset($data['health_practitioner'])) ? $data['health_practitioner'] : '', // field for loyalty register user
+                    'org_id' => (isset($data['org_id'])) ? $data['org_id'] : '', // field for loyalty register user
+                    'org_name' => (isset($data['org_name'])) ? $data['org_name'] : '', // field for loyalty register user
+                    'org_type' => (isset($data['org_type'])) ? $data['org_type'] : '', // field for loyalty register user
                     'loyalty_type' => (isset($data['loyalty_type'])) ? $data['loyalty_type'] : '', // field for loyalty register user
         ]);
 

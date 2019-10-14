@@ -29,8 +29,8 @@
                     </div>
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Current Practice Name<sup>*</sup>  @if ($errors->has('practice_name')) <span class="error invalid-feedback">{{ $errors->first('practice_name') }} </span> @endif</label>
-                                <input type="text" class="input-field form-control{{ $errors->has('practice_name') ? ' is-invalid' : '' }}" name="practice_name" value="{{ !empty(auth()->user()->practice_name) ? auth()->user()->practice_name : old('email') }}" data-label-name="practice name" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
+                                <label for="email">Current Practice Name<sup>*</sup>  @if ($errors->has('org_name')) <span class="error invalid-feedback">{{ $errors->first('org_name') }} </span> @endif</label>
+                                <input type="text" class="input-field form-control{{ $errors->has('org_name') ? ' is-invalid' : '' }}" name="org_name" value="{{ !empty(auth()->user()->org_name) ? auth()->user()->org_name : old('org_name') }}" data-label-name="practice name" >                                
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Health Practitioner<sup>*</sup>  @if ($errors->has('health_practitioner')) <span class="error invalid-feedback">{{ $errors->first('health_practitioner') }} </span> @endif</label>
-                                <input type="text" class="input-field form-control{{ $errors->has('health_practitioner') ? ' is-invalid' : '' }}" name="health_practitioner" value="{{ !empty(auth()->user()->health_practitioner) ? auth()->user()->health_practitioner : old('email') }}" data-label-name="health practitioner" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
+                                <label for="email">Health Practitioner<sup>*</sup>  @if ($errors->has('org_id')) <span class="error invalid-feedback">{{ $errors->first('org_id') }} </span> @endif</label>
+                                <input type="text" class="input-field form-control{{ $errors->has('org_id') ? ' is-invalid' : '' }}" name="org_id" value="{{ !empty(auth()->user()->org_id) ? auth()->user()->org_id : old('org_id') }}" data-label-name="health practitioner">                                
                         </div>
                     </div>
                     <div class="tab-6">
