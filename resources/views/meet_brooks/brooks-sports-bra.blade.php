@@ -7,7 +7,12 @@
 	      <picture>
 	        <source media="(max-width: 595px)" srcset="/images/meet-brooks/technology/brooks_sports_bra/LP_Bra-Tech_FWP_S.jpg">
 	        <img src="/images/meet-brooks/technology/brooks_sports_bra/LP_Bratech_FWP_L.jpg" alt="Header Images">
-	      </picture>
+         </picture>
+         <!-- <picture>
+                 <source media="(max-width: 595px)" srcset="/images/meet-brooks/Sports-Bra-Technology/S19_LP_Bra-Tech_1_FWP_S.jpg">
+                 <source media="(min-width: 596px) and (max-width: 974px)" srcset="/images/meet-brooks/Sports-Bra-Technology/S19_LP_Bra-Tech_1_FWP_M_new.jpg">
+                 <img class="m-block--hero--promo__img" src="/images/meet-brooks/Sports-Bra-Technology/S19_LP_Bra-Tech_1_FWP_L.jpg">
+             </picture> -->
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
 	      		<div class="row">
