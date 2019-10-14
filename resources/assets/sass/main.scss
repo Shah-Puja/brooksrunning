@@ -4619,3 +4619,423 @@ width: 100%;
     }
 }
 /* End mothers day collection page*/ 
+
+
+/* Start brooks sports bra page*/
+
+.sports-bra-page-banner{
+  position: relative;
+  min-height:320px;
+  picture{
+    img{
+      width:100%;
+    }
+  }
+  @media #{$tab-only}{
+  min-height: 200px;
+  }
+  .opacity-cover{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.2);
+         @media #{$tab-only}{
+           height: 100%;
+         }
+          @media #{$desktop-only}{
+             height: 82.5%;
+           }
+    }
+
+  .landingpage-banner--info{
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 20px;
+    z-index: 2;
+    @media #{$tab-only}{ 
+      height: 70%;
+    }
+    .banner--info{
+      top: 50%;
+      left: 50%;
+      transform: translate(5%, 5%);
+      width:100%;
+        max-width: 350px;
+        color: $white;
+          @media #{$tab-only}{ 
+            padding-top: 180px;
+            .primary-button{
+              max-width: 220px;
+            }
+          }
+          @media #{$desktop-only}{ 
+            padding-top: 180px;
+            .primary-button{
+              max-width: 220px;
+            }
+          }
+          @media #{$mobile-only}{ 
+            padding-top: 180px;
+            .primary-button{
+              max-width: 220px;
+            }
+          }
+    }
+    .label--underline{
+      position: relative;
+      font-size: 45px;
+      @extend %extrabold-font;
+  
+    }
+    p{
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: 27px;
+         @media #{$tab-only}{ 
+          font-size:25px;
+         }
+         @media #{$desktop-only}{ 
+          font-size:25px;
+         }
+    }
+     
+  @media #{$mobile-only}{
+      margin-bottom:26px !important;
+      background-color: $white;
+      position: relative;
+      .landing-info{
+          width: 350px;
+          height: 180px;
+          transform: translate(0%, 5%);
+          position: absolute;
+          top: -110px;
+          left: 49%;
+          transform: translateX(-50%);
+          background: $white;
+          color:$black;
+          padding: 25px 20px;
+          -webkit-box-shadow: 0 8px 7px -7px black;
+	   -moz-box-shadow: 0 8px 7px -7px black;
+	        box-shadow: 0 8px 7px -7px black;
+           .banner--info{
+              padding-top: 0px;
+              padding-bottom:30px;
+              color: $black;
+              text-align:center;
+              transform: translate(0%, -15%);
+              
+               .primary-button{
+                  min-width: 200px;
+                }
+            }
+            .label--underline{
+               position: relative;
+               font-size: 34px;
+             }
+             p{
+                margin-bottom: 12px;
+                line-height: 22px;
+                font-size: 16px;
+                }
+        }
+      }
+    }
+}
+.sports-bra-featured--container{
+  background-color: $white;
+  padding-top: 10px;
+  .homepage-new--arrival{
+     padding-bottom: 30px;
+      .main-heading{
+        border-top: 1px solid $border;
+        color: $blue;
+        margin-top: 15px;
+      }
+  }
+ 
+  .info-wrapper{
+    padding: 0 16px 0px 5px;
+    margin-top: -10px;
+    .br-heading{
+      margin: 0px;
+       @media #{$tab-only}{
+        font-size: 20px !important;
+      }
+    }
+    p{
+      margin: 10px 0;
+       @media #{$tab-only}{
+        font-size: 12px !important;
+      }
+      @media #{$desktop-only}{
+        font-size: 12px !important;
+      }
+    }
+    a{
+      display: inline-block;
+      font-size: 15px;
+      color: $blue;
+      @extend %bold-font;
+      &:hover{
+        color: $lightblue;
+         #br-home{
+        content: url(../images/home/link-arrow-lightblue--icon.png);
+        }
+      }
+     
+      img{
+        width: 14px;
+        vertical-align: baseline;
+        display: inline-block;
+      }
+       @media #{$tab-only}{
+        font-size: 13px !important;
+         img{
+          width: 12px;
+        }
+      }
+    }
+   
+    
+  }
+}
+
+.sports-bra-collection--container{
+  .collection-intro{
+    background-color: #fff;
+    margin :20px auto;
+    text-align: center;
+    
+    h1{
+      color:#0E0E0E;
+      margin: 0 0 9px;
+      @extend %extrabold-font;
+      text-align: center;
+    }
+    h2{
+      color:#0E0E0E;
+      margin: 0 0 9px;
+      @extend %extrabold-font;
+      font-size:25px;
+      text-align:center;
+    }
+    p{
+      max-width: 100%;
+      color:#0E0E0E;
+      font-size: 22px;
+      line-height: 30px;
+      @extend %info-font;
+      text-align: center;
+    }
+    div{
+      max-width: 100%;
+      color:#0E0E0E;
+      font-size: 18px;
+      line-height: 26px;
+      @extend %info-font;
+      
+      .shop-all{
+        text-align:center !important;
+        color: #0263f7;
+      }
+    }
+     
+  }
+
+  .sports-bra-lp-carousal{
+    @extend %display-flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    .owl-wrapper-outer{
+        @media #{$mobile-only} {
+          margin: 10px 0 0px;
+        }
+        .plp-product{
+          &.product_arrive{
+            padding:10px;
+            .info h3 {
+                margin: -5px auto;
+                padding-top: 15px;
+                text-align: center;
+            }
+            a .main_link{
+                text-align:center;
+                text-decoration:none;
+                color: $black;
+                 @extend %extrabold-font;
+                  &:hover{
+                  color: $lightblue;
+                  }
+            }
+            .info .shoes-type {
+                  text-align:center;
+            }
+            .price {
+                margin: 5px;
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                span.black{
+                  text-decoration:none;
+                  color:$black;
+                }
+             }
+          }
+          
+          position: relative;
+          @media #{$mobile-only} {
+            max-width: 240px;
+            margin: auto;
+          }
+        
+          .offer-info{
+            position: absolute;
+            top:-12px;
+            left:20px;
+            z-index: 5;
+            font-size: 13px;
+            @media #{$mobile-only}{
+              top: -5px;
+              font-size: 11px;
+            }
+            span{
+              @extend %bold-italic-font;
+              padding: 7px;
+              display: inline-block;
+              background-color: $blue;
+              color: $white;
+              @media #{$mobile-only}{
+                padding: 2px;
+              }
+              &.sale{
+                background-color: $red;
+              }
+            }
+          }
+          a{
+            display: block;
+            color: $black;
+          }
+          .plp-main--img--wrapper{
+            width: 100%;
+            height: 325px;
+            background-size: cover;
+            background-position: 50% 49%;
+            background-repeat: no-repeat;
+            @media #{$tab-only}{
+              height: 260px;
+            }
+            @media #{$mobile-only}{
+              height: 120px;
+            }
+          }
+          .img{
+            background-color: $darkgray;
+            text-align: center;
+            &.img-shoes{
+              height: 325px;
+              width: 100%;
+              position: relative;
+              @media #{$tab-only}{
+                  height: 260px;
+                }
+                @media #{$mobile-only}{
+                  height: 220px;
+                }
+              img{
+                position: absolute;
+                bottom:0;
+                left:0;
+              }
+            }
+           
+            img{
+              width: auto;
+              max-width: 100%;
+            }
+          }     
+          .info{
+            display: block;
+            position: relative;
+            padding: 17px 0 8px;
+            height: 122px;
+            border-bottom: 1px solid #f2f2f2;
+            @media #{$mobile-only} {
+              padding: 2px 0 3px;
+              z-index: -90;
+              height: 90px;
+            }
+            h3{
+              @extend %bold-font;
+              font-size: 16px;
+              line-height: 1.4;
+              margin: 0 0 5px;
+              @media #{$mobile-only}{
+                font-size: 13px;
+                margin:0;
+                line-height: 1.2;
+              }
+            }
+            .price{
+              @extend %bold-font;
+              font-size: 20px;
+              margin-bottom: 12px;
+              @media #{$mobile-only}{
+                font-size: 15px;
+                margin-bottom: 5px;
+              }
+              span{
+                  &.red{
+                    color: $red;
+                  }
+              }
+            }
+            .shoes-type{
+              font-size: 12px;
+            }
+          }
+          .info-sub{
+            p{
+              font-size: 11px;
+              margin: 5px 0;
+              @media #{$mobile-only}{
+                font-size: 9px;
+              }
+              &.right{
+                text-align: right;
+              }
+            }
+          }
+        }
+    }
+    @media #{$mobile-only}{
+      .owl-controls{
+        text-align: center;
+          .owl-page {
+          display: inline-block;
+            span {
+                background: none repeat scroll 0 0 #869791;
+                border-radius: 20px;
+                display: block;
+                height: 12px;
+                margin: 15px 7px;
+                opacity: 0.5;
+                width: 12px;
+                text-align: center;
+            }
+          }
+          .owl-page.active {
+            span{
+              background: #005CFB ;
+            }
+          }
+        }
+      }
+    }
+}
+
+
+/* End brooks sports bra page*/
