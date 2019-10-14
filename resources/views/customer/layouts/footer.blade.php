@@ -154,14 +154,14 @@
 <script src="/js/pdp-js.js?v={{ Cache::get('css_version_number') }}"></script>
 <script>
 	$(document).ready(function () {
-    var video = '{{(isset($product->video) && $product->video!='') ? $product->video:''}}'; /// Data fetch from PDP page
 		$('#pdp-zoom--image').lightSlider({
 			gallery: true,
 			item: 1,
 			slideMargin: 0,
 			thumbItem: 9,
 			onSliderLoad: function (el) {
-				if(video!=''){
+				var video_exist = $("#pdp-zoom--image").find("li:not([data-video=''])").length;
+				if(video_exist!='0'){
        				$('.lSGallery li').last().append('<div class="play"></div>');
 				}
 			},
