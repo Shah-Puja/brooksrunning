@@ -79,6 +79,7 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                <input type="hidden" name="org_type" id="org_type"/>
                         </div>
                         </div>
 		            </div>
@@ -280,7 +281,8 @@
         $(document).on('click', '.loyalty-practitioner li .option-value', function () {
             $('.selectedLi').removeClass('selectedLi');
             $(this).addClass('selectedLi');
-            var selText = $(this).text();
+            var selText = $(this).text().trim();
+            $("#org_type").val(selText);
             $(this).parents('.loyalty-practitioner--wrapper').find('.loyalty-practitioner li a').html(selText +
                     ' <span class="icon-down-arrow"></span>');
         //    $('.loyalty-practitioner__submenu').toggle();
