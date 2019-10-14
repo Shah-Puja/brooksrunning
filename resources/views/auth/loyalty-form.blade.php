@@ -59,21 +59,21 @@
                                 <ul class="loyalty-practitioner">
                                     <li>
                                         <a href="javascript:void(0)" class="practitioner">&nbsp; <span class="icon-down-arrow"></span></a>
-                                        <ul class="loyalty-practitioner__submenu">
+                                        <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
                                             
-                                                <li class="option-value">
+                                                <li class="option-value" data-value="Podiatrist">
                                                     Podiatrist
                                                 </li>
-                                                <li class="option-value">
+                                                <li class="option-value" data-value="Physiotherapist">
                                                    Physiotherapist
                                                 </li>
-                                                <li class="option-value">
+                                                <li class="option-value" data-value="Chiropractor">
                                                 Chiropractor
                                                 </li>
-                                                <li class="option-value">
+                                                <li class="option-value" data-value="Osteopath">
                                                 Osteopath
                                                 </li>
-                                                <li class="option-value">
+                                                <li class="option-value" data-value="Other">
                                                 Other
                                                 </li>
                                         </ul>
@@ -287,4 +287,14 @@
                     ' <span class="icon-down-arrow"></span>');
         //    $('.loyalty-practitioner__submenu').toggle();
         });
+
+
+
+        // Check this click event  only for testing- 
+        // $("body").on("click", "#loyalty-practitioner-Dropdown li", function() {
+        //     var selectedValue = $(this).attr('data-value')
+        //     alert(selectedValue)
+        // });
         </script>
+
+        
