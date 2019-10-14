@@ -5,8 +5,8 @@
 	<div class="landingpage-banner--wrapper">
     <div class="opacity-cover hidden-mob"></div>
     <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/bannerS.JPG">
-	        <img src="/images/landingpage/bannerL.JPG" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="images/landingpage/bannerS.jpg">
+	        <img src="/images/landingpage/bannerL.jpg" alt="Header Images">
 	      </picture>
 	      <!-- <picture>
 	        <source media="(max-width: 595px)"  srcset="images/meet-brooks/technology/brooks_sports_bra/LP_Bratech_FWP_S.jpg">
