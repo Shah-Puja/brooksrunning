@@ -154,7 +154,7 @@
 <script src="/js/pdp-js.js?v={{ Cache::get('css_version_number') }}"></script>
 <script>
 	$(document).ready(function () {
-    var video = '{{$product->video}}'; /// Data fetch from PDP page
+    var video = '{{(isset($product->video) && $product->video!='') ? $product->video:''}}'; /// Data fetch from PDP page
 		$('#pdp-zoom--image').lightSlider({
 			gallery: true,
 			item: 1,
