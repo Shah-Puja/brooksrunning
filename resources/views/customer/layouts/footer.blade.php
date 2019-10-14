@@ -154,14 +154,16 @@
 <script src="/js/pdp-js.js?v={{ Cache::get('css_version_number') }}"></script>
 <script>
 	$(document).ready(function () {
-
+    var video = '{{$product->video}}'; /// Data fetch from PDP page
 		$('#pdp-zoom--image').lightSlider({
 			gallery: true,
 			item: 1,
 			slideMargin: 0,
 			thumbItem: 9,
 			onSliderLoad: function (el) {
-       			$('.lSGallery li').last().append('<div class="play"></div>');
+				if(video!=''){
+       				$('.lSGallery li').last().append('<div class="play"></div>');
+				}
 			},
 		});
 	});
