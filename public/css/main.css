@@ -6511,7 +6511,7 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sports-bra-page-banner .opacity-cover {
-    height: 82.5%;
+    height: 99.5%;
   }
 }
 .sports-bra-page-banner .landingpage-banner--info {
@@ -6525,7 +6525,7 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sports-bra-page-banner .landingpage-banner--info {
-    height: 70%;
+    transform: translate(-50%, -70%);
   }
 }
 .sports-bra-page-banner .landingpage-banner--info .banner--info {
@@ -6538,18 +6538,13 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sports-bra-page-banner .landingpage-banner--info .banner--info {
-    padding-top: 180px;
-  }
-  .sports-bra-page-banner .landingpage-banner--info .banner--info .primary-button {
-    max-width: 220px;
+    padding-top: 200px;
+    max-width: 275px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sports-bra-page-banner .landingpage-banner--info .banner--info {
-    padding-top: 180px;
-  }
-  .sports-bra-page-banner .landingpage-banner--info .banner--info .primary-button {
-    max-width: 220px;
+    max-width: 300px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -6564,6 +6559,16 @@ textarea {
   position: relative;
   font-size: 45px;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sports-bra-page-banner .landingpage-banner--info .label--underline {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sports-bra-page-banner .landingpage-banner--info .label--underline {
+    font-size: 35px;
+  }
+}
 .sports-bra-page-banner .landingpage-banner--info p {
   margin-bottom: 16px;
   font-size: 20px;
@@ -6571,12 +6576,12 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sports-bra-page-banner .landingpage-banner--info p {
-    font-size: 25px;
+    font-size: 15px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sports-bra-page-banner .landingpage-banner--info p {
-    font-size: 25px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -6642,7 +6647,12 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sports-bra-featured--container .info-wrapper .br-heading {
-    font-size: 20px !important;
+    font-size: 16px !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sports-bra-featured--container .info-wrapper .br-heading {
+    font-size: 16px !important;
   }
 }
 .sports-bra-featured--container .info-wrapper p {

@@ -5,8 +5,8 @@
 	<div class="landingpage-banner--wrapper">
 	<div class="opacity-cover hidden-mob"></div>
 	      <picture>
-	        <source media="(max-width: 595px)" srcset="/images/meet-brooks/technology/brooks_sports_bra/S19_LP_Bra-Tech_1_FWP_S.jpg">
-	        <img src="/images/meet-brooks/technology/brooks_sports_bra/S19_LP_Bra-Tech_1_FWP_L.jpg" alt="Header Images">
+	        <source media="(max-width: 595px)" srcset="/images/meet-brooks/technology/brooks_sports_bra/LP_Bra-Tech_FWP_S.jpg">
+	        <img src="/images/meet-brooks/technology/brooks_sports_bra/LP_Bra-Tech_FWP_L.jpg" alt="Header Images">
 	      </picture>
 	      <div class="landingpage-banner--info">
 	      	<div class="wrapper">
@@ -34,7 +34,7 @@
 			<div class="tab-4">
 			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
-					<img src="/images/meet-brooks/technology/brooks_sports_bra/S19_LP_Bra-Tech_3_MB-1-3_L.jpg">
+					<img src="/images/meet-brooks/technology/brooks_sports_bra/LP_BraTech_1.jpg">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">The support you need for the run you want</h3>
@@ -45,7 +45,7 @@
 			<div class="tab-4">
 			<div class="hpgray-wrapper">
          <div class="homepage-cate--link">
-					<img src="/images/meet-brooks/technology/brooks_sports_bra/S19_LP_Bra-Tech_4_MB-1-3_L.jpg">
+					<img src="/images/meet-brooks/technology/brooks_sports_bra/LP_BraTech_2.jpg">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">The details make the bra</h3>
@@ -56,7 +56,7 @@
 			<div class="tab-4">
 			<div class="hpgray-wrapper">
 				<div class="homepage-cate--link">
-					<img src="/images/meet-brooks/technology/brooks_sports_bra/S19_LP_Bra-Tech_5_MB-1-3_L.jpg">
+					<img src="/images/meet-brooks/technology/brooks_sports_bra/LP_BraTech_3.jpg">
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">We’ve done our job when you forget you’re wearing our gear</h3>
