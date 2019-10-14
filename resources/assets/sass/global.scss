@@ -573,6 +573,7 @@
       input{
         display: none;
       }
+      
       label{
         @extend %info-font;
         display: inline;
@@ -624,6 +625,7 @@
           }
         }
       }
+      
     }
     .input-field{
       height: 38px;
@@ -1219,7 +1221,7 @@ color:#6a2327;
       }
       .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, 
          .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12,
-         .mob-1, .mob-2, .mob-3, .mob-4, .mob-5, .mob-6, .mob-7, .mob-8, .mob-9, .mob-10, .mob-11, .mob-12, {
+         .mob-1, .mob-2, .mob-3, .mob-4, .mob-5, .mob-6, .mob-7, .mob-8, .mob-9, .mob-10, .mob-11, .mob-12{
           position: relative;
           min-height: 1px;
           padding-right: 15px;
@@ -1265,7 +1267,7 @@ color:#6a2327;
         width: 8.333333333333332%;
       }
       @media #{$mobile-up} {
-        .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12,{
+        .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12{
           float: left;
         }
         .tab-12 {

@@ -7441,6 +7441,36 @@ textarea {
 .input-wrapper .checklist-inline .run-happy {
   margin-top: -24px;
 }
+.input-wrapper .checklist-inline label .text .instruction {
+  color: #f22629;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.1 !important;
+}
+.input-wrapper .checklist-inline label .mark.disable {
+  border: 1px solid #f1f1f1;
+  background-color: #f1f1f1;
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+.input-wrapper .checklist-inline label .mark.disable span {
+  background-color: #f1f1f1;
+  border-left: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+}
+.input-wrapper .checklist-inline input:checked ~ label .mark.disable {
+  background-color: #f1f1f1;
+  cursor: no-drop;
+  pointer-events: none;
+  color: #dedcda;
+  border: 1px solid #f1f1f1;
+}
+.input-wrapper .checklist-inline input:checked ~ label .mark.disable span {
+  background-color: #f1f1f1;
+  border-left: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+}
 
 /*  Shipping Page End */
 /*  Fixed Header Start */
