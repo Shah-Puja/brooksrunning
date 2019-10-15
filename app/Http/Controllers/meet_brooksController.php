@@ -296,17 +296,12 @@ class meet_brooksController extends Controller {
         return view('meet_brooks.our_purpose');
     }
 
-    public function test_page() {
-        return view('meet_brooks.test_page');
-    }
-
     public function our_history() {
         return view('meet_brooks.our_history');
     }
 
     public function brooks_sports_bra() {
-        // return view('meet_brooks.brooks-sports-bra');
-            $sports_bras = \App\Models\Product::getProducts_array(['350071_171','350037_515','300616_592','300633_383','300614_020','350042_568','300614_020','350054_0010','350064_649']);
+            $sports_bras = \App\Models\Product::getProducts_array(['300638_117','300637_544','300636_001','350071_171','350037_515','300616_592','300633_383','300614_020','350042_568','300614_020','350054_0010','350064_649']);
             $products = '';
             $colour_options ='';
             return view( 'meet_brooks.brooks-sports-bra',compact('sports_bras','accessories','colour_options','products'));
