@@ -2466,21 +2466,20 @@
           }
       }
       &.loyalty-details{
-        margin: 40px 0px;
+        margin: 25px 0px;
       }
     }
     &--loyaltybanner{
       img{
         width: 100%;
-       
-        margin: -10px auto;
+        margin: 0px auto;
         @media #{$mobile-only}{
           margin: 0px 0;
         }
       }
     }
     .footerloyalty-terms{
-      margin: -10px auto;
+      margin: 25px auto;
       background-color: $blue;
       padding: 15px 20px;
       color: $white;
@@ -2513,7 +2512,7 @@
       }
     }
     .footerloyalty-info{
-      margin: 43px auto; 
+      margin: 25px 0px 0px 0px;
       background-color: #D3D2D2;
       padding: 15px 15px;
       color: $black;

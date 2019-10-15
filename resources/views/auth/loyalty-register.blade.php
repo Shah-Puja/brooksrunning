@@ -18,7 +18,7 @@
                 <div class="create-account--right temp_class">
                     <div class="header">
                         <div class="icon-img">
-                            <img src="/images/accounts/icon-profile.png" alt="">
+                            <!-- <img src="/images/accounts/icon-profile.png" alt=""> -->
                         </div>					
                         <h3>What is the Brooks Professional Purchase Program? </h3>
                     </div>

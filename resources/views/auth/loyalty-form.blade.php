@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Health Practitioner<sup>*</sup>  @if ($errors->has('org_id')) <span class="error invalid-feedback">{{ $errors->first('org_id') }} </span> @endif</label>
+                                <label for="email">Health Practitioner Number<sup>*</sup>  @if ($errors->has('org_id')) <span class="error invalid-feedback">{{ $errors->first('org_id') }} </span> @endif</label>
                                 <input type="text" class="input-field form-control{{ $errors->has('org_id') ? ' is-invalid' : '' }}" name="org_id" value="{{ !empty(auth()->user()->org_id) ? auth()->user()->org_id : old('org_id') }}" data-label-name="health practitioner">                                
                         </div>
                     </div>

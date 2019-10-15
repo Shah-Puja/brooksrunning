@@ -11,6 +11,33 @@
             </div>
         </div>
     </div>
+
+<!-- New Section for Loyalty -->
+<div class="create-account wrapper">
+    <div class="footerloyalty-terms">
+        <div class="row">
+            <div class="col-4 tab-4">
+                <p class="br-heading">The Brooks<sup>&reg;</sup> Professional Purchase Program enables Sports Medicine practitioners to purchase Brooks products for their personal use at exclusive member pricing. </p>
+                <p class="br-heading">We believe practitioners are an integral part of the footwear industry and have created this program in recognition of this role and to enable you to experience our products. </p>
+            </div>
+            <div class="col-8 tab-8">
+            <p class="br-heading terms">Terms and Conditions:</p>
+            <p class="info">Professional Purchase Program Members are entitled to $800 in purchases per year at program discounted rates.</p>
+            <p class="info">Shoes are strictly for personal use only. Shoes must not be onsold, resold, or bought on behalf of someone else.</p>    
+            <p class="info">Texas Peak reserves the right to cancel an order if an applicant is deemed ineligible. </p>
+            <p class="info"> Please refer to our standard terms and conditions, returns policy or delivery information. </p>
+            </div>
+        </div>
+    </div>
+    <div class="footerloyalty-info">
+        <div class="row">
+            <div class="col-12 tab-12">
+            <h1>Would you like a product information session or resources for your clinic?</h1>
+            <p class="info"> <a href="#">Click here</a> to contact a Technical representative. </p>
+            </div>
+        </div>
+    </div>
+</div>
     <section class="create-account wrapper">
         <div class="row">
             <div class="tab-4">
@@ -80,36 +107,11 @@
     </section>
 
 <!-- New Section for Loyalty -->
-<div class="create-account wrapper">
-    <div class="footerloyalty-terms">
-        <div class="row">
-            <div class="col-4 tab-4">
-                <p class="br-heading">The Brooks<sup>&reg;</sup> Professional Purchase Program enables Sports Medicine practitioners to purchase Brooks products for their personal use at exclusive member pricing. </p>
-                <p class="br-heading">We believe practitioners are an integral part of the footwear industry and have created this program in recognition of this role and to enable you to experience our products. </p>
-            </div>
-            <div class="col-8 tab-8">
-            <p class="br-heading terms">Terms and Conditions:</p>
-            <p class="info">Professional Purchase Program Members are entitled to $800 in purchases per year at program discounted rates.</p>
-            <p class="info">Shoes are strictly for personal use only. Shoes must not be onsold, resold, or bought on behalf of someone else.</p>    
-            <p class="info">Texas Peak reserves the right to cancel an order if an applicant is deemed ineligible. </p>
-            <p class="info"> Please refer to our standard terms and conditions, returns policy or delivery information. </p>
-            </div>
-        </div>
-    </div>
-    <div class="footerloyalty-info">
-        <div class="row">
-            <div class="col-12 tab-12">
-            <h1>Would you like a product information session or resources for your clinic?</h1>
-            <p class="info"> <a href="#">Click here</a> to contact a Technical representative. </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="create-account--loyaltybanner">
     <picture>
-            <source media="(max-width: 595px)" srcset="/images/brooks-f19_apr_la_00477-1.jpg">
-            <img src="/images/brooks-f19_apr_la_00477-1.jpg" alt="shoes">
+            <source media="(max-width: 595px)" srcset="/images/accounts/PPP/F19_APR_LA_00714.png">
+            <img src="/images/accounts/PPP/F19_APR_LA_00714@2x.png" alt="shoes">
     </picture>
 </div>
 @endsection
