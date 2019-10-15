@@ -900,7 +900,6 @@ $(document).on('click', '.pdp-width-show li', function () {
 }
 
 .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
-    border: 1px solid #0ee0e0e0;
     position: relative;
     display: inline-block;
     width: 60px;
