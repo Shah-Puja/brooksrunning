@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Order_address;
+use App\Rules\MatchOldPassword;
 use Illuminate\Database\Eloquent\Model;
 
 class MyaccountController extends Controller {
@@ -59,6 +62,12 @@ class MyaccountController extends Controller {
     }
 
     public function update_profile(Request $request) {
+
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'password' => ['same:new_password'],
+        ]);
         /* echo "<pre>"; 
           print_r($request->all());die; */
         $user = User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
