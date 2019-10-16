@@ -1,13 +1,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-@if(request()->is('loyalty-register')) 
+@if(request()->is('loyalty_register')) 
 <form action="{{ route('register') }}" method="post" id="loyalty_register_form" class=" five columns form-register" onsubmit="return registervalidation()">
 @else
 <form id="loyalty_register_form" method="POST" action="/account/update_profile" onsubmit="return registervalidation()">
 @endif
         @csrf
             <div class="create-account--left loyalty-header-title">
-            @if(request()->is('loyalty-register'))              
+            @if(request()->is('loyalty_register'))              
                 <h3 class="br-heading">Create your Professional Purchase Account </h3>
                 <hr>
                 <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
