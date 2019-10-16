@@ -65,8 +65,8 @@ class MyaccountController extends Controller {
 
         $request->validate([
             'current_password' => ['required', new MatchOldPassword],
-            'new_password' => ['required'],
-            'password' => ['same:new_password'],
+            'password_confirmation' => ['required'],
+            'password' => ['same:password_confirmation'],
         ]);
         /* echo "<pre>"; 
           print_r($request->all());die; */

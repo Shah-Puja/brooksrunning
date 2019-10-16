@@ -174,7 +174,7 @@
                                     </div>
                                 </div>
                             </label>
-                            <input id="new_password" type="password" class="pass-show2 input-field{{ $errors->has('new_password') ? ' is-invalid' : '' }}" data-label-name="confirmation password" name="new_password">
+                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" data-label-name="confirmation password" name="password_confirmation">
 
                             @if ($errors->has('password')) 
                                 <span class="invalid-feedback" role="alert">
@@ -214,7 +214,7 @@
             function registervalidation(){
                $("#loyalty_register_form input,#loyalty_register_form select").removeClass("error-border");
                $("#loyalty_register_form input,#loyalty_register_form select").parent().find('label .error').remove();
-                required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","new_password"];
+                required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation"];
                 for (k=0;k<required.length;k++) {
                        let input = $('#loyalty_register_form input[name="'+required[k]+'"],#loyalty_register_form select[name="'+required[k]+'"]');
                        if (input.val() == "") {
@@ -266,7 +266,7 @@
                        }
                    }
        
-                   if(password.val()!="" && $("#loyalty_register_form input[name='new_password']").val()!="" && password.val()!=$("#loyalty_register_form input[name='new_password']").val()){
+                   if(password.val()!="" && $("#loyalty_register_form input[name='password_confirmation']").val()!="" && password.val()!=$("#loyalty_register_form input[name='password_confirmation']").val()){
                            password.addClass("needsfilled");
                            let input_label = password.parent().find('label');
                            let label_text = input_label.html();
