@@ -63,11 +63,15 @@ class MyaccountController extends Controller {
 
     public function update_profile(Request $request) {
 
-        $request->validate([
-            'current_password' => ['required', new MatchOldPassword],
-            'password_confirmation' => ['required'],
-            'password' => ['same:password_confirmation'],
-        ]);
+            $request->validate([
+                'current_password' => 'nullable|min:6|confirmed', new MatchOldPassword,
+                'password_confirmation' => 'nullable|min:6|confirmed',
+                'password' => 'same:password_confirmation',
+                'email' => 'required|email|max:255|unique:users,email,'.auth()->id(),
+                'first_name' => 'required|string|max:255',
+                'last_name' => 'required|string|max:255',
+            ]);
+        // }
         /* echo "<pre>"; 
           print_r($request->all());die; */
         $user = User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",

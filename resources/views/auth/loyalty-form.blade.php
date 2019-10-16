@@ -130,7 +130,7 @@
 					<div class="tab-6">
 						<div class="input-wrapper">
 							<label>Current Account Password</label>
-                            <input type="password" name="current_password" class="input-field">
+                            <input type="password" name="current_password" class="input-field" id="current_password" data-label-name="current password">
                             @if ($errors->has('current_password'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('current_password') }}</strong>
@@ -212,10 +212,27 @@
 
     <script>
             function registervalidation(){
+               $("#loyalty_register_form input,select").removeClass("needsfilled");
                $("#loyalty_register_form input,#loyalty_register_form select").removeClass("error-border");
                $("#loyalty_register_form input,#loyalty_register_form select").parent().find('label .error').remove();
-                required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation"];
-                for (k=0;k<required.length;k++) {
+               
+               @if(request()->is('loyalty-account-personal'))  
+                    required = ["first_name","last_name","email","practice_name","postcode","health_practitioner"];
+               @else
+                    required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation"];
+               @endif
+
+               let password = $("#loyalty_register_form input[name='password']");
+               let password_confirmation = $("#loyalty_register_form input[name='password_confirmation']");
+               let current_password = $("#loyalty_register_form input[name='current_password']");
+
+               @if(request()->is('loyalty-account-personal'))  
+                    if(password.val()!='' || password_confirmation.val()!='' || current_password.val()!=''){
+                        required = ["first_name","last_name","email","practice_name","postcode","health_practitioner","password","password_confirmation","current_password"];
+                    }
+               @endif
+               console.log(required);
+                 for (k=0;k<required.length;k++) {
                        let input = $('#loyalty_register_form input[name="'+required[k]+'"],#loyalty_register_form select[name="'+required[k]+'"]');
                        if (input.val() == "") {
                            input.addClass("needsfilled");
@@ -231,16 +248,7 @@
                            input.removeClass("needsfilled");
                        } 
                }
-               let password = $("#loyalty_register_form input[name='password']");
-               if(password.val()!='' && password.val().length < 6){
-                   password.addClass("needsfilled");
-                   let input_label = password.parent().find('label');
-                   let label_text = input_label.html();
-                   let error_span = " <span class='error'>The password must be at least 6 characters.</span>";
-                   let error = label_text + error_span ;
-                   input_label.html(error);
-                   password.addClass("error-border");	
-               }
+               
                  
                if(!$('#loyalty_register_form input[name="gender"]:checked').val()){
                    $('#loyalty_register_form input[name="gender"]').addClass("needsfilled");
@@ -253,32 +261,43 @@
                    $('#loyalty_register_form input[name="gender"]').removeClass("needsfilled");
                }  
        
-                   let email = $("#loyalty_register_form input[name='email']");
-                   if(email.val()!=''){
-                       if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
-                           email.addClass("needsfilled");
-                           let input_label = email.parent().find('label');
-                           let label_text = input_label.html();
-                           let error_span = " <span class='error'>The email must be a valid email address.</span>";
-                           let error = label_text + error_span ;
-                           input_label.html(error);
-                           email.addClass("error-border");	
-                       }
-                   }
+                let email = $("#loyalty_register_form input[name='email']");
+                if(email.val()!=''){
+                    if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email.val())) {
+                        email.addClass("needsfilled");
+                        let input_label = email.parent().find('label');
+                        let label_text = input_label.html();
+                        let error_span = " <span class='error'>The email must be a valid email address.</span>";
+                        let error = label_text + error_span ;
+                        input_label.html(error);
+                        email.addClass("error-border");	
+                    }
+                }
+
+               
+                if(password.val()!='' && password.val().length < 6){
+                    password.addClass("needsfilled");
+                    let input_label = password.parent().find('label');
+                    let label_text = input_label.html();
+                    let error_span = " <span class='error'>The password must be at least 6 characters.</span>";
+                    let error = label_text + error_span ;
+                    input_label.html(error);
+                    password.addClass("error-border");	
+                }
        
-                   if(password.val()!="" && $("#loyalty_register_form input[name='password_confirmation']").val()!="" && password.val()!=$("#loyalty_register_form input[name='password_confirmation']").val()){
-                           password.addClass("needsfilled");
-                           let input_label = password.parent().find('label');
-                           let label_text = input_label.html();
-                           let error_span = " <span class='error'>The password confirmation does not match.</span>";
-                           let error = label_text + error_span ;
-                           input_label.html(error);
-                           password.addClass("error-border");	
-                   }
+                if(password.val()!="" && $("#loyalty_register_form input[name='password_confirmation']").val()!="" && password.val()!=$("#loyalty_register_form input[name='password_confirmation']").val()){
+                    password.addClass("needsfilled");
+                    let input_label = password.parent().find('label');
+                    let label_text = input_label.html();
+                    let error_span = " <span class='error'>The password confirmation does not match.</span>";
+                    let error = label_text + error_span ;
+                    input_label.html(error);
+                    password.addClass("error-border");	
+                }
                    
-                   if ($("#loyalty_register_form input,#loyalty_register_form select").hasClass("needsfilled") ) {
-                       return false;
-                   }
+                if ($("#loyalty_register_form input,#loyalty_register_form select").hasClass("needsfilled") ) {
+                    return false;
+                }
             }
             $("#loyalty_register_form .allownumericwithdecimal").on("keypress keyup blur",function (event) {
                $(this).val($(this).val().replace(/[^0-9\.]/g,''));

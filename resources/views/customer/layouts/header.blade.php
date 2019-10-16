@@ -55,4 +55,7 @@
         @include('customer.layouts.header_desktop')
         @include('customer.layouts.header_mobile')
         @include('customer.medibank.medibank_header')
-        @include('customer.layouts.loyalty-header')
+
+        @if(auth()->user() && auth()->user()->loyalty_type== 'PPP')
+            @include('customer.layouts.loyalty-header')
+        @endif
