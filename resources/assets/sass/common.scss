@@ -3935,6 +3935,37 @@
         font-size: 12px;
       }
     }
+    &--loyalty{
+      background-color: #002855;
+      padding: 5px;
+      margin-top: -10px;
+       
+      @media #{$mobile-only}{
+        padding: 12px;
+      }
+      .success-text{
+        color: $white;
+        font-size: 16px;
+        text-align: center;
+        @extend %bold-font;
+        @media #{$mobile-only}{
+          font-size: 18px;
+        }
+        @media #{$tab-only}{
+          font-size: 18px;
+        }
+        @media #{$desktop-only}{
+          font-size: 18px;
+        }
+      }
+      .condition-text{
+        color: $white;
+        font-size: 13px;
+        text-align: center;
+        @extend %info-font;
+        margin:-15px 0px 20px 0px;
+      }
+    }
   }
   .pdp-info--wrapper{
     background-color: $gray;
@@ -6562,3 +6593,181 @@ a {
   }
 }
 /* End Error Page*/
+
+.loyalty-main--container{ 
+  position:relative;
+  display:block;
+  @media #{$tabmob-only}{
+    padding:0 !important;
+  }
+   
+  @media #{$mobile-only}{
+    .padding_left-0{
+      padding-left:0px !important;
+    }
+    .padding_right-0{
+      padding-right: 0px !important;
+    }
+  }
+  @media #{$tab-only}{
+    .padding_left-0{
+      padding-left:0px !important;
+    }
+    .padding_right-0{
+      padding-right: 0px !important;
+    }
+  }
+  .wrapper{
+    width: 100%;
+    max-width: 1300px;
+  }
+  
+  .loyalty-main--info{
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #005CFB;
+   
+    a{
+      display: block;
+      .logo{
+        width: 100%;
+        max-width: 220px;
+        margin-top: 10px;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .loyalty--subinfo--login{
+        margin: 0 auto;
+        
+        .loyalty-main--btn{
+          
+          @media #{$tab-only}{
+            margin-top: 8px;
+            padding: 12px 15px;
+            font-size: 13px;
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            margin-top: 8px;
+            padding: 12px 5px;
+            font-size: 17px;
+          }
+        }
+
+        .loyalty--content{
+          padding-top: 30px;
+          max-width: 250px;
+          text-align:center;
+          @media #{$mobile-only}{
+            padding-top: 0px;
+          }
+          label{
+            color:$white;
+            font-size: 12px;
+            }
+          @media #{$tab-only}{
+            padding-top: 2%;
+            max-width: 180px;
+          }
+          @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            
+            max-width: 215px;
+          }
+         
+          }
+      
+    
+      }
+  
+    .loyalty--subinfo--login--success{
+      margin: 0 auto;
+     
+      .loyalty--login--success{
+        margin: 0 auto;
+        @media #{$mobile-only}{
+          padding: 10px;
+          }
+        @media #{$tab-only}{
+          padding: 0px;
+        }
+        label{
+          color: $white;
+          text-decoration-line: underline; 
+          font-size: 18px;
+        }
+        .login_success{
+          .success-text{
+            color: $white;
+            font-size: 20px;
+            text-align: center;
+            @extend %bold-font;
+            @media #{$mobile-only}{
+              font-size: 18px;
+            }
+          }
+          .condition-text{
+            color: $white;
+            font-size: 18px;
+            text-align: center;
+            @extend %info-font;
+            margin:-20px 0px 20px 0px;
+            @media #{$mobile-only}{
+              font-size: 14px;
+              margin:-15px 0px 20px 0px;
+              }
+              @media #{$tab-only}{
+                font-size: 16px;
+              }
+          }
+         
+        }
+      }
+    }
+    
+    .br-info{
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .secondary-button{
+      margin-top:15px;
+    }
+    .primary-button{
+      margin-top:15px;
+    }
+    @media #{$mobile-only}{
+      top: 30%;
+    }
+    .sl-pl-0{
+      padding-left: 5px !important;
+      }
+      .sl-pr-0{
+        padding-right: 5px !important;
+      }
+  }
+  @media screen and (orientation: landscape) {
+    .loyalty-main--mobportrait{
+      display:none !important;
+    }
+    .loyalty-main--moblandscape{
+      top: 0;
+      .banner--info{
+          padding-top: 2% !important;
+          max-width: 180px !important;
+          padding-top: 3% !important;
+      }
+      .loyalty-main--btn{
+        margin-top: 8px;
+        padding: 8px 8px !important;
+        font-size: 12px;
+      }
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .loyalty-main--moblandscape{
+      display:none !important;
+    }
+  }
+}
