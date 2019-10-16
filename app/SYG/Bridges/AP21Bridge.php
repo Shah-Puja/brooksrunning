@@ -170,7 +170,7 @@ class AP21Bridge implements BridgeInterface {
         $url='Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT';
         $data = 'Pin = ' . $pin . ', Gift = '. $gift. ' and Amount = ' . $amount ;
         try {
-            $response = $this->apiClient->get($url, ['http_errors' => true]);
+            $response = $this->apiClient->get($url, ['http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
