@@ -868,43 +868,7 @@ $(document).on('click', '.pdp-width-show li', function () {
 
 
 <style>
-.videowrapper {
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    /* padding-bottom: 56.25%;
-    padding-top: 25%;
-    height: 0; */
-    height: 350px;
-    margin: 50px auto;
-}
-.videowrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-    /* ul.lSGallery li:last-child a .play{ */
- .play{
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border: none;
-        top: 50%;
-        left: 50%;
-        margin-top: -14px;
-        margin-left: -14px;
-        background: url(../images/ytubeplayicon.png) no-repeat;
-}
 
-.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 40px;
-}
 </style>
 
 <script>
@@ -914,7 +878,6 @@ $(document).on('click', '.pdp-width-show li', function () {
         $('.lSGallery li:last-child').attr('id', 'LastChild');
     });
 </script>
-
 
 
 <!-- End utube vdo -->
