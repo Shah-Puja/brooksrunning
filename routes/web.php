@@ -116,6 +116,9 @@ Route::get('/confirm-password', 'MyaccountController@confirm_password');
 Route::get('/order-history', 'MyaccountController@order_history');
 Route::post('/order/view_order','MyaccountController@view_order');
 
+
+Route::get('/loyalty-account-personal', 'MyaccountController@loyalty_account_personal');
+
 /* shoefinder old page */
 Route::get('/shoefinder_old', 'ShoefinderController@shoefinder');  
 Route::post('/shoefinder-ajax', 'ShoefinderController@ajax_data')->middleware('allowOnlyAjax');

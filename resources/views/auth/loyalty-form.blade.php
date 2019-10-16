@@ -1,11 +1,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-<form id="loyalty_register_form" method="POST" action="{{ route('register') }}" onsubmit="return registervalidation()">
+@if(request()->is('loyalty-register')) 
+<form action="{{ route('register') }}" method="post" id="loyalty_register_form" class=" five columns form-register" onsubmit="return registervalidation()">
+@else
+<form id="loyalty_register_form" method="POST" action="/account/update_profile" onsubmit="return registervalidation()">
+@endif
         @csrf
-            <div class="create-account--left loyalty-header-title">                    
+            <div class="create-account--left loyalty-header-title">
+            @if(request()->is('loyalty-register'))              
                 <h3 class="br-heading">Create your Professional Purchase Account </h3>
                 <hr>
                 <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+            @else
+                <h3 class="br-heading">View Or Update Your Details </h3>
+                <hr>
+            @endif
+               
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
@@ -58,7 +68,10 @@
                             <label for="name">Practitioner Type</label>
                                 <ul class="loyalty-practitioner">
                                     <li>
-                                        <a href="javascript:void(0)" class="practitioner">&nbsp; <span class="icon-down-arrow"></span></a>
+                                       @php
+                                        $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
+                                       @endphp
+                                        <a href="javascript:void(0)" class="practitioner">{!! !empty($order_type) ? $order_type : '&nbsp;'!!} <span class="icon-down-arrow"></span></a>
                                         <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
                                             
                                                 <li class="option-value" data-value="Podiatrist">
@@ -79,7 +92,7 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                <input type="hidden" name="org_type" id="org_type"/>
+                                <input type="hidden" name="org_type" id="org_type" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
                         </div>
                         </div>
 		            </div>
@@ -112,11 +125,22 @@
                         </div>
                     </div>
                 </div>
+                @if(request()->is('loyalty-account-personal'))  
+                <div class="row">
+					<div class="tab-6">
+						<div class="input-wrapper">
+							<label>Current Account Password</label>
+                            <input type="password" name="old_password" class="input-field">
+						</div>
+					</div>
+					<div class="tab-6"></div>
+				</div>
+                @endif
                 <div class="row">
                     <div class="tab-6">
                     <div class="input-wrapper">
                                 <div class="row">
-                                    <div class="mob-7"><label class="loyalty-password">Choose your Account Password</label></div>
+                                    <div class="mob-7"><label class="loyalty-password">New Account Password</label></div>
                                     <div class="mob-5">
                                         <div class="show-pass">
                                             <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
@@ -137,7 +161,7 @@
                     <div class="input-wrapper">
 								
                                 <div class="row">
-                                    <div class="mob-7"><label class="loyalty-password">Confirm Password</label></div>
+                                    <div class="mob-7"><label class="loyalty-password">Confirm New Account Password</label></div>
                                     <div class="mob-5">
                                     <div class="show-pass">
                                         <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
@@ -171,7 +195,7 @@
                 <div class="row">
                     <div class="tab-12">
                         <div class="loyalty-form-btn">                                           
-                                <button type="submit" class="btn primary-button">Create Account</button>                                    
+                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty-register') ? 'Create Account' : 'Save Changes' }}</button>                                    
                         </div>
                         <p class="loyalty-privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
                     </div>
