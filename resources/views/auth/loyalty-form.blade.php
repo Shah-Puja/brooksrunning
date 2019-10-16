@@ -195,7 +195,7 @@
                 <div class="row">
                     <div class="tab-12">
                         <div class="loyalty-form-btn">                                           
-                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty-register') ? 'Create Account' : 'Save Changes' }}</button>                                    
+                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty_register') ? 'Create Account' : 'Save Changes' }}</button>                                    
                         </div>
                         <p class="loyalty-privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
                     </div>
