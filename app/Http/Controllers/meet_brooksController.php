@@ -301,7 +301,7 @@ class meet_brooksController extends Controller {
     }
 
     public function brooks_sports_bra() {
-            $sports_bras = \App\Models\Product::getProducts_array(['300638_117','300637_544','300636_001','350071_171','350037_515','300616_592','300633_383','300614_020','350042_568','300614_020','350054_0010','350064_649']);
+            $sports_bras = \App\Models\Product::getProducts_array(['350071_171','350037_052','300616_020','300637_544','300636_001','300638_001','300614_020','350064_001','350042_001']);
             $products = '';
             $colour_options ='';
             return view( 'meet_brooks.brooks-sports-bra',compact('sports_bras','accessories','colour_options','products'));

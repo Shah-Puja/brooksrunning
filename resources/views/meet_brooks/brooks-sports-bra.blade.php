@@ -133,7 +133,7 @@
                                         <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
                                     @endif
                                 </div>
-                                <div class="shoes-type">{{ $curr_ele->h2 }}</div>
+                                <div class="shoes-type">{!! $curr_ele->h2 !!}</div>
                             </div>
                         </a>
                     </div>
@@ -259,7 +259,7 @@
                                             <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
                                             @endif
 										</div>
-										<div class="shoes-type">{{ $curr_ele->h2 }}</div>
+										<div class="shoes-type">{!! $curr_ele->h2 !!}</div>
 									</div>
 								</a>
 							</div>
