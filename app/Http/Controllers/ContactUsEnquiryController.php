@@ -17,8 +17,8 @@ class ContactUsEnquiryController extends Controller {
 
     public function store(ContactUsEnquiry $enquiry, Recaptcha $recaptcha) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'phone' => 'required',
             'email' => 'required|email',
             'subject' => 'required',

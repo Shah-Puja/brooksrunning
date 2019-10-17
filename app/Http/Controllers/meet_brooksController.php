@@ -45,8 +45,8 @@ class meet_brooksController extends Controller {
 
     public function store(Recaptcha $recaptcha, Request $request) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'gender' => 'sometimes|required|in:male,female',
             'email' => 'required|email',
             'country' => 'required',
@@ -227,8 +227,8 @@ class meet_brooksController extends Controller {
 
     public function enewsletter_store(Recaptcha $recaptcha) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
@@ -350,8 +350,8 @@ class meet_brooksController extends Controller {
 
     public function newsletter_update(Recaptcha $recaptcha) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
