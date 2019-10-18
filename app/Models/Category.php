@@ -239,18 +239,20 @@ class Category extends Model
                  break;
 
                  case 'Impact':
-                    $filters['Impact'] = 
-                    $products->map(function($product) {
+                    $impact_array = $products->map(function($product) {
                         return $product->tags->Where('key','PS_F_IMPACT');
                     })->flatten()->pluck('value')->unique()->sort();
-                 break;
+                    
+                    $order_array = array("Low","Medium", "High");
+                    $filters['Impact'] = (new static)->sort_array($impact_array,$order_array);
+                break;
 
                  case 'Support Preference':
-                 $filters['Support_Preference'] = 
-                 $products->map(function($product) {
-                     return $product->tags->Where('key','PS_F_SUPPORT');
-                 })->flatten()->pluck('value')->unique()->sort();
-              break;
+                    $filters['Support_Preference'] = 
+                    $products->map(function($product) {
+                        return $product->tags->Where('key','PS_F_SUPPORT');
+                    })->flatten()->pluck('value')->unique()->sort();
+                break;
 
              endswitch;
         }

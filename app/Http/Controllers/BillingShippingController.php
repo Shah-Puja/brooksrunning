@@ -65,8 +65,8 @@ class BillingShippingController extends Controller
     public function store(){
         $validatedAddress = request()->validate([
     		'email' => 'required|email',
-    		's_fname' => 'required',    		
-    		's_lname' => 'required',
+            's_fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            's_lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
      		's_add1' => 'required',
             's_add2' => '',
             's_city' => 'required',
@@ -84,6 +84,7 @@ class BillingShippingController extends Controller
             'terms' => 'accepted',
             'order_info' => '',
             'nosignaturedelivery' => '',
+            'atl' => '',
             'signme' => '',
             'flag_same_shipping' => '',
         ]);

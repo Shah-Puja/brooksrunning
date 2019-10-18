@@ -1,7 +1,7 @@
 {
    "Footwear_Filter": ["Size","Width","Experience Type","Color","Support Level","Arch","Activity","Midsole Drop"],
    "Apparel_Filter": ["Size","Color"],
-   "Sportsbra_Filter": ["Cup Size","Support Preference","Great For","Color","Feature Preferences","Breast Shape","Impact"],
+   "Sportsbra_Filter": ["Cup Size","Impact","Support Preference","Great For","Color","Feature Preferences","Breast Shape"],
    "Footwear_Category":[
        {
             "Shoes":[

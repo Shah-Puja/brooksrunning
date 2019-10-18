@@ -45,9 +45,9 @@ class meet_brooksController extends Controller {
 
     public function store(Recaptcha $recaptcha, Request $request) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
-            'gender' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'gender' => 'sometimes|required|in:male,female',
             'email' => 'required|email',
             'country' => 'required',
             'postcode' => 'required|numeric',
@@ -105,7 +105,9 @@ class meet_brooksController extends Controller {
                     'postcode' => request('postcode'),
                     'shoe_wear' => request('custom_Shoes_you_wear'),
                     'source' => 'Competition',
-                    'user_type' => 'Competition']);
+                    'user_type' => 'Competition',
+                    'newsletter' => '0'
+                    ]);
 
 
         if (isset($Person)) {
@@ -225,8 +227,8 @@ class meet_brooksController extends Controller {
 
     public function enewsletter_store(Recaptcha $recaptcha) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
@@ -298,6 +300,13 @@ class meet_brooksController extends Controller {
         return view('meet_brooks.our_history');
     }
 
+    public function brooks_sports_bra() {
+            $sports_bras = \App\Models\Product::getProducts_array(['350071_171','350037_052','300616_020','300637_544','300636_001','300638_001','300614_020','350064_001','350042_001']);
+            $products = '';
+            $colour_options ='';
+            return view( 'meet_brooks.brooks-sports-bra',compact('sports_bras','accessories','colour_options','products'));
+    }
+
     public function newsletter_signup() {
         $fname = $lname = "";
         if (strpos(request('name'), ' ') !== false) {
@@ -348,8 +357,8 @@ class meet_brooksController extends Controller {
 
     public function newsletter_update(Recaptcha $recaptcha) {
         request()->validate([
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+            'lname' => "required|string|max:255|regex:/^[A-Za-z-' ]+$/",
             'gender' => 'required',
             'email' => 'required|email',
             'country' => 'required',
