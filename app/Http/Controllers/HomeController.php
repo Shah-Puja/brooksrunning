@@ -44,10 +44,10 @@ class HomeController extends Controller
             $page = 'home';
         }
 
-        $cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
+        /*$cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
         if (isset($cart)) {
             session()->put('cart_id', $cart->id);
-        }
+        }*/
         
         return view($page,compact('shoefinder_user_details'));
     }

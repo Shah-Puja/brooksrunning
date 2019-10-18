@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -88,4 +89,12 @@ class LoginController extends Controller
             return redirect()->intended('home');
         }
     }*/
+
+    protected function authenticated(Request $request, $user)
+    {
+        $cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
+        if (isset($cart)) {
+            session()->put('cart_id', $cart->id);
+        }
+    }
 }
