@@ -5,7 +5,7 @@
 	<div class="landingpage-banner--wrapper">
     <div class="opacity-cover hidden-mob"></div>
     <picture>
-	        <source media="(max-width: 595px)" srcset="images/landingpage/bannerS.jpg">
+	        <source media="(max-width: 595px)" srcset="/images/landingpage/bannerS.jpg">
 	        <img src="/images/landingpage/Bra_Tech_L.jpg" alt="Header Images">
 	      </picture>
 	      <!-- <picture>
