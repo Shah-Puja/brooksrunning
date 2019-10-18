@@ -3908,8 +3908,13 @@ textarea {
 .create-account--left .loyalty-practitioner--wrapper .input-wrapper .loyalty-practitioner li:hover .loyalty-practitioner__submenu {
   display: block;
 }
+.create-account--left .loyalty-pass-section {
+  margin-bottom: 6px;
+  margin-top: 7px;
+}
 .create-account--left .loyalty-pass-section label {
   font-size: 13px;
+  display: inline;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .create-account--left .loyalty-pass-section {

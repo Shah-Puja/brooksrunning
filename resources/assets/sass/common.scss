@@ -2255,12 +2255,16 @@
          
       }
       .loyalty-pass-section{
-      label{
-        font-size: 13px;
-      }
+          label{
+            font-size: 13px;
+            display: inline;
+          }
         @media #{$desktop-only}{
          padding: 0px 14px;
         }
+        
+        margin-bottom: 6px;
+        margin-top: 7px;
       }
      
       &.loyalty-header-title{
