@@ -133,7 +133,7 @@ class CartController extends Controller {
         $freight_charges = 0;
         if (!empty($cart)) {
             if (auth()->id() != 0) { //check user is logged in or not for Loyalty program
-                if (auth()->user()->person_idx != '' && auth()->user()->loyalty_type== 'PPP') {
+                if (auth()->user()->person_idx != '') {
                     $personidx = auth()->user()->person_idx;
                 } else {
                    //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).

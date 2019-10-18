@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shoefinder_user;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
@@ -42,6 +43,11 @@ class HomeController extends Controller
         }else{
             $page = 'home';
         }
+
+        /*$cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
+        if (isset($cart)) {
+            session()->put('cart_id', $cart->id);
+        }*/
         
         return view($page,compact('shoefinder_user_details'));
     }
