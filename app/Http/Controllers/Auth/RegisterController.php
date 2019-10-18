@@ -54,8 +54,8 @@ class RegisterController extends Controller {
      */
     protected function validator(array $data) {
         return Validator::make($data, [
-                    'first_name' => 'sometimes|required|string|max:255',
-                    'last_name' => 'sometimes|required|string|max:255',
+                    'first_name' => "sometimes|required|string|max:255|regex:/^[A-Za-z-' ]+$/",
+                    'last_name' => "sometimes|required|string|max:255|regex:/^[A-Za-z-' ]+$/",
                     //'email' => 'required|string|email|max:255|unique:users',
                     'email' => [
                             'required', $this->check_rule($data),

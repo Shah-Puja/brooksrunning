@@ -229,7 +229,7 @@
 						   <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
 						@endif
 					</div>
-					<div class="shoes-type">{{ strip_tags($style->h2) }}</div>
+					<div class="shoes-type">{!!strip_tags($style->h2) !!}</div>
 				</div>
 				<!--<div class="info-sub">
 					<div class="row">
