@@ -17,7 +17,6 @@ Auth::routes();
 Route::get('/', 'HomePageController@index');
 
 
-
 Route::post('/reset_pass', 'InfoController@check_email');
 
 Route::get('/cart', 'CartController@show');
@@ -74,6 +73,9 @@ Route::post('/meet_brooks/newsletter_signup', 'meet_brooksController@newsletter_
 Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
+
+Route::get('/meet_brooks/technology/brooks-sports-bra', 'meet_brooksController@brooks_sports_bra');
+
 
 
 
