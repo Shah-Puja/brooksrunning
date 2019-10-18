@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-12 tab-12">
             <h1>Would you like a product information session or resources for your clinic?</h1>
-            <p class="info"> <a href="#">Click here</a> to contact a Technical representative. </p>
+            <p class="info"> <a href="mailto:info@brooksrunning.com.au">Click here</a> to contact a Technical representative. </p>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                         <img src="images/accounts/icon-account-details.png" alt="">
                     </div>
                     <h3 class="br-heading">Personal Details</h3>
-                    <div class="br-info">view and update your account details.</div>
+                    <div class="br-info">View and update your account details.</div>
                     <a href="loyalty-account-personal" class="primary-button">View Details</a>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <img src="images/accounts/icon-order-history.png" alt="">
                     </div>
                     <h3 class="br-heading">Order History</h3>
-                    <div class="br-info">view your current or past orders.</div>
+                    <div class="br-info">View your current or past orders.</div>
                     <a href="account-order-history" class="primary-button">View Order History</a>
                 </div>
             </div>

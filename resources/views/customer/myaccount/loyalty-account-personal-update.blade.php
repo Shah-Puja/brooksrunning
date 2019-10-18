@@ -20,7 +20,7 @@
 				@include('auth.loyalty-form')  
 			</div>
             <div class="col-3">
-				<div class="create-account--right temp_class">
+				<div class="create-account--right temp_class loyalty_right">
                     <div class="header">
                         <div class="icon-img">
                             <!-- <img src="/images/accounts/icon-profile.png" alt=""> -->
@@ -28,17 +28,17 @@
                         <h3>What is the Brooks Professional Purchase Program? </h3>
                     </div>
                     <div class="row">
-                        <div class="tab-4 col-12">
+                        <div class="tab-12 col-12 marginTop_0">
                             <div class="info">
                                 <p>The Brooks <sup>&reg;</sup> Professional Purchase Program enables Sports Medicine practitioners<sup>*</sup> to purchase Brooks products for their personal use at exclusive member pricing. </p>
                             </div>
                         </div>
-                        <div class="tab-4 col-12">
+                        <div class="tab-12 col-12 marginTop_0">
                             <div class="info">
                                 <p>We believe practitioners are an integral part of the footwear industry and have created this program in recognition of this role and to enable you to experience our products. </p>
                             </div>
                         </div>
-                        <div class="tab-4 col-12">
+                        <div class="tab-12 col-12 marginTop_0">
                             <div class="info">
                                 <p>* <i>This program is open to currently practicing, registered Podiatrists and Sports Muscoskeletol Physiotherapists. Sports Chiropractors and Sports Osteopaths.</i> </p>
                             </div>
