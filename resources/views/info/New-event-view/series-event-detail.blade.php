@@ -70,12 +70,12 @@
                             <div class="event-series-header">
                             <h2>{{$series_events->event_header}} </h2>
                               
-                            @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
+                            @if($series_events->end_dt->toDateTimeString() < date('Y-m-d') && $series_events->end_dt->toDateTimeString()!=00)
                                              <h3>{{date('F Y',strtotime($series_events->next_dt))}}</h3>
                                              @else
                                              <h3>{{$series_events->date_str}}</h3>
                                              @endif
-                            <h3> {{$series_events->city}}</h3>
+                            <h3> {{$series_events->city}},{{$series_events->state_abr}}</h3>
                             </div>
                         </li>
                         @endforeach
@@ -110,7 +110,7 @@
                                             <h2>{{$series_events->event_header}} </h2>
                                            
                                             
-                                            @if($series_events->end_dt < date('Y-m-d') && $series_events->end_dt!=00)
+                                            @if($series_events->end_dt->toDateTimeString() < date('Y-m-d') && $series_events->end_dt->toDateTimeString()!=00)
                                              <h3>{{date('F Y',strtotime($series_events->next_dt))}}</h3>
                                              @else
                                              <h3>{{$series_events->date_str}}</h3>
