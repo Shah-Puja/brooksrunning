@@ -47,8 +47,10 @@
                 <div class="row">
                     <div class="tab-6">
                         <div class="input-wrapper">
-                                <label for="email">Practice Postcode<sup>*</sup>  @if ($errors->has('postcode')) <span class="error invalid-feedback">{{ $errors->first('postcode') }} </span> @endif</label>
-                                <input type="text" class="input-field allownumericwithdecimal form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ !empty(auth()->user()->postcode) ? auth()->user()->postcode : old('postcode') }}" data-label-name="practice postcode" @if (request()->is('update-profile')) readonly="readonly" @endif>                                
+                            <label for="email">Practice Postcode<sup>*</sup>  @if ($errors->has('postcode')) <span class="error invalid-feedback">{{ $errors->first('postcode') }} </span> @endif</label>
+                                <!-- <input type="text" class="input-field allownumericwithdecimal form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ !empty(auth()->user()->postcode) ? auth()->user()->postcode : old('postcode') }}" data-label-name="practice postcode" @if (request()->is('update-profile')) readonly="readonly" @endif>    
+                            <input type="text" maxlength="4" name="b_postcode" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal" data-label-name="postal code">                             -->
+                            <input type="text" maxlength="4" min='0' inputmode='numeric' pattern='[0-9]*' class="input-field allownumericwithdecimal form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ !empty(auth()->user()->postcode) ? auth()->user()->postcode : old('postcode') }}" data-label-name="practice postcode" @if (request()->is('update-profile')) readonly="readonly" @endif>
                         </div>
                     </div>
                     <div class="tab-6">
@@ -145,8 +147,8 @@
                     <div class="tab-6">
                     <div class="input-wrapper">
                                 <div class="row">
-                                    <div class="mob-7"><label class="loyalty-password">New Account Password</label></div>
-                                    <div class="mob-5">
+                                    <div class="mob-7 loyalty-pass-section"><label>New Account Password</label></div>
+                                    <div class="mob-5 loyalty-pass-section">
                                         <div class="show-pass">
                                             <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
                                         </div>
@@ -166,8 +168,8 @@
                     <div class="input-wrapper">
 								
                                 <div class="row">
-                                    <div class="mob-7"><label class="loyalty-password">Confirm New Account Password</label></div>
-                                    <div class="mob-5">
+                                    <div class="mob-7 loyalty-pass-section"><label>Confirm New Account Password</label></div>
+                                    <div class="mob-5 loyalty-pass-section">
                                     <div class="show-pass">
                                         <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
                                     </div>
@@ -209,6 +211,16 @@
             </div>
         </div>
     </form>
+
+<style>
+    .create-account--left .input-wrapper .show-pass input{
+        vertical-align: middle;
+    }
+    .create-account--left .input-wrapper .show-pass span{
+        display: inline;
+        font-size: 13px;
+    }
+</style>
 
     <script>
             function registervalidation(){
