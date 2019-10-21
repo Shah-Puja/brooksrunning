@@ -5376,27 +5376,18 @@ textarea {
   height: 40px;
 }
 .pdp-container--image .pdp-zoom--container .videowrapper {
-  float: none;
-  clear: both;
-  width: 100%;
   position: relative;
-  /* padding-bottom: 56.25%;
-  padding-top: 25%;
-  height: 0; */
-  height: 350px;
-  margin: 50px auto;
-}
-@media only screen and (max-width: 767px) {
-  .pdp-container--image .pdp-zoom--container .videowrapper {
-    height: 175px;
-  }
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 .pdp-container--image .pdp-zoom--container .videowrapper iframe {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
 }
 .pdp-container--image .pdp-zoom--container .play {
   position: absolute;

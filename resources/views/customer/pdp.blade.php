@@ -66,21 +66,23 @@
                                 <li data-video='' data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
                                     <img src="{{ $product->image->image1Large() }}"/>
                                 </li>
-                                @for ($i = 2; $i < 10; $i++)
+                                
+                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
                                     <li data-video='' data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
                                         <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
+                                
                                 @if($product->video!='')
                                 <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
 					                <div class="videowrapper">
-                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
                                         </iframe>
                                     </div>
 					            </li>
-                                @endif
+                                @endif 
                             </ul>
 
                         </div>
