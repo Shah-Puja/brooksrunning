@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shoefinder_user;
+use App\Models\Cart;
 
 class HomeController extends Controller
 {
@@ -36,8 +37,19 @@ class HomeController extends Controller
         }
         $shoefinder_user_details = Shoefinder_user::where('user_id', auth()->id())->first();
         /******/
+
+        if(auth()->user()->loyalty_type== 'PPP'){
+            $page = 'loyalty-home';
+        }else{
+            $page = 'home';
+        }
+
+        /*$cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
+        if (isset($cart)) {
+            session()->put('cart_id', $cart->id);
+        }*/
         
-        return view('home',compact('shoefinder_user_details'));
+        return view($page,compact('shoefinder_user_details'));
     }
 
 }

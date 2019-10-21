@@ -139,6 +139,31 @@ class AP21Bridge implements BridgeInterface {
         }
     }
 
+    public function updatePerson($data,$userid) {
+        $url='Persons/'.$userid.'/?countryCode=AUFIT';
+        try {
+            $response = $this->apiClient->put($url, ['body' => $data, 'http_errors' => false]);
+            if (!empty($response)) {
+                return $response;
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {                
+                Ap21_error::store([
+                    'api' => 'Put Person-API/Register',
+                    'url' => env('AP21_URL') .$url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                    'body' => $data,
+                ]);
+                return null;
+            }
+        } catch (\Exception $exception) {
+            if ($exception->getMessage() != '') {
+                return null;
+            }
+        }
+    }
+
     public function processOrder($PersonId, $data, $order_id) {
         $url='Persons/' . $PersonId . '/Orders/?countryCode=AUFIT';
         try {
@@ -170,7 +195,7 @@ class AP21Bridge implements BridgeInterface {
         $url='Voucher/GVValid/' . $gift . '?pin=' . $pin . '&amount=' . $amount . '&countryCode=AUFIT';
         $data = 'Pin = ' . $pin . ', Gift = '. $gift. ' and Amount = ' . $amount ;
         try {
-            $response = $this->apiClient->get($url, ['http_errors' => true]);
+            $response = $this->apiClient->get($url, ['http_errors' => false]);
             if (!empty($response)) {
                 return $response;
             }
