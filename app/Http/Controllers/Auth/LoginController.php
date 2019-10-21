@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 
 class LoginController extends Controller
@@ -91,10 +92,35 @@ class LoginController extends Controller
     }*/
 
     protected function authenticated(Request $request, $user)
-    {
-        $cart = Cart::where('user_id', auth()->id())->orderBy('id','DESC')->first();
-        if (isset($cart)) {
-            session()->put('cart_id', $cart->id);
+    {   
+        $guest_cart_id = $request->session()->get('guest_cart_id');
+        $cart = Cart::where('user_id', auth()->id())->first();
+        if (isset($cart) && !empty($cart)) {
+            $request->session()->put('cart_id', $cart->id);
+            $guest_Cart = Cart::where('id', $guest_cart_id)->first();
+            if (isset($guest_Cart) && !empty($guest_Cart)) {
+                $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
+            }
+            Cache::forget('cart' . $cart->id);
+        }else{
+            $request->session()->forget('cart_id');
+            $guest_Cart = Cart::where('id', $guest_cart_id)->first();
+            $guest_Cart->user_id = auth()->id();
+            $guest_Cart->save();
+            $request->session()->put('cart_id', $guest_Cart->id);
+            $request->session()->forget('guest_cart_id');
+            Cache::forget('cart' . $guest_Cart->id);
         }
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {   
+        $cart_id = $request->session()->get('cart_id');
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+        $request->session()->put('guest_cart_id', $cart_id);
+        return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
     }
 }
