@@ -5382,12 +5382,6 @@ textarea {
   border: 1px solid #0263f7;
   border-radius: 0;
 }
-.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child, .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 40px;
-}
 .pdp-container--info .offer-info span {
   padding: 5px 7px;
   font-size: 11px;
