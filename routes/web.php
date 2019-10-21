@@ -15,6 +15,7 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
+Route::get('/loyalty_register', 'Auth\RegisterController@loyalty_register');
 
 
 Route::post('/reset_pass', 'InfoController@check_email');
@@ -116,6 +117,9 @@ Route::post('/account/update_profile', 'MyaccountController@update_profile');
 Route::get('/confirm-password', 'MyaccountController@confirm_password');
 Route::get('/order-history', 'MyaccountController@order_history');
 Route::post('/order/view_order','MyaccountController@view_order');
+
+
+Route::get('/loyalty-account-personal', 'MyaccountController@loyalty_account_personal');
 
 /* shoefinder old page */
 Route::get('/shoefinder_old', 'ShoefinderController@shoefinder');  
@@ -233,3 +237,9 @@ Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_
 
 Route::get('/testmedibankcsv/export_medibank_order_csv', 'testmedibankcsv@export_medibank_order_csv');
 Route::get('/error-page', 'QuickhelpController@error_404');
+
+
+
+
+/* loyalty accounts static pages */
+Route::get('/account-homepage', 'MyaccountController@account_homepage');

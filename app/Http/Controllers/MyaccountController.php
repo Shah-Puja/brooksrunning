@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Order_address;
+use App\Rules\MatchOldPassword;
 use Illuminate\Database\Eloquent\Model;
 
 class MyaccountController extends Controller {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function account_homepage() {
         return view('customer.myaccount.account-homepage');
@@ -54,9 +62,19 @@ class MyaccountController extends Controller {
     }
 
     public function update_profile(Request $request) {
+
+            $request->validate([
+                'current_password' => 'nullable|min:6|confirmed', new MatchOldPassword,
+                'password_confirmation' => 'nullable|min:6|confirmed',
+                'password' => 'same:password_confirmation',
+                'email' => 'required|email|max:255|unique:users,email,'.auth()->id(),
+                'first_name' => 'required|string|max:255',
+                'last_name' => 'required|string|max:255',
+            ]);
+        // }
         /* echo "<pre>"; 
           print_r($request->all());die; */
-        User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
+        $user = User::where('id', auth()->id())->update(['first_name' => isset($request->first_name) ? $request->first_name : "",
             'last_name' => isset($request->last_name) ? $request->last_name : "",
             'gender' => isset($request->gender) ? ucfirst($request->gender) : NULL,
             'dob' => (isset($request->birth_month) && isset($request->birth_date)) ? $request->birth_month . "-" . $request->birth_date : "0",
@@ -66,18 +84,32 @@ class MyaccountController extends Controller {
             'state' => isset($request->state) ? $request->state : "",
             'postcode' => isset($request->postcode) ? $request->postcode : "0",
             'shoe_wear' => isset($request->shoe_wear) ? $request->shoe_wear : '', 
-            'newsletter' => @$request->newsletter ? 1 : 0
+            'newsletter' => @$request->newsletter ? 1 : 0,
+            'org_id' => isset($request->org_id) ? $request->org_id : '', // field for loyalty register user
+            'org_name' => isset($request->org_name) ? $request->org_name : '', // field for loyalty register user
+            'org_type' => isset($request->org_type) ? $request->org_type : '', // field for loyalty register user
         ]);
         if(isset($request->password) && $request->password!=""){
             User::where('id', auth()->id())->update(['password' => Hash::make($request->password) ]);
         }
-        return redirect('account-personal');
+
+        if(auth()->user()->loyalty_type== 'PPP'){
+            return redirect('loyalty-account-personal');
+        }else{
+            return redirect('account-personal');
+        }
+        
+        
     }
 
     public function make_member() {
         $email = $_POST['user_email'];
         $password = Hash::make($_POST['pass']);
         User::where('email', $email)->update(['password' => $password,'user_type' => 'User']);
+    }
+
+    public function loyalty_account_personal() {
+        return view('customer.myaccount.loyalty-account-personal-update');
     }
 
 }

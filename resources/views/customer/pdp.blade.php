@@ -380,7 +380,9 @@
                     </div>
                     
                     @include('customer.medibank.medibank_pdp')
-
+                    @if(auth()->user() && auth()->user()->loyalty_type== 'PPP')
+                        @include('customer.layouts.loyalty-pdp')
+                    @endif
                     <div class="pdp-container--offer">
                         <h3>Free Shipping on all orders over $50. Australia Wide</h3>
                         <ul>

@@ -20,19 +20,19 @@
 	<div class="row">
 		<div class="col-9 tab-8">
 			<div class="create-account--left">
-				<h3 class="br-heading">Personal Details</h3>
+				<h3 class="br-heading">View or Update Your Details</h3>
 				<hr>
-				<p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+				<!-- <p class="privacy">Indicates a required field</a>.</p> -->
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label for="">First Name<sup>*</sup></label>
+							<label for="">First Name</label>
 							<input type="text" name="first_name" class="input-field" value="{{$first_name}}">
 						</div>
 					</div>
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label for="">Last Name<sup>*</sup></label>
+							<label for="">Last Name</label>
 							<input type="text" name="last_name" class="input-field" value="{{$last_name}}">
 						</div>
 					</div>
@@ -40,13 +40,13 @@
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label for="">Email Address<sup>*</sup></label>
+							<label for="">Email Address</label>
 							<input type="text" name="email" class="input-field" readonly value="{{auth()->user()->email}}">
 						</div>
 					</div>
 					<div class="tab-6">
-						<div class="input-wrapper">
-							  <label>Gender<sup>*</sup></label>
+						<!-- <div class="input-wrapper">
+							  <label>Gender</label>
 							  <div class="radio-inline">
 							  	  <input type="radio" class="input-radio" name="gender" value="male" id="male"
 									@if(auth()->user()->gender=="Male")
@@ -68,6 +68,10 @@
 							      	 <div class="text">Female</div>
 							      </label>
 							  </div>
+						</div> -->
+						<div class="input-wrapper">
+							<label for="">Current Practice Name</label>
+							<input type="text" name="practice" class="input-field" readonly value="{{auth()->user()->practice}}">
 						</div>
 					</div>
 				</div>
@@ -161,7 +165,7 @@
 						<div class="row">
 							<div class="mob-6">
 								<div class="input-wrapper">
-									<label>State<sup>*</sup></label>
+									<label>State</label>
 		                            <select name="state" class="select-field">
                                         <option value="" selected="selected">Select State</option>
                                         <option value="ACT,Australia" @if(auth()->user()->state=="ACT,Australia") selected @endif>ACT,Australia</option>
@@ -179,7 +183,7 @@
 							</div>
 							<div class="mob-6">
 								<div class="input-wrapper">
-									<label>Postcode<sup>*</sup></label>
+									<label>Postcode</label>
 		                            <input name="postcode" type="text" class="input-field" value="{{auth()->user()->postcode}}">
 								</div>
 							</div>
@@ -222,13 +226,13 @@
 				<div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label>New Password<sup>*</sup></label>
+							<label>New Password</label>
                             <input type="password" name="password" class="input-field">
 						</div>
 					</div>
 					<div class="tab-6">
 						<div class="input-wrapper">
-							<label>Confirm New Password<sup>*</sup></label>
+							<label>Confirm New Password</label>
                             <input type="password" name="password_confirm" class="input-field">
 						</div>
 					</div>
