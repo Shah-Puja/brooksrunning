@@ -2427,7 +2427,12 @@
                  @media #{$desktop-only}{ 
                   font-size: 16px;
                  }
-                 
+                 &.loyalty-shoefinder-heading{
+                  @media #{$tab-only}{ 
+                  font-size: 20px;
+                  margin: 8px 0;
+                  }
+                 }
               }
               .br-heading-mob{
                 font-size: 20px;
@@ -2450,6 +2455,13 @@
                     margin: 10px auto;
                     width: 100%;
                     max-width: 350px;
+                  }
+                  &.loyalty-shoefinder-info{
+                    @media #{$tab-only}{ 
+                      font-size: 14px;
+                      margin: 0 0 8px;
+                      line-height: 1.4;
+                    }
                   }
               }
               .br-info-mob{
@@ -3636,6 +3648,12 @@
           &.active{
             border: 1px solid $blue;
             border-radius: 0;
+          }
+          &:last-child{
+             position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 40px;
           }
         }
       }
@@ -6565,7 +6583,6 @@ a {
 }
 .errorpage-404-section{
   &.bg {
-    background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
     background-repeat: no-repeat;
 		-webkit-background-size: 100%;
 		-moz-background-size: cover;

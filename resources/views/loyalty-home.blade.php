@@ -67,13 +67,20 @@
             </div> -->
             @if($shoefinder_user_details && $shoefinder_user_details->status=='Y')
             <div class="tab-4">
-                <div class="create-account--homepage shoefinder">
-                    <div class="icon-img">
-                         <img src="/images/br-shoefinder-logo.png" alt="">
-                    </div>
-                    <h3 class="br-heading">Shoe Finder</h3>
-                    <div class="br-info">View your shoe finder results, or retake <br>the shoe finder.</div>
-                    <a href="/shoefinder" class="primary-button">View Shoes</a>
+            <div class="create-account--homepage loyalty-shoefinder-section loyalty-details">
+                    <div class="horizontal-shoe-finder">
+                        <div class="horizontal-shoefinder-logo">
+                            <img src="/images/shoes/shoe-lp-shoefinder-logo-hzl.png" alt="" class="foot-logo">
+                            <img src="/images/shoes/shoe-lp-shoefinder-magnifylogo.png" alt="" class="magnify-logo">
+                        </div>
+                        <p class="br-heading hidden-mob loyalty-shoefinder-heading">Shoe Finder</p>
+                        <p class="br-heading-mob visible-mob"><span class="finder-heading-mob">Shoe Finder</span> </p>
+                        <div class="br-info loyalty-shoefinder-info">View your shoe finder results, or retake <br class="hidden-tab"/>the shoe finder. <br class="hidden-tab"/><br class="hidden-tab"/></div>
+                    
+                        <div class="horizontal-shoefinder-btn">
+                            <a class="primary-button" href="/shoefinder">View Shoes</a>
+                        </div>
+		            </div>
                 </div>
             </div>
             @else

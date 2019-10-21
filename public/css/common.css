@@ -4106,6 +4106,12 @@ textarea {
     font-size: 16px;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-heading.loyalty-shoefinder-heading {
+    font-size: 20px;
+    margin: 8px 0;
+  }
+}
 .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-heading-mob {
   font-size: 20px;
   margin: 0;
@@ -4130,6 +4136,13 @@ textarea {
     margin: 10px auto;
     width: 100%;
     max-width: 350px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-info.loyalty-shoefinder-info {
+    font-size: 14px;
+    margin: 0 0 8px;
+    line-height: 1.4;
   }
 }
 .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-info-mob {
@@ -5368,6 +5381,12 @@ textarea {
 .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li.active, .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li.active {
   border: 1px solid #0263f7;
   border-radius: 0;
+}
+.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child, .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
 }
 .pdp-container--info .offer-info span {
   padding: 5px 7px;
@@ -8200,7 +8219,6 @@ textarea {
 }
 
 .errorpage-404-section.bg {
-  background: url(../images/brooks-f19_apr_la_00477-1.jpg) no-repeat;
   background-repeat: no-repeat;
   -webkit-background-size: 100%;
   -moz-background-size: cover;
