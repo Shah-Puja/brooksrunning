@@ -6736,6 +6736,7 @@ a {
      
       .loyalty--login--success{
         margin: 0 auto;
+        text-align: -webkit-center;
         @media #{$mobile-only}{
           padding: 10px;
           }
@@ -6747,7 +6748,7 @@ a {
           text-decoration-line: underline; 
           font-size: 18px;
         }
-        .login_success{
+        .loyalty_success{
           .success-text{
             color: $white;
             font-size: 20px;
