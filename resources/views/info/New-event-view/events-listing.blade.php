@@ -150,7 +150,7 @@
                                             </div> 
                                             @endif 
                                            
-                                            <div class="location">{{$events->city}},{{$events->state_abr}}</div>
+                                            <div class="location">{{$events->city}},&nbsp;{{$events->state_abr}}</div>
                                            
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                           <div class="date">{{$upcoming_events->date_str}}</div>
                                           @endif
                                            @endif
-                                           <div class="location">{{$upcoming_events->city}},{{$upcoming_events->state_abr}}</div>
+                                           <div class="location">{{$upcoming_events->city}},&nbsp;{{$upcoming_events->state_abr}}</div>
                                             
                                             </div>
                                     </div>
