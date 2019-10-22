@@ -8,8 +8,8 @@
 										<div class="col-12">
 											<div class="loyalty--login--success">
 												<div class="login_success">
-													<p class="success-text" >Your PPP member discount will be applied at checkout. <p>
-													<p class="condition-text">*conditions and limits apply.</span></p>
+													<p class="success-text" >Your PPP member discount will be applied at checkout. </p>
+													<p class="condition-text">*conditions and limits apply.</p>
 												</div>
 											</div>
 										</div>
