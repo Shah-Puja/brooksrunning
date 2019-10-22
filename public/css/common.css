@@ -4106,6 +4106,12 @@ textarea {
     font-size: 16px;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-heading.loyalty-shoefinder-heading {
+    font-size: 20px;
+    margin: 8px 0;
+  }
+}
 .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-heading-mob {
   font-size: 20px;
   margin: 0;
@@ -4130,6 +4136,13 @@ textarea {
     margin: 10px auto;
     width: 100%;
     max-width: 350px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-info.loyalty-shoefinder-info {
+    font-size: 14px;
+    margin: 0 0 8px;
+    line-height: 1.4;
   }
 }
 .create-account--homepage.loyalty-shoefinder-section .horizontal-shoe-finder .br-info-mob {
