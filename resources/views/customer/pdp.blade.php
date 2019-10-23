@@ -77,10 +77,11 @@
                                 
                                 @if($product->video!='')
                                 <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
-					                <div class="videowrapper">
-                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
-                                        </iframe>
-                                        <button class="videoPoster js-videoPoster"></button>
+					                <div class="videowrapper video_wrapper_full js-videoWrapper">
+                                        <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
+                                        </iframe> -->
+                                        <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe>
+                                        <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
                                     </div>
 					            </li>
                                 @endif 
@@ -871,68 +872,7 @@ $(document).on('click', '.pdp-width-show li', function () {
 <!-- Start utube vdo -->
 
 
-<style>
-.videoPoster {
-    position: initial;
-    z-index: 99999;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
 
-  border: none
-   text-indent: -999em;
-  overflow: hidden;
-  opacity: 1;
-  -webkit-transition: opacity 800ms, height 0s;
-  -moz-transition: opacity 800ms, height 0s;
-  transition: opacity 800ms, height 0s;
-  -webkit-transition-delay: 0s, 0s;
-  -moz-transition-delay: 0s, 0s;
-  transition-delay: 0s, 0s;
-}
-.videoPoster:hover {
-  cursor: pointer;
-}
-.videoPoster:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  height: 80px;
-  margin: -40px 0 0 -40px;
-  border: 5px solid #fff;
-  border-radius: 100%;
-  -webkit-transition: border-color 300ms;
-  -moz-transition: border-color 300ms;
-  transition: border-color 300ms;
-}
-.videoPoster:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    margin: -20px 0 0 -10px;
-    background-image: url("http://lorempixel.com/50/50/");
-    transition: border-color 300ms;
-}
-.videoPoster:hover:before,  .videoPoster:focus:before {
-    border-color: #f00;
-}
-.videoPoster:hover:after, .videoPoster:focus:after {
-  border-left-color: #f00;
-}
-.videoWrapperActive .videoPoster {
-  opacity: 0;
-  height: 0;
-  -webkit-transition-delay: 0s, 800ms;
-  -moz-transition-delay: 0s, 800ms;
-  transition-delay: 0s, 800ms;
-}
-</style>
 
 <script>
     $(document).ready(function(){
@@ -943,21 +883,26 @@ $(document).on('click', '.pdp-width-show li', function () {
 </script>
 <script>
 $(document).on('click','.js-videoPoster',function(e) {
+
   e.preventDefault();
   var poster = $(this);
+  
   var wrapper = poster.closest('.js-videoWrapper');
   videoPlay(wrapper);
 });
+
+
 function videoPlay(wrapper) {
   var iframe = wrapper.find('.js-videoIframe');
-  
+ 
   var src = iframe.data('src');
 
   wrapper.addClass('videoWrapperActive');
- 
+
   iframe.attr('src',src);
 }
-></script>
+
+</script>
 
 <!-- End utube vdo -->
 
