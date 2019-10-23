@@ -8,6 +8,36 @@
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">
+		     <div class="mob-12">
+		       <div class="top_prd_sec">
+		          <picture>
+			        <source media="(max-width: 595px)" srcset="/images/home/20191023/hp_shop_mob.jpg">
+			        <img src="/images/home/20191023/hp_shop.jpg" alt="Header Images" width="100%">
+			      </picture>
+				  <div class="wrapper">
+		   				<div class="row">
+						   <div class="mob-6 pl-0">
+								<div class="button_fixed">
+									<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
+								</div>
+						   </div>
+						   <div class="mob-6 pl-0">
+								<div class="button_fixed">
+									<a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
+								</div>
+						   </div>
+						</div>
+					</div>
+		         
+		       </div>
+		     </div>
+		   </div>
+	  </div>
+</section>
+
+<!-- <section class="homepage-container">
+	  <div class="wrapper">
+		   <div class="row">
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
@@ -32,7 +62,7 @@
 		     </div>
 		   </div>
 	  </div>
-</section>
+</section> -->
 <section class="wrapper">
 	<div class="row">
 		<div class="tab-4">
@@ -51,14 +81,14 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/20190715/hp_sm_gts19-m.jpg">
-			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
+					<img src="/images/home/20191023/hp_sm_gts20.gif">
+			        <h3>&nbsp; <br/>New! Adrenaline GTS 20 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.</p>
+					<p>Introducing the Adrenaline GTS 20. In its 20th edition, this legendary shoe features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.</p>
 					<!-- <br/>&nbsp;  </p> -->
-					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<a href="/adrenaline-gts-20-womens-running-shoes/120296_073.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
@@ -69,8 +99,8 @@
 			        <h3>&nbsp; <br/> Make a splash! </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.</p>
-					<!-- <br/>&nbsp;  </p> -->
+					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.
+					<br/>&nbsp;  </p>
 					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
