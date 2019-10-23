@@ -2427,7 +2427,12 @@
                  @media #{$desktop-only}{ 
                   font-size: 16px;
                  }
-                 
+                 &.loyalty-shoefinder-heading{
+                  @media #{$tab-only}{ 
+                  font-size: 20px;
+                  margin: 8px 0;
+                  }
+                 }
               }
               .br-heading-mob{
                 font-size: 20px;
@@ -2450,6 +2455,13 @@
                     margin: 10px auto;
                     width: 100%;
                     max-width: 350px;
+                  }
+                  &.loyalty-shoefinder-info{
+                    @media #{$tab-only}{ 
+                      font-size: 14px;
+                      margin: 0 0 8px;
+                      line-height: 1.4;
+                    }
                   }
               }
               .br-info-mob{
@@ -6779,6 +6791,7 @@ a {
      
       .loyalty--login--success{
         margin: 0 auto;
+        text-align: -webkit-center;
         @media #{$mobile-only}{
           padding: 10px;
           }
@@ -6790,7 +6803,7 @@ a {
           text-decoration-line: underline; 
           font-size: 18px;
         }
-        .login_success{
+        .loyalty_success{
           .success-text{
             color: $white;
             font-size: 20px;
@@ -6802,7 +6815,7 @@ a {
           }
           .condition-text{
             color: $white;
-            font-size: 18px;
+            font-size: 15px;
             text-align: center;
             @extend %info-font;
             margin:-20px 0px 20px 0px;
