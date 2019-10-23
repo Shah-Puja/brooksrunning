@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Syginteractive\CategorySort\CategorySort;
 use Syginteractive\MisingImages\MisingImages;
+use Illuminate\Http\Request;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -21,6 +22,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::userTimezone(function (Request $request) {
+            return 'Australia/Sydney';
+        });
     }
 
     /**

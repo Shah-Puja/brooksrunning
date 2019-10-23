@@ -1666,7 +1666,7 @@ textarea {
   color: #fff;
 }
 
-p {
+.para {
   margin-bottom: 0;
   max-width: 560px;
 }
@@ -1753,7 +1753,7 @@ div,
 figure,
 html,
 iframe,
-p,
+.para,
 section {
   margin: 0;
   padding: 0;
@@ -1872,7 +1872,7 @@ section {
   fill: #fff;
 }
 
-p {
+.para {
   font-family: Proxima, Helvetica, Arial, sans-serif;
   font-size: 17px;
   font-weight: 400;
@@ -1880,13 +1880,13 @@ p {
 }
 
 @media (min-width: 768px) {
-  p {
+  .para {
     font-size: 18px;
     line-height: 24px;
   }
 }
 @media (min-width: 1280px) {
-  p {
+  .para {
     font-size: 20px;
     line-height: 27px;
   }

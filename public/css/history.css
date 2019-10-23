@@ -134,7 +134,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.type, p, .sports-bra-collection--container .collection-intro div, .sports-bra-collection--container .collection-intro p, .mp-lp--container .collection-intro div, .mp-lp--container .collection-intro p, .event-container .br-more-event, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-promobanner-info .sub-promo-banner div, .collection-promobanner-info .sub-promo-banner .offer, .collection-promobanner-info .sub-promo-banner .promo-code, .collection-promobanner-info .sub-promo-banner .free-pair, .collection-header-intro div, .collection-header-intro p, .promo-banners .promo-banner-info div, .promo-banners .promo-banner-info .offer, .promo-banners .promo-banner-info .promo-code, .promo-banners .promo-banner-info .free-pair, .collection-intro div, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.type, .para, .sports-bra-collection--container .collection-intro div, .sports-bra-collection--container .collection-intro p, .mp-lp--container .collection-intro div, .mp-lp--container .collection-intro p, .event-container .br-more-event, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-promobanner-info .sub-promo-banner div, .collection-promobanner-info .sub-promo-banner .offer, .collection-promobanner-info .sub-promo-banner .promo-code, .collection-promobanner-info .sub-promo-banner .free-pair, .collection-header-intro div, .collection-header-intro p, .promo-banners .promo-banner-info div, .promo-banners .promo-banner-info .offer, .promo-banners .promo-banner-info .promo-code, .promo-banners .promo-banner-info .free-pair, .collection-intro div, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -1739,7 +1739,7 @@ textarea {
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.type, p, .sports-bra-collection--container .collection-intro div, .sports-bra-collection--container .collection-intro p, .mp-lp--container .collection-intro div, .mp-lp--container .collection-intro p, .event-container .br-more-event, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-promobanner-info .sub-promo-banner div, .collection-promobanner-info .sub-promo-banner .offer, .collection-promobanner-info .sub-promo-banner .promo-code, .collection-promobanner-info .sub-promo-banner .free-pair, .collection-header-intro div, .collection-header-intro p, .promo-banners .promo-banner-info div, .promo-banners .promo-banner-info .offer, .promo-banners .promo-banner-info .promo-code, .promo-banners .promo-banner-info .free-pair, .collection-intro div, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .input-wrapper .pdp-select-field, .br-info, .alert-msg p, html, body {
+.type, .para, .sports-bra-collection--container .collection-intro div, .sports-bra-collection--container .collection-intro p, .mp-lp--container .collection-intro div, .mp-lp--container .collection-intro p, .event-container .br-more-event, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .location, .event-container .event-wrapper-container .event-wrapper__sub .event-section .info .event-info-sub .date, .event-filters--wrapper .input-wrapper .select-field option, .event-intro p, .event__hero .m-block--hero--collection__content p, .collection-promobanner-info .sub-promo-banner div, .collection-promobanner-info .sub-promo-banner .offer, .collection-promobanner-info .sub-promo-banner .promo-code, .collection-promobanner-info .sub-promo-banner .free-pair, .collection-header-intro div, .collection-header-intro p, .promo-banners .promo-banner-info div, .promo-banners .promo-banner-info .offer, .promo-banners .promo-banner-info .promo-code, .promo-banners .promo-banner-info .free-pair, .collection-intro div, .collection-intro p, .category__hero .m-block--hero--collection__content p, .brooksrunhappyis .module .info-wrapper .mobtxtLeft-wordsRun, .brooksrunhappyis .module .info-wrapper .mobtxtLeft, .brooksrunhappyis .module .info-wrapper .mobtxtRight, .ctg-main-container .ctg-container .ctg-wrapper-container .info h4, .accordian-tab label:after, .input-wrapper label, .input-wrapper .checklist-inline label, .input-wrapper .input-field, .input-wrapper .input-textarea, .input-wrapper .select-field, .input-wrapper .pdp-select-field, .br-info, .alert-msg p, html, body {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -8623,7 +8623,7 @@ textarea {
   color: #fff;
 }
 
-p {
+.para {
   margin-bottom: 0;
   max-width: 560px;
 }
@@ -8705,7 +8705,7 @@ div,
 figure,
 html,
 iframe,
-p,
+.para,
 section {
   margin: 0;
   padding: 0;
@@ -8824,20 +8824,20 @@ section {
   fill: #fff;
 }
 
-p {
+.para {
   font-size: 17px;
   font-weight: 400;
   line-height: 23px;
 }
 
 @media (min-width: 768px) {
-  p {
+  .para {
     font-size: 18px;
     line-height: 24px;
   }
 }
 @media (min-width: 1280px) {
-  p {
+  .para {
     font-size: 20px;
     line-height: 27px;
   }
