@@ -72,7 +72,7 @@
 			        <h3>&nbsp;<br/>Revel 3 Breakthrough</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.<br/>&nbsp; <br/>&nbsp;  </p>
 					<a href="/collections/revel-3-breakthrough-collection">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
@@ -82,11 +82,11 @@
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
 					<img src="/images/home/20191023/hp_sm_gts20.gif">
-			        <h3>&nbsp; <br/>New! Adrenaline GTS 20 </h3>
+			        <h3>New!  <br/>Adrenaline GTS 20 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Introducing the Adrenaline GTS 20. In its 20th edition, this legendary shoe features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.</p>
-					<!-- <br/>&nbsp;  </p> -->
+					<p>Introducing the Adrenaline GTS 20. In its 20th edition, this legendary shoe features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.
+					</p>
 					<a href="/adrenaline-gts-20-womens-running-shoes/120296_073.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<span class="right-link"><a href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
@@ -100,7 +100,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.
-					<br/>&nbsp;  </p>
+					<br/>&nbsp; <br/>&nbsp;   </p>
 					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
