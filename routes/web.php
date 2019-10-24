@@ -15,7 +15,7 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
-
+Route::get('/loyalty_register', 'Auth\RegisterController@loyalty_register');
 
 
 Route::post('/reset_pass', 'InfoController@check_email');
@@ -75,6 +75,9 @@ Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 /* meet_brooks static pages */
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
+Route::get('/meet_brooks/technology/brooks-sports-bra', 'meet_brooksController@brooks_sports_bra');
+
+
 
 
 Route::get('/roadtester', 'meet_brooksController@roadtester');
@@ -114,6 +117,9 @@ Route::post('/account/update_profile', 'MyaccountController@update_profile');
 Route::get('/confirm-password', 'MyaccountController@confirm_password');
 Route::get('/order-history', 'MyaccountController@order_history');
 Route::post('/order/view_order','MyaccountController@view_order');
+
+
+Route::get('/loyalty-account-personal', 'MyaccountController@loyalty_account_personal');
 
 /* shoefinder old page */
 Route::get('/shoefinder_old', 'ShoefinderController@shoefinder');  
@@ -198,6 +204,8 @@ Route::get('/collections/revel-3-breakthrough-collection', 'CollectionController
 Route::get('sitemap-index.xml', 'SitemapController@index');
 Route::redirect('/sitemap.xml', '/sitemap-index.xml');
 
+Route::get('check_gv', 'SimpleGVController@gv_check');
+
 Route::get('/{category}', 'CategoryController@index');
 Route::get('/{prodname}/{style}_{color}.html', 'ProductColourController@index'); /* Detail page for shoes , apparel and sports bra */
 
@@ -229,3 +237,9 @@ Route::post('/medibank_shipping_verify_login','BillingShippingController@verify_
 
 Route::get('/testmedibankcsv/export_medibank_order_csv', 'testmedibankcsv@export_medibank_order_csv');
 Route::get('/error-page', 'QuickhelpController@error_404');
+
+
+
+
+/* loyalty accounts static pages */
+Route::get('/account-homepage', 'MyaccountController@account_homepage');
