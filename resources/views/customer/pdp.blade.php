@@ -80,8 +80,10 @@
 					                <div class="videowrapper video_wrapper_full js-videoWrapper">
                                         <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
                                         </iframe> -->
+                                        <button id="play-video" class="videoPoster" ></button>
                                         <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe>
-                                        <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
+                                        <!-- <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button> -->
+
                                     </div>
 					            </li>
                                 @endif 
