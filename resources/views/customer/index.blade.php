@@ -85,8 +85,7 @@
 			        <h3>New!  <br/>Adrenaline GTS 20 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Introducing the Adrenaline GTS 20. In its 20th edition, this legendary shoe features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.
-					</p>
+					<p>In its 20th edition, the legendary Adrenaline GTS 20 features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.</p>
 					<a href="/adrenaline-gts-20-womens-running-shoes/120296_073.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<span class="right-link"><a href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
@@ -155,7 +154,7 @@
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
-					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
+					<p>It's not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
 					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>
