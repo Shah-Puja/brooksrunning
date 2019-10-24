@@ -3692,10 +3692,15 @@
         width: 100%;
        z-index: 99999;
       }
-     
+      @media #{$tab-only}{
+        width: 85%;
+      }
   }
   .video_wrapper_full {
     padding-top: 67.25%;
+    @media #{$tab-only}{
+      padding-top: 64.25%;
+    }
   }
 
   .videoIframe {
@@ -3760,6 +3765,9 @@
         border-radius: 5px;
         background-color: $blue;
         
+    }
+    @media #{$tab-only}{
+      position: relative;
     }
   }
   .videoPoster:hover:before,  .videoPoster:focus:before {
