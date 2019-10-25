@@ -162,7 +162,7 @@
 									<a href="/brooks-running-shoes-revel-3-womens/120302_012.html" title="Revel 3">Revel 3</a> 
 								</li>
 								<li>
-									<a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_080.html" title="Adrenaline GTS 19">Adrenaline GTS 19 </a> 
+									<a href="/adrenaline-gts-20-womens-running-shoes/120296_073.html" title="Adrenaline GTS 20">Adrenaline GTS 20 </a> 
 								</li>
 								<li>
 									<a href="/brooks-running-shoes-launch-6-womens/120285_027.html" title="Levitate 2">Launch 6</a> 
@@ -286,7 +286,7 @@
 									<a class="name-link" href="/brooks-running-shoes-revel-3-mens/110314_088.html" title="Revel 3">Revel 3</a> 
 								</li>
 								<li>
-									<a class="name-link" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_010.html" title="Adrenaline GTS 19">Adrenaline GTS 19</a> 
+									<a class="name-link" href="/adrenaline-gts-20-mens-running-shoes/110307_051.html" title="Adrenaline GTS 20">Adrenaline GTS 20</a> 
 								</li>
 								<li>
 									<a class="name-link" href="/brooks-running-shoes-launch-6-mens/110297_419.html" title="Launch 6">Launch 6</a> 
