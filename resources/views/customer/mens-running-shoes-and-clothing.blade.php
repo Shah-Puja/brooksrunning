@@ -110,7 +110,7 @@
 					</div>
 					<div class="lp-info-block">
 							<p>The Adrenaline GTS 20. Get more support than ever before with integrated GuideRails<sup>&reg;</sup> Technology. &nbsp;<br/>&nbsp;<br/></p>
-							<a class="primary-button" href="/adrenaline-gts-20-womens-running-shoes/120296_030.html">Shop Adrenaline GTS 20</a>
+							<a class="primary-button" href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop Adrenaline GTS 20</a>
 					</div> 
 				</div>
 			</div>

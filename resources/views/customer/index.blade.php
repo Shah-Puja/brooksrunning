@@ -72,7 +72,7 @@
 			        <h3>&nbsp;<br/>Revel 3 Breakthrough</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.<br/>&nbsp; <br/>&nbsp;  </p>
+					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.<br/>&nbsp; </p>
 					<a href="/collections/revel-3-breakthrough-collection">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
@@ -99,7 +99,7 @@
 				</div>
 				<div class="info-wrapper">
 					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.
-					<br/>&nbsp; <br/>&nbsp;   </p>
+					<br/>&nbsp;  </p>
 					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
