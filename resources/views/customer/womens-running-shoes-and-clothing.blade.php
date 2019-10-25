@@ -102,14 +102,14 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Womens/women_ravenna10.jpg">
+							<img src="/images/landingpage/Womens/women_gts20_073.jpg">
 						    <div class="title">
-						        <h2 class="happy left">Meet the <br>Ravenna 10</h2>
+						        <h2 class="happy left"> From Unsteady<br> to Run Ready.</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>The Ravenna 10 now featuring GuideRails holistic support system and an updated midsole with additional foam under the forefoot.</p>
-							<a class="primary-button" href="/brooks-running-shoes-ravenna-10-womens/120286_615.html">Shop Ravenna 10</a> 
+							<p>The Adrenaline GTS 20. Get more support than ever before with integrated GuideRails<sup>&reg;</sup> Technology.</p>
+							<a class="primary-button" href="/adrenaline-gts-20-womens-running-shoes/120296_073.html">Shop Adrenaline GTS 20</a> 
 					</div> 
 				</div>
 			</div>
