@@ -13,7 +13,7 @@
 .width-disable{
     background-color: #f1f1f1;
     color: #dedcda;
-}
+} 
 </style>
 
 <div id="data-load">
