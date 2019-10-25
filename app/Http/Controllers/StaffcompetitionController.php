@@ -11,7 +11,11 @@ class StaffcompetitionController extends Controller
 {
     public function index(){
         $comp_name = strtolower(request()->segment(1));
-        $competition = Staff_competitions::where('slug',$comp_name)->firstOrFail();
+        $competition = Staff_competitions::where('slug',$comp_name)->first();
+        if(!$competition){
+            return abort(404);
+        }
+
         if(!view()->exists('staff_competition.'.$comp_name.'_form')){
             return abort(404);
         }
