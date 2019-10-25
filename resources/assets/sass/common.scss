@@ -3649,6 +3649,146 @@
             border: 1px solid $blue;
             border-radius: 0;
           }
+          &:last-child{
+             position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+          }
+        }
+        // youtube video css
+      //   .videowrapper {
+      //     position: relative;
+      //     padding-bottom: 56.25%;
+      //     padding-top: 35px;
+      //     height: 0;
+      //     overflow: hidden;
+      //     @media #{$mobile-only} {
+      //      height: 150px; 
+      //      width :250px;
+      //     }
+      //     @media #{$desktop-only} {
+      //       height: 250px; 
+      //      }
+      //    iframe {
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     width: 100%;
+      //     height: 100%;
+         
+      //   }
+      // }
+  .videowrapper {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        background-color: #000;
+       iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+     
+  }
+  .video_wrapper_full {
+    padding-top: 67.25%;
+    
+  }
+
+  .videoIframe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+    
+  }
+    
+  .videoPoster {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+      border: none;
+      text-indent: -999em;
+      overflow: hidden;
+      opacity: 1;
+      -webkit-transition: opacity 800ms, height 0s;
+      -moz-transition: opacity 800ms, height 0s;
+      transition: opacity 800ms, height 0s;
+      -webkit-transition-delay: 0s, 0s;
+      -moz-transition-delay: 0s, 0s;
+      transition-delay: 0s, 0s;
+      &:hover {
+      cursor: pointer;
+      
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        margin: -40px 0 0 -40px;
+        border: 5px solid $blue;
+        border-radius: 100%;
+        
+        background-color: $blue;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        margin: -15px 0 0 -5px;
+        border-left: 18px solid #fff;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-radius: 5px;
+        background-color: $blue;
+        
+    }
+  }
+  .videoPoster:hover:before,  .videoPoster:focus:before {
+      border-color: $darkblue;  background-color: $darkblue;
+  }
+  .videoPoster:hover:after, .videoPoster:focus:after {
+    border-left-color: $white; background-color: $darkblue;
+  }
+  .videoWrapperActive
+  {
+    .videoPoster {
+      opacity: 0;
+      height: 0;
+      -webkit-transition-delay: 0s, 800ms;
+      -moz-transition-delay: 0s, 800ms;
+      transition-delay: 0s, 800ms;
+    }
+  } 
+
+
+
+       .play{
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              border: none;
+              top: 50%;
+              left: 50%;
+              margin-top: -14px;
+              margin-left: -14px;
+              background: url(../images/ytubeplayicon.png) no-repeat;
         }
       }
     }

@@ -66,21 +66,25 @@
                                 <li data-video='' data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
                                     <img src="{{ $product->image->image1Large() }}"/>
                                 </li>
-                                @for ($i = 2; $i < 10; $i++)
+                                
+                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
                                     <li data-video='' data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
                                         <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
+                                
                                 @if($product->video!='')
                                 <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
-					                <div class="videowrapper">
-                                        <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                        </iframe>
+					                <div class="videowrapper video_wrapper_full js-videoWrapper">
+                                        <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
+                                        </iframe> -->
+                                        <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe>
+                                        <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
                                     </div>
 					            </li>
-                                @endif
+                                @endif 
                             </ul>
 
                         </div>
@@ -868,56 +872,37 @@ $(document).on('click', '.pdp-width-show li', function () {
 <!-- Start utube vdo -->
 
 
-<style>
-.videowrapper {
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    /* padding-bottom: 56.25%;
-    padding-top: 25%;
-    height: 0; */
-    height: 350px;
-    margin: 50px auto;
-}
-.videowrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-    /* ul.lSGallery li:last-child a .play{ */
- .play{
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border: none;
-        top: 50%;
-        left: 50%;
-        margin-top: -14px;
-        margin-left: -14px;
-        background: url(../images/ytubeplayicon.png) no-repeat;
-}
 
-.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
-    border: 1px solid #0ee0e0e0;
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 40px;
-}
-</style>
 
 <script>
     $(document).ready(function(){
         // var newcontent = '<div class="play"></div>';
         // $('#LastChild').html(newcontent);
         $('.lSGallery li:last-child').attr('id', 'LastChild');
-    });
+    });zz
 </script>
+<script>
+$(document).on('click','.js-videoPoster',function(e) {
+
+  e.preventDefault();
+  var poster = $(this);
+  
+  var wrapper = poster.closest('.js-videoWrapper');
+  videoPlay(wrapper);
+});
 
 
+function videoPlay(wrapper) {
+  var iframe = wrapper.find('.js-videoIframe');
+ 
+  var src = iframe.data('src');
+
+  wrapper.addClass('videoWrapperActive');
+
+  iframe.attr('src',src);
+}
+
+</script>
 
 <!-- End utube vdo -->
 
