@@ -8,6 +8,36 @@
 <section class="homepage-container">
 	  <div class="wrapper">
 		   <div class="row">
+		     <div class="mob-12">
+		       <div class="top_prd_sec">
+		          <picture>
+			        <source media="(max-width: 595px)" srcset="/images/home/20191023/hp_shop_mob.jpg">
+			        <img src="/images/home/20191023/hp_shop.jpg" alt="Header Images" width="100%">
+			      </picture>
+				  <div class="wrapper">
+		   				<div class="row">
+						   <div class="mob-6 pl-0">
+								<div class="button_fixed">
+									<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women's</a>
+								</div>
+						   </div>
+						   <div class="mob-6 pl-0">
+								<div class="button_fixed">
+									<a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men's</a>
+								</div>
+						   </div>
+						</div>
+					</div>
+		         
+		       </div>
+		     </div>
+		   </div>
+	  </div>
+</section>
+
+<!-- <section class="homepage-container">
+	  <div class="wrapper">
+		   <div class="row">
 		     <div class="mob-6 pr-0">
 		       <div class="top_prd_sec">
 		          <picture>
@@ -32,7 +62,7 @@
 		     </div>
 		   </div>
 	  </div>
-</section>
+</section> -->
 <section class="wrapper">
 	<div class="row">
 		<div class="tab-4">
@@ -42,7 +72,7 @@
 			        <h3>&nbsp;<br/>Revel 3 Breakthrough</h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.</p>
+					<p>Versatile performance and BioMoGo DNA cushioning with sunrise-to-sunset style.<br/>&nbsp; </p>
 					<a href="/collections/revel-3-breakthrough-collection">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-revel-3-mens/110314_088.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>				 -->
 				</div>
@@ -51,14 +81,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/20190715/hp_sm_gts19-m.jpg">
-			        <h3>&nbsp; <br/>Adrenaline GTS 19 </h3>
+					<img src="/images/home/20191023/hp_sm_gts20.gif">
+			        <h3>New!  <br/>Adrenaline GTS 20 </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Our latest Go-To-Shoe now has our GuideRails holistic support system plus soft yet responsive cushioning.</p>
-					<!-- <br/>&nbsp;  </p> -->
-					<a href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_069.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
-					<span class="right-link"><a href="/brooks-running-shoes-adrenaline-gts-19-womens/120284_028.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
+					<p>In its 20th edition, the legendary Adrenaline GTS 20 features GuideRails<sup>&reg;</sup> Technology to keep you stable and shows no signs of slowing down.</p>
+					<a href="/adrenaline-gts-20-womens-running-shoes/120296_073.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<span class="right-link"><a href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span>
 				</div>
 			</div>
 		</div>
@@ -69,8 +98,8 @@
 			        <h3>&nbsp; <br/> Make a splash! </h3>
 				</div>
 				<div class="info-wrapper">
-					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.</p>
-					<!-- <br/>&nbsp;  </p> -->
+					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.
+					<br/>&nbsp;  </p>
 					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
@@ -125,7 +154,7 @@
 				</div>
 				<div class="info-wrapper">
 					<h3 class="br-heading">Gear Up</h3>
-					<p>It’s not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
+					<p>It's not just the shoes. Clothing cleverly engineered for comfort and mobility, helping you run better, faster, and happier.</p>
 					<a href="/womens-running-clothes">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a>
 					<span class="right-link"><a href="/mens-running-clothes">Shop men's <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a></span>
 				</div>

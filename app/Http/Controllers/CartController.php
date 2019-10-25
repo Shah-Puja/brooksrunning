@@ -131,10 +131,19 @@ class CartController extends Controller {
         
         $data = array();
         $freight_charges = 0;
-
         if (!empty($cart)) {
+            if (auth()->id() != 0) { //check user is logged in or not for Loyalty program
+                if (auth()->user()->person_idx != '') {
+                    $personidx = auth()->user()->person_idx;
+                } else {
+                   //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
+                    $personidx = '115414';
+                }
+            } else {
+                $personidx = '115414';
+            }
             $cart_xml = "<Cart>
-						<PersonId>115414</PersonId>
+						<PersonId>".$personidx."</PersonId>
 						<Contacts>
 						</Contacts>
 							<CartDetails>\n\t";
@@ -332,7 +341,7 @@ class CartController extends Controller {
             $giftcert_pin = $request->voucher_pin;
             //$vouchervalid = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal)->getBody()->getContents();
 
-            $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal+$freight_cost);
+            $response = $this->bridgeObject->vouchervalid($giftcert_code, $giftcert_pin, $cartTotal + $freight_cost);
             if (!empty($response)) {
                 $returnCode = $response->getStatusCode();
                 switch ($returnCode) {
@@ -363,6 +372,8 @@ class CartController extends Controller {
                         echo "<hr>HTTP ERROR -> " . $returnCode . "<br>" . $response->getBody();
                         break;
                 }
+            } else {
+                echo "Incorrect Voucher";
             }
         }
     }

@@ -13,7 +13,7 @@
 .width-disable{
     background-color: #f1f1f1;
     color: #dedcda;
-}
+} 
 </style>
 
 <div id="data-load">
@@ -216,8 +216,7 @@
                             </div>
                         </div>
                         <!--/afterpay popup -->
-
-                        <div class="category"> {{ strip_tags($product->h2) }} </div>
+                        <div class="category"> {!!strip_tags($product->h2)!!} </div>
                         @if( !empty($colour_options) && count($colour_options) > 0 )
                         <!-- Colour swatches -->
                         <div class="swatches">
@@ -390,7 +389,9 @@
                     </div>
                     
                     @include('customer.medibank.medibank_pdp')
-
+                    @if(auth()->user() && auth()->user()->loyalty_type== 'PPP')
+                        @include('customer.layouts.loyalty-pdp')
+                    @endif
                     <div class="pdp-container--offer">
                         <h3>Free Shipping on all orders over $50. Australia Wide</h3>
                         <ul>

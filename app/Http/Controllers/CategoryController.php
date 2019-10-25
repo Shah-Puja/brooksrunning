@@ -11,7 +11,10 @@ use App\Models\Seo;
 class CategoryController extends Controller
 {
     public function index($category) {
-        $cat_info= \App\Models\Category::where('slug',$category)->firstOrFail();
+        $cat_info= \App\Models\Category::where('slug',$category)->first();
+        if (!$cat_info) {
+            abort(404);
+        }
 
         $gender = $cat_info->gender;            
         $prod_type = $cat_info->prod_type;

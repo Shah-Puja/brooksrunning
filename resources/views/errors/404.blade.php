@@ -5,9 +5,7 @@
 and (min-device-width : 375px) 
 and (max-device-width : 667px) 
 and (orientation : landscape) { /* STYLES GO HERE */
-
 	.bg{ height: 110vh !important; background-position: center center !important;}
-
 	}
 	@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) { 
 		/* STYLES GO HERE */
@@ -35,7 +33,10 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		</div>
 	</div>
 </section>
-<section class="create-account errorpage-404-section bg">
+@if(isset($images))
+<section class="create-account errorpage-404-section bg" 
+
+style="background-image: url('../images/error-404/{{$images->image}}')">
 	<div class="wrapper">
 		<div class="row">
 			<div class="col-2 tab-2"></div>
@@ -53,5 +54,25 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		</div>
 	</div>
 </section>
+@else
+<section class="create-account errorpage-404-section bg" >
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-2 tab-2"></div>
+			<div class="col-8 tab-8">
+				<div class="errorpage-404-container--wrapper info errorpage-middle--wrapper errorpage-middle--wrapper-onmob">
+					<div class="button_fixed_second">
+						<a class="primary-button" href="/womens-running-shoes-and-clothing">Shop Women</a>
+					</div>
+					<div class="button_fixed_second">
+						<a class="primary-button" href="/mens-running-shoes-and-clothing">Shop Men</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-2 tab-2"></div>
+		</div>
+	</div>
+</section>
+@endif
 
 @endsection

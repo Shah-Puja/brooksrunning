@@ -103,14 +103,14 @@
 				<div class="tab-6">
 					<div class="lp-cate--link">
 						 	<div class="opacity-cover"></div>
-							<img src="/images/landingpage/Mens/men_gts19_blk.jpg">
+							<img src="/images/landingpage/Mens/men_gts20_051.jpg">
 						    <div class="title">
-						        <h2 class="happy left">&nbsp;<br> Adrenaline GTS 19</h2>
+						        <h2 class="happy left">&nbsp;<br> From Unstable to Unstoppable</h2>
 						    </div>
 					</div>
 					<div class="lp-info-block">
-							<p>The legendary Adrenaline GTS has learned new tricks. Now you can experience GuideRails support in the GTS 19.</p>
-							<a class="primary-button" href="/brooks-running-shoes-adrenaline-gts-19-mens/110294_071.html">Shop Adrenaline GTS 19</a>
+							<p>The Adrenaline GTS 20. Get more support than ever before with integrated GuideRails<sup>&reg;</sup> Technology. &nbsp;<br/>&nbsp;<br/></p>
+							<a class="primary-button" href="/adrenaline-gts-20-mens-running-shoes/110307_051.html">Shop Adrenaline GTS 20</a>
 					</div> 
 				</div>
 			</div>
