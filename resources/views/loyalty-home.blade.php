@@ -22,7 +22,7 @@
             </div>
             <div class="col-8 tab-8">
             <p class="br-heading terms">Terms and Conditions:</p>
-            <p class="info">Professional Purchase Program Members are entitled to $800 in purchases per year at program discounted rates.</p>
+            <p class="info">Professional Purchase Program Members are entitled to $800 in purchases per year at an exclusive discount of 35% off RRP with free shipping on orders over $50.</p>
             <p class="info">Shoes are strictly for personal use only. Shoes must not be onsold, resold, or bought on behalf of someone else.</p>    
             <p class="info">Texas Peak reserves the right to cancel an order if an applicant is deemed ineligible. </p>
             <p class="info"> Please refer to our standard terms and conditions, returns policy or delivery information. </p>
