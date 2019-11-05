@@ -1465,7 +1465,7 @@ $(document).ready(function () {
         $(".br-vdo2")[0].src += "1";
     }); $('.trigger3').on('click', function () {
         $(".meet-brooks-uTube-section3").css({'display':'none'}); 
-        $(".module-vdo2").css({'display':'block'});        
+        $(".module-vdo3").css({'display':'block'});        
         $(".br-vdo3")[0].src += "1";
     });
 });
