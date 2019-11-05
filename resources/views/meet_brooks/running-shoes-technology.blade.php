@@ -596,7 +596,7 @@
                                     <span class="type white">1:23</span>
                                 </div>
                             </a>
-                            <div class="module-video mod-vdo3" style="display:none;">
+                            <div class="module-video module-vdo3" style="display:none;">
                                 <iframe class="br-video br-vdo3"  src="https://www.youtube.com/embed/CJHaMglcov0?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
