@@ -60,8 +60,8 @@
                                     <span class="type white">1:20</span>
                                 </div>
                             </a>
-                            <div class="module-video" style="display:none;">
-                                <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
+                            <div class="module-video mod-vdo" style="display:none;">
+                                <iframe class="br-video br-vdo"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
                 <!-- </div>  -->
@@ -1456,8 +1456,8 @@ $(document).ready(function () {
     });
     $('.trigger').on('click', function () {
         $(".meet-brooks-uTube-section").css({'display':'none'}); 
-        $(".module-video").css({'display':'block'});        
-        $(".br-video")[0].src += "1";
+        $(".module-vdo").css({'display':'block'});        
+        $(".br-vdo")[0].src += "1";
     });
     $('.trigger2').on('click', function () {
         $(".meet-brooks-uTube-section2").css({'display':'none'}); 
