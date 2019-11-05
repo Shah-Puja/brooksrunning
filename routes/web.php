@@ -76,6 +76,7 @@ Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 Route::get('/meet_brooks/technology/brooks-sports-bra', 'meet_brooksController@brooks_sports_bra');
+Route::get('/meet_brooks/technology/running-shoes-technology', 'meet_brooksController@running_shoes_technology');
 
 
 
