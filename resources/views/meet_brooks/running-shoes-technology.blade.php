@@ -60,8 +60,8 @@
                                     <span class="type white">1:20</span>
                                 </div>
                             </a>
-                            <div class="module-video" style="display:none;">
-                                <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
+                            <div class="module-video module-vdo" style="display:none;">
+                                <iframe class="br-video  br-vdo"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
                 <!-- </div>  -->
@@ -371,14 +371,14 @@
 </div>
 
 <!-- Carousel -->
-@if(!empty($men_running_shoes))
+@if(!empty($men_running_shoes2))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="runningshoes-lp--container">
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel running-shoe-lp-carousal owl-centered">
-        @if($men_running_shoes!='')
-            @foreach($men_running_shoes['products'] as $curr_ele)
-                @foreach($men_running_shoes['colour_options'] as $product)
+        @if($men_running_shoes2!='')
+            @foreach($men_running_shoes2['products'] as $curr_ele)
+                @foreach($men_running_shoes2['colour_options'] as $product)
                     @if($product->style == $curr_ele->style)
                             @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
@@ -451,16 +451,16 @@
 <!-- End Carousel -->
 
 <!-- Men running shoes section -->
-@if(!empty($men_running_shoes))
+@if(!empty($men_running_shoes2))
 <section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
     <div class="wrapper">
         <div class="row">
             <div class="col-12 tab-12">
             
                 <div class="plp-wrapper-container">
-                    @if($men_running_shoes!='')
-                    @foreach($men_running_shoes['products'] as $curr_ele)
-                        @foreach($men_running_shoes['colour_options'] as $product)
+                    @if($men_running_shoes2!='')
+                    @foreach($men_running_shoes2['products'] as $curr_ele)
+                        @foreach($men_running_shoes2['colour_options'] as $product)
                             @if($product->style == $curr_ele->style)
                                     @php $colors_option[$curr_ele->style][] = $product; @endphp
                             @endif
@@ -639,14 +639,14 @@
 </div>
 
 <!-- Carousel -->
-@if(!empty($men_running_shoes))
+@if(!empty($men_shoes3))
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="runningshoes-lp--container">
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel running-shoe-lp-carousal owl-centered">
-        @if($men_running_shoes!='')
-            @foreach($men_running_shoes['products'] as $curr_ele)
-                @foreach($men_running_shoes['colour_options'] as $product)
+        @if($men_shoes3!='')
+            @foreach($men_shoes3['products'] as $curr_ele)
+                @foreach($men_shoes3['colour_options'] as $product)
                     @if($product->style == $curr_ele->style)
                             @php $colors_option[$curr_ele->style][] = $product; @endphp
                     @endif
@@ -719,16 +719,16 @@
 <!-- End Carousel -->
 
 <!-- Men running shoes section -->
-@if(!empty($men_running_shoes))
+@if(!empty($men_shoes3))
 <section class="plp-container collection-listing-conatiner hidden-mob visible-tab visible-col">
     <div class="wrapper">
         <div class="row">
             <div class="col-12 tab-12">
             
                 <div class="plp-wrapper-container">
-                    @if($men_running_shoes!='')
-                    @foreach($men_running_shoes['products'] as $curr_ele)
-                        @foreach($men_running_shoes['colour_options'] as $product)
+                    @if($men_shoes3!='')
+                    @foreach($men_shoes3['products'] as $curr_ele)
+                        @foreach($men_shoes3['colour_options'] as $product)
                             @if($product->style == $curr_ele->style)
                                     @php $colors_option[$curr_ele->style][] = $product; @endphp
                             @endif
@@ -1456,17 +1456,16 @@ $(document).ready(function () {
     });
     $('.trigger').on('click', function () {
         $(".meet-brooks-uTube-section").css({'display':'none'}); 
-        $(".module-video").css({'display':'block'});        
-        $(".br-video")[0].src += "1";
+        $(".module-vdo").css({'display':'block'});        
+        $(".br-vdo")[0].src += "1";
     });
     $('.trigger2').on('click', function () {
         $(".meet-brooks-uTube-section2").css({'display':'none'}); 
-        $(".mod-vdo2").css({'display':'block'});        
+        $(".module-vdo1").css({'display':'block'});        
         $(".br-vdo2")[0].src += "1";
-    });
-    $('.trigger3').on('click', function () {
+    }); $('.trigger3').on('click', function () {
         $(".meet-brooks-uTube-section3").css({'display':'none'}); 
-        $(".mod-vdo3").css({'display':'block'});        
+        $(".module-vdo2").css({'display':'block'});        
         $(".br-vdo3")[0].src += "1";
     });
 });
