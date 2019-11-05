@@ -457,7 +457,7 @@
         <div class="row">
             <div class="col-12 tab-12">
             
-                <div class="plp-wrapper-container">
+                <div class="plp-wrapper-container running-shoe-container-energized">
                     @if($men_running_shoes2!='')
                     @foreach($men_running_shoes2['products'] as $curr_ele)
                         @foreach($men_running_shoes2['colour_options'] as $product)
@@ -1301,13 +1301,13 @@
                         <div class="banner--info hidden-mob">
                             <h1 class="br-mainheading">Find the best shoe for you</h1>
                             <p class="label--underline">Get started on the right foot by putting it in the right shoe.  </p>
-                              <a class="primary-button" href="#">Start now</a>
+                              <a class="primary-button" href="/shoefinder">Start now</a>
                         </div>
                         <div class="landing-info visible-mob">
                           <div class="banner--info">
                             <p class="label--underline">Find the best shoe for you</p>
                                <p>Get started on the right foot by putting it in the right shoe. </p>
-                               <a class="primary-button" href="#">Start now</a>
+                               <a class="primary-button" href="/shoefinder">Start now</a>
                             </div>
                     </div>
                 </div>
