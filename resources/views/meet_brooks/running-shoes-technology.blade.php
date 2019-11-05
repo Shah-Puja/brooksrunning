@@ -327,8 +327,8 @@
                                     <span class="medium white">Let the energy do the work for you</span>
                                     <span class="type white">1:26</span>
                                 </div>
-                            </a>
-                            <div class="module-video mod-vdo2" style="display:none;">
+                            </a> 
+                            <div class="module-video module-vdo2" style="display:none;">
                                 <iframe class="br-video br-vdo2"  src="https://www.youtube.com/embed/m69vNVRTdek?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
