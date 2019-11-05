@@ -147,7 +147,7 @@
                     <div class="tab-6">
                     <div class="input-wrapper">
                                 <div class="row">
-                                    <div class="mob-7 loyalty-pass-section"><label>New Account Password</label></div>
+                                    <div class="mob-7"><label>Choose a Password</label></div>
                                     <div class="mob-5 loyalty-pass-section">
                                         <div class="show-pass">
                                             <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
@@ -168,7 +168,7 @@
                     <div class="input-wrapper">
 								
                                 <div class="row">
-                                    <div class="mob-7 loyalty-pass-section"><label>Confirm New Account Password</label></div>
+                                    <div class="mob-7"><label>Confirm Password</label></div>
                                     <div class="mob-5 loyalty-pass-section">
                                     <div class="show-pass">
                                         <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
