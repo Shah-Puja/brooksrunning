@@ -60,7 +60,7 @@
                                     <span class="type white">1:20</span>
                                 </div>
                             </a>
-                            <div class="module-video mod-vdo" style="display:none;">
+                            <div class="module-video module-vdo" style="display:none;">
                                 <iframe class="br-video br-vdo"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
