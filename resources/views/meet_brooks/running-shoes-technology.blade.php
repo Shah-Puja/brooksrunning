@@ -585,8 +585,8 @@
                             <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger3 utube meet-brooks-uTube-section3">
                                 <div class="module-img br-img">
                                 <picture>
-                                    <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/shoe-technology/GuideRails_Video_Cover_Mobile.jpg">
-                                    <img alt="benefits" src="/images/meet-brooks/running-shoes/shoe-technology/GuideRails_Video_Cover.jpg" data-loaded="true" class="isLoading loaded" id="isLoading_e75d49d3-8792-49d2-8278-f8aa42ebe3be">
+                                    <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/GuideRails_Video_Cover_Mobile.jpg">
+                                    <img alt="benefits" src="/images/meet-brooks/running-shoes/GuideRails_Video_Cover.jpg" data-loaded="true" class="isLoading loaded" id="isLoading_e75d49d3-8792-49d2-8278-f8aa42ebe3be">
                                 </picture>
                                 </div>
                            
