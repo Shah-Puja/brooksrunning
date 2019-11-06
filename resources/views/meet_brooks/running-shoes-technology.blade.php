@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
 <section class="running-shoe-page-banner">
     <div class="landingpage-banner--wrapper">
+        
         <picture>
         <source media="(max-width: 595px)" srcset="/images/landingpage/running-shoes/Hero_Mobile.jpg">
         <img src="/images/landingpage/running-shoes/Hero.jpg" alt="Header Images">

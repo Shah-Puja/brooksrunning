@@ -6930,12 +6930,16 @@ textarea {
 .running-shoe-page-banner {
   position: relative;
   min-height: 320px;
+  padding: 0 40px;
+  background-color: #f2f2f2;
+  margin: 0px auto;
+  display: block;
 }
 .running-shoe-page-banner picture img {
   width: 100%;
   bottom: 0;
   height: 100%;
-  left: 0;
+  left: 12%;
   object-fit: cover;
   position: relative;
   right: 0;
@@ -6945,11 +6949,13 @@ textarea {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .running-shoe-page-banner picture img {
     position: absolute;
+    left: 10% !important;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .running-shoe-page-banner picture img {
     position: absolute;
+    left: 10% !important;
   }
 }
 .running-shoe-page-banner .landingpage-banner--info {
@@ -6976,14 +6982,13 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .running-shoe-page-banner .landingpage-banner--info .banner--info {
-    transform: translate(0, -10%);
-    max-width: 250px;
+    max-width: 350px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .running-shoe-page-banner .landingpage-banner--info .banner--info {
-    transform: translate(0, -50%);
-    max-width: 250px;
+    transform: translate(5%, -25%);
+    max-width: 350px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -7072,8 +7077,7 @@ textarea {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .running-shoe-page-banner {
-    height: 90vh;
-    min-height: 721px;
+    height: 75vh;
     padding: 0 40px;
     position: relative;
     width: 100%;
@@ -7081,12 +7085,15 @@ textarea {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .running-shoe-page-banner {
-    height: 90vh;
-    min-height: 721px;
+    height: 45vh;
     padding: 0 40px;
     position: relative;
     width: 100%;
   }
+}
+.running-shoe-page-banner .landingpage-banner--wrapper {
+  width: 75%;
+  margin: 0px auto;
 }
 
 .running-shoe-featured--container {
@@ -7171,7 +7178,7 @@ textarea {
 
 .running-shoes-intro {
   background-color: #fff;
-  margin: 40px 0px;
+  margin: 30px 0px;
   float: none;
   position: relative;
   text-align: center;
@@ -7180,8 +7187,8 @@ textarea {
   color: #0E0E0E;
   margin: 0 0 9px;
   text-align: center;
-  font-size: 52px;
-  line-height: 56px;
+  font-size: 42px;
+  line-height: 46px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .running-shoes-intro h1 {

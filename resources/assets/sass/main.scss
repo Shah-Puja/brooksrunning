@@ -5051,12 +5051,16 @@ width: 100%;
 .running-shoe-page-banner{
   position: relative;
   min-height:320px;
+  padding: 0 40px;
+  background-color: #f2f2f2;
+  margin: 0px auto;
+    display: block;
   picture{
     img{
       width:100%;
       bottom: 0;
       height: 100%;
-      left: 0;
+      left: 12%;
       object-fit: cover;
       position: relative;
       right: 0;
@@ -5064,9 +5068,11 @@ width: 100%;
       z-index: 100;
       @media #{$tab-only}{
         position: absolute;
+        left: 10% !important;
       }
       @media #{$desktop-only}{
         position: absolute;
+        left: 10% !important;
       }
     }
   }
@@ -5089,12 +5095,12 @@ width: 100%;
         max-width: 450px;
         color: $black;
           @media #{$tab-only}{ 
-            transform: translate(0, -10%);
-            max-width: 250px;
+            
+            max-width: 350px;
           }
           @media #{$desktop-only}{ 
-            transform: translate(0, -50%);
-            max-width: 250px;
+            transform: translate(5%, -25%);
+            max-width: 350px;
           }
           
           @media #{$mobile-only}{ 
@@ -5178,18 +5184,22 @@ width: 100%;
      
     } 
     @media #{$desktop-only}{
-    height: 90vh;
-    min-height: 721px;
+    height: 75vh;
     padding: 0 40px;
     position: relative;
     width: 100%;
   }
   @media #{$tab-only}{
-    height: 90vh;
-    min-height: 721px;
+    height: 45vh;
     padding: 0 40px;
     position: relative;
     width: 100%;
+  }
+  .landingpage-banner--wrapper{ 
+   
+    width: 75%;
+    margin: 0px auto;
+    
   }
 }
 .running-shoe-featured--container{
@@ -5265,7 +5275,7 @@ width: 100%;
 }
 .running-shoes-intro{
   background-color: #fff;
-  margin: 40px 0px;
+  margin: 30px 0px;
   float: none;
     position: relative;
     text-align: center;
@@ -5275,8 +5285,8 @@ width: 100%;
     margin: 0 0 9px;
     @extend %extrabold-font; 
     text-align: center;
-    font-size: 52px;
-    line-height: 56px;
+    font-size: 42px;
+    line-height: 46px;
   
     @media #{$tab-only}{
       font-size: 40px;
