@@ -15,7 +15,8 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
-Route::get('/loyalty_register', 'Auth\RegisterController@loyalty_register');
+Route::get('/program/ppp', 'Auth\RegisterController@loyalty_register');
+Route::redirect('/loyalty_register', '/program/ppp');
 
 
 Route::post('/reset_pass', 'InfoController@check_email');
