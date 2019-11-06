@@ -1,4 +1,9 @@
 @extends('customer.layouts.master')
+
+@section('head')
+<META NAME="robots" CONTENT="noindex">
+@endsection
+
 @section('content')
 <div class="create-account--header loyalty-header">
         <div class="wrapper">
