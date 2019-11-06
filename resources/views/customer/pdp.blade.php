@@ -76,11 +76,25 @@
                                 @endfor
                                 
                                 @if($product->video!='')
-                                <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="" class="trigger utube meet-brooks-uTube-section">
+                                <!-- <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="" class="trigger utube meet-brooks-uTube-section">
                                         <div class="playvideo"></div>
                                     <div class="module-video" style="display:none;">
                                         <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
                                     </div>
+                                        </li> -->
+                                        <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
+					                <div class="videowrapper video_wrapper_full js-videoWrapper">
+                                        <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
+                                        </iframe> -->
+                                        <!-- <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe> -->
+                                       
+                                            <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
+                                    </div>
+                                    <div class="module-video" style="display:none;">
+                                        <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
+                                    </div>
+                                </li>
+                                
                                 @endif 
                             </ul>
 
@@ -879,8 +893,8 @@ $(document).on('click', '.pdp-width-show li', function () {
     });zz
 </script>
 <script>
-$(document).ready(function () {$('.trigger').on('click', function () {
-        $(".meet-brooks-uTube-section").css({'display':'none'}); 
+$(document).ready(function () {$('.js-videoPoster').on('click', function () {
+        $(".js-videoWrapper").css({'display':'none'}); 
         $(".module-video").css({'display':'block'});        
         $(".br-video")[0].src += "1";
     });
