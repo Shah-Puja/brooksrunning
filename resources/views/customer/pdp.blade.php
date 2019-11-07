@@ -91,7 +91,7 @@
                                             <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
                                     </div>
                                     <div class="module-video" style="display:none;">
-                                        <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
+                                        <iframe class="br-video"  src="https://www.youtube.com/embed/{{$product->video}}?autoplay="  allowfullscreen></iframe>
                                     </div>
                                 </li>
                                 
@@ -894,6 +894,7 @@ $(document).on('click', '.pdp-width-show li', function () {
 </script>
 <script>
 $(document).ready(function () {$('.js-videoPoster').on('click', function () {
+    $(this).dblclick();
         $(".js-videoWrapper").css({'display':'none'}); 
         $(".module-video").css({'display':'block'});        
         $(".br-video")[0].src += "1";

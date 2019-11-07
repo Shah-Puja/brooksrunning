@@ -307,6 +307,15 @@ class meet_brooksController extends Controller {
             return view( 'meet_brooks.brooks-sports-bra',compact('sports_bras','accessories','colour_options','products'));
     }
 
+    public function running_shoes_technology(){
+        $men_running_shoes = \App\Models\Product::getProducts_array(['110316_489','120305_413','120283_327','110296_071']);
+        $men_running_shoes2 = \App\Models\Product::getProducts_array(['110290_038', '120279_060']);
+        $men_shoes3 = \App\Models\Product::getProducts_array(['120296_073','110307_051','110283_126','120272_049']);
+        $products = '';
+        $colour_options ='';
+        return view( 'meet_brooks.running-shoes-technology',compact('men_running_shoes','men_running_shoes2','men_shoes3','colour_options','products'));
+    }
+
     public function newsletter_signup() {
         $fname = $lname = "";
         if (strpos(request('name'), ' ') !== false) {
