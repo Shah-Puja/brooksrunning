@@ -15,7 +15,8 @@ Route::get('/ap21demo', 'AP21Demo@index');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 Route::get('/', 'HomePageController@index');
-Route::get('/loyalty_register', 'Auth\RegisterController@loyalty_register');
+Route::get('/program/ppp', 'Auth\RegisterController@loyalty_register');
+Route::redirect('/loyalty_register', '/program/ppp');
 
 
 Route::post('/reset_pass', 'InfoController@check_email');
@@ -76,6 +77,7 @@ Route::post('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 Route::get('/meet_brooks/{meet_brooks_pg}', 'meet_brooksController@index');
 
 Route::get('/meet_brooks/technology/brooks-sports-bra', 'meet_brooksController@brooks_sports_bra');
+Route::get('/meet_brooks/technology/running-shoes-technology', 'meet_brooksController@running_shoes_technology');
 
 
 
