@@ -1,14 +1,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-@if(request()->is('loyalty_register')) 
+@if(request()->is('program/ppp')) 
 <form action="{{ route('register') }}" method="post" id="loyalty_register_form" class=" five columns form-register" onsubmit="return registervalidation()">
 @else
 <form id="loyalty_register_form" method="POST" action="/account/update_profile" onsubmit="return registervalidation()">
 @endif
         @csrf
             <div class="create-account--left loyalty-header-title">
-            <!-- @if(request()->is('loyalty_register'))              
-                <h3 class="br-heading">Sign in to access staff pricing</h3>
+            @if(request()->is('program/ppp'))              
+                <h3 class="br-heading">Create your Professional Purchase Account </h3>
                 <hr>
                 <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
             @else
@@ -163,7 +163,7 @@
                 <div class="row">
                     <div class="tab-12">
                         <div class="loyalty-form-btn loyalty-staffpurchased">                                           
-                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty_register') ? 'Sign in' : 'Save Changes' }}</button>                                    
+                                <button type="submit" class="btn primary-button">{{ request()->is('program/ppp') ? 'Create Account' : 'Save Changes' }}</button>                                    
                         </div>
                         <p class="loyalty-privacy loyalty-help">Can't find your store?</p>
                     
