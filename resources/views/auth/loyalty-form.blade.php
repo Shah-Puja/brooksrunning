@@ -8,15 +8,13 @@
         @csrf
             <div class="create-account--left loyalty-header-title">
             @if(request()->is('program/ppp'))              
-                <h3 class="br-heading">Create your Professional Purchase Account </h3>
+                <h3 class="br-heading">Sign in to access staff pricing </h3>
                 <hr>
-                <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+                <!-- <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p> -->
             @else
                 <h3 class="br-heading">View Or Update Your Details </h3>
                 <hr>
-            @endif -->
-            <h3 class="br-heading">Sign in to access staff pricing</h3>
-                <hr>
+            @endif 
                 <!-- <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p> -->
                
                 <div class="row">
@@ -163,7 +161,7 @@
                 <div class="row">
                     <div class="tab-12">
                         <div class="loyalty-form-btn loyalty-staffpurchased">                                           
-                                <button type="submit" class="btn primary-button">{{ request()->is('program/ppp') ? 'Create Account' : 'Save Changes' }}</button>                                    
+                                <button type="submit" class="btn primary-button">{{ request()->is('program/ppp') ? 'Sign in' : 'Save Changes' }}</button>                                    
                         </div>
                         <p class="loyalty-privacy loyalty-help">Can't find your store?</p>
                     
