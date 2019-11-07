@@ -91,7 +91,7 @@
                                             <button class="videoPoster js-videoPoster" id="js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
                                     </div>
                                     <div class="module-video" style="display:none;">
-                                        <iframe class="br-video" id="video" src="https://www.youtube.com/embed/{{$product->video}}?enablejsapi=1&html5=1&origin={{env('APP_URL')}}"  allowfullscreen></iframe>
+                                        <iframe class="br-video" id="video" src="https://www.youtube.com/embed/{{$product->video}}?enablejsapi=1&html5=1"  allowfullscreen></iframe>
                                     </div>
                                 </li>
                                 
@@ -905,6 +905,12 @@ $(document).ready(function () {
 
 // https://developers.google.com/youtube/iframe_api_reference
 
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 // global variable for the player
 var player;
 
@@ -926,7 +932,7 @@ function onPlayerReady(event) {
   playButton.addEventListener("click", function() {
     $(".js-videoWrapper").css({'display':'none'}); 
     $(".module-video").css({'display':'block'});    
-    player.playVideo();
+    event.target.playVideo();
   });
   
 //   var pauseButton = document.getElementById("pause-button");
@@ -936,11 +942,7 @@ function onPlayerReady(event) {
   
 }
 
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 </script>
 
 <!-- End utube vdo -->
