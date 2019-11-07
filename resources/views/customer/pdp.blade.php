@@ -88,10 +88,10 @@
                                         </iframe> -->
                                         <!-- <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe> -->
                                        
-                                            <button class="videoPoster js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
+                                            <button class="videoPoster js-videoPoster" id="js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
                                     </div>
                                     <div class="module-video" style="display:none;">
-                                        <iframe class="br-video"  src="https://www.youtube.com/embed/{{$product->video}}?autoplay="  allowfullscreen></iframe>
+                                        <iframe class="br-video" id="video" src="https://www.youtube.com/embed/{{$product->video}}?enablejsapi=1&html5=1&origin={{env('APP_URL')}}"  allowfullscreen></iframe>
                                     </div>
                                 </li>
                                 
@@ -890,18 +890,57 @@ $(document).on('click', '.pdp-width-show li', function () {
         // var newcontent = '<div class="play"></div>';
         // $('#LastChild').html(newcontent);
         $('.lSGallery li:last-child').attr('id', 'LastChild');
-    });zz
+    });
 </script>
 <script>
-$(document).ready(function () {$('.js-videoPoster').on('click', function () {
-    $(this).dblclick();
-        $(".js-videoWrapper").css({'display':'none'}); 
-        $(".module-video").css({'display':'block'});        
-        $(".br-video")[0].src += "1";
-    });
+$(document).ready(function () {
+    // $('.js-videoPoster').on('click', function () {
+    //     $(this).dblclick();
+    //     $(".js-videoWrapper").css({'display':'none'}); 
+    //     $(".module-video").css({'display':'block'});        
+    //     $(".br-video")[0].src += "1";
+    // });
    
 });
 
+// https://developers.google.com/youtube/iframe_api_reference
+
+// global variable for the player
+var player;
+
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady,
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  
+  // bind events
+  var playButton = document.getElementById("js-videoPoster");
+  playButton.addEventListener("click", function() {
+    $(".js-videoWrapper").css({'display':'none'}); 
+    $(".module-video").css({'display':'block'});    
+    player.playVideo();
+  });
+  
+//   var pauseButton = document.getElementById("pause-button");
+//   pauseButton.addEventListener("click", function() {
+//     player.pauseVideo();
+//   });
+  
+}
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
 
 <!-- End utube vdo -->
