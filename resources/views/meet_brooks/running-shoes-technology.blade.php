@@ -1319,6 +1319,21 @@
 
 <!-- Shoefinder end -->
 
+<div class="create-account--header plp-header running-shoes-intro keep-exploring-sec">
+  <div class="wrapper">
+    <div class="row">
+    <div class="col-2"></div>
+      <div class="col-8">
+        <div class="about-header">
+           
+           
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Keep Exploring\  -->
 <!-- <div class="create-account--header plp-header running-shoes-intro keep-exploring-sec">
   <div class="wrapper">
