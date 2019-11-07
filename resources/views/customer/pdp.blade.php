@@ -76,13 +76,8 @@
                                 @endfor
                                 
                                 @if($product->video!='')
-                                <!-- <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="" class="trigger utube meet-brooks-uTube-section">
-                                        <div class="playvideo"></div>
-                                    <div class="module-video" style="display:none;">
-                                        <iframe class="br-video"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
-                                    </div>
-                                        </li> -->
-                                        <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
+                       
+                                <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
 					                <div class="videowrapper video_wrapper_full js-videoWrapper">
                                         <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
                                         </iframe> -->

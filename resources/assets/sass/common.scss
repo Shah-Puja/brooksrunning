@@ -3666,6 +3666,13 @@
             display: inline-block;
             width: 60px;
             height: 40px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            opacity:0.5;
           }
         }
 
@@ -3912,15 +3919,54 @@ border-left-color: $white; background-color: $darkblue;
     }
   } 
   .play{
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border: none;
-        top: 50%;
-        left: 50%;
-        margin-top: -14px;
-        margin-left: -14px;
-        background: url(../images/ytubeplayicon.png) no-repeat;
+
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  border: 5px solid $blue;
+  border-radius: 100%;
+  background-color: $blue;
+  border: none;
+  opacity:1;
+  z-index: 9999;
+        &:hover {
+        cursor: pointer;
+        
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 28px;
+          height: 28px;
+          margin-top: -14px;
+          margin-left: -14px;
+          border: 5px solid $blue;
+          border-radius: 100%;
+          background-color: $blue;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          margin: -9px 0 0 -3px;
+          border-left: 8px solid #fff;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-radius: 5px;
+          background-color: $blue;
+          
+      }
+
         }
       }
     }
