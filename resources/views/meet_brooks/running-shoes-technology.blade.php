@@ -1320,14 +1320,14 @@
 <!-- Shoefinder end -->
 
 <!-- Keep Exploring\  -->
-<div class="create-account--header plp-header running-shoes-intro keep-exploring-sec">
+<!-- <div class="create-account--header plp-header running-shoes-intro keep-exploring-sec">
   <div class="wrapper">
     <div class="row">
     <div class="col-2"></div>
       <div class="col-8">
         <div class="about-header">
             <h1 class="br-mainheading">Keep exploring</h1>
-            <!-- <p>If a shoe were a sandwich, the midsole would be the meat. It’s the part between the outsole and the upper, and it defines the experience.</p> -->
+           
         </div>
       </div>
       <div class="col-2"></div>
@@ -1345,7 +1345,6 @@
                 </div>
                 <div class="info-wrapper">
                     <h3 class="br-heading">Built for Your Run</h3>
-                    <!-- <p>BioMoGo DNA adapts to your specific weight, pace, gait, and running surface. That makes for a springier step that’s customized for your stride.</p> -->
                 </div>
             </div>
             </div>
@@ -1356,7 +1355,6 @@
                 </div>
                 <div class="info-wrapper">
                     <h3 class="br-heading">Research & Testing Approach</h3>
-                    <!-- <p>The segmented crash pad is a system of fully-integrated shock absorbers. They work to maximize efficiency, provide cushion, and create smooth heel-to-toe transitions.</p> -->
                 </div>
             </div>
             </div>
@@ -1367,7 +1365,6 @@
                 </div>
                 <div class="info-wrapper">
                     <h3 class="br-heading">Gear Technology</h3>
-                    <!-- <p>This rollbar is a high-density post at the medial arch. It’s engineered to provide support and create a smoother transition from the midstance to propulsion phase.</p> -->
                 </div>
             </div>
             </div>
@@ -1378,8 +1375,7 @@
                 </div>
                 <div class="info-wrapper">
                     <h3 class="br-heading">Bra Engineering</h3>
-                    <!-- <p>The pivot posting system is a trail-specific technology that provides stabilizing suspension on both sides of the heel and forefoot.</p> -->
-                </div>
+                 </div>
             </div>
             </div>
         </div>
@@ -1388,7 +1384,6 @@
 
 <div class="wrapper visible-mob hidden-tab hidden-col">
     <div class="runningshoes-lp--container">
-        <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel running-shoe-lp-carousal owl-centered">
                 <div class="item">
                     <div class="hpgray-wrapper">
@@ -1397,7 +1392,6 @@
                         </div>
                         <div class="info-wrapper">
                             <h3 class="br-heading">Built for Your Run</h3>
-                            <!-- <p>BioMoGo DNA adapts to your specific weight, pace, gait, and running surface. That makes for a springier step that’s customized for your stride.</p> -->
                         </div>
                     </div>
                 </div>
@@ -1409,7 +1403,6 @@
                             </div>
                             <div class="info-wrapper">
                                 <h3 class="br-heading">Research & Testing Approach</h3>
-                                <!-- <p>The segmented crash pad is a system of fully-integrated shock absorbers. They work to maximize efficiency, provide cushion, and create smooth heel-to-toe transitions.</p> -->
                             </div>
                     </div>
                 </div>
@@ -1420,7 +1413,6 @@
                         </div>
                         <div class="info-wrapper">
                             <h3 class="br-heading">Gear Technology</h3>
-                            <!-- <p>This rollbar is a high-density post at the medial arch. It’s engineered to provide support and create a smoother transition from the midstance to propulsion phase.</p> -->
                         </div>
                     </div>
                 </div>
@@ -1431,19 +1423,17 @@
                         </div>
                         <div class="info-wrapper">
                             <h3 class="br-heading">Bra Engineering</h3>
-                            <!-- <p>The pivot posting system is a trail-specific technology that provides stabilizing suspension on both sides of the heel and forefoot.</p> -->
-                        </div>
+                       </div>
                     </div>
                 </div>
 
-                <!-- <div class="item"></div> -->
+             
               
-            <!--  -->
+           
         
         </div>
-        <!-- <span class="icon-style icon-next-arrow next"></span> -->
     </div>
-</div>
+</div> -->
 <!-- /Keep Exploring -->
 
 <script>
