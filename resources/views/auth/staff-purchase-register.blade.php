@@ -9,7 +9,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="br-heading">Brooks Staff Purchase Program</h1>
+                    <h1 class="br-heading">Register for the Brooks Professional Purchase Program</h1>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
     <section class="create-account wrapper">
         <div class="row">
             <div class="col-9">
-                @include('auth.staff-purchase-form')                
+                @include('auth.loyalty-form')                
             </div>
             <div class="col-3">
                 <div class="create-account--right temp_class loyalty_right">

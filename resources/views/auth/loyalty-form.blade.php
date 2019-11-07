@@ -49,17 +49,17 @@
                 </div>
                 <div class="row">
                 <div class="tab-6">
-                    <div class="loyalty-practitioner--wrapper">
+                    <div class="loyalty-staffpurchase--wrapper">
                         <div class="row">
-                            <div class="mob-6">
+                            <div class="mob-6 pr-0">
                                 <div class="input-wrapper">
                                         <label for="name">Select your store group</label>
-                                            <ul class="loyalty-practitioner">
+                                            <ul class="loyalty-staffpurchased">
                                                 <li>
                                                 @php
                                                     $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
                                                 @endphp
-                                                    <a href="javascript:void(0)" class="practitioner" style="margin-left: 5px;">{!! !empty($order_type) ? $order_type : 'Select your store group'!!} <span class="icon-down-arrow"></span></a>
+                                                    <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your store group'!!} <span class="icon-down-arrow"></span></a>
                                                     <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
                                                         
                                                             <li class="option-value" data-value="Podiatrist">
@@ -86,12 +86,12 @@
                             <div class="mob-6">
                                 <div class="input-wrapper">
                                     <label for="name">Select your state</label>
-                                        <ul class="loyalty-practitioner">
+                                        <ul class="loyalty-staffpurchased">
                                             <li>
                                             @php
                                                 $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
                                             @endphp
-                                                <a href="javascript:void(0)" class="practitioner" style="margin-left: 5px;">{!! !empty($order_type) ? $order_type : 'Select your state'!!} <span class="icon-down-arrow"></span></a>
+                                                <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your state'!!} <span class="icon-down-arrow"></span></a>
                                                 <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
                                                     
                                                         <li class="option-value" data-value="Podiatrist">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-		        </div>
+                </div>
                 <div class="tab-6">
                     <div class="loyalty-practitioner--wrapper">
                 
@@ -129,7 +129,7 @@
                                     @php
                                     $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
                                     @endphp
-                                    <a href="javascript:void(0)" class="practitioner" style="margin-left: 5px;">{!! !empty($order_type) ? $order_type : 'Select your store'!!} <span class="icon-down-arrow"></span></a>
+                                    <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your store'!!} <span class="icon-down-arrow"></span></a>
                                     <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
                                         
                                             <li class="option-value" data-value="Podiatrist">
@@ -156,76 +156,20 @@
                 </div>
                 </div>    
                 
-                 @if(request()->is('loyalty-account-personal'))  
-                <div class="row">
-					<div class="tab-6">
-						<div class="input-wrapper">
-							<label>Current Account Password</label>
-                            <input type="password" name="current_password" class="input-field" id="current_password" data-label-name="current password">
-                            @if ($errors->has('current_password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('current_password') }}</strong>
-                                </span>
-                            @endif	
-						</div>
-					</div>
-					<div class="tab-6"></div>
-				</div>
-                @endif
-                <div class="row">
-                    <div class="tab-6">
-                    <div class="input-wrapper">
-                                <div class="row">
-                                    <div class="mob-7"><label>Choose a Password</label></div>
-                                    <div class="mob-5 loyalty-pass-section">
-                                        <div class="show-pass">
-                                            <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <input id="password" type="password" class="pass-show1 input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" data-label-name="password" name="password">
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif								
-                        </div>
-                    </div>
-                    <div class="tab-6">
-                    <div class="input-wrapper">
-								
-                                <div class="row">
-                                    <div class="mob-7"><label>Confirm Password</label></div>
-                                    <div class="mob-5 loyalty-pass-section">
-                                    <div class="show-pass">
-                                        <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
-                                    </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" data-label-name="confirmation password" name="password_confirmation">
-
-                            @if ($errors->has('password')) 
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif								
-                        </div>
-                </div>
+                
+              
                 <input type="hidden" name="loyalty_type" value="PPP"/> 
               
                 <div class="row">
                     <div class="tab-12">
-                        <div class="loyalty-form-btn">                                           
-                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty_register') ? 'Create Account' : 'Save Changes' }}</button>                                    
+                        <div class="loyalty-form-btn loyalty-staffpurchased">                                           
+                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty_register') ? 'Sign in' : 'Save Changes' }}</button>                                    
                         </div>
-                        <p class="loyalty-privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
+                        <p class="loyalty-privacy loyalty-help">Can't find your store?</p>
+                    
+                        <p class="loyalty-privacy loyalty-contact"> Please contact your Brooks Rep to arrange access to the program.</p>
                     </div>
-                </div>                
-            
-            </div>
+                </div> 
         </div>
     </form>
 
@@ -299,7 +243,7 @@
                         let error_span = " <span class='error'>The email must be a valid email address.</span>";
                         let error = label_text + error_span ;
                         input_label.html(error);
-                        email.addClass("error-border");	
+                        email.addClass("error-border"); 
                     }
                 }
 
@@ -311,7 +255,7 @@
                     let error_span = " <span class='error'>The password must be at least 6 characters.</span>";
                     let error = label_text + error_span ;
                     input_label.html(error);
-                    password.addClass("error-border");	
+                    password.addClass("error-border");  
                 }
        
                 if(password.val()!="" && $("#loyalty_register_form input[name='password_confirmation']").val()!="" && password.val()!=$("#loyalty_register_form input[name='password_confirmation']").val()){
@@ -321,7 +265,7 @@
                     let error_span = " <span class='error'>The password confirmation does not match.</span>";
                     let error = label_text + error_span ;
                     input_label.html(error);
-                    password.addClass("error-border");	
+                    password.addClass("error-border");  
                 }
                    
                 if ($("#loyalty_register_form input,#loyalty_register_form select").hasClass("needsfilled") ) {
@@ -355,6 +299,17 @@
            
 
 
+        $(document).on('click', '.loyalty-staffpurchased li .option-value', function () {
+            $('.selectedLi').removeClass('selectedLi');
+            $(this).addClass('selectedLi');
+            var selText = $(this).text().trim();
+            $("#org_type").val(selText);
+            $(this).parents('.loyalty-staffpurchase--wrapper').find('.loyalty-staffpurchased li a').html(selText +
+                    ' <span class="icon-down-arrow"></span>');
+        //    $('.loyalty-practitioner__submenu').toggle();
+        });
+
+
         $(document).on('click', '.loyalty-practitioner li .option-value', function () {
             $('.selectedLi').removeClass('selectedLi');
             $(this).addClass('selectedLi');
@@ -364,7 +319,6 @@
                     ' <span class="icon-down-arrow"></span>');
         //    $('.loyalty-practitioner__submenu').toggle();
         });
-
 
 
         // Check this click event  only for testing- 

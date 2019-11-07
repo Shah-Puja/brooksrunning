@@ -131,7 +131,7 @@
   font-family: "ProximaNova-BoldIt", "Helvetica", "Arial", sans-serif;
 }
 
-.loyalty-main--container .loyalty-main--info .loyalty--subinfo--login--success .loyalty--login--success .loyalty_success .condition-text, .response_content .input-wrapper .radio-inline.new-comp-update-details label, .about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--loyalty .condition-text, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .create-account--left .loyalty-practitioner--wrapper .input-wrapper .select-field option, .br-afterpaysale-header .br-afteryay-sale-offer-valid, .header-mobile .mob-search--product .search-container .search-wrapper form input, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
+.loyalty-main--container .loyalty-main--info .loyalty--subinfo--login--success .loyalty--login--success .loyalty_success .condition-text, .response_content .input-wrapper .radio-inline.new-comp-update-details label, .about-container--info h5 span, .about-container--info h4 span, .payment-container .payment-tab .input-wrapper .text .info, .shopping-delevery--option .delivery-option .radio-inline .text .gift-input, .shopping-delevery--option .delivery-option .radio-inline label, .pdp-container--loyalty .condition-text, .pdp-container--info .main.size-chart a, .order-history--product .bold span, .product-info-mob p span, .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field option, .create-account--left .loyalty-practitioner--wrapper .input-wrapper .select-field option, .br-afterpaysale-header .br-afteryay-sale-offer-valid, .header-mobile .mob-search--product .search-container .search-wrapper form input, .header-mobile .mob-search--product input, .desktop-navigation .main .desktop-navigation--sub, .header-desktop .header-desktop--right .top .offer-info, .header-desktop .search-container .search-wrapper form input, .cart-popup-desktop .cart-popup-info .product .product-info .btn, body, html, .alert-msg p, .br-info, .input-wrapper .pdp-select-field, .input-wrapper .select-field, .input-wrapper .input-textarea, .input-wrapper .input-field, .input-wrapper .checklist-inline label, .input-wrapper label, .accordian-tab label:after {
   font-family: "ProximaNova-Regular", "Helvetica", "Arial", sans-serif;
 }
 
@@ -3708,6 +3708,9 @@ textarea {
     margin: 24px auto;
   }
 }
+.create-account--left .loyalty-form-btn.loyalty-staffpurchased {
+  margin: 24px 0px;
+}
 .create-account--left .loyalty-privacy {
   font-size: 14px;
   margin: 0px 24px;
@@ -3730,6 +3733,13 @@ textarea {
     text-align: center;
     margin: 15px auto;
   }
+}
+.create-account--left .loyalty-privacy.loyalty-help {
+  color: #005CFB;
+  margin: 0px 0px;
+}
+.create-account--left .loyalty-privacy.loyalty-contact {
+  margin: 0px 0px;
 }
 .create-account--left .loyalty-btn {
   display: inline-block;
@@ -3906,6 +3916,200 @@ textarea {
   }
 }
 .create-account--left .loyalty-practitioner--wrapper .input-wrapper .loyalty-practitioner li:hover .loyalty-practitioner__submenu {
+  display: block;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .pr-0 {
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .pr-0 {
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .pr-0 {
+    padding-right: 0 !important;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper {
+  padding-top: 0px;
+}
+@media only screen and (max-width: 767px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper {
+    padding-top: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .input-field {
+    margin-bottom: 7px;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper select.select-field::-ms-expand {
+  display: none;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field {
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: url(../images/dropdown-arrow.png) no-repeat;
+  background-position: right 5px center;
+  background-color: #f1f1f1;
+  color: #000000;
+  border: 1px solid #f1f1f1;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field option {
+  -webkit-appearance: none !important;
+  background-color: white;
+  color: black;
+  -moz-appearance: none;
+  appearance: none;
+  color: #000000;
+  font-size: 14px;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field option:hover {
+  color: #ffffff;
+  background-color: #00d3d6;
+  border: solid 1px #00d3d6;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field .option-value:before {
+  content: "✓";
+  color: black;
+  font-weight: bold;
+  padding: 0px 3px;
+  font-size: 12px;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .select-field .option-value:visited {
+  padding-left: 14px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased {
+  position: relative;
+  height: 38px;
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 100%;
+  background-color: #f1f1f1;
+  outline: 0;
+  border: 0;
+  font-size: 14px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased {
+    font-size: 13px;
+    padding: 10px 5px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased {
+    font-size: 13px;
+    padding: 10px 5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased {
+    font-size: 13px;
+    padding: 10px 3px;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li {
+  list-style-type: none;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a {
+  color: #000000;
+  margin-left: 5px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a {
+    margin-left: 0px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a {
+    margin-left: 0px;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a:hover {
+  color: #0263f7;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li a .icon-down-arrow {
+  vertical-align: middle;
+  line-height: 0;
+  margin: 10px 5px;
+  float: right;
+  text-align: right;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu {
+  display: none;
+  text-align: left;
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  width: fit-content;
+  margin: 0px -10px;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #d3d0cd;
+  border-top: 0;
+  padding-top: 5px;
+  padding: 5px 5px;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu li {
+  padding: 5px 3px;
+  color: #000000;
+  margin: 0px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu li {
+    margin-left: 3px;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu li:hover {
+  color: #000000;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu li:before {
+  content: "✓";
+  color: transparent;
+  padding: 0px 3px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu li:hover:before {
+  content: "✓";
+  color: #0263f7;
+  padding: 0px 3px;
+  font-weight: bold;
+  font-size: 12px;
+}
+@media only screen and (max-width: 767px) {
+  .create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li .loyalty-practitioner__submenu {
+    overflow: auto;
+    height: 120px;
+  }
+}
+.create-account--left .loyalty-staffpurchase--wrapper .input-wrapper .loyalty-staffpurchased li:hover .loyalty-practitioner__submenu {
   display: block;
 }
 .create-account--left .loyalty-pass-section {

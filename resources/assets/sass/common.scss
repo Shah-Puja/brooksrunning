@@ -2060,6 +2060,9 @@
             text-align: center;
             margin: 24px auto;
            }
+           &.loyalty-staffpurchased{
+            margin: 24px 0px;
+           }
         }
         .loyalty-privacy{
           font-size: 14px;
@@ -2078,6 +2081,13 @@
           @media #{$mobile-only}{
             text-align: center;
             margin: 15px auto;
+           }
+           &.loyalty-help{
+            color:#005CFB;
+            margin: 0px 0px;
+           }
+           &.loyalty-contact{
+            margin: 0px 0px;
            }
         }
        .loyalty-btn{
@@ -2182,6 +2192,189 @@
               margin-left: 10px;
               @media #{$tab-only}{
                 margin-left: 3px;            
+              }
+              &:hover{
+                color:$blue;
+              }
+              .icon-down-arrow{
+                vertical-align: middle;
+                line-height:0;
+                margin: 10px 5px;
+                float: right;
+                text-align: right;
+              }
+            }
+            .loyalty-practitioner__submenu{
+              display: none;
+              text-align: left;
+              position: absolute;
+              z-index: 3;
+              top: 20px;
+              // width: 420px;
+              width: fit-content;
+              margin: 0px -10px;
+              left: 0;
+              background: $white;
+              border: 1px solid $border;
+              border-top: 0;
+              padding-top: 5px;
+              padding: 5px 5px;
+              li{
+                padding: 5px 3px;
+                color: $black;
+                margin: 0px;
+                cursor: pointer;
+                @media #{$tab-only}{
+                  margin-left: 3px;            
+                }
+                &:hover{
+                  color:$black;
+                }
+               
+                  &:before {
+                  content: "\2713";
+                  color: transparent;
+                  padding: 0px 3px;
+                  font-weight: bold;
+                  font-size: 12px;
+                }
+                &:hover:before {
+                  content: "\2713";
+                  color: $blue;
+                  padding: 0px 3px;
+                  font-weight: bold;
+                  font-size: 12px;
+                }
+              }
+              @media #{$mobile-only}{
+                 
+                overflow: auto;
+                height: 120px;   
+              }
+            }
+            &:hover{
+              .loyalty-practitioner__submenu{
+                display: block;
+              }
+            }
+
+          }
+        }
+        
+      }
+         
+      }
+
+      .loyalty-staffpurchase--wrapper{
+        .pr-0{
+          @media #{$tab-only}{
+          padding-right: 0 !important;
+          }
+          @media #{$desktop-only}{
+            padding-right: 0 !important;
+            }
+          @media #{$tabmob-only}{
+            padding-right: 0 !important;
+          }
+        }
+        .input-wrapper{
+          padding-top: 0px;
+          @media #{$mobile-only}{
+            padding-top: 0px;
+          }
+          .input-field{
+            @media #{$mobile-only}{
+              margin-bottom: 7px;
+            }
+          }
+          select.select-field::-ms-expand {
+            display: none;
+        } 
+         .select-field{
+          // background: #fff;
+          font-size: 14px;
+          -webkit-appearance: none; 
+          -moz-appearance: none;
+          appearance: none;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          background: url(../images/dropdown-arrow.png) no-repeat;
+          background-position: right 5px center;
+          background-color: #f1f1f1;
+          color: #000000;
+          border: 1px solid #f1f1f1;
+    
+          option{
+            -webkit-appearance:none !important;
+            background-color: white;
+            color: black;
+            -moz-appearance: none;
+            appearance: none;
+            color:$black;
+            @extend %info-font;
+            font-size: 14px;
+            &:hover{
+              color: $white;
+              background-color: $lightblue;
+              border: solid 1px $lightblue;
+            } 
+            
+          }
+          .option-value:before {
+            content: "\2713";
+            color: black;
+            font-weight: bold;
+            padding: 0px 3px;
+            font-size: 12px;
+        
+          }
+          .option-value:visited {
+            padding-left: 14px;
+            display:inline-block;
+            width: 22px;
+            height:22px;
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+            transform: rotate(45deg);
+            }
+         } 
+        .loyalty-staffpurchased{
+          position: relative;
+          height: 38px;
+          margin-bottom: 15px;
+          padding: 8px;
+          width: 100%;
+          background-color: #f1f1f1;
+          outline: 0;
+          border: 0;
+          font-size: 14px;
+          @media #{$tab-only}{
+            font-size: 13px;     padding: 10px 5px;
+          }
+          @media #{$desktop-only}{
+            font-size: 13px;     padding: 10px 5px;
+          }
+          @media #{$mobile-only}{
+            font-size: 13px;     padding: 10px 3px;
+          }
+          li{
+            list-style-type: none;
+            display: inline-block;
+            position: relative;
+            text-align: left;
+            width:100%;
+            a{
+              color: $black;
+              margin-left: 5px;
+              @media #{$tab-only}{
+                margin-left: 0px;            
+              }
+              @media #{$mobile-only}{
+                margin-left: 0px;            
+              }
+              @media #{$desktop-only}{
+                margin-left: 0px;            
               }
               &:hover{
                 color:$blue;
