@@ -156,7 +156,7 @@
                 </div>
                 </div>    
                 
-                <!-- @if(request()->is('loyalty-account-personal'))  
+                 @if(request()->is('loyalty-account-personal'))  
                 <div class="row">
 					<div class="tab-6">
 						<div class="input-wrapper">
@@ -214,7 +214,7 @@
                             @endif								
                         </div>
                 </div>
-                <input type="hidden" name="loyalty_type" value="PPP"/> -->
+                <input type="hidden" name="loyalty_type" value="PPP"/> 
               
                 <div class="row">
                     <div class="tab-12">
