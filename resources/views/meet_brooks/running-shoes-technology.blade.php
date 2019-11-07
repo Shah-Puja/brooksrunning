@@ -47,7 +47,7 @@
             <div class="row">
                 <div id="desk" class="col-12 tab-12 mob-12"> 
                         <!-- <div class="wrapper"> -->
-                            <a  style="cursor:default;" class="trigger utube meet-brooks-uTube-section" id="trigger">
+                            <a  style="cursor:default;" style="cursor:default;" class="trigger utube meet-brooks-uTube-section" id="trigger">
                                 <div class="module-img br-img">
                                 <picture>
                                     <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/LOFT_Video_Cover_Mobile.jpg">
