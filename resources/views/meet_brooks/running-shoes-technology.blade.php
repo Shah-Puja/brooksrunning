@@ -47,7 +47,7 @@
             <div class="row">
                 <div id="desk" class="col-12 tab-12 mob-12"> 
                         <!-- <div class="wrapper"> -->
-                            <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger utube meet-brooks-uTube-section">
+                            <a  style="cursor:default;" class="trigger utube meet-brooks-uTube-section" id="trigger">
                                 <div class="module-img br-img">
                                 <picture>
                                     <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/LOFT_Video_Cover_Mobile.jpg">
@@ -62,6 +62,7 @@
                                 </div>
                             </a>
                             <div class="module-video module-vdo" style="display:none;">
+                                <!-- <iframe class="br-video br-vdo"  src="https://www.youtube.com/embed/YGDYyUzJeT4?enablejsapi=1&html5=1"  allowfullscreen></iframe> -->
                                 <iframe class="br-video br-vdo"  src="https://www.youtube.com/embed/YGDYyUzJeT4?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
@@ -315,7 +316,7 @@
             <div class="row">
                 <div id="desk" class="col-12 tab-12 mob-12"> 
                         <div class="wrapper">
-                            <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger2 utube meet-brooks-uTube-section2">
+                            <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger2 utube meet-brooks-uTube-section2" id="trigger2">
                                 <div class="module-img br-img">
                                     <picture>
                                         <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/AMP_Video_Cover_Mobile.jpg">
@@ -329,7 +330,8 @@
                                     <span class="type white">1:26</span>
                                 </div>
                             </a> 
-                            <div class="module-video module-vdo2" style="display:none;">
+                            <div class="module-video module-vdo2" style="display:none;"> 
+                                <!-- <iframe class="br-video br-vdo2"  src="https://www.youtube.com/embed/m69vNVRTdek?enablejsapi=1&html5=1"  allowfullscreen></iframe> -->
                                 <iframe class="br-video br-vdo2"  src="https://www.youtube.com/embed/m69vNVRTdek?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
@@ -583,7 +585,7 @@
             <div class="row">
                 <div id="desk" class="col-12 tab-12 mob-12"> 
                         <div class="wrapper">
-                            <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger3 utube meet-brooks-uTube-section3">
+                            <a href="JavaScript:Void(0);" style="cursor:default;" class="trigger3 utube meet-brooks-uTube-section3" id="trigger3">
                                 <div class="module-img br-img">
                                 <picture>
                                     <source media="(max-width: 595px)" srcset="/images/meet-brooks/running-shoes/GuideRails_Video_Cover_Mobile.jpg">
@@ -598,7 +600,8 @@
                                 </div>
                             </a>
                             <div class="module-video module-vdo3" style="display:none;">
-                                <iframe class="br-video br-vdo3"  src="https://www.youtube.com/embed/CJHaMglcov0?autoplay="  allowfullscreen></iframe>
+                                <!-- <iframe class="br-video br-vdo3"  src="https://www.youtube.com/embed/CJHaMglcov0?enablejsapi=1&html5=1"  allowfullscreen></iframe> -->
+                                    <iframe class="br-video br-vdo3"  src="https://www.youtube.com/embed/CJHaMglcov0?autoplay="  allowfullscreen></iframe>
                             </div>
                         </div>
                 </div>  
@@ -1460,6 +1463,7 @@ $(document).ready(function () {
         items: 1
         
     });
+
     $('.trigger').on('click', function () {
         $(".meet-brooks-uTube-section").css({'display':'none'}); 
         $(".module-vdo").css({'display':'block'});        
@@ -1475,7 +1479,44 @@ $(document).ready(function () {
         $(".module-vdo3").css({'display':'block'});        
         $(".br-vdo3")[0].src += "1";
     });
+
+
 });
+
+// https://developers.google.com/youtube/iframe_api_reference
+
+// Inject YouTube API script
+// var tag = document.createElement('script');
+// tag.src = "//www.youtube.com/player_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// global variable for the player
+// var player;
+
+// this function gets called when API is ready to use
+// function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+//   player = new YT.Player('video', {
+//     events: {
+      // call this function when player is ready to use
+//       'onReady': onPlayerReady,
+//     }
+//   });
+// }
+
+// function onPlayerReady(event) {
+  
+//   // bind events
+//   var playButton = document.getElementById("trigger");
+//   playButton.addEventListener("click", function() {
+//     $(".meet-brooks-uTube-section").css({'display':'none'}); 
+//     $(".module-vdo").css({'display':'block'});    
+//     event.target.playVideo();
+//   });
+  
+// }
+
 </script>
 
 @endsection
