@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use DB;
 
 class LoginController extends Controller
 {
