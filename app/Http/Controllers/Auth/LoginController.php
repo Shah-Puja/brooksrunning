@@ -92,12 +92,27 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {   
         $guest_cart_id = $request->session()->get('guest_cart_id');
-        $cart = Cart::where('user_id', auth()->id())->first();
+        $cart = Cart::where('user_id', auth()->id())->orderBy('id','desc')->first();
         if (isset($cart) && !empty($cart)) {
             $request->session()->put('cart_id', $cart->id);
-            $guest_Cart = Cart::where('id', $guest_cart_id)->first();
+            $guest_Cart = Cart::where('id', $guest_cart_id)->orderBy('id','desc')->first();
             if (isset($guest_Cart) && !empty($guest_Cart)) {
-                $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
+                if($guest_Cart->promo_string!=''){
+                    $guest_Cart->cartItems()
+                                ->where('discount_detail','>','0')
+                                ->update([
+                                    'cart_id' => $cart->id,
+                                    'discount_detail' => '0', 
+                                    'discount_price' => DB::raw("price_sale"),
+                            ]);
+                }else{
+                    $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
+                }
+                $cart->load('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb');
+                $cart->total = $cart->cartItems()->sum('price_sale');
+                $cart->discount = $cart->cartItems()->sum('discount_detail');
+                $cart->grand_total = $cart->cartItems()->sum('discount_price');
+                $cart->save();
             }
             Cache::forget('cart' . $cart->id);
         }else{
