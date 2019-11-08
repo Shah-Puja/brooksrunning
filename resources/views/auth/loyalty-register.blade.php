@@ -22,7 +22,7 @@
             <div class="col-3">
                 <div class="create-account--right temp_class loyalty_right">
                     <div class="header">					
-                        <h3>Welcome to the Brooks Staff Purchase Program. </h3>
+                        <h3>Welcome to the Brooks Staff Purchase Program.</h3>
                     </div>
                     <div class="row">
                         <div class="tab-12 col-12 marginTop_0">

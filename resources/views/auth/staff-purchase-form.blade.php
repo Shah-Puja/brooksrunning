@@ -1,20 +1,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
-@if(request()->is('loyalty_register')) 
+@if(request()->is('program/ppp')) 
 <form action="{{ route('register') }}" method="post" id="loyalty_register_form" class=" five columns form-register" onsubmit="return registervalidation()">
 @else
 <form id="loyalty_register_form" method="POST" action="/account/update_profile" onsubmit="return registervalidation()">
 @endif
         @csrf
             <div class="create-account--left loyalty-header-title">
-            @if(request()->is('loyalty_register'))              
-                <h3 class="br-heading">Sign in to access staff pricing</h3>
+            @if(request()->is('program/ppp'))              
+                <h3 class="br-heading">Sign in to access staff pricing </h3>
                 <hr>
-                <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p>
+                <!-- <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p> -->
             @else
                 <h3 class="br-heading">View Or Update Your Details </h3>
                 <hr>
-            @endif
+            @endif 
+                <!-- <p class="privacy"><sup>*</sup>Indicates a required field</a>.</p> -->
                
                 <div class="row">
                     <div class="tab-6">
@@ -40,202 +41,137 @@
                     <div class="tab-6">
                         <div class="input-wrapper">
                                 <label for="email">Access Code<sup>*</sup>  @if ($errors->has('org_name')) <span class="error invalid-feedback">{{ $errors->first('org_name') }} </span> @endif</label>
-                                <input type="text" class="input-field form-control{{ $errors->has('org_name') ? ' is-invalid' : '' }}" name="org_name" value="{{ !empty(auth()->user()->org_name) ? auth()->user()->org_name : old('org_name') }}" data-label-name="practice name" >                                
+                                <input type="text" class="input-field form-control{{ $errors->has('org_name') ? ' is-invalid' : '' }}" name="org_name" value="{{ !empty(auth()->user()->org_name) ? auth()->user()->org_name : old('org_name') }}" data-label-name="practice name" >    
+                           
+                                <p class="error-icon" style="display:none;">Access code invalid. please contact your brooks sales rep to obtain the current code.</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                 <div class="tab-6">
-                        <div class="loyalty-practitioner--wrapper">
-                           
-                        <div class="input-wrapper">
-                            <label for="name">Practitioner Type</label>
-                                <ul class="loyalty-practitioner">
-                                    <li>
-                                       @php
-                                        $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
-                                       @endphp
-                                        <a href="javascript:void(0)" class="practitioner">{!! !empty($order_type) ? $order_type : '&nbsp;'!!} <span class="icon-down-arrow"></span></a>
-                                        <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
-                                            
-                                                <li class="option-value" data-value="Podiatrist">
-                                                    Podiatrist
+                    <div class="loyalty-staffpurchase--wrapper">
+                        <div class="row">
+                            <div class="mob-6 pr-0">
+                                <div class="input-wrapper">
+                                        <label for="name">Select your store group</label>
+                                            <ul class="loyalty-staffpurchased-store-group">
+                                                <li>
+                                                @php
+                                                    $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
+                                                @endphp
+                                                    <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your store group'!!} <span class="icon-down-arrow"></span></a>
+                                                    <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
+                                                        
+                                                            <li class="option-value" data-value="Athlete">
+                                                            The Athlete's Foot 
+                                                            </li>
+                                                            <li class="option-value" data-value="Rebel">
+                                                            Rebel
+                                                            </li>
+                                                            <li class="option-value" data-value="Other">
+                                                            Other
+                                                            </li>
+                                                           
+                                                    </ul>
                                                 </li>
-                                                <li class="option-value" data-value="Physiotherapist">
-                                                   Physiotherapist
-                                                </li>
-                                                <li class="option-value" data-value="Chiropractor">
-                                                Chiropractor
-                                                </li>
-                                                <li class="option-value" data-value="Osteopath">
-                                                Osteopath
-                                                </li>
-                                                <li class="option-value" data-value="Other">
-                                                Other
-                                                </li>
+                                            </ul>
+                                            <input type="hidden" name="org_type" id="org_type" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
+                                    </div>
+                                </div>
+                            <div class="mob-6">
+                                <div class="input-wrapper">
+                                    <label for="name">Select your state</label>
+                                        <ul class="loyalty-staffpurchased-state">
+                                            <li>
+                                            @php
+                                                $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
+                                            @endphp
+                                                <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your state'!!} <span class="icon-down-arrow"></span></a>
+                                                <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
+                                                    
+                                                        <li class="option-value" data-value="ACT">
+                                                          ACT     
+                                                        </li>
+                                                        <li class="option-value" data-value="NSW">
+                                                            NSW
+                                                        </li>
+                                                        <li class="option-value" data-value="NT">
+                                                        NT
+                                                        </li>
+                                                        <li class="option-value" data-value="QLD">
+                                                        QLD
+                                                        </li>
+                                                        <li class="option-value" data-value="SA">
+                                                        SA
+                                                        </li>
+                                                        <li class="option-value" data-value="TAS">
+                                                        TAS
+                                                        </li>
+                                                        <li class="option-value" data-value="VIC">
+                                                        VIC
+                                                        </li>
+                                                        <li class="option-value" data-value="WA">
+                                                        WA
+                                                        </li>
+
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </li>
-                                </ul>
-                                <input type="hidden" name="org_type" id="org_type" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
+                                        <input type="hidden" name="org_type" id="org_type2" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-		            </div>
-                    <div class="tab-6">
-                        <div class="loyalty-practitioner--wrapper">
-                        <!-- <div class="input-wrapper">
-                        <label for="name">Practitioner Type</label>
-                                <select class="select-field" name="custom_Age" id="custom_Age" style="margin-bottom: 0px;">
-                                    <option class="option-value" value="Podiatrist">Podiatrist</option>
-                                    <option class="option-value" value="Physiotherapist">Physiotherapist</option>
-                                    <option class="option-value" value="Chiropractor">Chiropractor</option>
-                                    <option class="option-value" value="Osteopath">Osteopath</option>
-                                    <option class="option-value" value="Other">Other</option>
-                                </select>
-                        </div> -->
-                           
-                        <div class="input-wrapper">
-                            <label for="name">Practitioner Type</label>
-                                <ul class="loyalty-practitioner">
-                                    <li>
-                                       @php
-                                        $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
-                                       @endphp
-                                        <a href="javascript:void(0)" class="practitioner">{!! !empty($order_type) ? $order_type : '&nbsp;'!!} <span class="icon-down-arrow"></span></a>
-                                        <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
-                                            
-                                                <li class="option-value" data-value="Podiatrist">
-                                                    Podiatrist
-                                                </li>
-                                                <li class="option-value" data-value="Physiotherapist">
-                                                   Physiotherapist
-                                                </li>
-                                                <li class="option-value" data-value="Chiropractor">
-                                                Chiropractor
-                                                </li>
-                                                <li class="option-value" data-value="Osteopath">
-                                                Osteopath
-                                                </li>
-                                                <li class="option-value" data-value="Other">
-                                                Other
-                                                </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <input type="hidden" name="org_type" id="org_type" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
-                        </div>
-                        </div>
-		            </div>
+                    </div>
+                </div>
+                <div class="tab-6">
+                <div class="loyalty-staffpurchase--wrapper">
+                    <div class="input-wrapper">
+                        <label for="name">Select your store</label>
+                            <ul class="loyalty-staffpurchased-store">
+                                <li>
+                                    @php
+                                    $order_type = !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type')
+                                    @endphp
+                                    <a href="javascript:void(0)" class="practitioner" >{!! !empty($order_type) ? $order_type : 'Select your store'!!} <span class="icon-down-arrow"></span></a>
+                                    <ul class="loyalty-practitioner__submenu" id='loyalty-practitioner-Dropdown'>
+                                        
+                                            <li class="option-value" data-value="Canberra">
+                                            The Athlete's Foot Canberra  
+                                            </li>
+                                            <li class="option-value" data-value="Belconnen">
+                                            The Athlete's Foot Belconnen
+                                            </li>
+                                            <li class="option-value" data-value="Woden">
+                                            The Athlete's Foot Woden
+                                            </li>
+                                           
+                                    </ul>
+                                    <span class="note">*<i>please note any order placed through the staff purchase program will be shipped to your registered store.</i></span>
+                   
+                                </li>
+                            </ul>
+                            <input type="hidden" name="org_type" id="org_type3" value="{{ !empty(auth()->user()->org_type) ? auth()->user()->org_type : old('org_type') }}"/>
+                    </div>
+                    
+                    </div>
+                </div>
                 </div>    
-                <div class="row">
-                    <div class="tab-6">
-                        <div class="input-wrapper">
-                                <label for="email">Health Practitioner Number<sup>*</sup>  @if ($errors->has('org_id')) <span class="error invalid-feedback">{{ $errors->first('org_id') }} </span> @endif</label>
-                                <input type="text" class="input-field form-control{{ $errors->has('org_id') ? ' is-invalid' : '' }}" name="org_id" value="{{ !empty(auth()->user()->org_id) ? auth()->user()->org_id : old('org_id') }}" data-label-name="health practitioner">                                
-                        </div>
-                    </div>
-                    <div class="tab-6">
-                        <div class="input-wrapper padding_bottom">
-                            <label class="gender_label">Gender<sup>*</sup>  @if ($errors->has('gender')) <span class="error invalid-feedback">{{ $errors->first('gender') }} </span> @endif</label>
-                            <div class="radio-inline">
-                                @php $gender = !empty(auth()->user()->gender) ? auth()->user()->gender : old('gender'); @endphp
-                                <input type="radio" class="input-radio" name="gender" value="Male" id="male" {{ $gender == 'Male' ? "checked" : "" }}>
-                                <label for="male">
-                                    <div class="mark"><span></span></div>
-                                    <div class="text">Male</div>
-                                </label>                                
-                            </div>
-                            <div class="radio-inline">
-                                    <input type="radio" class="input-radio" name="gender" value="Female" id="female" {{ $gender == 'Female' ? "checked" : "" }}>
-                                    <label for="female">
-                                        <div class="mark"><span></span></div>
-                                        <div class="text">Female</div>
-                                    </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @if(request()->is('loyalty-account-personal'))  
-                <div class="row">
-					<div class="tab-6">
-						<div class="input-wrapper">
-							<label>Current Account Password</label>
-                            <input type="password" name="current_password" class="input-field" id="current_password" data-label-name="current password">
-                            @if ($errors->has('current_password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('current_password') }}</strong>
-                                </span>
-                            @endif	
-						</div>
-					</div>
-					<div class="tab-6"></div>
-				</div>
-                @endif
-                <div class="row">
-                    <div class="tab-6">
-                    <div class="input-wrapper">
-                                <div class="row">
-                                    <div class="mob-7"><label>Choose a Password</label></div>
-                                    <div class="mob-5 loyalty-pass-section">
-                                        <div class="show-pass">
-                                            <span><input type="checkbox" class="show_password1" name="show_password" >Show Password</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <input id="password" type="password" class="pass-show1 input-field{{ $errors->has('password') ? ' is-invalid' : '' }}" data-label-name="password" name="password">
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif								
-                        </div>
-                    </div>
-                    <div class="tab-6">
-                    <div class="input-wrapper">
-								
-                                <div class="row">
-                                    <div class="mob-7"><label>Confirm Password</label></div>
-                                    <div class="mob-5 loyalty-pass-section">
-                                    <div class="show-pass">
-                                        <span><input type="checkbox" class="show_password2" name="show_password">Show Password</span>
-                                    </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <input id="password_confirmation" type="password" class="pass-show2 input-field{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" data-label-name="confirmation password" name="password_confirmation">
-
-                            @if ($errors->has('password')) 
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif								
-                        </div>
-                </div>
-                <input type="hidden" name="loyalty_type" value="PPP"/>
-                <!--<div class="row">
-                    <div class="tab-12">
-                        <div class="input-wrapper">
-                            <div class="checklist-inline">
-                                    <input type="checkbox" id="signme" name="newsletter_subscription" value="1" {{ !empty(auth()->user()->newsletter_subscription) && auth()->user()->newsletter_subscription == '1' ? "checked" : "" }}>
-                                <label for="signme">
-                                        <div class="mark"><span></span></div>
-                                        <div class="text">Please sign me up to receive Brooks email newsletter The Run Down.</div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+                
+                
+              
+                <input type="hidden" name="loyalty_type" value="PPP"/> 
+              
                 <div class="row">
                     <div class="tab-12">
-                        <div class="loyalty-form-btn">                                           
-                                <button type="submit" class="btn primary-button">{{ request()->is('loyalty_register') ? 'Create Account' : 'Save Changes' }}</button>                                    
+                        <div class="loyalty-form-btn loyalty-staffpurchased"> 
+                            <!-- add class disabled-signin with primary-btn to disable button -->
+                                <button type="submit" class="btn primary-button">{{ request()->is('program/ppp') ? 'Sign in' : 'Save Changes' }}</button>                                    
                         </div>
-                        <p class="loyalty-privacy">See our <a href="/info/privacy">Privacy Policy</a> and <a href="/info/terms-conditions">Terms and Conditions</a>.</p>
+                        <p class="loyalty-privacy loyalty-help">Can't find your store?</p>
+                    
+                        <p class="loyalty-privacy loyalty-contact"> Please contact your Brooks Rep to arrange access to the program.</p>
                     </div>
-                </div>                
-            
-            </div>
+                </div> 
         </div>
     </form>
 
@@ -309,7 +245,7 @@
                         let error_span = " <span class='error'>The email must be a valid email address.</span>";
                         let error = label_text + error_span ;
                         input_label.html(error);
-                        email.addClass("error-border");	
+                        email.addClass("error-border"); 
                     }
                 }
 
@@ -321,7 +257,7 @@
                     let error_span = " <span class='error'>The password must be at least 6 characters.</span>";
                     let error = label_text + error_span ;
                     input_label.html(error);
-                    password.addClass("error-border");	
+                    password.addClass("error-border");  
                 }
        
                 if(password.val()!="" && $("#loyalty_register_form input[name='password_confirmation']").val()!="" && password.val()!=$("#loyalty_register_form input[name='password_confirmation']").val()){
@@ -331,7 +267,7 @@
                     let error_span = " <span class='error'>The password confirmation does not match.</span>";
                     let error = label_text + error_span ;
                     input_label.html(error);
-                    password.addClass("error-border");	
+                    password.addClass("error-border");  
                 }
                    
                 if ($("#loyalty_register_form input,#loyalty_register_form select").hasClass("needsfilled") ) {
@@ -365,16 +301,36 @@
            
 
 
-        $(document).on('click', '.loyalty-practitioner li .option-value', function () {
+        $(document).on('click', '.loyalty-staffpurchased-store-group li .option-value', function () {
             $('.selectedLi').removeClass('selectedLi');
             $(this).addClass('selectedLi');
             var selText = $(this).text().trim();
             $("#org_type").val(selText);
-            $(this).parents('.loyalty-practitioner--wrapper').find('.loyalty-practitioner li a').html(selText +
+            $(this).parents('.loyalty-staffpurchase--wrapper').find('.loyalty-staffpurchased-store-group li a').html(selText +
                     ' <span class="icon-down-arrow"></span>');
         //    $('.loyalty-practitioner__submenu').toggle();
         });
 
+
+        $(document).on('click', '.loyalty-staffpurchased-state li .option-value', function () {
+            $('.selectedLi').removeClass('selectedLi');
+            $(this).addClass('selectedLi');
+            var selText = $(this).text().trim();
+            $("#org_type2").val(selText);
+            $(this).parents('.loyalty-staffpurchase--wrapper').find('.loyalty-staffpurchased-state li a').html(selText +
+                    ' <span class="icon-down-arrow"></span>');
+        //    $('.loyalty-practitioner__submenu').toggle();
+        });
+
+        $(document).on('click', '.loyalty-staffpurchased-store li .option-value', function () {
+            $('.selectedLi').removeClass('selectedLi');
+            $(this).addClass('selectedLi');
+            var selText = $(this).text().trim();
+            $("#org_type3").val(selText);
+            $(this).parents('.loyalty-staffpurchase--wrapper').find('.loyalty-staffpurchased-store li a').html(selText +
+                    ' <span class="icon-down-arrow"></span>');
+        //    $('.loyalty-practitioner__submenu').toggle();
+        });
 
 
         // Check this click event  only for testing- 
