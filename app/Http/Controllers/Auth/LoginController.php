@@ -110,7 +110,7 @@ class LoginController extends Controller
                 }else{
                     $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
                 }
-                Cart::updateCartInformation();
+                $cart->updateCartInformation();
             }
             Cache::forget('cart' . $cart->id);
         }else{
