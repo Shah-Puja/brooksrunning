@@ -92,6 +92,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {   
+        $request->session()->forget('cart_id');
         $guest_cart_id = $request->session()->get('guest_cart_id');
         $cart = Cart::where('user_id', auth()->id())->orderBy('id','desc')->first();
         if (isset($cart) && !empty($cart)) {
@@ -100,17 +101,17 @@ class LoginController extends Controller
             if (isset($guest_Cart) && !empty($guest_Cart)) {
                 if($guest_Cart->promo_string!=''){
                     $guest_Cart->cartItems()
-                                ->where('discount_detail','>','0')
+                                //->where('discount_detail','>','0')
                                 ->update([
                                     'cart_id' => $cart->id,
                                     'discount_detail' => '0', 
-                                    'discount_price' => DB::raw("price_sale"),
+                                    'discount_price' => DB::raw("price_sale*qty"),
                             ]);
                 }else{
                     $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
                 }
                 $cart->load('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb');
-                $cart->total = $cart->cartItems()->sum('price_sale');
+                $cart->total = $cart->cartItems()->sum('price_sale') * $cart->cartItems()->sum('qty');
                 $cart->discount = $cart->cartItems()->sum('discount_detail');
                 $cart->grand_total = $cart->cartItems()->sum('discount_price');
                 $cart->save();
@@ -132,6 +133,7 @@ class LoginController extends Controller
         $request->session()->regenerate();
         $this->clearLoginAttempts($request);
         $request->session()->put('guest_cart_id', $cart_id);
+        $request->session()->put('cart_id', $cart_id);
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
     }
