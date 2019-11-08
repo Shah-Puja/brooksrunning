@@ -110,11 +110,7 @@ class LoginController extends Controller
                 }else{
                     $guest_Cart->cartItems()->update([ 'cart_id' => $cart->id ]);
                 }
-                $cart->load('cartItems.variant.product:id,gender,stylename,color_name,cart_blurb');
-                $cart->total = $cart->cartItems()->sum('price_sale') * $cart->cartItems()->sum('qty');
-                $cart->discount = $cart->cartItems()->sum('discount_detail');
-                $cart->grand_total = $cart->cartItems()->sum('discount_price');
-                $cart->save();
+                Cart::updateCartInformation();
             }
             Cache::forget('cart' . $cart->id);
         }else{
