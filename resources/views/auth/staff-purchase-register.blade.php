@@ -17,7 +17,7 @@
     <section class="create-account wrapper">
         <div class="row">
             <div class="col-9">
-                @include('auth.loyalty-form')                
+                @include('auth.staff-purchase-form')                
             </div>
             <div class="col-3">
                 <div class="create-account--right temp_class loyalty_right">

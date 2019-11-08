@@ -9,7 +9,7 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="br-heading">Brooks Staff Purchase Program</h1>
+                    <h1 class="br-heading">Register for the Brooks Professional Purchase Program</h1>
                 </div>
             </div>
         </div>
@@ -22,20 +22,24 @@
             <div class="col-3">
                 <div class="create-account--right temp_class loyalty_right">
                     <div class="header">					
-                        <h3>Welcome to the Brooks Staff Purchase Program.</h3>
+                        <h3>What is the Brooks Professional Purchase Program? </h3>
                     </div>
                     <div class="row">
                         <div class="tab-12 col-12 marginTop_0">
                             <div class="info">
-                                <p>This program recognises the important role that staff of our retail partners play in getting Brooks onto the feet of their customers. It's goal is to help these staff experience the performance of our products for themselves by providing an exclusive offer on our current range. </p>
+                                <p>The Brooks<sup>&reg;</sup> Professional Purchase Program enables Sports Medicine practitioners<sup>*</sup> to purchase Brooks products for their personal use at exclusive member pricing. </p>
                             </div>
                         </div>
                         <div class="tab-12 col-12 marginTop_0">
                             <div class="info">
-                                <p> *Please note that due to the significant discount on offer, some verifications steps are required to ensure the program is restricted to approved users only.</p>
+                                <p>We believe practitioners are an integral part of the footwear industry and have created this program in recognition of this role and to enable you to experience our products. </p>
                             </div>
                         </div>
-                        
+                        <div class="tab-12 col-12 marginTop_0">
+                            <div class="info">
+                                <p>* <i>This program is open to currently practicing, registered Podiatrists and Sports Muscoskeletol Physiotherapists. Sports Chiropractors and Sports Osteopaths.</i> </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
