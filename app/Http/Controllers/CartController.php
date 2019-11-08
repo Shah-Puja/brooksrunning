@@ -137,10 +137,13 @@ class CartController extends Controller {
                     $personidx = auth()->user()->person_idx;
                 } else {
                    //create ap21 personidx, if person idx is not there of new user (for Loyalty Program).
-                    $personidx = '115414';
+                    //$personidx = '115414';
+                    $personidx = '402038';
+                   
                 }
             } else {
-                $personidx = '115414';
+                //$personidx = '115414';
+                $personidx = '402038';
             }
             $cart_xml = "<Cart>
 						<PersonId>".$personidx."</PersonId>
