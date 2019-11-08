@@ -65,7 +65,7 @@ class Cart extends Model {
         $this->updateCartInformation();
     }
 
-    public function updateCartInformation() {
+    public static function updateCartInformation() {
         $cart = Cart::where('id', session('cart_id'))->with('cartItems.variant.product:id,gender,stylename,color_name')->first();
         $this->load('cartItems.variant.product:id,stylename');
         //echo "<pre>";print_R();die;
