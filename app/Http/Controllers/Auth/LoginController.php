@@ -142,40 +142,41 @@ class LoginController extends Controller
     }
    
     public function check_PPP_status(){ 
-        if(auth()->user()->loyalty_type=="PPP"){
-            $response = $this->bridge->getPersonid(auth()->user()->email);
-            if (!empty($response)) {
-                $returnCode = $response->getStatusCode();
-                $userid = false;
-                switch ($returnCode) {
-                    case '200':
-                        $response_xml = @simplexml_load_string($response->getBody()->getContents());
-                        $userid = $response_xml->Person->Id;
-                        $filtered ='';
-                                if(isset($response_xml->Person->Loyalties->Loyalty)):
-                                    $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
-                                            return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
-                                    });
-                                endif;
+        //$response = $this->bridge->getPerson(auth()->user()->person_idx);
+        $response = $this->bridge->getPersonid(auth()->user()->email);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    $filtered ='';
+                            if(isset($response_xml->Person->Loyalties->Loyalty)):
+                                $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
+                                        return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
+                                });
+                            endif;
 
-                        if($filtered==''){ 
-                            User::where("id",auth()->id())->update(['loyalty_type'=>'']);
-                        }
-                        break;
-                    default:
-                        $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . auth()->user()->email; 
-                        $error_response = $response->getBody()->getContents();
-                        Ap21_error::store([
-                            'api' => 'GET Person-API/Login',
-                            'url' => $url,
-                            'http_error' => $returnCode,
-                            'error_response' =>  $error_response,
-                            'error_type' => 'API Error',
-                        ]);
-                        $userid = false;
-                        break;  
-                }
-            }           
-        }
+                    if($filtered==''){ 
+                        User::where("id",auth()->id())->update(['loyalty_type'=>'']);
+                    }else{
+                        User::where("id",auth()->id())->update(['loyalty_type'=>'PPP']);
+                    }
+                    break;
+                default:
+                    $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . auth()->user()->email; 
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'GET Person-API/Login',
+                        'url' => $url,
+                        'http_error' => $returnCode,
+                        'error_response' =>  $error_response,
+                        'error_type' => 'API Error',
+                    ]);
+                    $userid = false;
+                    break;  
+            }
+        }           
     }
 }

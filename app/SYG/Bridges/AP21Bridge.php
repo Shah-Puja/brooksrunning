@@ -250,4 +250,26 @@ class AP21Bridge implements BridgeInterface {
         return $this->apiClient->post('Persons/' . $PersonId . '/Orders/?countryCode=AUFIT', ['body' => $data, 'http_errors' => false]);
     }
 
+    public function getPerson($id) {
+        $url='Persons/'.$id.'?countryCode=AUFIT';        
+        try {
+            $response = $this->apiClient->get($url, ['http_errors' => false]);
+            if (!empty($response)) {                
+                return $response;
+            }
+        } catch (RequestException $e) {
+            if ($e->getMessage() != '') {
+                Ap21_error::store([
+                    'api' => 'GET Person-ID-API',
+                    'url' => env('AP21_URL') .$url,
+                    'error_response' => $e->getMessage(),
+                    'error_type' => 'Connectivity',
+                ]);
+                return null;
+            }
+        } catch (\Exception $exception) {
+                return null;
+        }
+    }
+
 }
