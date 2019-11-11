@@ -14,6 +14,9 @@
     background-color: #f1f1f1;
     color: #dedcda;
 } 
+@if($product->video!='')
+.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child img{opacity:0.5;}
+@endif
 </style>
 
 <div id="data-load">
