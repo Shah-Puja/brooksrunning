@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('/', 'HomePageController@index');
 Route::get('/program/ppp', 'Auth\RegisterController@loyalty_register');
 Route::redirect('/loyalty_register', '/program/ppp');
-
+Route::redirect('/meet_brooks/technology', '/meet_brooks/technology/running-shoes-technology');
 
 Route::post('/reset_pass', 'InfoController@check_email');
 
