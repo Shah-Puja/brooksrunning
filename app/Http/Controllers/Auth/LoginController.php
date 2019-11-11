@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Ap21_error;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use DB;
+use App\SYG\Bridges\BridgeInterface;
 
 class LoginController extends Controller
 {
@@ -25,6 +27,7 @@ class LoginController extends Controller
     |
     */
     use AuthenticatesUsers;
+    protected $bridge;
 
     /**
      * Where to redirect users after login.
@@ -38,9 +41,10 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(BridgeInterface $bridge)
     {
         $this->middleware('guest')->except('logout');
+        $this->bridge = $bridge;
     }
 
     public function login(Request $request)
@@ -122,6 +126,9 @@ class LoginController extends Controller
             $request->session()->forget('guest_cart_id');
             Cache::forget('cart' . $guest_Cart->id);
         }
+
+        $this->check_PPP_status(); //// Check the loyalty PPP status in AP21
+        
     }
     protected function sendLoginResponse(Request $request)
     {   
@@ -132,5 +139,43 @@ class LoginController extends Controller
         $request->session()->put('cart_id', $cart_id);
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
+    }
+   
+    public function check_PPP_status(){ 
+        if(auth()->user()->loyalty_type=="PPP"){
+            $response = $this->bridge->getPersonid(auth()->user()->email);
+            if (!empty($response)) {
+                $returnCode = $response->getStatusCode();
+                $userid = false;
+                switch ($returnCode) {
+                    case '200':
+                        $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                        $userid = $response_xml->Person->Id;
+                        $filtered ='';
+                                if(isset($response_xml->Person->Loyalties->Loyalty)):
+                                    $filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
+                                            return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
+                                    });
+                                endif;
+
+                        if($filtered==''){ 
+                            User::where("id",auth()->id())->update(['loyalty_type'=>'']);
+                        }
+                        break;
+                    default:
+                        $url = env('AP21_URL') .'Persons/?countryCode=AUFIT&email=' . auth()->user()->email; 
+                        $error_response = $response->getBody()->getContents();
+                        Ap21_error::store([
+                            'api' => 'GET Person-API/Login',
+                            'url' => $url,
+                            'http_error' => $returnCode,
+                            'error_response' =>  $error_response,
+                            'error_type' => 'API Error',
+                        ]);
+                        $userid = false;
+                        break;  
+                }
+            }           
+        }
     }
 }
