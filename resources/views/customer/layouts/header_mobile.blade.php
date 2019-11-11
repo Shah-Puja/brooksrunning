@@ -515,7 +515,7 @@
 	                                </a>
 	                            </li>
 								<li>
-	                                <a href="/meet_brooks/technology">
+	                                <a href="/meet_brooks/technology/running-shoes-technology">
 									Technology
 	                                </a>
 	                            </li>
