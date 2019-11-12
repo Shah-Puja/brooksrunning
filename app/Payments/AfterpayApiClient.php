@@ -3,6 +3,7 @@
 namespace App\Payments;
 
 use Zttp\Zttp;
+use App\Models\Afterpay_log;
 
 class AfterpayApiClient {
 
@@ -16,30 +17,65 @@ class AfterpayApiClient {
     public function createOrder($data)
 	{   
 		try {
+			Afterpay_log::createNew([
+				'api' => 'POST Order-API Order-id='.$data->merchantReference,
+				'url' => $this->url . 'orders',
+				'body' => $data
+			]);
 			return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
 		} catch (\Exception $e) {
-			report($e);
-			return false;
+			if ($e->getMessage() != '') {
+                Afterpay_log::createNew([
+                    'api' => 'POST Order-API Order-id='.$data->merchantReference,
+                    'url' => $this->url . 'orders',
+                    'error_response' => $e->getMessage(),
+					'error_type' => 'Connectivity',
+					'body' => $data
+                ]);
+                return null;
+            }
 		}
 	}
 
-    public function getOrder($token)
+    public function getOrder($token,$orderID)
 	{	
 		try {
+			Afterpay_log::createNew([
+				'api' => 'GET Order-API Order-id='.$orderID,
+				'url' => $this->url . 'orders',
+				'body' => "AfterPay token :". $token,
+			]);
 			return Zttp::withHeaders($this->config)->get($this->url . 'orders/' . $token)->body();	
 		} catch (\Exception $e) {
-			report($e);
-			return false;
+			Afterpay_log::createNew([
+				'api' => 'GET Order-API Order-id='.$orderID,
+				'url' => $this->url . 'orders/' . $token,
+				'error_response' => $e->getMessage(),
+				'error_type' => 'Connectivity',
+				'body' => "AfterPay token :". $token,
+			]);
+			return null;
 		}
 	}
 
 	public function capturePayment($data)
 	{ 
 		try {
+			Afterpay_log::createNew([
+				'api' => 'POST Payment Capture Order-id='.$data->merchantReference,
+				'url' => $this->url . 'payments/capture',
+				'body' => $data,
+			]);
 			return Zttp::withHeaders($this->config)->post($this->url . 'payments/capture', $data)->body();
 		} catch (\Exception $e) {
-			report($e);
-			return false;
+			Afterpay_log::createNew([
+				'api' => 'POST Payment Capture Order-id='.$data->merchantReference,
+				'url' => $this->url . 'payments/capture',
+				'error_response' => $e->getMessage(),
+				'error_type' => 'Connectivity',
+				'body' => $data 
+			]);
+			return null;
 		}
 	}  
 }

@@ -112,7 +112,7 @@ class PaymentController extends Controller {
 
     public function afterpay_success(Request $request, AfterpayProcessor $afterpay_processor) {
         if ($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0) {
-            $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token);
+            $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token,$this->order->id);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
 
             if (isset($charge_payment['status']) && $charge_payment['status'] == "APPROVED" && $charge_payment['token'] != "") {
