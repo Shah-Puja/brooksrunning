@@ -15,18 +15,31 @@ class AfterpayApiClient {
 
     public function createOrder($data)
 	{   
-		echo $this->url . 'orders';
-		exit;
-		return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
+		try {
+			return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
+		} catch (\Exception $e) {
+			report($e);
+			return false;
+		}
 	}
 
     public function getOrder($token)
-	{
-		return Zttp::withHeaders($this->config)->get($this->url . 'orders/' . $token)->body();	
+	{	
+		try {
+			return Zttp::withHeaders($this->config)->get($this->url . 'orders/' . $token)->body();	
+		} catch (\Exception $e) {
+			report($e);
+			return false;
+		}
 	}
 
 	public function capturePayment($data)
-	{
-		return Zttp::withHeaders($this->config)->post($this->url . 'payments/capture', $data)->body();
+	{ 
+		try {
+			return Zttp::withHeaders($this->config)->post($this->url . 'payments/capture', $data)->body();
+		} catch (\Exception $e) {
+			report($e);
+			return false;
+		}
 	}  
 }
