@@ -16,9 +16,6 @@ class AfterpayProcessor {
 
     public function getAfterpayToken($order) { 
         $data = $this->prepareOrderData($order);
-        echo "<pre>";
-        print_r($data);
-        exit;
 		    return $this->afterpayApiClient->createOrder($data);  
     }
 
