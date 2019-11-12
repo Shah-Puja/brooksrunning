@@ -14,7 +14,9 @@ class AfterpayApiClient {
     }
 
     public function createOrder($data)
-	{
+	{   
+		echo $this->url . 'orders';
+		exit;
 		return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
 	}
 
