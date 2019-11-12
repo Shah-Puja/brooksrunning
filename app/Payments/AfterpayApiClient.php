@@ -18,7 +18,7 @@ class AfterpayApiClient {
 	{   
 		try {
 			Afterpay_log::createNew([
-				'api' => 'POST Order-API Order-id='.$data->merchantReference,
+				'api' => 'POST Order-API Order-id='.$data['merchantReference'],
 				'url' => $this->url . 'orders',
 				'body' => $data
 			]);
@@ -26,7 +26,7 @@ class AfterpayApiClient {
 		} catch (\Exception $e) {
 			if ($e->getMessage() != '') {
                 Afterpay_log::createNew([
-                    'api' => 'POST Order-API Order-id='.$data->merchantReference,
+                    'api' => 'POST Order-API Order-id='.$data['merchantReference'],
                     'url' => $this->url . 'orders',
                     'error_response' => $e->getMessage(),
 					'error_type' => 'Connectivity',
@@ -62,14 +62,14 @@ class AfterpayApiClient {
 	{ 
 		try {
 			Afterpay_log::createNew([
-				'api' => 'POST Payment Capture Order-id='.$data->merchantReference,
+				'api' => 'POST Payment Capture Order-id='.$data['merchantReference'],
 				'url' => $this->url . 'payments/capture',
 				'body' => $data,
 			]);
 			return Zttp::withHeaders($this->config)->post($this->url . 'payments/capture', $data)->body();
 		} catch (\Exception $e) {
 			Afterpay_log::createNew([
-				'api' => 'POST Payment Capture Order-id='.$data->merchantReference,
+				'api' => 'POST Payment Capture Order-id='.$data['merchantReference'],
 				'url' => $this->url . 'payments/capture',
 				'error_response' => $e->getMessage(),
 				'error_type' => 'Connectivity',
