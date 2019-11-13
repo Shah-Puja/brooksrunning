@@ -42,7 +42,7 @@ class AfterpayApiClient {
 		try {
 			Afterpay_log::createNew([
 				'api' => 'GET Order-API Order-id='.$orderID,
-				'url' => $this->url . 'orders',
+				'url' => $this->url . 'orders/' . $token,
 				'body' => "AfterPay token :". $token,
 			]);
 			return Zttp::withHeaders($this->config)->get($this->url . 'orders/' . $token)->body();	
