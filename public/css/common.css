@@ -5349,6 +5349,8 @@ textarea {
 .pdp-container--image .pdp-zoom--container {
   width: 100%;
   text-align: center;
+  /* Youtube embed video start*/
+  /* Youtube embed video end*/
 }
 .pdp-container--image .pdp-zoom--container .lSSlideWrapper {
   background-color: #f1f1f1;
@@ -5393,6 +5395,216 @@ textarea {
 .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li.active, .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li.active {
   border: 1px solid #0263f7;
   border-radius: 0;
+}
+.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child, .pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: rgba(0,0,0,0.5);*/
+  z-index: 2;
+  /*opacity:0.5;*/
+}
+.pdp-container--image .pdp-zoom--container .module-video {
+  display: block;
+  margin: 0px auto;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  text-align: center;
+}
+.pdp-container--image .pdp-zoom--container .module-video .br-video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -45%);
+}
+@media only screen and (max-width: 767px) {
+  .pdp-container--image .pdp-zoom--container .module-video .br-video {
+    transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pdp-container--image .pdp-zoom--container .module-video .br-video {
+    transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pdp-container--image .pdp-zoom--container .module-video .br-video {
+    transform: translate(-50%, -50%);
+  }
+}
+.pdp-container--image .pdp-zoom--container .playvideo {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  z-index: 300;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  overflow: hidden;
+  opacity: 1;
+}
+.pdp-container--image .pdp-zoom--container .playvideo:hover {
+  cursor: pointer;
+}
+.pdp-container--image .pdp-zoom--container .playvideo:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  border: 5px solid #0263f7;
+  border-radius: 100%;
+  background-color: #0263f7;
+}
+.pdp-container--image .pdp-zoom--container .playvideo:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: -15px 0 0 -5px;
+  border-left: 18px solid #fff;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-radius: 5px;
+  background-color: #0263f7;
+}
+.pdp-container--image .pdp-zoom--container .playvideo:hover:before, .pdp-container--image .pdp-zoom--container .playvideo:focus:before {
+  border-color: #002855;
+  background-color: #002855;
+}
+.pdp-container--image .pdp-zoom--container .playvideo:hover:after, .pdp-container--image .pdp-zoom--container .playvideo:focus:after {
+  border-left-color: #ffffff;
+  background-color: #002855;
+}
+.pdp-container--image .pdp-zoom--container .videowrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background-color: #000;
+}
+.pdp-container--image .pdp-zoom--container .video_wrapper_full {
+  padding-top: 67.25%;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster {
+  position: absolute;
+  z-index: 300;
+  top: -5%;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  overflow: hidden;
+  opacity: 1;
+  border: none;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster:hover {
+  cursor: pointer;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  border: 5px solid #0263f7;
+  border-radius: 100%;
+  background-color: #0263f7;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: -15px 0 0 -5px;
+  border-left: 18px solid #fff;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-radius: 5px;
+  background-color: #0263f7;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster:hover:before, .pdp-container--image .pdp-zoom--container .videoPoster:focus:before {
+  border-color: #002855;
+  background-color: #002855;
+}
+.pdp-container--image .pdp-zoom--container .videoPoster:hover:after, .pdp-container--image .pdp-zoom--container .videoPoster:focus:after {
+  border-left-color: #ffffff;
+  background-color: #002855;
+}
+.pdp-container--image .pdp-zoom--container .videoWrapperActive .videoPoster {
+  opacity: 0;
+  height: 0;
+  -webkit-transition-delay: 0s, 800ms;
+  -moz-transition-delay: 0s, 800ms;
+  transition-delay: 0s, 800ms;
+}
+.pdp-container--image .pdp-zoom--container .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  border: 5px solid #0263f7;
+  border-radius: 100%;
+  background-color: #0263f7;
+  border: none;
+  opacity: 1;
+  z-index: 9999;
+}
+.pdp-container--image .pdp-zoom--container .play:hover {
+  cursor: pointer;
+}
+.pdp-container--image .pdp-zoom--container .play:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  border: 5px solid #0263f7;
+  border-radius: 100%;
+  background-color: #0263f7;
+}
+.pdp-container--image .pdp-zoom--container .play:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: -9px 0 0 -3px;
+  border-left: 8px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-radius: 5px;
+  background-color: #0263f7;
 }
 .pdp-container--info .offer-info span {
   padding: 5px 7px;
