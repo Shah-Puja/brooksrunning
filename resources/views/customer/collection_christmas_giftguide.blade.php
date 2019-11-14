@@ -3,6 +3,15 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/main.css?v={{ Cache::get('css_version_number') }}">
+<style>
+/* CSS  only for Christmas Giftguide */
+.christmas .primary-button{width:35%;padding:10px 15px;}
+.christmas .primary-button.first{margin-right:10px;}
+@media only screen and (max-width: 767px){
+    .about-header p{font-size:20px;}
+    .christmas .primary-button {width:40%;font-size:15px;}
+}
+</style>
 <div class="create-account--header plp-header category__hero">
  
         <div class="row">
@@ -22,17 +31,59 @@
                                 </div>
                             </div>
                         <h1 class="title">The Brooks Gift Guide</h1>
-                        <p class="type">Ran out of gift ideas? See our suggestions for every kind of runner.<br/>
+                        <p class="type">Ran out of gift ideas? <br />See our suggestions for every kind of runner.<br/>
                         </p>
                     </div>
                 </div>
                 <div class="collection-hero-overlay hidden-mob"></div>
             </div>
             <div class="category__hero__image mob-12 col-6 tab-6 pr-0 pl-0">
-                <img src="/images/Limited-Edition/giftsforwomen-categoryimage_updated.jpg">
+                <img src="/images/Limited-Edition/giftguide-2019-categoryimage.jpg">
             </div>
         </div>
 </div>
+<div class="create-account--header plp-header collection-intro">
+  <div class="wrapper">
+    <div class="row">
+    <div class="col-2"></div>
+      <div class="col-8">
+      	<div class="about-header">
+            <p>Get ahead with our Christmas collection or <br class="visible-tab visible-col" />best selling shoes and show off your new running styles.</p>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+</div>
+
+<section class="wrapper pr-collection-page pr-0 pl-0">
+	<div class="prod-desc--wrapper christmas">
+		<div class="wrapper">
+			<div class="row">
+				<div class="tab-6 padding_0">
+					<div class="collection-cate--link">
+							<picture>
+                                <source media="(max-width: 667px)" srcset="/images/Limited-Edition/revel.jpg">
+                                <img src="/images/Limited-Edition/revel.jpg"  alt="">
+                            </picture>
+                            <h2>Revel 3 Christmas Edition</h2>
+                            <a class="primary-button first" href="/revel-3-mens-running-shoes/110314_477.html">Shop Men</a>
+                            <a class="primary-button" href="/revel-3-womens-running-shoes/120302_477.html">Shop Women</a>
+					 </div>
+				</div>
+				<div class="tab-6 padding_0">
+					<div class="collection-cate--link">
+							 <picture>
+                                <source media="(max-width: 667px)" srcset="/images/Limited-Edition/levitate.jpg">
+                                <img src="/images/Limited-Edition/levitate.jpg"  alt="">
+                            </picture>
+                            <h2>Levitate 2 Christmas Edition</h2>
+                            <a class="primary-button first" href="/levitate-2-mens-christmas-ugly-sweater-running-shoes/110290_322.html">Shop Men</a>
+                            <a class="primary-button" href="/brooks-running-shoes-levitate-2-christmas-ugly-sweater-womens/120279_322.html">Shop Women</a>
+					 </div>
+				</div>
+			</div>
+</section>
 
 <!-- Shop for her section -->
 @if(!empty($shopher))
