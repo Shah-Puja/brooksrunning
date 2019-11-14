@@ -19,8 +19,8 @@ class AfterpayProcessor {
 		    return $this->afterpayApiClient->createOrder($data);  
     }
 
-    public function getOrder($token) {
-        return $this->afterpayApiClient->getOrder($token);
+    public function getOrder($token,$orderID) {
+        return $this->afterpayApiClient->getOrder($token,$orderID);
     }
 
     public function charge($order) { 
