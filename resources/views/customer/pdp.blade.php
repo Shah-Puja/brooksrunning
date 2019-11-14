@@ -14,6 +14,9 @@
     background-color: #f1f1f1;
     color: #dedcda;
 } 
+@if($product->video!='')
+.pdp-container--image .pdp-zoom--container .lSSlideOuter .lSPager.lSGallery li:last-child img{opacity:0.5;}
+@endif
 </style>
 
 <div id="data-load">
@@ -63,17 +66,36 @@
                                 <span class="icon-enlarge"></span>
                             </div>
                             <ul id="pdp-zoom--image">
-                                <li data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
+                                <li data-video='' data-thumb="{{ $product->image->image1Thumbnail() }}" data-src="{{ $product->image->image1Large() }}" data-zoomsrc="{{ $product->image->image1Zoom() }}">
                                     <img src="{{ $product->image->image1Large() }}"/>
                                 </li>
-                                @for ($i = 2; $i < 10; $i++)
+                                
+                                 @for ($i = 2; $i < 10; $i++)
                                     @if ($product->image->{'image' . $i} != null)
-                                    <li data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
+                                    <li data-video='' data-thumb="{{ $product->image->{ 'image'.$i.'Thumbnail' }() }}"  data-src="{{ $product->image->{ 'image'.$i.'Large' }() }}" data-zoomsrc="{{ $product->image->{ 'image'.$i.'Zoom' }()  }}">
                                         <img src="{{ $product->image->{ 'image'.$i.'Large' }() }}" />
                                     </li>
                                     @endif
                                 @endfor
+                                
+                                @if($product->video!='')
+                       
+                                <li data-video='{{$product->video}}' data-thumb="http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg" data-src="" data-zoomsrc="">
+					                <div class="videowrapper video_wrapper_full js-videoWrapper">
+                                        <!-- <iframe width="670" height="447" src="https://www.youtube.com/embed/{{$product->video}}" allowfullscreen="" frameborder="0">
+                                        </iframe> -->
+                                        <!-- <iframe class="videoIframe js-videoIframe" src="https://www.youtube.com/embed/{{$product->video}}" frameborder="0"  allowfullscreen="" ></iframe> -->
+                                       
+                                            <button class="videoPoster js-videoPoster" id="js-videoPoster" style="background-image:url('http://i3.ytimg.com/vi/{{$product->video}}/sddefault.jpg');"></button>
+                                    </div>
+                                    <div class="module-video" style="display:none;">
+                                        <iframe class="br-video" id="video" src="https://www.youtube.com/embed/{{$product->video}}?enablejsapi=1&html5=1"  allowfullscreen></iframe>
+                                    </div>
+                                </li>
+                                
+                                @endif 
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -855,5 +877,74 @@ $(document).on('click', '.pdp-width-show li', function () {
 });
 
 </script>
+
+<!-- Start utube vdo -->
+
+
+
+
+<script>
+    $(document).ready(function(){
+        // var newcontent = '<div class="play"></div>';
+        // $('#LastChild').html(newcontent);
+        $('.lSGallery li:last-child').attr('id', 'LastChild');
+    });
+</script>
+<script>
+$(document).ready(function () {
+    // $('.js-videoPoster').on('click', function () {
+    //     $(this).dblclick();
+    //     $(".js-videoWrapper").css({'display':'none'}); 
+    //     $(".module-video").css({'display':'block'});        
+    //     $(".br-video")[0].src += "1";
+    // });
+   
+});
+
+// https://developers.google.com/youtube/iframe_api_reference
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// global variable for the player
+var player;
+
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady,
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  
+  // bind events
+  var playButton = document.getElementById("js-videoPoster");
+  playButton.addEventListener("click", function() {
+    $(".js-videoWrapper").css({'display':'none'}); 
+    $(".module-video").css({'display':'block'});    
+    event.target.playVideo();
+  });
+  
+//   var pauseButton = document.getElementById("pause-button");
+//   pauseButton.addEventListener("click", function() {
+//     player.pauseVideo();
+//   });
+  
+}
+
+
+</script>
+
+<!-- End utube vdo -->
+
+
 
 @endsection
