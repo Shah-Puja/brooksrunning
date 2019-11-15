@@ -15,8 +15,6 @@ class AfterpayApiClient {
     public function __construct($config, $url) {
         $this->config = $config;
 		$this->url = $url;
-		$this->client = new \GuzzleHttp\Client();
-		$this->client->setDefaultOption('headers',$this->config);
     }
 
     public function createOrder($data)
@@ -27,7 +25,9 @@ class AfterpayApiClient {
 				'url' => $this->url . 'orders',
 				'body' => json_encode($data)
 			]);
-			$response = $this->client->post($this->url . 'orders', [ 'body' => $data, 'http_errors' => false])->getBody();
+			$client = new \GuzzleHttp\Client();
+			$client->setDefaultOption('headers',$this->config);
+			$response = $client->post($this->url . 'orders', [ 'body' => $data, 'http_errors' => false])->getBody();
 			print_r($response);
 			exit;
 			if (!empty($response)) {                
