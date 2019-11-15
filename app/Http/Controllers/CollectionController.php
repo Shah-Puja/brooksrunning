@@ -350,7 +350,7 @@ class CollectionController extends Controller
        }
 
        public function christmas_giftguide(){
-            $shopher = \App\Models\Product::getProducts_array(['120296_07','120283_059','120307_142','120302_043','120292_177','120305_007','120296_073']);
+            $shopher = \App\Models\Product::getProducts_array(['120296_073','120283_059','120307_142','120302_043','120292_177','120305_007']);
             $shophim = \App\Models\Product::getProducts_array(['110307_051','110296_021','110318_142','110314_423','110293_057','110316_466']);
             $gifts100 = \App\Models\Product::getProducts_array(['221202_001', '221227_472','221287_613','221337_540','220981_579','211221_422','211071_001','211212_459','211134_046']);
             $gifts50 = \App\Models\Product::getProducts_array(['7343_001', 'BROXYGEN_211','PRTM0316_167','PRTM0315_167','280413_451','280356_520']);
