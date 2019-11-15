@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
 use Session;
 use DB;
 use App\Models\Ap21_error;
+use App\Models\Afterpay_log;
 
 class PaymentController extends Controller {
 
@@ -50,11 +51,12 @@ class PaymentController extends Controller {
             }
 
             $this->order = $this->cart->order;
-            check_state_and_update_delivery_option($this->order->id);
 
             if (!$this->order) {
                 return redirect('shipping');
             }
+
+            check_state_and_update_delivery_option($this->order->id);
 
             if (isset($this->order->address) && !$this->order->address->isValid()) {
                 return redirect('shipping');
@@ -111,7 +113,19 @@ class PaymentController extends Controller {
     }
 
     public function afterpay_success(Request $request, AfterpayProcessor $afterpay_processor) {
+
+        Afterpay_log::createNew([
+            'api' => 'POST Order-check Order-id='.$this->order->id,
+            'body' => "Inside afterpay_success function"
+        ]);
+
         if ($request->status == "SUCCESS" && $request->orderToken != "" && $this->order->id != 0) {
+           
+            Afterpay_log::createNew([
+                'api' => 'POST Order-check Order-id='.$this->order->id,
+                'body' => "afterpay staus = SUCCESS"
+            ]);
+ 
             $get_order_details = $afterpay_processor->getOrder($this->order->afterpay_token,$this->order->id);
             $charge_payment = json_decode($afterpay_processor->charge($this->order), true);
 
@@ -208,6 +222,12 @@ class PaymentController extends Controller {
             }
         } else {
             //return redirect('/cart');
+
+            Afterpay_log::createNew([
+                'api' => 'POST Order-check Order-id='.$this->order->id,
+                'body' => "afterpay staus = CANCEL"
+            ]);
+
             $this->order->update(array('status' => 'AfterPay Processor Declined', 'transaction_status' => 'Incomplete', 'payment_status' => Carbon::now()
             ));
             $logger = array(
