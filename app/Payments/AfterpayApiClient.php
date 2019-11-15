@@ -27,7 +27,7 @@ class AfterpayApiClient {
 			]);*/
 
 			$client = new \GuzzleHttp\Client();
-			$response = $client->request('POST', $this->url . 'orders', [ 'headers' => $this->config, 'form_params' => $data, 'http_errors' => false]);
+			$response = $client->request('POST', $this->url . 'orders', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
 			
 			print_r($response);
 			if (!empty($response)) {                
