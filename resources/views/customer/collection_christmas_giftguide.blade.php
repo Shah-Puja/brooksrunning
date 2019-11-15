@@ -7,6 +7,7 @@
 /* CSS  only for Christmas Giftguide */
 .christmas .primary-button{width:35%;padding:10px 15px;}
 .christmas .primary-button.first{margin-right:10px;}
+.collection-header-intro div .shop-all{font-size:17px;}
 @media only screen and (max-width: 767px){
     .about-header p{font-size:20px;}
     .christmas .primary-button {width:40%;font-size:15px;}
