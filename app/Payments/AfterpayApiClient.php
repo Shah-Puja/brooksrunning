@@ -15,6 +15,7 @@ class AfterpayApiClient {
     public function __construct($config, $url) {
         $this->config = $config;
 		$this->url = $url;
+		$this->client =  new \GuzzleHttp\Client();
     }
 
     public function createOrder($data)
@@ -26,8 +27,7 @@ class AfterpayApiClient {
 				'body' => json_encode($data)
 			]);
 
-			$client = new \GuzzleHttp\Client();
-			$response = $client->request('POST', $this->url . 'orders', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
+			$response = $this->client->request('POST', $this->url . 'orders', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
 			if (!empty($response)) {                
                 return $response->getBody();
             }
@@ -59,8 +59,7 @@ class AfterpayApiClient {
 				'body' => "AfterPay token :". $token,
 			]);
 
-			$client = new \GuzzleHttp\Client();
-			$response = $client->request('GET', $this->url . 'orders/' . $token, [ 'headers' => $this->config, 'http_errors' => false]);
+			$response = $this->client->request('GET', $this->url . 'orders/' . $token, [ 'headers' => $this->config, 'http_errors' => false]);
 			if (!empty($response)) {                
                 return $response->getBody();
             }
@@ -92,8 +91,7 @@ class AfterpayApiClient {
 				'body' => json_encode($data),
 			]);
 			
-			$client = new \GuzzleHttp\Client();
-			$response = $client->request('POST', $this->url . 'payments/capture', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
+			$response = $this->client->request('POST', $this->url . 'payments/capture', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
 			if (!empty($response)) {                
                 return $response->getBody();
             }
