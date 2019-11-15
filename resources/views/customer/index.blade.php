@@ -193,7 +193,7 @@
 		</div>
 	</div>
 
-	@if(isset($product) && count(array_filter($product)) != 0)
+	@if(!empty($product))
 	<div class="wrapper homepage-new--arrival">
 		<div class="row">
 			<div class="col-12">
@@ -205,22 +205,46 @@
 		<div class="new-arrival--container">
 	   		<span class="icon-style icon-back-arrow prev"></span>
 	     	<div class="owl-carousel">
-				@foreach($product as $prod_key => $Featured_prod)
-					@if(!empty($Featured_prod))
+				@foreach($product['products'] as $curr_ele)
+				@php
+                    $price_sale = $curr_ele->variants->max('price_sale');
+                    $price = $curr_ele->variants->max('price');
+                    $max_price =$curr_ele->variants->pluck('price')->max();
+                    $max_price_sale = $curr_ele->variants->pluck('price_sale')->max();
+                    $min_price = $curr_ele->variants->pluck('price')->min();
+                    $min_price_sale = $curr_ele->variants->pluck('price_sale')->min();
+                @endphp
 					<div class="item">
 						<div class="product_arrive">
 							<div class="prd_img">
-							<a href = "/{{(isset($Featured_prod->seo_name)) ? $Featured_prod->seo_name : ''}}/{{$Featured_prod->style}}_{{$Featured_prod->color_code}}.html">
-							<img src="{{$Featured_prod->image->image1Medium()}}">
+							<a href = "/{{$curr_ele->seo_name}}/{{$curr_ele->style}}_{{$curr_ele->color_code}}.html">
+							<img src="{{ $curr_ele->image->image1Mediumx() }}">
 								</a>
 							</div>
 							<div class="prd_caption">
-								<h3>{{$Featured_prod->stylename}}</h3>
-								<h4 class="price">${{$Featured_prod->variants[$prod_key]->price}}</h4>
+								<h3>{{ $curr_ele->stylename }}</h3>
+								<div class="price">
+                                    @if($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale==$max_price_sale && $min_price!=$min_price_sale && $max_price!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @elseif($min_price==$min_price_sale && $max_price==$max_price_sale)
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price==$max_price && $min_price_sale!=$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @elseif($min_price!=$max_price && $min_price_sale==$max_price_sale)
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="red price_text">&dollar;{{ $min_price_sale }}</span>
+                                    @else
+                                        <del><span class="black">&dollar;{{ $min_price }} - &dollar;{{ $max_price }}</span></del>
+                                        <span class="black price_text">&dollar;{{ $min_price_sale }} - &dollar;{{ $max_price_sale }}</span>
+                                    @endif
+                                </div>
 							</div>
 						</div>
 					</div>
-				    @endif
 				@endforeach
 	       </div>
 	       <span class="icon-style icon-next-arrow next"></span>
