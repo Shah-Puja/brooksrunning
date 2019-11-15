@@ -26,9 +26,9 @@ class AfterpayApiClient {
 				'body' => json_encode($data)
 			]);
 			$client = new \GuzzleHttp\Client(['headers' => $this->config]);
-			$response = $client->post($this->url . 'orders', [ 'body' => $data, 'http_errors' => false])->getBody();
+			$response = $client->post($this->url . 'orders', [ 'body' => $data, 'http_errors' => false]);
 			if (!empty($response)) {                
-                return $response;
+                return $response->getBody()->getContents();
             }
 			//return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
 		} catch (RequestException $e) {
