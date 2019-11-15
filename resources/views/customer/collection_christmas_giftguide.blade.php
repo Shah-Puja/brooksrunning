@@ -91,7 +91,7 @@
     <div class="mp-lp--container">
     <div class="collection-intro">
         <h2>Shop for Her</h2>
-        <!--<div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>-->
+        <div><a href="/womens-running-shoes" class="shop-all">Shop all women's running shoes<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
@@ -175,7 +175,7 @@
             <div class="col-3 tab-4 ">
                 <div class="collection-header-intro">
                     <h2>Shop for Her</h2>
-                    <!--<div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>-->
+                    <div><a href="/womens-running-shoes" class="shop-all">Shop all women's running shoes<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
             </div>
             <div class="col-9 tab-8">
@@ -290,7 +290,7 @@
     <div class="mp-lp--container">
     <div class="collection-intro">
         <h2>Shop for Him</h2>
-        <!--<div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>-->
+        <div><a href="/mens-running-shoes" class="shop-all">Shop all men's running shoes<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
     </div>
         <!-- <span class="icon-style icon-back-arrow prev"></span> -->
         <div class="owl-carousel md-lp-carousal owl-centered">
@@ -374,7 +374,7 @@
             <div class="col-3 tab-4 ">
                 <div class="collection-header-intro">
                     <h2>Shop for Him</h2>
-                    <!--<div><a href="/womens-running-shoes" class="shop-all">Shop All <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>-->
+                    <div><a href="/mens-running-shoes" class="shop-all">Shop all men's running shoes<img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></div>
                 </div>
             </div>
             <div class="col-9 tab-8">
