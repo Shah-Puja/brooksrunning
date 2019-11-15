@@ -105,8 +105,6 @@ class PaymentController extends Controller {
 
     public function create_token(AfterpayProcessor $afterpay_processor) {
         $get_afterpay_token = json_decode($afterpay_processor->getAfterpayToken($this->order));
-        print_r($get_afterpay_token);
-        exit;
         $token = $get_afterpay_token->token;
         $this->order->update(array('afterpay_token' => $token));
         return $token;

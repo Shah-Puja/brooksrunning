@@ -20,16 +20,15 @@ class AfterpayApiClient {
     public function createOrder($data)
 	{   
 		try {
-			/*Afterpay_log::createNew([
+			Afterpay_log::createNew([
 				'api' => 'POST Order-API Order-id='.$data['merchantReference'],
 				'url' => $this->url . 'orders',
 				'body' => json_encode($data)
-			]);*/
+			]);
 
 			$client = new \GuzzleHttp\Client();
 			$response = $client->request('POST', $this->url . 'orders', [ 'headers' => $this->config, 'json' => $data, 'http_errors' => false]);
-			
-			print_r($response);
+		
 			if (!empty($response)) {                
                 return $response->getBody();
             }
