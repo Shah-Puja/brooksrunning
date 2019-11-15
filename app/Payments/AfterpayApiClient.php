@@ -27,7 +27,9 @@ class AfterpayApiClient {
 				'body' => json_encode($data)
 			]);
 			$response = $this->client->post($this->url . 'orders', ['headers' => $this->config , 'body' => $data, 'http_errors' => false])->getBody();
-            if (!empty($response)) {                
+			print_r($response);
+			exit;
+			if (!empty($response)) {                
                 return $response;
             }
 			//return Zttp::withHeaders($this->config)->post($this->url . 'orders', $data)->body();
