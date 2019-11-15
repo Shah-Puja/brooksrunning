@@ -26,7 +26,7 @@ class AfterpayApiClient {
 				'url' => $this->url . 'orders',
 				'body' => json_encode($data)
 			]);
-			$response = $this->client->post($this->url . 'orders', ['headers' => $this->config , 'body' => $data, 'http_errors' => false]);
+			$response = $this->client->post($this->url . 'orders', ['headers' => $this->config , 'body' => $data, 'http_errors' => false])->getBody();
             if (!empty($response)) {                
                 return $response;
             }
