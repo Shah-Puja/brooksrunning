@@ -1,4 +1,6 @@
 @extends('customer.layouts.master')
+
+
 @section('content')
 <div class="create-account--header">
 	<div class="wrapper">

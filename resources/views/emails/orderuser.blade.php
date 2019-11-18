@@ -395,9 +395,9 @@
                                                                 </td>
                                                             </tr>
 
-                                                            @if (isset($order->coupon_code) && $order->coupon_code != '')
+                                                            @if(isset($coup_discount) && $coup_discount > 0)
                                                             <tr>
-                                                                <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Coupon Discounts:</p></td>
+                                                                <td><p style="text-align:justify; line-height: 0.4; font-weight: bold; ">Discounts:</p></td>
                                                                 <td><p style="color:red; text-align:justify; line-height: 0.4;">-${{ $coup_discount }}</p></td>
                                                             </tr>
                                                             @endif

@@ -506,7 +506,7 @@
                                                     </li>
                                                     <li><a href="/meet_brooks/our_history">Our History</a></li>
                                                     <li><a href="/meet_brooks/our_purpose">Our Purpose</a></li>
-                                                    <li><a href="/meet_brooks/technology">Technology</a></li>
+                                                    <li><a href="/meet_brooks/technology/running-shoes-technology">Technology</a></li>
                                                     <li><a href="/meet_brooks/run-signature">Run Signature</a></li>
                                                 </ul>
                                                 <ul class="tab-3">

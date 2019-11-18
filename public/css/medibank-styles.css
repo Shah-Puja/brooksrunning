@@ -5249,7 +5249,7 @@ textarea {
 
 .pdp-container--benefits {
   padding: 40px 0;
-  background-image: linear-gradient(#ffffff, #f1f1f1);
+  background-image: linear-gradient(#ffffff, #ffffff);
 }
 .pdp-container--benefits .module-header {
   padding: 70px 0;
