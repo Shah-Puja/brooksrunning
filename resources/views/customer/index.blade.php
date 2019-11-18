@@ -94,13 +94,13 @@
 		<div class="tab-4">
 			<div class="overgray-wrapper">
 				<div class="img-wrapper">
-					<img src="/images/home/20190910/hp_sm_ghost12_splash.jpg">
-			        <h3>&nbsp; <br/> Make a splash! </h3>
+					<img src="/images/home/20191118/hp_sm_christmas_gift_guide.jpg">
+			        <!--<h3>&nbsp; <br/> Make a splash! </h3>-->
 				</div>
 				<div class="info-wrapper">
-					<p>Forget about paint by numbers. The Ghost 12 splash collection is all about colouring outside the lines.
+					<p>Ran out of gift ideas? Get ahead with the latest Christmas collection and our best selling styles.
 					<br/>&nbsp;  </p>
-					<a href="/collections/ghost-saturation">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
+					<a href="/collections/christmas-gift-guide">Shop the collection <img id="br-home" src="/images/home/link-arrow--icon.png" alt="" ></a>
 					<!-- <span class="right-link"><a href="/brooks-running-shoes-ghost-12-womens/120305_413.html">Shop women's <img id="br-home" src="/images/home/link-arrow--icon.png" alt=""></a></span> -->
 				</div>
 			</div>
