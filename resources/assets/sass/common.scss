@@ -1843,8 +1843,10 @@
                 color:$red;
               }
               span.black{
-                text-decoration:line-through;
                 color:$black;
+              }
+              del{
+                text-decoration:line-through;
               }
            }
           }

@@ -3490,8 +3490,10 @@ textarea {
   color: #b9161e;
 }
 .homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price span.black {
-  text-decoration: line-through;
   color: #000000;
+}
+.homepage-gray--container .new-arrival--container .owl-carousel .product_arrive .price del {
+  text-decoration: line-through;
 }
 .homepage-gray--container .new-arrival--container .icon-style {
   position: absolute;
