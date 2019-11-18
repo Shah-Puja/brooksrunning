@@ -201,7 +201,7 @@ Route::get('/collections/ghost-saturation', 'CollectionController@ghost_saturati
 Route::get('/collections/revel-3-shine-collection', 'CollectionController@revel3_shine_collection');
 Route::get('/collections/melts-collection', 'CollectionController@melts_collection');
 Route::get('/collections/revel-3-breakthrough-collection', 'CollectionController@revel3_breakthrough_collection');
-
+Route::get('/collections/christmas-gift-guide', 'CollectionController@christmas_giftguide');
 
 Route::get('sitemap-index.xml', 'SitemapController@index');
 Route::redirect('/sitemap.xml', '/sitemap-index.xml');
