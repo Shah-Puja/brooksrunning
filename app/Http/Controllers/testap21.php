@@ -27,7 +27,7 @@ class testap21 extends Controller
                         if(isset($response_xml->Person->Loyalties->Loyalty)):
                             $response_xml->Person->Loyalties="";
                             $new_xml = $response_xml->Person->asXML();
-                            //dd($new_xml);
+                            echo $new_xml;
                             $this->update_user($new_xml,115414);
                             /*$filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
                                         return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
