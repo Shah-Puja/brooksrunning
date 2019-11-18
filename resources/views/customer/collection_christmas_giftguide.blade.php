@@ -26,7 +26,7 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="JavaScript:Void(0);" class="active">The Brooks Gift Guiden</a>
+                                            <a href="JavaScript:Void(0);" class="active">The Brooks Gift Guide</a>
                                         </li>
                                     </ul>
                                 </div>
