@@ -13,6 +13,64 @@ class testap21 extends Controller
         $this->bridge = $bridge;
     }
 
+    public function remove_loyalty(){
+        $email='sygtest@gmail.com';
+        $response = $this->bridge->getPersonid($email);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            $userid = false;
+            switch ($returnCode) {
+                case '200':
+                    $response_xml = @simplexml_load_string($response->getBody()->getContents());
+                    $userid = $response_xml->Person->Id;
+                    $filtered ='';
+                        if(isset($response_xml->Person->Loyalties->Loyalty)):
+                            $response_xml->Person->Loyalties="";
+                            $new_xml = $response_xml->Person->asXML();
+                            dd($new_xml);
+                            //$this->update_user($new_xml,115414);
+                            /*$filtered =  collect($response_xml->Person->Loyalties->Loyalty)->filter(function ($item, $key) {
+                                        return isset($item->LoyaltyTypeId) && $item->LoyaltyTypeId==env('LOYALTY_ID');
+                                });*/
+                        endif;
+
+                    /*if($filtered==''){
+                        $response_xml->Person->Loyalties->Loyalty->LoyaltyTypeId = env('LOYALTY_ID');
+                        $new_xml = $response_xml->Person->asXML();
+                        $this->update_user($new_xml,$userid);
+                    }*/
+                    break;                
+            }
+        }       
+    }
+    public function update_user($person_xml, $userid) {
+        $returnVal = false;
+        $response = $this->bridge->updatePerson($person_xml,$userid);
+        if (!empty($response)) {
+            $returnCode = $response->getStatusCode();
+            switch ($returnCode) {
+                case 200:
+                    $returnVal = true;
+                    break;
+
+                default:
+                    $url = env('AP21_URL') . "Persons/".$userid."/?countryCode=" . env('AP21_COUNTRYCODE');
+                    $error_response = $response->getBody()->getContents();
+                    Ap21_error::store([
+                        'api' => 'PUT Person-API/Register',
+                        'url' => $url,
+                        'error_response' => $error_response,
+                        'error_type' => 'API Error',
+                        'body' =>  $person_xml
+                    ]);
+                    $returnVal = false;
+                    break;
+            }
+        }
+        return $returnVal;
+    }
+
+
 public function voucher_valid(){
     //$gift_id="200001005111"; $pin="3164111";$total=1000;
     $gift_id="1200001012"; $pin="2026";$total=100;

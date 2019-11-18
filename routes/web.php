@@ -168,6 +168,8 @@ Route::get('/track-your-order', 'quickhelpController@track_your_order');
 Route::get('/testap21/create_user', 'testap21@create_user'); 
 Route::get('/testap21/create_order', 'testap21@create_order'); 
 Route::get('/testap21/voucher_valid', 'testap21@voucher_valid'); 
+Route::get('/testap21/remove_loyalty', 'testap21@remove_loyalty'); 
+
 Route::get('/test/stockrefresh', 'TestController@stockrefresh'); 
 
 Route::get('/neutral-running-shoes', 'CategoryController@shoes_category');

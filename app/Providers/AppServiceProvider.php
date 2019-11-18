@@ -66,7 +66,7 @@ class AppServiceProvider extends ServiceProvider {
         $this->app->bind('App\SYG\Bridges\BridgeInterface', function ($app) {
             $apiClient = new \GuzzleHttp\Client([ 
                 'base_uri' => env('AP21_URL'),  
-                'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_2.0'],
+                'headers' => ['Content-type' => 'text/xml', 'Accept' => 'Version_3.0'],
                 'connect_timeout' => 10,
             ]);
             return new \App\SYG\Bridges\AP21Bridge($apiClient);
